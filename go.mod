@@ -1,4 +1,4 @@
-module github.com/wangsu/wangsu-sdk-go
+module github.com/wangsu-api/wangsu-sdk-go
 
 go 1.17
 

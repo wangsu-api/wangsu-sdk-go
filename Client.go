@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/wangsu/wangsu-sdk-go/common/auth"
+	"github.com/wangsu-api/wangsu-sdk-go/common/auth"
 )
 
 func main() {

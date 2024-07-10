@@ -2,8 +2,8 @@ package ratelimit
 
 import (
 	"errors"
-	"github.com/wangsu/wangsu-sdk-go/common"
-	"github.com/wangsu/wangsu-sdk-go/common/auth"
+	"github.com/wangsu-api/wangsu-sdk-go/common"
+	"github.com/wangsu-api/wangsu-sdk-go/common/auth"
 )
 
 type Client struct {
