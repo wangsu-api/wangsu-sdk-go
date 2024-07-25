@@ -10,9 +10,10 @@ type Client struct {
 	common.Client
 }
 
-func NewClient(credential common.CredentialIface) (client *Client, err error) {
+func NewClient(credential common.CredentialIface, httpProfile common.HttpProfileIface) (client *Client, err error) {
 	client = &Client{}
 	client.WithCredential(credential)
+	client.WithHttpProfile(httpProfile)
 	return
 }
 
@@ -25,7 +26,7 @@ func (c *Client) AddWaapWhitelistRule(request *CreateWhitelistRuleRequest) (requ
 	}
 
 	var resp CreateWhitelistRuleResponse
-	config := auth.NewAkskConfig(c.GetCredential(), "/api/v1/common/whitelist/add", "POST")
+	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/api/v1/common/whitelist/add", "POST")
 
 	requestId, err = auth.Invoke(config, request, &resp)
 	if err != nil {
@@ -44,7 +45,7 @@ func (c *Client) GetWaapWhitelistList(request *ListWhitelistRulesRequest) (reque
 	}
 
 	var resp ListWhitelistRulesResponse
-	config := auth.NewAkskConfig(c.GetCredential(), "/api/v1/common/whitelist/query-list", "POST")
+	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/api/v1/common/whitelist/query-list", "POST")
 
 	requestId, err = auth.Invoke(config, request, &resp)
 	if err != nil {
@@ -64,7 +65,7 @@ func (c *Client) DeleteWaapWhitelist(request *DeleteWhitelistRulesRequest) (requ
 	}
 
 	var resp DeleteWhitelistRulesResponse
-	config := auth.NewAkskConfig(c.GetCredential(), "/api/v1/common/whitelist/delete", "POST")
+	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/api/v1/common/whitelist/delete", "POST")
 
 	requestId, err = auth.Invoke(config, request, &resp)
 	if err != nil {
@@ -83,7 +84,7 @@ func (c *Client) UpdateWaapWhitelist(request *UpdateWhitelistRuleRequest) (reque
 	}
 
 	var resp UpdateWhitelistRuleResponse
-	config := auth.NewAkskConfig(c.GetCredential(), "/api/v1/common/whitelist/update", "POST")
+	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/api/v1/common/whitelist/update", "POST")
 
 	requestId, err = auth.Invoke(config, request, &resp)
 	if err != nil {

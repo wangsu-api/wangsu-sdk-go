@@ -10,9 +10,10 @@ type Client struct {
 	common.Client
 }
 
-func NewClient(credential common.CredentialIface) (client *Client, err error) {
+func NewClient(credential common.CredentialIface, httpProfile common.HttpProfileIface) (client *Client, err error) {
 	client = &Client{}
 	client.WithCredential(credential)
+	client.WithHttpProfile(httpProfile)
 	return
 }
 
@@ -24,7 +25,7 @@ func (c *Client) AddRateLimit(request *CreatRateLimitingRuleRequest) (requestId 
 		return "", nil, errors.New("credential is required")
 	}
 	var resp CreatRateLimitingRuleResponse
-	config := auth.NewAkskConfig(c.GetCredential(), "/api/v1/rate-limit/add-rule", "POST")
+	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/api/v1/rate-limit/add-rule", "POST")
 	requestId, err = auth.Invoke(config, request, &resp)
 	if err != nil {
 		return "", nil, err
@@ -40,7 +41,7 @@ func (c *Client) GetRateLimitList(request *ListRateLimitingRulesRequest) (reques
 		return "", nil, errors.New("credential is required")
 	}
 	var resp ListRateLimitingRulesResponse
-	config := auth.NewAkskConfig(c.GetCredential(), "/api/v1/rate-limit/get-rule-list", "POST")
+	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/api/v1/rate-limit/get-rule-list", "POST")
 	requestId, err = auth.Invoke(config, request, &resp)
 	if err != nil {
 		return "", nil, err
@@ -56,7 +57,7 @@ func (c *Client) DeleteRateLimit(request *DeleteRateLimitingRulesRequest) (reque
 		return "", nil, errors.New("credential is required")
 	}
 	var resp DeleteRateLimitingRulesResponse
-	config := auth.NewAkskConfig(c.GetCredential(), "/api/v1/rate-limit/delete-rule-by-ids", "POST")
+	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/api/v1/rate-limit/delete-rule-by-ids", "POST")
 	requestId, err = auth.Invoke(config, request, &resp)
 	if err != nil {
 		return "", nil, err
@@ -72,7 +73,7 @@ func (c *Client) UpdateRateLimit(request *UpdateRateLimitingRuleRequest) (reques
 		return "", nil, errors.New("credential is required")
 	}
 	var resp UpdateRateLimitingRuleResponse
-	config := auth.NewAkskConfig(c.GetCredential(), "/api/v1/rate-limit/update-rule", "POST")
+	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/api/v1/rate-limit/update-rule", "POST")
 	requestId, err = auth.Invoke(config, request, &resp)
 	if err != nil {
 		return "", nil, err

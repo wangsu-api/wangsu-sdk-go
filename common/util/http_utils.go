@@ -15,7 +15,7 @@ func Call(requestMsg model.HttpRequestMsg) (*http.Response, error) {
 		log.Printf("Error: %v", err)
 	}
 	for key := range requestMsg.Headers {
-		req.Header.Set(key, requestMsg.Headers[key])
+		req.Header[key] = []string{requestMsg.Headers[key]}
 	}
 	resp, err := client.Do(req)
 

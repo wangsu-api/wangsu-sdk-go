@@ -2,6 +2,7 @@ package constant
 
 const (
 	HttpRequestPrefix = "https://open.chinanetcenter.com"
+	Https             = "https"
 	HttpRequestDomain = "open.chinanetcenter.com"
 	ApplicationJson   = "application/json"
 	TypeTerraform     = "terraform"
@@ -14,4 +15,5 @@ const (
 	AKSK              = "AKSK"
 	ACCEPT            = "Accept"
 	ApiType           = "x-cnc-api-type"
+	ServiceType       = "serviceType"
 )

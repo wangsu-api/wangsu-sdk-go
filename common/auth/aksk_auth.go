@@ -23,22 +23,36 @@ import (
 type AkskConfig struct {
 	AccessKey     string
 	SecretKey     string
+	Protocol      string
+	EndPoint      string
 	Uri           string
 	Method        string
-	EndPoint      string
 	SignedHeaders string
-	customHeaders map[string]string //custom headers
+	CustomHeaders map[string]string //custom headers
 }
 
-func NewAkskConfig(credential common.CredentialIface, uri string, method string) (config AkskConfig) {
+func NewAkskConfig(credential common.CredentialIface, httpProfile common.HttpProfileIface, uri string, method string) (config AkskConfig) {
 	config.AccessKey = credential.GetAccessKey()
 	config.SecretKey = credential.GetSecretKey()
+
+	config.Protocol = httpProfile.GetProtocol()
+	if config.Protocol == "" {
+		config.Protocol = constant.Https
+	}
 	config.Uri = uri
+	config.EndPoint = httpProfile.GetEndpoint()
+	if config.EndPoint == "" {
+		config.EndPoint = constant.HttpRequestDomain
+	}
 	config.Method = method
-	config.EndPoint = constant.HttpRequestDomain
 	config.SignedHeaders = "content-type;host"
-	config.customHeaders = map[string]string{}
-	config.customHeaders[constant.ApiType] = constant.TypeTerraform
+	config.CustomHeaders = map[string]string{}
+	config.CustomHeaders[constant.ApiType] = constant.TypeTerraform
+
+	if httpProfile.GetServiceType() != "" {
+		config.CustomHeaders[constant.ServiceType] = httpProfile.GetServiceType()
+	}
+
 	return
 }
 
@@ -49,10 +63,10 @@ func TransferRequestMsg(config AkskConfig) model.HttpRequestMsg {
 	requestMsg.Url = constant.HttpRequestPrefix + config.Uri
 	if len(config.EndPoint) == 0 || "{endPoint}" == config.EndPoint {
 		requestMsg.Host = constant.HttpRequestDomain
-		requestMsg.Url = "https://" + constant.HttpRequestDomain + config.Uri
+		requestMsg.Url = constant.Https + "://" + constant.HttpRequestDomain + config.Uri
 	} else {
 		requestMsg.Host = config.EndPoint
-		requestMsg.Url = "https://" + config.EndPoint + config.Uri
+		requestMsg.Url = config.Protocol + "://" + config.EndPoint + config.Uri
 	}
 	requestMsg.SignedHeaders = getSignedHeaders(config.SignedHeaders)
 	return requestMsg
@@ -72,7 +86,7 @@ func Invoke(config AkskConfig, request interface{}, response interface{}) (reqeu
 	requestMsg.Headers[constant.HeadSignAccessKey] = config.AccessKey
 	requestMsg.Headers[constant.XCncAuthMethod] = constant.AKSK
 	requestMsg.Headers[constant.ACCEPT] = constant.ApplicationJson
-	for k, v := range config.customHeaders {
+	for k, v := range config.CustomHeaders {
 		requestMsg.Headers[k] = v
 	}
 	signature := getSignature(requestMsg, config.SecretKey, timeStamp)

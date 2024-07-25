@@ -10,9 +10,10 @@ type Client struct {
 	common.Client
 }
 
-func NewClient(credential common.CredentialIface) (client *Client, err error) {
+func NewClient(credential common.CredentialIface, httpProfile common.HttpProfileIface) (client *Client, err error) {
 	client = &Client{}
 	client.WithCredential(credential)
+	client.WithHttpProfile(httpProfile)
 	return
 }
 
@@ -24,7 +25,7 @@ func (c *Client) AddDomain(request *AccessDomainRequest) (requestId string, resp
 		return "", nil, errors.New("credential is required")
 	}
 	var resp AccessDomainResponse
-	config := auth.NewAkskConfig(c.GetCredential(), "/api/v1/tf/sys-domain-info/add", "POST")
+	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/api/v1/tf/sys-domain-info/add", "POST")
 	requestId, err = auth.Invoke(config, request, &resp)
 	if err != nil {
 		return "", nil, err
@@ -40,7 +41,7 @@ func (c *Client) AddDomainByCopy(request *UsingExistingHostnameToAddNewHostnameR
 		return "", nil, errors.New("credential is required")
 	}
 	var resp UsingExistingHostnameToAddNewHostnameResponse
-	config := auth.NewAkskConfig(c.GetCredential(), "/api/v1/common/sys-domain-info/add-refer-to-other-domain", "POST")
+	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/api/v1/common/sys-domain-info/add-refer-to-other-domain", "POST")
 	requestId, err = auth.Invoke(config, request, &resp)
 	if err != nil {
 		return "", nil, err
@@ -56,7 +57,7 @@ func (c *Client) AddDomainByCopy(request *UsingExistingHostnameToAddNewHostnameR
 		return "", nil, errors.New("credential is required")
 	}
 	var resp ListDomainCommonConfResponse
-	config := auth.NewAkskConfig(c.GetCredential(), "/api/v1/tf/sys-domain-info/get-common-conf-list", "POST")
+	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/api/v1/tf/sys-domain-info/get-common-conf-list", "POST")
 	requestId, err = auth.Invoke(config, request, &resp)
 	if err != nil {
 		return "", nil, err
@@ -72,7 +73,7 @@ func (c *Client) GetDomainList(request *ListDomainInfoRequest) (requestId string
 		return "", nil, errors.New("credential is required")
 	}
 	var resp ListDomainInfoResponse
-	config := auth.NewAkskConfig(c.GetCredential(), "/api/v1/common/sys-domain-info/get-list", "POST")
+	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/api/v1/common/sys-domain-info/get-list", "POST")
 	requestId, err = auth.Invoke(config, request, &resp)
 	if err != nil {
 		return "", nil, err
@@ -89,7 +90,7 @@ func (c *Client) GetDomainList(request *ListDomainInfoRequest) (requestId string
 		return "", nil, errors.New("credential is required")
 	}
 	var resp UpdateDomainCommonConfResponse
-	config := auth.NewAkskConfig(c.GetCredential(), "/api/v1/tf/sys-domain-info/update-common-conf", "POST")
+	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/api/v1/tf/sys-domain-info/update-common-conf", "POST")
 	requestId, err = auth.Invoke(config, request, &resp)
 	if err != nil {
 		return "", nil, err
@@ -106,7 +107,7 @@ func (c *Client) UpdateDomainPolicy(request *ModifyPolicyStatusRequest) (request
 		return "", nil, errors.New("credential is required")
 	}
 	var resp ModifyPolicyStatusResponse
-	config := auth.NewAkskConfig(c.GetCredential(), "/api/v1/common/sys-domain-info/update-switch", "POST")
+	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/api/v1/common/sys-domain-info/update-switch", "POST")
 	requestId, err = auth.Invoke(config, request, &resp)
 	if err != nil {
 		return "", nil, err
@@ -123,7 +124,7 @@ func (c *Client) DeleteDomain(request *RemoveProtectedHostnameParameters) (reque
 	}
 	domain := *request.Domain
 	var resp RemoveProtectedHostnameResponse
-	config := auth.NewAkskConfig(c.GetCredential(), "/api/v1/common/sys-domain-info/remove?domain="+domain, "GET")
+	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/api/v1/common/sys-domain-info/remove?domain="+domain, "GET")
 	requestId, err = auth.Invoke(config, request, &resp)
 	if err != nil {
 		return "", nil, err
