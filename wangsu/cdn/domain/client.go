@@ -77,7 +77,7 @@ func (c *Client) QueryDomainDeployStatus(xCncRequestId string) (response *QueryD
 	var resp QueryDeployResultForTerraformResponse
 	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/api/terraform/request/"+xCncRequestId, "GET")
 
-	auth.Invoke(config, nil, &resp)
+	_, err = auth.Invoke(config, nil, &resp)
 	if err != nil {
 		return nil, err
 	}
