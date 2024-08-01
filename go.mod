@@ -1,6 +1,6 @@
 module github.com/wangsu-api/wangsu-sdk-go
 
-go 1.17
+go 1.22
 
 require github.com/alibabacloud-go/tea v1.2.0
 
