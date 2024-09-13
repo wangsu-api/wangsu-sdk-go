@@ -31,10 +31,14 @@ type UpdateAppaDomainForTerraformRequest struct {
 	//   }
 	// ]"}
 	OriginConfig []*UpdateAppaDomainForTerraformRequestOriginConfig `json:"originConfig" xml:"originConfig" type:"Repeated"`
-	// {"en":"HTTP port. The value is an integer ranging from 1 to 65535. Multiple ports are supported and can be configured in the following format:httpPorts:[1000,1001]Note: 1. Ports 2012, 2323, 2443, 4031, 12012, 20121, 57891, 62016, 65383, and 65529 do not support.2. The HTTP port and HTTPS port must be unique.3. At least one HTTP port or HTTPS port must be configured.", "zh_CN":"HTTP端口，取值范围为1-65535的整数，可配置多个，格式如：httpPorts:[1000,1001]注意：1、端口2012、2323、2443、4031、12012、20121、57891、62016、65383、65529不支持配置。2、HTTP端口和HTTPS端口不能重复。3、HTTP端口和HTTPS端口必须至少配置一个。"}
+	// {'en':'HTTP port. The value is an integer ranging from 1 to 65535. Multiple ports are supported and can be configured in the following format:httpPorts:["9001"]Note: 1. Ports 2012, 2323, 2443, 4031, 12012, 20121, 57891, 62016, 65383, and 65529 do not support.2. The HTTP port and HTTPS port and TCP port must be unique.3. At least one HTTP port or HTTPS port or TCP port or UDP port must be configured.', 'zh_CN':'HTTP端口，取值范围为1-65535的整数，可配置多个，格式如：httpPorts:["9001"]注意：1、端口2012、2323、2443、4031、12012、20121、57891、62016、65383、65529不支持配置。2、HTTP端口和HTTPS端口和TCP端口不能重复。3、HTTP端口和HTTPS端口和TCP端口和UDP端口必须至少配置一个。'}
 	HttpPorts []*string `json:"httpPorts" xml:"httpPorts" type:"Repeated"`
-	// {"en":"HTTPS port. The value is an integer ranging from 1 to 65535. Multiple ports are supported and can be configured in the following format:httpPorts:[1000,1001]Note: 1. Ports 2012, 2323, 2443, 4031, 12012, 20121, 57891, 62016, 65383, and 65529 do not support.2. The HTTP port and HTTPS port must be unique.3. At least one HTTP port or HTTPS port must be configured.", "zh_CN":"HTTPS端口，取值范围为1-65535的整数，可配置多个，格式如：httpsPorts:[2000,2001]注意：1、端口2012、2323、2443、4031、12012、20121、57891、62016、65383、65529不支持配置。2、HTTP端口和HTTPS端口不能重复。3、HTTP端口和HTTPS端口必须至少配置一个。"}
+	// {'en':'HTTPS port. The value is an integer ranging from 1 to 65535. Multiple ports are supported and can be configured in the following format:httpPorts:["9002","9003"]Note: 1. Ports 2012, 2323, 2443, 4031, 12012, 20121, 57891, 62016, 65383, and 65529 do not support.2. The HTTP port and HTTPS port and TCP port must be unique.3. At least one HTTP port or HTTPS port or TCP port or UDP port must be configured.', 'zh_CN':'HTTPS端口，取值范围为1-65535的整数，可配置多个，格式如：httpsPorts:["9002","9003"]注意：1、端口2012、2323、2443、4031、12012、20121、57891、62016、65383、65529不支持配置。2、HTTP端口和HTTPS端口和TCP端口不能重复。3、HTTP端口和HTTPS端口和TCP端口和UDP端口必须至少配置一个。'}
 	HttpsPorts []*string `json:"httpsPorts" xml:"httpsPorts" type:"Repeated"`
+	// {'en':'TCP port.The value is an integer ranging from 1 to 65535. Multiple ports are supported and can be configured in the following format:tcpPorts:["9005-9007"]Note: 1. Ports 2012, 2323, 2443, 4031, 12012, 20121, 57891, 62016, 65383, and 65529 do not support.2. The HTTP port and HTTPS port and TCP port must be unique.3. At least one HTTP port or HTTPS port or TCP port or UDP port must be configured.', 'zh_CN':'TCP端口，取值范围为1-65535的整数，可配置多个，格式如：tcpPorts:["9005-9007"]注意：1、端口2012、2323、2443、4031、12012、20121、57891、62016、65383、65529不支持配置。2、HTTP端口和HTTPS端口和TCP端口不能重复。3、HTTP端口和HTTPS端口和TCP端口和UDP端口必须至少配置一个。'}
+	TcpPorts []*string `json:"tcpPorts" xml:"tcpPorts" type:"Repeated"`
+	// {'en':'UDP port.The value is an integer ranging from 1 to 65535. Multiple ports are supported and can be configured in the following format:udpPorts:["9008-9009"]Note: 1. Ports 2012, 2323, 2443, 4031, 12012, 20121, 57891, 62016, 65383, and 65529 do not support.2. At least one HTTP port or HTTPS port or TCP port or UDP port must be configured.', 'zh_CN':'UDP端口，取值范围为1-65535的整数，可配置多个，格式如：udpPorts:["9008-9009"]注意：1、端口2012、2323、2443、4031、12012、20121、57891、62016、65383、65529不支持配置。2、HTTP端口和HTTPS端口和TCP端口和UDP端口必须至少配置一个。'}
+	UdpPorts []*string `json:"udpPorts" xml:"udpPorts" type:"Repeated"`
 }
 
 func (s UpdateAppaDomainForTerraformRequest) String() string {
@@ -57,6 +61,16 @@ func (s *UpdateAppaDomainForTerraformRequest) SetHttpPorts(v []*string) *UpdateA
 
 func (s *UpdateAppaDomainForTerraformRequest) SetHttpsPorts(v []*string) *UpdateAppaDomainForTerraformRequest {
 	s.HttpsPorts = v
+	return s
+}
+
+func (s *UpdateAppaDomainForTerraformRequest) SetTcpPorts(v []*string) *UpdateAppaDomainForTerraformRequest {
+	s.TcpPorts = v
+	return s
+}
+
+func (s *UpdateAppaDomainForTerraformRequest) SetUdpPorts(v []*string) *UpdateAppaDomainForTerraformRequest {
+	s.UdpPorts = v
 	return s
 }
 
