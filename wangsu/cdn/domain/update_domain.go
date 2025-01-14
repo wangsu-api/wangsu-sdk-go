@@ -77,6 +77,8 @@ type UpdateDomainForTerraformRequest struct {
 	// 2. 需要清空域名下的内容重定向内容，可以传入空节点<rewrite-rule-settings></rewrite-rule-settings>
 	// 3. 如果有开启其他高级配置（如防盗链配置），有些配置可能会有配置冲突，建议先与技术支持人员确认"}
 	RewriteRuleSettings []*UpdateDomainForTerraformRequestRewriteRuleSettings `json:"rewriteRuleSettings" xml:"rewriteRuleSettings" require:"true" type:"Repeated"`
+	// {"en":"Back to origin rewrite rule.", "zh_CN":"修改回源协议和端口；若要按原始请求回源，则可清空该对象，示例\"backToOriginRewriteRule\":{}"}
+	BackToOriginRewriteRule *UpdateDomainForTerraformRequestBackToOriginRewriteRule `json:"backToOriginRewriteRule" xml:"backToOriginRewriteRule" type:"Struct"`
 }
 
 func (s UpdateDomainForTerraformRequest) String() string {
@@ -154,6 +156,11 @@ func (s *UpdateDomainForTerraformRequest) SetHeaderModifyRules(v []*UpdateDomain
 
 func (s *UpdateDomainForTerraformRequest) SetRewriteRuleSettings(v []*UpdateDomainForTerraformRequestRewriteRuleSettings) *UpdateDomainForTerraformRequest {
 	s.RewriteRuleSettings = v
+	return s
+}
+
+func (s *UpdateDomainForTerraformRequest) SetBackToOriginRewriteRule(v *UpdateDomainForTerraformRequestBackToOriginRewriteRule) *UpdateDomainForTerraformRequest {
+	s.BackToOriginRewriteRule = v
 	return s
 }
 
@@ -1377,5 +1384,30 @@ func (s *UpdateDomainForTerraformResponse) SetMessage(v string) *UpdateDomainFor
 
 func (s *UpdateDomainForTerraformResponse) SetData(v string) *UpdateDomainForTerraformResponse {
 	s.Data = &v
+	return s
+}
+
+type UpdateDomainForTerraformRequestBackToOriginRewriteRule struct {
+	// {"en":"The specified protocol is either http or https.", "zh_CN":"改写后的回源协议，可选值：http、https"}
+	Protocol *string `json:"protocol" xml:"protocol"`
+	// {"en":"If the protocol is http, the default is 80. If the protocol is https, the default is 443", "zh_CN":"改写后的回源端口，若protocol为http时，默认为80，若protocol为https时，默认为443"}
+	Port *string `json:"port" xml:"port"`
+}
+
+func (s UpdateDomainForTerraformRequestBackToOriginRewriteRule) String() string {
+	return tea.Prettify(s)
+}
+
+func (s UpdateDomainForTerraformRequestBackToOriginRewriteRule) GoString() string {
+	return s.String()
+}
+
+func (s *UpdateDomainForTerraformRequestBackToOriginRewriteRule) SetProtocol(v string) *UpdateDomainForTerraformRequestBackToOriginRewriteRule {
+	s.Protocol = &v
+	return s
+}
+
+func (s *UpdateDomainForTerraformRequestBackToOriginRewriteRule) SetPort(v string) *UpdateDomainForTerraformRequestBackToOriginRewriteRule {
+	s.Port = &v
 	return s
 }

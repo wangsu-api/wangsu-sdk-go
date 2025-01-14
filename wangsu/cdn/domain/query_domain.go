@@ -146,6 +146,8 @@ type QueryDomainForTerraformResponseData struct {
 	// 2. 需要清空域名下的内容重定向内容，可以传入空节点<rewrite-rule-settings></rewrite-rule-settings>
 	// 3. 如果有开启其他高级配置（如防盗链配置），有些配置可能会有配置冲突，建议先与技术支持人员确认"}
 	RewriteRuleSettings []*QueryDomainForTerraformResponseDataRewriteRuleSettings `json:"rewriteRuleSettings,omitempty" xml:"rewriteRuleSettings,omitempty" require:"true" type:"Repeated"`
+	// {"en":"Back to origin rewrite rule.", "zh_CN":"修改回源协议和端口；若要按原始请求回源，则可清空该对象，示例\"backToOriginRewriteRule\":{}"}
+	BackToOriginRewriteRule *QueryDomainForTerraformResponseDataBackToOriginRewriteRule `json:"backToOriginRewriteRule,omitempty" xml:"backToOriginRewriteRule,omitempty" type:"Struct"`
 }
 
 func (s QueryDomainForTerraformResponseData) String() string {
@@ -243,6 +245,11 @@ func (s *QueryDomainForTerraformResponseData) SetHeaderModifyRules(v []*QueryDom
 
 func (s *QueryDomainForTerraformResponseData) SetRewriteRuleSettings(v []*QueryDomainForTerraformResponseDataRewriteRuleSettings) *QueryDomainForTerraformResponseData {
 	s.RewriteRuleSettings = v
+	return s
+}
+
+func (s *QueryDomainForTerraformResponseData) SetBackToOriginRewriteRule(v *QueryDomainForTerraformResponseDataBackToOriginRewriteRule) *QueryDomainForTerraformResponseData {
+	s.BackToOriginRewriteRule = v
 	return s
 }
 
@@ -1434,5 +1441,30 @@ func (s *QueryDomainForTerraformResponseDataRewriteRuleSettings) SetRequestHeade
 
 func (s *QueryDomainForTerraformResponseDataRewriteRuleSettings) SetExceptionRequestHeader(v string) *QueryDomainForTerraformResponseDataRewriteRuleSettings {
 	s.ExceptionRequestHeader = &v
+	return s
+}
+
+type QueryDomainForTerraformResponseDataBackToOriginRewriteRule struct {
+	// {"en":"The specified protocol is either http or https.", "zh_CN":"改写后的回源协议，可选值：http、https"}
+	Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty"`
+	// {"en":"If the protocol is http, the default is 80. If the protocol is https, the default is 443", "zh_CN":"改写后的回源端口，若protocol为http时，默认为80，若protocol为https时，默认为443"}
+	Port *string `json:"port,omitempty" xml:"port,omitempty"`
+}
+
+func (s QueryDomainForTerraformResponseDataBackToOriginRewriteRule) String() string {
+	return tea.Prettify(s)
+}
+
+func (s QueryDomainForTerraformResponseDataBackToOriginRewriteRule) GoString() string {
+	return s.String()
+}
+
+func (s *QueryDomainForTerraformResponseDataBackToOriginRewriteRule) SetProtocol(v string) *QueryDomainForTerraformResponseDataBackToOriginRewriteRule {
+	s.Protocol = &v
+	return s
+}
+
+func (s *QueryDomainForTerraformResponseDataBackToOriginRewriteRule) SetPort(v string) *QueryDomainForTerraformResponseDataBackToOriginRewriteRule {
+	s.Port = &v
 	return s
 }
