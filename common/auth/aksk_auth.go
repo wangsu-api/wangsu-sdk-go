@@ -61,6 +61,9 @@ func TransferRequestMsg(config AkskConfig) model.HttpRequestMsg {
 	requestMsg.Uri = config.Uri
 	requestMsg.Method = config.Method
 	requestMsg.Url = constant.HttpRequestPrefix + config.Uri
+	if len(config.Protocol) == 0 {
+		config.Protocol = constant.Https
+	}
 	if len(config.EndPoint) == 0 || "{endPoint}" == config.EndPoint {
 		requestMsg.Host = constant.HttpRequestDomain
 		requestMsg.Url = constant.Https + "://" + constant.HttpRequestDomain + config.Uri
@@ -102,10 +105,9 @@ func Invoke(config AkskConfig, request interface{}, response interface{}) (reqeu
 	}(resp.Body)
 
 	body, bodyReadError := io.ReadAll(resp.Body)
-
+	xCncRequestId := resp.Header.Get("x-cnc-request-id")
 	if call_error != nil {
-		log.Printf("Error: %v, response body: %s", err, body)
-		return "", fmt.Errorf("unexpected HTTP status code: %d, response:%s", resp.StatusCode, body)
+		return "", fmt.Errorf("unexpected HTTP status code: %d, requestId:%s, response:%s", resp.StatusCode, xCncRequestId, body)
 	}
 
 	bodyReadError = json.Unmarshal(body, &response)
@@ -114,7 +116,7 @@ func Invoke(config AkskConfig, request interface{}, response interface{}) (reqeu
 		return "", err
 	}
 
-	return resp.Header.Get("x-cnc-request-id"), nil
+	return xCncRequestId, nil
 }
 
 func getCurrentTimeSeconds() string {

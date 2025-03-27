@@ -46,3 +46,17 @@
 ```cmd
     go mod tidy
 ```
+
+### 安装指定产品 SDK（可选）
+
+按照产品下载，您只需下载基础包和对应的产品包(如usermanage)即可，不需要下载全部的产品，从而加快您构建镜像或者编译的速度：
+
+1. 安装对应的产品包(如usermanage):
+
+ ```bash
+ go get -v -u github.com/wangsu-api/wangsu-sdk-go/wangsu/usermanage
+ ```
+具体产品的包名缩写和使用方法请参考 [products.md](./products.md) 中的包名字段。
+
+## 支持产品列表
+参见 [产品列表](products.md)
