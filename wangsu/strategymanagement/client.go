@@ -1,0 +1,14213 @@
+package strategymanagement
+
+// This file is auto-generated, don't edit it. Thanks.
+import (
+  "github.com/alibabacloud-go/tea/tea"
+)
+
+type UpdatePropagationPoliciesRequest struct {
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"Standard object metadata.", "zh_CN":"标准的对象元数据。"}
+  Metadata *UpdatePropagationPoliciesObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Spec defines the behavior of a UpdatePropagationPoliciesPropagationPolicy", "zh_CN":"spec 定义 UpdatePropagationPoliciesPropagationPolicy 的行为"}
+  Spec *UpdatePropagationPoliciesPropagationSpec `json:"spec,omitempty" xml:"spec,omitempty" require:"true"`
+}
+
+func (s UpdatePropagationPoliciesRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesRequest) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesRequest) SetKind(v string) *UpdatePropagationPoliciesRequest {
+  s.Kind = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesRequest) SetApiVersion(v string) *UpdatePropagationPoliciesRequest {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesRequest) SetMetadata(v *UpdatePropagationPoliciesObjectMeta) *UpdatePropagationPoliciesRequest {
+  s.Metadata = v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesRequest) SetSpec(v *UpdatePropagationPoliciesPropagationSpec) *UpdatePropagationPoliciesRequest {
+  s.Spec = v
+  return s
+}
+
+type UpdatePropagationPoliciesResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"UpdatePropagationPoliciesPropagationPolicy object", "zh_CN":"PropagationPolicy对象"}
+  Data *UpdatePropagationPoliciesPropagationPolicy `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s UpdatePropagationPoliciesResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesResponse) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesResponse) SetCode(v int64) *UpdatePropagationPoliciesResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesResponse) SetMsg(v string) *UpdatePropagationPoliciesResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesResponse) SetRequestId(v string) *UpdatePropagationPoliciesResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesResponse) SetData(v *UpdatePropagationPoliciesPropagationPolicy) *UpdatePropagationPoliciesResponse {
+  s.Data = v
+  return s
+}
+
+type UpdatePropagationPoliciesPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+  // {"en":"The name of propagationPolicy", "zh_CN":"propagationPolicy 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s UpdatePropagationPoliciesPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesPaths) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesPaths) SetNamespace(v string) *UpdatePropagationPoliciesPaths {
+  s.Namespace = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesPaths) SetName(v string) *UpdatePropagationPoliciesPaths {
+  s.Name = &v
+  return s
+}
+
+type UpdatePropagationPoliciesParameters struct {
+}
+
+func (s UpdatePropagationPoliciesParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesParameters) GoString() string {
+  return s.String()
+}
+
+type UpdatePropagationPoliciesRequestHeader struct {
+}
+
+func (s UpdatePropagationPoliciesRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesRequestHeader) GoString() string {
+  return s.String()
+}
+
+type UpdatePropagationPoliciesResponseHeader struct {
+}
+
+func (s UpdatePropagationPoliciesResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesResponseHeader) GoString() string {
+  return s.String()
+}
+
+type UpdatePropagationPoliciesPropagationPolicy struct {
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"Standard object metadata.", "zh_CN":"标准的对象元数据。"}
+  Metadata *UpdatePropagationPoliciesObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Spec defines the behavior of a UpdatePropagationPoliciesPropagationPolicy", "zh_CN":"spec 定义 UpdatePropagationPoliciesPropagationPolicy 的行为"}
+  Spec *UpdatePropagationPoliciesPropagationSpec `json:"spec,omitempty" xml:"spec,omitempty" require:"true"`
+}
+
+func (s UpdatePropagationPoliciesPropagationPolicy) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesPropagationPolicy) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesPropagationPolicy) SetKind(v string) *UpdatePropagationPoliciesPropagationPolicy {
+  s.Kind = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesPropagationPolicy) SetApiVersion(v string) *UpdatePropagationPoliciesPropagationPolicy {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesPropagationPolicy) SetMetadata(v *UpdatePropagationPoliciesObjectMeta) *UpdatePropagationPoliciesPropagationPolicy {
+  s.Metadata = v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesPropagationPolicy) SetSpec(v *UpdatePropagationPoliciesPropagationSpec) *UpdatePropagationPoliciesPropagationPolicy {
+  s.Spec = v
+  return s
+}
+
+type UpdatePropagationPoliciesPropagationSpec struct {
+  // {"en":"resource that this propagation policy applies to", "zh_CN":"策略应用的资源"}
+  ResourceSelectors []*UpdatePropagationPoliciesResourceSelector `json:"resourceSelectors,omitempty" xml:"resourceSelectors,omitempty" type:"Repeated"`
+  // {"en":"association", "zh_CN":"association"}
+  Association *bool `json:"association,omitempty" xml:"association,omitempty"`
+  // {"en":"scheduling strategy", "zh_CN":"调度策略"}
+  UpdatePropagationPoliciesPlacement *UpdatePropagationPoliciesPlacement `json:"placement,omitempty" xml:"placement,omitempty"`
+  // {"en":"dependent overrides", "zh_CN":"依赖的覆盖策略"}
+  DependentOverrides []*string `json:"dependentOverrides,omitempty" xml:"dependentOverrides,omitempty" type:"Repeated"`
+  // {"en":"name of scheduler", "zh_CN":"调度器名称"}
+  SchedulerName *string `json:"schedulerName,omitempty" xml:"schedulerName,omitempty"`
+  // {"en":"indicates how Karmada migrates applications in case of failures", "zh_CN":"failover 重调度策略"}
+  Failover *UpdatePropagationPoliciesFailoverBehavior `json:"failover,omitempty" xml:"failover,omitempty"`
+}
+
+func (s UpdatePropagationPoliciesPropagationSpec) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesPropagationSpec) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesPropagationSpec) SetResourceSelectors(v []*UpdatePropagationPoliciesResourceSelector) *UpdatePropagationPoliciesPropagationSpec {
+  s.ResourceSelectors = v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesPropagationSpec) SetAssociation(v bool) *UpdatePropagationPoliciesPropagationSpec {
+  s.Association = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesPropagationSpec) SetPlacement(v *UpdatePropagationPoliciesPlacement) *UpdatePropagationPoliciesPropagationSpec {
+  s.UpdatePropagationPoliciesPlacement = v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesPropagationSpec) SetDependentOverrides(v []*string) *UpdatePropagationPoliciesPropagationSpec {
+  s.DependentOverrides = v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesPropagationSpec) SetSchedulerName(v string) *UpdatePropagationPoliciesPropagationSpec {
+  s.SchedulerName = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesPropagationSpec) SetFailover(v *UpdatePropagationPoliciesFailoverBehavior) *UpdatePropagationPoliciesPropagationSpec {
+  s.Failover = v
+  return s
+}
+
+type UpdatePropagationPoliciesFailoverBehavior struct {
+  // {"en":"indicates failover behaviors in case of application failure", "zh_CN":"failover 重调度策略"}
+  Application *UpdatePropagationPoliciesApplicationFailoverBehavior `json:"application,omitempty" xml:"application,omitempty"`
+}
+
+func (s UpdatePropagationPoliciesFailoverBehavior) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesFailoverBehavior) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesFailoverBehavior) SetApplication(v *UpdatePropagationPoliciesApplicationFailoverBehavior) *UpdatePropagationPoliciesFailoverBehavior {
+  s.Application = v
+  return s
+}
+
+type UpdatePropagationPoliciesApplicationFailoverBehavior struct {
+  // {"en":"indicates the decision conditions of performing the failover process.", "zh_CN":"程序经过多长时间的失败,才属于不健康"}
+  UpdatePropagationPoliciesDecisionConditions *UpdatePropagationPoliciesDecisionConditions `json:"decisionConditions,omitempty" xml:"decisionConditions,omitempty"`
+  // {"en":"represents how to deal with the legacy applications on the cluster from which the application is migrated. there are three options: Immediately,Graciously and Never. Graciously by defautl", "zh_CN":"应用在失败后的驱逐方式,有3个可填值: Immediately,Graciously and Never 默认:Graciously "}
+  PurgeMode *string `json:"purgeMode,omitempty" xml:"purgeMode,omitempty"`
+  // {"en":"the maximum waiting duration in seconds before application on the migrated cluster should be deleted.", "zh_CN":"平滑删除时间"}
+  GracePeriodSeconds *int64 `json:"gracePeriodSeconds,omitempty" xml:"gracePeriodSeconds,omitempty"`
+}
+
+func (s UpdatePropagationPoliciesApplicationFailoverBehavior) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesApplicationFailoverBehavior) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesApplicationFailoverBehavior) SetDecisionConditions(v *UpdatePropagationPoliciesDecisionConditions) *UpdatePropagationPoliciesApplicationFailoverBehavior {
+  s.UpdatePropagationPoliciesDecisionConditions = v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesApplicationFailoverBehavior) SetPurgeMode(v string) *UpdatePropagationPoliciesApplicationFailoverBehavior {
+  s.PurgeMode = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesApplicationFailoverBehavior) SetGracePeriodSeconds(v int64) *UpdatePropagationPoliciesApplicationFailoverBehavior {
+  s.GracePeriodSeconds = &v
+  return s
+}
+
+type UpdatePropagationPoliciesDecisionConditions struct {
+  // {"en":"represents the period of time Karmada should wait", "zh_CN":"应用经过多长时间后算失败"}
+  TolerationSeconds *int64 `json:"tolerationSeconds,omitempty" xml:"tolerationSeconds,omitempty"`
+}
+
+func (s UpdatePropagationPoliciesDecisionConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesDecisionConditions) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesDecisionConditions) SetTolerationSeconds(v int64) *UpdatePropagationPoliciesDecisionConditions {
+  s.TolerationSeconds = &v
+  return s
+}
+
+type UpdatePropagationPoliciesResourceSelector struct {
+  // {"en":"represents the API version of the target resources", "zh_CN":"表示目标资源的API版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"represents the Kind of the target resources", "zh_CN":"表示目标资源的类型"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"name of the target resource", "zh_CN":"目标资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"A label query over a set of resources", "zh_CN":"对一组资源的标签查询"}
+  LabelSelector *UpdatePropagationPoliciesMetaV1LabelSelector `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+}
+
+func (s UpdatePropagationPoliciesResourceSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesResourceSelector) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesResourceSelector) SetApiVersion(v string) *UpdatePropagationPoliciesResourceSelector {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesResourceSelector) SetKind(v string) *UpdatePropagationPoliciesResourceSelector {
+  s.Kind = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesResourceSelector) SetName(v string) *UpdatePropagationPoliciesResourceSelector {
+  s.Name = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesResourceSelector) SetLabelSelector(v *UpdatePropagationPoliciesMetaV1LabelSelector) *UpdatePropagationPoliciesResourceSelector {
+  s.LabelSelector = v
+  return s
+}
+
+type UpdatePropagationPoliciesPlacement struct {
+  // {"en":"the policy that only applies to resources propagated to the matching clusters", "zh_CN":"策略应用到成员集群的目标选择"}
+  UpdatePropagationPoliciesClusterAffinity *UpdatePropagationPoliciesClusterAffinity `json:"clusterAffinity,omitempty" xml:"clusterAffinity,omitempty"`
+  // {"en":"toleration of cluster", "zh_CN":"集群容忍度"}
+  ClusterTolerations *UpdatePropagationPoliciesToleration `json:"clusterTolerations,omitempty" xml:"clusterTolerations,omitempty"`
+  // {"en":"Cluster grouping constraint", "zh_CN":"根据约束对集群进行分组，把资源分散到多个小组"}
+  SpreadConstraints []*UpdatePropagationPoliciesSpreadConstraint `json:"spreadConstraints,omitempty" xml:"spreadConstraints,omitempty" type:"Repeated"`
+  // {"en":"scheduling strategy of replicas", "zh_CN":"副本调度策略"}
+  ReplicaScheduling *UpdatePropagationPoliciesReplicaSchedulingStrategy `json:"replicaScheduling,omitempty" xml:"replicaScheduling,omitempty"`
+}
+
+func (s UpdatePropagationPoliciesPlacement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesPlacement) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesPlacement) SetClusterAffinity(v *UpdatePropagationPoliciesClusterAffinity) *UpdatePropagationPoliciesPlacement {
+  s.UpdatePropagationPoliciesClusterAffinity = v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesPlacement) SetClusterTolerations(v *UpdatePropagationPoliciesToleration) *UpdatePropagationPoliciesPlacement {
+  s.ClusterTolerations = v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesPlacement) SetSpreadConstraints(v []*UpdatePropagationPoliciesSpreadConstraint) *UpdatePropagationPoliciesPlacement {
+  s.SpreadConstraints = v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesPlacement) SetReplicaScheduling(v *UpdatePropagationPoliciesReplicaSchedulingStrategy) *UpdatePropagationPoliciesPlacement {
+  s.ReplicaScheduling = v
+  return s
+}
+
+type UpdatePropagationPoliciesReplicaSchedulingStrategy struct {
+  // {"en":"scheduling type of replicas", "zh_CN":"副本调度类型"}
+  ReplicaSchedulingType *string `json:"replicaSchedulingType,omitempty" xml:"replicaSchedulingType,omitempty"`
+  // {"en":"division preference of replicas", "zh_CN":"副本数切分方式"}
+  ReplicaDivisionPreference *string `json:"replicaDivisionPreference,omitempty" xml:"replicaDivisionPreference,omitempty"`
+  // {"en":"weight preference", "zh_CN":"权重配置"}
+  WeightPreference *UpdatePropagationPoliciesClusterPreferences `json:"weightPreference,omitempty" xml:"weightPreference,omitempty"`
+}
+
+func (s UpdatePropagationPoliciesReplicaSchedulingStrategy) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesReplicaSchedulingStrategy) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesReplicaSchedulingStrategy) SetReplicaSchedulingType(v string) *UpdatePropagationPoliciesReplicaSchedulingStrategy {
+  s.ReplicaSchedulingType = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesReplicaSchedulingStrategy) SetReplicaDivisionPreference(v string) *UpdatePropagationPoliciesReplicaSchedulingStrategy {
+  s.ReplicaDivisionPreference = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesReplicaSchedulingStrategy) SetWeightPreference(v *UpdatePropagationPoliciesClusterPreferences) *UpdatePropagationPoliciesReplicaSchedulingStrategy {
+  s.WeightPreference = v
+  return s
+}
+
+type UpdatePropagationPoliciesClusterPreferences struct {
+  // {"en":"static proportion of cluster replicas in total", "zh_CN":"集群副本数占比"}
+  StaticWeightList []*UpdatePropagationPoliciesStaticClusterWeight `json:"staticWeightList,omitempty" xml:"staticWeightList,omitempty" type:"Repeated"`
+  // {"en":"dynamic proportion of replicas in total", "zh_CN":"动态比重"}
+  DynamicWeight *string `json:"dynamicWeight,omitempty" xml:"dynamicWeight,omitempty"`
+}
+
+func (s UpdatePropagationPoliciesClusterPreferences) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesClusterPreferences) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesClusterPreferences) SetStaticWeightList(v []*UpdatePropagationPoliciesStaticClusterWeight) *UpdatePropagationPoliciesClusterPreferences {
+  s.StaticWeightList = v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesClusterPreferences) SetDynamicWeight(v string) *UpdatePropagationPoliciesClusterPreferences {
+  s.DynamicWeight = &v
+  return s
+}
+
+type UpdatePropagationPoliciesStaticClusterWeight struct {
+  // {"en":"affected clusters by the weight", "zh_CN":"比重生效的目标集群"}
+  TargetCluster *UpdatePropagationPoliciesClusterAffinity `json:"targetCluster,omitempty" xml:"targetCluster,omitempty"`
+  // {"en":"proportion of replicas in total", "zh_CN":"集群实例数占比"}
+  Weight *int64 `json:"weight,omitempty" xml:"weight,omitempty"`
+}
+
+func (s UpdatePropagationPoliciesStaticClusterWeight) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesStaticClusterWeight) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesStaticClusterWeight) SetTargetCluster(v *UpdatePropagationPoliciesClusterAffinity) *UpdatePropagationPoliciesStaticClusterWeight {
+  s.TargetCluster = v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesStaticClusterWeight) SetWeight(v int64) *UpdatePropagationPoliciesStaticClusterWeight {
+  s.Weight = &v
+  return s
+}
+
+type UpdatePropagationPoliciesSpreadConstraint struct {
+  // {"en":"The member clusters in the cluster federation are divided into multiple groups based on an attribute of the member cluster (currently, only cluster is supported, and the region, zone, and provider attributes may be supported in the future)", "zh_CN":"根据成员集群的某个属性（当前仅支持cluster、后续可能增加对成员集群region、zone、provider等属性支持）将集群联邦中的成员集群分为多个小组"}
+  SpreadByField *string `json:"spreadByField,omitempty" xml:"spreadByField,omitempty"`
+  // {"en":"The member cluster is divided into groups based on labels", "zh_CN":"根据label将成员集群分为多个小组"}
+  SpreadByLabel *string `json:"spreadByLabel,omitempty" xml:"spreadByLabel,omitempty"`
+  // {"en":"Maximum number of groups", "zh_CN":"最大分组数"}
+  MaxGroups *int64 `json:"maxGroups,omitempty" xml:"maxGroups,omitempty"`
+  // {"en":"Minimum number of groups", "zh_CN":"最小分组数"}
+  MinGroups *int64 `json:"minGroups,omitempty" xml:"minGroups,omitempty"`
+}
+
+func (s UpdatePropagationPoliciesSpreadConstraint) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesSpreadConstraint) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesSpreadConstraint) SetSpreadByField(v string) *UpdatePropagationPoliciesSpreadConstraint {
+  s.SpreadByField = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesSpreadConstraint) SetSpreadByLabel(v string) *UpdatePropagationPoliciesSpreadConstraint {
+  s.SpreadByLabel = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesSpreadConstraint) SetMaxGroups(v int64) *UpdatePropagationPoliciesSpreadConstraint {
+  s.MaxGroups = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesSpreadConstraint) SetMinGroups(v int64) *UpdatePropagationPoliciesSpreadConstraint {
+  s.MinGroups = &v
+  return s
+}
+
+type UpdatePropagationPoliciesToleration struct {
+  // {"en":"The taint key that the toleration applies to. Empty means match all taint keys. If the key is empty, operator must be Exists; this combination means to match all values and all keys.", "zh_CN":"容忍度所适用的污点的键名。此字段为空意味着匹配所有的污点键。 如果 key 为空，则 operator 必须为 Exists；这种组合意味着匹配所有值和所有键。"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"Represents a key's relationship to the value. Valid operators are Exists and Equal. Defaults to Equal. Exists is equivalent to wildcard for value, so that a pod can tolerate all taints of a particular category.", "zh_CN":"表示 key 与 value 之间的关系。有效的 operator 取值是 Exists 和 Equal。默认为 Equal。 Exists 相当于 value 为某种通配符，因此 Pod 可以容忍特定类别的所有污点。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"The taint value the toleration matches to. If the operator is Exists, the value should be empty, otherwise just a regular string.", "zh_CN":"容忍度所匹配的污点值。如果 operator 为 Exists，则此 value 值应该为空， 否则 value 值应该是一个正常的字符串。"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty"`
+  // {"en":"Indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute.", "zh_CN":"指示要匹配的污点效果。空值意味著匹配所有污点效果。如果要设置此字段，允许的值为 NoSchedule、PreferNoSchedule 和 NoExecute 之一。"}
+  Effect *string `json:"effect,omitempty" xml:"effect,omitempty"`
+  // {"en":"Represents the period of time the toleration (which must be of effect NoExecute, otherwise this field is ignored) tolerates the taint. By default, it is not set, which means tolerate the taint forever (do not evict). Zero and negative values will be treated as 0 (evict immediately) by the system.", "zh_CN":" 表示容忍度（effect 必须是 NoExecute，否则此字段被忽略）容忍污点的时间长度。 默认情况下，此字段未被设置，这意味着会一直能够容忍对应污点（不会发生驱逐操作）。 零值和负值会被系统当做 0 值处理（立即触发驱逐）。"}
+  TolerationSeconds *int64 `json:"tolerationSeconds,omitempty" xml:"tolerationSeconds,omitempty"`
+}
+
+func (s UpdatePropagationPoliciesToleration) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesToleration) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesToleration) SetKey(v string) *UpdatePropagationPoliciesToleration {
+  s.Key = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesToleration) SetOperator(v string) *UpdatePropagationPoliciesToleration {
+  s.Operator = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesToleration) SetValue(v string) *UpdatePropagationPoliciesToleration {
+  s.Value = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesToleration) SetEffect(v string) *UpdatePropagationPoliciesToleration {
+  s.Effect = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesToleration) SetTolerationSeconds(v int64) *UpdatePropagationPoliciesToleration {
+  s.TolerationSeconds = &v
+  return s
+}
+
+type UpdatePropagationPoliciesClusterAffinity struct {
+  // {"en":"a filter to select member clusters by labels", "zh_CN":"一个用来选中集群的标签过滤器"}
+  LabelSelector *UpdatePropagationPoliciesMetaV1LabelSelector `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+  // {"en":"a filter to select member clusters by fields. Currently only three fields of provider(cluster.spec.provider), zone(cluster.spec.zone), and region(cluster.spec.region) are supported", "zh_CN":"一个用来选中集群的字段过滤器，目前支持的字段只有三个：提供商（cluster.spec.provider），区域（cluster.spec.zone），地区（cluster.spec.region）"}
+  UpdatePropagationPoliciesFieldSelector *UpdatePropagationPoliciesFieldSelector `json:"fieldSelector,omitempty" xml:"fieldSelector,omitempty"`
+  // {"en":"the list of clusters to be selected", "zh_CN":"选中的集群列表"}
+  ClusterNames []*string `json:"clusterNames,omitempty" xml:"clusterNames,omitempty" type:"Repeated"`
+  // {"en":"the list of clusters to be ignored", "zh_CN":"要忽略的集群列表"}
+  Exclude []*string `json:"exclude,omitempty" xml:"exclude,omitempty" type:"Repeated"`
+}
+
+func (s UpdatePropagationPoliciesClusterAffinity) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesClusterAffinity) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesClusterAffinity) SetLabelSelector(v *UpdatePropagationPoliciesMetaV1LabelSelector) *UpdatePropagationPoliciesClusterAffinity {
+  s.LabelSelector = v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesClusterAffinity) SetFieldSelector(v *UpdatePropagationPoliciesFieldSelector) *UpdatePropagationPoliciesClusterAffinity {
+  s.UpdatePropagationPoliciesFieldSelector = v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesClusterAffinity) SetClusterNames(v []*string) *UpdatePropagationPoliciesClusterAffinity {
+  s.ClusterNames = v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesClusterAffinity) SetExclude(v []*string) *UpdatePropagationPoliciesClusterAffinity {
+  s.Exclude = v
+  return s
+}
+
+type UpdatePropagationPoliciesFieldSelector struct {
+  // {"en":"A list of node selector requirements by node's labels.", "zh_CN":"按节点标签列出的节点选择器需求列表。"}
+  MatchExpressions []*UpdatePropagationPoliciesCoreV1NodeSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s UpdatePropagationPoliciesFieldSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesFieldSelector) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesFieldSelector) SetMatchExpressions(v []*UpdatePropagationPoliciesCoreV1NodeSelectorRequirement) *UpdatePropagationPoliciesFieldSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type UpdatePropagationPoliciesCoreV1NodeSelectorRequirement struct {
+  // {"en":"The label key that the selector applies to.", "zh_CN":"选择算符所适用的标签主键。"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"Represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.", "zh_CN":"代表主键与值集之间的关系。合法的 operator 值包括 In、NotIn、Exists、DoesNotExist、Gt 和 Lt。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.", "zh_CN":"一个由字符串值组成的数组。如果 operator 是 In 或 NotIn，则 values 数组不能为空。 如果 operator 为 Exists 或 DoesNotExist，则 values 数组只能为空。 如果 operator 为 Gt 或 Lt，则 values 数组只能包含一个元素，并且该元素会被解释为整数。 在执行策略性合并补丁操作时，此数组会被整体替换。"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s UpdatePropagationPoliciesCoreV1NodeSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesCoreV1NodeSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesCoreV1NodeSelectorRequirement) SetKey(v string) *UpdatePropagationPoliciesCoreV1NodeSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesCoreV1NodeSelectorRequirement) SetOperator(v string) *UpdatePropagationPoliciesCoreV1NodeSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesCoreV1NodeSelectorRequirement) SetValues(v []*string) *UpdatePropagationPoliciesCoreV1NodeSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type UpdatePropagationPoliciesMetaV1LabelSelector struct {
+  // {"en":"A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed.", "zh_CN":"matchLabels 映射中的单个 {key,value} 键值对相当于 matchExpressions 的一个元素，其键字段为 key，运算符为 In，values 数组仅包含 value。"}
+  MatchLabels map[string]*string `json:"matchLabels,omitempty" xml:"matchLabels,omitempty"`
+  // {"en":"A list of label selector requirements. The requirements are ANDed.", "zh_CN":"标签选择器要求的列表，这些要求的结果按逻辑与的关系来计算。"}
+  MatchExpressions []*UpdatePropagationPoliciesLabelSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s UpdatePropagationPoliciesMetaV1LabelSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesMetaV1LabelSelector) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesMetaV1LabelSelector) SetMatchLabels(v map[string]*string) *UpdatePropagationPoliciesMetaV1LabelSelector {
+  s.MatchLabels = v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesMetaV1LabelSelector) SetMatchExpressions(v []*UpdatePropagationPoliciesLabelSelectorRequirement) *UpdatePropagationPoliciesMetaV1LabelSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type UpdatePropagationPoliciesLabelSelectorRequirement struct {
+  // {"en":"key is the label key that the selector applies to.", "zh_CN":"选择器应用的标签键"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist.", "zh_CN":"operator 表示键与一组值的关系。有效的运算符包括 In、NotIn、Exists 和 DoesNotExist。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.", "zh_CN":"values 是一个字符串值数组。如果运算符为 In 或 NotIn，则 values 数组必须为非空。如果运算符是 Exists 或 DoesNotExist，则 values 数组必须为空。该数组在策略性合并补丁（Strategic Merge Patch）期间被替换。"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s UpdatePropagationPoliciesLabelSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesLabelSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesLabelSelectorRequirement) SetKey(v string) *UpdatePropagationPoliciesLabelSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesLabelSelectorRequirement) SetOperator(v string) *UpdatePropagationPoliciesLabelSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesLabelSelectorRequirement) SetValues(v []*string) *UpdatePropagationPoliciesLabelSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type UpdatePropagationPoliciesObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*UpdatePropagationPoliciesOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*UpdatePropagationPoliciesManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s UpdatePropagationPoliciesObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesObjectMeta) SetName(v string) *UpdatePropagationPoliciesObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesObjectMeta) SetGenerateName(v string) *UpdatePropagationPoliciesObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesObjectMeta) SetNamespace(v string) *UpdatePropagationPoliciesObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesObjectMeta) SetSelfLink(v string) *UpdatePropagationPoliciesObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesObjectMeta) SetUid(v string) *UpdatePropagationPoliciesObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesObjectMeta) SetResourceVersion(v string) *UpdatePropagationPoliciesObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesObjectMeta) SetGeneration(v int64) *UpdatePropagationPoliciesObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesObjectMeta) SetCreationTimestamp(v string) *UpdatePropagationPoliciesObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesObjectMeta) SetDeletionTimestamp(v string) *UpdatePropagationPoliciesObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesObjectMeta) SetDeletionGracePeriodSeconds(v int64) *UpdatePropagationPoliciesObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesObjectMeta) SetLabels(v map[string]*string) *UpdatePropagationPoliciesObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesObjectMeta) SetAnnotations(v map[string]*string) *UpdatePropagationPoliciesObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesObjectMeta) SetOwnerReferences(v []*UpdatePropagationPoliciesOwnerReference) *UpdatePropagationPoliciesObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesObjectMeta) SetFinalizers(v []*string) *UpdatePropagationPoliciesObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesObjectMeta) SetClusterName(v string) *UpdatePropagationPoliciesObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesObjectMeta) SetManagedFields(v []*UpdatePropagationPoliciesManagedFieldsEntry) *UpdatePropagationPoliciesObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type UpdatePropagationPoliciesManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this UpdatePropagationPoliciesManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'UpdatePropagationPoliciesFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“UpdatePropagationPoliciesFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"UpdatePropagationPoliciesFieldsV1 holds the first JSON version format as described in the 'UpdatePropagationPoliciesFieldsV1' type", "zh_CN":"UpdatePropagationPoliciesFieldsV1 包含类型 “UpdatePropagationPoliciesFieldsV1” 中描述的第一个 JSON 版本格式"}
+  UpdatePropagationPoliciesFieldsV1 *UpdatePropagationPoliciesFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s UpdatePropagationPoliciesManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesManagedFieldsEntry) SetManager(v string) *UpdatePropagationPoliciesManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesManagedFieldsEntry) SetOperation(v string) *UpdatePropagationPoliciesManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesManagedFieldsEntry) SetApiVersion(v string) *UpdatePropagationPoliciesManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesManagedFieldsEntry) SetTime(v string) *UpdatePropagationPoliciesManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesManagedFieldsEntry) SetFieldsType(v string) *UpdatePropagationPoliciesManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesManagedFieldsEntry) SetFieldsV1(v *UpdatePropagationPoliciesFieldsV1) *UpdatePropagationPoliciesManagedFieldsEntry {
+  s.UpdatePropagationPoliciesFieldsV1 = v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesManagedFieldsEntry) SetSubresource(v string) *UpdatePropagationPoliciesManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type UpdatePropagationPoliciesFieldsV1 struct {
+}
+
+func (s UpdatePropagationPoliciesFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesFieldsV1) GoString() string {
+  return s.String()
+}
+
+type UpdatePropagationPoliciesOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s UpdatePropagationPoliciesOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdatePropagationPoliciesOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *UpdatePropagationPoliciesOwnerReference) SetApiVersion(v string) *UpdatePropagationPoliciesOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesOwnerReference) SetKind(v string) *UpdatePropagationPoliciesOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesOwnerReference) SetName(v string) *UpdatePropagationPoliciesOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesOwnerReference) SetUid(v string) *UpdatePropagationPoliciesOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesOwnerReference) SetController(v bool) *UpdatePropagationPoliciesOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *UpdatePropagationPoliciesOwnerReference) SetBlockOwnerDeletion(v bool) *UpdatePropagationPoliciesOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+
+
+
+type PatchHorizontalPodAutoscalerRequest struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *PatchHorizontalPodAutoscalerObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"spec defines the behaviour of autoscaler.", "zh_CN":"spec 定义自动缩放器的规约"}
+  Spec *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerSpec `json:"spec,omitempty" xml:"spec,omitempty"`
+}
+
+func (s PatchHorizontalPodAutoscalerRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerRequest) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerRequest) SetApiVersion(v string) *PatchHorizontalPodAutoscalerRequest {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerRequest) SetKind(v string) *PatchHorizontalPodAutoscalerRequest {
+  s.Kind = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerRequest) SetMetadata(v *PatchHorizontalPodAutoscalerObjectMeta) *PatchHorizontalPodAutoscalerRequest {
+  s.Metadata = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerRequest) SetSpec(v *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) *PatchHorizontalPodAutoscalerRequest {
+  s.Spec = v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"PatchHorizontalPodAutoscalerHorizontalPodAutoscaler", "zh_CN":"PatchHorizontalPodAutoscalerHorizontalPodAutoscaler"}
+  Data *PatchHorizontalPodAutoscalerHorizontalPodAutoscaler `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s PatchHorizontalPodAutoscalerResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerResponse) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerResponse) SetCode(v int64) *PatchHorizontalPodAutoscalerResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerResponse) SetMsg(v string) *PatchHorizontalPodAutoscalerResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerResponse) SetRequestId(v string) *PatchHorizontalPodAutoscalerResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerResponse) SetData(v *PatchHorizontalPodAutoscalerHorizontalPodAutoscaler) *PatchHorizontalPodAutoscalerResponse {
+  s.Data = v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+  // {"en":"资源name", "zh_CN":"资源名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s PatchHorizontalPodAutoscalerPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerPaths) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerPaths) SetNamespace(v string) *PatchHorizontalPodAutoscalerPaths {
+  s.Namespace = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerPaths) SetName(v string) *PatchHorizontalPodAutoscalerPaths {
+  s.Name = &v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerParameters struct {
+}
+
+func (s PatchHorizontalPodAutoscalerParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerParameters) GoString() string {
+  return s.String()
+}
+
+type PatchHorizontalPodAutoscalerRequestHeader struct {
+}
+
+func (s PatchHorizontalPodAutoscalerRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerRequestHeader) GoString() string {
+  return s.String()
+}
+
+type PatchHorizontalPodAutoscalerResponseHeader struct {
+}
+
+func (s PatchHorizontalPodAutoscalerResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerResponseHeader) GoString() string {
+  return s.String()
+}
+
+type PatchHorizontalPodAutoscalerObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*PatchHorizontalPodAutoscalerOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*PatchHorizontalPodAutoscalerManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s PatchHorizontalPodAutoscalerObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerObjectMeta) SetName(v string) *PatchHorizontalPodAutoscalerObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerObjectMeta) SetGenerateName(v string) *PatchHorizontalPodAutoscalerObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerObjectMeta) SetNamespace(v string) *PatchHorizontalPodAutoscalerObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerObjectMeta) SetSelfLink(v string) *PatchHorizontalPodAutoscalerObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerObjectMeta) SetUid(v string) *PatchHorizontalPodAutoscalerObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerObjectMeta) SetResourceVersion(v string) *PatchHorizontalPodAutoscalerObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerObjectMeta) SetGeneration(v int64) *PatchHorizontalPodAutoscalerObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerObjectMeta) SetCreationTimestamp(v string) *PatchHorizontalPodAutoscalerObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerObjectMeta) SetDeletionTimestamp(v string) *PatchHorizontalPodAutoscalerObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerObjectMeta) SetDeletionGracePeriodSeconds(v int64) *PatchHorizontalPodAutoscalerObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerObjectMeta) SetLabels(v map[string]*string) *PatchHorizontalPodAutoscalerObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerObjectMeta) SetAnnotations(v map[string]*string) *PatchHorizontalPodAutoscalerObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerObjectMeta) SetOwnerReferences(v []*PatchHorizontalPodAutoscalerOwnerReference) *PatchHorizontalPodAutoscalerObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerObjectMeta) SetFinalizers(v []*string) *PatchHorizontalPodAutoscalerObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerObjectMeta) SetClusterName(v string) *PatchHorizontalPodAutoscalerObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerObjectMeta) SetManagedFields(v []*PatchHorizontalPodAutoscalerManagedFieldsEntry) *PatchHorizontalPodAutoscalerObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this PatchHorizontalPodAutoscalerManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'PatchHorizontalPodAutoscalerFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“PatchHorizontalPodAutoscalerFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"PatchHorizontalPodAutoscalerFieldsV1 holds the first JSON version format as described in the 'PatchHorizontalPodAutoscalerFieldsV1' type", "zh_CN":"PatchHorizontalPodAutoscalerFieldsV1 包含类型 “PatchHorizontalPodAutoscalerFieldsV1” 中描述的第一个 JSON 版本格式"}
+  PatchHorizontalPodAutoscalerFieldsV1 *PatchHorizontalPodAutoscalerFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s PatchHorizontalPodAutoscalerManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerManagedFieldsEntry) SetManager(v string) *PatchHorizontalPodAutoscalerManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerManagedFieldsEntry) SetOperation(v string) *PatchHorizontalPodAutoscalerManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerManagedFieldsEntry) SetApiVersion(v string) *PatchHorizontalPodAutoscalerManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerManagedFieldsEntry) SetTime(v string) *PatchHorizontalPodAutoscalerManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerManagedFieldsEntry) SetFieldsType(v string) *PatchHorizontalPodAutoscalerManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerManagedFieldsEntry) SetFieldsV1(v *PatchHorizontalPodAutoscalerFieldsV1) *PatchHorizontalPodAutoscalerManagedFieldsEntry {
+  s.PatchHorizontalPodAutoscalerFieldsV1 = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerManagedFieldsEntry) SetSubresource(v string) *PatchHorizontalPodAutoscalerManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerFieldsV1 struct {
+}
+
+func (s PatchHorizontalPodAutoscalerFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerFieldsV1) GoString() string {
+  return s.String()
+}
+
+type PatchHorizontalPodAutoscalerOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s PatchHorizontalPodAutoscalerOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerOwnerReference) SetApiVersion(v string) *PatchHorizontalPodAutoscalerOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerOwnerReference) SetKind(v string) *PatchHorizontalPodAutoscalerOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerOwnerReference) SetName(v string) *PatchHorizontalPodAutoscalerOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerOwnerReference) SetUid(v string) *PatchHorizontalPodAutoscalerOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerOwnerReference) SetController(v bool) *PatchHorizontalPodAutoscalerOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerOwnerReference) SetBlockOwnerDeletion(v bool) *PatchHorizontalPodAutoscalerOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerHorizontalPodAutoscaler struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *PatchHorizontalPodAutoscalerObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"spec defines the behaviour of autoscaler.", "zh_CN":"spec 定义自动缩放器的规约"}
+  Spec *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerSpec `json:"spec,omitempty" xml:"spec,omitempty"`
+  // {"en":"the current information about the autoscaler", "zh_CN":"自动缩放器的当前信息"}
+  Status *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerStatus `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+func (s PatchHorizontalPodAutoscalerHorizontalPodAutoscaler) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerHorizontalPodAutoscaler) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerHorizontalPodAutoscaler) SetApiVersion(v string) *PatchHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerHorizontalPodAutoscaler) SetKind(v string) *PatchHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.Kind = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerHorizontalPodAutoscaler) SetMetadata(v *PatchHorizontalPodAutoscalerObjectMeta) *PatchHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.Metadata = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerHorizontalPodAutoscaler) SetSpec(v *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) *PatchHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.Spec = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerHorizontalPodAutoscaler) SetStatus(v *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) *PatchHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.Status = v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerHorizontalPodAutoscalerStatus struct {
+  // {"en":"the most recent generation observed by this autoscaler", "zh_CN":"observedGeneration 是此自动缩放器观察到的最新一代"}
+  ObservedGeneration *int64 `json:"observedGeneration,omitempty" xml:"observedGeneration,omitempty"`
+  // {"en":"the current number of replicas of pods managed by this autoscaler", "zh_CN":"此自动缩放器管理的 Pod 的当前副本数"}
+  CurrentReplicas *int32 `json:"currentReplicas,omitempty" xml:"currentReplicas,omitempty" require:"true"`
+  // {"en":"the desired number of replicas of pods managed by this autoscaler", "zh_CN":"此自动缩放器管理的 Pod 副本的所需数量"}
+  DesiredReplicas *int32 `json:"desiredReplicas,omitempty" xml:"desiredReplicas,omitempty" require:"true"`
+}
+
+func (s PatchHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) SetObservedGeneration(v int64) *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerStatus {
+  s.ObservedGeneration = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) SetCurrentReplicas(v int32) *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerStatus {
+  s.CurrentReplicas = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) SetDesiredReplicas(v int32) *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerStatus {
+  s.DesiredReplicas = &v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerHorizontalPodAutoscalerSpec struct {
+  // {"en":"reference to scaled resource; horizontal pod autoscaler will learn the current resource consumption and will set the desired number of pods by using its Scale subresource", "zh_CN":"对被扩缩资源的引用； 水平 Pod 自动缩放器将了解当前的资源消耗，并使用其 scale 子资源设置所需的 Pod 数量"}
+  ScaleTargetRef *PatchHorizontalPodAutoscalerCrossVersionObjectReference `json:"scaleTargetRef,omitempty" xml:"scaleTargetRef,omitempty" require:"true"`
+  // {"en":"the lower limit for the number of replicas to which the autoscaler can scale down. It defaults to 1 pod. minReplicas is allowed to be 0 if the alpha feature gate HPAScaleToZero is enabled and at least one Object or External metric is configured. Scaling is active as long as at least one metric value is available", "zh_CN":"自动缩放器可以缩减的副本数的下限。 它默认为 1 个 Pod。 如果启用了 alpha 特性门禁 HPAScaleToZero 并且配置了至少一个 Object 或 External 度量标准， 则 minReplicas 允许为 0。 只要至少有一个度量值可用，缩放就处于活动状态"}
+  MinReplicas *int32 `json:"minReplicas,omitempty" xml:"minReplicas,omitempty"`
+  // {"en":"the upper limit for the number of pods that can be set by the autoscaler; cannot be smaller than MinReplicas", "zh_CN":"自动扩缩器可以设置的 Pod 数量上限； 不能小于 minReplicas"}
+  MaxReplicas *int32 `json:"maxReplicas,omitempty" xml:"maxReplicas,omitempty" require:"true"`
+  // {"en":"metrics contains the specifications for which to use to calculate the desired replica count (the maximum replica count across all metrics will be used). The desired replica count is calculated multiplying the ratio between the target value and the current value by the current number of pods. Ergo, metrics used must decrease as the pod count is increased, and vice-versa. See the individual metric source types for more information about how each type of metric must respond. If not set, the default metric will be set to 80% average CPU utilization", "zh_CN":"metrics 包含用于计算预期副本数的规约（将使用所有指标的最大副本数）。 预期副本数是通过将目标值与当前值之间的比率乘以当前 Pod 数来计算的。 因此，使用的指标必须随着 Pod 数量的增加而减少，反之亦然。 有关每种类别的指标必须如何响应的更多信息，请参阅各个指标源类别。 如果未设置，默认指标将设置为 80% 的平均 CPU 利用率"}
+  Metrics []*PatchHorizontalPodAutoscalerMetricSpec `json:"metrics,omitempty" xml:"metrics,omitempty" type:"Repeated"`
+  // {"en":"behavior configures the scaling behavior of the target in both Up and Down directions (scaleUp and scaleDown fields respectively). If not set, the default PatchHorizontalPodAutoscalerHPAScalingRules for scale up and scale down are used", "zh_CN":"behavior 配置目标在扩容（Up）和缩容（Down）两个方向的扩缩行为（分别用 scaleUp 和 scaleDown 字段）。 如果未设置，则会使用默认的 PatchHorizontalPodAutoscalerHPAScalingRules 进行扩缩容"}
+  Behavior *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior `json:"behavior,omitempty" xml:"behavior,omitempty"`
+}
+
+func (s PatchHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetScaleTargetRef(v *PatchHorizontalPodAutoscalerCrossVersionObjectReference) *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.ScaleTargetRef = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetMinReplicas(v int32) *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.MinReplicas = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetMaxReplicas(v int32) *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.MaxReplicas = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetMetrics(v []*PatchHorizontalPodAutoscalerMetricSpec) *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.Metrics = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetBehavior(v *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.Behavior = v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerCrossVersionObjectReference struct {
+  // {"en":"the API version of the referent", "zh_CN":"被引用对象的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"the kind of the referent", "zh_CN":"被引用对象的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"the name of the referent", "zh_CN":"被引用对象的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s PatchHorizontalPodAutoscalerCrossVersionObjectReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerCrossVersionObjectReference) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerCrossVersionObjectReference) SetApiVersion(v string) *PatchHorizontalPodAutoscalerCrossVersionObjectReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerCrossVersionObjectReference) SetKind(v string) *PatchHorizontalPodAutoscalerCrossVersionObjectReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerCrossVersionObjectReference) SetName(v string) *PatchHorizontalPodAutoscalerCrossVersionObjectReference {
+  s.Name = &v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerMetricSpec struct {
+  // {"en":"the type of metric source. It should be one of 'ContainerResource', 'External', 'Object', 'Pods' or 'Resource', each mapping to a matching field in the object. Note: 'ContainerResource' type is available on when the feature-gate HPAContainerMetrics is enabled", "zh_CN":"type 是指标源的类别。它取值是 “ContainerResource”、“External”、“Object”、“Pods” 或 “Resource” 之一， 每个类别映射到对象中的一个对应的字段。注意：“ContainerResource” 类别在特性门控 HPAContainerMetrics 启用时可用"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {"en":"refers to a metric describing a single kubernetes object (for example, hits-per-second on an Ingress object)", "zh_CN":"指描述单个 Kubernetes 对象的指标"}
+  Object *PatchHorizontalPodAutoscalerObjectMetricSource `json:"object,omitempty" xml:"object,omitempty"`
+  // {"en":"refers to a metric describing each pod in the current scale target (for example, transactions-processed-per-second). The values will be averaged together before being compared to the target value", "zh_CN":"指描述当前扩缩目标中每个 Pod 的指标（例如，transactions-processed-per-second）。 在与目标值进行比较之前，这些指标值将被平均"}
+  Pods *PatchHorizontalPodAutoscalerPodsMetricSource `json:"pods,omitempty" xml:"pods,omitempty"`
+  // {"en":"refers to a resource metric (such as those specified in requests and limits) known to Kubernetes describing each pod in the current scale target (e.g. CPU or memory). Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the 'pods' source", "zh_CN":"指 Kubernetes 已知的资源指标（例如在请求和限制中指定的那些）， 此结构描述当前扩缩目标中的每个 Pod（例如 CPU 或内存）。此类指标内置于 Kubernetes 中， 并且在使用 “Pods” 源的、按 Pod 统计的普通指标之外支持一些特殊的扩缩选项"}
+  Resource *PatchHorizontalPodAutoscalerResourceMetricSource `json:"resource,omitempty" xml:"resource,omitempty"`
+  // {"en":"refers to a resource metric (such as those specified in requests and limits) known to Kubernetes describing a single container in each pod of the current scale target (e.g. CPU or memory). Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the 'pods' source. This is an alpha feature and can be enabled by the HPAContainerMetrics feature flag", "zh_CN":"指 Kubernetes 已知的资源指标（例如在请求和限制中指定的那些）， 描述当前扩缩目标中每个 Pod 中的单个容器（例如 CPU 或内存）。 此类指标内置于 Kubernetes 中，在使用 “pods” 源的、按 Pod 计算的普通指标之外，还具有一些特殊的扩缩选项。 这是一个 Alpha 特性，可以通过 HPAContainerMetrics 特性标志启用"}
+  ContainerResource *PatchHorizontalPodAutoscalerContainerResourceMetricSource `json:"containerResource,omitempty" xml:"containerResource,omitempty"`
+  // {"en":"refers to a global metric that is not associated with any Kubernetes object. It allows autoscaling based on information coming from components running outside of cluster (for example length of queue in cloud messaging service, or QPS from loadbalancer running outside of cluster)", "zh_CN":"指的是不与任何 Kubernetes 对象关联的全局指标。 这一字段允许基于来自集群外部运行的组件（例如云消息服务中的队列长度，或来自运行在集群外部的负载均衡器的 QPS）的信息进行自动扩缩容"}
+  External *PatchHorizontalPodAutoscalerExternalMetricSource `json:"external,omitempty" xml:"external,omitempty"`
+}
+
+func (s PatchHorizontalPodAutoscalerMetricSpec) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerMetricSpec) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerMetricSpec) SetType(v string) *PatchHorizontalPodAutoscalerMetricSpec {
+  s.Type = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerMetricSpec) SetObject(v *PatchHorizontalPodAutoscalerObjectMetricSource) *PatchHorizontalPodAutoscalerMetricSpec {
+  s.Object = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerMetricSpec) SetPods(v *PatchHorizontalPodAutoscalerPodsMetricSource) *PatchHorizontalPodAutoscalerMetricSpec {
+  s.Pods = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerMetricSpec) SetResource(v *PatchHorizontalPodAutoscalerResourceMetricSource) *PatchHorizontalPodAutoscalerMetricSpec {
+  s.Resource = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerMetricSpec) SetContainerResource(v *PatchHorizontalPodAutoscalerContainerResourceMetricSource) *PatchHorizontalPodAutoscalerMetricSpec {
+  s.ContainerResource = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerMetricSpec) SetExternal(v *PatchHorizontalPodAutoscalerExternalMetricSource) *PatchHorizontalPodAutoscalerMetricSpec {
+  s.External = v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerResourceMetricSource struct {
+  // {"en":"the name of the resource in question", "zh_CN":"相关资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"specifies the target value for the given metric", "zh_CN":"指定给定指标的目标值"}
+  Target *PatchHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+}
+
+func (s PatchHorizontalPodAutoscalerResourceMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerResourceMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerResourceMetricSource) SetName(v string) *PatchHorizontalPodAutoscalerResourceMetricSource {
+  s.Name = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerResourceMetricSource) SetTarget(v *PatchHorizontalPodAutoscalerMetricTarget) *PatchHorizontalPodAutoscalerResourceMetricSource {
+  s.Target = v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerContainerResourceMetricSource struct {
+  // {"en":"the name of the resource in question", "zh_CN":"相关资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"specifies the target value for the given metric", "zh_CN":"指定给定指标的目标值"}
+  Target *PatchHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+  // {"en":"the name of the container in the pods of the scaling target", "zh_CN":"扩缩目标的 Pod 中容器的名称"}
+  Container *string `json:"container,omitempty" xml:"container,omitempty" require:"true"`
+}
+
+func (s PatchHorizontalPodAutoscalerContainerResourceMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerContainerResourceMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerContainerResourceMetricSource) SetName(v string) *PatchHorizontalPodAutoscalerContainerResourceMetricSource {
+  s.Name = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerContainerResourceMetricSource) SetTarget(v *PatchHorizontalPodAutoscalerMetricTarget) *PatchHorizontalPodAutoscalerContainerResourceMetricSource {
+  s.Target = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerContainerResourceMetricSource) SetContainer(v string) *PatchHorizontalPodAutoscalerContainerResourceMetricSource {
+  s.Container = &v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerExternalMetricSource struct {
+  // {"en":"metric identifies the target metric by name and selector", "zh_CN":"metric 通过名称和选择算符识别目标指标"}
+  Metric *PatchHorizontalPodAutoscalerMetricIdentifier `json:"metric,omitempty" xml:"metric,omitempty" require:"true"`
+  // {"en":"target specifies the target value for the given metric", "zh_CN":"target 指定给定指标的目标值"}
+  Target *PatchHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+}
+
+func (s PatchHorizontalPodAutoscalerExternalMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerExternalMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerExternalMetricSource) SetMetric(v *PatchHorizontalPodAutoscalerMetricIdentifier) *PatchHorizontalPodAutoscalerExternalMetricSource {
+  s.Metric = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerExternalMetricSource) SetTarget(v *PatchHorizontalPodAutoscalerMetricTarget) *PatchHorizontalPodAutoscalerExternalMetricSource {
+  s.Target = v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerPodsMetricSource struct {
+  // {"en":"metric identifies the target metric by name and selector", "zh_CN":"metric 通过名称和选择算符识别目标指标"}
+  Metric *PatchHorizontalPodAutoscalerMetricIdentifier `json:"metric,omitempty" xml:"metric,omitempty" require:"true"`
+  // {"en":"target specifies the target value for the given metric", "zh_CN":"target 表示给定指标的目标值"}
+  Target *PatchHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+}
+
+func (s PatchHorizontalPodAutoscalerPodsMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerPodsMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerPodsMetricSource) SetMetric(v *PatchHorizontalPodAutoscalerMetricIdentifier) *PatchHorizontalPodAutoscalerPodsMetricSource {
+  s.Metric = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerPodsMetricSource) SetTarget(v *PatchHorizontalPodAutoscalerMetricTarget) *PatchHorizontalPodAutoscalerPodsMetricSource {
+  s.Target = v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerObjectMetricSource struct {
+  // {"en":"describedObject specifies the descriptions of a object,such as kind,name apiVersion", "zh_CN":"describeObject 表示对象的描述，如对象的 kind、name、apiVersion"}
+  DescribedObject *PatchHorizontalPodAutoscalerCrossVersionObjectReference `json:"describedObject,omitempty" xml:"describedObject,omitempty" require:"true"`
+  // {"en":"target specifies the target value for the given metric", "zh_CN":"target 表示给定指标的目标值"}
+  Target *PatchHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+  // {"en":"metric identifies the target metric by name and selector", "zh_CN":"metric 通过名称和选择算符识别目标指标"}
+  Metric *PatchHorizontalPodAutoscalerMetricIdentifier `json:"metric,omitempty" xml:"metric,omitempty" require:"true"`
+}
+
+func (s PatchHorizontalPodAutoscalerObjectMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerObjectMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerObjectMetricSource) SetDescribedObject(v *PatchHorizontalPodAutoscalerCrossVersionObjectReference) *PatchHorizontalPodAutoscalerObjectMetricSource {
+  s.DescribedObject = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerObjectMetricSource) SetTarget(v *PatchHorizontalPodAutoscalerMetricTarget) *PatchHorizontalPodAutoscalerObjectMetricSource {
+  s.Target = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerObjectMetricSource) SetMetric(v *PatchHorizontalPodAutoscalerMetricIdentifier) *PatchHorizontalPodAutoscalerObjectMetricSource {
+  s.Metric = v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerMetricTarget struct {
+  // {"en":"type represents whether the metric type is Utilization, Value, or AverageValue", "zh_CN":"type 表示指标类别是 Utilization、Value 或 AverageValue"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {"en":"the target value of the metric (as a quantity)", "zh_CN":"value 是指标的目标值（以数量形式给出）"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty"`
+  // {"en":"the target value of the average of the metric across all relevant pods (as a quantity)", "zh_CN":"averageValue 是跨所有 Pod 得出的指标均值的目标值（以数量形式给出）"}
+  AverageValue *string `json:"averageValue,omitempty" xml:"averageValue,omitempty"`
+  // {"en":"the target value of the average of the resource metric across all relevant pods, represented as a percentage of the requested value of the resource for the pods. Currently only valid for Resource metric source type", "zh_CN":"averageUtilization 是跨所有相关 Pod 得出的资源指标均值的目标值， 表示为 Pod 资源请求值的百分比。目前仅对 “Resource” 指标源类别有效"}
+  AverageUtilization *int32 `json:"averageUtilization,omitempty" xml:"averageUtilization,omitempty"`
+}
+
+func (s PatchHorizontalPodAutoscalerMetricTarget) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerMetricTarget) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerMetricTarget) SetType(v string) *PatchHorizontalPodAutoscalerMetricTarget {
+  s.Type = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerMetricTarget) SetValue(v string) *PatchHorizontalPodAutoscalerMetricTarget {
+  s.Value = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerMetricTarget) SetAverageValue(v string) *PatchHorizontalPodAutoscalerMetricTarget {
+  s.AverageValue = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerMetricTarget) SetAverageUtilization(v int32) *PatchHorizontalPodAutoscalerMetricTarget {
+  s.AverageUtilization = &v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerMetricIdentifier struct {
+  // {"en":"the name of the given metric", "zh_CN":"给定指标的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"the string-encoded form of a standard kubernetes label selector for the given metric When set, it is passed as an additional parameter to the metrics server for more specific metrics scoping. When unset, just the metricName will be used to gather metrics", "zh_CN":"给定指标的标准 Kubernetes 标签选择算符的字符串编码形式。 设置后，它作为附加参数传递给指标服务器，以获取更具体的指标范围。 未设置时，仅 metricName 参数将用于收集指标"}
+  Selector *PatchHorizontalPodAutoscalerLabelSelector `json:"selector,omitempty" xml:"selector,omitempty"`
+}
+
+func (s PatchHorizontalPodAutoscalerMetricIdentifier) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerMetricIdentifier) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerMetricIdentifier) SetName(v string) *PatchHorizontalPodAutoscalerMetricIdentifier {
+  s.Name = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerMetricIdentifier) SetSelector(v *PatchHorizontalPodAutoscalerLabelSelector) *PatchHorizontalPodAutoscalerMetricIdentifier {
+  s.Selector = v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerLabelSelector struct {
+  // {"en":"a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is 'key', the operator is 'In', and the values array contains only 'value'. The requirements are ANDed", "zh_CN":"matchLabels 是 {key,value} 键值对的映射。matchLabels 映射中的单个 {key,value} 键值对相当于 matchExpressions 的一个元素，其键字段为 key，运算符为 In，values 数组仅包含 value。所表达的需求最终要按逻辑与的关系组合"}
+  MatchLabels map[string]*string `json:"matchLabels,omitempty" xml:"matchLabels,omitempty"`
+  // {"en":"a list of label selector requirements. The requirements are ANDed", "zh_CN":"标签选择器要求的列表，这些要求的结果按逻辑与的关系来计算"}
+  MatchExpressions []*PatchHorizontalPodAutoscalerLabelSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s PatchHorizontalPodAutoscalerLabelSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerLabelSelector) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerLabelSelector) SetMatchLabels(v map[string]*string) *PatchHorizontalPodAutoscalerLabelSelector {
+  s.MatchLabels = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerLabelSelector) SetMatchExpressions(v []*PatchHorizontalPodAutoscalerLabelSelectorRequirement) *PatchHorizontalPodAutoscalerLabelSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerLabelSelectorRequirement struct {
+  // {"en":"the label key that the selector applies to", "zh_CN":"选择器应用的标签键"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist", "zh_CN":"表示键与一组值的关系。有效的运算符包括 In、NotIn、Exists 和 DoesNotExist"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch", "zh_CN":"values 是一个字符串值数组。如果运算符为 In 或 NotIn，则 values 数组必须为非空。如果运算符是 Exists 或 DoesNotExist，则 values 数组必须为空。该数组在策略性合并补丁（Strategic Merge Patch）期间被替换"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s PatchHorizontalPodAutoscalerLabelSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerLabelSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerLabelSelectorRequirement) SetKey(v string) *PatchHorizontalPodAutoscalerLabelSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerLabelSelectorRequirement) SetOperator(v string) *PatchHorizontalPodAutoscalerLabelSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerLabelSelectorRequirement) SetValues(v []*string) *PatchHorizontalPodAutoscalerLabelSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior struct {
+  // {"en":"scaleUp is scaling policy for scaling Up. If not set, the default value is the higher of:- increase no more than 4 pods per 60 seconds- double the number of pods per 60 seconds No stabilization is used", "zh_CN":"scaleUp 是用于扩容的扩缩策略。如果未设置，则默认值为以下值中的较高者：- 每 60 秒增加不超过 4 个 Pod- 每 60 秒 Pod 数量翻倍。不使用稳定窗口"}
+  ScaleUp *PatchHorizontalPodAutoscalerHPAScalingRules `json:"scaleUp,omitempty" xml:"scaleUp,omitempty"`
+  // {"en":"scaleDown is scaling policy for scaling Down. If not set, the default value is to allow to scale down to minReplicas pods, with a 300 second stabilization window (i.e., the highest recommendation for the last 300sec is used)", "zh_CN":"scaleDown 是缩容策略。如果未设置，则默认值允许缩减到 minReplicas 数量的 Pod， 具有 300 秒的稳定窗口（使用最近 300 秒的最高推荐值）"}
+  ScaleDown *PatchHorizontalPodAutoscalerHPAScalingRules `json:"scaleDown,omitempty" xml:"scaleDown,omitempty"`
+}
+
+func (s PatchHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) SetScaleUp(v *PatchHorizontalPodAutoscalerHPAScalingRules) *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior {
+  s.ScaleUp = v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) SetScaleDown(v *PatchHorizontalPodAutoscalerHPAScalingRules) *PatchHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior {
+  s.ScaleDown = v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerHPAScalingRules struct {
+  // {"en":"stabilizationWindowSeconds is the number of seconds for which past recommendations should be considered while scaling up or scaling down. StabilizationWindowSeconds must be greater than or equal to zero and less than or equal to 3600 (one hour). If not set, use the default values: - For scale up: 0 (i.e. no stabilization is done). - For scale down: 300 (i.e. the stabilization window is 300 seconds long)", "zh_CN":"stabilizationWindowSeconds 是在扩缩容时应考虑的之前建议的秒数。stabilizationWindowSeconds 必须大于或等于零且小于或等于 3600（一小时）。如果未设置，则使用默认值：扩容：0（不设置稳定窗口）。缩容：300（即稳定窗口为 300 秒）"}
+  StabilizationWindowSeconds *int32 `json:"stabilizationWindowSeconds,omitempty" xml:"stabilizationWindowSeconds,omitempty"`
+  // {"en":"selectPolicy is used to specify which policy should be used. If not set, the default value Max is used", "zh_CN":"selectPolicy 用于指定应该使用哪个策略。如果未设置，则使用默认值 Max"}
+  SelectPolicy *string `json:"selectPolicy,omitempty" xml:"selectPolicy,omitempty"`
+  // {"en":"policies is a list of potential scaling polices which can be used during scaling. At least one policy must be specified, otherwise the PatchHorizontalPodAutoscalerHPAScalingRules will be discarded as invalid", "zh_CN":"policies 是可在扩缩容过程中使用的潜在扩缩策略的列表。必须至少指定一个策略，否则 PatchHorizontalPodAutoscalerHPAScalingRules 将被视为无效而丢弃"}
+  Policies []*PatchHorizontalPodAutoscalerHPAScalingPolicy `json:"policies,omitempty" xml:"policies,omitempty" type:"Repeated"`
+}
+
+func (s PatchHorizontalPodAutoscalerHPAScalingRules) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerHPAScalingRules) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerHPAScalingRules) SetStabilizationWindowSeconds(v int32) *PatchHorizontalPodAutoscalerHPAScalingRules {
+  s.StabilizationWindowSeconds = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerHPAScalingRules) SetSelectPolicy(v string) *PatchHorizontalPodAutoscalerHPAScalingRules {
+  s.SelectPolicy = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerHPAScalingRules) SetPolicies(v []*PatchHorizontalPodAutoscalerHPAScalingPolicy) *PatchHorizontalPodAutoscalerHPAScalingRules {
+  s.Policies = v
+  return s
+}
+
+type PatchHorizontalPodAutoscalerHPAScalingPolicy struct {
+  // {"en":"type is used to specify the scaling policy", "zh_CN":"type 用于指定扩缩策略"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty"`
+  // {"en":"value contains the amount of change which is permitted by the policy. It must be greater than zero", "zh_CN":"value 包含策略允许的更改量。它必须大于零"}
+  Value *int32 `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+  // {"en":"periodSeconds specifies the window of time for which the policy should hold true. PeriodSeconds must be greater than zero and less than or equal to 1800 (30 min)", "zh_CN":"periodSeconds 表示策略应该保持为 true 的时间窗口长度。 periodSeconds 必须大于零且小于或等于 1800（30 分钟）"}
+  PeriodSeconds *int32 `json:"periodSeconds,omitempty" xml:"periodSeconds,omitempty" require:"true"`
+}
+
+func (s PatchHorizontalPodAutoscalerHPAScalingPolicy) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PatchHorizontalPodAutoscalerHPAScalingPolicy) GoString() string {
+  return s.String()
+}
+
+func (s *PatchHorizontalPodAutoscalerHPAScalingPolicy) SetType(v string) *PatchHorizontalPodAutoscalerHPAScalingPolicy {
+  s.Type = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerHPAScalingPolicy) SetValue(v int32) *PatchHorizontalPodAutoscalerHPAScalingPolicy {
+  s.Value = &v
+  return s
+}
+
+func (s *PatchHorizontalPodAutoscalerHPAScalingPolicy) SetPeriodSeconds(v int32) *PatchHorizontalPodAutoscalerHPAScalingPolicy {
+  s.PeriodSeconds = &v
+  return s
+}
+
+
+
+
+type CreateHorizontalPodAutoscalerRequest struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *CreateHorizontalPodAutoscalerObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"spec defines the behaviour of autoscaler.", "zh_CN":"spec 定义自动缩放器的规约"}
+  Spec *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec `json:"spec,omitempty" xml:"spec,omitempty"`
+}
+
+func (s CreateHorizontalPodAutoscalerRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerRequest) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerRequest) SetApiVersion(v string) *CreateHorizontalPodAutoscalerRequest {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerRequest) SetKind(v string) *CreateHorizontalPodAutoscalerRequest {
+  s.Kind = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerRequest) SetMetadata(v *CreateHorizontalPodAutoscalerObjectMeta) *CreateHorizontalPodAutoscalerRequest {
+  s.Metadata = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerRequest) SetSpec(v *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) *CreateHorizontalPodAutoscalerRequest {
+  s.Spec = v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"CreateHorizontalPodAutoscalerHorizontalPodAutoscaler", "zh_CN":"CreateHorizontalPodAutoscalerHorizontalPodAutoscaler"}
+  Data *CreateHorizontalPodAutoscalerHorizontalPodAutoscaler `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s CreateHorizontalPodAutoscalerResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerResponse) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerResponse) SetCode(v int64) *CreateHorizontalPodAutoscalerResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerResponse) SetMsg(v string) *CreateHorizontalPodAutoscalerResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerResponse) SetRequestId(v string) *CreateHorizontalPodAutoscalerResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerResponse) SetData(v *CreateHorizontalPodAutoscalerHorizontalPodAutoscaler) *CreateHorizontalPodAutoscalerResponse {
+  s.Data = v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+}
+
+func (s CreateHorizontalPodAutoscalerPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerPaths) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerPaths) SetNamespace(v string) *CreateHorizontalPodAutoscalerPaths {
+  s.Namespace = &v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerParameters struct {
+}
+
+func (s CreateHorizontalPodAutoscalerParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerParameters) GoString() string {
+  return s.String()
+}
+
+type CreateHorizontalPodAutoscalerRequestHeader struct {
+}
+
+func (s CreateHorizontalPodAutoscalerRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerRequestHeader) GoString() string {
+  return s.String()
+}
+
+type CreateHorizontalPodAutoscalerResponseHeader struct {
+}
+
+func (s CreateHorizontalPodAutoscalerResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerResponseHeader) GoString() string {
+  return s.String()
+}
+
+type CreateHorizontalPodAutoscalerObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*CreateHorizontalPodAutoscalerOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*CreateHorizontalPodAutoscalerManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s CreateHorizontalPodAutoscalerObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerObjectMeta) SetName(v string) *CreateHorizontalPodAutoscalerObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerObjectMeta) SetGenerateName(v string) *CreateHorizontalPodAutoscalerObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerObjectMeta) SetNamespace(v string) *CreateHorizontalPodAutoscalerObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerObjectMeta) SetSelfLink(v string) *CreateHorizontalPodAutoscalerObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerObjectMeta) SetUid(v string) *CreateHorizontalPodAutoscalerObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerObjectMeta) SetResourceVersion(v string) *CreateHorizontalPodAutoscalerObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerObjectMeta) SetGeneration(v int64) *CreateHorizontalPodAutoscalerObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerObjectMeta) SetCreationTimestamp(v string) *CreateHorizontalPodAutoscalerObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerObjectMeta) SetDeletionTimestamp(v string) *CreateHorizontalPodAutoscalerObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerObjectMeta) SetDeletionGracePeriodSeconds(v int64) *CreateHorizontalPodAutoscalerObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerObjectMeta) SetLabels(v map[string]*string) *CreateHorizontalPodAutoscalerObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerObjectMeta) SetAnnotations(v map[string]*string) *CreateHorizontalPodAutoscalerObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerObjectMeta) SetOwnerReferences(v []*CreateHorizontalPodAutoscalerOwnerReference) *CreateHorizontalPodAutoscalerObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerObjectMeta) SetFinalizers(v []*string) *CreateHorizontalPodAutoscalerObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerObjectMeta) SetClusterName(v string) *CreateHorizontalPodAutoscalerObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerObjectMeta) SetManagedFields(v []*CreateHorizontalPodAutoscalerManagedFieldsEntry) *CreateHorizontalPodAutoscalerObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this CreateHorizontalPodAutoscalerManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'CreateHorizontalPodAutoscalerFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“CreateHorizontalPodAutoscalerFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"CreateHorizontalPodAutoscalerFieldsV1 holds the first JSON version format as described in the 'CreateHorizontalPodAutoscalerFieldsV1' type", "zh_CN":"CreateHorizontalPodAutoscalerFieldsV1 包含类型 “CreateHorizontalPodAutoscalerFieldsV1” 中描述的第一个 JSON 版本格式"}
+  CreateHorizontalPodAutoscalerFieldsV1 *CreateHorizontalPodAutoscalerFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s CreateHorizontalPodAutoscalerManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerManagedFieldsEntry) SetManager(v string) *CreateHorizontalPodAutoscalerManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerManagedFieldsEntry) SetOperation(v string) *CreateHorizontalPodAutoscalerManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerManagedFieldsEntry) SetApiVersion(v string) *CreateHorizontalPodAutoscalerManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerManagedFieldsEntry) SetTime(v string) *CreateHorizontalPodAutoscalerManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerManagedFieldsEntry) SetFieldsType(v string) *CreateHorizontalPodAutoscalerManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerManagedFieldsEntry) SetFieldsV1(v *CreateHorizontalPodAutoscalerFieldsV1) *CreateHorizontalPodAutoscalerManagedFieldsEntry {
+  s.CreateHorizontalPodAutoscalerFieldsV1 = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerManagedFieldsEntry) SetSubresource(v string) *CreateHorizontalPodAutoscalerManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerFieldsV1 struct {
+}
+
+func (s CreateHorizontalPodAutoscalerFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerFieldsV1) GoString() string {
+  return s.String()
+}
+
+type CreateHorizontalPodAutoscalerOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s CreateHorizontalPodAutoscalerOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerOwnerReference) SetApiVersion(v string) *CreateHorizontalPodAutoscalerOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerOwnerReference) SetKind(v string) *CreateHorizontalPodAutoscalerOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerOwnerReference) SetName(v string) *CreateHorizontalPodAutoscalerOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerOwnerReference) SetUid(v string) *CreateHorizontalPodAutoscalerOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerOwnerReference) SetController(v bool) *CreateHorizontalPodAutoscalerOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerOwnerReference) SetBlockOwnerDeletion(v bool) *CreateHorizontalPodAutoscalerOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerHorizontalPodAutoscaler struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *CreateHorizontalPodAutoscalerObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"spec defines the behaviour of autoscaler.", "zh_CN":"spec 定义自动缩放器的规约"}
+  Spec *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec `json:"spec,omitempty" xml:"spec,omitempty"`
+  // {"en":"the current information about the autoscaler", "zh_CN":"自动缩放器的当前信息"}
+  Status *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+func (s CreateHorizontalPodAutoscalerHorizontalPodAutoscaler) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerHorizontalPodAutoscaler) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerHorizontalPodAutoscaler) SetApiVersion(v string) *CreateHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerHorizontalPodAutoscaler) SetKind(v string) *CreateHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.Kind = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerHorizontalPodAutoscaler) SetMetadata(v *CreateHorizontalPodAutoscalerObjectMeta) *CreateHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.Metadata = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerHorizontalPodAutoscaler) SetSpec(v *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) *CreateHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.Spec = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerHorizontalPodAutoscaler) SetStatus(v *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) *CreateHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.Status = v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus struct {
+  // {"en":"the most recent generation observed by this autoscaler", "zh_CN":"observedGeneration 是此自动缩放器观察到的最新一代"}
+  ObservedGeneration *int64 `json:"observedGeneration,omitempty" xml:"observedGeneration,omitempty"`
+  // {"en":"the current number of replicas of pods managed by this autoscaler", "zh_CN":"此自动缩放器管理的 Pod 的当前副本数"}
+  CurrentReplicas *int32 `json:"currentReplicas,omitempty" xml:"currentReplicas,omitempty" require:"true"`
+  // {"en":"the desired number of replicas of pods managed by this autoscaler", "zh_CN":"此自动缩放器管理的 Pod 副本的所需数量"}
+  DesiredReplicas *int32 `json:"desiredReplicas,omitempty" xml:"desiredReplicas,omitempty" require:"true"`
+}
+
+func (s CreateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) SetObservedGeneration(v int64) *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus {
+  s.ObservedGeneration = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) SetCurrentReplicas(v int32) *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus {
+  s.CurrentReplicas = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) SetDesiredReplicas(v int32) *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus {
+  s.DesiredReplicas = &v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec struct {
+  // {"en":"reference to scaled resource; horizontal pod autoscaler will learn the current resource consumption and will set the desired number of pods by using its Scale subresource", "zh_CN":"对被扩缩资源的引用； 水平 Pod 自动缩放器将了解当前的资源消耗，并使用其 scale 子资源设置所需的 Pod 数量"}
+  ScaleTargetRef *CreateHorizontalPodAutoscalerCrossVersionObjectReference `json:"scaleTargetRef,omitempty" xml:"scaleTargetRef,omitempty" require:"true"`
+  // {"en":"the lower limit for the number of replicas to which the autoscaler can scale down. It defaults to 1 pod. minReplicas is allowed to be 0 if the alpha feature gate HPAScaleToZero is enabled and at least one Object or External metric is configured. Scaling is active as long as at least one metric value is available", "zh_CN":"自动缩放器可以缩减的副本数的下限。 它默认为 1 个 Pod。 如果启用了 alpha 特性门禁 HPAScaleToZero 并且配置了至少一个 Object 或 External 度量标准， 则 minReplicas 允许为 0。 只要至少有一个度量值可用，缩放就处于活动状态"}
+  MinReplicas *int32 `json:"minReplicas,omitempty" xml:"minReplicas,omitempty"`
+  // {"en":"the upper limit for the number of pods that can be set by the autoscaler; cannot be smaller than MinReplicas", "zh_CN":"自动扩缩器可以设置的 Pod 数量上限； 不能小于 minReplicas"}
+  MaxReplicas *int32 `json:"maxReplicas,omitempty" xml:"maxReplicas,omitempty" require:"true"`
+  // {"en":"metrics contains the specifications for which to use to calculate the desired replica count (the maximum replica count across all metrics will be used). The desired replica count is calculated multiplying the ratio between the target value and the current value by the current number of pods. Ergo, metrics used must decrease as the pod count is increased, and vice-versa. See the individual metric source types for more information about how each type of metric must respond. If not set, the default metric will be set to 80% average CPU utilization", "zh_CN":"metrics 包含用于计算预期副本数的规约（将使用所有指标的最大副本数）。 预期副本数是通过将目标值与当前值之间的比率乘以当前 Pod 数来计算的。 因此，使用的指标必须随着 Pod 数量的增加而减少，反之亦然。 有关每种类别的指标必须如何响应的更多信息，请参阅各个指标源类别。 如果未设置，默认指标将设置为 80% 的平均 CPU 利用率"}
+  Metrics []*CreateHorizontalPodAutoscalerMetricSpec `json:"metrics,omitempty" xml:"metrics,omitempty" type:"Repeated"`
+  // {"en":"behavior configures the scaling behavior of the target in both Up and Down directions (scaleUp and scaleDown fields respectively). If not set, the default CreateHorizontalPodAutoscalerHPAScalingRules for scale up and scale down are used", "zh_CN":"behavior 配置目标在扩容（Up）和缩容（Down）两个方向的扩缩行为（分别用 scaleUp 和 scaleDown 字段）。 如果未设置，则会使用默认的 CreateHorizontalPodAutoscalerHPAScalingRules 进行扩缩容"}
+  Behavior *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior `json:"behavior,omitempty" xml:"behavior,omitempty"`
+}
+
+func (s CreateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetScaleTargetRef(v *CreateHorizontalPodAutoscalerCrossVersionObjectReference) *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.ScaleTargetRef = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetMinReplicas(v int32) *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.MinReplicas = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetMaxReplicas(v int32) *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.MaxReplicas = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetMetrics(v []*CreateHorizontalPodAutoscalerMetricSpec) *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.Metrics = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetBehavior(v *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.Behavior = v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerCrossVersionObjectReference struct {
+  // {"en":"the API version of the referent", "zh_CN":"被引用对象的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"the kind of the referent", "zh_CN":"被引用对象的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"the name of the referent", "zh_CN":"被引用对象的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s CreateHorizontalPodAutoscalerCrossVersionObjectReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerCrossVersionObjectReference) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerCrossVersionObjectReference) SetApiVersion(v string) *CreateHorizontalPodAutoscalerCrossVersionObjectReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerCrossVersionObjectReference) SetKind(v string) *CreateHorizontalPodAutoscalerCrossVersionObjectReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerCrossVersionObjectReference) SetName(v string) *CreateHorizontalPodAutoscalerCrossVersionObjectReference {
+  s.Name = &v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerMetricSpec struct {
+  // {"en":"the type of metric source. It should be one of 'ContainerResource', 'External', 'Object', 'Pods' or 'Resource', each mapping to a matching field in the object. Note: 'ContainerResource' type is available on when the feature-gate HPAContainerMetrics is enabled", "zh_CN":"type 是指标源的类别。它取值是 “ContainerResource”、“External”、“Object”、“Pods” 或 “Resource” 之一， 每个类别映射到对象中的一个对应的字段。注意：“ContainerResource” 类别在特性门控 HPAContainerMetrics 启用时可用"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {"en":"refers to a metric describing a single kubernetes object (for example, hits-per-second on an Ingress object)", "zh_CN":"指描述单个 Kubernetes 对象的指标"}
+  Object *CreateHorizontalPodAutoscalerObjectMetricSource `json:"object,omitempty" xml:"object,omitempty"`
+  // {"en":"refers to a metric describing each pod in the current scale target (for example, transactions-processed-per-second). The values will be averaged together before being compared to the target value", "zh_CN":"指描述当前扩缩目标中每个 Pod 的指标（例如，transactions-processed-per-second）。 在与目标值进行比较之前，这些指标值将被平均"}
+  Pods *CreateHorizontalPodAutoscalerPodsMetricSource `json:"pods,omitempty" xml:"pods,omitempty"`
+  // {"en":"refers to a resource metric (such as those specified in requests and limits) known to Kubernetes describing each pod in the current scale target (e.g. CPU or memory). Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the 'pods' source", "zh_CN":"指 Kubernetes 已知的资源指标（例如在请求和限制中指定的那些）， 此结构描述当前扩缩目标中的每个 Pod（例如 CPU 或内存）。此类指标内置于 Kubernetes 中， 并且在使用 “Pods” 源的、按 Pod 统计的普通指标之外支持一些特殊的扩缩选项"}
+  Resource *CreateHorizontalPodAutoscalerResourceMetricSource `json:"resource,omitempty" xml:"resource,omitempty"`
+  // {"en":"refers to a resource metric (such as those specified in requests and limits) known to Kubernetes describing a single container in each pod of the current scale target (e.g. CPU or memory). Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the 'pods' source. This is an alpha feature and can be enabled by the HPAContainerMetrics feature flag", "zh_CN":"指 Kubernetes 已知的资源指标（例如在请求和限制中指定的那些）， 描述当前扩缩目标中每个 Pod 中的单个容器（例如 CPU 或内存）。 此类指标内置于 Kubernetes 中，在使用 “pods” 源的、按 Pod 计算的普通指标之外，还具有一些特殊的扩缩选项。 这是一个 Alpha 特性，可以通过 HPAContainerMetrics 特性标志启用"}
+  ContainerResource *CreateHorizontalPodAutoscalerContainerResourceMetricSource `json:"containerResource,omitempty" xml:"containerResource,omitempty"`
+  // {"en":"refers to a global metric that is not associated with any Kubernetes object. It allows autoscaling based on information coming from components running outside of cluster (for example length of queue in cloud messaging service, or QPS from loadbalancer running outside of cluster)", "zh_CN":"指的是不与任何 Kubernetes 对象关联的全局指标。 这一字段允许基于来自集群外部运行的组件（例如云消息服务中的队列长度，或来自运行在集群外部的负载均衡器的 QPS）的信息进行自动扩缩容"}
+  External *CreateHorizontalPodAutoscalerExternalMetricSource `json:"external,omitempty" xml:"external,omitempty"`
+}
+
+func (s CreateHorizontalPodAutoscalerMetricSpec) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerMetricSpec) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerMetricSpec) SetType(v string) *CreateHorizontalPodAutoscalerMetricSpec {
+  s.Type = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerMetricSpec) SetObject(v *CreateHorizontalPodAutoscalerObjectMetricSource) *CreateHorizontalPodAutoscalerMetricSpec {
+  s.Object = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerMetricSpec) SetPods(v *CreateHorizontalPodAutoscalerPodsMetricSource) *CreateHorizontalPodAutoscalerMetricSpec {
+  s.Pods = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerMetricSpec) SetResource(v *CreateHorizontalPodAutoscalerResourceMetricSource) *CreateHorizontalPodAutoscalerMetricSpec {
+  s.Resource = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerMetricSpec) SetContainerResource(v *CreateHorizontalPodAutoscalerContainerResourceMetricSource) *CreateHorizontalPodAutoscalerMetricSpec {
+  s.ContainerResource = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerMetricSpec) SetExternal(v *CreateHorizontalPodAutoscalerExternalMetricSource) *CreateHorizontalPodAutoscalerMetricSpec {
+  s.External = v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerResourceMetricSource struct {
+  // {"en":"the name of the resource in question", "zh_CN":"相关资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"specifies the target value for the given metric", "zh_CN":"指定给定指标的目标值"}
+  Target *CreateHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+}
+
+func (s CreateHorizontalPodAutoscalerResourceMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerResourceMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerResourceMetricSource) SetName(v string) *CreateHorizontalPodAutoscalerResourceMetricSource {
+  s.Name = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerResourceMetricSource) SetTarget(v *CreateHorizontalPodAutoscalerMetricTarget) *CreateHorizontalPodAutoscalerResourceMetricSource {
+  s.Target = v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerContainerResourceMetricSource struct {
+  // {"en":"the name of the resource in question", "zh_CN":"相关资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"specifies the target value for the given metric", "zh_CN":"指定给定指标的目标值"}
+  Target *CreateHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+  // {"en":"the name of the container in the pods of the scaling target", "zh_CN":"扩缩目标的 Pod 中容器的名称"}
+  Container *string `json:"container,omitempty" xml:"container,omitempty" require:"true"`
+}
+
+func (s CreateHorizontalPodAutoscalerContainerResourceMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerContainerResourceMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerContainerResourceMetricSource) SetName(v string) *CreateHorizontalPodAutoscalerContainerResourceMetricSource {
+  s.Name = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerContainerResourceMetricSource) SetTarget(v *CreateHorizontalPodAutoscalerMetricTarget) *CreateHorizontalPodAutoscalerContainerResourceMetricSource {
+  s.Target = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerContainerResourceMetricSource) SetContainer(v string) *CreateHorizontalPodAutoscalerContainerResourceMetricSource {
+  s.Container = &v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerExternalMetricSource struct {
+  // {"en":"metric identifies the target metric by name and selector", "zh_CN":"metric 通过名称和选择算符识别目标指标"}
+  Metric *CreateHorizontalPodAutoscalerMetricIdentifier `json:"metric,omitempty" xml:"metric,omitempty" require:"true"`
+  // {"en":"target specifies the target value for the given metric", "zh_CN":"target 指定给定指标的目标值"}
+  Target *CreateHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+}
+
+func (s CreateHorizontalPodAutoscalerExternalMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerExternalMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerExternalMetricSource) SetMetric(v *CreateHorizontalPodAutoscalerMetricIdentifier) *CreateHorizontalPodAutoscalerExternalMetricSource {
+  s.Metric = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerExternalMetricSource) SetTarget(v *CreateHorizontalPodAutoscalerMetricTarget) *CreateHorizontalPodAutoscalerExternalMetricSource {
+  s.Target = v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerPodsMetricSource struct {
+  // {"en":"metric identifies the target metric by name and selector", "zh_CN":"metric 通过名称和选择算符识别目标指标"}
+  Metric *CreateHorizontalPodAutoscalerMetricIdentifier `json:"metric,omitempty" xml:"metric,omitempty" require:"true"`
+  // {"en":"target specifies the target value for the given metric", "zh_CN":"target 表示给定指标的目标值"}
+  Target *CreateHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+}
+
+func (s CreateHorizontalPodAutoscalerPodsMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerPodsMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerPodsMetricSource) SetMetric(v *CreateHorizontalPodAutoscalerMetricIdentifier) *CreateHorizontalPodAutoscalerPodsMetricSource {
+  s.Metric = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerPodsMetricSource) SetTarget(v *CreateHorizontalPodAutoscalerMetricTarget) *CreateHorizontalPodAutoscalerPodsMetricSource {
+  s.Target = v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerObjectMetricSource struct {
+  // {"en":"describedObject specifies the descriptions of a object,such as kind,name apiVersion", "zh_CN":"describeObject 表示对象的描述，如对象的 kind、name、apiVersion"}
+  DescribedObject *CreateHorizontalPodAutoscalerCrossVersionObjectReference `json:"describedObject,omitempty" xml:"describedObject,omitempty" require:"true"`
+  // {"en":"target specifies the target value for the given metric", "zh_CN":"target 表示给定指标的目标值"}
+  Target *CreateHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+  // {"en":"metric identifies the target metric by name and selector", "zh_CN":"metric 通过名称和选择算符识别目标指标"}
+  Metric *CreateHorizontalPodAutoscalerMetricIdentifier `json:"metric,omitempty" xml:"metric,omitempty" require:"true"`
+}
+
+func (s CreateHorizontalPodAutoscalerObjectMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerObjectMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerObjectMetricSource) SetDescribedObject(v *CreateHorizontalPodAutoscalerCrossVersionObjectReference) *CreateHorizontalPodAutoscalerObjectMetricSource {
+  s.DescribedObject = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerObjectMetricSource) SetTarget(v *CreateHorizontalPodAutoscalerMetricTarget) *CreateHorizontalPodAutoscalerObjectMetricSource {
+  s.Target = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerObjectMetricSource) SetMetric(v *CreateHorizontalPodAutoscalerMetricIdentifier) *CreateHorizontalPodAutoscalerObjectMetricSource {
+  s.Metric = v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerMetricTarget struct {
+  // {"en":"type represents whether the metric type is Utilization, Value, or AverageValue", "zh_CN":"type 表示指标类别是 Utilization、Value 或 AverageValue"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {"en":"the target value of the metric (as a quantity)", "zh_CN":"value 是指标的目标值（以数量形式给出）"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty"`
+  // {"en":"the target value of the average of the metric across all relevant pods (as a quantity)", "zh_CN":"averageValue 是跨所有 Pod 得出的指标均值的目标值（以数量形式给出）"}
+  AverageValue *string `json:"averageValue,omitempty" xml:"averageValue,omitempty"`
+  // {"en":"the target value of the average of the resource metric across all relevant pods, represented as a percentage of the requested value of the resource for the pods. Currently only valid for Resource metric source type", "zh_CN":"averageUtilization 是跨所有相关 Pod 得出的资源指标均值的目标值， 表示为 Pod 资源请求值的百分比。目前仅对 “Resource” 指标源类别有效"}
+  AverageUtilization *int32 `json:"averageUtilization,omitempty" xml:"averageUtilization,omitempty"`
+}
+
+func (s CreateHorizontalPodAutoscalerMetricTarget) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerMetricTarget) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerMetricTarget) SetType(v string) *CreateHorizontalPodAutoscalerMetricTarget {
+  s.Type = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerMetricTarget) SetValue(v string) *CreateHorizontalPodAutoscalerMetricTarget {
+  s.Value = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerMetricTarget) SetAverageValue(v string) *CreateHorizontalPodAutoscalerMetricTarget {
+  s.AverageValue = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerMetricTarget) SetAverageUtilization(v int32) *CreateHorizontalPodAutoscalerMetricTarget {
+  s.AverageUtilization = &v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerMetricIdentifier struct {
+  // {"en":"the name of the given metric", "zh_CN":"给定指标的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"the string-encoded form of a standard kubernetes label selector for the given metric When set, it is passed as an additional parameter to the metrics server for more specific metrics scoping. When unset, just the metricName will be used to gather metrics", "zh_CN":"给定指标的标准 Kubernetes 标签选择算符的字符串编码形式。 设置后，它作为附加参数传递给指标服务器，以获取更具体的指标范围。 未设置时，仅 metricName 参数将用于收集指标"}
+  Selector *CreateHorizontalPodAutoscalerLabelSelector `json:"selector,omitempty" xml:"selector,omitempty"`
+}
+
+func (s CreateHorizontalPodAutoscalerMetricIdentifier) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerMetricIdentifier) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerMetricIdentifier) SetName(v string) *CreateHorizontalPodAutoscalerMetricIdentifier {
+  s.Name = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerMetricIdentifier) SetSelector(v *CreateHorizontalPodAutoscalerLabelSelector) *CreateHorizontalPodAutoscalerMetricIdentifier {
+  s.Selector = v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerLabelSelector struct {
+  // {"en":"a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is 'key', the operator is 'In', and the values array contains only 'value'. The requirements are ANDed", "zh_CN":"matchLabels 是 {key,value} 键值对的映射。matchLabels 映射中的单个 {key,value} 键值对相当于 matchExpressions 的一个元素，其键字段为 key，运算符为 In，values 数组仅包含 value。所表达的需求最终要按逻辑与的关系组合"}
+  MatchLabels map[string]*string `json:"matchLabels,omitempty" xml:"matchLabels,omitempty"`
+  // {"en":"a list of label selector requirements. The requirements are ANDed", "zh_CN":"标签选择器要求的列表，这些要求的结果按逻辑与的关系来计算"}
+  MatchExpressions []*CreateHorizontalPodAutoscalerLabelSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s CreateHorizontalPodAutoscalerLabelSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerLabelSelector) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerLabelSelector) SetMatchLabels(v map[string]*string) *CreateHorizontalPodAutoscalerLabelSelector {
+  s.MatchLabels = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerLabelSelector) SetMatchExpressions(v []*CreateHorizontalPodAutoscalerLabelSelectorRequirement) *CreateHorizontalPodAutoscalerLabelSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerLabelSelectorRequirement struct {
+  // {"en":"the label key that the selector applies to", "zh_CN":"选择器应用的标签键"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist", "zh_CN":"表示键与一组值的关系。有效的运算符包括 In、NotIn、Exists 和 DoesNotExist"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch", "zh_CN":"values 是一个字符串值数组。如果运算符为 In 或 NotIn，则 values 数组必须为非空。如果运算符是 Exists 或 DoesNotExist，则 values 数组必须为空。该数组在策略性合并补丁（Strategic Merge Patch）期间被替换"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s CreateHorizontalPodAutoscalerLabelSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerLabelSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerLabelSelectorRequirement) SetKey(v string) *CreateHorizontalPodAutoscalerLabelSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerLabelSelectorRequirement) SetOperator(v string) *CreateHorizontalPodAutoscalerLabelSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerLabelSelectorRequirement) SetValues(v []*string) *CreateHorizontalPodAutoscalerLabelSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior struct {
+  // {"en":"scaleUp is scaling policy for scaling Up. If not set, the default value is the higher of:- increase no more than 4 pods per 60 seconds- double the number of pods per 60 seconds No stabilization is used", "zh_CN":"scaleUp 是用于扩容的扩缩策略。如果未设置，则默认值为以下值中的较高者：- 每 60 秒增加不超过 4 个 Pod- 每 60 秒 Pod 数量翻倍。不使用稳定窗口"}
+  ScaleUp *CreateHorizontalPodAutoscalerHPAScalingRules `json:"scaleUp,omitempty" xml:"scaleUp,omitempty"`
+  // {"en":"scaleDown is scaling policy for scaling Down. If not set, the default value is to allow to scale down to minReplicas pods, with a 300 second stabilization window (i.e., the highest recommendation for the last 300sec is used)", "zh_CN":"scaleDown 是缩容策略。如果未设置，则默认值允许缩减到 minReplicas 数量的 Pod， 具有 300 秒的稳定窗口（使用最近 300 秒的最高推荐值）"}
+  ScaleDown *CreateHorizontalPodAutoscalerHPAScalingRules `json:"scaleDown,omitempty" xml:"scaleDown,omitempty"`
+}
+
+func (s CreateHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) SetScaleUp(v *CreateHorizontalPodAutoscalerHPAScalingRules) *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior {
+  s.ScaleUp = v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) SetScaleDown(v *CreateHorizontalPodAutoscalerHPAScalingRules) *CreateHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior {
+  s.ScaleDown = v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerHPAScalingRules struct {
+  // {"en":"stabilizationWindowSeconds is the number of seconds for which past recommendations should be considered while scaling up or scaling down. StabilizationWindowSeconds must be greater than or equal to zero and less than or equal to 3600 (one hour). If not set, use the default values: - For scale up: 0 (i.e. no stabilization is done). - For scale down: 300 (i.e. the stabilization window is 300 seconds long)", "zh_CN":"stabilizationWindowSeconds 是在扩缩容时应考虑的之前建议的秒数。stabilizationWindowSeconds 必须大于或等于零且小于或等于 3600（一小时）。如果未设置，则使用默认值：扩容：0（不设置稳定窗口）。缩容：300（即稳定窗口为 300 秒）"}
+  StabilizationWindowSeconds *int32 `json:"stabilizationWindowSeconds,omitempty" xml:"stabilizationWindowSeconds,omitempty"`
+  // {"en":"selectPolicy is used to specify which policy should be used. If not set, the default value Max is used", "zh_CN":"selectPolicy 用于指定应该使用哪个策略。如果未设置，则使用默认值 Max"}
+  SelectPolicy *string `json:"selectPolicy,omitempty" xml:"selectPolicy,omitempty"`
+  // {"en":"policies is a list of potential scaling polices which can be used during scaling. At least one policy must be specified, otherwise the CreateHorizontalPodAutoscalerHPAScalingRules will be discarded as invalid", "zh_CN":"policies 是可在扩缩容过程中使用的潜在扩缩策略的列表。必须至少指定一个策略，否则 CreateHorizontalPodAutoscalerHPAScalingRules 将被视为无效而丢弃"}
+  Policies []*CreateHorizontalPodAutoscalerHPAScalingPolicy `json:"policies,omitempty" xml:"policies,omitempty" type:"Repeated"`
+}
+
+func (s CreateHorizontalPodAutoscalerHPAScalingRules) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerHPAScalingRules) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerHPAScalingRules) SetStabilizationWindowSeconds(v int32) *CreateHorizontalPodAutoscalerHPAScalingRules {
+  s.StabilizationWindowSeconds = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerHPAScalingRules) SetSelectPolicy(v string) *CreateHorizontalPodAutoscalerHPAScalingRules {
+  s.SelectPolicy = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerHPAScalingRules) SetPolicies(v []*CreateHorizontalPodAutoscalerHPAScalingPolicy) *CreateHorizontalPodAutoscalerHPAScalingRules {
+  s.Policies = v
+  return s
+}
+
+type CreateHorizontalPodAutoscalerHPAScalingPolicy struct {
+  // {"en":"type is used to specify the scaling policy", "zh_CN":"type 用于指定扩缩策略"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty"`
+  // {"en":"value contains the amount of change which is permitted by the policy. It must be greater than zero", "zh_CN":"value 包含策略允许的更改量。它必须大于零"}
+  Value *int32 `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+  // {"en":"periodSeconds specifies the window of time for which the policy should hold true. PeriodSeconds must be greater than zero and less than or equal to 1800 (30 min)", "zh_CN":"periodSeconds 表示策略应该保持为 true 的时间窗口长度。 periodSeconds 必须大于零且小于或等于 1800（30 分钟）"}
+  PeriodSeconds *int32 `json:"periodSeconds,omitempty" xml:"periodSeconds,omitempty" require:"true"`
+}
+
+func (s CreateHorizontalPodAutoscalerHPAScalingPolicy) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateHorizontalPodAutoscalerHPAScalingPolicy) GoString() string {
+  return s.String()
+}
+
+func (s *CreateHorizontalPodAutoscalerHPAScalingPolicy) SetType(v string) *CreateHorizontalPodAutoscalerHPAScalingPolicy {
+  s.Type = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerHPAScalingPolicy) SetValue(v int32) *CreateHorizontalPodAutoscalerHPAScalingPolicy {
+  s.Value = &v
+  return s
+}
+
+func (s *CreateHorizontalPodAutoscalerHPAScalingPolicy) SetPeriodSeconds(v int32) *CreateHorizontalPodAutoscalerHPAScalingPolicy {
+  s.PeriodSeconds = &v
+  return s
+}
+
+
+
+
+type DeleteOverridepolicyRequest struct {
+}
+
+func (s DeleteOverridepolicyRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteOverridepolicyRequest) GoString() string {
+  return s.String()
+}
+
+type DeleteOverridepolicyResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"delete status", "zh_CN":"删除结果详情"}
+  Data *DeleteOverridepolicyStatus `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s DeleteOverridepolicyResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteOverridepolicyResponse) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteOverridepolicyResponse) SetCode(v int64) *DeleteOverridepolicyResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *DeleteOverridepolicyResponse) SetMsg(v string) *DeleteOverridepolicyResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *DeleteOverridepolicyResponse) SetRequestId(v string) *DeleteOverridepolicyResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *DeleteOverridepolicyResponse) SetData(v *DeleteOverridepolicyStatus) *DeleteOverridepolicyResponse {
+  s.Data = v
+  return s
+}
+
+type DeleteOverridepolicyPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+  // {"en":"The name of overridePolicy", "zh_CN":"overridePolicy 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s DeleteOverridepolicyPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteOverridepolicyPaths) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteOverridepolicyPaths) SetNamespace(v string) *DeleteOverridepolicyPaths {
+  s.Namespace = &v
+  return s
+}
+
+func (s *DeleteOverridepolicyPaths) SetName(v string) *DeleteOverridepolicyPaths {
+  s.Name = &v
+  return s
+}
+
+type DeleteOverridepolicyParameters struct {
+}
+
+func (s DeleteOverridepolicyParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteOverridepolicyParameters) GoString() string {
+  return s.String()
+}
+
+type DeleteOverridepolicyRequestHeader struct {
+}
+
+func (s DeleteOverridepolicyRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteOverridepolicyRequestHeader) GoString() string {
+  return s.String()
+}
+
+type DeleteOverridepolicyResponseHeader struct {
+}
+
+func (s DeleteOverridepolicyResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteOverridepolicyResponseHeader) GoString() string {
+  return s.String()
+}
+
+type DeleteOverridepolicyStatus struct {
+  // {"en":"APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values", "zh_CN":"APIVersion 定义对象表示的版本化模式。 服务器应将已识别的模式转换为最新的内部值，并可能拒绝无法识别的值"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase", "zh_CN":"Kind 是一个字符串值，表示此对象表示的 REST 资源。 服务器可以从客户端提交请求的端点推断出这一点。 无法更新。驼峰式规则"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"DeleteOverridepolicyStatus of the operation. One of: 'Success' or 'Failure'", "zh_CN":"操作状态。“Success”或“Failure” 之一"}
+  DeleteOverridepolicyStatus *string `json:"status,omitempty" xml:"status,omitempty" require:"true"`
+  // {"en":"Suggested HTTP return code for this status, 0 if not set", "zh_CN":"此状态的建议 HTTP 返回代码，如果未设置，则为 0"}
+  Code *int32 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Extended data associated with the reason. Each reason may define its own extended details. This field is optional and the data returned is not guaranteed to conform to any schema except that defined by the reason type", "zh_CN":"与原因（Reason）相关的扩展数据。每个原因都可以定义自己的扩展细节。 此字段是可选的，并且不保证返回的数据符合任何模式，除非由原因类型定义"}
+  Details *DeleteOverridepolicyStatusDetails `json:"details,omitempty" xml:"details,omitempty" require:"true"`
+}
+
+func (s DeleteOverridepolicyStatus) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteOverridepolicyStatus) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteOverridepolicyStatus) SetApiVersion(v string) *DeleteOverridepolicyStatus {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *DeleteOverridepolicyStatus) SetKind(v string) *DeleteOverridepolicyStatus {
+  s.Kind = &v
+  return s
+}
+
+func (s *DeleteOverridepolicyStatus) SetStatus(v string) *DeleteOverridepolicyStatus {
+  s.DeleteOverridepolicyStatus = &v
+  return s
+}
+
+func (s *DeleteOverridepolicyStatus) SetCode(v int32) *DeleteOverridepolicyStatus {
+  s.Code = &v
+  return s
+}
+
+func (s *DeleteOverridepolicyStatus) SetDetails(v *DeleteOverridepolicyStatusDetails) *DeleteOverridepolicyStatus {
+  s.Details = v
+  return s
+}
+
+type DeleteOverridepolicyStatusDetails struct {
+  // {"en":"The name attribute of the resource associated with the status StatusReason (when there is a single name which can be described)", "zh_CN":"与状态 StatusReason 关联的资源的名称属性（当有一个可以描述的名称时）"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"The kind attribute of the resource associated with the status StatusReason. On some operations may differ from the requested resource Kind", "zh_CN":"与状态 StatusReason 关联的资源的种类属性"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"The group attribute of the resource associated with the status StatusReason", "zh_CN":"与状态 StatusReason 关联的资源的组属性"}
+  Group *string `json:"group,omitempty" xml:"group,omitempty" require:"true"`
+  // {"en":"UID of the resource. (when there is a single resource which can be described)", "zh_CN":"资源的 UID（当有单个可以描述的资源时）"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty" require:"true"`
+}
+
+func (s DeleteOverridepolicyStatusDetails) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteOverridepolicyStatusDetails) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteOverridepolicyStatusDetails) SetName(v string) *DeleteOverridepolicyStatusDetails {
+  s.Name = &v
+  return s
+}
+
+func (s *DeleteOverridepolicyStatusDetails) SetKind(v string) *DeleteOverridepolicyStatusDetails {
+  s.Kind = &v
+  return s
+}
+
+func (s *DeleteOverridepolicyStatusDetails) SetGroup(v string) *DeleteOverridepolicyStatusDetails {
+  s.Group = &v
+  return s
+}
+
+func (s *DeleteOverridepolicyStatusDetails) SetUid(v string) *DeleteOverridepolicyStatusDetails {
+  s.Uid = &v
+  return s
+}
+
+
+
+
+type UpdateHorizontalPodAutoscalerRequest struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *UpdateHorizontalPodAutoscalerObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"spec defines the behaviour of autoscaler.", "zh_CN":"spec 定义自动缩放器的规约"}
+  Spec *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec `json:"spec,omitempty" xml:"spec,omitempty"`
+}
+
+func (s UpdateHorizontalPodAutoscalerRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerRequest) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerRequest) SetApiVersion(v string) *UpdateHorizontalPodAutoscalerRequest {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerRequest) SetKind(v string) *UpdateHorizontalPodAutoscalerRequest {
+  s.Kind = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerRequest) SetMetadata(v *UpdateHorizontalPodAutoscalerObjectMeta) *UpdateHorizontalPodAutoscalerRequest {
+  s.Metadata = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerRequest) SetSpec(v *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) *UpdateHorizontalPodAutoscalerRequest {
+  s.Spec = v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"UpdateHorizontalPodAutoscalerHorizontalPodAutoscaler", "zh_CN":"UpdateHorizontalPodAutoscalerHorizontalPodAutoscaler"}
+  Data *UpdateHorizontalPodAutoscalerHorizontalPodAutoscaler `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s UpdateHorizontalPodAutoscalerResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerResponse) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerResponse) SetCode(v int64) *UpdateHorizontalPodAutoscalerResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerResponse) SetMsg(v string) *UpdateHorizontalPodAutoscalerResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerResponse) SetRequestId(v string) *UpdateHorizontalPodAutoscalerResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerResponse) SetData(v *UpdateHorizontalPodAutoscalerHorizontalPodAutoscaler) *UpdateHorizontalPodAutoscalerResponse {
+  s.Data = v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+  // {"en":"资源name", "zh_CN":"资源名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s UpdateHorizontalPodAutoscalerPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerPaths) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerPaths) SetNamespace(v string) *UpdateHorizontalPodAutoscalerPaths {
+  s.Namespace = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerPaths) SetName(v string) *UpdateHorizontalPodAutoscalerPaths {
+  s.Name = &v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerParameters struct {
+}
+
+func (s UpdateHorizontalPodAutoscalerParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerParameters) GoString() string {
+  return s.String()
+}
+
+type UpdateHorizontalPodAutoscalerRequestHeader struct {
+}
+
+func (s UpdateHorizontalPodAutoscalerRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerRequestHeader) GoString() string {
+  return s.String()
+}
+
+type UpdateHorizontalPodAutoscalerResponseHeader struct {
+}
+
+func (s UpdateHorizontalPodAutoscalerResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerResponseHeader) GoString() string {
+  return s.String()
+}
+
+type UpdateHorizontalPodAutoscalerObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*UpdateHorizontalPodAutoscalerOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*UpdateHorizontalPodAutoscalerManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s UpdateHorizontalPodAutoscalerObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerObjectMeta) SetName(v string) *UpdateHorizontalPodAutoscalerObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerObjectMeta) SetGenerateName(v string) *UpdateHorizontalPodAutoscalerObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerObjectMeta) SetNamespace(v string) *UpdateHorizontalPodAutoscalerObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerObjectMeta) SetSelfLink(v string) *UpdateHorizontalPodAutoscalerObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerObjectMeta) SetUid(v string) *UpdateHorizontalPodAutoscalerObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerObjectMeta) SetResourceVersion(v string) *UpdateHorizontalPodAutoscalerObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerObjectMeta) SetGeneration(v int64) *UpdateHorizontalPodAutoscalerObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerObjectMeta) SetCreationTimestamp(v string) *UpdateHorizontalPodAutoscalerObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerObjectMeta) SetDeletionTimestamp(v string) *UpdateHorizontalPodAutoscalerObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerObjectMeta) SetDeletionGracePeriodSeconds(v int64) *UpdateHorizontalPodAutoscalerObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerObjectMeta) SetLabels(v map[string]*string) *UpdateHorizontalPodAutoscalerObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerObjectMeta) SetAnnotations(v map[string]*string) *UpdateHorizontalPodAutoscalerObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerObjectMeta) SetOwnerReferences(v []*UpdateHorizontalPodAutoscalerOwnerReference) *UpdateHorizontalPodAutoscalerObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerObjectMeta) SetFinalizers(v []*string) *UpdateHorizontalPodAutoscalerObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerObjectMeta) SetClusterName(v string) *UpdateHorizontalPodAutoscalerObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerObjectMeta) SetManagedFields(v []*UpdateHorizontalPodAutoscalerManagedFieldsEntry) *UpdateHorizontalPodAutoscalerObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this UpdateHorizontalPodAutoscalerManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'UpdateHorizontalPodAutoscalerFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“UpdateHorizontalPodAutoscalerFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"UpdateHorizontalPodAutoscalerFieldsV1 holds the first JSON version format as described in the 'UpdateHorizontalPodAutoscalerFieldsV1' type", "zh_CN":"UpdateHorizontalPodAutoscalerFieldsV1 包含类型 “UpdateHorizontalPodAutoscalerFieldsV1” 中描述的第一个 JSON 版本格式"}
+  UpdateHorizontalPodAutoscalerFieldsV1 *UpdateHorizontalPodAutoscalerFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s UpdateHorizontalPodAutoscalerManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerManagedFieldsEntry) SetManager(v string) *UpdateHorizontalPodAutoscalerManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerManagedFieldsEntry) SetOperation(v string) *UpdateHorizontalPodAutoscalerManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerManagedFieldsEntry) SetApiVersion(v string) *UpdateHorizontalPodAutoscalerManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerManagedFieldsEntry) SetTime(v string) *UpdateHorizontalPodAutoscalerManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerManagedFieldsEntry) SetFieldsType(v string) *UpdateHorizontalPodAutoscalerManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerManagedFieldsEntry) SetFieldsV1(v *UpdateHorizontalPodAutoscalerFieldsV1) *UpdateHorizontalPodAutoscalerManagedFieldsEntry {
+  s.UpdateHorizontalPodAutoscalerFieldsV1 = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerManagedFieldsEntry) SetSubresource(v string) *UpdateHorizontalPodAutoscalerManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerFieldsV1 struct {
+}
+
+func (s UpdateHorizontalPodAutoscalerFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerFieldsV1) GoString() string {
+  return s.String()
+}
+
+type UpdateHorizontalPodAutoscalerOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s UpdateHorizontalPodAutoscalerOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerOwnerReference) SetApiVersion(v string) *UpdateHorizontalPodAutoscalerOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerOwnerReference) SetKind(v string) *UpdateHorizontalPodAutoscalerOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerOwnerReference) SetName(v string) *UpdateHorizontalPodAutoscalerOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerOwnerReference) SetUid(v string) *UpdateHorizontalPodAutoscalerOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerOwnerReference) SetController(v bool) *UpdateHorizontalPodAutoscalerOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerOwnerReference) SetBlockOwnerDeletion(v bool) *UpdateHorizontalPodAutoscalerOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerHorizontalPodAutoscaler struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *UpdateHorizontalPodAutoscalerObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"spec defines the behaviour of autoscaler.", "zh_CN":"spec 定义自动缩放器的规约"}
+  Spec *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec `json:"spec,omitempty" xml:"spec,omitempty"`
+  // {"en":"the current information about the autoscaler", "zh_CN":"自动缩放器的当前信息"}
+  Status *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+func (s UpdateHorizontalPodAutoscalerHorizontalPodAutoscaler) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerHorizontalPodAutoscaler) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerHorizontalPodAutoscaler) SetApiVersion(v string) *UpdateHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerHorizontalPodAutoscaler) SetKind(v string) *UpdateHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.Kind = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerHorizontalPodAutoscaler) SetMetadata(v *UpdateHorizontalPodAutoscalerObjectMeta) *UpdateHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.Metadata = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerHorizontalPodAutoscaler) SetSpec(v *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) *UpdateHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.Spec = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerHorizontalPodAutoscaler) SetStatus(v *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) *UpdateHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.Status = v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus struct {
+  // {"en":"the most recent generation observed by this autoscaler", "zh_CN":"observedGeneration 是此自动缩放器观察到的最新一代"}
+  ObservedGeneration *int64 `json:"observedGeneration,omitempty" xml:"observedGeneration,omitempty"`
+  // {"en":"the current number of replicas of pods managed by this autoscaler", "zh_CN":"此自动缩放器管理的 Pod 的当前副本数"}
+  CurrentReplicas *int32 `json:"currentReplicas,omitempty" xml:"currentReplicas,omitempty" require:"true"`
+  // {"en":"the desired number of replicas of pods managed by this autoscaler", "zh_CN":"此自动缩放器管理的 Pod 副本的所需数量"}
+  DesiredReplicas *int32 `json:"desiredReplicas,omitempty" xml:"desiredReplicas,omitempty" require:"true"`
+}
+
+func (s UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) SetObservedGeneration(v int64) *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus {
+  s.ObservedGeneration = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) SetCurrentReplicas(v int32) *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus {
+  s.CurrentReplicas = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) SetDesiredReplicas(v int32) *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerStatus {
+  s.DesiredReplicas = &v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec struct {
+  // {"en":"reference to scaled resource; horizontal pod autoscaler will learn the current resource consumption and will set the desired number of pods by using its Scale subresource", "zh_CN":"对被扩缩资源的引用； 水平 Pod 自动缩放器将了解当前的资源消耗，并使用其 scale 子资源设置所需的 Pod 数量"}
+  ScaleTargetRef *UpdateHorizontalPodAutoscalerCrossVersionObjectReference `json:"scaleTargetRef,omitempty" xml:"scaleTargetRef,omitempty" require:"true"`
+  // {"en":"the lower limit for the number of replicas to which the autoscaler can scale down. It defaults to 1 pod. minReplicas is allowed to be 0 if the alpha feature gate HPAScaleToZero is enabled and at least one Object or External metric is configured. Scaling is active as long as at least one metric value is available", "zh_CN":"自动缩放器可以缩减的副本数的下限。 它默认为 1 个 Pod。 如果启用了 alpha 特性门禁 HPAScaleToZero 并且配置了至少一个 Object 或 External 度量标准， 则 minReplicas 允许为 0。 只要至少有一个度量值可用，缩放就处于活动状态"}
+  MinReplicas *int32 `json:"minReplicas,omitempty" xml:"minReplicas,omitempty"`
+  // {"en":"the upper limit for the number of pods that can be set by the autoscaler; cannot be smaller than MinReplicas", "zh_CN":"自动扩缩器可以设置的 Pod 数量上限； 不能小于 minReplicas"}
+  MaxReplicas *int32 `json:"maxReplicas,omitempty" xml:"maxReplicas,omitempty" require:"true"`
+  // {"en":"metrics contains the specifications for which to use to calculate the desired replica count (the maximum replica count across all metrics will be used). The desired replica count is calculated multiplying the ratio between the target value and the current value by the current number of pods. Ergo, metrics used must decrease as the pod count is increased, and vice-versa. See the individual metric source types for more information about how each type of metric must respond. If not set, the default metric will be set to 80% average CPU utilization", "zh_CN":"metrics 包含用于计算预期副本数的规约（将使用所有指标的最大副本数）。 预期副本数是通过将目标值与当前值之间的比率乘以当前 Pod 数来计算的。 因此，使用的指标必须随着 Pod 数量的增加而减少，反之亦然。 有关每种类别的指标必须如何响应的更多信息，请参阅各个指标源类别。 如果未设置，默认指标将设置为 80% 的平均 CPU 利用率"}
+  Metrics []*UpdateHorizontalPodAutoscalerMetricSpec `json:"metrics,omitempty" xml:"metrics,omitempty" type:"Repeated"`
+  // {"en":"behavior configures the scaling behavior of the target in both Up and Down directions (scaleUp and scaleDown fields respectively). If not set, the default UpdateHorizontalPodAutoscalerHPAScalingRules for scale up and scale down are used", "zh_CN":"behavior 配置目标在扩容（Up）和缩容（Down）两个方向的扩缩行为（分别用 scaleUp 和 scaleDown 字段）。 如果未设置，则会使用默认的 UpdateHorizontalPodAutoscalerHPAScalingRules 进行扩缩容"}
+  Behavior *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior `json:"behavior,omitempty" xml:"behavior,omitempty"`
+}
+
+func (s UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetScaleTargetRef(v *UpdateHorizontalPodAutoscalerCrossVersionObjectReference) *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.ScaleTargetRef = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetMinReplicas(v int32) *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.MinReplicas = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetMaxReplicas(v int32) *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.MaxReplicas = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetMetrics(v []*UpdateHorizontalPodAutoscalerMetricSpec) *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.Metrics = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetBehavior(v *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.Behavior = v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerCrossVersionObjectReference struct {
+  // {"en":"the API version of the referent", "zh_CN":"被引用对象的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"the kind of the referent", "zh_CN":"被引用对象的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"the name of the referent", "zh_CN":"被引用对象的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s UpdateHorizontalPodAutoscalerCrossVersionObjectReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerCrossVersionObjectReference) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerCrossVersionObjectReference) SetApiVersion(v string) *UpdateHorizontalPodAutoscalerCrossVersionObjectReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerCrossVersionObjectReference) SetKind(v string) *UpdateHorizontalPodAutoscalerCrossVersionObjectReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerCrossVersionObjectReference) SetName(v string) *UpdateHorizontalPodAutoscalerCrossVersionObjectReference {
+  s.Name = &v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerMetricSpec struct {
+  // {"en":"the type of metric source. It should be one of 'ContainerResource', 'External', 'Object', 'Pods' or 'Resource', each mapping to a matching field in the object. Note: 'ContainerResource' type is available on when the feature-gate HPAContainerMetrics is enabled", "zh_CN":"type 是指标源的类别。它取值是 “ContainerResource”、“External”、“Object”、“Pods” 或 “Resource” 之一， 每个类别映射到对象中的一个对应的字段。注意：“ContainerResource” 类别在特性门控 HPAContainerMetrics 启用时可用"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {"en":"refers to a metric describing a single kubernetes object (for example, hits-per-second on an Ingress object)", "zh_CN":"指描述单个 Kubernetes 对象的指标"}
+  Object *UpdateHorizontalPodAutoscalerObjectMetricSource `json:"object,omitempty" xml:"object,omitempty"`
+  // {"en":"refers to a metric describing each pod in the current scale target (for example, transactions-processed-per-second). The values will be averaged together before being compared to the target value", "zh_CN":"指描述当前扩缩目标中每个 Pod 的指标（例如，transactions-processed-per-second）。 在与目标值进行比较之前，这些指标值将被平均"}
+  Pods *UpdateHorizontalPodAutoscalerPodsMetricSource `json:"pods,omitempty" xml:"pods,omitempty"`
+  // {"en":"refers to a resource metric (such as those specified in requests and limits) known to Kubernetes describing each pod in the current scale target (e.g. CPU or memory). Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the 'pods' source", "zh_CN":"指 Kubernetes 已知的资源指标（例如在请求和限制中指定的那些）， 此结构描述当前扩缩目标中的每个 Pod（例如 CPU 或内存）。此类指标内置于 Kubernetes 中， 并且在使用 “Pods” 源的、按 Pod 统计的普通指标之外支持一些特殊的扩缩选项"}
+  Resource *UpdateHorizontalPodAutoscalerResourceMetricSource `json:"resource,omitempty" xml:"resource,omitempty"`
+  // {"en":"refers to a resource metric (such as those specified in requests and limits) known to Kubernetes describing a single container in each pod of the current scale target (e.g. CPU or memory). Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the 'pods' source. This is an alpha feature and can be enabled by the HPAContainerMetrics feature flag", "zh_CN":"指 Kubernetes 已知的资源指标（例如在请求和限制中指定的那些）， 描述当前扩缩目标中每个 Pod 中的单个容器（例如 CPU 或内存）。 此类指标内置于 Kubernetes 中，在使用 “pods” 源的、按 Pod 计算的普通指标之外，还具有一些特殊的扩缩选项。 这是一个 Alpha 特性，可以通过 HPAContainerMetrics 特性标志启用"}
+  ContainerResource *UpdateHorizontalPodAutoscalerContainerResourceMetricSource `json:"containerResource,omitempty" xml:"containerResource,omitempty"`
+  // {"en":"refers to a global metric that is not associated with any Kubernetes object. It allows autoscaling based on information coming from components running outside of cluster (for example length of queue in cloud messaging service, or QPS from loadbalancer running outside of cluster)", "zh_CN":"指的是不与任何 Kubernetes 对象关联的全局指标。 这一字段允许基于来自集群外部运行的组件（例如云消息服务中的队列长度，或来自运行在集群外部的负载均衡器的 QPS）的信息进行自动扩缩容"}
+  External *UpdateHorizontalPodAutoscalerExternalMetricSource `json:"external,omitempty" xml:"external,omitempty"`
+}
+
+func (s UpdateHorizontalPodAutoscalerMetricSpec) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerMetricSpec) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerMetricSpec) SetType(v string) *UpdateHorizontalPodAutoscalerMetricSpec {
+  s.Type = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerMetricSpec) SetObject(v *UpdateHorizontalPodAutoscalerObjectMetricSource) *UpdateHorizontalPodAutoscalerMetricSpec {
+  s.Object = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerMetricSpec) SetPods(v *UpdateHorizontalPodAutoscalerPodsMetricSource) *UpdateHorizontalPodAutoscalerMetricSpec {
+  s.Pods = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerMetricSpec) SetResource(v *UpdateHorizontalPodAutoscalerResourceMetricSource) *UpdateHorizontalPodAutoscalerMetricSpec {
+  s.Resource = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerMetricSpec) SetContainerResource(v *UpdateHorizontalPodAutoscalerContainerResourceMetricSource) *UpdateHorizontalPodAutoscalerMetricSpec {
+  s.ContainerResource = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerMetricSpec) SetExternal(v *UpdateHorizontalPodAutoscalerExternalMetricSource) *UpdateHorizontalPodAutoscalerMetricSpec {
+  s.External = v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerResourceMetricSource struct {
+  // {"en":"the name of the resource in question", "zh_CN":"相关资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"specifies the target value for the given metric", "zh_CN":"指定给定指标的目标值"}
+  Target *UpdateHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+}
+
+func (s UpdateHorizontalPodAutoscalerResourceMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerResourceMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerResourceMetricSource) SetName(v string) *UpdateHorizontalPodAutoscalerResourceMetricSource {
+  s.Name = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerResourceMetricSource) SetTarget(v *UpdateHorizontalPodAutoscalerMetricTarget) *UpdateHorizontalPodAutoscalerResourceMetricSource {
+  s.Target = v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerContainerResourceMetricSource struct {
+  // {"en":"the name of the resource in question", "zh_CN":"相关资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"specifies the target value for the given metric", "zh_CN":"指定给定指标的目标值"}
+  Target *UpdateHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+  // {"en":"the name of the container in the pods of the scaling target", "zh_CN":"扩缩目标的 Pod 中容器的名称"}
+  Container *string `json:"container,omitempty" xml:"container,omitempty" require:"true"`
+}
+
+func (s UpdateHorizontalPodAutoscalerContainerResourceMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerContainerResourceMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerContainerResourceMetricSource) SetName(v string) *UpdateHorizontalPodAutoscalerContainerResourceMetricSource {
+  s.Name = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerContainerResourceMetricSource) SetTarget(v *UpdateHorizontalPodAutoscalerMetricTarget) *UpdateHorizontalPodAutoscalerContainerResourceMetricSource {
+  s.Target = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerContainerResourceMetricSource) SetContainer(v string) *UpdateHorizontalPodAutoscalerContainerResourceMetricSource {
+  s.Container = &v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerExternalMetricSource struct {
+  // {"en":"metric identifies the target metric by name and selector", "zh_CN":"metric 通过名称和选择算符识别目标指标"}
+  Metric *UpdateHorizontalPodAutoscalerMetricIdentifier `json:"metric,omitempty" xml:"metric,omitempty" require:"true"`
+  // {"en":"target specifies the target value for the given metric", "zh_CN":"target 指定给定指标的目标值"}
+  Target *UpdateHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+}
+
+func (s UpdateHorizontalPodAutoscalerExternalMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerExternalMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerExternalMetricSource) SetMetric(v *UpdateHorizontalPodAutoscalerMetricIdentifier) *UpdateHorizontalPodAutoscalerExternalMetricSource {
+  s.Metric = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerExternalMetricSource) SetTarget(v *UpdateHorizontalPodAutoscalerMetricTarget) *UpdateHorizontalPodAutoscalerExternalMetricSource {
+  s.Target = v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerPodsMetricSource struct {
+  // {"en":"metric identifies the target metric by name and selector", "zh_CN":"metric 通过名称和选择算符识别目标指标"}
+  Metric *UpdateHorizontalPodAutoscalerMetricIdentifier `json:"metric,omitempty" xml:"metric,omitempty" require:"true"`
+  // {"en":"target specifies the target value for the given metric", "zh_CN":"target 表示给定指标的目标值"}
+  Target *UpdateHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+}
+
+func (s UpdateHorizontalPodAutoscalerPodsMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerPodsMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerPodsMetricSource) SetMetric(v *UpdateHorizontalPodAutoscalerMetricIdentifier) *UpdateHorizontalPodAutoscalerPodsMetricSource {
+  s.Metric = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerPodsMetricSource) SetTarget(v *UpdateHorizontalPodAutoscalerMetricTarget) *UpdateHorizontalPodAutoscalerPodsMetricSource {
+  s.Target = v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerObjectMetricSource struct {
+  // {"en":"describedObject specifies the descriptions of a object,such as kind,name apiVersion", "zh_CN":"describeObject 表示对象的描述，如对象的 kind、name、apiVersion"}
+  DescribedObject *UpdateHorizontalPodAutoscalerCrossVersionObjectReference `json:"describedObject,omitempty" xml:"describedObject,omitempty" require:"true"`
+  // {"en":"target specifies the target value for the given metric", "zh_CN":"target 表示给定指标的目标值"}
+  Target *UpdateHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+  // {"en":"metric identifies the target metric by name and selector", "zh_CN":"metric 通过名称和选择算符识别目标指标"}
+  Metric *UpdateHorizontalPodAutoscalerMetricIdentifier `json:"metric,omitempty" xml:"metric,omitempty" require:"true"`
+}
+
+func (s UpdateHorizontalPodAutoscalerObjectMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerObjectMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerObjectMetricSource) SetDescribedObject(v *UpdateHorizontalPodAutoscalerCrossVersionObjectReference) *UpdateHorizontalPodAutoscalerObjectMetricSource {
+  s.DescribedObject = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerObjectMetricSource) SetTarget(v *UpdateHorizontalPodAutoscalerMetricTarget) *UpdateHorizontalPodAutoscalerObjectMetricSource {
+  s.Target = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerObjectMetricSource) SetMetric(v *UpdateHorizontalPodAutoscalerMetricIdentifier) *UpdateHorizontalPodAutoscalerObjectMetricSource {
+  s.Metric = v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerMetricTarget struct {
+  // {"en":"type represents whether the metric type is Utilization, Value, or AverageValue", "zh_CN":"type 表示指标类别是 Utilization、Value 或 AverageValue"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {"en":"the target value of the metric (as a quantity)", "zh_CN":"value 是指标的目标值（以数量形式给出）"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty"`
+  // {"en":"the target value of the average of the metric across all relevant pods (as a quantity)", "zh_CN":"averageValue 是跨所有 Pod 得出的指标均值的目标值（以数量形式给出）"}
+  AverageValue *string `json:"averageValue,omitempty" xml:"averageValue,omitempty"`
+  // {"en":"the target value of the average of the resource metric across all relevant pods, represented as a percentage of the requested value of the resource for the pods. Currently only valid for Resource metric source type", "zh_CN":"averageUtilization 是跨所有相关 Pod 得出的资源指标均值的目标值， 表示为 Pod 资源请求值的百分比。目前仅对 “Resource” 指标源类别有效"}
+  AverageUtilization *int32 `json:"averageUtilization,omitempty" xml:"averageUtilization,omitempty"`
+}
+
+func (s UpdateHorizontalPodAutoscalerMetricTarget) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerMetricTarget) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerMetricTarget) SetType(v string) *UpdateHorizontalPodAutoscalerMetricTarget {
+  s.Type = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerMetricTarget) SetValue(v string) *UpdateHorizontalPodAutoscalerMetricTarget {
+  s.Value = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerMetricTarget) SetAverageValue(v string) *UpdateHorizontalPodAutoscalerMetricTarget {
+  s.AverageValue = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerMetricTarget) SetAverageUtilization(v int32) *UpdateHorizontalPodAutoscalerMetricTarget {
+  s.AverageUtilization = &v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerMetricIdentifier struct {
+  // {"en":"the name of the given metric", "zh_CN":"给定指标的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"the string-encoded form of a standard kubernetes label selector for the given metric When set, it is passed as an additional parameter to the metrics server for more specific metrics scoping. When unset, just the metricName will be used to gather metrics", "zh_CN":"给定指标的标准 Kubernetes 标签选择算符的字符串编码形式。 设置后，它作为附加参数传递给指标服务器，以获取更具体的指标范围。 未设置时，仅 metricName 参数将用于收集指标"}
+  Selector *UpdateHorizontalPodAutoscalerLabelSelector `json:"selector,omitempty" xml:"selector,omitempty"`
+}
+
+func (s UpdateHorizontalPodAutoscalerMetricIdentifier) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerMetricIdentifier) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerMetricIdentifier) SetName(v string) *UpdateHorizontalPodAutoscalerMetricIdentifier {
+  s.Name = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerMetricIdentifier) SetSelector(v *UpdateHorizontalPodAutoscalerLabelSelector) *UpdateHorizontalPodAutoscalerMetricIdentifier {
+  s.Selector = v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerLabelSelector struct {
+  // {"en":"a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is 'key', the operator is 'In', and the values array contains only 'value'. The requirements are ANDed", "zh_CN":"matchLabels 是 {key,value} 键值对的映射。matchLabels 映射中的单个 {key,value} 键值对相当于 matchExpressions 的一个元素，其键字段为 key，运算符为 In，values 数组仅包含 value。所表达的需求最终要按逻辑与的关系组合"}
+  MatchLabels map[string]*string `json:"matchLabels,omitempty" xml:"matchLabels,omitempty"`
+  // {"en":"a list of label selector requirements. The requirements are ANDed", "zh_CN":"标签选择器要求的列表，这些要求的结果按逻辑与的关系来计算"}
+  MatchExpressions []*UpdateHorizontalPodAutoscalerLabelSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s UpdateHorizontalPodAutoscalerLabelSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerLabelSelector) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerLabelSelector) SetMatchLabels(v map[string]*string) *UpdateHorizontalPodAutoscalerLabelSelector {
+  s.MatchLabels = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerLabelSelector) SetMatchExpressions(v []*UpdateHorizontalPodAutoscalerLabelSelectorRequirement) *UpdateHorizontalPodAutoscalerLabelSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerLabelSelectorRequirement struct {
+  // {"en":"the label key that the selector applies to", "zh_CN":"选择器应用的标签键"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist", "zh_CN":"表示键与一组值的关系。有效的运算符包括 In、NotIn、Exists 和 DoesNotExist"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch", "zh_CN":"values 是一个字符串值数组。如果运算符为 In 或 NotIn，则 values 数组必须为非空。如果运算符是 Exists 或 DoesNotExist，则 values 数组必须为空。该数组在策略性合并补丁（Strategic Merge Patch）期间被替换"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s UpdateHorizontalPodAutoscalerLabelSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerLabelSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerLabelSelectorRequirement) SetKey(v string) *UpdateHorizontalPodAutoscalerLabelSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerLabelSelectorRequirement) SetOperator(v string) *UpdateHorizontalPodAutoscalerLabelSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerLabelSelectorRequirement) SetValues(v []*string) *UpdateHorizontalPodAutoscalerLabelSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior struct {
+  // {"en":"scaleUp is scaling policy for scaling Up. If not set, the default value is the higher of:- increase no more than 4 pods per 60 seconds- double the number of pods per 60 seconds No stabilization is used", "zh_CN":"scaleUp 是用于扩容的扩缩策略。如果未设置，则默认值为以下值中的较高者：- 每 60 秒增加不超过 4 个 Pod- 每 60 秒 Pod 数量翻倍。不使用稳定窗口"}
+  ScaleUp *UpdateHorizontalPodAutoscalerHPAScalingRules `json:"scaleUp,omitempty" xml:"scaleUp,omitempty"`
+  // {"en":"scaleDown is scaling policy for scaling Down. If not set, the default value is to allow to scale down to minReplicas pods, with a 300 second stabilization window (i.e., the highest recommendation for the last 300sec is used)", "zh_CN":"scaleDown 是缩容策略。如果未设置，则默认值允许缩减到 minReplicas 数量的 Pod， 具有 300 秒的稳定窗口（使用最近 300 秒的最高推荐值）"}
+  ScaleDown *UpdateHorizontalPodAutoscalerHPAScalingRules `json:"scaleDown,omitempty" xml:"scaleDown,omitempty"`
+}
+
+func (s UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) SetScaleUp(v *UpdateHorizontalPodAutoscalerHPAScalingRules) *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior {
+  s.ScaleUp = v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) SetScaleDown(v *UpdateHorizontalPodAutoscalerHPAScalingRules) *UpdateHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior {
+  s.ScaleDown = v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerHPAScalingRules struct {
+  // {"en":"stabilizationWindowSeconds is the number of seconds for which past recommendations should be considered while scaling up or scaling down. StabilizationWindowSeconds must be greater than or equal to zero and less than or equal to 3600 (one hour). If not set, use the default values: - For scale up: 0 (i.e. no stabilization is done). - For scale down: 300 (i.e. the stabilization window is 300 seconds long)", "zh_CN":"stabilizationWindowSeconds 是在扩缩容时应考虑的之前建议的秒数。stabilizationWindowSeconds 必须大于或等于零且小于或等于 3600（一小时）。如果未设置，则使用默认值：扩容：0（不设置稳定窗口）。缩容：300（即稳定窗口为 300 秒）"}
+  StabilizationWindowSeconds *int32 `json:"stabilizationWindowSeconds,omitempty" xml:"stabilizationWindowSeconds,omitempty"`
+  // {"en":"selectPolicy is used to specify which policy should be used. If not set, the default value Max is used", "zh_CN":"selectPolicy 用于指定应该使用哪个策略。如果未设置，则使用默认值 Max"}
+  SelectPolicy *string `json:"selectPolicy,omitempty" xml:"selectPolicy,omitempty"`
+  // {"en":"policies is a list of potential scaling polices which can be used during scaling. At least one policy must be specified, otherwise the UpdateHorizontalPodAutoscalerHPAScalingRules will be discarded as invalid", "zh_CN":"policies 是可在扩缩容过程中使用的潜在扩缩策略的列表。必须至少指定一个策略，否则 UpdateHorizontalPodAutoscalerHPAScalingRules 将被视为无效而丢弃"}
+  Policies []*UpdateHorizontalPodAutoscalerHPAScalingPolicy `json:"policies,omitempty" xml:"policies,omitempty" type:"Repeated"`
+}
+
+func (s UpdateHorizontalPodAutoscalerHPAScalingRules) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerHPAScalingRules) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerHPAScalingRules) SetStabilizationWindowSeconds(v int32) *UpdateHorizontalPodAutoscalerHPAScalingRules {
+  s.StabilizationWindowSeconds = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerHPAScalingRules) SetSelectPolicy(v string) *UpdateHorizontalPodAutoscalerHPAScalingRules {
+  s.SelectPolicy = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerHPAScalingRules) SetPolicies(v []*UpdateHorizontalPodAutoscalerHPAScalingPolicy) *UpdateHorizontalPodAutoscalerHPAScalingRules {
+  s.Policies = v
+  return s
+}
+
+type UpdateHorizontalPodAutoscalerHPAScalingPolicy struct {
+  // {"en":"type is used to specify the scaling policy", "zh_CN":"type 用于指定扩缩策略"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty"`
+  // {"en":"value contains the amount of change which is permitted by the policy. It must be greater than zero", "zh_CN":"value 包含策略允许的更改量。它必须大于零"}
+  Value *int32 `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+  // {"en":"periodSeconds specifies the window of time for which the policy should hold true. PeriodSeconds must be greater than zero and less than or equal to 1800 (30 min)", "zh_CN":"periodSeconds 表示策略应该保持为 true 的时间窗口长度。 periodSeconds 必须大于零且小于或等于 1800（30 分钟）"}
+  PeriodSeconds *int32 `json:"periodSeconds,omitempty" xml:"periodSeconds,omitempty" require:"true"`
+}
+
+func (s UpdateHorizontalPodAutoscalerHPAScalingPolicy) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHorizontalPodAutoscalerHPAScalingPolicy) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHorizontalPodAutoscalerHPAScalingPolicy) SetType(v string) *UpdateHorizontalPodAutoscalerHPAScalingPolicy {
+  s.Type = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerHPAScalingPolicy) SetValue(v int32) *UpdateHorizontalPodAutoscalerHPAScalingPolicy {
+  s.Value = &v
+  return s
+}
+
+func (s *UpdateHorizontalPodAutoscalerHPAScalingPolicy) SetPeriodSeconds(v int32) *UpdateHorizontalPodAutoscalerHPAScalingPolicy {
+  s.PeriodSeconds = &v
+  return s
+}
+
+
+
+
+type GetHorizontalPodAutoscalerRequest struct {
+}
+
+func (s GetHorizontalPodAutoscalerRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerRequest) GoString() string {
+  return s.String()
+}
+
+type GetHorizontalPodAutoscalerResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"GetHorizontalPodAutoscalerHorizontalPodAutoscaler", "zh_CN":"GetHorizontalPodAutoscalerHorizontalPodAutoscaler"}
+  Data *GetHorizontalPodAutoscalerHorizontalPodAutoscaler `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s GetHorizontalPodAutoscalerResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerResponse) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerResponse) SetCode(v int64) *GetHorizontalPodAutoscalerResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerResponse) SetMsg(v string) *GetHorizontalPodAutoscalerResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerResponse) SetRequestId(v string) *GetHorizontalPodAutoscalerResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerResponse) SetData(v *GetHorizontalPodAutoscalerHorizontalPodAutoscaler) *GetHorizontalPodAutoscalerResponse {
+  s.Data = v
+  return s
+}
+
+type GetHorizontalPodAutoscalerPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+  // {"en":"hpa name", "zh_CN":"hpa名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s GetHorizontalPodAutoscalerPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerPaths) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerPaths) SetNamespace(v string) *GetHorizontalPodAutoscalerPaths {
+  s.Namespace = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerPaths) SetName(v string) *GetHorizontalPodAutoscalerPaths {
+  s.Name = &v
+  return s
+}
+
+type GetHorizontalPodAutoscalerParameters struct {
+}
+
+func (s GetHorizontalPodAutoscalerParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerParameters) GoString() string {
+  return s.String()
+}
+
+type GetHorizontalPodAutoscalerRequestHeader struct {
+}
+
+func (s GetHorizontalPodAutoscalerRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerRequestHeader) GoString() string {
+  return s.String()
+}
+
+type GetHorizontalPodAutoscalerResponseHeader struct {
+}
+
+func (s GetHorizontalPodAutoscalerResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerResponseHeader) GoString() string {
+  return s.String()
+}
+
+type GetHorizontalPodAutoscalerObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*GetHorizontalPodAutoscalerOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*GetHorizontalPodAutoscalerManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s GetHorizontalPodAutoscalerObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerObjectMeta) SetName(v string) *GetHorizontalPodAutoscalerObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerObjectMeta) SetGenerateName(v string) *GetHorizontalPodAutoscalerObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerObjectMeta) SetNamespace(v string) *GetHorizontalPodAutoscalerObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerObjectMeta) SetSelfLink(v string) *GetHorizontalPodAutoscalerObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerObjectMeta) SetUid(v string) *GetHorizontalPodAutoscalerObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerObjectMeta) SetResourceVersion(v string) *GetHorizontalPodAutoscalerObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerObjectMeta) SetGeneration(v int64) *GetHorizontalPodAutoscalerObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerObjectMeta) SetCreationTimestamp(v string) *GetHorizontalPodAutoscalerObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerObjectMeta) SetDeletionTimestamp(v string) *GetHorizontalPodAutoscalerObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerObjectMeta) SetDeletionGracePeriodSeconds(v int64) *GetHorizontalPodAutoscalerObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerObjectMeta) SetLabels(v map[string]*string) *GetHorizontalPodAutoscalerObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerObjectMeta) SetAnnotations(v map[string]*string) *GetHorizontalPodAutoscalerObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerObjectMeta) SetOwnerReferences(v []*GetHorizontalPodAutoscalerOwnerReference) *GetHorizontalPodAutoscalerObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerObjectMeta) SetFinalizers(v []*string) *GetHorizontalPodAutoscalerObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerObjectMeta) SetClusterName(v string) *GetHorizontalPodAutoscalerObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerObjectMeta) SetManagedFields(v []*GetHorizontalPodAutoscalerManagedFieldsEntry) *GetHorizontalPodAutoscalerObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type GetHorizontalPodAutoscalerManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this GetHorizontalPodAutoscalerManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'GetHorizontalPodAutoscalerFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“GetHorizontalPodAutoscalerFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"GetHorizontalPodAutoscalerFieldsV1 holds the first JSON version format as described in the 'GetHorizontalPodAutoscalerFieldsV1' type", "zh_CN":"GetHorizontalPodAutoscalerFieldsV1 包含类型 “GetHorizontalPodAutoscalerFieldsV1” 中描述的第一个 JSON 版本格式"}
+  GetHorizontalPodAutoscalerFieldsV1 *GetHorizontalPodAutoscalerFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s GetHorizontalPodAutoscalerManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerManagedFieldsEntry) SetManager(v string) *GetHorizontalPodAutoscalerManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerManagedFieldsEntry) SetOperation(v string) *GetHorizontalPodAutoscalerManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerManagedFieldsEntry) SetApiVersion(v string) *GetHorizontalPodAutoscalerManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerManagedFieldsEntry) SetTime(v string) *GetHorizontalPodAutoscalerManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerManagedFieldsEntry) SetFieldsType(v string) *GetHorizontalPodAutoscalerManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerManagedFieldsEntry) SetFieldsV1(v *GetHorizontalPodAutoscalerFieldsV1) *GetHorizontalPodAutoscalerManagedFieldsEntry {
+  s.GetHorizontalPodAutoscalerFieldsV1 = v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerManagedFieldsEntry) SetSubresource(v string) *GetHorizontalPodAutoscalerManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type GetHorizontalPodAutoscalerFieldsV1 struct {
+}
+
+func (s GetHorizontalPodAutoscalerFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerFieldsV1) GoString() string {
+  return s.String()
+}
+
+type GetHorizontalPodAutoscalerOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s GetHorizontalPodAutoscalerOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerOwnerReference) SetApiVersion(v string) *GetHorizontalPodAutoscalerOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerOwnerReference) SetKind(v string) *GetHorizontalPodAutoscalerOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerOwnerReference) SetName(v string) *GetHorizontalPodAutoscalerOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerOwnerReference) SetUid(v string) *GetHorizontalPodAutoscalerOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerOwnerReference) SetController(v bool) *GetHorizontalPodAutoscalerOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerOwnerReference) SetBlockOwnerDeletion(v bool) *GetHorizontalPodAutoscalerOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+type GetHorizontalPodAutoscalerHorizontalPodAutoscaler struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *GetHorizontalPodAutoscalerObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"spec defines the behaviour of autoscaler.", "zh_CN":"spec 定义自动缩放器的规约"}
+  Spec *GetHorizontalPodAutoscalerHorizontalPodAutoscalerSpec `json:"spec,omitempty" xml:"spec,omitempty"`
+  // {"en":"the current information about the autoscaler", "zh_CN":"自动缩放器的当前信息"}
+  Status *GetHorizontalPodAutoscalerHorizontalPodAutoscalerStatus `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+func (s GetHorizontalPodAutoscalerHorizontalPodAutoscaler) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerHorizontalPodAutoscaler) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerHorizontalPodAutoscaler) SetApiVersion(v string) *GetHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerHorizontalPodAutoscaler) SetKind(v string) *GetHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.Kind = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerHorizontalPodAutoscaler) SetMetadata(v *GetHorizontalPodAutoscalerObjectMeta) *GetHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.Metadata = v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerHorizontalPodAutoscaler) SetSpec(v *GetHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) *GetHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.Spec = v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerHorizontalPodAutoscaler) SetStatus(v *GetHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) *GetHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.Status = v
+  return s
+}
+
+type GetHorizontalPodAutoscalerHorizontalPodAutoscalerStatus struct {
+  // {"en":"the most recent generation observed by this autoscaler", "zh_CN":"observedGeneration 是此自动缩放器观察到的最新一代"}
+  ObservedGeneration *int64 `json:"observedGeneration,omitempty" xml:"observedGeneration,omitempty"`
+  // {"en":"the current number of replicas of pods managed by this autoscaler", "zh_CN":"此自动缩放器管理的 Pod 的当前副本数"}
+  CurrentReplicas *int32 `json:"currentReplicas,omitempty" xml:"currentReplicas,omitempty" require:"true"`
+  // {"en":"the desired number of replicas of pods managed by this autoscaler", "zh_CN":"此自动缩放器管理的 Pod 副本的所需数量"}
+  DesiredReplicas *int32 `json:"desiredReplicas,omitempty" xml:"desiredReplicas,omitempty" require:"true"`
+}
+
+func (s GetHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) SetObservedGeneration(v int64) *GetHorizontalPodAutoscalerHorizontalPodAutoscalerStatus {
+  s.ObservedGeneration = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) SetCurrentReplicas(v int32) *GetHorizontalPodAutoscalerHorizontalPodAutoscalerStatus {
+  s.CurrentReplicas = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) SetDesiredReplicas(v int32) *GetHorizontalPodAutoscalerHorizontalPodAutoscalerStatus {
+  s.DesiredReplicas = &v
+  return s
+}
+
+type GetHorizontalPodAutoscalerHorizontalPodAutoscalerSpec struct {
+  // {"en":"reference to scaled resource; horizontal pod autoscaler will learn the current resource consumption and will set the desired number of pods by using its Scale subresource", "zh_CN":"对被扩缩资源的引用； 水平 Pod 自动缩放器将了解当前的资源消耗，并使用其 scale 子资源设置所需的 Pod 数量"}
+  ScaleTargetRef *GetHorizontalPodAutoscalerCrossVersionObjectReference `json:"scaleTargetRef,omitempty" xml:"scaleTargetRef,omitempty" require:"true"`
+  // {"en":"the lower limit for the number of replicas to which the autoscaler can scale down. It defaults to 1 pod. minReplicas is allowed to be 0 if the alpha feature gate HPAScaleToZero is enabled and at least one Object or External metric is configured. Scaling is active as long as at least one metric value is available", "zh_CN":"自动缩放器可以缩减的副本数的下限。 它默认为 1 个 Pod。 如果启用了 alpha 特性门禁 HPAScaleToZero 并且配置了至少一个 Object 或 External 度量标准， 则 minReplicas 允许为 0。 只要至少有一个度量值可用，缩放就处于活动状态"}
+  MinReplicas *int32 `json:"minReplicas,omitempty" xml:"minReplicas,omitempty"`
+  // {"en":"the upper limit for the number of pods that can be set by the autoscaler; cannot be smaller than MinReplicas", "zh_CN":"自动扩缩器可以设置的 Pod 数量上限； 不能小于 minReplicas"}
+  MaxReplicas *int32 `json:"maxReplicas,omitempty" xml:"maxReplicas,omitempty" require:"true"`
+  // {"en":"metrics contains the specifications for which to use to calculate the desired replica count (the maximum replica count across all metrics will be used). The desired replica count is calculated multiplying the ratio between the target value and the current value by the current number of pods. Ergo, metrics used must decrease as the pod count is increased, and vice-versa. See the individual metric source types for more information about how each type of metric must respond. If not set, the default metric will be set to 80% average CPU utilization", "zh_CN":"metrics 包含用于计算预期副本数的规约（将使用所有指标的最大副本数）。 预期副本数是通过将目标值与当前值之间的比率乘以当前 Pod 数来计算的。 因此，使用的指标必须随着 Pod 数量的增加而减少，反之亦然。 有关每种类别的指标必须如何响应的更多信息，请参阅各个指标源类别。 如果未设置，默认指标将设置为 80% 的平均 CPU 利用率"}
+  Metrics []*GetHorizontalPodAutoscalerMetricSpec `json:"metrics,omitempty" xml:"metrics,omitempty" type:"Repeated"`
+  // {"en":"behavior configures the scaling behavior of the target in both Up and Down directions (scaleUp and scaleDown fields respectively). If not set, the default GetHorizontalPodAutoscalerHPAScalingRules for scale up and scale down are used", "zh_CN":"behavior 配置目标在扩容（Up）和缩容（Down）两个方向的扩缩行为（分别用 scaleUp 和 scaleDown 字段）。 如果未设置，则会使用默认的 GetHorizontalPodAutoscalerHPAScalingRules 进行扩缩容"}
+  Behavior *GetHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior `json:"behavior,omitempty" xml:"behavior,omitempty"`
+}
+
+func (s GetHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetScaleTargetRef(v *GetHorizontalPodAutoscalerCrossVersionObjectReference) *GetHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.ScaleTargetRef = v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetMinReplicas(v int32) *GetHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.MinReplicas = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetMaxReplicas(v int32) *GetHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.MaxReplicas = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetMetrics(v []*GetHorizontalPodAutoscalerMetricSpec) *GetHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.Metrics = v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetBehavior(v *GetHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) *GetHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.Behavior = v
+  return s
+}
+
+type GetHorizontalPodAutoscalerCrossVersionObjectReference struct {
+  // {"en":"the API version of the referent", "zh_CN":"被引用对象的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"the kind of the referent", "zh_CN":"被引用对象的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"the name of the referent", "zh_CN":"被引用对象的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s GetHorizontalPodAutoscalerCrossVersionObjectReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerCrossVersionObjectReference) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerCrossVersionObjectReference) SetApiVersion(v string) *GetHorizontalPodAutoscalerCrossVersionObjectReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerCrossVersionObjectReference) SetKind(v string) *GetHorizontalPodAutoscalerCrossVersionObjectReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerCrossVersionObjectReference) SetName(v string) *GetHorizontalPodAutoscalerCrossVersionObjectReference {
+  s.Name = &v
+  return s
+}
+
+type GetHorizontalPodAutoscalerMetricSpec struct {
+  // {"en":"the type of metric source. It should be one of 'ContainerResource', 'External', 'Object', 'Pods' or 'Resource', each mapping to a matching field in the object. Note: 'ContainerResource' type is available on when the feature-gate HPAContainerMetrics is enabled", "zh_CN":"type 是指标源的类别。它取值是 “ContainerResource”、“External”、“Object”、“Pods” 或 “Resource” 之一， 每个类别映射到对象中的一个对应的字段。注意：“ContainerResource” 类别在特性门控 HPAContainerMetrics 启用时可用"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {"en":"refers to a metric describing a single kubernetes object (for example, hits-per-second on an Ingress object)", "zh_CN":"指描述单个 Kubernetes 对象的指标"}
+  Object *GetHorizontalPodAutoscalerObjectMetricSource `json:"object,omitempty" xml:"object,omitempty"`
+  // {"en":"refers to a metric describing each pod in the current scale target (for example, transactions-processed-per-second). The values will be averaged together before being compared to the target value", "zh_CN":"指描述当前扩缩目标中每个 Pod 的指标（例如，transactions-processed-per-second）。 在与目标值进行比较之前，这些指标值将被平均"}
+  Pods *GetHorizontalPodAutoscalerPodsMetricSource `json:"pods,omitempty" xml:"pods,omitempty"`
+  // {"en":"refers to a resource metric (such as those specified in requests and limits) known to Kubernetes describing each pod in the current scale target (e.g. CPU or memory). Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the 'pods' source", "zh_CN":"指 Kubernetes 已知的资源指标（例如在请求和限制中指定的那些）， 此结构描述当前扩缩目标中的每个 Pod（例如 CPU 或内存）。此类指标内置于 Kubernetes 中， 并且在使用 “Pods” 源的、按 Pod 统计的普通指标之外支持一些特殊的扩缩选项"}
+  Resource *GetHorizontalPodAutoscalerResourceMetricSource `json:"resource,omitempty" xml:"resource,omitempty"`
+  // {"en":"refers to a resource metric (such as those specified in requests and limits) known to Kubernetes describing a single container in each pod of the current scale target (e.g. CPU or memory). Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the 'pods' source. This is an alpha feature and can be enabled by the HPAContainerMetrics feature flag", "zh_CN":"指 Kubernetes 已知的资源指标（例如在请求和限制中指定的那些）， 描述当前扩缩目标中每个 Pod 中的单个容器（例如 CPU 或内存）。 此类指标内置于 Kubernetes 中，在使用 “pods” 源的、按 Pod 计算的普通指标之外，还具有一些特殊的扩缩选项。 这是一个 Alpha 特性，可以通过 HPAContainerMetrics 特性标志启用"}
+  ContainerResource *GetHorizontalPodAutoscalerContainerResourceMetricSource `json:"containerResource,omitempty" xml:"containerResource,omitempty"`
+  // {"en":"refers to a global metric that is not associated with any Kubernetes object. It allows autoscaling based on information coming from components running outside of cluster (for example length of queue in cloud messaging service, or QPS from loadbalancer running outside of cluster)", "zh_CN":"指的是不与任何 Kubernetes 对象关联的全局指标。 这一字段允许基于来自集群外部运行的组件（例如云消息服务中的队列长度，或来自运行在集群外部的负载均衡器的 QPS）的信息进行自动扩缩容"}
+  External *GetHorizontalPodAutoscalerExternalMetricSource `json:"external,omitempty" xml:"external,omitempty"`
+}
+
+func (s GetHorizontalPodAutoscalerMetricSpec) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerMetricSpec) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerMetricSpec) SetType(v string) *GetHorizontalPodAutoscalerMetricSpec {
+  s.Type = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerMetricSpec) SetObject(v *GetHorizontalPodAutoscalerObjectMetricSource) *GetHorizontalPodAutoscalerMetricSpec {
+  s.Object = v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerMetricSpec) SetPods(v *GetHorizontalPodAutoscalerPodsMetricSource) *GetHorizontalPodAutoscalerMetricSpec {
+  s.Pods = v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerMetricSpec) SetResource(v *GetHorizontalPodAutoscalerResourceMetricSource) *GetHorizontalPodAutoscalerMetricSpec {
+  s.Resource = v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerMetricSpec) SetContainerResource(v *GetHorizontalPodAutoscalerContainerResourceMetricSource) *GetHorizontalPodAutoscalerMetricSpec {
+  s.ContainerResource = v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerMetricSpec) SetExternal(v *GetHorizontalPodAutoscalerExternalMetricSource) *GetHorizontalPodAutoscalerMetricSpec {
+  s.External = v
+  return s
+}
+
+type GetHorizontalPodAutoscalerResourceMetricSource struct {
+  // {"en":"the name of the resource in question", "zh_CN":"相关资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"specifies the target value for the given metric", "zh_CN":"指定给定指标的目标值"}
+  Target *GetHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+}
+
+func (s GetHorizontalPodAutoscalerResourceMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerResourceMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerResourceMetricSource) SetName(v string) *GetHorizontalPodAutoscalerResourceMetricSource {
+  s.Name = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerResourceMetricSource) SetTarget(v *GetHorizontalPodAutoscalerMetricTarget) *GetHorizontalPodAutoscalerResourceMetricSource {
+  s.Target = v
+  return s
+}
+
+type GetHorizontalPodAutoscalerContainerResourceMetricSource struct {
+  // {"en":"the name of the resource in question", "zh_CN":"相关资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"specifies the target value for the given metric", "zh_CN":"指定给定指标的目标值"}
+  Target *GetHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+  // {"en":"the name of the container in the pods of the scaling target", "zh_CN":"扩缩目标的 Pod 中容器的名称"}
+  Container *string `json:"container,omitempty" xml:"container,omitempty" require:"true"`
+}
+
+func (s GetHorizontalPodAutoscalerContainerResourceMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerContainerResourceMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerContainerResourceMetricSource) SetName(v string) *GetHorizontalPodAutoscalerContainerResourceMetricSource {
+  s.Name = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerContainerResourceMetricSource) SetTarget(v *GetHorizontalPodAutoscalerMetricTarget) *GetHorizontalPodAutoscalerContainerResourceMetricSource {
+  s.Target = v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerContainerResourceMetricSource) SetContainer(v string) *GetHorizontalPodAutoscalerContainerResourceMetricSource {
+  s.Container = &v
+  return s
+}
+
+type GetHorizontalPodAutoscalerExternalMetricSource struct {
+  // {"en":"metric identifies the target metric by name and selector", "zh_CN":"metric 通过名称和选择算符识别目标指标"}
+  Metric *GetHorizontalPodAutoscalerMetricIdentifier `json:"metric,omitempty" xml:"metric,omitempty" require:"true"`
+  // {"en":"target specifies the target value for the given metric", "zh_CN":"target 指定给定指标的目标值"}
+  Target *GetHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+}
+
+func (s GetHorizontalPodAutoscalerExternalMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerExternalMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerExternalMetricSource) SetMetric(v *GetHorizontalPodAutoscalerMetricIdentifier) *GetHorizontalPodAutoscalerExternalMetricSource {
+  s.Metric = v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerExternalMetricSource) SetTarget(v *GetHorizontalPodAutoscalerMetricTarget) *GetHorizontalPodAutoscalerExternalMetricSource {
+  s.Target = v
+  return s
+}
+
+type GetHorizontalPodAutoscalerPodsMetricSource struct {
+  // {"en":"metric identifies the target metric by name and selector", "zh_CN":"metric 通过名称和选择算符识别目标指标"}
+  Metric *GetHorizontalPodAutoscalerMetricIdentifier `json:"metric,omitempty" xml:"metric,omitempty" require:"true"`
+  // {"en":"target specifies the target value for the given metric", "zh_CN":"target 表示给定指标的目标值"}
+  Target *GetHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+}
+
+func (s GetHorizontalPodAutoscalerPodsMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerPodsMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerPodsMetricSource) SetMetric(v *GetHorizontalPodAutoscalerMetricIdentifier) *GetHorizontalPodAutoscalerPodsMetricSource {
+  s.Metric = v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerPodsMetricSource) SetTarget(v *GetHorizontalPodAutoscalerMetricTarget) *GetHorizontalPodAutoscalerPodsMetricSource {
+  s.Target = v
+  return s
+}
+
+type GetHorizontalPodAutoscalerObjectMetricSource struct {
+  // {"en":"describedObject specifies the descriptions of a object,such as kind,name apiVersion", "zh_CN":"describeObject 表示对象的描述，如对象的 kind、name、apiVersion"}
+  DescribedObject *GetHorizontalPodAutoscalerCrossVersionObjectReference `json:"describedObject,omitempty" xml:"describedObject,omitempty" require:"true"`
+  // {"en":"target specifies the target value for the given metric", "zh_CN":"target 表示给定指标的目标值"}
+  Target *GetHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+  // {"en":"metric identifies the target metric by name and selector", "zh_CN":"metric 通过名称和选择算符识别目标指标"}
+  Metric *GetHorizontalPodAutoscalerMetricIdentifier `json:"metric,omitempty" xml:"metric,omitempty" require:"true"`
+}
+
+func (s GetHorizontalPodAutoscalerObjectMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerObjectMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerObjectMetricSource) SetDescribedObject(v *GetHorizontalPodAutoscalerCrossVersionObjectReference) *GetHorizontalPodAutoscalerObjectMetricSource {
+  s.DescribedObject = v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerObjectMetricSource) SetTarget(v *GetHorizontalPodAutoscalerMetricTarget) *GetHorizontalPodAutoscalerObjectMetricSource {
+  s.Target = v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerObjectMetricSource) SetMetric(v *GetHorizontalPodAutoscalerMetricIdentifier) *GetHorizontalPodAutoscalerObjectMetricSource {
+  s.Metric = v
+  return s
+}
+
+type GetHorizontalPodAutoscalerMetricTarget struct {
+  // {"en":"type represents whether the metric type is Utilization, Value, or AverageValue", "zh_CN":"type 表示指标类别是 Utilization、Value 或 AverageValue"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {"en":"the target value of the metric (as a quantity)", "zh_CN":"value 是指标的目标值（以数量形式给出）"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty"`
+  // {"en":"the target value of the average of the metric across all relevant pods (as a quantity)", "zh_CN":"averageValue 是跨所有 Pod 得出的指标均值的目标值（以数量形式给出）"}
+  AverageValue *string `json:"averageValue,omitempty" xml:"averageValue,omitempty"`
+  // {"en":"the target value of the average of the resource metric across all relevant pods, represented as a percentage of the requested value of the resource for the pods. Currently only valid for Resource metric source type", "zh_CN":"averageUtilization 是跨所有相关 Pod 得出的资源指标均值的目标值， 表示为 Pod 资源请求值的百分比。目前仅对 “Resource” 指标源类别有效"}
+  AverageUtilization *int32 `json:"averageUtilization,omitempty" xml:"averageUtilization,omitempty"`
+}
+
+func (s GetHorizontalPodAutoscalerMetricTarget) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerMetricTarget) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerMetricTarget) SetType(v string) *GetHorizontalPodAutoscalerMetricTarget {
+  s.Type = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerMetricTarget) SetValue(v string) *GetHorizontalPodAutoscalerMetricTarget {
+  s.Value = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerMetricTarget) SetAverageValue(v string) *GetHorizontalPodAutoscalerMetricTarget {
+  s.AverageValue = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerMetricTarget) SetAverageUtilization(v int32) *GetHorizontalPodAutoscalerMetricTarget {
+  s.AverageUtilization = &v
+  return s
+}
+
+type GetHorizontalPodAutoscalerMetricIdentifier struct {
+  // {"en":"the name of the given metric", "zh_CN":"给定指标的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"the string-encoded form of a standard kubernetes label selector for the given metric When set, it is passed as an additional parameter to the metrics server for more specific metrics scoping. When unset, just the metricName will be used to gather metrics", "zh_CN":"给定指标的标准 Kubernetes 标签选择算符的字符串编码形式。 设置后，它作为附加参数传递给指标服务器，以获取更具体的指标范围。 未设置时，仅 metricName 参数将用于收集指标"}
+  Selector *GetHorizontalPodAutoscalerLabelSelector `json:"selector,omitempty" xml:"selector,omitempty"`
+}
+
+func (s GetHorizontalPodAutoscalerMetricIdentifier) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerMetricIdentifier) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerMetricIdentifier) SetName(v string) *GetHorizontalPodAutoscalerMetricIdentifier {
+  s.Name = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerMetricIdentifier) SetSelector(v *GetHorizontalPodAutoscalerLabelSelector) *GetHorizontalPodAutoscalerMetricIdentifier {
+  s.Selector = v
+  return s
+}
+
+type GetHorizontalPodAutoscalerLabelSelector struct {
+  // {"en":"a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is 'key', the operator is 'In', and the values array contains only 'value'. The requirements are ANDed", "zh_CN":"matchLabels 是 {key,value} 键值对的映射。matchLabels 映射中的单个 {key,value} 键值对相当于 matchExpressions 的一个元素，其键字段为 key，运算符为 In，values 数组仅包含 value。所表达的需求最终要按逻辑与的关系组合"}
+  MatchLabels map[string]*string `json:"matchLabels,omitempty" xml:"matchLabels,omitempty"`
+  // {"en":"a list of label selector requirements. The requirements are ANDed", "zh_CN":"标签选择器要求的列表，这些要求的结果按逻辑与的关系来计算"}
+  MatchExpressions []*GetHorizontalPodAutoscalerLabelSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s GetHorizontalPodAutoscalerLabelSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerLabelSelector) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerLabelSelector) SetMatchLabels(v map[string]*string) *GetHorizontalPodAutoscalerLabelSelector {
+  s.MatchLabels = v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerLabelSelector) SetMatchExpressions(v []*GetHorizontalPodAutoscalerLabelSelectorRequirement) *GetHorizontalPodAutoscalerLabelSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type GetHorizontalPodAutoscalerLabelSelectorRequirement struct {
+  // {"en":"the label key that the selector applies to", "zh_CN":"选择器应用的标签键"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist", "zh_CN":"表示键与一组值的关系。有效的运算符包括 In、NotIn、Exists 和 DoesNotExist"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch", "zh_CN":"values 是一个字符串值数组。如果运算符为 In 或 NotIn，则 values 数组必须为非空。如果运算符是 Exists 或 DoesNotExist，则 values 数组必须为空。该数组在策略性合并补丁（Strategic Merge Patch）期间被替换"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s GetHorizontalPodAutoscalerLabelSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerLabelSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerLabelSelectorRequirement) SetKey(v string) *GetHorizontalPodAutoscalerLabelSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerLabelSelectorRequirement) SetOperator(v string) *GetHorizontalPodAutoscalerLabelSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerLabelSelectorRequirement) SetValues(v []*string) *GetHorizontalPodAutoscalerLabelSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type GetHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior struct {
+  // {"en":"scaleUp is scaling policy for scaling Up. If not set, the default value is the higher of:- increase no more than 4 pods per 60 seconds- double the number of pods per 60 seconds No stabilization is used", "zh_CN":"scaleUp 是用于扩容的扩缩策略。如果未设置，则默认值为以下值中的较高者：- 每 60 秒增加不超过 4 个 Pod- 每 60 秒 Pod 数量翻倍。不使用稳定窗口"}
+  ScaleUp *GetHorizontalPodAutoscalerHPAScalingRules `json:"scaleUp,omitempty" xml:"scaleUp,omitempty"`
+  // {"en":"scaleDown is scaling policy for scaling Down. If not set, the default value is to allow to scale down to minReplicas pods, with a 300 second stabilization window (i.e., the highest recommendation for the last 300sec is used)", "zh_CN":"scaleDown 是缩容策略。如果未设置，则默认值允许缩减到 minReplicas 数量的 Pod， 具有 300 秒的稳定窗口（使用最近 300 秒的最高推荐值）"}
+  ScaleDown *GetHorizontalPodAutoscalerHPAScalingRules `json:"scaleDown,omitempty" xml:"scaleDown,omitempty"`
+}
+
+func (s GetHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) SetScaleUp(v *GetHorizontalPodAutoscalerHPAScalingRules) *GetHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior {
+  s.ScaleUp = v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) SetScaleDown(v *GetHorizontalPodAutoscalerHPAScalingRules) *GetHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior {
+  s.ScaleDown = v
+  return s
+}
+
+type GetHorizontalPodAutoscalerHPAScalingRules struct {
+  // {"en":"stabilizationWindowSeconds is the number of seconds for which past recommendations should be considered while scaling up or scaling down. StabilizationWindowSeconds must be greater than or equal to zero and less than or equal to 3600 (one hour). If not set, use the default values: - For scale up: 0 (i.e. no stabilization is done). - For scale down: 300 (i.e. the stabilization window is 300 seconds long)", "zh_CN":"stabilizationWindowSeconds 是在扩缩容时应考虑的之前建议的秒数。stabilizationWindowSeconds 必须大于或等于零且小于或等于 3600（一小时）。如果未设置，则使用默认值：扩容：0（不设置稳定窗口）。缩容：300（即稳定窗口为 300 秒）"}
+  StabilizationWindowSeconds *int32 `json:"stabilizationWindowSeconds,omitempty" xml:"stabilizationWindowSeconds,omitempty"`
+  // {"en":"selectPolicy is used to specify which policy should be used. If not set, the default value Max is used", "zh_CN":"selectPolicy 用于指定应该使用哪个策略。如果未设置，则使用默认值 Max"}
+  SelectPolicy *string `json:"selectPolicy,omitempty" xml:"selectPolicy,omitempty"`
+  // {"en":"policies is a list of potential scaling polices which can be used during scaling. At least one policy must be specified, otherwise the GetHorizontalPodAutoscalerHPAScalingRules will be discarded as invalid", "zh_CN":"policies 是可在扩缩容过程中使用的潜在扩缩策略的列表。必须至少指定一个策略，否则 GetHorizontalPodAutoscalerHPAScalingRules 将被视为无效而丢弃"}
+  Policies []*GetHorizontalPodAutoscalerHPAScalingPolicy `json:"policies,omitempty" xml:"policies,omitempty" type:"Repeated"`
+}
+
+func (s GetHorizontalPodAutoscalerHPAScalingRules) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerHPAScalingRules) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerHPAScalingRules) SetStabilizationWindowSeconds(v int32) *GetHorizontalPodAutoscalerHPAScalingRules {
+  s.StabilizationWindowSeconds = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerHPAScalingRules) SetSelectPolicy(v string) *GetHorizontalPodAutoscalerHPAScalingRules {
+  s.SelectPolicy = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerHPAScalingRules) SetPolicies(v []*GetHorizontalPodAutoscalerHPAScalingPolicy) *GetHorizontalPodAutoscalerHPAScalingRules {
+  s.Policies = v
+  return s
+}
+
+type GetHorizontalPodAutoscalerHPAScalingPolicy struct {
+  // {"en":"type is used to specify the scaling policy", "zh_CN":"type 用于指定扩缩策略"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty"`
+  // {"en":"value contains the amount of change which is permitted by the policy. It must be greater than zero", "zh_CN":"value 包含策略允许的更改量。它必须大于零"}
+  Value *int32 `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+  // {"en":"periodSeconds specifies the window of time for which the policy should hold true. PeriodSeconds must be greater than zero and less than or equal to 1800 (30 min)", "zh_CN":"periodSeconds 表示策略应该保持为 true 的时间窗口长度。 periodSeconds 必须大于零且小于或等于 1800（30 分钟）"}
+  PeriodSeconds *int32 `json:"periodSeconds,omitempty" xml:"periodSeconds,omitempty" require:"true"`
+}
+
+func (s GetHorizontalPodAutoscalerHPAScalingPolicy) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetHorizontalPodAutoscalerHPAScalingPolicy) GoString() string {
+  return s.String()
+}
+
+func (s *GetHorizontalPodAutoscalerHPAScalingPolicy) SetType(v string) *GetHorizontalPodAutoscalerHPAScalingPolicy {
+  s.Type = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerHPAScalingPolicy) SetValue(v int32) *GetHorizontalPodAutoscalerHPAScalingPolicy {
+  s.Value = &v
+  return s
+}
+
+func (s *GetHorizontalPodAutoscalerHPAScalingPolicy) SetPeriodSeconds(v int32) *GetHorizontalPodAutoscalerHPAScalingPolicy {
+  s.PeriodSeconds = &v
+  return s
+}
+
+
+
+
+type GetPropagationPoliciesRequest struct {
+}
+
+func (s GetPropagationPoliciesRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesRequest) GoString() string {
+  return s.String()
+}
+
+type GetPropagationPoliciesResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"propagationPolicy ", "zh_CN":"propagationPolicy 对象"}
+  Data *GetPropagationPoliciesPropagationPolicy `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s GetPropagationPoliciesResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesResponse) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesResponse) SetCode(v int64) *GetPropagationPoliciesResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesResponse) SetMsg(v string) *GetPropagationPoliciesResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesResponse) SetRequestId(v string) *GetPropagationPoliciesResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesResponse) SetData(v *GetPropagationPoliciesPropagationPolicy) *GetPropagationPoliciesResponse {
+  s.Data = v
+  return s
+}
+
+type GetPropagationPoliciesPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+  // {"en":"The name of propagationPolicy", "zh_CN":"propagationPolicy 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s GetPropagationPoliciesPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesPaths) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesPaths) SetNamespace(v string) *GetPropagationPoliciesPaths {
+  s.Namespace = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesPaths) SetName(v string) *GetPropagationPoliciesPaths {
+  s.Name = &v
+  return s
+}
+
+type GetPropagationPoliciesParameters struct {
+}
+
+func (s GetPropagationPoliciesParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesParameters) GoString() string {
+  return s.String()
+}
+
+type GetPropagationPoliciesRequestHeader struct {
+}
+
+func (s GetPropagationPoliciesRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesRequestHeader) GoString() string {
+  return s.String()
+}
+
+type GetPropagationPoliciesResponseHeader struct {
+}
+
+func (s GetPropagationPoliciesResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesResponseHeader) GoString() string {
+  return s.String()
+}
+
+type GetPropagationPoliciesPropagationPolicy struct {
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"Standard object metadata.", "zh_CN":"标准的对象元数据。"}
+  Metadata *GetPropagationPoliciesObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Spec defines the behavior of a GetPropagationPoliciesPropagationPolicy", "zh_CN":"spec 定义 GetPropagationPoliciesPropagationPolicy 的行为"}
+  Spec *GetPropagationPoliciesPropagationSpec `json:"spec,omitempty" xml:"spec,omitempty" require:"true"`
+}
+
+func (s GetPropagationPoliciesPropagationPolicy) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesPropagationPolicy) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesPropagationPolicy) SetKind(v string) *GetPropagationPoliciesPropagationPolicy {
+  s.Kind = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesPropagationPolicy) SetApiVersion(v string) *GetPropagationPoliciesPropagationPolicy {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesPropagationPolicy) SetMetadata(v *GetPropagationPoliciesObjectMeta) *GetPropagationPoliciesPropagationPolicy {
+  s.Metadata = v
+  return s
+}
+
+func (s *GetPropagationPoliciesPropagationPolicy) SetSpec(v *GetPropagationPoliciesPropagationSpec) *GetPropagationPoliciesPropagationPolicy {
+  s.Spec = v
+  return s
+}
+
+type GetPropagationPoliciesPropagationSpec struct {
+  // {"en":"resource that this propagation policy applies to", "zh_CN":"策略应用的资源"}
+  ResourceSelectors []*GetPropagationPoliciesResourceSelector `json:"resourceSelectors,omitempty" xml:"resourceSelectors,omitempty" type:"Repeated"`
+  // {"en":"association", "zh_CN":"association"}
+  Association *bool `json:"association,omitempty" xml:"association,omitempty"`
+  // {"en":"scheduling strategy", "zh_CN":"调度策略"}
+  GetPropagationPoliciesPlacement *GetPropagationPoliciesPlacement `json:"placement,omitempty" xml:"placement,omitempty"`
+  // {"en":"dependent overrides", "zh_CN":"依赖的覆盖策略"}
+  DependentOverrides []*string `json:"dependentOverrides,omitempty" xml:"dependentOverrides,omitempty" type:"Repeated"`
+  // {"en":"name of scheduler", "zh_CN":"调度器名称"}
+  SchedulerName *string `json:"schedulerName,omitempty" xml:"schedulerName,omitempty"`
+  // {"en":"indicates how Karmada migrates applications in case of failures", "zh_CN":"failover 重调度策略"}
+  Failover *GetPropagationPoliciesFailoverBehavior `json:"failover,omitempty" xml:"failover,omitempty"`
+}
+
+func (s GetPropagationPoliciesPropagationSpec) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesPropagationSpec) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesPropagationSpec) SetResourceSelectors(v []*GetPropagationPoliciesResourceSelector) *GetPropagationPoliciesPropagationSpec {
+  s.ResourceSelectors = v
+  return s
+}
+
+func (s *GetPropagationPoliciesPropagationSpec) SetAssociation(v bool) *GetPropagationPoliciesPropagationSpec {
+  s.Association = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesPropagationSpec) SetPlacement(v *GetPropagationPoliciesPlacement) *GetPropagationPoliciesPropagationSpec {
+  s.GetPropagationPoliciesPlacement = v
+  return s
+}
+
+func (s *GetPropagationPoliciesPropagationSpec) SetDependentOverrides(v []*string) *GetPropagationPoliciesPropagationSpec {
+  s.DependentOverrides = v
+  return s
+}
+
+func (s *GetPropagationPoliciesPropagationSpec) SetSchedulerName(v string) *GetPropagationPoliciesPropagationSpec {
+  s.SchedulerName = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesPropagationSpec) SetFailover(v *GetPropagationPoliciesFailoverBehavior) *GetPropagationPoliciesPropagationSpec {
+  s.Failover = v
+  return s
+}
+
+type GetPropagationPoliciesFailoverBehavior struct {
+  // {"en":"indicates failover behaviors in case of application failure", "zh_CN":"failover 重调度策略"}
+  Application *GetPropagationPoliciesApplicationFailoverBehavior `json:"application,omitempty" xml:"application,omitempty"`
+}
+
+func (s GetPropagationPoliciesFailoverBehavior) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesFailoverBehavior) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesFailoverBehavior) SetApplication(v *GetPropagationPoliciesApplicationFailoverBehavior) *GetPropagationPoliciesFailoverBehavior {
+  s.Application = v
+  return s
+}
+
+type GetPropagationPoliciesApplicationFailoverBehavior struct {
+  // {"en":"indicates the decision conditions of performing the failover process.", "zh_CN":"程序经过多长时间的失败,才属于不健康"}
+  GetPropagationPoliciesDecisionConditions *GetPropagationPoliciesDecisionConditions `json:"decisionConditions,omitempty" xml:"decisionConditions,omitempty"`
+  // {"en":"represents how to deal with the legacy applications on the cluster from which the application is migrated. there are three options: Immediately,Graciously and Never. Graciously by defautl", "zh_CN":"应用在失败后的驱逐方式,有3个可填值: Immediately,Graciously and Never 默认:Graciously "}
+  PurgeMode *string `json:"purgeMode,omitempty" xml:"purgeMode,omitempty"`
+  // {"en":"the maximum waiting duration in seconds before application on the migrated cluster should be deleted.", "zh_CN":"平滑删除时间"}
+  GracePeriodSeconds *int64 `json:"gracePeriodSeconds,omitempty" xml:"gracePeriodSeconds,omitempty"`
+}
+
+func (s GetPropagationPoliciesApplicationFailoverBehavior) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesApplicationFailoverBehavior) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesApplicationFailoverBehavior) SetDecisionConditions(v *GetPropagationPoliciesDecisionConditions) *GetPropagationPoliciesApplicationFailoverBehavior {
+  s.GetPropagationPoliciesDecisionConditions = v
+  return s
+}
+
+func (s *GetPropagationPoliciesApplicationFailoverBehavior) SetPurgeMode(v string) *GetPropagationPoliciesApplicationFailoverBehavior {
+  s.PurgeMode = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesApplicationFailoverBehavior) SetGracePeriodSeconds(v int64) *GetPropagationPoliciesApplicationFailoverBehavior {
+  s.GracePeriodSeconds = &v
+  return s
+}
+
+type GetPropagationPoliciesDecisionConditions struct {
+  // {"en":"represents the period of time Karmada should wait", "zh_CN":"应用经过多长时间后算失败"}
+  TolerationSeconds *int64 `json:"tolerationSeconds,omitempty" xml:"tolerationSeconds,omitempty"`
+}
+
+func (s GetPropagationPoliciesDecisionConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesDecisionConditions) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesDecisionConditions) SetTolerationSeconds(v int64) *GetPropagationPoliciesDecisionConditions {
+  s.TolerationSeconds = &v
+  return s
+}
+
+type GetPropagationPoliciesResourceSelector struct {
+  // {"en":"represents the API version of the target resources", "zh_CN":"表示目标资源的API版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"represents the Kind of the target resources", "zh_CN":"表示目标资源的类型"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"name of the target resource", "zh_CN":"目标资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"A label query over a set of resources", "zh_CN":"对一组资源的标签查询"}
+  LabelSelector *GetPropagationPoliciesMetaV1LabelSelector `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+}
+
+func (s GetPropagationPoliciesResourceSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesResourceSelector) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesResourceSelector) SetApiVersion(v string) *GetPropagationPoliciesResourceSelector {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesResourceSelector) SetKind(v string) *GetPropagationPoliciesResourceSelector {
+  s.Kind = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesResourceSelector) SetNamespace(v string) *GetPropagationPoliciesResourceSelector {
+  s.Namespace = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesResourceSelector) SetName(v string) *GetPropagationPoliciesResourceSelector {
+  s.Name = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesResourceSelector) SetLabelSelector(v *GetPropagationPoliciesMetaV1LabelSelector) *GetPropagationPoliciesResourceSelector {
+  s.LabelSelector = v
+  return s
+}
+
+type GetPropagationPoliciesPlacement struct {
+  // {"en":"the policy that only applies to resources propagated to the matching clusters", "zh_CN":"策略应用到成员集群的目标选择"}
+  GetPropagationPoliciesClusterAffinity *GetPropagationPoliciesClusterAffinity `json:"clusterAffinity,omitempty" xml:"clusterAffinity,omitempty"`
+  // {"en":"toleration of cluster", "zh_CN":"集群容忍度"}
+  ClusterTolerations *GetPropagationPoliciesToleration `json:"clusterTolerations,omitempty" xml:"clusterTolerations,omitempty"`
+  // {"en":"Cluster grouping constraint", "zh_CN":"根据约束对集群进行分组，把资源分散到多个小组"}
+  SpreadConstraints []*GetPropagationPoliciesSpreadConstraint `json:"spreadConstraints,omitempty" xml:"spreadConstraints,omitempty" type:"Repeated"`
+  // {"en":"scheduling strategy of replicas", "zh_CN":"副本调度策略"}
+  ReplicaScheduling *GetPropagationPoliciesReplicaSchedulingStrategy `json:"replicaScheduling,omitempty" xml:"replicaScheduling,omitempty"`
+}
+
+func (s GetPropagationPoliciesPlacement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesPlacement) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesPlacement) SetClusterAffinity(v *GetPropagationPoliciesClusterAffinity) *GetPropagationPoliciesPlacement {
+  s.GetPropagationPoliciesClusterAffinity = v
+  return s
+}
+
+func (s *GetPropagationPoliciesPlacement) SetClusterTolerations(v *GetPropagationPoliciesToleration) *GetPropagationPoliciesPlacement {
+  s.ClusterTolerations = v
+  return s
+}
+
+func (s *GetPropagationPoliciesPlacement) SetSpreadConstraints(v []*GetPropagationPoliciesSpreadConstraint) *GetPropagationPoliciesPlacement {
+  s.SpreadConstraints = v
+  return s
+}
+
+func (s *GetPropagationPoliciesPlacement) SetReplicaScheduling(v *GetPropagationPoliciesReplicaSchedulingStrategy) *GetPropagationPoliciesPlacement {
+  s.ReplicaScheduling = v
+  return s
+}
+
+type GetPropagationPoliciesReplicaSchedulingStrategy struct {
+  // {"en":"scheduling type of replicas", "zh_CN":"副本调度类型"}
+  ReplicaSchedulingType *string `json:"replicaSchedulingType,omitempty" xml:"replicaSchedulingType,omitempty"`
+  // {"en":"division preference of replicas", "zh_CN":"副本数切分方式"}
+  ReplicaDivisionPreference *string `json:"replicaDivisionPreference,omitempty" xml:"replicaDivisionPreference,omitempty"`
+  // {"en":"weight preference", "zh_CN":"权重配置"}
+  WeightPreference *GetPropagationPoliciesClusterPreferences `json:"weightPreference,omitempty" xml:"weightPreference,omitempty"`
+}
+
+func (s GetPropagationPoliciesReplicaSchedulingStrategy) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesReplicaSchedulingStrategy) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesReplicaSchedulingStrategy) SetReplicaSchedulingType(v string) *GetPropagationPoliciesReplicaSchedulingStrategy {
+  s.ReplicaSchedulingType = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesReplicaSchedulingStrategy) SetReplicaDivisionPreference(v string) *GetPropagationPoliciesReplicaSchedulingStrategy {
+  s.ReplicaDivisionPreference = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesReplicaSchedulingStrategy) SetWeightPreference(v *GetPropagationPoliciesClusterPreferences) *GetPropagationPoliciesReplicaSchedulingStrategy {
+  s.WeightPreference = v
+  return s
+}
+
+type GetPropagationPoliciesClusterPreferences struct {
+  // {"en":"static proportion of cluster replicas in total", "zh_CN":"集群副本数占比"}
+  StaticWeightList []*GetPropagationPoliciesStaticClusterWeight `json:"staticWeightList,omitempty" xml:"staticWeightList,omitempty" type:"Repeated"`
+  // {"en":"dynamic proportion of replicas in total", "zh_CN":"动态比重"}
+  DynamicWeight *string `json:"dynamicWeight,omitempty" xml:"dynamicWeight,omitempty"`
+}
+
+func (s GetPropagationPoliciesClusterPreferences) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesClusterPreferences) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesClusterPreferences) SetStaticWeightList(v []*GetPropagationPoliciesStaticClusterWeight) *GetPropagationPoliciesClusterPreferences {
+  s.StaticWeightList = v
+  return s
+}
+
+func (s *GetPropagationPoliciesClusterPreferences) SetDynamicWeight(v string) *GetPropagationPoliciesClusterPreferences {
+  s.DynamicWeight = &v
+  return s
+}
+
+type GetPropagationPoliciesStaticClusterWeight struct {
+  // {"en":"affected clusters by the weight", "zh_CN":"比重生效的目标集群"}
+  TargetCluster *GetPropagationPoliciesClusterAffinity `json:"targetCluster,omitempty" xml:"targetCluster,omitempty"`
+  // {"en":"proportion of replicas in total", "zh_CN":"集群实例数占比"}
+  Weight *int64 `json:"weight,omitempty" xml:"weight,omitempty"`
+}
+
+func (s GetPropagationPoliciesStaticClusterWeight) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesStaticClusterWeight) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesStaticClusterWeight) SetTargetCluster(v *GetPropagationPoliciesClusterAffinity) *GetPropagationPoliciesStaticClusterWeight {
+  s.TargetCluster = v
+  return s
+}
+
+func (s *GetPropagationPoliciesStaticClusterWeight) SetWeight(v int64) *GetPropagationPoliciesStaticClusterWeight {
+  s.Weight = &v
+  return s
+}
+
+type GetPropagationPoliciesSpreadConstraint struct {
+  // {"en":"The member clusters in the cluster federation are divided into multiple groups based on an attribute of the member cluster (currently, only cluster is supported, and the region, zone, and provider attributes may be supported in the future)", "zh_CN":"根据成员集群的某个属性（当前仅支持cluster、后续可能增加对成员集群region、zone、provider等属性支持）将集群联邦中的成员集群分为多个小组"}
+  SpreadByField *string `json:"spreadByField,omitempty" xml:"spreadByField,omitempty"`
+  // {"en":"The member cluster is divided into groups based on labels", "zh_CN":"根据label将成员集群分为多个小组"}
+  SpreadByLabel *string `json:"spreadByLabel,omitempty" xml:"spreadByLabel,omitempty"`
+  // {"en":"Maximum number of groups", "zh_CN":"最大分组数"}
+  MaxGroups *int64 `json:"maxGroups,omitempty" xml:"maxGroups,omitempty"`
+  // {"en":"Minimum number of groups", "zh_CN":"最小分组数"}
+  MinGroups *int64 `json:"minGroups,omitempty" xml:"minGroups,omitempty"`
+}
+
+func (s GetPropagationPoliciesSpreadConstraint) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesSpreadConstraint) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesSpreadConstraint) SetSpreadByField(v string) *GetPropagationPoliciesSpreadConstraint {
+  s.SpreadByField = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesSpreadConstraint) SetSpreadByLabel(v string) *GetPropagationPoliciesSpreadConstraint {
+  s.SpreadByLabel = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesSpreadConstraint) SetMaxGroups(v int64) *GetPropagationPoliciesSpreadConstraint {
+  s.MaxGroups = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesSpreadConstraint) SetMinGroups(v int64) *GetPropagationPoliciesSpreadConstraint {
+  s.MinGroups = &v
+  return s
+}
+
+type GetPropagationPoliciesToleration struct {
+  // {"en":"The taint key that the toleration applies to. Empty means match all taint keys. If the key is empty, operator must be Exists; this combination means to match all values and all keys.", "zh_CN":"容忍度所适用的污点的键名。此字段为空意味着匹配所有的污点键。 如果 key 为空，则 operator 必须为 Exists；这种组合意味着匹配所有值和所有键。"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"Represents a key's relationship to the value. Valid operators are Exists and Equal. Defaults to Equal. Exists is equivalent to wildcard for value, so that a pod can tolerate all taints of a particular category.", "zh_CN":"表示 key 与 value 之间的关系。有效的 operator 取值是 Exists 和 Equal。默认为 Equal。 Exists 相当于 value 为某种通配符，因此 Pod 可以容忍特定类别的所有污点。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"The taint value the toleration matches to. If the operator is Exists, the value should be empty, otherwise just a regular string.", "zh_CN":"容忍度所匹配的污点值。如果 operator 为 Exists，则此 value 值应该为空， 否则 value 值应该是一个正常的字符串。"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty"`
+  // {"en":"Indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute.", "zh_CN":"指示要匹配的污点效果。空值意味著匹配所有污点效果。如果要设置此字段，允许的值为 NoSchedule、PreferNoSchedule 和 NoExecute 之一。"}
+  Effect *string `json:"effect,omitempty" xml:"effect,omitempty"`
+  // {"en":"Represents the period of time the toleration (which must be of effect NoExecute, otherwise this field is ignored) tolerates the taint. By default, it is not set, which means tolerate the taint forever (do not evict). Zero and negative values will be treated as 0 (evict immediately) by the system.", "zh_CN":" 表示容忍度（effect 必须是 NoExecute，否则此字段被忽略）容忍污点的时间长度。 默认情况下，此字段未被设置，这意味着会一直能够容忍对应污点（不会发生驱逐操作）。 零值和负值会被系统当做 0 值处理（立即触发驱逐）。"}
+  TolerationSeconds *int64 `json:"tolerationSeconds,omitempty" xml:"tolerationSeconds,omitempty"`
+}
+
+func (s GetPropagationPoliciesToleration) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesToleration) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesToleration) SetKey(v string) *GetPropagationPoliciesToleration {
+  s.Key = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesToleration) SetOperator(v string) *GetPropagationPoliciesToleration {
+  s.Operator = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesToleration) SetValue(v string) *GetPropagationPoliciesToleration {
+  s.Value = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesToleration) SetEffect(v string) *GetPropagationPoliciesToleration {
+  s.Effect = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesToleration) SetTolerationSeconds(v int64) *GetPropagationPoliciesToleration {
+  s.TolerationSeconds = &v
+  return s
+}
+
+type GetPropagationPoliciesClusterAffinity struct {
+  // {"en":"a filter to select member clusters by labels", "zh_CN":"一个用来选中集群的标签过滤器"}
+  LabelSelector *GetPropagationPoliciesMetaV1LabelSelector `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+  // {"en":"a filter to select member clusters by fields. Currently only three fields of provider(cluster.spec.provider), zone(cluster.spec.zone), and region(cluster.spec.region) are supported", "zh_CN":"一个用来选中集群的字段过滤器，目前支持的字段只有三个：提供商（cluster.spec.provider），区域（cluster.spec.zone），地区（cluster.spec.region）"}
+  GetPropagationPoliciesFieldSelector *GetPropagationPoliciesFieldSelector `json:"fieldSelector,omitempty" xml:"fieldSelector,omitempty"`
+  // {"en":"the list of clusters to be selected", "zh_CN":"选中的集群列表"}
+  ClusterNames []*string `json:"clusterNames,omitempty" xml:"clusterNames,omitempty" type:"Repeated"`
+  // {"en":"the list of clusters to be ignored", "zh_CN":"要忽略的集群列表"}
+  Exclude []*string `json:"exclude,omitempty" xml:"exclude,omitempty" type:"Repeated"`
+}
+
+func (s GetPropagationPoliciesClusterAffinity) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesClusterAffinity) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesClusterAffinity) SetLabelSelector(v *GetPropagationPoliciesMetaV1LabelSelector) *GetPropagationPoliciesClusterAffinity {
+  s.LabelSelector = v
+  return s
+}
+
+func (s *GetPropagationPoliciesClusterAffinity) SetFieldSelector(v *GetPropagationPoliciesFieldSelector) *GetPropagationPoliciesClusterAffinity {
+  s.GetPropagationPoliciesFieldSelector = v
+  return s
+}
+
+func (s *GetPropagationPoliciesClusterAffinity) SetClusterNames(v []*string) *GetPropagationPoliciesClusterAffinity {
+  s.ClusterNames = v
+  return s
+}
+
+func (s *GetPropagationPoliciesClusterAffinity) SetExclude(v []*string) *GetPropagationPoliciesClusterAffinity {
+  s.Exclude = v
+  return s
+}
+
+type GetPropagationPoliciesFieldSelector struct {
+  // {"en":"A list of node selector requirements by node's labels.", "zh_CN":"按节点标签列出的节点选择器需求列表。"}
+  MatchExpressions []*GetPropagationPoliciesCoreV1NodeSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s GetPropagationPoliciesFieldSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesFieldSelector) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesFieldSelector) SetMatchExpressions(v []*GetPropagationPoliciesCoreV1NodeSelectorRequirement) *GetPropagationPoliciesFieldSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type GetPropagationPoliciesCoreV1NodeSelectorRequirement struct {
+  // {"en":"The label key that the selector applies to.", "zh_CN":"选择算符所适用的标签主键。"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"Represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.", "zh_CN":"代表主键与值集之间的关系。合法的 operator 值包括 In、NotIn、Exists、DoesNotExist、Gt 和 Lt。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.", "zh_CN":"一个由字符串值组成的数组。如果 operator 是 In 或 NotIn，则 values 数组不能为空。 如果 operator 为 Exists 或 DoesNotExist，则 values 数组只能为空。 如果 operator 为 Gt 或 Lt，则 values 数组只能包含一个元素，并且该元素会被解释为整数。 在执行策略性合并补丁操作时，此数组会被整体替换。"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s GetPropagationPoliciesCoreV1NodeSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesCoreV1NodeSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesCoreV1NodeSelectorRequirement) SetKey(v string) *GetPropagationPoliciesCoreV1NodeSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesCoreV1NodeSelectorRequirement) SetOperator(v string) *GetPropagationPoliciesCoreV1NodeSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesCoreV1NodeSelectorRequirement) SetValues(v []*string) *GetPropagationPoliciesCoreV1NodeSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type GetPropagationPoliciesMetaV1LabelSelector struct {
+  // {"en":"A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed.", "zh_CN":"matchLabels 映射中的单个 {key,value} 键值对相当于 matchExpressions 的一个元素，其键字段为 key，运算符为 In，values 数组仅包含 value。"}
+  MatchLabels map[string]*string `json:"matchLabels,omitempty" xml:"matchLabels,omitempty"`
+  // {"en":"A list of label selector requirements. The requirements are ANDed.", "zh_CN":"标签选择器要求的列表，这些要求的结果按逻辑与的关系来计算。"}
+  MatchExpressions []*GetPropagationPoliciesLabelSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s GetPropagationPoliciesMetaV1LabelSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesMetaV1LabelSelector) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesMetaV1LabelSelector) SetMatchLabels(v map[string]*string) *GetPropagationPoliciesMetaV1LabelSelector {
+  s.MatchLabels = v
+  return s
+}
+
+func (s *GetPropagationPoliciesMetaV1LabelSelector) SetMatchExpressions(v []*GetPropagationPoliciesLabelSelectorRequirement) *GetPropagationPoliciesMetaV1LabelSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type GetPropagationPoliciesLabelSelectorRequirement struct {
+  // {"en":"key is the label key that the selector applies to.", "zh_CN":"选择器应用的标签键"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist.", "zh_CN":"operator 表示键与一组值的关系。有效的运算符包括 In、NotIn、Exists 和 DoesNotExist。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.", "zh_CN":"values 是一个字符串值数组。如果运算符为 In 或 NotIn，则 values 数组必须为非空。如果运算符是 Exists 或 DoesNotExist，则 values 数组必须为空。该数组在策略性合并补丁（Strategic Merge Patch）期间被替换。"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s GetPropagationPoliciesLabelSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesLabelSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesLabelSelectorRequirement) SetKey(v string) *GetPropagationPoliciesLabelSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesLabelSelectorRequirement) SetOperator(v string) *GetPropagationPoliciesLabelSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesLabelSelectorRequirement) SetValues(v []*string) *GetPropagationPoliciesLabelSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type GetPropagationPoliciesObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*GetPropagationPoliciesOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*GetPropagationPoliciesManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s GetPropagationPoliciesObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesObjectMeta) SetName(v string) *GetPropagationPoliciesObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesObjectMeta) SetGenerateName(v string) *GetPropagationPoliciesObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesObjectMeta) SetNamespace(v string) *GetPropagationPoliciesObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesObjectMeta) SetSelfLink(v string) *GetPropagationPoliciesObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesObjectMeta) SetUid(v string) *GetPropagationPoliciesObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesObjectMeta) SetResourceVersion(v string) *GetPropagationPoliciesObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesObjectMeta) SetGeneration(v int64) *GetPropagationPoliciesObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesObjectMeta) SetCreationTimestamp(v string) *GetPropagationPoliciesObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesObjectMeta) SetDeletionTimestamp(v string) *GetPropagationPoliciesObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesObjectMeta) SetDeletionGracePeriodSeconds(v int64) *GetPropagationPoliciesObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesObjectMeta) SetLabels(v map[string]*string) *GetPropagationPoliciesObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *GetPropagationPoliciesObjectMeta) SetAnnotations(v map[string]*string) *GetPropagationPoliciesObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *GetPropagationPoliciesObjectMeta) SetOwnerReferences(v []*GetPropagationPoliciesOwnerReference) *GetPropagationPoliciesObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *GetPropagationPoliciesObjectMeta) SetFinalizers(v []*string) *GetPropagationPoliciesObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *GetPropagationPoliciesObjectMeta) SetClusterName(v string) *GetPropagationPoliciesObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesObjectMeta) SetManagedFields(v []*GetPropagationPoliciesManagedFieldsEntry) *GetPropagationPoliciesObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type GetPropagationPoliciesManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this GetPropagationPoliciesManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'GetPropagationPoliciesFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“GetPropagationPoliciesFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"GetPropagationPoliciesFieldsV1 holds the first JSON version format as described in the 'GetPropagationPoliciesFieldsV1' type", "zh_CN":"GetPropagationPoliciesFieldsV1 包含类型 “GetPropagationPoliciesFieldsV1” 中描述的第一个 JSON 版本格式"}
+  GetPropagationPoliciesFieldsV1 *GetPropagationPoliciesFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s GetPropagationPoliciesManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesManagedFieldsEntry) SetManager(v string) *GetPropagationPoliciesManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesManagedFieldsEntry) SetOperation(v string) *GetPropagationPoliciesManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesManagedFieldsEntry) SetApiVersion(v string) *GetPropagationPoliciesManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesManagedFieldsEntry) SetTime(v string) *GetPropagationPoliciesManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesManagedFieldsEntry) SetFieldsType(v string) *GetPropagationPoliciesManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesManagedFieldsEntry) SetFieldsV1(v *GetPropagationPoliciesFieldsV1) *GetPropagationPoliciesManagedFieldsEntry {
+  s.GetPropagationPoliciesFieldsV1 = v
+  return s
+}
+
+func (s *GetPropagationPoliciesManagedFieldsEntry) SetSubresource(v string) *GetPropagationPoliciesManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type GetPropagationPoliciesFieldsV1 struct {
+}
+
+func (s GetPropagationPoliciesFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesFieldsV1) GoString() string {
+  return s.String()
+}
+
+type GetPropagationPoliciesOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s GetPropagationPoliciesOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPropagationPoliciesOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *GetPropagationPoliciesOwnerReference) SetApiVersion(v string) *GetPropagationPoliciesOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesOwnerReference) SetKind(v string) *GetPropagationPoliciesOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesOwnerReference) SetName(v string) *GetPropagationPoliciesOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesOwnerReference) SetUid(v string) *GetPropagationPoliciesOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesOwnerReference) SetController(v bool) *GetPropagationPoliciesOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *GetPropagationPoliciesOwnerReference) SetBlockOwnerDeletion(v bool) *GetPropagationPoliciesOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+
+
+
+type WsPatchOverridepolicyRequest struct {
+}
+
+func (s WsPatchOverridepolicyRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyRequest) GoString() string {
+  return s.String()
+}
+
+type WsPatchOverridepolicyResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"WsPatchOverridepolicyOverridePolicy", "zh_CN":"WsPatchOverridepolicyOverridePolicy"}
+  Data map[string]interface{} `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s WsPatchOverridepolicyResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyResponse) GoString() string {
+  return s.String()
+}
+
+func (s *WsPatchOverridepolicyResponse) SetCode(v int64) *WsPatchOverridepolicyResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyResponse) SetMsg(v string) *WsPatchOverridepolicyResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyResponse) SetRequestId(v string) *WsPatchOverridepolicyResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyResponse) SetData(v map[string]interface{}) *WsPatchOverridepolicyResponse {
+  s.Data = v
+  return s
+}
+
+type WsPatchOverridepolicyPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+  // {"en":"The name of WsPatchOverridepolicyOverridePolicy", "zh_CN":"WsPatchOverridepolicyOverridePolicy 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s WsPatchOverridepolicyPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyPaths) GoString() string {
+  return s.String()
+}
+
+func (s *WsPatchOverridepolicyPaths) SetNamespace(v string) *WsPatchOverridepolicyPaths {
+  s.Namespace = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyPaths) SetName(v string) *WsPatchOverridepolicyPaths {
+  s.Name = &v
+  return s
+}
+
+type WsPatchOverridepolicyParameters struct {
+}
+
+func (s WsPatchOverridepolicyParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyParameters) GoString() string {
+  return s.String()
+}
+
+type WsPatchOverridepolicyRequestHeader struct {
+}
+
+func (s WsPatchOverridepolicyRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyRequestHeader) GoString() string {
+  return s.String()
+}
+
+type WsPatchOverridepolicyResponseHeader struct {
+}
+
+func (s WsPatchOverridepolicyResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyResponseHeader) GoString() string {
+  return s.String()
+}
+
+type WsPatchOverridepolicyOverridePolicy struct {
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"Standard object metadata.", "zh_CN":"标准的对象元数据。"}
+  Metadata *WsPatchOverridepolicyObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Spec defines the behavior of a WsPatchOverridepolicyOverridePolicy", "zh_CN":"spec 定义 WsPatchOverridepolicyOverridePolicy 的行为"}
+  Spec *WsPatchOverridepolicyOverrideSpec `json:"spec,omitempty" xml:"spec,omitempty" require:"true"`
+}
+
+func (s WsPatchOverridepolicyOverridePolicy) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyOverridePolicy) GoString() string {
+  return s.String()
+}
+
+func (s *WsPatchOverridepolicyOverridePolicy) SetKind(v string) *WsPatchOverridepolicyOverridePolicy {
+  s.Kind = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyOverridePolicy) SetApiVersion(v string) *WsPatchOverridepolicyOverridePolicy {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyOverridePolicy) SetMetadata(v *WsPatchOverridepolicyObjectMeta) *WsPatchOverridepolicyOverridePolicy {
+  s.Metadata = v
+  return s
+}
+
+func (s *WsPatchOverridepolicyOverridePolicy) SetSpec(v *WsPatchOverridepolicyOverrideSpec) *WsPatchOverridepolicyOverridePolicy {
+  s.Spec = v
+  return s
+}
+
+type WsPatchOverridepolicyOverrideSpec struct {
+  // {"en":"restricts resource types that this override policy applies to. If you ignore this field it means matching all resources.", "zh_CN":"限制此覆盖策略应用的资源类型。如果忽略此字段，则表示匹配所有资源"}
+  ResourceSelectors []*WsPatchOverridepolicyResourceSelector `json:"resourceSelectors,omitempty" xml:"resourceSelectors,omitempty" type:"Repeated"`
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  OverrideRules []*WsPatchOverridepolicyRuleWithCluster `json:"overrideRules,omitempty" xml:"overrideRules,omitempty" type:"Repeated"`
+  // {"en":"defines restrictions on the override policy that only applies to resources propagated to the matching clusters. If you ignore this field it means matching all clusters", "zh_CN":"定义了对此覆盖策略应用到成员集群的目标选择。如果忽略此字段，则表示匹配所有集群"}
+  TargetCluster *WsPatchOverridepolicyClusterAffinity `json:"targetCluster,omitempty" xml:"targetCluster,omitempty"`
+  // {"en":"represents the override policy to be applied to resources", "zh_CN":"表示将应用于资源的覆盖规则，已弃用，请使用OverrideRules"}
+  WsPatchOverridepolicyOverriders *WsPatchOverridepolicyOverriders `json:"overriders,omitempty" xml:"overriders,omitempty"`
+}
+
+func (s WsPatchOverridepolicyOverrideSpec) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyOverrideSpec) GoString() string {
+  return s.String()
+}
+
+func (s *WsPatchOverridepolicyOverrideSpec) SetResourceSelectors(v []*WsPatchOverridepolicyResourceSelector) *WsPatchOverridepolicyOverrideSpec {
+  s.ResourceSelectors = v
+  return s
+}
+
+func (s *WsPatchOverridepolicyOverrideSpec) SetOverrideRules(v []*WsPatchOverridepolicyRuleWithCluster) *WsPatchOverridepolicyOverrideSpec {
+  s.OverrideRules = v
+  return s
+}
+
+func (s *WsPatchOverridepolicyOverrideSpec) SetTargetCluster(v *WsPatchOverridepolicyClusterAffinity) *WsPatchOverridepolicyOverrideSpec {
+  s.TargetCluster = v
+  return s
+}
+
+func (s *WsPatchOverridepolicyOverrideSpec) SetOverriders(v *WsPatchOverridepolicyOverriders) *WsPatchOverridepolicyOverrideSpec {
+  s.WsPatchOverridepolicyOverriders = v
+  return s
+}
+
+type WsPatchOverridepolicyResourceSelector struct {
+  // {"en":"represents the API version of the target resources", "zh_CN":"表示目标资源的API版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"represents the Kind of the target resources", "zh_CN":"表示目标资源的类型"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"name of the target resource", "zh_CN":"目标资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"A label query over a set of resources", "zh_CN":"对一组资源的标签查询"}
+  LabelSelector *WsPatchOverridepolicyMetaV1LabelSelector `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+}
+
+func (s WsPatchOverridepolicyResourceSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyResourceSelector) GoString() string {
+  return s.String()
+}
+
+func (s *WsPatchOverridepolicyResourceSelector) SetApiVersion(v string) *WsPatchOverridepolicyResourceSelector {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyResourceSelector) SetKind(v string) *WsPatchOverridepolicyResourceSelector {
+  s.Kind = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyResourceSelector) SetNamespace(v string) *WsPatchOverridepolicyResourceSelector {
+  s.Namespace = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyResourceSelector) SetName(v string) *WsPatchOverridepolicyResourceSelector {
+  s.Name = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyResourceSelector) SetLabelSelector(v *WsPatchOverridepolicyMetaV1LabelSelector) *WsPatchOverridepolicyResourceSelector {
+  s.LabelSelector = v
+  return s
+}
+
+type WsPatchOverridepolicyRuleWithCluster struct {
+  // {"en":"defines restrictions on the override policy that only applies to resources propagated to the matching clusters. If you ignore this field it means matching all clusters", "zh_CN":"定义了对此覆盖策略应用到成员集群的目标选择。如果忽略此字段，则表示匹配所有集群"}
+  TargetCluster *WsPatchOverridepolicyClusterAffinity `json:"TargetCluster,omitempty" xml:"TargetCluster,omitempty"`
+  // {"en":"the override policy to be applied to resources", "zh_CN":"应用于资源的覆盖规则"}
+  WsPatchOverridepolicyOverriders *WsPatchOverridepolicyOverriders `json:"WsPatchOverridepolicyOverriders,omitempty" xml:"WsPatchOverridepolicyOverriders,omitempty" require:"true"`
+}
+
+func (s WsPatchOverridepolicyRuleWithCluster) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyRuleWithCluster) GoString() string {
+  return s.String()
+}
+
+func (s *WsPatchOverridepolicyRuleWithCluster) SetTargetCluster(v *WsPatchOverridepolicyClusterAffinity) *WsPatchOverridepolicyRuleWithCluster {
+  s.TargetCluster = v
+  return s
+}
+
+func (s *WsPatchOverridepolicyRuleWithCluster) SetOverriders(v *WsPatchOverridepolicyOverriders) *WsPatchOverridepolicyRuleWithCluster {
+  s.WsPatchOverridepolicyOverriders = v
+  return s
+}
+
+type WsPatchOverridepolicyClusterAffinity struct {
+  // {"en":"a filter to select member clusters by labels", "zh_CN":"一个用来选中集群的标签过滤器"}
+  LabelSelector *WsPatchOverridepolicyMetaV1LabelSelector `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+  // {"en":"a filter to select member clusters by fields. Currently only three fields of provider(cluster.spec.provider), zone(cluster.spec.zone), and region(cluster.spec.region) are supported", "zh_CN":"一个用来选中集群的字段过滤器，目前支持的字段只有三个：提供商（cluster.spec.provider），区域（cluster.spec.zone），地区（cluster.spec.region）"}
+  WsPatchOverridepolicyFieldSelector *WsPatchOverridepolicyFieldSelector `json:"fieldSelector,omitempty" xml:"fieldSelector,omitempty"`
+  // {"en":"the list of clusters to be selected", "zh_CN":"选中的集群列表"}
+  ClusterNames []*string `json:"clusterNames,omitempty" xml:"clusterNames,omitempty" type:"Repeated"`
+  // {"en":"the list of clusters to be ignored", "zh_CN":"要忽略的集群列表"}
+  Exclude []*string `json:"exclude,omitempty" xml:"exclude,omitempty" type:"Repeated"`
+}
+
+func (s WsPatchOverridepolicyClusterAffinity) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyClusterAffinity) GoString() string {
+  return s.String()
+}
+
+func (s *WsPatchOverridepolicyClusterAffinity) SetLabelSelector(v *WsPatchOverridepolicyMetaV1LabelSelector) *WsPatchOverridepolicyClusterAffinity {
+  s.LabelSelector = v
+  return s
+}
+
+func (s *WsPatchOverridepolicyClusterAffinity) SetFieldSelector(v *WsPatchOverridepolicyFieldSelector) *WsPatchOverridepolicyClusterAffinity {
+  s.WsPatchOverridepolicyFieldSelector = v
+  return s
+}
+
+func (s *WsPatchOverridepolicyClusterAffinity) SetClusterNames(v []*string) *WsPatchOverridepolicyClusterAffinity {
+  s.ClusterNames = v
+  return s
+}
+
+func (s *WsPatchOverridepolicyClusterAffinity) SetExclude(v []*string) *WsPatchOverridepolicyClusterAffinity {
+  s.Exclude = v
+  return s
+}
+
+type WsPatchOverridepolicyOverriders struct {
+  // {"en":"a general-purpose tool to override any kind of resources", "zh_CN":"覆盖任何类型资源的通用工具"}
+  Plaintext []*WsPatchOverridepolicyPlaintextOverrider `json:"plaintext,omitempty" xml:"plaintext,omitempty" type:"Repeated"`
+  // {"en":"overrides images for workloads", "zh_CN":"覆盖负载的镜像"}
+  WsPatchOverridepolicyImageOverrider []*WsPatchOverridepolicyImageOverrider `json:"imageOverrider,omitempty" xml:"imageOverrider,omitempty" type:"Repeated"`
+  // {"en":"overrides commands for workloads", "zh_CN":"覆盖工作负载的命令"}
+  CommandOverrider []*WsPatchOverridepolicyCommandArgsOverrider `json:"commandOverrider,omitempty" xml:"commandOverrider,omitempty" type:"Repeated"`
+  // {"en":"overrides args for workloads", "zh_CN":"覆盖工作负载参数"}
+  ArgsOverrider []*WsPatchOverridepolicyCommandArgsOverrider `json:"argsOverrider,omitempty" xml:"argsOverrider,omitempty" type:"Repeated"`
+}
+
+func (s WsPatchOverridepolicyOverriders) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyOverriders) GoString() string {
+  return s.String()
+}
+
+func (s *WsPatchOverridepolicyOverriders) SetPlaintext(v []*WsPatchOverridepolicyPlaintextOverrider) *WsPatchOverridepolicyOverriders {
+  s.Plaintext = v
+  return s
+}
+
+func (s *WsPatchOverridepolicyOverriders) SetImageOverrider(v []*WsPatchOverridepolicyImageOverrider) *WsPatchOverridepolicyOverriders {
+  s.WsPatchOverridepolicyImageOverrider = v
+  return s
+}
+
+func (s *WsPatchOverridepolicyOverriders) SetCommandOverrider(v []*WsPatchOverridepolicyCommandArgsOverrider) *WsPatchOverridepolicyOverriders {
+  s.CommandOverrider = v
+  return s
+}
+
+func (s *WsPatchOverridepolicyOverriders) SetArgsOverrider(v []*WsPatchOverridepolicyCommandArgsOverrider) *WsPatchOverridepolicyOverriders {
+  s.ArgsOverrider = v
+  return s
+}
+
+type WsPatchOverridepolicyPlaintextOverrider struct {
+  // {"en":"path of the target field", "zh_CN":"目标字段的路径"}
+  Path *string `json:"path,omitempty" xml:"path,omitempty" require:"true"`
+  // {"en":"type of operation on the target field", "zh_CN":"对目标字段操作类型"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty" require:"true"`
+  // {"en":"the value applied to the target field,when operator is remove, value must be empty", "zh_CN":"应用在目标字段的值，当 Operator 为 remove 时，此字段必须为空"}
+  Value *WsPatchOverridepolicyJSON `json:"value,omitempty" xml:"value,omitempty"`
+}
+
+func (s WsPatchOverridepolicyPlaintextOverrider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyPlaintextOverrider) GoString() string {
+  return s.String()
+}
+
+func (s *WsPatchOverridepolicyPlaintextOverrider) SetPath(v string) *WsPatchOverridepolicyPlaintextOverrider {
+  s.Path = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyPlaintextOverrider) SetOperator(v string) *WsPatchOverridepolicyPlaintextOverrider {
+  s.Operator = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyPlaintextOverrider) SetValue(v *WsPatchOverridepolicyJSON) *WsPatchOverridepolicyPlaintextOverrider {
+  s.Value = v
+  return s
+}
+
+type WsPatchOverridepolicyJSON struct {
+  // {"en":"value", "zh_CN":"字段值"}
+  Raw [][]byte `json:"raw,omitempty" xml:"raw,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s WsPatchOverridepolicyJSON) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyJSON) GoString() string {
+  return s.String()
+}
+
+func (s *WsPatchOverridepolicyJSON) SetRaw(v [][]byte) *WsPatchOverridepolicyJSON {
+  s.Raw = v
+  return s
+}
+
+type WsPatchOverridepolicyImageOverrider struct {
+  // {"en":"The default is nil. If the resource is a Pod, ReplicaSet, Deployment, StatefulSet system detects the image automatically. If the resource object has multiple containers, all the images will be processed. If it is not empty, only matched mirrors are processed", "zh_CN":"默认为空,如果资源是Pod, ReplicaSet, Deployment, StatefulSet系统自动检测镜像，如果资源对象有多个容器，所有镜像都将被处理。如果不为空，则只处理匹配到的镜像"}
+  Predicate *WsPatchOverridepolicyImagePredicate `json:"predicate,omitempty" xml:"predicate,omitempty"`
+  // {"en":"component of image: [registry/]repository[:tag]", "zh_CN":"假设镜像组成成分：[registry/]repository[:tag]"}
+  Component *string `json:"component,omitempty" xml:"component,omitempty" require:"true"`
+  // {"en":"type of operation on the image", "zh_CN":"对镜像进行的操作"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty" require:"true"`
+  // {"en":"value could not be empty when operator is add or replace. Default is empty. ignored when operator is remove", "zh_CN":"当 Operator 为 add 或 replace 时不能为空，默认为空，当 operator 为 remove 时忽略"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+}
+
+func (s WsPatchOverridepolicyImageOverrider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyImageOverrider) GoString() string {
+  return s.String()
+}
+
+func (s *WsPatchOverridepolicyImageOverrider) SetPredicate(v *WsPatchOverridepolicyImagePredicate) *WsPatchOverridepolicyImageOverrider {
+  s.Predicate = v
+  return s
+}
+
+func (s *WsPatchOverridepolicyImageOverrider) SetComponent(v string) *WsPatchOverridepolicyImageOverrider {
+  s.Component = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyImageOverrider) SetOperator(v string) *WsPatchOverridepolicyImageOverrider {
+  s.Operator = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyImageOverrider) SetValue(v string) *WsPatchOverridepolicyImageOverrider {
+  s.Value = &v
+  return s
+}
+
+type WsPatchOverridepolicyImagePredicate struct {
+  // {"en":"path of the target field", "zh_CN":"目标字段的路径"}
+  Path *string `json:"path,omitempty" xml:"path,omitempty" require:"true"`
+}
+
+func (s WsPatchOverridepolicyImagePredicate) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyImagePredicate) GoString() string {
+  return s.String()
+}
+
+func (s *WsPatchOverridepolicyImagePredicate) SetPath(v string) *WsPatchOverridepolicyImagePredicate {
+  s.Path = &v
+  return s
+}
+
+type WsPatchOverridepolicyCommandArgsOverrider struct {
+  // {"en":"name of container", "zh_CN":"容器名"}
+  ContainerName *string `json:"containerName,omitempty" xml:"containerName,omitempty" require:"true"`
+  // {"en":"operation to be applied to command/args", "zh_CN":"应用在commad/args上的操作"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty" require:"true"`
+  // {"en":"The value applied to command/args is append to commad/args when operator is add. The value is removed from command/args when operator is remove. If the value is empty, command/args remains unchanged", "zh_CN":"应用在command/args上的值，当operator为add时该值append到commad/args，当operator为remove时，该值从command/args移除，如果该值为空command/args维持原状"}
+  Value []*string `json:"value,omitempty" xml:"value,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s WsPatchOverridepolicyCommandArgsOverrider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyCommandArgsOverrider) GoString() string {
+  return s.String()
+}
+
+func (s *WsPatchOverridepolicyCommandArgsOverrider) SetContainerName(v string) *WsPatchOverridepolicyCommandArgsOverrider {
+  s.ContainerName = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyCommandArgsOverrider) SetOperator(v string) *WsPatchOverridepolicyCommandArgsOverrider {
+  s.Operator = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyCommandArgsOverrider) SetValue(v []*string) *WsPatchOverridepolicyCommandArgsOverrider {
+  s.Value = v
+  return s
+}
+
+type WsPatchOverridepolicyFieldSelector struct {
+  // {"en":"A list of node selector requirements by node's labels.", "zh_CN":"按节点标签列出的节点选择器需求列表。"}
+  MatchExpressions []*WsPatchOverridepolicyCoreV1NodeSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s WsPatchOverridepolicyFieldSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyFieldSelector) GoString() string {
+  return s.String()
+}
+
+func (s *WsPatchOverridepolicyFieldSelector) SetMatchExpressions(v []*WsPatchOverridepolicyCoreV1NodeSelectorRequirement) *WsPatchOverridepolicyFieldSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type WsPatchOverridepolicyCoreV1NodeSelectorRequirement struct {
+  // {"en":"The label key that the selector applies to.", "zh_CN":"选择算符所适用的标签主键。"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"Represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.", "zh_CN":"代表主键与值集之间的关系。合法的 operator 值包括 In、NotIn、Exists、DoesNotExist、Gt 和 Lt。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.", "zh_CN":"一个由字符串值组成的数组。如果 operator 是 In 或 NotIn，则 values 数组不能为空。 如果 operator 为 Exists 或 DoesNotExist，则 values 数组只能为空。 如果 operator 为 Gt 或 Lt，则 values 数组只能包含一个元素，并且该元素会被解释为整数。 在执行策略性合并补丁操作时，此数组会被整体替换。"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s WsPatchOverridepolicyCoreV1NodeSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyCoreV1NodeSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *WsPatchOverridepolicyCoreV1NodeSelectorRequirement) SetKey(v string) *WsPatchOverridepolicyCoreV1NodeSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyCoreV1NodeSelectorRequirement) SetOperator(v string) *WsPatchOverridepolicyCoreV1NodeSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyCoreV1NodeSelectorRequirement) SetValues(v []*string) *WsPatchOverridepolicyCoreV1NodeSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type WsPatchOverridepolicyMetaV1LabelSelector struct {
+  // {"en":"A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed.", "zh_CN":"matchLabels 映射中的单个 {key,value} 键值对相当于 matchExpressions 的一个元素，其键字段为 key，运算符为 In，values 数组仅包含 value。"}
+  MatchLabels map[string]*string `json:"matchLabels,omitempty" xml:"matchLabels,omitempty"`
+  // {"en":"A list of label selector requirements. The requirements are ANDed.", "zh_CN":"标签选择器要求的列表，这些要求的结果按逻辑与的关系来计算。"}
+  MatchExpressions []*WsPatchOverridepolicyLabelSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s WsPatchOverridepolicyMetaV1LabelSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyMetaV1LabelSelector) GoString() string {
+  return s.String()
+}
+
+func (s *WsPatchOverridepolicyMetaV1LabelSelector) SetMatchLabels(v map[string]*string) *WsPatchOverridepolicyMetaV1LabelSelector {
+  s.MatchLabels = v
+  return s
+}
+
+func (s *WsPatchOverridepolicyMetaV1LabelSelector) SetMatchExpressions(v []*WsPatchOverridepolicyLabelSelectorRequirement) *WsPatchOverridepolicyMetaV1LabelSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type WsPatchOverridepolicyLabelSelectorRequirement struct {
+  // {"en":"key is the label key that the selector applies to.", "zh_CN":"选择器应用的标签键"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist.", "zh_CN":"operator 表示键与一组值的关系。有效的运算符包括 In、NotIn、Exists 和 DoesNotExist。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.", "zh_CN":"values 是一个字符串值数组。如果运算符为 In 或 NotIn，则 values 数组必须为非空。如果运算符是 Exists 或 DoesNotExist，则 values 数组必须为空。该数组在策略性合并补丁（Strategic Merge Patch）期间被替换。"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s WsPatchOverridepolicyLabelSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyLabelSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *WsPatchOverridepolicyLabelSelectorRequirement) SetKey(v string) *WsPatchOverridepolicyLabelSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyLabelSelectorRequirement) SetOperator(v string) *WsPatchOverridepolicyLabelSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyLabelSelectorRequirement) SetValues(v []*string) *WsPatchOverridepolicyLabelSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type WsPatchOverridepolicyObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*WsPatchOverridepolicyOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*WsPatchOverridepolicyManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s WsPatchOverridepolicyObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *WsPatchOverridepolicyObjectMeta) SetName(v string) *WsPatchOverridepolicyObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyObjectMeta) SetGenerateName(v string) *WsPatchOverridepolicyObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyObjectMeta) SetNamespace(v string) *WsPatchOverridepolicyObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyObjectMeta) SetSelfLink(v string) *WsPatchOverridepolicyObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyObjectMeta) SetUid(v string) *WsPatchOverridepolicyObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyObjectMeta) SetResourceVersion(v string) *WsPatchOverridepolicyObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyObjectMeta) SetGeneration(v int64) *WsPatchOverridepolicyObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyObjectMeta) SetCreationTimestamp(v string) *WsPatchOverridepolicyObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyObjectMeta) SetDeletionTimestamp(v string) *WsPatchOverridepolicyObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyObjectMeta) SetDeletionGracePeriodSeconds(v int64) *WsPatchOverridepolicyObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyObjectMeta) SetLabels(v map[string]*string) *WsPatchOverridepolicyObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *WsPatchOverridepolicyObjectMeta) SetAnnotations(v map[string]*string) *WsPatchOverridepolicyObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *WsPatchOverridepolicyObjectMeta) SetOwnerReferences(v []*WsPatchOverridepolicyOwnerReference) *WsPatchOverridepolicyObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *WsPatchOverridepolicyObjectMeta) SetFinalizers(v []*string) *WsPatchOverridepolicyObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *WsPatchOverridepolicyObjectMeta) SetClusterName(v string) *WsPatchOverridepolicyObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyObjectMeta) SetManagedFields(v []*WsPatchOverridepolicyManagedFieldsEntry) *WsPatchOverridepolicyObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type WsPatchOverridepolicyManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this WsPatchOverridepolicyManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'WsPatchOverridepolicyFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“WsPatchOverridepolicyFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"WsPatchOverridepolicyFieldsV1 holds the first WsPatchOverridepolicyJSON version format as described in the 'WsPatchOverridepolicyFieldsV1' type", "zh_CN":"WsPatchOverridepolicyFieldsV1 包含类型 “WsPatchOverridepolicyFieldsV1” 中描述的第一个 WsPatchOverridepolicyJSON 版本格式"}
+  WsPatchOverridepolicyFieldsV1 *WsPatchOverridepolicyFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s WsPatchOverridepolicyManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *WsPatchOverridepolicyManagedFieldsEntry) SetManager(v string) *WsPatchOverridepolicyManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyManagedFieldsEntry) SetOperation(v string) *WsPatchOverridepolicyManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyManagedFieldsEntry) SetApiVersion(v string) *WsPatchOverridepolicyManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyManagedFieldsEntry) SetTime(v string) *WsPatchOverridepolicyManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyManagedFieldsEntry) SetFieldsType(v string) *WsPatchOverridepolicyManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyManagedFieldsEntry) SetFieldsV1(v *WsPatchOverridepolicyFieldsV1) *WsPatchOverridepolicyManagedFieldsEntry {
+  s.WsPatchOverridepolicyFieldsV1 = v
+  return s
+}
+
+func (s *WsPatchOverridepolicyManagedFieldsEntry) SetSubresource(v string) *WsPatchOverridepolicyManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type WsPatchOverridepolicyFieldsV1 struct {
+}
+
+func (s WsPatchOverridepolicyFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyFieldsV1) GoString() string {
+  return s.String()
+}
+
+type WsPatchOverridepolicyOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s WsPatchOverridepolicyOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsPatchOverridepolicyOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *WsPatchOverridepolicyOwnerReference) SetApiVersion(v string) *WsPatchOverridepolicyOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyOwnerReference) SetKind(v string) *WsPatchOverridepolicyOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyOwnerReference) SetName(v string) *WsPatchOverridepolicyOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyOwnerReference) SetUid(v string) *WsPatchOverridepolicyOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyOwnerReference) SetController(v bool) *WsPatchOverridepolicyOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *WsPatchOverridepolicyOwnerReference) SetBlockOwnerDeletion(v bool) *WsPatchOverridepolicyOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+
+
+
+type PutPatchPropagationPoliciesRequest struct {
+}
+
+func (s PutPatchPropagationPoliciesRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesRequest) GoString() string {
+  return s.String()
+}
+
+type PutPatchPropagationPoliciesResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"PutPatchPropagationPoliciesPropagationPolicy object", "zh_CN":"PropagationPolicy对象"}
+  Data *PutPatchPropagationPoliciesPropagationPolicy `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s PutPatchPropagationPoliciesResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesResponse) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesResponse) SetCode(v int64) *PutPatchPropagationPoliciesResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesResponse) SetMsg(v string) *PutPatchPropagationPoliciesResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesResponse) SetRequestId(v string) *PutPatchPropagationPoliciesResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesResponse) SetData(v *PutPatchPropagationPoliciesPropagationPolicy) *PutPatchPropagationPoliciesResponse {
+  s.Data = v
+  return s
+}
+
+type PutPatchPropagationPoliciesPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+  // {"en":"The name of propagationPolicy", "zh_CN":"propagationPolicy 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s PutPatchPropagationPoliciesPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesPaths) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesPaths) SetNamespace(v string) *PutPatchPropagationPoliciesPaths {
+  s.Namespace = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesPaths) SetName(v string) *PutPatchPropagationPoliciesPaths {
+  s.Name = &v
+  return s
+}
+
+type PutPatchPropagationPoliciesParameters struct {
+}
+
+func (s PutPatchPropagationPoliciesParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesParameters) GoString() string {
+  return s.String()
+}
+
+type PutPatchPropagationPoliciesRequestHeader struct {
+}
+
+func (s PutPatchPropagationPoliciesRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesRequestHeader) GoString() string {
+  return s.String()
+}
+
+type PutPatchPropagationPoliciesResponseHeader struct {
+}
+
+func (s PutPatchPropagationPoliciesResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesResponseHeader) GoString() string {
+  return s.String()
+}
+
+type PutPatchPropagationPoliciesPropagationPolicy struct {
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"Standard object metadata.", "zh_CN":"标准的对象元数据。"}
+  Metadata *PutPatchPropagationPoliciesObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Spec defines the behavior of a PutPatchPropagationPoliciesPropagationPolicy", "zh_CN":"spec 定义 PutPatchPropagationPoliciesPropagationPolicy 的行为"}
+  Spec *PutPatchPropagationPoliciesPropagationSpec `json:"spec,omitempty" xml:"spec,omitempty" require:"true"`
+}
+
+func (s PutPatchPropagationPoliciesPropagationPolicy) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesPropagationPolicy) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesPropagationPolicy) SetKind(v string) *PutPatchPropagationPoliciesPropagationPolicy {
+  s.Kind = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesPropagationPolicy) SetApiVersion(v string) *PutPatchPropagationPoliciesPropagationPolicy {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesPropagationPolicy) SetMetadata(v *PutPatchPropagationPoliciesObjectMeta) *PutPatchPropagationPoliciesPropagationPolicy {
+  s.Metadata = v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesPropagationPolicy) SetSpec(v *PutPatchPropagationPoliciesPropagationSpec) *PutPatchPropagationPoliciesPropagationPolicy {
+  s.Spec = v
+  return s
+}
+
+type PutPatchPropagationPoliciesPropagationSpec struct {
+  // {"en":"resource that this propagation policy applies to", "zh_CN":"策略应用的资源"}
+  ResourceSelectors []*PutPatchPropagationPoliciesResourceSelector `json:"resourceSelectors,omitempty" xml:"resourceSelectors,omitempty" type:"Repeated"`
+  // {"en":"association", "zh_CN":"association"}
+  Association *bool `json:"association,omitempty" xml:"association,omitempty"`
+  // {"en":"scheduling strategy", "zh_CN":"调度策略"}
+  PutPatchPropagationPoliciesPlacement *PutPatchPropagationPoliciesPlacement `json:"placement,omitempty" xml:"placement,omitempty"`
+  // {"en":"dependent overrides", "zh_CN":"依赖的覆盖策略"}
+  DependentOverrides []*string `json:"dependentOverrides,omitempty" xml:"dependentOverrides,omitempty" type:"Repeated"`
+  // {"en":"name of scheduler", "zh_CN":"调度器名称"}
+  SchedulerName *string `json:"schedulerName,omitempty" xml:"schedulerName,omitempty"`
+  // {"en":"indicates how Karmada migrates applications in case of failures", "zh_CN":"failover 重调度策略"}
+  Failover *PutPatchPropagationPoliciesFailoverBehavior `json:"failover,omitempty" xml:"failover,omitempty"`
+}
+
+func (s PutPatchPropagationPoliciesPropagationSpec) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesPropagationSpec) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesPropagationSpec) SetResourceSelectors(v []*PutPatchPropagationPoliciesResourceSelector) *PutPatchPropagationPoliciesPropagationSpec {
+  s.ResourceSelectors = v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesPropagationSpec) SetAssociation(v bool) *PutPatchPropagationPoliciesPropagationSpec {
+  s.Association = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesPropagationSpec) SetPlacement(v *PutPatchPropagationPoliciesPlacement) *PutPatchPropagationPoliciesPropagationSpec {
+  s.PutPatchPropagationPoliciesPlacement = v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesPropagationSpec) SetDependentOverrides(v []*string) *PutPatchPropagationPoliciesPropagationSpec {
+  s.DependentOverrides = v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesPropagationSpec) SetSchedulerName(v string) *PutPatchPropagationPoliciesPropagationSpec {
+  s.SchedulerName = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesPropagationSpec) SetFailover(v *PutPatchPropagationPoliciesFailoverBehavior) *PutPatchPropagationPoliciesPropagationSpec {
+  s.Failover = v
+  return s
+}
+
+type PutPatchPropagationPoliciesFailoverBehavior struct {
+  // {"en":"indicates failover behaviors in case of application failure", "zh_CN":"failover 重调度策略"}
+  Application *PutPatchPropagationPoliciesApplicationFailoverBehavior `json:"application,omitempty" xml:"application,omitempty"`
+}
+
+func (s PutPatchPropagationPoliciesFailoverBehavior) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesFailoverBehavior) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesFailoverBehavior) SetApplication(v *PutPatchPropagationPoliciesApplicationFailoverBehavior) *PutPatchPropagationPoliciesFailoverBehavior {
+  s.Application = v
+  return s
+}
+
+type PutPatchPropagationPoliciesApplicationFailoverBehavior struct {
+  // {"en":"indicates the decision conditions of performing the failover process.", "zh_CN":"程序经过多长时间的失败,才属于不健康"}
+  PutPatchPropagationPoliciesDecisionConditions *PutPatchPropagationPoliciesDecisionConditions `json:"decisionConditions,omitempty" xml:"decisionConditions,omitempty"`
+  // {"en":"represents how to deal with the legacy applications on the cluster from which the application is migrated. there are three options: Immediately,Graciously and Never. Graciously by defautl", "zh_CN":"应用在失败后的驱逐方式,有3个可填值: Immediately,Graciously and Never 默认:Graciously "}
+  PurgeMode *string `json:"purgeMode,omitempty" xml:"purgeMode,omitempty"`
+  // {"en":"the maximum waiting duration in seconds before application on the migrated cluster should be deleted.", "zh_CN":"平滑删除时间"}
+  GracePeriodSeconds *int64 `json:"gracePeriodSeconds,omitempty" xml:"gracePeriodSeconds,omitempty"`
+}
+
+func (s PutPatchPropagationPoliciesApplicationFailoverBehavior) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesApplicationFailoverBehavior) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesApplicationFailoverBehavior) SetDecisionConditions(v *PutPatchPropagationPoliciesDecisionConditions) *PutPatchPropagationPoliciesApplicationFailoverBehavior {
+  s.PutPatchPropagationPoliciesDecisionConditions = v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesApplicationFailoverBehavior) SetPurgeMode(v string) *PutPatchPropagationPoliciesApplicationFailoverBehavior {
+  s.PurgeMode = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesApplicationFailoverBehavior) SetGracePeriodSeconds(v int64) *PutPatchPropagationPoliciesApplicationFailoverBehavior {
+  s.GracePeriodSeconds = &v
+  return s
+}
+
+type PutPatchPropagationPoliciesDecisionConditions struct {
+  // {"en":"represents the period of time Karmada should wait", "zh_CN":"应用经过多长时间后算失败"}
+  TolerationSeconds *int64 `json:"tolerationSeconds,omitempty" xml:"tolerationSeconds,omitempty"`
+}
+
+func (s PutPatchPropagationPoliciesDecisionConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesDecisionConditions) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesDecisionConditions) SetTolerationSeconds(v int64) *PutPatchPropagationPoliciesDecisionConditions {
+  s.TolerationSeconds = &v
+  return s
+}
+
+type PutPatchPropagationPoliciesResourceSelector struct {
+  // {"en":"represents the API version of the target resources", "zh_CN":"表示目标资源的API版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"represents the Kind of the target resources", "zh_CN":"表示目标资源的类型"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"name of the target resource", "zh_CN":"目标资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"A label query over a set of resources", "zh_CN":"对一组资源的标签查询"}
+  LabelSelector *PutPatchPropagationPoliciesMetaV1LabelSelector `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+}
+
+func (s PutPatchPropagationPoliciesResourceSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesResourceSelector) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesResourceSelector) SetApiVersion(v string) *PutPatchPropagationPoliciesResourceSelector {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesResourceSelector) SetKind(v string) *PutPatchPropagationPoliciesResourceSelector {
+  s.Kind = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesResourceSelector) SetName(v string) *PutPatchPropagationPoliciesResourceSelector {
+  s.Name = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesResourceSelector) SetLabelSelector(v *PutPatchPropagationPoliciesMetaV1LabelSelector) *PutPatchPropagationPoliciesResourceSelector {
+  s.LabelSelector = v
+  return s
+}
+
+type PutPatchPropagationPoliciesPlacement struct {
+  // {"en":"the policy that only applies to resources propagated to the matching clusters", "zh_CN":"策略应用到成员集群的目标选择"}
+  PutPatchPropagationPoliciesClusterAffinity *PutPatchPropagationPoliciesClusterAffinity `json:"clusterAffinity,omitempty" xml:"clusterAffinity,omitempty"`
+  // {"en":"toleration of cluster", "zh_CN":"集群容忍度"}
+  ClusterTolerations *PutPatchPropagationPoliciesToleration `json:"clusterTolerations,omitempty" xml:"clusterTolerations,omitempty"`
+  // {"en":"Cluster grouping constraint", "zh_CN":"根据约束对集群进行分组，把资源分散到多个小组"}
+  SpreadConstraints []*PutPatchPropagationPoliciesSpreadConstraint `json:"spreadConstraints,omitempty" xml:"spreadConstraints,omitempty" type:"Repeated"`
+  // {"en":"scheduling strategy of replicas", "zh_CN":"副本调度策略"}
+  ReplicaScheduling *PutPatchPropagationPoliciesReplicaSchedulingStrategy `json:"replicaScheduling,omitempty" xml:"replicaScheduling,omitempty"`
+}
+
+func (s PutPatchPropagationPoliciesPlacement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesPlacement) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesPlacement) SetClusterAffinity(v *PutPatchPropagationPoliciesClusterAffinity) *PutPatchPropagationPoliciesPlacement {
+  s.PutPatchPropagationPoliciesClusterAffinity = v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesPlacement) SetClusterTolerations(v *PutPatchPropagationPoliciesToleration) *PutPatchPropagationPoliciesPlacement {
+  s.ClusterTolerations = v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesPlacement) SetSpreadConstraints(v []*PutPatchPropagationPoliciesSpreadConstraint) *PutPatchPropagationPoliciesPlacement {
+  s.SpreadConstraints = v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesPlacement) SetReplicaScheduling(v *PutPatchPropagationPoliciesReplicaSchedulingStrategy) *PutPatchPropagationPoliciesPlacement {
+  s.ReplicaScheduling = v
+  return s
+}
+
+type PutPatchPropagationPoliciesReplicaSchedulingStrategy struct {
+  // {"en":"scheduling type of replicas", "zh_CN":"副本调度类型"}
+  ReplicaSchedulingType *string `json:"replicaSchedulingType,omitempty" xml:"replicaSchedulingType,omitempty"`
+  // {"en":"division preference of replicas", "zh_CN":"副本数切分方式"}
+  ReplicaDivisionPreference *string `json:"replicaDivisionPreference,omitempty" xml:"replicaDivisionPreference,omitempty"`
+  // {"en":"weight preference", "zh_CN":"权重配置"}
+  WeightPreference *PutPatchPropagationPoliciesClusterPreferences `json:"weightPreference,omitempty" xml:"weightPreference,omitempty"`
+}
+
+func (s PutPatchPropagationPoliciesReplicaSchedulingStrategy) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesReplicaSchedulingStrategy) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesReplicaSchedulingStrategy) SetReplicaSchedulingType(v string) *PutPatchPropagationPoliciesReplicaSchedulingStrategy {
+  s.ReplicaSchedulingType = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesReplicaSchedulingStrategy) SetReplicaDivisionPreference(v string) *PutPatchPropagationPoliciesReplicaSchedulingStrategy {
+  s.ReplicaDivisionPreference = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesReplicaSchedulingStrategy) SetWeightPreference(v *PutPatchPropagationPoliciesClusterPreferences) *PutPatchPropagationPoliciesReplicaSchedulingStrategy {
+  s.WeightPreference = v
+  return s
+}
+
+type PutPatchPropagationPoliciesClusterPreferences struct {
+  // {"en":"static proportion of cluster replicas in total", "zh_CN":"集群副本数占比"}
+  StaticWeightList []*PutPatchPropagationPoliciesStaticClusterWeight `json:"staticWeightList,omitempty" xml:"staticWeightList,omitempty" type:"Repeated"`
+  // {"en":"dynamic proportion of replicas in total", "zh_CN":"动态比重"}
+  DynamicWeight *string `json:"dynamicWeight,omitempty" xml:"dynamicWeight,omitempty"`
+}
+
+func (s PutPatchPropagationPoliciesClusterPreferences) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesClusterPreferences) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesClusterPreferences) SetStaticWeightList(v []*PutPatchPropagationPoliciesStaticClusterWeight) *PutPatchPropagationPoliciesClusterPreferences {
+  s.StaticWeightList = v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesClusterPreferences) SetDynamicWeight(v string) *PutPatchPropagationPoliciesClusterPreferences {
+  s.DynamicWeight = &v
+  return s
+}
+
+type PutPatchPropagationPoliciesStaticClusterWeight struct {
+  // {"en":"affected clusters by the weight", "zh_CN":"比重生效的目标集群"}
+  TargetCluster *PutPatchPropagationPoliciesClusterAffinity `json:"targetCluster,omitempty" xml:"targetCluster,omitempty"`
+  // {"en":"proportion of replicas in total", "zh_CN":"集群实例数占比"}
+  Weight *int64 `json:"weight,omitempty" xml:"weight,omitempty"`
+}
+
+func (s PutPatchPropagationPoliciesStaticClusterWeight) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesStaticClusterWeight) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesStaticClusterWeight) SetTargetCluster(v *PutPatchPropagationPoliciesClusterAffinity) *PutPatchPropagationPoliciesStaticClusterWeight {
+  s.TargetCluster = v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesStaticClusterWeight) SetWeight(v int64) *PutPatchPropagationPoliciesStaticClusterWeight {
+  s.Weight = &v
+  return s
+}
+
+type PutPatchPropagationPoliciesSpreadConstraint struct {
+  // {"en":"The member clusters in the cluster federation are divided into multiple groups based on an attribute of the member cluster (currently, only cluster is supported, and the region, zone, and provider attributes may be supported in the future)", "zh_CN":"根据成员集群的某个属性（当前仅支持cluster、后续可能增加对成员集群region、zone、provider等属性支持）将集群联邦中的成员集群分为多个小组"}
+  SpreadByField *string `json:"spreadByField,omitempty" xml:"spreadByField,omitempty"`
+  // {"en":"The member cluster is divided into groups based on labels", "zh_CN":"根据label将成员集群分为多个小组"}
+  SpreadByLabel *string `json:"spreadByLabel,omitempty" xml:"spreadByLabel,omitempty"`
+  // {"en":"Maximum number of groups", "zh_CN":"最大分组数"}
+  MaxGroups *int64 `json:"maxGroups,omitempty" xml:"maxGroups,omitempty"`
+  // {"en":"Minimum number of groups", "zh_CN":"最小分组数"}
+  MinGroups *int64 `json:"minGroups,omitempty" xml:"minGroups,omitempty"`
+}
+
+func (s PutPatchPropagationPoliciesSpreadConstraint) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesSpreadConstraint) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesSpreadConstraint) SetSpreadByField(v string) *PutPatchPropagationPoliciesSpreadConstraint {
+  s.SpreadByField = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesSpreadConstraint) SetSpreadByLabel(v string) *PutPatchPropagationPoliciesSpreadConstraint {
+  s.SpreadByLabel = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesSpreadConstraint) SetMaxGroups(v int64) *PutPatchPropagationPoliciesSpreadConstraint {
+  s.MaxGroups = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesSpreadConstraint) SetMinGroups(v int64) *PutPatchPropagationPoliciesSpreadConstraint {
+  s.MinGroups = &v
+  return s
+}
+
+type PutPatchPropagationPoliciesToleration struct {
+  // {"en":"The taint key that the toleration applies to. Empty means match all taint keys. If the key is empty, operator must be Exists; this combination means to match all values and all keys.", "zh_CN":"容忍度所适用的污点的键名。此字段为空意味着匹配所有的污点键。 如果 key 为空，则 operator 必须为 Exists；这种组合意味着匹配所有值和所有键。"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"Represents a key's relationship to the value. Valid operators are Exists and Equal. Defaults to Equal. Exists is equivalent to wildcard for value, so that a pod can tolerate all taints of a particular category.", "zh_CN":"表示 key 与 value 之间的关系。有效的 operator 取值是 Exists 和 Equal。默认为 Equal。 Exists 相当于 value 为某种通配符，因此 Pod 可以容忍特定类别的所有污点。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"The taint value the toleration matches to. If the operator is Exists, the value should be empty, otherwise just a regular string.", "zh_CN":"容忍度所匹配的污点值。如果 operator 为 Exists，则此 value 值应该为空， 否则 value 值应该是一个正常的字符串。"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty"`
+  // {"en":"Indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute.", "zh_CN":"指示要匹配的污点效果。空值意味著匹配所有污点效果。如果要设置此字段，允许的值为 NoSchedule、PreferNoSchedule 和 NoExecute 之一。"}
+  Effect *string `json:"effect,omitempty" xml:"effect,omitempty"`
+  // {"en":"Represents the period of time the toleration (which must be of effect NoExecute, otherwise this field is ignored) tolerates the taint. By default, it is not set, which means tolerate the taint forever (do not evict). Zero and negative values will be treated as 0 (evict immediately) by the system.", "zh_CN":" 表示容忍度（effect 必须是 NoExecute，否则此字段被忽略）容忍污点的时间长度。 默认情况下，此字段未被设置，这意味着会一直能够容忍对应污点（不会发生驱逐操作）。 零值和负值会被系统当做 0 值处理（立即触发驱逐）。"}
+  TolerationSeconds *int64 `json:"tolerationSeconds,omitempty" xml:"tolerationSeconds,omitempty"`
+}
+
+func (s PutPatchPropagationPoliciesToleration) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesToleration) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesToleration) SetKey(v string) *PutPatchPropagationPoliciesToleration {
+  s.Key = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesToleration) SetOperator(v string) *PutPatchPropagationPoliciesToleration {
+  s.Operator = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesToleration) SetValue(v string) *PutPatchPropagationPoliciesToleration {
+  s.Value = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesToleration) SetEffect(v string) *PutPatchPropagationPoliciesToleration {
+  s.Effect = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesToleration) SetTolerationSeconds(v int64) *PutPatchPropagationPoliciesToleration {
+  s.TolerationSeconds = &v
+  return s
+}
+
+type PutPatchPropagationPoliciesClusterAffinity struct {
+  // {"en":"a filter to select member clusters by labels", "zh_CN":"一个用来选中集群的标签过滤器"}
+  LabelSelector *PutPatchPropagationPoliciesMetaV1LabelSelector `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+  // {"en":"a filter to select member clusters by fields. Currently only three fields of provider(cluster.spec.provider), zone(cluster.spec.zone), and region(cluster.spec.region) are supported", "zh_CN":"一个用来选中集群的字段过滤器，目前支持的字段只有三个：提供商（cluster.spec.provider），区域（cluster.spec.zone），地区（cluster.spec.region）"}
+  PutPatchPropagationPoliciesFieldSelector *PutPatchPropagationPoliciesFieldSelector `json:"fieldSelector,omitempty" xml:"fieldSelector,omitempty"`
+  // {"en":"the list of clusters to be selected", "zh_CN":"选中的集群列表"}
+  ClusterNames []*string `json:"clusterNames,omitempty" xml:"clusterNames,omitempty" type:"Repeated"`
+  // {"en":"the list of clusters to be ignored", "zh_CN":"要忽略的集群列表"}
+  Exclude []*string `json:"exclude,omitempty" xml:"exclude,omitempty" type:"Repeated"`
+}
+
+func (s PutPatchPropagationPoliciesClusterAffinity) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesClusterAffinity) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesClusterAffinity) SetLabelSelector(v *PutPatchPropagationPoliciesMetaV1LabelSelector) *PutPatchPropagationPoliciesClusterAffinity {
+  s.LabelSelector = v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesClusterAffinity) SetFieldSelector(v *PutPatchPropagationPoliciesFieldSelector) *PutPatchPropagationPoliciesClusterAffinity {
+  s.PutPatchPropagationPoliciesFieldSelector = v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesClusterAffinity) SetClusterNames(v []*string) *PutPatchPropagationPoliciesClusterAffinity {
+  s.ClusterNames = v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesClusterAffinity) SetExclude(v []*string) *PutPatchPropagationPoliciesClusterAffinity {
+  s.Exclude = v
+  return s
+}
+
+type PutPatchPropagationPoliciesFieldSelector struct {
+  // {"en":"A list of node selector requirements by node's labels.", "zh_CN":"按节点标签列出的节点选择器需求列表。"}
+  MatchExpressions []*PutPatchPropagationPoliciesCoreV1NodeSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s PutPatchPropagationPoliciesFieldSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesFieldSelector) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesFieldSelector) SetMatchExpressions(v []*PutPatchPropagationPoliciesCoreV1NodeSelectorRequirement) *PutPatchPropagationPoliciesFieldSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type PutPatchPropagationPoliciesCoreV1NodeSelectorRequirement struct {
+  // {"en":"The label key that the selector applies to.", "zh_CN":"选择算符所适用的标签主键。"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"Represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.", "zh_CN":"代表主键与值集之间的关系。合法的 operator 值包括 In、NotIn、Exists、DoesNotExist、Gt 和 Lt。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.", "zh_CN":"一个由字符串值组成的数组。如果 operator 是 In 或 NotIn，则 values 数组不能为空。 如果 operator 为 Exists 或 DoesNotExist，则 values 数组只能为空。 如果 operator 为 Gt 或 Lt，则 values 数组只能包含一个元素，并且该元素会被解释为整数。 在执行策略性合并补丁操作时，此数组会被整体替换。"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s PutPatchPropagationPoliciesCoreV1NodeSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesCoreV1NodeSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesCoreV1NodeSelectorRequirement) SetKey(v string) *PutPatchPropagationPoliciesCoreV1NodeSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesCoreV1NodeSelectorRequirement) SetOperator(v string) *PutPatchPropagationPoliciesCoreV1NodeSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesCoreV1NodeSelectorRequirement) SetValues(v []*string) *PutPatchPropagationPoliciesCoreV1NodeSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type PutPatchPropagationPoliciesMetaV1LabelSelector struct {
+  // {"en":"A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed.", "zh_CN":"matchLabels 映射中的单个 {key,value} 键值对相当于 matchExpressions 的一个元素，其键字段为 key，运算符为 In，values 数组仅包含 value。"}
+  MatchLabels map[string]*string `json:"matchLabels,omitempty" xml:"matchLabels,omitempty"`
+  // {"en":"A list of label selector requirements. The requirements are ANDed.", "zh_CN":"标签选择器要求的列表，这些要求的结果按逻辑与的关系来计算。"}
+  MatchExpressions []*PutPatchPropagationPoliciesLabelSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s PutPatchPropagationPoliciesMetaV1LabelSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesMetaV1LabelSelector) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesMetaV1LabelSelector) SetMatchLabels(v map[string]*string) *PutPatchPropagationPoliciesMetaV1LabelSelector {
+  s.MatchLabels = v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesMetaV1LabelSelector) SetMatchExpressions(v []*PutPatchPropagationPoliciesLabelSelectorRequirement) *PutPatchPropagationPoliciesMetaV1LabelSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type PutPatchPropagationPoliciesLabelSelectorRequirement struct {
+  // {"en":"key is the label key that the selector applies to.", "zh_CN":"选择器应用的标签键"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist.", "zh_CN":"operator 表示键与一组值的关系。有效的运算符包括 In、NotIn、Exists 和 DoesNotExist。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.", "zh_CN":"values 是一个字符串值数组。如果运算符为 In 或 NotIn，则 values 数组必须为非空。如果运算符是 Exists 或 DoesNotExist，则 values 数组必须为空。该数组在策略性合并补丁（Strategic Merge Patch）期间被替换。"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s PutPatchPropagationPoliciesLabelSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesLabelSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesLabelSelectorRequirement) SetKey(v string) *PutPatchPropagationPoliciesLabelSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesLabelSelectorRequirement) SetOperator(v string) *PutPatchPropagationPoliciesLabelSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesLabelSelectorRequirement) SetValues(v []*string) *PutPatchPropagationPoliciesLabelSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type PutPatchPropagationPoliciesObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*PutPatchPropagationPoliciesOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*PutPatchPropagationPoliciesManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s PutPatchPropagationPoliciesObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesObjectMeta) SetName(v string) *PutPatchPropagationPoliciesObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesObjectMeta) SetGenerateName(v string) *PutPatchPropagationPoliciesObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesObjectMeta) SetNamespace(v string) *PutPatchPropagationPoliciesObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesObjectMeta) SetSelfLink(v string) *PutPatchPropagationPoliciesObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesObjectMeta) SetUid(v string) *PutPatchPropagationPoliciesObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesObjectMeta) SetResourceVersion(v string) *PutPatchPropagationPoliciesObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesObjectMeta) SetGeneration(v int64) *PutPatchPropagationPoliciesObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesObjectMeta) SetCreationTimestamp(v string) *PutPatchPropagationPoliciesObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesObjectMeta) SetDeletionTimestamp(v string) *PutPatchPropagationPoliciesObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesObjectMeta) SetDeletionGracePeriodSeconds(v int64) *PutPatchPropagationPoliciesObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesObjectMeta) SetLabels(v map[string]*string) *PutPatchPropagationPoliciesObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesObjectMeta) SetAnnotations(v map[string]*string) *PutPatchPropagationPoliciesObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesObjectMeta) SetOwnerReferences(v []*PutPatchPropagationPoliciesOwnerReference) *PutPatchPropagationPoliciesObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesObjectMeta) SetFinalizers(v []*string) *PutPatchPropagationPoliciesObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesObjectMeta) SetClusterName(v string) *PutPatchPropagationPoliciesObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesObjectMeta) SetManagedFields(v []*PutPatchPropagationPoliciesManagedFieldsEntry) *PutPatchPropagationPoliciesObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type PutPatchPropagationPoliciesManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this PutPatchPropagationPoliciesManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'PutPatchPropagationPoliciesFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“PutPatchPropagationPoliciesFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"PutPatchPropagationPoliciesFieldsV1 holds the first JSON version format as described in the 'PutPatchPropagationPoliciesFieldsV1' type", "zh_CN":"PutPatchPropagationPoliciesFieldsV1 包含类型 “PutPatchPropagationPoliciesFieldsV1” 中描述的第一个 JSON 版本格式"}
+  PutPatchPropagationPoliciesFieldsV1 *PutPatchPropagationPoliciesFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s PutPatchPropagationPoliciesManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesManagedFieldsEntry) SetManager(v string) *PutPatchPropagationPoliciesManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesManagedFieldsEntry) SetOperation(v string) *PutPatchPropagationPoliciesManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesManagedFieldsEntry) SetApiVersion(v string) *PutPatchPropagationPoliciesManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesManagedFieldsEntry) SetTime(v string) *PutPatchPropagationPoliciesManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesManagedFieldsEntry) SetFieldsType(v string) *PutPatchPropagationPoliciesManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesManagedFieldsEntry) SetFieldsV1(v *PutPatchPropagationPoliciesFieldsV1) *PutPatchPropagationPoliciesManagedFieldsEntry {
+  s.PutPatchPropagationPoliciesFieldsV1 = v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesManagedFieldsEntry) SetSubresource(v string) *PutPatchPropagationPoliciesManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type PutPatchPropagationPoliciesFieldsV1 struct {
+}
+
+func (s PutPatchPropagationPoliciesFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesFieldsV1) GoString() string {
+  return s.String()
+}
+
+type PutPatchPropagationPoliciesOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s PutPatchPropagationPoliciesOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchPropagationPoliciesOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchPropagationPoliciesOwnerReference) SetApiVersion(v string) *PutPatchPropagationPoliciesOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesOwnerReference) SetKind(v string) *PutPatchPropagationPoliciesOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesOwnerReference) SetName(v string) *PutPatchPropagationPoliciesOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesOwnerReference) SetUid(v string) *PutPatchPropagationPoliciesOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesOwnerReference) SetController(v bool) *PutPatchPropagationPoliciesOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *PutPatchPropagationPoliciesOwnerReference) SetBlockOwnerDeletion(v bool) *PutPatchPropagationPoliciesOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+
+
+
+type ListOverridepolicyRequest struct {
+}
+
+func (s ListOverridepolicyRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyRequest) GoString() string {
+  return s.String()
+}
+
+type ListOverridepolicyResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"ListOverridepolicyOverridePolicyList", "zh_CN":"ListOverridepolicyOverridePolicyList"}
+  Data *ListOverridepolicyOverridePolicyList `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s ListOverridepolicyResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyResponse) SetCode(v int64) *ListOverridepolicyResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ListOverridepolicyResponse) SetMsg(v string) *ListOverridepolicyResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *ListOverridepolicyResponse) SetRequestId(v string) *ListOverridepolicyResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *ListOverridepolicyResponse) SetData(v *ListOverridepolicyOverridePolicyList) *ListOverridepolicyResponse {
+  s.Data = v
+  return s
+}
+
+type ListOverridepolicyPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+}
+
+func (s ListOverridepolicyPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyPaths) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyPaths) SetNamespace(v string) *ListOverridepolicyPaths {
+  s.Namespace = &v
+  return s
+}
+
+type ListOverridepolicyParameters struct {
+  // {"en":"The name of deployment", "zh_CN":"deployment 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"labelSelector", "zh_CN":"labelSelector"}
+  LabelSelector *string `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+}
+
+func (s ListOverridepolicyParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyParameters) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyParameters) SetName(v string) *ListOverridepolicyParameters {
+  s.Name = &v
+  return s
+}
+
+func (s *ListOverridepolicyParameters) SetLabelSelector(v string) *ListOverridepolicyParameters {
+  s.LabelSelector = &v
+  return s
+}
+
+type ListOverridepolicyRequestHeader struct {
+}
+
+func (s ListOverridepolicyRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ListOverridepolicyResponseHeader struct {
+}
+
+func (s ListOverridepolicyResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyResponseHeader) GoString() string {
+  return s.String()
+}
+
+type ListOverridepolicyOverridePolicyList struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"Standard list metadata", "zh_CN":"标准列表元数据"}
+  Metadata *ListOverridepolicyListMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"List of ListOverridepolicyOverridePolicy", "zh_CN":"ListOverridepolicyOverridePolicy 列表"}
+  Items []*ListOverridepolicyOverridePolicy `json:"items,omitempty" xml:"items,omitempty" type:"Repeated"`
+}
+
+func (s ListOverridepolicyOverridePolicyList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyOverridePolicyList) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyOverridePolicyList) SetApiVersion(v string) *ListOverridepolicyOverridePolicyList {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListOverridepolicyOverridePolicyList) SetKind(v string) *ListOverridepolicyOverridePolicyList {
+  s.Kind = &v
+  return s
+}
+
+func (s *ListOverridepolicyOverridePolicyList) SetMetadata(v *ListOverridepolicyListMeta) *ListOverridepolicyOverridePolicyList {
+  s.Metadata = v
+  return s
+}
+
+func (s *ListOverridepolicyOverridePolicyList) SetItems(v []*ListOverridepolicyOverridePolicy) *ListOverridepolicyOverridePolicyList {
+  s.Items = v
+  return s
+}
+
+type ListOverridepolicyListMeta struct {
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system", "zh_CN":"selfLink 表示此对象的 URL，由系统填充，只读。已弃用：selfLink 是一个遗留的只读字段，不再由系统填充。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only", "zh_CN":"标识该对象的服务器内部版本的字符串，客户端可以用该字段来确定对象何时被更改。 该值对客户端是不透明的，并且应该原样传回给服务器。该值由系统填充，只读"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"continue may be set if the user set a limit on the number of items returned, and indicates that the server has more data available. The value is opaque and may be used to issue another request to the endpoint that served this list to retrieve the next set of available objects. Continuing a consistent list may not be possible if the server configuration has changed or more than a few minutes have passed. The resourceVersion field returned when using this continue value will be identical to the value in the first response, unless you have received this token from an error message", "zh_CN":"如果用户对返回的条目数量设置了限制，则 continue 可能被设置，表示服务器有更多可用的数据。 该值是不透明的，可用于向提供此列表服务的端点发出另一个请求，以检索下一组可用的对象。 如果服务器配置已更改或时间已过去几分钟，则可能无法继续提供一致的列表。 除非你在错误消息中收到此令牌（token），否则使用此 continue 值时返回的 resourceVersion 字段应该和第一个响应中的值是相同的"}
+  Continue *string `json:"continue,omitempty" xml:"continue,omitempty"`
+  // {"en":"remainingItemCount is the number of subsequent items in the list which are not included in this list response. If the list request contained label or field selectors, then the number of remaining items is unknown and the field will be left unset and omitted during serialization. If the list is complete (either because it is not chunking or because this is the last chunk), then there are no more remaining items and this field will be left unset and omitted during serialization. Servers older than v1.15 do not set this field. The intended use of the remainingItemCount is estimating the size of a collection. Clients should not rely on the remainingItemCount to be set or to be exact", "zh_CN":"remainingItemCount 是列表中未包含在此列表响应中的后续项目的数量。 如果列表请求包含标签或字段选择器，则剩余项目的数量是未知的，并且在序列化期间该字段将保持未设置和省略。 如果列表是完整的（因为它没有分块或者这是最后一个块），那么就没有剩余的项目，并且在序列化过程中该字段将保持未设置和省略。 早于 v1.15 的服务器不设置此字段。remainingItemCount 的预期用途是估计集合的大小。 客户端不应依赖于设置准确的 remainingItemCount"}
+  RemainingItemCount *int64 `json:"remainingItemCount,omitempty" xml:"remainingItemCount,omitempty"`
+}
+
+func (s ListOverridepolicyListMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyListMeta) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyListMeta) SetSelfLink(v string) *ListOverridepolicyListMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *ListOverridepolicyListMeta) SetResourceVersion(v string) *ListOverridepolicyListMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *ListOverridepolicyListMeta) SetContinue(v string) *ListOverridepolicyListMeta {
+  s.Continue = &v
+  return s
+}
+
+func (s *ListOverridepolicyListMeta) SetRemainingItemCount(v int64) *ListOverridepolicyListMeta {
+  s.RemainingItemCount = &v
+  return s
+}
+
+type ListOverridepolicyOverridePolicy struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"Standard object metadata.", "zh_CN":"标准的对象元数据。"}
+  Metadata *ListOverridepolicyObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Spec defines the behavior of a ListOverridepolicyOverridePolicy", "zh_CN":"spec 定义 ListOverridepolicyOverridePolicy 的行为"}
+  Spec *ListOverridepolicyOverrideSpec `json:"spec,omitempty" xml:"spec,omitempty" require:"true"`
+}
+
+func (s ListOverridepolicyOverridePolicy) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyOverridePolicy) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyOverridePolicy) SetApiVersion(v string) *ListOverridepolicyOverridePolicy {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListOverridepolicyOverridePolicy) SetKind(v string) *ListOverridepolicyOverridePolicy {
+  s.Kind = &v
+  return s
+}
+
+func (s *ListOverridepolicyOverridePolicy) SetMetadata(v *ListOverridepolicyObjectMeta) *ListOverridepolicyOverridePolicy {
+  s.Metadata = v
+  return s
+}
+
+func (s *ListOverridepolicyOverridePolicy) SetSpec(v *ListOverridepolicyOverrideSpec) *ListOverridepolicyOverridePolicy {
+  s.Spec = v
+  return s
+}
+
+type ListOverridepolicyOverrideSpec struct {
+  // {"en":"restricts resource types that this override policy applies to. If you ignore this field it means matching all resources.", "zh_CN":"限制此覆盖策略应用的资源类型。如果忽略此字段，则表示匹配所有资源"}
+  ResourceSelectors []*ListOverridepolicyResourceSelector `json:"resourceSelectors,omitempty" xml:"resourceSelectors,omitempty" type:"Repeated"`
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  OverrideRules []*ListOverridepolicyRuleWithCluster `json:"overrideRules,omitempty" xml:"overrideRules,omitempty" type:"Repeated"`
+  // {"en":"defines restrictions on the override policy that only applies to resources propagated to the matching clusters. If you ignore this field it means matching all clusters", "zh_CN":"定义了对此覆盖策略应用到成员集群的目标选择。如果忽略此字段，则表示匹配所有集群"}
+  TargetCluster *ListOverridepolicyClusterAffinity `json:"targetCluster,omitempty" xml:"targetCluster,omitempty"`
+  // {"en":"represents the override policy to be applied to resources", "zh_CN":"表示将应用于资源的覆盖规则，已弃用，请使用OverrideRules"}
+  ListOverridepolicyOverriders *ListOverridepolicyOverriders `json:"overriders,omitempty" xml:"overriders,omitempty"`
+}
+
+func (s ListOverridepolicyOverrideSpec) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyOverrideSpec) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyOverrideSpec) SetResourceSelectors(v []*ListOverridepolicyResourceSelector) *ListOverridepolicyOverrideSpec {
+  s.ResourceSelectors = v
+  return s
+}
+
+func (s *ListOverridepolicyOverrideSpec) SetOverrideRules(v []*ListOverridepolicyRuleWithCluster) *ListOverridepolicyOverrideSpec {
+  s.OverrideRules = v
+  return s
+}
+
+func (s *ListOverridepolicyOverrideSpec) SetTargetCluster(v *ListOverridepolicyClusterAffinity) *ListOverridepolicyOverrideSpec {
+  s.TargetCluster = v
+  return s
+}
+
+func (s *ListOverridepolicyOverrideSpec) SetOverriders(v *ListOverridepolicyOverriders) *ListOverridepolicyOverrideSpec {
+  s.ListOverridepolicyOverriders = v
+  return s
+}
+
+type ListOverridepolicyResourceSelector struct {
+  // {"en":"represents the API version of the target resources", "zh_CN":"表示目标资源的API版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"represents the Kind of the target resources", "zh_CN":"表示目标资源的类型"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"name of the target resource", "zh_CN":"目标资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"A label query over a set of resources", "zh_CN":"对一组资源的标签查询"}
+  LabelSelector *ListOverridepolicyMetaV1LabelSelector `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+}
+
+func (s ListOverridepolicyResourceSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyResourceSelector) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyResourceSelector) SetApiVersion(v string) *ListOverridepolicyResourceSelector {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListOverridepolicyResourceSelector) SetKind(v string) *ListOverridepolicyResourceSelector {
+  s.Kind = &v
+  return s
+}
+
+func (s *ListOverridepolicyResourceSelector) SetNamespace(v string) *ListOverridepolicyResourceSelector {
+  s.Namespace = &v
+  return s
+}
+
+func (s *ListOverridepolicyResourceSelector) SetName(v string) *ListOverridepolicyResourceSelector {
+  s.Name = &v
+  return s
+}
+
+func (s *ListOverridepolicyResourceSelector) SetLabelSelector(v *ListOverridepolicyMetaV1LabelSelector) *ListOverridepolicyResourceSelector {
+  s.LabelSelector = v
+  return s
+}
+
+type ListOverridepolicyRuleWithCluster struct {
+  // {"en":"defines restrictions on the override policy that only applies to resources propagated to the matching clusters. If you ignore this field it means matching all clusters", "zh_CN":"定义了对此覆盖策略应用到成员集群的目标选择。如果忽略此字段，则表示匹配所有集群"}
+  TargetCluster *ListOverridepolicyClusterAffinity `json:"TargetCluster,omitempty" xml:"TargetCluster,omitempty"`
+  // {"en":"the override policy to be applied to resources", "zh_CN":"应用于资源的覆盖规则"}
+  ListOverridepolicyOverriders *ListOverridepolicyOverriders `json:"ListOverridepolicyOverriders,omitempty" xml:"ListOverridepolicyOverriders,omitempty" require:"true"`
+}
+
+func (s ListOverridepolicyRuleWithCluster) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyRuleWithCluster) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyRuleWithCluster) SetTargetCluster(v *ListOverridepolicyClusterAffinity) *ListOverridepolicyRuleWithCluster {
+  s.TargetCluster = v
+  return s
+}
+
+func (s *ListOverridepolicyRuleWithCluster) SetOverriders(v *ListOverridepolicyOverriders) *ListOverridepolicyRuleWithCluster {
+  s.ListOverridepolicyOverriders = v
+  return s
+}
+
+type ListOverridepolicyClusterAffinity struct {
+  // {"en":"a filter to select member clusters by labels", "zh_CN":"一个用来选中集群的标签过滤器"}
+  LabelSelector *ListOverridepolicyMetaV1LabelSelector `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+  // {"en":"a filter to select member clusters by fields. Currently only three fields of provider(cluster.spec.provider), zone(cluster.spec.zone), and region(cluster.spec.region) are supported", "zh_CN":"一个用来选中集群的字段过滤器，目前支持的字段只有三个：提供商（cluster.spec.provider），区域（cluster.spec.zone），地区（cluster.spec.region）"}
+  ListOverridepolicyFieldSelector *ListOverridepolicyFieldSelector `json:"fieldSelector,omitempty" xml:"fieldSelector,omitempty"`
+  // {"en":"the list of clusters to be selected", "zh_CN":"选中的集群列表"}
+  ClusterNames []*string `json:"clusterNames,omitempty" xml:"clusterNames,omitempty" type:"Repeated"`
+  // {"en":"the list of clusters to be ignored", "zh_CN":"要忽略的集群列表"}
+  Exclude []*string `json:"exclude,omitempty" xml:"exclude,omitempty" type:"Repeated"`
+}
+
+func (s ListOverridepolicyClusterAffinity) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyClusterAffinity) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyClusterAffinity) SetLabelSelector(v *ListOverridepolicyMetaV1LabelSelector) *ListOverridepolicyClusterAffinity {
+  s.LabelSelector = v
+  return s
+}
+
+func (s *ListOverridepolicyClusterAffinity) SetFieldSelector(v *ListOverridepolicyFieldSelector) *ListOverridepolicyClusterAffinity {
+  s.ListOverridepolicyFieldSelector = v
+  return s
+}
+
+func (s *ListOverridepolicyClusterAffinity) SetClusterNames(v []*string) *ListOverridepolicyClusterAffinity {
+  s.ClusterNames = v
+  return s
+}
+
+func (s *ListOverridepolicyClusterAffinity) SetExclude(v []*string) *ListOverridepolicyClusterAffinity {
+  s.Exclude = v
+  return s
+}
+
+type ListOverridepolicyOverriders struct {
+  // {"en":"a general-purpose tool to override any kind of resources", "zh_CN":"覆盖任何类型资源的通用工具"}
+  Plaintext []*ListOverridepolicyPlaintextOverrider `json:"plaintext,omitempty" xml:"plaintext,omitempty" type:"Repeated"`
+  // {"en":"overrides images for workloads", "zh_CN":"覆盖负载的镜像"}
+  ListOverridepolicyImageOverrider []*ListOverridepolicyImageOverrider `json:"imageOverrider,omitempty" xml:"imageOverrider,omitempty" type:"Repeated"`
+  // {"en":"overrides commands for workloads", "zh_CN":"覆盖工作负载的命令"}
+  CommandOverrider []*ListOverridepolicyCommandArgsOverrider `json:"commandOverrider,omitempty" xml:"commandOverrider,omitempty" type:"Repeated"`
+  // {"en":"overrides args for workloads", "zh_CN":"覆盖工作负载参数"}
+  ArgsOverrider []*ListOverridepolicyCommandArgsOverrider `json:"argsOverrider,omitempty" xml:"argsOverrider,omitempty" type:"Repeated"`
+}
+
+func (s ListOverridepolicyOverriders) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyOverriders) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyOverriders) SetPlaintext(v []*ListOverridepolicyPlaintextOverrider) *ListOverridepolicyOverriders {
+  s.Plaintext = v
+  return s
+}
+
+func (s *ListOverridepolicyOverriders) SetImageOverrider(v []*ListOverridepolicyImageOverrider) *ListOverridepolicyOverriders {
+  s.ListOverridepolicyImageOverrider = v
+  return s
+}
+
+func (s *ListOverridepolicyOverriders) SetCommandOverrider(v []*ListOverridepolicyCommandArgsOverrider) *ListOverridepolicyOverriders {
+  s.CommandOverrider = v
+  return s
+}
+
+func (s *ListOverridepolicyOverriders) SetArgsOverrider(v []*ListOverridepolicyCommandArgsOverrider) *ListOverridepolicyOverriders {
+  s.ArgsOverrider = v
+  return s
+}
+
+type ListOverridepolicyPlaintextOverrider struct {
+  // {"en":"path of the target field", "zh_CN":"目标字段的路径"}
+  Path *string `json:"path,omitempty" xml:"path,omitempty" require:"true"`
+  // {"en":"type of operation on the target field", "zh_CN":"对目标字段操作类型"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty" require:"true"`
+  // {"en":"the value applied to the target field,when operator is remove, value must be empty", "zh_CN":"应用在目标字段的值，当 Operator 为 remove 时，此字段必须为空"}
+  Value *ListOverridepolicyJSON `json:"value,omitempty" xml:"value,omitempty"`
+}
+
+func (s ListOverridepolicyPlaintextOverrider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyPlaintextOverrider) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyPlaintextOverrider) SetPath(v string) *ListOverridepolicyPlaintextOverrider {
+  s.Path = &v
+  return s
+}
+
+func (s *ListOverridepolicyPlaintextOverrider) SetOperator(v string) *ListOverridepolicyPlaintextOverrider {
+  s.Operator = &v
+  return s
+}
+
+func (s *ListOverridepolicyPlaintextOverrider) SetValue(v *ListOverridepolicyJSON) *ListOverridepolicyPlaintextOverrider {
+  s.Value = v
+  return s
+}
+
+type ListOverridepolicyJSON struct {
+  // {"en":"value", "zh_CN":"字段值"}
+  Raw [][]byte `json:"raw,omitempty" xml:"raw,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ListOverridepolicyJSON) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyJSON) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyJSON) SetRaw(v [][]byte) *ListOverridepolicyJSON {
+  s.Raw = v
+  return s
+}
+
+type ListOverridepolicyImageOverrider struct {
+  // {"en":"The default is nil. If the resource is a Pod, ReplicaSet, Deployment, StatefulSet system detects the image automatically. If the resource object has multiple containers, all the images will be processed. If it is not empty, only matched mirrors are processed", "zh_CN":"默认为空,如果资源是Pod, ReplicaSet, Deployment, StatefulSet系统自动检测镜像，如果资源对象有多个容器，所有镜像都将被处理。如果不为空，则只处理匹配到的镜像"}
+  Predicate *ListOverridepolicyImagePredicate `json:"predicate,omitempty" xml:"predicate,omitempty"`
+  // {"en":"component of image: [registry/]repository[:tag]", "zh_CN":"假设镜像组成成分：[registry/]repository[:tag]"}
+  Component *string `json:"component,omitempty" xml:"component,omitempty" require:"true"`
+  // {"en":"type of operation on the image", "zh_CN":"对镜像进行的操作"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty" require:"true"`
+  // {"en":"value could not be empty when operator is add or replace. Default is empty. ignored when operator is remove", "zh_CN":"当 Operator 为 add 或 replace 时不能为空，默认为空，当 operator 为 remove 时忽略"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+}
+
+func (s ListOverridepolicyImageOverrider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyImageOverrider) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyImageOverrider) SetPredicate(v *ListOverridepolicyImagePredicate) *ListOverridepolicyImageOverrider {
+  s.Predicate = v
+  return s
+}
+
+func (s *ListOverridepolicyImageOverrider) SetComponent(v string) *ListOverridepolicyImageOverrider {
+  s.Component = &v
+  return s
+}
+
+func (s *ListOverridepolicyImageOverrider) SetOperator(v string) *ListOverridepolicyImageOverrider {
+  s.Operator = &v
+  return s
+}
+
+func (s *ListOverridepolicyImageOverrider) SetValue(v string) *ListOverridepolicyImageOverrider {
+  s.Value = &v
+  return s
+}
+
+type ListOverridepolicyImagePredicate struct {
+  // {"en":"path of the target field", "zh_CN":"目标字段的路径"}
+  Path *string `json:"path,omitempty" xml:"path,omitempty" require:"true"`
+}
+
+func (s ListOverridepolicyImagePredicate) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyImagePredicate) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyImagePredicate) SetPath(v string) *ListOverridepolicyImagePredicate {
+  s.Path = &v
+  return s
+}
+
+type ListOverridepolicyCommandArgsOverrider struct {
+  // {"en":"name of container", "zh_CN":"容器名"}
+  ContainerName *string `json:"containerName,omitempty" xml:"containerName,omitempty" require:"true"`
+  // {"en":"operation to be applied to command/args", "zh_CN":"应用在commad/args上的操作"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty" require:"true"`
+  // {"en":"The value applied to command/args is append to commad/args when operator is add. The value is removed from command/args when operator is remove. If the value is empty, command/args remains unchanged", "zh_CN":"应用在command/args上的值，当operator为add时该值append到commad/args，当operator为remove时，该值从command/args移除，如果该值为空command/args维持原状"}
+  Value []*string `json:"value,omitempty" xml:"value,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ListOverridepolicyCommandArgsOverrider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyCommandArgsOverrider) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyCommandArgsOverrider) SetContainerName(v string) *ListOverridepolicyCommandArgsOverrider {
+  s.ContainerName = &v
+  return s
+}
+
+func (s *ListOverridepolicyCommandArgsOverrider) SetOperator(v string) *ListOverridepolicyCommandArgsOverrider {
+  s.Operator = &v
+  return s
+}
+
+func (s *ListOverridepolicyCommandArgsOverrider) SetValue(v []*string) *ListOverridepolicyCommandArgsOverrider {
+  s.Value = v
+  return s
+}
+
+type ListOverridepolicyFieldSelector struct {
+  // {"en":"A list of node selector requirements by node's labels.", "zh_CN":"按节点标签列出的节点选择器需求列表。"}
+  MatchExpressions []*ListOverridepolicyCoreV1NodeSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s ListOverridepolicyFieldSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyFieldSelector) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyFieldSelector) SetMatchExpressions(v []*ListOverridepolicyCoreV1NodeSelectorRequirement) *ListOverridepolicyFieldSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type ListOverridepolicyCoreV1NodeSelectorRequirement struct {
+  // {"en":"The label key that the selector applies to.", "zh_CN":"选择算符所适用的标签主键。"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"Represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.", "zh_CN":"代表主键与值集之间的关系。合法的 operator 值包括 In、NotIn、Exists、DoesNotExist、Gt 和 Lt。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.", "zh_CN":"一个由字符串值组成的数组。如果 operator 是 In 或 NotIn，则 values 数组不能为空。 如果 operator 为 Exists 或 DoesNotExist，则 values 数组只能为空。 如果 operator 为 Gt 或 Lt，则 values 数组只能包含一个元素，并且该元素会被解释为整数。 在执行策略性合并补丁操作时，此数组会被整体替换。"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s ListOverridepolicyCoreV1NodeSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyCoreV1NodeSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyCoreV1NodeSelectorRequirement) SetKey(v string) *ListOverridepolicyCoreV1NodeSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *ListOverridepolicyCoreV1NodeSelectorRequirement) SetOperator(v string) *ListOverridepolicyCoreV1NodeSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *ListOverridepolicyCoreV1NodeSelectorRequirement) SetValues(v []*string) *ListOverridepolicyCoreV1NodeSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type ListOverridepolicyMetaV1LabelSelector struct {
+  // {"en":"A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed.", "zh_CN":"matchLabels 映射中的单个 {key,value} 键值对相当于 matchExpressions 的一个元素，其键字段为 key，运算符为 In，values 数组仅包含 value。"}
+  MatchLabels map[string]*string `json:"matchLabels,omitempty" xml:"matchLabels,omitempty"`
+  // {"en":"A list of label selector requirements. The requirements are ANDed.", "zh_CN":"标签选择器要求的列表，这些要求的结果按逻辑与的关系来计算。"}
+  MatchExpressions []*ListOverridepolicyLabelSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s ListOverridepolicyMetaV1LabelSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyMetaV1LabelSelector) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyMetaV1LabelSelector) SetMatchLabels(v map[string]*string) *ListOverridepolicyMetaV1LabelSelector {
+  s.MatchLabels = v
+  return s
+}
+
+func (s *ListOverridepolicyMetaV1LabelSelector) SetMatchExpressions(v []*ListOverridepolicyLabelSelectorRequirement) *ListOverridepolicyMetaV1LabelSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type ListOverridepolicyLabelSelectorRequirement struct {
+  // {"en":"key is the label key that the selector applies to.", "zh_CN":"选择器应用的标签键"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist.", "zh_CN":"operator 表示键与一组值的关系。有效的运算符包括 In、NotIn、Exists 和 DoesNotExist。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.", "zh_CN":"values 是一个字符串值数组。如果运算符为 In 或 NotIn，则 values 数组必须为非空。如果运算符是 Exists 或 DoesNotExist，则 values 数组必须为空。该数组在策略性合并补丁（Strategic Merge Patch）期间被替换。"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s ListOverridepolicyLabelSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyLabelSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyLabelSelectorRequirement) SetKey(v string) *ListOverridepolicyLabelSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *ListOverridepolicyLabelSelectorRequirement) SetOperator(v string) *ListOverridepolicyLabelSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *ListOverridepolicyLabelSelectorRequirement) SetValues(v []*string) *ListOverridepolicyLabelSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type ListOverridepolicyObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*ListOverridepolicyOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*ListOverridepolicyManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s ListOverridepolicyObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyObjectMeta) SetName(v string) *ListOverridepolicyObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *ListOverridepolicyObjectMeta) SetGenerateName(v string) *ListOverridepolicyObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *ListOverridepolicyObjectMeta) SetNamespace(v string) *ListOverridepolicyObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *ListOverridepolicyObjectMeta) SetSelfLink(v string) *ListOverridepolicyObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *ListOverridepolicyObjectMeta) SetUid(v string) *ListOverridepolicyObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *ListOverridepolicyObjectMeta) SetResourceVersion(v string) *ListOverridepolicyObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *ListOverridepolicyObjectMeta) SetGeneration(v int64) *ListOverridepolicyObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *ListOverridepolicyObjectMeta) SetCreationTimestamp(v string) *ListOverridepolicyObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *ListOverridepolicyObjectMeta) SetDeletionTimestamp(v string) *ListOverridepolicyObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *ListOverridepolicyObjectMeta) SetDeletionGracePeriodSeconds(v int64) *ListOverridepolicyObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *ListOverridepolicyObjectMeta) SetLabels(v map[string]*string) *ListOverridepolicyObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *ListOverridepolicyObjectMeta) SetAnnotations(v map[string]*string) *ListOverridepolicyObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *ListOverridepolicyObjectMeta) SetOwnerReferences(v []*ListOverridepolicyOwnerReference) *ListOverridepolicyObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *ListOverridepolicyObjectMeta) SetFinalizers(v []*string) *ListOverridepolicyObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *ListOverridepolicyObjectMeta) SetClusterName(v string) *ListOverridepolicyObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *ListOverridepolicyObjectMeta) SetManagedFields(v []*ListOverridepolicyManagedFieldsEntry) *ListOverridepolicyObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type ListOverridepolicyManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this ListOverridepolicyManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'ListOverridepolicyFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“ListOverridepolicyFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"ListOverridepolicyFieldsV1 holds the first ListOverridepolicyJSON version format as described in the 'ListOverridepolicyFieldsV1' type", "zh_CN":"ListOverridepolicyFieldsV1 包含类型 “ListOverridepolicyFieldsV1” 中描述的第一个 ListOverridepolicyJSON 版本格式"}
+  ListOverridepolicyFieldsV1 *ListOverridepolicyFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s ListOverridepolicyManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyManagedFieldsEntry) SetManager(v string) *ListOverridepolicyManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *ListOverridepolicyManagedFieldsEntry) SetOperation(v string) *ListOverridepolicyManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *ListOverridepolicyManagedFieldsEntry) SetApiVersion(v string) *ListOverridepolicyManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListOverridepolicyManagedFieldsEntry) SetTime(v string) *ListOverridepolicyManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *ListOverridepolicyManagedFieldsEntry) SetFieldsType(v string) *ListOverridepolicyManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *ListOverridepolicyManagedFieldsEntry) SetFieldsV1(v *ListOverridepolicyFieldsV1) *ListOverridepolicyManagedFieldsEntry {
+  s.ListOverridepolicyFieldsV1 = v
+  return s
+}
+
+func (s *ListOverridepolicyManagedFieldsEntry) SetSubresource(v string) *ListOverridepolicyManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type ListOverridepolicyFieldsV1 struct {
+}
+
+func (s ListOverridepolicyFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyFieldsV1) GoString() string {
+  return s.String()
+}
+
+type ListOverridepolicyOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s ListOverridepolicyOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListOverridepolicyOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *ListOverridepolicyOwnerReference) SetApiVersion(v string) *ListOverridepolicyOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListOverridepolicyOwnerReference) SetKind(v string) *ListOverridepolicyOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *ListOverridepolicyOwnerReference) SetName(v string) *ListOverridepolicyOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *ListOverridepolicyOwnerReference) SetUid(v string) *ListOverridepolicyOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *ListOverridepolicyOwnerReference) SetController(v bool) *ListOverridepolicyOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *ListOverridepolicyOwnerReference) SetBlockOwnerDeletion(v bool) *ListOverridepolicyOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+
+
+
+type DeletePropagationPoliciesRequest struct {
+}
+
+func (s DeletePropagationPoliciesRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeletePropagationPoliciesRequest) GoString() string {
+  return s.String()
+}
+
+type DeletePropagationPoliciesResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"status", "zh_CN":"status"}
+  Data *DeletePropagationPoliciesStatus `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s DeletePropagationPoliciesResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeletePropagationPoliciesResponse) GoString() string {
+  return s.String()
+}
+
+func (s *DeletePropagationPoliciesResponse) SetCode(v int64) *DeletePropagationPoliciesResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *DeletePropagationPoliciesResponse) SetMsg(v string) *DeletePropagationPoliciesResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *DeletePropagationPoliciesResponse) SetRequestId(v string) *DeletePropagationPoliciesResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *DeletePropagationPoliciesResponse) SetData(v *DeletePropagationPoliciesStatus) *DeletePropagationPoliciesResponse {
+  s.Data = v
+  return s
+}
+
+type DeletePropagationPoliciesPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+  // {"en":"The name of propagationPolicy", "zh_CN":"propagationPolicy 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s DeletePropagationPoliciesPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeletePropagationPoliciesPaths) GoString() string {
+  return s.String()
+}
+
+func (s *DeletePropagationPoliciesPaths) SetNamespace(v string) *DeletePropagationPoliciesPaths {
+  s.Namespace = &v
+  return s
+}
+
+func (s *DeletePropagationPoliciesPaths) SetName(v string) *DeletePropagationPoliciesPaths {
+  s.Name = &v
+  return s
+}
+
+type DeletePropagationPoliciesParameters struct {
+}
+
+func (s DeletePropagationPoliciesParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeletePropagationPoliciesParameters) GoString() string {
+  return s.String()
+}
+
+type DeletePropagationPoliciesRequestHeader struct {
+}
+
+func (s DeletePropagationPoliciesRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeletePropagationPoliciesRequestHeader) GoString() string {
+  return s.String()
+}
+
+type DeletePropagationPoliciesResponseHeader struct {
+}
+
+func (s DeletePropagationPoliciesResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeletePropagationPoliciesResponseHeader) GoString() string {
+  return s.String()
+}
+
+type DeletePropagationPoliciesStatus struct {
+  // {"en":"APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values", "zh_CN":"APIVersion 定义对象表示的版本化模式。 服务器应将已识别的模式转换为最新的内部值，并可能拒绝无法识别的值"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase", "zh_CN":"Kind 是一个字符串值，表示此对象表示的 REST 资源。 服务器可以从客户端提交请求的端点推断出这一点。 无法更新。驼峰式规则"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"DeletePropagationPoliciesStatus of the operation. One of: 'Success' or 'Failure'", "zh_CN":"操作状态。“Success”或“Failure” 之一"}
+  DeletePropagationPoliciesStatus *string `json:"status,omitempty" xml:"status,omitempty" require:"true"`
+  // {"en":"Suggested HTTP return code for this status, 0 if not set", "zh_CN":"此状态的建议 HTTP 返回代码，如果未设置，则为 0"}
+  Code *int32 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Extended data associated with the reason. Each reason may define its own extended details. This field is optional and the data returned is not guaranteed to conform to any schema except that defined by the reason type", "zh_CN":"与原因（Reason）相关的扩展数据。每个原因都可以定义自己的扩展细节。 此字段是可选的，并且不保证返回的数据符合任何模式，除非由原因类型定义"}
+  Details *DeletePropagationPoliciesStatusDetails `json:"details,omitempty" xml:"details,omitempty" require:"true"`
+}
+
+func (s DeletePropagationPoliciesStatus) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeletePropagationPoliciesStatus) GoString() string {
+  return s.String()
+}
+
+func (s *DeletePropagationPoliciesStatus) SetApiVersion(v string) *DeletePropagationPoliciesStatus {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *DeletePropagationPoliciesStatus) SetKind(v string) *DeletePropagationPoliciesStatus {
+  s.Kind = &v
+  return s
+}
+
+func (s *DeletePropagationPoliciesStatus) SetStatus(v string) *DeletePropagationPoliciesStatus {
+  s.DeletePropagationPoliciesStatus = &v
+  return s
+}
+
+func (s *DeletePropagationPoliciesStatus) SetCode(v int32) *DeletePropagationPoliciesStatus {
+  s.Code = &v
+  return s
+}
+
+func (s *DeletePropagationPoliciesStatus) SetDetails(v *DeletePropagationPoliciesStatusDetails) *DeletePropagationPoliciesStatus {
+  s.Details = v
+  return s
+}
+
+type DeletePropagationPoliciesStatusDetails struct {
+  // {"en":"The name attribute of the resource associated with the status StatusReason (when there is a single name which can be described)", "zh_CN":"与状态 StatusReason 关联的资源的名称属性（当有一个可以描述的名称时）"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"The kind attribute of the resource associated with the status StatusReason. On some operations may differ from the requested resource Kind", "zh_CN":"与状态 StatusReason 关联的资源的种类属性"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"The group attribute of the resource associated with the status StatusReason", "zh_CN":"与状态 StatusReason 关联的资源的组属性"}
+  Group *string `json:"group,omitempty" xml:"group,omitempty" require:"true"`
+  // {"en":"UID of the resource. (when there is a single resource which can be described)", "zh_CN":"资源的 UID（当有单个可以描述的资源时）"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty" require:"true"`
+}
+
+func (s DeletePropagationPoliciesStatusDetails) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeletePropagationPoliciesStatusDetails) GoString() string {
+  return s.String()
+}
+
+func (s *DeletePropagationPoliciesStatusDetails) SetName(v string) *DeletePropagationPoliciesStatusDetails {
+  s.Name = &v
+  return s
+}
+
+func (s *DeletePropagationPoliciesStatusDetails) SetKind(v string) *DeletePropagationPoliciesStatusDetails {
+  s.Kind = &v
+  return s
+}
+
+func (s *DeletePropagationPoliciesStatusDetails) SetGroup(v string) *DeletePropagationPoliciesStatusDetails {
+  s.Group = &v
+  return s
+}
+
+func (s *DeletePropagationPoliciesStatusDetails) SetUid(v string) *DeletePropagationPoliciesStatusDetails {
+  s.Uid = &v
+  return s
+}
+
+
+
+
+type DeleteHorizontalPodAutoscalerRequest struct {
+}
+
+func (s DeleteHorizontalPodAutoscalerRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteHorizontalPodAutoscalerRequest) GoString() string {
+  return s.String()
+}
+
+type DeleteHorizontalPodAutoscalerResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+}
+
+func (s DeleteHorizontalPodAutoscalerResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteHorizontalPodAutoscalerResponse) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteHorizontalPodAutoscalerResponse) SetCode(v int64) *DeleteHorizontalPodAutoscalerResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *DeleteHorizontalPodAutoscalerResponse) SetMsg(v string) *DeleteHorizontalPodAutoscalerResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *DeleteHorizontalPodAutoscalerResponse) SetRequestId(v string) *DeleteHorizontalPodAutoscalerResponse {
+  s.RequestId = &v
+  return s
+}
+
+type DeleteHorizontalPodAutoscalerPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+  // {"en":"hpa name", "zh_CN":"hpa 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s DeleteHorizontalPodAutoscalerPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteHorizontalPodAutoscalerPaths) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteHorizontalPodAutoscalerPaths) SetNamespace(v string) *DeleteHorizontalPodAutoscalerPaths {
+  s.Namespace = &v
+  return s
+}
+
+func (s *DeleteHorizontalPodAutoscalerPaths) SetName(v string) *DeleteHorizontalPodAutoscalerPaths {
+  s.Name = &v
+  return s
+}
+
+type DeleteHorizontalPodAutoscalerParameters struct {
+}
+
+func (s DeleteHorizontalPodAutoscalerParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteHorizontalPodAutoscalerParameters) GoString() string {
+  return s.String()
+}
+
+type DeleteHorizontalPodAutoscalerRequestHeader struct {
+}
+
+func (s DeleteHorizontalPodAutoscalerRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteHorizontalPodAutoscalerRequestHeader) GoString() string {
+  return s.String()
+}
+
+type DeleteHorizontalPodAutoscalerResponseHeader struct {
+}
+
+func (s DeleteHorizontalPodAutoscalerResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteHorizontalPodAutoscalerResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type ListPropagationPoliciesRequest struct {
+}
+
+func (s ListPropagationPoliciesRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesRequest) GoString() string {
+  return s.String()
+}
+
+type ListPropagationPoliciesResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"propagationPolicy list", "zh_CN":"propagationPolicy 列表"}
+  Data *ListPropagationPoliciesPropagationPolicyList `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s ListPropagationPoliciesResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesResponse) SetCode(v int64) *ListPropagationPoliciesResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesResponse) SetMsg(v string) *ListPropagationPoliciesResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesResponse) SetRequestId(v string) *ListPropagationPoliciesResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesResponse) SetData(v *ListPropagationPoliciesPropagationPolicyList) *ListPropagationPoliciesResponse {
+  s.Data = v
+  return s
+}
+
+type ListPropagationPoliciesPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+}
+
+func (s ListPropagationPoliciesPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesPaths) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesPaths) SetNamespace(v string) *ListPropagationPoliciesPaths {
+  s.Namespace = &v
+  return s
+}
+
+type ListPropagationPoliciesParameters struct {
+  // {"en":"The name of deployment", "zh_CN":"deployment 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"labelSelector", "zh_CN":"labelSelector"}
+  LabelSelector *string `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+}
+
+func (s ListPropagationPoliciesParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesParameters) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesParameters) SetName(v string) *ListPropagationPoliciesParameters {
+  s.Name = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesParameters) SetLabelSelector(v string) *ListPropagationPoliciesParameters {
+  s.LabelSelector = &v
+  return s
+}
+
+type ListPropagationPoliciesRequestHeader struct {
+}
+
+func (s ListPropagationPoliciesRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ListPropagationPoliciesResponseHeader struct {
+}
+
+func (s ListPropagationPoliciesResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesResponseHeader) GoString() string {
+  return s.String()
+}
+
+type ListPropagationPoliciesPropagationPolicyList struct {
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"Standard list metadata", "zh_CN":"标准列表元数据"}
+  Metadata *ListPropagationPoliciesListMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"List of ListPropagationPoliciesPropagationPolicy", "zh_CN":"ListPropagationPoliciesPropagationPolicy 列表"}
+  Items []*ListPropagationPoliciesPropagationPolicy `json:"items,omitempty" xml:"items,omitempty" type:"Repeated"`
+}
+
+func (s ListPropagationPoliciesPropagationPolicyList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesPropagationPolicyList) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesPropagationPolicyList) SetKind(v string) *ListPropagationPoliciesPropagationPolicyList {
+  s.Kind = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesPropagationPolicyList) SetApiVersion(v string) *ListPropagationPoliciesPropagationPolicyList {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesPropagationPolicyList) SetMetadata(v *ListPropagationPoliciesListMeta) *ListPropagationPoliciesPropagationPolicyList {
+  s.Metadata = v
+  return s
+}
+
+func (s *ListPropagationPoliciesPropagationPolicyList) SetItems(v []*ListPropagationPoliciesPropagationPolicy) *ListPropagationPoliciesPropagationPolicyList {
+  s.Items = v
+  return s
+}
+
+type ListPropagationPoliciesListMeta struct {
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system", "zh_CN":"selfLink 表示此对象的 URL，由系统填充，只读。已弃用：selfLink 是一个遗留的只读字段，不再由系统填充。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only", "zh_CN":"标识该对象的服务器内部版本的字符串，客户端可以用该字段来确定对象何时被更改。 该值对客户端是不透明的，并且应该原样传回给服务器。该值由系统填充，只读"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"continue may be set if the user set a limit on the number of items returned, and indicates that the server has more data available. The value is opaque and may be used to issue another request to the endpoint that served this list to retrieve the next set of available objects. Continuing a consistent list may not be possible if the server configuration has changed or more than a few minutes have passed. The resourceVersion field returned when using this continue value will be identical to the value in the first response, unless you have received this token from an error message", "zh_CN":"如果用户对返回的条目数量设置了限制，则 continue 可能被设置，表示服务器有更多可用的数据。 该值是不透明的，可用于向提供此列表服务的端点发出另一个请求，以检索下一组可用的对象。 如果服务器配置已更改或时间已过去几分钟，则可能无法继续提供一致的列表。 除非你在错误消息中收到此令牌（token），否则使用此 continue 值时返回的 resourceVersion 字段应该和第一个响应中的值是相同的"}
+  Continue *string `json:"continue,omitempty" xml:"continue,omitempty"`
+  // {"en":"remainingItemCount is the number of subsequent items in the list which are not included in this list response. If the list request contained label or field selectors, then the number of remaining items is unknown and the field will be left unset and omitted during serialization. If the list is complete (either because it is not chunking or because this is the last chunk), then there are no more remaining items and this field will be left unset and omitted during serialization. Servers older than v1.15 do not set this field. The intended use of the remainingItemCount is estimating the size of a collection. Clients should not rely on the remainingItemCount to be set or to be exact", "zh_CN":"remainingItemCount 是列表中未包含在此列表响应中的后续项目的数量。 如果列表请求包含标签或字段选择器，则剩余项目的数量是未知的，并且在序列化期间该字段将保持未设置和省略。 如果列表是完整的（因为它没有分块或者这是最后一个块），那么就没有剩余的项目，并且在序列化过程中该字段将保持未设置和省略。 早于 v1.15 的服务器不设置此字段。remainingItemCount 的预期用途是估计集合的大小。 客户端不应依赖于设置准确的 remainingItemCount"}
+  RemainingItemCount *int64 `json:"remainingItemCount,omitempty" xml:"remainingItemCount,omitempty"`
+}
+
+func (s ListPropagationPoliciesListMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesListMeta) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesListMeta) SetSelfLink(v string) *ListPropagationPoliciesListMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesListMeta) SetResourceVersion(v string) *ListPropagationPoliciesListMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesListMeta) SetContinue(v string) *ListPropagationPoliciesListMeta {
+  s.Continue = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesListMeta) SetRemainingItemCount(v int64) *ListPropagationPoliciesListMeta {
+  s.RemainingItemCount = &v
+  return s
+}
+
+type ListPropagationPoliciesPropagationPolicy struct {
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"Standard object metadata.", "zh_CN":"标准的对象元数据。"}
+  Metadata *ListPropagationPoliciesObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Spec defines the behavior of a ListPropagationPoliciesPropagationPolicy", "zh_CN":"spec 定义 ListPropagationPoliciesPropagationPolicy 的行为"}
+  Spec *ListPropagationPoliciesPropagationSpec `json:"spec,omitempty" xml:"spec,omitempty" require:"true"`
+}
+
+func (s ListPropagationPoliciesPropagationPolicy) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesPropagationPolicy) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesPropagationPolicy) SetKind(v string) *ListPropagationPoliciesPropagationPolicy {
+  s.Kind = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesPropagationPolicy) SetApiVersion(v string) *ListPropagationPoliciesPropagationPolicy {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesPropagationPolicy) SetMetadata(v *ListPropagationPoliciesObjectMeta) *ListPropagationPoliciesPropagationPolicy {
+  s.Metadata = v
+  return s
+}
+
+func (s *ListPropagationPoliciesPropagationPolicy) SetSpec(v *ListPropagationPoliciesPropagationSpec) *ListPropagationPoliciesPropagationPolicy {
+  s.Spec = v
+  return s
+}
+
+type ListPropagationPoliciesPropagationSpec struct {
+  // {"en":"resource that this propagation policy applies to", "zh_CN":"策略应用的资源"}
+  ResourceSelectors []*ListPropagationPoliciesResourceSelector `json:"resourceSelectors,omitempty" xml:"resourceSelectors,omitempty" type:"Repeated"`
+  // {"en":"association", "zh_CN":"association"}
+  Association *bool `json:"association,omitempty" xml:"association,omitempty"`
+  // {"en":"scheduling strategy", "zh_CN":"调度策略"}
+  ListPropagationPoliciesPlacement *ListPropagationPoliciesPlacement `json:"placement,omitempty" xml:"placement,omitempty"`
+  // {"en":"dependent overrides", "zh_CN":"依赖的覆盖策略"}
+  DependentOverrides []*string `json:"dependentOverrides,omitempty" xml:"dependentOverrides,omitempty" type:"Repeated"`
+  // {"en":"name of scheduler", "zh_CN":"调度器名称"}
+  SchedulerName *string `json:"schedulerName,omitempty" xml:"schedulerName,omitempty"`
+  // {"en":"indicates how Karmada migrates applications in case of failures", "zh_CN":"failover 重调度策略"}
+  Failover *ListPropagationPoliciesFailoverBehavior `json:"failover,omitempty" xml:"failover,omitempty"`
+}
+
+func (s ListPropagationPoliciesPropagationSpec) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesPropagationSpec) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesPropagationSpec) SetResourceSelectors(v []*ListPropagationPoliciesResourceSelector) *ListPropagationPoliciesPropagationSpec {
+  s.ResourceSelectors = v
+  return s
+}
+
+func (s *ListPropagationPoliciesPropagationSpec) SetAssociation(v bool) *ListPropagationPoliciesPropagationSpec {
+  s.Association = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesPropagationSpec) SetPlacement(v *ListPropagationPoliciesPlacement) *ListPropagationPoliciesPropagationSpec {
+  s.ListPropagationPoliciesPlacement = v
+  return s
+}
+
+func (s *ListPropagationPoliciesPropagationSpec) SetDependentOverrides(v []*string) *ListPropagationPoliciesPropagationSpec {
+  s.DependentOverrides = v
+  return s
+}
+
+func (s *ListPropagationPoliciesPropagationSpec) SetSchedulerName(v string) *ListPropagationPoliciesPropagationSpec {
+  s.SchedulerName = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesPropagationSpec) SetFailover(v *ListPropagationPoliciesFailoverBehavior) *ListPropagationPoliciesPropagationSpec {
+  s.Failover = v
+  return s
+}
+
+type ListPropagationPoliciesFailoverBehavior struct {
+  // {"en":"indicates failover behaviors in case of application failure", "zh_CN":"failover 重调度策略"}
+  Application *ListPropagationPoliciesApplicationFailoverBehavior `json:"application,omitempty" xml:"application,omitempty"`
+}
+
+func (s ListPropagationPoliciesFailoverBehavior) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesFailoverBehavior) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesFailoverBehavior) SetApplication(v *ListPropagationPoliciesApplicationFailoverBehavior) *ListPropagationPoliciesFailoverBehavior {
+  s.Application = v
+  return s
+}
+
+type ListPropagationPoliciesApplicationFailoverBehavior struct {
+  // {"en":"indicates the decision conditions of performing the failover process.", "zh_CN":"程序经过多长时间的失败,才属于不健康"}
+  ListPropagationPoliciesDecisionConditions *ListPropagationPoliciesDecisionConditions `json:"decisionConditions,omitempty" xml:"decisionConditions,omitempty"`
+  // {"en":"represents how to deal with the legacy applications on the cluster from which the application is migrated. there are three options: Immediately,Graciously and Never. Graciously by defautl", "zh_CN":"应用在失败后的驱逐方式,有3个可填值: Immediately,Graciously and Never 默认:Graciously "}
+  PurgeMode *string `json:"purgeMode,omitempty" xml:"purgeMode,omitempty"`
+  // {"en":"the maximum waiting duration in seconds before application on the migrated cluster should be deleted.", "zh_CN":"平滑删除时间"}
+  GracePeriodSeconds *int64 `json:"gracePeriodSeconds,omitempty" xml:"gracePeriodSeconds,omitempty"`
+}
+
+func (s ListPropagationPoliciesApplicationFailoverBehavior) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesApplicationFailoverBehavior) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesApplicationFailoverBehavior) SetDecisionConditions(v *ListPropagationPoliciesDecisionConditions) *ListPropagationPoliciesApplicationFailoverBehavior {
+  s.ListPropagationPoliciesDecisionConditions = v
+  return s
+}
+
+func (s *ListPropagationPoliciesApplicationFailoverBehavior) SetPurgeMode(v string) *ListPropagationPoliciesApplicationFailoverBehavior {
+  s.PurgeMode = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesApplicationFailoverBehavior) SetGracePeriodSeconds(v int64) *ListPropagationPoliciesApplicationFailoverBehavior {
+  s.GracePeriodSeconds = &v
+  return s
+}
+
+type ListPropagationPoliciesDecisionConditions struct {
+  // {"en":"represents the period of time Karmada should wait", "zh_CN":"应用经过多长时间后算失败"}
+  TolerationSeconds *int64 `json:"tolerationSeconds,omitempty" xml:"tolerationSeconds,omitempty"`
+}
+
+func (s ListPropagationPoliciesDecisionConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesDecisionConditions) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesDecisionConditions) SetTolerationSeconds(v int64) *ListPropagationPoliciesDecisionConditions {
+  s.TolerationSeconds = &v
+  return s
+}
+
+type ListPropagationPoliciesResourceSelector struct {
+  // {"en":"represents the API version of the target resources", "zh_CN":"表示目标资源的API版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"represents the Kind of the target resources", "zh_CN":"表示目标资源的类型"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"name of the target resource", "zh_CN":"目标资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"A label query over a set of resources", "zh_CN":"对一组资源的标签查询"}
+  LabelSelector *ListPropagationPoliciesMetaV1LabelSelector `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+}
+
+func (s ListPropagationPoliciesResourceSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesResourceSelector) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesResourceSelector) SetApiVersion(v string) *ListPropagationPoliciesResourceSelector {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesResourceSelector) SetKind(v string) *ListPropagationPoliciesResourceSelector {
+  s.Kind = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesResourceSelector) SetNamespace(v string) *ListPropagationPoliciesResourceSelector {
+  s.Namespace = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesResourceSelector) SetName(v string) *ListPropagationPoliciesResourceSelector {
+  s.Name = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesResourceSelector) SetLabelSelector(v *ListPropagationPoliciesMetaV1LabelSelector) *ListPropagationPoliciesResourceSelector {
+  s.LabelSelector = v
+  return s
+}
+
+type ListPropagationPoliciesPlacement struct {
+  // {"en":"the policy that only applies to resources propagated to the matching clusters", "zh_CN":"策略应用到成员集群的目标选择"}
+  ListPropagationPoliciesClusterAffinity *ListPropagationPoliciesClusterAffinity `json:"clusterAffinity,omitempty" xml:"clusterAffinity,omitempty"`
+  // {"en":"toleration of cluster", "zh_CN":"集群容忍度"}
+  ClusterTolerations *ListPropagationPoliciesToleration `json:"clusterTolerations,omitempty" xml:"clusterTolerations,omitempty"`
+  // {"en":"Cluster grouping constraint", "zh_CN":"根据约束对集群进行分组，把资源分散到多个小组"}
+  SpreadConstraints []*ListPropagationPoliciesSpreadConstraint `json:"spreadConstraints,omitempty" xml:"spreadConstraints,omitempty" type:"Repeated"`
+  // {"en":"scheduling strategy of replicas", "zh_CN":"副本调度策略"}
+  ReplicaScheduling *ListPropagationPoliciesReplicaSchedulingStrategy `json:"replicaScheduling,omitempty" xml:"replicaScheduling,omitempty"`
+}
+
+func (s ListPropagationPoliciesPlacement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesPlacement) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesPlacement) SetClusterAffinity(v *ListPropagationPoliciesClusterAffinity) *ListPropagationPoliciesPlacement {
+  s.ListPropagationPoliciesClusterAffinity = v
+  return s
+}
+
+func (s *ListPropagationPoliciesPlacement) SetClusterTolerations(v *ListPropagationPoliciesToleration) *ListPropagationPoliciesPlacement {
+  s.ClusterTolerations = v
+  return s
+}
+
+func (s *ListPropagationPoliciesPlacement) SetSpreadConstraints(v []*ListPropagationPoliciesSpreadConstraint) *ListPropagationPoliciesPlacement {
+  s.SpreadConstraints = v
+  return s
+}
+
+func (s *ListPropagationPoliciesPlacement) SetReplicaScheduling(v *ListPropagationPoliciesReplicaSchedulingStrategy) *ListPropagationPoliciesPlacement {
+  s.ReplicaScheduling = v
+  return s
+}
+
+type ListPropagationPoliciesReplicaSchedulingStrategy struct {
+  // {"en":"scheduling type of replicas", "zh_CN":"副本调度类型"}
+  ReplicaSchedulingType *string `json:"replicaSchedulingType,omitempty" xml:"replicaSchedulingType,omitempty"`
+  // {"en":"division preference of replicas", "zh_CN":"副本数切分方式"}
+  ReplicaDivisionPreference *string `json:"replicaDivisionPreference,omitempty" xml:"replicaDivisionPreference,omitempty"`
+  // {"en":"weight preference", "zh_CN":"权重配置"}
+  WeightPreference *ListPropagationPoliciesClusterPreferences `json:"weightPreference,omitempty" xml:"weightPreference,omitempty"`
+}
+
+func (s ListPropagationPoliciesReplicaSchedulingStrategy) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesReplicaSchedulingStrategy) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesReplicaSchedulingStrategy) SetReplicaSchedulingType(v string) *ListPropagationPoliciesReplicaSchedulingStrategy {
+  s.ReplicaSchedulingType = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesReplicaSchedulingStrategy) SetReplicaDivisionPreference(v string) *ListPropagationPoliciesReplicaSchedulingStrategy {
+  s.ReplicaDivisionPreference = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesReplicaSchedulingStrategy) SetWeightPreference(v *ListPropagationPoliciesClusterPreferences) *ListPropagationPoliciesReplicaSchedulingStrategy {
+  s.WeightPreference = v
+  return s
+}
+
+type ListPropagationPoliciesClusterPreferences struct {
+  // {"en":"static proportion of cluster replicas in total", "zh_CN":"集群副本数占比"}
+  StaticWeightList []*ListPropagationPoliciesStaticClusterWeight `json:"staticWeightList,omitempty" xml:"staticWeightList,omitempty" type:"Repeated"`
+  // {"en":"dynamic proportion of replicas in total", "zh_CN":"动态比重"}
+  DynamicWeight *string `json:"dynamicWeight,omitempty" xml:"dynamicWeight,omitempty"`
+}
+
+func (s ListPropagationPoliciesClusterPreferences) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesClusterPreferences) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesClusterPreferences) SetStaticWeightList(v []*ListPropagationPoliciesStaticClusterWeight) *ListPropagationPoliciesClusterPreferences {
+  s.StaticWeightList = v
+  return s
+}
+
+func (s *ListPropagationPoliciesClusterPreferences) SetDynamicWeight(v string) *ListPropagationPoliciesClusterPreferences {
+  s.DynamicWeight = &v
+  return s
+}
+
+type ListPropagationPoliciesStaticClusterWeight struct {
+  // {"en":"affected clusters by the weight", "zh_CN":"比重生效的目标集群"}
+  TargetCluster *ListPropagationPoliciesClusterAffinity `json:"targetCluster,omitempty" xml:"targetCluster,omitempty"`
+  // {"en":"proportion of replicas in total", "zh_CN":"集群实例数占比"}
+  Weight *int64 `json:"weight,omitempty" xml:"weight,omitempty"`
+}
+
+func (s ListPropagationPoliciesStaticClusterWeight) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesStaticClusterWeight) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesStaticClusterWeight) SetTargetCluster(v *ListPropagationPoliciesClusterAffinity) *ListPropagationPoliciesStaticClusterWeight {
+  s.TargetCluster = v
+  return s
+}
+
+func (s *ListPropagationPoliciesStaticClusterWeight) SetWeight(v int64) *ListPropagationPoliciesStaticClusterWeight {
+  s.Weight = &v
+  return s
+}
+
+type ListPropagationPoliciesSpreadConstraint struct {
+  // {"en":"The member clusters in the cluster federation are divided into multiple groups based on an attribute of the member cluster (currently, only cluster is supported, and the region, zone, and provider attributes may be supported in the future)", "zh_CN":"根据成员集群的某个属性（当前仅支持cluster、后续可能增加对成员集群region、zone、provider等属性支持）将集群联邦中的成员集群分为多个小组"}
+  SpreadByField *string `json:"spreadByField,omitempty" xml:"spreadByField,omitempty"`
+  // {"en":"The member cluster is divided into groups based on labels", "zh_CN":"根据label将成员集群分为多个小组"}
+  SpreadByLabel *string `json:"spreadByLabel,omitempty" xml:"spreadByLabel,omitempty"`
+  // {"en":"Maximum number of groups", "zh_CN":"最大分组数"}
+  MaxGroups *int64 `json:"maxGroups,omitempty" xml:"maxGroups,omitempty"`
+  // {"en":"Minimum number of groups", "zh_CN":"最小分组数"}
+  MinGroups *int64 `json:"minGroups,omitempty" xml:"minGroups,omitempty"`
+}
+
+func (s ListPropagationPoliciesSpreadConstraint) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesSpreadConstraint) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesSpreadConstraint) SetSpreadByField(v string) *ListPropagationPoliciesSpreadConstraint {
+  s.SpreadByField = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesSpreadConstraint) SetSpreadByLabel(v string) *ListPropagationPoliciesSpreadConstraint {
+  s.SpreadByLabel = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesSpreadConstraint) SetMaxGroups(v int64) *ListPropagationPoliciesSpreadConstraint {
+  s.MaxGroups = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesSpreadConstraint) SetMinGroups(v int64) *ListPropagationPoliciesSpreadConstraint {
+  s.MinGroups = &v
+  return s
+}
+
+type ListPropagationPoliciesToleration struct {
+  // {"en":"The taint key that the toleration applies to. Empty means match all taint keys. If the key is empty, operator must be Exists; this combination means to match all values and all keys.", "zh_CN":"容忍度所适用的污点的键名。此字段为空意味着匹配所有的污点键。 如果 key 为空，则 operator 必须为 Exists；这种组合意味着匹配所有值和所有键。"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"Represents a key's relationship to the value. Valid operators are Exists and Equal. Defaults to Equal. Exists is equivalent to wildcard for value, so that a pod can tolerate all taints of a particular category.", "zh_CN":"表示 key 与 value 之间的关系。有效的 operator 取值是 Exists 和 Equal。默认为 Equal。 Exists 相当于 value 为某种通配符，因此 Pod 可以容忍特定类别的所有污点。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"The taint value the toleration matches to. If the operator is Exists, the value should be empty, otherwise just a regular string.", "zh_CN":"容忍度所匹配的污点值。如果 operator 为 Exists，则此 value 值应该为空， 否则 value 值应该是一个正常的字符串。"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty"`
+  // {"en":"Indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute.", "zh_CN":"指示要匹配的污点效果。空值意味著匹配所有污点效果。如果要设置此字段，允许的值为 NoSchedule、PreferNoSchedule 和 NoExecute 之一。"}
+  Effect *string `json:"effect,omitempty" xml:"effect,omitempty"`
+  // {"en":"Represents the period of time the toleration (which must be of effect NoExecute, otherwise this field is ignored) tolerates the taint. By default, it is not set, which means tolerate the taint forever (do not evict). Zero and negative values will be treated as 0 (evict immediately) by the system.", "zh_CN":" 表示容忍度（effect 必须是 NoExecute，否则此字段被忽略）容忍污点的时间长度。 默认情况下，此字段未被设置，这意味着会一直能够容忍对应污点（不会发生驱逐操作）。 零值和负值会被系统当做 0 值处理（立即触发驱逐）。"}
+  TolerationSeconds *int64 `json:"tolerationSeconds,omitempty" xml:"tolerationSeconds,omitempty"`
+}
+
+func (s ListPropagationPoliciesToleration) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesToleration) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesToleration) SetKey(v string) *ListPropagationPoliciesToleration {
+  s.Key = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesToleration) SetOperator(v string) *ListPropagationPoliciesToleration {
+  s.Operator = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesToleration) SetValue(v string) *ListPropagationPoliciesToleration {
+  s.Value = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesToleration) SetEffect(v string) *ListPropagationPoliciesToleration {
+  s.Effect = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesToleration) SetTolerationSeconds(v int64) *ListPropagationPoliciesToleration {
+  s.TolerationSeconds = &v
+  return s
+}
+
+type ListPropagationPoliciesClusterAffinity struct {
+  // {"en":"a filter to select member clusters by labels", "zh_CN":"一个用来选中集群的标签过滤器"}
+  LabelSelector *ListPropagationPoliciesMetaV1LabelSelector `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+  // {"en":"a filter to select member clusters by fields. Currently only three fields of provider(cluster.spec.provider), zone(cluster.spec.zone), and region(cluster.spec.region) are supported", "zh_CN":"一个用来选中集群的字段过滤器，目前支持的字段只有三个：提供商（cluster.spec.provider），区域（cluster.spec.zone），地区（cluster.spec.region）"}
+  ListPropagationPoliciesFieldSelector *ListPropagationPoliciesFieldSelector `json:"fieldSelector,omitempty" xml:"fieldSelector,omitempty"`
+  // {"en":"the list of clusters to be selected", "zh_CN":"选中的集群列表"}
+  ClusterNames []*string `json:"clusterNames,omitempty" xml:"clusterNames,omitempty" type:"Repeated"`
+  // {"en":"the list of clusters to be ignored", "zh_CN":"要忽略的集群列表"}
+  Exclude []*string `json:"exclude,omitempty" xml:"exclude,omitempty" type:"Repeated"`
+}
+
+func (s ListPropagationPoliciesClusterAffinity) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesClusterAffinity) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesClusterAffinity) SetLabelSelector(v *ListPropagationPoliciesMetaV1LabelSelector) *ListPropagationPoliciesClusterAffinity {
+  s.LabelSelector = v
+  return s
+}
+
+func (s *ListPropagationPoliciesClusterAffinity) SetFieldSelector(v *ListPropagationPoliciesFieldSelector) *ListPropagationPoliciesClusterAffinity {
+  s.ListPropagationPoliciesFieldSelector = v
+  return s
+}
+
+func (s *ListPropagationPoliciesClusterAffinity) SetClusterNames(v []*string) *ListPropagationPoliciesClusterAffinity {
+  s.ClusterNames = v
+  return s
+}
+
+func (s *ListPropagationPoliciesClusterAffinity) SetExclude(v []*string) *ListPropagationPoliciesClusterAffinity {
+  s.Exclude = v
+  return s
+}
+
+type ListPropagationPoliciesFieldSelector struct {
+  // {"en":"A list of node selector requirements by node's labels.", "zh_CN":"按节点标签列出的节点选择器需求列表。"}
+  MatchExpressions []*ListPropagationPoliciesCoreV1NodeSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s ListPropagationPoliciesFieldSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesFieldSelector) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesFieldSelector) SetMatchExpressions(v []*ListPropagationPoliciesCoreV1NodeSelectorRequirement) *ListPropagationPoliciesFieldSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type ListPropagationPoliciesCoreV1NodeSelectorRequirement struct {
+  // {"en":"The label key that the selector applies to.", "zh_CN":"选择算符所适用的标签主键。"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"Represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.", "zh_CN":"代表主键与值集之间的关系。合法的 operator 值包括 In、NotIn、Exists、DoesNotExist、Gt 和 Lt。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.", "zh_CN":"一个由字符串值组成的数组。如果 operator 是 In 或 NotIn，则 values 数组不能为空。 如果 operator 为 Exists 或 DoesNotExist，则 values 数组只能为空。 如果 operator 为 Gt 或 Lt，则 values 数组只能包含一个元素，并且该元素会被解释为整数。 在执行策略性合并补丁操作时，此数组会被整体替换。"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s ListPropagationPoliciesCoreV1NodeSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesCoreV1NodeSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesCoreV1NodeSelectorRequirement) SetKey(v string) *ListPropagationPoliciesCoreV1NodeSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesCoreV1NodeSelectorRequirement) SetOperator(v string) *ListPropagationPoliciesCoreV1NodeSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesCoreV1NodeSelectorRequirement) SetValues(v []*string) *ListPropagationPoliciesCoreV1NodeSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type ListPropagationPoliciesMetaV1LabelSelector struct {
+  // {"en":"A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed.", "zh_CN":"matchLabels 映射中的单个 {key,value} 键值对相当于 matchExpressions 的一个元素，其键字段为 key，运算符为 In，values 数组仅包含 value。"}
+  MatchLabels map[string]*string `json:"matchLabels,omitempty" xml:"matchLabels,omitempty"`
+  // {"en":"A list of label selector requirements. The requirements are ANDed.", "zh_CN":"标签选择器要求的列表，这些要求的结果按逻辑与的关系来计算。"}
+  MatchExpressions []*ListPropagationPoliciesLabelSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s ListPropagationPoliciesMetaV1LabelSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesMetaV1LabelSelector) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesMetaV1LabelSelector) SetMatchLabels(v map[string]*string) *ListPropagationPoliciesMetaV1LabelSelector {
+  s.MatchLabels = v
+  return s
+}
+
+func (s *ListPropagationPoliciesMetaV1LabelSelector) SetMatchExpressions(v []*ListPropagationPoliciesLabelSelectorRequirement) *ListPropagationPoliciesMetaV1LabelSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type ListPropagationPoliciesLabelSelectorRequirement struct {
+  // {"en":"key is the label key that the selector applies to.", "zh_CN":"选择器应用的标签键"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist.", "zh_CN":"operator 表示键与一组值的关系。有效的运算符包括 In、NotIn、Exists 和 DoesNotExist。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.", "zh_CN":"values 是一个字符串值数组。如果运算符为 In 或 NotIn，则 values 数组必须为非空。如果运算符是 Exists 或 DoesNotExist，则 values 数组必须为空。该数组在策略性合并补丁（Strategic Merge Patch）期间被替换。"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s ListPropagationPoliciesLabelSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesLabelSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesLabelSelectorRequirement) SetKey(v string) *ListPropagationPoliciesLabelSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesLabelSelectorRequirement) SetOperator(v string) *ListPropagationPoliciesLabelSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesLabelSelectorRequirement) SetValues(v []*string) *ListPropagationPoliciesLabelSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type ListPropagationPoliciesObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*ListPropagationPoliciesOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*ListPropagationPoliciesManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s ListPropagationPoliciesObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesObjectMeta) SetName(v string) *ListPropagationPoliciesObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesObjectMeta) SetGenerateName(v string) *ListPropagationPoliciesObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesObjectMeta) SetNamespace(v string) *ListPropagationPoliciesObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesObjectMeta) SetSelfLink(v string) *ListPropagationPoliciesObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesObjectMeta) SetUid(v string) *ListPropagationPoliciesObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesObjectMeta) SetResourceVersion(v string) *ListPropagationPoliciesObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesObjectMeta) SetGeneration(v int64) *ListPropagationPoliciesObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesObjectMeta) SetCreationTimestamp(v string) *ListPropagationPoliciesObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesObjectMeta) SetDeletionTimestamp(v string) *ListPropagationPoliciesObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesObjectMeta) SetDeletionGracePeriodSeconds(v int64) *ListPropagationPoliciesObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesObjectMeta) SetLabels(v map[string]*string) *ListPropagationPoliciesObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *ListPropagationPoliciesObjectMeta) SetAnnotations(v map[string]*string) *ListPropagationPoliciesObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *ListPropagationPoliciesObjectMeta) SetOwnerReferences(v []*ListPropagationPoliciesOwnerReference) *ListPropagationPoliciesObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *ListPropagationPoliciesObjectMeta) SetFinalizers(v []*string) *ListPropagationPoliciesObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *ListPropagationPoliciesObjectMeta) SetClusterName(v string) *ListPropagationPoliciesObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesObjectMeta) SetManagedFields(v []*ListPropagationPoliciesManagedFieldsEntry) *ListPropagationPoliciesObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type ListPropagationPoliciesManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this ListPropagationPoliciesManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'ListPropagationPoliciesFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“ListPropagationPoliciesFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"ListPropagationPoliciesFieldsV1 holds the first JSON version format as described in the 'ListPropagationPoliciesFieldsV1' type", "zh_CN":"ListPropagationPoliciesFieldsV1 包含类型 “ListPropagationPoliciesFieldsV1” 中描述的第一个 JSON 版本格式"}
+  ListPropagationPoliciesFieldsV1 *ListPropagationPoliciesFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s ListPropagationPoliciesManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesManagedFieldsEntry) SetManager(v string) *ListPropagationPoliciesManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesManagedFieldsEntry) SetOperation(v string) *ListPropagationPoliciesManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesManagedFieldsEntry) SetApiVersion(v string) *ListPropagationPoliciesManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesManagedFieldsEntry) SetTime(v string) *ListPropagationPoliciesManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesManagedFieldsEntry) SetFieldsType(v string) *ListPropagationPoliciesManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesManagedFieldsEntry) SetFieldsV1(v *ListPropagationPoliciesFieldsV1) *ListPropagationPoliciesManagedFieldsEntry {
+  s.ListPropagationPoliciesFieldsV1 = v
+  return s
+}
+
+func (s *ListPropagationPoliciesManagedFieldsEntry) SetSubresource(v string) *ListPropagationPoliciesManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type ListPropagationPoliciesFieldsV1 struct {
+}
+
+func (s ListPropagationPoliciesFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesFieldsV1) GoString() string {
+  return s.String()
+}
+
+type ListPropagationPoliciesOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s ListPropagationPoliciesOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListPropagationPoliciesOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *ListPropagationPoliciesOwnerReference) SetApiVersion(v string) *ListPropagationPoliciesOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesOwnerReference) SetKind(v string) *ListPropagationPoliciesOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesOwnerReference) SetName(v string) *ListPropagationPoliciesOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesOwnerReference) SetUid(v string) *ListPropagationPoliciesOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesOwnerReference) SetController(v bool) *ListPropagationPoliciesOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *ListPropagationPoliciesOwnerReference) SetBlockOwnerDeletion(v bool) *ListPropagationPoliciesOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+
+
+
+type GetOverridepolicyRequest struct {
+}
+
+func (s GetOverridepolicyRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyRequest) GoString() string {
+  return s.String()
+}
+
+type GetOverridepolicyResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"GetOverridepolicyOverridePolicy", "zh_CN":"GetOverridepolicyOverridePolicy"}
+  Data map[string]interface{} `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s GetOverridepolicyResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyResponse) GoString() string {
+  return s.String()
+}
+
+func (s *GetOverridepolicyResponse) SetCode(v int64) *GetOverridepolicyResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *GetOverridepolicyResponse) SetMsg(v string) *GetOverridepolicyResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *GetOverridepolicyResponse) SetRequestId(v string) *GetOverridepolicyResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *GetOverridepolicyResponse) SetData(v map[string]interface{}) *GetOverridepolicyResponse {
+  s.Data = v
+  return s
+}
+
+type GetOverridepolicyPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+  // {"en":"The name of GetOverridepolicyOverridePolicy", "zh_CN":"GetOverridepolicyOverridePolicy 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s GetOverridepolicyPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyPaths) GoString() string {
+  return s.String()
+}
+
+func (s *GetOverridepolicyPaths) SetNamespace(v string) *GetOverridepolicyPaths {
+  s.Namespace = &v
+  return s
+}
+
+func (s *GetOverridepolicyPaths) SetName(v string) *GetOverridepolicyPaths {
+  s.Name = &v
+  return s
+}
+
+type GetOverridepolicyParameters struct {
+}
+
+func (s GetOverridepolicyParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyParameters) GoString() string {
+  return s.String()
+}
+
+type GetOverridepolicyRequestHeader struct {
+}
+
+func (s GetOverridepolicyRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyRequestHeader) GoString() string {
+  return s.String()
+}
+
+type GetOverridepolicyResponseHeader struct {
+}
+
+func (s GetOverridepolicyResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyResponseHeader) GoString() string {
+  return s.String()
+}
+
+type GetOverridepolicyOverridePolicy struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"Standard object metadata.", "zh_CN":"标准的对象元数据。"}
+  Metadata *GetOverridepolicyObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Spec defines the behavior of a GetOverridepolicyOverridePolicy", "zh_CN":"spec 定义 GetOverridepolicyOverridePolicy 的行为"}
+  Spec *GetOverridepolicyOverrideSpec `json:"spec,omitempty" xml:"spec,omitempty" require:"true"`
+}
+
+func (s GetOverridepolicyOverridePolicy) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyOverridePolicy) GoString() string {
+  return s.String()
+}
+
+func (s *GetOverridepolicyOverridePolicy) SetApiVersion(v string) *GetOverridepolicyOverridePolicy {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *GetOverridepolicyOverridePolicy) SetKind(v string) *GetOverridepolicyOverridePolicy {
+  s.Kind = &v
+  return s
+}
+
+func (s *GetOverridepolicyOverridePolicy) SetMetadata(v *GetOverridepolicyObjectMeta) *GetOverridepolicyOverridePolicy {
+  s.Metadata = v
+  return s
+}
+
+func (s *GetOverridepolicyOverridePolicy) SetSpec(v *GetOverridepolicyOverrideSpec) *GetOverridepolicyOverridePolicy {
+  s.Spec = v
+  return s
+}
+
+type GetOverridepolicyOverrideSpec struct {
+  // {"en":"restricts resource types that this override policy applies to. If you ignore this field it means matching all resources.", "zh_CN":"限制此覆盖策略应用的资源类型。如果忽略此字段，则表示匹配所有资源"}
+  ResourceSelectors []*GetOverridepolicyResourceSelector `json:"resourceSelectors,omitempty" xml:"resourceSelectors,omitempty" type:"Repeated"`
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  OverrideRules []*GetOverridepolicyRuleWithCluster `json:"overrideRules,omitempty" xml:"overrideRules,omitempty" type:"Repeated"`
+  // {"en":"defines restrictions on the override policy that only applies to resources propagated to the matching clusters. If you ignore this field it means matching all clusters", "zh_CN":"定义了对此覆盖策略应用到成员集群的目标选择。如果忽略此字段，则表示匹配所有集群"}
+  TargetCluster *GetOverridepolicyClusterAffinity `json:"targetCluster,omitempty" xml:"targetCluster,omitempty"`
+  // {"en":"represents the override policy to be applied to resources", "zh_CN":"表示将应用于资源的覆盖规则，已弃用，请使用OverrideRules"}
+  GetOverridepolicyOverriders *GetOverridepolicyOverriders `json:"overriders,omitempty" xml:"overriders,omitempty"`
+}
+
+func (s GetOverridepolicyOverrideSpec) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyOverrideSpec) GoString() string {
+  return s.String()
+}
+
+func (s *GetOverridepolicyOverrideSpec) SetResourceSelectors(v []*GetOverridepolicyResourceSelector) *GetOverridepolicyOverrideSpec {
+  s.ResourceSelectors = v
+  return s
+}
+
+func (s *GetOverridepolicyOverrideSpec) SetOverrideRules(v []*GetOverridepolicyRuleWithCluster) *GetOverridepolicyOverrideSpec {
+  s.OverrideRules = v
+  return s
+}
+
+func (s *GetOverridepolicyOverrideSpec) SetTargetCluster(v *GetOverridepolicyClusterAffinity) *GetOverridepolicyOverrideSpec {
+  s.TargetCluster = v
+  return s
+}
+
+func (s *GetOverridepolicyOverrideSpec) SetOverriders(v *GetOverridepolicyOverriders) *GetOverridepolicyOverrideSpec {
+  s.GetOverridepolicyOverriders = v
+  return s
+}
+
+type GetOverridepolicyResourceSelector struct {
+  // {"en":"represents the API version of the target resources", "zh_CN":"表示目标资源的API版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"represents the Kind of the target resources", "zh_CN":"表示目标资源的类型"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"name of the target resource", "zh_CN":"目标资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"A label query over a set of resources", "zh_CN":"对一组资源的标签查询"}
+  LabelSelector *GetOverridepolicyMetaV1LabelSelector `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+}
+
+func (s GetOverridepolicyResourceSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyResourceSelector) GoString() string {
+  return s.String()
+}
+
+func (s *GetOverridepolicyResourceSelector) SetApiVersion(v string) *GetOverridepolicyResourceSelector {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *GetOverridepolicyResourceSelector) SetKind(v string) *GetOverridepolicyResourceSelector {
+  s.Kind = &v
+  return s
+}
+
+func (s *GetOverridepolicyResourceSelector) SetNamespace(v string) *GetOverridepolicyResourceSelector {
+  s.Namespace = &v
+  return s
+}
+
+func (s *GetOverridepolicyResourceSelector) SetName(v string) *GetOverridepolicyResourceSelector {
+  s.Name = &v
+  return s
+}
+
+func (s *GetOverridepolicyResourceSelector) SetLabelSelector(v *GetOverridepolicyMetaV1LabelSelector) *GetOverridepolicyResourceSelector {
+  s.LabelSelector = v
+  return s
+}
+
+type GetOverridepolicyRuleWithCluster struct {
+  // {"en":"defines restrictions on the override policy that only applies to resources propagated to the matching clusters. If you ignore this field it means matching all clusters", "zh_CN":"定义了对此覆盖策略应用到成员集群的目标选择。如果忽略此字段，则表示匹配所有集群"}
+  TargetCluster *GetOverridepolicyClusterAffinity `json:"TargetCluster,omitempty" xml:"TargetCluster,omitempty"`
+  // {"en":"the override policy to be applied to resources", "zh_CN":"应用于资源的覆盖规则"}
+  GetOverridepolicyOverriders *GetOverridepolicyOverriders `json:"GetOverridepolicyOverriders,omitempty" xml:"GetOverridepolicyOverriders,omitempty" require:"true"`
+}
+
+func (s GetOverridepolicyRuleWithCluster) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyRuleWithCluster) GoString() string {
+  return s.String()
+}
+
+func (s *GetOverridepolicyRuleWithCluster) SetTargetCluster(v *GetOverridepolicyClusterAffinity) *GetOverridepolicyRuleWithCluster {
+  s.TargetCluster = v
+  return s
+}
+
+func (s *GetOverridepolicyRuleWithCluster) SetOverriders(v *GetOverridepolicyOverriders) *GetOverridepolicyRuleWithCluster {
+  s.GetOverridepolicyOverriders = v
+  return s
+}
+
+type GetOverridepolicyClusterAffinity struct {
+  // {"en":"a filter to select member clusters by labels", "zh_CN":"一个用来选中集群的标签过滤器"}
+  LabelSelector *GetOverridepolicyMetaV1LabelSelector `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+  // {"en":"a filter to select member clusters by fields. Currently only three fields of provider(cluster.spec.provider), zone(cluster.spec.zone), and region(cluster.spec.region) are supported", "zh_CN":"一个用来选中集群的字段过滤器，目前支持的字段只有三个：提供商（cluster.spec.provider），区域（cluster.spec.zone），地区（cluster.spec.region）"}
+  GetOverridepolicyFieldSelector *GetOverridepolicyFieldSelector `json:"fieldSelector,omitempty" xml:"fieldSelector,omitempty"`
+  // {"en":"the list of clusters to be selected", "zh_CN":"选中的集群列表"}
+  ClusterNames []*string `json:"clusterNames,omitempty" xml:"clusterNames,omitempty" type:"Repeated"`
+  // {"en":"the list of clusters to be ignored", "zh_CN":"要忽略的集群列表"}
+  Exclude []*string `json:"exclude,omitempty" xml:"exclude,omitempty" type:"Repeated"`
+}
+
+func (s GetOverridepolicyClusterAffinity) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyClusterAffinity) GoString() string {
+  return s.String()
+}
+
+func (s *GetOverridepolicyClusterAffinity) SetLabelSelector(v *GetOverridepolicyMetaV1LabelSelector) *GetOverridepolicyClusterAffinity {
+  s.LabelSelector = v
+  return s
+}
+
+func (s *GetOverridepolicyClusterAffinity) SetFieldSelector(v *GetOverridepolicyFieldSelector) *GetOverridepolicyClusterAffinity {
+  s.GetOverridepolicyFieldSelector = v
+  return s
+}
+
+func (s *GetOverridepolicyClusterAffinity) SetClusterNames(v []*string) *GetOverridepolicyClusterAffinity {
+  s.ClusterNames = v
+  return s
+}
+
+func (s *GetOverridepolicyClusterAffinity) SetExclude(v []*string) *GetOverridepolicyClusterAffinity {
+  s.Exclude = v
+  return s
+}
+
+type GetOverridepolicyOverriders struct {
+  // {"en":"a general-purpose tool to override any kind of resources", "zh_CN":"覆盖任何类型资源的通用工具"}
+  Plaintext []*GetOverridepolicyPlaintextOverrider `json:"plaintext,omitempty" xml:"plaintext,omitempty" type:"Repeated"`
+  // {"en":"overrides images for workloads", "zh_CN":"覆盖负载的镜像"}
+  GetOverridepolicyImageOverrider []*GetOverridepolicyImageOverrider `json:"imageOverrider,omitempty" xml:"imageOverrider,omitempty" type:"Repeated"`
+  // {"en":"overrides commands for workloads", "zh_CN":"覆盖工作负载的命令"}
+  CommandOverrider []*GetOverridepolicyCommandArgsOverrider `json:"commandOverrider,omitempty" xml:"commandOverrider,omitempty" type:"Repeated"`
+  // {"en":"overrides args for workloads", "zh_CN":"覆盖工作负载参数"}
+  ArgsOverrider []*GetOverridepolicyCommandArgsOverrider `json:"argsOverrider,omitempty" xml:"argsOverrider,omitempty" type:"Repeated"`
+}
+
+func (s GetOverridepolicyOverriders) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyOverriders) GoString() string {
+  return s.String()
+}
+
+func (s *GetOverridepolicyOverriders) SetPlaintext(v []*GetOverridepolicyPlaintextOverrider) *GetOverridepolicyOverriders {
+  s.Plaintext = v
+  return s
+}
+
+func (s *GetOverridepolicyOverriders) SetImageOverrider(v []*GetOverridepolicyImageOverrider) *GetOverridepolicyOverriders {
+  s.GetOverridepolicyImageOverrider = v
+  return s
+}
+
+func (s *GetOverridepolicyOverriders) SetCommandOverrider(v []*GetOverridepolicyCommandArgsOverrider) *GetOverridepolicyOverriders {
+  s.CommandOverrider = v
+  return s
+}
+
+func (s *GetOverridepolicyOverriders) SetArgsOverrider(v []*GetOverridepolicyCommandArgsOverrider) *GetOverridepolicyOverriders {
+  s.ArgsOverrider = v
+  return s
+}
+
+type GetOverridepolicyPlaintextOverrider struct {
+  // {"en":"path of the target field", "zh_CN":"目标字段的路径"}
+  Path *string `json:"path,omitempty" xml:"path,omitempty" require:"true"`
+  // {"en":"type of operation on the target field", "zh_CN":"对目标字段操作类型"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty" require:"true"`
+  // {"en":"the value applied to the target field,when operator is remove, value must be empty", "zh_CN":"应用在目标字段的值，当 Operator 为 remove 时，此字段必须为空"}
+  Value *GetOverridepolicyJSON `json:"value,omitempty" xml:"value,omitempty"`
+}
+
+func (s GetOverridepolicyPlaintextOverrider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyPlaintextOverrider) GoString() string {
+  return s.String()
+}
+
+func (s *GetOverridepolicyPlaintextOverrider) SetPath(v string) *GetOverridepolicyPlaintextOverrider {
+  s.Path = &v
+  return s
+}
+
+func (s *GetOverridepolicyPlaintextOverrider) SetOperator(v string) *GetOverridepolicyPlaintextOverrider {
+  s.Operator = &v
+  return s
+}
+
+func (s *GetOverridepolicyPlaintextOverrider) SetValue(v *GetOverridepolicyJSON) *GetOverridepolicyPlaintextOverrider {
+  s.Value = v
+  return s
+}
+
+type GetOverridepolicyJSON struct {
+  // {"en":"value", "zh_CN":"字段值"}
+  Raw [][]byte `json:"raw,omitempty" xml:"raw,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s GetOverridepolicyJSON) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyJSON) GoString() string {
+  return s.String()
+}
+
+func (s *GetOverridepolicyJSON) SetRaw(v [][]byte) *GetOverridepolicyJSON {
+  s.Raw = v
+  return s
+}
+
+type GetOverridepolicyImageOverrider struct {
+  // {"en":"The default is nil. If the resource is a Pod, ReplicaSet, Deployment, StatefulSet system detects the image automatically. If the resource object has multiple containers, all the images will be processed. If it is not empty, only matched mirrors are processed", "zh_CN":"默认为空,如果资源是Pod, ReplicaSet, Deployment, StatefulSet系统自动检测镜像，如果资源对象有多个容器，所有镜像都将被处理。如果不为空，则只处理匹配到的镜像"}
+  Predicate *GetOverridepolicyImagePredicate `json:"predicate,omitempty" xml:"predicate,omitempty"`
+  // {"en":"component of image: [registry/]repository[:tag]", "zh_CN":"假设镜像组成成分：[registry/]repository[:tag]"}
+  Component *string `json:"component,omitempty" xml:"component,omitempty" require:"true"`
+  // {"en":"type of operation on the image", "zh_CN":"对镜像进行的操作"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty" require:"true"`
+  // {"en":"value could not be empty when operator is add or replace. Default is empty. ignored when operator is remove", "zh_CN":"当 Operator 为 add 或 replace 时不能为空，默认为空，当 operator 为 remove 时忽略"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+}
+
+func (s GetOverridepolicyImageOverrider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyImageOverrider) GoString() string {
+  return s.String()
+}
+
+func (s *GetOverridepolicyImageOverrider) SetPredicate(v *GetOverridepolicyImagePredicate) *GetOverridepolicyImageOverrider {
+  s.Predicate = v
+  return s
+}
+
+func (s *GetOverridepolicyImageOverrider) SetComponent(v string) *GetOverridepolicyImageOverrider {
+  s.Component = &v
+  return s
+}
+
+func (s *GetOverridepolicyImageOverrider) SetOperator(v string) *GetOverridepolicyImageOverrider {
+  s.Operator = &v
+  return s
+}
+
+func (s *GetOverridepolicyImageOverrider) SetValue(v string) *GetOverridepolicyImageOverrider {
+  s.Value = &v
+  return s
+}
+
+type GetOverridepolicyImagePredicate struct {
+  // {"en":"path of the target field", "zh_CN":"目标字段的路径"}
+  Path *string `json:"path,omitempty" xml:"path,omitempty" require:"true"`
+}
+
+func (s GetOverridepolicyImagePredicate) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyImagePredicate) GoString() string {
+  return s.String()
+}
+
+func (s *GetOverridepolicyImagePredicate) SetPath(v string) *GetOverridepolicyImagePredicate {
+  s.Path = &v
+  return s
+}
+
+type GetOverridepolicyCommandArgsOverrider struct {
+  // {"en":"name of container", "zh_CN":"容器名"}
+  ContainerName *string `json:"containerName,omitempty" xml:"containerName,omitempty" require:"true"`
+  // {"en":"operation to be applied to command/args", "zh_CN":"应用在commad/args上的操作"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty" require:"true"`
+  // {"en":"The value applied to command/args is append to commad/args when operator is add. The value is removed from command/args when operator is remove. If the value is empty, command/args remains unchanged", "zh_CN":"应用在command/args上的值，当operator为add时该值append到commad/args，当operator为remove时，该值从command/args移除，如果该值为空command/args维持原状"}
+  Value []*string `json:"value,omitempty" xml:"value,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s GetOverridepolicyCommandArgsOverrider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyCommandArgsOverrider) GoString() string {
+  return s.String()
+}
+
+func (s *GetOverridepolicyCommandArgsOverrider) SetContainerName(v string) *GetOverridepolicyCommandArgsOverrider {
+  s.ContainerName = &v
+  return s
+}
+
+func (s *GetOverridepolicyCommandArgsOverrider) SetOperator(v string) *GetOverridepolicyCommandArgsOverrider {
+  s.Operator = &v
+  return s
+}
+
+func (s *GetOverridepolicyCommandArgsOverrider) SetValue(v []*string) *GetOverridepolicyCommandArgsOverrider {
+  s.Value = v
+  return s
+}
+
+type GetOverridepolicyFieldSelector struct {
+  // {"en":"A list of node selector requirements by node's labels.", "zh_CN":"按节点标签列出的节点选择器需求列表。"}
+  MatchExpressions []*GetOverridepolicyCoreV1NodeSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s GetOverridepolicyFieldSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyFieldSelector) GoString() string {
+  return s.String()
+}
+
+func (s *GetOverridepolicyFieldSelector) SetMatchExpressions(v []*GetOverridepolicyCoreV1NodeSelectorRequirement) *GetOverridepolicyFieldSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type GetOverridepolicyCoreV1NodeSelectorRequirement struct {
+  // {"en":"The label key that the selector applies to.", "zh_CN":"选择算符所适用的标签主键。"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"Represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.", "zh_CN":"代表主键与值集之间的关系。合法的 operator 值包括 In、NotIn、Exists、DoesNotExist、Gt 和 Lt。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.", "zh_CN":"一个由字符串值组成的数组。如果 operator 是 In 或 NotIn，则 values 数组不能为空。 如果 operator 为 Exists 或 DoesNotExist，则 values 数组只能为空。 如果 operator 为 Gt 或 Lt，则 values 数组只能包含一个元素，并且该元素会被解释为整数。 在执行策略性合并补丁操作时，此数组会被整体替换。"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s GetOverridepolicyCoreV1NodeSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyCoreV1NodeSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *GetOverridepolicyCoreV1NodeSelectorRequirement) SetKey(v string) *GetOverridepolicyCoreV1NodeSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *GetOverridepolicyCoreV1NodeSelectorRequirement) SetOperator(v string) *GetOverridepolicyCoreV1NodeSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *GetOverridepolicyCoreV1NodeSelectorRequirement) SetValues(v []*string) *GetOverridepolicyCoreV1NodeSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type GetOverridepolicyMetaV1LabelSelector struct {
+  // {"en":"A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed.", "zh_CN":"matchLabels 映射中的单个 {key,value} 键值对相当于 matchExpressions 的一个元素，其键字段为 key，运算符为 In，values 数组仅包含 value。"}
+  MatchLabels map[string]*string `json:"matchLabels,omitempty" xml:"matchLabels,omitempty"`
+  // {"en":"A list of label selector requirements. The requirements are ANDed.", "zh_CN":"标签选择器要求的列表，这些要求的结果按逻辑与的关系来计算。"}
+  MatchExpressions []*GetOverridepolicyLabelSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s GetOverridepolicyMetaV1LabelSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyMetaV1LabelSelector) GoString() string {
+  return s.String()
+}
+
+func (s *GetOverridepolicyMetaV1LabelSelector) SetMatchLabels(v map[string]*string) *GetOverridepolicyMetaV1LabelSelector {
+  s.MatchLabels = v
+  return s
+}
+
+func (s *GetOverridepolicyMetaV1LabelSelector) SetMatchExpressions(v []*GetOverridepolicyLabelSelectorRequirement) *GetOverridepolicyMetaV1LabelSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type GetOverridepolicyLabelSelectorRequirement struct {
+  // {"en":"key is the label key that the selector applies to.", "zh_CN":"选择器应用的标签键"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist.", "zh_CN":"operator 表示键与一组值的关系。有效的运算符包括 In、NotIn、Exists 和 DoesNotExist。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.", "zh_CN":"values 是一个字符串值数组。如果运算符为 In 或 NotIn，则 values 数组必须为非空。如果运算符是 Exists 或 DoesNotExist，则 values 数组必须为空。该数组在策略性合并补丁（Strategic Merge Patch）期间被替换。"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s GetOverridepolicyLabelSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyLabelSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *GetOverridepolicyLabelSelectorRequirement) SetKey(v string) *GetOverridepolicyLabelSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *GetOverridepolicyLabelSelectorRequirement) SetOperator(v string) *GetOverridepolicyLabelSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *GetOverridepolicyLabelSelectorRequirement) SetValues(v []*string) *GetOverridepolicyLabelSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type GetOverridepolicyObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*GetOverridepolicyOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*GetOverridepolicyManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s GetOverridepolicyObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *GetOverridepolicyObjectMeta) SetName(v string) *GetOverridepolicyObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *GetOverridepolicyObjectMeta) SetGenerateName(v string) *GetOverridepolicyObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *GetOverridepolicyObjectMeta) SetNamespace(v string) *GetOverridepolicyObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *GetOverridepolicyObjectMeta) SetSelfLink(v string) *GetOverridepolicyObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *GetOverridepolicyObjectMeta) SetUid(v string) *GetOverridepolicyObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *GetOverridepolicyObjectMeta) SetResourceVersion(v string) *GetOverridepolicyObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *GetOverridepolicyObjectMeta) SetGeneration(v int64) *GetOverridepolicyObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *GetOverridepolicyObjectMeta) SetCreationTimestamp(v string) *GetOverridepolicyObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *GetOverridepolicyObjectMeta) SetDeletionTimestamp(v string) *GetOverridepolicyObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *GetOverridepolicyObjectMeta) SetDeletionGracePeriodSeconds(v int64) *GetOverridepolicyObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *GetOverridepolicyObjectMeta) SetLabels(v map[string]*string) *GetOverridepolicyObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *GetOverridepolicyObjectMeta) SetAnnotations(v map[string]*string) *GetOverridepolicyObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *GetOverridepolicyObjectMeta) SetOwnerReferences(v []*GetOverridepolicyOwnerReference) *GetOverridepolicyObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *GetOverridepolicyObjectMeta) SetFinalizers(v []*string) *GetOverridepolicyObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *GetOverridepolicyObjectMeta) SetClusterName(v string) *GetOverridepolicyObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *GetOverridepolicyObjectMeta) SetManagedFields(v []*GetOverridepolicyManagedFieldsEntry) *GetOverridepolicyObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type GetOverridepolicyManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this GetOverridepolicyManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'GetOverridepolicyFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“GetOverridepolicyFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"GetOverridepolicyFieldsV1 holds the first GetOverridepolicyJSON version format as described in the 'GetOverridepolicyFieldsV1' type", "zh_CN":"GetOverridepolicyFieldsV1 包含类型 “GetOverridepolicyFieldsV1” 中描述的第一个 GetOverridepolicyJSON 版本格式"}
+  GetOverridepolicyFieldsV1 *GetOverridepolicyFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s GetOverridepolicyManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *GetOverridepolicyManagedFieldsEntry) SetManager(v string) *GetOverridepolicyManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *GetOverridepolicyManagedFieldsEntry) SetOperation(v string) *GetOverridepolicyManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *GetOverridepolicyManagedFieldsEntry) SetApiVersion(v string) *GetOverridepolicyManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *GetOverridepolicyManagedFieldsEntry) SetTime(v string) *GetOverridepolicyManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *GetOverridepolicyManagedFieldsEntry) SetFieldsType(v string) *GetOverridepolicyManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *GetOverridepolicyManagedFieldsEntry) SetFieldsV1(v *GetOverridepolicyFieldsV1) *GetOverridepolicyManagedFieldsEntry {
+  s.GetOverridepolicyFieldsV1 = v
+  return s
+}
+
+func (s *GetOverridepolicyManagedFieldsEntry) SetSubresource(v string) *GetOverridepolicyManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type GetOverridepolicyFieldsV1 struct {
+}
+
+func (s GetOverridepolicyFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyFieldsV1) GoString() string {
+  return s.String()
+}
+
+type GetOverridepolicyOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s GetOverridepolicyOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetOverridepolicyOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *GetOverridepolicyOwnerReference) SetApiVersion(v string) *GetOverridepolicyOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *GetOverridepolicyOwnerReference) SetKind(v string) *GetOverridepolicyOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *GetOverridepolicyOwnerReference) SetName(v string) *GetOverridepolicyOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *GetOverridepolicyOwnerReference) SetUid(v string) *GetOverridepolicyOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *GetOverridepolicyOwnerReference) SetController(v bool) *GetOverridepolicyOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *GetOverridepolicyOwnerReference) SetBlockOwnerDeletion(v bool) *GetOverridepolicyOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+
+
+
+type CreateOverridepolicyRequest struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"Standard object metadata.", "zh_CN":"标准的对象元数据。"}
+  Metadata *CreateOverridepolicyObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Spec defines the behavior of a CreateOverridepolicyOverridePolicy", "zh_CN":"spec 定义 CreateOverridepolicyOverridePolicy 的行为"}
+  Spec *CreateOverridepolicyOverrideSpec `json:"spec,omitempty" xml:"spec,omitempty" require:"true"`
+}
+
+func (s CreateOverridepolicyRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyRequest) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyRequest) SetApiVersion(v string) *CreateOverridepolicyRequest {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreateOverridepolicyRequest) SetKind(v string) *CreateOverridepolicyRequest {
+  s.Kind = &v
+  return s
+}
+
+func (s *CreateOverridepolicyRequest) SetMetadata(v *CreateOverridepolicyObjectMeta) *CreateOverridepolicyRequest {
+  s.Metadata = v
+  return s
+}
+
+func (s *CreateOverridepolicyRequest) SetSpec(v *CreateOverridepolicyOverrideSpec) *CreateOverridepolicyRequest {
+  s.Spec = v
+  return s
+}
+
+type CreateOverridepolicyResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"CreateOverridepolicyOverridePolicy", "zh_CN":"CreateOverridepolicyOverridePolicy"}
+  Data *CreateOverridepolicyOverridePolicy `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s CreateOverridepolicyResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyResponse) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyResponse) SetCode(v int64) *CreateOverridepolicyResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *CreateOverridepolicyResponse) SetMsg(v string) *CreateOverridepolicyResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *CreateOverridepolicyResponse) SetRequestId(v string) *CreateOverridepolicyResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *CreateOverridepolicyResponse) SetData(v *CreateOverridepolicyOverridePolicy) *CreateOverridepolicyResponse {
+  s.Data = v
+  return s
+}
+
+type CreateOverridepolicyPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+}
+
+func (s CreateOverridepolicyPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyPaths) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyPaths) SetNamespace(v string) *CreateOverridepolicyPaths {
+  s.Namespace = &v
+  return s
+}
+
+type CreateOverridepolicyParameters struct {
+}
+
+func (s CreateOverridepolicyParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyParameters) GoString() string {
+  return s.String()
+}
+
+type CreateOverridepolicyRequestHeader struct {
+}
+
+func (s CreateOverridepolicyRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyRequestHeader) GoString() string {
+  return s.String()
+}
+
+type CreateOverridepolicyResponseHeader struct {
+}
+
+func (s CreateOverridepolicyResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyResponseHeader) GoString() string {
+  return s.String()
+}
+
+type CreateOverridepolicyOverridePolicy struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"Standard object metadata.", "zh_CN":"标准的对象元数据。"}
+  Metadata *CreateOverridepolicyObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Spec defines the behavior of a CreateOverridepolicyOverridePolicy", "zh_CN":"spec 定义 CreateOverridepolicyOverridePolicy 的行为"}
+  Spec *CreateOverridepolicyOverrideSpec `json:"spec,omitempty" xml:"spec,omitempty" require:"true"`
+}
+
+func (s CreateOverridepolicyOverridePolicy) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyOverridePolicy) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyOverridePolicy) SetApiVersion(v string) *CreateOverridepolicyOverridePolicy {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreateOverridepolicyOverridePolicy) SetKind(v string) *CreateOverridepolicyOverridePolicy {
+  s.Kind = &v
+  return s
+}
+
+func (s *CreateOverridepolicyOverridePolicy) SetMetadata(v *CreateOverridepolicyObjectMeta) *CreateOverridepolicyOverridePolicy {
+  s.Metadata = v
+  return s
+}
+
+func (s *CreateOverridepolicyOverridePolicy) SetSpec(v *CreateOverridepolicyOverrideSpec) *CreateOverridepolicyOverridePolicy {
+  s.Spec = v
+  return s
+}
+
+type CreateOverridepolicyOverrideSpec struct {
+  // {"en":"restricts resource types that this override policy applies to. If you ignore this field it means matching all resources.", "zh_CN":"限制此覆盖策略应用的资源类型。如果忽略此字段，则表示匹配所有资源"}
+  ResourceSelectors []*CreateOverridepolicyResourceSelector `json:"resourceSelectors,omitempty" xml:"resourceSelectors,omitempty" type:"Repeated"`
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  OverrideRules []*CreateOverridepolicyRuleWithCluster `json:"overrideRules,omitempty" xml:"overrideRules,omitempty" type:"Repeated"`
+  // {"en":"defines restrictions on the override policy that only applies to resources propagated to the matching clusters. If you ignore this field it means matching all clusters", "zh_CN":"定义了对此覆盖策略应用到成员集群的目标选择。如果忽略此字段，则表示匹配所有集群"}
+  TargetCluster *CreateOverridepolicyClusterAffinity `json:"targetCluster,omitempty" xml:"targetCluster,omitempty"`
+  // {"en":"represents the override policy to be applied to resources", "zh_CN":"表示将应用于资源的覆盖规则，已弃用，请使用OverrideRules"}
+  CreateOverridepolicyOverriders *CreateOverridepolicyOverriders `json:"overriders,omitempty" xml:"overriders,omitempty"`
+}
+
+func (s CreateOverridepolicyOverrideSpec) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyOverrideSpec) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyOverrideSpec) SetResourceSelectors(v []*CreateOverridepolicyResourceSelector) *CreateOverridepolicyOverrideSpec {
+  s.ResourceSelectors = v
+  return s
+}
+
+func (s *CreateOverridepolicyOverrideSpec) SetOverrideRules(v []*CreateOverridepolicyRuleWithCluster) *CreateOverridepolicyOverrideSpec {
+  s.OverrideRules = v
+  return s
+}
+
+func (s *CreateOverridepolicyOverrideSpec) SetTargetCluster(v *CreateOverridepolicyClusterAffinity) *CreateOverridepolicyOverrideSpec {
+  s.TargetCluster = v
+  return s
+}
+
+func (s *CreateOverridepolicyOverrideSpec) SetOverriders(v *CreateOverridepolicyOverriders) *CreateOverridepolicyOverrideSpec {
+  s.CreateOverridepolicyOverriders = v
+  return s
+}
+
+type CreateOverridepolicyResourceSelector struct {
+  // {"en":"represents the API version of the target resources", "zh_CN":"表示目标资源的API版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"represents the Kind of the target resources", "zh_CN":"表示目标资源的类型"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"name of the target resource", "zh_CN":"目标资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"A label query over a set of resources", "zh_CN":"对一组资源的标签查询"}
+  LabelSelector *CreateOverridepolicyMetaV1LabelSelector `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+}
+
+func (s CreateOverridepolicyResourceSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyResourceSelector) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyResourceSelector) SetApiVersion(v string) *CreateOverridepolicyResourceSelector {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreateOverridepolicyResourceSelector) SetKind(v string) *CreateOverridepolicyResourceSelector {
+  s.Kind = &v
+  return s
+}
+
+func (s *CreateOverridepolicyResourceSelector) SetNamespace(v string) *CreateOverridepolicyResourceSelector {
+  s.Namespace = &v
+  return s
+}
+
+func (s *CreateOverridepolicyResourceSelector) SetName(v string) *CreateOverridepolicyResourceSelector {
+  s.Name = &v
+  return s
+}
+
+func (s *CreateOverridepolicyResourceSelector) SetLabelSelector(v *CreateOverridepolicyMetaV1LabelSelector) *CreateOverridepolicyResourceSelector {
+  s.LabelSelector = v
+  return s
+}
+
+type CreateOverridepolicyRuleWithCluster struct {
+  // {"en":"defines restrictions on the override policy that only applies to resources propagated to the matching clusters. If you ignore this field it means matching all clusters", "zh_CN":"定义了对此覆盖策略应用到成员集群的目标选择。如果忽略此字段，则表示匹配所有集群"}
+  TargetCluster *CreateOverridepolicyClusterAffinity `json:"TargetCluster,omitempty" xml:"TargetCluster,omitempty"`
+  // {"en":"the override policy to be applied to resources", "zh_CN":"应用于资源的覆盖规则"}
+  CreateOverridepolicyOverriders *CreateOverridepolicyOverriders `json:"CreateOverridepolicyOverriders,omitempty" xml:"CreateOverridepolicyOverriders,omitempty" require:"true"`
+}
+
+func (s CreateOverridepolicyRuleWithCluster) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyRuleWithCluster) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyRuleWithCluster) SetTargetCluster(v *CreateOverridepolicyClusterAffinity) *CreateOverridepolicyRuleWithCluster {
+  s.TargetCluster = v
+  return s
+}
+
+func (s *CreateOverridepolicyRuleWithCluster) SetOverriders(v *CreateOverridepolicyOverriders) *CreateOverridepolicyRuleWithCluster {
+  s.CreateOverridepolicyOverriders = v
+  return s
+}
+
+type CreateOverridepolicyClusterAffinity struct {
+  // {"en":"a filter to select member clusters by labels", "zh_CN":"一个用来选中集群的标签过滤器"}
+  LabelSelector *CreateOverridepolicyMetaV1LabelSelector `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+  // {"en":"a filter to select member clusters by fields. Currently only three fields of provider(cluster.spec.provider), zone(cluster.spec.zone), and region(cluster.spec.region) are supported", "zh_CN":"一个用来选中集群的字段过滤器，目前支持的字段只有三个：提供商（cluster.spec.provider），区域（cluster.spec.zone），地区（cluster.spec.region）"}
+  CreateOverridepolicyFieldSelector *CreateOverridepolicyFieldSelector `json:"fieldSelector,omitempty" xml:"fieldSelector,omitempty"`
+  // {"en":"the list of clusters to be selected", "zh_CN":"选中的集群列表"}
+  ClusterNames []*string `json:"clusterNames,omitempty" xml:"clusterNames,omitempty" type:"Repeated"`
+  // {"en":"the list of clusters to be ignored", "zh_CN":"要忽略的集群列表"}
+  Exclude []*string `json:"exclude,omitempty" xml:"exclude,omitempty" type:"Repeated"`
+}
+
+func (s CreateOverridepolicyClusterAffinity) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyClusterAffinity) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyClusterAffinity) SetLabelSelector(v *CreateOverridepolicyMetaV1LabelSelector) *CreateOverridepolicyClusterAffinity {
+  s.LabelSelector = v
+  return s
+}
+
+func (s *CreateOverridepolicyClusterAffinity) SetFieldSelector(v *CreateOverridepolicyFieldSelector) *CreateOverridepolicyClusterAffinity {
+  s.CreateOverridepolicyFieldSelector = v
+  return s
+}
+
+func (s *CreateOverridepolicyClusterAffinity) SetClusterNames(v []*string) *CreateOverridepolicyClusterAffinity {
+  s.ClusterNames = v
+  return s
+}
+
+func (s *CreateOverridepolicyClusterAffinity) SetExclude(v []*string) *CreateOverridepolicyClusterAffinity {
+  s.Exclude = v
+  return s
+}
+
+type CreateOverridepolicyOverriders struct {
+  // {"en":"a general-purpose tool to override any kind of resources", "zh_CN":"覆盖任何类型资源的通用工具"}
+  Plaintext []*CreateOverridepolicyPlaintextOverrider `json:"plaintext,omitempty" xml:"plaintext,omitempty" type:"Repeated"`
+  // {"en":"overrides images for workloads", "zh_CN":"覆盖负载的镜像"}
+  CreateOverridepolicyImageOverrider []*CreateOverridepolicyImageOverrider `json:"imageOverrider,omitempty" xml:"imageOverrider,omitempty" type:"Repeated"`
+  // {"en":"overrides commands for workloads", "zh_CN":"覆盖工作负载的命令"}
+  CommandOverrider []*CreateOverridepolicyCommandArgsOverrider `json:"commandOverrider,omitempty" xml:"commandOverrider,omitempty" type:"Repeated"`
+  // {"en":"overrides args for workloads", "zh_CN":"覆盖工作负载参数"}
+  ArgsOverrider []*CreateOverridepolicyCommandArgsOverrider `json:"argsOverrider,omitempty" xml:"argsOverrider,omitempty" type:"Repeated"`
+}
+
+func (s CreateOverridepolicyOverriders) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyOverriders) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyOverriders) SetPlaintext(v []*CreateOverridepolicyPlaintextOverrider) *CreateOverridepolicyOverriders {
+  s.Plaintext = v
+  return s
+}
+
+func (s *CreateOverridepolicyOverriders) SetImageOverrider(v []*CreateOverridepolicyImageOverrider) *CreateOverridepolicyOverriders {
+  s.CreateOverridepolicyImageOverrider = v
+  return s
+}
+
+func (s *CreateOverridepolicyOverriders) SetCommandOverrider(v []*CreateOverridepolicyCommandArgsOverrider) *CreateOverridepolicyOverriders {
+  s.CommandOverrider = v
+  return s
+}
+
+func (s *CreateOverridepolicyOverriders) SetArgsOverrider(v []*CreateOverridepolicyCommandArgsOverrider) *CreateOverridepolicyOverriders {
+  s.ArgsOverrider = v
+  return s
+}
+
+type CreateOverridepolicyPlaintextOverrider struct {
+  // {"en":"path of the target field", "zh_CN":"目标字段的路径"}
+  Path *string `json:"path,omitempty" xml:"path,omitempty" require:"true"`
+  // {"en":"type of operation on the target field", "zh_CN":"对目标字段操作类型"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty" require:"true"`
+  // {"en":"the value applied to the target field,when operator is remove, value must be empty", "zh_CN":"应用在目标字段的值，当 Operator 为 remove 时，此字段必须为空"}
+  Value *CreateOverridepolicyJSON `json:"value,omitempty" xml:"value,omitempty"`
+}
+
+func (s CreateOverridepolicyPlaintextOverrider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyPlaintextOverrider) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyPlaintextOverrider) SetPath(v string) *CreateOverridepolicyPlaintextOverrider {
+  s.Path = &v
+  return s
+}
+
+func (s *CreateOverridepolicyPlaintextOverrider) SetOperator(v string) *CreateOverridepolicyPlaintextOverrider {
+  s.Operator = &v
+  return s
+}
+
+func (s *CreateOverridepolicyPlaintextOverrider) SetValue(v *CreateOverridepolicyJSON) *CreateOverridepolicyPlaintextOverrider {
+  s.Value = v
+  return s
+}
+
+type CreateOverridepolicyJSON struct {
+  // {"en":"value", "zh_CN":"字段值"}
+  Raw [][]byte `json:"raw,omitempty" xml:"raw,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s CreateOverridepolicyJSON) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyJSON) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyJSON) SetRaw(v [][]byte) *CreateOverridepolicyJSON {
+  s.Raw = v
+  return s
+}
+
+type CreateOverridepolicyImageOverrider struct {
+  // {"en":"The default is nil. If the resource is a Pod, ReplicaSet, Deployment, StatefulSet system detects the image automatically. If the resource object has multiple containers, all the images will be processed. If it is not empty, only matched mirrors are processed", "zh_CN":"默认为空,如果资源是Pod, ReplicaSet, Deployment, StatefulSet系统自动检测镜像，如果资源对象有多个容器，所有镜像都将被处理。如果不为空，则只处理匹配到的镜像"}
+  Predicate *CreateOverridepolicyImagePredicate `json:"predicate,omitempty" xml:"predicate,omitempty"`
+  // {"en":"component of image: [registry/]repository[:tag]", "zh_CN":"假设镜像组成成分：[registry/]repository[:tag]"}
+  Component *string `json:"component,omitempty" xml:"component,omitempty" require:"true"`
+  // {"en":"type of operation on the image", "zh_CN":"对镜像进行的操作"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty" require:"true"`
+  // {"en":"value could not be empty when operator is add or replace. Default is empty. ignored when operator is remove", "zh_CN":"当 Operator 为 add 或 replace 时不能为空，默认为空，当 operator 为 remove 时忽略"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+}
+
+func (s CreateOverridepolicyImageOverrider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyImageOverrider) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyImageOverrider) SetPredicate(v *CreateOverridepolicyImagePredicate) *CreateOverridepolicyImageOverrider {
+  s.Predicate = v
+  return s
+}
+
+func (s *CreateOverridepolicyImageOverrider) SetComponent(v string) *CreateOverridepolicyImageOverrider {
+  s.Component = &v
+  return s
+}
+
+func (s *CreateOverridepolicyImageOverrider) SetOperator(v string) *CreateOverridepolicyImageOverrider {
+  s.Operator = &v
+  return s
+}
+
+func (s *CreateOverridepolicyImageOverrider) SetValue(v string) *CreateOverridepolicyImageOverrider {
+  s.Value = &v
+  return s
+}
+
+type CreateOverridepolicyImagePredicate struct {
+  // {"en":"path of the target field", "zh_CN":"目标字段的路径"}
+  Path *string `json:"path,omitempty" xml:"path,omitempty" require:"true"`
+}
+
+func (s CreateOverridepolicyImagePredicate) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyImagePredicate) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyImagePredicate) SetPath(v string) *CreateOverridepolicyImagePredicate {
+  s.Path = &v
+  return s
+}
+
+type CreateOverridepolicyCommandArgsOverrider struct {
+  // {"en":"name of container", "zh_CN":"容器名"}
+  ContainerName *string `json:"containerName,omitempty" xml:"containerName,omitempty" require:"true"`
+  // {"en":"operation to be applied to command/args", "zh_CN":"应用在commad/args上的操作"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty" require:"true"`
+  // {"en":"The value applied to command/args is append to commad/args when operator is add. The value is removed from command/args when operator is remove. If the value is empty, command/args remains unchanged", "zh_CN":"应用在command/args上的值，当operator为add时该值append到commad/args，当operator为remove时，该值从command/args移除，如果该值为空command/args维持原状"}
+  Value []*string `json:"value,omitempty" xml:"value,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s CreateOverridepolicyCommandArgsOverrider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyCommandArgsOverrider) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyCommandArgsOverrider) SetContainerName(v string) *CreateOverridepolicyCommandArgsOverrider {
+  s.ContainerName = &v
+  return s
+}
+
+func (s *CreateOverridepolicyCommandArgsOverrider) SetOperator(v string) *CreateOverridepolicyCommandArgsOverrider {
+  s.Operator = &v
+  return s
+}
+
+func (s *CreateOverridepolicyCommandArgsOverrider) SetValue(v []*string) *CreateOverridepolicyCommandArgsOverrider {
+  s.Value = v
+  return s
+}
+
+type CreateOverridepolicyFieldSelector struct {
+  // {"en":"A list of node selector requirements by node's labels.", "zh_CN":"按节点标签列出的节点选择器需求列表。"}
+  MatchExpressions []*CreateOverridepolicyCoreV1NodeSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s CreateOverridepolicyFieldSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyFieldSelector) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyFieldSelector) SetMatchExpressions(v []*CreateOverridepolicyCoreV1NodeSelectorRequirement) *CreateOverridepolicyFieldSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type CreateOverridepolicyCoreV1NodeSelectorRequirement struct {
+  // {"en":"The label key that the selector applies to.", "zh_CN":"选择算符所适用的标签主键。"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"Represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.", "zh_CN":"代表主键与值集之间的关系。合法的 operator 值包括 In、NotIn、Exists、DoesNotExist、Gt 和 Lt。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.", "zh_CN":"一个由字符串值组成的数组。如果 operator 是 In 或 NotIn，则 values 数组不能为空。 如果 operator 为 Exists 或 DoesNotExist，则 values 数组只能为空。 如果 operator 为 Gt 或 Lt，则 values 数组只能包含一个元素，并且该元素会被解释为整数。 在执行策略性合并补丁操作时，此数组会被整体替换。"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s CreateOverridepolicyCoreV1NodeSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyCoreV1NodeSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyCoreV1NodeSelectorRequirement) SetKey(v string) *CreateOverridepolicyCoreV1NodeSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *CreateOverridepolicyCoreV1NodeSelectorRequirement) SetOperator(v string) *CreateOverridepolicyCoreV1NodeSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *CreateOverridepolicyCoreV1NodeSelectorRequirement) SetValues(v []*string) *CreateOverridepolicyCoreV1NodeSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type CreateOverridepolicyMetaV1LabelSelector struct {
+  // {"en":"A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed.", "zh_CN":"matchLabels 映射中的单个 {key,value} 键值对相当于 matchExpressions 的一个元素，其键字段为 key，运算符为 In，values 数组仅包含 value。"}
+  MatchLabels map[string]*string `json:"matchLabels,omitempty" xml:"matchLabels,omitempty"`
+  // {"en":"A list of label selector requirements. The requirements are ANDed.", "zh_CN":"标签选择器要求的列表，这些要求的结果按逻辑与的关系来计算。"}
+  MatchExpressions []*CreateOverridepolicyLabelSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s CreateOverridepolicyMetaV1LabelSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyMetaV1LabelSelector) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyMetaV1LabelSelector) SetMatchLabels(v map[string]*string) *CreateOverridepolicyMetaV1LabelSelector {
+  s.MatchLabels = v
+  return s
+}
+
+func (s *CreateOverridepolicyMetaV1LabelSelector) SetMatchExpressions(v []*CreateOverridepolicyLabelSelectorRequirement) *CreateOverridepolicyMetaV1LabelSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type CreateOverridepolicyLabelSelectorRequirement struct {
+  // {"en":"key is the label key that the selector applies to.", "zh_CN":"选择器应用的标签键"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist.", "zh_CN":"operator 表示键与一组值的关系。有效的运算符包括 In、NotIn、Exists 和 DoesNotExist。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.", "zh_CN":"values 是一个字符串值数组。如果运算符为 In 或 NotIn，则 values 数组必须为非空。如果运算符是 Exists 或 DoesNotExist，则 values 数组必须为空。该数组在策略性合并补丁（Strategic Merge Patch）期间被替换。"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s CreateOverridepolicyLabelSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyLabelSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyLabelSelectorRequirement) SetKey(v string) *CreateOverridepolicyLabelSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *CreateOverridepolicyLabelSelectorRequirement) SetOperator(v string) *CreateOverridepolicyLabelSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *CreateOverridepolicyLabelSelectorRequirement) SetValues(v []*string) *CreateOverridepolicyLabelSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type CreateOverridepolicyObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*CreateOverridepolicyOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*CreateOverridepolicyManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s CreateOverridepolicyObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyObjectMeta) SetName(v string) *CreateOverridepolicyObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *CreateOverridepolicyObjectMeta) SetGenerateName(v string) *CreateOverridepolicyObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *CreateOverridepolicyObjectMeta) SetNamespace(v string) *CreateOverridepolicyObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *CreateOverridepolicyObjectMeta) SetSelfLink(v string) *CreateOverridepolicyObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *CreateOverridepolicyObjectMeta) SetUid(v string) *CreateOverridepolicyObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *CreateOverridepolicyObjectMeta) SetResourceVersion(v string) *CreateOverridepolicyObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *CreateOverridepolicyObjectMeta) SetGeneration(v int64) *CreateOverridepolicyObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *CreateOverridepolicyObjectMeta) SetCreationTimestamp(v string) *CreateOverridepolicyObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *CreateOverridepolicyObjectMeta) SetDeletionTimestamp(v string) *CreateOverridepolicyObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *CreateOverridepolicyObjectMeta) SetDeletionGracePeriodSeconds(v int64) *CreateOverridepolicyObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *CreateOverridepolicyObjectMeta) SetLabels(v map[string]*string) *CreateOverridepolicyObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *CreateOverridepolicyObjectMeta) SetAnnotations(v map[string]*string) *CreateOverridepolicyObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *CreateOverridepolicyObjectMeta) SetOwnerReferences(v []*CreateOverridepolicyOwnerReference) *CreateOverridepolicyObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *CreateOverridepolicyObjectMeta) SetFinalizers(v []*string) *CreateOverridepolicyObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *CreateOverridepolicyObjectMeta) SetClusterName(v string) *CreateOverridepolicyObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *CreateOverridepolicyObjectMeta) SetManagedFields(v []*CreateOverridepolicyManagedFieldsEntry) *CreateOverridepolicyObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type CreateOverridepolicyManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this CreateOverridepolicyManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'CreateOverridepolicyFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“CreateOverridepolicyFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"CreateOverridepolicyFieldsV1 holds the first CreateOverridepolicyJSON version format as described in the 'CreateOverridepolicyFieldsV1' type", "zh_CN":"CreateOverridepolicyFieldsV1 包含类型 “CreateOverridepolicyFieldsV1” 中描述的第一个 CreateOverridepolicyJSON 版本格式"}
+  CreateOverridepolicyFieldsV1 *CreateOverridepolicyFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s CreateOverridepolicyManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyManagedFieldsEntry) SetManager(v string) *CreateOverridepolicyManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *CreateOverridepolicyManagedFieldsEntry) SetOperation(v string) *CreateOverridepolicyManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *CreateOverridepolicyManagedFieldsEntry) SetApiVersion(v string) *CreateOverridepolicyManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreateOverridepolicyManagedFieldsEntry) SetTime(v string) *CreateOverridepolicyManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *CreateOverridepolicyManagedFieldsEntry) SetFieldsType(v string) *CreateOverridepolicyManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *CreateOverridepolicyManagedFieldsEntry) SetFieldsV1(v *CreateOverridepolicyFieldsV1) *CreateOverridepolicyManagedFieldsEntry {
+  s.CreateOverridepolicyFieldsV1 = v
+  return s
+}
+
+func (s *CreateOverridepolicyManagedFieldsEntry) SetSubresource(v string) *CreateOverridepolicyManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type CreateOverridepolicyFieldsV1 struct {
+}
+
+func (s CreateOverridepolicyFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyFieldsV1) GoString() string {
+  return s.String()
+}
+
+type CreateOverridepolicyOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s CreateOverridepolicyOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateOverridepolicyOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *CreateOverridepolicyOwnerReference) SetApiVersion(v string) *CreateOverridepolicyOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreateOverridepolicyOwnerReference) SetKind(v string) *CreateOverridepolicyOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *CreateOverridepolicyOwnerReference) SetName(v string) *CreateOverridepolicyOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *CreateOverridepolicyOwnerReference) SetUid(v string) *CreateOverridepolicyOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *CreateOverridepolicyOwnerReference) SetController(v bool) *CreateOverridepolicyOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *CreateOverridepolicyOwnerReference) SetBlockOwnerDeletion(v bool) *CreateOverridepolicyOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+
+
+
+type PutOverridepolicyRequest struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"Standard object metadata.", "zh_CN":"标准的对象元数据。"}
+  Metadata *PutOverridepolicyObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Spec defines the behavior of a PutOverridepolicyOverridePolicy", "zh_CN":"spec 定义 PutOverridepolicyOverridePolicy 的行为"}
+  Spec *PutOverridepolicyOverrideSpec `json:"spec,omitempty" xml:"spec,omitempty" require:"true"`
+}
+
+func (s PutOverridepolicyRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyRequest) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyRequest) SetApiVersion(v string) *PutOverridepolicyRequest {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *PutOverridepolicyRequest) SetKind(v string) *PutOverridepolicyRequest {
+  s.Kind = &v
+  return s
+}
+
+func (s *PutOverridepolicyRequest) SetMetadata(v *PutOverridepolicyObjectMeta) *PutOverridepolicyRequest {
+  s.Metadata = v
+  return s
+}
+
+func (s *PutOverridepolicyRequest) SetSpec(v *PutOverridepolicyOverrideSpec) *PutOverridepolicyRequest {
+  s.Spec = v
+  return s
+}
+
+type PutOverridepolicyResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"PutOverridepolicyOverridePolicy", "zh_CN":"PutOverridepolicyOverridePolicy"}
+  Data map[string]interface{} `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s PutOverridepolicyResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyResponse) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyResponse) SetCode(v int64) *PutOverridepolicyResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *PutOverridepolicyResponse) SetMsg(v string) *PutOverridepolicyResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *PutOverridepolicyResponse) SetRequestId(v string) *PutOverridepolicyResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *PutOverridepolicyResponse) SetData(v map[string]interface{}) *PutOverridepolicyResponse {
+  s.Data = v
+  return s
+}
+
+type PutOverridepolicyPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+  // {"en":"The name of PutOverridepolicyOverridePolicy", "zh_CN":"PutOverridepolicyOverridePolicy 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s PutOverridepolicyPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyPaths) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyPaths) SetNamespace(v string) *PutOverridepolicyPaths {
+  s.Namespace = &v
+  return s
+}
+
+func (s *PutOverridepolicyPaths) SetName(v string) *PutOverridepolicyPaths {
+  s.Name = &v
+  return s
+}
+
+type PutOverridepolicyParameters struct {
+}
+
+func (s PutOverridepolicyParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyParameters) GoString() string {
+  return s.String()
+}
+
+type PutOverridepolicyRequestHeader struct {
+}
+
+func (s PutOverridepolicyRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyRequestHeader) GoString() string {
+  return s.String()
+}
+
+type PutOverridepolicyResponseHeader struct {
+}
+
+func (s PutOverridepolicyResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyResponseHeader) GoString() string {
+  return s.String()
+}
+
+type PutOverridepolicyOverridePolicy struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"Standard object metadata.", "zh_CN":"标准的对象元数据。"}
+  Metadata *PutOverridepolicyObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Spec defines the behavior of a PutOverridepolicyOverridePolicy", "zh_CN":"spec 定义 PutOverridepolicyOverridePolicy 的行为"}
+  Spec *PutOverridepolicyOverrideSpec `json:"spec,omitempty" xml:"spec,omitempty" require:"true"`
+}
+
+func (s PutOverridepolicyOverridePolicy) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyOverridePolicy) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyOverridePolicy) SetApiVersion(v string) *PutOverridepolicyOverridePolicy {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *PutOverridepolicyOverridePolicy) SetKind(v string) *PutOverridepolicyOverridePolicy {
+  s.Kind = &v
+  return s
+}
+
+func (s *PutOverridepolicyOverridePolicy) SetMetadata(v *PutOverridepolicyObjectMeta) *PutOverridepolicyOverridePolicy {
+  s.Metadata = v
+  return s
+}
+
+func (s *PutOverridepolicyOverridePolicy) SetSpec(v *PutOverridepolicyOverrideSpec) *PutOverridepolicyOverridePolicy {
+  s.Spec = v
+  return s
+}
+
+type PutOverridepolicyOverrideSpec struct {
+  // {"en":"restricts resource types that this override policy applies to. If you ignore this field it means matching all resources.", "zh_CN":"限制此覆盖策略应用的资源类型。如果忽略此字段，则表示匹配所有资源"}
+  ResourceSelectors []*PutOverridepolicyResourceSelector `json:"resourceSelectors,omitempty" xml:"resourceSelectors,omitempty" type:"Repeated"`
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  OverrideRules []*PutOverridepolicyRuleWithCluster `json:"overrideRules,omitempty" xml:"overrideRules,omitempty" type:"Repeated"`
+  // {"en":"defines restrictions on the override policy that only applies to resources propagated to the matching clusters. If you ignore this field it means matching all clusters", "zh_CN":"定义了对此覆盖策略应用到成员集群的目标选择。如果忽略此字段，则表示匹配所有集群"}
+  TargetCluster *PutOverridepolicyClusterAffinity `json:"targetCluster,omitempty" xml:"targetCluster,omitempty"`
+  // {"en":"represents the override policy to be applied to resources", "zh_CN":"表示将应用于资源的覆盖规则，已弃用，请使用OverrideRules"}
+  PutOverridepolicyOverriders *PutOverridepolicyOverriders `json:"overriders,omitempty" xml:"overriders,omitempty"`
+}
+
+func (s PutOverridepolicyOverrideSpec) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyOverrideSpec) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyOverrideSpec) SetResourceSelectors(v []*PutOverridepolicyResourceSelector) *PutOverridepolicyOverrideSpec {
+  s.ResourceSelectors = v
+  return s
+}
+
+func (s *PutOverridepolicyOverrideSpec) SetOverrideRules(v []*PutOverridepolicyRuleWithCluster) *PutOverridepolicyOverrideSpec {
+  s.OverrideRules = v
+  return s
+}
+
+func (s *PutOverridepolicyOverrideSpec) SetTargetCluster(v *PutOverridepolicyClusterAffinity) *PutOverridepolicyOverrideSpec {
+  s.TargetCluster = v
+  return s
+}
+
+func (s *PutOverridepolicyOverrideSpec) SetOverriders(v *PutOverridepolicyOverriders) *PutOverridepolicyOverrideSpec {
+  s.PutOverridepolicyOverriders = v
+  return s
+}
+
+type PutOverridepolicyResourceSelector struct {
+  // {"en":"represents the API version of the target resources", "zh_CN":"表示目标资源的API版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"represents the Kind of the target resources", "zh_CN":"表示目标资源的类型"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"name of the target resource", "zh_CN":"目标资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"A label query over a set of resources", "zh_CN":"对一组资源的标签查询"}
+  LabelSelector *PutOverridepolicyMetaV1LabelSelector `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+}
+
+func (s PutOverridepolicyResourceSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyResourceSelector) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyResourceSelector) SetApiVersion(v string) *PutOverridepolicyResourceSelector {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *PutOverridepolicyResourceSelector) SetKind(v string) *PutOverridepolicyResourceSelector {
+  s.Kind = &v
+  return s
+}
+
+func (s *PutOverridepolicyResourceSelector) SetNamespace(v string) *PutOverridepolicyResourceSelector {
+  s.Namespace = &v
+  return s
+}
+
+func (s *PutOverridepolicyResourceSelector) SetName(v string) *PutOverridepolicyResourceSelector {
+  s.Name = &v
+  return s
+}
+
+func (s *PutOverridepolicyResourceSelector) SetLabelSelector(v *PutOverridepolicyMetaV1LabelSelector) *PutOverridepolicyResourceSelector {
+  s.LabelSelector = v
+  return s
+}
+
+type PutOverridepolicyRuleWithCluster struct {
+  // {"en":"defines restrictions on the override policy that only applies to resources propagated to the matching clusters. If you ignore this field it means matching all clusters", "zh_CN":"定义了对此覆盖策略应用到成员集群的目标选择。如果忽略此字段，则表示匹配所有集群"}
+  TargetCluster *PutOverridepolicyClusterAffinity `json:"TargetCluster,omitempty" xml:"TargetCluster,omitempty"`
+  // {"en":"the override policy to be applied to resources", "zh_CN":"应用于资源的覆盖规则"}
+  PutOverridepolicyOverriders *PutOverridepolicyOverriders `json:"PutOverridepolicyOverriders,omitempty" xml:"PutOverridepolicyOverriders,omitempty" require:"true"`
+}
+
+func (s PutOverridepolicyRuleWithCluster) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyRuleWithCluster) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyRuleWithCluster) SetTargetCluster(v *PutOverridepolicyClusterAffinity) *PutOverridepolicyRuleWithCluster {
+  s.TargetCluster = v
+  return s
+}
+
+func (s *PutOverridepolicyRuleWithCluster) SetOverriders(v *PutOverridepolicyOverriders) *PutOverridepolicyRuleWithCluster {
+  s.PutOverridepolicyOverriders = v
+  return s
+}
+
+type PutOverridepolicyClusterAffinity struct {
+  // {"en":"a filter to select member clusters by labels", "zh_CN":"一个用来选中集群的标签过滤器"}
+  LabelSelector *PutOverridepolicyMetaV1LabelSelector `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+  // {"en":"a filter to select member clusters by fields. Currently only three fields of provider(cluster.spec.provider), zone(cluster.spec.zone), and region(cluster.spec.region) are supported", "zh_CN":"一个用来选中集群的字段过滤器，目前支持的字段只有三个：提供商（cluster.spec.provider），区域（cluster.spec.zone），地区（cluster.spec.region）"}
+  PutOverridepolicyFieldSelector *PutOverridepolicyFieldSelector `json:"fieldSelector,omitempty" xml:"fieldSelector,omitempty"`
+  // {"en":"the list of clusters to be selected", "zh_CN":"选中的集群列表"}
+  ClusterNames []*string `json:"clusterNames,omitempty" xml:"clusterNames,omitempty" type:"Repeated"`
+  // {"en":"the list of clusters to be ignored", "zh_CN":"要忽略的集群列表"}
+  Exclude []*string `json:"exclude,omitempty" xml:"exclude,omitempty" type:"Repeated"`
+}
+
+func (s PutOverridepolicyClusterAffinity) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyClusterAffinity) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyClusterAffinity) SetLabelSelector(v *PutOverridepolicyMetaV1LabelSelector) *PutOverridepolicyClusterAffinity {
+  s.LabelSelector = v
+  return s
+}
+
+func (s *PutOverridepolicyClusterAffinity) SetFieldSelector(v *PutOverridepolicyFieldSelector) *PutOverridepolicyClusterAffinity {
+  s.PutOverridepolicyFieldSelector = v
+  return s
+}
+
+func (s *PutOverridepolicyClusterAffinity) SetClusterNames(v []*string) *PutOverridepolicyClusterAffinity {
+  s.ClusterNames = v
+  return s
+}
+
+func (s *PutOverridepolicyClusterAffinity) SetExclude(v []*string) *PutOverridepolicyClusterAffinity {
+  s.Exclude = v
+  return s
+}
+
+type PutOverridepolicyOverriders struct {
+  // {"en":"a general-purpose tool to override any kind of resources", "zh_CN":"覆盖任何类型资源的通用工具"}
+  Plaintext []*PutOverridepolicyPlaintextOverrider `json:"plaintext,omitempty" xml:"plaintext,omitempty" type:"Repeated"`
+  // {"en":"overrides images for workloads", "zh_CN":"覆盖负载的镜像"}
+  PutOverridepolicyImageOverrider []*PutOverridepolicyImageOverrider `json:"imageOverrider,omitempty" xml:"imageOverrider,omitempty" type:"Repeated"`
+  // {"en":"overrides commands for workloads", "zh_CN":"覆盖工作负载的命令"}
+  CommandOverrider []*PutOverridepolicyCommandArgsOverrider `json:"commandOverrider,omitempty" xml:"commandOverrider,omitempty" type:"Repeated"`
+  // {"en":"overrides args for workloads", "zh_CN":"覆盖工作负载参数"}
+  ArgsOverrider []*PutOverridepolicyCommandArgsOverrider `json:"argsOverrider,omitempty" xml:"argsOverrider,omitempty" type:"Repeated"`
+}
+
+func (s PutOverridepolicyOverriders) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyOverriders) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyOverriders) SetPlaintext(v []*PutOverridepolicyPlaintextOverrider) *PutOverridepolicyOverriders {
+  s.Plaintext = v
+  return s
+}
+
+func (s *PutOverridepolicyOverriders) SetImageOverrider(v []*PutOverridepolicyImageOverrider) *PutOverridepolicyOverriders {
+  s.PutOverridepolicyImageOverrider = v
+  return s
+}
+
+func (s *PutOverridepolicyOverriders) SetCommandOverrider(v []*PutOverridepolicyCommandArgsOverrider) *PutOverridepolicyOverriders {
+  s.CommandOverrider = v
+  return s
+}
+
+func (s *PutOverridepolicyOverriders) SetArgsOverrider(v []*PutOverridepolicyCommandArgsOverrider) *PutOverridepolicyOverriders {
+  s.ArgsOverrider = v
+  return s
+}
+
+type PutOverridepolicyPlaintextOverrider struct {
+  // {"en":"path of the target field", "zh_CN":"目标字段的路径"}
+  Path *string `json:"path,omitempty" xml:"path,omitempty" require:"true"`
+  // {"en":"type of operation on the target field", "zh_CN":"对目标字段操作类型"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty" require:"true"`
+  // {"en":"the value applied to the target field,when operator is remove, value must be empty", "zh_CN":"应用在目标字段的值，当 Operator 为 remove 时，此字段必须为空"}
+  Value *PutOverridepolicyJSON `json:"value,omitempty" xml:"value,omitempty"`
+}
+
+func (s PutOverridepolicyPlaintextOverrider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyPlaintextOverrider) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyPlaintextOverrider) SetPath(v string) *PutOverridepolicyPlaintextOverrider {
+  s.Path = &v
+  return s
+}
+
+func (s *PutOverridepolicyPlaintextOverrider) SetOperator(v string) *PutOverridepolicyPlaintextOverrider {
+  s.Operator = &v
+  return s
+}
+
+func (s *PutOverridepolicyPlaintextOverrider) SetValue(v *PutOverridepolicyJSON) *PutOverridepolicyPlaintextOverrider {
+  s.Value = v
+  return s
+}
+
+type PutOverridepolicyJSON struct {
+  // {"en":"value", "zh_CN":"字段值"}
+  Raw [][]byte `json:"raw,omitempty" xml:"raw,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s PutOverridepolicyJSON) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyJSON) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyJSON) SetRaw(v [][]byte) *PutOverridepolicyJSON {
+  s.Raw = v
+  return s
+}
+
+type PutOverridepolicyImageOverrider struct {
+  // {"en":"The default is nil. If the resource is a Pod, ReplicaSet, Deployment, StatefulSet system detects the image automatically. If the resource object has multiple containers, all the images will be processed. If it is not empty, only matched mirrors are processed", "zh_CN":"默认为空,如果资源是Pod, ReplicaSet, Deployment, StatefulSet系统自动检测镜像，如果资源对象有多个容器，所有镜像都将被处理。如果不为空，则只处理匹配到的镜像"}
+  Predicate *PutOverridepolicyImagePredicate `json:"predicate,omitempty" xml:"predicate,omitempty"`
+  // {"en":"component of image: [registry/]repository[:tag]", "zh_CN":"假设镜像组成成分：[registry/]repository[:tag]"}
+  Component *string `json:"component,omitempty" xml:"component,omitempty" require:"true"`
+  // {"en":"type of operation on the image", "zh_CN":"对镜像进行的操作"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty" require:"true"`
+  // {"en":"value could not be empty when operator is add or replace. Default is empty. ignored when operator is remove", "zh_CN":"当 Operator 为 add 或 replace 时不能为空，默认为空，当 operator 为 remove 时忽略"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+}
+
+func (s PutOverridepolicyImageOverrider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyImageOverrider) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyImageOverrider) SetPredicate(v *PutOverridepolicyImagePredicate) *PutOverridepolicyImageOverrider {
+  s.Predicate = v
+  return s
+}
+
+func (s *PutOverridepolicyImageOverrider) SetComponent(v string) *PutOverridepolicyImageOverrider {
+  s.Component = &v
+  return s
+}
+
+func (s *PutOverridepolicyImageOverrider) SetOperator(v string) *PutOverridepolicyImageOverrider {
+  s.Operator = &v
+  return s
+}
+
+func (s *PutOverridepolicyImageOverrider) SetValue(v string) *PutOverridepolicyImageOverrider {
+  s.Value = &v
+  return s
+}
+
+type PutOverridepolicyImagePredicate struct {
+  // {"en":"path of the target field", "zh_CN":"目标字段的路径"}
+  Path *string `json:"path,omitempty" xml:"path,omitempty" require:"true"`
+}
+
+func (s PutOverridepolicyImagePredicate) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyImagePredicate) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyImagePredicate) SetPath(v string) *PutOverridepolicyImagePredicate {
+  s.Path = &v
+  return s
+}
+
+type PutOverridepolicyCommandArgsOverrider struct {
+  // {"en":"name of container", "zh_CN":"容器名"}
+  ContainerName *string `json:"containerName,omitempty" xml:"containerName,omitempty" require:"true"`
+  // {"en":"operation to be applied to command/args", "zh_CN":"应用在commad/args上的操作"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty" require:"true"`
+  // {"en":"The value applied to command/args is append to commad/args when operator is add. The value is removed from command/args when operator is remove. If the value is empty, command/args remains unchanged", "zh_CN":"应用在command/args上的值，当operator为add时该值append到commad/args，当operator为remove时，该值从command/args移除，如果该值为空command/args维持原状"}
+  Value []*string `json:"value,omitempty" xml:"value,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s PutOverridepolicyCommandArgsOverrider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyCommandArgsOverrider) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyCommandArgsOverrider) SetContainerName(v string) *PutOverridepolicyCommandArgsOverrider {
+  s.ContainerName = &v
+  return s
+}
+
+func (s *PutOverridepolicyCommandArgsOverrider) SetOperator(v string) *PutOverridepolicyCommandArgsOverrider {
+  s.Operator = &v
+  return s
+}
+
+func (s *PutOverridepolicyCommandArgsOverrider) SetValue(v []*string) *PutOverridepolicyCommandArgsOverrider {
+  s.Value = v
+  return s
+}
+
+type PutOverridepolicyFieldSelector struct {
+  // {"en":"A list of node selector requirements by node's labels.", "zh_CN":"按节点标签列出的节点选择器需求列表。"}
+  MatchExpressions []*PutOverridepolicyCoreV1NodeSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s PutOverridepolicyFieldSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyFieldSelector) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyFieldSelector) SetMatchExpressions(v []*PutOverridepolicyCoreV1NodeSelectorRequirement) *PutOverridepolicyFieldSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type PutOverridepolicyCoreV1NodeSelectorRequirement struct {
+  // {"en":"The label key that the selector applies to.", "zh_CN":"选择算符所适用的标签主键。"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"Represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.", "zh_CN":"代表主键与值集之间的关系。合法的 operator 值包括 In、NotIn、Exists、DoesNotExist、Gt 和 Lt。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.", "zh_CN":"一个由字符串值组成的数组。如果 operator 是 In 或 NotIn，则 values 数组不能为空。 如果 operator 为 Exists 或 DoesNotExist，则 values 数组只能为空。 如果 operator 为 Gt 或 Lt，则 values 数组只能包含一个元素，并且该元素会被解释为整数。 在执行策略性合并补丁操作时，此数组会被整体替换。"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s PutOverridepolicyCoreV1NodeSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyCoreV1NodeSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyCoreV1NodeSelectorRequirement) SetKey(v string) *PutOverridepolicyCoreV1NodeSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *PutOverridepolicyCoreV1NodeSelectorRequirement) SetOperator(v string) *PutOverridepolicyCoreV1NodeSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *PutOverridepolicyCoreV1NodeSelectorRequirement) SetValues(v []*string) *PutOverridepolicyCoreV1NodeSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type PutOverridepolicyMetaV1LabelSelector struct {
+  // {"en":"A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed.", "zh_CN":"matchLabels 映射中的单个 {key,value} 键值对相当于 matchExpressions 的一个元素，其键字段为 key，运算符为 In，values 数组仅包含 value。"}
+  MatchLabels map[string]*string `json:"matchLabels,omitempty" xml:"matchLabels,omitempty"`
+  // {"en":"A list of label selector requirements. The requirements are ANDed.", "zh_CN":"标签选择器要求的列表，这些要求的结果按逻辑与的关系来计算。"}
+  MatchExpressions []*PutOverridepolicyLabelSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s PutOverridepolicyMetaV1LabelSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyMetaV1LabelSelector) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyMetaV1LabelSelector) SetMatchLabels(v map[string]*string) *PutOverridepolicyMetaV1LabelSelector {
+  s.MatchLabels = v
+  return s
+}
+
+func (s *PutOverridepolicyMetaV1LabelSelector) SetMatchExpressions(v []*PutOverridepolicyLabelSelectorRequirement) *PutOverridepolicyMetaV1LabelSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type PutOverridepolicyLabelSelectorRequirement struct {
+  // {"en":"key is the label key that the selector applies to.", "zh_CN":"选择器应用的标签键"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist.", "zh_CN":"operator 表示键与一组值的关系。有效的运算符包括 In、NotIn、Exists 和 DoesNotExist。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.", "zh_CN":"values 是一个字符串值数组。如果运算符为 In 或 NotIn，则 values 数组必须为非空。如果运算符是 Exists 或 DoesNotExist，则 values 数组必须为空。该数组在策略性合并补丁（Strategic Merge Patch）期间被替换。"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s PutOverridepolicyLabelSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyLabelSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyLabelSelectorRequirement) SetKey(v string) *PutOverridepolicyLabelSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *PutOverridepolicyLabelSelectorRequirement) SetOperator(v string) *PutOverridepolicyLabelSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *PutOverridepolicyLabelSelectorRequirement) SetValues(v []*string) *PutOverridepolicyLabelSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type PutOverridepolicyObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*PutOverridepolicyOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*PutOverridepolicyManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s PutOverridepolicyObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyObjectMeta) SetName(v string) *PutOverridepolicyObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *PutOverridepolicyObjectMeta) SetGenerateName(v string) *PutOverridepolicyObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *PutOverridepolicyObjectMeta) SetNamespace(v string) *PutOverridepolicyObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *PutOverridepolicyObjectMeta) SetSelfLink(v string) *PutOverridepolicyObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *PutOverridepolicyObjectMeta) SetUid(v string) *PutOverridepolicyObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *PutOverridepolicyObjectMeta) SetResourceVersion(v string) *PutOverridepolicyObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *PutOverridepolicyObjectMeta) SetGeneration(v int64) *PutOverridepolicyObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *PutOverridepolicyObjectMeta) SetCreationTimestamp(v string) *PutOverridepolicyObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *PutOverridepolicyObjectMeta) SetDeletionTimestamp(v string) *PutOverridepolicyObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *PutOverridepolicyObjectMeta) SetDeletionGracePeriodSeconds(v int64) *PutOverridepolicyObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *PutOverridepolicyObjectMeta) SetLabels(v map[string]*string) *PutOverridepolicyObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *PutOverridepolicyObjectMeta) SetAnnotations(v map[string]*string) *PutOverridepolicyObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *PutOverridepolicyObjectMeta) SetOwnerReferences(v []*PutOverridepolicyOwnerReference) *PutOverridepolicyObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *PutOverridepolicyObjectMeta) SetFinalizers(v []*string) *PutOverridepolicyObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *PutOverridepolicyObjectMeta) SetClusterName(v string) *PutOverridepolicyObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *PutOverridepolicyObjectMeta) SetManagedFields(v []*PutOverridepolicyManagedFieldsEntry) *PutOverridepolicyObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type PutOverridepolicyManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this PutOverridepolicyManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'PutOverridepolicyFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“PutOverridepolicyFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"PutOverridepolicyFieldsV1 holds the first PutOverridepolicyJSON version format as described in the 'PutOverridepolicyFieldsV1' type", "zh_CN":"PutOverridepolicyFieldsV1 包含类型 “PutOverridepolicyFieldsV1” 中描述的第一个 PutOverridepolicyJSON 版本格式"}
+  PutOverridepolicyFieldsV1 *PutOverridepolicyFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s PutOverridepolicyManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyManagedFieldsEntry) SetManager(v string) *PutOverridepolicyManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *PutOverridepolicyManagedFieldsEntry) SetOperation(v string) *PutOverridepolicyManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *PutOverridepolicyManagedFieldsEntry) SetApiVersion(v string) *PutOverridepolicyManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *PutOverridepolicyManagedFieldsEntry) SetTime(v string) *PutOverridepolicyManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *PutOverridepolicyManagedFieldsEntry) SetFieldsType(v string) *PutOverridepolicyManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *PutOverridepolicyManagedFieldsEntry) SetFieldsV1(v *PutOverridepolicyFieldsV1) *PutOverridepolicyManagedFieldsEntry {
+  s.PutOverridepolicyFieldsV1 = v
+  return s
+}
+
+func (s *PutOverridepolicyManagedFieldsEntry) SetSubresource(v string) *PutOverridepolicyManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type PutOverridepolicyFieldsV1 struct {
+}
+
+func (s PutOverridepolicyFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyFieldsV1) GoString() string {
+  return s.String()
+}
+
+type PutOverridepolicyOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s PutOverridepolicyOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutOverridepolicyOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *PutOverridepolicyOwnerReference) SetApiVersion(v string) *PutOverridepolicyOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *PutOverridepolicyOwnerReference) SetKind(v string) *PutOverridepolicyOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *PutOverridepolicyOwnerReference) SetName(v string) *PutOverridepolicyOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *PutOverridepolicyOwnerReference) SetUid(v string) *PutOverridepolicyOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *PutOverridepolicyOwnerReference) SetController(v bool) *PutOverridepolicyOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *PutOverridepolicyOwnerReference) SetBlockOwnerDeletion(v bool) *PutOverridepolicyOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+
+
+
+type ListHorizontalPodAutoscalerRequest struct {
+}
+
+func (s ListHorizontalPodAutoscalerRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerRequest) GoString() string {
+  return s.String()
+}
+
+type ListHorizontalPodAutoscalerResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"ListHorizontalPodAutoscalerHorizontalPodAutoscaler", "zh_CN":"ListHorizontalPodAutoscalerHorizontalPodAutoscaler"}
+  Data *ListHorizontalPodAutoscalerHorizontalPodAutoscalerList `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s ListHorizontalPodAutoscalerResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerResponse) SetCode(v int64) *ListHorizontalPodAutoscalerResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerResponse) SetMsg(v string) *ListHorizontalPodAutoscalerResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerResponse) SetRequestId(v string) *ListHorizontalPodAutoscalerResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerResponse) SetData(v *ListHorizontalPodAutoscalerHorizontalPodAutoscalerList) *ListHorizontalPodAutoscalerResponse {
+  s.Data = v
+  return s
+}
+
+type ListHorizontalPodAutoscalerPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+}
+
+func (s ListHorizontalPodAutoscalerPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerPaths) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerPaths) SetNamespace(v string) *ListHorizontalPodAutoscalerPaths {
+  s.Namespace = &v
+  return s
+}
+
+type ListHorizontalPodAutoscalerParameters struct {
+}
+
+func (s ListHorizontalPodAutoscalerParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerParameters) GoString() string {
+  return s.String()
+}
+
+type ListHorizontalPodAutoscalerRequestHeader struct {
+}
+
+func (s ListHorizontalPodAutoscalerRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ListHorizontalPodAutoscalerResponseHeader struct {
+}
+
+func (s ListHorizontalPodAutoscalerResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerResponseHeader) GoString() string {
+  return s.String()
+}
+
+type ListHorizontalPodAutoscalerHorizontalPodAutoscalerList struct {
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"metadata is the standard list metadata", "zh_CN":"metadata 是标准的列表元数据"}
+  Metadata *ListHorizontalPodAutoscalerListMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"the list of horizontal pod autoscaler objects", "zh_CN":"items 是水平 Pod 自动扩缩器对象的列表"}
+  Items []*ListHorizontalPodAutoscalerHorizontalPodAutoscaler `json:"items,omitempty" xml:"items,omitempty" type:"Repeated"`
+}
+
+func (s ListHorizontalPodAutoscalerHorizontalPodAutoscalerList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerHorizontalPodAutoscalerList) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerHorizontalPodAutoscalerList) SetKind(v string) *ListHorizontalPodAutoscalerHorizontalPodAutoscalerList {
+  s.Kind = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerHorizontalPodAutoscalerList) SetApiVersion(v string) *ListHorizontalPodAutoscalerHorizontalPodAutoscalerList {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerHorizontalPodAutoscalerList) SetMetadata(v *ListHorizontalPodAutoscalerListMeta) *ListHorizontalPodAutoscalerHorizontalPodAutoscalerList {
+  s.Metadata = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerHorizontalPodAutoscalerList) SetItems(v []*ListHorizontalPodAutoscalerHorizontalPodAutoscaler) *ListHorizontalPodAutoscalerHorizontalPodAutoscalerList {
+  s.Items = v
+  return s
+}
+
+type ListHorizontalPodAutoscalerListMeta struct {
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system", "zh_CN":"selfLink 表示此对象的 URL，由系统填充，只读。已弃用：selfLink 是一个遗留的只读字段，不再由系统填充"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system", "zh_CN":"标识该对象的服务器内部版本的字符串，客户端可以用该字段来确定对象何时被更改。 该值对客户端是不透明的，并且应该原样传回给服务器。该值由系统填充，只读"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"continue may be set if the user set a limit on the number of items returned, and indicates that the server has more data available. The value is opaque and may be used to issue another request to the endpoint that served this list to retrieve the next set of available objects. Continuing a consistent list may not be possible if the server configuration has changed or more than a few minutes have passed. The resourceVersion field returned when using this continue value will be identical to the value in the first response, unless you have received this token from an error message", "zh_CN":"如果用户对返回的条目数量设置了限制，则 continue 可能被设置，表示服务器有更多可用的数据。 该值是不透明的，可用于向提供此列表服务的端点发出另一个请求，以检索下一组可用的对象。 如果服务器配置已更改或时间已过去几分钟，则可能无法继续提供一致的列表。 除非你在错误消息中收到此令牌（token），否则使用此 continue 值时返回的 resourceVersion 字段应该和第一个响应中的值是相同的"}
+  Continue *string `json:"continue,omitempty" xml:"continue,omitempty"`
+  // {"en":"remainingItemCount is the number of subsequent items in the list which are not included in this list response. If the list request contained label or field selectors, then the number of remaining items is unknown and the field will be left unset and omitted during serialization. If the list is complete (either because it is not chunking or because this is the last chunk), then there are no more remaining items and this field will be left unset and omitted during serialization. Servers older than v1.15 do not set this field. The intended use of the remainingItemCount is estimating the size of a collection. Clients should not rely on the remainingItemCount to be set or to be exact", "zh_CN":"remainingItemCount 是列表中未包含在此列表响应中的后续项目的数量。 如果列表请求包含标签或字段选择器，则剩余项目的数量是未知的，并且在序列化期间该字段将保持未设置和省略。 如果列表是完整的（因为它没有分块或者这是最后一个块），那么就没有剩余的项目，并且在序列化过程中该字段将保持未设置和省略。 早于 v1.15 的服务器不设置此字段。remainingItemCount 的预期用途是估计集合的大小。 客户端不应依赖于设置准确的 remainingItemCount"}
+  RemainingItemCount *int64 `json:"remainingItemCount,omitempty" xml:"remainingItemCount,omitempty"`
+}
+
+func (s ListHorizontalPodAutoscalerListMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerListMeta) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerListMeta) SetSelfLink(v string) *ListHorizontalPodAutoscalerListMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerListMeta) SetResourceVersion(v string) *ListHorizontalPodAutoscalerListMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerListMeta) SetContinue(v string) *ListHorizontalPodAutoscalerListMeta {
+  s.Continue = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerListMeta) SetRemainingItemCount(v int64) *ListHorizontalPodAutoscalerListMeta {
+  s.RemainingItemCount = &v
+  return s
+}
+
+type ListHorizontalPodAutoscalerObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*ListHorizontalPodAutoscalerOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*ListHorizontalPodAutoscalerManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s ListHorizontalPodAutoscalerObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerObjectMeta) SetName(v string) *ListHorizontalPodAutoscalerObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerObjectMeta) SetGenerateName(v string) *ListHorizontalPodAutoscalerObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerObjectMeta) SetNamespace(v string) *ListHorizontalPodAutoscalerObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerObjectMeta) SetSelfLink(v string) *ListHorizontalPodAutoscalerObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerObjectMeta) SetUid(v string) *ListHorizontalPodAutoscalerObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerObjectMeta) SetResourceVersion(v string) *ListHorizontalPodAutoscalerObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerObjectMeta) SetGeneration(v int64) *ListHorizontalPodAutoscalerObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerObjectMeta) SetCreationTimestamp(v string) *ListHorizontalPodAutoscalerObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerObjectMeta) SetDeletionTimestamp(v string) *ListHorizontalPodAutoscalerObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerObjectMeta) SetDeletionGracePeriodSeconds(v int64) *ListHorizontalPodAutoscalerObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerObjectMeta) SetLabels(v map[string]*string) *ListHorizontalPodAutoscalerObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerObjectMeta) SetAnnotations(v map[string]*string) *ListHorizontalPodAutoscalerObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerObjectMeta) SetOwnerReferences(v []*ListHorizontalPodAutoscalerOwnerReference) *ListHorizontalPodAutoscalerObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerObjectMeta) SetFinalizers(v []*string) *ListHorizontalPodAutoscalerObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerObjectMeta) SetClusterName(v string) *ListHorizontalPodAutoscalerObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerObjectMeta) SetManagedFields(v []*ListHorizontalPodAutoscalerManagedFieldsEntry) *ListHorizontalPodAutoscalerObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type ListHorizontalPodAutoscalerManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this ListHorizontalPodAutoscalerManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'ListHorizontalPodAutoscalerFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“ListHorizontalPodAutoscalerFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"ListHorizontalPodAutoscalerFieldsV1 holds the first JSON version format as described in the 'ListHorizontalPodAutoscalerFieldsV1' type", "zh_CN":"ListHorizontalPodAutoscalerFieldsV1 包含类型 “ListHorizontalPodAutoscalerFieldsV1” 中描述的第一个 JSON 版本格式"}
+  ListHorizontalPodAutoscalerFieldsV1 *ListHorizontalPodAutoscalerFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s ListHorizontalPodAutoscalerManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerManagedFieldsEntry) SetManager(v string) *ListHorizontalPodAutoscalerManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerManagedFieldsEntry) SetOperation(v string) *ListHorizontalPodAutoscalerManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerManagedFieldsEntry) SetApiVersion(v string) *ListHorizontalPodAutoscalerManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerManagedFieldsEntry) SetTime(v string) *ListHorizontalPodAutoscalerManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerManagedFieldsEntry) SetFieldsType(v string) *ListHorizontalPodAutoscalerManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerManagedFieldsEntry) SetFieldsV1(v *ListHorizontalPodAutoscalerFieldsV1) *ListHorizontalPodAutoscalerManagedFieldsEntry {
+  s.ListHorizontalPodAutoscalerFieldsV1 = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerManagedFieldsEntry) SetSubresource(v string) *ListHorizontalPodAutoscalerManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type ListHorizontalPodAutoscalerFieldsV1 struct {
+}
+
+func (s ListHorizontalPodAutoscalerFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerFieldsV1) GoString() string {
+  return s.String()
+}
+
+type ListHorizontalPodAutoscalerOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s ListHorizontalPodAutoscalerOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerOwnerReference) SetApiVersion(v string) *ListHorizontalPodAutoscalerOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerOwnerReference) SetKind(v string) *ListHorizontalPodAutoscalerOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerOwnerReference) SetName(v string) *ListHorizontalPodAutoscalerOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerOwnerReference) SetUid(v string) *ListHorizontalPodAutoscalerOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerOwnerReference) SetController(v bool) *ListHorizontalPodAutoscalerOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerOwnerReference) SetBlockOwnerDeletion(v bool) *ListHorizontalPodAutoscalerOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+type ListHorizontalPodAutoscalerHorizontalPodAutoscaler struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *ListHorizontalPodAutoscalerObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"spec defines the behaviour of autoscaler.", "zh_CN":"spec 定义自动缩放器的规约"}
+  Spec *ListHorizontalPodAutoscalerHorizontalPodAutoscalerSpec `json:"spec,omitempty" xml:"spec,omitempty"`
+  // {"en":"the current information about the autoscaler", "zh_CN":"自动缩放器的当前信息"}
+  Status *ListHorizontalPodAutoscalerHorizontalPodAutoscalerStatus `json:"status,omitempty" xml:"status,omitempty"`
+}
+
+func (s ListHorizontalPodAutoscalerHorizontalPodAutoscaler) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerHorizontalPodAutoscaler) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerHorizontalPodAutoscaler) SetApiVersion(v string) *ListHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerHorizontalPodAutoscaler) SetKind(v string) *ListHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.Kind = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerHorizontalPodAutoscaler) SetMetadata(v *ListHorizontalPodAutoscalerObjectMeta) *ListHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.Metadata = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerHorizontalPodAutoscaler) SetSpec(v *ListHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) *ListHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.Spec = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerHorizontalPodAutoscaler) SetStatus(v *ListHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) *ListHorizontalPodAutoscalerHorizontalPodAutoscaler {
+  s.Status = v
+  return s
+}
+
+type ListHorizontalPodAutoscalerHorizontalPodAutoscalerStatus struct {
+  // {"en":"the most recent generation observed by this autoscaler", "zh_CN":"observedGeneration 是此自动缩放器观察到的最新一代"}
+  ObservedGeneration *int64 `json:"observedGeneration,omitempty" xml:"observedGeneration,omitempty"`
+  // {"en":"the current number of replicas of pods managed by this autoscaler", "zh_CN":"此自动缩放器管理的 Pod 的当前副本数"}
+  CurrentReplicas *int32 `json:"currentReplicas,omitempty" xml:"currentReplicas,omitempty" require:"true"`
+  // {"en":"the desired number of replicas of pods managed by this autoscaler", "zh_CN":"此自动缩放器管理的 Pod 副本的所需数量"}
+  DesiredReplicas *int32 `json:"desiredReplicas,omitempty" xml:"desiredReplicas,omitempty" require:"true"`
+}
+
+func (s ListHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) SetObservedGeneration(v int64) *ListHorizontalPodAutoscalerHorizontalPodAutoscalerStatus {
+  s.ObservedGeneration = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) SetCurrentReplicas(v int32) *ListHorizontalPodAutoscalerHorizontalPodAutoscalerStatus {
+  s.CurrentReplicas = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerHorizontalPodAutoscalerStatus) SetDesiredReplicas(v int32) *ListHorizontalPodAutoscalerHorizontalPodAutoscalerStatus {
+  s.DesiredReplicas = &v
+  return s
+}
+
+type ListHorizontalPodAutoscalerHorizontalPodAutoscalerSpec struct {
+  // {"en":"reference to scaled resource; horizontal pod autoscaler will learn the current resource consumption and will set the desired number of pods by using its Scale subresource", "zh_CN":"对被扩缩资源的引用； 水平 Pod 自动缩放器将了解当前的资源消耗，并使用其 scale 子资源设置所需的 Pod 数量"}
+  ScaleTargetRef *ListHorizontalPodAutoscalerCrossVersionObjectReference `json:"scaleTargetRef,omitempty" xml:"scaleTargetRef,omitempty" require:"true"`
+  // {"en":"the lower limit for the number of replicas to which the autoscaler can scale down. It defaults to 1 pod. minReplicas is allowed to be 0 if the alpha feature gate HPAScaleToZero is enabled and at least one Object or External metric is configured. Scaling is active as long as at least one metric value is available", "zh_CN":"自动缩放器可以缩减的副本数的下限。 它默认为 1 个 Pod。 如果启用了 alpha 特性门禁 HPAScaleToZero 并且配置了至少一个 Object 或 External 度量标准， 则 minReplicas 允许为 0。 只要至少有一个度量值可用，缩放就处于活动状态"}
+  MinReplicas *int32 `json:"minReplicas,omitempty" xml:"minReplicas,omitempty"`
+  // {"en":"the upper limit for the number of pods that can be set by the autoscaler; cannot be smaller than MinReplicas", "zh_CN":"自动扩缩器可以设置的 Pod 数量上限； 不能小于 minReplicas"}
+  MaxReplicas *int32 `json:"maxReplicas,omitempty" xml:"maxReplicas,omitempty" require:"true"`
+  // {"en":"metrics contains the specifications for which to use to calculate the desired replica count (the maximum replica count across all metrics will be used). The desired replica count is calculated multiplying the ratio between the target value and the current value by the current number of pods. Ergo, metrics used must decrease as the pod count is increased, and vice-versa. See the individual metric source types for more information about how each type of metric must respond. If not set, the default metric will be set to 80% average CPU utilization", "zh_CN":"metrics 包含用于计算预期副本数的规约（将使用所有指标的最大副本数）。 预期副本数是通过将目标值与当前值之间的比率乘以当前 Pod 数来计算的。 因此，使用的指标必须随着 Pod 数量的增加而减少，反之亦然。 有关每种类别的指标必须如何响应的更多信息，请参阅各个指标源类别。 如果未设置，默认指标将设置为 80% 的平均 CPU 利用率"}
+  Metrics []*ListHorizontalPodAutoscalerMetricSpec `json:"metrics,omitempty" xml:"metrics,omitempty" type:"Repeated"`
+  // {"en":"behavior configures the scaling behavior of the target in both Up and Down directions (scaleUp and scaleDown fields respectively). If not set, the default ListHorizontalPodAutoscalerHPAScalingRules for scale up and scale down are used", "zh_CN":"behavior 配置目标在扩容（Up）和缩容（Down）两个方向的扩缩行为（分别用 scaleUp 和 scaleDown 字段）。 如果未设置，则会使用默认的 ListHorizontalPodAutoscalerHPAScalingRules 进行扩缩容"}
+  Behavior *ListHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior `json:"behavior,omitempty" xml:"behavior,omitempty"`
+}
+
+func (s ListHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetScaleTargetRef(v *ListHorizontalPodAutoscalerCrossVersionObjectReference) *ListHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.ScaleTargetRef = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetMinReplicas(v int32) *ListHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.MinReplicas = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetMaxReplicas(v int32) *ListHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.MaxReplicas = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetMetrics(v []*ListHorizontalPodAutoscalerMetricSpec) *ListHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.Metrics = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerHorizontalPodAutoscalerSpec) SetBehavior(v *ListHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) *ListHorizontalPodAutoscalerHorizontalPodAutoscalerSpec {
+  s.Behavior = v
+  return s
+}
+
+type ListHorizontalPodAutoscalerCrossVersionObjectReference struct {
+  // {"en":"the API version of the referent", "zh_CN":"被引用对象的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"the kind of the referent", "zh_CN":"被引用对象的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"the name of the referent", "zh_CN":"被引用对象的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s ListHorizontalPodAutoscalerCrossVersionObjectReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerCrossVersionObjectReference) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerCrossVersionObjectReference) SetApiVersion(v string) *ListHorizontalPodAutoscalerCrossVersionObjectReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerCrossVersionObjectReference) SetKind(v string) *ListHorizontalPodAutoscalerCrossVersionObjectReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerCrossVersionObjectReference) SetName(v string) *ListHorizontalPodAutoscalerCrossVersionObjectReference {
+  s.Name = &v
+  return s
+}
+
+type ListHorizontalPodAutoscalerMetricSpec struct {
+  // {"en":"the type of metric source. It should be one of 'ContainerResource', 'External', 'Object', 'Pods' or 'Resource', each mapping to a matching field in the object. Note: 'ContainerResource' type is available on when the feature-gate HPAContainerMetrics is enabled", "zh_CN":"type 是指标源的类别。它取值是 “ContainerResource”、“External”、“Object”、“Pods” 或 “Resource” 之一， 每个类别映射到对象中的一个对应的字段。注意：“ContainerResource” 类别在特性门控 HPAContainerMetrics 启用时可用"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {"en":"refers to a metric describing a single kubernetes object (for example, hits-per-second on an Ingress object)", "zh_CN":"指描述单个 Kubernetes 对象的指标"}
+  Object *ListHorizontalPodAutoscalerObjectMetricSource `json:"object,omitempty" xml:"object,omitempty"`
+  // {"en":"refers to a metric describing each pod in the current scale target (for example, transactions-processed-per-second). The values will be averaged together before being compared to the target value", "zh_CN":"指描述当前扩缩目标中每个 Pod 的指标（例如，transactions-processed-per-second）。 在与目标值进行比较之前，这些指标值将被平均"}
+  Pods *ListHorizontalPodAutoscalerPodsMetricSource `json:"pods,omitempty" xml:"pods,omitempty"`
+  // {"en":"refers to a resource metric (such as those specified in requests and limits) known to Kubernetes describing each pod in the current scale target (e.g. CPU or memory). Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the 'pods' source", "zh_CN":"指 Kubernetes 已知的资源指标（例如在请求和限制中指定的那些）， 此结构描述当前扩缩目标中的每个 Pod（例如 CPU 或内存）。此类指标内置于 Kubernetes 中， 并且在使用 “Pods” 源的、按 Pod 统计的普通指标之外支持一些特殊的扩缩选项"}
+  Resource *ListHorizontalPodAutoscalerResourceMetricSource `json:"resource,omitempty" xml:"resource,omitempty"`
+  // {"en":"refers to a resource metric (such as those specified in requests and limits) known to Kubernetes describing a single container in each pod of the current scale target (e.g. CPU or memory). Such metrics are built in to Kubernetes, and have special scaling options on top of those available to normal per-pod metrics using the 'pods' source. This is an alpha feature and can be enabled by the HPAContainerMetrics feature flag", "zh_CN":"指 Kubernetes 已知的资源指标（例如在请求和限制中指定的那些）， 描述当前扩缩目标中每个 Pod 中的单个容器（例如 CPU 或内存）。 此类指标内置于 Kubernetes 中，在使用 “pods” 源的、按 Pod 计算的普通指标之外，还具有一些特殊的扩缩选项。 这是一个 Alpha 特性，可以通过 HPAContainerMetrics 特性标志启用"}
+  ContainerResource *ListHorizontalPodAutoscalerContainerResourceMetricSource `json:"containerResource,omitempty" xml:"containerResource,omitempty"`
+  // {"en":"refers to a global metric that is not associated with any Kubernetes object. It allows autoscaling based on information coming from components running outside of cluster (for example length of queue in cloud messaging service, or QPS from loadbalancer running outside of cluster)", "zh_CN":"指的是不与任何 Kubernetes 对象关联的全局指标。 这一字段允许基于来自集群外部运行的组件（例如云消息服务中的队列长度，或来自运行在集群外部的负载均衡器的 QPS）的信息进行自动扩缩容"}
+  External *ListHorizontalPodAutoscalerExternalMetricSource `json:"external,omitempty" xml:"external,omitempty"`
+}
+
+func (s ListHorizontalPodAutoscalerMetricSpec) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerMetricSpec) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerMetricSpec) SetType(v string) *ListHorizontalPodAutoscalerMetricSpec {
+  s.Type = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerMetricSpec) SetObject(v *ListHorizontalPodAutoscalerObjectMetricSource) *ListHorizontalPodAutoscalerMetricSpec {
+  s.Object = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerMetricSpec) SetPods(v *ListHorizontalPodAutoscalerPodsMetricSource) *ListHorizontalPodAutoscalerMetricSpec {
+  s.Pods = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerMetricSpec) SetResource(v *ListHorizontalPodAutoscalerResourceMetricSource) *ListHorizontalPodAutoscalerMetricSpec {
+  s.Resource = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerMetricSpec) SetContainerResource(v *ListHorizontalPodAutoscalerContainerResourceMetricSource) *ListHorizontalPodAutoscalerMetricSpec {
+  s.ContainerResource = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerMetricSpec) SetExternal(v *ListHorizontalPodAutoscalerExternalMetricSource) *ListHorizontalPodAutoscalerMetricSpec {
+  s.External = v
+  return s
+}
+
+type ListHorizontalPodAutoscalerResourceMetricSource struct {
+  // {"en":"the name of the resource in question", "zh_CN":"相关资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"specifies the target value for the given metric", "zh_CN":"指定给定指标的目标值"}
+  Target *ListHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+}
+
+func (s ListHorizontalPodAutoscalerResourceMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerResourceMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerResourceMetricSource) SetName(v string) *ListHorizontalPodAutoscalerResourceMetricSource {
+  s.Name = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerResourceMetricSource) SetTarget(v *ListHorizontalPodAutoscalerMetricTarget) *ListHorizontalPodAutoscalerResourceMetricSource {
+  s.Target = v
+  return s
+}
+
+type ListHorizontalPodAutoscalerContainerResourceMetricSource struct {
+  // {"en":"the name of the resource in question", "zh_CN":"相关资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"specifies the target value for the given metric", "zh_CN":"指定给定指标的目标值"}
+  Target *ListHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+  // {"en":"the name of the container in the pods of the scaling target", "zh_CN":"扩缩目标的 Pod 中容器的名称"}
+  Container *string `json:"container,omitempty" xml:"container,omitempty" require:"true"`
+}
+
+func (s ListHorizontalPodAutoscalerContainerResourceMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerContainerResourceMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerContainerResourceMetricSource) SetName(v string) *ListHorizontalPodAutoscalerContainerResourceMetricSource {
+  s.Name = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerContainerResourceMetricSource) SetTarget(v *ListHorizontalPodAutoscalerMetricTarget) *ListHorizontalPodAutoscalerContainerResourceMetricSource {
+  s.Target = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerContainerResourceMetricSource) SetContainer(v string) *ListHorizontalPodAutoscalerContainerResourceMetricSource {
+  s.Container = &v
+  return s
+}
+
+type ListHorizontalPodAutoscalerExternalMetricSource struct {
+  // {"en":"metric identifies the target metric by name and selector", "zh_CN":"metric 通过名称和选择算符识别目标指标"}
+  Metric *ListHorizontalPodAutoscalerMetricIdentifier `json:"metric,omitempty" xml:"metric,omitempty" require:"true"`
+  // {"en":"target specifies the target value for the given metric", "zh_CN":"target 指定给定指标的目标值"}
+  Target *ListHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+}
+
+func (s ListHorizontalPodAutoscalerExternalMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerExternalMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerExternalMetricSource) SetMetric(v *ListHorizontalPodAutoscalerMetricIdentifier) *ListHorizontalPodAutoscalerExternalMetricSource {
+  s.Metric = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerExternalMetricSource) SetTarget(v *ListHorizontalPodAutoscalerMetricTarget) *ListHorizontalPodAutoscalerExternalMetricSource {
+  s.Target = v
+  return s
+}
+
+type ListHorizontalPodAutoscalerPodsMetricSource struct {
+  // {"en":"metric identifies the target metric by name and selector", "zh_CN":"metric 通过名称和选择算符识别目标指标"}
+  Metric *ListHorizontalPodAutoscalerMetricIdentifier `json:"metric,omitempty" xml:"metric,omitempty" require:"true"`
+  // {"en":"target specifies the target value for the given metric", "zh_CN":"target 表示给定指标的目标值"}
+  Target *ListHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+}
+
+func (s ListHorizontalPodAutoscalerPodsMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerPodsMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerPodsMetricSource) SetMetric(v *ListHorizontalPodAutoscalerMetricIdentifier) *ListHorizontalPodAutoscalerPodsMetricSource {
+  s.Metric = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerPodsMetricSource) SetTarget(v *ListHorizontalPodAutoscalerMetricTarget) *ListHorizontalPodAutoscalerPodsMetricSource {
+  s.Target = v
+  return s
+}
+
+type ListHorizontalPodAutoscalerObjectMetricSource struct {
+  // {"en":"describedObject specifies the descriptions of a object,such as kind,name apiVersion", "zh_CN":"describeObject 表示对象的描述，如对象的 kind、name、apiVersion"}
+  DescribedObject *ListHorizontalPodAutoscalerCrossVersionObjectReference `json:"describedObject,omitempty" xml:"describedObject,omitempty" require:"true"`
+  // {"en":"target specifies the target value for the given metric", "zh_CN":"target 表示给定指标的目标值"}
+  Target *ListHorizontalPodAutoscalerMetricTarget `json:"target,omitempty" xml:"target,omitempty" require:"true"`
+  // {"en":"metric identifies the target metric by name and selector", "zh_CN":"metric 通过名称和选择算符识别目标指标"}
+  Metric *ListHorizontalPodAutoscalerMetricIdentifier `json:"metric,omitempty" xml:"metric,omitempty" require:"true"`
+}
+
+func (s ListHorizontalPodAutoscalerObjectMetricSource) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerObjectMetricSource) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerObjectMetricSource) SetDescribedObject(v *ListHorizontalPodAutoscalerCrossVersionObjectReference) *ListHorizontalPodAutoscalerObjectMetricSource {
+  s.DescribedObject = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerObjectMetricSource) SetTarget(v *ListHorizontalPodAutoscalerMetricTarget) *ListHorizontalPodAutoscalerObjectMetricSource {
+  s.Target = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerObjectMetricSource) SetMetric(v *ListHorizontalPodAutoscalerMetricIdentifier) *ListHorizontalPodAutoscalerObjectMetricSource {
+  s.Metric = v
+  return s
+}
+
+type ListHorizontalPodAutoscalerMetricTarget struct {
+  // {"en":"type represents whether the metric type is Utilization, Value, or AverageValue", "zh_CN":"type 表示指标类别是 Utilization、Value 或 AverageValue"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {"en":"the target value of the metric (as a quantity)", "zh_CN":"value 是指标的目标值（以数量形式给出）"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty"`
+  // {"en":"the target value of the average of the metric across all relevant pods (as a quantity)", "zh_CN":"averageValue 是跨所有 Pod 得出的指标均值的目标值（以数量形式给出）"}
+  AverageValue *string `json:"averageValue,omitempty" xml:"averageValue,omitempty"`
+  // {"en":"the target value of the average of the resource metric across all relevant pods, represented as a percentage of the requested value of the resource for the pods. Currently only valid for Resource metric source type", "zh_CN":"averageUtilization 是跨所有相关 Pod 得出的资源指标均值的目标值， 表示为 Pod 资源请求值的百分比。目前仅对 “Resource” 指标源类别有效"}
+  AverageUtilization *int32 `json:"averageUtilization,omitempty" xml:"averageUtilization,omitempty"`
+}
+
+func (s ListHorizontalPodAutoscalerMetricTarget) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerMetricTarget) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerMetricTarget) SetType(v string) *ListHorizontalPodAutoscalerMetricTarget {
+  s.Type = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerMetricTarget) SetValue(v string) *ListHorizontalPodAutoscalerMetricTarget {
+  s.Value = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerMetricTarget) SetAverageValue(v string) *ListHorizontalPodAutoscalerMetricTarget {
+  s.AverageValue = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerMetricTarget) SetAverageUtilization(v int32) *ListHorizontalPodAutoscalerMetricTarget {
+  s.AverageUtilization = &v
+  return s
+}
+
+type ListHorizontalPodAutoscalerMetricIdentifier struct {
+  // {"en":"the name of the given metric", "zh_CN":"给定指标的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"the string-encoded form of a standard kubernetes label selector for the given metric When set, it is passed as an additional parameter to the metrics server for more specific metrics scoping. When unset, just the metricName will be used to gather metrics", "zh_CN":"给定指标的标准 Kubernetes 标签选择算符的字符串编码形式。 设置后，它作为附加参数传递给指标服务器，以获取更具体的指标范围。 未设置时，仅 metricName 参数将用于收集指标"}
+  Selector *ListHorizontalPodAutoscalerLabelSelector `json:"selector,omitempty" xml:"selector,omitempty"`
+}
+
+func (s ListHorizontalPodAutoscalerMetricIdentifier) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerMetricIdentifier) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerMetricIdentifier) SetName(v string) *ListHorizontalPodAutoscalerMetricIdentifier {
+  s.Name = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerMetricIdentifier) SetSelector(v *ListHorizontalPodAutoscalerLabelSelector) *ListHorizontalPodAutoscalerMetricIdentifier {
+  s.Selector = v
+  return s
+}
+
+type ListHorizontalPodAutoscalerLabelSelector struct {
+  // {"en":"a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is 'key', the operator is 'In', and the values array contains only 'value'. The requirements are ANDed", "zh_CN":"matchLabels 是 {key,value} 键值对的映射。matchLabels 映射中的单个 {key,value} 键值对相当于 matchExpressions 的一个元素，其键字段为 key，运算符为 In，values 数组仅包含 value。所表达的需求最终要按逻辑与的关系组合"}
+  MatchLabels map[string]*string `json:"matchLabels,omitempty" xml:"matchLabels,omitempty"`
+  // {"en":"a list of label selector requirements. The requirements are ANDed", "zh_CN":"标签选择器要求的列表，这些要求的结果按逻辑与的关系来计算"}
+  MatchExpressions []*ListHorizontalPodAutoscalerLabelSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s ListHorizontalPodAutoscalerLabelSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerLabelSelector) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerLabelSelector) SetMatchLabels(v map[string]*string) *ListHorizontalPodAutoscalerLabelSelector {
+  s.MatchLabels = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerLabelSelector) SetMatchExpressions(v []*ListHorizontalPodAutoscalerLabelSelectorRequirement) *ListHorizontalPodAutoscalerLabelSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type ListHorizontalPodAutoscalerLabelSelectorRequirement struct {
+  // {"en":"the label key that the selector applies to", "zh_CN":"选择器应用的标签键"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist", "zh_CN":"表示键与一组值的关系。有效的运算符包括 In、NotIn、Exists 和 DoesNotExist"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch", "zh_CN":"values 是一个字符串值数组。如果运算符为 In 或 NotIn，则 values 数组必须为非空。如果运算符是 Exists 或 DoesNotExist，则 values 数组必须为空。该数组在策略性合并补丁（Strategic Merge Patch）期间被替换"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s ListHorizontalPodAutoscalerLabelSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerLabelSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerLabelSelectorRequirement) SetKey(v string) *ListHorizontalPodAutoscalerLabelSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerLabelSelectorRequirement) SetOperator(v string) *ListHorizontalPodAutoscalerLabelSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerLabelSelectorRequirement) SetValues(v []*string) *ListHorizontalPodAutoscalerLabelSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type ListHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior struct {
+  // {"en":"scaleUp is scaling policy for scaling Up. If not set, the default value is the higher of:- increase no more than 4 pods per 60 seconds- double the number of pods per 60 seconds No stabilization is used", "zh_CN":"scaleUp 是用于扩容的扩缩策略。如果未设置，则默认值为以下值中的较高者：- 每 60 秒增加不超过 4 个 Pod- 每 60 秒 Pod 数量翻倍。不使用稳定窗口"}
+  ScaleUp *ListHorizontalPodAutoscalerHPAScalingRules `json:"scaleUp,omitempty" xml:"scaleUp,omitempty"`
+  // {"en":"scaleDown is scaling policy for scaling Down. If not set, the default value is to allow to scale down to minReplicas pods, with a 300 second stabilization window (i.e., the highest recommendation for the last 300sec is used)", "zh_CN":"scaleDown 是缩容策略。如果未设置，则默认值允许缩减到 minReplicas 数量的 Pod， 具有 300 秒的稳定窗口（使用最近 300 秒的最高推荐值）"}
+  ScaleDown *ListHorizontalPodAutoscalerHPAScalingRules `json:"scaleDown,omitempty" xml:"scaleDown,omitempty"`
+}
+
+func (s ListHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) SetScaleUp(v *ListHorizontalPodAutoscalerHPAScalingRules) *ListHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior {
+  s.ScaleUp = v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior) SetScaleDown(v *ListHorizontalPodAutoscalerHPAScalingRules) *ListHorizontalPodAutoscalerHorizontalPodAutoscalerBehavior {
+  s.ScaleDown = v
+  return s
+}
+
+type ListHorizontalPodAutoscalerHPAScalingRules struct {
+  // {"en":"stabilizationWindowSeconds is the number of seconds for which past recommendations should be considered while scaling up or scaling down. StabilizationWindowSeconds must be greater than or equal to zero and less than or equal to 3600 (one hour). If not set, use the default values: - For scale up: 0 (i.e. no stabilization is done). - For scale down: 300 (i.e. the stabilization window is 300 seconds long)", "zh_CN":"stabilizationWindowSeconds 是在扩缩容时应考虑的之前建议的秒数。stabilizationWindowSeconds 必须大于或等于零且小于或等于 3600（一小时）。如果未设置，则使用默认值：扩容：0（不设置稳定窗口）。缩容：300（即稳定窗口为 300 秒）"}
+  StabilizationWindowSeconds *int32 `json:"stabilizationWindowSeconds,omitempty" xml:"stabilizationWindowSeconds,omitempty"`
+  // {"en":"selectPolicy is used to specify which policy should be used. If not set, the default value Max is used", "zh_CN":"selectPolicy 用于指定应该使用哪个策略。如果未设置，则使用默认值 Max"}
+  SelectPolicy *string `json:"selectPolicy,omitempty" xml:"selectPolicy,omitempty"`
+  // {"en":"policies is a list of potential scaling polices which can be used during scaling. At least one policy must be specified, otherwise the ListHorizontalPodAutoscalerHPAScalingRules will be discarded as invalid", "zh_CN":"policies 是可在扩缩容过程中使用的潜在扩缩策略的列表。必须至少指定一个策略，否则 ListHorizontalPodAutoscalerHPAScalingRules 将被视为无效而丢弃"}
+  Policies []*ListHorizontalPodAutoscalerHPAScalingPolicy `json:"policies,omitempty" xml:"policies,omitempty" type:"Repeated"`
+}
+
+func (s ListHorizontalPodAutoscalerHPAScalingRules) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerHPAScalingRules) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerHPAScalingRules) SetStabilizationWindowSeconds(v int32) *ListHorizontalPodAutoscalerHPAScalingRules {
+  s.StabilizationWindowSeconds = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerHPAScalingRules) SetSelectPolicy(v string) *ListHorizontalPodAutoscalerHPAScalingRules {
+  s.SelectPolicy = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerHPAScalingRules) SetPolicies(v []*ListHorizontalPodAutoscalerHPAScalingPolicy) *ListHorizontalPodAutoscalerHPAScalingRules {
+  s.Policies = v
+  return s
+}
+
+type ListHorizontalPodAutoscalerHPAScalingPolicy struct {
+  // {"en":"type is used to specify the scaling policy", "zh_CN":"type 用于指定扩缩策略"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty"`
+  // {"en":"value contains the amount of change which is permitted by the policy. It must be greater than zero", "zh_CN":"value 包含策略允许的更改量。它必须大于零"}
+  Value *int32 `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+  // {"en":"periodSeconds specifies the window of time for which the policy should hold true. PeriodSeconds must be greater than zero and less than or equal to 1800 (30 min)", "zh_CN":"periodSeconds 表示策略应该保持为 true 的时间窗口长度。 periodSeconds 必须大于零且小于或等于 1800（30 分钟）"}
+  PeriodSeconds *int32 `json:"periodSeconds,omitempty" xml:"periodSeconds,omitempty" require:"true"`
+}
+
+func (s ListHorizontalPodAutoscalerHPAScalingPolicy) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListHorizontalPodAutoscalerHPAScalingPolicy) GoString() string {
+  return s.String()
+}
+
+func (s *ListHorizontalPodAutoscalerHPAScalingPolicy) SetType(v string) *ListHorizontalPodAutoscalerHPAScalingPolicy {
+  s.Type = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerHPAScalingPolicy) SetValue(v int32) *ListHorizontalPodAutoscalerHPAScalingPolicy {
+  s.Value = &v
+  return s
+}
+
+func (s *ListHorizontalPodAutoscalerHPAScalingPolicy) SetPeriodSeconds(v int32) *ListHorizontalPodAutoscalerHPAScalingPolicy {
+  s.PeriodSeconds = &v
+  return s
+}
+
+
+
+
+type CreatePropagationPoliciesRequest struct {
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"Standard object metadata.", "zh_CN":"标准的对象元数据。"}
+  Metadata *CreatePropagationPoliciesObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Spec defines the behavior of a CreatePropagationPoliciesPropagationPolicy", "zh_CN":"spec 定义 CreatePropagationPoliciesPropagationPolicy 的行为"}
+  Spec *CreatePropagationPoliciesPropagationSpec `json:"spec,omitempty" xml:"spec,omitempty" require:"true"`
+}
+
+func (s CreatePropagationPoliciesRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesRequest) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesRequest) SetKind(v string) *CreatePropagationPoliciesRequest {
+  s.Kind = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesRequest) SetApiVersion(v string) *CreatePropagationPoliciesRequest {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesRequest) SetMetadata(v *CreatePropagationPoliciesObjectMeta) *CreatePropagationPoliciesRequest {
+  s.Metadata = v
+  return s
+}
+
+func (s *CreatePropagationPoliciesRequest) SetSpec(v *CreatePropagationPoliciesPropagationSpec) *CreatePropagationPoliciesRequest {
+  s.Spec = v
+  return s
+}
+
+type CreatePropagationPoliciesResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"CreatePropagationPoliciesPropagationPolicy object", "zh_CN":"PropagationPolicy对象"}
+  Data *CreatePropagationPoliciesPropagationPolicy `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s CreatePropagationPoliciesResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesResponse) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesResponse) SetCode(v int64) *CreatePropagationPoliciesResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesResponse) SetMsg(v string) *CreatePropagationPoliciesResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesResponse) SetRequestId(v string) *CreatePropagationPoliciesResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesResponse) SetData(v *CreatePropagationPoliciesPropagationPolicy) *CreatePropagationPoliciesResponse {
+  s.Data = v
+  return s
+}
+
+type CreatePropagationPoliciesPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+}
+
+func (s CreatePropagationPoliciesPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesPaths) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesPaths) SetNamespace(v string) *CreatePropagationPoliciesPaths {
+  s.Namespace = &v
+  return s
+}
+
+type CreatePropagationPoliciesParameters struct {
+}
+
+func (s CreatePropagationPoliciesParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesParameters) GoString() string {
+  return s.String()
+}
+
+type CreatePropagationPoliciesRequestHeader struct {
+}
+
+func (s CreatePropagationPoliciesRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesRequestHeader) GoString() string {
+  return s.String()
+}
+
+type CreatePropagationPoliciesResponseHeader struct {
+}
+
+func (s CreatePropagationPoliciesResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesResponseHeader) GoString() string {
+  return s.String()
+}
+
+type CreatePropagationPoliciesPropagationPolicy struct {
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"Standard object metadata.", "zh_CN":"标准的对象元数据。"}
+  Metadata *CreatePropagationPoliciesObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Spec defines the behavior of a CreatePropagationPoliciesPropagationPolicy", "zh_CN":"spec 定义 CreatePropagationPoliciesPropagationPolicy 的行为"}
+  Spec *CreatePropagationPoliciesPropagationSpec `json:"spec,omitempty" xml:"spec,omitempty" require:"true"`
+}
+
+func (s CreatePropagationPoliciesPropagationPolicy) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesPropagationPolicy) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesPropagationPolicy) SetKind(v string) *CreatePropagationPoliciesPropagationPolicy {
+  s.Kind = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesPropagationPolicy) SetApiVersion(v string) *CreatePropagationPoliciesPropagationPolicy {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesPropagationPolicy) SetMetadata(v *CreatePropagationPoliciesObjectMeta) *CreatePropagationPoliciesPropagationPolicy {
+  s.Metadata = v
+  return s
+}
+
+func (s *CreatePropagationPoliciesPropagationPolicy) SetSpec(v *CreatePropagationPoliciesPropagationSpec) *CreatePropagationPoliciesPropagationPolicy {
+  s.Spec = v
+  return s
+}
+
+type CreatePropagationPoliciesPropagationSpec struct {
+  // {"en":"resource that this propagation policy applies to", "zh_CN":"策略应用的资源"}
+  ResourceSelectors []*CreatePropagationPoliciesResourceSelector `json:"resourceSelectors,omitempty" xml:"resourceSelectors,omitempty" type:"Repeated"`
+  // {"en":"association", "zh_CN":"association"}
+  Association *bool `json:"association,omitempty" xml:"association,omitempty"`
+  // {"en":"scheduling strategy", "zh_CN":"调度策略"}
+  CreatePropagationPoliciesPlacement *CreatePropagationPoliciesPlacement `json:"placement,omitempty" xml:"placement,omitempty"`
+  // {"en":"dependent overrides", "zh_CN":"依赖的覆盖策略"}
+  DependentOverrides []*string `json:"dependentOverrides,omitempty" xml:"dependentOverrides,omitempty" type:"Repeated"`
+  // {"en":"name of scheduler", "zh_CN":"调度器名称"}
+  SchedulerName *string `json:"schedulerName,omitempty" xml:"schedulerName,omitempty"`
+  // {"en":"indicates how Karmada migrates applications in case of failures", "zh_CN":"failover 重调度策略"}
+  Failover *CreatePropagationPoliciesFailoverBehavior `json:"failover,omitempty" xml:"failover,omitempty"`
+}
+
+func (s CreatePropagationPoliciesPropagationSpec) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesPropagationSpec) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesPropagationSpec) SetResourceSelectors(v []*CreatePropagationPoliciesResourceSelector) *CreatePropagationPoliciesPropagationSpec {
+  s.ResourceSelectors = v
+  return s
+}
+
+func (s *CreatePropagationPoliciesPropagationSpec) SetAssociation(v bool) *CreatePropagationPoliciesPropagationSpec {
+  s.Association = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesPropagationSpec) SetPlacement(v *CreatePropagationPoliciesPlacement) *CreatePropagationPoliciesPropagationSpec {
+  s.CreatePropagationPoliciesPlacement = v
+  return s
+}
+
+func (s *CreatePropagationPoliciesPropagationSpec) SetDependentOverrides(v []*string) *CreatePropagationPoliciesPropagationSpec {
+  s.DependentOverrides = v
+  return s
+}
+
+func (s *CreatePropagationPoliciesPropagationSpec) SetSchedulerName(v string) *CreatePropagationPoliciesPropagationSpec {
+  s.SchedulerName = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesPropagationSpec) SetFailover(v *CreatePropagationPoliciesFailoverBehavior) *CreatePropagationPoliciesPropagationSpec {
+  s.Failover = v
+  return s
+}
+
+type CreatePropagationPoliciesFailoverBehavior struct {
+  // {"en":"indicates failover behaviors in case of application failure", "zh_CN":"failover 重调度策略"}
+  Application *CreatePropagationPoliciesApplicationFailoverBehavior `json:"application,omitempty" xml:"application,omitempty"`
+}
+
+func (s CreatePropagationPoliciesFailoverBehavior) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesFailoverBehavior) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesFailoverBehavior) SetApplication(v *CreatePropagationPoliciesApplicationFailoverBehavior) *CreatePropagationPoliciesFailoverBehavior {
+  s.Application = v
+  return s
+}
+
+type CreatePropagationPoliciesApplicationFailoverBehavior struct {
+  // {"en":"indicates the decision conditions of performing the failover process.", "zh_CN":"程序经过多长时间的失败,才属于不健康"}
+  CreatePropagationPoliciesDecisionConditions *CreatePropagationPoliciesDecisionConditions `json:"decisionConditions,omitempty" xml:"decisionConditions,omitempty"`
+  // {"en":"represents how to deal with the legacy applications on the cluster from which the application is migrated. there are three options: Immediately,Graciously and Never. Graciously by defautl", "zh_CN":"应用在失败后的驱逐方式,有3个可填值: Immediately,Graciously and Never 默认:Graciously "}
+  PurgeMode *string `json:"purgeMode,omitempty" xml:"purgeMode,omitempty"`
+  // {"en":"the maximum waiting duration in seconds before application on the migrated cluster should be deleted.", "zh_CN":"平滑删除时间"}
+  GracePeriodSeconds *int64 `json:"gracePeriodSeconds,omitempty" xml:"gracePeriodSeconds,omitempty"`
+}
+
+func (s CreatePropagationPoliciesApplicationFailoverBehavior) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesApplicationFailoverBehavior) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesApplicationFailoverBehavior) SetDecisionConditions(v *CreatePropagationPoliciesDecisionConditions) *CreatePropagationPoliciesApplicationFailoverBehavior {
+  s.CreatePropagationPoliciesDecisionConditions = v
+  return s
+}
+
+func (s *CreatePropagationPoliciesApplicationFailoverBehavior) SetPurgeMode(v string) *CreatePropagationPoliciesApplicationFailoverBehavior {
+  s.PurgeMode = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesApplicationFailoverBehavior) SetGracePeriodSeconds(v int64) *CreatePropagationPoliciesApplicationFailoverBehavior {
+  s.GracePeriodSeconds = &v
+  return s
+}
+
+type CreatePropagationPoliciesDecisionConditions struct {
+  // {"en":"represents the period of time Karmada should wait", "zh_CN":"应用经过多长时间后算失败"}
+  TolerationSeconds *int64 `json:"tolerationSeconds,omitempty" xml:"tolerationSeconds,omitempty"`
+}
+
+func (s CreatePropagationPoliciesDecisionConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesDecisionConditions) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesDecisionConditions) SetTolerationSeconds(v int64) *CreatePropagationPoliciesDecisionConditions {
+  s.TolerationSeconds = &v
+  return s
+}
+
+type CreatePropagationPoliciesResourceSelector struct {
+  // {"en":"represents the API version of the target resources", "zh_CN":"表示目标资源的API版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"represents the Kind of the target resources", "zh_CN":"表示目标资源的类型"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"name of the target resource", "zh_CN":"目标资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"A label query over a set of resources", "zh_CN":"对一组资源的标签查询"}
+  LabelSelector *CreatePropagationPoliciesMetaV1LabelSelector `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+}
+
+func (s CreatePropagationPoliciesResourceSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesResourceSelector) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesResourceSelector) SetApiVersion(v string) *CreatePropagationPoliciesResourceSelector {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesResourceSelector) SetKind(v string) *CreatePropagationPoliciesResourceSelector {
+  s.Kind = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesResourceSelector) SetName(v string) *CreatePropagationPoliciesResourceSelector {
+  s.Name = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesResourceSelector) SetLabelSelector(v *CreatePropagationPoliciesMetaV1LabelSelector) *CreatePropagationPoliciesResourceSelector {
+  s.LabelSelector = v
+  return s
+}
+
+type CreatePropagationPoliciesPlacement struct {
+  // {"en":"the policy that only applies to resources propagated to the matching clusters", "zh_CN":"策略应用到成员集群的目标选择"}
+  CreatePropagationPoliciesClusterAffinity *CreatePropagationPoliciesClusterAffinity `json:"clusterAffinity,omitempty" xml:"clusterAffinity,omitempty"`
+  // {"en":"toleration of cluster", "zh_CN":"集群容忍度"}
+  ClusterTolerations *CreatePropagationPoliciesToleration `json:"clusterTolerations,omitempty" xml:"clusterTolerations,omitempty"`
+  // {"en":"Cluster grouping constraint", "zh_CN":"根据约束对集群进行分组，把资源分散到多个小组"}
+  SpreadConstraints []*CreatePropagationPoliciesSpreadConstraint `json:"spreadConstraints,omitempty" xml:"spreadConstraints,omitempty" type:"Repeated"`
+  // {"en":"scheduling strategy of replicas", "zh_CN":"副本调度策略"}
+  ReplicaScheduling *CreatePropagationPoliciesReplicaSchedulingStrategy `json:"replicaScheduling,omitempty" xml:"replicaScheduling,omitempty"`
+}
+
+func (s CreatePropagationPoliciesPlacement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesPlacement) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesPlacement) SetClusterAffinity(v *CreatePropagationPoliciesClusterAffinity) *CreatePropagationPoliciesPlacement {
+  s.CreatePropagationPoliciesClusterAffinity = v
+  return s
+}
+
+func (s *CreatePropagationPoliciesPlacement) SetClusterTolerations(v *CreatePropagationPoliciesToleration) *CreatePropagationPoliciesPlacement {
+  s.ClusterTolerations = v
+  return s
+}
+
+func (s *CreatePropagationPoliciesPlacement) SetSpreadConstraints(v []*CreatePropagationPoliciesSpreadConstraint) *CreatePropagationPoliciesPlacement {
+  s.SpreadConstraints = v
+  return s
+}
+
+func (s *CreatePropagationPoliciesPlacement) SetReplicaScheduling(v *CreatePropagationPoliciesReplicaSchedulingStrategy) *CreatePropagationPoliciesPlacement {
+  s.ReplicaScheduling = v
+  return s
+}
+
+type CreatePropagationPoliciesReplicaSchedulingStrategy struct {
+  // {"en":"scheduling type of replicas", "zh_CN":"副本调度类型"}
+  ReplicaSchedulingType *string `json:"replicaSchedulingType,omitempty" xml:"replicaSchedulingType,omitempty"`
+  // {"en":"division preference of replicas", "zh_CN":"副本数切分方式"}
+  ReplicaDivisionPreference *string `json:"replicaDivisionPreference,omitempty" xml:"replicaDivisionPreference,omitempty"`
+  // {"en":"weight preference", "zh_CN":"权重配置"}
+  WeightPreference *CreatePropagationPoliciesClusterPreferences `json:"weightPreference,omitempty" xml:"weightPreference,omitempty"`
+}
+
+func (s CreatePropagationPoliciesReplicaSchedulingStrategy) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesReplicaSchedulingStrategy) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesReplicaSchedulingStrategy) SetReplicaSchedulingType(v string) *CreatePropagationPoliciesReplicaSchedulingStrategy {
+  s.ReplicaSchedulingType = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesReplicaSchedulingStrategy) SetReplicaDivisionPreference(v string) *CreatePropagationPoliciesReplicaSchedulingStrategy {
+  s.ReplicaDivisionPreference = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesReplicaSchedulingStrategy) SetWeightPreference(v *CreatePropagationPoliciesClusterPreferences) *CreatePropagationPoliciesReplicaSchedulingStrategy {
+  s.WeightPreference = v
+  return s
+}
+
+type CreatePropagationPoliciesClusterPreferences struct {
+  // {"en":"static proportion of cluster replicas in total", "zh_CN":"集群副本数占比"}
+  StaticWeightList []*CreatePropagationPoliciesStaticClusterWeight `json:"staticWeightList,omitempty" xml:"staticWeightList,omitempty" type:"Repeated"`
+  // {"en":"dynamic proportion of replicas in total", "zh_CN":"动态比重"}
+  DynamicWeight *string `json:"dynamicWeight,omitempty" xml:"dynamicWeight,omitempty"`
+}
+
+func (s CreatePropagationPoliciesClusterPreferences) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesClusterPreferences) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesClusterPreferences) SetStaticWeightList(v []*CreatePropagationPoliciesStaticClusterWeight) *CreatePropagationPoliciesClusterPreferences {
+  s.StaticWeightList = v
+  return s
+}
+
+func (s *CreatePropagationPoliciesClusterPreferences) SetDynamicWeight(v string) *CreatePropagationPoliciesClusterPreferences {
+  s.DynamicWeight = &v
+  return s
+}
+
+type CreatePropagationPoliciesStaticClusterWeight struct {
+  // {"en":"affected clusters by the weight", "zh_CN":"比重生效的目标集群"}
+  TargetCluster *CreatePropagationPoliciesClusterAffinity `json:"targetCluster,omitempty" xml:"targetCluster,omitempty"`
+  // {"en":"proportion of replicas in total", "zh_CN":"集群实例数占比"}
+  Weight *int64 `json:"weight,omitempty" xml:"weight,omitempty"`
+}
+
+func (s CreatePropagationPoliciesStaticClusterWeight) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesStaticClusterWeight) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesStaticClusterWeight) SetTargetCluster(v *CreatePropagationPoliciesClusterAffinity) *CreatePropagationPoliciesStaticClusterWeight {
+  s.TargetCluster = v
+  return s
+}
+
+func (s *CreatePropagationPoliciesStaticClusterWeight) SetWeight(v int64) *CreatePropagationPoliciesStaticClusterWeight {
+  s.Weight = &v
+  return s
+}
+
+type CreatePropagationPoliciesSpreadConstraint struct {
+  // {"en":"The member clusters in the cluster federation are divided into multiple groups based on an attribute of the member cluster (currently, only cluster is supported, and the region, zone, and provider attributes may be supported in the future)", "zh_CN":"根据成员集群的某个属性（当前仅支持cluster、后续可能增加对成员集群region、zone、provider等属性支持）将集群联邦中的成员集群分为多个小组"}
+  SpreadByField *string `json:"spreadByField,omitempty" xml:"spreadByField,omitempty"`
+  // {"en":"The member cluster is divided into groups based on labels", "zh_CN":"根据label将成员集群分为多个小组"}
+  SpreadByLabel *string `json:"spreadByLabel,omitempty" xml:"spreadByLabel,omitempty"`
+  // {"en":"Maximum number of groups", "zh_CN":"最大分组数"}
+  MaxGroups *int64 `json:"maxGroups,omitempty" xml:"maxGroups,omitempty"`
+  // {"en":"Minimum number of groups", "zh_CN":"最小分组数"}
+  MinGroups *int64 `json:"minGroups,omitempty" xml:"minGroups,omitempty"`
+}
+
+func (s CreatePropagationPoliciesSpreadConstraint) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesSpreadConstraint) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesSpreadConstraint) SetSpreadByField(v string) *CreatePropagationPoliciesSpreadConstraint {
+  s.SpreadByField = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesSpreadConstraint) SetSpreadByLabel(v string) *CreatePropagationPoliciesSpreadConstraint {
+  s.SpreadByLabel = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesSpreadConstraint) SetMaxGroups(v int64) *CreatePropagationPoliciesSpreadConstraint {
+  s.MaxGroups = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesSpreadConstraint) SetMinGroups(v int64) *CreatePropagationPoliciesSpreadConstraint {
+  s.MinGroups = &v
+  return s
+}
+
+type CreatePropagationPoliciesToleration struct {
+  // {"en":"The taint key that the toleration applies to. Empty means match all taint keys. If the key is empty, operator must be Exists; this combination means to match all values and all keys.", "zh_CN":"容忍度所适用的污点的键名。此字段为空意味着匹配所有的污点键。 如果 key 为空，则 operator 必须为 Exists；这种组合意味着匹配所有值和所有键。"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"Represents a key's relationship to the value. Valid operators are Exists and Equal. Defaults to Equal. Exists is equivalent to wildcard for value, so that a pod can tolerate all taints of a particular category.", "zh_CN":"表示 key 与 value 之间的关系。有效的 operator 取值是 Exists 和 Equal。默认为 Equal。 Exists 相当于 value 为某种通配符，因此 Pod 可以容忍特定类别的所有污点。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"The taint value the toleration matches to. If the operator is Exists, the value should be empty, otherwise just a regular string.", "zh_CN":"容忍度所匹配的污点值。如果 operator 为 Exists，则此 value 值应该为空， 否则 value 值应该是一个正常的字符串。"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty"`
+  // {"en":"Indicates the taint effect to match. Empty means match all taint effects. When specified, allowed values are NoSchedule, PreferNoSchedule and NoExecute.", "zh_CN":"指示要匹配的污点效果。空值意味著匹配所有污点效果。如果要设置此字段，允许的值为 NoSchedule、PreferNoSchedule 和 NoExecute 之一。"}
+  Effect *string `json:"effect,omitempty" xml:"effect,omitempty"`
+  // {"en":"Represents the period of time the toleration (which must be of effect NoExecute, otherwise this field is ignored) tolerates the taint. By default, it is not set, which means tolerate the taint forever (do not evict). Zero and negative values will be treated as 0 (evict immediately) by the system.", "zh_CN":" 表示容忍度（effect 必须是 NoExecute，否则此字段被忽略）容忍污点的时间长度。 默认情况下，此字段未被设置，这意味着会一直能够容忍对应污点（不会发生驱逐操作）。 零值和负值会被系统当做 0 值处理（立即触发驱逐）。"}
+  TolerationSeconds *int64 `json:"tolerationSeconds,omitempty" xml:"tolerationSeconds,omitempty"`
+}
+
+func (s CreatePropagationPoliciesToleration) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesToleration) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesToleration) SetKey(v string) *CreatePropagationPoliciesToleration {
+  s.Key = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesToleration) SetOperator(v string) *CreatePropagationPoliciesToleration {
+  s.Operator = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesToleration) SetValue(v string) *CreatePropagationPoliciesToleration {
+  s.Value = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesToleration) SetEffect(v string) *CreatePropagationPoliciesToleration {
+  s.Effect = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesToleration) SetTolerationSeconds(v int64) *CreatePropagationPoliciesToleration {
+  s.TolerationSeconds = &v
+  return s
+}
+
+type CreatePropagationPoliciesClusterAffinity struct {
+  // {"en":"a filter to select member clusters by labels", "zh_CN":"一个用来选中集群的标签过滤器"}
+  LabelSelector *CreatePropagationPoliciesMetaV1LabelSelector `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+  // {"en":"a filter to select member clusters by fields. Currently only three fields of provider(cluster.spec.provider), zone(cluster.spec.zone), and region(cluster.spec.region) are supported", "zh_CN":"一个用来选中集群的字段过滤器，目前支持的字段只有三个：提供商（cluster.spec.provider），区域（cluster.spec.zone），地区（cluster.spec.region）"}
+  CreatePropagationPoliciesFieldSelector *CreatePropagationPoliciesFieldSelector `json:"fieldSelector,omitempty" xml:"fieldSelector,omitempty"`
+  // {"en":"the list of clusters to be selected", "zh_CN":"选中的集群列表"}
+  ClusterNames []*string `json:"clusterNames,omitempty" xml:"clusterNames,omitempty" type:"Repeated"`
+  // {"en":"the list of clusters to be ignored", "zh_CN":"要忽略的集群列表"}
+  Exclude []*string `json:"exclude,omitempty" xml:"exclude,omitempty" type:"Repeated"`
+}
+
+func (s CreatePropagationPoliciesClusterAffinity) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesClusterAffinity) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesClusterAffinity) SetLabelSelector(v *CreatePropagationPoliciesMetaV1LabelSelector) *CreatePropagationPoliciesClusterAffinity {
+  s.LabelSelector = v
+  return s
+}
+
+func (s *CreatePropagationPoliciesClusterAffinity) SetFieldSelector(v *CreatePropagationPoliciesFieldSelector) *CreatePropagationPoliciesClusterAffinity {
+  s.CreatePropagationPoliciesFieldSelector = v
+  return s
+}
+
+func (s *CreatePropagationPoliciesClusterAffinity) SetClusterNames(v []*string) *CreatePropagationPoliciesClusterAffinity {
+  s.ClusterNames = v
+  return s
+}
+
+func (s *CreatePropagationPoliciesClusterAffinity) SetExclude(v []*string) *CreatePropagationPoliciesClusterAffinity {
+  s.Exclude = v
+  return s
+}
+
+type CreatePropagationPoliciesFieldSelector struct {
+  // {"en":"A list of node selector requirements by node's labels.", "zh_CN":"按节点标签列出的节点选择器需求列表。"}
+  MatchExpressions []*CreatePropagationPoliciesCoreV1NodeSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s CreatePropagationPoliciesFieldSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesFieldSelector) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesFieldSelector) SetMatchExpressions(v []*CreatePropagationPoliciesCoreV1NodeSelectorRequirement) *CreatePropagationPoliciesFieldSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type CreatePropagationPoliciesCoreV1NodeSelectorRequirement struct {
+  // {"en":"The label key that the selector applies to.", "zh_CN":"选择算符所适用的标签主键。"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"Represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists, DoesNotExist. Gt, and Lt.", "zh_CN":"代表主键与值集之间的关系。合法的 operator 值包括 In、NotIn、Exists、DoesNotExist、Gt 和 Lt。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"An array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. If the operator is Gt or Lt, the values array must have a single element, which will be interpreted as an integer. This array is replaced during a strategic merge patch.", "zh_CN":"一个由字符串值组成的数组。如果 operator 是 In 或 NotIn，则 values 数组不能为空。 如果 operator 为 Exists 或 DoesNotExist，则 values 数组只能为空。 如果 operator 为 Gt 或 Lt，则 values 数组只能包含一个元素，并且该元素会被解释为整数。 在执行策略性合并补丁操作时，此数组会被整体替换。"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s CreatePropagationPoliciesCoreV1NodeSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesCoreV1NodeSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesCoreV1NodeSelectorRequirement) SetKey(v string) *CreatePropagationPoliciesCoreV1NodeSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesCoreV1NodeSelectorRequirement) SetOperator(v string) *CreatePropagationPoliciesCoreV1NodeSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesCoreV1NodeSelectorRequirement) SetValues(v []*string) *CreatePropagationPoliciesCoreV1NodeSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type CreatePropagationPoliciesMetaV1LabelSelector struct {
+  // {"en":"A map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is \"key\", the operator is \"In\", and the values array contains only \"value\". The requirements are ANDed.", "zh_CN":"matchLabels 映射中的单个 {key,value} 键值对相当于 matchExpressions 的一个元素，其键字段为 key，运算符为 In，values 数组仅包含 value。"}
+  MatchLabels map[string]*string `json:"matchLabels,omitempty" xml:"matchLabels,omitempty"`
+  // {"en":"A list of label selector requirements. The requirements are ANDed.", "zh_CN":"标签选择器要求的列表，这些要求的结果按逻辑与的关系来计算。"}
+  MatchExpressions []*CreatePropagationPoliciesLabelSelectorRequirement `json:"matchExpressions,omitempty" xml:"matchExpressions,omitempty" type:"Repeated"`
+}
+
+func (s CreatePropagationPoliciesMetaV1LabelSelector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesMetaV1LabelSelector) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesMetaV1LabelSelector) SetMatchLabels(v map[string]*string) *CreatePropagationPoliciesMetaV1LabelSelector {
+  s.MatchLabels = v
+  return s
+}
+
+func (s *CreatePropagationPoliciesMetaV1LabelSelector) SetMatchExpressions(v []*CreatePropagationPoliciesLabelSelectorRequirement) *CreatePropagationPoliciesMetaV1LabelSelector {
+  s.MatchExpressions = v
+  return s
+}
+
+type CreatePropagationPoliciesLabelSelectorRequirement struct {
+  // {"en":"key is the label key that the selector applies to.", "zh_CN":"选择器应用的标签键"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty"`
+  // {"en":"operator represents a key's relationship to a set of values. Valid operators are In, NotIn, Exists and DoesNotExist.", "zh_CN":"operator 表示键与一组值的关系。有效的运算符包括 In、NotIn、Exists 和 DoesNotExist。"}
+  Operator *string `json:"operator,omitempty" xml:"operator,omitempty"`
+  // {"en":"values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.", "zh_CN":"values 是一个字符串值数组。如果运算符为 In 或 NotIn，则 values 数组必须为非空。如果运算符是 Exists 或 DoesNotExist，则 values 数组必须为空。该数组在策略性合并补丁（Strategic Merge Patch）期间被替换。"}
+  Values []*string `json:"values,omitempty" xml:"values,omitempty" type:"Repeated"`
+}
+
+func (s CreatePropagationPoliciesLabelSelectorRequirement) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesLabelSelectorRequirement) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesLabelSelectorRequirement) SetKey(v string) *CreatePropagationPoliciesLabelSelectorRequirement {
+  s.Key = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesLabelSelectorRequirement) SetOperator(v string) *CreatePropagationPoliciesLabelSelectorRequirement {
+  s.Operator = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesLabelSelectorRequirement) SetValues(v []*string) *CreatePropagationPoliciesLabelSelectorRequirement {
+  s.Values = v
+  return s
+}
+
+type CreatePropagationPoliciesObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*CreatePropagationPoliciesOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*CreatePropagationPoliciesManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s CreatePropagationPoliciesObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesObjectMeta) SetName(v string) *CreatePropagationPoliciesObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesObjectMeta) SetGenerateName(v string) *CreatePropagationPoliciesObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesObjectMeta) SetNamespace(v string) *CreatePropagationPoliciesObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesObjectMeta) SetSelfLink(v string) *CreatePropagationPoliciesObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesObjectMeta) SetUid(v string) *CreatePropagationPoliciesObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesObjectMeta) SetResourceVersion(v string) *CreatePropagationPoliciesObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesObjectMeta) SetGeneration(v int64) *CreatePropagationPoliciesObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesObjectMeta) SetCreationTimestamp(v string) *CreatePropagationPoliciesObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesObjectMeta) SetDeletionTimestamp(v string) *CreatePropagationPoliciesObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesObjectMeta) SetDeletionGracePeriodSeconds(v int64) *CreatePropagationPoliciesObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesObjectMeta) SetLabels(v map[string]*string) *CreatePropagationPoliciesObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *CreatePropagationPoliciesObjectMeta) SetAnnotations(v map[string]*string) *CreatePropagationPoliciesObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *CreatePropagationPoliciesObjectMeta) SetOwnerReferences(v []*CreatePropagationPoliciesOwnerReference) *CreatePropagationPoliciesObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *CreatePropagationPoliciesObjectMeta) SetFinalizers(v []*string) *CreatePropagationPoliciesObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *CreatePropagationPoliciesObjectMeta) SetClusterName(v string) *CreatePropagationPoliciesObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesObjectMeta) SetManagedFields(v []*CreatePropagationPoliciesManagedFieldsEntry) *CreatePropagationPoliciesObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type CreatePropagationPoliciesManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this CreatePropagationPoliciesManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'CreatePropagationPoliciesFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“CreatePropagationPoliciesFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"CreatePropagationPoliciesFieldsV1 holds the first JSON version format as described in the 'CreatePropagationPoliciesFieldsV1' type", "zh_CN":"CreatePropagationPoliciesFieldsV1 包含类型 “CreatePropagationPoliciesFieldsV1” 中描述的第一个 JSON 版本格式"}
+  CreatePropagationPoliciesFieldsV1 *CreatePropagationPoliciesFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s CreatePropagationPoliciesManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesManagedFieldsEntry) SetManager(v string) *CreatePropagationPoliciesManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesManagedFieldsEntry) SetOperation(v string) *CreatePropagationPoliciesManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesManagedFieldsEntry) SetApiVersion(v string) *CreatePropagationPoliciesManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesManagedFieldsEntry) SetTime(v string) *CreatePropagationPoliciesManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesManagedFieldsEntry) SetFieldsType(v string) *CreatePropagationPoliciesManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesManagedFieldsEntry) SetFieldsV1(v *CreatePropagationPoliciesFieldsV1) *CreatePropagationPoliciesManagedFieldsEntry {
+  s.CreatePropagationPoliciesFieldsV1 = v
+  return s
+}
+
+func (s *CreatePropagationPoliciesManagedFieldsEntry) SetSubresource(v string) *CreatePropagationPoliciesManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type CreatePropagationPoliciesFieldsV1 struct {
+}
+
+func (s CreatePropagationPoliciesFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesFieldsV1) GoString() string {
+  return s.String()
+}
+
+type CreatePropagationPoliciesOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s CreatePropagationPoliciesOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreatePropagationPoliciesOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *CreatePropagationPoliciesOwnerReference) SetApiVersion(v string) *CreatePropagationPoliciesOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesOwnerReference) SetKind(v string) *CreatePropagationPoliciesOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesOwnerReference) SetName(v string) *CreatePropagationPoliciesOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesOwnerReference) SetUid(v string) *CreatePropagationPoliciesOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesOwnerReference) SetController(v bool) *CreatePropagationPoliciesOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *CreatePropagationPoliciesOwnerReference) SetBlockOwnerDeletion(v bool) *CreatePropagationPoliciesOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+
+
+

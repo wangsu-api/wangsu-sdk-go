@@ -1,0 +1,323 @@
+package treemanagement
+
+// This file is auto-generated, don't edit it. Thanks.
+import (
+  "github.com/alibabacloud-go/tea/tea"
+)
+
+type AddTreeNodesRequest struct {
+  // {"en":"Relay node ID. When empty, it is added to the root directory by default The node type must be a directory node.", "zh_CN":"父节点ID。为空时，默认新增到根目录下 节点类型必须是目录节点"}
+  ParentNodeId *string `json:"parentNodeId,omitempty" xml:"parentNodeId,omitempty"`
+  // {"en":"Node name", "zh_CN":"新增节点名称"}
+  NodeName *string `json:"nodeName,omitempty" xml:"nodeName,omitempty" require:"true"`
+}
+
+func (s AddTreeNodesRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddTreeNodesRequest) GoString() string {
+  return s.String()
+}
+
+func (s *AddTreeNodesRequest) SetParentNodeId(v string) *AddTreeNodesRequest {
+  s.ParentNodeId = &v
+  return s
+}
+
+func (s *AddTreeNodesRequest) SetNodeName(v string) *AddTreeNodesRequest {
+  s.NodeName = &v
+  return s
+}
+
+type AddTreeNodesResponse struct {
+  // {"en":"Result status code, 0 indicates success", "zh_CN":"结果状态码，0为成功"}
+  Code *int32 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Return message", "zh_CN":"返回消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Return data", "zh_CN":"返回数据"}
+  Data *string `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s AddTreeNodesResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddTreeNodesResponse) GoString() string {
+  return s.String()
+}
+
+func (s *AddTreeNodesResponse) SetCode(v int32) *AddTreeNodesResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *AddTreeNodesResponse) SetMessage(v string) *AddTreeNodesResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *AddTreeNodesResponse) SetData(v string) *AddTreeNodesResponse {
+  s.Data = &v
+  return s
+}
+
+type AddTreeNodesPaths struct {
+}
+
+func (s AddTreeNodesPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddTreeNodesPaths) GoString() string {
+  return s.String()
+}
+
+type AddTreeNodesParameters struct {
+}
+
+func (s AddTreeNodesParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddTreeNodesParameters) GoString() string {
+  return s.String()
+}
+
+type AddTreeNodesRequestHeader struct {
+}
+
+func (s AddTreeNodesRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddTreeNodesRequestHeader) GoString() string {
+  return s.String()
+}
+
+type AddTreeNodesResponseHeader struct {
+}
+
+func (s AddTreeNodesResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddTreeNodesResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type DeleteTreeNodesRequest struct {
+  // {"en":"Tree Node Id", "zh_CN":"节点Id，必须目录节点。如果节点下有设备，会删除失败"}
+  NodeId *string `json:"nodeId,omitempty" xml:"nodeId,omitempty" require:"true"`
+}
+
+func (s DeleteTreeNodesRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteTreeNodesRequest) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteTreeNodesRequest) SetNodeId(v string) *DeleteTreeNodesRequest {
+  s.NodeId = &v
+  return s
+}
+
+type DeleteTreeNodesResponse struct {
+  // {"en":"Result status code, 0 indicates success", "zh_CN":"结果状态码，0为成功"}
+  Code *int32 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Return message", "zh_CN":"返回消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s DeleteTreeNodesResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteTreeNodesResponse) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteTreeNodesResponse) SetCode(v int32) *DeleteTreeNodesResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *DeleteTreeNodesResponse) SetMessage(v string) *DeleteTreeNodesResponse {
+  s.Message = &v
+  return s
+}
+
+type DeleteTreeNodesPaths struct {
+}
+
+func (s DeleteTreeNodesPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteTreeNodesPaths) GoString() string {
+  return s.String()
+}
+
+type DeleteTreeNodesParameters struct {
+}
+
+func (s DeleteTreeNodesParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteTreeNodesParameters) GoString() string {
+  return s.String()
+}
+
+type DeleteTreeNodesRequestHeader struct {
+}
+
+func (s DeleteTreeNodesRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteTreeNodesRequestHeader) GoString() string {
+  return s.String()
+}
+
+type DeleteTreeNodesResponseHeader struct {
+}
+
+func (s DeleteTreeNodesResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteTreeNodesResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryTreeNodesRequest struct {
+  // {"en":"Relay node ID. When empty, get the root directory node The node type must be a directory node.", "zh_CN":"父节点ID。为空时，获取根目录节点 节点类型必须是目录节点。"}
+  ParentNodeId *string `json:"parentNodeId,omitempty" xml:"parentNodeId,omitempty"`
+}
+
+func (s QueryTreeNodesRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryTreeNodesRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryTreeNodesRequest) SetParentNodeId(v string) *QueryTreeNodesRequest {
+  s.ParentNodeId = &v
+  return s
+}
+
+type QueryTreeNodesResponse struct {
+  // {"en":"QueryTreeNodesNode List", "zh_CN":"节点列表"}
+  Rows []*QueryTreeNodesNode `json:"rows,omitempty" xml:"rows,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Total number of devices", "zh_CN":"总设备数"}
+  Total *int32 `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+}
+
+func (s QueryTreeNodesResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryTreeNodesResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryTreeNodesResponse) SetRows(v []*QueryTreeNodesNode) *QueryTreeNodesResponse {
+  s.Rows = v
+  return s
+}
+
+func (s *QueryTreeNodesResponse) SetTotal(v int32) *QueryTreeNodesResponse {
+  s.Total = &v
+  return s
+}
+
+type QueryTreeNodesNode struct {
+  // {"en":"Tree node ID", "zh_CN":"树节点ID"}
+  NodeId *string `json:"nodeId,omitempty" xml:"nodeId,omitempty" require:"true"`
+  // {"en":"Tree node name", "zh_CN":"树节点名称"}
+  NodeName *string `json:"nodeName,omitempty" xml:"nodeName,omitempty" require:"true"`
+  // {"en":"QueryTreeNodesNode Type 0 Directory node", "zh_CN":"节点类型 0 目录节点"}
+  NodeType *int32 `json:"nodeType,omitempty" xml:"nodeType,omitempty" require:"true"`
+}
+
+func (s QueryTreeNodesNode) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryTreeNodesNode) GoString() string {
+  return s.String()
+}
+
+func (s *QueryTreeNodesNode) SetNodeId(v string) *QueryTreeNodesNode {
+  s.NodeId = &v
+  return s
+}
+
+func (s *QueryTreeNodesNode) SetNodeName(v string) *QueryTreeNodesNode {
+  s.NodeName = &v
+  return s
+}
+
+func (s *QueryTreeNodesNode) SetNodeType(v int32) *QueryTreeNodesNode {
+  s.NodeType = &v
+  return s
+}
+
+type QueryTreeNodesPaths struct {
+}
+
+func (s QueryTreeNodesPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryTreeNodesPaths) GoString() string {
+  return s.String()
+}
+
+type QueryTreeNodesParameters struct {
+}
+
+func (s QueryTreeNodesParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryTreeNodesParameters) GoString() string {
+  return s.String()
+}
+
+type QueryTreeNodesRequestHeader struct {
+}
+
+func (s QueryTreeNodesRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryTreeNodesRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryTreeNodesResponseHeader struct {
+}
+
+func (s QueryTreeNodesResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryTreeNodesResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+

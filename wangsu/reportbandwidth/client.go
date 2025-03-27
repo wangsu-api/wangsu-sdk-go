@@ -1,0 +1,8517 @@
+package reportbandwidth
+
+// This file is auto-generated, don't edit it. Thanks.
+import (
+  "github.com/alibabacloud-go/tea/tea"
+)
+
+type PerzoneBillingRequest struct {
+  // {"en":"cust_en_name of sub-client.
+  // When a merged-account wants to  view the information of the subclient,the cust_en_name is required.", "zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名"}
+  Cust *string `json:"cust,omitempty" xml:"cust,omitempty"`
+  // {"en":"Specifies the query date:
+  // 1.With format yyyy-mm-dd.
+  // 2.If not Specifies,it means today as default.", "zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
+  Date *string `json:"date,omitempty" xml:"date,omitempty"`
+  // {"en":"1.Must work with 'enddate' and they specify the query date scope. 2.With format yyyy-mm-dd. 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的起始日期，日期格式为yyyy-mm-dd；此参数需与enddate参数配合,若存在date参数,则该参数无效"}
+  StartDate *string `json:"startDate,omitempty" xml:"startDate,omitempty"`
+  // {"en":"1.Must work with 'startdate' and they specify the query date scope. 2.With format yyyy-mm-dd 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的结束日期,日期格式为yyyy-mm-dd；此参数需与startdate参数配合,若存在date参数,则该参数无效。"}
+  EndDate *string `json:"endDate,omitempty" xml:"endDate,omitempty"`
+  // {"en":"In Greenwich time zone, the value GMT+09:00 means East Nine, GMT-09:00 means West Nine, and the default is East Eight.", "zh_CN":"格林尼治时区，参数格式 GMT+09:00 表示东九区，GMT-09:00 表示西9区，不传则默认为本地时区（东八区）"}
+  Timezone *string `json:"timezone,omitempty" xml:"timezone,omitempty"`
+  // {"en":"domains that been queried:
+  // 1.If there are multiple inputs,use  ';' as separator.
+  // 2.If not specified, it means all the domains of the account .", "zh_CN":"查询的频道，多个频道值请用英文分号“;”，不选或者为空时默认为所查询客户的所有频道"}
+  Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
+  // {"en":"acceleration type.
+  // 1.If there are multiple inputs,use ';' as separator.
+  // 2.If not specified or specified as 'all', it means all the accetypes.", "zh_CN":"加速类型参数，如accetype=web。多个请用英文分号“;”分隔开，不填或值为all表示所有类型"}
+  Accetype *string `json:"accetype,omitempty" xml:"accetype,omitempty"`
+  // {"en":"Whether it is a DWA product, 1: yes; 0: no, if not fill in, the default is 0", "zh_CN":"是否DWA产品，1:是;0:否,不填默认0"}
+  Dwa *string `json:"dwa,omitempty" xml:"dwa,omitempty"`
+  // {"en":"Data type (1: bandwidth|2: traffic) default 1", "zh_CN":"数据类型（1:带宽|2:流量）默认1"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+func (s PerzoneBillingRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PerzoneBillingRequest) GoString() string {
+  return s.String()
+}
+
+func (s *PerzoneBillingRequest) SetCust(v string) *PerzoneBillingRequest {
+  s.Cust = &v
+  return s
+}
+
+func (s *PerzoneBillingRequest) SetDate(v string) *PerzoneBillingRequest {
+  s.Date = &v
+  return s
+}
+
+func (s *PerzoneBillingRequest) SetStartDate(v string) *PerzoneBillingRequest {
+  s.StartDate = &v
+  return s
+}
+
+func (s *PerzoneBillingRequest) SetEndDate(v string) *PerzoneBillingRequest {
+  s.EndDate = &v
+  return s
+}
+
+func (s *PerzoneBillingRequest) SetTimezone(v string) *PerzoneBillingRequest {
+  s.Timezone = &v
+  return s
+}
+
+func (s *PerzoneBillingRequest) SetChannel(v string) *PerzoneBillingRequest {
+  s.Channel = &v
+  return s
+}
+
+func (s *PerzoneBillingRequest) SetAccetype(v string) *PerzoneBillingRequest {
+  s.Accetype = &v
+  return s
+}
+
+func (s *PerzoneBillingRequest) SetDwa(v string) *PerzoneBillingRequest {
+  s.Dwa = &v
+  return s
+}
+
+func (s *PerzoneBillingRequest) SetType(v string) *PerzoneBillingRequest {
+  s.Type = &v
+  return s
+}
+
+type PerzoneBillingResponse struct {
+  // {'en':'provider', 'zh_CN':'结果'}
+  Provider *PerzoneBillingPerzoneBillingResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+}
+
+func (s PerzoneBillingResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PerzoneBillingResponse) GoString() string {
+  return s.String()
+}
+
+func (s *PerzoneBillingResponse) SetProvider(v *PerzoneBillingPerzoneBillingResponseProvider) *PerzoneBillingResponse {
+  s.Provider = v
+  return s
+}
+
+type PerzoneBillingPerzoneBillingResponseProvider struct {
+  // {'en':'tenant', 'zh_CN':'租户'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'type', 'zh_CN':'接口类型'}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {'en':'resultType', 'zh_CN':'统计类型'}
+  ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty" require:"true"`
+  // {'en':'data', 'zh_CN':'perzone带宽数据'}
+  Date *PerzoneBillingPerzoneBillingResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+}
+
+func (s PerzoneBillingPerzoneBillingResponseProvider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PerzoneBillingPerzoneBillingResponseProvider) GoString() string {
+  return s.String()
+}
+
+func (s *PerzoneBillingPerzoneBillingResponseProvider) SetName(v string) *PerzoneBillingPerzoneBillingResponseProvider {
+  s.Name = &v
+  return s
+}
+
+func (s *PerzoneBillingPerzoneBillingResponseProvider) SetType(v string) *PerzoneBillingPerzoneBillingResponseProvider {
+  s.Type = &v
+  return s
+}
+
+func (s *PerzoneBillingPerzoneBillingResponseProvider) SetResultType(v string) *PerzoneBillingPerzoneBillingResponseProvider {
+  s.ResultType = &v
+  return s
+}
+
+func (s *PerzoneBillingPerzoneBillingResponseProvider) SetDate(v *PerzoneBillingPerzoneBillingResponseProviderDate) *PerzoneBillingPerzoneBillingResponseProvider {
+  s.Date = v
+  return s
+}
+
+type PerzoneBillingPerzoneBillingResponseProviderDate struct {
+  // {'en':'startdate', 'zh_CN':'开始时间'}
+  StartDate *string `json:"startDate,omitempty" xml:"startDate,omitempty" require:"true"`
+  // {'en':'enddate', 'zh_CN':'结束时间'}
+  EndDate *string `json:"endDate,omitempty" xml:"endDate,omitempty" require:"true"`
+  // {'en':'type', 'zh_CN':'数据类型1:带宽|2:流量'}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {'en':'channel', 'zh_CN':'频道'}
+  AreaMap *PerzoneBillingPerzoneBillingResponseProviderDateAreaMap `json:"areaMap,omitempty" xml:"areaMap,omitempty" require:"true" type:"Struct"`
+}
+
+func (s PerzoneBillingPerzoneBillingResponseProviderDate) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PerzoneBillingPerzoneBillingResponseProviderDate) GoString() string {
+  return s.String()
+}
+
+func (s *PerzoneBillingPerzoneBillingResponseProviderDate) SetStartDate(v string) *PerzoneBillingPerzoneBillingResponseProviderDate {
+  s.StartDate = &v
+  return s
+}
+
+func (s *PerzoneBillingPerzoneBillingResponseProviderDate) SetEndDate(v string) *PerzoneBillingPerzoneBillingResponseProviderDate {
+  s.EndDate = &v
+  return s
+}
+
+func (s *PerzoneBillingPerzoneBillingResponseProviderDate) SetType(v string) *PerzoneBillingPerzoneBillingResponseProviderDate {
+  s.Type = &v
+  return s
+}
+
+func (s *PerzoneBillingPerzoneBillingResponseProviderDate) SetAreaMap(v *PerzoneBillingPerzoneBillingResponseProviderDateAreaMap) *PerzoneBillingPerzoneBillingResponseProviderDate {
+  s.AreaMap = v
+  return s
+}
+
+type PerzoneBillingPerzoneBillingResponseProviderDateAreaMap struct {
+  // {'en':'perzone', 'zh_CN':'perzone数据'}
+  Perzone *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone `json:"perzone,omitempty" xml:"perzone,omitempty" require:"true" type:"Struct"`
+}
+
+func (s PerzoneBillingPerzoneBillingResponseProviderDateAreaMap) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PerzoneBillingPerzoneBillingResponseProviderDateAreaMap) GoString() string {
+  return s.String()
+}
+
+func (s *PerzoneBillingPerzoneBillingResponseProviderDateAreaMap) SetPerzone(v *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone) *PerzoneBillingPerzoneBillingResponseProviderDateAreaMap {
+  s.Perzone = v
+  return s
+}
+
+type PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone struct {
+  // {'en':'name', 'zh_CN':'perzone区域'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'peakValue', 'zh_CN':'峰值'}
+  PeakValue *string `json:"peakValue,omitempty" xml:"peakValue,omitempty" require:"true"`
+  // {'en':'peakTime', 'zh_CN':'峰值时间点'}
+  PeakTime *string `json:"peakTime,omitempty" xml:"peakTime,omitempty" require:"true"`
+  // {'en':'totalFlow', 'zh_CN':'总流量'}
+  TotalFlow *string `json:"totalFlow,omitempty" xml:"totalFlow,omitempty" require:"true"`
+  // {'en':'bandwidth', 'zh_CN':'带宽数据'}
+  Detail []*PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzoneDetail `json:"detail,omitempty" xml:"detail,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone) GoString() string {
+  return s.String()
+}
+
+func (s *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone) SetName(v string) *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone {
+  s.Name = &v
+  return s
+}
+
+func (s *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone) SetPeakValue(v string) *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone {
+  s.PeakValue = &v
+  return s
+}
+
+func (s *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone) SetPeakTime(v string) *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone {
+  s.PeakTime = &v
+  return s
+}
+
+func (s *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone) SetTotalFlow(v string) *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone {
+  s.TotalFlow = &v
+  return s
+}
+
+func (s *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone) SetDetail(v []*PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzoneDetail) *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone {
+  s.Detail = v
+  return s
+}
+
+type PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzoneDetail struct     {
+  // {'en':'timestamp', 'zh_CN':'时间点'}
+  Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
+  // {'en':'bandwidth', 'zh_CN':'带宽'}
+  Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
+}
+
+func (s PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzoneDetail) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzoneDetail) GoString() string {
+  return s.String()
+}
+
+func (s *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzoneDetail) SetTime(v string) *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzoneDetail {
+  s.Time = &v
+  return s
+}
+
+func (s *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzoneDetail) SetText(v string) *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzoneDetail {
+  s.Text = &v
+  return s
+}
+
+type PerzoneBillingPaths struct {
+}
+
+func (s PerzoneBillingPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PerzoneBillingPaths) GoString() string {
+  return s.String()
+}
+
+type PerzoneBillingParameters struct {
+}
+
+func (s PerzoneBillingParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PerzoneBillingParameters) GoString() string {
+  return s.String()
+}
+
+type PerzoneBillingRequestHeader struct {
+}
+
+func (s PerzoneBillingRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PerzoneBillingRequestHeader) GoString() string {
+  return s.String()
+}
+
+type PerzoneBillingResponseHeader struct {
+}
+
+func (s PerzoneBillingResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PerzoneBillingResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type ReportDirBandwidthInfoServiceRequest struct {
+  // {'en':'Start time:
+  // 
+  // 1. The format is yyyyy-MM-ddTHH:mm:ss+08:00, for example, 2016-12-02T10:00:00+08:00 (10:00:00 Beijing time on December 2, 2016);
+  // 
+  // 2. Can not exceed the current time;
+  // 
+  // 3. The latest half year (183 days) data can be obtained at most.', 'zh_CN':'开始时间：
+  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00，例如，2016-12-02T10:00:00+08:00（为北京时间2016年12月2日10点0分0秒）；
+  // 2.不能大于当前时间；
+  // 3.最多可获取最近半年（183天）的数据。'}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
+  // {'en':'End time:
+  // 
+  // 1. The format is yyyy-MM-ddTHH:mm:ss+08:00;
+  // 
+  // 2. The end time is greater than the start time.
+  // 
+  // 3. If the end time is greater than the current time, the current time is taken.
+  // 
+  // 4. DateFrom and dateTo are not uploaded, defaulting to query the past 24 hours; if only one is not uploaded, throw an exception;
+  // 
+  // 5. Maximum query interval allowed: 31 days, that is, the difference between dateFrom and dateTo can not exceed 31 days. ', 'zh_CN':'结束时间：
+  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00；
+  // 2.结束时间需大于开始时间；
+  // 3.结束时间如果大于当前时间，取当前时间；
+  // 4.dateFrom，dateTo二者都未传，默认查询过去的24小时；如仅有一个未传，抛异常；
+  // 5.允许查询最大间隔：31天，即dateFrom和dateTo相差不能超过31天。'}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
+  // {'en':'Acceleration area:
+  // 
+  // 1.Acceleration areaCode is not uploaded: Query all acceleration areas by default.
+  // 
+  // 2.Acceleration areaCode is uploaded: Multiple can be uploaded, such as cn, af.  Please refer to the appendix description section of the overview page.', 'zh_CN':'加速区域：
+  // 
+  // 1.未传递areaCode时，默认查询所有加速区域；
+  // 
+  // 2.有传递areaCode时：可传多个，如cn, af。可传递的值详见概览页附录说明章节'}
+  AreaCode []*string `json:"areaCode,omitempty" xml:"areaCode,omitempty" type:"Repeated"`
+  // {'en':'Directory levels, value range 1-4. Only one vlaue can be submitted', 'zh_CN':'目录层级,取值范围1~4,只能提交单个值'}
+  DirHierarchy *string `json:"dirHierarchy,omitempty" xml:"dirHierarchy,omitempty" require:"true"`
+  DomainDir []*ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceRequestDomainDir `json:"domainDir,omitempty" xml:"domainDir,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportDirBandwidthInfoServiceRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDirBandwidthInfoServiceRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ReportDirBandwidthInfoServiceRequest) SetDateFrom(v string) *ReportDirBandwidthInfoServiceRequest {
+  s.DateFrom = &v
+  return s
+}
+
+func (s *ReportDirBandwidthInfoServiceRequest) SetDateTo(v string) *ReportDirBandwidthInfoServiceRequest {
+  s.DateTo = &v
+  return s
+}
+
+func (s *ReportDirBandwidthInfoServiceRequest) SetAreaCode(v []*string) *ReportDirBandwidthInfoServiceRequest {
+  s.AreaCode = v
+  return s
+}
+
+func (s *ReportDirBandwidthInfoServiceRequest) SetDirHierarchy(v string) *ReportDirBandwidthInfoServiceRequest {
+  s.DirHierarchy = &v
+  return s
+}
+
+func (s *ReportDirBandwidthInfoServiceRequest) SetDomainDir(v []*ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceRequestDomainDir) *ReportDirBandwidthInfoServiceRequest {
+  s.DomainDir = v
+  return s
+}
+
+type ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceRequestDomainDir struct     {
+  // {'en':'Domains.', 'zh_CN':'域名：
+  // 
+  // 1.域名个数限制根据账号可调,默认为1个'}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {'en':'Table of contents
+  // 
+  // 1.Directory number limits can be adjusted depending on different accounts. The default value is 200;
+  // 
+  // 2.Empty value means to query all directories. Number of directories shall not exceed set limit;
+  // 
+  // 3.Invalid directories are not returned', 'zh_CN':'目录
+  // 
+  // 1.目录个数限制根据账号可调,默认为200个。更多找技术支持调整;
+  // 
+  // 2.不传代表查询该域名下的所有目录,同时接受目录个数限制;
+  // 
+  // 3.无效的目录不返回'}
+  Dir []*string `json:"dir,omitempty" xml:"dir,omitempty" type:"Repeated"`
+}
+
+func (s ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceRequestDomainDir) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceRequestDomainDir) GoString() string {
+  return s.String()
+}
+
+func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceRequestDomainDir) SetDomain(v string) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceRequestDomainDir {
+  s.Domain = &v
+  return s
+}
+
+func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceRequestDomainDir) SetDir(v []*string) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceRequestDomainDir {
+  s.Dir = v
+  return s
+}
+
+type ReportDirBandwidthInfoServiceResponse struct {
+  // {'en':'result', 'zh_CN':'结果'}
+  Result []*ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportDirBandwidthInfoServiceResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDirBandwidthInfoServiceResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ReportDirBandwidthInfoServiceResponse) SetResult(v []*ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult) *ReportDirBandwidthInfoServiceResponse {
+  s.Result = v
+  return s
+}
+
+type ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult struct     {
+  // {'en':'Domain', 'zh_CN':'域名'}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {'en':'The total flow under the domain name, in MB, with 2 decimal places retained.', 'zh_CN':'域名下的总流量,单位MB,保留2位小数'}
+  DomainTotalFlow *string `json:"domainTotalFlow,omitempty" xml:"domainTotalFlow,omitempty" require:"true"`
+  // {'en':'Directory details under the domain.', 'zh_CN':'域名下的目录详情'}
+  Details []*ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult) GoString() string {
+  return s.String()
+}
+
+func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult) SetDomain(v string) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult {
+  s.Domain = &v
+  return s
+}
+
+func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult) SetDomainTotalFlow(v string) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult {
+  s.DomainTotalFlow = &v
+  return s
+}
+
+func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult) SetDetails(v []*ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult {
+  s.Details = v
+  return s
+}
+
+type ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails struct     {
+  // {'en':'The directory.l', 'zh_CN':'具体目录'}
+  Dir *string `json:"dir,omitempty" xml:"dir,omitempty" require:"true"`
+  // {'en':'Total flow under the directory.', 'zh_CN':'目录下的总流量'}
+  DirTotalFlow *string `json:"dirTotalFlow,omitempty" xml:"dirTotalFlow,omitempty" require:"true"`
+  // {'en':'Time segment details under specific directory.', 'zh_CN':'具体目录下的时间片段明细'}
+  Details []*ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails) GoString() string {
+  return s.String()
+}
+
+func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails) SetDir(v string) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails {
+  s.Dir = &v
+  return s
+}
+
+func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails) SetDirTotalFlow(v string) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails {
+  s.DirTotalFlow = &v
+  return s
+}
+
+func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails) SetDetails(v []*ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails {
+  s.Details = v
+  return s
+}
+
+type ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails struct     {
+  // {'en':'Time:
+  // 
+  // 1. When the data query granularity is 5m, then the format is yyyy-MM-dd HH:mm; Each time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:05, and the last one is (yyyy-MM-dd+1) 00:00;
+  // 
+  // 2. Return the time slices that contained in start time and in end time.', 'zh_CN':'时间，
+  // 查询的数据粒度为5m，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05，最后一个时间片是（yyyy-MM-dd+1） 00:00；
+  // 返回开始时间和结束时间包含的时间片。'}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {'en':'Bandwidth value. Unit is Mbps and 2 digits of decimals are allowed.', 'zh_CN':'带宽，单位Mbps。保留2位小数'}
+  Bandwidth *string `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true"`
+  // {'en':'Flow value. Unit is MB and 2 digits of decimals are allowed.', 'zh_CN':'流量，单位MB。保留2位小数'}
+  Flow *string `json:"flow,omitempty" xml:"flow,omitempty" require:"true"`
+}
+
+func (s ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails) GoString() string {
+  return s.String()
+}
+
+func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails) SetTimestamp(v string) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails) SetBandwidth(v string) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails {
+  s.Bandwidth = &v
+  return s
+}
+
+func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails) SetFlow(v string) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails {
+  s.Flow = &v
+  return s
+}
+
+type ReportDirBandwidthInfoServicePaths struct {
+}
+
+func (s ReportDirBandwidthInfoServicePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDirBandwidthInfoServicePaths) GoString() string {
+  return s.String()
+}
+
+type ReportDirBandwidthInfoServiceParameters struct {
+}
+
+func (s ReportDirBandwidthInfoServiceParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDirBandwidthInfoServiceParameters) GoString() string {
+  return s.String()
+}
+
+type ReportDirBandwidthInfoServiceRequestHeader struct {
+}
+
+func (s ReportDirBandwidthInfoServiceRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDirBandwidthInfoServiceRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ReportDirBandwidthInfoServiceResponseHeader struct {
+}
+
+func (s ReportDirBandwidthInfoServiceResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDirBandwidthInfoServiceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type BandwidthChannelProtocolRequest struct {
+  // {"en":"cust_en_name of sub-client.
+  // When a merged-account wants to  view the information of the subclient,the cust_en_name is required.", "zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名"}
+  Cust *string `json:"cust,omitempty" xml:"cust,omitempty"`
+  // {"en":"Specifies the query date:
+  // 1.With format yyyy-mm-dd.
+  // 2.If not Specifies,it means today as default.", "zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
+  Date *string `json:"date,omitempty" xml:"date,omitempty"`
+  // {"en":"1.Must work with 'enddate' and they  specify the query date scope. 
+  // 2.With format yyyy-mm-dd hh:MM.If 'hh:MM' not specified,it means '00:01'.
+  // 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的起始日期,精确到分钟,日期格式为yyyy-mm-dd hh:MM若没有输入时、分，则时分默认为00:01；此参数需与enddate参数配合,若存在date参数,则该参数无效"}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty"`
+  // {"en":"1.Must work with 'startdate' and they  specify the query date scope. 
+  // 2.With format yyyy-mm-dd hh:MM.If 'hh:MM' not specified,it means '24:00'.
+  // 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的结束日期,精确到分钟,日期格式为yyyy-mm-dd hh:MM,若没有输入时、分，则时分默认为24:00；此参数需与startdate参数配合,若存在date参数,则该参数无效。"}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty"`
+  // {"en":"domains that been queried:
+  // 1.If there are multiple inputs,use  ';' as separator.
+  // 2.If not specified, it means all the domains of the account .", "zh_CN":"查询的频道，多个频道值请用英文分号';'，不选或者为空时默认为所查询客户的所有频道"}
+  Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
+  // {"en":"Specifies if  the 'channel' parameter should be exactly matched:
+  // 1.'true' as default.
+  // 2. If not 'true',it will query data of channels that ends with any item of input 'channel's.", "zh_CN":"&nbsp;频道是否完全匹配,为true时，必须填写完整的域名(此时会过滤用户输入的无效或重复频道,所有输入频道都无效时返403.。不为true时，显示以用户输入的频道为结尾的所有频道。默认为true"}
+  IsExactMatch *string `json:"isExactMatch,omitempty" xml:"isExactMatch,omitempty"`
+  // {"en":"1.If there are multiple inputs,use ';' as separator.For example,u can use 'region=cn;apac' to query data of cn and apac region.
+  // 2.If not specified, it means all the regions.", "zh_CN":"查询的加速区域的缩写，多个区域请用英文分号';'分隔开，如查询大陆及亚太区域，参数填写为：'region=cn;apac'。不选或者为空时默认为全部区域。"}
+  Region *string `json:"region,omitempty" xml:"region,omitempty"`
+  // {"en":"acceleration type:
+  // 1.If there are multiple inputs,use ';' as separator.
+  // 2.If not specified or specified as 'all', it means all the accetypes.", "zh_CN":"加速类型参数，如accetype=web。多个请用英文分号';'分隔开，不填或值为all表示所有类型"}
+  Accetype *string `json:"accetype,omitempty" xml:"accetype,omitempty"`
+  // {"en":"The response format:
+  // 1.optional values:xml, json.
+  // 2.'xml' as default.", "zh_CN":"返回结果格式,支持格式为xml和json,默认为xml"}
+  Dataformat *string `json:"dataformat,omitempty" xml:"dataformat,omitempty"`
+  // {"en":"Display statistic result in merged or separate way:
+  // 1.If specified 1,get the merged result.
+  // 2.If specified 2,get the separate result.
+  // 3.If specified 3,get both merged result and separate result.
+  // 4.If not specified,means '1'.", "zh_CN":"&nbsp;结果的显示是否提供合并值。填写1时：只提供合并结果；填写2时：只提供拆分值；填写3时：既提供合并值，又提供拆分值。不选或者为空时默认为'1'。"}
+  ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty"`
+  // {"en":"data type:
+  // 1.If specified 1,get the bandwidth data of both http and https protocals.
+  // 2.If specified 2,get the bandwidth data of http protocal.
+  // 3.If specified 3,get the bandwidth data of https protocal.", "zh_CN":"查询的数据类型。填写1时：输出http+https的带宽数据；填写2时：输出http的带宽数据；填写3时：输出https的带宽数据。多个值请用英文分号';'.不选或者为空时默认为'1'。"}
+  Datatype *string `json:"datatype,omitempty" xml:"datatype,omitempty"`
+}
+
+func (s BandwidthChannelProtocolRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthChannelProtocolRequest) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthChannelProtocolRequest) SetCust(v string) *BandwidthChannelProtocolRequest {
+  s.Cust = &v
+  return s
+}
+
+func (s *BandwidthChannelProtocolRequest) SetDate(v string) *BandwidthChannelProtocolRequest {
+  s.Date = &v
+  return s
+}
+
+func (s *BandwidthChannelProtocolRequest) SetStartdate(v string) *BandwidthChannelProtocolRequest {
+  s.Startdate = &v
+  return s
+}
+
+func (s *BandwidthChannelProtocolRequest) SetEnddate(v string) *BandwidthChannelProtocolRequest {
+  s.Enddate = &v
+  return s
+}
+
+func (s *BandwidthChannelProtocolRequest) SetChannel(v string) *BandwidthChannelProtocolRequest {
+  s.Channel = &v
+  return s
+}
+
+func (s *BandwidthChannelProtocolRequest) SetIsExactMatch(v string) *BandwidthChannelProtocolRequest {
+  s.IsExactMatch = &v
+  return s
+}
+
+func (s *BandwidthChannelProtocolRequest) SetRegion(v string) *BandwidthChannelProtocolRequest {
+  s.Region = &v
+  return s
+}
+
+func (s *BandwidthChannelProtocolRequest) SetAccetype(v string) *BandwidthChannelProtocolRequest {
+  s.Accetype = &v
+  return s
+}
+
+func (s *BandwidthChannelProtocolRequest) SetDataformat(v string) *BandwidthChannelProtocolRequest {
+  s.Dataformat = &v
+  return s
+}
+
+func (s *BandwidthChannelProtocolRequest) SetResultType(v string) *BandwidthChannelProtocolRequest {
+  s.ResultType = &v
+  return s
+}
+
+func (s *BandwidthChannelProtocolRequest) SetDatatype(v string) *BandwidthChannelProtocolRequest {
+  s.Datatype = &v
+  return s
+}
+
+type BandwidthChannelProtocolResponse struct {
+  // {'en':'provider', 'zh_CN':'结果'}
+  Provider *BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthChannelProtocolResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthChannelProtocolResponse) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthChannelProtocolResponse) SetProvider(v *BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider) *BandwidthChannelProtocolResponse {
+  s.Provider = v
+  return s
+}
+
+type BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider struct {
+  // {'en':'tenant', 'zh_CN':'租户'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'type', 'zh_CN':'接口类型'}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {'en':'resultType', 'zh_CN':'统计类型'}
+  ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty" require:"true"`
+  // {'en':'data', 'zh_CN':'频道带宽区分协议带宽数据'}
+  Date *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider) SetName(v string) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider {
+  s.Name = &v
+  return s
+}
+
+func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider) SetType(v string) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider {
+  s.Type = &v
+  return s
+}
+
+func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider) SetResultType(v string) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider {
+  s.ResultType = &v
+  return s
+}
+
+func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider) SetDate(v *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider {
+  s.Date = v
+  return s
+}
+
+type BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate struct {
+  // {'en':'startdate', 'zh_CN':'开始时间'}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
+  // {'en':'enddate', 'zh_CN':'结束时间'}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
+  // {'en':'channel', 'zh_CN':'频道'}
+  Channel *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate) SetStartdate(v string) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate {
+  s.Startdate = &v
+  return s
+}
+
+func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate) SetEnddate(v string) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate {
+  s.Enddate = &v
+  return s
+}
+
+func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate) SetChannel(v *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannel) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate {
+  s.Channel = v
+  return s
+}
+
+type BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannel struct {
+  // {'en':'channel', 'zh_CN':'频道'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'bandwidth', 'zh_CN':'频道带宽区分协议带宽数据'}
+  Bandwidth []*BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannel) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannel) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannel) SetName(v string) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannel {
+  s.Name = &v
+  return s
+}
+
+func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannel) SetBandwidth(v []*BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannel {
+  s.Bandwidth = v
+  return s
+}
+
+type BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth struct     {
+  // {'en':'timestamp', 'zh_CN':'时间点'}
+  Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
+  // {'en':'total bandwidth of http and https,unit Mbps.This value only displays When parameter 'datatype' is not specified or includes '1'.', 'zh_CN':'带宽'}
+  Total *string `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+  // {'en':'http bandwidth,unit Mbps.This value only displays when parameter 'datatype' includes '2'.', 'zh_CN':'http类型的带宽，单位：Mbps(当入参datatype包含2时有值)'}
+  Http *string `json:"http,omitempty" xml:"http,omitempty" require:"true"`
+  // {'en':'http2 bandwidth,unit Mbps.This value only displays when parameter 'datatype' includes '3'.', 'zh_CN':'https类型的带宽，单位：Mbps(当入参datatype包含3时有值)'}
+  Https *string `json:"https,omitempty" xml:"https,omitempty" require:"true"`
+}
+
+func (s BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth) SetTime(v string) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth {
+  s.Time = &v
+  return s
+}
+
+func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth) SetTotal(v string) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth {
+  s.Total = &v
+  return s
+}
+
+func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth) SetHttp(v string) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth {
+  s.Http = &v
+  return s
+}
+
+func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth) SetHttps(v string) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth {
+  s.Https = &v
+  return s
+}
+
+type BandwidthChannelProtocolPaths struct {
+}
+
+func (s BandwidthChannelProtocolPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthChannelProtocolPaths) GoString() string {
+  return s.String()
+}
+
+type BandwidthChannelProtocolParameters struct {
+}
+
+func (s BandwidthChannelProtocolParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthChannelProtocolParameters) GoString() string {
+  return s.String()
+}
+
+type BandwidthChannelProtocolRequestHeader struct {
+}
+
+func (s BandwidthChannelProtocolRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthChannelProtocolRequestHeader) GoString() string {
+  return s.String()
+}
+
+type BandwidthChannelProtocolResponseHeader struct {
+}
+
+func (s BandwidthChannelProtocolResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthChannelProtocolResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type ReportP2pBandwidthDomainServiceRequest struct {
+  // {"en":"Start time:
+  // 1. The format is yyyyy-MM-ddTHH:mm:SS+08:00, for example, 2021-05-19T10:00:00+08:00 (10:00:00 Beijing time on May 19, 2021);
+  // 2. Can not exceed the current time;
+  // 3. The latest half year (183 days) data can be obtained at most.", "zh_CN":"开始时间:
+  // 1.时间格式为yyyy-MM-ddTHH:mm:ss+08:00,例如,2021-05-19T10:00:00+08:00(为北京时间2021年5月19日10点0分0秒)
+  // 2.不能大于当前时间
+  // 3.最多可获取最近半年(183天)的数据"}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
+  // {"en":"End time:
+  // 1. The format is yyyy-MM-ddTHH:mm:ss+08:00;
+  // 2. The end time is greater than the start time.
+  // 3. If the end time is greater than the current time, the current time is taken.
+  // 4. DateFrom and dateTo are not uploaded, defaulting to query the past 1 hours; if only one is not uploaded, throw an exception;
+  // 5. Maximum query interval allowed: 31 days, that is, the difference between dateFrom and dateTo can not exceed 31 days. ", "zh_CN":"结束时间:
+  // 1.时间格式为yyyy-MM-ddTHH:mm:ss+08:00
+  // 2.结束时间需大于开始时间,结束时间如果大于当前时间,取当前时间。
+  // 3.dateFrom,dateTo二者都未传,默认查询过去的1小时;如仅有一个未传,抛异常
+  // 4.允许查询最大时间间隔:31天,即dateFrom和dateTo相差不能超过31天。"}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
+  // {"en":"Domain: 
+  // 	1.Allowable maximum number of domain is 20 (can be adjusted by contacting technical support).", "zh_CN":"1.可传递域名数量上限默认为20个(可联系技术支持调整);
+  // 2.如未填,则默认查询此账号下所有S-P2P的加速域名"}
+  Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" type:"Repeated"`
+}
+
+func (s ReportP2pBandwidthDomainServiceRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportP2pBandwidthDomainServiceRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ReportP2pBandwidthDomainServiceRequest) SetDateFrom(v string) *ReportP2pBandwidthDomainServiceRequest {
+  s.DateFrom = &v
+  return s
+}
+
+func (s *ReportP2pBandwidthDomainServiceRequest) SetDateTo(v string) *ReportP2pBandwidthDomainServiceRequest {
+  s.DateTo = &v
+  return s
+}
+
+func (s *ReportP2pBandwidthDomainServiceRequest) SetDomain(v []*string) *ReportP2pBandwidthDomainServiceRequest {
+  s.Domain = v
+  return s
+}
+
+type ReportP2pBandwidthDomainServiceResponse struct {
+  // {"en":"request result status code", "zh_CN":"请求结果状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"request result information", "zh_CN":"请求结果信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  Data []*ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportP2pBandwidthDomainServiceResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportP2pBandwidthDomainServiceResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ReportP2pBandwidthDomainServiceResponse) SetCode(v string) *ReportP2pBandwidthDomainServiceResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ReportP2pBandwidthDomainServiceResponse) SetMessage(v string) *ReportP2pBandwidthDomainServiceResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *ReportP2pBandwidthDomainServiceResponse) SetData(v []*ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseData) *ReportP2pBandwidthDomainServiceResponse {
+  s.Data = v
+  return s
+}
+
+type ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseData struct     {
+  DomainList []*ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainList `json:"domainList,omitempty" xml:"domainList,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseData) SetDomainList(v []*ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainList) *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseData {
+  s.DomainList = v
+  return s
+}
+
+type ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainList struct     {
+  // {"en":"1. If the accelerated domain name is a generic domain name, this field is the detailed domain name of the generic domain name (a generic domain name may have many detailed domain names, and detailed data of each detailed domain name will be returned).
+  // 						  2. If the accelerated domain name queried is not a generic domain name but a precise domain name, then this field displays the same domain name as the accelerated domain name.", "zh_CN":"1.如果加速域名是泛域名,则此字段为泛域名的明细域名(一个泛域名可能会有很多个明细域名,则会返回每个明细域名的详细数据)。
+  // 						  2.如果查询的加速域名非泛域名,而是精确域名,则此字段展示同加速域名。"}
+  VDomain *string `json:"vDomain,omitempty" xml:"vDomain,omitempty" require:"true"`
+  BandwidthList []*ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList `json:"bandwidthList,omitempty" xml:"bandwidthList,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainList) GoString() string {
+  return s.String()
+}
+
+func (s *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainList) SetVDomain(v string) *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainList {
+  s.VDomain = &v
+  return s
+}
+
+func (s *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainList) SetBandwidthList(v []*ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainList {
+  s.BandwidthList = v
+  return s
+}
+
+type ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList struct     {
+  // {"en":"Timestamp, returns the time slice containing the start time and end time. Time format: yyyy-MM-dd HH:mm", "zh_CN":"时间片,返回开始时间和结束时间包含的时间片。时间格式:yyyy-MM-dd HH:mm"}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {"en":"The bandwidth value of the CDN requested by the SDK, in Mbps, with 2 decimal places", "zh_CN":"SDK请求CDN的带宽值,单位Mbps,保留2位小数。"}
+  CdnValue *string `json:"cdnValue,omitempty" xml:"cdnValue,omitempty" require:"true"`
+  // {"en":"P2P bandwidth value, unit Mbps, keep 2 decimal places", "zh_CN":"P2P带宽值,单位Mbps,保留2位小数。"}
+  P2pValue *string `json:"p2pValue,omitempty" xml:"p2pValue,omitempty" require:"true"`
+  // {"en":"IPv6 bandwidth in P2P bandwidth, unit Mbps, keep 2 decimal places", "zh_CN":"P2P带宽中的IPv6带宽,单位Mbps,保留2位小数。"}
+  P2pIpv6Value *string `json:"p2pIpv6Value,omitempty" xml:"p2pIpv6Value,omitempty" require:"true"`
+}
+
+func (s ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) GoString() string {
+  return s.String()
+}
+
+func (s *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) SetTimestamp(v string) *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) SetCdnValue(v string) *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList {
+  s.CdnValue = &v
+  return s
+}
+
+func (s *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) SetP2pValue(v string) *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList {
+  s.P2pValue = &v
+  return s
+}
+
+func (s *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) SetP2pIpv6Value(v string) *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList {
+  s.P2pIpv6Value = &v
+  return s
+}
+
+type ReportP2pBandwidthDomainServicePaths struct {
+}
+
+func (s ReportP2pBandwidthDomainServicePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportP2pBandwidthDomainServicePaths) GoString() string {
+  return s.String()
+}
+
+type ReportP2pBandwidthDomainServiceParameters struct {
+}
+
+func (s ReportP2pBandwidthDomainServiceParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportP2pBandwidthDomainServiceParameters) GoString() string {
+  return s.String()
+}
+
+type ReportP2pBandwidthDomainServiceRequestHeader struct {
+}
+
+func (s ReportP2pBandwidthDomainServiceRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportP2pBandwidthDomainServiceRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ReportP2pBandwidthDomainServiceResponseHeader struct {
+}
+
+func (s ReportP2pBandwidthDomainServiceResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportP2pBandwidthDomainServiceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryBandwidthofOriginminutelyRequest struct {
+  // {"en":"Start Time:
+  // 1. The time format is yyyy-MM-ddTHH:MM:ss+08:00, for example, 2019-01-01T10:00:00+08:00 (Beijing time on January 1, 2019 at 10:00 am to 0 seconds);
+  // 2. No more than the current time;
+  // 3. Up to 6 months (183 days) of data are available.", "zh_CN":"开始时间：
+  // 1.时间格式为yyyy-MM-ddTHH:mm:ss+08:00，例如，2019-01-01T10:00:00+08:00（为北京时间2019年1月1日10点0分0秒）；
+  // 2.不能大于当前时间；
+  // 3.最多可获取最近半年（183天）的数据。"}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
+  // {"en":"End Time:
+  // 1. Time Format 2019-01-02T10:00:00+08:00;
+  // 2. the end time should be greater than the start time. if the end time is greater than the current time, take the current time;
+  // 3. dateFrom, dateTo, both are not sent, default query past 24 hours; If only one is not sent, throw exception;
+  // 4. Allow maximum query interval: 7 days, i.e., 7 days between Dategroup and dateTo. Do not exceed 7 days.", "zh_CN":"结束时间：
+  // 1.时间格式2019-01-02T10:00:00+08:00；
+  // 2.结束时间需大于开始时间，结束时间如果大于当前时间，取当前时间；
+  // 3.dateFrom，dateTo二者都未传，默认查询过去的24小时；如仅有一个未传，抛异常；
+  // 4.允许查询最大时间间隔：7天，即dateFrom和dateTo相差不能超过7天，不支持调整"}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
+  // {"en":"Data granularity:
+  // 1. Support for 1m (1 minute), 5m (5 minutes), 1h (1 hour);
+  // 2. do not pass default 5m.
+  // Data granularity, default to 5m", "zh_CN":"数据粒度：
+  // 1.支持1m（1分钟）、5m（5分钟）、1h（1小时）；
+  // 2.不传默认5m。
+  // 
+  // 数据粒度，默认为5m"}
+  DataInterval *string `json:"dataInterval,omitempty" xml:"dataInterval,omitempty"`
+  // {"en":"Domain name:
+  // 1. the maximum number of transitive domain names is 50 by default;
+  // 2. Automatically filter out illegal domain names (e.g. passing illegal domain names will be filtered out, and the search results will only return the legal domain name data)
+  // 3. If left blank, all domain names will be obtained. If the total number of domain names exceeds the upper limit, an error will be reported.", "zh_CN":"域名：
+  // 1.可传递域名数量上限默认为50（可联系技术支持调整）；
+  // 2.自动过滤掉非法域名（如传递非法域名，会被过滤掉，查询结果只返回合法域名的数据）。
+  // 3. 若未填写默认查询全部域名，全部域名超出域名上限报错"}
+  Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" type:"Repeated"`
+  // {"en":"Acceleration zone:
+  // 1. do not pass the default query to all areas;
+  // 2. currently only the leaflet area is supported externally;
+  // 3. optional values: cn, apac, am, emea.", "zh_CN":"加速区域：
+  // 1.不传默认查询全部区域；
+  // 2.目前对外只支持传单区域；
+  // 3.可选值：cn、apac、am、emea。"}
+  Region *string `json:"region,omitempty" xml:"region,omitempty"`
+  // {"en":"grouped dimension:
+  // 1. the optional value is domain;
+  // 2. If incoming data is shown in accordance with the dimension.", "zh_CN":"分组维度：
+  // 1.可选值为domain；
+  // 2.有传入则按照该维度展示明细数据。"}
+  GroupBy *string `json:"groupBy,omitempty" xml:"groupBy,omitempty"`
+}
+
+func (s QueryBandwidthofOriginminutelyRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthofOriginminutelyRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryBandwidthofOriginminutelyRequest) SetDateFrom(v string) *QueryBandwidthofOriginminutelyRequest {
+  s.DateFrom = &v
+  return s
+}
+
+func (s *QueryBandwidthofOriginminutelyRequest) SetDateTo(v string) *QueryBandwidthofOriginminutelyRequest {
+  s.DateTo = &v
+  return s
+}
+
+func (s *QueryBandwidthofOriginminutelyRequest) SetDataInterval(v string) *QueryBandwidthofOriginminutelyRequest {
+  s.DataInterval = &v
+  return s
+}
+
+func (s *QueryBandwidthofOriginminutelyRequest) SetDomain(v []*string) *QueryBandwidthofOriginminutelyRequest {
+  s.Domain = v
+  return s
+}
+
+func (s *QueryBandwidthofOriginminutelyRequest) SetRegion(v string) *QueryBandwidthofOriginminutelyRequest {
+  s.Region = &v
+  return s
+}
+
+func (s *QueryBandwidthofOriginminutelyRequest) SetGroupBy(v string) *QueryBandwidthofOriginminutelyRequest {
+  s.GroupBy = &v
+  return s
+}
+
+type QueryBandwidthofOriginminutelyResponse struct {
+  // {"en":"Request result status code", "zh_CN":"请求结果状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Request result information", "zh_CN":"请求结果信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Detailed data on request results", "zh_CN":"请求结果的详细数据"}
+  Data []*QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryBandwidthofOriginminutelyResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthofOriginminutelyResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryBandwidthofOriginminutelyResponse) SetCode(v string) *QueryBandwidthofOriginminutelyResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QueryBandwidthofOriginminutelyResponse) SetMessage(v string) *QueryBandwidthofOriginminutelyResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *QueryBandwidthofOriginminutelyResponse) SetData(v []*QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData) *QueryBandwidthofOriginminutelyResponse {
+  s.Data = v
+  return s
+}
+
+type QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData struct     {
+  // {"en":"Domain", "zh_CN":"域名信息"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {"en":"Peak bandwidth Mbps, example (931556.21 Mbps)", "zh_CN":"峰值带宽 Mbps，示例 （931556.21 Mbps）"}
+  PeakValue *string `json:"peakValue,omitempty" xml:"peakValue,omitempty" require:"true"`
+  // {"en":"Peak Time, Example (2019-02-13 18:01)", "zh_CN":"峰值时间，示例(2019-02-13 18:01)"}
+  PeakTime *string `json:"peakTime,omitempty" xml:"peakTime,omitempty" require:"true"`
+  // {"en":"Total return flow, example ( 74099.92 MB )", "zh_CN":"回源总流量，示例 ( 74099.92 MB )"}
+  Total *string `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+  OriginBandwidthData []*QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseDataOriginBandwidthData `json:"originBandwidthData,omitempty" xml:"originBandwidthData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData) SetDomain(v string) *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData {
+  s.Domain = &v
+  return s
+}
+
+func (s *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData) SetPeakValue(v string) *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData {
+  s.PeakValue = &v
+  return s
+}
+
+func (s *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData) SetPeakTime(v string) *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData {
+  s.PeakTime = &v
+  return s
+}
+
+func (s *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData) SetTotal(v string) *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData {
+  s.Total = &v
+  return s
+}
+
+func (s *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData) SetOriginBandwidthData(v []*QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseDataOriginBandwidthData) *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData {
+  s.OriginBandwidthData = v
+  return s
+}
+
+type QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseDataOriginBandwidthData struct     {
+  // {"en":"The granularity of data is 1 minute, and the format is yyyy-MM-dd HH:MM.", "zh_CN":"数据粒度为1分钟，格式为yyyy-MM-dd HH:mm。"}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {"en":"Return the source bandwidth value, in Mbps, 2 decimal places reserved.", "zh_CN":"回源带宽值，单位Mbps，保留2位小数。"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+}
+
+func (s QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseDataOriginBandwidthData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseDataOriginBandwidthData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseDataOriginBandwidthData) SetTimestamp(v string) *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseDataOriginBandwidthData {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseDataOriginBandwidthData) SetValue(v string) *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseDataOriginBandwidthData {
+  s.Value = &v
+  return s
+}
+
+type QueryBandwidthofOriginminutelyPaths struct {
+}
+
+func (s QueryBandwidthofOriginminutelyPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthofOriginminutelyPaths) GoString() string {
+  return s.String()
+}
+
+type QueryBandwidthofOriginminutelyParameters struct {
+}
+
+func (s QueryBandwidthofOriginminutelyParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthofOriginminutelyParameters) GoString() string {
+  return s.String()
+}
+
+type QueryBandwidthofOriginminutelyRequestHeader struct {
+}
+
+func (s QueryBandwidthofOriginminutelyRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthofOriginminutelyRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryBandwidthofOriginminutelyResponseHeader struct {
+}
+
+func (s QueryBandwidthofOriginminutelyResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthofOriginminutelyResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type BandwidthChannelRequest struct {
+  // {"en":"cust_en_name of sub-client.
+  // When a merged-account wants to  view the information of the subclient,the cust_en_name is required.", "zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名"}
+  Cust *string `json:"cust,omitempty" xml:"cust,omitempty"`
+  // {"en":"Specifies the query date:
+  // 1.With format yyyy-mm-dd.
+  // 2.If not Specifies,it means today as default.", "zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
+  Date *string `json:"date,omitempty" xml:"date,omitempty"`
+  // {"en":"1.Must work with 'enddate' and they  specify the query date scope. 
+  // 2.With format yyyy-mm-dd hh:MM.If 'hh:MM' not specified,it means '00:01'.
+  // 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的起始日期,精确到分钟,日期格式为yyyy-mm-dd hh:MM若没有输入时、分，则时分默认为00:01；此参数需与enddate参数配合,若存在date参数,则该参数无效"}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty"`
+  // {"en":"1.Must work with 'startdate' and they  specify the query date scope. 
+  // 2.With format yyyy-mm-dd hh:MM.If 'hh:MM' not specified,it means '24:00'.
+  // 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的结束日期,精确到分钟,日期格式为yyyy-mm-dd hh:MM,若没有输入时、分，则时分默认为24:00；此参数需与startdate参数配合,若存在date参数,则该参数无效。"}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty"`
+  // {"en":"domains that been queried:
+  // 1.If there are multiple inputs,use  ';' as separator.
+  // 2.If not specified, it means all the domains of the account .", "zh_CN":"查询的频道，多个频道值请用英文分号';'，不选或者为空时默认为所查询客户的所有频道"}
+  Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
+  // {"en":"1.If there are multiple inputs,use ';' as separator.For example,u can use 'region=cn;apac' to query data of cn and apac region.
+  // 2.If not specified, it means all the regions.", "zh_CN":"查询的加速区域的缩写，多个区域请用英文分号';'分隔开，如查询大陆及亚太区域，参数填写为：'region=cn;apac'。不选或者为空时默认为全部区域。"}
+  Region *string `json:"region,omitempty" xml:"region,omitempty"`
+  // {"en":"acceleration type.
+  // 1.If there are multiple inputs,use ';' as separator.
+  // 2.If not specified or specified as 'all', it means all the accetypes.", "zh_CN":"加速类型参数，如accetype=web。多个请用英文分号';'分隔开，不填或值为all表示所有类型"}
+  Accetype *string `json:"accetype,omitempty" xml:"accetype,omitempty"`
+  // {"en":"The response format:
+  // 1.optional values:xml, json.
+  // 2.'xml' as default.", "zh_CN":"返回结果格式,支持格式为xml和json,默认为xml"}
+  Dataformat *string `json:"dataformat,omitempty" xml:"dataformat,omitempty"`
+  // {"en":"Specifies if  the 'channel' parameter should be exactly matched:
+  // 1.'true' as default.
+  // 2. If not 'true',it will query data of channels that ends with any item of input 'channel's.", "zh_CN":"&nbsp;频道是否完全匹配,为true时，必须填写完整的域名(此时会过滤用户输入的无效或重复频道,所有输入频道都无效时返403.。不为true时，显示以用户输入的频道为结尾的所有频道。默认为true"}
+  IsExactMatch *string `json:"isExactMatch,omitempty" xml:"isExactMatch,omitempty"`
+  // {"en":"1.If there isp multiple inputs,use ';' as demimeter.
+  // 2.optional values of isp: refers to the ISP-section of appendix.
+  // 3. If not specified,means all the isp.", "zh_CN":"&nbsp;要查询的运营商的缩写，多个isp请用英文分号';'分隔开。运营商的缩写格式参考附录：具体运行商（ISP）信息的代号。备注：只有当地区只写了'cn'时，填写isp信息才有效。不选或者为空时默认为所有isp。"}
+  Isp *string `json:"isp,omitempty" xml:"isp,omitempty"`
+  // {"en":"Display statistic result in merged or separate way.
+  // 1.If specified 1,get the merged result.
+  // 2.If specified 2,get the separate result.
+  // 3.If specified 3,get both merged result and separate result.
+  // 4.If not specified,means '1'.", "zh_CN":"&nbsp;结果的显示是否提供合并值。填写1时：只提供合并结果；填写2时：只提供拆分值；填写3时：既提供合并值，又提供拆分值。不选或者为空时默认为'1'。"}
+  ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty"`
+  // {"en":"If return the flow details:
+  // choose 1: Return 
+  // choose 0: Not return 
+  // the default is 0", "zh_CN":"needFlow 是否需要返回流量明细，1：需要；0：不需要。默认为0."}
+  NeedFlow *string `json:"needFlow,omitempty" xml:"needFlow,omitempty"`
+  // {"en":"flowInfo:displays bandwidth peak, peak time, and total flow information;", "zh_CN":"flowInfo ：展示带宽峰值、峰值时间、总流量信息；"}
+  OptionalFields *string `json:"optionalFields,omitempty" xml:"optionalFields,omitempty"`
+}
+
+func (s BandwidthChannelRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthChannelRequest) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthChannelRequest) SetCust(v string) *BandwidthChannelRequest {
+  s.Cust = &v
+  return s
+}
+
+func (s *BandwidthChannelRequest) SetDate(v string) *BandwidthChannelRequest {
+  s.Date = &v
+  return s
+}
+
+func (s *BandwidthChannelRequest) SetStartdate(v string) *BandwidthChannelRequest {
+  s.Startdate = &v
+  return s
+}
+
+func (s *BandwidthChannelRequest) SetEnddate(v string) *BandwidthChannelRequest {
+  s.Enddate = &v
+  return s
+}
+
+func (s *BandwidthChannelRequest) SetChannel(v string) *BandwidthChannelRequest {
+  s.Channel = &v
+  return s
+}
+
+func (s *BandwidthChannelRequest) SetRegion(v string) *BandwidthChannelRequest {
+  s.Region = &v
+  return s
+}
+
+func (s *BandwidthChannelRequest) SetAccetype(v string) *BandwidthChannelRequest {
+  s.Accetype = &v
+  return s
+}
+
+func (s *BandwidthChannelRequest) SetDataformat(v string) *BandwidthChannelRequest {
+  s.Dataformat = &v
+  return s
+}
+
+func (s *BandwidthChannelRequest) SetIsExactMatch(v string) *BandwidthChannelRequest {
+  s.IsExactMatch = &v
+  return s
+}
+
+func (s *BandwidthChannelRequest) SetIsp(v string) *BandwidthChannelRequest {
+  s.Isp = &v
+  return s
+}
+
+func (s *BandwidthChannelRequest) SetResultType(v string) *BandwidthChannelRequest {
+  s.ResultType = &v
+  return s
+}
+
+func (s *BandwidthChannelRequest) SetNeedFlow(v string) *BandwidthChannelRequest {
+  s.NeedFlow = &v
+  return s
+}
+
+func (s *BandwidthChannelRequest) SetOptionalFields(v string) *BandwidthChannelRequest {
+  s.OptionalFields = &v
+  return s
+}
+
+type BandwidthChannelResponse struct {
+  // {'en':'provider', 'zh_CN':'结果'}
+  Provider *BandwidthChannelBandwidthChannelResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthChannelResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthChannelResponse) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthChannelResponse) SetProvider(v *BandwidthChannelBandwidthChannelResponseProvider) *BandwidthChannelResponse {
+  s.Provider = v
+  return s
+}
+
+type BandwidthChannelBandwidthChannelResponseProvider struct {
+  // {'en':'tenant', 'zh_CN':'租户'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'type', 'zh_CN':'接口类型'}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {'en':'resultType', 'zh_CN':'统计类型'}
+  ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty" require:"true"`
+  // {'en':'data', 'zh_CN':'频道带宽数据'}
+  Date *BandwidthChannelBandwidthChannelResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthChannelBandwidthChannelResponseProvider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthChannelBandwidthChannelResponseProvider) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthChannelBandwidthChannelResponseProvider) SetName(v string) *BandwidthChannelBandwidthChannelResponseProvider {
+  s.Name = &v
+  return s
+}
+
+func (s *BandwidthChannelBandwidthChannelResponseProvider) SetType(v string) *BandwidthChannelBandwidthChannelResponseProvider {
+  s.Type = &v
+  return s
+}
+
+func (s *BandwidthChannelBandwidthChannelResponseProvider) SetResultType(v string) *BandwidthChannelBandwidthChannelResponseProvider {
+  s.ResultType = &v
+  return s
+}
+
+func (s *BandwidthChannelBandwidthChannelResponseProvider) SetDate(v *BandwidthChannelBandwidthChannelResponseProviderDate) *BandwidthChannelBandwidthChannelResponseProvider {
+  s.Date = v
+  return s
+}
+
+type BandwidthChannelBandwidthChannelResponseProviderDate struct {
+  // {'en':'startdate', 'zh_CN':'开始时间'}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
+  // {'en':'enddate', 'zh_CN':'结束时间'}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
+  // {'en':'channel', 'zh_CN':'频道'}
+  Channel *BandwidthChannelBandwidthChannelResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthChannelBandwidthChannelResponseProviderDate) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthChannelBandwidthChannelResponseProviderDate) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthChannelBandwidthChannelResponseProviderDate) SetStartdate(v string) *BandwidthChannelBandwidthChannelResponseProviderDate {
+  s.Startdate = &v
+  return s
+}
+
+func (s *BandwidthChannelBandwidthChannelResponseProviderDate) SetEnddate(v string) *BandwidthChannelBandwidthChannelResponseProviderDate {
+  s.Enddate = &v
+  return s
+}
+
+func (s *BandwidthChannelBandwidthChannelResponseProviderDate) SetChannel(v *BandwidthChannelBandwidthChannelResponseProviderDateChannel) *BandwidthChannelBandwidthChannelResponseProviderDate {
+  s.Channel = v
+  return s
+}
+
+type BandwidthChannelBandwidthChannelResponseProviderDateChannel struct {
+  // {'en':'channel', 'zh_CN':'频道'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'bandwidth', 'zh_CN':'带宽数据'}
+  Bandwidth []*BandwidthChannelBandwidthChannelResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s BandwidthChannelBandwidthChannelResponseProviderDateChannel) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthChannelBandwidthChannelResponseProviderDateChannel) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthChannelBandwidthChannelResponseProviderDateChannel) SetName(v string) *BandwidthChannelBandwidthChannelResponseProviderDateChannel {
+  s.Name = &v
+  return s
+}
+
+func (s *BandwidthChannelBandwidthChannelResponseProviderDateChannel) SetBandwidth(v []*BandwidthChannelBandwidthChannelResponseProviderDateChannelBandwidth) *BandwidthChannelBandwidthChannelResponseProviderDateChannel {
+  s.Bandwidth = v
+  return s
+}
+
+type BandwidthChannelBandwidthChannelResponseProviderDateChannelBandwidth struct     {
+  // {'en':'timestamp', 'zh_CN':'时间点'}
+  Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
+  // {'en':'bandwidth', 'zh_CN':'带宽，单位Mbps'}
+  Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
+}
+
+func (s BandwidthChannelBandwidthChannelResponseProviderDateChannelBandwidth) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthChannelBandwidthChannelResponseProviderDateChannelBandwidth) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthChannelBandwidthChannelResponseProviderDateChannelBandwidth) SetTime(v string) *BandwidthChannelBandwidthChannelResponseProviderDateChannelBandwidth {
+  s.Time = &v
+  return s
+}
+
+func (s *BandwidthChannelBandwidthChannelResponseProviderDateChannelBandwidth) SetText(v string) *BandwidthChannelBandwidthChannelResponseProviderDateChannelBandwidth {
+  s.Text = &v
+  return s
+}
+
+type BandwidthChannelPaths struct {
+}
+
+func (s BandwidthChannelPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthChannelPaths) GoString() string {
+  return s.String()
+}
+
+type BandwidthChannelParameters struct {
+}
+
+func (s BandwidthChannelParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthChannelParameters) GoString() string {
+  return s.String()
+}
+
+type BandwidthChannelRequestHeader struct {
+}
+
+func (s BandwidthChannelRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthChannelRequestHeader) GoString() string {
+  return s.String()
+}
+
+type BandwidthChannelResponseHeader struct {
+}
+
+func (s BandwidthChannelResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthChannelResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type BillingOrderRequest struct {
+  // {"en":"cust_en_name of sub-client.
+  // When a merged-account wants to  view the information of the subclient,the cust_en_name is required.", "zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名"}
+  Cust *string `json:"cust,omitempty" xml:"cust,omitempty"`
+  // {"en":"Specifies the query date:
+  // 1)With format yyyy-mm-dd.
+  // 2)If not specified,it means today as default.", "zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
+  Date *string `json:"date,omitempty" xml:"date,omitempty"`
+  // {"en":"1)Must work with 'enddate' and they  specify the query date scope. 
+  // 2)With format yyyy-mm-dd.
+  // 3)If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的起始日期 ,日期格式为yyyy-mm-dd；此参数需与enddate参数配合,若存在date参数,则该参数无效"}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty"`
+  // {"en":"1)Must work with 'startdate' and they  specify the query date scope. 
+  // 2)With format yyyy-mm-dd
+  // 3)If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的结束日期 ,日期格式为yyyy-mm-dd；此参数需与startdate参数配合,若存在date参数,则该参数无效。"}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty"`
+  // {"en":"domains that been queried:
+  // 1)If there are multiple inputs,use  ';' as separator.
+  // 2)If not specified, it means all the domains of the account .", "zh_CN":"查询的频道，多个频道值请用英文分号“;”，不选或者为空时默认为所查询客户的所有频道"}
+  Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
+  // {"en":"1)If there are multiple inputs,use ';' as separator.For example,u can use 'region=cn;apac' to query data of cn and apac region.
+  // 2)If not specified, it means all the regions.", "zh_CN":"查询的加速区域的缩写，多个区域请用英文分号“;”分隔开，如查询大陆及亚太区域，参数填写为：“region=cn;apac”。不选或者为空时默认为全部区域。"}
+  Region *string `json:"region,omitempty" xml:"region,omitempty"`
+  // {"en":"Contract Code. If there are multiple inputs,use ';' as separator.", "zh_CN":"合同号，如contracCode=SR190001，多个请用英文分号";"分隔开"}
+  ContractCode *string `json:"contractCode,omitempty" xml:"contractCode,omitempty"`
+  // {"en":"Show the details of order or not. Optional valuse: true, false.
+  // 'false' as defaullt.", "zh_CN":"showDetail=true 显示订单详情，showDetail=false不显示订单详情，默认值是false。"}
+  ShowDetail *string `json:"showDetail,omitempty" xml:"showDetail,omitempty"`
+  // {"en":"The response format:
+  // 1)optional values:xml, json.
+  // 2)'xml' as default.", "zh_CN":"返回结果格式,支持格式为xml和json,默认为xml"}
+  Dataformat *string `json:"dataformat,omitempty" xml:"dataformat,omitempty"`
+  // {"en":"Filter the billing start and end time of formal orders", "zh_CN":"是否对正式订单的计费起止时间进行过滤。payDateFilter=true表示要过滤，即正式订单只返回计费起止时间与查询时间有交集的结果；payDateFilter=false表示不过滤，默认false；测试订单不受此参数影响"}
+  PayDateFilter *string `json:"payDateFilter,omitempty" xml:"payDateFilter,omitempty"`
+}
+
+func (s BillingOrderRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BillingOrderRequest) GoString() string {
+  return s.String()
+}
+
+func (s *BillingOrderRequest) SetCust(v string) *BillingOrderRequest {
+  s.Cust = &v
+  return s
+}
+
+func (s *BillingOrderRequest) SetDate(v string) *BillingOrderRequest {
+  s.Date = &v
+  return s
+}
+
+func (s *BillingOrderRequest) SetStartdate(v string) *BillingOrderRequest {
+  s.Startdate = &v
+  return s
+}
+
+func (s *BillingOrderRequest) SetEnddate(v string) *BillingOrderRequest {
+  s.Enddate = &v
+  return s
+}
+
+func (s *BillingOrderRequest) SetChannel(v string) *BillingOrderRequest {
+  s.Channel = &v
+  return s
+}
+
+func (s *BillingOrderRequest) SetRegion(v string) *BillingOrderRequest {
+  s.Region = &v
+  return s
+}
+
+func (s *BillingOrderRequest) SetContractCode(v string) *BillingOrderRequest {
+  s.ContractCode = &v
+  return s
+}
+
+func (s *BillingOrderRequest) SetShowDetail(v string) *BillingOrderRequest {
+  s.ShowDetail = &v
+  return s
+}
+
+func (s *BillingOrderRequest) SetDataformat(v string) *BillingOrderRequest {
+  s.Dataformat = &v
+  return s
+}
+
+func (s *BillingOrderRequest) SetPayDateFilter(v string) *BillingOrderRequest {
+  s.PayDateFilter = &v
+  return s
+}
+
+type BillingOrderResponse struct {
+  // {'en':'provider', 'zh_CN':'结果'}
+  Provider *BillingOrderBillingOrderResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BillingOrderResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BillingOrderResponse) GoString() string {
+  return s.String()
+}
+
+func (s *BillingOrderResponse) SetProvider(v *BillingOrderBillingOrderResponseProvider) *BillingOrderResponse {
+  s.Provider = v
+  return s
+}
+
+type BillingOrderBillingOrderResponseProvider struct {
+  // {'en':'tenant', 'zh_CN':'租户'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'type', 'zh_CN':'接口类型'}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {'en':'data', 'zh_CN':'订单计费值'}
+  Date *BillingOrderBillingOrderResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BillingOrderBillingOrderResponseProvider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BillingOrderBillingOrderResponseProvider) GoString() string {
+  return s.String()
+}
+
+func (s *BillingOrderBillingOrderResponseProvider) SetName(v string) *BillingOrderBillingOrderResponseProvider {
+  s.Name = &v
+  return s
+}
+
+func (s *BillingOrderBillingOrderResponseProvider) SetType(v string) *BillingOrderBillingOrderResponseProvider {
+  s.Type = &v
+  return s
+}
+
+func (s *BillingOrderBillingOrderResponseProvider) SetDate(v *BillingOrderBillingOrderResponseProviderDate) *BillingOrderBillingOrderResponseProvider {
+  s.Date = v
+  return s
+}
+
+type BillingOrderBillingOrderResponseProviderDate struct {
+  // {'en':'startdate', 'zh_CN':'开始时间'}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
+  // {'en':'enddate', 'zh_CN':'结束时间'}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
+  // {'en':'channel', 'zh_CN':'订单计费值'}
+  Order []*BillingOrderBillingOrderResponseProviderDateOrder `json:"order,omitempty" xml:"order,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s BillingOrderBillingOrderResponseProviderDate) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BillingOrderBillingOrderResponseProviderDate) GoString() string {
+  return s.String()
+}
+
+func (s *BillingOrderBillingOrderResponseProviderDate) SetStartdate(v string) *BillingOrderBillingOrderResponseProviderDate {
+  s.Startdate = &v
+  return s
+}
+
+func (s *BillingOrderBillingOrderResponseProviderDate) SetEnddate(v string) *BillingOrderBillingOrderResponseProviderDate {
+  s.Enddate = &v
+  return s
+}
+
+func (s *BillingOrderBillingOrderResponseProviderDate) SetOrder(v []*BillingOrderBillingOrderResponseProviderDateOrder) *BillingOrderBillingOrderResponseProviderDate {
+  s.Order = v
+  return s
+}
+
+type BillingOrderBillingOrderResponseProviderDateOrder struct     {
+  // {'en':'id', 'zh_CN':'订单ID'}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+  // {'en':'orderInfo', 'zh_CN':'订单信息'}
+  OrderInfo *string `json:"orderInfo,omitempty" xml:"orderInfo,omitempty" require:"true"`
+  // {'en':'chargeMethod', 'zh_CN':'计费方式'}
+  ChargeMethod *string `json:"chargeMethod,omitempty" xml:"chargeMethod,omitempty" require:"true"`
+  // {'en':'chargeExplanation', 'zh_CN':'计费说明'}
+  ChargeExplanation *string `json:"chargeExplanation,omitempty" xml:"chargeExplanation,omitempty" require:"true"`
+  // {'en':'regionAndIsp', 'zh_CN':'区域和ISP'}
+  RegionAndIsp *string `json:"regionAndIsp,omitempty" xml:"regionAndIsp,omitempty" require:"true"`
+  // {'en':'acceType', 'zh_CN':'加速类型'}
+  AcceType *string `json:"acceType,omitempty" xml:"acceType,omitempty" require:"true"`
+  // {'en':'chargeValue', 'zh_CN':'计费值'}
+  ChargeValue *string `json:"chargeValue,omitempty" xml:"chargeValue,omitempty" require:"true"`
+  // {'en':'chargeCategory', 'zh_CN':'费用类别'}
+  ChargeCategory *string `json:"chargeCategory,omitempty" xml:"chargeCategory,omitempty" require:"true"`
+  // {'en':'detailInfo', 'zh_CN':'计费单位'}
+  DetailInfo *string `json:"detailInfo,omitempty" xml:"detailInfo,omitempty" require:"true"`
+  // {'en':'channel', 'zh_CN':'频道'}
+  Channel *string `json:"channel,omitempty" xml:"channel,omitempty" require:"true"`
+  // {'en':'bandwidth', 'zh_CN':'带宽数据'}
+  Type *BillingOrderBillingOrderResponseProviderDateOrderType `json:"type,omitempty" xml:"type,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BillingOrderBillingOrderResponseProviderDateOrder) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BillingOrderBillingOrderResponseProviderDateOrder) GoString() string {
+  return s.String()
+}
+
+func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetId(v string) *BillingOrderBillingOrderResponseProviderDateOrder {
+  s.Id = &v
+  return s
+}
+
+func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetOrderInfo(v string) *BillingOrderBillingOrderResponseProviderDateOrder {
+  s.OrderInfo = &v
+  return s
+}
+
+func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetChargeMethod(v string) *BillingOrderBillingOrderResponseProviderDateOrder {
+  s.ChargeMethod = &v
+  return s
+}
+
+func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetChargeExplanation(v string) *BillingOrderBillingOrderResponseProviderDateOrder {
+  s.ChargeExplanation = &v
+  return s
+}
+
+func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetRegionAndIsp(v string) *BillingOrderBillingOrderResponseProviderDateOrder {
+  s.RegionAndIsp = &v
+  return s
+}
+
+func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetAcceType(v string) *BillingOrderBillingOrderResponseProviderDateOrder {
+  s.AcceType = &v
+  return s
+}
+
+func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetChargeValue(v string) *BillingOrderBillingOrderResponseProviderDateOrder {
+  s.ChargeValue = &v
+  return s
+}
+
+func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetChargeCategory(v string) *BillingOrderBillingOrderResponseProviderDateOrder {
+  s.ChargeCategory = &v
+  return s
+}
+
+func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetDetailInfo(v string) *BillingOrderBillingOrderResponseProviderDateOrder {
+  s.DetailInfo = &v
+  return s
+}
+
+func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetChannel(v string) *BillingOrderBillingOrderResponseProviderDateOrder {
+  s.Channel = &v
+  return s
+}
+
+func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetType(v *BillingOrderBillingOrderResponseProviderDateOrderType) *BillingOrderBillingOrderResponseProviderDateOrder {
+  s.Type = v
+  return s
+}
+
+type BillingOrderBillingOrderResponseProviderDateOrderType struct {
+  // {'en':'name', 'zh_CN':'流量'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'bandwidth', 'zh_CN':'带宽数据'}
+  Detail []*BillingOrderBillingOrderResponseProviderDateOrderTypeDetail `json:"detail,omitempty" xml:"detail,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s BillingOrderBillingOrderResponseProviderDateOrderType) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BillingOrderBillingOrderResponseProviderDateOrderType) GoString() string {
+  return s.String()
+}
+
+func (s *BillingOrderBillingOrderResponseProviderDateOrderType) SetName(v string) *BillingOrderBillingOrderResponseProviderDateOrderType {
+  s.Name = &v
+  return s
+}
+
+func (s *BillingOrderBillingOrderResponseProviderDateOrderType) SetDetail(v []*BillingOrderBillingOrderResponseProviderDateOrderTypeDetail) *BillingOrderBillingOrderResponseProviderDateOrderType {
+  s.Detail = v
+  return s
+}
+
+type BillingOrderBillingOrderResponseProviderDateOrderTypeDetail struct     {
+  // {'en':'timestamp', 'zh_CN':'时间点'}
+  Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
+  // {'en':'bandwidth', 'zh_CN':'带宽'}
+  Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
+}
+
+func (s BillingOrderBillingOrderResponseProviderDateOrderTypeDetail) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BillingOrderBillingOrderResponseProviderDateOrderTypeDetail) GoString() string {
+  return s.String()
+}
+
+func (s *BillingOrderBillingOrderResponseProviderDateOrderTypeDetail) SetTime(v string) *BillingOrderBillingOrderResponseProviderDateOrderTypeDetail {
+  s.Time = &v
+  return s
+}
+
+func (s *BillingOrderBillingOrderResponseProviderDateOrderTypeDetail) SetText(v string) *BillingOrderBillingOrderResponseProviderDateOrderTypeDetail {
+  s.Text = &v
+  return s
+}
+
+type BillingOrderPaths struct {
+}
+
+func (s BillingOrderPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BillingOrderPaths) GoString() string {
+  return s.String()
+}
+
+type BillingOrderParameters struct {
+}
+
+func (s BillingOrderParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BillingOrderParameters) GoString() string {
+  return s.String()
+}
+
+type BillingOrderRequestHeader struct {
+}
+
+func (s BillingOrderRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BillingOrderRequestHeader) GoString() string {
+  return s.String()
+}
+
+type BillingOrderResponseHeader struct {
+}
+
+func (s BillingOrderResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BillingOrderResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type GetBandwidthLogRequest struct {
+  // {"en":"cust_en_name of sub-client.
+  // When a merged-account wants to  view the information of the subclient,the cust_en_name is required.", "zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名"}
+  Cust *string `json:"cust,omitempty" xml:"cust,omitempty"`
+  // {"en":"Specifies the query date:
+  // 1.With format yyyy-mm-dd.
+  // 2.If not specified,it means today as default.", "zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
+  Date *string `json:"date,omitempty" xml:"date,omitempty"`
+  // {"en":"1.Must work with 'enddate' and they  specify the query date scope.
+  // 2.With format yyyy-mm-dd hh:MM.If 'hh:MM' not specified,it means '00:01'.
+  // 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的起始日期,精确到分钟,日期格式为yyyy-mm-dd hh:MM若没有输入时、分，则时分默认为00:01；此参数需与enddate参数配合,若存在date参数,则该参数无效"}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty"`
+  // {"en":"1.Must work with 'startdate' and they  specify the query date scope.
+  // 2.With format yyyy-mm-dd hh:MM.If 'hh:MM' not specified,it means '24:00'.
+  // 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的结束日期,精确到分钟,日期格式为yyyy-mm-dd hh:MM,若没有输入时、分，则时分默认为24:00；此参数需与startdate参数配合,若存在date参数,则该参数无效。"}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty"`
+  // {"en":"GMT time zone, parameter format: GMT+09:00 means east 9th zone, GMT-09:00 means west 9th zone, if not transmitted, the default is local time zone (east 8th zone).", "zh_CN":"格林尼治时区，参数格式 GMT+09:00 表示东九区，GMT-09:00 表示西9区，不传则默认为本地时区（东八区）"}
+  Timezone *string `json:"timezone,omitempty" xml:"timezone,omitempty"`
+  // {"en":"domains that been queried:
+  // 1.If there are multiple inputs,use  ';' as separator.
+  // 2.If not specified, it means all the domains of the account .", "zh_CN":"查询的频道，多个频道值请用英文分号';'，不选或者为空时默认为所查询客户的所有频道"}
+  Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
+  // {"en":"1.If there are multiple inputs,use ';' as separator.For example,u can use 'region=cn;apac' to query data of cn and apac region.
+  // 2.If not specified, it means all the regions.", "zh_CN":"查询的加速区域的缩写，多个区域请用英文分号';'分隔开，如查询大陆及亚太区域，参数填写为：'region=cn;apac'。不选或者为空时默认为全部区域。"}
+  Region *string `json:"region,omitempty" xml:"region,omitempty"`
+  // {"en":"acceleration type.
+  // 1.If there are multiple inputs,use ';' as separator.
+  // 2.If not specified or specified as 'all', it means all the accetypes.", "zh_CN":"加速类型参数，如accetype=web。多个请用英文分号';'分隔开，不填或值为all表示所有类型"}
+  Accetype *string `json:"accetype,omitempty" xml:"accetype,omitempty"`
+  // {"en":"The response format:
+  // 1.optional values:xml, json.
+  // 2.'xml' as default.", "zh_CN":"返回结果格式,支持格式为xml和json,默认为xml"}
+  Dataformat *string `json:"dataformat,omitempty" xml:"dataformat,omitempty"`
+  // {"en":"Display statistic result in merged or separate way.
+  // 1.If specified 1,get the merged result.
+  // 2.If specified 2,get the separate result.
+  // 3.If specified 3,get both merged result and separate result.
+  // 4.If not specified,means '1'.", "zh_CN":"&nbsp;结果的显示是否提供合并值。填写1时：只提供合并结果；填写2时：只提供拆分值；填写3时：既提供合并值，又提供拆分值。不选或者为空时默认为'1'。"}
+  ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty"`
+  // {"en":"The unit of the flow value in the details, the default is Mbps. Optional byte (byte) or bps", "zh_CN":"明细中的流量值单位，默认为Mbps。可选 byte (字节)或者bps"}
+  FlowUnit *string `json:"flowUnit,omitempty" xml:"flowUnit,omitempty"`
+  // {"en":"If specified 0,the time return as 00:05--24:00,If specified 1,the time return as 00:00--23:55,If not specified, the default value is 0", "zh_CN":"当值为0:返回00:05--24:00；当值为1:返回00:00--23:55。不传默认为:0"}
+  TimeFromZero *string `json:"timeFromZero,omitempty" xml:"timeFromZero,omitempty"`
+}
+
+func (s GetBandwidthLogRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetBandwidthLogRequest) GoString() string {
+  return s.String()
+}
+
+func (s *GetBandwidthLogRequest) SetCust(v string) *GetBandwidthLogRequest {
+  s.Cust = &v
+  return s
+}
+
+func (s *GetBandwidthLogRequest) SetDate(v string) *GetBandwidthLogRequest {
+  s.Date = &v
+  return s
+}
+
+func (s *GetBandwidthLogRequest) SetStartdate(v string) *GetBandwidthLogRequest {
+  s.Startdate = &v
+  return s
+}
+
+func (s *GetBandwidthLogRequest) SetEnddate(v string) *GetBandwidthLogRequest {
+  s.Enddate = &v
+  return s
+}
+
+func (s *GetBandwidthLogRequest) SetTimezone(v string) *GetBandwidthLogRequest {
+  s.Timezone = &v
+  return s
+}
+
+func (s *GetBandwidthLogRequest) SetChannel(v string) *GetBandwidthLogRequest {
+  s.Channel = &v
+  return s
+}
+
+func (s *GetBandwidthLogRequest) SetRegion(v string) *GetBandwidthLogRequest {
+  s.Region = &v
+  return s
+}
+
+func (s *GetBandwidthLogRequest) SetAccetype(v string) *GetBandwidthLogRequest {
+  s.Accetype = &v
+  return s
+}
+
+func (s *GetBandwidthLogRequest) SetDataformat(v string) *GetBandwidthLogRequest {
+  s.Dataformat = &v
+  return s
+}
+
+func (s *GetBandwidthLogRequest) SetResultType(v string) *GetBandwidthLogRequest {
+  s.ResultType = &v
+  return s
+}
+
+func (s *GetBandwidthLogRequest) SetFlowUnit(v string) *GetBandwidthLogRequest {
+  s.FlowUnit = &v
+  return s
+}
+
+func (s *GetBandwidthLogRequest) SetTimeFromZero(v string) *GetBandwidthLogRequest {
+  s.TimeFromZero = &v
+  return s
+}
+
+type GetBandwidthLogResponse struct {
+  // {'en':'provider', 'zh_CN':'结果'}
+  Provider *GetBandwidthLogGetBandwidthLogResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+}
+
+func (s GetBandwidthLogResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetBandwidthLogResponse) GoString() string {
+  return s.String()
+}
+
+func (s *GetBandwidthLogResponse) SetProvider(v *GetBandwidthLogGetBandwidthLogResponseProvider) *GetBandwidthLogResponse {
+  s.Provider = v
+  return s
+}
+
+type GetBandwidthLogGetBandwidthLogResponseProvider struct {
+  // {'en':'tenant', 'zh_CN':'租户'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'type', 'zh_CN':'接口类型'}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {'en':'resultType', 'zh_CN':'统计类型'}
+  ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty" require:"true"`
+  // {'en':'data', 'zh_CN':'频道带宽数据'}
+  Date *GetBandwidthLogGetBandwidthLogResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+}
+
+func (s GetBandwidthLogGetBandwidthLogResponseProvider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetBandwidthLogGetBandwidthLogResponseProvider) GoString() string {
+  return s.String()
+}
+
+func (s *GetBandwidthLogGetBandwidthLogResponseProvider) SetName(v string) *GetBandwidthLogGetBandwidthLogResponseProvider {
+  s.Name = &v
+  return s
+}
+
+func (s *GetBandwidthLogGetBandwidthLogResponseProvider) SetType(v string) *GetBandwidthLogGetBandwidthLogResponseProvider {
+  s.Type = &v
+  return s
+}
+
+func (s *GetBandwidthLogGetBandwidthLogResponseProvider) SetResultType(v string) *GetBandwidthLogGetBandwidthLogResponseProvider {
+  s.ResultType = &v
+  return s
+}
+
+func (s *GetBandwidthLogGetBandwidthLogResponseProvider) SetDate(v *GetBandwidthLogGetBandwidthLogResponseProviderDate) *GetBandwidthLogGetBandwidthLogResponseProvider {
+  s.Date = v
+  return s
+}
+
+type GetBandwidthLogGetBandwidthLogResponseProviderDate struct {
+  // {'en':'startdate', 'zh_CN':'开始时间'}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
+  // {'en':'enddate', 'zh_CN':'结束时间'}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
+  // {'en':'channel', 'zh_CN':'频道'}
+  Channel *GetBandwidthLogGetBandwidthLogResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+}
+
+func (s GetBandwidthLogGetBandwidthLogResponseProviderDate) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetBandwidthLogGetBandwidthLogResponseProviderDate) GoString() string {
+  return s.String()
+}
+
+func (s *GetBandwidthLogGetBandwidthLogResponseProviderDate) SetStartdate(v string) *GetBandwidthLogGetBandwidthLogResponseProviderDate {
+  s.Startdate = &v
+  return s
+}
+
+func (s *GetBandwidthLogGetBandwidthLogResponseProviderDate) SetEnddate(v string) *GetBandwidthLogGetBandwidthLogResponseProviderDate {
+  s.Enddate = &v
+  return s
+}
+
+func (s *GetBandwidthLogGetBandwidthLogResponseProviderDate) SetChannel(v *GetBandwidthLogGetBandwidthLogResponseProviderDateChannel) *GetBandwidthLogGetBandwidthLogResponseProviderDate {
+  s.Channel = v
+  return s
+}
+
+type GetBandwidthLogGetBandwidthLogResponseProviderDateChannel struct {
+  // {'en':'channel', 'zh_CN':'频道'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'bandwidth', 'zh_CN':'带宽数据'}
+  Bandwidth []*GetBandwidthLogGetBandwidthLogResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s GetBandwidthLogGetBandwidthLogResponseProviderDateChannel) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetBandwidthLogGetBandwidthLogResponseProviderDateChannel) GoString() string {
+  return s.String()
+}
+
+func (s *GetBandwidthLogGetBandwidthLogResponseProviderDateChannel) SetName(v string) *GetBandwidthLogGetBandwidthLogResponseProviderDateChannel {
+  s.Name = &v
+  return s
+}
+
+func (s *GetBandwidthLogGetBandwidthLogResponseProviderDateChannel) SetBandwidth(v []*GetBandwidthLogGetBandwidthLogResponseProviderDateChannelBandwidth) *GetBandwidthLogGetBandwidthLogResponseProviderDateChannel {
+  s.Bandwidth = v
+  return s
+}
+
+type GetBandwidthLogGetBandwidthLogResponseProviderDateChannelBandwidth struct     {
+  // {'en':'timestamp', 'zh_CN':'时间点'}
+  Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
+  // {'en':'bandwidth', 'zh_CN':'带宽'}
+  Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
+}
+
+func (s GetBandwidthLogGetBandwidthLogResponseProviderDateChannelBandwidth) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetBandwidthLogGetBandwidthLogResponseProviderDateChannelBandwidth) GoString() string {
+  return s.String()
+}
+
+func (s *GetBandwidthLogGetBandwidthLogResponseProviderDateChannelBandwidth) SetTime(v string) *GetBandwidthLogGetBandwidthLogResponseProviderDateChannelBandwidth {
+  s.Time = &v
+  return s
+}
+
+func (s *GetBandwidthLogGetBandwidthLogResponseProviderDateChannelBandwidth) SetText(v string) *GetBandwidthLogGetBandwidthLogResponseProviderDateChannelBandwidth {
+  s.Text = &v
+  return s
+}
+
+type GetBandwidthLogPaths struct {
+}
+
+func (s GetBandwidthLogPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetBandwidthLogPaths) GoString() string {
+  return s.String()
+}
+
+type GetBandwidthLogParameters struct {
+}
+
+func (s GetBandwidthLogParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetBandwidthLogParameters) GoString() string {
+  return s.String()
+}
+
+type GetBandwidthLogRequestHeader struct {
+}
+
+func (s GetBandwidthLogRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetBandwidthLogRequestHeader) GoString() string {
+  return s.String()
+}
+
+type GetBandwidthLogResponseHeader struct {
+}
+
+func (s GetBandwidthLogResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetBandwidthLogResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryRealTimeBandwidthForMultiDomainRequest struct {
+  // {'en':'Start time: 
+  //     1.Start time: time format is yyyy-MM-ddTHH:mm:ss+08:00, for example, 2016-12-02T10:00:00+08:00 (December 2rd, 2016, 10:00 a.m., Beijing Time); 
+  //     2.Not greater than the current time;
+  //     3.The most recent half-year (183 days) data can be obtained
+  // ', 'zh_CN':'开始时间：
+  // 
+  // 时间格式为yyyy-MM-ddTHH:mm:ss+08:00，例如，2019-01-01T10:00:00+08:00（为北京时间2019年1月1日10点0分0秒）；
+  // 不能大于当前时间
+  // 最多可获取最近半年（183天）的数据。'}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
+  // {'en':'End time: 
+  //     1.The time format is 2016-12-02T10:00:00+08:00 
+  //     2.End time should be greater than start time. If the end time is greater than current time, current time will be used. 
+  //     3.If both fields of dataFrom and dateTo are left empty, then data in the last 1 hours will be queried by default; if one field is filled and one is left empty, then exception will occur. 
+  //     4.Maximum time range allowable for query: The default value is 1 hour, that is, the difference between dateFrom and dateTo cannot exceed 1 hour (you can contact technical support to adjust it, the maximum is 31 days)
+  // ', 'zh_CN':'结束时间：
+  // 
+  // 时间格式为yyyy-MM-ddTHH:mm:ss+08:00
+  // 结束时间需大于开始时间，结束时间如果大于当前时间，取当前时间。
+  // dateFrom，dateTo二者都未传，默认查询过去的1小时；如仅有一个未传，抛异常
+  // 允许查询最大时间间隔：默认1小时，即dateFrom和dateTo相差不能超过1小时（可联系技术支持调整，最长31天）。'}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
+  // {'en':'Data granularity: 
+  //     1. Support 1m (1 minute granularity),5m (5 minutes granularity) 
+  //     2. The default value is 1m
+  // ', 'zh_CN':'数据粒度：不传默认1m
+  // 
+  // 支持1m（1分钟）、5m（5分钟）'}
+  DataInterval *string `json:"dataInterval,omitempty" xml:"dataInterval,omitempty"`
+  // {'en':'Domain: 
+  //     1.The default upper limit of domains that can be entered is 20 (if you want to adjust, please, contact technical support); 
+  //     2.Automatically filter out illegal domains (illegal domains will be filtered out, the query results only return the data of legitimate domains)
+  // ', 'zh_CN':'域名：
+  // 
+  // 可传递域名数量上限默认为20（可联系技术支持调整）；
+  // 自动过滤掉非法域名（如传递非法域名，会被过滤掉，查询结果只返回合法域名的数据）'}
+  Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" require:"true" type:"Repeated"`
+  // {'en':'The optional value of the grouping dimension is domain; if it is passed in, detailed data will be displayed according to this dimension;', 'zh_CN':'分组维度
+  // 
+  // 可选值为domain；
+  // 有传入则按照该维度展示明细数据；'}
+  GroupBy *string `json:"groupBy,omitempty" xml:"groupBy,omitempty"`
+}
+
+func (s QueryRealTimeBandwidthForMultiDomainRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRealTimeBandwidthForMultiDomainRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryRealTimeBandwidthForMultiDomainRequest) SetDateFrom(v string) *QueryRealTimeBandwidthForMultiDomainRequest {
+  s.DateFrom = &v
+  return s
+}
+
+func (s *QueryRealTimeBandwidthForMultiDomainRequest) SetDateTo(v string) *QueryRealTimeBandwidthForMultiDomainRequest {
+  s.DateTo = &v
+  return s
+}
+
+func (s *QueryRealTimeBandwidthForMultiDomainRequest) SetDataInterval(v string) *QueryRealTimeBandwidthForMultiDomainRequest {
+  s.DataInterval = &v
+  return s
+}
+
+func (s *QueryRealTimeBandwidthForMultiDomainRequest) SetDomain(v []*string) *QueryRealTimeBandwidthForMultiDomainRequest {
+  s.Domain = v
+  return s
+}
+
+func (s *QueryRealTimeBandwidthForMultiDomainRequest) SetGroupBy(v string) *QueryRealTimeBandwidthForMultiDomainRequest {
+  s.GroupBy = &v
+  return s
+}
+
+type QueryRealTimeBandwidthForMultiDomainResponse struct {
+  // {'en':'request result status code', 'zh_CN':'请求结果状态码'}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {'en':'request result information', 'zh_CN':'请求结果信息'}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  Data []*QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryRealTimeBandwidthForMultiDomainResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRealTimeBandwidthForMultiDomainResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryRealTimeBandwidthForMultiDomainResponse) SetCode(v string) *QueryRealTimeBandwidthForMultiDomainResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QueryRealTimeBandwidthForMultiDomainResponse) SetMessage(v string) *QueryRealTimeBandwidthForMultiDomainResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *QueryRealTimeBandwidthForMultiDomainResponse) SetData(v []*QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData) *QueryRealTimeBandwidthForMultiDomainResponse {
+  s.Data = v
+  return s
+}
+
+type QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData struct     {
+  // {'en':' Domain name. If you do not select domain name group Dimension, this field is a semicolon-separated string of all domain names.', 'zh_CN':'域名，如果不选择域名分组维度，该字段为所有域名以分号分隔的字符串'}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {'en':'Peak Bandwidth,unit is Mbps,example(9811.21Mbps)', 'zh_CN':'峰值带宽，单位Mbps，示例 （9811.21Mbps)'}
+  PeakValue *string `json:"peakValue,omitempty" xml:"peakValue,omitempty" require:"true"`
+  // {'en':'Time of peak bandwidth,example(2019-02-13 18:01)', 'zh_CN':'峰值时间，示例（2019-02-13 18:01）'}
+  PeakTime *string `json:"peakTime,omitempty" xml:"peakTime,omitempty" require:"true"`
+  // {'en':'Edge total traffic,example(74099.91MB)', 'zh_CN':'边缘总流量，单位MB，示例 ( 74099.91MB)'}
+  Total *string `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+  BandwidthData []*QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData `json:"bandwidthData,omitempty" xml:"bandwidthData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData) SetDomain(v string) *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData {
+  s.Domain = &v
+  return s
+}
+
+func (s *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData) SetPeakValue(v string) *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData {
+  s.PeakValue = &v
+  return s
+}
+
+func (s *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData) SetPeakTime(v string) *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData {
+  s.PeakTime = &v
+  return s
+}
+
+func (s *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData) SetTotal(v string) *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData {
+  s.Total = &v
+  return s
+}
+
+func (s *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData) SetBandwidthData(v []*QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData) *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData {
+  s.BandwidthData = v
+  return s
+}
+
+type QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData struct     {
+  // {'en':'Time: 1. When the data query granularity is 1m, then the format is yyyy-MM-dd HH:mm; 
+  //     Each time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is (yyyy-MM-dd+1) 00:00; 
+  //     2. Return the time slices that contained in start time and in end time.
+  // ', 'zh_CN':'格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。
+  // 
+  // 一天开始的时间片是yyyy-MM-dd 00:01，最后一个时间片是第二天（yyyy-MM-dd） 00:00。
+  // 
+  // 返回开始时间和结束时间包含的时间片'}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {'en':'Edge bandwidth,the unit is Mbps,keep 2 decimal places', 'zh_CN':'带宽值，单位Mbps，保留2位小数。'}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+}
+
+func (s QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData) SetTimestamp(v string) *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData) SetValue(v string) *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData {
+  s.Value = &v
+  return s
+}
+
+type QueryRealTimeBandwidthForMultiDomainPaths struct {
+}
+
+func (s QueryRealTimeBandwidthForMultiDomainPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRealTimeBandwidthForMultiDomainPaths) GoString() string {
+  return s.String()
+}
+
+type QueryRealTimeBandwidthForMultiDomainParameters struct {
+}
+
+func (s QueryRealTimeBandwidthForMultiDomainParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRealTimeBandwidthForMultiDomainParameters) GoString() string {
+  return s.String()
+}
+
+type QueryRealTimeBandwidthForMultiDomainRequestHeader struct {
+}
+
+func (s QueryRealTimeBandwidthForMultiDomainRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRealTimeBandwidthForMultiDomainRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryRealTimeBandwidthForMultiDomainResponseHeader struct {
+}
+
+func (s QueryRealTimeBandwidthForMultiDomainResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRealTimeBandwidthForMultiDomainResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryCPSBandwidthRequest struct {
+  // {"en":"cust_en_name.If there are multiple inputs,use ';' as separator", "zh_CN":"客户的英文名，多个';'隔开"}
+  Cust *string `json:"cust,omitempty" xml:"cust,omitempty"`
+  // {"en":"1.Must work with 'enddate' and they specify the query date scope.
+  // 2.With format yyyy-mm-dd.
+  // 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的起始日期,日期格式为yyyy-mm-dd；
+  // 
+  // 此参数需与enddate参数配合,若存在date参数,则该参数无效"}
+  StartDate *string `json:"startDate,omitempty" xml:"startDate,omitempty"`
+  // {"en":"1.Must work with 'startdate' and they specify the query date scope.
+  // 
+  // 2.With format yyyy-mm-dd 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的结束日期,日期格式为yyyy-mm-dd；
+  // 
+  // 此参数需与startdate参数配合,若存在date参数,则该参数无效"}
+  EndDate *string `json:"endDate,omitempty" xml:"endDate,omitempty"`
+  // {"en":"domains that been queried:
+  // 1.If there are multiple inputs,use ';' as separator.
+  // 2.If not specified, it means all the domains of the account .", "zh_CN":"查询的频道，多个频道值请用英文分号';'，
+  // 
+  // 返回多个频道的汇总值，不选或者为空时默认为所查询客户的所有频道"}
+  Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
+  // {"en":"GMT time zone, parameter format: GMT+09:00 means east 9th zone, GMT-09:00 means west 9th zone, if not transmitted, the default is local time zone (east 8th zone).", "zh_CN":"格林尼治时区，参数格式 GMT+09:00 表示东九区，
+  // 
+  // GMT-09:00 表示西9区，不传则默认为本地时区（东八区）"}
+  Timezone *string `json:"timezone,omitempty" xml:"timezone,omitempty"`
+  // {"en":"Input 'flowInfo', which will show the bandwidth peak, peak time, total flow. not selected or null&nbsp;will not be showed", "zh_CN":"入参flowInfo，将展示带宽峰值、峰值时间、总流量,不选或者为空默认不展示"}
+  OptionalFields *string `json:"optionalFields,omitempty" xml:"optionalFields,omitempty"`
+  // {"en":"This parameter represents the type of the dedicated line. It can have multiple values. Use the semicolon as a separator if there are multiple values. hk: represents China Premium Service; jp: represents China Premium Service-Basic. eu: not applicable to CDNW. all: not applicable to CDNW.", "zh_CN":"专线类型:hk;jp，支持多个，用分号隔开。hk:中港；jp:中日；eu:中欧；all:所有，默认为：hk"}
+  LineType *string `json:"lineType,omitempty" xml:"lineType,omitempty"`
+}
+
+func (s QueryCPSBandwidthRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCPSBandwidthRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryCPSBandwidthRequest) SetCust(v string) *QueryCPSBandwidthRequest {
+  s.Cust = &v
+  return s
+}
+
+func (s *QueryCPSBandwidthRequest) SetStartDate(v string) *QueryCPSBandwidthRequest {
+  s.StartDate = &v
+  return s
+}
+
+func (s *QueryCPSBandwidthRequest) SetEndDate(v string) *QueryCPSBandwidthRequest {
+  s.EndDate = &v
+  return s
+}
+
+func (s *QueryCPSBandwidthRequest) SetChannel(v string) *QueryCPSBandwidthRequest {
+  s.Channel = &v
+  return s
+}
+
+func (s *QueryCPSBandwidthRequest) SetTimezone(v string) *QueryCPSBandwidthRequest {
+  s.Timezone = &v
+  return s
+}
+
+func (s *QueryCPSBandwidthRequest) SetOptionalFields(v string) *QueryCPSBandwidthRequest {
+  s.OptionalFields = &v
+  return s
+}
+
+func (s *QueryCPSBandwidthRequest) SetLineType(v string) *QueryCPSBandwidthRequest {
+  s.LineType = &v
+  return s
+}
+
+type QueryCPSBandwidthResponse struct {
+  // {'en':'code', 'zh_CN':'返回编码'}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {'en':'message', 'zh_CN':'返回消息'}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {'en':'data', 'zh_CN':'频道带宽数据'}
+  Data *QueryCPSBandwidthQueryCPSBandwidthResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryCPSBandwidthResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCPSBandwidthResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryCPSBandwidthResponse) SetCode(v string) *QueryCPSBandwidthResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QueryCPSBandwidthResponse) SetMessage(v string) *QueryCPSBandwidthResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *QueryCPSBandwidthResponse) SetData(v *QueryCPSBandwidthQueryCPSBandwidthResponseData) *QueryCPSBandwidthResponse {
+  s.Data = v
+  return s
+}
+
+type QueryCPSBandwidthQueryCPSBandwidthResponseData struct {
+  // {'en':'totalFlow', 'zh_CN':'总流量，单位GB'}
+  TotalFlow *string `json:"totalFlow,omitempty" xml:"totalFlow,omitempty" require:"true"`
+  // {'en':'peakTime', 'zh_CN':'峰值时间'}
+  PeakTime *string `json:"peakTime,omitempty" xml:"peakTime,omitempty" require:"true"`
+  // {'en':'peakvalue', 'zh_CN':'带宽峰值，单位Mbps'}
+  PeakValue *string `json:"peakValue,omitempty" xml:"peakValue,omitempty" require:"true"`
+  // {'en':'detail', 'zh_CN':'时点带宽数据'}
+  Detail *QueryCPSBandwidthQueryCPSBandwidthResponseDataDetail `json:"detail,omitempty" xml:"detail,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryCPSBandwidthQueryCPSBandwidthResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCPSBandwidthQueryCPSBandwidthResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryCPSBandwidthQueryCPSBandwidthResponseData) SetTotalFlow(v string) *QueryCPSBandwidthQueryCPSBandwidthResponseData {
+  s.TotalFlow = &v
+  return s
+}
+
+func (s *QueryCPSBandwidthQueryCPSBandwidthResponseData) SetPeakTime(v string) *QueryCPSBandwidthQueryCPSBandwidthResponseData {
+  s.PeakTime = &v
+  return s
+}
+
+func (s *QueryCPSBandwidthQueryCPSBandwidthResponseData) SetPeakValue(v string) *QueryCPSBandwidthQueryCPSBandwidthResponseData {
+  s.PeakValue = &v
+  return s
+}
+
+func (s *QueryCPSBandwidthQueryCPSBandwidthResponseData) SetDetail(v *QueryCPSBandwidthQueryCPSBandwidthResponseDataDetail) *QueryCPSBandwidthQueryCPSBandwidthResponseData {
+  s.Detail = v
+  return s
+}
+
+type QueryCPSBandwidthQueryCPSBandwidthResponseDataDetail struct {
+  // {'en':'timestamp', 'zh_CN':'时间点'}
+  Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
+  // {'en':'bandwidth', 'zh_CN':'带宽'}
+  Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
+}
+
+func (s QueryCPSBandwidthQueryCPSBandwidthResponseDataDetail) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCPSBandwidthQueryCPSBandwidthResponseDataDetail) GoString() string {
+  return s.String()
+}
+
+func (s *QueryCPSBandwidthQueryCPSBandwidthResponseDataDetail) SetTime(v string) *QueryCPSBandwidthQueryCPSBandwidthResponseDataDetail {
+  s.Time = &v
+  return s
+}
+
+func (s *QueryCPSBandwidthQueryCPSBandwidthResponseDataDetail) SetText(v string) *QueryCPSBandwidthQueryCPSBandwidthResponseDataDetail {
+  s.Text = &v
+  return s
+}
+
+type QueryCPSBandwidthPaths struct {
+}
+
+func (s QueryCPSBandwidthPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCPSBandwidthPaths) GoString() string {
+  return s.String()
+}
+
+type QueryCPSBandwidthParameters struct {
+}
+
+func (s QueryCPSBandwidthParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCPSBandwidthParameters) GoString() string {
+  return s.String()
+}
+
+type QueryCPSBandwidthRequestHeader struct {
+}
+
+func (s QueryCPSBandwidthRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCPSBandwidthRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryCPSBandwidthResponseHeader struct {
+}
+
+func (s QueryCPSBandwidthResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCPSBandwidthResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryP2PBandwidthRequest struct {
+  // {"en":"cust_en_name of sub-client.
+  // When a merged-account wants to view the information of the subclient,the cust_en_name is required.", "zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名"}
+  Cust *string `json:"cust,omitempty" xml:"cust,omitempty"`
+  // {"en":"Specifies the query date: 1.With format yyyy-mm-dd. 2.If not specified,it means today as default.", "zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
+  Date *string `json:"date,omitempty" xml:"date,omitempty"`
+  // {"en":"1.Must work with 'enddate' and they specify the query date scope. 2.With format yyyy-mm-dd. 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的起始日期,日期格式为yyyy-mm-dd；此参数需与enddate参数配合,若存在date参数,则该参数无效"}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty"`
+  // {"en":"1.Must work with 'startdate' and they specify the query date scope.
+  // 2.With format yyyy-mm-dd
+  // 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的结束日期,日期格式为yyyy-mm-dd此参数需与startdate参数配合,若存在date参数,则该参数无效。"}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty"`
+  // {"en":"domains that been queried.
+  // 1.If there are multiple inputs,use ';' as separator.
+  // 2.If not specified, it means all the domains of the account .", "zh_CN":"查询的频道，多个频道值请用英文分号';'，不选或者为空时默认为所查询客户的所有频道"}
+  Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
+  // {"en":"acceleration type.
+  // 1.If there are multiple inputs,use ';' as separator.
+  // 2.If not specified or specified as 'all', it means all the accetypes.", "zh_CN":"加速类型参数，如accetype=web。多个请用英文分号';'分隔开，不填或值为all表示所有类型"}
+  Accetype *string `json:"accetype,omitempty" xml:"accetype,omitempty"`
+  // {"en":"The response format:
+  // 1.optional values:xml, json.
+  // 2.'xml' as default.", "zh_CN":"返回结果格式,支持格式为xml和json,默认为xml"}
+  Dataformat *string `json:"dataformat,omitempty" xml:"dataformat,omitempty"`
+  // {"en":"Whether the channel is completely matched. When it is true, the complete domain name must be filled in (invalid or duplicate channels entered by the user will be filtered at this time, and 403 will be returned if all input channels are invalid. If it is not true, the display will end with the channel entered by the user All channels. Defaults to true", "zh_CN":"频道是否完全匹配,为true时，必须填写完整的域名(此时会过滤用户输入的无效或重复频道,所有输入频道都无效时返403.。不为true时，显示以用户输入的频道为结尾的所有频道。默认为true"}
+  IsExactMatch *string `json:"isExactMatch,omitempty" xml:"isExactMatch,omitempty"`
+  // {"en":"A value of 1 means log bandwidth is returned, 0 means cdn bandwidth is returned, and the default value is 0", "zh_CN":"值为1，表示返回的是log带宽，0表示返回的是cdn带宽，默认值为0"}
+  IsLog *string `json:"isLog,omitempty" xml:"isLog,omitempty"`
+  // {"en":"Control whether to return box bandwidth, the default is 0, when box=1, return cdn(log) bandwidth+p2p bandwidth+box bandwidth; when box=0, return cdn(log) bandwidth+p2p bandwidth", "zh_CN":"控制是否返回盒子带宽,默认为0,box=1时，返回cdn(log)带宽+p2p带宽+box带宽;box=0时，返回cdn(log)带宽+p2p带宽"}
+  Box *string `json:"box,omitempty" xml:"box,omitempty"`
+  // {"en":"Control whether to return flow details, the default is 0 and no return, return flow details when passing 1", "zh_CN":"控制是否返回流量明细，默认为0不返回，传1时返回流量明细"}
+  Flow *string `json:"flow,omitempty" xml:"flow,omitempty"`
+  // {"en":"1.If there are multiple inputs,use ';' as separator.For example,u can use 'region=cn;apac' to query data of cn and apac region.
+  // 2.If not specified, it means all the regions.", "zh_CN":"查询的加速区域的缩写，多个区域请用英文分号';'分隔开，如查询大陆及亚太区域，参数填写为：'region=cn;apac'。不选或者为空时默认为全部区域。"}
+  Region *string `json:"region,omitempty" xml:"region,omitempty"`
+}
+
+func (s QueryP2PBandwidthRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryP2PBandwidthRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryP2PBandwidthRequest) SetCust(v string) *QueryP2PBandwidthRequest {
+  s.Cust = &v
+  return s
+}
+
+func (s *QueryP2PBandwidthRequest) SetDate(v string) *QueryP2PBandwidthRequest {
+  s.Date = &v
+  return s
+}
+
+func (s *QueryP2PBandwidthRequest) SetStartdate(v string) *QueryP2PBandwidthRequest {
+  s.Startdate = &v
+  return s
+}
+
+func (s *QueryP2PBandwidthRequest) SetEnddate(v string) *QueryP2PBandwidthRequest {
+  s.Enddate = &v
+  return s
+}
+
+func (s *QueryP2PBandwidthRequest) SetChannel(v string) *QueryP2PBandwidthRequest {
+  s.Channel = &v
+  return s
+}
+
+func (s *QueryP2PBandwidthRequest) SetAccetype(v string) *QueryP2PBandwidthRequest {
+  s.Accetype = &v
+  return s
+}
+
+func (s *QueryP2PBandwidthRequest) SetDataformat(v string) *QueryP2PBandwidthRequest {
+  s.Dataformat = &v
+  return s
+}
+
+func (s *QueryP2PBandwidthRequest) SetIsExactMatch(v string) *QueryP2PBandwidthRequest {
+  s.IsExactMatch = &v
+  return s
+}
+
+func (s *QueryP2PBandwidthRequest) SetIsLog(v string) *QueryP2PBandwidthRequest {
+  s.IsLog = &v
+  return s
+}
+
+func (s *QueryP2PBandwidthRequest) SetBox(v string) *QueryP2PBandwidthRequest {
+  s.Box = &v
+  return s
+}
+
+func (s *QueryP2PBandwidthRequest) SetFlow(v string) *QueryP2PBandwidthRequest {
+  s.Flow = &v
+  return s
+}
+
+func (s *QueryP2PBandwidthRequest) SetRegion(v string) *QueryP2PBandwidthRequest {
+  s.Region = &v
+  return s
+}
+
+type QueryP2PBandwidthResponse struct {
+  // {'en':'provider', 'zh_CN':'结果'}
+  Provider *QueryP2PBandwidthQueryP2PBandwidthResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryP2PBandwidthResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryP2PBandwidthResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryP2PBandwidthResponse) SetProvider(v *QueryP2PBandwidthQueryP2PBandwidthResponseProvider) *QueryP2PBandwidthResponse {
+  s.Provider = v
+  return s
+}
+
+type QueryP2PBandwidthQueryP2PBandwidthResponseProvider struct {
+  // {'en':'tenant', 'zh_CN':'租户'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'type', 'zh_CN':'接口类型'}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {'en':'data', 'zh_CN':'p2p带宽数据'}
+  Date *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryP2PBandwidthQueryP2PBandwidthResponseProvider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryP2PBandwidthQueryP2PBandwidthResponseProvider) GoString() string {
+  return s.String()
+}
+
+func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProvider) SetName(v string) *QueryP2PBandwidthQueryP2PBandwidthResponseProvider {
+  s.Name = &v
+  return s
+}
+
+func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProvider) SetType(v string) *QueryP2PBandwidthQueryP2PBandwidthResponseProvider {
+  s.Type = &v
+  return s
+}
+
+func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProvider) SetDate(v *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate) *QueryP2PBandwidthQueryP2PBandwidthResponseProvider {
+  s.Date = v
+  return s
+}
+
+type QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate struct {
+  // {'en':'startdate', 'zh_CN':'开始时间'}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
+  // {'en':'enddate', 'zh_CN':'结束时间'}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
+  // {'en':'channel', 'zh_CN':'频道'}
+  Channel *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate) GoString() string {
+  return s.String()
+}
+
+func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate) SetStartdate(v string) *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate {
+  s.Startdate = &v
+  return s
+}
+
+func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate) SetEnddate(v string) *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate {
+  s.Enddate = &v
+  return s
+}
+
+func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate) SetChannel(v *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannel) *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate {
+  s.Channel = v
+  return s
+}
+
+type QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannel struct {
+  // {'en':'channel', 'zh_CN':'频道'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'bandwidth', 'zh_CN':'p2p带宽数据'}
+  Bandwidth []*QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannel) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannel) GoString() string {
+  return s.String()
+}
+
+func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannel) SetName(v string) *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannel {
+  s.Name = &v
+  return s
+}
+
+func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannel) SetBandwidth(v []*QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth) *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannel {
+  s.Bandwidth = v
+  return s
+}
+
+type QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth struct     {
+  // {'en':'time', 'zh_CN':'时间点，格式 yyyy-MM-dd hh:mm:ss'}
+  Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
+  // {'en':'p2pBandWidth', 'zh_CN':'cdn带宽，单位 Mbps'}
+  P2p *string `json:"p2p,omitempty" xml:"p2p,omitempty" require:"true"`
+  // {'en':'cdnBandWidth', 'zh_CN':'cdn带宽，单位 Mbps'}
+  Cdn *string `json:"cdn,omitempty" xml:"cdn,omitempty" require:"true"`
+  // {'en':'boxBandWidth', 'zh_CN':'p2sp带宽，单位 Mbps'}
+  Box *string `json:"box,omitempty" xml:"box,omitempty" require:"true"`
+  // {'en':'totalBandWidth', 'zh_CN':'总带宽，单位 Mbps'}
+  Total *string `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+}
+
+func (s QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth) GoString() string {
+  return s.String()
+}
+
+func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth) SetTime(v string) *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth {
+  s.Time = &v
+  return s
+}
+
+func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth) SetP2p(v string) *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth {
+  s.P2p = &v
+  return s
+}
+
+func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth) SetCdn(v string) *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth {
+  s.Cdn = &v
+  return s
+}
+
+func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth) SetBox(v string) *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth {
+  s.Box = &v
+  return s
+}
+
+func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth) SetTotal(v string) *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth {
+  s.Total = &v
+  return s
+}
+
+type QueryP2PBandwidthPaths struct {
+}
+
+func (s QueryP2PBandwidthPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryP2PBandwidthPaths) GoString() string {
+  return s.String()
+}
+
+type QueryP2PBandwidthParameters struct {
+}
+
+func (s QueryP2PBandwidthParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryP2PBandwidthParameters) GoString() string {
+  return s.String()
+}
+
+type QueryP2PBandwidthRequestHeader struct {
+}
+
+func (s QueryP2PBandwidthRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryP2PBandwidthRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryP2PBandwidthResponseHeader struct {
+}
+
+func (s QueryP2PBandwidthResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryP2PBandwidthResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type BandwidthTotalRequest struct {
+  // {"en":"cust_en_name of sub-client.
+  // When a merged-account wants to  view the information of the subclient,the cust_en_name is required.", "zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名"}
+  Cust *string `json:"cust,omitempty" xml:"cust,omitempty"`
+  // {"en":"Specifies the query date:
+  // 1)With format yyyy-mm-dd.
+  // 2)If not Specifies,it means today as default.", "zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
+  Date *string `json:"date,omitempty" xml:"date,omitempty"`
+  // {"en":"1)Must work with 'enddate' and they  specify the query date scope. 
+  // 2)With format yyyy-mm-dd.
+  // 3)If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的起始日期，日期格式为yyyy-mm-dd；此参数需与enddate参数配合,若存在date参数,则该参数无效"}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty"`
+  // {"en":"1)Must work with 'startdate' and they  specify the query date scope. 
+  // 2)With format yyyy-mm-dd
+  // 3)If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的结束日期,日期格式为yyyy-mm-dd；此参数需与startdate参数配合,若存在date参数,则该参数无效。"}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty"`
+  // {"en":"domains that been queried:
+  // 1)If there are multiple inputs,use  ';' as separator.
+  // 2)If not specified, it means all the domains of the account .", "zh_CN":"查询的频道，多个频道值请用英文分号';'，不选或者为空时默认为所查询客户的所有频道"}
+  Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
+  // {"en":"1)If there are multiple inputs,use ';' as separator.For example,u can use 'region=cn;apac' to query data of cn and apac region.
+  // 2)If not specified, it means all the regions.", "zh_CN":"查询的加速区域的缩写，多个区域请用英文分号';'分隔开，如查询大陆及亚太区域，参数填写为：'region=cn;apac'。不选或者为空时默认为全部区域。"}
+  Region *string `json:"region,omitempty" xml:"region,omitempty"`
+  // {"en":"acceleration type.
+  // 1)If there are multiple inputs,use ';' as separator.
+  // 2)If not specified or specified as 'all', it means all the accetypes.", "zh_CN":"加速类型参数，如accetype=web。多个请用英文分号';'分隔开，不填或值为all表示所有类型"}
+  Accetype *string `json:"accetype,omitempty" xml:"accetype,omitempty"`
+  // {"en":"The response format:
+  // 1)optional values:xml, json.
+  // 2)'xml' as default.", "zh_CN":"返回结果格式,支持格式为xml和json,默认为xml"}
+  Dataformat *string `json:"dataformat,omitempty" xml:"dataformat,omitempty"`
+  // {"en":"Specifies if  the 'channel' parameter should be exactly matched:
+  // 1)'true' as default.
+  // 2) If not 'true',it will query data of channels that ends with any item of input 'channel's.", "zh_CN":"&nbsp;频道是否完全匹配,为true时，必须填写完整的域名(此时会过滤用户输入的无效或重复频道,所有输入频道都无效时返403)。不为true时，显示以用户输入的频道为结尾的所有频道。默认为true"}
+  IsExactMatch *string `json:"isExactMatch,omitempty" xml:"isExactMatch,omitempty"`
+  // {"en":"1)If there isp multiple inputs,use ';' as demimeter.
+  // 2)optional values of isp: refers to the ISP-section of appendix.
+  // 3) If not specified,means all the isp.", "zh_CN":"&nbsp;要查询的运营商的缩写，多个isp请用英文分号';'分隔开。运营商的缩写格式参考附录：具体运行商（ISP）信息的代号。备注：只有当地区只写了'cn'时，填写isp信息才有效。不选或者为空时默认为所有isp。"}
+  Isp *string `json:"isp,omitempty" xml:"isp,omitempty"`
+}
+
+func (s BandwidthTotalRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthTotalRequest) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthTotalRequest) SetCust(v string) *BandwidthTotalRequest {
+  s.Cust = &v
+  return s
+}
+
+func (s *BandwidthTotalRequest) SetDate(v string) *BandwidthTotalRequest {
+  s.Date = &v
+  return s
+}
+
+func (s *BandwidthTotalRequest) SetStartdate(v string) *BandwidthTotalRequest {
+  s.Startdate = &v
+  return s
+}
+
+func (s *BandwidthTotalRequest) SetEnddate(v string) *BandwidthTotalRequest {
+  s.Enddate = &v
+  return s
+}
+
+func (s *BandwidthTotalRequest) SetChannel(v string) *BandwidthTotalRequest {
+  s.Channel = &v
+  return s
+}
+
+func (s *BandwidthTotalRequest) SetRegion(v string) *BandwidthTotalRequest {
+  s.Region = &v
+  return s
+}
+
+func (s *BandwidthTotalRequest) SetAccetype(v string) *BandwidthTotalRequest {
+  s.Accetype = &v
+  return s
+}
+
+func (s *BandwidthTotalRequest) SetDataformat(v string) *BandwidthTotalRequest {
+  s.Dataformat = &v
+  return s
+}
+
+func (s *BandwidthTotalRequest) SetIsExactMatch(v string) *BandwidthTotalRequest {
+  s.IsExactMatch = &v
+  return s
+}
+
+func (s *BandwidthTotalRequest) SetIsp(v string) *BandwidthTotalRequest {
+  s.Isp = &v
+  return s
+}
+
+type BandwidthTotalResponse struct {
+  // {'en':'provider', 'zh_CN':'结果'}
+  Provider *BandwidthTotalBandwidthTotalResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthTotalResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthTotalResponse) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthTotalResponse) SetProvider(v *BandwidthTotalBandwidthTotalResponseProvider) *BandwidthTotalResponse {
+  s.Provider = v
+  return s
+}
+
+type BandwidthTotalBandwidthTotalResponseProvider struct {
+  // {'en':'tenant', 'zh_CN':'租户'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'type', 'zh_CN':'接口类型'}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {'en':'resultType', 'zh_CN':'统计类型'}
+  ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty" require:"true"`
+  // {'en':'data', 'zh_CN':'时点数据'}
+  Date *BandwidthTotalBandwidthTotalResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthTotalBandwidthTotalResponseProvider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthTotalBandwidthTotalResponseProvider) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthTotalBandwidthTotalResponseProvider) SetName(v string) *BandwidthTotalBandwidthTotalResponseProvider {
+  s.Name = &v
+  return s
+}
+
+func (s *BandwidthTotalBandwidthTotalResponseProvider) SetType(v string) *BandwidthTotalBandwidthTotalResponseProvider {
+  s.Type = &v
+  return s
+}
+
+func (s *BandwidthTotalBandwidthTotalResponseProvider) SetResultType(v string) *BandwidthTotalBandwidthTotalResponseProvider {
+  s.ResultType = &v
+  return s
+}
+
+func (s *BandwidthTotalBandwidthTotalResponseProvider) SetDate(v *BandwidthTotalBandwidthTotalResponseProviderDate) *BandwidthTotalBandwidthTotalResponseProvider {
+  s.Date = v
+  return s
+}
+
+type BandwidthTotalBandwidthTotalResponseProviderDate struct {
+  // {'en':'startdate', 'zh_CN':'开始时间'}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
+  // {'en':'enddate', 'zh_CN':'结束时间'}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
+  // {'en':'channel', 'zh_CN':'频道'}
+  Channel *BandwidthTotalBandwidthTotalResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthTotalBandwidthTotalResponseProviderDate) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthTotalBandwidthTotalResponseProviderDate) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthTotalBandwidthTotalResponseProviderDate) SetStartdate(v string) *BandwidthTotalBandwidthTotalResponseProviderDate {
+  s.Startdate = &v
+  return s
+}
+
+func (s *BandwidthTotalBandwidthTotalResponseProviderDate) SetEnddate(v string) *BandwidthTotalBandwidthTotalResponseProviderDate {
+  s.Enddate = &v
+  return s
+}
+
+func (s *BandwidthTotalBandwidthTotalResponseProviderDate) SetChannel(v *BandwidthTotalBandwidthTotalResponseProviderDateChannel) *BandwidthTotalBandwidthTotalResponseProviderDate {
+  s.Channel = v
+  return s
+}
+
+type BandwidthTotalBandwidthTotalResponseProviderDateChannel struct {
+  // {'en':'channel', 'zh_CN':'频道'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'totalFlow', 'zh_CN':'总流量'}
+  TotalFlow []*BandwidthTotalBandwidthTotalResponseProviderDateChannelTotalFlow `json:"totalFlow,omitempty" xml:"totalFlow,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s BandwidthTotalBandwidthTotalResponseProviderDateChannel) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthTotalBandwidthTotalResponseProviderDateChannel) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthTotalBandwidthTotalResponseProviderDateChannel) SetName(v string) *BandwidthTotalBandwidthTotalResponseProviderDateChannel {
+  s.Name = &v
+  return s
+}
+
+func (s *BandwidthTotalBandwidthTotalResponseProviderDateChannel) SetTotalFlow(v []*BandwidthTotalBandwidthTotalResponseProviderDateChannelTotalFlow) *BandwidthTotalBandwidthTotalResponseProviderDateChannel {
+  s.TotalFlow = v
+  return s
+}
+
+type BandwidthTotalBandwidthTotalResponseProviderDateChannelTotalFlow struct     {
+  // {'en':'the total flow(GB)', 'zh_CN':'总流量（单位GB）'}
+  Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
+}
+
+func (s BandwidthTotalBandwidthTotalResponseProviderDateChannelTotalFlow) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthTotalBandwidthTotalResponseProviderDateChannelTotalFlow) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthTotalBandwidthTotalResponseProviderDateChannelTotalFlow) SetText(v string) *BandwidthTotalBandwidthTotalResponseProviderDateChannelTotalFlow {
+  s.Text = &v
+  return s
+}
+
+type BandwidthTotalPaths struct {
+}
+
+func (s BandwidthTotalPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthTotalPaths) GoString() string {
+  return s.String()
+}
+
+type BandwidthTotalParameters struct {
+}
+
+func (s BandwidthTotalParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthTotalParameters) GoString() string {
+  return s.String()
+}
+
+type BandwidthTotalRequestHeader struct {
+}
+
+func (s BandwidthTotalRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthTotalRequestHeader) GoString() string {
+  return s.String()
+}
+
+type BandwidthTotalResponseHeader struct {
+}
+
+func (s BandwidthTotalResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthTotalResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type ReportDomainOriginResponseTimeServiceRequest struct {
+  // {'en':'Start time:
+  // 
+  // 1. The format is yyyyy-MM-ddTHH: mm: SS + 08:00, for example, 2024-01-23T10:00 + 08:00 (10:00:00 Beijing time on January 23, 2024);
+  // 
+  // 2. Can not exceed the current time;
+  // 
+  // 3. The latest half year (183 days) data can be obtained at most.', 'zh_CN':'开始时间：
+  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00，例如，2024-01-23T10:00:00+08:00（为北京时间2024年01月23日10点0分0秒）；
+  // 2.不能大于当前时间；
+  // 3.最多可获取最近半年（183天）的数据。'}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
+  // {'en':'End time:
+  // 
+  // 1. The format is yyyy-MM-ddTHH:mm:ss+08:00;
+  // 
+  // 2. The end time is greater than the start time.
+  // 
+  // 3. If the end time is greater than the current time, the current time is taken.
+  // 
+  // 4. DateFrom and dateTo are not uploaded, defaulting to query the past 24 hours; if only one is not uploaded, throw an exception;
+  // 
+  // 5. Maximum query interval allowed: 7 days, that is, the difference between dateFrom and dateTo can not exceed 7 days. ', 'zh_CN':'结束时间：
+  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00；
+  // 2.结束时间需大于开始时间；
+  // 3.结束时间如果大于当前时间，取当前时间；
+  // 4.dateFrom，dateTo二者都未传，默认查询过去的24小时；如仅有一个未传，抛异常；
+  // 5.允许查询最大间隔：7天，即dateFrom和dateTo相差不能超过7天。'}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
+  // {'en':'Domains:
+  // 
+  // 1.Domain is not uploaded: Query all domain names of the account (More than 20 domains will error, you can contact technical support for adjustment);
+  // 
+  // 2.Domain is uploaded: Up to 20 domains are supported (you can contact technical support for adjustment).', 'zh_CN':'域名：
+  // 
+  // 1.未传递domain时：查询账号下所有全部域名(域名超过20个则报错，可联系技术支持调整)；
+  // 
+  // 2.有传递domain时：域名最多支持传20个（可联系技术支持调整）。'}
+  Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" type:"Repeated"`
+}
+
+func (s ReportDomainOriginResponseTimeServiceRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDomainOriginResponseTimeServiceRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ReportDomainOriginResponseTimeServiceRequest) SetDateFrom(v string) *ReportDomainOriginResponseTimeServiceRequest {
+  s.DateFrom = &v
+  return s
+}
+
+func (s *ReportDomainOriginResponseTimeServiceRequest) SetDateTo(v string) *ReportDomainOriginResponseTimeServiceRequest {
+  s.DateTo = &v
+  return s
+}
+
+func (s *ReportDomainOriginResponseTimeServiceRequest) SetDomain(v []*string) *ReportDomainOriginResponseTimeServiceRequest {
+  s.Domain = v
+  return s
+}
+
+type ReportDomainOriginResponseTimeServiceResponse struct {
+  // {'en':'data', 'zh_CN':'请求结果'}
+  Data []*ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportDomainOriginResponseTimeServiceResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDomainOriginResponseTimeServiceResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ReportDomainOriginResponseTimeServiceResponse) SetData(v []*ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseData) *ReportDomainOriginResponseTimeServiceResponse {
+  s.Data = v
+  return s
+}
+
+type ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseData struct     {
+  // {'en':'Domain', 'zh_CN':'域名'}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {'en':'details', 'zh_CN':'请求结果的详细数据'}
+  DetailList []*ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseData) SetDomain(v string) *ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseData {
+  s.Domain = &v
+  return s
+}
+
+func (s *ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseData) SetDetailList(v []*ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseDataDetailList) *ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseData {
+  s.DetailList = v
+  return s
+}
+
+type ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseDataDetailList struct     {
+  // {'en':'Time:
+  // 
+  // 1. When the data query granularity is 1m, then the format is yyyy-MM-dd HH:mm; Each time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is (yyyy-MM-dd+1) 00:00;
+  // 
+  // 2. Return the time slices that contained in start time and in end time.', 'zh_CN':'时间，
+  // 查询的数据粒度为1m时，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:01，最后一个时间片是（yyyy-MM-dd+1） 00:00；
+  // 返回开始时间和结束时间包含的时间片。'}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {'en':'Return to origin response time. Unit is ms and 2 digits of decimals are allowed.
+  // ', 'zh_CN':'回源响应时间，单位ms。保留2位小数'}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+}
+
+func (s ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseDataDetailList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseDataDetailList) GoString() string {
+  return s.String()
+}
+
+func (s *ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseDataDetailList) SetTimestamp(v string) *ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseDataDetailList {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseDataDetailList) SetValue(v string) *ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseDataDetailList {
+  s.Value = &v
+  return s
+}
+
+type ReportDomainOriginResponseTimeServicePaths struct {
+}
+
+func (s ReportDomainOriginResponseTimeServicePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDomainOriginResponseTimeServicePaths) GoString() string {
+  return s.String()
+}
+
+type ReportDomainOriginResponseTimeServiceParameters struct {
+}
+
+func (s ReportDomainOriginResponseTimeServiceParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDomainOriginResponseTimeServiceParameters) GoString() string {
+  return s.String()
+}
+
+type ReportDomainOriginResponseTimeServiceRequestHeader struct {
+}
+
+func (s ReportDomainOriginResponseTimeServiceRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDomainOriginResponseTimeServiceRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ReportDomainOriginResponseTimeServiceResponseHeader struct {
+}
+
+func (s ReportDomainOriginResponseTimeServiceResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDomainOriginResponseTimeServiceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type ReportCountryServerBandwidthServiceRequest struct {
+  // {"en":"Start time:
+  // 
+  // 1. The format is yyyyy-MM-ddTHH: mm: SS + 08:00, for example, 2016-12-02T10:00 + 08:00 (10:0:00 Beijing time on December 2, 2016);
+  // 
+  // 2. Can not exceed the current time;
+  // 
+  // 3. The latest half year (183 days) data can be obtained at most.", "zh_CN":"开始时间:
+  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00,例如,2016-12-02T10:00:00+08:00(为北京时间2016年12月2日10点0分0秒);
+  // 2.不能大于当前时间;
+  // 3.最多可获取最近半年(183天)的数据。"}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
+  // {"en":"End time:
+  // 
+  // 1. The 1format is yyyy-MM-ddTHH:mm:ss+08:00;
+  // 
+  // 2. The end time is greater than the start time.
+  // 
+  // 3. If the end time is greater than the current time, the current time is taken.
+  // 
+  // 4. DateFrom and dateTo are not uploaded, defaulting to query the past 24 hours; if only one is not uploaded, throw an exception;
+  // 
+  // 5. Maximum query interval allowed: 7 days, that is, the difference between dateFrom and dateTo can not exceed 7 days.  ", "zh_CN":"结束时间:
+  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00;
+  // 2.结束时间需大于开始时间;
+  // 3.结束时间如果大于当前时间,取当前时间;
+  // 4.dateFrom,dateTo二者都未传,默认查询过去的24小时;如仅有一个未传,抛异常;
+  // 5.允许查询最大间隔:7天,即dateFrom和dateTo相差不能超过7天。"}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
+  // {"en":"Domains:
+  // 
+  // 1.Domain is not uploaded: Query all domain names of the account (More than 20 domains will error,you can contact technical support for adjustment);
+  // 
+  // 2.Domain is uploaded: Up to 20 domains are supported(you can contact technical support for adjustment).", "zh_CN":"域名:
+  // 
+  // 1.未传递domain时:查询账号下所有全部域名(域名超过20个则报错,可联系技术支持调整);
+  // 
+  // 2.有传递domain时:域名最多支持传20个(可联系技术支持调整)。"}
+  Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" type:"Repeated"`
+  // {"en":"Country area:
+  // 
+  // 1. countryCode is not uploaded: Query all country areas by default;
+  // 
+  // 2. countryCode is uploaded: Multiple can be uploaded, such as cn, in.  Please refer to the appendix description section of the overview page.", "zh_CN":"国家区域(含中国台湾、中国澳门、中国香港、中国大陆):
+  // 
+  // 1.未传递countryCode时:查询全部国家区域;
+  // 
+  // 2.有传递countryCode时:可传多个,如cn,in。可传递的值详见概览页附录说明章节"}
+  CountryCode []*string `json:"countryCode,omitempty" xml:"countryCode,omitempty" type:"Repeated"`
+  // {"en":"Data granularity:
+  // 
+  // 5m: 5 minute granularity; Default value is 5m.
+  // 
+  // 1h: 1 hour granularity.", "zh_CN":"数据粒度:
+  // 
+  // 5m:5分钟粒度。不传默认5分钟粒度
+  // 
+  // 1h:1小时粒度;"}
+  DataInterval *string `json:"dataInterval,omitempty" xml:"dataInterval,omitempty"`
+}
+
+func (s ReportCountryServerBandwidthServiceRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportCountryServerBandwidthServiceRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ReportCountryServerBandwidthServiceRequest) SetDateFrom(v string) *ReportCountryServerBandwidthServiceRequest {
+  s.DateFrom = &v
+  return s
+}
+
+func (s *ReportCountryServerBandwidthServiceRequest) SetDateTo(v string) *ReportCountryServerBandwidthServiceRequest {
+  s.DateTo = &v
+  return s
+}
+
+func (s *ReportCountryServerBandwidthServiceRequest) SetDomain(v []*string) *ReportCountryServerBandwidthServiceRequest {
+  s.Domain = v
+  return s
+}
+
+func (s *ReportCountryServerBandwidthServiceRequest) SetCountryCode(v []*string) *ReportCountryServerBandwidthServiceRequest {
+  s.CountryCode = v
+  return s
+}
+
+func (s *ReportCountryServerBandwidthServiceRequest) SetDataInterval(v string) *ReportCountryServerBandwidthServiceRequest {
+  s.DataInterval = &v
+  return s
+}
+
+type ReportCountryServerBandwidthServiceResponse struct {
+  // {"en":"Domain", "zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  CountryData []*ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryData `json:"countryData,omitempty" xml:"countryData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportCountryServerBandwidthServiceResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportCountryServerBandwidthServiceResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ReportCountryServerBandwidthServiceResponse) SetDomain(v string) *ReportCountryServerBandwidthServiceResponse {
+  s.Domain = &v
+  return s
+}
+
+func (s *ReportCountryServerBandwidthServiceResponse) SetCountryData(v []*ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryData) *ReportCountryServerBandwidthServiceResponse {
+  s.CountryData = v
+  return s
+}
+
+type ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryData struct     {
+  // {"en":"Country area", "zh_CN":"国家地区"}
+  CountryCode *string `json:"countryCode,omitempty" xml:"countryCode,omitempty" require:"true"`
+  DetailList []*ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryData) SetCountryCode(v string) *ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryData {
+  s.CountryCode = &v
+  return s
+}
+
+func (s *ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryData) SetDetailList(v []*ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList) *ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryData {
+  s.DetailList = v
+  return s
+}
+
+type ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList struct     {
+  // {"en":"Time:
+  // 
+  // 1. When the data query granularity is 5m, then the format is yyyy-MM-dd HH:mm; ach time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:05, and the last one is (yyyy-MM-dd+1) 00:00;
+  // 
+  // 2. When the data query granularity is 1h, the format is yyyy-MM-dd HH; Each time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 01, and the last one is (yyyy-MM-dd+1) 00;
+  // 
+  // 3. Return the time slices that contained in start time and in end time.", "zh_CN":"时间,
+  // 查询的数据粒度为5m时,格式为yyyy-MM-dd HH:mm;每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05,最后一个时间片是(yyyy-MM-dd+1) 00:00;
+  // 查询的数据粒度为1h时,格式为yyyy-MM-dd HH;每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 01,最后一个时间片是(yyyy-MM-dd+1) 00;
+  // 返回开始时间和结束时间包含的时间片。"}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {"en":"Bandwidth value, unit Mbps", "zh_CN":"时间点对应的边缘带宽数据,单位Mbps"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+  // {"en":"Flow, unit MB", "zh_CN":"时间点对应的边缘流量,单位MB"}
+  Flow *string `json:"flow,omitempty" xml:"flow,omitempty" require:"true"`
+}
+
+func (s ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList) GoString() string {
+  return s.String()
+}
+
+func (s *ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList) SetTimestamp(v string) *ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList) SetValue(v string) *ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList {
+  s.Value = &v
+  return s
+}
+
+func (s *ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList) SetFlow(v string) *ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList {
+  s.Flow = &v
+  return s
+}
+
+type ReportCountryServerBandwidthServicePaths struct {
+}
+
+func (s ReportCountryServerBandwidthServicePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportCountryServerBandwidthServicePaths) GoString() string {
+  return s.String()
+}
+
+type ReportCountryServerBandwidthServiceParameters struct {
+}
+
+func (s ReportCountryServerBandwidthServiceParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportCountryServerBandwidthServiceParameters) GoString() string {
+  return s.String()
+}
+
+type ReportCountryServerBandwidthServiceRequestHeader struct {
+}
+
+func (s ReportCountryServerBandwidthServiceRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportCountryServerBandwidthServiceRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ReportCountryServerBandwidthServiceResponseHeader struct {
+}
+
+func (s ReportCountryServerBandwidthServiceResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportCountryServerBandwidthServiceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type ReportBandwidthRequestByIPIspProvinceRequest struct {
+  // {"en":"Start time:
+  // 
+  // 1. The format is yyyyy-MM-ddTHH: mm: SS + 08:00, for example, 2024-12-23T10:00 + 08:00 (10:00:00 Beijing time on December 23, 2024);
+  // 
+  // 2. Can not exceed the current time;
+  // 
+  // 3. The latest half year (183 days) data can be obtained at most.", "zh_CN":"开始时间：
+  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00，例如，2024-12-23T10:00:00+08:00（为北京时间2024年12月23日10点0分0秒）；
+  // 2.不能大于当前时间；
+  // 3.最多可获取最近半年（183天）的数据。"}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
+  // {"en":"End time:
+  // 
+  // 1. The 1format is yyyy-MM-ddTHH:mm:ss+08:00;
+  // 
+  // 2. The end time is greater than the start time.
+  // 
+  // 3. If the end time is greater than the current time, the current time is taken.
+  // 
+  // 4. DateFrom and dateTo are not uploaded, defaulting to query the past 24 hours; if only one is not uploaded, throw an exception;
+  // 
+  // 5. Maximum query interval allowed: 7 days, that is, the difference between dateFrom and dateTo can not exceed 7 days.  ", "zh_CN":"结束时间：
+  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00；
+  // 2.结束时间需大于开始时间；
+  // 3.结束时间如果大于当前时间，取当前时间；
+  // 4.dateFrom，dateTo二者都未传，默认查询过去的24小时；如仅有一个未传，抛异常；
+  // 5.允许查询最大间隔：7天，即dateFrom和dateTo相差不能超过7天。"}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
+  // {"en":"Domains: 1.Domain is not uploaded: Query all domain names of the account (More than 20 domains will error, you can contact technical support for adjustment); 2.Domain is uploaded: Up to 20 domains are supported (you can contact technical support for adjustment).", "zh_CN":"域名： 1.未传递domain时：查询账号下所有全部域名(域名超过20个则报错，可联系技术支持调整)； 2.有传递domain时：域名最多支持传20个（可联系技术支持调整）。"}
+  Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" type:"Repeated"`
+  // {"en":"Data granularity: 1m:1 mintues5m: 5 minute granularity; Default value is 5m. ", "zh_CN":"数据粒度：1m：1分钟粒度 5m：5分钟粒度。不传默认5分钟粒度 "}
+  DataInterval *string `json:"dataInterval,omitempty" xml:"dataInterval,omitempty"`
+  // {"en":"Province: 1. Province is empty: Query all provinces and aggregate the returned data according to all provinces; 2. Province : please send province code. ", "zh_CN":"省份： 1.未传递province时：查询所有省份，返回的数据按照所有省份聚合。 2.有传递province时：传递省份code，可传多个"}
+  Province []*string `json:"province,omitempty" xml:"province,omitempty" type:"Repeated"`
+  // {"en":"ISP: 1. ISP  is empty: Query all ISPs and aggregate the returned data according to all ISPs; 2. ISP: please send ISP code.", "zh_CN":"运营商： 1.未传递isp时：查询所有isp，返回的数据按照所有运营商聚合。 2.有传递isp时：传递运营商code，可传多个"}
+  Isp []*string `json:"isp,omitempty" xml:"isp,omitempty" type:"Repeated"`
+  // {"en":"Group dimension 1.Options are domain, province, isp, and more than one value can be entered; 2.The data is displayed according to the specified dimension;", "zh_CN":"分组维度 可选值为domain、province、isp，可传入多个值； 有传入则按照该维度展示明细数据； 没传默认全部聚合。"}
+  GroupBy []*string `json:"groupBy,omitempty" xml:"groupBy,omitempty" type:"Repeated"`
+}
+
+func (s ReportBandwidthRequestByIPIspProvinceRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthRequestByIPIspProvinceRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ReportBandwidthRequestByIPIspProvinceRequest) SetDateFrom(v string) *ReportBandwidthRequestByIPIspProvinceRequest {
+  s.DateFrom = &v
+  return s
+}
+
+func (s *ReportBandwidthRequestByIPIspProvinceRequest) SetDateTo(v string) *ReportBandwidthRequestByIPIspProvinceRequest {
+  s.DateTo = &v
+  return s
+}
+
+func (s *ReportBandwidthRequestByIPIspProvinceRequest) SetDomain(v []*string) *ReportBandwidthRequestByIPIspProvinceRequest {
+  s.Domain = v
+  return s
+}
+
+func (s *ReportBandwidthRequestByIPIspProvinceRequest) SetDataInterval(v string) *ReportBandwidthRequestByIPIspProvinceRequest {
+  s.DataInterval = &v
+  return s
+}
+
+func (s *ReportBandwidthRequestByIPIspProvinceRequest) SetProvince(v []*string) *ReportBandwidthRequestByIPIspProvinceRequest {
+  s.Province = v
+  return s
+}
+
+func (s *ReportBandwidthRequestByIPIspProvinceRequest) SetIsp(v []*string) *ReportBandwidthRequestByIPIspProvinceRequest {
+  s.Isp = v
+  return s
+}
+
+func (s *ReportBandwidthRequestByIPIspProvinceRequest) SetGroupBy(v []*string) *ReportBandwidthRequestByIPIspProvinceRequest {
+  s.GroupBy = v
+  return s
+}
+
+type ReportBandwidthRequestByIPIspProvinceResponse struct {
+  // {"en":"request result status code", "zh_CN":"请求结果状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"request result information", "zh_CN":"请求结果信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"result", "zh_CN":"结果"}
+  Data []*ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportBandwidthRequestByIPIspProvinceResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthRequestByIPIspProvinceResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ReportBandwidthRequestByIPIspProvinceResponse) SetCode(v string) *ReportBandwidthRequestByIPIspProvinceResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ReportBandwidthRequestByIPIspProvinceResponse) SetMessage(v string) *ReportBandwidthRequestByIPIspProvinceResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *ReportBandwidthRequestByIPIspProvinceResponse) SetData(v []*ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseData) *ReportBandwidthRequestByIPIspProvinceResponse {
+  s.Data = v
+  return s
+}
+
+type ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseData struct     {
+  // {"en":"Domain", "zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {"en":"ISP code", "zh_CN":"运营商code"}
+  IspData []*ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseData) SetDomain(v string) *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseData {
+  s.Domain = &v
+  return s
+}
+
+func (s *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseData) SetIspData(v []*ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspData) *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseData {
+  s.IspData = v
+  return s
+}
+
+type ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspData struct     {
+  // {"en":"Province code", "zh_CN":"省份code"}
+  ProvinceData []*ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspData) SetProvinceData(v []*ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData) *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspData {
+  s.ProvinceData = v
+  return s
+}
+
+type ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData struct     {
+  // {"en":"", "zh_CN":""}
+  DetailList []*ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData) SetDetailList(v []*ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData {
+  s.DetailList = v
+  return s
+}
+
+type ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList struct     {
+  // {"en":"Time: 1.the format is yyyy-MM-dd HH:mm;   ach time slice value represents the value within the previous time granularity range. When the data query granularity is 5m,The first time slice of the day is yyyy-MM-dd 00:05, and the last one is (yyyy-MM-dd+1) 00:00; 2. When the data query granularity is 1m, The first time slice of the day is yyyy-MM-dd 00:05, and the last one is (yyyy-MM-dd+1) 00:00.", "zh_CN":"时间， 格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。查询的数据粒度为5m时，一天开始的时间片是yyyy-MM-dd 00:05，最后一个时间片是（yyyy-MM-dd+1） 00:00； 查询的数据粒度为1m时，一天开始的时间片是yyyy-MM-dd 00:01，最后一个时间片是（yyyy-MM-dd+1） 00:00；"}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {"en":"Number of IPv4 requests.", "zh_CN":"IPv4请求数"}
+  V4Request *string `json:"v4Request,omitempty" xml:"v4Request,omitempty" require:"true"`
+  // {"en":"Bandwidth of IPv4", "zh_CN":"IPv4带宽 单位Mbps。保留2位小数"}
+  V4Bandwidth *string `json:"v4Bandwidth,omitempty" xml:"v4Bandwidth,omitempty" require:"true"`
+  // {"en":"Number of IPv6 requests.", "zh_CN":"IPv6请求数"}
+  V6Request *string `json:"v6Request,omitempty" xml:"v6Request,omitempty" require:"true"`
+  // {"en":"Bandwidth of IPv6", "zh_CN":"IPv6带宽 单位Mbps。保留2位小数"}
+  V6Bandwidth *string `json:"v6Bandwidth,omitempty" xml:"v6Bandwidth,omitempty" require:"true"`
+}
+
+func (s ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) GoString() string {
+  return s.String()
+}
+
+func (s *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) SetTimestamp(v string) *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) SetV4Request(v string) *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList {
+  s.V4Request = &v
+  return s
+}
+
+func (s *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) SetV4Bandwidth(v string) *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList {
+  s.V4Bandwidth = &v
+  return s
+}
+
+func (s *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) SetV6Request(v string) *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList {
+  s.V6Request = &v
+  return s
+}
+
+func (s *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) SetV6Bandwidth(v string) *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList {
+  s.V6Bandwidth = &v
+  return s
+}
+
+type ReportBandwidthRequestByIPIspProvincePaths struct {
+}
+
+func (s ReportBandwidthRequestByIPIspProvincePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthRequestByIPIspProvincePaths) GoString() string {
+  return s.String()
+}
+
+type ReportBandwidthRequestByIPIspProvinceParameters struct {
+}
+
+func (s ReportBandwidthRequestByIPIspProvinceParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthRequestByIPIspProvinceParameters) GoString() string {
+  return s.String()
+}
+
+type ReportBandwidthRequestByIPIspProvinceRequestHeader struct {
+}
+
+func (s ReportBandwidthRequestByIPIspProvinceRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthRequestByIPIspProvinceRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ReportBandwidthRequestByIPIspProvinceResponseHeader struct {
+}
+
+func (s ReportBandwidthRequestByIPIspProvinceResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthRequestByIPIspProvinceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryBandwidthMinutelyRequest struct {
+  // {"en":"Start Time:
+  // 1. The time format is yyyy-MM-ddTHH:MM:ss+08:00, for example, December 2, 2016 10:00-02T10:00:00+08:00 (Beijing time on December 2, 2016 10:00 am 0 seconds);
+  // 2. No more than the current time
+  // 3. Only available for the last 30 minutes.", "zh_CN":"开始时间：
+  // 1.时间格式为yyyy-MM-ddTHH:mm:ss+08:00，例如，2016-12-02T10:00:00+08:00（为北京时间2016年12月2日10点0分0秒）；
+  // 2.不能大于当前时间
+  // 3.只能查询最近30分钟。"}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
+  // {"en":"End Time:
+  // 1. Time Format 2016-12-02T10:00:00+08:00
+  // 2. the end time should be greater than the start time. if the end time is greater than the current time, take the current time.
+  // 3. dateFrom, dateTo both not upload, default query past 30 minutes; If only one is not sent, throw exception
+  // 4. Allow maximum query interval: 30 minutes, i.e. the difference between dateFrom and dateTo should not exceed 30 minutes.", "zh_CN":"结束时间：
+  // 
+  // 1.时间格式2016-12-02T10:00:00+08:00
+  // 2.结束时间需大于开始时间，结束时间如果大于当前时间，取当前时间。
+  // 3.dateFrom，dateTo二者都未传，默认查询过去的30分钟；如仅有一个未传，抛异常
+  // 4.允许查询最大时间间隔：30分钟，即dateFrom和dateTo相差不能超过30分钟。"}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
+  // {"en":"Multiple domain names:
+  // 1. The maximum number of incoming domain names is 50 (contact technical support for adjustment).
+  // 2. filter out invalid domain name; A domain name that is not in the historical domain name table.", "zh_CN":"多域名：
+  // 1.单次传入域名数量最多50个（可联系技术支持调整）。
+  // 2.过滤掉无效域名；即不在历史域名表中的域名。"}
+  Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" type:"Repeated"`
+  // {"en":"Acceleration zone:
+  // 1. do not pass the default query to all areas.
+  // 2. currently only the leaflet area is supported externally.
+  // 3. optional values: cn, apac, am, emea.", "zh_CN":"加速区域：
+  // 1.不传默认查询全部区域。
+  // 2.目前对外只支持传单区域。
+  // 3.可选值：cn、apac、am、emea；"}
+  Region *string `json:"region,omitempty" xml:"region,omitempty"`
+  // {"en":"grouped dimension:
+  // 1. the optional value is domain.
+  // 2. If incoming data is shown in accordance with the dimension;", "zh_CN":"分组维度:
+  // 1.可选值为domain；
+  // 2.有传入则按照该维度展示明细数据；"}
+  GroupBy *string `json:"groupBy,omitempty" xml:"groupBy,omitempty"`
+}
+
+func (s QueryBandwidthMinutelyRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthMinutelyRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryBandwidthMinutelyRequest) SetDateFrom(v string) *QueryBandwidthMinutelyRequest {
+  s.DateFrom = &v
+  return s
+}
+
+func (s *QueryBandwidthMinutelyRequest) SetDateTo(v string) *QueryBandwidthMinutelyRequest {
+  s.DateTo = &v
+  return s
+}
+
+func (s *QueryBandwidthMinutelyRequest) SetDomain(v []*string) *QueryBandwidthMinutelyRequest {
+  s.Domain = v
+  return s
+}
+
+func (s *QueryBandwidthMinutelyRequest) SetRegion(v string) *QueryBandwidthMinutelyRequest {
+  s.Region = &v
+  return s
+}
+
+func (s *QueryBandwidthMinutelyRequest) SetGroupBy(v string) *QueryBandwidthMinutelyRequest {
+  s.GroupBy = &v
+  return s
+}
+
+type QueryBandwidthMinutelyResponse struct {
+  // {"en":"Request result status code", "zh_CN":"请求结果状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Request result information", "zh_CN":"请求结果信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  Data []*QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryBandwidthMinutelyResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthMinutelyResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryBandwidthMinutelyResponse) SetCode(v string) *QueryBandwidthMinutelyResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QueryBandwidthMinutelyResponse) SetMessage(v string) *QueryBandwidthMinutelyResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *QueryBandwidthMinutelyResponse) SetData(v []*QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData) *QueryBandwidthMinutelyResponse {
+  s.Data = v
+  return s
+}
+
+type QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData struct     {
+  // {"en":"Domain", "zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {"en":"Peak Time", "zh_CN":"峰值时间"}
+  PeakTime *string `json:"peakTime,omitempty" xml:"peakTime,omitempty" require:"true"`
+  // {"en":"Peak Bandwidth", "zh_CN":"带宽峰值"}
+  PeakValue *string `json:"peakValue,omitempty" xml:"peakValue,omitempty" require:"true"`
+  // {"en":"The granularity of data is 1 minute, and the format is yyyy-MM-dd HH:MM. Each time slice data value represents the data value in the previous time granularity range. Returns the time slice included with the start and end times.", "zh_CN":"数据粒度为1分钟，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。
+  //                 一天开始的时间片是yyyy-MM-dd 00:01:00，最后一个时间片是（yyyy-MM-dd） 24:00:00。
+  //                 返回开始时间和结束时间包含的时间片。"}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {"en":"Bandwidth value in Mbps, with 2 decimal places reserved.", "zh_CN":"带宽值，单位Mbps，保留2位小数。"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+}
+
+func (s QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData) SetDomain(v string) *QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData {
+  s.Domain = &v
+  return s
+}
+
+func (s *QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData) SetPeakTime(v string) *QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData {
+  s.PeakTime = &v
+  return s
+}
+
+func (s *QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData) SetPeakValue(v string) *QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData {
+  s.PeakValue = &v
+  return s
+}
+
+func (s *QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData) SetTimestamp(v string) *QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData) SetValue(v string) *QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData {
+  s.Value = &v
+  return s
+}
+
+type QueryBandwidthMinutelyPaths struct {
+}
+
+func (s QueryBandwidthMinutelyPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthMinutelyPaths) GoString() string {
+  return s.String()
+}
+
+type QueryBandwidthMinutelyParameters struct {
+}
+
+func (s QueryBandwidthMinutelyParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthMinutelyParameters) GoString() string {
+  return s.String()
+}
+
+type QueryBandwidthMinutelyRequestHeader struct {
+}
+
+func (s QueryBandwidthMinutelyRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthMinutelyRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryBandwidthMinutelyResponseHeader struct {
+}
+
+func (s QueryBandwidthMinutelyResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthMinutelyResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type ReportLogBandwidthMultiDomainEcdnEdgeServiceRequest struct {
+  // {"en":"Start time:
+  // 1. The format is yyyyy-MM-ddTHH: mm: SS + 08:00, for example, 2016-12-02T10:00 + 08:00 (10:0:00 Beijing time on December 2, 2016);
+  // 2. Can not exceed the current time;
+  // 3. The latest half year (183 days) data can be obtained at most.", "zh_CN":"开始时间：
+  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00，例如，2016-12-02T10:00:00+08:00（为北京时间2016年12月2日10点0分0秒）；
+  // 2.不能大于当前时间；
+  // 3.最多可获取最近半年（183天）的数据。"}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
+  // {"en":"End time:
+  // 1. The 1format is yyyy-MM-ddTHH:mm:ss+08:00;
+  // 2. The end time is greater than the start time.
+  // 3. If the end time is greater than the current time, the current time is taken.
+  // 4. DateFrom and dateTo are not uploaded, defaulting to query the past 24 hours; if only one is not uploaded, throw an exception;
+  // 5. Maximum query interval allowed: 90 days, that is, the difference between dateFrom and dateTo can not exceed 90 days.", "zh_CN":"结束时间：
+  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00；
+  // 2.结束时间需大于开始时间；
+  // 3.结束时间如果大于当前时间，取当前时间；
+  // 4.dateFrom，dateTo二者都未传，默认查询过去的24小时；如仅有一个未传，抛异常；
+  // 5.允许查询最大间隔：31天，即dateFrom和dateTo相差不能超过31天。"}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
+  // {"en":"Domain:
+  // 1.The default upper limit of domains that can be entered is 20 (if you want to adjust, please, contact technical support);
+  // 2.Automatically filter out illegal domains (illegal domains will be filtered out, the query results only return the data of legitimate domains)", "zh_CN":"域名：
+  // 1.可传递域名数量上限默认为20个（可联系技术支持调整）；
+  // 2.自动过滤掉非法域名（如传递非法域名，会被过滤掉，查询结果只返回合法域名的数据）
+  // 3.域名超过上限，报错"}
+  Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" require:"true" type:"Repeated"`
+  // {"en":"region:
+  // 1. All areas are queried by default if the system does not transmit data.
+  // 2. Multiple regions can be passed. The value can be cn, hk, ov, apac, am, emea, or fg.", "zh_CN":"区域：
+  // 1.不传默认查询全部区域。
+  // 2.支持传递多个区域，可选值为：cn、hk、ov、apac、am、emea、fg。"}
+  Region []*string `json:"region,omitempty" xml:"region,omitempty" type:"Repeated"`
+  // {"en":"Grouping dimension:
+  // 1. By default, it is not transmitted and displayed in aggregation mode;
+  // 2. The optional value supports only domain, and displays detailed data by domain.", "zh_CN":"分组维度
+  // 1.默认不传，聚合展示；
+  // 2.可选值仅支持domain，传入时按域名展示明细数据。"}
+  GroupBy *string `json:"groupBy,omitempty" xml:"groupBy,omitempty"`
+}
+
+func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceRequest) SetDateFrom(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceRequest {
+  s.DateFrom = &v
+  return s
+}
+
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceRequest) SetDateTo(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceRequest {
+  s.DateTo = &v
+  return s
+}
+
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceRequest) SetDomain(v []*string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceRequest {
+  s.Domain = v
+  return s
+}
+
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceRequest) SetRegion(v []*string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceRequest {
+  s.Region = v
+  return s
+}
+
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceRequest) SetGroupBy(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceRequest {
+  s.GroupBy = &v
+  return s
+}
+
+type ReportLogBandwidthMultiDomainEcdnEdgeServiceResponse struct {
+  // {"en":"Request result status code", "zh_CN":"请求结果状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Request result information", "zh_CN":"请求结果信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  Data []*ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponse) SetCode(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponse) SetMessage(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponse) SetData(v []*ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponse {
+  s.Data = v
+  return s
+}
+
+type ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData struct     {
+  // {"en":"Domain name. If you do not select domain name group Dimension, this field is a semicolon-separated string of all domain names.", "zh_CN":"域名，如果不选择域名分组维度，该字段为所有域名以分号分隔的字符串。"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {"en":"Peak Bandwidth,unit is Mbps,example(9811.21Mbps)", "zh_CN":"峰值带宽 Mbps，示例 （931556.21 Mbps）"}
+  PeakValue *string `json:"peakValue,omitempty" xml:"peakValue,omitempty" require:"true"`
+  // {"en":"Time of peak bandwidth,example(2019-02-13 18:01)", "zh_CN":"峰值时间，示例（2019-02-13 18:01）;"}
+  PeakTime *string `json:"peakTime,omitempty" xml:"peakTime,omitempty" require:"true"`
+  // {"en":"Edge total traffic,example(74099.91MB)", "zh_CN":"边缘总流量，示例 ( 74099.92 MB )"}
+  Total *string `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+  BandwidthData []*ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData `json:"bandwidthData,omitempty" xml:"bandwidthData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) SetDomain(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData {
+  s.Domain = &v
+  return s
+}
+
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) SetPeakValue(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData {
+  s.PeakValue = &v
+  return s
+}
+
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) SetPeakTime(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData {
+  s.PeakTime = &v
+  return s
+}
+
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) SetTotal(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData {
+  s.Total = &v
+  return s
+}
+
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) SetBandwidthData(v []*ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData) *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData {
+  s.BandwidthData = v
+  return s
+}
+
+type ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData struct     {
+  // {"en":"The data granularity is 1 minute,the format is yyyy-MM-dd HH:mm", "zh_CN":"数据粒度为5分钟，格式为yyyy-MM-dd HH:mm；"}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {"en":"Edge bandwidth,the unit is Mbps,keep 2 decimal places", "zh_CN":"边缘带宽值，单位Mbps，保留2位小数。"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+}
+
+func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData) SetTimestamp(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData) SetValue(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData {
+  s.Value = &v
+  return s
+}
+
+type ReportLogBandwidthMultiDomainEcdnEdgeServicePaths struct {
+}
+
+func (s ReportLogBandwidthMultiDomainEcdnEdgeServicePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLogBandwidthMultiDomainEcdnEdgeServicePaths) GoString() string {
+  return s.String()
+}
+
+type ReportLogBandwidthMultiDomainEcdnEdgeServiceParameters struct {
+}
+
+func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceParameters) GoString() string {
+  return s.String()
+}
+
+type ReportLogBandwidthMultiDomainEcdnEdgeServiceRequestHeader struct {
+}
+
+func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseHeader struct {
+}
+
+func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type ReportP2SPOriginBandwidthWildcardDomainServiceRequest struct {
+  // {'en':'Start time:
+  // 1. The format is yyyy-MM-ddTHH:mm:SS+08:00, for example, 2016-12-02T10:00 + 08:00 (10:00:00 Beijing time on December 2, 2016);
+  // 2. Can not exceed the current time;
+  // 3. The latest half year (183 days) data can be obtained at most.', 'zh_CN':'开始时间:
+  //         1.时间格式为yyyy-MM-ddTHH:mm:ss+08:00,例如,2021-05-19T10:00:00+08:00(为北京时间2021年5月19日10点0分0秒);
+  //         2.不能大于当前时间;
+  //         3.最多可获取最近半年(183天)的数据'}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
+  // {'en':'End time:
+  // 1. The 1format is yyyy-MM-ddTHH:mm:ss+08:00;
+  // 2. The end time is greater than the start time;
+  // 3. If the end time is greater than the current time, the current time is taken;
+  // 4. DateFrom and dateTo are not uploaded, defaulting to query the past 24 hours, if only one is not uploaded, throw an exception;
+  // 5. Maximum query interval allowed: 31 days, that is the difference between dateFrom and dateTo can not exceed 31 days. ', 'zh_CN':'结束时间:
+  //         1.时间格式为yyyy-MM-ddTHH:mm:ss+08:00;
+  //         2.结束时间需大于开始时间,结束时间如果大于当前时间,取当前时间;
+  //         3.dateFrom,dateTo二者都未传,默认查询过去的24小时;如仅有一个未传,抛异常;
+  //         4.允许查询最大时间间隔:31天,即dateFrom和dateTo相差不能超过31天.'}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
+  // {'en':'Wildcard Domain:
+  // 1. The upper limit of the number of Wildcard Domain names that can be passed is 20 by default (contact technical support for adjustment);
+  // 2. Automatically filter out invalid domain names (if a non-common domain name is passed in, it will be filtered out);
+  // 3. If it is not filled, all pan domain names under the account will be queried by default.', 'zh_CN':'泛域名:
+  //         1.可传递泛域名数量上限默认为20个(可联系技术支持调整);
+  //         2.自动过滤掉无效域名(如传递非泛域名,会被过滤掉);
+  //         3.如未填,则默认查询此账号下所有泛域名.'}
+  WildcardDomain []*string `json:"wildcardDomain,omitempty" xml:"wildcardDomain,omitempty" type:"Repeated"`
+  // {'en':'Grouped dimension:
+  // 1.When the "groupBy" parameter has a value, the value can only be "domain". It will group and return the detailed back-to-origin bandwidth based on wildcard domains and exact domains.
+  // 2.When groupBy does not have a value, return the total origin bandwidth details for the wildcard domain. ', 'zh_CN':'	
+  // 分组维度:
+  // 1.有传值时,只能选domain,按照泛域名及精确域名分组返回回源带宽明细;
+  // 2.不传时:返回查询泛域名下的总回源带宽明细.'}
+  GroupBy *string `json:"groupBy,omitempty" xml:"groupBy,omitempty"`
+}
+
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ReportP2SPOriginBandwidthWildcardDomainServiceRequest) SetDateFrom(v string) *ReportP2SPOriginBandwidthWildcardDomainServiceRequest {
+  s.DateFrom = &v
+  return s
+}
+
+func (s *ReportP2SPOriginBandwidthWildcardDomainServiceRequest) SetDateTo(v string) *ReportP2SPOriginBandwidthWildcardDomainServiceRequest {
+  s.DateTo = &v
+  return s
+}
+
+func (s *ReportP2SPOriginBandwidthWildcardDomainServiceRequest) SetWildcardDomain(v []*string) *ReportP2SPOriginBandwidthWildcardDomainServiceRequest {
+  s.WildcardDomain = v
+  return s
+}
+
+func (s *ReportP2SPOriginBandwidthWildcardDomainServiceRequest) SetGroupBy(v string) *ReportP2SPOriginBandwidthWildcardDomainServiceRequest {
+  s.GroupBy = &v
+  return s
+}
+
+type ReportP2SPOriginBandwidthWildcardDomainServiceResponse struct {
+  // {'en':'Request result status code', 'zh_CN':'请求结果状态码'}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {'en':'Request result information', 'zh_CN':'请求结果信息'}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  Data []*ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ReportP2SPOriginBandwidthWildcardDomainServiceResponse) SetCode(v string) *ReportP2SPOriginBandwidthWildcardDomainServiceResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ReportP2SPOriginBandwidthWildcardDomainServiceResponse) SetMessage(v string) *ReportP2SPOriginBandwidthWildcardDomainServiceResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *ReportP2SPOriginBandwidthWildcardDomainServiceResponse) SetData(v []*ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseData) *ReportP2SPOriginBandwidthWildcardDomainServiceResponse {
+  s.Data = v
+  return s
+}
+
+type ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseData struct     {
+  // {'en':'Wildcard domain', 'zh_CN':'泛域名'}
+  WildcardDomain *string `json:"wildcardDomain,omitempty" xml:"wildcardDomain,omitempty" require:"true"`
+  DomainList []*ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList `json:"domainList,omitempty" xml:"domainList,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseData) SetWildcardDomain(v string) *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseData {
+  s.WildcardDomain = &v
+  return s
+}
+
+func (s *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseData) SetDomainList(v []*ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList) *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseData {
+  s.DomainList = v
+  return s
+}
+
+type ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList struct     {
+  // {'en':'Domain', 'zh_CN':'明细域名'}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  OriginBandwidthList []*ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList `json:"originBandwidthList,omitempty" xml:"originBandwidthList,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList) GoString() string {
+  return s.String()
+}
+
+func (s *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList) SetDomain(v string) *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList {
+  s.Domain = &v
+  return s
+}
+
+func (s *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList) SetOriginBandwidthList(v []*ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList) *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList {
+  s.OriginBandwidthList = v
+  return s
+}
+
+type ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList struct     {
+  // {'en':'Time:
+  // 1. When the data query granularity is 5m, then the format is yyyy-MM-dd HH:mm; Each time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:05, and the last one is (yyyy-MM-dd+1) 00:00;
+  // 2. Return the time slices that contained in start time and in end time.', 'zh_CN':'时间,
+  // 查询的数据粒度为5m时,格式为yyyy-MM-dd HH:mm;每一个时间片数据值代表的是前一个时间粒度范围内的数据值.一天开始的时间片是yyyy-MM-dd 00:05,最后一个时间片是(yyyy-MM-dd+1) 00:00;
+  // 返回开始时间和结束时间包含的时间片.'}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {'en':'Origin bandwidth value. Unit is Mbps and 2 digits of decimals are allowed', 'zh_CN':'回源带宽数据,单位Mbps,保留2位小数.'}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+}
+
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList) GoString() string {
+  return s.String()
+}
+
+func (s *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList) SetTimestamp(v string) *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList) SetValue(v string) *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList {
+  s.Value = &v
+  return s
+}
+
+type ReportP2SPOriginBandwidthWildcardDomainServicePaths struct {
+}
+
+func (s ReportP2SPOriginBandwidthWildcardDomainServicePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportP2SPOriginBandwidthWildcardDomainServicePaths) GoString() string {
+  return s.String()
+}
+
+type ReportP2SPOriginBandwidthWildcardDomainServiceParameters struct {
+}
+
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceParameters) GoString() string {
+  return s.String()
+}
+
+type ReportP2SPOriginBandwidthWildcardDomainServiceRequestHeader struct {
+}
+
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ReportP2SPOriginBandwidthWildcardDomainServiceResponseHeader struct {
+}
+
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type ReportIPV6BandwidthServiceRequest struct {
+  // {"en":"Start time:
+  // 
+  // 1. The format is yyyyy-MM-ddTHH: mm: SS + 08:00, for example, 2016-12-02T10:00 + 08:00 (10:0:00 Beijing time on December 2, 2016);
+  // 
+  // 2. Can not exceed the current time;
+  // 
+  // 3. The latest half year (183 days) data can be obtained at most.", "zh_CN":"开始时间:
+  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00,例如,2016-12-02T10:00:00+08:00(为北京时间2016年12月2日10点0分0秒);
+  // 2.不能大于当前时间;
+  // 3.最多可获取最近半年(183天)的数据."}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
+  // {"en":"End time:
+  // 
+  // 1. The 1format is yyyy-MM-ddTHH:mm:ss+08:00;
+  // 
+  // 2. The end time is greater than the start time.
+  // 
+  // 3. If the end time is greater than the current time, the current time is taken.
+  // 
+  // 4. DateFrom and dateTo are not uploaded, defaulting to query the past 24 hours; if only one is not uploaded, throw an exception;
+  // 
+  // 5. Maximum query interval allowed: 7 days, that is, the difference between dateFrom and dateTo can not exceed 7 days. ", "zh_CN":"结束时间:
+  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00;
+  // 2.结束时间需大于开始时间;
+  // 3.结束时间如果大于当前时间,取当前时间;
+  // 4.dateFrom,dateTo二者都未传,默认查询过去的24小时;如仅有一个未传,抛异常;
+  // 5.允许查询最大间隔:7天,即dateFrom和dateTo相差不能超过7天."}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
+  // {"en":"Domains:
+  // 
+  // 1.Domain is not uploaded: Query all domain names of the account (More than 20 domains will error,you can contact technical support for adjustment) ;
+  // 
+  // 2.Domain is uploaded: Up to 20 domains are supported (you can contact technical support for adjustment).", "zh_CN":"域名:
+  // 
+  // 1.未传递domain时:查询账号下所有全部域名(域名超过20个则报错,可联系技术支持调整);
+  // 
+  // 2.有传递domain时:域名最多支持传20个(可联系技术支持调整)."}
+  Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" type:"Repeated"`
+  // {"en":"Data granularity:
+  // 
+  // 5m: 5 minute granularity; Default value is 5m.
+  // 
+  // 1h: 1 hour granularity.", "zh_CN":"数据粒度:
+  // 
+  // 5m:5分钟粒度.不传默认5分钟粒度
+  // 
+  // 1h:1小时粒度;"}
+  DataInterval *string `json:"dataInterval,omitempty" xml:"dataInterval,omitempty"`
+}
+
+func (s ReportIPV6BandwidthServiceRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportIPV6BandwidthServiceRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ReportIPV6BandwidthServiceRequest) SetDateFrom(v string) *ReportIPV6BandwidthServiceRequest {
+  s.DateFrom = &v
+  return s
+}
+
+func (s *ReportIPV6BandwidthServiceRequest) SetDateTo(v string) *ReportIPV6BandwidthServiceRequest {
+  s.DateTo = &v
+  return s
+}
+
+func (s *ReportIPV6BandwidthServiceRequest) SetDomain(v []*string) *ReportIPV6BandwidthServiceRequest {
+  s.Domain = v
+  return s
+}
+
+func (s *ReportIPV6BandwidthServiceRequest) SetDataInterval(v string) *ReportIPV6BandwidthServiceRequest {
+  s.DataInterval = &v
+  return s
+}
+
+type ReportIPV6BandwidthServiceResponse struct {
+  Data []*ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportIPV6BandwidthServiceResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportIPV6BandwidthServiceResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ReportIPV6BandwidthServiceResponse) SetData(v []*ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseData) *ReportIPV6BandwidthServiceResponse {
+  s.Data = v
+  return s
+}
+
+type ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseData struct     {
+  // {"en":"Domain", "zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  DetailList []*ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseData) SetDomain(v string) *ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseData {
+  s.Domain = &v
+  return s
+}
+
+func (s *ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseData) SetDetailList(v []*ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList) *ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseData {
+  s.DetailList = v
+  return s
+}
+
+type ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList struct     {
+  // {"en":"Time:
+  // 1. When the data query granularity is 5m, then the format is yyyy-MM-dd HH:mm; ach time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:05, and the last one is (yyyy-MM-dd+1) 00:00;", "zh_CN":"时间,
+  // 查询的数据粒度为5m时,格式为yyyy-MM-dd HH:mm;每一个时间片数据值代表的是前一个时间粒度范围内的数据值.一天开始的时间片是yyyy-MM-dd 00:05,最后一个时间片是(yyyy-MM-dd+1) 00:00;
+  // 查询的数据粒度为1h时,格式为yyyy-MM-dd HH;每一个时间片数据值代表的是前一个时间粒度范围内的数据值.一天开始的时间片是yyyy-MM-dd 01,最后一个时间片是(yyyy-MM-dd+1) 00;
+  // 返回开始时间和结束时间包含的时间片."}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {"en":"IPV6 bandwidth data, unit Mbps. Keep 2 decimal places", "zh_CN":"IPV6带宽数据,单位Mbps.保留2位小数"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+  // {"en":"IPV6 traffic, unit MB. Keep 2 decimal places", "zh_CN":"IPV6流量,单位MB.保留2位小数"}
+  Flow *string `json:"flow,omitempty" xml:"flow,omitempty" require:"true"`
+}
+
+func (s ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList) GoString() string {
+  return s.String()
+}
+
+func (s *ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList) SetTimestamp(v string) *ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList) SetValue(v string) *ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList {
+  s.Value = &v
+  return s
+}
+
+func (s *ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList) SetFlow(v string) *ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList {
+  s.Flow = &v
+  return s
+}
+
+type ReportIPV6BandwidthServicePaths struct {
+}
+
+func (s ReportIPV6BandwidthServicePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportIPV6BandwidthServicePaths) GoString() string {
+  return s.String()
+}
+
+type ReportIPV6BandwidthServiceParameters struct {
+}
+
+func (s ReportIPV6BandwidthServiceParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportIPV6BandwidthServiceParameters) GoString() string {
+  return s.String()
+}
+
+type ReportIPV6BandwidthServiceRequestHeader struct {
+}
+
+func (s ReportIPV6BandwidthServiceRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportIPV6BandwidthServiceRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ReportIPV6BandwidthServiceResponseHeader struct {
+}
+
+func (s ReportIPV6BandwidthServiceResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportIPV6BandwidthServiceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type ChannelValueSumRequest struct {
+  // {"en":"cust_en_name of sub-client.
+  // When a merged-account wants to  view the information of the subclient,the cust_en_name is required.", "zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名"}
+  Cust *string `json:"cust,omitempty" xml:"cust,omitempty"`
+  // {"en":"Specifies the query date:
+  // 1)With format yyyy-mm-dd.
+  // 2)If not specified,it means today as default.", "zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
+  Date *string `json:"date,omitempty" xml:"date,omitempty"`
+  // {"en":"1)Must work with 'enddate' and they  specify the query date scope. 
+  // 2)With format yyyy-mm-dd.
+  // 3)If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的起始日期 ,日期格式为yyyy-mm-dd；此参数需与enddate参数配合,若存在date参数,则该参数无效"}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty"`
+  // {"en":"1)Must work with 'startdate' and they  specify the query date scope. 
+  // 2)With format yyyy-mm-dd
+  // 3)If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的结束日期 ,日期格式为yyyy-mm-dd；此参数需与startdate参数配合,若存在date参数,则该参数无效。"}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty"`
+  // {"en":"domains that been queried:
+  // 1)If there are multiple inputs,use  ';' as separator.
+  // 2)If not specified, it means all the domains of the account .", "zh_CN":"查询的频道，多个频道值请用英文分号';'，不选或者为空时默认为所查询客户的所有频道"}
+  Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
+  // {"en":"1)If there are multiple inputs,use ';' as separator.For example,u can use 'region=cn;apac' to query data of cn and apac region.
+  // 2)If not specified, it means all the regions.", "zh_CN":"查询的加速区域的缩写，多个区域请用英文分号';'分隔开，如查询大陆及亚太区域，参数填写为：'region=cn;apac'。不选或者为空时默认为全部区域。"}
+  Region *string `json:"region,omitempty" xml:"region,omitempty"`
+  // {"en":"Specifies if  the 'channel' parameter should be exactly matched:
+  // 1)'true' as default.
+  // 2) If not 'true',it will query data of channels that ends with any item of input 'channel's.", "zh_CN":"&nbsp;频道是否完全匹配,为true时，必须填写完整的域名(此时会过滤用户输入的无效或重复频道,所有输入频道都无效时返403)。不为true时，显示以用户输入的频道为结尾的所有频道。默认为true"}
+  IsExactMatch *string `json:"isExactMatch,omitempty" xml:"isExactMatch,omitempty"`
+  // {"en":"acceleration type.
+  // 1)If there are multiple inputs,use ';' as separator.
+  // 2)If not specified or specified as 'all', it means all the accetypes.", "zh_CN":"加速类型参数，如accetype=web。多个请用英文分号';'分隔开，不填或值为all表示所有类型"}
+  Accetype *string `json:"accetype,omitempty" xml:"accetype,omitempty"`
+  // {"en":"The response format:
+  // 1)optional values:xml, json.
+  // 2)'xml' as default.", "zh_CN":"返回结果格式,支持格式为xml和json,默认为xml"}
+  Dataformat *string `json:"dataformat,omitempty" xml:"dataformat,omitempty"`
+}
+
+func (s ChannelValueSumRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ChannelValueSumRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ChannelValueSumRequest) SetCust(v string) *ChannelValueSumRequest {
+  s.Cust = &v
+  return s
+}
+
+func (s *ChannelValueSumRequest) SetDate(v string) *ChannelValueSumRequest {
+  s.Date = &v
+  return s
+}
+
+func (s *ChannelValueSumRequest) SetStartdate(v string) *ChannelValueSumRequest {
+  s.Startdate = &v
+  return s
+}
+
+func (s *ChannelValueSumRequest) SetEnddate(v string) *ChannelValueSumRequest {
+  s.Enddate = &v
+  return s
+}
+
+func (s *ChannelValueSumRequest) SetChannel(v string) *ChannelValueSumRequest {
+  s.Channel = &v
+  return s
+}
+
+func (s *ChannelValueSumRequest) SetRegion(v string) *ChannelValueSumRequest {
+  s.Region = &v
+  return s
+}
+
+func (s *ChannelValueSumRequest) SetIsExactMatch(v string) *ChannelValueSumRequest {
+  s.IsExactMatch = &v
+  return s
+}
+
+func (s *ChannelValueSumRequest) SetAccetype(v string) *ChannelValueSumRequest {
+  s.Accetype = &v
+  return s
+}
+
+func (s *ChannelValueSumRequest) SetDataformat(v string) *ChannelValueSumRequest {
+  s.Dataformat = &v
+  return s
+}
+
+type ChannelValueSumResponse struct {
+  // {'en':'provider', 'zh_CN':'结果'}
+  Provider *ChannelValueSumChannelValueSumResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+}
+
+func (s ChannelValueSumResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ChannelValueSumResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ChannelValueSumResponse) SetProvider(v *ChannelValueSumChannelValueSumResponseProvider) *ChannelValueSumResponse {
+  s.Provider = v
+  return s
+}
+
+type ChannelValueSumChannelValueSumResponseProvider struct {
+  // {'en':'tenant', 'zh_CN':'租户'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'type', 'zh_CN':'接口类型'}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {'en':'resultType', 'zh_CN':'统计类型'}
+  ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty" require:"true"`
+  // {'en':'data', 'zh_CN':'多域名总计费带宽数据'}
+  Date *ChannelValueSumChannelValueSumResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+}
+
+func (s ChannelValueSumChannelValueSumResponseProvider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ChannelValueSumChannelValueSumResponseProvider) GoString() string {
+  return s.String()
+}
+
+func (s *ChannelValueSumChannelValueSumResponseProvider) SetName(v string) *ChannelValueSumChannelValueSumResponseProvider {
+  s.Name = &v
+  return s
+}
+
+func (s *ChannelValueSumChannelValueSumResponseProvider) SetType(v string) *ChannelValueSumChannelValueSumResponseProvider {
+  s.Type = &v
+  return s
+}
+
+func (s *ChannelValueSumChannelValueSumResponseProvider) SetResultType(v string) *ChannelValueSumChannelValueSumResponseProvider {
+  s.ResultType = &v
+  return s
+}
+
+func (s *ChannelValueSumChannelValueSumResponseProvider) SetDate(v *ChannelValueSumChannelValueSumResponseProviderDate) *ChannelValueSumChannelValueSumResponseProvider {
+  s.Date = v
+  return s
+}
+
+type ChannelValueSumChannelValueSumResponseProviderDate struct {
+  // {'en':'startdate', 'zh_CN':'开始时间'}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
+  // {'en':'enddate', 'zh_CN':'结束时间'}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
+  // {'en':'information', 'zh_CN':'频道计费数据'}
+  Information []*ChannelValueSumChannelValueSumResponseProviderDateInformation `json:"information,omitempty" xml:"information,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ChannelValueSumChannelValueSumResponseProviderDate) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ChannelValueSumChannelValueSumResponseProviderDate) GoString() string {
+  return s.String()
+}
+
+func (s *ChannelValueSumChannelValueSumResponseProviderDate) SetStartdate(v string) *ChannelValueSumChannelValueSumResponseProviderDate {
+  s.Startdate = &v
+  return s
+}
+
+func (s *ChannelValueSumChannelValueSumResponseProviderDate) SetEnddate(v string) *ChannelValueSumChannelValueSumResponseProviderDate {
+  s.Enddate = &v
+  return s
+}
+
+func (s *ChannelValueSumChannelValueSumResponseProviderDate) SetInformation(v []*ChannelValueSumChannelValueSumResponseProviderDateInformation) *ChannelValueSumChannelValueSumResponseProviderDate {
+  s.Information = v
+  return s
+}
+
+type ChannelValueSumChannelValueSumResponseProviderDateInformation struct     {
+  // {'en':'channel', 'zh_CN':'频道'}
+  Channel *string `json:"channel,omitempty" xml:"channel,omitempty" require:"true"`
+  // {'en':'bandwidth', 'zh_CN':'带宽数据'}
+  Bandwidth []*ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ChannelValueSumChannelValueSumResponseProviderDateInformation) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ChannelValueSumChannelValueSumResponseProviderDateInformation) GoString() string {
+  return s.String()
+}
+
+func (s *ChannelValueSumChannelValueSumResponseProviderDateInformation) SetChannel(v string) *ChannelValueSumChannelValueSumResponseProviderDateInformation {
+  s.Channel = &v
+  return s
+}
+
+func (s *ChannelValueSumChannelValueSumResponseProviderDateInformation) SetBandwidth(v []*ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth) *ChannelValueSumChannelValueSumResponseProviderDateInformation {
+  s.Bandwidth = v
+  return s
+}
+
+type ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth struct     {
+  // {'en':'timestamp', 'zh_CN':'时间点'}
+  Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
+  // {'en':'charge method', 'zh_CN':'计费方式'}
+  ChargeMethod *string `json:"charge-method,omitempty" xml:"charge-method,omitempty" require:"true"`
+  // {'en':'charge value', 'zh_CN':'计费值'}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+  // {'en':'charge unit', 'zh_CN':'计费单位'}
+  Unit *string `json:"unit,omitempty" xml:"unit,omitempty" require:"true"`
+}
+
+func (s ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth) GoString() string {
+  return s.String()
+}
+
+func (s *ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth) SetTime(v string) *ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth {
+  s.Time = &v
+  return s
+}
+
+func (s *ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth) SetChargeMethod(v string) *ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth {
+  s.ChargeMethod = &v
+  return s
+}
+
+func (s *ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth) SetValue(v string) *ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth {
+  s.Value = &v
+  return s
+}
+
+func (s *ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth) SetUnit(v string) *ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth {
+  s.Unit = &v
+  return s
+}
+
+type ChannelValueSumPaths struct {
+}
+
+func (s ChannelValueSumPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ChannelValueSumPaths) GoString() string {
+  return s.String()
+}
+
+type ChannelValueSumParameters struct {
+}
+
+func (s ChannelValueSumParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ChannelValueSumParameters) GoString() string {
+  return s.String()
+}
+
+type ChannelValueSumRequestHeader struct {
+}
+
+func (s ChannelValueSumRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ChannelValueSumRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ChannelValueSumResponseHeader struct {
+}
+
+func (s ChannelValueSumResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ChannelValueSumResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type ReportLowDelayCountryBandwidthServiceRequest struct {
+  // {"en":"Start time:
+  // 	1.The format is yyyy-MM-ddTHH:mm:ss+08:00; 
+  // 	2.Must be a time that is 183 days earlier than the current time, and the time must be earlier than the current time and dateTo; 
+  // 	3.Period between dataFrom and dateTo cannot be longer than 7 days; 
+  // 	4.dateFrom and dateTo can be either both are specified or neither is specifies; 
+  // 	5.If neither dateFrom nor dateTo is specified, then by default, data in the last 24 hour is queried.", "zh_CN":"开始时间:
+  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00;
+  // 2.必须大于当前时间-183天,并且小于当前时间和dateTo;
+  // 3.dateFrom和dateTo相差不能超过7天;(可联系技术支持调整)
+  // 4.dateFrom和dateTo要么都传递,要么都不传递;
+  // 5.dateFrom和dateTo都未传递,则默认查询过去24小时的数据"}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
+  // {"en":"End time: 
+  // 1.The time format is yyyy-MM-ddTHH:MM:ss+08:00.
+  // 2.The end time needs to be greater than the start time. If the end time is greater than the current time, take the current time.", "zh_CN":"结束时间:
+  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00;
+  // 2.必须大于dateFrom;如果大于当前时间,则重新赋值为当前时间;"}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
+  // {"en":"Domain: 
+  // 	1.Allowable maximum number of domain is 250 (can be adjusted by contacting technical support).
+  // 	2.Domain is not uploaded: Query all domain names of the account", "zh_CN":"域名:可传递域名数量上限默认为250个(可联系技术支持调整),未传递该入参时查询账号下所有域名,但当账号下域名数量超过限制时不可查询(报错)"}
+  Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" type:"Repeated"`
+  // {"en":"Acceleration zone:
+  // 1. If not passed or empty, it defaults to all regions.
+  // 2. Multiple areas are separated by English semicolons;
+  // 3. The optional values are: cn, apac, etc., see the overview page [Appendix 1] for details", "zh_CN":"加速区域:
+  // 1.不选或者为空时默认为全部区域。
+  // 2.多个区域使用英文分号分隔;
+  // 3.可选值为:cn、apac…等,详见概览页【附表1】说明"}
+  AreaCode []*string `json:"areaCode,omitempty" xml:"areaCode,omitempty" type:"Repeated"`
+  // {"en":"Country code:
+  // 1.If no value is passed, all countries and regions will be queried by default;
+  // 2.For the values that can be passed, see the overview page [Appendix 1] for details.", "zh_CN":"国家地区代号:
+  // 1.不传默认查询全部国家地区;
+  // 2.可传递的值详见概览页【附表1】说明。"}
+  CountryCode []*string `json:"countryCode,omitempty" xml:"countryCode,omitempty" type:"Repeated"`
+}
+
+func (s ReportLowDelayCountryBandwidthServiceRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLowDelayCountryBandwidthServiceRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ReportLowDelayCountryBandwidthServiceRequest) SetDateFrom(v string) *ReportLowDelayCountryBandwidthServiceRequest {
+  s.DateFrom = &v
+  return s
+}
+
+func (s *ReportLowDelayCountryBandwidthServiceRequest) SetDateTo(v string) *ReportLowDelayCountryBandwidthServiceRequest {
+  s.DateTo = &v
+  return s
+}
+
+func (s *ReportLowDelayCountryBandwidthServiceRequest) SetDomain(v []*string) *ReportLowDelayCountryBandwidthServiceRequest {
+  s.Domain = v
+  return s
+}
+
+func (s *ReportLowDelayCountryBandwidthServiceRequest) SetAreaCode(v []*string) *ReportLowDelayCountryBandwidthServiceRequest {
+  s.AreaCode = v
+  return s
+}
+
+func (s *ReportLowDelayCountryBandwidthServiceRequest) SetCountryCode(v []*string) *ReportLowDelayCountryBandwidthServiceRequest {
+  s.CountryCode = v
+  return s
+}
+
+type ReportLowDelayCountryBandwidthServiceResponse struct {
+  // {"en":"request result status code", "zh_CN":"请求结果状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"request result information", "zh_CN":"请求结果信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  Data []*ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportLowDelayCountryBandwidthServiceResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLowDelayCountryBandwidthServiceResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ReportLowDelayCountryBandwidthServiceResponse) SetCode(v string) *ReportLowDelayCountryBandwidthServiceResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ReportLowDelayCountryBandwidthServiceResponse) SetMessage(v string) *ReportLowDelayCountryBandwidthServiceResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *ReportLowDelayCountryBandwidthServiceResponse) SetData(v []*ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseData) *ReportLowDelayCountryBandwidthServiceResponse {
+  s.Data = v
+  return s
+}
+
+type ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseData struct     {
+  // {"en":"Domain", "zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  CountryData []*ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryData `json:"countryData,omitempty" xml:"countryData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseData) SetDomain(v string) *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseData {
+  s.Domain = &v
+  return s
+}
+
+func (s *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseData) SetCountryData(v []*ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryData) *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseData {
+  s.CountryData = v
+  return s
+}
+
+type ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryData struct     {
+  // {"en":"CountryCode", "zh_CN":"国家地区"}
+  CountryCode *string `json:"countryCode,omitempty" xml:"countryCode,omitempty" require:"true"`
+  BandwidthList []*ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList `json:"bandwidthList,omitempty" xml:"bandwidthList,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryData) SetCountryCode(v string) *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryData {
+  s.CountryCode = &v
+  return s
+}
+
+func (s *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryData) SetBandwidthList(v []*ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList) *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryData {
+  s.BandwidthList = v
+  return s
+}
+
+type ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList struct     {
+  // {"en":"time:
+  // 																	1.When the query data granularity is 5m, the format is yyyy-MM-dd HH:mm; each time slice data value represents the data value within the previous time granularity range. 
+  // 																	2.The time slice at the beginning of a day is yyyy-MM-dd 00:05, and the last time slice is (yyyy-MM-dd+1) 00:00; return the time slice included in the start time and end time.", "zh_CN":"时间:
+  // 																	1.查询的数据粒度为5m时,格式为yyyy-MM-dd HH:mm;每一个时间片数据值代表的是前一个时间粒度范围内的数据值。
+  // 																	2.一天开始的时间片是yyyy-MM-dd 00:05,最后一个时间片是(yyyy-MM-dd+1) 00:00;返回开始时间和结束时间包含的时间片。"}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {"en":"The bandwidth value corresponding to the time point, in Mbps", "zh_CN":"时间点对应的带宽值,单位Mbps"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+}
+
+func (s ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList) GoString() string {
+  return s.String()
+}
+
+func (s *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList) SetTimestamp(v string) *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList) SetValue(v string) *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList {
+  s.Value = &v
+  return s
+}
+
+type ReportLowDelayCountryBandwidthServicePaths struct {
+}
+
+func (s ReportLowDelayCountryBandwidthServicePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLowDelayCountryBandwidthServicePaths) GoString() string {
+  return s.String()
+}
+
+type ReportLowDelayCountryBandwidthServiceParameters struct {
+}
+
+func (s ReportLowDelayCountryBandwidthServiceParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLowDelayCountryBandwidthServiceParameters) GoString() string {
+  return s.String()
+}
+
+type ReportLowDelayCountryBandwidthServiceRequestHeader struct {
+}
+
+func (s ReportLowDelayCountryBandwidthServiceRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLowDelayCountryBandwidthServiceRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ReportLowDelayCountryBandwidthServiceResponseHeader struct {
+}
+
+func (s ReportLowDelayCountryBandwidthServiceResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLowDelayCountryBandwidthServiceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type ReportLogFlowIspProvinceServiceRequest struct {
+  // {"en":"Start time 
+  // 	1.The format is yyyy-MM-ddTHH:mm:ss+08:00; 
+  // 	2.Must be a time that is 183 days earlier than the current time, and the time must be earlier than the current time and dateTo; 
+  // 	3.Period between dataFrom and dateTo cannot be longer than 7 days(technical support can be contacted to adjust); 
+  // 	4.dateFrom and dateTo can be either both are specified or neither is specifies; 
+  // 	5.If neither dateFrom nor dateTo is specified, then by default, data in the last 24 hour is queried.", "zh_CN":"开始时间
+  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00;
+  // 2.必须大于当前时间-183天,并且小于当前时间和dateTo;
+  // 3.dateFrom和dateTo相差不能超过7天;(可联系技术支持调整)
+  // 4.dateFrom和dateTo要么都传递,要么都不传递;
+  // 5.dateFrom和dateTo都未传递,则默认查询过去24小时的数据;"}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
+  // {"en":"End time 
+  // 	1.The format is yyyy-MM-ddTHH:mm:ss+08:00; 
+  // 	2.Must be greater than dateFrom; if it's greater than the current time, then the current time is assigned as the value.", "zh_CN":"结束时间:
+  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00;
+  // 2.必须大于dateFrom;如果大于当前时间,则重新赋值为当前时间;"}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
+  // {"en":"Data granularity, 5m: 5-minute granularity, 1h: 1-hour granularity", "zh_CN":"数据粒度,5m:5分钟粒度,1h:1小时粒度。默认5分钟粒度"}
+  DataInterval *string `json:"dataInterval,omitempty" xml:"dataInterval,omitempty"`
+  // {"en":"Domain names, domain number limits can be adjusted depending on different accounts. The default value is 20", "zh_CN":"域名,域名个数限制根据账号可调,默认为20个(可联系技术支持调整)"}
+  Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Province
+  // 
+  // 1.Province is not upload: Query all provinces and aggregate the returned data according to all provinces; 
+  // 2.Province is upload: Provinces can transmit Chinese or code. Please refer to the appendix description section of the overview page for the provincial information code table.
+  // 
+  // 3.Support language request header Accept Language, only support zh-CN and en-US, default to zh-CN. Accept Language: en-US, both the province and isp input and return are in code, otherwise the return is in Chinese.", "zh_CN":"省份
+  // 
+  // 1.未传递province时：查询所有省份，返回的数据按照所有省份聚合。
+  // 
+  // 2.有传递province时：省份 可传中文或code。省份信息码表详见概览页附录说明章节
+  // 
+  // 3.支持语言请求头Accept-Language，只支持zh-CN、en-US，默认为zh-CN。Accept-Language：en-US时，省份及运营商 入参及返回都为code，否则返回的为中文。"}
+  Province []*string `json:"province,omitempty" xml:"province,omitempty" type:"Repeated"`
+  // {"en":"ISP:
+  // 1.ISP is not upload: Query all ISPs and aggregate the returned data according to all ISPs; 
+  // 2.ISPs is upload: Isp can transmit Chinese or code. Please refer to the appendix description section of the overview page for the ISP information code table.", "zh_CN":"运营商：
+  // 1.未传递isp时：查询所有isp，返回的数据按照所有运营商聚合。 
+  // 2.有传递isp时：运营商 可传中文或code。运营商信息码表详见概览页附录说明章节"}
+  Isp []*string `json:"isp,omitempty" xml:"isp,omitempty" type:"Repeated"`
+  // {"en":"Group dimension 
+  // 	1.Options are domain, province, isp, and more than one value can be entered; 
+  // 	2.The data is displayed according to the specified dimension", "zh_CN":"分组维度
+  //     1.可选值为domain、province、isp,可传入多个值;
+  //     2.有传入则按照该维度展示明细数据;"}
+  GroupBy []*string `json:"groupBy,omitempty" xml:"groupBy,omitempty" type:"Repeated"`
+}
+
+func (s ReportLogFlowIspProvinceServiceRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLogFlowIspProvinceServiceRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ReportLogFlowIspProvinceServiceRequest) SetDateFrom(v string) *ReportLogFlowIspProvinceServiceRequest {
+  s.DateFrom = &v
+  return s
+}
+
+func (s *ReportLogFlowIspProvinceServiceRequest) SetDateTo(v string) *ReportLogFlowIspProvinceServiceRequest {
+  s.DateTo = &v
+  return s
+}
+
+func (s *ReportLogFlowIspProvinceServiceRequest) SetDataInterval(v string) *ReportLogFlowIspProvinceServiceRequest {
+  s.DataInterval = &v
+  return s
+}
+
+func (s *ReportLogFlowIspProvinceServiceRequest) SetDomain(v []*string) *ReportLogFlowIspProvinceServiceRequest {
+  s.Domain = v
+  return s
+}
+
+func (s *ReportLogFlowIspProvinceServiceRequest) SetProvince(v []*string) *ReportLogFlowIspProvinceServiceRequest {
+  s.Province = v
+  return s
+}
+
+func (s *ReportLogFlowIspProvinceServiceRequest) SetIsp(v []*string) *ReportLogFlowIspProvinceServiceRequest {
+  s.Isp = v
+  return s
+}
+
+func (s *ReportLogFlowIspProvinceServiceRequest) SetGroupBy(v []*string) *ReportLogFlowIspProvinceServiceRequest {
+  s.GroupBy = v
+  return s
+}
+
+type ReportLogFlowIspProvinceServiceResponse struct {
+  // {"en":"request result status code", "zh_CN":"请求结果状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Request result information", "zh_CN":"请求结果信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  Data []*ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportLogFlowIspProvinceServiceResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLogFlowIspProvinceServiceResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ReportLogFlowIspProvinceServiceResponse) SetCode(v string) *ReportLogFlowIspProvinceServiceResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ReportLogFlowIspProvinceServiceResponse) SetMessage(v string) *ReportLogFlowIspProvinceServiceResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *ReportLogFlowIspProvinceServiceResponse) SetData(v []*ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseData) *ReportLogFlowIspProvinceServiceResponse {
+  s.Data = v
+  return s
+}
+
+type ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseData struct     {
+  // {"en":"Domain", "zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  IspData []*ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseData) SetDomain(v string) *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseData {
+  s.Domain = &v
+  return s
+}
+
+func (s *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseData) SetIspData(v []*ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspData) *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseData {
+  s.IspData = v
+  return s
+}
+
+type ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspData struct     {
+  // {"en":"ISP", "zh_CN":"运营商"}
+  Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
+  ProvinceData []*ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspData) SetIsp(v string) *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspData {
+  s.Isp = &v
+  return s
+}
+
+func (s *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspData) SetProvinceData(v []*ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData) *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspData {
+  s.ProvinceData = v
+  return s
+}
+
+type ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData struct     {
+  // {"en":"Province", "zh_CN":"省份"}
+  Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
+  Details []*ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData) SetProvince(v string) *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData {
+  s.Province = &v
+  return s
+}
+
+func (s *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData) SetDetails(v []*ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails) *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData {
+  s.Details = v
+  return s
+}
+
+type ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails struct     {
+  // {"en":"Time:
+  // 				1.When the data query granularity is 5m, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 12:05 AM, and the last one is (yyyy-MM-dd+1) 00:00;
+  // 				2.When the data query granularity is 1h, the format is yyyy-MM-dd HH; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is (yyyy-MM-dd+1) 00;
+  // 				3.Return the time slice contained in start time and the time slice contained in end time.", "zh_CN":"时间:
+  // 
+  // 1.查询的数据粒度为5m时,格式为yyyy-MM-dd HH:mm;每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05,最后一个时间片是(yyyy-MM-dd+1) 00:00。
+  // 2.查询的数据粒度为1h时,格式为yyyy-MM-dd HH;每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 01,最后一个时间片是(yyyy-MM-dd+1) 00。
+  // 3.返回开始时间和结束时间包含的时间片。"}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {"en":"Traffic unit is MB and 2 digits of decimals allowed", "zh_CN":"流量值,单位为MB,保留两位小数"}
+  Flow *string `json:"flow,omitempty" xml:"flow,omitempty" require:"true"`
+  // {"en":"Bandwidth value. Unit is Mbps and 2 digits of decimals allowed", "zh_CN":"带宽值,单位为Mbps,保留两位小数"}
+  Bandwidth *string `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true"`
+}
+
+func (s ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails) GoString() string {
+  return s.String()
+}
+
+func (s *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails) SetTimestamp(v string) *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails) SetFlow(v string) *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails {
+  s.Flow = &v
+  return s
+}
+
+func (s *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails) SetBandwidth(v string) *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails {
+  s.Bandwidth = &v
+  return s
+}
+
+type ReportLogFlowIspProvinceServicePaths struct {
+}
+
+func (s ReportLogFlowIspProvinceServicePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLogFlowIspProvinceServicePaths) GoString() string {
+  return s.String()
+}
+
+type ReportLogFlowIspProvinceServiceParameters struct {
+}
+
+func (s ReportLogFlowIspProvinceServiceParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLogFlowIspProvinceServiceParameters) GoString() string {
+  return s.String()
+}
+
+type ReportLogFlowIspProvinceServiceRequestHeader struct {
+}
+
+func (s ReportLogFlowIspProvinceServiceRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLogFlowIspProvinceServiceRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ReportLogFlowIspProvinceServiceResponseHeader struct {
+}
+
+func (s ReportLogFlowIspProvinceServiceResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportLogFlowIspProvinceServiceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type BandwidthVmRequest struct {
+  // {"en":"cust_en_name of sub-client.
+  // When a merged-account wants to  view the information of the subclient,the cust_en_name is required.", "zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名"}
+  Cust *string `json:"cust,omitempty" xml:"cust,omitempty"`
+  // {"en":"Specifies the query date:
+  // 1.With format yyyy-mm-dd.
+  // 2.If not Specifies,it means today as default.", "zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
+  Date *string `json:"date,omitempty" xml:"date,omitempty"`
+  // {"en":"1.Must work with 'enddate' and they  specify the query date scope. 
+  // 2.With format yyyy-mm-dd hh:MM.If 'hh:MM' not specified,it means '00:01'.
+  // 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的起始日期,精确到天,日期格式为yyyy-mm-dd 此参数需与enddate参数配合,若存在date参数,则该参数无效"}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty"`
+  // {"en":"1.Must work with 'startdate' and they  specify the query date scope. 
+  // 2.With format yyyy-mm-dd hh:MM.If 'hh:MM' not specified,it means '24:00'.
+  // 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的结束日期,精确到天,日期格式为yyyy-mm-dd 此参数需与startdate参数配合,若存在date参数,则该参数无效"}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty"`
+  // {"en":"domains that been queried:
+  // 1.If there are multiple inputs,use  ';' as separator.
+  // 2.If not specified, it means all the domains of the account .", "zh_CN":"查询的频道，多个频道值请用英文分号';'，不选或者为空时默认为所查询客户的所有频道"}
+  Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
+  // {"en":"1.If there are multiple inputs,use ';' as separator.For example,u can use 'region=cn;apac' to query data of cn and apac region.
+  // 2.If not specified, it means all the regions.", "zh_CN":"查询的加速区域的缩写，多个区域请用英文分号';'分隔开，如查询大陆及亚太区域，参数填写为：'region=cn;apac'。不选或者为空时默认为全部区域。"}
+  Region *string `json:"region,omitempty" xml:"region,omitempty"`
+  // {"en":"acceleration type:
+  // 1.If there are multiple inputs,use ';' as separator.
+  // 2.If not specified or specified as 'all', it means all the accetypes.", "zh_CN":"加速类型参数，如accetype=web。多个请用英文分号';'分隔开，不填或值为all表示所有类型"}
+  Accetype *string `json:"accetype,omitempty" xml:"accetype,omitempty"`
+  // {"en":"The response format:
+  // 1.optional values:xml, json.
+  // 2.'xml' as default.", "zh_CN":"返回结果格式,支持格式为xml和json,默认为xml"}
+  Dataformat *string `json:"dataformat,omitempty" xml:"dataformat,omitempty"`
+  // {"en":"Specifies if  the 'channel' parameter should be exactly matched:
+  // 1.'true' as default.
+  // 2. If not 'true',it will query data of channels that ends with any item of input 'channel's.", "zh_CN":"频道是否完全匹配,为true时，必须填写完整的域名(此时会过滤用户输入的无效或重复频道,所有输入频道都无效时返403.。不为true时，显示以用户输入的频道为结尾的所有频道。默认为true"}
+  IsExactMatch *string `json:"isExactMatch,omitempty" xml:"isExactMatch,omitempty"`
+  // {"en":"1.If there isp multiple inputs,use ';' as demimeter.
+  // 2.optional values of isp: refers to the ISP-section of appendix.
+  // 3. If not specified,means all the isp.", "zh_CN":"要查询的运营商的缩写，多个isp请用英文分号';'分隔开。运营商的缩写格式参考附录：具体运行商（ISP）信息的代号。备注：只有当地区只写了'cn'时，填写isp信息才有效。不选或者为空时默认为所有isp。"}
+  IspId *string `json:"ispId,omitempty" xml:"ispId,omitempty"`
+  // {"en":"choose the ipv4 or ipv6.If not specified or specified as 'all', it means all the accetypes.", "zh_CN":"ipv4、ipv6，不填默认查全部"}
+  IpProtocol *string `json:"ipProtocol,omitempty" xml:"ipProtocol,omitempty"`
+  // {"en":"the type of bandwidth:
+  // 1. in : the in's bandwidth.
+  // 2. out: the out's bandwidth.
+  // 3. ein: the exin's bandwidth.
+  // 4. eout: the exout's bandwidth.", "zh_CN":"带宽类型：in:流入带宽,out:流出带宽;ein:外网流入带宽,eout:外网流出带宽。不传或者空时默认为：in:流入带宽,out:流出带宽;ein:外网流入带宽,eout:外网流出带宽"}
+  BandwidthType *string `json:"bandwidthType,omitempty" xml:"bandwidthType,omitempty"`
+  // {"en":"The name of the node", "zh_CN":"节点名称"}
+  Node *string `json:"node,omitempty" xml:"node,omitempty"`
+  // {"en":"chargeInfo:show the charge method,charge value,the 95 of charge value", "zh_CN":"chargeInfo：计费时间计费方式、计费值、95值"}
+  OptionalFields *string `json:"optionalFields,omitempty" xml:"optionalFields,omitempty"`
+  // {"en":"method of data aggregation, can be left blank or filled with 'isp'", "zh_CN":"groupBy：数据聚合方式，可不填或填'isp'"}
+  GroupBy *string `json:"groupBy,omitempty" xml:"groupBy,omitempty"`
+}
+
+func (s BandwidthVmRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthVmRequest) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthVmRequest) SetCust(v string) *BandwidthVmRequest {
+  s.Cust = &v
+  return s
+}
+
+func (s *BandwidthVmRequest) SetDate(v string) *BandwidthVmRequest {
+  s.Date = &v
+  return s
+}
+
+func (s *BandwidthVmRequest) SetStartdate(v string) *BandwidthVmRequest {
+  s.Startdate = &v
+  return s
+}
+
+func (s *BandwidthVmRequest) SetEnddate(v string) *BandwidthVmRequest {
+  s.Enddate = &v
+  return s
+}
+
+func (s *BandwidthVmRequest) SetChannel(v string) *BandwidthVmRequest {
+  s.Channel = &v
+  return s
+}
+
+func (s *BandwidthVmRequest) SetRegion(v string) *BandwidthVmRequest {
+  s.Region = &v
+  return s
+}
+
+func (s *BandwidthVmRequest) SetAccetype(v string) *BandwidthVmRequest {
+  s.Accetype = &v
+  return s
+}
+
+func (s *BandwidthVmRequest) SetDataformat(v string) *BandwidthVmRequest {
+  s.Dataformat = &v
+  return s
+}
+
+func (s *BandwidthVmRequest) SetIsExactMatch(v string) *BandwidthVmRequest {
+  s.IsExactMatch = &v
+  return s
+}
+
+func (s *BandwidthVmRequest) SetIspId(v string) *BandwidthVmRequest {
+  s.IspId = &v
+  return s
+}
+
+func (s *BandwidthVmRequest) SetIpProtocol(v string) *BandwidthVmRequest {
+  s.IpProtocol = &v
+  return s
+}
+
+func (s *BandwidthVmRequest) SetBandwidthType(v string) *BandwidthVmRequest {
+  s.BandwidthType = &v
+  return s
+}
+
+func (s *BandwidthVmRequest) SetNode(v string) *BandwidthVmRequest {
+  s.Node = &v
+  return s
+}
+
+func (s *BandwidthVmRequest) SetOptionalFields(v string) *BandwidthVmRequest {
+  s.OptionalFields = &v
+  return s
+}
+
+func (s *BandwidthVmRequest) SetGroupBy(v string) *BandwidthVmRequest {
+  s.GroupBy = &v
+  return s
+}
+
+type BandwidthVmResponse struct {
+  // {'en':'provider', 'zh_CN':'结果'}
+  Provider *BandwidthVmBandwidthVmResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthVmResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthVmResponse) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthVmResponse) SetProvider(v *BandwidthVmBandwidthVmResponseProvider) *BandwidthVmResponse {
+  s.Provider = v
+  return s
+}
+
+type BandwidthVmBandwidthVmResponseProvider struct {
+  // {'en':'tenant', 'zh_CN':'租户'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'type', 'zh_CN':'接口类型'}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {'en':'data', 'zh_CN':'频道带宽数据'}
+  Date *BandwidthVmBandwidthVmResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthVmBandwidthVmResponseProvider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthVmBandwidthVmResponseProvider) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthVmBandwidthVmResponseProvider) SetName(v string) *BandwidthVmBandwidthVmResponseProvider {
+  s.Name = &v
+  return s
+}
+
+func (s *BandwidthVmBandwidthVmResponseProvider) SetType(v string) *BandwidthVmBandwidthVmResponseProvider {
+  s.Type = &v
+  return s
+}
+
+func (s *BandwidthVmBandwidthVmResponseProvider) SetDate(v *BandwidthVmBandwidthVmResponseProviderDate) *BandwidthVmBandwidthVmResponseProvider {
+  s.Date = v
+  return s
+}
+
+type BandwidthVmBandwidthVmResponseProviderDate struct {
+  // {'en':'startdate', 'zh_CN':'开始时间'}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
+  // {'en':'enddate', 'zh_CN':'结束时间'}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
+  // {'en':'channel', 'zh_CN':'频道'}
+  Channel *BandwidthVmBandwidthVmResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+  // {'en':'isp', 'zh_CN':'运营商'}
+  Isp *BandwidthVmBandwidthVmResponseProviderDateIsp `json:"isp,omitempty" xml:"isp,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthVmBandwidthVmResponseProviderDate) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthVmBandwidthVmResponseProviderDate) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthVmBandwidthVmResponseProviderDate) SetStartdate(v string) *BandwidthVmBandwidthVmResponseProviderDate {
+  s.Startdate = &v
+  return s
+}
+
+func (s *BandwidthVmBandwidthVmResponseProviderDate) SetEnddate(v string) *BandwidthVmBandwidthVmResponseProviderDate {
+  s.Enddate = &v
+  return s
+}
+
+func (s *BandwidthVmBandwidthVmResponseProviderDate) SetChannel(v *BandwidthVmBandwidthVmResponseProviderDateChannel) *BandwidthVmBandwidthVmResponseProviderDate {
+  s.Channel = v
+  return s
+}
+
+func (s *BandwidthVmBandwidthVmResponseProviderDate) SetIsp(v *BandwidthVmBandwidthVmResponseProviderDateIsp) *BandwidthVmBandwidthVmResponseProviderDate {
+  s.Isp = v
+  return s
+}
+
+type BandwidthVmBandwidthVmResponseProviderDateChannel struct {
+  // {'en':'channel', 'zh_CN':'频道'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'bandwidth', 'zh_CN':'带宽数据'}
+  Bandwidth []*BandwidthVmBandwidthVmResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s BandwidthVmBandwidthVmResponseProviderDateChannel) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthVmBandwidthVmResponseProviderDateChannel) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthVmBandwidthVmResponseProviderDateChannel) SetName(v string) *BandwidthVmBandwidthVmResponseProviderDateChannel {
+  s.Name = &v
+  return s
+}
+
+func (s *BandwidthVmBandwidthVmResponseProviderDateChannel) SetBandwidth(v []*BandwidthVmBandwidthVmResponseProviderDateChannelBandwidth) *BandwidthVmBandwidthVmResponseProviderDateChannel {
+  s.Bandwidth = v
+  return s
+}
+
+type BandwidthVmBandwidthVmResponseProviderDateChannelBandwidth struct     {
+  // {'en':'timestamp', 'zh_CN':'时间点'}
+  Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
+  // {'en':'bandwidth', 'zh_CN':'带宽'}
+  Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
+}
+
+func (s BandwidthVmBandwidthVmResponseProviderDateChannelBandwidth) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthVmBandwidthVmResponseProviderDateChannelBandwidth) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthVmBandwidthVmResponseProviderDateChannelBandwidth) SetTime(v string) *BandwidthVmBandwidthVmResponseProviderDateChannelBandwidth {
+  s.Time = &v
+  return s
+}
+
+func (s *BandwidthVmBandwidthVmResponseProviderDateChannelBandwidth) SetText(v string) *BandwidthVmBandwidthVmResponseProviderDateChannelBandwidth {
+  s.Text = &v
+  return s
+}
+
+type BandwidthVmBandwidthVmResponseProviderDateIsp struct {
+  // {'en':'isp id', 'zh_CN':'isp id'}
+  Ispid *string `json:"ispid,omitempty" xml:"ispid,omitempty" require:"true"`
+  // {'en':'node', 'zh_CN':'节点名称'}
+  Node *string `json:"node,omitempty" xml:"node,omitempty" require:"true"`
+  // {'en':'peakTime', 'zh_CN':'带宽峰值时间'}
+  PeakTime *string `json:"peakTime,omitempty" xml:"peakTime,omitempty" require:"true"`
+  // {'en':'peakValue', 'zh_CN':'带宽峰值'}
+  PeakValue *string `json:"peakValue,omitempty" xml:"peakValue,omitempty" require:"true"`
+}
+
+func (s BandwidthVmBandwidthVmResponseProviderDateIsp) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthVmBandwidthVmResponseProviderDateIsp) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthVmBandwidthVmResponseProviderDateIsp) SetIspid(v string) *BandwidthVmBandwidthVmResponseProviderDateIsp {
+  s.Ispid = &v
+  return s
+}
+
+func (s *BandwidthVmBandwidthVmResponseProviderDateIsp) SetNode(v string) *BandwidthVmBandwidthVmResponseProviderDateIsp {
+  s.Node = &v
+  return s
+}
+
+func (s *BandwidthVmBandwidthVmResponseProviderDateIsp) SetPeakTime(v string) *BandwidthVmBandwidthVmResponseProviderDateIsp {
+  s.PeakTime = &v
+  return s
+}
+
+func (s *BandwidthVmBandwidthVmResponseProviderDateIsp) SetPeakValue(v string) *BandwidthVmBandwidthVmResponseProviderDateIsp {
+  s.PeakValue = &v
+  return s
+}
+
+type BandwidthVmPaths struct {
+}
+
+func (s BandwidthVmPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthVmPaths) GoString() string {
+  return s.String()
+}
+
+type BandwidthVmParameters struct {
+}
+
+func (s BandwidthVmParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthVmParameters) GoString() string {
+  return s.String()
+}
+
+type BandwidthVmRequestHeader struct {
+}
+
+func (s BandwidthVmRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthVmRequestHeader) GoString() string {
+  return s.String()
+}
+
+type BandwidthVmResponseHeader struct {
+}
+
+func (s BandwidthVmResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthVmResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryBandwidthbyISPProvinceRequest struct {
+  // {'en':'Start time', 'zh_CN':'开始时间：
+  // &nbsp; 1.格式为yyyy-MM-ddTHH:mm:ss+08:00，例如，2016-12-02T10:00:00+08:00（为北京时间2016年12月2日10点0分0秒）；
+  // &nbsp; 2.不能大于当前时间；
+  // &nbsp; 3.最多可获取最近半年（183天）的数据。'}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
+  // {'en':'End time:
+  // 
+  // The 1. format is yyyy-MM-ddTHH:mm:ss+08:00;
+  // 
+  // 2. the end time is larger than the start time.
+  // 
+  // 3. if the end time is greater than the current time, take the current time.
+  // 
+  // 4. DateFrom and dateTo are not uploaded, default query for the past 24 hours; if only one is not uploaded, throw an exception;
+  // 
+  // 5. Maximum query interval allowed: 31 days, that is, the difference between dateFrom and dateTo can not exceed 31 days (technical support can be contacted to adjust).', 'zh_CN':'结束时间：
+  // &nbsp; 1.格式为yyyy-MM-ddTHH:mm:ss+08:00；
+  // &nbsp; 2.结束时间需大于开始时间；
+  // &nbsp; 3.结束时间如果大于当前时间，取当前时间；
+  // &nbsp; 4.dateFrom，dateTo二者都未传，默认查询过去的24小时；如仅有一个未传，抛异常；
+  // &nbsp; 5.允许查询最大间隔：31天，即dateFrom和dateTo相差不能超过31天（可联系技术支持调整）。'}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
+  // {'en':'Data granularity
+  // 
+  // 1.        fiveminutes:   five minutes, hourly: one hour, daily: one day;
+  // 
+  // 2.        If   not specified, daily is set as the default value;
+  // 
+  // 3.        If   fiveminutes is specified as the value, then data is returned in actual   configured granularity when there is specific configuration to data collecting   granularity for the customer.', 'zh_CN':'数据粒度：
+  // 1.支持5m（5分钟）
+  // 2.不传默认5m。'}
+  DataInterval *string `json:"dataInterval,omitempty" xml:"dataInterval,omitempty"`
+  // {'en':'area:
+  // 
+  // 1. Do not pass the default query all areas.
+  // 
+  // 2. Support to pass multiple regions, the optional values are: cn, hk, ov, apac, am, emea, fg.', 'zh_CN':'区域：
+  // 1.不传默认查询全部区域。
+  // 2.支持传递多个区域，可选值为：cn、hk、ov、apac、am、emea、fg。'}
+  AreaCode []*string `json:"areaCode,omitempty" xml:"areaCode,omitempty" type:"Repeated"`
+  // {'en':'domain:
+  // 
+  // 1. The maximum number of passable domain names is 20 by default (you can contact technical support adjustment).
+  // 
+  // 2. Query all the domain names under the account when the entry is not passed, but you cannot query (error) when the number of domain names under the account exceeds the limit.', 'zh_CN':'域名：
+  // 1.可传递域名数量上限默认为20个（可联系技术支持调整），
+  // 2.未传递该入参时查询账号下所有域名，但当账号下域名数量超过限制时不可查询（报错）。'}
+  Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" type:"Repeated"`
+  // {'en':'By default, all provinces are queried, and the provinces are transferred. The province information code table is detailed in the appendix of the overview page.', 'zh_CN':'默认查询全部省份，传递省份，省份信息码表详见概览页附录说明章节'}
+  Province []*string `json:"province,omitempty" xml:"province,omitempty" type:"Repeated"`
+  // {'en':'The default query is for all operators, the operators and operator information codes are detailed in the appendix of the overview page.', 'zh_CN':'默认查询全部运营商，传递运营商，运营商信息码表详见概览页附录说明章节'}
+  Isp []*string `json:"isp,omitempty" xml:"isp,omitempty" type:"Repeated"`
+}
+
+func (s QueryBandwidthbyISPProvinceRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthbyISPProvinceRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryBandwidthbyISPProvinceRequest) SetDateFrom(v string) *QueryBandwidthbyISPProvinceRequest {
+  s.DateFrom = &v
+  return s
+}
+
+func (s *QueryBandwidthbyISPProvinceRequest) SetDateTo(v string) *QueryBandwidthbyISPProvinceRequest {
+  s.DateTo = &v
+  return s
+}
+
+func (s *QueryBandwidthbyISPProvinceRequest) SetDataInterval(v string) *QueryBandwidthbyISPProvinceRequest {
+  s.DataInterval = &v
+  return s
+}
+
+func (s *QueryBandwidthbyISPProvinceRequest) SetAreaCode(v []*string) *QueryBandwidthbyISPProvinceRequest {
+  s.AreaCode = v
+  return s
+}
+
+func (s *QueryBandwidthbyISPProvinceRequest) SetDomain(v []*string) *QueryBandwidthbyISPProvinceRequest {
+  s.Domain = v
+  return s
+}
+
+func (s *QueryBandwidthbyISPProvinceRequest) SetProvince(v []*string) *QueryBandwidthbyISPProvinceRequest {
+  s.Province = v
+  return s
+}
+
+func (s *QueryBandwidthbyISPProvinceRequest) SetIsp(v []*string) *QueryBandwidthbyISPProvinceRequest {
+  s.Isp = v
+  return s
+}
+
+type QueryBandwidthbyISPProvinceResponse struct {
+  // {'en':'result', 'zh_CN':'结果'}
+  Result []*QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryBandwidthbyISPProvinceResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthbyISPProvinceResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryBandwidthbyISPProvinceResponse) SetResult(v []*QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResult) *QueryBandwidthbyISPProvinceResponse {
+  s.Result = v
+  return s
+}
+
+type QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResult struct     {
+  BandwidthData []*QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResultBandwidthData `json:"bandwidthData,omitempty" xml:"bandwidthData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResult) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResult) GoString() string {
+  return s.String()
+}
+
+func (s *QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResult) SetBandwidthData(v []*QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResultBandwidthData) *QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResult {
+  s.BandwidthData = v
+  return s
+}
+
+type QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResultBandwidthData struct     {
+  // {'en':'Date
+  // 
+  // 1.        When   the data query granularity is fiveminutes, the format is yyyy-MM-dd HH:mm;   the data value of every time slice represents the data value within the   previous time granularity range. 
+  // 2.        Return   the time slice contained in start time and the time slice contained in end   time.', 'zh_CN':'时间
+  // 1.查询的数据粒度为5m时，格式为yyyy-MM-dd &nbsp; HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值，比如yyyy-MM-dd 00:05，代表00:00到00:05范围内的数据。
+  // 2.返回开始时间和结束时间包含的时间片。'}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {'en':'The bandwidth value, the corresponding value value of each time slice, shows the cumulative data value represented by this time slice.
+  // 
+  // 
+  // 
+  // Unit Mbps, keep 2 decimal digits.', 'zh_CN':'带宽值，每个时间片的对应value值都展示这个时间片代表的完整数据累计值。
+  // 单位Mbps，保留2位小数。'}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+}
+
+func (s QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResultBandwidthData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResultBandwidthData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResultBandwidthData) SetTimestamp(v string) *QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResultBandwidthData {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResultBandwidthData) SetValue(v string) *QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResultBandwidthData {
+  s.Value = &v
+  return s
+}
+
+type QueryBandwidthbyISPProvincePaths struct {
+}
+
+func (s QueryBandwidthbyISPProvincePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthbyISPProvincePaths) GoString() string {
+  return s.String()
+}
+
+type QueryBandwidthbyISPProvinceParameters struct {
+}
+
+func (s QueryBandwidthbyISPProvinceParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthbyISPProvinceParameters) GoString() string {
+  return s.String()
+}
+
+type QueryBandwidthbyISPProvinceRequestHeader struct {
+}
+
+func (s QueryBandwidthbyISPProvinceRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthbyISPProvinceRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryBandwidthbyISPProvinceResponseHeader struct {
+}
+
+func (s QueryBandwidthbyISPProvinceResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryBandwidthbyISPProvinceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type BandwidthPeakRankingRequest struct {
+  // {"en":"cust_en_name of sub-client.
+  // When a merged-account wants to  view the information of the subclient,the cust_en_name is required.", "zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名"}
+  Cust *string `json:"cust,omitempty" xml:"cust,omitempty"`
+  // {"en":"Specifies the query date:
+  // 1.With format yyyy-mm-dd.
+  // 2.If not specified,it means today as default.", "zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
+  Date *string `json:"date,omitempty" xml:"date,omitempty"`
+  // {"en":"1.Must work with 'enddate' and they  specify the query date scope. 
+  // 2.With format yyyy-mm-dd.
+  // 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的起始日期，日期格式为yyyy-mm-dd；此参数需与enddate参数配合,若存在date参数,则该参数无效"}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty"`
+  // {"en":"1.Must work with 'startdate' and they  specify the query date scope. 
+  // 2.With format yyyy-mm-dd.
+  // 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的结束日期,日期格式为yyyy-mm-dd；此参数需与startdate参数配合,若存在date参数,则该参数无效。"}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty"`
+  // {"en":"domains that been queried:
+  // 1.If there are multiple inputs,use  ';' as separator.
+  // 2.If not specified, it means all the domains of the account .", "zh_CN":"查询的频道，多个频道值请用英文分号';'，不选或者为空时默认为所查询客户的所有频道"}
+  Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
+  // {"en":"1.If there are multiple inputs,use ';' as separator.For example,u can use 'region=cn;apac' to query data of cn and apac region.
+  // 2.If not specified, it means all the regions.", "zh_CN":"查询的加速区域的缩写，多个区域请用英文分号';'分隔开，如查询大陆及亚太区域，参数填写为：'region=cn;apac'。不选或者为空时默认为全部区域。"}
+  Region *string `json:"region,omitempty" xml:"region,omitempty"`
+  // {"en":"1.If there area multiple inputs,use ';' as demimeter.
+  // 2.optional values of isp: refers to the ISP-section of appendix.
+  // 3. If not specified,means all the isp.", "zh_CN":"&nbsp;要查询的运营商的缩写，多个isp请用英文分号';'分隔开。运营商的缩写格式参考附录：具体运行商（ISP）信息的代号。备注：只有当地区只写了'cn'时，填写isp信息才有效。不选或者为空时默认为所有isp。"}
+  Isp *string `json:"isp,omitempty" xml:"isp,omitempty"`
+  // {"en":"acceleration type.
+  // 1.If there are multiple inputs,use ';' as separator.
+  // 2.If not specified or specified as 'all', it means all the accetypes.", "zh_CN":"加速类型参数，如accetype=web。多个请用英文分号';'分隔开，不填或值为all表示所有类型"}
+  Accetype *string `json:"accetype,omitempty" xml:"accetype,omitempty"`
+  // {"en":"The response format:
+  // 1.optional values:xml, json.
+  // 2.'xml' as default.", "zh_CN":"返回结果格式,支持格式为xml和json,默认为xml"}
+  Dataformat *string `json:"dataformat,omitempty" xml:"dataformat,omitempty"`
+  // {"en":"Specifies if  the 'channel' parameter should be exactly matched:
+  // 1.'true' as default.
+  // 2. If not 'true',it will query data of channels that ends with any item of input 'channel's.", "zh_CN":"&nbsp;频道是否完全匹配,为true时，必须填写完整的域名(此时会过滤用户输入的无效或重复频道,所有输入频道都无效时返403.。不为true时，显示以用户输入的频道为结尾的所有频道。默认为true"}
+  IsExactMatch *string `json:"isExactMatch,omitempty" xml:"isExactMatch,omitempty"`
+  // {"en":"Different data types.
+  // 1.optional values:1,2,3.
+  // 2.'2' means bandwidth of http.'3' means bandwidth of https.'1' mean the total bandwidth.
+  // 3.ISP parameter not supported.", "zh_CN":"datatype=1时，输出总带宽；datatype=2时输出http的带宽；datatype=3时，输出https的带宽。默认datatype=1。当datatype=2或者3时，不支持isp入参。"}
+  Datatype *string `json:"datatype,omitempty" xml:"datatype,omitempty"`
+}
+
+func (s BandwidthPeakRankingRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthPeakRankingRequest) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthPeakRankingRequest) SetCust(v string) *BandwidthPeakRankingRequest {
+  s.Cust = &v
+  return s
+}
+
+func (s *BandwidthPeakRankingRequest) SetDate(v string) *BandwidthPeakRankingRequest {
+  s.Date = &v
+  return s
+}
+
+func (s *BandwidthPeakRankingRequest) SetStartdate(v string) *BandwidthPeakRankingRequest {
+  s.Startdate = &v
+  return s
+}
+
+func (s *BandwidthPeakRankingRequest) SetEnddate(v string) *BandwidthPeakRankingRequest {
+  s.Enddate = &v
+  return s
+}
+
+func (s *BandwidthPeakRankingRequest) SetChannel(v string) *BandwidthPeakRankingRequest {
+  s.Channel = &v
+  return s
+}
+
+func (s *BandwidthPeakRankingRequest) SetRegion(v string) *BandwidthPeakRankingRequest {
+  s.Region = &v
+  return s
+}
+
+func (s *BandwidthPeakRankingRequest) SetIsp(v string) *BandwidthPeakRankingRequest {
+  s.Isp = &v
+  return s
+}
+
+func (s *BandwidthPeakRankingRequest) SetAccetype(v string) *BandwidthPeakRankingRequest {
+  s.Accetype = &v
+  return s
+}
+
+func (s *BandwidthPeakRankingRequest) SetDataformat(v string) *BandwidthPeakRankingRequest {
+  s.Dataformat = &v
+  return s
+}
+
+func (s *BandwidthPeakRankingRequest) SetIsExactMatch(v string) *BandwidthPeakRankingRequest {
+  s.IsExactMatch = &v
+  return s
+}
+
+func (s *BandwidthPeakRankingRequest) SetDatatype(v string) *BandwidthPeakRankingRequest {
+  s.Datatype = &v
+  return s
+}
+
+type BandwidthPeakRankingResponse struct {
+  // {'en':'provider', 'zh_CN':'结果'}
+  Provider *BandwidthPeakRankingBandwidthPeakRankingResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthPeakRankingResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthPeakRankingResponse) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthPeakRankingResponse) SetProvider(v *BandwidthPeakRankingBandwidthPeakRankingResponseProvider) *BandwidthPeakRankingResponse {
+  s.Provider = v
+  return s
+}
+
+type BandwidthPeakRankingBandwidthPeakRankingResponseProvider struct {
+  // {'en':'tenant', 'zh_CN':'租户'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'type', 'zh_CN':'接口类型'}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {'en':'data', 'zh_CN':'数据'}
+  Date *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthPeakRankingBandwidthPeakRankingResponseProvider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthPeakRankingBandwidthPeakRankingResponseProvider) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthPeakRankingBandwidthPeakRankingResponseProvider) SetName(v string) *BandwidthPeakRankingBandwidthPeakRankingResponseProvider {
+  s.Name = &v
+  return s
+}
+
+func (s *BandwidthPeakRankingBandwidthPeakRankingResponseProvider) SetType(v string) *BandwidthPeakRankingBandwidthPeakRankingResponseProvider {
+  s.Type = &v
+  return s
+}
+
+func (s *BandwidthPeakRankingBandwidthPeakRankingResponseProvider) SetDate(v *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate) *BandwidthPeakRankingBandwidthPeakRankingResponseProvider {
+  s.Date = v
+  return s
+}
+
+type BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate struct {
+  // {'en':'startdate', 'zh_CN':'开始日期'}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
+  // {'en':'enddate', 'zh_CN':'结束日期'}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
+  // {'en':'channelPeak', 'zh_CN':'频道峰值数据'}
+  ChannelPeak *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak `json:"channelPeak,omitempty" xml:"channelPeak,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate) SetStartdate(v string) *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate {
+  s.Startdate = &v
+  return s
+}
+
+func (s *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate) SetEnddate(v string) *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate {
+  s.Enddate = &v
+  return s
+}
+
+func (s *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate) SetChannelPeak(v *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak) *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate {
+  s.ChannelPeak = v
+  return s
+}
+
+type BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak struct {
+  // {'en':'channel', 'zh_CN':'频道'}
+  Channel *string `json:"channel,omitempty" xml:"channel,omitempty" require:"true"`
+  // {'en':'peakTime', 'zh_CN':'峰值时间'}
+  PeakTime *string `json:"peakTime,omitempty" xml:"peakTime,omitempty" require:"true"`
+  // {'en':'peakvalue（Mbps）', 'zh_CN':'带宽峰值，单位Mbps'}
+  PeakValue *string `json:"peakValue,omitempty" xml:"peakValue,omitempty" require:"true"`
+  // {'en':'total traffic,unit GB', 'zh_CN':'总流量，单位GB'}
+  TotalFlow *string `json:"totalFlow,omitempty" xml:"totalFlow,omitempty" require:"true"`
+}
+
+func (s BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak) SetChannel(v string) *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak {
+  s.Channel = &v
+  return s
+}
+
+func (s *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak) SetPeakTime(v string) *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak {
+  s.PeakTime = &v
+  return s
+}
+
+func (s *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak) SetPeakValue(v string) *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak {
+  s.PeakValue = &v
+  return s
+}
+
+func (s *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak) SetTotalFlow(v string) *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak {
+  s.TotalFlow = &v
+  return s
+}
+
+type BandwidthPeakRankingPaths struct {
+}
+
+func (s BandwidthPeakRankingPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthPeakRankingPaths) GoString() string {
+  return s.String()
+}
+
+type BandwidthPeakRankingParameters struct {
+}
+
+func (s BandwidthPeakRankingParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthPeakRankingParameters) GoString() string {
+  return s.String()
+}
+
+type BandwidthPeakRankingRequestHeader struct {
+}
+
+func (s BandwidthPeakRankingRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthPeakRankingRequestHeader) GoString() string {
+  return s.String()
+}
+
+type BandwidthPeakRankingResponseHeader struct {
+}
+
+func (s BandwidthPeakRankingResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthPeakRankingResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type BandwidthEcdnRequest struct {
+  // {"en":"cust_en_name of sub-client.
+  // When a merged-account wants to  view the information of the subclient,the cust_en_name is required.", "zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名"}
+  Cust *string `json:"cust,omitempty" xml:"cust,omitempty"`
+  // {"en":"Specifies the query date:
+  // 1)With format yyyy-mm-dd.
+  // 2)If not specified,it means today as default.", "zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
+  Date *string `json:"date,omitempty" xml:"date,omitempty"`
+  // {"en":"1)Must work with 'enddate' and they  specify the query date scope. 
+  // 2)With format yyyy-mm-dd.
+  // 3)If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的起始日期，日期格式为yyyy-mm-dd；此参数需与enddate参数配合,若存在date参数,则该参数无效"}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty"`
+  // {"en":"1)Must work with 'startdate' and they  specify the query date scope. 
+  // 2)With format yyyy-mm-dd
+  // 3)If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的结束日期,日期格式为yyyy-mm-dd；此参数需与startdate参数配合,若存在date参数,则该参数无效。"}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty"`
+  // {"en":"domains that been queried:
+  // 1)If there are multiple inputs,use  ';' as separator.
+  // 2)If not specified, it means all the domains of the account .", "zh_CN":"查询的频道，多个频道值请用英文分号';'，不选或者为空时默认为所查询客户的所有频道"}
+  Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
+  // {"en":"GMT time zone, parameter format: GMT+09:00 means east 9th zone, GMT-09:00 means west 9th zone, if not transmitted, the default is local time zone (east 8th zone).", "zh_CN":"格林尼治时区，参数格式 GMT+09:00 表示东九区，GMT-09:00 表示西9区，不传则默认为本地时区（东八区）"}
+  Timezone *string `json:"timezone,omitempty" xml:"timezone,omitempty"`
+  // {"en":"1)If there are multiple inputs,use ';' as separator.For example,u can use 'region=cn;apac' to query data of cn and apac region.
+  // 2)If not specified, it means all the regions.", "zh_CN":"查询的加速区域的缩写，多个区域请用英文分号';'分隔开，如查询大陆及亚太区域，参数填写为：'region=cn;apac'。不选或者为空时默认为全部区域。"}
+  Region *string `json:"region,omitempty" xml:"region,omitempty"`
+  // {"en":"acceleration type.
+  // 1)If there are multiple inputs,use ';' as separator.
+  // 2)If not specified or specified as 'all', it means all the accetypes.", "zh_CN":"加速类型参数，如accetype=web。多个请用英文分号';'分隔开，不填或值为all表示所有类型"}
+  Accetype *string `json:"accetype,omitempty" xml:"accetype,omitempty"`
+  // {"en":"The response format:
+  // 1)optional values:xml, json.
+  // 2)'xml' as default.", "zh_CN":"返回结果格式,支持格式为xml和json,默认为xml"}
+  Dataformat *string `json:"dataformat,omitempty" xml:"dataformat,omitempty"`
+  // {"en":"The option without specifying a value will return all types of data:
+  // 1)ecdnBandwidth: will only return ECDN data.
+  // 2)cdnBandwidth: will only return CDN details data.
+  // 3)cdnPlusEcdnBandwidth: will only return ECDN+CDN details dat.", "zh_CN":"不传返回所有类型数据。ecdnBandwidth：只返回ECDN数据；cdnBandwidth：只返回CDN明细数据；cdnPlusEcdnBandwidth：只返回ECDN+cdn明细数据"}
+  Datasource *string `json:"datasource,omitempty" xml:"datasource,omitempty"`
+}
+
+func (s BandwidthEcdnRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthEcdnRequest) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthEcdnRequest) SetCust(v string) *BandwidthEcdnRequest {
+  s.Cust = &v
+  return s
+}
+
+func (s *BandwidthEcdnRequest) SetDate(v string) *BandwidthEcdnRequest {
+  s.Date = &v
+  return s
+}
+
+func (s *BandwidthEcdnRequest) SetStartdate(v string) *BandwidthEcdnRequest {
+  s.Startdate = &v
+  return s
+}
+
+func (s *BandwidthEcdnRequest) SetEnddate(v string) *BandwidthEcdnRequest {
+  s.Enddate = &v
+  return s
+}
+
+func (s *BandwidthEcdnRequest) SetChannel(v string) *BandwidthEcdnRequest {
+  s.Channel = &v
+  return s
+}
+
+func (s *BandwidthEcdnRequest) SetTimezone(v string) *BandwidthEcdnRequest {
+  s.Timezone = &v
+  return s
+}
+
+func (s *BandwidthEcdnRequest) SetRegion(v string) *BandwidthEcdnRequest {
+  s.Region = &v
+  return s
+}
+
+func (s *BandwidthEcdnRequest) SetAccetype(v string) *BandwidthEcdnRequest {
+  s.Accetype = &v
+  return s
+}
+
+func (s *BandwidthEcdnRequest) SetDataformat(v string) *BandwidthEcdnRequest {
+  s.Dataformat = &v
+  return s
+}
+
+func (s *BandwidthEcdnRequest) SetDatasource(v string) *BandwidthEcdnRequest {
+  s.Datasource = &v
+  return s
+}
+
+type BandwidthEcdnResponse struct {
+  // {'en':'provider', 'zh_CN':'结果'}
+  Provider *BandwidthEcdnBandwidthEcdnResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthEcdnResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthEcdnResponse) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthEcdnResponse) SetProvider(v *BandwidthEcdnBandwidthEcdnResponseProvider) *BandwidthEcdnResponse {
+  s.Provider = v
+  return s
+}
+
+type BandwidthEcdnBandwidthEcdnResponseProvider struct {
+  // {'en':'tenant', 'zh_CN':'租户'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'type', 'zh_CN':'接口类型'}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {'en':'data', 'zh_CN':'ecdn数据'}
+  Date *BandwidthEcdnBandwidthEcdnResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthEcdnBandwidthEcdnResponseProvider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthEcdnBandwidthEcdnResponseProvider) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthEcdnBandwidthEcdnResponseProvider) SetName(v string) *BandwidthEcdnBandwidthEcdnResponseProvider {
+  s.Name = &v
+  return s
+}
+
+func (s *BandwidthEcdnBandwidthEcdnResponseProvider) SetType(v string) *BandwidthEcdnBandwidthEcdnResponseProvider {
+  s.Type = &v
+  return s
+}
+
+func (s *BandwidthEcdnBandwidthEcdnResponseProvider) SetDate(v *BandwidthEcdnBandwidthEcdnResponseProviderDate) *BandwidthEcdnBandwidthEcdnResponseProvider {
+  s.Date = v
+  return s
+}
+
+type BandwidthEcdnBandwidthEcdnResponseProviderDate struct {
+  // {'en':'chartDataList', 'zh_CN':'带宽明细'}
+  ChartDataList []*BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataList `json:"chartDataList,omitempty" xml:"chartDataList,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s BandwidthEcdnBandwidthEcdnResponseProviderDate) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthEcdnBandwidthEcdnResponseProviderDate) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthEcdnBandwidthEcdnResponseProviderDate) SetChartDataList(v []*BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataList) *BandwidthEcdnBandwidthEcdnResponseProviderDate {
+  s.ChartDataList = v
+  return s
+}
+
+type BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataList struct     {
+  // {'en':'ecdnBandwidth', 'zh_CN':'支持：[ecdnBandwidth],[cdnBandwidth],[cdnPlusEcdnBandwidth] 3种类型带宽数据'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'bandwidth', 'zh_CN':'带宽明细'}
+  Data []*BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataListData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataList) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataList) SetName(v string) *BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataList {
+  s.Name = &v
+  return s
+}
+
+func (s *BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataList) SetData(v []*BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataListData) *BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataList {
+  s.Data = v
+  return s
+}
+
+type BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataListData struct     {
+  // {'en':'time of every 5 duration,with format yyyy-mmm-dd hh:MM:ss', 'zh_CN':'ecdn带宽5分钟粒度时间，格式yyyy-mm-dd hh:MM:ss'}
+  Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
+  // {'en':'displaying the Bandwidth(Mbps)', 'zh_CN':'ecdn带宽(Mbps)'}
+  Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
+}
+
+func (s BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataListData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataListData) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataListData) SetTime(v string) *BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataListData {
+  s.Time = &v
+  return s
+}
+
+func (s *BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataListData) SetText(v string) *BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataListData {
+  s.Text = &v
+  return s
+}
+
+type BandwidthEcdnPaths struct {
+}
+
+func (s BandwidthEcdnPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthEcdnPaths) GoString() string {
+  return s.String()
+}
+
+type BandwidthEcdnParameters struct {
+}
+
+func (s BandwidthEcdnParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthEcdnParameters) GoString() string {
+  return s.String()
+}
+
+type BandwidthEcdnRequestHeader struct {
+}
+
+func (s BandwidthEcdnRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthEcdnRequestHeader) GoString() string {
+  return s.String()
+}
+
+type BandwidthEcdnResponseHeader struct {
+}
+
+func (s BandwidthEcdnResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthEcdnResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type BandwidthLogEcdnRequest struct {
+  // {"en":"cust_en_name of sub-client.
+  // When a merged-account wants to  view the information of the subclient,the cust_en_name is required.", "zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名"}
+  Cust *string `json:"cust,omitempty" xml:"cust,omitempty"`
+  // {"en":"Specifies the query date:
+  // 1)With format yyyy-mm-dd.
+  // 2)If not specified,it means today as default.", "zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
+  Date *string `json:"date,omitempty" xml:"date,omitempty"`
+  // {"en":"1)Must work with 'enddate' and they  specify the query date scope. 
+  // 2)With format yyyy-mm-dd.
+  // 3)If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的起始日期，日期格式为yyyy-mm-dd；此参数需与enddate参数配合,若存在date参数,则该参数无效"}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty"`
+  // {"en":"1)Must work with 'startdate' and they  specify the query date scope. 
+  // 2)With format yyyy-mm-dd
+  // 3)If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的结束日期,日期格式为yyyy-mm-dd；此参数需与startdate参数配合,若存在date参数,则该参数无效。"}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty"`
+  // {"en":"domains that been queried:
+  // 1)If there are multiple inputs,use  ';' as separator.
+  // 2)If not specified, it means all the domains of the account .", "zh_CN":"查询的频道，多个频道值请用英文分号';'，不选或者为空时默认为所查询客户的所有频道"}
+  Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
+  // {"en":"GMT time zone, parameter format: GMT+09:00 means east 9th zone, GMT-09:00 means west 9th zone, if not transmitted, the default is local time zone (east 8th zone).", "zh_CN":"格林尼治时区，参数格式 GMT+09:00 表示东九区，GMT-09:00 表示西9区，不传则默认为本地时区（东八区）"}
+  Timezone *string `json:"timezone,omitempty" xml:"timezone,omitempty"`
+  // {"en":"1)If there are multiple inputs,use ';' as separator.For example,u can use 'region=cn;apac' to query data of cn and apac region.
+  // 2)If not specified, it means all the regions.", "zh_CN":"查询的加速区域的缩写，多个区域请用英文分号';'分隔开，如查询大陆及亚太区域，参数填写为：'region=cn;apac'。不选或者为空时默认为全部区域。"}
+  Region *string `json:"region,omitempty" xml:"region,omitempty"`
+  // {"en":"acceleration type.
+  // 1)If there are multiple inputs,use ';' as separator.
+  // 2)If not specified or specified as 'all', it means all the accetypes.", "zh_CN":"加速类型参数，如accetype=web。多个请用英文分号';'分隔开，不填或值为all表示所有类型"}
+  Accetype *string `json:"accetype,omitempty" xml:"accetype,omitempty"`
+  // {"en":"The response format:
+  // 1)optional values:xml, json.
+  // 2)'xml' as default.", "zh_CN":"返回结果格式,支持格式为xml和json,默认为xml"}
+  Dataformat *string `json:"dataformat,omitempty" xml:"dataformat,omitempty"`
+  // {"en":"The option without specifying a value will return all types of data:
+  // 1)ecdnBandwidth: will only return ECDN data.
+  // 2)cdnBandwidth: will only return CDN details data.
+  // 3)cdnPlusEcdnBandwidth: will only return ECDN+CDN details dat.", "zh_CN":"不传返回所有类型数据。ecdnBandwidth：只返回ECDN数据；cdnBandwidth：只返回CDN明细数据；cdnPlusEcdnBandwidth：只返回ECDN+cdn明细数据"}
+  Datasource *string `json:"datasource,omitempty" xml:"datasource,omitempty"`
+}
+
+func (s BandwidthLogEcdnRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthLogEcdnRequest) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthLogEcdnRequest) SetCust(v string) *BandwidthLogEcdnRequest {
+  s.Cust = &v
+  return s
+}
+
+func (s *BandwidthLogEcdnRequest) SetDate(v string) *BandwidthLogEcdnRequest {
+  s.Date = &v
+  return s
+}
+
+func (s *BandwidthLogEcdnRequest) SetStartdate(v string) *BandwidthLogEcdnRequest {
+  s.Startdate = &v
+  return s
+}
+
+func (s *BandwidthLogEcdnRequest) SetEnddate(v string) *BandwidthLogEcdnRequest {
+  s.Enddate = &v
+  return s
+}
+
+func (s *BandwidthLogEcdnRequest) SetChannel(v string) *BandwidthLogEcdnRequest {
+  s.Channel = &v
+  return s
+}
+
+func (s *BandwidthLogEcdnRequest) SetTimezone(v string) *BandwidthLogEcdnRequest {
+  s.Timezone = &v
+  return s
+}
+
+func (s *BandwidthLogEcdnRequest) SetRegion(v string) *BandwidthLogEcdnRequest {
+  s.Region = &v
+  return s
+}
+
+func (s *BandwidthLogEcdnRequest) SetAccetype(v string) *BandwidthLogEcdnRequest {
+  s.Accetype = &v
+  return s
+}
+
+func (s *BandwidthLogEcdnRequest) SetDataformat(v string) *BandwidthLogEcdnRequest {
+  s.Dataformat = &v
+  return s
+}
+
+func (s *BandwidthLogEcdnRequest) SetDatasource(v string) *BandwidthLogEcdnRequest {
+  s.Datasource = &v
+  return s
+}
+
+type BandwidthLogEcdnResponse struct {
+  // {'en':'provider', 'zh_CN':'结果'}
+  Provider *BandwidthLogEcdnBandwidthLogEcdnResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthLogEcdnResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthLogEcdnResponse) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthLogEcdnResponse) SetProvider(v *BandwidthLogEcdnBandwidthLogEcdnResponseProvider) *BandwidthLogEcdnResponse {
+  s.Provider = v
+  return s
+}
+
+type BandwidthLogEcdnBandwidthLogEcdnResponseProvider struct {
+  // {'en':'tenant', 'zh_CN':'租户'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'type', 'zh_CN':'接口类型'}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {'en':'data', 'zh_CN':'ecdn数据'}
+  Date *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthLogEcdnBandwidthLogEcdnResponseProvider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthLogEcdnBandwidthLogEcdnResponseProvider) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthLogEcdnBandwidthLogEcdnResponseProvider) SetName(v string) *BandwidthLogEcdnBandwidthLogEcdnResponseProvider {
+  s.Name = &v
+  return s
+}
+
+func (s *BandwidthLogEcdnBandwidthLogEcdnResponseProvider) SetType(v string) *BandwidthLogEcdnBandwidthLogEcdnResponseProvider {
+  s.Type = &v
+  return s
+}
+
+func (s *BandwidthLogEcdnBandwidthLogEcdnResponseProvider) SetDate(v *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDate) *BandwidthLogEcdnBandwidthLogEcdnResponseProvider {
+  s.Date = v
+  return s
+}
+
+type BandwidthLogEcdnBandwidthLogEcdnResponseProviderDate struct {
+  // {'en':'chartDataList', 'zh_CN':'带宽明细'}
+  ChartDataList []*BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataList `json:"chartDataList,omitempty" xml:"chartDataList,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s BandwidthLogEcdnBandwidthLogEcdnResponseProviderDate) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthLogEcdnBandwidthLogEcdnResponseProviderDate) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDate) SetChartDataList(v []*BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataList) *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDate {
+  s.ChartDataList = v
+  return s
+}
+
+type BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataList struct     {
+  // {'en':'ecdnBandwidth', 'zh_CN':'支持：[ecdnBandwidth],[cdnBandwidth],[cdnPlusEcdnBandwidth] 3种类型带宽数据'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'bandwidth', 'zh_CN':'带宽明细'}
+  Data []*BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataListData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataList) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataList) SetName(v string) *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataList {
+  s.Name = &v
+  return s
+}
+
+func (s *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataList) SetData(v []*BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataListData) *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataList {
+  s.Data = v
+  return s
+}
+
+type BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataListData struct     {
+  // {'en':'time of every 5 duration,with format yyyy-mmm-dd hh:MM:ss', 'zh_CN':'ecdn带宽5分钟粒度时间，格式yyyy-mm-dd hh:MM:ss'}
+  Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
+  // {'en':'displaying the Bandwidth(Mbps)', 'zh_CN':'ecdn带宽(Mbps)'}
+  Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
+}
+
+func (s BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataListData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataListData) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataListData) SetTime(v string) *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataListData {
+  s.Time = &v
+  return s
+}
+
+func (s *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataListData) SetText(v string) *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataListData {
+  s.Text = &v
+  return s
+}
+
+type BandwidthLogEcdnPaths struct {
+}
+
+func (s BandwidthLogEcdnPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthLogEcdnPaths) GoString() string {
+  return s.String()
+}
+
+type BandwidthLogEcdnParameters struct {
+}
+
+func (s BandwidthLogEcdnParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthLogEcdnParameters) GoString() string {
+  return s.String()
+}
+
+type BandwidthLogEcdnRequestHeader struct {
+}
+
+func (s BandwidthLogEcdnRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthLogEcdnRequestHeader) GoString() string {
+  return s.String()
+}
+
+type BandwidthLogEcdnResponseHeader struct {
+}
+
+func (s BandwidthLogEcdnResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthLogEcdnResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryIPV6BandwidthOfeachISPandProvinceRequest struct {
+  // {"en":"Start time
+  // 
+  // 1.The time format is yyyy-MM-ddTHH:mm:ss+08:00, for example, 2016-12-02T10:00:00+08:00 (for Beijing time, December 2, 2016, 10:00:00);
+  // 2.Cannot be greater than the current time
+  // 3.Get up to the last six months (183 days) of data.", "zh_CN":"开始时间:
+  // 
+  // 1.时间格式为yyyy-MM-ddTHH:mm:ss+08:00,例如,2016-12-02T10:00:00+08:00(为北京时间2016年12月2日10点0分0秒);
+  // 
+  // 2.不能大于当前时间
+  // 
+  // 3.最多可获取最近半年(183天)的数据"}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
+  // {"en":"End time
+  // 1.The format is yyyy-MM-ddTHH:mm:ss+08:00;
+  // 2.Must be greater than dateFrom; if it's greater than the current time, then the current time is assigned as the value;
+  // 3.If both fields of dataFrom and dateTo are left empty, then data in the last 24 hours will be queried by default;
+  // 4.Allowable maximum time range for query: 1 day, means the period between dateFrom to dateTo should not exceed 1 day (can be adjusted by contacting technical support up to 31 days)", "zh_CN":"结束时间:
+  // 
+  // 1.时间格式yyyy-MM-ddTHH:mm:ss+08:00
+  // 
+  // 2.结束时间需大于开始时间,结束时间如果大于当前时间,取当前时间。
+  // 
+  // 3.dateFrom,dateTo二者都未传,默认查询过去的24小时;如仅有一个未传,抛异常
+  // 
+  // 4.允许查询最大时间间隔:1天,即dateFrom和dateTo相差不能超过1天。(可联系技术支持调整)"}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
+  // {"en":"Domain:
+  // 1.The default upper limit to domains that can be entered is 200 (Contact technical support to adjust);
+  // 2.Automatically filter out illegal domains (illegal domains will be filtered out, the query results only return the data of legitimate domains)", "zh_CN":"域名:
+  // 
+  // 1.可传递域名数量上限默认为200个(可联系技术支持调整);
+  // 
+  // 2.自动过滤掉无效域名(如传递非法域名,会被过滤掉,查询结果只返回有效域名的数据)"}
+  Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" type:"Repeated"`
+  // {"en":"Data granularity:
+  // 1. Support 5m (5 minutes granularity),1h (1 hour granularity)
+  // 2. The default value is 5m", "zh_CN":"数据粒度:
+  // 
+  // 1.支持5m(5分钟)、1h(1小时)
+  // 
+  // 2.不传默认5m。"}
+  DataInterval *string `json:"dataInterval,omitempty" xml:"dataInterval,omitempty"`
+  // {"en":"Province
+  // 
+  // 1.Province is not upload: Query all provinces and aggregate the returned data according to all provinces; 
+  // 2.Province is upload: Provinces can transmit Chinese or code. Please refer to the appendix description section of the overview page for the provincial information code table.
+  // 
+  // 3.Support language request header Accept Language, only support zh-CN and en-US, default to zh-CN. Accept Language: en-US, both the province and isp input and return are in code, otherwise the return is in Chinese.", "zh_CN":"省份
+  // 
+  // 1.未传递province时：查询所有省份，返回的数据按照所有省份聚合。
+  // 
+  // 2.有传递province时：省份 可传中文或code。省份信息码表详见概览页附录说明章节
+  // 
+  // 3.支持语言请求头Accept-Language，只支持zh-CN、en-US，默认为zh-CN。Accept-Language：en-US时，省份及运营商 入参及返回都为code，否则返回的为中文。"}
+  Province []*string `json:"province,omitempty" xml:"province,omitempty" type:"Repeated"`
+  // {"en":"ISP:
+  // 1.ISP is not upload: Query all ISPs and aggregate the returned data according to all ISPs; 
+  // 2.ISPs is upload: Isp can transmit Chinese or code. Please refer to the appendix description section of the overview page for the ISP information code table.", "zh_CN":"运营商：
+  // 1.未传递isp时：查询所有isp，返回的数据按照所有运营商聚合。 
+  // 2.有传递isp时：运营商 可传中文或code。运营商信息码表详见概览页附录说明章节"}
+  Isp []*string `json:"isp,omitempty" xml:"isp,omitempty" type:"Repeated"`
+  // {"en":"IP type
+  // 1.Optional values:IPV6,IPV4
+  // 2.Query all IP type by default.", "zh_CN":"IP类型:
+  // 
+  // 1.可选值为 IPV6.IPV4
+  // 2.不传默认查询全部"}
+  IPType *string `json:"IPType,omitempty" xml:"IPType,omitempty"`
+  // {"en":"Group dimension:
+  // 1.Default response aggregation data without group
+  // 2.Optional values:domain,province,isp,you can pass in single or multiple values
+  // 3.The detailed data will be displayed according to the dimension.For example,if the dimension is isp,the detail data will be group by each isp.", "zh_CN":"分组关键词:
+  // 1.默认聚合展示;
+  // 2.可选值为domain.province.isp,可传入多个值;
+  // 3.传入关键词则代表需要按照关键词对应的值展示明细; 例如groupBy传入isp,则isp维度需要明细展示;当没有传递isp,则代表isp聚合展示,同时isp节点则不返回。其他province和domain相同逻辑。 例如:传递'groupBy':   ['domain','province'],则ispData下的isp节点无需返回。 { 'domain': 'www.aaaa.com', 'ispData': [ { 'isp':   '中国电信', 'provinceData': [....] }]}"}
+  GroupBy []*string `json:"groupBy,omitempty" xml:"groupBy,omitempty" type:"Repeated"`
+}
+
+func (s QueryIPV6BandwidthOfeachISPandProvinceRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryIPV6BandwidthOfeachISPandProvinceRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryIPV6BandwidthOfeachISPandProvinceRequest) SetDateFrom(v string) *QueryIPV6BandwidthOfeachISPandProvinceRequest {
+  s.DateFrom = &v
+  return s
+}
+
+func (s *QueryIPV6BandwidthOfeachISPandProvinceRequest) SetDateTo(v string) *QueryIPV6BandwidthOfeachISPandProvinceRequest {
+  s.DateTo = &v
+  return s
+}
+
+func (s *QueryIPV6BandwidthOfeachISPandProvinceRequest) SetDomain(v []*string) *QueryIPV6BandwidthOfeachISPandProvinceRequest {
+  s.Domain = v
+  return s
+}
+
+func (s *QueryIPV6BandwidthOfeachISPandProvinceRequest) SetDataInterval(v string) *QueryIPV6BandwidthOfeachISPandProvinceRequest {
+  s.DataInterval = &v
+  return s
+}
+
+func (s *QueryIPV6BandwidthOfeachISPandProvinceRequest) SetProvince(v []*string) *QueryIPV6BandwidthOfeachISPandProvinceRequest {
+  s.Province = v
+  return s
+}
+
+func (s *QueryIPV6BandwidthOfeachISPandProvinceRequest) SetIsp(v []*string) *QueryIPV6BandwidthOfeachISPandProvinceRequest {
+  s.Isp = v
+  return s
+}
+
+func (s *QueryIPV6BandwidthOfeachISPandProvinceRequest) SetIPType(v string) *QueryIPV6BandwidthOfeachISPandProvinceRequest {
+  s.IPType = &v
+  return s
+}
+
+func (s *QueryIPV6BandwidthOfeachISPandProvinceRequest) SetGroupBy(v []*string) *QueryIPV6BandwidthOfeachISPandProvinceRequest {
+  s.GroupBy = v
+  return s
+}
+
+type QueryIPV6BandwidthOfeachISPandProvinceResponse struct {
+  // {"en":"result", "zh_CN":"结果"}
+  Result []*QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryIPV6BandwidthOfeachISPandProvinceResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryIPV6BandwidthOfeachISPandProvinceResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryIPV6BandwidthOfeachISPandProvinceResponse) SetResult(v []*QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResult) *QueryIPV6BandwidthOfeachISPandProvinceResponse {
+  s.Result = v
+  return s
+}
+
+type QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResult struct     {
+  // {"en":"Domain", "zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  IspData []*QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResult) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResult) GoString() string {
+  return s.String()
+}
+
+func (s *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResult) SetDomain(v string) *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResult {
+  s.Domain = &v
+  return s
+}
+
+func (s *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResult) SetIspData(v []*QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData) *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResult {
+  s.IspData = v
+  return s
+}
+
+type QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData struct     {
+  // {"en":"ISP", "zh_CN":"运营商"}
+  Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
+  ProvinceData []*QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData) SetIsp(v string) *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData {
+  s.Isp = &v
+  return s
+}
+
+func (s *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData) SetProvinceData(v []*QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData) *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData {
+  s.ProvinceData = v
+  return s
+}
+
+type QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData struct     {
+  // {"en":"Province", "zh_CN":"省份"}
+  Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
+  BandwidthData []*QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData `json:"bandwidthData,omitempty" xml:"bandwidthData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData) SetProvince(v string) *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData {
+  s.Province = &v
+  return s
+}
+
+func (s *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData) SetBandwidthData(v []*QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData) *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData {
+  s.BandwidthData = v
+  return s
+}
+
+type QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData struct     {
+  // {"en":"Time
+  // 1. When the data size of the query is 5m, the format is yyyy-MM-dd HH:mm; each time slice data value represents the data value in the previous time granularity range. The time slice starting at the beginning of the day is yyyy-MM-dd 00:05, and the last time slice is (yyyy-MM-dd+1) 00:00.
+  // 2. When the data granularity of the query is 1h, the format is yyyy-MM-dd HH; each time slice data value represents the data value within the previous time granularity range. The time slice starting at the beginning of the day is yyyy-MM-dd 01, and the last time slice is (yyyy-MM-dd+1) 00.
+  // 3. Returns the time slice contained in the start time and end time.", "zh_CN":"时间,
+  // 查询的数据粒度为5m时,格式为yyyy-MM-dd HH:mm;每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05,最后一个时间片是(yyyy-MM-dd+1) 00:00;
+  // 查询的数据粒度为1h时,格式为yyyy-MM-dd HH;每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 01,最后一个时间片是(yyyy-MM-dd+1) 00;
+  // 返回开始时间和结束时间包含的时间片。"}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {"en":"Bandwidth,unit is Mbps,Keep 2 decimal places", "zh_CN":"带宽值,单位Mbps,保留2位小数。"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+}
+
+func (s QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData) SetTimestamp(v string) *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData) SetValue(v string) *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData {
+  s.Value = &v
+  return s
+}
+
+type QueryIPV6BandwidthOfeachISPandProvincePaths struct {
+}
+
+func (s QueryIPV6BandwidthOfeachISPandProvincePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryIPV6BandwidthOfeachISPandProvincePaths) GoString() string {
+  return s.String()
+}
+
+type QueryIPV6BandwidthOfeachISPandProvinceParameters struct {
+}
+
+func (s QueryIPV6BandwidthOfeachISPandProvinceParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryIPV6BandwidthOfeachISPandProvinceParameters) GoString() string {
+  return s.String()
+}
+
+type QueryIPV6BandwidthOfeachISPandProvinceRequestHeader struct {
+}
+
+func (s QueryIPV6BandwidthOfeachISPandProvinceRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryIPV6BandwidthOfeachISPandProvinceRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryIPV6BandwidthOfeachISPandProvinceResponseHeader struct {
+}
+
+func (s QueryIPV6BandwidthOfeachISPandProvinceResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryIPV6BandwidthOfeachISPandProvinceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type ReportBandwidthRealTimeEdgeServiceRequest struct {
+  // {"en":"Start time:
+  // 1.Start time: time format is yyyy-MM-ddTHH:mm:ss+08:00, for example, 2016-12-02T10:00:00+08:00 (December 2rd, 2016, 10:00 a.m., Beijing Time);
+  // 2.Not greater than the current time
+  // 3.The most recent half-year (183 days) data can be obtained", "zh_CN":"开始时间:
+  // 1.时间格式为yyyy-MM-ddTHH:mm:ss+08:00,例如,2019-01-01T10:00:00+08:00(为北京时间2019年01月01日10点0分0秒);
+  // 2.不能大于当前时间
+  // 3.最多可获取最近半年(183天)的数据。"}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
+  // {"en":"End time:
+  // 1.The time format is 2016-12-02T10:00:00+08:00
+  // 2.End time should be greater than start time. If the end time is greater than current time, current time will be used.
+  // 3.If both fields of dataFrom and dateTo are left empty, then data in the last 1 hours will be queried by default; if one field is filled and one is left empty, then exception will occur.
+  // 4.Maximum time range allowable for query: The default value is 1 hour, that is, the difference between dateFrom and dateTo cannot exceed 1 hour (you can contact technical support to adjust it, the maximum is 31 days).", "zh_CN":"结束时间:
+  // 1.时间格式2016-12-02T10:00:00+08:00
+  // 2.结束时间需大于开始时间,结束时间如果大于当前时间,取当前时间。
+  // 3.dateFrom,dateTo二者都未传,默认查询过去的1小时;如仅有一个未传,抛异常
+  // 4.允许查询最大时间间隔:默认1小时，即dateFrom和dateTo相差不能超过1小时（可联系技术支持调整，最长31天）。"}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
+  // {"en":"Domain:
+  // 1.The default upper limit of domains that can be entered is 20 (if you want to adjust, please, contact technical support);
+  // 2.Automatically filter out illegal domains (illegal domains will be filtered out, the query results only return the data of legitimate domains)", "zh_CN":"域名:
+  // 1.可传递域名数量上限默认为20个(可联系技术支持调整);
+  // 2.自动过滤掉非法域名(如传递非法域名,会被过滤掉,查询结果只返回合法域名的数据)
+  // 3.域名超过上限,报错"}
+  Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Data granularity:
+  // 1. Support 1m (1 minute granularity),5m (5 minutes granularity)
+  // 2. The default value is 1m", "zh_CN":"数据粒度:不传默认1m
+  // 1.支持1m(1分钟)、5m(5分钟)"}
+  DataInterval *string `json:"dataInterval,omitempty" xml:"dataInterval,omitempty"`
+}
+
+func (s ReportBandwidthRealTimeEdgeServiceRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthRealTimeEdgeServiceRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ReportBandwidthRealTimeEdgeServiceRequest) SetDateFrom(v string) *ReportBandwidthRealTimeEdgeServiceRequest {
+  s.DateFrom = &v
+  return s
+}
+
+func (s *ReportBandwidthRealTimeEdgeServiceRequest) SetDateTo(v string) *ReportBandwidthRealTimeEdgeServiceRequest {
+  s.DateTo = &v
+  return s
+}
+
+func (s *ReportBandwidthRealTimeEdgeServiceRequest) SetDomain(v []*string) *ReportBandwidthRealTimeEdgeServiceRequest {
+  s.Domain = v
+  return s
+}
+
+func (s *ReportBandwidthRealTimeEdgeServiceRequest) SetDataInterval(v string) *ReportBandwidthRealTimeEdgeServiceRequest {
+  s.DataInterval = &v
+  return s
+}
+
+type ReportBandwidthRealTimeEdgeServiceResponse struct {
+  Result []*ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportBandwidthRealTimeEdgeServiceResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthRealTimeEdgeServiceResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ReportBandwidthRealTimeEdgeServiceResponse) SetResult(v []*ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult) *ReportBandwidthRealTimeEdgeServiceResponse {
+  s.Result = v
+  return s
+}
+
+type ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult struct     {
+  // {"en":"Peak Bandwidth,unit is Mbps,example(9811.21Mbps)", "zh_CN":"峰值带宽 Mbps,示例 (931556.21 Mbps)"}
+  PeakValue *string `json:"peakValue,omitempty" xml:"peakValue,omitempty" require:"true"`
+  // {"en":"Time of peak bandwidth,example(2019-02-13 18:01)", "zh_CN":"峰值时间,示例(2019-02-13 18:01);"}
+  PeakTime *string `json:"peakTime,omitempty" xml:"peakTime,omitempty" require:"true"`
+  // {"en":"Edge total traffic,example(74099.91MB)", "zh_CN":"边缘总流量,示例 ( 74099.92 MB )"}
+  Total *string `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+  BandwidthData []*ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData `json:"bandwidthData,omitempty" xml:"bandwidthData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult) GoString() string {
+  return s.String()
+}
+
+func (s *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult) SetPeakValue(v string) *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult {
+  s.PeakValue = &v
+  return s
+}
+
+func (s *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult) SetPeakTime(v string) *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult {
+  s.PeakTime = &v
+  return s
+}
+
+func (s *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult) SetTotal(v string) *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult {
+  s.Total = &v
+  return s
+}
+
+func (s *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult) SetBandwidthData(v []*ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData) *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult {
+  s.BandwidthData = v
+  return s
+}
+
+type ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData struct     {
+  // {"en":"The data granularity is 1 minute,the format is yyyy-MM-dd HH:mm", "zh_CN":"数据粒度为1分钟,格式为yyyy-MM-dd HH:mm;"}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {"en":"Edge bandwidth,the unit is Mbps,keep 2 decimal places", "zh_CN":"边缘带宽值,单位Mbps,保留2位小数。"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+}
+
+func (s ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData) SetTimestamp(v string) *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData) SetValue(v string) *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData {
+  s.Value = &v
+  return s
+}
+
+type ReportBandwidthRealTimeEdgeServicePaths struct {
+}
+
+func (s ReportBandwidthRealTimeEdgeServicePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthRealTimeEdgeServicePaths) GoString() string {
+  return s.String()
+}
+
+type ReportBandwidthRealTimeEdgeServiceParameters struct {
+}
+
+func (s ReportBandwidthRealTimeEdgeServiceParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthRealTimeEdgeServiceParameters) GoString() string {
+  return s.String()
+}
+
+type ReportBandwidthRealTimeEdgeServiceRequestHeader struct {
+}
+
+func (s ReportBandwidthRealTimeEdgeServiceRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthRealTimeEdgeServiceRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ReportBandwidthRealTimeEdgeServiceResponseHeader struct {
+}
+
+func (s ReportBandwidthRealTimeEdgeServiceResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthRealTimeEdgeServiceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type BandwidthMiddleRequest struct {
+  // {"en":"cust_en_name of sub-client.
+  // When a merged-account wants to  view the information of the subclient,the cust_en_name is required.", "zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名"}
+  Cust *string `json:"cust,omitempty" xml:"cust,omitempty"`
+  // {"en":"Specifies the query date:
+  // 1.With format yyyy-mm-dd.
+  // 2.If not specified,it means today as default.", "zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
+  Date *string `json:"date,omitempty" xml:"date,omitempty"`
+  // {"en":"1.Must work with 'enddate' and they  specify the query date scope. 
+  // 2.With format yyyy-mm-dd.
+  // 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的起始日期，日期格式为yyyy-mm-dd；此参数需与enddate参数配合,若存在date参数,则该参数无效"}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty"`
+  // {"en":"1.Must work with 'startdate' and they  specify the query date scope. 
+  // 2.With format yyyy-mm-dd.
+  // 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的结束日期,日期格式为yyyy-mm-dd；此参数需与startdate参数配合,若存在date参数,则该参数无效。"}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty"`
+  // {"en":"domains that been queried:
+  // 1.If there are multiple inputs,use  ';' as separator.
+  // 2.If not specified, it means all the domains of the account .", "zh_CN":"查询的频道，多个频道值请用英文分号“;”，不选或者为空时默认为所查询客户的所有频道"}
+  Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
+  // {"en":"1.If there are multiple inputs,use ';' as separator.For example,u can use 'region=cn;apac' to query data of cn and apac region.
+  // 2.If not specified, it means all the regions.", "zh_CN":"查询的加速区域的缩写，多个区域请用英文分号“;”分隔开，如查询大陆及亚太区域，参数填写为：“region=cn;apac”。不选或者为空时默认为全部区域。"}
+  Region *string `json:"region,omitempty" xml:"region,omitempty"`
+  // {"en":"acceleration type:
+  // 1.If there are multiple inputs,use ';' as separator.
+  // 2.If not specified or specified as 'all', it means all the accetypes.", "zh_CN":"加速类型参数，如accetype=web。多个请用英文分号“;”分隔开，不填或值为all表示所有类型"}
+  Accetype *string `json:"accetype,omitempty" xml:"accetype,omitempty"`
+  // {"en":"The response format:
+  // 1.optional values:xml, json.
+  // 2.'xml' as default.", "zh_CN":"返回结果格式,支持格式为xml和json,默认为xml"}
+  Dataformat *string `json:"dataformat,omitempty" xml:"dataformat,omitempty"`
+  // {"en":"Specifies if  the 'channel' parameter should be exactly matched:
+  // 1.'true' as default.
+  // 2. If not 'true',it will query data of channels that ends with any item of input 'channel's.", "zh_CN":" 频道是否完全匹配,为true时，必须填写完整的域名(此时会过滤用户输入的无效或重复频道,所有输入频道都无效时返403)。不为true时，显示以用户输入的频道为结尾的所有频道。默认为true"}
+  IsExactMatch *string `json:"isExactMatch,omitempty" xml:"isExactMatch,omitempty"`
+  // {"en":"Display statistic result in merged or separate way:
+  // 1.If specified 1, get the merged result.
+  // 2.If  specified 2,get the separate result.
+  // 3.If specifed 3,get both merged result and separate result.
+  // 4.If not specified,means '1'.", "zh_CN":" 结果的显示是否提供合并值。填写1时：只提供合并结果；填写2时：只提供拆分值；填写3时：既提供合并值，又提供拆分值。不选或者为空时默认为“1”。"}
+  ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty"`
+  // {"en":"Different data types:
+  // 1.optional values: hit,miss.
+  // 2.If  there are multiple inputs,use ';' as separator.
+  // 3.If not specified,it means the merged value of all types.", "zh_CN":"可选值：hit（hit带宽），miss（miss带宽）。多个以英文分号分隔，不选或为空默认展示合计值。"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty"`
+  // {"en":"Different father types:
+  // 1.optional values: stafu,dynfu,all
+  // 2.If there are multiple inputs,use ';' as separator.
+  // 3.If not specified,it means 'all'.", "zh_CN":"可选值：stafu（静态父），dynfu（动态父），all(全选)；默认all（全选）。"}
+  FatherType *string `json:"fatherType,omitempty" xml:"fatherType,omitempty"`
+  // {"en":"Return traffic details, 1: mandatory; 0: optional. The default value is 0.", "zh_CN":"返回流量明细，1：需要；0：不需要。默认为0."}
+  NeedFlow *string `json:"needFlow,omitempty" xml:"needFlow,omitempty"`
+}
+
+func (s BandwidthMiddleRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthMiddleRequest) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthMiddleRequest) SetCust(v string) *BandwidthMiddleRequest {
+  s.Cust = &v
+  return s
+}
+
+func (s *BandwidthMiddleRequest) SetDate(v string) *BandwidthMiddleRequest {
+  s.Date = &v
+  return s
+}
+
+func (s *BandwidthMiddleRequest) SetStartdate(v string) *BandwidthMiddleRequest {
+  s.Startdate = &v
+  return s
+}
+
+func (s *BandwidthMiddleRequest) SetEnddate(v string) *BandwidthMiddleRequest {
+  s.Enddate = &v
+  return s
+}
+
+func (s *BandwidthMiddleRequest) SetChannel(v string) *BandwidthMiddleRequest {
+  s.Channel = &v
+  return s
+}
+
+func (s *BandwidthMiddleRequest) SetRegion(v string) *BandwidthMiddleRequest {
+  s.Region = &v
+  return s
+}
+
+func (s *BandwidthMiddleRequest) SetAccetype(v string) *BandwidthMiddleRequest {
+  s.Accetype = &v
+  return s
+}
+
+func (s *BandwidthMiddleRequest) SetDataformat(v string) *BandwidthMiddleRequest {
+  s.Dataformat = &v
+  return s
+}
+
+func (s *BandwidthMiddleRequest) SetIsExactMatch(v string) *BandwidthMiddleRequest {
+  s.IsExactMatch = &v
+  return s
+}
+
+func (s *BandwidthMiddleRequest) SetResultType(v string) *BandwidthMiddleRequest {
+  s.ResultType = &v
+  return s
+}
+
+func (s *BandwidthMiddleRequest) SetType(v string) *BandwidthMiddleRequest {
+  s.Type = &v
+  return s
+}
+
+func (s *BandwidthMiddleRequest) SetFatherType(v string) *BandwidthMiddleRequest {
+  s.FatherType = &v
+  return s
+}
+
+func (s *BandwidthMiddleRequest) SetNeedFlow(v string) *BandwidthMiddleRequest {
+  s.NeedFlow = &v
+  return s
+}
+
+type BandwidthMiddleResponse struct {
+  // {'en':'provider', 'zh_CN':'结果'}
+  Provider *BandwidthMiddleBandwidthMiddleResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthMiddleResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthMiddleResponse) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthMiddleResponse) SetProvider(v *BandwidthMiddleBandwidthMiddleResponseProvider) *BandwidthMiddleResponse {
+  s.Provider = v
+  return s
+}
+
+type BandwidthMiddleBandwidthMiddleResponseProvider struct {
+  // {'en':'tenant', 'zh_CN':'租户'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'type', 'zh_CN':'接口类型'}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {'en':'resultType', 'zh_CN':'统计类型'}
+  ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty" require:"true"`
+  // {'en':'data', 'zh_CN':'中间缓存带宽数据'}
+  Date *BandwidthMiddleBandwidthMiddleResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthMiddleBandwidthMiddleResponseProvider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthMiddleBandwidthMiddleResponseProvider) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthMiddleBandwidthMiddleResponseProvider) SetName(v string) *BandwidthMiddleBandwidthMiddleResponseProvider {
+  s.Name = &v
+  return s
+}
+
+func (s *BandwidthMiddleBandwidthMiddleResponseProvider) SetType(v string) *BandwidthMiddleBandwidthMiddleResponseProvider {
+  s.Type = &v
+  return s
+}
+
+func (s *BandwidthMiddleBandwidthMiddleResponseProvider) SetResultType(v string) *BandwidthMiddleBandwidthMiddleResponseProvider {
+  s.ResultType = &v
+  return s
+}
+
+func (s *BandwidthMiddleBandwidthMiddleResponseProvider) SetDate(v *BandwidthMiddleBandwidthMiddleResponseProviderDate) *BandwidthMiddleBandwidthMiddleResponseProvider {
+  s.Date = v
+  return s
+}
+
+type BandwidthMiddleBandwidthMiddleResponseProviderDate struct {
+  // {'en':'startdate', 'zh_CN':'开始时间'}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
+  // {'en':'enddate', 'zh_CN':'结束时间'}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
+  // {'en':'channel', 'zh_CN':'频道'}
+  Channel *BandwidthMiddleBandwidthMiddleResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+}
+
+func (s BandwidthMiddleBandwidthMiddleResponseProviderDate) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthMiddleBandwidthMiddleResponseProviderDate) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthMiddleBandwidthMiddleResponseProviderDate) SetStartdate(v string) *BandwidthMiddleBandwidthMiddleResponseProviderDate {
+  s.Startdate = &v
+  return s
+}
+
+func (s *BandwidthMiddleBandwidthMiddleResponseProviderDate) SetEnddate(v string) *BandwidthMiddleBandwidthMiddleResponseProviderDate {
+  s.Enddate = &v
+  return s
+}
+
+func (s *BandwidthMiddleBandwidthMiddleResponseProviderDate) SetChannel(v *BandwidthMiddleBandwidthMiddleResponseProviderDateChannel) *BandwidthMiddleBandwidthMiddleResponseProviderDate {
+  s.Channel = v
+  return s
+}
+
+type BandwidthMiddleBandwidthMiddleResponseProviderDateChannel struct {
+  // {'en':'channel', 'zh_CN':'频道'}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {'en':'bandwidth', 'zh_CN':'中间缓存带宽数据'}
+  Bandwidth []*BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s BandwidthMiddleBandwidthMiddleResponseProviderDateChannel) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthMiddleBandwidthMiddleResponseProviderDateChannel) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthMiddleBandwidthMiddleResponseProviderDateChannel) SetName(v string) *BandwidthMiddleBandwidthMiddleResponseProviderDateChannel {
+  s.Name = &v
+  return s
+}
+
+func (s *BandwidthMiddleBandwidthMiddleResponseProviderDateChannel) SetBandwidth(v []*BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth) *BandwidthMiddleBandwidthMiddleResponseProviderDateChannel {
+  s.Bandwidth = v
+  return s
+}
+
+type BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth struct     {
+  // {'en':'timestamp', 'zh_CN':'时间点'}
+  Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
+  // {'en':'summary', 'zh_CN':'带宽合计'}
+  Summary *string `json:"summary,omitempty" xml:"summary,omitempty" require:"true"`
+  // {'en':'stafuHit', 'zh_CN':'静态Hit带宽'}
+  StafuHit *string `json:"stafuHit,omitempty" xml:"stafuHit,omitempty" require:"true"`
+  // {'en':'dynfuHit', 'zh_CN':'动态Hit带宽'}
+  DynfuHit *string `json:"dynfuHit,omitempty" xml:"dynfuHit,omitempty" require:"true"`
+  // {'en':'stafuMiss', 'zh_CN':'静态Miss带宽'}
+  StafuMiss *string `json:"stafuMiss,omitempty" xml:"stafuMiss,omitempty" require:"true"`
+  // {'en':'dynfuMiss', 'zh_CN':'动态Miss带宽'}
+  DynfuMiss *string `json:"dynfuMiss,omitempty" xml:"dynfuMiss,omitempty" require:"true"`
+  // {'en':'thirdWs', 'zh_CN':'带宽'}
+  ThirdWs *string `json:"thirdWs,omitempty" xml:"thirdWs,omitempty" require:"true"`
+}
+
+func (s BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth) GoString() string {
+  return s.String()
+}
+
+func (s *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth) SetTime(v string) *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth {
+  s.Time = &v
+  return s
+}
+
+func (s *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth) SetSummary(v string) *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth {
+  s.Summary = &v
+  return s
+}
+
+func (s *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth) SetStafuHit(v string) *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth {
+  s.StafuHit = &v
+  return s
+}
+
+func (s *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth) SetDynfuHit(v string) *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth {
+  s.DynfuHit = &v
+  return s
+}
+
+func (s *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth) SetStafuMiss(v string) *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth {
+  s.StafuMiss = &v
+  return s
+}
+
+func (s *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth) SetDynfuMiss(v string) *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth {
+  s.DynfuMiss = &v
+  return s
+}
+
+func (s *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth) SetThirdWs(v string) *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth {
+  s.ThirdWs = &v
+  return s
+}
+
+type BandwidthMiddlePaths struct {
+}
+
+func (s BandwidthMiddlePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthMiddlePaths) GoString() string {
+  return s.String()
+}
+
+type BandwidthMiddleParameters struct {
+}
+
+func (s BandwidthMiddleParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthMiddleParameters) GoString() string {
+  return s.String()
+}
+
+type BandwidthMiddleRequestHeader struct {
+}
+
+func (s BandwidthMiddleRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthMiddleRequestHeader) GoString() string {
+  return s.String()
+}
+
+type BandwidthMiddleResponseHeader struct {
+}
+
+func (s BandwidthMiddleResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BandwidthMiddleResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type WsiInfoRequest struct {
+  // {"en":"cust_en_name of sub-client. When a merged-account wants to view the information of the subclient,the cust_en_name is required.", "zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名"}
+  Cust *string `json:"cust,omitempty" xml:"cust,omitempty"`
+  // {"en":"rbi mapping account. If there is a pass, use this account to query; if it is empty or not, use w+authentication account to query.", "zh_CN":"rbi映射账号。有传就使用此账号查询；为空或者没传，则使用w+鉴权账号查询。"}
+  Relateaccount *string `json:"relateaccount,omitempty" xml:"relateaccount,omitempty"`
+  // {"en":"Specifies the query date: 1.With format yyyy-mm-dd. 2.If not Specifies,it means today as default.", "zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
+  Date *string `json:"date,omitempty" xml:"date,omitempty"`
+  // {"en":"1.Must work with 'enddate' and they specify the query date scope. 2.With format yyyy-mm-dd hh:MM.If 'hh:MM' not specified,it means '00:01'. 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的起始日期,精确到分钟,日期格式为yyyy-mm-dd hh:MM若没有输入时、分，则时分默认为00:01；此参数需与enddate参数配合,若存在date参数,则该参数无效"}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty"`
+  // {"en":"1.Must work with 'startdate' and they specify the query date scope. 2.With format yyyy-mm-dd hh:MM.If 'hh:MM' not specified,it means '24:00'. 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的结束日期,精确到分钟,日期格式为yyyy-mm-dd hh:MM,若没有输入时、分，则时分默认为24:00；此参数需与startdate参数配合,若存在date参数,则该参数无效"}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty"`
+  // {"en":"domains that been queried: 1.If there are multiple inputs,use ';' as separator. 2.If not specified, it means all the domains of the account .When datatype=0, when querying the average number of domain names, this parameter is invalid.", "zh_CN":"查询的频道，多个频道值请用英文分号“;”，不选或者为空时默认为所查询客户的所有频道。当datatype=0，查询域名数均值的时候，此参数无效。"}
+  Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
+  // {"en":"Greenwich Mean Time Zone, the parameter format GMT+09:00 means East 9th District, GMT-09:00 means West 9th District, if not passed, it defaults to the local time zone (East 8th District). When datatype=0, when querying the average number of domain names, this parameter is invalid.", "zh_CN":"格林尼治时区，参数格式 GMT+09:00 表示东九区，GMT-09:00 表示西9区，不传则默认为本地时区（东八区）。当datatype=0，查询域名数均值的时候，此参数无效。"}
+  Timezone *string `json:"timezone,omitempty" xml:"timezone,omitempty"`
+  // {"en":"The response format: 1.optional values:xml, json. 2.'xml' as default.", "zh_CN":"返回结果格式,支持格式为xml和json,默认为xml"}
+  Dataformat *string `json:"dataformat,omitempty" xml:"dataformat,omitempty"`
+  // {"en":"3 types. 0: The average number of query domain names; 1: Query bandwidth; 2: The number of query requests. Default query: 0.", "zh_CN":"3种类型。0：查询域名数均值；1：查询带宽；2：查询请求数。默认查询：0。"}
+  Datatype *string `json:"datatype,omitempty" xml:"datatype,omitempty"`
+}
+
+func (s WsiInfoRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsiInfoRequest) GoString() string {
+  return s.String()
+}
+
+func (s *WsiInfoRequest) SetCust(v string) *WsiInfoRequest {
+  s.Cust = &v
+  return s
+}
+
+func (s *WsiInfoRequest) SetRelateaccount(v string) *WsiInfoRequest {
+  s.Relateaccount = &v
+  return s
+}
+
+func (s *WsiInfoRequest) SetDate(v string) *WsiInfoRequest {
+  s.Date = &v
+  return s
+}
+
+func (s *WsiInfoRequest) SetStartdate(v string) *WsiInfoRequest {
+  s.Startdate = &v
+  return s
+}
+
+func (s *WsiInfoRequest) SetEnddate(v string) *WsiInfoRequest {
+  s.Enddate = &v
+  return s
+}
+
+func (s *WsiInfoRequest) SetChannel(v string) *WsiInfoRequest {
+  s.Channel = &v
+  return s
+}
+
+func (s *WsiInfoRequest) SetTimezone(v string) *WsiInfoRequest {
+  s.Timezone = &v
+  return s
+}
+
+func (s *WsiInfoRequest) SetDataformat(v string) *WsiInfoRequest {
+  s.Dataformat = &v
+  return s
+}
+
+func (s *WsiInfoRequest) SetDatatype(v string) *WsiInfoRequest {
+  s.Datatype = &v
+  return s
+}
+
+type WsiInfoResponse struct {
+  // {"en":"peakTime", "zh_CN":"峰值时间"}
+  PeakTime *string `json:"peakTime,omitempty" xml:"peakTime,omitempty" require:"true"`
+  // {"en":"peakvalue(Mbps)", "zh_CN":"带宽峰值（单位Mbps）"}
+  PeakValue *string `json:"peakValue,omitempty" xml:"peakValue,omitempty" require:"true"`
+  // {"en":"chargeMethod", "zh_CN":"计费方式"}
+  ChargeMethod *string `json:"chargeMethod,omitempty" xml:"chargeMethod,omitempty" require:"true"`
+  // {"en":"chargeValue", "zh_CN":"计费值"}
+  ChargeValue *string `json:"chargeValue,omitempty" xml:"chargeValue,omitempty" require:"true"`
+  // {"en":"the total flow(GB)", "zh_CN":"总流量（单位GB）"}
+  TotalFlow *string `json:"totalFlow,omitempty" xml:"totalFlow,omitempty" require:"true"`
+  // {"en":"the total hits", "zh_CN":"总请求数"}
+  TotalHit *string `json:"totalHit,omitempty" xml:"totalHit,omitempty" require:"true"`
+  // {"en":"Average number of domain names", "zh_CN":"域名数均值"}
+  ChannelAvg *string `json:"channelAvg,omitempty" xml:"channelAvg,omitempty" require:"true"`
+  // {'en':'channel', 'zh_CN':'channel'}
+  Channel *WsiInfoWsiInfoResponseChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+}
+
+func (s WsiInfoResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsiInfoResponse) GoString() string {
+  return s.String()
+}
+
+func (s *WsiInfoResponse) SetPeakTime(v string) *WsiInfoResponse {
+  s.PeakTime = &v
+  return s
+}
+
+func (s *WsiInfoResponse) SetPeakValue(v string) *WsiInfoResponse {
+  s.PeakValue = &v
+  return s
+}
+
+func (s *WsiInfoResponse) SetChargeMethod(v string) *WsiInfoResponse {
+  s.ChargeMethod = &v
+  return s
+}
+
+func (s *WsiInfoResponse) SetChargeValue(v string) *WsiInfoResponse {
+  s.ChargeValue = &v
+  return s
+}
+
+func (s *WsiInfoResponse) SetTotalFlow(v string) *WsiInfoResponse {
+  s.TotalFlow = &v
+  return s
+}
+
+func (s *WsiInfoResponse) SetTotalHit(v string) *WsiInfoResponse {
+  s.TotalHit = &v
+  return s
+}
+
+func (s *WsiInfoResponse) SetChannelAvg(v string) *WsiInfoResponse {
+  s.ChannelAvg = &v
+  return s
+}
+
+func (s *WsiInfoResponse) SetChannel(v *WsiInfoWsiInfoResponseChannel) *WsiInfoResponse {
+  s.Channel = v
+  return s
+}
+
+type WsiInfoWsiInfoResponseChannel struct {
+  // {'en':'detail', 'zh_CN':'detail'}
+  Detail []*WsiInfoWsiInfoResponseChannelDetail `json:"detail,omitempty" xml:"detail,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s WsiInfoWsiInfoResponseChannel) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsiInfoWsiInfoResponseChannel) GoString() string {
+  return s.String()
+}
+
+func (s *WsiInfoWsiInfoResponseChannel) SetDetail(v []*WsiInfoWsiInfoResponseChannelDetail) *WsiInfoWsiInfoResponseChannel {
+  s.Detail = v
+  return s
+}
+
+type WsiInfoWsiInfoResponseChannelDetail struct     {
+  // {"en":"time", "zh_CN":"时间点"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
+  // {"en":"The bandwidth value corresponding to the time point, the default unit is Mbps,
+  // Return the value of the corresponding unit according to flowUnit", "zh_CN":"时间点对应的带宽值，默认单位Mbps，根据flowUnit返回对应单位的数值"}
+  Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
+}
+
+func (s WsiInfoWsiInfoResponseChannelDetail) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsiInfoWsiInfoResponseChannelDetail) GoString() string {
+  return s.String()
+}
+
+func (s *WsiInfoWsiInfoResponseChannelDetail) SetTime(v string) *WsiInfoWsiInfoResponseChannelDetail {
+  s.Time = &v
+  return s
+}
+
+func (s *WsiInfoWsiInfoResponseChannelDetail) SetText(v string) *WsiInfoWsiInfoResponseChannelDetail {
+  s.Text = &v
+  return s
+}
+
+type WsiInfoPaths struct {
+}
+
+func (s WsiInfoPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsiInfoPaths) GoString() string {
+  return s.String()
+}
+
+type WsiInfoParameters struct {
+}
+
+func (s WsiInfoParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsiInfoParameters) GoString() string {
+  return s.String()
+}
+
+type WsiInfoRequestHeader struct {
+}
+
+func (s WsiInfoRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsiInfoRequestHeader) GoString() string {
+  return s.String()
+}
+
+type WsiInfoResponseHeader struct {
+}
+
+func (s WsiInfoResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s WsiInfoResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type ReportBandwidthWildcardDomainServiceRequest struct {
+  // {"en":"Start time: 
+  // 		1. The format is yyyy-MM-ddTHH: mm: SS + 08:00, for example, 2016-12-02T10:00:00+08:00 (10:00:00 Beijing time on December 2, 2016); 
+  // 		2. Can not exceed the current time; 
+  // 		3. The latest half year (183 days) data can be obtained at most.", "zh_CN":"开始时间:
+  //         1.时间格式为yyyy-MM-ddTHH:mm:ss+08:00,例如,2016-12-02T10:00:00+08:00(为北京时间2016年12月02日10点0分0秒)
+  //         2.不能大于当前时间
+  //         3.最多可获取最近半年(183天)的数据"}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
+  // {"en":"End time: 
+  // 		1. The format is yyyy-MM-ddTHH:mm:ss+08:00; 
+  // 		2. The end time is greater than the start time. If the end time is greater than the current time, the current time is taken. 
+  // 		3. DateFrom and dateTo are not uploaded, defaulting to query the past 24 hours; if only one is not uploaded, throw an exception; 
+  // 		4. Maximum query interval allowed: 31 days, that is, the difference between dateFrom and dateTo can not exceed 31 days.", "zh_CN":"结束时间:
+  //         1.时间格式为yyyy-MM-ddTHH:mm:ss+08:00
+  //         2.结束时间需大于开始时间,结束时间如果大于当前时间,取当前时间。
+  //         3.dateFrom,dateTo二者都未传,默认查询过去的1小时;如仅有一个未传,抛异常
+  //         4.允许查询最大时间间隔:31天,即dateFrom和dateTo相差不能超过31天。"}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
+  // {"en":"Wildcard Domain:
+  //         1. The upper limit of the number of Wildcard Domain names that can be passed is 20 by default (contact technical support for adjustment);
+  //         2. Automatically filter out invalid domain names (if a non-common domain name is passed in, it will be filtered out).
+  //         3. If it is not filled, all pan domain names under the account will be queried by default", "zh_CN":"泛域名:
+  //         1. 可传递泛域名数量上限默认为20个(可联系技术支持调整);
+  //         2. 自动过滤掉无效域名(如传递非泛域名,会被过滤掉)。
+  //         3. 如未填,则默认查询此账号下所有泛域名"}
+  WildcardDomain []*string `json:"wildcardDomain,omitempty" xml:"wildcardDomain,omitempty" type:"Repeated"`
+}
+
+func (s ReportBandwidthWildcardDomainServiceRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthWildcardDomainServiceRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ReportBandwidthWildcardDomainServiceRequest) SetDateFrom(v string) *ReportBandwidthWildcardDomainServiceRequest {
+  s.DateFrom = &v
+  return s
+}
+
+func (s *ReportBandwidthWildcardDomainServiceRequest) SetDateTo(v string) *ReportBandwidthWildcardDomainServiceRequest {
+  s.DateTo = &v
+  return s
+}
+
+func (s *ReportBandwidthWildcardDomainServiceRequest) SetWildcardDomain(v []*string) *ReportBandwidthWildcardDomainServiceRequest {
+  s.WildcardDomain = v
+  return s
+}
+
+type ReportBandwidthWildcardDomainServiceResponse struct {
+  // {"en":"request result status code", "zh_CN":"请求结果状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"request result information", "zh_CN":"请求结果信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  Data []*ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportBandwidthWildcardDomainServiceResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthWildcardDomainServiceResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ReportBandwidthWildcardDomainServiceResponse) SetCode(v string) *ReportBandwidthWildcardDomainServiceResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ReportBandwidthWildcardDomainServiceResponse) SetMessage(v string) *ReportBandwidthWildcardDomainServiceResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *ReportBandwidthWildcardDomainServiceResponse) SetData(v []*ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseData) *ReportBandwidthWildcardDomainServiceResponse {
+  s.Data = v
+  return s
+}
+
+type ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseData struct     {
+  // {"en":"wildcard Domain", "zh_CN":"泛域名"}
+  WildcardDomain *string `json:"wildcardDomain,omitempty" xml:"wildcardDomain,omitempty" require:"true"`
+  DomainList []*ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainList `json:"domainList,omitempty" xml:"domainList,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseData) SetWildcardDomain(v string) *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseData {
+  s.WildcardDomain = &v
+  return s
+}
+
+func (s *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseData) SetDomainList(v []*ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainList) *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseData {
+  s.DomainList = v
+  return s
+}
+
+type ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainList struct     {
+  // {"en":"domain", "zh_CN":"明细域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  BandwidthList []*ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList `json:"bandwidthList,omitempty" xml:"bandwidthList,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainList) GoString() string {
+  return s.String()
+}
+
+func (s *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainList) SetDomain(v string) *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainList {
+  s.Domain = &v
+  return s
+}
+
+func (s *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainList) SetBandwidthList(v []*ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList) *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainList {
+  s.BandwidthList = v
+  return s
+}
+
+type ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList struct     {
+  // {"en":"Time slice, returns the time slice containing the start time and end time. Time format: yyyy-MM-dd HH:mm", "zh_CN":"时间片,返回开始时间和结束时间包含的时间片。时间格式:yyyy-MM-dd HH:mm"}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {"en":"Bandwidth value, unit Mbps, keep 2 decimal places", "zh_CN":"带宽值,单位Mbps,保留2位小数。"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+}
+
+func (s ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList) GoString() string {
+  return s.String()
+}
+
+func (s *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList) SetTimestamp(v string) *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList) SetValue(v string) *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList {
+  s.Value = &v
+  return s
+}
+
+type ReportBandwidthWildcardDomainServicePaths struct {
+}
+
+func (s ReportBandwidthWildcardDomainServicePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthWildcardDomainServicePaths) GoString() string {
+  return s.String()
+}
+
+type ReportBandwidthWildcardDomainServiceParameters struct {
+}
+
+func (s ReportBandwidthWildcardDomainServiceParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthWildcardDomainServiceParameters) GoString() string {
+  return s.String()
+}
+
+type ReportBandwidthWildcardDomainServiceRequestHeader struct {
+}
+
+func (s ReportBandwidthWildcardDomainServiceRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthWildcardDomainServiceRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ReportBandwidthWildcardDomainServiceResponseHeader struct {
+}
+
+func (s ReportBandwidthWildcardDomainServiceResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportBandwidthWildcardDomainServiceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryDomainBandwidthRequest struct {
+  // {"en":"Domain list.
+  // Domain number limits can be adjusted depending on different accounts. The default value is 20(if you want to adjust,please, contact technical support)", "zh_CN":"域名列表
+  // 1.域名个数限制根据账号可调,默认为20个（可联系技术支持下单调整）;"}
+  QueryDomainBandwidthDomainList *QueryDomainBandwidthDomainList `json:"domain-list,omitempty" xml:"domain-list,omitempty" require:"true"`
+}
+
+func (s QueryDomainBandwidthRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDomainBandwidthRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDomainBandwidthRequest) SetDomainList(v *QueryDomainBandwidthDomainList) *QueryDomainBandwidthRequest {
+  s.QueryDomainBandwidthDomainList = v
+  return s
+}
+
+type QueryDomainBandwidthDomainList struct {
+  // {"en":"Domain", "zh_CN":"域名"}
+  DomainName []*string `json:"domain-name,omitempty" xml:"domain-name,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryDomainBandwidthDomainList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDomainBandwidthDomainList) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDomainBandwidthDomainList) SetDomainName(v []*string) *QueryDomainBandwidthDomainList {
+  s.DomainName = v
+  return s
+}
+
+type QueryDomainBandwidthResponse struct {
+  BandwidthReport []*QueryDomainBandwidthQueryDomainBandwidthResponseBandwidthReport `json:"bandwidthReport,omitempty" xml:"bandwidthReport,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryDomainBandwidthResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDomainBandwidthResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDomainBandwidthResponse) SetBandwidthReport(v []*QueryDomainBandwidthQueryDomainBandwidthResponseBandwidthReport) *QueryDomainBandwidthResponse {
+  s.BandwidthReport = v
+  return s
+}
+
+type QueryDomainBandwidthQueryDomainBandwidthResponseBandwidthReport struct     {
+  // {"en":"Date
+  // When the querying data granularity is fiveminutes, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:05 AM, and the last one is yyyy-MM-dd 24:00;When the querying data granularity is hourly, the format is yyyy-MM-dd HH; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 01, and the last one is yyyy-MM-dd 24;When the querying data granularity is daily, the format is yyyy-MM-dd; the data value of every time slice represents the value of the daily data;Return the time slice contained in start time and in end time", "zh_CN":"时间
+  // 1.查询的数据粒度为fiveminutes时,格式为yyyy-MM-dd HH:mm;每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05,最后一个时间片是yyyy-MM-dd 24:00。
+  // 2.查询的数据粒度为hourly时,格式为yyyy-MM-dd HH;每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 01,最后一个时间片是yyyy-MM-dd 24。
+  // 3.查询的数据粒度为daily时,格式为yyyy-MM-dd;每一个时间片数据值代表的该天内的数据值;
+  // 4.返回开始时间和结束时间包含的时间片。"}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {"en":"Bandwidth, keep the number to four decimal places. Unit: Mbps", "zh_CN":"带宽,保留4位小数,单位为Mbps"}
+  Bandwidth *int `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true"`
+}
+
+func (s QueryDomainBandwidthQueryDomainBandwidthResponseBandwidthReport) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDomainBandwidthQueryDomainBandwidthResponseBandwidthReport) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDomainBandwidthQueryDomainBandwidthResponseBandwidthReport) SetTimestamp(v string) *QueryDomainBandwidthQueryDomainBandwidthResponseBandwidthReport {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *QueryDomainBandwidthQueryDomainBandwidthResponseBandwidthReport) SetBandwidth(v int) *QueryDomainBandwidthQueryDomainBandwidthResponseBandwidthReport {
+  s.Bandwidth = &v
+  return s
+}
+
+type QueryDomainBandwidthPaths struct {
+}
+
+func (s QueryDomainBandwidthPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDomainBandwidthPaths) GoString() string {
+  return s.String()
+}
+
+type QueryDomainBandwidthParameters struct {
+  // {"en":"Start time
+  // 1.The format is yyyy-MM-ddTHH:mm:ss+08:00;
+  // 2.And smaller than the current time and dateTo;
+  // 3.Period between dataFrom and dateTo cannot be longer than 31 days", "zh_CN":"开始时间
+  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00;
+  // 2.并且小于当前时间和dateTo;
+  // 3.dateFrom和dateTo相差不能超过31天（可联系技术支持调整）;4.只能查询最近2年内数据。"}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty" require:"true"`
+  // {"en":"End time
+  // 1.The format is yyyy-MM-ddTHH:mm:ss+08:00;
+  // 2.Must be greater than dateFrom;
+  // 3.If it's greater than the current time, then the current time will be assigned as the value", "zh_CN":"结束时间
+  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00;
+  // 2.必须大于dateFrom;
+  // 3.如果大于当前时间,则重新赋值为当前时间;"}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty" require:"true"`
+  // {"en":"Data granularity
+  // fiveminutes: five minutes, hourly: one hour, daily: one day;If not specified, daily is set as the default value", "zh_CN":"数据粒度
+  // 1.fiveminutes:5分钟,hourly:1小时,daily:1天;
+  // 2.不传递,默认为daily;
+  // 3.传递fiveminutes时,若客户数据采集粒度有特殊配置将按实际配置粒度返回。"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+func (s QueryDomainBandwidthParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDomainBandwidthParameters) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDomainBandwidthParameters) SetDateFrom(v string) *QueryDomainBandwidthParameters {
+  s.DateFrom = &v
+  return s
+}
+
+func (s *QueryDomainBandwidthParameters) SetDateTo(v string) *QueryDomainBandwidthParameters {
+  s.DateTo = &v
+  return s
+}
+
+func (s *QueryDomainBandwidthParameters) SetType(v string) *QueryDomainBandwidthParameters {
+  s.Type = &v
+  return s
+}
+
+type QueryDomainBandwidthRequestHeader struct {
+}
+
+func (s QueryDomainBandwidthRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDomainBandwidthRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryDomainBandwidthResponseHeader struct {
+}
+
+func (s QueryDomainBandwidthResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDomainBandwidthResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+

@@ -1,0 +1,335 @@
+package contentrefresh
+
+// This file is auto-generated, don't edit it. Thanks.
+import (
+  "github.com/alibabacloud-go/tea/tea"
+)
+
+type QueryRefreshPageRequest struct {
+  // {"en":"query url", "zh_CN":"查询的 URL"}
+  Url *string `json:"url,omitempty" xml:"url,omitempty"`
+  // {"en":"refresh status 1- wait; 2- success; 3- fail;", "zh_CN":"刷新状态 1 -表示待刷新; 2 -刷新成功; 3- 刷新失败;"}
+  Status []*string `json:"status,omitempty" xml:"status,omitempty" type:"Repeated"`
+  // {"en":"Start Time; yyyy-mm-dd hh:mm:ss.", "zh_CN":"开始时间; yyyy-mm-dd hh:mm:ss."}
+  StartTime *string `json:"startTime,omitempty" xml:"startTime,omitempty"`
+  // {"en":"end Time;yyyy-mm-dd hh:mm:ss.", "zh_CN":"结束时间;yyyy-mm-dd hh:mm:ss."}
+  EndTime *string `json:"endTime,omitempty" xml:"endTime,omitempty"`
+  // {"en":"page Num", "zh_CN":"当前页"}
+  PageNum *int `json:"pageNum,omitempty" xml:"pageNum,omitempty" require:"true"`
+  // {"en":"Page Size", "zh_CN":"每页记录数"}
+  PageSize *int `json:"pageSize,omitempty" xml:"pageSize,omitempty" require:"true"`
+}
+
+func (s QueryRefreshPageRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRefreshPageRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryRefreshPageRequest) SetUrl(v string) *QueryRefreshPageRequest {
+  s.Url = &v
+  return s
+}
+
+func (s *QueryRefreshPageRequest) SetStatus(v []*string) *QueryRefreshPageRequest {
+  s.Status = v
+  return s
+}
+
+func (s *QueryRefreshPageRequest) SetStartTime(v string) *QueryRefreshPageRequest {
+  s.StartTime = &v
+  return s
+}
+
+func (s *QueryRefreshPageRequest) SetEndTime(v string) *QueryRefreshPageRequest {
+  s.EndTime = &v
+  return s
+}
+
+func (s *QueryRefreshPageRequest) SetPageNum(v int) *QueryRefreshPageRequest {
+  s.PageNum = &v
+  return s
+}
+
+func (s *QueryRefreshPageRequest) SetPageSize(v int) *QueryRefreshPageRequest {
+  s.PageSize = &v
+  return s
+}
+
+type QueryRefreshPageResponse struct {
+  // {"en":"code，success is 0", "zh_CN":"状态码，成功为0"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"error message or Success", "zh_CN":"错误信息或Success"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"return data", "zh_CN":"返回值"}
+  Data *QueryRefreshPageRefreshSiteLogPage `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s QueryRefreshPageResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRefreshPageResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryRefreshPageResponse) SetCode(v string) *QueryRefreshPageResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QueryRefreshPageResponse) SetMessage(v string) *QueryRefreshPageResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *QueryRefreshPageResponse) SetData(v *QueryRefreshPageRefreshSiteLogPage) *QueryRefreshPageResponse {
+  s.Data = v
+  return s
+}
+
+type QueryRefreshPageRefreshSiteLogPage struct {
+  // {"en":"record count", "zh_CN":"总记录数"}
+  Total *int64 `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+  // {"en":"total page", "zh_CN":"页数"}
+  Pages *int `json:"pages,omitempty" xml:"pages,omitempty" require:"true"`
+  // {"en":"page data list", "zh_CN":"每页数据列表"}
+  List []*QueryRefreshPageRefreshSiteLog `json:"list,omitempty" xml:"list,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryRefreshPageRefreshSiteLogPage) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRefreshPageRefreshSiteLogPage) GoString() string {
+  return s.String()
+}
+
+func (s *QueryRefreshPageRefreshSiteLogPage) SetTotal(v int64) *QueryRefreshPageRefreshSiteLogPage {
+  s.Total = &v
+  return s
+}
+
+func (s *QueryRefreshPageRefreshSiteLogPage) SetPages(v int) *QueryRefreshPageRefreshSiteLogPage {
+  s.Pages = &v
+  return s
+}
+
+func (s *QueryRefreshPageRefreshSiteLogPage) SetList(v []*QueryRefreshPageRefreshSiteLog) *QueryRefreshPageRefreshSiteLogPage {
+  s.List = v
+  return s
+}
+
+type QueryRefreshPageRefreshSiteLog struct {
+  // {"en":"refresh URL，support like search", "zh_CN":"刷新URL,支持模糊查询"}
+  Url *string `json:"url,omitempty" xml:"url,omitempty" require:"true"`
+  // {"en":"refresh status 1 wait ，2，success，3 fail", "zh_CN":"刷新状态 1 待刷新，2，刷新成功，3失败"}
+  Status *int `json:"status,omitempty" xml:"status,omitempty" require:"true"`
+  // {"en":"refresh time", "zh_CN":"刷新时间"}
+  RunTime *string `json:"runTime,omitempty" xml:"runTime,omitempty" require:"true"`
+  // {"en":"End Time", "zh_CN":"结束时间"}
+  EndTime *string `json:"endTime,omitempty" xml:"endTime,omitempty" require:"true"`
+  // {"en":"comment，run result", "zh_CN":"备注,执行结果"}
+  Comment *string `json:"comment,omitempty" xml:"comment,omitempty" require:"true"`
+}
+
+func (s QueryRefreshPageRefreshSiteLog) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRefreshPageRefreshSiteLog) GoString() string {
+  return s.String()
+}
+
+func (s *QueryRefreshPageRefreshSiteLog) SetUrl(v string) *QueryRefreshPageRefreshSiteLog {
+  s.Url = &v
+  return s
+}
+
+func (s *QueryRefreshPageRefreshSiteLog) SetStatus(v int) *QueryRefreshPageRefreshSiteLog {
+  s.Status = &v
+  return s
+}
+
+func (s *QueryRefreshPageRefreshSiteLog) SetRunTime(v string) *QueryRefreshPageRefreshSiteLog {
+  s.RunTime = &v
+  return s
+}
+
+func (s *QueryRefreshPageRefreshSiteLog) SetEndTime(v string) *QueryRefreshPageRefreshSiteLog {
+  s.EndTime = &v
+  return s
+}
+
+func (s *QueryRefreshPageRefreshSiteLog) SetComment(v string) *QueryRefreshPageRefreshSiteLog {
+  s.Comment = &v
+  return s
+}
+
+type QueryRefreshPagePaths struct {
+}
+
+func (s QueryRefreshPagePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRefreshPagePaths) GoString() string {
+  return s.String()
+}
+
+type QueryRefreshPageParameters struct {
+}
+
+func (s QueryRefreshPageParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRefreshPageParameters) GoString() string {
+  return s.String()
+}
+
+type QueryRefreshPageRequestHeader struct {
+}
+
+func (s QueryRefreshPageRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRefreshPageRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryRefreshPageResponseHeader struct {
+}
+
+func (s QueryRefreshPageResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRefreshPageResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type RefreshByUrlsRequest struct {
+  // {"en":"refresh page url", "zh_CN":"刷新页面URL"}
+  Urls []*string `json:"urls,omitempty" xml:"urls,omitempty" require:"true" type:"Repeated"`
+  // {"en":"refresh mode 1: now 2:delayed 3: order", "zh_CN":"刷新方式 1: 表示即可 2:延时 3: 预约"}
+  RefreshType *int `json:"refreshType,omitempty" xml:"refreshType,omitempty" require:"true"`
+  // {"en":"delay minutes（unit min）,if refreshType=2 the current is not null", "zh_CN":"延时分钟（单位分钟），当 refreshType=2 不能为空"}
+  DelayMinutes *int `json:"delayMinutes,omitempty" xml:"delayMinutes,omitempty"`
+  // {"en":"order Time; yyyy-mm-dd hh:mm:ss. if refreshType=3 the current is not null", "zh_CN":"预约时间; yyyy-mm-dd hh:mm:ss. 当 refreshType=3 不能为空"}
+  OrderTime *string `json:"orderTime,omitempty" xml:"orderTime,omitempty"`
+}
+
+func (s RefreshByUrlsRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s RefreshByUrlsRequest) GoString() string {
+  return s.String()
+}
+
+func (s *RefreshByUrlsRequest) SetUrls(v []*string) *RefreshByUrlsRequest {
+  s.Urls = v
+  return s
+}
+
+func (s *RefreshByUrlsRequest) SetRefreshType(v int) *RefreshByUrlsRequest {
+  s.RefreshType = &v
+  return s
+}
+
+func (s *RefreshByUrlsRequest) SetDelayMinutes(v int) *RefreshByUrlsRequest {
+  s.DelayMinutes = &v
+  return s
+}
+
+func (s *RefreshByUrlsRequest) SetOrderTime(v string) *RefreshByUrlsRequest {
+  s.OrderTime = &v
+  return s
+}
+
+type RefreshByUrlsResponse struct {
+  // {"en":"code，success is 0", "zh_CN":"状态码，成功为0"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"error message or Success", "zh_CN":"错误信息或Success"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"return data", "zh_CN":"返回值"}
+  Data *string `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s RefreshByUrlsResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s RefreshByUrlsResponse) GoString() string {
+  return s.String()
+}
+
+func (s *RefreshByUrlsResponse) SetCode(v string) *RefreshByUrlsResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *RefreshByUrlsResponse) SetMessage(v string) *RefreshByUrlsResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *RefreshByUrlsResponse) SetData(v string) *RefreshByUrlsResponse {
+  s.Data = &v
+  return s
+}
+
+type RefreshByUrlsPaths struct {
+}
+
+func (s RefreshByUrlsPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s RefreshByUrlsPaths) GoString() string {
+  return s.String()
+}
+
+type RefreshByUrlsParameters struct {
+}
+
+func (s RefreshByUrlsParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s RefreshByUrlsParameters) GoString() string {
+  return s.String()
+}
+
+type RefreshByUrlsRequestHeader struct {
+}
+
+func (s RefreshByUrlsRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s RefreshByUrlsRequestHeader) GoString() string {
+  return s.String()
+}
+
+type RefreshByUrlsResponseHeader struct {
+}
+
+func (s RefreshByUrlsResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s RefreshByUrlsResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+

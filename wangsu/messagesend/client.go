@@ -1,0 +1,118 @@
+package messagesend
+
+// This file is auto-generated, don't edit it. Thanks.
+import (
+  "github.com/alibabacloud-go/tea/tea"
+)
+
+type ApiMncSendsmsRequest struct {
+  // {"en":"mobiles", "zh_CN":"手机号列表，多个用半角逗号分隔"}
+  Mobiles *string `json:"mobiles,omitempty" xml:"mobiles,omitempty" require:"true"`
+  // {"en":"signature", "zh_CN":"短信签名"}
+  Signature *string `json:"signature,omitempty" xml:"signature,omitempty" require:"true"`
+  // {"en":"content", "zh_CN":"短信内容，最大字符数500"}
+  Content *string `json:"content,omitempty" xml:"content,omitempty" require:"true"`
+}
+
+func (s ApiMncSendsmsRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ApiMncSendsmsRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ApiMncSendsmsRequest) SetMobiles(v string) *ApiMncSendsmsRequest {
+  s.Mobiles = &v
+  return s
+}
+
+func (s *ApiMncSendsmsRequest) SetSignature(v string) *ApiMncSendsmsRequest {
+  s.Signature = &v
+  return s
+}
+
+func (s *ApiMncSendsmsRequest) SetContent(v string) *ApiMncSendsmsRequest {
+  s.Content = &v
+  return s
+}
+
+type ApiMncSendsmsResponse struct {
+  // {"en":"code", "zh_CN":"返回代码，0为成功，非0失败"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"message", "zh_CN":"异常信息，发送成功该字段为空，失败该字段非空"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求id,全局唯一"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+}
+
+func (s ApiMncSendsmsResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ApiMncSendsmsResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ApiMncSendsmsResponse) SetCode(v string) *ApiMncSendsmsResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ApiMncSendsmsResponse) SetMessage(v string) *ApiMncSendsmsResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *ApiMncSendsmsResponse) SetRequestId(v string) *ApiMncSendsmsResponse {
+  s.RequestId = &v
+  return s
+}
+
+type ApiMncSendsmsPaths struct {
+}
+
+func (s ApiMncSendsmsPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ApiMncSendsmsPaths) GoString() string {
+  return s.String()
+}
+
+type ApiMncSendsmsParameters struct {
+}
+
+func (s ApiMncSendsmsParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ApiMncSendsmsParameters) GoString() string {
+  return s.String()
+}
+
+type ApiMncSendsmsRequestHeader struct {
+}
+
+func (s ApiMncSendsmsRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ApiMncSendsmsRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ApiMncSendsmsResponseHeader struct {
+}
+
+func (s ApiMncSendsmsResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ApiMncSendsmsResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+

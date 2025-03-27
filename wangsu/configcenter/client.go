@@ -1,0 +1,4979 @@
+package configcenter
+
+// This file is auto-generated, don't edit it. Thanks.
+import (
+  "github.com/alibabacloud-go/tea/tea"
+)
+
+type DeleteSecretRequest struct {
+}
+
+func (s DeleteSecretRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteSecretRequest) GoString() string {
+  return s.String()
+}
+
+type DeleteSecretResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"status", "zh_CN":"status"}
+  Data *DeleteSecretStatus `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s DeleteSecretResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteSecretResponse) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteSecretResponse) SetCode(v int64) *DeleteSecretResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *DeleteSecretResponse) SetMsg(v string) *DeleteSecretResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *DeleteSecretResponse) SetRequestId(v string) *DeleteSecretResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *DeleteSecretResponse) SetData(v *DeleteSecretStatus) *DeleteSecretResponse {
+  s.Data = v
+  return s
+}
+
+type DeleteSecretPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+  // {"en":"secret name", "zh_CN":"secret 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s DeleteSecretPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteSecretPaths) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteSecretPaths) SetNamespace(v string) *DeleteSecretPaths {
+  s.Namespace = &v
+  return s
+}
+
+func (s *DeleteSecretPaths) SetName(v string) *DeleteSecretPaths {
+  s.Name = &v
+  return s
+}
+
+type DeleteSecretParameters struct {
+}
+
+func (s DeleteSecretParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteSecretParameters) GoString() string {
+  return s.String()
+}
+
+type DeleteSecretRequestHeader struct {
+}
+
+func (s DeleteSecretRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteSecretRequestHeader) GoString() string {
+  return s.String()
+}
+
+type DeleteSecretResponseHeader struct {
+}
+
+func (s DeleteSecretResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteSecretResponseHeader) GoString() string {
+  return s.String()
+}
+
+type DeleteSecretStatus struct {
+  // {"en":"APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values", "zh_CN":"APIVersion 定义对象表示的版本化模式。 服务器应将已识别的模式转换为最新的内部值，并可能拒绝无法识别的值"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase", "zh_CN":"Kind 是一个字符串值，表示此对象表示的 REST 资源。 服务器可以从客户端提交请求的端点推断出这一点。 无法更新。驼峰式规则"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"DeleteSecretStatus of the operation. One of: 'Success' or 'Failure'", "zh_CN":"操作状态。“Success”或“Failure” 之一"}
+  DeleteSecretStatus *string `json:"status,omitempty" xml:"status,omitempty" require:"true"`
+  // {"en":"Suggested HTTP return code for this status, 0 if not set", "zh_CN":"此状态的建议 HTTP 返回代码，如果未设置，则为 0"}
+  Code *int32 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Extended data associated with the reason. Each reason may define its own extended details. This field is optional and the data returned is not guaranteed to conform to any schema except that defined by the reason type", "zh_CN":"与原因（Reason）相关的扩展数据。每个原因都可以定义自己的扩展细节。 此字段是可选的，并且不保证返回的数据符合任何模式，除非由原因类型定义"}
+  Details *DeleteSecretStatusDetails `json:"details,omitempty" xml:"details,omitempty" require:"true"`
+}
+
+func (s DeleteSecretStatus) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteSecretStatus) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteSecretStatus) SetApiVersion(v string) *DeleteSecretStatus {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *DeleteSecretStatus) SetKind(v string) *DeleteSecretStatus {
+  s.Kind = &v
+  return s
+}
+
+func (s *DeleteSecretStatus) SetStatus(v string) *DeleteSecretStatus {
+  s.DeleteSecretStatus = &v
+  return s
+}
+
+func (s *DeleteSecretStatus) SetCode(v int32) *DeleteSecretStatus {
+  s.Code = &v
+  return s
+}
+
+func (s *DeleteSecretStatus) SetDetails(v *DeleteSecretStatusDetails) *DeleteSecretStatus {
+  s.Details = v
+  return s
+}
+
+type DeleteSecretStatusDetails struct {
+  // {"en":"The name attribute of the resource associated with the status StatusReason (when there is a single name which can be described)", "zh_CN":"与状态 StatusReason 关联的资源的名称属性（当有一个可以描述的名称时）"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"The kind attribute of the resource associated with the status StatusReason. On some operations may differ from the requested resource Kind", "zh_CN":"与状态 StatusReason 关联的资源的种类属性"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"The group attribute of the resource associated with the status StatusReason", "zh_CN":"与状态 StatusReason 关联的资源的组属性"}
+  Group *string `json:"group,omitempty" xml:"group,omitempty" require:"true"`
+  // {"en":"UID of the resource. (when there is a single resource which can be described)", "zh_CN":"资源的 UID（当有单个可以描述的资源时）"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty" require:"true"`
+}
+
+func (s DeleteSecretStatusDetails) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteSecretStatusDetails) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteSecretStatusDetails) SetName(v string) *DeleteSecretStatusDetails {
+  s.Name = &v
+  return s
+}
+
+func (s *DeleteSecretStatusDetails) SetKind(v string) *DeleteSecretStatusDetails {
+  s.Kind = &v
+  return s
+}
+
+func (s *DeleteSecretStatusDetails) SetGroup(v string) *DeleteSecretStatusDetails {
+  s.Group = &v
+  return s
+}
+
+func (s *DeleteSecretStatusDetails) SetUid(v string) *DeleteSecretStatusDetails {
+  s.Uid = &v
+  return s
+}
+
+
+
+
+type CreateConfigmapRequest struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *CreateConfigmapObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Immutable, if set to true, ensures that data stored in the CreateConfigmapConfigMap cannot be updated (only object metadata can be modified). If not set to true, the field can be modified at any time. Defaulted to nil", "zh_CN":"binaryData 包含二进制数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 binaryData 可以包含不在 UTF-8 范围中的字节序列。 binaryData 中存储的键不得与 data 字段中的键重叠，这在验证过程中是强制要求。 使用此字段需要 apiserver 和 kubelet 的版本高于 1.10"}
+  Immutable *bool `json:"immutable,omitempty" xml:"immutable,omitempty"`
+  // {"en":"Data contains the configuration data. Each key must consist of alphanumeric characters, '-', '_' or '.'. Values with non-UTF-8 byte sequences must use the BinaryData field. The keys stored in Data must not overlap with the keys in the BinaryData field, this is enforced during validation process", "zh_CN":"data 包含配置数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 如果值包含非 UTF-8 字节序列，则必须使用 binaryData 字段。 data 中存储的键不得与 binaryData 字段中的键重叠，这在验证过程中是强制要求"}
+  Data map[string]*string `json:"data,omitempty" xml:"data,omitempty"`
+  // {"en":"BinaryData contains the binary data. Each key must consist of alphanumeric characters, '-', '_' or '.'. BinaryData can contain byte sequences that are not in the UTF-8 range. The keys stored in BinaryData must not overlap with the ones in the Data field, this is enforced during validation process. Using this field will require 1.10+ apiserver and kubelet", "zh_CN":"如果 immutable 设为 true， 则确保不会更新 CreateConfigmapConfigMap 中存储的数据（只能修改对象元数据）。 如果未设为 true，则可以随时修改此字段。 默认为 nil"}
+  BinaryData map[string]*string `json:"binaryData,omitempty" xml:"binaryData,omitempty"`
+}
+
+func (s CreateConfigmapRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateConfigmapRequest) GoString() string {
+  return s.String()
+}
+
+func (s *CreateConfigmapRequest) SetApiVersion(v string) *CreateConfigmapRequest {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreateConfigmapRequest) SetKind(v string) *CreateConfigmapRequest {
+  s.Kind = &v
+  return s
+}
+
+func (s *CreateConfigmapRequest) SetMetadata(v *CreateConfigmapObjectMeta) *CreateConfigmapRequest {
+  s.Metadata = v
+  return s
+}
+
+func (s *CreateConfigmapRequest) SetImmutable(v bool) *CreateConfigmapRequest {
+  s.Immutable = &v
+  return s
+}
+
+func (s *CreateConfigmapRequest) SetData(v map[string]*string) *CreateConfigmapRequest {
+  s.Data = v
+  return s
+}
+
+func (s *CreateConfigmapRequest) SetBinaryData(v map[string]*string) *CreateConfigmapRequest {
+  s.BinaryData = v
+  return s
+}
+
+type CreateConfigmapResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"configmap object", "zh_CN":"configmap对象"}
+  Data *CreateConfigmapConfigMap `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s CreateConfigmapResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateConfigmapResponse) GoString() string {
+  return s.String()
+}
+
+func (s *CreateConfigmapResponse) SetCode(v int64) *CreateConfigmapResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *CreateConfigmapResponse) SetMsg(v string) *CreateConfigmapResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *CreateConfigmapResponse) SetRequestId(v string) *CreateConfigmapResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *CreateConfigmapResponse) SetData(v *CreateConfigmapConfigMap) *CreateConfigmapResponse {
+  s.Data = v
+  return s
+}
+
+type CreateConfigmapPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+}
+
+func (s CreateConfigmapPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateConfigmapPaths) GoString() string {
+  return s.String()
+}
+
+func (s *CreateConfigmapPaths) SetNamespace(v string) *CreateConfigmapPaths {
+  s.Namespace = &v
+  return s
+}
+
+type CreateConfigmapParameters struct {
+}
+
+func (s CreateConfigmapParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateConfigmapParameters) GoString() string {
+  return s.String()
+}
+
+type CreateConfigmapRequestHeader struct {
+}
+
+func (s CreateConfigmapRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateConfigmapRequestHeader) GoString() string {
+  return s.String()
+}
+
+type CreateConfigmapResponseHeader struct {
+}
+
+func (s CreateConfigmapResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateConfigmapResponseHeader) GoString() string {
+  return s.String()
+}
+
+type CreateConfigmapConfigMap struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *CreateConfigmapObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Immutable, if set to true, ensures that data stored in the CreateConfigmapConfigMap cannot be updated (only object metadata can be modified). If not set to true, the field can be modified at any time. Defaulted to nil", "zh_CN":"binaryData 包含二进制数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 binaryData 可以包含不在 UTF-8 范围中的字节序列。 binaryData 中存储的键不得与 data 字段中的键重叠，这在验证过程中是强制要求。 使用此字段需要 apiserver 和 kubelet 的版本高于 1.10"}
+  Immutable *bool `json:"immutable,omitempty" xml:"immutable,omitempty"`
+  // {"en":"Data contains the configuration data. Each key must consist of alphanumeric characters, '-', '_' or '.'. Values with non-UTF-8 byte sequences must use the BinaryData field. The keys stored in Data must not overlap with the keys in the BinaryData field, this is enforced during validation process", "zh_CN":"data 包含配置数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 如果值包含非 UTF-8 字节序列，则必须使用 binaryData 字段。 data 中存储的键不得与 binaryData 字段中的键重叠，这在验证过程中是强制要求"}
+  Data map[string]*string `json:"data,omitempty" xml:"data,omitempty"`
+  // {"en":"BinaryData contains the binary data. Each key must consist of alphanumeric characters, '-', '_' or '.'. BinaryData can contain byte sequences that are not in the UTF-8 range. The keys stored in BinaryData must not overlap with the ones in the Data field, this is enforced during validation process. Using this field will require 1.10+ apiserver and kubelet", "zh_CN":"如果 immutable 设为 true， 则确保不会更新 CreateConfigmapConfigMap 中存储的数据（只能修改对象元数据）。 如果未设为 true，则可以随时修改此字段。 默认为 nil"}
+  BinaryData map[string]*string `json:"binaryData,omitempty" xml:"binaryData,omitempty"`
+}
+
+func (s CreateConfigmapConfigMap) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateConfigmapConfigMap) GoString() string {
+  return s.String()
+}
+
+func (s *CreateConfigmapConfigMap) SetApiVersion(v string) *CreateConfigmapConfigMap {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreateConfigmapConfigMap) SetKind(v string) *CreateConfigmapConfigMap {
+  s.Kind = &v
+  return s
+}
+
+func (s *CreateConfigmapConfigMap) SetMetadata(v *CreateConfigmapObjectMeta) *CreateConfigmapConfigMap {
+  s.Metadata = v
+  return s
+}
+
+func (s *CreateConfigmapConfigMap) SetImmutable(v bool) *CreateConfigmapConfigMap {
+  s.Immutable = &v
+  return s
+}
+
+func (s *CreateConfigmapConfigMap) SetData(v map[string]*string) *CreateConfigmapConfigMap {
+  s.Data = v
+  return s
+}
+
+func (s *CreateConfigmapConfigMap) SetBinaryData(v map[string]*string) *CreateConfigmapConfigMap {
+  s.BinaryData = v
+  return s
+}
+
+type CreateConfigmapObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*CreateConfigmapOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*CreateConfigmapManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s CreateConfigmapObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateConfigmapObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *CreateConfigmapObjectMeta) SetName(v string) *CreateConfigmapObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *CreateConfigmapObjectMeta) SetGenerateName(v string) *CreateConfigmapObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *CreateConfigmapObjectMeta) SetNamespace(v string) *CreateConfigmapObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *CreateConfigmapObjectMeta) SetSelfLink(v string) *CreateConfigmapObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *CreateConfigmapObjectMeta) SetUid(v string) *CreateConfigmapObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *CreateConfigmapObjectMeta) SetResourceVersion(v string) *CreateConfigmapObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *CreateConfigmapObjectMeta) SetGeneration(v int64) *CreateConfigmapObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *CreateConfigmapObjectMeta) SetCreationTimestamp(v string) *CreateConfigmapObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *CreateConfigmapObjectMeta) SetDeletionTimestamp(v string) *CreateConfigmapObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *CreateConfigmapObjectMeta) SetDeletionGracePeriodSeconds(v int64) *CreateConfigmapObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *CreateConfigmapObjectMeta) SetLabels(v map[string]*string) *CreateConfigmapObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *CreateConfigmapObjectMeta) SetAnnotations(v map[string]*string) *CreateConfigmapObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *CreateConfigmapObjectMeta) SetOwnerReferences(v []*CreateConfigmapOwnerReference) *CreateConfigmapObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *CreateConfigmapObjectMeta) SetFinalizers(v []*string) *CreateConfigmapObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *CreateConfigmapObjectMeta) SetClusterName(v string) *CreateConfigmapObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *CreateConfigmapObjectMeta) SetManagedFields(v []*CreateConfigmapManagedFieldsEntry) *CreateConfigmapObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type CreateConfigmapManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this CreateConfigmapManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'CreateConfigmapFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“CreateConfigmapFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"CreateConfigmapFieldsV1 holds the first JSON version format as described in the 'CreateConfigmapFieldsV1' type", "zh_CN":"CreateConfigmapFieldsV1 包含类型 “CreateConfigmapFieldsV1” 中描述的第一个 JSON 版本格式"}
+  CreateConfigmapFieldsV1 *CreateConfigmapFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s CreateConfigmapManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateConfigmapManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *CreateConfigmapManagedFieldsEntry) SetManager(v string) *CreateConfigmapManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *CreateConfigmapManagedFieldsEntry) SetOperation(v string) *CreateConfigmapManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *CreateConfigmapManagedFieldsEntry) SetApiVersion(v string) *CreateConfigmapManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreateConfigmapManagedFieldsEntry) SetTime(v string) *CreateConfigmapManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *CreateConfigmapManagedFieldsEntry) SetFieldsType(v string) *CreateConfigmapManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *CreateConfigmapManagedFieldsEntry) SetFieldsV1(v *CreateConfigmapFieldsV1) *CreateConfigmapManagedFieldsEntry {
+  s.CreateConfigmapFieldsV1 = v
+  return s
+}
+
+func (s *CreateConfigmapManagedFieldsEntry) SetSubresource(v string) *CreateConfigmapManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type CreateConfigmapFieldsV1 struct {
+}
+
+func (s CreateConfigmapFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateConfigmapFieldsV1) GoString() string {
+  return s.String()
+}
+
+type CreateConfigmapOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s CreateConfigmapOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateConfigmapOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *CreateConfigmapOwnerReference) SetApiVersion(v string) *CreateConfigmapOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreateConfigmapOwnerReference) SetKind(v string) *CreateConfigmapOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *CreateConfigmapOwnerReference) SetName(v string) *CreateConfigmapOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *CreateConfigmapOwnerReference) SetUid(v string) *CreateConfigmapOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *CreateConfigmapOwnerReference) SetController(v bool) *CreateConfigmapOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *CreateConfigmapOwnerReference) SetBlockOwnerDeletion(v bool) *CreateConfigmapOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+
+
+
+type CreateSecretRequest struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *CreateSecretObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Immutable, if set to true, ensures that data stored in the CreateSecretSecret cannot be updated (only object metadata can be modified). If not set to true, the field can be modified at any time. Defaulted to nil", "zh_CN":"如果 immutable 设为 true，则确保不会更新 CreateSecretSecret 中存储的数据（只能修改对象元数据）。 如果未设为 true，则可以随时修改此字段。 默认为 nil"}
+  Immutable *bool `json:"immutable,omitempty" xml:"immutable,omitempty"`
+  // {"en":"Data contains the secret data. Each key must consist of alphanumeric characters, '-', '_' or '.'. The serialized form of the secret data is a base64 encoded string, representing the arbitrary (possibly non-string) data value here", "zh_CN":"data 包含秘密数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 秘密数据的序列化格式是 base64 编码的字符串，表示此处的任意（可能是非字符串）数据值"}
+  Data map[string]*string `json:"data,omitempty" xml:"data,omitempty"`
+  // {"en":"stringData allows specifying non-binary secret data in string form. It is provided as a write-only input field for convenience. All keys and values are merged into the data field on write, overwriting any existing values. The stringData field is never output when reading from the API", "zh_CN":"stringData 允许指定字符串格式的非二进制秘密数据。 为了方便起见，它作为只写输入字段提供。 写入时将所有键和值合并到 data 字段，且覆盖任何现有的值。 从 API 读取时绝不会输出 stringData 字段"}
+  StringData map[string]*string `json:"stringData,omitempty" xml:"stringData,omitempty"`
+  // {"en":"Used to facilitate programmatic handling of secret data", "zh_CN":"用于满足程序化方式处理秘密数据"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+func (s CreateSecretRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSecretRequest) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSecretRequest) SetApiVersion(v string) *CreateSecretRequest {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreateSecretRequest) SetKind(v string) *CreateSecretRequest {
+  s.Kind = &v
+  return s
+}
+
+func (s *CreateSecretRequest) SetMetadata(v *CreateSecretObjectMeta) *CreateSecretRequest {
+  s.Metadata = v
+  return s
+}
+
+func (s *CreateSecretRequest) SetImmutable(v bool) *CreateSecretRequest {
+  s.Immutable = &v
+  return s
+}
+
+func (s *CreateSecretRequest) SetData(v map[string]*string) *CreateSecretRequest {
+  s.Data = v
+  return s
+}
+
+func (s *CreateSecretRequest) SetStringData(v map[string]*string) *CreateSecretRequest {
+  s.StringData = v
+  return s
+}
+
+func (s *CreateSecretRequest) SetType(v string) *CreateSecretRequest {
+  s.Type = &v
+  return s
+}
+
+type CreateSecretResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"secret object", "zh_CN":"secret对象"}
+  Data *CreateSecretSecret `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s CreateSecretResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSecretResponse) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSecretResponse) SetCode(v int64) *CreateSecretResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *CreateSecretResponse) SetMsg(v string) *CreateSecretResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *CreateSecretResponse) SetRequestId(v string) *CreateSecretResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *CreateSecretResponse) SetData(v *CreateSecretSecret) *CreateSecretResponse {
+  s.Data = v
+  return s
+}
+
+type CreateSecretPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+}
+
+func (s CreateSecretPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSecretPaths) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSecretPaths) SetNamespace(v string) *CreateSecretPaths {
+  s.Namespace = &v
+  return s
+}
+
+type CreateSecretParameters struct {
+}
+
+func (s CreateSecretParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSecretParameters) GoString() string {
+  return s.String()
+}
+
+type CreateSecretRequestHeader struct {
+}
+
+func (s CreateSecretRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSecretRequestHeader) GoString() string {
+  return s.String()
+}
+
+type CreateSecretResponseHeader struct {
+}
+
+func (s CreateSecretResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSecretResponseHeader) GoString() string {
+  return s.String()
+}
+
+type CreateSecretSecret struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *CreateSecretObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Immutable, if set to true, ensures that data stored in the CreateSecretSecret cannot be updated (only object metadata can be modified). If not set to true, the field can be modified at any time. Defaulted to nil", "zh_CN":"如果 immutable 设为 true，则确保不会更新 CreateSecretSecret 中存储的数据（只能修改对象元数据）。 如果未设为 true，则可以随时修改此字段。 默认为 nil"}
+  Immutable *bool `json:"immutable,omitempty" xml:"immutable,omitempty"`
+  // {"en":"Data contains the secret data. Each key must consist of alphanumeric characters, '-', '_' or '.'. The serialized form of the secret data is a base64 encoded string, representing the arbitrary (possibly non-string) data value here", "zh_CN":"data 包含秘密数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 秘密数据的序列化格式是 base64 编码的字符串，表示此处的任意（可能是非字符串）数据值"}
+  Data map[string]*string `json:"data,omitempty" xml:"data,omitempty"`
+  // {"en":"stringData allows specifying non-binary secret data in string form. It is provided as a write-only input field for convenience. All keys and values are merged into the data field on write, overwriting any existing values. The stringData field is never output when reading from the API", "zh_CN":"stringData 允许指定字符串格式的非二进制秘密数据。 为了方便起见，它作为只写输入字段提供。 写入时将所有键和值合并到 data 字段，且覆盖任何现有的值。 从 API 读取时绝不会输出 stringData 字段"}
+  StringData map[string]*string `json:"stringData,omitempty" xml:"stringData,omitempty"`
+  // {"en":"Used to facilitate programmatic handling of secret data", "zh_CN":"用于满足程序化方式处理秘密数据"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+func (s CreateSecretSecret) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSecretSecret) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSecretSecret) SetApiVersion(v string) *CreateSecretSecret {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreateSecretSecret) SetKind(v string) *CreateSecretSecret {
+  s.Kind = &v
+  return s
+}
+
+func (s *CreateSecretSecret) SetMetadata(v *CreateSecretObjectMeta) *CreateSecretSecret {
+  s.Metadata = v
+  return s
+}
+
+func (s *CreateSecretSecret) SetImmutable(v bool) *CreateSecretSecret {
+  s.Immutable = &v
+  return s
+}
+
+func (s *CreateSecretSecret) SetData(v map[string]*string) *CreateSecretSecret {
+  s.Data = v
+  return s
+}
+
+func (s *CreateSecretSecret) SetStringData(v map[string]*string) *CreateSecretSecret {
+  s.StringData = v
+  return s
+}
+
+func (s *CreateSecretSecret) SetType(v string) *CreateSecretSecret {
+  s.Type = &v
+  return s
+}
+
+type CreateSecretObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*CreateSecretOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*CreateSecretManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s CreateSecretObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSecretObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSecretObjectMeta) SetName(v string) *CreateSecretObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *CreateSecretObjectMeta) SetGenerateName(v string) *CreateSecretObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *CreateSecretObjectMeta) SetNamespace(v string) *CreateSecretObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *CreateSecretObjectMeta) SetSelfLink(v string) *CreateSecretObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *CreateSecretObjectMeta) SetUid(v string) *CreateSecretObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *CreateSecretObjectMeta) SetResourceVersion(v string) *CreateSecretObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *CreateSecretObjectMeta) SetGeneration(v int64) *CreateSecretObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *CreateSecretObjectMeta) SetCreationTimestamp(v string) *CreateSecretObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *CreateSecretObjectMeta) SetDeletionTimestamp(v string) *CreateSecretObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *CreateSecretObjectMeta) SetDeletionGracePeriodSeconds(v int64) *CreateSecretObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *CreateSecretObjectMeta) SetLabels(v map[string]*string) *CreateSecretObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *CreateSecretObjectMeta) SetAnnotations(v map[string]*string) *CreateSecretObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *CreateSecretObjectMeta) SetOwnerReferences(v []*CreateSecretOwnerReference) *CreateSecretObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *CreateSecretObjectMeta) SetFinalizers(v []*string) *CreateSecretObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *CreateSecretObjectMeta) SetClusterName(v string) *CreateSecretObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *CreateSecretObjectMeta) SetManagedFields(v []*CreateSecretManagedFieldsEntry) *CreateSecretObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type CreateSecretManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this CreateSecretManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'CreateSecretFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“CreateSecretFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"CreateSecretFieldsV1 holds the first JSON version format as described in the 'CreateSecretFieldsV1' type", "zh_CN":"CreateSecretFieldsV1 包含类型 “CreateSecretFieldsV1” 中描述的第一个 JSON 版本格式"}
+  CreateSecretFieldsV1 *CreateSecretFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s CreateSecretManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSecretManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSecretManagedFieldsEntry) SetManager(v string) *CreateSecretManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *CreateSecretManagedFieldsEntry) SetOperation(v string) *CreateSecretManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *CreateSecretManagedFieldsEntry) SetApiVersion(v string) *CreateSecretManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreateSecretManagedFieldsEntry) SetTime(v string) *CreateSecretManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *CreateSecretManagedFieldsEntry) SetFieldsType(v string) *CreateSecretManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *CreateSecretManagedFieldsEntry) SetFieldsV1(v *CreateSecretFieldsV1) *CreateSecretManagedFieldsEntry {
+  s.CreateSecretFieldsV1 = v
+  return s
+}
+
+func (s *CreateSecretManagedFieldsEntry) SetSubresource(v string) *CreateSecretManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type CreateSecretFieldsV1 struct {
+}
+
+func (s CreateSecretFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSecretFieldsV1) GoString() string {
+  return s.String()
+}
+
+type CreateSecretOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s CreateSecretOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSecretOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSecretOwnerReference) SetApiVersion(v string) *CreateSecretOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *CreateSecretOwnerReference) SetKind(v string) *CreateSecretOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *CreateSecretOwnerReference) SetName(v string) *CreateSecretOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *CreateSecretOwnerReference) SetUid(v string) *CreateSecretOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *CreateSecretOwnerReference) SetController(v bool) *CreateSecretOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *CreateSecretOwnerReference) SetBlockOwnerDeletion(v bool) *CreateSecretOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+
+
+
+type DeleteConfigmapRequest struct {
+}
+
+func (s DeleteConfigmapRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteConfigmapRequest) GoString() string {
+  return s.String()
+}
+
+type DeleteConfigmapResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"status", "zh_CN":"status"}
+  Data *DeleteConfigmapStatus `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s DeleteConfigmapResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteConfigmapResponse) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteConfigmapResponse) SetCode(v int64) *DeleteConfigmapResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *DeleteConfigmapResponse) SetMsg(v string) *DeleteConfigmapResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *DeleteConfigmapResponse) SetRequestId(v string) *DeleteConfigmapResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *DeleteConfigmapResponse) SetData(v *DeleteConfigmapStatus) *DeleteConfigmapResponse {
+  s.Data = v
+  return s
+}
+
+type DeleteConfigmapPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+  // {"en":"configmap name", "zh_CN":"configmap 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s DeleteConfigmapPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteConfigmapPaths) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteConfigmapPaths) SetNamespace(v string) *DeleteConfigmapPaths {
+  s.Namespace = &v
+  return s
+}
+
+func (s *DeleteConfigmapPaths) SetName(v string) *DeleteConfigmapPaths {
+  s.Name = &v
+  return s
+}
+
+type DeleteConfigmapParameters struct {
+}
+
+func (s DeleteConfigmapParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteConfigmapParameters) GoString() string {
+  return s.String()
+}
+
+type DeleteConfigmapRequestHeader struct {
+}
+
+func (s DeleteConfigmapRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteConfigmapRequestHeader) GoString() string {
+  return s.String()
+}
+
+type DeleteConfigmapResponseHeader struct {
+}
+
+func (s DeleteConfigmapResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteConfigmapResponseHeader) GoString() string {
+  return s.String()
+}
+
+type DeleteConfigmapStatus struct {
+  // {"en":"APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values", "zh_CN":"APIVersion 定义对象表示的版本化模式。 服务器应将已识别的模式转换为最新的内部值，并可能拒绝无法识别的值"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase", "zh_CN":"Kind 是一个字符串值，表示此对象表示的 REST 资源。 服务器可以从客户端提交请求的端点推断出这一点。 无法更新。驼峰式规则"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"DeleteConfigmapStatus of the operation. One of: 'Success' or 'Failure'", "zh_CN":"操作状态。“Success”或“Failure” 之一"}
+  DeleteConfigmapStatus *string `json:"status,omitempty" xml:"status,omitempty" require:"true"`
+  // {"en":"Suggested HTTP return code for this status, 0 if not set", "zh_CN":"此状态的建议 HTTP 返回代码，如果未设置，则为 0"}
+  Code *int32 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Extended data associated with the reason. Each reason may define its own extended details. This field is optional and the data returned is not guaranteed to conform to any schema except that defined by the reason type", "zh_CN":"与原因（Reason）相关的扩展数据。每个原因都可以定义自己的扩展细节。 此字段是可选的，并且不保证返回的数据符合任何模式，除非由原因类型定义"}
+  Details *DeleteConfigmapStatusDetails `json:"details,omitempty" xml:"details,omitempty" require:"true"`
+}
+
+func (s DeleteConfigmapStatus) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteConfigmapStatus) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteConfigmapStatus) SetApiVersion(v string) *DeleteConfigmapStatus {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *DeleteConfigmapStatus) SetKind(v string) *DeleteConfigmapStatus {
+  s.Kind = &v
+  return s
+}
+
+func (s *DeleteConfigmapStatus) SetStatus(v string) *DeleteConfigmapStatus {
+  s.DeleteConfigmapStatus = &v
+  return s
+}
+
+func (s *DeleteConfigmapStatus) SetCode(v int32) *DeleteConfigmapStatus {
+  s.Code = &v
+  return s
+}
+
+func (s *DeleteConfigmapStatus) SetDetails(v *DeleteConfigmapStatusDetails) *DeleteConfigmapStatus {
+  s.Details = v
+  return s
+}
+
+type DeleteConfigmapStatusDetails struct {
+  // {"en":"The name attribute of the resource associated with the status StatusReason (when there is a single name which can be described)", "zh_CN":"与状态 StatusReason 关联的资源的名称属性（当有一个可以描述的名称时）"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"The kind attribute of the resource associated with the status StatusReason. On some operations may differ from the requested resource Kind", "zh_CN":"与状态 StatusReason 关联的资源的种类属性"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"The group attribute of the resource associated with the status StatusReason", "zh_CN":"与状态 StatusReason 关联的资源的组属性"}
+  Group *string `json:"group,omitempty" xml:"group,omitempty" require:"true"`
+  // {"en":"UID of the resource. (when there is a single resource which can be described)", "zh_CN":"资源的 UID（当有单个可以描述的资源时）"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty" require:"true"`
+}
+
+func (s DeleteConfigmapStatusDetails) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteConfigmapStatusDetails) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteConfigmapStatusDetails) SetName(v string) *DeleteConfigmapStatusDetails {
+  s.Name = &v
+  return s
+}
+
+func (s *DeleteConfigmapStatusDetails) SetKind(v string) *DeleteConfigmapStatusDetails {
+  s.Kind = &v
+  return s
+}
+
+func (s *DeleteConfigmapStatusDetails) SetGroup(v string) *DeleteConfigmapStatusDetails {
+  s.Group = &v
+  return s
+}
+
+func (s *DeleteConfigmapStatusDetails) SetUid(v string) *DeleteConfigmapStatusDetails {
+  s.Uid = &v
+  return s
+}
+
+
+
+
+type GetTokenRequest struct {
+}
+
+func (s GetTokenRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetTokenRequest) GoString() string {
+  return s.String()
+}
+
+type GetTokenResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"token", "zh_CN":"token"}
+  Data *string `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s GetTokenResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetTokenResponse) GoString() string {
+  return s.String()
+}
+
+func (s *GetTokenResponse) SetCode(v int64) *GetTokenResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *GetTokenResponse) SetMsg(v string) *GetTokenResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *GetTokenResponse) SetRequestId(v string) *GetTokenResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *GetTokenResponse) SetData(v string) *GetTokenResponse {
+  s.Data = &v
+  return s
+}
+
+type GetTokenPaths struct {
+}
+
+func (s GetTokenPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetTokenPaths) GoString() string {
+  return s.String()
+}
+
+type GetTokenParameters struct {
+}
+
+func (s GetTokenParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetTokenParameters) GoString() string {
+  return s.String()
+}
+
+type GetTokenRequestHeader struct {
+}
+
+func (s GetTokenRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetTokenRequestHeader) GoString() string {
+  return s.String()
+}
+
+type GetTokenResponseHeader struct {
+}
+
+func (s GetTokenResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetTokenResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type GetConfigmapRequest struct {
+}
+
+func (s GetConfigmapRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetConfigmapRequest) GoString() string {
+  return s.String()
+}
+
+type GetConfigmapResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"configmap", "zh_CN":"configmap"}
+  Data *GetConfigmapConfigMap `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s GetConfigmapResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetConfigmapResponse) GoString() string {
+  return s.String()
+}
+
+func (s *GetConfigmapResponse) SetCode(v int64) *GetConfigmapResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *GetConfigmapResponse) SetMsg(v string) *GetConfigmapResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *GetConfigmapResponse) SetRequestId(v string) *GetConfigmapResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *GetConfigmapResponse) SetData(v *GetConfigmapConfigMap) *GetConfigmapResponse {
+  s.Data = v
+  return s
+}
+
+type GetConfigmapPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+  // {"en":"configmap name", "zh_CN":"configmap 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s GetConfigmapPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetConfigmapPaths) GoString() string {
+  return s.String()
+}
+
+func (s *GetConfigmapPaths) SetNamespace(v string) *GetConfigmapPaths {
+  s.Namespace = &v
+  return s
+}
+
+func (s *GetConfigmapPaths) SetName(v string) *GetConfigmapPaths {
+  s.Name = &v
+  return s
+}
+
+type GetConfigmapParameters struct {
+}
+
+func (s GetConfigmapParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetConfigmapParameters) GoString() string {
+  return s.String()
+}
+
+type GetConfigmapRequestHeader struct {
+}
+
+func (s GetConfigmapRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetConfigmapRequestHeader) GoString() string {
+  return s.String()
+}
+
+type GetConfigmapResponseHeader struct {
+}
+
+func (s GetConfigmapResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetConfigmapResponseHeader) GoString() string {
+  return s.String()
+}
+
+type GetConfigmapConfigMap struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *GetConfigmapObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Immutable, if set to true, ensures that data stored in the GetConfigmapConfigMap cannot be updated (only object metadata can be modified). If not set to true, the field can be modified at any time. Defaulted to nil", "zh_CN":"binaryData 包含二进制数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 binaryData 可以包含不在 UTF-8 范围中的字节序列。 binaryData 中存储的键不得与 data 字段中的键重叠，这在验证过程中是强制要求。 使用此字段需要 apiserver 和 kubelet 的版本高于 1.10"}
+  Immutable *bool `json:"immutable,omitempty" xml:"immutable,omitempty"`
+  // {"en":"Data contains the configuration data. Each key must consist of alphanumeric characters, '-', '_' or '.'. Values with non-UTF-8 byte sequences must use the BinaryData field. The keys stored in Data must not overlap with the keys in the BinaryData field, this is enforced during validation process", "zh_CN":"data 包含配置数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 如果值包含非 UTF-8 字节序列，则必须使用 binaryData 字段。 data 中存储的键不得与 binaryData 字段中的键重叠，这在验证过程中是强制要求"}
+  Data map[string]*string `json:"data,omitempty" xml:"data,omitempty"`
+  // {"en":"BinaryData contains the binary data. Each key must consist of alphanumeric characters, '-', '_' or '.'. BinaryData can contain byte sequences that are not in the UTF-8 range. The keys stored in BinaryData must not overlap with the ones in the Data field, this is enforced during validation process. Using this field will require 1.10+ apiserver and kubelet", "zh_CN":"如果 immutable 设为 true， 则确保不会更新 GetConfigmapConfigMap 中存储的数据（只能修改对象元数据）。 如果未设为 true，则可以随时修改此字段。 默认为 nil"}
+  BinaryData map[string]*string `json:"binaryData,omitempty" xml:"binaryData,omitempty"`
+}
+
+func (s GetConfigmapConfigMap) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetConfigmapConfigMap) GoString() string {
+  return s.String()
+}
+
+func (s *GetConfigmapConfigMap) SetApiVersion(v string) *GetConfigmapConfigMap {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *GetConfigmapConfigMap) SetKind(v string) *GetConfigmapConfigMap {
+  s.Kind = &v
+  return s
+}
+
+func (s *GetConfigmapConfigMap) SetMetadata(v *GetConfigmapObjectMeta) *GetConfigmapConfigMap {
+  s.Metadata = v
+  return s
+}
+
+func (s *GetConfigmapConfigMap) SetImmutable(v bool) *GetConfigmapConfigMap {
+  s.Immutable = &v
+  return s
+}
+
+func (s *GetConfigmapConfigMap) SetData(v map[string]*string) *GetConfigmapConfigMap {
+  s.Data = v
+  return s
+}
+
+func (s *GetConfigmapConfigMap) SetBinaryData(v map[string]*string) *GetConfigmapConfigMap {
+  s.BinaryData = v
+  return s
+}
+
+type GetConfigmapObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*GetConfigmapOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*GetConfigmapManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s GetConfigmapObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetConfigmapObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *GetConfigmapObjectMeta) SetName(v string) *GetConfigmapObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *GetConfigmapObjectMeta) SetGenerateName(v string) *GetConfigmapObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *GetConfigmapObjectMeta) SetNamespace(v string) *GetConfigmapObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *GetConfigmapObjectMeta) SetSelfLink(v string) *GetConfigmapObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *GetConfigmapObjectMeta) SetUid(v string) *GetConfigmapObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *GetConfigmapObjectMeta) SetResourceVersion(v string) *GetConfigmapObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *GetConfigmapObjectMeta) SetGeneration(v int64) *GetConfigmapObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *GetConfigmapObjectMeta) SetCreationTimestamp(v string) *GetConfigmapObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *GetConfigmapObjectMeta) SetDeletionTimestamp(v string) *GetConfigmapObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *GetConfigmapObjectMeta) SetDeletionGracePeriodSeconds(v int64) *GetConfigmapObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *GetConfigmapObjectMeta) SetLabels(v map[string]*string) *GetConfigmapObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *GetConfigmapObjectMeta) SetAnnotations(v map[string]*string) *GetConfigmapObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *GetConfigmapObjectMeta) SetOwnerReferences(v []*GetConfigmapOwnerReference) *GetConfigmapObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *GetConfigmapObjectMeta) SetFinalizers(v []*string) *GetConfigmapObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *GetConfigmapObjectMeta) SetClusterName(v string) *GetConfigmapObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *GetConfigmapObjectMeta) SetManagedFields(v []*GetConfigmapManagedFieldsEntry) *GetConfigmapObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type GetConfigmapManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this GetConfigmapManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'GetConfigmapFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“GetConfigmapFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"GetConfigmapFieldsV1 holds the first JSON version format as described in the 'GetConfigmapFieldsV1' type", "zh_CN":"GetConfigmapFieldsV1 包含类型 “GetConfigmapFieldsV1” 中描述的第一个 JSON 版本格式"}
+  GetConfigmapFieldsV1 *GetConfigmapFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s GetConfigmapManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetConfigmapManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *GetConfigmapManagedFieldsEntry) SetManager(v string) *GetConfigmapManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *GetConfigmapManagedFieldsEntry) SetOperation(v string) *GetConfigmapManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *GetConfigmapManagedFieldsEntry) SetApiVersion(v string) *GetConfigmapManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *GetConfigmapManagedFieldsEntry) SetTime(v string) *GetConfigmapManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *GetConfigmapManagedFieldsEntry) SetFieldsType(v string) *GetConfigmapManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *GetConfigmapManagedFieldsEntry) SetFieldsV1(v *GetConfigmapFieldsV1) *GetConfigmapManagedFieldsEntry {
+  s.GetConfigmapFieldsV1 = v
+  return s
+}
+
+func (s *GetConfigmapManagedFieldsEntry) SetSubresource(v string) *GetConfigmapManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type GetConfigmapFieldsV1 struct {
+}
+
+func (s GetConfigmapFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetConfigmapFieldsV1) GoString() string {
+  return s.String()
+}
+
+type GetConfigmapOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s GetConfigmapOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetConfigmapOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *GetConfigmapOwnerReference) SetApiVersion(v string) *GetConfigmapOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *GetConfigmapOwnerReference) SetKind(v string) *GetConfigmapOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *GetConfigmapOwnerReference) SetName(v string) *GetConfigmapOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *GetConfigmapOwnerReference) SetUid(v string) *GetConfigmapOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *GetConfigmapOwnerReference) SetController(v bool) *GetConfigmapOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *GetConfigmapOwnerReference) SetBlockOwnerDeletion(v bool) *GetConfigmapOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+
+
+
+type ListConfigmapRequest struct {
+}
+
+func (s ListConfigmapRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConfigmapRequest) GoString() string {
+  return s.String()
+}
+
+type ListConfigmapResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"configmap list", "zh_CN":"configmap列表"}
+  Data *ListConfigmapConfigMapList `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s ListConfigmapResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConfigmapResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ListConfigmapResponse) SetCode(v int64) *ListConfigmapResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ListConfigmapResponse) SetMsg(v string) *ListConfigmapResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *ListConfigmapResponse) SetRequestId(v string) *ListConfigmapResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *ListConfigmapResponse) SetData(v *ListConfigmapConfigMapList) *ListConfigmapResponse {
+  s.Data = v
+  return s
+}
+
+type ListConfigmapPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+}
+
+func (s ListConfigmapPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConfigmapPaths) GoString() string {
+  return s.String()
+}
+
+func (s *ListConfigmapPaths) SetNamespace(v string) *ListConfigmapPaths {
+  s.Namespace = &v
+  return s
+}
+
+type ListConfigmapParameters struct {
+  // {"en":"The name of configmap", "zh_CN":"configmap 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"labelSelector", "zh_CN":"labelSelector"}
+  LabelSelector *string `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+}
+
+func (s ListConfigmapParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConfigmapParameters) GoString() string {
+  return s.String()
+}
+
+func (s *ListConfigmapParameters) SetName(v string) *ListConfigmapParameters {
+  s.Name = &v
+  return s
+}
+
+func (s *ListConfigmapParameters) SetLabelSelector(v string) *ListConfigmapParameters {
+  s.LabelSelector = &v
+  return s
+}
+
+type ListConfigmapRequestHeader struct {
+}
+
+func (s ListConfigmapRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConfigmapRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ListConfigmapResponseHeader struct {
+}
+
+func (s ListConfigmapResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConfigmapResponseHeader) GoString() string {
+  return s.String()
+}
+
+type ListConfigmapConfigMapList struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Standard list metadata", "zh_CN":"标准列表元数据"}
+  Metadata *ListConfigmapListMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"List of ListConfigmapConfigMap", "zh_CN":"ListConfigmapConfigMap 列表"}
+  Items []*ListConfigmapConfigMap `json:"items,omitempty" xml:"items,omitempty" type:"Repeated"`
+}
+
+func (s ListConfigmapConfigMapList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConfigmapConfigMapList) GoString() string {
+  return s.String()
+}
+
+func (s *ListConfigmapConfigMapList) SetApiVersion(v string) *ListConfigmapConfigMapList {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListConfigmapConfigMapList) SetKind(v string) *ListConfigmapConfigMapList {
+  s.Kind = &v
+  return s
+}
+
+func (s *ListConfigmapConfigMapList) SetMetadata(v *ListConfigmapListMeta) *ListConfigmapConfigMapList {
+  s.Metadata = v
+  return s
+}
+
+func (s *ListConfigmapConfigMapList) SetItems(v []*ListConfigmapConfigMap) *ListConfigmapConfigMapList {
+  s.Items = v
+  return s
+}
+
+type ListConfigmapListMeta struct {
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system", "zh_CN":"selfLink 表示此对象的 URL，由系统填充，只读。已弃用：selfLink 是一个遗留的只读字段，不再由系统填充。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only", "zh_CN":"标识该对象的服务器内部版本的字符串，客户端可以用该字段来确定对象何时被更改。 该值对客户端是不透明的，并且应该原样传回给服务器。该值由系统填充，只读"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"continue may be set if the user set a limit on the number of items returned, and indicates that the server has more data available. The value is opaque and may be used to issue another request to the endpoint that served this list to retrieve the next set of available objects. Continuing a consistent list may not be possible if the server configuration has changed or more than a few minutes have passed. The resourceVersion field returned when using this continue value will be identical to the value in the first response, unless you have received this token from an error message", "zh_CN":"如果用户对返回的条目数量设置了限制，则 continue 可能被设置，表示服务器有更多可用的数据。 该值是不透明的，可用于向提供此列表服务的端点发出另一个请求，以检索下一组可用的对象。 如果服务器配置已更改或时间已过去几分钟，则可能无法继续提供一致的列表。 除非你在错误消息中收到此令牌（token），否则使用此 continue 值时返回的 resourceVersion 字段应该和第一个响应中的值是相同的"}
+  Continue *string `json:"continue,omitempty" xml:"continue,omitempty"`
+  // {"en":"remainingItemCount is the number of subsequent items in the list which are not included in this list response. If the list request contained label or field selectors, then the number of remaining items is unknown and the field will be left unset and omitted during serialization. If the list is complete (either because it is not chunking or because this is the last chunk), then there are no more remaining items and this field will be left unset and omitted during serialization. Servers older than v1.15 do not set this field. The intended use of the remainingItemCount is estimating the size of a collection. Clients should not rely on the remainingItemCount to be set or to be exact", "zh_CN":"remainingItemCount 是列表中未包含在此列表响应中的后续项目的数量。 如果列表请求包含标签或字段选择器，则剩余项目的数量是未知的，并且在序列化期间该字段将保持未设置和省略。 如果列表是完整的（因为它没有分块或者这是最后一个块），那么就没有剩余的项目，并且在序列化过程中该字段将保持未设置和省略。 早于 v1.15 的服务器不设置此字段。remainingItemCount 的预期用途是估计集合的大小。 客户端不应依赖于设置准确的 remainingItemCount"}
+  RemainingItemCount *int64 `json:"remainingItemCount,omitempty" xml:"remainingItemCount,omitempty"`
+}
+
+func (s ListConfigmapListMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConfigmapListMeta) GoString() string {
+  return s.String()
+}
+
+func (s *ListConfigmapListMeta) SetSelfLink(v string) *ListConfigmapListMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *ListConfigmapListMeta) SetResourceVersion(v string) *ListConfigmapListMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *ListConfigmapListMeta) SetContinue(v string) *ListConfigmapListMeta {
+  s.Continue = &v
+  return s
+}
+
+func (s *ListConfigmapListMeta) SetRemainingItemCount(v int64) *ListConfigmapListMeta {
+  s.RemainingItemCount = &v
+  return s
+}
+
+type ListConfigmapConfigMap struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *ListConfigmapObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Immutable, if set to true, ensures that data stored in the ListConfigmapConfigMap cannot be updated (only object metadata can be modified). If not set to true, the field can be modified at any time. Defaulted to nil", "zh_CN":"binaryData 包含二进制数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 binaryData 可以包含不在 UTF-8 范围中的字节序列。 binaryData 中存储的键不得与 data 字段中的键重叠，这在验证过程中是强制要求。 使用此字段需要 apiserver 和 kubelet 的版本高于 1.10"}
+  Immutable *bool `json:"immutable,omitempty" xml:"immutable,omitempty"`
+  // {"en":"Data contains the configuration data. Each key must consist of alphanumeric characters, '-', '_' or '.'. Values with non-UTF-8 byte sequences must use the BinaryData field. The keys stored in Data must not overlap with the keys in the BinaryData field, this is enforced during validation process", "zh_CN":"data 包含配置数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 如果值包含非 UTF-8 字节序列，则必须使用 binaryData 字段。 data 中存储的键不得与 binaryData 字段中的键重叠，这在验证过程中是强制要求"}
+  Data map[string]*string `json:"data,omitempty" xml:"data,omitempty"`
+  // {"en":"BinaryData contains the binary data. Each key must consist of alphanumeric characters, '-', '_' or '.'. BinaryData can contain byte sequences that are not in the UTF-8 range. The keys stored in BinaryData must not overlap with the ones in the Data field, this is enforced during validation process. Using this field will require 1.10+ apiserver and kubelet", "zh_CN":"如果 immutable 设为 true， 则确保不会更新 ListConfigmapConfigMap 中存储的数据（只能修改对象元数据）。 如果未设为 true，则可以随时修改此字段。 默认为 nil"}
+  BinaryData map[string]*string `json:"binaryData,omitempty" xml:"binaryData,omitempty"`
+}
+
+func (s ListConfigmapConfigMap) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConfigmapConfigMap) GoString() string {
+  return s.String()
+}
+
+func (s *ListConfigmapConfigMap) SetApiVersion(v string) *ListConfigmapConfigMap {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListConfigmapConfigMap) SetKind(v string) *ListConfigmapConfigMap {
+  s.Kind = &v
+  return s
+}
+
+func (s *ListConfigmapConfigMap) SetMetadata(v *ListConfigmapObjectMeta) *ListConfigmapConfigMap {
+  s.Metadata = v
+  return s
+}
+
+func (s *ListConfigmapConfigMap) SetImmutable(v bool) *ListConfigmapConfigMap {
+  s.Immutable = &v
+  return s
+}
+
+func (s *ListConfigmapConfigMap) SetData(v map[string]*string) *ListConfigmapConfigMap {
+  s.Data = v
+  return s
+}
+
+func (s *ListConfigmapConfigMap) SetBinaryData(v map[string]*string) *ListConfigmapConfigMap {
+  s.BinaryData = v
+  return s
+}
+
+type ListConfigmapObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*ListConfigmapOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*ListConfigmapManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s ListConfigmapObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConfigmapObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *ListConfigmapObjectMeta) SetName(v string) *ListConfigmapObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *ListConfigmapObjectMeta) SetGenerateName(v string) *ListConfigmapObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *ListConfigmapObjectMeta) SetNamespace(v string) *ListConfigmapObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *ListConfigmapObjectMeta) SetSelfLink(v string) *ListConfigmapObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *ListConfigmapObjectMeta) SetUid(v string) *ListConfigmapObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *ListConfigmapObjectMeta) SetResourceVersion(v string) *ListConfigmapObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *ListConfigmapObjectMeta) SetGeneration(v int64) *ListConfigmapObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *ListConfigmapObjectMeta) SetCreationTimestamp(v string) *ListConfigmapObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *ListConfigmapObjectMeta) SetDeletionTimestamp(v string) *ListConfigmapObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *ListConfigmapObjectMeta) SetDeletionGracePeriodSeconds(v int64) *ListConfigmapObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *ListConfigmapObjectMeta) SetLabels(v map[string]*string) *ListConfigmapObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *ListConfigmapObjectMeta) SetAnnotations(v map[string]*string) *ListConfigmapObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *ListConfigmapObjectMeta) SetOwnerReferences(v []*ListConfigmapOwnerReference) *ListConfigmapObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *ListConfigmapObjectMeta) SetFinalizers(v []*string) *ListConfigmapObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *ListConfigmapObjectMeta) SetClusterName(v string) *ListConfigmapObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *ListConfigmapObjectMeta) SetManagedFields(v []*ListConfigmapManagedFieldsEntry) *ListConfigmapObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type ListConfigmapManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this ListConfigmapManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'ListConfigmapFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“ListConfigmapFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"ListConfigmapFieldsV1 holds the first JSON version format as described in the 'ListConfigmapFieldsV1' type", "zh_CN":"ListConfigmapFieldsV1 包含类型 “ListConfigmapFieldsV1” 中描述的第一个 JSON 版本格式"}
+  ListConfigmapFieldsV1 *ListConfigmapFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s ListConfigmapManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConfigmapManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *ListConfigmapManagedFieldsEntry) SetManager(v string) *ListConfigmapManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *ListConfigmapManagedFieldsEntry) SetOperation(v string) *ListConfigmapManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *ListConfigmapManagedFieldsEntry) SetApiVersion(v string) *ListConfigmapManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListConfigmapManagedFieldsEntry) SetTime(v string) *ListConfigmapManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *ListConfigmapManagedFieldsEntry) SetFieldsType(v string) *ListConfigmapManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *ListConfigmapManagedFieldsEntry) SetFieldsV1(v *ListConfigmapFieldsV1) *ListConfigmapManagedFieldsEntry {
+  s.ListConfigmapFieldsV1 = v
+  return s
+}
+
+func (s *ListConfigmapManagedFieldsEntry) SetSubresource(v string) *ListConfigmapManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type ListConfigmapFieldsV1 struct {
+}
+
+func (s ListConfigmapFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConfigmapFieldsV1) GoString() string {
+  return s.String()
+}
+
+type ListConfigmapOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s ListConfigmapOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConfigmapOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *ListConfigmapOwnerReference) SetApiVersion(v string) *ListConfigmapOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListConfigmapOwnerReference) SetKind(v string) *ListConfigmapOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *ListConfigmapOwnerReference) SetName(v string) *ListConfigmapOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *ListConfigmapOwnerReference) SetUid(v string) *ListConfigmapOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *ListConfigmapOwnerReference) SetController(v bool) *ListConfigmapOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *ListConfigmapOwnerReference) SetBlockOwnerDeletion(v bool) *ListConfigmapOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+
+
+
+type ListSecretRequest struct {
+}
+
+func (s ListSecretRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSecretRequest) GoString() string {
+  return s.String()
+}
+
+type ListSecretResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"secret list", "zh_CN":"secret 列表"}
+  Data *ListSecretSecretList `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s ListSecretResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSecretResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ListSecretResponse) SetCode(v int64) *ListSecretResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ListSecretResponse) SetMsg(v string) *ListSecretResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *ListSecretResponse) SetRequestId(v string) *ListSecretResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *ListSecretResponse) SetData(v *ListSecretSecretList) *ListSecretResponse {
+  s.Data = v
+  return s
+}
+
+type ListSecretPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+}
+
+func (s ListSecretPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSecretPaths) GoString() string {
+  return s.String()
+}
+
+func (s *ListSecretPaths) SetNamespace(v string) *ListSecretPaths {
+  s.Namespace = &v
+  return s
+}
+
+type ListSecretParameters struct {
+  // {"en":"secret name", "zh_CN":"secret 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"labelSelector", "zh_CN":"labelSelector"}
+  LabelSelector *string `json:"labelSelector,omitempty" xml:"labelSelector,omitempty"`
+}
+
+func (s ListSecretParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSecretParameters) GoString() string {
+  return s.String()
+}
+
+func (s *ListSecretParameters) SetName(v string) *ListSecretParameters {
+  s.Name = &v
+  return s
+}
+
+func (s *ListSecretParameters) SetLabelSelector(v string) *ListSecretParameters {
+  s.LabelSelector = &v
+  return s
+}
+
+type ListSecretRequestHeader struct {
+}
+
+func (s ListSecretRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSecretRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ListSecretResponseHeader struct {
+}
+
+func (s ListSecretResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSecretResponseHeader) GoString() string {
+  return s.String()
+}
+
+type ListSecretSecretList struct {
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"Standard list metadata", "zh_CN":"标准列表元数据"}
+  Metadata *ListSecretListMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"List of ListSecretSecret", "zh_CN":"ListSecretSecret 列表"}
+  Items []*ListSecretSecret `json:"items,omitempty" xml:"items,omitempty" type:"Repeated"`
+}
+
+func (s ListSecretSecretList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSecretSecretList) GoString() string {
+  return s.String()
+}
+
+func (s *ListSecretSecretList) SetKind(v string) *ListSecretSecretList {
+  s.Kind = &v
+  return s
+}
+
+func (s *ListSecretSecretList) SetApiVersion(v string) *ListSecretSecretList {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListSecretSecretList) SetMetadata(v *ListSecretListMeta) *ListSecretSecretList {
+  s.Metadata = v
+  return s
+}
+
+func (s *ListSecretSecretList) SetItems(v []*ListSecretSecret) *ListSecretSecretList {
+  s.Items = v
+  return s
+}
+
+type ListSecretListMeta struct {
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system", "zh_CN":"selfLink 表示此对象的 URL，由系统填充，只读。已弃用：selfLink 是一个遗留的只读字段，不再由系统填充。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only", "zh_CN":"标识该对象的服务器内部版本的字符串，客户端可以用该字段来确定对象何时被更改。 该值对客户端是不透明的，并且应该原样传回给服务器。该值由系统填充，只读"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"continue may be set if the user set a limit on the number of items returned, and indicates that the server has more data available. The value is opaque and may be used to issue another request to the endpoint that served this list to retrieve the next set of available objects. Continuing a consistent list may not be possible if the server configuration has changed or more than a few minutes have passed. The resourceVersion field returned when using this continue value will be identical to the value in the first response, unless you have received this token from an error message", "zh_CN":"如果用户对返回的条目数量设置了限制，则 continue 可能被设置，表示服务器有更多可用的数据。 该值是不透明的，可用于向提供此列表服务的端点发出另一个请求，以检索下一组可用的对象。 如果服务器配置已更改或时间已过去几分钟，则可能无法继续提供一致的列表。 除非你在错误消息中收到此令牌（token），否则使用此 continue 值时返回的 resourceVersion 字段应该和第一个响应中的值是相同的"}
+  Continue *string `json:"continue,omitempty" xml:"continue,omitempty"`
+  // {"en":"remainingItemCount is the number of subsequent items in the list which are not included in this list response. If the list request contained label or field selectors, then the number of remaining items is unknown and the field will be left unset and omitted during serialization. If the list is complete (either because it is not chunking or because this is the last chunk), then there are no more remaining items and this field will be left unset and omitted during serialization. Servers older than v1.15 do not set this field. The intended use of the remainingItemCount is estimating the size of a collection. Clients should not rely on the remainingItemCount to be set or to be exact", "zh_CN":"remainingItemCount 是列表中未包含在此列表响应中的后续项目的数量。 如果列表请求包含标签或字段选择器，则剩余项目的数量是未知的，并且在序列化期间该字段将保持未设置和省略。 如果列表是完整的（因为它没有分块或者这是最后一个块），那么就没有剩余的项目，并且在序列化过程中该字段将保持未设置和省略。 早于 v1.15 的服务器不设置此字段。remainingItemCount 的预期用途是估计集合的大小。 客户端不应依赖于设置准确的 remainingItemCount"}
+  RemainingItemCount *int64 `json:"remainingItemCount,omitempty" xml:"remainingItemCount,omitempty"`
+}
+
+func (s ListSecretListMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSecretListMeta) GoString() string {
+  return s.String()
+}
+
+func (s *ListSecretListMeta) SetSelfLink(v string) *ListSecretListMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *ListSecretListMeta) SetResourceVersion(v string) *ListSecretListMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *ListSecretListMeta) SetContinue(v string) *ListSecretListMeta {
+  s.Continue = &v
+  return s
+}
+
+func (s *ListSecretListMeta) SetRemainingItemCount(v int64) *ListSecretListMeta {
+  s.RemainingItemCount = &v
+  return s
+}
+
+type ListSecretSecret struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *ListSecretObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Immutable, if set to true, ensures that data stored in the ListSecretSecret cannot be updated (only object metadata can be modified). If not set to true, the field can be modified at any time. Defaulted to nil", "zh_CN":"如果 immutable 设为 true，则确保不会更新 ListSecretSecret 中存储的数据（只能修改对象元数据）。 如果未设为 true，则可以随时修改此字段。 默认为 nil"}
+  Immutable *bool `json:"immutable,omitempty" xml:"immutable,omitempty"`
+  // {"en":"Data contains the secret data. Each key must consist of alphanumeric characters, '-', '_' or '.'. The serialized form of the secret data is a base64 encoded string, representing the arbitrary (possibly non-string) data value here", "zh_CN":"data 包含秘密数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 秘密数据的序列化格式是 base64 编码的字符串，表示此处的任意（可能是非字符串）数据值"}
+  Data map[string]*string `json:"data,omitempty" xml:"data,omitempty"`
+  // {"en":"stringData allows specifying non-binary secret data in string form. It is provided as a write-only input field for convenience. All keys and values are merged into the data field on write, overwriting any existing values. The stringData field is never output when reading from the API", "zh_CN":"stringData 允许指定字符串格式的非二进制秘密数据。 为了方便起见，它作为只写输入字段提供。 写入时将所有键和值合并到 data 字段，且覆盖任何现有的值。 从 API 读取时绝不会输出 stringData 字段"}
+  StringData map[string]*string `json:"stringData,omitempty" xml:"stringData,omitempty"`
+  // {"en":"Used to facilitate programmatic handling of secret data", "zh_CN":"用于满足程序化方式处理秘密数据"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+func (s ListSecretSecret) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSecretSecret) GoString() string {
+  return s.String()
+}
+
+func (s *ListSecretSecret) SetApiVersion(v string) *ListSecretSecret {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListSecretSecret) SetKind(v string) *ListSecretSecret {
+  s.Kind = &v
+  return s
+}
+
+func (s *ListSecretSecret) SetMetadata(v *ListSecretObjectMeta) *ListSecretSecret {
+  s.Metadata = v
+  return s
+}
+
+func (s *ListSecretSecret) SetImmutable(v bool) *ListSecretSecret {
+  s.Immutable = &v
+  return s
+}
+
+func (s *ListSecretSecret) SetData(v map[string]*string) *ListSecretSecret {
+  s.Data = v
+  return s
+}
+
+func (s *ListSecretSecret) SetStringData(v map[string]*string) *ListSecretSecret {
+  s.StringData = v
+  return s
+}
+
+func (s *ListSecretSecret) SetType(v string) *ListSecretSecret {
+  s.Type = &v
+  return s
+}
+
+type ListSecretObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*ListSecretOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*ListSecretManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s ListSecretObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSecretObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *ListSecretObjectMeta) SetName(v string) *ListSecretObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *ListSecretObjectMeta) SetGenerateName(v string) *ListSecretObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *ListSecretObjectMeta) SetNamespace(v string) *ListSecretObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *ListSecretObjectMeta) SetSelfLink(v string) *ListSecretObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *ListSecretObjectMeta) SetUid(v string) *ListSecretObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *ListSecretObjectMeta) SetResourceVersion(v string) *ListSecretObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *ListSecretObjectMeta) SetGeneration(v int64) *ListSecretObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *ListSecretObjectMeta) SetCreationTimestamp(v string) *ListSecretObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *ListSecretObjectMeta) SetDeletionTimestamp(v string) *ListSecretObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *ListSecretObjectMeta) SetDeletionGracePeriodSeconds(v int64) *ListSecretObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *ListSecretObjectMeta) SetLabels(v map[string]*string) *ListSecretObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *ListSecretObjectMeta) SetAnnotations(v map[string]*string) *ListSecretObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *ListSecretObjectMeta) SetOwnerReferences(v []*ListSecretOwnerReference) *ListSecretObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *ListSecretObjectMeta) SetFinalizers(v []*string) *ListSecretObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *ListSecretObjectMeta) SetClusterName(v string) *ListSecretObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *ListSecretObjectMeta) SetManagedFields(v []*ListSecretManagedFieldsEntry) *ListSecretObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type ListSecretManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this ListSecretManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'ListSecretFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“ListSecretFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"ListSecretFieldsV1 holds the first JSON version format as described in the 'ListSecretFieldsV1' type", "zh_CN":"ListSecretFieldsV1 包含类型 “ListSecretFieldsV1” 中描述的第一个 JSON 版本格式"}
+  ListSecretFieldsV1 *ListSecretFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s ListSecretManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSecretManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *ListSecretManagedFieldsEntry) SetManager(v string) *ListSecretManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *ListSecretManagedFieldsEntry) SetOperation(v string) *ListSecretManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *ListSecretManagedFieldsEntry) SetApiVersion(v string) *ListSecretManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListSecretManagedFieldsEntry) SetTime(v string) *ListSecretManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *ListSecretManagedFieldsEntry) SetFieldsType(v string) *ListSecretManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *ListSecretManagedFieldsEntry) SetFieldsV1(v *ListSecretFieldsV1) *ListSecretManagedFieldsEntry {
+  s.ListSecretFieldsV1 = v
+  return s
+}
+
+func (s *ListSecretManagedFieldsEntry) SetSubresource(v string) *ListSecretManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type ListSecretFieldsV1 struct {
+}
+
+func (s ListSecretFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSecretFieldsV1) GoString() string {
+  return s.String()
+}
+
+type ListSecretOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s ListSecretOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSecretOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *ListSecretOwnerReference) SetApiVersion(v string) *ListSecretOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *ListSecretOwnerReference) SetKind(v string) *ListSecretOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *ListSecretOwnerReference) SetName(v string) *ListSecretOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *ListSecretOwnerReference) SetUid(v string) *ListSecretOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *ListSecretOwnerReference) SetController(v bool) *ListSecretOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *ListSecretOwnerReference) SetBlockOwnerDeletion(v bool) *ListSecretOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+
+
+
+type UpdateSecretRequest struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *UpdateSecretObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Immutable, if set to true, ensures that data stored in the UpdateSecretSecret cannot be updated (only object metadata can be modified). If not set to true, the field can be modified at any time. Defaulted to nil", "zh_CN":"如果 immutable 设为 true，则确保不会更新 UpdateSecretSecret 中存储的数据（只能修改对象元数据）。 如果未设为 true，则可以随时修改此字段。 默认为 nil"}
+  Immutable *bool `json:"immutable,omitempty" xml:"immutable,omitempty"`
+  // {"en":"Data contains the secret data. Each key must consist of alphanumeric characters, '-', '_' or '.'. The serialized form of the secret data is a base64 encoded string, representing the arbitrary (possibly non-string) data value here", "zh_CN":"data 包含秘密数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 秘密数据的序列化格式是 base64 编码的字符串，表示此处的任意（可能是非字符串）数据值"}
+  Data map[string]*string `json:"data,omitempty" xml:"data,omitempty"`
+  // {"en":"stringData allows specifying non-binary secret data in string form. It is provided as a write-only input field for convenience. All keys and values are merged into the data field on write, overwriting any existing values. The stringData field is never output when reading from the API", "zh_CN":"stringData 允许指定字符串格式的非二进制秘密数据。 为了方便起见，它作为只写输入字段提供。 写入时将所有键和值合并到 data 字段，且覆盖任何现有的值。 从 API 读取时绝不会输出 stringData 字段"}
+  StringData map[string]*string `json:"stringData,omitempty" xml:"stringData,omitempty"`
+  // {"en":"Used to facilitate programmatic handling of secret data", "zh_CN":"用于满足程序化方式处理秘密数据"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+func (s UpdateSecretRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSecretRequest) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSecretRequest) SetApiVersion(v string) *UpdateSecretRequest {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *UpdateSecretRequest) SetKind(v string) *UpdateSecretRequest {
+  s.Kind = &v
+  return s
+}
+
+func (s *UpdateSecretRequest) SetMetadata(v *UpdateSecretObjectMeta) *UpdateSecretRequest {
+  s.Metadata = v
+  return s
+}
+
+func (s *UpdateSecretRequest) SetImmutable(v bool) *UpdateSecretRequest {
+  s.Immutable = &v
+  return s
+}
+
+func (s *UpdateSecretRequest) SetData(v map[string]*string) *UpdateSecretRequest {
+  s.Data = v
+  return s
+}
+
+func (s *UpdateSecretRequest) SetStringData(v map[string]*string) *UpdateSecretRequest {
+  s.StringData = v
+  return s
+}
+
+func (s *UpdateSecretRequest) SetType(v string) *UpdateSecretRequest {
+  s.Type = &v
+  return s
+}
+
+type UpdateSecretResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"secret", "zh_CN":"secret"}
+  Data *UpdateSecretSecret `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s UpdateSecretResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSecretResponse) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSecretResponse) SetCode(v int64) *UpdateSecretResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *UpdateSecretResponse) SetMsg(v string) *UpdateSecretResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *UpdateSecretResponse) SetRequestId(v string) *UpdateSecretResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *UpdateSecretResponse) SetData(v *UpdateSecretSecret) *UpdateSecretResponse {
+  s.Data = v
+  return s
+}
+
+type UpdateSecretPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+  // {"en":"secret name", "zh_CN":"secret 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s UpdateSecretPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSecretPaths) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSecretPaths) SetNamespace(v string) *UpdateSecretPaths {
+  s.Namespace = &v
+  return s
+}
+
+func (s *UpdateSecretPaths) SetName(v string) *UpdateSecretPaths {
+  s.Name = &v
+  return s
+}
+
+type UpdateSecretParameters struct {
+}
+
+func (s UpdateSecretParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSecretParameters) GoString() string {
+  return s.String()
+}
+
+type UpdateSecretRequestHeader struct {
+}
+
+func (s UpdateSecretRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSecretRequestHeader) GoString() string {
+  return s.String()
+}
+
+type UpdateSecretResponseHeader struct {
+}
+
+func (s UpdateSecretResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSecretResponseHeader) GoString() string {
+  return s.String()
+}
+
+type UpdateSecretSecret struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *UpdateSecretObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Immutable, if set to true, ensures that data stored in the UpdateSecretSecret cannot be updated (only object metadata can be modified). If not set to true, the field can be modified at any time. Defaulted to nil", "zh_CN":"如果 immutable 设为 true，则确保不会更新 UpdateSecretSecret 中存储的数据（只能修改对象元数据）。 如果未设为 true，则可以随时修改此字段。 默认为 nil"}
+  Immutable *bool `json:"immutable,omitempty" xml:"immutable,omitempty"`
+  // {"en":"Data contains the secret data. Each key must consist of alphanumeric characters, '-', '_' or '.'. The serialized form of the secret data is a base64 encoded string, representing the arbitrary (possibly non-string) data value here", "zh_CN":"data 包含秘密数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 秘密数据的序列化格式是 base64 编码的字符串，表示此处的任意（可能是非字符串）数据值"}
+  Data map[string]*string `json:"data,omitempty" xml:"data,omitempty"`
+  // {"en":"stringData allows specifying non-binary secret data in string form. It is provided as a write-only input field for convenience. All keys and values are merged into the data field on write, overwriting any existing values. The stringData field is never output when reading from the API", "zh_CN":"stringData 允许指定字符串格式的非二进制秘密数据。 为了方便起见，它作为只写输入字段提供。 写入时将所有键和值合并到 data 字段，且覆盖任何现有的值。 从 API 读取时绝不会输出 stringData 字段"}
+  StringData map[string]*string `json:"stringData,omitempty" xml:"stringData,omitempty"`
+  // {"en":"Used to facilitate programmatic handling of secret data", "zh_CN":"用于满足程序化方式处理秘密数据"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+func (s UpdateSecretSecret) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSecretSecret) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSecretSecret) SetApiVersion(v string) *UpdateSecretSecret {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *UpdateSecretSecret) SetKind(v string) *UpdateSecretSecret {
+  s.Kind = &v
+  return s
+}
+
+func (s *UpdateSecretSecret) SetMetadata(v *UpdateSecretObjectMeta) *UpdateSecretSecret {
+  s.Metadata = v
+  return s
+}
+
+func (s *UpdateSecretSecret) SetImmutable(v bool) *UpdateSecretSecret {
+  s.Immutable = &v
+  return s
+}
+
+func (s *UpdateSecretSecret) SetData(v map[string]*string) *UpdateSecretSecret {
+  s.Data = v
+  return s
+}
+
+func (s *UpdateSecretSecret) SetStringData(v map[string]*string) *UpdateSecretSecret {
+  s.StringData = v
+  return s
+}
+
+func (s *UpdateSecretSecret) SetType(v string) *UpdateSecretSecret {
+  s.Type = &v
+  return s
+}
+
+type UpdateSecretObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*UpdateSecretOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*UpdateSecretManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s UpdateSecretObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSecretObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSecretObjectMeta) SetName(v string) *UpdateSecretObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *UpdateSecretObjectMeta) SetGenerateName(v string) *UpdateSecretObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *UpdateSecretObjectMeta) SetNamespace(v string) *UpdateSecretObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *UpdateSecretObjectMeta) SetSelfLink(v string) *UpdateSecretObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *UpdateSecretObjectMeta) SetUid(v string) *UpdateSecretObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *UpdateSecretObjectMeta) SetResourceVersion(v string) *UpdateSecretObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *UpdateSecretObjectMeta) SetGeneration(v int64) *UpdateSecretObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *UpdateSecretObjectMeta) SetCreationTimestamp(v string) *UpdateSecretObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *UpdateSecretObjectMeta) SetDeletionTimestamp(v string) *UpdateSecretObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *UpdateSecretObjectMeta) SetDeletionGracePeriodSeconds(v int64) *UpdateSecretObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *UpdateSecretObjectMeta) SetLabels(v map[string]*string) *UpdateSecretObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *UpdateSecretObjectMeta) SetAnnotations(v map[string]*string) *UpdateSecretObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *UpdateSecretObjectMeta) SetOwnerReferences(v []*UpdateSecretOwnerReference) *UpdateSecretObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *UpdateSecretObjectMeta) SetFinalizers(v []*string) *UpdateSecretObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *UpdateSecretObjectMeta) SetClusterName(v string) *UpdateSecretObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *UpdateSecretObjectMeta) SetManagedFields(v []*UpdateSecretManagedFieldsEntry) *UpdateSecretObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type UpdateSecretManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this UpdateSecretManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'UpdateSecretFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“UpdateSecretFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"UpdateSecretFieldsV1 holds the first JSON version format as described in the 'UpdateSecretFieldsV1' type", "zh_CN":"UpdateSecretFieldsV1 包含类型 “UpdateSecretFieldsV1” 中描述的第一个 JSON 版本格式"}
+  UpdateSecretFieldsV1 *UpdateSecretFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s UpdateSecretManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSecretManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSecretManagedFieldsEntry) SetManager(v string) *UpdateSecretManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *UpdateSecretManagedFieldsEntry) SetOperation(v string) *UpdateSecretManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *UpdateSecretManagedFieldsEntry) SetApiVersion(v string) *UpdateSecretManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *UpdateSecretManagedFieldsEntry) SetTime(v string) *UpdateSecretManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *UpdateSecretManagedFieldsEntry) SetFieldsType(v string) *UpdateSecretManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *UpdateSecretManagedFieldsEntry) SetFieldsV1(v *UpdateSecretFieldsV1) *UpdateSecretManagedFieldsEntry {
+  s.UpdateSecretFieldsV1 = v
+  return s
+}
+
+func (s *UpdateSecretManagedFieldsEntry) SetSubresource(v string) *UpdateSecretManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type UpdateSecretFieldsV1 struct {
+}
+
+func (s UpdateSecretFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSecretFieldsV1) GoString() string {
+  return s.String()
+}
+
+type UpdateSecretOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s UpdateSecretOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSecretOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSecretOwnerReference) SetApiVersion(v string) *UpdateSecretOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *UpdateSecretOwnerReference) SetKind(v string) *UpdateSecretOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *UpdateSecretOwnerReference) SetName(v string) *UpdateSecretOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *UpdateSecretOwnerReference) SetUid(v string) *UpdateSecretOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *UpdateSecretOwnerReference) SetController(v bool) *UpdateSecretOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *UpdateSecretOwnerReference) SetBlockOwnerDeletion(v bool) *UpdateSecretOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+
+
+
+type PutPatchSecretRequest struct {
+}
+
+func (s PutPatchSecretRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchSecretRequest) GoString() string {
+  return s.String()
+}
+
+type PutPatchSecretResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"secret", "zh_CN":"secret"}
+  Data *PutPatchSecretSecret `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s PutPatchSecretResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchSecretResponse) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchSecretResponse) SetCode(v int64) *PutPatchSecretResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *PutPatchSecretResponse) SetMsg(v string) *PutPatchSecretResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *PutPatchSecretResponse) SetRequestId(v string) *PutPatchSecretResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *PutPatchSecretResponse) SetData(v *PutPatchSecretSecret) *PutPatchSecretResponse {
+  s.Data = v
+  return s
+}
+
+type PutPatchSecretPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+  // {"en":"secret name", "zh_CN":"secret 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s PutPatchSecretPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchSecretPaths) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchSecretPaths) SetNamespace(v string) *PutPatchSecretPaths {
+  s.Namespace = &v
+  return s
+}
+
+func (s *PutPatchSecretPaths) SetName(v string) *PutPatchSecretPaths {
+  s.Name = &v
+  return s
+}
+
+type PutPatchSecretParameters struct {
+}
+
+func (s PutPatchSecretParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchSecretParameters) GoString() string {
+  return s.String()
+}
+
+type PutPatchSecretRequestHeader struct {
+}
+
+func (s PutPatchSecretRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchSecretRequestHeader) GoString() string {
+  return s.String()
+}
+
+type PutPatchSecretResponseHeader struct {
+}
+
+func (s PutPatchSecretResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchSecretResponseHeader) GoString() string {
+  return s.String()
+}
+
+type PutPatchSecretSecret struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *PutPatchSecretObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Immutable, if set to true, ensures that data stored in the PutPatchSecretSecret cannot be updated (only object metadata can be modified). If not set to true, the field can be modified at any time. Defaulted to nil", "zh_CN":"如果 immutable 设为 true，则确保不会更新 PutPatchSecretSecret 中存储的数据（只能修改对象元数据）。 如果未设为 true，则可以随时修改此字段。 默认为 nil"}
+  Immutable *bool `json:"immutable,omitempty" xml:"immutable,omitempty"`
+  // {"en":"Data contains the secret data. Each key must consist of alphanumeric characters, '-', '_' or '.'. The serialized form of the secret data is a base64 encoded string, representing the arbitrary (possibly non-string) data value here", "zh_CN":"data 包含秘密数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 秘密数据的序列化格式是 base64 编码的字符串，表示此处的任意（可能是非字符串）数据值"}
+  Data map[string]*string `json:"data,omitempty" xml:"data,omitempty"`
+  // {"en":"stringData allows specifying non-binary secret data in string form. It is provided as a write-only input field for convenience. All keys and values are merged into the data field on write, overwriting any existing values. The stringData field is never output when reading from the API", "zh_CN":"stringData 允许指定字符串格式的非二进制秘密数据。 为了方便起见，它作为只写输入字段提供。 写入时将所有键和值合并到 data 字段，且覆盖任何现有的值。 从 API 读取时绝不会输出 stringData 字段"}
+  StringData map[string]*string `json:"stringData,omitempty" xml:"stringData,omitempty"`
+  // {"en":"Used to facilitate programmatic handling of secret data", "zh_CN":"用于满足程序化方式处理秘密数据"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+func (s PutPatchSecretSecret) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchSecretSecret) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchSecretSecret) SetApiVersion(v string) *PutPatchSecretSecret {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *PutPatchSecretSecret) SetKind(v string) *PutPatchSecretSecret {
+  s.Kind = &v
+  return s
+}
+
+func (s *PutPatchSecretSecret) SetMetadata(v *PutPatchSecretObjectMeta) *PutPatchSecretSecret {
+  s.Metadata = v
+  return s
+}
+
+func (s *PutPatchSecretSecret) SetImmutable(v bool) *PutPatchSecretSecret {
+  s.Immutable = &v
+  return s
+}
+
+func (s *PutPatchSecretSecret) SetData(v map[string]*string) *PutPatchSecretSecret {
+  s.Data = v
+  return s
+}
+
+func (s *PutPatchSecretSecret) SetStringData(v map[string]*string) *PutPatchSecretSecret {
+  s.StringData = v
+  return s
+}
+
+func (s *PutPatchSecretSecret) SetType(v string) *PutPatchSecretSecret {
+  s.Type = &v
+  return s
+}
+
+type PutPatchSecretObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*PutPatchSecretOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*PutPatchSecretManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s PutPatchSecretObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchSecretObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchSecretObjectMeta) SetName(v string) *PutPatchSecretObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *PutPatchSecretObjectMeta) SetGenerateName(v string) *PutPatchSecretObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *PutPatchSecretObjectMeta) SetNamespace(v string) *PutPatchSecretObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *PutPatchSecretObjectMeta) SetSelfLink(v string) *PutPatchSecretObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *PutPatchSecretObjectMeta) SetUid(v string) *PutPatchSecretObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *PutPatchSecretObjectMeta) SetResourceVersion(v string) *PutPatchSecretObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *PutPatchSecretObjectMeta) SetGeneration(v int64) *PutPatchSecretObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *PutPatchSecretObjectMeta) SetCreationTimestamp(v string) *PutPatchSecretObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *PutPatchSecretObjectMeta) SetDeletionTimestamp(v string) *PutPatchSecretObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *PutPatchSecretObjectMeta) SetDeletionGracePeriodSeconds(v int64) *PutPatchSecretObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *PutPatchSecretObjectMeta) SetLabels(v map[string]*string) *PutPatchSecretObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *PutPatchSecretObjectMeta) SetAnnotations(v map[string]*string) *PutPatchSecretObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *PutPatchSecretObjectMeta) SetOwnerReferences(v []*PutPatchSecretOwnerReference) *PutPatchSecretObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *PutPatchSecretObjectMeta) SetFinalizers(v []*string) *PutPatchSecretObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *PutPatchSecretObjectMeta) SetClusterName(v string) *PutPatchSecretObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *PutPatchSecretObjectMeta) SetManagedFields(v []*PutPatchSecretManagedFieldsEntry) *PutPatchSecretObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type PutPatchSecretManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this PutPatchSecretManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'PutPatchSecretFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“PutPatchSecretFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"PutPatchSecretFieldsV1 holds the first JSON version format as described in the 'PutPatchSecretFieldsV1' type", "zh_CN":"PutPatchSecretFieldsV1 包含类型 “PutPatchSecretFieldsV1” 中描述的第一个 JSON 版本格式"}
+  PutPatchSecretFieldsV1 *PutPatchSecretFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s PutPatchSecretManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchSecretManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchSecretManagedFieldsEntry) SetManager(v string) *PutPatchSecretManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *PutPatchSecretManagedFieldsEntry) SetOperation(v string) *PutPatchSecretManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *PutPatchSecretManagedFieldsEntry) SetApiVersion(v string) *PutPatchSecretManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *PutPatchSecretManagedFieldsEntry) SetTime(v string) *PutPatchSecretManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *PutPatchSecretManagedFieldsEntry) SetFieldsType(v string) *PutPatchSecretManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *PutPatchSecretManagedFieldsEntry) SetFieldsV1(v *PutPatchSecretFieldsV1) *PutPatchSecretManagedFieldsEntry {
+  s.PutPatchSecretFieldsV1 = v
+  return s
+}
+
+func (s *PutPatchSecretManagedFieldsEntry) SetSubresource(v string) *PutPatchSecretManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type PutPatchSecretFieldsV1 struct {
+}
+
+func (s PutPatchSecretFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchSecretFieldsV1) GoString() string {
+  return s.String()
+}
+
+type PutPatchSecretOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s PutPatchSecretOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchSecretOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchSecretOwnerReference) SetApiVersion(v string) *PutPatchSecretOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *PutPatchSecretOwnerReference) SetKind(v string) *PutPatchSecretOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *PutPatchSecretOwnerReference) SetName(v string) *PutPatchSecretOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *PutPatchSecretOwnerReference) SetUid(v string) *PutPatchSecretOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *PutPatchSecretOwnerReference) SetController(v bool) *PutPatchSecretOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *PutPatchSecretOwnerReference) SetBlockOwnerDeletion(v bool) *PutPatchSecretOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+
+
+
+type PutPatchConfigmapRequest struct {
+}
+
+func (s PutPatchConfigmapRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchConfigmapRequest) GoString() string {
+  return s.String()
+}
+
+type PutPatchConfigmapResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"configmap", "zh_CN":"configmap"}
+  Data *PutPatchConfigmapConfigMap `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s PutPatchConfigmapResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchConfigmapResponse) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchConfigmapResponse) SetCode(v int64) *PutPatchConfigmapResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *PutPatchConfigmapResponse) SetMsg(v string) *PutPatchConfigmapResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *PutPatchConfigmapResponse) SetRequestId(v string) *PutPatchConfigmapResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *PutPatchConfigmapResponse) SetData(v *PutPatchConfigmapConfigMap) *PutPatchConfigmapResponse {
+  s.Data = v
+  return s
+}
+
+type PutPatchConfigmapPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+  // {"en":"configmap name", "zh_CN":"configmap 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s PutPatchConfigmapPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchConfigmapPaths) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchConfigmapPaths) SetNamespace(v string) *PutPatchConfigmapPaths {
+  s.Namespace = &v
+  return s
+}
+
+func (s *PutPatchConfigmapPaths) SetName(v string) *PutPatchConfigmapPaths {
+  s.Name = &v
+  return s
+}
+
+type PutPatchConfigmapParameters struct {
+}
+
+func (s PutPatchConfigmapParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchConfigmapParameters) GoString() string {
+  return s.String()
+}
+
+type PutPatchConfigmapRequestHeader struct {
+}
+
+func (s PutPatchConfigmapRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchConfigmapRequestHeader) GoString() string {
+  return s.String()
+}
+
+type PutPatchConfigmapResponseHeader struct {
+}
+
+func (s PutPatchConfigmapResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchConfigmapResponseHeader) GoString() string {
+  return s.String()
+}
+
+type PutPatchConfigmapConfigMap struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *PutPatchConfigmapObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Immutable, if set to true, ensures that data stored in the PutPatchConfigmapConfigMap cannot be updated (only object metadata can be modified). If not set to true, the field can be modified at any time. Defaulted to nil", "zh_CN":"binaryData 包含二进制数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 binaryData 可以包含不在 UTF-8 范围中的字节序列。 binaryData 中存储的键不得与 data 字段中的键重叠，这在验证过程中是强制要求。 使用此字段需要 apiserver 和 kubelet 的版本高于 1.10"}
+  Immutable *bool `json:"immutable,omitempty" xml:"immutable,omitempty"`
+  // {"en":"Data contains the configuration data. Each key must consist of alphanumeric characters, '-', '_' or '.'. Values with non-UTF-8 byte sequences must use the BinaryData field. The keys stored in Data must not overlap with the keys in the BinaryData field, this is enforced during validation process", "zh_CN":"data 包含配置数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 如果值包含非 UTF-8 字节序列，则必须使用 binaryData 字段。 data 中存储的键不得与 binaryData 字段中的键重叠，这在验证过程中是强制要求"}
+  Data map[string]*string `json:"data,omitempty" xml:"data,omitempty"`
+  // {"en":"BinaryData contains the binary data. Each key must consist of alphanumeric characters, '-', '_' or '.'. BinaryData can contain byte sequences that are not in the UTF-8 range. The keys stored in BinaryData must not overlap with the ones in the Data field, this is enforced during validation process. Using this field will require 1.10+ apiserver and kubelet", "zh_CN":"如果 immutable 设为 true， 则确保不会更新 PutPatchConfigmapConfigMap 中存储的数据（只能修改对象元数据）。 如果未设为 true，则可以随时修改此字段。 默认为 nil"}
+  BinaryData map[string]*string `json:"binaryData,omitempty" xml:"binaryData,omitempty"`
+}
+
+func (s PutPatchConfigmapConfigMap) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchConfigmapConfigMap) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchConfigmapConfigMap) SetApiVersion(v string) *PutPatchConfigmapConfigMap {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *PutPatchConfigmapConfigMap) SetKind(v string) *PutPatchConfigmapConfigMap {
+  s.Kind = &v
+  return s
+}
+
+func (s *PutPatchConfigmapConfigMap) SetMetadata(v *PutPatchConfigmapObjectMeta) *PutPatchConfigmapConfigMap {
+  s.Metadata = v
+  return s
+}
+
+func (s *PutPatchConfigmapConfigMap) SetImmutable(v bool) *PutPatchConfigmapConfigMap {
+  s.Immutable = &v
+  return s
+}
+
+func (s *PutPatchConfigmapConfigMap) SetData(v map[string]*string) *PutPatchConfigmapConfigMap {
+  s.Data = v
+  return s
+}
+
+func (s *PutPatchConfigmapConfigMap) SetBinaryData(v map[string]*string) *PutPatchConfigmapConfigMap {
+  s.BinaryData = v
+  return s
+}
+
+type PutPatchConfigmapObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*PutPatchConfigmapOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*PutPatchConfigmapManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s PutPatchConfigmapObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchConfigmapObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchConfigmapObjectMeta) SetName(v string) *PutPatchConfigmapObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *PutPatchConfigmapObjectMeta) SetGenerateName(v string) *PutPatchConfigmapObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *PutPatchConfigmapObjectMeta) SetNamespace(v string) *PutPatchConfigmapObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *PutPatchConfigmapObjectMeta) SetSelfLink(v string) *PutPatchConfigmapObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *PutPatchConfigmapObjectMeta) SetUid(v string) *PutPatchConfigmapObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *PutPatchConfigmapObjectMeta) SetResourceVersion(v string) *PutPatchConfigmapObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *PutPatchConfigmapObjectMeta) SetGeneration(v int64) *PutPatchConfigmapObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *PutPatchConfigmapObjectMeta) SetCreationTimestamp(v string) *PutPatchConfigmapObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *PutPatchConfigmapObjectMeta) SetDeletionTimestamp(v string) *PutPatchConfigmapObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *PutPatchConfigmapObjectMeta) SetDeletionGracePeriodSeconds(v int64) *PutPatchConfigmapObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *PutPatchConfigmapObjectMeta) SetLabels(v map[string]*string) *PutPatchConfigmapObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *PutPatchConfigmapObjectMeta) SetAnnotations(v map[string]*string) *PutPatchConfigmapObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *PutPatchConfigmapObjectMeta) SetOwnerReferences(v []*PutPatchConfigmapOwnerReference) *PutPatchConfigmapObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *PutPatchConfigmapObjectMeta) SetFinalizers(v []*string) *PutPatchConfigmapObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *PutPatchConfigmapObjectMeta) SetClusterName(v string) *PutPatchConfigmapObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *PutPatchConfigmapObjectMeta) SetManagedFields(v []*PutPatchConfigmapManagedFieldsEntry) *PutPatchConfigmapObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type PutPatchConfigmapManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this PutPatchConfigmapManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'PutPatchConfigmapFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“PutPatchConfigmapFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"PutPatchConfigmapFieldsV1 holds the first JSON version format as described in the 'PutPatchConfigmapFieldsV1' type", "zh_CN":"PutPatchConfigmapFieldsV1 包含类型 “PutPatchConfigmapFieldsV1” 中描述的第一个 JSON 版本格式"}
+  PutPatchConfigmapFieldsV1 *PutPatchConfigmapFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s PutPatchConfigmapManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchConfigmapManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchConfigmapManagedFieldsEntry) SetManager(v string) *PutPatchConfigmapManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *PutPatchConfigmapManagedFieldsEntry) SetOperation(v string) *PutPatchConfigmapManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *PutPatchConfigmapManagedFieldsEntry) SetApiVersion(v string) *PutPatchConfigmapManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *PutPatchConfigmapManagedFieldsEntry) SetTime(v string) *PutPatchConfigmapManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *PutPatchConfigmapManagedFieldsEntry) SetFieldsType(v string) *PutPatchConfigmapManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *PutPatchConfigmapManagedFieldsEntry) SetFieldsV1(v *PutPatchConfigmapFieldsV1) *PutPatchConfigmapManagedFieldsEntry {
+  s.PutPatchConfigmapFieldsV1 = v
+  return s
+}
+
+func (s *PutPatchConfigmapManagedFieldsEntry) SetSubresource(v string) *PutPatchConfigmapManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type PutPatchConfigmapFieldsV1 struct {
+}
+
+func (s PutPatchConfigmapFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchConfigmapFieldsV1) GoString() string {
+  return s.String()
+}
+
+type PutPatchConfigmapOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s PutPatchConfigmapOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PutPatchConfigmapOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *PutPatchConfigmapOwnerReference) SetApiVersion(v string) *PutPatchConfigmapOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *PutPatchConfigmapOwnerReference) SetKind(v string) *PutPatchConfigmapOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *PutPatchConfigmapOwnerReference) SetName(v string) *PutPatchConfigmapOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *PutPatchConfigmapOwnerReference) SetUid(v string) *PutPatchConfigmapOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *PutPatchConfigmapOwnerReference) SetController(v bool) *PutPatchConfigmapOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *PutPatchConfigmapOwnerReference) SetBlockOwnerDeletion(v bool) *PutPatchConfigmapOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+
+
+
+type UpdateConfigmapRequest struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *UpdateConfigmapObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Immutable, if set to true, ensures that data stored in the UpdateConfigmapConfigMap cannot be updated (only object metadata can be modified). If not set to true, the field can be modified at any time. Defaulted to nil", "zh_CN":"binaryData 包含二进制数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 binaryData 可以包含不在 UTF-8 范围中的字节序列。 binaryData 中存储的键不得与 data 字段中的键重叠，这在验证过程中是强制要求。 使用此字段需要 apiserver 和 kubelet 的版本高于 1.10"}
+  Immutable *bool `json:"immutable,omitempty" xml:"immutable,omitempty"`
+  // {"en":"Data contains the configuration data. Each key must consist of alphanumeric characters, '-', '_' or '.'. Values with non-UTF-8 byte sequences must use the BinaryData field. The keys stored in Data must not overlap with the keys in the BinaryData field, this is enforced during validation process", "zh_CN":"data 包含配置数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 如果值包含非 UTF-8 字节序列，则必须使用 binaryData 字段。 data 中存储的键不得与 binaryData 字段中的键重叠，这在验证过程中是强制要求"}
+  Data map[string]*string `json:"data,omitempty" xml:"data,omitempty"`
+  // {"en":"BinaryData contains the binary data. Each key must consist of alphanumeric characters, '-', '_' or '.'. BinaryData can contain byte sequences that are not in the UTF-8 range. The keys stored in BinaryData must not overlap with the ones in the Data field, this is enforced during validation process. Using this field will require 1.10+ apiserver and kubelet", "zh_CN":"如果 immutable 设为 true， 则确保不会更新 UpdateConfigmapConfigMap 中存储的数据（只能修改对象元数据）。 如果未设为 true，则可以随时修改此字段。 默认为 nil"}
+  BinaryData map[string]*string `json:"binaryData,omitempty" xml:"binaryData,omitempty"`
+}
+
+func (s UpdateConfigmapRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateConfigmapRequest) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateConfigmapRequest) SetApiVersion(v string) *UpdateConfigmapRequest {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *UpdateConfigmapRequest) SetKind(v string) *UpdateConfigmapRequest {
+  s.Kind = &v
+  return s
+}
+
+func (s *UpdateConfigmapRequest) SetMetadata(v *UpdateConfigmapObjectMeta) *UpdateConfigmapRequest {
+  s.Metadata = v
+  return s
+}
+
+func (s *UpdateConfigmapRequest) SetImmutable(v bool) *UpdateConfigmapRequest {
+  s.Immutable = &v
+  return s
+}
+
+func (s *UpdateConfigmapRequest) SetData(v map[string]*string) *UpdateConfigmapRequest {
+  s.Data = v
+  return s
+}
+
+func (s *UpdateConfigmapRequest) SetBinaryData(v map[string]*string) *UpdateConfigmapRequest {
+  s.BinaryData = v
+  return s
+}
+
+type UpdateConfigmapResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"configmap", "zh_CN":"configmap"}
+  Data *UpdateConfigmapConfigMap `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s UpdateConfigmapResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateConfigmapResponse) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateConfigmapResponse) SetCode(v int64) *UpdateConfigmapResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *UpdateConfigmapResponse) SetMsg(v string) *UpdateConfigmapResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *UpdateConfigmapResponse) SetRequestId(v string) *UpdateConfigmapResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *UpdateConfigmapResponse) SetData(v *UpdateConfigmapConfigMap) *UpdateConfigmapResponse {
+  s.Data = v
+  return s
+}
+
+type UpdateConfigmapPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+  // {"en":"configmap name", "zh_CN":"configmap 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s UpdateConfigmapPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateConfigmapPaths) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateConfigmapPaths) SetNamespace(v string) *UpdateConfigmapPaths {
+  s.Namespace = &v
+  return s
+}
+
+func (s *UpdateConfigmapPaths) SetName(v string) *UpdateConfigmapPaths {
+  s.Name = &v
+  return s
+}
+
+type UpdateConfigmapParameters struct {
+}
+
+func (s UpdateConfigmapParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateConfigmapParameters) GoString() string {
+  return s.String()
+}
+
+type UpdateConfigmapRequestHeader struct {
+}
+
+func (s UpdateConfigmapRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateConfigmapRequestHeader) GoString() string {
+  return s.String()
+}
+
+type UpdateConfigmapResponseHeader struct {
+}
+
+func (s UpdateConfigmapResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateConfigmapResponseHeader) GoString() string {
+  return s.String()
+}
+
+type UpdateConfigmapConfigMap struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *UpdateConfigmapObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Immutable, if set to true, ensures that data stored in the UpdateConfigmapConfigMap cannot be updated (only object metadata can be modified). If not set to true, the field can be modified at any time. Defaulted to nil", "zh_CN":"binaryData 包含二进制数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 binaryData 可以包含不在 UTF-8 范围中的字节序列。 binaryData 中存储的键不得与 data 字段中的键重叠，这在验证过程中是强制要求。 使用此字段需要 apiserver 和 kubelet 的版本高于 1.10"}
+  Immutable *bool `json:"immutable,omitempty" xml:"immutable,omitempty"`
+  // {"en":"Data contains the configuration data. Each key must consist of alphanumeric characters, '-', '_' or '.'. Values with non-UTF-8 byte sequences must use the BinaryData field. The keys stored in Data must not overlap with the keys in the BinaryData field, this is enforced during validation process", "zh_CN":"data 包含配置数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 如果值包含非 UTF-8 字节序列，则必须使用 binaryData 字段。 data 中存储的键不得与 binaryData 字段中的键重叠，这在验证过程中是强制要求"}
+  Data map[string]*string `json:"data,omitempty" xml:"data,omitempty"`
+  // {"en":"BinaryData contains the binary data. Each key must consist of alphanumeric characters, '-', '_' or '.'. BinaryData can contain byte sequences that are not in the UTF-8 range. The keys stored in BinaryData must not overlap with the ones in the Data field, this is enforced during validation process. Using this field will require 1.10+ apiserver and kubelet", "zh_CN":"如果 immutable 设为 true， 则确保不会更新 UpdateConfigmapConfigMap 中存储的数据（只能修改对象元数据）。 如果未设为 true，则可以随时修改此字段。 默认为 nil"}
+  BinaryData map[string]*string `json:"binaryData,omitempty" xml:"binaryData,omitempty"`
+}
+
+func (s UpdateConfigmapConfigMap) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateConfigmapConfigMap) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateConfigmapConfigMap) SetApiVersion(v string) *UpdateConfigmapConfigMap {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *UpdateConfigmapConfigMap) SetKind(v string) *UpdateConfigmapConfigMap {
+  s.Kind = &v
+  return s
+}
+
+func (s *UpdateConfigmapConfigMap) SetMetadata(v *UpdateConfigmapObjectMeta) *UpdateConfigmapConfigMap {
+  s.Metadata = v
+  return s
+}
+
+func (s *UpdateConfigmapConfigMap) SetImmutable(v bool) *UpdateConfigmapConfigMap {
+  s.Immutable = &v
+  return s
+}
+
+func (s *UpdateConfigmapConfigMap) SetData(v map[string]*string) *UpdateConfigmapConfigMap {
+  s.Data = v
+  return s
+}
+
+func (s *UpdateConfigmapConfigMap) SetBinaryData(v map[string]*string) *UpdateConfigmapConfigMap {
+  s.BinaryData = v
+  return s
+}
+
+type UpdateConfigmapObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*UpdateConfigmapOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*UpdateConfigmapManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s UpdateConfigmapObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateConfigmapObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateConfigmapObjectMeta) SetName(v string) *UpdateConfigmapObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *UpdateConfigmapObjectMeta) SetGenerateName(v string) *UpdateConfigmapObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *UpdateConfigmapObjectMeta) SetNamespace(v string) *UpdateConfigmapObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *UpdateConfigmapObjectMeta) SetSelfLink(v string) *UpdateConfigmapObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *UpdateConfigmapObjectMeta) SetUid(v string) *UpdateConfigmapObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *UpdateConfigmapObjectMeta) SetResourceVersion(v string) *UpdateConfigmapObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *UpdateConfigmapObjectMeta) SetGeneration(v int64) *UpdateConfigmapObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *UpdateConfigmapObjectMeta) SetCreationTimestamp(v string) *UpdateConfigmapObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *UpdateConfigmapObjectMeta) SetDeletionTimestamp(v string) *UpdateConfigmapObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *UpdateConfigmapObjectMeta) SetDeletionGracePeriodSeconds(v int64) *UpdateConfigmapObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *UpdateConfigmapObjectMeta) SetLabels(v map[string]*string) *UpdateConfigmapObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *UpdateConfigmapObjectMeta) SetAnnotations(v map[string]*string) *UpdateConfigmapObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *UpdateConfigmapObjectMeta) SetOwnerReferences(v []*UpdateConfigmapOwnerReference) *UpdateConfigmapObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *UpdateConfigmapObjectMeta) SetFinalizers(v []*string) *UpdateConfigmapObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *UpdateConfigmapObjectMeta) SetClusterName(v string) *UpdateConfigmapObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *UpdateConfigmapObjectMeta) SetManagedFields(v []*UpdateConfigmapManagedFieldsEntry) *UpdateConfigmapObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type UpdateConfigmapManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this UpdateConfigmapManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'UpdateConfigmapFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“UpdateConfigmapFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"UpdateConfigmapFieldsV1 holds the first JSON version format as described in the 'UpdateConfigmapFieldsV1' type", "zh_CN":"UpdateConfigmapFieldsV1 包含类型 “UpdateConfigmapFieldsV1” 中描述的第一个 JSON 版本格式"}
+  UpdateConfigmapFieldsV1 *UpdateConfigmapFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s UpdateConfigmapManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateConfigmapManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateConfigmapManagedFieldsEntry) SetManager(v string) *UpdateConfigmapManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *UpdateConfigmapManagedFieldsEntry) SetOperation(v string) *UpdateConfigmapManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *UpdateConfigmapManagedFieldsEntry) SetApiVersion(v string) *UpdateConfigmapManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *UpdateConfigmapManagedFieldsEntry) SetTime(v string) *UpdateConfigmapManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *UpdateConfigmapManagedFieldsEntry) SetFieldsType(v string) *UpdateConfigmapManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *UpdateConfigmapManagedFieldsEntry) SetFieldsV1(v *UpdateConfigmapFieldsV1) *UpdateConfigmapManagedFieldsEntry {
+  s.UpdateConfigmapFieldsV1 = v
+  return s
+}
+
+func (s *UpdateConfigmapManagedFieldsEntry) SetSubresource(v string) *UpdateConfigmapManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type UpdateConfigmapFieldsV1 struct {
+}
+
+func (s UpdateConfigmapFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateConfigmapFieldsV1) GoString() string {
+  return s.String()
+}
+
+type UpdateConfigmapOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s UpdateConfigmapOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateConfigmapOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateConfigmapOwnerReference) SetApiVersion(v string) *UpdateConfigmapOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *UpdateConfigmapOwnerReference) SetKind(v string) *UpdateConfigmapOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *UpdateConfigmapOwnerReference) SetName(v string) *UpdateConfigmapOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *UpdateConfigmapOwnerReference) SetUid(v string) *UpdateConfigmapOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *UpdateConfigmapOwnerReference) SetController(v bool) *UpdateConfigmapOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *UpdateConfigmapOwnerReference) SetBlockOwnerDeletion(v bool) *UpdateConfigmapOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+
+
+
+type GetSecretRequest struct {
+}
+
+func (s GetSecretRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetSecretRequest) GoString() string {
+  return s.String()
+}
+
+type GetSecretResponse struct {
+  // {"en":"response code", "zh_CN":"请求返回码"}
+  Code *int64 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message", "zh_CN":"请求返回信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"requestId", "zh_CN":"请求识别码"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"secret", "zh_CN":"secret"}
+  Data *GetSecretSecret `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s GetSecretResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetSecretResponse) GoString() string {
+  return s.String()
+}
+
+func (s *GetSecretResponse) SetCode(v int64) *GetSecretResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *GetSecretResponse) SetMsg(v string) *GetSecretResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *GetSecretResponse) SetRequestId(v string) *GetSecretResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *GetSecretResponse) SetData(v *GetSecretSecret) *GetSecretResponse {
+  s.Data = v
+  return s
+}
+
+type GetSecretPaths struct {
+  // {"en":"namespace", "zh_CN":"命名空间"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty" require:"true"`
+  // {"en":"secret name", "zh_CN":"secret 名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+}
+
+func (s GetSecretPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetSecretPaths) GoString() string {
+  return s.String()
+}
+
+func (s *GetSecretPaths) SetNamespace(v string) *GetSecretPaths {
+  s.Namespace = &v
+  return s
+}
+
+func (s *GetSecretPaths) SetName(v string) *GetSecretPaths {
+  s.Name = &v
+  return s
+}
+
+type GetSecretParameters struct {
+}
+
+func (s GetSecretParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetSecretParameters) GoString() string {
+  return s.String()
+}
+
+type GetSecretRequestHeader struct {
+}
+
+func (s GetSecretRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetSecretRequestHeader) GoString() string {
+  return s.String()
+}
+
+type GetSecretResponseHeader struct {
+}
+
+func (s GetSecretResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetSecretResponseHeader) GoString() string {
+  return s.String()
+}
+
+type GetSecretSecret struct {
+  // {"en":"apiVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.", "zh_CN":"APIVersion定义了表示对象的版本化模式。服务器应该将认可的模式转换为最新的内部值，并可以拒绝不被认可的值。"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty" require:"true"`
+  // {"en":"kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.", "zh_CN":"kind是一个字符串值，表示此对象所代表的REST资源。服务器可以根据客户端提交请求的终点推断出这个值。不能更新。"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty" require:"true"`
+  // {"en":"standard object metadata.", "zh_CN":"标准的对象元数据"}
+  Metadata *GetSecretObjectMeta `json:"metadata,omitempty" xml:"metadata,omitempty"`
+  // {"en":"Immutable, if set to true, ensures that data stored in the GetSecretSecret cannot be updated (only object metadata can be modified). If not set to true, the field can be modified at any time. Defaulted to nil", "zh_CN":"如果 immutable 设为 true，则确保不会更新 GetSecretSecret 中存储的数据（只能修改对象元数据）。 如果未设为 true，则可以随时修改此字段。 默认为 nil"}
+  Immutable *bool `json:"immutable,omitempty" xml:"immutable,omitempty"`
+  // {"en":"Data contains the secret data. Each key must consist of alphanumeric characters, '-', '_' or '.'. The serialized form of the secret data is a base64 encoded string, representing the arbitrary (possibly non-string) data value here", "zh_CN":"data 包含秘密数据。 每个键必须由字母、数字、“-”、“_” 或 “.” 组成。 秘密数据的序列化格式是 base64 编码的字符串，表示此处的任意（可能是非字符串）数据值"}
+  Data map[string]*string `json:"data,omitempty" xml:"data,omitempty"`
+  // {"en":"stringData allows specifying non-binary secret data in string form. It is provided as a write-only input field for convenience. All keys and values are merged into the data field on write, overwriting any existing values. The stringData field is never output when reading from the API", "zh_CN":"stringData 允许指定字符串格式的非二进制秘密数据。 为了方便起见，它作为只写输入字段提供。 写入时将所有键和值合并到 data 字段，且覆盖任何现有的值。 从 API 读取时绝不会输出 stringData 字段"}
+  StringData map[string]*string `json:"stringData,omitempty" xml:"stringData,omitempty"`
+  // {"en":"Used to facilitate programmatic handling of secret data", "zh_CN":"用于满足程序化方式处理秘密数据"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty"`
+}
+
+func (s GetSecretSecret) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetSecretSecret) GoString() string {
+  return s.String()
+}
+
+func (s *GetSecretSecret) SetApiVersion(v string) *GetSecretSecret {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *GetSecretSecret) SetKind(v string) *GetSecretSecret {
+  s.Kind = &v
+  return s
+}
+
+func (s *GetSecretSecret) SetMetadata(v *GetSecretObjectMeta) *GetSecretSecret {
+  s.Metadata = v
+  return s
+}
+
+func (s *GetSecretSecret) SetImmutable(v bool) *GetSecretSecret {
+  s.Immutable = &v
+  return s
+}
+
+func (s *GetSecretSecret) SetData(v map[string]*string) *GetSecretSecret {
+  s.Data = v
+  return s
+}
+
+func (s *GetSecretSecret) SetStringData(v map[string]*string) *GetSecretSecret {
+  s.StringData = v
+  return s
+}
+
+func (s *GetSecretSecret) SetType(v string) *GetSecretSecret {
+  s.Type = &v
+  return s
+}
+
+type GetSecretObjectMeta struct {
+  // {"en":"must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated", "zh_CN":"name 在命名空间内必须是唯一的。创建资源时需要，尽管某些资源可能允许客户端请求自动地生成适当的名称。 名称主要用于创建幂等性和配置定义。无法更新"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server", "zh_CN":"一个可选前缀，由服务器使用，仅在未提供 name 字段时生成唯一名称。 如果使用此字段，则返回给客户端的名称将与传递的名称不同。该值还将与唯一的后缀组合。 提供的值与 name 字段具有相同的验证规则，并且可能会根据所需的后缀长度被截断，以使该值在服务器上唯一"}
+  GenerateName *string `json:"generateName,omitempty" xml:"generateName,omitempty"`
+  // {"en":"Namespace defines the space within which each name must be unique. An empty namespace is equivalent to the \"default\" namespace, but \"default\" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty.Must be a DNS_LABEL. Cannot be updated", "zh_CN":"namespace 定义了一个值空间，其中每个名称必须唯一。空命名空间相当于 “default” 命名空间，但 “default” 是规范表示。 并非所有对象都需要限定在命名空间中——这些对象的此字段的值将为空。必须是 DNS_LABEL。无法更新。"}
+  Namespace *string `json:"namespace,omitempty" xml:"namespace,omitempty"`
+  // {"en":"Deprecated: selfLink is a legacy read-only field that is no longer populated by the system.", "zh_CN":"表示此对象的 URL。由系统填充。只读。已弃用。Kubernetes 将在 1.20 版本中停止传播该字段，并计划在 1.21 版本中删除该字段。"}
+  SelfLink *string `json:"selfLink,omitempty" xml:"selfLink,omitempty"`
+  // {"en":"UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations.Populated by the system. Read-only", "zh_CN":"该对象在时间和空间上的唯一值。它通常由服务器在成功创建资源时生成，并且不允许使用 PUT 操作更改。由系统填充。只读"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.Populated by the system. Read-only. Value must be treated as opaque by clients and", "zh_CN":"一个不透明的值，表示此对象的内部版本，客户端可以使用该值来确定对象是否已被更改。 可用于乐观并发、变更检测以及对资源或资源集的监听操作。 客户端必须将这些值视为不透明的，且未更改地传回服务器。 它们可能仅对特定资源或一组资源有效。由系统填充。只读。客户端必须将值视为不透明。"}
+  ResourceVersion *string `json:"resourceVersion,omitempty" xml:"resourceVersion,omitempty"`
+  // {"en":"A sequence number representing a specific generation of the desired state. Populated by the system. Read-only", "zh_CN":"表示期望状态的特定生成的序列号。由系统填充。只读"}
+  Generation *int64 `json:"generation,omitempty" xml:"generation,omitempty"`
+  // {"en":"a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC.Populated by the system. Read-only. Null for lists", "zh_CN":"一个时间戳，表示创建此对象时的服务器时间。 不能保证在单独的操作中按发生前的顺序设置。 客户端不得设置此值。它以 RFC3339 形式表示，并采用 UTC。由系统填充。只读。列表为空"}
+  CreationTimestamp *string `json:"creationTimestamp,omitempty" xml:"creationTimestamp,omitempty"`
+  // {"en":"RFC 3339 date and time at which this resource will be deleted", "zh_CN":"删除此资源的 RFC 3339 日期和时间"}
+  DeletionTimestamp *string `json:"deletionTimestamp,omitempty" xml:"deletionTimestamp,omitempty"`
+  // {"en":"Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only", "zh_CN":"此对象从系统中删除之前允许正常终止的秒数。 仅当设置了 deletionTimestamp 时才设置。 只能缩短。只读"}
+  DeletionGracePeriodSeconds *int64 `json:"deletionGracePeriodSeconds,omitempty" xml:"deletionGracePeriodSeconds,omitempty"`
+  // {"en":"Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services", "zh_CN":"可用于组织和分类（确定范围和选择）对象的字符串键和值的映射。 可以匹配 ReplicationController 和 Service 的选择算符"}
+  Labels map[string]*string `json:"labels,omitempty" xml:"labels,omitempty"`
+  // {"en":"Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects", "zh_CN":"annotations 是一个非结构化的键值映射，存储在资源中，可以由外部工具设置以存储和检索任意元数据。 它们不可查询，在修改对象时应保留"}
+  Annotations map[string]*string `json:"annotations,omitempty" xml:"annotations,omitempty"`
+  // {"en":"List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller", "zh_CN":"此对象所依赖的对象列表。如果列表中的所有对象都已被删除，则该对象将被垃圾回收。 如果此对象由控制器管理，则此列表中的条目将指向此控制器，controller 字段设置为 true。 管理控制器不能超过一个"}
+  OwnerReferences []*GetSecretOwnerReference `json:"ownerReferences,omitempty" xml:"ownerReferences,omitempty" type:"Repeated"`
+  // {"en":"Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed. Finalizers may be processed and removed in any order. Order is NOT enforced because it introduces significant risk of stuck finalizers. finalizers is a shared field, any actor with permission can reorder it. If the finalizer list is processed in order, then this can lead to a situation in which the component responsible for the first finalizer in the list is waiting for a signal (field value, external system, or other) produced by a component responsible for a finalizer later in the list, resulting in a deadlock. Without enforced ordering finalizers are free to order amongst themselves and are not vulnerable to ordering changes in the list.", "zh_CN":"在从注册表中删除对象之前该字段必须为空。 每个条目都是负责的组件的标识符，各组件将从列表中删除自己对应的条目。 如果对象的 deletionTimestamp 非空，则只能删除此列表中的条目。 终结器可以按任何顺序处理和删除。没有按照顺序执行， 因为它引入了终结器卡住的重大风险。finalizers 是一个共享字段， 任何有权限的参与者都可以对其进行重新排序。如果按顺序处理终结器列表， 那么这可能导致列表中第一个负责终结器的组件正在等待列表中靠后负责终结器的组件产生的信号（字段值、外部系统或其他）， 从而导致死锁。在没有强制排序的情况下，终结者可以在它们之间自由排序， 并且不容易受到列表中排序更改的影响。"}
+  Finalizers []*string `json:"finalizers,omitempty" xml:"finalizers,omitempty" type:"Repeated"`
+  // {"en":"name of cluster", "zh_CN":"集群名称"}
+  ClusterName *string `json:"clusterName,omitempty" xml:"clusterName,omitempty"`
+  // {"en":"ManagedFields maps workflow-id and version to the set of fields that are managed by that workflow. This is mostly for internal housekeeping, and users typically shouldn't need to set or understand this field. A workflow can be the user's name, a controller's name, or the name of a specific apply path like \"ci-cd\". The set of fields is always in the version that the workflow used when modifying the object", "zh_CN":"managedFields 将 workflow-id 和版本映射到由该工作流管理的字段集。 这主要用于内部管理，用户通常不需要设置或理解该字段。 工作流可以是用户名、控制器名或特定应用路径的名称，如 “ci-cd”。 字段集始终存在于修改对象时工作流使用的版本"}
+  ManagedFields []*GetSecretManagedFieldsEntry `json:"managedFields,omitempty" xml:"managedFields,omitempty" type:"Repeated"`
+}
+
+func (s GetSecretObjectMeta) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetSecretObjectMeta) GoString() string {
+  return s.String()
+}
+
+func (s *GetSecretObjectMeta) SetName(v string) *GetSecretObjectMeta {
+  s.Name = &v
+  return s
+}
+
+func (s *GetSecretObjectMeta) SetGenerateName(v string) *GetSecretObjectMeta {
+  s.GenerateName = &v
+  return s
+}
+
+func (s *GetSecretObjectMeta) SetNamespace(v string) *GetSecretObjectMeta {
+  s.Namespace = &v
+  return s
+}
+
+func (s *GetSecretObjectMeta) SetSelfLink(v string) *GetSecretObjectMeta {
+  s.SelfLink = &v
+  return s
+}
+
+func (s *GetSecretObjectMeta) SetUid(v string) *GetSecretObjectMeta {
+  s.Uid = &v
+  return s
+}
+
+func (s *GetSecretObjectMeta) SetResourceVersion(v string) *GetSecretObjectMeta {
+  s.ResourceVersion = &v
+  return s
+}
+
+func (s *GetSecretObjectMeta) SetGeneration(v int64) *GetSecretObjectMeta {
+  s.Generation = &v
+  return s
+}
+
+func (s *GetSecretObjectMeta) SetCreationTimestamp(v string) *GetSecretObjectMeta {
+  s.CreationTimestamp = &v
+  return s
+}
+
+func (s *GetSecretObjectMeta) SetDeletionTimestamp(v string) *GetSecretObjectMeta {
+  s.DeletionTimestamp = &v
+  return s
+}
+
+func (s *GetSecretObjectMeta) SetDeletionGracePeriodSeconds(v int64) *GetSecretObjectMeta {
+  s.DeletionGracePeriodSeconds = &v
+  return s
+}
+
+func (s *GetSecretObjectMeta) SetLabels(v map[string]*string) *GetSecretObjectMeta {
+  s.Labels = v
+  return s
+}
+
+func (s *GetSecretObjectMeta) SetAnnotations(v map[string]*string) *GetSecretObjectMeta {
+  s.Annotations = v
+  return s
+}
+
+func (s *GetSecretObjectMeta) SetOwnerReferences(v []*GetSecretOwnerReference) *GetSecretObjectMeta {
+  s.OwnerReferences = v
+  return s
+}
+
+func (s *GetSecretObjectMeta) SetFinalizers(v []*string) *GetSecretObjectMeta {
+  s.Finalizers = v
+  return s
+}
+
+func (s *GetSecretObjectMeta) SetClusterName(v string) *GetSecretObjectMeta {
+  s.ClusterName = &v
+  return s
+}
+
+func (s *GetSecretObjectMeta) SetManagedFields(v []*GetSecretManagedFieldsEntry) *GetSecretObjectMeta {
+  s.ManagedFields = v
+  return s
+}
+
+type GetSecretManagedFieldsEntry struct {
+  // {"en":"an identifier of the workflow managing these fields", "zh_CN":"管理这些字段的工作流的标识符"}
+  Manager *string `json:"manager,omitempty" xml:"manager,omitempty"`
+  // {"en":"the type of operation which lead to this GetSecretManagedFieldsEntry being created. The only valid values for this field are 'Apply' and 'Update'", "zh_CN":"导致创建此 managedFields 表项的操作类型。 此字段的仅有合法值是 “Apply” 和 “Update”"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty"`
+  // {"en":"defines the version of this resource that this field set applies to. The format is \"group\/version\" just like the top-level APIVersion field. It is necessary to track the version of a field set because it cannot be automatically converted", "zh_CN":"定义此字段集适用的资源的版本。 格式是 “group\/version”，就像顶级 apiVersion 字段一样。 必须跟踪字段集的版本，因为它不能自动转换"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"the timestamp of when the ManagedFields entry was added", "zh_CN":"添加 managedFields 条目时的时间戳"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty"`
+  // {"en":"the discriminator for the different fields format and version. There is currently only one possible value: 'GetSecretFieldsV1'", "zh_CN":"不同字段格式和版本的鉴别器。 目前只有一个可能的值：“GetSecretFieldsV1”"}
+  FieldsType *string `json:"fieldsType,omitempty" xml:"fieldsType,omitempty"`
+  // {"en":"GetSecretFieldsV1 holds the first JSON version format as described in the 'GetSecretFieldsV1' type", "zh_CN":"GetSecretFieldsV1 包含类型 “GetSecretFieldsV1” 中描述的第一个 JSON 版本格式"}
+  GetSecretFieldsV1 *GetSecretFieldsV1 `json:"fieldsV1,omitempty" xml:"fieldsV1,omitempty"`
+  // {"en":"the name of the subresource used to update that object, or empty string if the object was updated through the main resource. The value of this field is used to distinguish between managers, even if they share the same name. For example, a status update will be distinct from a regular update using the same manager name. Note that the APIVersion field is not related to the Subresource field and it always corresponds to the version of the main resource", "zh_CN":"用于更新该对象的子资源的名称，如果对象是通过主资源更新的，则为空字符串。 该字段的值用于区分管理者，即使他们共享相同的名称。例如，状态更新将不同于使用相同管理者名称的常规更新。 请注意，apiVersion 字段与 subresource 字段无关，它始终对应于主资源的版本"}
+  Subresource *string `json:"subresource,omitempty" xml:"subresource,omitempty"`
+}
+
+func (s GetSecretManagedFieldsEntry) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetSecretManagedFieldsEntry) GoString() string {
+  return s.String()
+}
+
+func (s *GetSecretManagedFieldsEntry) SetManager(v string) *GetSecretManagedFieldsEntry {
+  s.Manager = &v
+  return s
+}
+
+func (s *GetSecretManagedFieldsEntry) SetOperation(v string) *GetSecretManagedFieldsEntry {
+  s.Operation = &v
+  return s
+}
+
+func (s *GetSecretManagedFieldsEntry) SetApiVersion(v string) *GetSecretManagedFieldsEntry {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *GetSecretManagedFieldsEntry) SetTime(v string) *GetSecretManagedFieldsEntry {
+  s.Time = &v
+  return s
+}
+
+func (s *GetSecretManagedFieldsEntry) SetFieldsType(v string) *GetSecretManagedFieldsEntry {
+  s.FieldsType = &v
+  return s
+}
+
+func (s *GetSecretManagedFieldsEntry) SetFieldsV1(v *GetSecretFieldsV1) *GetSecretManagedFieldsEntry {
+  s.GetSecretFieldsV1 = v
+  return s
+}
+
+func (s *GetSecretManagedFieldsEntry) SetSubresource(v string) *GetSecretManagedFieldsEntry {
+  s.Subresource = &v
+  return s
+}
+
+type GetSecretFieldsV1 struct {
+}
+
+func (s GetSecretFieldsV1) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetSecretFieldsV1) GoString() string {
+  return s.String()
+}
+
+type GetSecretOwnerReference struct {
+  // {"en":"API version of the referent", "zh_CN":"被引用资源的 API 版本"}
+  ApiVersion *string `json:"apiVersion,omitempty" xml:"apiVersion,omitempty"`
+  // {"en":"Kind of the referent", "zh_CN":"被引用资源的类别"}
+  Kind *string `json:"kind,omitempty" xml:"kind,omitempty"`
+  // {"en":"Name of the referent", "zh_CN":"被引用资源的名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"UID of the referent", "zh_CN":"被引用资源的 uid"}
+  Uid *string `json:"uid,omitempty" xml:"uid,omitempty"`
+  // {"en":"If true, this reference points to the managing controller", "zh_CN":"如果为 true，则此引用指向管理的控制器"}
+  Controller *bool `json:"controller,omitempty" xml:"controller,omitempty"`
+  // {"en":"If true, AND if the owner has the \"foregroundDeletion\" finalizer, then the owner cannot be deleted from the key-value store until this reference is removed", "zh_CN":"如果为 true，**并且** 如果属主具有 “foregroundDeletion” 终结器，则在删除此引用之前，无法从键值存储中删除属主。 默认为 false。要设置此字段，用户需要属主的 “delete” 权限， 否则将返回 422 (Unprocessable Entity)"}
+  BlockOwnerDeletion *bool `json:"blockOwnerDeletion,omitempty" xml:"blockOwnerDeletion,omitempty"`
+}
+
+func (s GetSecretOwnerReference) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetSecretOwnerReference) GoString() string {
+  return s.String()
+}
+
+func (s *GetSecretOwnerReference) SetApiVersion(v string) *GetSecretOwnerReference {
+  s.ApiVersion = &v
+  return s
+}
+
+func (s *GetSecretOwnerReference) SetKind(v string) *GetSecretOwnerReference {
+  s.Kind = &v
+  return s
+}
+
+func (s *GetSecretOwnerReference) SetName(v string) *GetSecretOwnerReference {
+  s.Name = &v
+  return s
+}
+
+func (s *GetSecretOwnerReference) SetUid(v string) *GetSecretOwnerReference {
+  s.Uid = &v
+  return s
+}
+
+func (s *GetSecretOwnerReference) SetController(v bool) *GetSecretOwnerReference {
+  s.Controller = &v
+  return s
+}
+
+func (s *GetSecretOwnerReference) SetBlockOwnerDeletion(v bool) *GetSecretOwnerReference {
+  s.BlockOwnerDeletion = &v
+  return s
+}
+
+
+
+
