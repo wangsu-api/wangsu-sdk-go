@@ -18,7 +18,7 @@ func (s IcpQueryServiceRequest) GoString() string {
 
 type IcpQueryServiceResponse struct {
   // {'en':'domainIcpData', 'zh_CN':'域名备案信息'}
-  DomainIcpDataList []*IcpQueryServiceIcpQueryServiceResponseDomainIcpDataList `json:"domain-icp-data,omitempty" xml:"domain-icp-data,omitempty" require:"true" type:"Repeated"`
+  DomainIcpDataList []*IcpQueryServiceResponseDomainIcpDataList `json:"domain-icp-data,omitempty" xml:"domain-icp-data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s IcpQueryServiceResponse) String() string {
@@ -29,32 +29,32 @@ func (s IcpQueryServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *IcpQueryServiceResponse) SetDomainIcpDataList(v []*IcpQueryServiceIcpQueryServiceResponseDomainIcpDataList) *IcpQueryServiceResponse {
+func (s *IcpQueryServiceResponse) SetDomainIcpDataList(v []*IcpQueryServiceResponseDomainIcpDataList) *IcpQueryServiceResponse {
   s.DomainIcpDataList = v
   return s
 }
 
-type IcpQueryServiceIcpQueryServiceResponseDomainIcpDataList struct     {
+type IcpQueryServiceResponseDomainIcpDataList struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"Registration No.", "zh_CN":"备案号"}
   IcpNumber *string `json:"icp-number,omitempty" xml:"icp-number,omitempty" require:"true"`
 }
 
-func (s IcpQueryServiceIcpQueryServiceResponseDomainIcpDataList) String() string {
+func (s IcpQueryServiceResponseDomainIcpDataList) String() string {
   return tea.Prettify(s)
 }
 
-func (s IcpQueryServiceIcpQueryServiceResponseDomainIcpDataList) GoString() string {
+func (s IcpQueryServiceResponseDomainIcpDataList) GoString() string {
   return s.String()
 }
 
-func (s *IcpQueryServiceIcpQueryServiceResponseDomainIcpDataList) SetDomain(v string) *IcpQueryServiceIcpQueryServiceResponseDomainIcpDataList {
+func (s *IcpQueryServiceResponseDomainIcpDataList) SetDomain(v string) *IcpQueryServiceResponseDomainIcpDataList {
   s.Domain = &v
   return s
 }
 
-func (s *IcpQueryServiceIcpQueryServiceResponseDomainIcpDataList) SetIcpNumber(v string) *IcpQueryServiceIcpQueryServiceResponseDomainIcpDataList {
+func (s *IcpQueryServiceResponseDomainIcpDataList) SetIcpNumber(v string) *IcpQueryServiceResponseDomainIcpDataList {
   s.IcpNumber = &v
   return s
 }
@@ -126,7 +126,7 @@ func (s QueryBandwidthLimitTaskListServiceRequest) GoString() string {
 
 type QueryBandwidthLimitTaskListServiceResponse struct {
   // {'en':'result', 'zh_CN':'结果'}
-  Result []*QueryBandwidthLimitTaskListServiceQueryBandwidthLimitTaskListServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryBandwidthLimitTaskListServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryBandwidthLimitTaskListServiceResponse) String() string {
@@ -137,12 +137,12 @@ func (s QueryBandwidthLimitTaskListServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryBandwidthLimitTaskListServiceResponse) SetResult(v []*QueryBandwidthLimitTaskListServiceQueryBandwidthLimitTaskListServiceResponseResult) *QueryBandwidthLimitTaskListServiceResponse {
+func (s *QueryBandwidthLimitTaskListServiceResponse) SetResult(v []*QueryBandwidthLimitTaskListServiceResponseResult) *QueryBandwidthLimitTaskListServiceResponse {
   s.Result = v
   return s
 }
 
-type QueryBandwidthLimitTaskListServiceQueryBandwidthLimitTaskListServiceResponseResult struct     {
+type QueryBandwidthLimitTaskListServiceResponseResult struct     {
   // {'en':'Domain', 'zh_CN':'域名'}
   DomainName *string `json:"domainName,omitempty" xml:"domainName,omitempty" require:"true"`
   // {'en':'Maximum bandwidth set', 'zh_CN':'设置的最大带宽值'}
@@ -151,25 +151,25 @@ type QueryBandwidthLimitTaskListServiceQueryBandwidthLimitTaskListServiceRespons
   TaskName *string `json:"taskName,omitempty" xml:"taskName,omitempty" require:"true"`
 }
 
-func (s QueryBandwidthLimitTaskListServiceQueryBandwidthLimitTaskListServiceResponseResult) String() string {
+func (s QueryBandwidthLimitTaskListServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryBandwidthLimitTaskListServiceQueryBandwidthLimitTaskListServiceResponseResult) GoString() string {
+func (s QueryBandwidthLimitTaskListServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryBandwidthLimitTaskListServiceQueryBandwidthLimitTaskListServiceResponseResult) SetDomainName(v string) *QueryBandwidthLimitTaskListServiceQueryBandwidthLimitTaskListServiceResponseResult {
+func (s *QueryBandwidthLimitTaskListServiceResponseResult) SetDomainName(v string) *QueryBandwidthLimitTaskListServiceResponseResult {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryBandwidthLimitTaskListServiceQueryBandwidthLimitTaskListServiceResponseResult) SetBandwidthLimit(v int32) *QueryBandwidthLimitTaskListServiceQueryBandwidthLimitTaskListServiceResponseResult {
+func (s *QueryBandwidthLimitTaskListServiceResponseResult) SetBandwidthLimit(v int32) *QueryBandwidthLimitTaskListServiceResponseResult {
   s.BandwidthLimit = &v
   return s
 }
 
-func (s *QueryBandwidthLimitTaskListServiceQueryBandwidthLimitTaskListServiceResponseResult) SetTaskName(v string) *QueryBandwidthLimitTaskListServiceQueryBandwidthLimitTaskListServiceResponseResult {
+func (s *QueryBandwidthLimitTaskListServiceResponseResult) SetTaskName(v string) *QueryBandwidthLimitTaskListServiceResponseResult {
   s.TaskName = &v
   return s
 }
@@ -1093,7 +1093,7 @@ type ReportServerIpCountryCodeServiceResponse struct {
   // {'en':'Request result information', 'zh_CN':'请求结果信息'}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {'en':'domain', 'zh_CN':'-'}
-  Data []*ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportServerIpCountryCodeServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportServerIpCountryCodeServiceResponse) String() string {
@@ -1114,37 +1114,37 @@ func (s *ReportServerIpCountryCodeServiceResponse) SetMessage(v string) *ReportS
   return s
 }
 
-func (s *ReportServerIpCountryCodeServiceResponse) SetData(v []*ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseData) *ReportServerIpCountryCodeServiceResponse {
+func (s *ReportServerIpCountryCodeServiceResponse) SetData(v []*ReportServerIpCountryCodeServiceResponseData) *ReportServerIpCountryCodeServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseData struct     {
+type ReportServerIpCountryCodeServiceResponseData struct     {
   // {'en':'domain', 'zh_CN':'域名'}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {'en':'Detailed data on the results of the request', 'zh_CN':'请求结果的详细数据'}
-  CountryData []*ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseDataCountryData `json:"countryData,omitempty" xml:"countryData,omitempty" require:"true" type:"Repeated"`
+  CountryData []*ReportServerIpCountryCodeServiceResponseDataCountryData `json:"countryData,omitempty" xml:"countryData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseData) String() string {
+func (s ReportServerIpCountryCodeServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseData) GoString() string {
+func (s ReportServerIpCountryCodeServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseData) SetDomain(v string) *ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseData {
+func (s *ReportServerIpCountryCodeServiceResponseData) SetDomain(v string) *ReportServerIpCountryCodeServiceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseData) SetCountryData(v []*ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseDataCountryData) *ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseData {
+func (s *ReportServerIpCountryCodeServiceResponseData) SetCountryData(v []*ReportServerIpCountryCodeServiceResponseDataCountryData) *ReportServerIpCountryCodeServiceResponseData {
   s.CountryData = v
   return s
 }
 
-type ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseDataCountryData struct     {
+type ReportServerIpCountryCodeServiceResponseDataCountryData struct     {
   // {'en':'Chinese country name', 'zh_CN':'中文国家名'}
   CountryNameZH *string `json:"countryNameZH,omitempty" xml:"countryNameZH,omitempty" require:"true"`
   // {'en':'English country name', 'zh_CN':'英文国家名'}
@@ -1153,25 +1153,25 @@ type ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseDat
   ServerIp []*string `json:"serverIp,omitempty" xml:"serverIp,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseDataCountryData) String() string {
+func (s ReportServerIpCountryCodeServiceResponseDataCountryData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseDataCountryData) GoString() string {
+func (s ReportServerIpCountryCodeServiceResponseDataCountryData) GoString() string {
   return s.String()
 }
 
-func (s *ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseDataCountryData) SetCountryNameZH(v string) *ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseDataCountryData {
+func (s *ReportServerIpCountryCodeServiceResponseDataCountryData) SetCountryNameZH(v string) *ReportServerIpCountryCodeServiceResponseDataCountryData {
   s.CountryNameZH = &v
   return s
 }
 
-func (s *ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseDataCountryData) SetCountryNameEN(v string) *ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseDataCountryData {
+func (s *ReportServerIpCountryCodeServiceResponseDataCountryData) SetCountryNameEN(v string) *ReportServerIpCountryCodeServiceResponseDataCountryData {
   s.CountryNameEN = &v
   return s
 }
 
-func (s *ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseDataCountryData) SetServerIp(v []*string) *ReportServerIpCountryCodeServiceReportServerIpCountryCodeServiceResponseDataCountryData {
+func (s *ReportServerIpCountryCodeServiceResponseDataCountryData) SetServerIp(v []*string) *ReportServerIpCountryCodeServiceResponseDataCountryData {
   s.ServerIp = v
   return s
 }
@@ -1247,7 +1247,7 @@ type IpDomainServiceResponse struct {
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Detailed data on the results of the request", "zh_CN":"请求结果的详细数据"}
-  Data []*IpDomainServiceIpDomainServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*IpDomainServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s IpDomainServiceResponse) String() string {
@@ -1268,12 +1268,12 @@ func (s *IpDomainServiceResponse) SetMessage(v string) *IpDomainServiceResponse 
   return s
 }
 
-func (s *IpDomainServiceResponse) SetData(v []*IpDomainServiceIpDomainServiceResponseData) *IpDomainServiceResponse {
+func (s *IpDomainServiceResponse) SetData(v []*IpDomainServiceResponseData) *IpDomainServiceResponse {
   s.Data = v
   return s
 }
 
-type IpDomainServiceIpDomainServiceResponseData struct     {
+type IpDomainServiceResponseData struct     {
   // {"en":"ip", "zh_CN":"IP名称"}
   Ip *string `json:"ip,omitempty" xml:"ip,omitempty" require:"true"`
   // {"en":"Whether to use:
@@ -1289,25 +1289,25 @@ type IpDomainServiceIpDomainServiceResponseData struct     {
   DomainList []*string `json:"domainList,omitempty" xml:"domainList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s IpDomainServiceIpDomainServiceResponseData) String() string {
+func (s IpDomainServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s IpDomainServiceIpDomainServiceResponseData) GoString() string {
+func (s IpDomainServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *IpDomainServiceIpDomainServiceResponseData) SetIp(v string) *IpDomainServiceIpDomainServiceResponseData {
+func (s *IpDomainServiceResponseData) SetIp(v string) *IpDomainServiceResponseData {
   s.Ip = &v
   return s
 }
 
-func (s *IpDomainServiceIpDomainServiceResponseData) SetStatus(v string) *IpDomainServiceIpDomainServiceResponseData {
+func (s *IpDomainServiceResponseData) SetStatus(v string) *IpDomainServiceResponseData {
   s.Status = &v
   return s
 }
 
-func (s *IpDomainServiceIpDomainServiceResponseData) SetDomainList(v []*string) *IpDomainServiceIpDomainServiceResponseData {
+func (s *IpDomainServiceResponseData) SetDomainList(v []*string) *IpDomainServiceResponseData {
   s.DomainList = v
   return s
 }
@@ -2054,7 +2054,7 @@ type QueryAllBandwidthLimitTaskListServiceResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*QueryAllBandwidthLimitTaskListServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryAllBandwidthLimitTaskListServiceResponse) String() string {
@@ -2075,43 +2075,43 @@ func (s *QueryAllBandwidthLimitTaskListServiceResponse) SetMessage(v string) *Qu
   return s
 }
 
-func (s *QueryAllBandwidthLimitTaskListServiceResponse) SetData(v []*QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseData) *QueryAllBandwidthLimitTaskListServiceResponse {
+func (s *QueryAllBandwidthLimitTaskListServiceResponse) SetData(v []*QueryAllBandwidthLimitTaskListServiceResponseData) *QueryAllBandwidthLimitTaskListServiceResponse {
   s.Data = v
   return s
 }
 
-type QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseData struct     {
+type QueryAllBandwidthLimitTaskListServiceResponseData struct     {
   // {"en":"domain", "zh_CN":"客户域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"Whether there is a configuration control task, 0: no, 1: yes", "zh_CN":"是否有配置控制任务,0表示没有,1表示有"}
   IsExist *string `json:"isExist,omitempty" xml:"isExist,omitempty" require:"true"`
-  Content []*QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseDataContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Repeated"`
+  Content []*QueryAllBandwidthLimitTaskListServiceResponseDataContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseData) String() string {
+func (s QueryAllBandwidthLimitTaskListServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseData) GoString() string {
+func (s QueryAllBandwidthLimitTaskListServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseData) SetDomain(v string) *QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseData {
+func (s *QueryAllBandwidthLimitTaskListServiceResponseData) SetDomain(v string) *QueryAllBandwidthLimitTaskListServiceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseData) SetIsExist(v string) *QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseData {
+func (s *QueryAllBandwidthLimitTaskListServiceResponseData) SetIsExist(v string) *QueryAllBandwidthLimitTaskListServiceResponseData {
   s.IsExist = &v
   return s
 }
 
-func (s *QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseData) SetContent(v []*QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseDataContent) *QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseData {
+func (s *QueryAllBandwidthLimitTaskListServiceResponseData) SetContent(v []*QueryAllBandwidthLimitTaskListServiceResponseDataContent) *QueryAllBandwidthLimitTaskListServiceResponseData {
   s.Content = v
   return s
 }
 
-type QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseDataContent struct     {
+type QueryAllBandwidthLimitTaskListServiceResponseDataContent struct     {
   // {"en":"taskName", "zh_CN":"任务名称"}
   TaskName *string `json:"taskName,omitempty" xml:"taskName,omitempty" require:"true"`
   // {"en":"Domain name configuration task types: 1. Static bandwidth control task, 2. Bandwidth buyout task, 3. Flow buyout task, 4. Request number buyout task, 5. Redundant pool speed limit task, 6. Back-to-source task, 7. POP running high scheduling task (this kind of task is quite special, the domain name is a global quantity, so as long as there is configuration, it will be enabled by default), 8. IP ban task", "zh_CN":"域名配置的任务类型:1静态带宽控制任务,2带宽买断任务,3流量买断任务,4请求数买断任务,5冗余池限速任务,6回源任务,7POP跑高调度任务(此种任务比较特殊,域名为全局量,所以只要有配置,就默认开启),8IP封禁任务"}
@@ -2126,40 +2126,40 @@ type QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceR
   DomainList []*string `json:"domainList,omitempty" xml:"domainList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseDataContent) String() string {
+func (s QueryAllBandwidthLimitTaskListServiceResponseDataContent) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseDataContent) GoString() string {
+func (s QueryAllBandwidthLimitTaskListServiceResponseDataContent) GoString() string {
   return s.String()
 }
 
-func (s *QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseDataContent) SetTaskName(v string) *QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseDataContent {
+func (s *QueryAllBandwidthLimitTaskListServiceResponseDataContent) SetTaskName(v string) *QueryAllBandwidthLimitTaskListServiceResponseDataContent {
   s.TaskName = &v
   return s
 }
 
-func (s *QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseDataContent) SetTaskType(v string) *QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseDataContent {
+func (s *QueryAllBandwidthLimitTaskListServiceResponseDataContent) SetTaskType(v string) *QueryAllBandwidthLimitTaskListServiceResponseDataContent {
   s.TaskType = &v
   return s
 }
 
-func (s *QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseDataContent) SetTaskStatus(v string) *QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseDataContent {
+func (s *QueryAllBandwidthLimitTaskListServiceResponseDataContent) SetTaskStatus(v string) *QueryAllBandwidthLimitTaskListServiceResponseDataContent {
   s.TaskStatus = &v
   return s
 }
 
-func (s *QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseDataContent) SetCtrlMode(v string) *QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseDataContent {
+func (s *QueryAllBandwidthLimitTaskListServiceResponseDataContent) SetCtrlMode(v string) *QueryAllBandwidthLimitTaskListServiceResponseDataContent {
   s.CtrlMode = &v
   return s
 }
 
-func (s *QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseDataContent) SetCtrlValue(v string) *QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseDataContent {
+func (s *QueryAllBandwidthLimitTaskListServiceResponseDataContent) SetCtrlValue(v string) *QueryAllBandwidthLimitTaskListServiceResponseDataContent {
   s.CtrlValue = &v
   return s
 }
 
-func (s *QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseDataContent) SetDomainList(v []*string) *QueryAllBandwidthLimitTaskListServiceQueryAllBandwidthLimitTaskListServiceResponseDataContent {
+func (s *QueryAllBandwidthLimitTaskListServiceResponseDataContent) SetDomainList(v []*string) *QueryAllBandwidthLimitTaskListServiceResponseDataContent {
   s.DomainList = v
   return s
 }

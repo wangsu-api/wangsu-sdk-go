@@ -7,7 +7,7 @@ import (
 
 type CreateAppRequest struct {
   // {"en":"Debug fingerprint, only applicable to Android. If it matches the production fingerprint, it can be left blank.","zh_CN":"调试指纹，仅对Android生效，如果与正式指纹一致可不填写。"}
-  DebugFingerprintList []*CreateAppCreateAppRequestDebugFingerprintList `json:"debugFingerprintList,omitempty" xml:"debugFingerprintList,omitempty" type:"Repeated"`
+  DebugFingerprintList []*CreateAppRequestDebugFingerprintList `json:"debugFingerprintList,omitempty" xml:"debugFingerprintList,omitempty" type:"Repeated"`
   // {"en":"Application name should not exceed 60 characters and does not support characters ',\",<,>,&,/.","zh_CN":"应用名称，长度不超过60，不支持字符',\",<,>,&,/。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {"en":"Official fingerprint, mandatory for Android applications. Please ensure this is the fingerprint for the officially launched application, otherwise authentication will fail and the service cannot be activated. You can check with technical support for the method to obtain the fingerprint. The total length should not exceed 100 characters and must include colons, uppercase and lowercase letters from A to F, and numbers from 0 to 9. After removing the colons, the length should be between 32 and 64.","zh_CN":"正式指纹，Android应用必填，请确保该指纹为正式上线应用的指纹，否则将鉴权失败无法启用服务。获取指纹方法可找技术支持确认。总长度不超过100，仅包含冒号、A~F大小写字母和0~9的数字，去除冒号后长度介于32~64之间。"}
@@ -28,7 +28,7 @@ func (s CreateAppRequest) GoString() string {
   return s.String()
 }
 
-func (s *CreateAppRequest) SetDebugFingerprintList(v []*CreateAppCreateAppRequestDebugFingerprintList) *CreateAppRequest {
+func (s *CreateAppRequest) SetDebugFingerprintList(v []*CreateAppRequestDebugFingerprintList) *CreateAppRequest {
   s.DebugFingerprintList = v
   return s
 }
@@ -58,27 +58,27 @@ func (s *CreateAppRequest) SetPlatform(v string) *CreateAppRequest {
   return s
 }
 
-type CreateAppCreateAppRequestDebugFingerprintList struct     {
+type CreateAppRequestDebugFingerprintList struct     {
   // {"en":"Fingerprint, with a total length not exceeding 100, containing only colons, letters A to F in both uppercase and lowercase, and digits 0 to 9. After removing colons, the length should be between 32 and 64.","zh_CN":"指纹，总长度不超过100，仅包含冒号、A~F大小写字母和0~9的数字，去除冒号后长度介于32~64之间。"}
   Fingerprint *string `json:"fingerprint,omitempty" xml:"fingerprint,omitempty"`
   // {"en":"Description, no more than 60 characters.","zh_CN":"描述，长度不超过60。"}
   Desc *string `json:"desc,omitempty" xml:"desc,omitempty"`
 }
 
-func (s CreateAppCreateAppRequestDebugFingerprintList) String() string {
+func (s CreateAppRequestDebugFingerprintList) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAppCreateAppRequestDebugFingerprintList) GoString() string {
+func (s CreateAppRequestDebugFingerprintList) GoString() string {
   return s.String()
 }
 
-func (s *CreateAppCreateAppRequestDebugFingerprintList) SetFingerprint(v string) *CreateAppCreateAppRequestDebugFingerprintList {
+func (s *CreateAppRequestDebugFingerprintList) SetFingerprint(v string) *CreateAppRequestDebugFingerprintList {
   s.Fingerprint = &v
   return s
 }
 
-func (s *CreateAppCreateAppRequestDebugFingerprintList) SetDesc(v string) *CreateAppCreateAppRequestDebugFingerprintList {
+func (s *CreateAppRequestDebugFingerprintList) SetDesc(v string) *CreateAppRequestDebugFingerprintList {
   s.Desc = &v
   return s
 }
@@ -309,7 +309,7 @@ type AddDebugFingerprintRequest struct {
   // {"en":"Application ID","zh_CN":"应用ID"}
   AppId *int `json:"appId,omitempty" xml:"appId,omitempty" require:"true"`
   // {"en":"Debug fingerprint, only applicable to Android.","zh_CN":"调试指纹，仅对Android生效。"}
-  DebugFingerprintList []*AddDebugFingerprintAddDebugFingerprintRequestDebugFingerprintList `json:"debugFingerprintList,omitempty" xml:"debugFingerprintList,omitempty" require:"true" type:"Repeated"`
+  DebugFingerprintList []*AddDebugFingerprintRequestDebugFingerprintList `json:"debugFingerprintList,omitempty" xml:"debugFingerprintList,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s AddDebugFingerprintRequest) String() string {
@@ -325,32 +325,32 @@ func (s *AddDebugFingerprintRequest) SetAppId(v int) *AddDebugFingerprintRequest
   return s
 }
 
-func (s *AddDebugFingerprintRequest) SetDebugFingerprintList(v []*AddDebugFingerprintAddDebugFingerprintRequestDebugFingerprintList) *AddDebugFingerprintRequest {
+func (s *AddDebugFingerprintRequest) SetDebugFingerprintList(v []*AddDebugFingerprintRequestDebugFingerprintList) *AddDebugFingerprintRequest {
   s.DebugFingerprintList = v
   return s
 }
 
-type AddDebugFingerprintAddDebugFingerprintRequestDebugFingerprintList struct     {
+type AddDebugFingerprintRequestDebugFingerprintList struct     {
   // {"en":"Fingerprint, with a total length not exceeding 100, containing only colons, letters A to F in both uppercase and lowercase, and digits 0 to 9. After removing colons, the length should be between 32 and 64.","zh_CN":"指纹，总长度不超过100，仅包含冒号、A~F大小写字母和0~9的数字，去除冒号后长度介于32~64之间。"}
   Fingerprint *string `json:"fingerprint,omitempty" xml:"fingerprint,omitempty" require:"true"`
   // {"en":"Description, no more than 60 characters.","zh_CN":"描述，长度不超过60。"}
   Desc *string `json:"desc,omitempty" xml:"desc,omitempty"`
 }
 
-func (s AddDebugFingerprintAddDebugFingerprintRequestDebugFingerprintList) String() string {
+func (s AddDebugFingerprintRequestDebugFingerprintList) String() string {
   return tea.Prettify(s)
 }
 
-func (s AddDebugFingerprintAddDebugFingerprintRequestDebugFingerprintList) GoString() string {
+func (s AddDebugFingerprintRequestDebugFingerprintList) GoString() string {
   return s.String()
 }
 
-func (s *AddDebugFingerprintAddDebugFingerprintRequestDebugFingerprintList) SetFingerprint(v string) *AddDebugFingerprintAddDebugFingerprintRequestDebugFingerprintList {
+func (s *AddDebugFingerprintRequestDebugFingerprintList) SetFingerprint(v string) *AddDebugFingerprintRequestDebugFingerprintList {
   s.Fingerprint = &v
   return s
 }
 
-func (s *AddDebugFingerprintAddDebugFingerprintRequestDebugFingerprintList) SetDesc(v string) *AddDebugFingerprintAddDebugFingerprintRequestDebugFingerprintList {
+func (s *AddDebugFingerprintRequestDebugFingerprintList) SetDesc(v string) *AddDebugFingerprintRequestDebugFingerprintList {
   s.Desc = &v
   return s
 }

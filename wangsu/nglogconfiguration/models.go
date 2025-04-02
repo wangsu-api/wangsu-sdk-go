@@ -163,7 +163,7 @@ func (s GetAListOfLogConfigurationsResponseHeader) GoString() string {
 
 type GetAListOfLogConfigurationsResponse struct {
   // {"en" : "List of log configurations.", "zh_CN": "日志配置列表。"}
-  LogConfigs []*GetAListOfLogConfigurationsGetAListOfLogConfigurationsResponseLogConfigs `json:"logConfigs,omitempty" xml:"logConfigs,omitempty" require:"true" type:"Repeated"`
+  LogConfigs []*GetAListOfLogConfigurationsResponseLogConfigs `json:"logConfigs,omitempty" xml:"logConfigs,omitempty" require:"true" type:"Repeated"`
   // {"en" : "Range: >= 0 
   // Number of log configurations.", "zh_CN": "取值范围: >= 0 
   // 日志配置数量。"}
@@ -178,7 +178,7 @@ func (s GetAListOfLogConfigurationsResponse) GoString() string {
   return s.String()
 }
 
-func (s *GetAListOfLogConfigurationsResponse) SetLogConfigs(v []*GetAListOfLogConfigurationsGetAListOfLogConfigurationsResponseLogConfigs) *GetAListOfLogConfigurationsResponse {
+func (s *GetAListOfLogConfigurationsResponse) SetLogConfigs(v []*GetAListOfLogConfigurationsResponseLogConfigs) *GetAListOfLogConfigurationsResponse {
   s.LogConfigs = v
   return s
 }
@@ -188,7 +188,7 @@ func (s *GetAListOfLogConfigurationsResponse) SetCount(v int) *GetAListOfLogConf
   return s
 }
 
-type GetAListOfLogConfigurationsGetAListOfLogConfigurationsResponseLogConfigs struct     {
+type GetAListOfLogConfigurationsResponseLogConfigs struct     {
   // {"en" : "An ID representating the log configuration. Use the ID to get, update, or delete the configuration later.", "zh_CN": "日志配置唯一标识ID。可用该ID查询，更新或删除日志配置。"}
   LogConfigId *int `json:"logConfigId,omitempty" xml:"logConfigId,omitempty"`
   // {"en" : "A list of hostnames to which the log configuration applies. A hostname should be a fully qualified domain name like domain.com, a wildcard domain name with a leading '*' like *.domain.com, or '*' if you want the log configuration to apply to all hostnames.", "zh_CN": "适用该日志配置的域名列表。每个域名必须是完整的FQDN域名如domain.com，或者是带星号的泛域名如*.domain.com。如果该日志配置适用于所有域名，则直接用星号*表示。"}
@@ -201,35 +201,35 @@ type GetAListOfLogConfigurationsGetAListOfLogConfigurationsResponseLogConfigs st
   CreationTime *string `json:"creationTime,omitempty" xml:"creationTime,omitempty"`
 }
 
-func (s GetAListOfLogConfigurationsGetAListOfLogConfigurationsResponseLogConfigs) String() string {
+func (s GetAListOfLogConfigurationsResponseLogConfigs) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAListOfLogConfigurationsGetAListOfLogConfigurationsResponseLogConfigs) GoString() string {
+func (s GetAListOfLogConfigurationsResponseLogConfigs) GoString() string {
   return s.String()
 }
 
-func (s *GetAListOfLogConfigurationsGetAListOfLogConfigurationsResponseLogConfigs) SetLogConfigId(v int) *GetAListOfLogConfigurationsGetAListOfLogConfigurationsResponseLogConfigs {
+func (s *GetAListOfLogConfigurationsResponseLogConfigs) SetLogConfigId(v int) *GetAListOfLogConfigurationsResponseLogConfigs {
   s.LogConfigId = &v
   return s
 }
 
-func (s *GetAListOfLogConfigurationsGetAListOfLogConfigurationsResponseLogConfigs) SetHostnames(v []*string) *GetAListOfLogConfigurationsGetAListOfLogConfigurationsResponseLogConfigs {
+func (s *GetAListOfLogConfigurationsResponseLogConfigs) SetHostnames(v []*string) *GetAListOfLogConfigurationsResponseLogConfigs {
   s.Hostnames = v
   return s
 }
 
-func (s *GetAListOfLogConfigurationsGetAListOfLogConfigurationsResponseLogConfigs) SetDescription(v string) *GetAListOfLogConfigurationsGetAListOfLogConfigurationsResponseLogConfigs {
+func (s *GetAListOfLogConfigurationsResponseLogConfigs) SetDescription(v string) *GetAListOfLogConfigurationsResponseLogConfigs {
   s.Description = &v
   return s
 }
 
-func (s *GetAListOfLogConfigurationsGetAListOfLogConfigurationsResponseLogConfigs) SetLastUpdateTime(v string) *GetAListOfLogConfigurationsGetAListOfLogConfigurationsResponseLogConfigs {
+func (s *GetAListOfLogConfigurationsResponseLogConfigs) SetLastUpdateTime(v string) *GetAListOfLogConfigurationsResponseLogConfigs {
   s.LastUpdateTime = &v
   return s
 }
 
-func (s *GetAListOfLogConfigurationsGetAListOfLogConfigurationsResponseLogConfigs) SetCreationTime(v string) *GetAListOfLogConfigurationsGetAListOfLogConfigurationsResponseLogConfigs {
+func (s *GetAListOfLogConfigurationsResponseLogConfigs) SetCreationTime(v string) *GetAListOfLogConfigurationsResponseLogConfigs {
   s.CreationTime = &v
   return s
 }
@@ -411,7 +411,7 @@ func (s GetAccessLogsForHostnamesRequestHeader) GoString() string {
 
 type GetAccessLogsForHostnamesRequest struct {
   // {"en" : "", "zh_CN": ""}
-  Filters *GetAccessLogsForHostnamesGetAccessLogsForHostnamesRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetAccessLogsForHostnamesRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
 }
 
 func (s GetAccessLogsForHostnamesRequest) String() string {
@@ -422,25 +422,25 @@ func (s GetAccessLogsForHostnamesRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetAccessLogsForHostnamesRequest) SetFilters(v *GetAccessLogsForHostnamesGetAccessLogsForHostnamesRequestFilters) *GetAccessLogsForHostnamesRequest {
+func (s *GetAccessLogsForHostnamesRequest) SetFilters(v *GetAccessLogsForHostnamesRequestFilters) *GetAccessLogsForHostnamesRequest {
   s.Filters = v
   return s
 }
 
-type GetAccessLogsForHostnamesGetAccessLogsForHostnamesRequestFilters struct {
+type GetAccessLogsForHostnamesRequestFilters struct {
   // {"en" : "Specify the hostnames that interest you.", "zh_CN": "指定加速域名。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
 }
 
-func (s GetAccessLogsForHostnamesGetAccessLogsForHostnamesRequestFilters) String() string {
+func (s GetAccessLogsForHostnamesRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAccessLogsForHostnamesGetAccessLogsForHostnamesRequestFilters) GoString() string {
+func (s GetAccessLogsForHostnamesRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetAccessLogsForHostnamesGetAccessLogsForHostnamesRequestFilters) SetHostnames(v []*string) *GetAccessLogsForHostnamesGetAccessLogsForHostnamesRequestFilters {
+func (s *GetAccessLogsForHostnamesRequestFilters) SetHostnames(v []*string) *GetAccessLogsForHostnamesRequestFilters {
   s.Hostnames = v
   return s
 }
@@ -458,7 +458,7 @@ func (s GetAccessLogsForHostnamesResponseHeader) GoString() string {
 
 type GetAccessLogsForHostnamesResponse struct {
   // {"en" : "List of objects describing logs you can download.", "zh_CN": "日志信息列表。"}
-  Logs []*GetAccessLogsForHostnamesGetAccessLogsForHostnamesResponseLogs `json:"logs,omitempty" xml:"logs,omitempty" require:"true" type:"Repeated"`
+  Logs []*GetAccessLogsForHostnamesResponseLogs `json:"logs,omitempty" xml:"logs,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetAccessLogsForHostnamesResponse) String() string {
@@ -469,12 +469,12 @@ func (s GetAccessLogsForHostnamesResponse) GoString() string {
   return s.String()
 }
 
-func (s *GetAccessLogsForHostnamesResponse) SetLogs(v []*GetAccessLogsForHostnamesGetAccessLogsForHostnamesResponseLogs) *GetAccessLogsForHostnamesResponse {
+func (s *GetAccessLogsForHostnamesResponse) SetLogs(v []*GetAccessLogsForHostnamesResponseLogs) *GetAccessLogsForHostnamesResponse {
   s.Logs = v
   return s
 }
 
-type GetAccessLogsForHostnamesGetAccessLogsForHostnamesResponseLogs struct     {
+type GetAccessLogsForHostnamesResponseLogs struct     {
   // {"en" : "An RFC 3339 date indicate the beginning of the log file.", "zh_CN": "RFC 3339格式的日期，表示日志文件的开始时间。"}
   DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
   // {"en" : "An RFC 3339 date indicating the end of the log file.", "zh_CN": "RFC 3339格式的日期，表示日志文件的结束时间。"}
@@ -489,35 +489,35 @@ type GetAccessLogsForHostnamesGetAccessLogsForHostnamesResponseLogs struct     {
   Hostname *string `json:"hostname,omitempty" xml:"hostname,omitempty"`
 }
 
-func (s GetAccessLogsForHostnamesGetAccessLogsForHostnamesResponseLogs) String() string {
+func (s GetAccessLogsForHostnamesResponseLogs) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAccessLogsForHostnamesGetAccessLogsForHostnamesResponseLogs) GoString() string {
+func (s GetAccessLogsForHostnamesResponseLogs) GoString() string {
   return s.String()
 }
 
-func (s *GetAccessLogsForHostnamesGetAccessLogsForHostnamesResponseLogs) SetDateFrom(v string) *GetAccessLogsForHostnamesGetAccessLogsForHostnamesResponseLogs {
+func (s *GetAccessLogsForHostnamesResponseLogs) SetDateFrom(v string) *GetAccessLogsForHostnamesResponseLogs {
   s.DateFrom = &v
   return s
 }
 
-func (s *GetAccessLogsForHostnamesGetAccessLogsForHostnamesResponseLogs) SetDateTo(v string) *GetAccessLogsForHostnamesGetAccessLogsForHostnamesResponseLogs {
+func (s *GetAccessLogsForHostnamesResponseLogs) SetDateTo(v string) *GetAccessLogsForHostnamesResponseLogs {
   s.DateTo = &v
   return s
 }
 
-func (s *GetAccessLogsForHostnamesGetAccessLogsForHostnamesResponseLogs) SetFileSize(v int) *GetAccessLogsForHostnamesGetAccessLogsForHostnamesResponseLogs {
+func (s *GetAccessLogsForHostnamesResponseLogs) SetFileSize(v int) *GetAccessLogsForHostnamesResponseLogs {
   s.FileSize = &v
   return s
 }
 
-func (s *GetAccessLogsForHostnamesGetAccessLogsForHostnamesResponseLogs) SetLogUrl(v string) *GetAccessLogsForHostnamesGetAccessLogsForHostnamesResponseLogs {
+func (s *GetAccessLogsForHostnamesResponseLogs) SetLogUrl(v string) *GetAccessLogsForHostnamesResponseLogs {
   s.LogUrl = &v
   return s
 }
 
-func (s *GetAccessLogsForHostnamesGetAccessLogsForHostnamesResponseLogs) SetHostname(v string) *GetAccessLogsForHostnamesGetAccessLogsForHostnamesResponseLogs {
+func (s *GetAccessLogsForHostnamesResponseLogs) SetHostname(v string) *GetAccessLogsForHostnamesResponseLogs {
   s.Hostname = &v
   return s
 }
@@ -593,7 +593,7 @@ type GetALogConfigurationResponse struct {
   // 日志配置的ID。"}
   Id *int `json:"id,omitempty" xml:"id,omitempty" require:"true"`
   // {"en" : "Describes a log configuration", "zh_CN": "日志配置。"}
-  Configs *GetALogConfigurationGetALogConfigurationResponseConfigs `json:"configs,omitempty" xml:"configs,omitempty" require:"true" type:"Struct"`
+  Configs *GetALogConfigurationResponseConfigs `json:"configs,omitempty" xml:"configs,omitempty" require:"true" type:"Struct"`
   // {"en" : "RFC 3339 date indicating when the log configuration was last updated.", "zh_CN": "日志配置最近一次更新时间，以RFC 3339日期格式展示。"}
   LastUpdateTime *string `json:"lastUpdateTime,omitempty" xml:"lastUpdateTime,omitempty" require:"true"`
   // {"en" : "RFC 3339 date indicating when the log configuration was created.", "zh_CN": "日志配置创建时间，以RFC 3339日期格式展示。"}
@@ -613,7 +613,7 @@ func (s *GetALogConfigurationResponse) SetId(v int) *GetALogConfigurationRespons
   return s
 }
 
-func (s *GetALogConfigurationResponse) SetConfigs(v *GetALogConfigurationGetALogConfigurationResponseConfigs) *GetALogConfigurationResponse {
+func (s *GetALogConfigurationResponse) SetConfigs(v *GetALogConfigurationResponseConfigs) *GetALogConfigurationResponse {
   s.Configs = v
   return s
 }
@@ -628,7 +628,7 @@ func (s *GetALogConfigurationResponse) SetCreationTime(v string) *GetALogConfigu
   return s
 }
 
-type GetALogConfigurationGetALogConfigurationResponseConfigs struct {
+type GetALogConfigurationResponseConfigs struct {
   // {"en" : "A description of the log configuration.", "zh_CN": "日志配置描述信息。"}
   Description *string `json:"description,omitempty" xml:"description,omitempty" require:"true"`
   // {"en" : "A list of hostnames to which the log configuration applies. A hostname should be a fully qualified domain name like domain.com, a wildcard domain name with a leading '*' like *.domain.com, or '*' if you want the log configuration to apply to all hostnames. You should ensure that only one log configuration applies to each hostname.", "zh_CN": "适用该日志配置的域名列表。每个域名必须是完整的FQDN域名如domain.com，或者是带星号的泛域名如*.domain.com。如果该日志配置适用于所有域名，则直接用星号*表示。每个域名有且只能有一个对应的日志配置。"}
@@ -653,35 +653,35 @@ type GetALogConfigurationGetALogConfigurationResponseConfigs struct {
   LogDownloadFileSpanMinutes *int `json:"logDownloadFileSpanMinutes,omitempty" xml:"logDownloadFileSpanMinutes,omitempty" require:"true"`
 }
 
-func (s GetALogConfigurationGetALogConfigurationResponseConfigs) String() string {
+func (s GetALogConfigurationResponseConfigs) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetALogConfigurationGetALogConfigurationResponseConfigs) GoString() string {
+func (s GetALogConfigurationResponseConfigs) GoString() string {
   return s.String()
 }
 
-func (s *GetALogConfigurationGetALogConfigurationResponseConfigs) SetDescription(v string) *GetALogConfigurationGetALogConfigurationResponseConfigs {
+func (s *GetALogConfigurationResponseConfigs) SetDescription(v string) *GetALogConfigurationResponseConfigs {
   s.Description = &v
   return s
 }
 
-func (s *GetALogConfigurationGetALogConfigurationResponseConfigs) SetHostnames(v []*string) *GetALogConfigurationGetALogConfigurationResponseConfigs {
+func (s *GetALogConfigurationResponseConfigs) SetHostnames(v []*string) *GetALogConfigurationResponseConfigs {
   s.Hostnames = v
   return s
 }
 
-func (s *GetALogConfigurationGetALogConfigurationResponseConfigs) SetLogDownloadFormat(v string) *GetALogConfigurationGetALogConfigurationResponseConfigs {
+func (s *GetALogConfigurationResponseConfigs) SetLogDownloadFormat(v string) *GetALogConfigurationResponseConfigs {
   s.LogDownloadFormat = &v
   return s
 }
 
-func (s *GetALogConfigurationGetALogConfigurationResponseConfigs) SetLogDownloadStorageDays(v int) *GetALogConfigurationGetALogConfigurationResponseConfigs {
+func (s *GetALogConfigurationResponseConfigs) SetLogDownloadStorageDays(v int) *GetALogConfigurationResponseConfigs {
   s.LogDownloadStorageDays = &v
   return s
 }
 
-func (s *GetALogConfigurationGetALogConfigurationResponseConfigs) SetLogDownloadFileSpanMinutes(v int) *GetALogConfigurationGetALogConfigurationResponseConfigs {
+func (s *GetALogConfigurationResponseConfigs) SetLogDownloadFileSpanMinutes(v int) *GetALogConfigurationResponseConfigs {
   s.LogDownloadFileSpanMinutes = &v
   return s
 }

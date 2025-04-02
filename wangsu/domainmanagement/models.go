@@ -338,7 +338,7 @@ type PreDeployChangeServerConfigRequest struct {
   // 注意：
   // 1、需要取消【接入域名跳转】时，可以传入空节点<change-servers></change-servers>。
   // 2、表示需要设置【接入域名跳转】，此项必填"}
-  ChangeServers []*PreDeployChangeServerConfigPreDeployChangeServerConfigRequestChangeServers `json:"change-servers,omitempty" xml:"change-servers,omitempty" require:"true" type:"Repeated"`
+  ChangeServers []*PreDeployChangeServerConfigRequestChangeServers `json:"change-servers,omitempty" xml:"change-servers,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s PreDeployChangeServerConfigRequest) String() string {
@@ -349,12 +349,12 @@ func (s PreDeployChangeServerConfigRequest) GoString() string {
   return s.String()
 }
 
-func (s *PreDeployChangeServerConfigRequest) SetChangeServers(v []*PreDeployChangeServerConfigPreDeployChangeServerConfigRequestChangeServers) *PreDeployChangeServerConfigRequest {
+func (s *PreDeployChangeServerConfigRequest) SetChangeServers(v []*PreDeployChangeServerConfigRequestChangeServers) *PreDeployChangeServerConfigRequest {
   s.ChangeServers = v
   return s
 }
 
-type PreDeployChangeServerConfigPreDeployChangeServerConfigRequestChangeServers struct     {
+type PreDeployChangeServerConfigRequestChangeServers struct     {
   // {"en":"If it is a universal domain name, set it to a universal domain name, for example, *.56.com.", "zh_CN":"如果是泛域名，需要填写为泛域名，例如：*.56.com"}
   TargetServer *string `json:"target-server,omitempty" xml:"target-server,omitempty"`
   // {"en":"Data-id is to indicate a specific group configuration when the client has multiple groups of configurations. Data-id can be retrieved through a query interface. Note: 
@@ -372,20 +372,20 @@ type PreDeployChangeServerConfigPreDeployChangeServerConfigRequestChangeServers 
   DataId *int `json:"dataId,omitempty" xml:"dataId,omitempty"`
 }
 
-func (s PreDeployChangeServerConfigPreDeployChangeServerConfigRequestChangeServers) String() string {
+func (s PreDeployChangeServerConfigRequestChangeServers) String() string {
   return tea.Prettify(s)
 }
 
-func (s PreDeployChangeServerConfigPreDeployChangeServerConfigRequestChangeServers) GoString() string {
+func (s PreDeployChangeServerConfigRequestChangeServers) GoString() string {
   return s.String()
 }
 
-func (s *PreDeployChangeServerConfigPreDeployChangeServerConfigRequestChangeServers) SetTargetServer(v string) *PreDeployChangeServerConfigPreDeployChangeServerConfigRequestChangeServers {
+func (s *PreDeployChangeServerConfigRequestChangeServers) SetTargetServer(v string) *PreDeployChangeServerConfigRequestChangeServers {
   s.TargetServer = &v
   return s
 }
 
-func (s *PreDeployChangeServerConfigPreDeployChangeServerConfigRequestChangeServers) SetDataId(v int) *PreDeployChangeServerConfigPreDeployChangeServerConfigRequestChangeServers {
+func (s *PreDeployChangeServerConfigRequestChangeServers) SetDataId(v int) *PreDeployChangeServerConfigRequestChangeServers {
   s.DataId = &v
   return s
 }
@@ -396,7 +396,7 @@ type PreDeployChangeServerConfigResponse struct {
   // {"en":"The message body", "zh_CN":"消息体"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Returns the body of the data.", "zh_CN":"返回数据体"}
-  Data *PreDeployChangeServerConfigPreDeployChangeServerConfigResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *PreDeployChangeServerConfigResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
   // {"en":"Uniquely labeled id for querying each requested task (for all interfaces)", "zh_CN":"唯一标示的id，用于查询每次请求的任务 （适用全部接口）"}
   XCncRequestId *string `json:"x-cnc-request-id,omitempty" xml:"x-cnc-request-id,omitempty" require:"true"`
 }
@@ -419,7 +419,7 @@ func (s *PreDeployChangeServerConfigResponse) SetMessage(v string) *PreDeployCha
   return s
 }
 
-func (s *PreDeployChangeServerConfigResponse) SetData(v *PreDeployChangeServerConfigPreDeployChangeServerConfigResponseData) *PreDeployChangeServerConfigResponse {
+func (s *PreDeployChangeServerConfigResponse) SetData(v *PreDeployChangeServerConfigResponseData) *PreDeployChangeServerConfigResponse {
   s.Data = v
   return s
 }
@@ -429,20 +429,20 @@ func (s *PreDeployChangeServerConfigResponse) SetXCncRequestId(v string) *PreDep
   return s
 }
 
-type PreDeployChangeServerConfigPreDeployChangeServerConfigResponseData struct {
+type PreDeployChangeServerConfigResponseData struct {
   // {"en":"The preliminary deployment id", "zh_CN":"预部署id"}
   PreDeployId *string `json:"preDeployId,omitempty" xml:"preDeployId,omitempty" require:"true"`
 }
 
-func (s PreDeployChangeServerConfigPreDeployChangeServerConfigResponseData) String() string {
+func (s PreDeployChangeServerConfigResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s PreDeployChangeServerConfigPreDeployChangeServerConfigResponseData) GoString() string {
+func (s PreDeployChangeServerConfigResponseData) GoString() string {
   return s.String()
 }
 
-func (s *PreDeployChangeServerConfigPreDeployChangeServerConfigResponseData) SetPreDeployId(v string) *PreDeployChangeServerConfigPreDeployChangeServerConfigResponseData {
+func (s *PreDeployChangeServerConfigResponseData) SetPreDeployId(v string) *PreDeployChangeServerConfigResponseData {
   s.PreDeployId = &v
   return s
 }
@@ -1008,7 +1008,7 @@ func (s *ChannelAcceTypeRequest) SetDataformat(v string) *ChannelAcceTypeRequest
 
 type ChannelAcceTypeResponse struct {
   // {'en':'provider', 'zh_CN':'结果'}
-  Provider *ChannelAcceTypeChannelAcceTypeResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+  Provider *ChannelAcceTypeResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
 func (s ChannelAcceTypeResponse) String() string {
@@ -1019,114 +1019,114 @@ func (s ChannelAcceTypeResponse) GoString() string {
   return s.String()
 }
 
-func (s *ChannelAcceTypeResponse) SetProvider(v *ChannelAcceTypeChannelAcceTypeResponseProvider) *ChannelAcceTypeResponse {
+func (s *ChannelAcceTypeResponse) SetProvider(v *ChannelAcceTypeResponseProvider) *ChannelAcceTypeResponse {
   s.Provider = v
   return s
 }
 
-type ChannelAcceTypeChannelAcceTypeResponseProvider struct {
+type ChannelAcceTypeResponseProvider struct {
   // {'en':'tenant', 'zh_CN':'租户'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'type', 'zh_CN':'接口类型'}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
   // {'en':'account', 'zh_CN':'账号数据'}
-  Account *ChannelAcceTypeChannelAcceTypeResponseProviderAccount `json:"account,omitempty" xml:"account,omitempty" require:"true" type:"Struct"`
+  Account *ChannelAcceTypeResponseProviderAccount `json:"account,omitempty" xml:"account,omitempty" require:"true" type:"Struct"`
 }
 
-func (s ChannelAcceTypeChannelAcceTypeResponseProvider) String() string {
+func (s ChannelAcceTypeResponseProvider) String() string {
   return tea.Prettify(s)
 }
 
-func (s ChannelAcceTypeChannelAcceTypeResponseProvider) GoString() string {
+func (s ChannelAcceTypeResponseProvider) GoString() string {
   return s.String()
 }
 
-func (s *ChannelAcceTypeChannelAcceTypeResponseProvider) SetName(v string) *ChannelAcceTypeChannelAcceTypeResponseProvider {
+func (s *ChannelAcceTypeResponseProvider) SetName(v string) *ChannelAcceTypeResponseProvider {
   s.Name = &v
   return s
 }
 
-func (s *ChannelAcceTypeChannelAcceTypeResponseProvider) SetType(v string) *ChannelAcceTypeChannelAcceTypeResponseProvider {
+func (s *ChannelAcceTypeResponseProvider) SetType(v string) *ChannelAcceTypeResponseProvider {
   s.Type = &v
   return s
 }
 
-func (s *ChannelAcceTypeChannelAcceTypeResponseProvider) SetAccount(v *ChannelAcceTypeChannelAcceTypeResponseProviderAccount) *ChannelAcceTypeChannelAcceTypeResponseProvider {
+func (s *ChannelAcceTypeResponseProvider) SetAccount(v *ChannelAcceTypeResponseProviderAccount) *ChannelAcceTypeResponseProvider {
   s.Account = v
   return s
 }
 
-type ChannelAcceTypeChannelAcceTypeResponseProviderAccount struct {
+type ChannelAcceTypeResponseProviderAccount struct {
   // {'en':'login-name', 'zh_CN':'日期'}
   LoginName *string `json:"login-name,omitempty" xml:"login-name,omitempty" require:"true"`
   // {'en':'acce-type', 'zh_CN':'频道'}
-  AcceType *ChannelAcceTypeChannelAcceTypeResponseProviderAccountAcceType `json:"acce-type,omitempty" xml:"acce-type,omitempty" require:"true" type:"Struct"`
+  AcceType *ChannelAcceTypeResponseProviderAccountAcceType `json:"acce-type,omitempty" xml:"acce-type,omitempty" require:"true" type:"Struct"`
 }
 
-func (s ChannelAcceTypeChannelAcceTypeResponseProviderAccount) String() string {
+func (s ChannelAcceTypeResponseProviderAccount) String() string {
   return tea.Prettify(s)
 }
 
-func (s ChannelAcceTypeChannelAcceTypeResponseProviderAccount) GoString() string {
+func (s ChannelAcceTypeResponseProviderAccount) GoString() string {
   return s.String()
 }
 
-func (s *ChannelAcceTypeChannelAcceTypeResponseProviderAccount) SetLoginName(v string) *ChannelAcceTypeChannelAcceTypeResponseProviderAccount {
+func (s *ChannelAcceTypeResponseProviderAccount) SetLoginName(v string) *ChannelAcceTypeResponseProviderAccount {
   s.LoginName = &v
   return s
 }
 
-func (s *ChannelAcceTypeChannelAcceTypeResponseProviderAccount) SetAcceType(v *ChannelAcceTypeChannelAcceTypeResponseProviderAccountAcceType) *ChannelAcceTypeChannelAcceTypeResponseProviderAccount {
+func (s *ChannelAcceTypeResponseProviderAccount) SetAcceType(v *ChannelAcceTypeResponseProviderAccountAcceType) *ChannelAcceTypeResponseProviderAccount {
   s.AcceType = v
   return s
 }
 
-type ChannelAcceTypeChannelAcceTypeResponseProviderAccountAcceType struct {
+type ChannelAcceTypeResponseProviderAccountAcceType struct {
   // {'en':'name', 'zh_CN':'加速类型'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'value', 'zh_CN':'加速类型值'}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
   // {'en':'channel', 'zh_CN':'频道'}
-  Channel []*ChannelAcceTypeChannelAcceTypeResponseProviderAccountAcceTypeChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Repeated"`
+  Channel []*ChannelAcceTypeResponseProviderAccountAcceTypeChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ChannelAcceTypeChannelAcceTypeResponseProviderAccountAcceType) String() string {
+func (s ChannelAcceTypeResponseProviderAccountAcceType) String() string {
   return tea.Prettify(s)
 }
 
-func (s ChannelAcceTypeChannelAcceTypeResponseProviderAccountAcceType) GoString() string {
+func (s ChannelAcceTypeResponseProviderAccountAcceType) GoString() string {
   return s.String()
 }
 
-func (s *ChannelAcceTypeChannelAcceTypeResponseProviderAccountAcceType) SetName(v string) *ChannelAcceTypeChannelAcceTypeResponseProviderAccountAcceType {
+func (s *ChannelAcceTypeResponseProviderAccountAcceType) SetName(v string) *ChannelAcceTypeResponseProviderAccountAcceType {
   s.Name = &v
   return s
 }
 
-func (s *ChannelAcceTypeChannelAcceTypeResponseProviderAccountAcceType) SetValue(v string) *ChannelAcceTypeChannelAcceTypeResponseProviderAccountAcceType {
+func (s *ChannelAcceTypeResponseProviderAccountAcceType) SetValue(v string) *ChannelAcceTypeResponseProviderAccountAcceType {
   s.Value = &v
   return s
 }
 
-func (s *ChannelAcceTypeChannelAcceTypeResponseProviderAccountAcceType) SetChannel(v []*ChannelAcceTypeChannelAcceTypeResponseProviderAccountAcceTypeChannel) *ChannelAcceTypeChannelAcceTypeResponseProviderAccountAcceType {
+func (s *ChannelAcceTypeResponseProviderAccountAcceType) SetChannel(v []*ChannelAcceTypeResponseProviderAccountAcceTypeChannel) *ChannelAcceTypeResponseProviderAccountAcceType {
   s.Channel = v
   return s
 }
 
-type ChannelAcceTypeChannelAcceTypeResponseProviderAccountAcceTypeChannel struct     {
+type ChannelAcceTypeResponseProviderAccountAcceTypeChannel struct     {
   // {'en':'channel', 'zh_CN':'频道'}
   Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
 }
 
-func (s ChannelAcceTypeChannelAcceTypeResponseProviderAccountAcceTypeChannel) String() string {
+func (s ChannelAcceTypeResponseProviderAccountAcceTypeChannel) String() string {
   return tea.Prettify(s)
 }
 
-func (s ChannelAcceTypeChannelAcceTypeResponseProviderAccountAcceTypeChannel) GoString() string {
+func (s ChannelAcceTypeResponseProviderAccountAcceTypeChannel) GoString() string {
   return s.String()
 }
 
-func (s *ChannelAcceTypeChannelAcceTypeResponseProviderAccountAcceTypeChannel) SetText(v string) *ChannelAcceTypeChannelAcceTypeResponseProviderAccountAcceTypeChannel {
+func (s *ChannelAcceTypeResponseProviderAccountAcceTypeChannel) SetText(v string) *ChannelAcceTypeResponseProviderAccountAcceTypeChannel {
   s.Text = &v
   return s
 }
@@ -1418,7 +1418,7 @@ type EnableDisableHwDomainResponse struct {
   // {"en":"Response information, when success is successful", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"The response data", "zh_CN":"响应数据"}
-  Data *EnableDisableHwDomainEnableDisableHwDomainResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *EnableDisableHwDomainResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
   // {"en":"Uniquely labeled id for querying each requested task (for all interfaces)", "zh_CN":"唯一标示的id，用于查询每次请求的任务 （适用全部接口）"}
   XRequestId *string `json:"X-Request-Id,omitempty" xml:"X-Request-Id,omitempty" require:"true"`
 }
@@ -1441,7 +1441,7 @@ func (s *EnableDisableHwDomainResponse) SetMessage(v string) *EnableDisableHwDom
   return s
 }
 
-func (s *EnableDisableHwDomainResponse) SetData(v *EnableDisableHwDomainEnableDisableHwDomainResponseData) *EnableDisableHwDomainResponse {
+func (s *EnableDisableHwDomainResponse) SetData(v *EnableDisableHwDomainResponseData) *EnableDisableHwDomainResponse {
   s.Data = v
   return s
 }
@@ -1451,20 +1451,20 @@ func (s *EnableDisableHwDomainResponse) SetXRequestId(v string) *EnableDisableHw
   return s
 }
 
-type EnableDisableHwDomainEnableDisableHwDomainResponseData struct {
+type EnableDisableHwDomainResponseData struct {
   // {"en":"task id.", "zh_CN":"任务id"}
   TaskId *string `json:"task_id,omitempty" xml:"task_id,omitempty" require:"true"`
 }
 
-func (s EnableDisableHwDomainEnableDisableHwDomainResponseData) String() string {
+func (s EnableDisableHwDomainResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s EnableDisableHwDomainEnableDisableHwDomainResponseData) GoString() string {
+func (s EnableDisableHwDomainResponseData) GoString() string {
   return s.String()
 }
 
-func (s *EnableDisableHwDomainEnableDisableHwDomainResponseData) SetTaskId(v string) *EnableDisableHwDomainEnableDisableHwDomainResponseData {
+func (s *EnableDisableHwDomainResponseData) SetTaskId(v string) *EnableDisableHwDomainResponseData {
   s.TaskId = &v
   return s
 }
@@ -1886,7 +1886,7 @@ type DeleteHwDomainResponse struct {
   // {"en":"Response information, when success is successful", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"The response data", "zh_CN":"响应数据"}
-  Data *DeleteHwDomainDeleteHwDomainResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *DeleteHwDomainResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
   // {"en":"Uniquely labeled id for querying each requested task (for all interfaces)", "zh_CN":"唯一标示的id，用于查询每次请求的任务 （适用全部接口）"}
   XRequestId *string `json:"X-Request-Id,omitempty" xml:"X-Request-Id,omitempty" require:"true"`
 }
@@ -1909,7 +1909,7 @@ func (s *DeleteHwDomainResponse) SetMessage(v string) *DeleteHwDomainResponse {
   return s
 }
 
-func (s *DeleteHwDomainResponse) SetData(v *DeleteHwDomainDeleteHwDomainResponseData) *DeleteHwDomainResponse {
+func (s *DeleteHwDomainResponse) SetData(v *DeleteHwDomainResponseData) *DeleteHwDomainResponse {
   s.Data = v
   return s
 }
@@ -1919,20 +1919,20 @@ func (s *DeleteHwDomainResponse) SetXRequestId(v string) *DeleteHwDomainResponse
   return s
 }
 
-type DeleteHwDomainDeleteHwDomainResponseData struct {
+type DeleteHwDomainResponseData struct {
   // {"en":"task id.", "zh_CN":"任务id"}
   TaskId *string `json:"task_id,omitempty" xml:"task_id,omitempty" require:"true"`
 }
 
-func (s DeleteHwDomainDeleteHwDomainResponseData) String() string {
+func (s DeleteHwDomainResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s DeleteHwDomainDeleteHwDomainResponseData) GoString() string {
+func (s DeleteHwDomainResponseData) GoString() string {
   return s.String()
 }
 
-func (s *DeleteHwDomainDeleteHwDomainResponseData) SetTaskId(v string) *DeleteHwDomainDeleteHwDomainResponseData {
+func (s *DeleteHwDomainResponseData) SetTaskId(v string) *DeleteHwDomainResponseData {
   s.TaskId = &v
   return s
 }
@@ -2108,7 +2108,7 @@ type UpdateChangeServerRequest struct {
   // 注意：
   // 1、需要取消【接入域名跳转】时，可以传入空节点<change-servers></change-servers>。
   // 2、表示需要设置【接入域名跳转】，此项必填"}
-  ChangeServers []*UpdateChangeServerUpdateChangeServerRequestChangeServers `json:"change-servers,omitempty" xml:"change-servers,omitempty" require:"true" type:"Repeated"`
+  ChangeServers []*UpdateChangeServerRequestChangeServers `json:"change-servers,omitempty" xml:"change-servers,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s UpdateChangeServerRequest) String() string {
@@ -2119,12 +2119,12 @@ func (s UpdateChangeServerRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateChangeServerRequest) SetChangeServers(v []*UpdateChangeServerUpdateChangeServerRequestChangeServers) *UpdateChangeServerRequest {
+func (s *UpdateChangeServerRequest) SetChangeServers(v []*UpdateChangeServerRequestChangeServers) *UpdateChangeServerRequest {
   s.ChangeServers = v
   return s
 }
 
-type UpdateChangeServerUpdateChangeServerRequestChangeServers struct     {
+type UpdateChangeServerRequestChangeServers struct     {
   // {"en":"If it is a universal domain name, set it to a universal domain name, for example, *.56.com.", "zh_CN":"如果是泛域名，需要填写为泛域名，例如：*.56.com"}
   TargetServer *string `json:"target-server,omitempty" xml:"target-server,omitempty"`
   // {"en":"Data-id is to indicate a specific group configuration when the client has multiple groups of configurations. Data-id can be retrieved through a query interface. Note: 
@@ -2143,20 +2143,20 @@ type UpdateChangeServerUpdateChangeServerRequestChangeServers struct     {
   DataId *int `json:"dataId,omitempty" xml:"dataId,omitempty"`
 }
 
-func (s UpdateChangeServerUpdateChangeServerRequestChangeServers) String() string {
+func (s UpdateChangeServerRequestChangeServers) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateChangeServerUpdateChangeServerRequestChangeServers) GoString() string {
+func (s UpdateChangeServerRequestChangeServers) GoString() string {
   return s.String()
 }
 
-func (s *UpdateChangeServerUpdateChangeServerRequestChangeServers) SetTargetServer(v string) *UpdateChangeServerUpdateChangeServerRequestChangeServers {
+func (s *UpdateChangeServerRequestChangeServers) SetTargetServer(v string) *UpdateChangeServerRequestChangeServers {
   s.TargetServer = &v
   return s
 }
 
-func (s *UpdateChangeServerUpdateChangeServerRequestChangeServers) SetDataId(v int) *UpdateChangeServerUpdateChangeServerRequestChangeServers {
+func (s *UpdateChangeServerRequestChangeServers) SetDataId(v int) *UpdateChangeServerRequestChangeServers {
   s.DataId = &v
   return s
 }
@@ -2477,7 +2477,7 @@ type GetFuzzyPagingDomainListResponse struct {
   // {"en":"Number of data page", "zh_CN":"每个页面的数据条数"}
   PageSize *int `json:"pageSize,omitempty" xml:"pageSize,omitempty" require:"true"`
   // {"en":"Responses status information for the accelerated domain name", "zh_CN":"返回加速域名的状态信息"}
-  ResultList []*GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList `json:"resultList,omitempty" xml:"resultList,omitempty" require:"true" type:"Repeated"`
+  ResultList []*GetFuzzyPagingDomainListResponseResultList `json:"resultList,omitempty" xml:"resultList,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetFuzzyPagingDomainListResponse) String() string {
@@ -2518,12 +2518,12 @@ func (s *GetFuzzyPagingDomainListResponse) SetPageSize(v int) *GetFuzzyPagingDom
   return s
 }
 
-func (s *GetFuzzyPagingDomainListResponse) SetResultList(v []*GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList) *GetFuzzyPagingDomainListResponse {
+func (s *GetFuzzyPagingDomainListResponse) SetResultList(v []*GetFuzzyPagingDomainListResponseResultList) *GetFuzzyPagingDomainListResponse {
   s.ResultList = v
   return s
 }
 
-type GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList struct     {
+type GetFuzzyPagingDomainListResponseResultList struct     {
   // {"en":"Accelerated domain CNAME corresponding to CNAME, for example: 7nt6mrh7sdkslj.cdn30.com", "zh_CN":"加速域名对应的CNAME域名，例如：7nt6mrh7sdkslj.cdn30.com"}
   Cname *string `json:"cname,omitempty" xml:"cname,omitempty" require:"true"`
   // {"en":"Configuration name", "zh_CN":"配置单名称"}
@@ -2550,70 +2550,70 @@ type GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList struct  
   IsEnabled *string `json:"isEnabled,omitempty" xml:"isEnabled,omitempty" require:"true"`
 }
 
-func (s GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList) String() string {
+func (s GetFuzzyPagingDomainListResponseResultList) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList) GoString() string {
+func (s GetFuzzyPagingDomainListResponseResultList) GoString() string {
   return s.String()
 }
 
-func (s *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList) SetCname(v string) *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList {
+func (s *GetFuzzyPagingDomainListResponseResultList) SetCname(v string) *GetFuzzyPagingDomainListResponseResultList {
   s.Cname = &v
   return s
 }
 
-func (s *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList) SetConfigFormName(v string) *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList {
+func (s *GetFuzzyPagingDomainListResponseResultList) SetConfigFormName(v string) *GetFuzzyPagingDomainListResponseResultList {
   s.ConfigFormName = &v
   return s
 }
 
-func (s *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList) SetCreateTime(v string) *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList {
+func (s *GetFuzzyPagingDomainListResponseResultList) SetCreateTime(v string) *GetFuzzyPagingDomainListResponseResultList {
   s.CreateTime = &v
   return s
 }
 
-func (s *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList) SetDomainId(v string) *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList {
+func (s *GetFuzzyPagingDomainListResponseResultList) SetDomainId(v string) *GetFuzzyPagingDomainListResponseResultList {
   s.DomainId = &v
   return s
 }
 
-func (s *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList) SetDomainName(v string) *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList {
+func (s *GetFuzzyPagingDomainListResponseResultList) SetDomainName(v string) *GetFuzzyPagingDomainListResponseResultList {
   s.DomainName = &v
   return s
 }
 
-func (s *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList) SetOperator(v string) *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList {
+func (s *GetFuzzyPagingDomainListResponseResultList) SetOperator(v string) *GetFuzzyPagingDomainListResponseResultList {
   s.Operator = &v
   return s
 }
 
-func (s *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList) SetOriginIps(v string) *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList {
+func (s *GetFuzzyPagingDomainListResponseResultList) SetOriginIps(v string) *GetFuzzyPagingDomainListResponseResultList {
   s.OriginIps = &v
   return s
 }
 
-func (s *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList) SetServiceType(v string) *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList {
+func (s *GetFuzzyPagingDomainListResponseResultList) SetServiceType(v string) *GetFuzzyPagingDomainListResponseResultList {
   s.ServiceType = &v
   return s
 }
 
-func (s *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList) SetDomainStatus(v string) *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList {
+func (s *GetFuzzyPagingDomainListResponseResultList) SetDomainStatus(v string) *GetFuzzyPagingDomainListResponseResultList {
   s.DomainStatus = &v
   return s
 }
 
-func (s *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList) SetDeployVersion(v string) *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList {
+func (s *GetFuzzyPagingDomainListResponseResultList) SetDeployVersion(v string) *GetFuzzyPagingDomainListResponseResultList {
   s.DeployVersion = &v
   return s
 }
 
-func (s *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList) SetCdnServiceStatus(v string) *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList {
+func (s *GetFuzzyPagingDomainListResponseResultList) SetCdnServiceStatus(v string) *GetFuzzyPagingDomainListResponseResultList {
   s.CdnServiceStatus = &v
   return s
 }
 
-func (s *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList) SetIsEnabled(v string) *GetFuzzyPagingDomainListGetFuzzyPagingDomainListResponseResultList {
+func (s *GetFuzzyPagingDomainListResponseResultList) SetIsEnabled(v string) *GetFuzzyPagingDomainListResponseResultList {
   s.IsEnabled = &v
   return s
 }
@@ -2985,7 +2985,7 @@ func (s *QueryCustomerDomainNameGroupServiceRequest) SetDomainGroupNameList(v []
 }
 
 type QueryCustomerDomainNameGroupServiceResponse struct {
-  Result []*QueryCustomerDomainNameGroupServiceQueryCustomerDomainNameGroupServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryCustomerDomainNameGroupServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryCustomerDomainNameGroupServiceResponse) String() string {
@@ -2996,12 +2996,12 @@ func (s QueryCustomerDomainNameGroupServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryCustomerDomainNameGroupServiceResponse) SetResult(v []*QueryCustomerDomainNameGroupServiceQueryCustomerDomainNameGroupServiceResponseResult) *QueryCustomerDomainNameGroupServiceResponse {
+func (s *QueryCustomerDomainNameGroupServiceResponse) SetResult(v []*QueryCustomerDomainNameGroupServiceResponseResult) *QueryCustomerDomainNameGroupServiceResponse {
   s.Result = v
   return s
 }
 
-type QueryCustomerDomainNameGroupServiceQueryCustomerDomainNameGroupServiceResponseResult struct     {
+type QueryCustomerDomainNameGroupServiceResponseResult struct     {
   // {'en':'Domain group name', 'zh_CN':'域名组名称'}
   DomainGroupName *string `json:"domainGroupName,omitempty" xml:"domainGroupName,omitempty" require:"true"`
   // {'en':'Domain list', 'zh_CN':'域名列表'}
@@ -3010,25 +3010,25 @@ type QueryCustomerDomainNameGroupServiceQueryCustomerDomainNameGroupServiceRespo
   DomainGroupId *string `json:"domainGroupId,omitempty" xml:"domainGroupId,omitempty" require:"true"`
 }
 
-func (s QueryCustomerDomainNameGroupServiceQueryCustomerDomainNameGroupServiceResponseResult) String() string {
+func (s QueryCustomerDomainNameGroupServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCustomerDomainNameGroupServiceQueryCustomerDomainNameGroupServiceResponseResult) GoString() string {
+func (s QueryCustomerDomainNameGroupServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryCustomerDomainNameGroupServiceQueryCustomerDomainNameGroupServiceResponseResult) SetDomainGroupName(v string) *QueryCustomerDomainNameGroupServiceQueryCustomerDomainNameGroupServiceResponseResult {
+func (s *QueryCustomerDomainNameGroupServiceResponseResult) SetDomainGroupName(v string) *QueryCustomerDomainNameGroupServiceResponseResult {
   s.DomainGroupName = &v
   return s
 }
 
-func (s *QueryCustomerDomainNameGroupServiceQueryCustomerDomainNameGroupServiceResponseResult) SetDomainList(v []*string) *QueryCustomerDomainNameGroupServiceQueryCustomerDomainNameGroupServiceResponseResult {
+func (s *QueryCustomerDomainNameGroupServiceResponseResult) SetDomainList(v []*string) *QueryCustomerDomainNameGroupServiceResponseResult {
   s.DomainList = v
   return s
 }
 
-func (s *QueryCustomerDomainNameGroupServiceQueryCustomerDomainNameGroupServiceResponseResult) SetDomainGroupId(v string) *QueryCustomerDomainNameGroupServiceQueryCustomerDomainNameGroupServiceResponseResult {
+func (s *QueryCustomerDomainNameGroupServiceResponseResult) SetDomainGroupId(v string) *QueryCustomerDomainNameGroupServiceResponseResult {
   s.DomainGroupId = &v
   return s
 }
@@ -3321,7 +3321,7 @@ func (s QueryApiDomainListServiceRequest) GoString() string {
 
 type QueryApiDomainListServiceResponse struct {
   // {"en":"domain list", "zh_CN":"域名列表"}
-  DomainList []*QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList `json:"domain-list,omitempty" xml:"domain-list,omitempty" require:"true" type:"Repeated"`
+  DomainList []*QueryApiDomainListServiceResponseDomainList `json:"domain-list,omitempty" xml:"domain-list,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryApiDomainListServiceResponse) String() string {
@@ -3332,12 +3332,12 @@ func (s QueryApiDomainListServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryApiDomainListServiceResponse) SetDomainList(v []*QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList) *QueryApiDomainListServiceResponse {
+func (s *QueryApiDomainListServiceResponse) SetDomainList(v []*QueryApiDomainListServiceResponseDomainList) *QueryApiDomainListServiceResponse {
   s.DomainList = v
   return s
 }
 
-type QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList struct     {
+type QueryApiDomainListServiceResponseDomainList struct     {
   // {"en":"Name of accelerated domain name", "zh_CN":"加速域名的名称"}
   DomainName *string `json:"domain-name,omitempty" xml:"domain-name,omitempty" require:"true"`
   // {"en":"The corresponding domain name ID: the domain name ID, used to perform the query and modification operations of the related domain name.", "zh_CN":"对应的域名ID：域名ID，用于执行相关域名的查询、修改操作等。"}
@@ -3382,55 +3382,55 @@ type QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList struct
   BillingArea *string `json:"billing-areas,omitempty" xml:"billing-areas,omitempty" require:"true"`
 }
 
-func (s QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList) String() string {
+func (s QueryApiDomainListServiceResponseDomainList) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList) GoString() string {
+func (s QueryApiDomainListServiceResponseDomainList) GoString() string {
   return s.String()
 }
 
-func (s *QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList) SetDomainName(v string) *QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList {
+func (s *QueryApiDomainListServiceResponseDomainList) SetDomainName(v string) *QueryApiDomainListServiceResponseDomainList {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList) SetDomainId(v int) *QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList {
+func (s *QueryApiDomainListServiceResponseDomainList) SetDomainId(v int) *QueryApiDomainListServiceResponseDomainList {
   s.DomainId = &v
   return s
 }
 
-func (s *QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList) SetCname(v string) *QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList {
+func (s *QueryApiDomainListServiceResponseDomainList) SetCname(v string) *QueryApiDomainListServiceResponseDomainList {
   s.Cname = &v
   return s
 }
 
-func (s *QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList) SetServiceType(v string) *QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList {
+func (s *QueryApiDomainListServiceResponseDomainList) SetServiceType(v string) *QueryApiDomainListServiceResponseDomainList {
   s.ServiceType = &v
   return s
 }
 
-func (s *QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList) SetStatus(v string) *QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList {
+func (s *QueryApiDomainListServiceResponseDomainList) SetStatus(v string) *QueryApiDomainListServiceResponseDomainList {
   s.Status = &v
   return s
 }
 
-func (s *QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList) SetCdnServiceStatus(v string) *QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList {
+func (s *QueryApiDomainListServiceResponseDomainList) SetCdnServiceStatus(v string) *QueryApiDomainListServiceResponseDomainList {
   s.CdnServiceStatus = &v
   return s
 }
 
-func (s *QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList) SetEnabled(v string) *QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList {
+func (s *QueryApiDomainListServiceResponseDomainList) SetEnabled(v string) *QueryApiDomainListServiceResponseDomainList {
   s.Enabled = &v
   return s
 }
 
-func (s *QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList) SetLastModified(v string) *QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList {
+func (s *QueryApiDomainListServiceResponseDomainList) SetLastModified(v string) *QueryApiDomainListServiceResponseDomainList {
   s.LastModified = &v
   return s
 }
 
-func (s *QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList) SetBillingArea(v string) *QueryApiDomainListServiceQueryApiDomainListServiceResponseDomainList {
+func (s *QueryApiDomainListServiceResponseDomainList) SetBillingArea(v string) *QueryApiDomainListServiceResponseDomainList {
   s.BillingArea = &v
   return s
 }
@@ -3574,11 +3574,11 @@ type CreateDomainRequest struct {
   //   注意：当前缀是泛域名时，则再增加wsall作为前缀。如.baidu.com.wscloudcdn.com，会生成wsall.baidu.com.wscloudcdn.com"}
   CnameWithCustomizedPrefix *string `json:"cname-with-customized-prefix,omitempty" xml:"cname-with-customized-prefix,omitempty"`
   // {"en":"Back-to-origin policy setting, which is used to set the origin site information and the back-to-origin policy of the none-live accelerated domain", "zh_CN":"回源策略设置(非直播域名使用)，用于设置加速域名的源站信息和回源策略。"}
-  OriginConfig *CreateDomainCreateDomainRequestOriginConfig `json:"origin-config,omitempty" xml:"origin-config,omitempty" type:"Struct"`
+  OriginConfig *CreateDomainRequestOriginConfig `json:"origin-config,omitempty" xml:"origin-config,omitempty" type:"Struct"`
   // {"en":"Live domain configuration, used to set the push flow of rtmp live acceleration domain (use required)
   // Note: In addition to the API call permission, you need to contact the dedicated customer service to apply for the corresponding API client template.", "zh_CN":"直播域名配置，用于设置rtmp直播加速域名的推拉流（使用需申请）
   // 注意：该节点下的相关参数配置，除开通API调用权限外，还需要联系专属客服申请开通对应的API客户模板"}
-  LiveConfig *CreateDomainCreateDomainRequestLiveConfig `json:"live-config,omitempty" xml:"live-config,omitempty" type:"Struct"`
+  LiveConfig *CreateDomainRequestLiveConfig `json:"live-config,omitempty" xml:"live-config,omitempty" type:"Struct"`
   // {"en":"Identifies whether a domain name is fully overseas accelerated.
   // Whether the default is false
   // True: indicates that the client domain name is a pure overseas acceleration
@@ -3606,9 +3606,9 @@ type CreateDomainRequest struct {
   // 1、拉流和对应的推流域名，必须配置相同的发布点；
   // 2、不想修改发布点时，不要传入该节点及以下入参；
   // 3、发布点采用覆盖式更新，每次修改时，需要提交全部发布点，不能仅提交需要修改的部分。"}
-  PublishPoints []*CreateDomainCreateDomainRequestPublishPoints `json:"publish-points,omitempty" xml:"publish-points,omitempty" type:"Repeated"`
+  PublishPoints []*CreateDomainRequestPublishPoints `json:"publish-points,omitempty" xml:"publish-points,omitempty" type:"Repeated"`
   // {"en":"SSL settings, to bind a certificate with the accelerated domain. You can use the interface [AddCertificate] to upload your  certificates. If you want to modify a certificate, please use the interface: [UpdateCertificate]", "zh_CN":"ssl证书设置，用于设置加速域名的ssl证书配置。上传证书请使用接口：【新增证书V2】；若要修改证书，请使用接口：【修改证书V2】"}
-  Ssl *CreateDomainCreateDomainRequestSsl `json:"ssl,omitempty" xml:"ssl,omitempty" type:"Struct"`
+  Ssl *CreateDomainRequestSsl `json:"ssl,omitempty" xml:"ssl,omitempty" type:"Struct"`
 }
 
 func (s CreateDomainRequest) String() string {
@@ -3664,12 +3664,12 @@ func (s *CreateDomainRequest) SetCnameWithCustomizedPrefix(v string) *CreateDoma
   return s
 }
 
-func (s *CreateDomainRequest) SetOriginConfig(v *CreateDomainCreateDomainRequestOriginConfig) *CreateDomainRequest {
+func (s *CreateDomainRequest) SetOriginConfig(v *CreateDomainRequestOriginConfig) *CreateDomainRequest {
   s.OriginConfig = v
   return s
 }
 
-func (s *CreateDomainRequest) SetLiveConfig(v *CreateDomainCreateDomainRequestLiveConfig) *CreateDomainRequest {
+func (s *CreateDomainRequest) SetLiveConfig(v *CreateDomainRequestLiveConfig) *CreateDomainRequest {
   s.LiveConfig = v
   return s
 }
@@ -3689,17 +3689,17 @@ func (s *CreateDomainRequest) SetUpstreamHost(v string) *CreateDomainRequest {
   return s
 }
 
-func (s *CreateDomainRequest) SetPublishPoints(v []*CreateDomainCreateDomainRequestPublishPoints) *CreateDomainRequest {
+func (s *CreateDomainRequest) SetPublishPoints(v []*CreateDomainRequestPublishPoints) *CreateDomainRequest {
   s.PublishPoints = v
   return s
 }
 
-func (s *CreateDomainRequest) SetSsl(v *CreateDomainCreateDomainRequestSsl) *CreateDomainRequest {
+func (s *CreateDomainRequest) SetSsl(v *CreateDomainRequestSsl) *CreateDomainRequest {
   s.Ssl = v
   return s
 }
 
-type CreateDomainCreateDomainRequestOriginConfig struct {
+type CreateDomainRequestOriginConfig struct {
   // {"en":"Origin address, which can be an IP or domain name.
   // 1. Multiple IPs are supported, separated by semicolons.
   // 2. Only one domain name is allowed. IP and domain name cannot exist at the same time.
@@ -3715,25 +3715,25 @@ type CreateDomainCreateDomainRequestOriginConfig struct {
   DefaultOriginHostHeader *string `json:"default-origin-host-header,omitempty" xml:"default-origin-host-header,omitempty"`
 }
 
-func (s CreateDomainCreateDomainRequestOriginConfig) String() string {
+func (s CreateDomainRequestOriginConfig) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateDomainCreateDomainRequestOriginConfig) GoString() string {
+func (s CreateDomainRequestOriginConfig) GoString() string {
   return s.String()
 }
 
-func (s *CreateDomainCreateDomainRequestOriginConfig) SetOriginIps(v string) *CreateDomainCreateDomainRequestOriginConfig {
+func (s *CreateDomainRequestOriginConfig) SetOriginIps(v string) *CreateDomainRequestOriginConfig {
   s.OriginIps = &v
   return s
 }
 
-func (s *CreateDomainCreateDomainRequestOriginConfig) SetDefaultOriginHostHeader(v string) *CreateDomainCreateDomainRequestOriginConfig {
+func (s *CreateDomainRequestOriginConfig) SetDefaultOriginHostHeader(v string) *CreateDomainRequestOriginConfig {
   s.DefaultOriginHostHeader = &v
   return s
 }
 
-type CreateDomainCreateDomainRequestLiveConfig struct {
+type CreateDomainRequestLiveConfig struct {
   // {"en":"The live push-pull stream type, the optional values are pull and push, pull means pull flow; push means push flow.", "zh_CN":"直播推拉流类型，可选值为pull和push，pull表示拉流；   push表示推流。"}
   StreamType *string `json:"stream-type,omitempty" xml:"stream-type,omitempty"`
   // {"en":"The push-pull domain name is used to set the push-flow domain name corresponding to the rtmp live streaming domain name. When the stream-type is pull, at least one of the source IP address and the corresponding push-stream domain name is not empty. When the stream-type is push, Incoming.", "zh_CN":"配套推流域名，用于设置rtmp直播拉流域名对应的推流域名，当stream-type为pull时，源站IP和配套推流域名至少一个不为空；当stream-type为push时，无需传入。"}
@@ -3747,48 +3747,48 @@ type CreateDomainCreateDomainRequestLiveConfig struct {
   LiveConfigOriginIps *string `json:"origin-ips,omitempty" xml:"origin-ips,omitempty"`
 }
 
-func (s CreateDomainCreateDomainRequestLiveConfig) String() string {
+func (s CreateDomainRequestLiveConfig) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateDomainCreateDomainRequestLiveConfig) GoString() string {
+func (s CreateDomainRequestLiveConfig) GoString() string {
   return s.String()
 }
 
-func (s *CreateDomainCreateDomainRequestLiveConfig) SetStreamType(v string) *CreateDomainCreateDomainRequestLiveConfig {
+func (s *CreateDomainRequestLiveConfig) SetStreamType(v string) *CreateDomainRequestLiveConfig {
   s.StreamType = &v
   return s
 }
 
-func (s *CreateDomainCreateDomainRequestLiveConfig) SetOriginPushHost(v string) *CreateDomainCreateDomainRequestLiveConfig {
+func (s *CreateDomainRequestLiveConfig) SetOriginPushHost(v string) *CreateDomainRequestLiveConfig {
   s.OriginPushHost = &v
   return s
 }
 
-func (s *CreateDomainCreateDomainRequestLiveConfig) SetLiveConfigOriginIps(v string) *CreateDomainCreateDomainRequestLiveConfig {
+func (s *CreateDomainRequestLiveConfig) SetLiveConfigOriginIps(v string) *CreateDomainRequestLiveConfig {
   s.LiveConfigOriginIps = &v
   return s
 }
 
-type CreateDomainCreateDomainRequestPublishPoints struct     {
+type CreateDomainRequestPublishPoints struct     {
   // {"en":"Livestream domain settings. Publish point, support multiple, do not pass the system by default to generate a publishing point uri for [/]", "zh_CN":"发布点，支持多个，不传系统默认生成一条发布点uri为“/”"}
   Uri *string `json:"uri,omitempty" xml:"uri,omitempty"`
 }
 
-func (s CreateDomainCreateDomainRequestPublishPoints) String() string {
+func (s CreateDomainRequestPublishPoints) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateDomainCreateDomainRequestPublishPoints) GoString() string {
+func (s CreateDomainRequestPublishPoints) GoString() string {
   return s.String()
 }
 
-func (s *CreateDomainCreateDomainRequestPublishPoints) SetUri(v string) *CreateDomainCreateDomainRequestPublishPoints {
+func (s *CreateDomainRequestPublishPoints) SetUri(v string) *CreateDomainRequestPublishPoints {
   s.Uri = &v
   return s
 }
 
-type CreateDomainCreateDomainRequestSsl struct {
+type CreateDomainRequestSsl struct {
   // {"en":"Use a certificate, the optional values are true and false, true means to use the certificate, false means not to use the certificate", "zh_CN":"使用证书，可选值为true和false，true表示使用证书，false表示不使用证书"}
   UseSsl *string `json:"use-ssl,omitempty" xml:"use-ssl,omitempty"`
   // {"en":"Use sni certificate, the optional values are true and false, true means use sni certificate, false means use shared certificate (not supported)", "zh_CN":"使用sni证书，可选值为true和false，true表示使用sni证书，false表示使用合用证书（暂不支持）"}
@@ -3797,25 +3797,25 @@ type CreateDomainCreateDomainRequestSsl struct {
   SslCertificateId *int `json:"ssl-certificate-id,omitempty" xml:"ssl-certificate-id,omitempty"`
 }
 
-func (s CreateDomainCreateDomainRequestSsl) String() string {
+func (s CreateDomainRequestSsl) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateDomainCreateDomainRequestSsl) GoString() string {
+func (s CreateDomainRequestSsl) GoString() string {
   return s.String()
 }
 
-func (s *CreateDomainCreateDomainRequestSsl) SetUseSsl(v string) *CreateDomainCreateDomainRequestSsl {
+func (s *CreateDomainRequestSsl) SetUseSsl(v string) *CreateDomainRequestSsl {
   s.UseSsl = &v
   return s
 }
 
-func (s *CreateDomainCreateDomainRequestSsl) SetUseForSni(v string) *CreateDomainCreateDomainRequestSsl {
+func (s *CreateDomainRequestSsl) SetUseForSni(v string) *CreateDomainRequestSsl {
   s.UseForSni = &v
   return s
 }
 
-func (s *CreateDomainCreateDomainRequestSsl) SetSslCertificateId(v int) *CreateDomainCreateDomainRequestSsl {
+func (s *CreateDomainRequestSsl) SetSslCertificateId(v int) *CreateDomainRequestSsl {
   s.SslCertificateId = &v
   return s
 }
@@ -4348,7 +4348,7 @@ type GetPagingDomainListResponse struct {
   // {"en":"Number of data page", "zh_CN":"每个页面的数据条数"}
   PageSize *int `json:"pageSize,omitempty" xml:"pageSize,omitempty" require:"true"`
   // {"en":"Domain list.", "zh_CN":"域名列表"}
-  ResultList []*GetPagingDomainListGetPagingDomainListResponseResultList `json:"resultList,omitempty" xml:"resultList,omitempty" require:"true" type:"Repeated"`
+  ResultList []*GetPagingDomainListResponseResultList `json:"resultList,omitempty" xml:"resultList,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetPagingDomainListResponse) String() string {
@@ -4379,12 +4379,12 @@ func (s *GetPagingDomainListResponse) SetPageSize(v int) *GetPagingDomainListRes
   return s
 }
 
-func (s *GetPagingDomainListResponse) SetResultList(v []*GetPagingDomainListGetPagingDomainListResponseResultList) *GetPagingDomainListResponse {
+func (s *GetPagingDomainListResponse) SetResultList(v []*GetPagingDomainListResponseResultList) *GetPagingDomainListResponse {
   s.ResultList = v
   return s
 }
 
-type GetPagingDomainListGetPagingDomainListResponseResultList struct     {
+type GetPagingDomainListResponseResultList struct     {
   // {"en":"Cname of the accelerated domain", "zh_CN":"加速域名cname，如：a1.example.com.wscdns.com"}
   Cname *string `json:"cname,omitempty" xml:"cname,omitempty" require:"true"`
   // {"en":"Create time of the accelerated domain. Example: 2024-01-01T22:30:00+08:00", "zh_CN":"	域名创建时间，时间格式如：2024-01-01T22:30:00+08:00"}
@@ -4401,45 +4401,45 @@ type GetPagingDomainListGetPagingDomainListResponseResultList struct     {
   Enabled *string `json:"enabled,omitempty" xml:"enabled,omitempty" require:"true"`
 }
 
-func (s GetPagingDomainListGetPagingDomainListResponseResultList) String() string {
+func (s GetPagingDomainListResponseResultList) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetPagingDomainListGetPagingDomainListResponseResultList) GoString() string {
+func (s GetPagingDomainListResponseResultList) GoString() string {
   return s.String()
 }
 
-func (s *GetPagingDomainListGetPagingDomainListResponseResultList) SetCname(v string) *GetPagingDomainListGetPagingDomainListResponseResultList {
+func (s *GetPagingDomainListResponseResultList) SetCname(v string) *GetPagingDomainListResponseResultList {
   s.Cname = &v
   return s
 }
 
-func (s *GetPagingDomainListGetPagingDomainListResponseResultList) SetCreateTime(v string) *GetPagingDomainListGetPagingDomainListResponseResultList {
+func (s *GetPagingDomainListResponseResultList) SetCreateTime(v string) *GetPagingDomainListResponseResultList {
   s.CreateTime = &v
   return s
 }
 
-func (s *GetPagingDomainListGetPagingDomainListResponseResultList) SetDomainId(v string) *GetPagingDomainListGetPagingDomainListResponseResultList {
+func (s *GetPagingDomainListResponseResultList) SetDomainId(v string) *GetPagingDomainListResponseResultList {
   s.DomainId = &v
   return s
 }
 
-func (s *GetPagingDomainListGetPagingDomainListResponseResultList) SetDomainName(v string) *GetPagingDomainListGetPagingDomainListResponseResultList {
+func (s *GetPagingDomainListResponseResultList) SetDomainName(v string) *GetPagingDomainListResponseResultList {
   s.DomainName = &v
   return s
 }
 
-func (s *GetPagingDomainListGetPagingDomainListResponseResultList) SetServiceTypes(v []*string) *GetPagingDomainListGetPagingDomainListResponseResultList {
+func (s *GetPagingDomainListResponseResultList) SetServiceTypes(v []*string) *GetPagingDomainListResponseResultList {
   s.ServiceTypes = v
   return s
 }
 
-func (s *GetPagingDomainListGetPagingDomainListResponseResultList) SetStatus(v string) *GetPagingDomainListGetPagingDomainListResponseResultList {
+func (s *GetPagingDomainListResponseResultList) SetStatus(v string) *GetPagingDomainListResponseResultList {
   s.Status = &v
   return s
 }
 
-func (s *GetPagingDomainListGetPagingDomainListResponseResultList) SetEnabled(v string) *GetPagingDomainListGetPagingDomainListResponseResultList {
+func (s *GetPagingDomainListResponseResultList) SetEnabled(v string) *GetPagingDomainListResponseResultList {
   s.Enabled = &v
   return s
 }
@@ -4552,7 +4552,7 @@ type QueryDispatchDomainsResponse struct {
   // {"en":"Detailed description of the status code.", "zh_CN":"状态码的详细说明。"}
   Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
   // {"en":"Detailed description of the domain. count The total number of user's domains rows The queried results of domains", "zh_CN":"域名的详细说明。count 用户域名总数量"}
-  Content *QueryDispatchDomainsQueryDispatchDomainsResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
+  Content *QueryDispatchDomainsResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryDispatchDomainsResponse) String() string {
@@ -4573,29 +4573,29 @@ func (s *QueryDispatchDomainsResponse) SetMsg(v string) *QueryDispatchDomainsRes
   return s
 }
 
-func (s *QueryDispatchDomainsResponse) SetContent(v *QueryDispatchDomainsQueryDispatchDomainsResponseContent) *QueryDispatchDomainsResponse {
+func (s *QueryDispatchDomainsResponse) SetContent(v *QueryDispatchDomainsResponseContent) *QueryDispatchDomainsResponse {
   s.Content = v
   return s
 }
 
-type QueryDispatchDomainsQueryDispatchDomainsResponseContent struct {
-  Rows []*QueryDispatchDomainsQueryDispatchDomainsResponseContentRows `json:"rows,omitempty" xml:"rows,omitempty" require:"true" type:"Repeated"`
+type QueryDispatchDomainsResponseContent struct {
+  Rows []*QueryDispatchDomainsResponseContentRows `json:"rows,omitempty" xml:"rows,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryDispatchDomainsQueryDispatchDomainsResponseContent) String() string {
+func (s QueryDispatchDomainsResponseContent) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDispatchDomainsQueryDispatchDomainsResponseContent) GoString() string {
+func (s QueryDispatchDomainsResponseContent) GoString() string {
   return s.String()
 }
 
-func (s *QueryDispatchDomainsQueryDispatchDomainsResponseContent) SetRows(v []*QueryDispatchDomainsQueryDispatchDomainsResponseContentRows) *QueryDispatchDomainsQueryDispatchDomainsResponseContent {
+func (s *QueryDispatchDomainsResponseContent) SetRows(v []*QueryDispatchDomainsResponseContentRows) *QueryDispatchDomainsResponseContent {
   s.Rows = v
   return s
 }
 
-type QueryDispatchDomainsQueryDispatchDomainsResponseContentRows struct     {
+type QueryDispatchDomainsResponseContentRows struct     {
   // {"en":"domainId", "zh_CN":"域名ID标识"}
   DomainId *int `json:"domainId,omitempty" xml:"domainId,omitempty" require:"true"`
   // {"en":"domainName", "zh_CN":"域名"}
@@ -4606,30 +4606,30 @@ type QueryDispatchDomainsQueryDispatchDomainsResponseContentRows struct     {
   PolicyCount *string `json:"policyCount,omitempty" xml:"policyCount,omitempty" require:"true"`
 }
 
-func (s QueryDispatchDomainsQueryDispatchDomainsResponseContentRows) String() string {
+func (s QueryDispatchDomainsResponseContentRows) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDispatchDomainsQueryDispatchDomainsResponseContentRows) GoString() string {
+func (s QueryDispatchDomainsResponseContentRows) GoString() string {
   return s.String()
 }
 
-func (s *QueryDispatchDomainsQueryDispatchDomainsResponseContentRows) SetDomainId(v int) *QueryDispatchDomainsQueryDispatchDomainsResponseContentRows {
+func (s *QueryDispatchDomainsResponseContentRows) SetDomainId(v int) *QueryDispatchDomainsResponseContentRows {
   s.DomainId = &v
   return s
 }
 
-func (s *QueryDispatchDomainsQueryDispatchDomainsResponseContentRows) SetDomainName(v string) *QueryDispatchDomainsQueryDispatchDomainsResponseContentRows {
+func (s *QueryDispatchDomainsResponseContentRows) SetDomainName(v string) *QueryDispatchDomainsResponseContentRows {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryDispatchDomainsQueryDispatchDomainsResponseContentRows) SetDispatchCname(v string) *QueryDispatchDomainsQueryDispatchDomainsResponseContentRows {
+func (s *QueryDispatchDomainsResponseContentRows) SetDispatchCname(v string) *QueryDispatchDomainsResponseContentRows {
   s.DispatchCname = &v
   return s
 }
 
-func (s *QueryDispatchDomainsQueryDispatchDomainsResponseContentRows) SetPolicyCount(v string) *QueryDispatchDomainsQueryDispatchDomainsResponseContentRows {
+func (s *QueryDispatchDomainsResponseContentRows) SetPolicyCount(v string) *QueryDispatchDomainsResponseContentRows {
   s.PolicyCount = &v
   return s
 }
@@ -4818,7 +4818,7 @@ type QueryApiDomainListResponse struct {
   Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"", "zh_CN":"唯一标示的id，用于查询每次请求的任务 （适用全部接口）"}
   XCncRequestId *string `json:"x-cnc-request-id,omitempty" xml:"x-cnc-request-id,omitempty" require:"true"`
-  DomainSummary []*QueryApiDomainListQueryApiDomainListResponseDomainSummary `json:"domain-summary,omitempty" xml:"domain-summary,omitempty" require:"true" type:"Repeated"`
+  DomainSummary []*QueryApiDomainListResponseDomainSummary `json:"domain-summary,omitempty" xml:"domain-summary,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryApiDomainListResponse) String() string {
@@ -4839,12 +4839,12 @@ func (s *QueryApiDomainListResponse) SetXCncRequestId(v string) *QueryApiDomainL
   return s
 }
 
-func (s *QueryApiDomainListResponse) SetDomainSummary(v []*QueryApiDomainListQueryApiDomainListResponseDomainSummary) *QueryApiDomainListResponse {
+func (s *QueryApiDomainListResponse) SetDomainSummary(v []*QueryApiDomainListResponseDomainSummary) *QueryApiDomainListResponse {
   s.DomainSummary = v
   return s
 }
 
-type QueryApiDomainListQueryApiDomainListResponseDomainSummary struct     {
+type QueryApiDomainListResponseDomainSummary struct     {
   // {"en":"", "zh_CN":"加速域名对应的CNAME域名，例如：7nt6mrh7sdkslj.cdn30.com"}
   Cname *string `json:"cname,omitempty" xml:"cname,omitempty" require:"true"`
   // {"en":"", "zh_CN":"对应的域名ID"}
@@ -4861,45 +4861,45 @@ type QueryApiDomainListQueryApiDomainListResponseDomainSummary struct     {
   Enabled *string `json:"enabled,omitempty" xml:"enabled,omitempty" require:"true"`
 }
 
-func (s QueryApiDomainListQueryApiDomainListResponseDomainSummary) String() string {
+func (s QueryApiDomainListResponseDomainSummary) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryApiDomainListQueryApiDomainListResponseDomainSummary) GoString() string {
+func (s QueryApiDomainListResponseDomainSummary) GoString() string {
   return s.String()
 }
 
-func (s *QueryApiDomainListQueryApiDomainListResponseDomainSummary) SetCname(v string) *QueryApiDomainListQueryApiDomainListResponseDomainSummary {
+func (s *QueryApiDomainListResponseDomainSummary) SetCname(v string) *QueryApiDomainListResponseDomainSummary {
   s.Cname = &v
   return s
 }
 
-func (s *QueryApiDomainListQueryApiDomainListResponseDomainSummary) SetDomainId(v int) *QueryApiDomainListQueryApiDomainListResponseDomainSummary {
+func (s *QueryApiDomainListResponseDomainSummary) SetDomainId(v int) *QueryApiDomainListResponseDomainSummary {
   s.DomainId = &v
   return s
 }
 
-func (s *QueryApiDomainListQueryApiDomainListResponseDomainSummary) SetDomainName(v string) *QueryApiDomainListQueryApiDomainListResponseDomainSummary {
+func (s *QueryApiDomainListResponseDomainSummary) SetDomainName(v string) *QueryApiDomainListResponseDomainSummary {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryApiDomainListQueryApiDomainListResponseDomainSummary) SetOriginIps(v string) *QueryApiDomainListQueryApiDomainListResponseDomainSummary {
+func (s *QueryApiDomainListResponseDomainSummary) SetOriginIps(v string) *QueryApiDomainListResponseDomainSummary {
   s.OriginIps = &v
   return s
 }
 
-func (s *QueryApiDomainListQueryApiDomainListResponseDomainSummary) SetServiceType(v string) *QueryApiDomainListQueryApiDomainListResponseDomainSummary {
+func (s *QueryApiDomainListResponseDomainSummary) SetServiceType(v string) *QueryApiDomainListResponseDomainSummary {
   s.ServiceType = &v
   return s
 }
 
-func (s *QueryApiDomainListQueryApiDomainListResponseDomainSummary) SetStatus(v string) *QueryApiDomainListQueryApiDomainListResponseDomainSummary {
+func (s *QueryApiDomainListResponseDomainSummary) SetStatus(v string) *QueryApiDomainListResponseDomainSummary {
   s.Status = &v
   return s
 }
 
-func (s *QueryApiDomainListQueryApiDomainListResponseDomainSummary) SetEnabled(v string) *QueryApiDomainListQueryApiDomainListResponseDomainSummary {
+func (s *QueryApiDomainListResponseDomainSummary) SetEnabled(v string) *QueryApiDomainListResponseDomainSummary {
   s.Enabled = &v
   return s
 }
@@ -4968,7 +4968,7 @@ type QueryChangeServerResponse struct {
   // {"en":"Response information, when success is successful", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"The response data", "zh_CN":"响应数据"}
-  Data *QueryChangeServerQueryChangeServerResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryChangeServerResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
   // {"en":"Uniquely labeled id for querying each requested task (for all interfaces)", "zh_CN":"唯一标示的id，用于查询每次请求的任务 （适用全部接口）"}
   XCncRequestId *string `json:"x-cnc-request-id,omitempty" xml:"x-cnc-request-id,omitempty" require:"true"`
 }
@@ -4991,7 +4991,7 @@ func (s *QueryChangeServerResponse) SetMessage(v string) *QueryChangeServerRespo
   return s
 }
 
-func (s *QueryChangeServerResponse) SetData(v *QueryChangeServerQueryChangeServerResponseData) *QueryChangeServerResponse {
+func (s *QueryChangeServerResponse) SetData(v *QueryChangeServerResponseData) *QueryChangeServerResponse {
   s.Data = v
   return s
 }
@@ -5001,7 +5001,7 @@ func (s *QueryChangeServerResponse) SetXCncRequestId(v string) *QueryChangeServe
   return s
 }
 
-type QueryChangeServerQueryChangeServerResponseData struct {
+type QueryChangeServerResponseData struct {
   // {"en":"domain id.", "zh_CN":"域名id"}
   DomainId *string `json:"domainId,omitempty" xml:"domainId,omitempty" require:"true"`
   // {"en":"domain name.", "zh_CN":"域名名称"}
@@ -5012,53 +5012,53 @@ type QueryChangeServerQueryChangeServerResponseData struct {
   // 注意：
   // 1、需要取消【接入域名跳转】时，可以传入空节点<change-servers></change-servers>。
   // 2、表示需要设置【接入域名跳转】，此项必填"}
-  ChangeServers []*QueryChangeServerQueryChangeServerResponseDataChangeServers `json:"change-servers,omitempty" xml:"change-servers,omitempty" require:"true" type:"Repeated"`
+  ChangeServers []*QueryChangeServerResponseDataChangeServers `json:"change-servers,omitempty" xml:"change-servers,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryChangeServerQueryChangeServerResponseData) String() string {
+func (s QueryChangeServerResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryChangeServerQueryChangeServerResponseData) GoString() string {
+func (s QueryChangeServerResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryChangeServerQueryChangeServerResponseData) SetDomainId(v string) *QueryChangeServerQueryChangeServerResponseData {
+func (s *QueryChangeServerResponseData) SetDomainId(v string) *QueryChangeServerResponseData {
   s.DomainId = &v
   return s
 }
 
-func (s *QueryChangeServerQueryChangeServerResponseData) SetDomainName(v string) *QueryChangeServerQueryChangeServerResponseData {
+func (s *QueryChangeServerResponseData) SetDomainName(v string) *QueryChangeServerResponseData {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryChangeServerQueryChangeServerResponseData) SetChangeServers(v []*QueryChangeServerQueryChangeServerResponseDataChangeServers) *QueryChangeServerQueryChangeServerResponseData {
+func (s *QueryChangeServerResponseData) SetChangeServers(v []*QueryChangeServerResponseDataChangeServers) *QueryChangeServerResponseData {
   s.ChangeServers = v
   return s
 }
 
-type QueryChangeServerQueryChangeServerResponseDataChangeServers struct     {
+type QueryChangeServerResponseDataChangeServers struct     {
   // {"en":"If it is a universal domain name, set it to a universal domain name, for example, *.56.com.", "zh_CN":"如果是泛域名，需要填写为泛域名，例如：*.56.com"}
   TargetServer *string `json:"change-server,omitempty" xml:"change-server,omitempty" require:"true"`
   // {"en":"Data-id is to indicate a specific group configuration when the client has multiple groups of configurations. Data-id can be retrieved through a query interface. Note: A. If data-id is passed, it means that one group of configuration items is specified to be modified, and no other group configuration items need to be modified. B. If multiple groups of configurations are included, some of them are configured with data-id and others are not, then the expression of data-id is used to modify a specific group of configurations, and a new group of configurations is added on the original basis without the expression of data-id. C. If the data-id is not transmitted, it means that the original configuration will be fully covered by this configuration. D. If no configuration parameter is passed, only domain name and secondary label are passed, which means that all configuration of domain name secondary service corresponding to this interface is cleared. E. If there is no specific configuration item in a set of configurations, the data-id must be filled in, and the value is the actual data-id, which means clearing the value of the corresponding data-id configuration item; it is not allowed that there is no specific configuration item or data-id in a set of configurations.", "zh_CN":"配置多组配置时，具体某组配置的id。dataId可以通过查询接口获取。 注意： a、如果有传dataId，说明指定修改其中一组配置项内容，不需求修改其他组配置内容不需要入参； b、如果入参多组配置，其中有些组配置有传dataId，有些没有传，则有传dataId的表示修改具体某组配置，没有传dataId的表示在原来基础上新增一组配置； c、如果入参都没有传dataId,表示用本次的配置全量覆盖原先配置； d、如果入参没有传任何配置项参数，只传了域名和二级标签，表示清空这个接口对应域名二级服务所有配置； e、如果一组配置没有具体的配置项，则dataId必填，且值为实际存在的dataId，表示清空这个dataId对应配置项的值；不允许一组配置没有具体的配置项也没有dataId。"}
   DataId *int `json:"dataId,omitempty" xml:"dataId,omitempty" require:"true"`
 }
 
-func (s QueryChangeServerQueryChangeServerResponseDataChangeServers) String() string {
+func (s QueryChangeServerResponseDataChangeServers) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryChangeServerQueryChangeServerResponseDataChangeServers) GoString() string {
+func (s QueryChangeServerResponseDataChangeServers) GoString() string {
   return s.String()
 }
 
-func (s *QueryChangeServerQueryChangeServerResponseDataChangeServers) SetTargetServer(v string) *QueryChangeServerQueryChangeServerResponseDataChangeServers {
+func (s *QueryChangeServerResponseDataChangeServers) SetTargetServer(v string) *QueryChangeServerResponseDataChangeServers {
   s.TargetServer = &v
   return s
 }
 
-func (s *QueryChangeServerQueryChangeServerResponseDataChangeServers) SetDataId(v int) *QueryChangeServerQueryChangeServerResponseDataChangeServers {
+func (s *QueryChangeServerResponseDataChangeServers) SetDataId(v int) *QueryChangeServerResponseDataChangeServers {
   s.DataId = &v
   return s
 }

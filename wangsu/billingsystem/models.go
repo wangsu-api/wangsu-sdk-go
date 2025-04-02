@@ -460,7 +460,7 @@ type VmNodeInfoForMaxOutAndInResponse struct {
   // {'en':'message', 'zh_CN':'消息'}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'统计数据'}
-  Data []*VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*VmNodeInfoForMaxOutAndInResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s VmNodeInfoForMaxOutAndInResponse) String() string {
@@ -481,12 +481,12 @@ func (s *VmNodeInfoForMaxOutAndInResponse) SetMessage(v string) *VmNodeInfoForMa
   return s
 }
 
-func (s *VmNodeInfoForMaxOutAndInResponse) SetData(v []*VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData) *VmNodeInfoForMaxOutAndInResponse {
+func (s *VmNodeInfoForMaxOutAndInResponse) SetData(v []*VmNodeInfoForMaxOutAndInResponseData) *VmNodeInfoForMaxOutAndInResponse {
   s.Data = v
   return s
 }
 
-type VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData struct     {
+type VmNodeInfoForMaxOutAndInResponseData struct     {
   // {"en":"node", "zh_CN":"节点"}
   Node *string `json:"node,omitempty" xml:"node,omitempty" require:"true"`
   // {"en":"95th billing value, unit: Mbps", "zh_CN":"95计费值, 单位Mbps"}
@@ -507,55 +507,55 @@ type VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData struct     {
   TotalFlow *string `json:"totalFlow,omitempty" xml:"totalFlow,omitempty" require:"true"`
 }
 
-func (s VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData) String() string {
+func (s VmNodeInfoForMaxOutAndInResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData) GoString() string {
+func (s VmNodeInfoForMaxOutAndInResponseData) GoString() string {
   return s.String()
 }
 
-func (s *VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData) SetNode(v string) *VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData {
+func (s *VmNodeInfoForMaxOutAndInResponseData) SetNode(v string) *VmNodeInfoForMaxOutAndInResponseData {
   s.Node = &v
   return s
 }
 
-func (s *VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData) SetCharge95Value(v string) *VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData {
+func (s *VmNodeInfoForMaxOutAndInResponseData) SetCharge95Value(v string) *VmNodeInfoForMaxOutAndInResponseData {
   s.Charge95Value = &v
   return s
 }
 
-func (s *VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData) SetCharge95Time(v string) *VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData {
+func (s *VmNodeInfoForMaxOutAndInResponseData) SetCharge95Time(v string) *VmNodeInfoForMaxOutAndInResponseData {
   s.Charge95Time = &v
   return s
 }
 
-func (s *VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData) SetDataTypeFor95(v string) *VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData {
+func (s *VmNodeInfoForMaxOutAndInResponseData) SetDataTypeFor95(v string) *VmNodeInfoForMaxOutAndInResponseData {
   s.DataTypeFor95 = &v
   return s
 }
 
-func (s *VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData) SetPeakAvgValue(v string) *VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData {
+func (s *VmNodeInfoForMaxOutAndInResponseData) SetPeakAvgValue(v string) *VmNodeInfoForMaxOutAndInResponseData {
   s.PeakAvgValue = &v
   return s
 }
 
-func (s *VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData) SetPeak1stValue(v string) *VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData {
+func (s *VmNodeInfoForMaxOutAndInResponseData) SetPeak1stValue(v string) *VmNodeInfoForMaxOutAndInResponseData {
   s.Peak1stValue = &v
   return s
 }
 
-func (s *VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData) SetPeak1stTime(v string) *VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData {
+func (s *VmNodeInfoForMaxOutAndInResponseData) SetPeak1stTime(v string) *VmNodeInfoForMaxOutAndInResponseData {
   s.Peak1stTime = &v
   return s
 }
 
-func (s *VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData) SetDataTypeForPeak(v string) *VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData {
+func (s *VmNodeInfoForMaxOutAndInResponseData) SetDataTypeForPeak(v string) *VmNodeInfoForMaxOutAndInResponseData {
   s.DataTypeForPeak = &v
   return s
 }
 
-func (s *VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData) SetTotalFlow(v string) *VmNodeInfoForMaxOutAndInVmNodeInfoForMaxOutAndInResponseData {
+func (s *VmNodeInfoForMaxOutAndInResponseData) SetTotalFlow(v string) *VmNodeInfoForMaxOutAndInResponseData {
   s.TotalFlow = &v
   return s
 }

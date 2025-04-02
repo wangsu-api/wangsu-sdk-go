@@ -6,7 +6,7 @@ import (
 )
 
 type ControlResourceClusterRequest struct {
-  Param []*ControlResourceClusterControlResourceClusterRequestParam `json:"param,omitempty" xml:"param,omitempty" require:"true" type:"Repeated"`
+  Param []*ControlResourceClusterRequestParam `json:"param,omitempty" xml:"param,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ControlResourceClusterRequest) String() string {
@@ -17,32 +17,32 @@ func (s ControlResourceClusterRequest) GoString() string {
   return s.String()
 }
 
-func (s *ControlResourceClusterRequest) SetParam(v []*ControlResourceClusterControlResourceClusterRequestParam) *ControlResourceClusterRequest {
+func (s *ControlResourceClusterRequest) SetParam(v []*ControlResourceClusterRequestParam) *ControlResourceClusterRequest {
   s.Param = v
   return s
 }
 
-type ControlResourceClusterControlResourceClusterRequestParam struct     {
+type ControlResourceClusterRequestParam struct     {
   // {"en":"The policy id", "zh_CN":"策略id"}
   PolicyId *int `json:"policyId,omitempty" xml:"policyId,omitempty" require:"true"`
   // {"en":"The start stop code 1111 consists of four digits of 0 or 1, representing the primary source, primary backup source, secondary backup source, and tertiary backup source. 0 is disabled and 1 is enabled. For example, if only the primary backup source needs to be disabled, code=1011, both the primary source and the tertiary backup source need to be disabled. code=0110. If the backup source does not exist, it is defaulted to 1", "zh_CN":"启停代码 1111 四位0或1的数字代表主源 一级备源 二级备源 三级备源  0 停用 1 启用  例如 需要只停用一级备 code=1011  需要同时停用主源和三级备 code=0110  如果备源不存在则默认补1"}
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
 }
 
-func (s ControlResourceClusterControlResourceClusterRequestParam) String() string {
+func (s ControlResourceClusterRequestParam) String() string {
   return tea.Prettify(s)
 }
 
-func (s ControlResourceClusterControlResourceClusterRequestParam) GoString() string {
+func (s ControlResourceClusterRequestParam) GoString() string {
   return s.String()
 }
 
-func (s *ControlResourceClusterControlResourceClusterRequestParam) SetPolicyId(v int) *ControlResourceClusterControlResourceClusterRequestParam {
+func (s *ControlResourceClusterRequestParam) SetPolicyId(v int) *ControlResourceClusterRequestParam {
   s.PolicyId = &v
   return s
 }
 
-func (s *ControlResourceClusterControlResourceClusterRequestParam) SetCode(v string) *ControlResourceClusterControlResourceClusterRequestParam {
+func (s *ControlResourceClusterRequestParam) SetCode(v string) *ControlResourceClusterRequestParam {
   s.Code = &v
   return s
 }
@@ -53,7 +53,7 @@ type ControlResourceClusterResponse struct {
   // {"en":"Response message", "zh_CN":"返回说明"}
   Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
   // {"en":"return data", "zh_CN":"返回值"}
-  Content []*ControlResourceClusterControlResourceClusterResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Repeated"`
+  Content []*ControlResourceClusterResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ControlResourceClusterResponse) String() string {
@@ -74,19 +74,19 @@ func (s *ControlResourceClusterResponse) SetMsg(v string) *ControlResourceCluste
   return s
 }
 
-func (s *ControlResourceClusterResponse) SetContent(v []*ControlResourceClusterControlResourceClusterResponseContent) *ControlResourceClusterResponse {
+func (s *ControlResourceClusterResponse) SetContent(v []*ControlResourceClusterResponseContent) *ControlResourceClusterResponse {
   s.Content = v
   return s
 }
 
-type ControlResourceClusterControlResourceClusterResponseContent struct     {
+type ControlResourceClusterResponseContent struct     {
 }
 
-func (s ControlResourceClusterControlResourceClusterResponseContent) String() string {
+func (s ControlResourceClusterResponseContent) String() string {
   return tea.Prettify(s)
 }
 
-func (s ControlResourceClusterControlResourceClusterResponseContent) GoString() string {
+func (s ControlResourceClusterResponseContent) GoString() string {
   return s.String()
 }
 
@@ -322,7 +322,7 @@ type QueryDispatchPoliciesResponse struct {
   // viewId线路ID
   // 
   // viewCn 线路中文"}
-  View *QueryDispatchPoliciesQueryDispatchPoliciesResponseView `json:"view,omitempty" xml:"view,omitempty" require:"true" type:"Struct"`
+  View *QueryDispatchPoliciesResponseView `json:"view,omitempty" xml:"view,omitempty" require:"true" type:"Struct"`
   // {"en":"Call frequency Unit is minute(1,2,5,10,30,60)", "zh_CN":"调度频率
   // 以分钟为单位， 可选值1、2、5、10、30、60"}
   Rate *int `json:"rate,omitempty" xml:"rate,omitempty" require:"true"`
@@ -350,14 +350,14 @@ type QueryDispatchPoliciesResponse struct {
   // packetLossLimit 丢包率，当监控方式为ping时选项
   // 
   // delayLimit时延，单位：毫秒，当监控方式为ping时选项"}
-  Monitor *QueryDispatchPoliciesQueryDispatchPoliciesResponseMonitor `json:"monitor,omitempty" xml:"monitor,omitempty" require:"true" type:"Struct"`
+  Monitor *QueryDispatchPoliciesResponseMonitor `json:"monitor,omitempty" xml:"monitor,omitempty" require:"true" type:"Struct"`
   // {"en":"Warning configurations warnMethod Warning type,1 Warn with email warnInterval How long will the warning last, unit: minute warnEmail The Email box to receive warning messages. Use English semicolon to separate two if there are multiple email boxes exist", "zh_CN":"告警配置：
   // warnMethod告警方式， 1 邮件告警
   // 
   // warnInterval连续告警提醒周期，单位：分钟
   // 
   // warnEmail 告警邮箱，多个邮箱以英文分号分隔"}
-  Warning *QueryDispatchPoliciesQueryDispatchPoliciesResponseWarning `json:"warning,omitempty" xml:"warning,omitempty" require:"true" type:"Struct"`
+  Warning *QueryDispatchPoliciesResponseWarning `json:"warning,omitempty" xml:"warning,omitempty" require:"true" type:"Struct"`
   // {"en":"Policy resources partType Resource type, 0 Primary DNS 1 Level-one redundancy 2 Level-two redundancy 3 Level-three redundancy type Resource record type, 0 A record 1 CNAME value Resource record value loadRatio Ratio", "zh_CN":"策略资源：
   // partType资源类型， 0 主解析资源 1 一级备 2 二级备 3 三级备
   // 
@@ -401,7 +401,7 @@ func (s *QueryDispatchPoliciesResponse) SetDomainId(v int) *QueryDispatchPolicie
   return s
 }
 
-func (s *QueryDispatchPoliciesResponse) SetView(v *QueryDispatchPoliciesQueryDispatchPoliciesResponseView) *QueryDispatchPoliciesResponse {
+func (s *QueryDispatchPoliciesResponse) SetView(v *QueryDispatchPoliciesResponseView) *QueryDispatchPoliciesResponse {
   s.View = v
   return s
 }
@@ -411,12 +411,12 @@ func (s *QueryDispatchPoliciesResponse) SetRate(v int) *QueryDispatchPoliciesRes
   return s
 }
 
-func (s *QueryDispatchPoliciesResponse) SetMonitor(v *QueryDispatchPoliciesQueryDispatchPoliciesResponseMonitor) *QueryDispatchPoliciesResponse {
+func (s *QueryDispatchPoliciesResponse) SetMonitor(v *QueryDispatchPoliciesResponseMonitor) *QueryDispatchPoliciesResponse {
   s.Monitor = v
   return s
 }
 
-func (s *QueryDispatchPoliciesResponse) SetWarning(v *QueryDispatchPoliciesQueryDispatchPoliciesResponseWarning) *QueryDispatchPoliciesResponse {
+func (s *QueryDispatchPoliciesResponse) SetWarning(v *QueryDispatchPoliciesResponseWarning) *QueryDispatchPoliciesResponse {
   s.Warning = v
   return s
 }
@@ -431,36 +431,36 @@ func (s *QueryDispatchPoliciesResponse) SetRelease(v []*string) *QueryDispatchPo
   return s
 }
 
-type QueryDispatchPoliciesQueryDispatchPoliciesResponseView struct {
+type QueryDispatchPoliciesResponseView struct {
 }
 
-func (s QueryDispatchPoliciesQueryDispatchPoliciesResponseView) String() string {
+func (s QueryDispatchPoliciesResponseView) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDispatchPoliciesQueryDispatchPoliciesResponseView) GoString() string {
+func (s QueryDispatchPoliciesResponseView) GoString() string {
   return s.String()
 }
 
-type QueryDispatchPoliciesQueryDispatchPoliciesResponseMonitor struct {
+type QueryDispatchPoliciesResponseMonitor struct {
 }
 
-func (s QueryDispatchPoliciesQueryDispatchPoliciesResponseMonitor) String() string {
+func (s QueryDispatchPoliciesResponseMonitor) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDispatchPoliciesQueryDispatchPoliciesResponseMonitor) GoString() string {
+func (s QueryDispatchPoliciesResponseMonitor) GoString() string {
   return s.String()
 }
 
-type QueryDispatchPoliciesQueryDispatchPoliciesResponseWarning struct {
+type QueryDispatchPoliciesResponseWarning struct {
 }
 
-func (s QueryDispatchPoliciesQueryDispatchPoliciesResponseWarning) String() string {
+func (s QueryDispatchPoliciesResponseWarning) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDispatchPoliciesQueryDispatchPoliciesResponseWarning) GoString() string {
+func (s QueryDispatchPoliciesResponseWarning) GoString() string {
   return s.String()
 }
 

@@ -431,7 +431,7 @@ type AgencyCreateResourceResponse struct {
   // {"en":"Response error message if failed.", "zh_CN":"接口响应信息，success代表成功，失败则提供失败信息。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"data", "zh_CN":"数据"}
-  Data *AgencyCreateResourceAgencyCreateResourceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *AgencyCreateResourceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s AgencyCreateResourceResponse) String() string {
@@ -452,12 +452,12 @@ func (s *AgencyCreateResourceResponse) SetMessage(v string) *AgencyCreateResourc
   return s
 }
 
-func (s *AgencyCreateResourceResponse) SetData(v *AgencyCreateResourceAgencyCreateResourceResponseData) *AgencyCreateResourceResponse {
+func (s *AgencyCreateResourceResponse) SetData(v *AgencyCreateResourceResponseData) *AgencyCreateResourceResponse {
   s.Data = v
   return s
 }
 
-type AgencyCreateResourceAgencyCreateResourceResponseData struct {
+type AgencyCreateResourceResponseData struct {
   // {"en":"Effective time (timestamp, milliseconds)", "zh_CN":"生效时间（时间戳，毫秒）"}
   EffDate *string `json:"effDate,omitempty" xml:"effDate,omitempty" require:"true"`
   // {"en":"AgencyCreateResourceOrder List. Usually 1, when the input parameter qunatity>1, each resource returns 1 order", 
@@ -465,20 +465,20 @@ type AgencyCreateResourceAgencyCreateResourceResponseData struct {
   Orders []*AgencyCreateResourceOrder `json:"orders,omitempty" xml:"orders,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s AgencyCreateResourceAgencyCreateResourceResponseData) String() string {
+func (s AgencyCreateResourceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s AgencyCreateResourceAgencyCreateResourceResponseData) GoString() string {
+func (s AgencyCreateResourceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *AgencyCreateResourceAgencyCreateResourceResponseData) SetEffDate(v string) *AgencyCreateResourceAgencyCreateResourceResponseData {
+func (s *AgencyCreateResourceResponseData) SetEffDate(v string) *AgencyCreateResourceResponseData {
   s.EffDate = &v
   return s
 }
 
-func (s *AgencyCreateResourceAgencyCreateResourceResponseData) SetOrders(v []*AgencyCreateResourceOrder) *AgencyCreateResourceAgencyCreateResourceResponseData {
+func (s *AgencyCreateResourceResponseData) SetOrders(v []*AgencyCreateResourceOrder) *AgencyCreateResourceResponseData {
   s.Orders = v
   return s
 }

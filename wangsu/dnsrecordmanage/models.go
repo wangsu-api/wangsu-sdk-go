@@ -261,7 +261,7 @@ type QueryRecordsResponse struct {
   // {"en":"Detailed description of the
   // status code.", "zh_CN":"状态码详细说明"}
   Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
-  Content []*QueryRecordsQueryRecordsResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Repeated"`
+  Content []*QueryRecordsResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryRecordsResponse) String() string {
@@ -282,12 +282,12 @@ func (s *QueryRecordsResponse) SetMsg(v string) *QueryRecordsResponse {
   return s
 }
 
-func (s *QueryRecordsResponse) SetContent(v []*QueryRecordsQueryRecordsResponseContent) *QueryRecordsResponse {
+func (s *QueryRecordsResponse) SetContent(v []*QueryRecordsResponseContent) *QueryRecordsResponse {
   s.Content = v
   return s
 }
 
-type QueryRecordsQueryRecordsResponseContent struct     {
+type QueryRecordsResponseContent struct     {
   // {"en":"ID of host name record", "zh_CN":"主机记录ID"}
   RecordId *int `json:"recordId,omitempty" xml:"recordId,omitempty" require:"true"`
   // {"en":"Host name records", "zh_CN":"主机记录"}
@@ -325,55 +325,55 @@ type QueryRecordsQueryRecordsResponseContent struct     {
   Auth *int `json:"auth,omitempty" xml:"auth,omitempty" require:"true"`
 }
 
-func (s QueryRecordsQueryRecordsResponseContent) String() string {
+func (s QueryRecordsResponseContent) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryRecordsQueryRecordsResponseContent) GoString() string {
+func (s QueryRecordsResponseContent) GoString() string {
   return s.String()
 }
 
-func (s *QueryRecordsQueryRecordsResponseContent) SetRecordId(v int) *QueryRecordsQueryRecordsResponseContent {
+func (s *QueryRecordsResponseContent) SetRecordId(v int) *QueryRecordsResponseContent {
   s.RecordId = &v
   return s
 }
 
-func (s *QueryRecordsQueryRecordsResponseContent) SetDcName(v string) *QueryRecordsQueryRecordsResponseContent {
+func (s *QueryRecordsResponseContent) SetDcName(v string) *QueryRecordsResponseContent {
   s.DcName = &v
   return s
 }
 
-func (s *QueryRecordsQueryRecordsResponseContent) SetDcType(v string) *QueryRecordsQueryRecordsResponseContent {
+func (s *QueryRecordsResponseContent) SetDcType(v string) *QueryRecordsResponseContent {
   s.DcType = &v
   return s
 }
 
-func (s *QueryRecordsQueryRecordsResponseContent) SetDcView(v int) *QueryRecordsQueryRecordsResponseContent {
+func (s *QueryRecordsResponseContent) SetDcView(v int) *QueryRecordsResponseContent {
   s.DcView = &v
   return s
 }
 
-func (s *QueryRecordsQueryRecordsResponseContent) SetDcValue(v string) *QueryRecordsQueryRecordsResponseContent {
+func (s *QueryRecordsResponseContent) SetDcValue(v string) *QueryRecordsResponseContent {
   s.DcValue = &v
   return s
 }
 
-func (s *QueryRecordsQueryRecordsResponseContent) SetState(v int) *QueryRecordsQueryRecordsResponseContent {
+func (s *QueryRecordsResponseContent) SetState(v int) *QueryRecordsResponseContent {
   s.State = &v
   return s
 }
 
-func (s *QueryRecordsQueryRecordsResponseContent) SetMxPri(v int) *QueryRecordsQueryRecordsResponseContent {
+func (s *QueryRecordsResponseContent) SetMxPri(v int) *QueryRecordsResponseContent {
   s.MxPri = &v
   return s
 }
 
-func (s *QueryRecordsQueryRecordsResponseContent) SetTtl(v int) *QueryRecordsQueryRecordsResponseContent {
+func (s *QueryRecordsResponseContent) SetTtl(v int) *QueryRecordsResponseContent {
   s.Ttl = &v
   return s
 }
 
-func (s *QueryRecordsQueryRecordsResponseContent) SetAuth(v int) *QueryRecordsQueryRecordsResponseContent {
+func (s *QueryRecordsResponseContent) SetAuth(v int) *QueryRecordsResponseContent {
   s.Auth = &v
   return s
 }

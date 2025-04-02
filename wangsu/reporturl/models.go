@@ -65,7 +65,7 @@ type ReportUrlOriginServiceResponse struct {
   // {'en':'Request Result Information', 'zh_CN':'请求结果信息'}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {'en':'Detailed data on results of requests', 'zh_CN':'请求结果的详细数据'}
-  Data []*ReportUrlOriginServiceReportUrlOriginServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportUrlOriginServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportUrlOriginServiceResponse) String() string {
@@ -86,56 +86,56 @@ func (s *ReportUrlOriginServiceResponse) SetMessage(v string) *ReportUrlOriginSe
   return s
 }
 
-func (s *ReportUrlOriginServiceResponse) SetData(v []*ReportUrlOriginServiceReportUrlOriginServiceResponseData) *ReportUrlOriginServiceResponse {
+func (s *ReportUrlOriginServiceResponse) SetData(v []*ReportUrlOriginServiceResponseData) *ReportUrlOriginServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportUrlOriginServiceReportUrlOriginServiceResponseData struct     {
+type ReportUrlOriginServiceResponseData struct     {
   // {'en':'Domain name', 'zh_CN':'域名'}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  UrlDatas []*ReportUrlOriginServiceReportUrlOriginServiceResponseDataUrlDatas `json:"urlDatas,omitempty" xml:"urlDatas,omitempty" require:"true" type:"Repeated"`
+  UrlDatas []*ReportUrlOriginServiceResponseDataUrlDatas `json:"urlDatas,omitempty" xml:"urlDatas,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportUrlOriginServiceReportUrlOriginServiceResponseData) String() string {
+func (s ReportUrlOriginServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportUrlOriginServiceReportUrlOriginServiceResponseData) GoString() string {
+func (s ReportUrlOriginServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportUrlOriginServiceReportUrlOriginServiceResponseData) SetDomain(v string) *ReportUrlOriginServiceReportUrlOriginServiceResponseData {
+func (s *ReportUrlOriginServiceResponseData) SetDomain(v string) *ReportUrlOriginServiceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *ReportUrlOriginServiceReportUrlOriginServiceResponseData) SetUrlDatas(v []*ReportUrlOriginServiceReportUrlOriginServiceResponseDataUrlDatas) *ReportUrlOriginServiceReportUrlOriginServiceResponseData {
+func (s *ReportUrlOriginServiceResponseData) SetUrlDatas(v []*ReportUrlOriginServiceResponseDataUrlDatas) *ReportUrlOriginServiceResponseData {
   s.UrlDatas = v
   return s
 }
 
-type ReportUrlOriginServiceReportUrlOriginServiceResponseDataUrlDatas struct     {
+type ReportUrlOriginServiceResponseDataUrlDatas struct     {
   // {'en':'URL', 'zh_CN':'URL'}
   Url *string `json:"url,omitempty" xml:"url,omitempty" require:"true"`
   // {'en':'Number of requests', 'zh_CN':'请求数'}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s ReportUrlOriginServiceReportUrlOriginServiceResponseDataUrlDatas) String() string {
+func (s ReportUrlOriginServiceResponseDataUrlDatas) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportUrlOriginServiceReportUrlOriginServiceResponseDataUrlDatas) GoString() string {
+func (s ReportUrlOriginServiceResponseDataUrlDatas) GoString() string {
   return s.String()
 }
 
-func (s *ReportUrlOriginServiceReportUrlOriginServiceResponseDataUrlDatas) SetUrl(v string) *ReportUrlOriginServiceReportUrlOriginServiceResponseDataUrlDatas {
+func (s *ReportUrlOriginServiceResponseDataUrlDatas) SetUrl(v string) *ReportUrlOriginServiceResponseDataUrlDatas {
   s.Url = &v
   return s
 }
 
-func (s *ReportUrlOriginServiceReportUrlOriginServiceResponseDataUrlDatas) SetValue(v string) *ReportUrlOriginServiceReportUrlOriginServiceResponseDataUrlDatas {
+func (s *ReportUrlOriginServiceResponseDataUrlDatas) SetValue(v string) *ReportUrlOriginServiceResponseDataUrlDatas {
   s.Value = &v
   return s
 }
@@ -282,7 +282,7 @@ type ReportDomainRefererUrlServiceResponse struct {
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Detailed data on the results of the request", "zh_CN":"请求结果的详细数据"}
-  Data []*ReportDomainRefererUrlServiceReportDomainRefererUrlServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportDomainRefererUrlServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportDomainRefererUrlServiceResponse) String() string {
@@ -303,12 +303,12 @@ func (s *ReportDomainRefererUrlServiceResponse) SetMessage(v string) *ReportDoma
   return s
 }
 
-func (s *ReportDomainRefererUrlServiceResponse) SetData(v []*ReportDomainRefererUrlServiceReportDomainRefererUrlServiceResponseData) *ReportDomainRefererUrlServiceResponse {
+func (s *ReportDomainRefererUrlServiceResponse) SetData(v []*ReportDomainRefererUrlServiceResponseData) *ReportDomainRefererUrlServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportDomainRefererUrlServiceReportDomainRefererUrlServiceResponseData struct     {
+type ReportDomainRefererUrlServiceResponseData struct     {
   // {"en":"URL", "zh_CN":"URL"}
   Url *string `json:"url,omitempty" xml:"url,omitempty" require:"true"`
   // {"en":"Request", "zh_CN":"请求数"}
@@ -317,25 +317,25 @@ type ReportDomainRefererUrlServiceReportDomainRefererUrlServiceResponseData stru
   Flow *string `json:"flow,omitempty" xml:"flow,omitempty" require:"true"`
 }
 
-func (s ReportDomainRefererUrlServiceReportDomainRefererUrlServiceResponseData) String() string {
+func (s ReportDomainRefererUrlServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportDomainRefererUrlServiceReportDomainRefererUrlServiceResponseData) GoString() string {
+func (s ReportDomainRefererUrlServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportDomainRefererUrlServiceReportDomainRefererUrlServiceResponseData) SetUrl(v string) *ReportDomainRefererUrlServiceReportDomainRefererUrlServiceResponseData {
+func (s *ReportDomainRefererUrlServiceResponseData) SetUrl(v string) *ReportDomainRefererUrlServiceResponseData {
   s.Url = &v
   return s
 }
 
-func (s *ReportDomainRefererUrlServiceReportDomainRefererUrlServiceResponseData) SetRequest(v string) *ReportDomainRefererUrlServiceReportDomainRefererUrlServiceResponseData {
+func (s *ReportDomainRefererUrlServiceResponseData) SetRequest(v string) *ReportDomainRefererUrlServiceResponseData {
   s.Request = &v
   return s
 }
 
-func (s *ReportDomainRefererUrlServiceReportDomainRefererUrlServiceResponseData) SetFlow(v string) *ReportDomainRefererUrlServiceReportDomainRefererUrlServiceResponseData {
+func (s *ReportDomainRefererUrlServiceResponseData) SetFlow(v string) *ReportDomainRefererUrlServiceResponseData {
   s.Flow = &v
   return s
 }
@@ -671,7 +671,7 @@ type ReportDomainRefererWebsiteServiceResponse struct {
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Detailed data on the results of the request", "zh_CN":"请求结果的详细数据"}
-  Data []*ReportDomainRefererWebsiteServiceReportDomainRefererWebsiteServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportDomainRefererWebsiteServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportDomainRefererWebsiteServiceResponse) String() string {
@@ -692,12 +692,12 @@ func (s *ReportDomainRefererWebsiteServiceResponse) SetMessage(v string) *Report
   return s
 }
 
-func (s *ReportDomainRefererWebsiteServiceResponse) SetData(v []*ReportDomainRefererWebsiteServiceReportDomainRefererWebsiteServiceResponseData) *ReportDomainRefererWebsiteServiceResponse {
+func (s *ReportDomainRefererWebsiteServiceResponse) SetData(v []*ReportDomainRefererWebsiteServiceResponseData) *ReportDomainRefererWebsiteServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportDomainRefererWebsiteServiceReportDomainRefererWebsiteServiceResponseData struct     {
+type ReportDomainRefererWebsiteServiceResponseData struct     {
   // {"en":"Website", "zh_CN":"网站"}
   Website *string `json:"website,omitempty" xml:"website,omitempty" require:"true"`
   // {"en":"Requests", "zh_CN":"对应请求数"}
@@ -706,25 +706,25 @@ type ReportDomainRefererWebsiteServiceReportDomainRefererWebsiteServiceResponseD
   Flow *string `json:"flow,omitempty" xml:"flow,omitempty" require:"true"`
 }
 
-func (s ReportDomainRefererWebsiteServiceReportDomainRefererWebsiteServiceResponseData) String() string {
+func (s ReportDomainRefererWebsiteServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportDomainRefererWebsiteServiceReportDomainRefererWebsiteServiceResponseData) GoString() string {
+func (s ReportDomainRefererWebsiteServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportDomainRefererWebsiteServiceReportDomainRefererWebsiteServiceResponseData) SetWebsite(v string) *ReportDomainRefererWebsiteServiceReportDomainRefererWebsiteServiceResponseData {
+func (s *ReportDomainRefererWebsiteServiceResponseData) SetWebsite(v string) *ReportDomainRefererWebsiteServiceResponseData {
   s.Website = &v
   return s
 }
 
-func (s *ReportDomainRefererWebsiteServiceReportDomainRefererWebsiteServiceResponseData) SetRequest(v string) *ReportDomainRefererWebsiteServiceReportDomainRefererWebsiteServiceResponseData {
+func (s *ReportDomainRefererWebsiteServiceResponseData) SetRequest(v string) *ReportDomainRefererWebsiteServiceResponseData {
   s.Request = &v
   return s
 }
 
-func (s *ReportDomainRefererWebsiteServiceReportDomainRefererWebsiteServiceResponseData) SetFlow(v string) *ReportDomainRefererWebsiteServiceReportDomainRefererWebsiteServiceResponseData {
+func (s *ReportDomainRefererWebsiteServiceResponseData) SetFlow(v string) *ReportDomainRefererWebsiteServiceResponseData {
   s.Flow = &v
   return s
 }
@@ -856,7 +856,7 @@ type ReportUrlCustomTopDailyServiceResponse struct {
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Detailed data on the results of the request", "zh_CN":"请求结果的详细数据"}
-  Data []*ReportUrlCustomTopDailyServiceReportUrlCustomTopDailyServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportUrlCustomTopDailyServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportUrlCustomTopDailyServiceResponse) String() string {
@@ -877,12 +877,12 @@ func (s *ReportUrlCustomTopDailyServiceResponse) SetMessage(v string) *ReportUrl
   return s
 }
 
-func (s *ReportUrlCustomTopDailyServiceResponse) SetData(v []*ReportUrlCustomTopDailyServiceReportUrlCustomTopDailyServiceResponseData) *ReportUrlCustomTopDailyServiceResponse {
+func (s *ReportUrlCustomTopDailyServiceResponse) SetData(v []*ReportUrlCustomTopDailyServiceResponseData) *ReportUrlCustomTopDailyServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportUrlCustomTopDailyServiceReportUrlCustomTopDailyServiceResponseData struct     {
+type ReportUrlCustomTopDailyServiceResponseData struct     {
   // {"en":"top", "zh_CN":"top排名"}
   Top *string `json:"top,omitempty" xml:"top,omitempty" require:"true"`
   // {"en":"url", "zh_CN":"url"}
@@ -893,30 +893,30 @@ type ReportUrlCustomTopDailyServiceReportUrlCustomTopDailyServiceResponseData st
   TotalRequest *string `json:"totalRequest,omitempty" xml:"totalRequest,omitempty" require:"true"`
 }
 
-func (s ReportUrlCustomTopDailyServiceReportUrlCustomTopDailyServiceResponseData) String() string {
+func (s ReportUrlCustomTopDailyServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportUrlCustomTopDailyServiceReportUrlCustomTopDailyServiceResponseData) GoString() string {
+func (s ReportUrlCustomTopDailyServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportUrlCustomTopDailyServiceReportUrlCustomTopDailyServiceResponseData) SetTop(v string) *ReportUrlCustomTopDailyServiceReportUrlCustomTopDailyServiceResponseData {
+func (s *ReportUrlCustomTopDailyServiceResponseData) SetTop(v string) *ReportUrlCustomTopDailyServiceResponseData {
   s.Top = &v
   return s
 }
 
-func (s *ReportUrlCustomTopDailyServiceReportUrlCustomTopDailyServiceResponseData) SetUrl(v string) *ReportUrlCustomTopDailyServiceReportUrlCustomTopDailyServiceResponseData {
+func (s *ReportUrlCustomTopDailyServiceResponseData) SetUrl(v string) *ReportUrlCustomTopDailyServiceResponseData {
   s.Url = &v
   return s
 }
 
-func (s *ReportUrlCustomTopDailyServiceReportUrlCustomTopDailyServiceResponseData) SetTotalFlow(v string) *ReportUrlCustomTopDailyServiceReportUrlCustomTopDailyServiceResponseData {
+func (s *ReportUrlCustomTopDailyServiceResponseData) SetTotalFlow(v string) *ReportUrlCustomTopDailyServiceResponseData {
   s.TotalFlow = &v
   return s
 }
 
-func (s *ReportUrlCustomTopDailyServiceReportUrlCustomTopDailyServiceResponseData) SetTotalRequest(v string) *ReportUrlCustomTopDailyServiceReportUrlCustomTopDailyServiceResponseData {
+func (s *ReportUrlCustomTopDailyServiceResponseData) SetTotalRequest(v string) *ReportUrlCustomTopDailyServiceResponseData {
   s.TotalRequest = &v
   return s
 }

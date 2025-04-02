@@ -120,7 +120,7 @@ func (s *QueryIPV6StatusOfeachISPandProvinceRequest) SetGroupBy(v []*string) *Qu
 }
 
 type QueryIPV6StatusOfeachISPandProvinceResponse struct {
-  Result []*QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryIPV6StatusOfeachISPandProvinceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryIPV6StatusOfeachISPandProvinceResponse) String() string {
@@ -131,128 +131,128 @@ func (s QueryIPV6StatusOfeachISPandProvinceResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryIPV6StatusOfeachISPandProvinceResponse) SetResult(v []*QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResult) *QueryIPV6StatusOfeachISPandProvinceResponse {
+func (s *QueryIPV6StatusOfeachISPandProvinceResponse) SetResult(v []*QueryIPV6StatusOfeachISPandProvinceResponseResult) *QueryIPV6StatusOfeachISPandProvinceResponse {
   s.Result = v
   return s
 }
 
-type QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResult struct     {
+type QueryIPV6StatusOfeachISPandProvinceResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  IspData []*QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*QueryIPV6StatusOfeachISPandProvinceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResult) String() string {
+func (s QueryIPV6StatusOfeachISPandProvinceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResult) GoString() string {
+func (s QueryIPV6StatusOfeachISPandProvinceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResult) SetDomain(v string) *QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResult {
+func (s *QueryIPV6StatusOfeachISPandProvinceResponseResult) SetDomain(v string) *QueryIPV6StatusOfeachISPandProvinceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResult) SetIspData(v []*QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspData) *QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResult {
+func (s *QueryIPV6StatusOfeachISPandProvinceResponseResult) SetIspData(v []*QueryIPV6StatusOfeachISPandProvinceResponseResultIspData) *QueryIPV6StatusOfeachISPandProvinceResponseResult {
   s.IspData = v
   return s
 }
 
-type QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspData struct     {
+type QueryIPV6StatusOfeachISPandProvinceResponseResultIspData struct     {
   // {"en":"ISP", "zh_CN":"运营商"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
-  ProvinceData []*QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspData) String() string {
+func (s QueryIPV6StatusOfeachISPandProvinceResponseResultIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspData) GoString() string {
+func (s QueryIPV6StatusOfeachISPandProvinceResponseResultIspData) GoString() string {
   return s.String()
 }
 
-func (s *QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspData) SetIsp(v string) *QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspData {
+func (s *QueryIPV6StatusOfeachISPandProvinceResponseResultIspData) SetIsp(v string) *QueryIPV6StatusOfeachISPandProvinceResponseResultIspData {
   s.Isp = &v
   return s
 }
 
-func (s *QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspData) SetProvinceData(v []*QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceData) *QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspData {
+func (s *QueryIPV6StatusOfeachISPandProvinceResponseResultIspData) SetProvinceData(v []*QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceData) *QueryIPV6StatusOfeachISPandProvinceResponseResultIspData {
   s.ProvinceData = v
   return s
 }
 
-type QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceData struct     {
+type QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceData struct     {
   // {"en":"Province", "zh_CN":"省份"}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
-  StatusCodeData []*QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData `json:"statusCodeData,omitempty" xml:"statusCodeData,omitempty" require:"true" type:"Repeated"`
+  StatusCodeData []*QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData `json:"statusCodeData,omitempty" xml:"statusCodeData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceData) String() string {
+func (s QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceData) GoString() string {
+func (s QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceData) SetProvince(v string) *QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceData {
+func (s *QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceData) SetProvince(v string) *QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceData {
   s.Province = &v
   return s
 }
 
-func (s *QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceData) SetStatusCodeData(v []*QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData) *QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceData {
+func (s *QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceData) SetStatusCodeData(v []*QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData) *QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceData {
   s.StatusCodeData = v
   return s
 }
 
-type QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData struct     {
+type QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData struct     {
   // {"en":"Status Code", "zh_CN":"状态码类型"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
-  RequestData []*QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
+  RequestData []*QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData) String() string {
+func (s QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData) GoString() string {
+func (s QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData) GoString() string {
   return s.String()
 }
 
-func (s *QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData) SetStatusCode(v string) *QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData {
+func (s *QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData) SetStatusCode(v string) *QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData {
   s.StatusCode = &v
   return s
 }
 
-func (s *QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData) SetRequestData(v []*QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData) *QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData {
+func (s *QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData) SetRequestData(v []*QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData) *QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData {
   s.RequestData = v
   return s
 }
 
-type QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData struct     {
+type QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData struct     {
   // {"en":"Time granularity is 5m, the format is yyyy-MM-dd HH:mm", "zh_CN":"数据粒度为5分钟，格式为yyyy-MM-dd HH:mm"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Requests of status code", "zh_CN":"状态码请求数"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData) String() string {
+func (s QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData) GoString() string {
+func (s QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData) GoString() string {
   return s.String()
 }
 
-func (s *QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData) SetTimestamp(v string) *QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData {
+func (s *QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData) SetTimestamp(v string) *QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData) SetValue(v string) *QueryIPV6StatusOfeachISPandProvinceQueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData {
+func (s *QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData) SetValue(v string) *QueryIPV6StatusOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData {
   s.Value = &v
   return s
 }
@@ -367,7 +367,7 @@ type ReportFlowIpVersionStatusCodeServiceResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportFlowIpVersionStatusCodeServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportFlowIpVersionStatusCodeServiceResponse) String() string {
@@ -388,60 +388,60 @@ func (s *ReportFlowIpVersionStatusCodeServiceResponse) SetMessage(v string) *Rep
   return s
 }
 
-func (s *ReportFlowIpVersionStatusCodeServiceResponse) SetData(v []*ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseData) *ReportFlowIpVersionStatusCodeServiceResponse {
+func (s *ReportFlowIpVersionStatusCodeServiceResponse) SetData(v []*ReportFlowIpVersionStatusCodeServiceResponseData) *ReportFlowIpVersionStatusCodeServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseData struct     {
+type ReportFlowIpVersionStatusCodeServiceResponseData struct     {
   // {"en":"Domain. If merge date of all domains will not return domain", "zh_CN":"域名,聚合全部域名数据不返回该字段"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  StatusCodeDataList []*ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataList `json:"statusCodeDataList,omitempty" xml:"statusCodeDataList,omitempty" require:"true" type:"Repeated"`
+  StatusCodeDataList []*ReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataList `json:"statusCodeDataList,omitempty" xml:"statusCodeDataList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseData) String() string {
+func (s ReportFlowIpVersionStatusCodeServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseData) GoString() string {
+func (s ReportFlowIpVersionStatusCodeServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseData) SetDomain(v string) *ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseData {
+func (s *ReportFlowIpVersionStatusCodeServiceResponseData) SetDomain(v string) *ReportFlowIpVersionStatusCodeServiceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseData) SetStatusCodeDataList(v []*ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataList) *ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseData {
+func (s *ReportFlowIpVersionStatusCodeServiceResponseData) SetStatusCodeDataList(v []*ReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataList) *ReportFlowIpVersionStatusCodeServiceResponseData {
   s.StatusCodeDataList = v
   return s
 }
 
-type ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataList struct     {
+type ReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataList struct     {
   // {"en":"Status code", "zh_CN":"状态码"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
-  DetailList []*ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+  DetailList []*ReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataList) String() string {
+func (s ReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataList) GoString() string {
+func (s ReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataList) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataList) SetStatusCode(v string) *ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataList {
+func (s *ReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataList) SetStatusCode(v string) *ReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataList {
   s.StatusCode = &v
   return s
 }
 
-func (s *ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataList) SetDetailList(v []*ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList) *ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataList {
+func (s *ReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataList) SetDetailList(v []*ReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList) *ReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataList {
   s.DetailList = v
   return s
 }
 
-type ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList struct     {
+type ReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList struct     {
   // {"en":"timestamp,Returns the timestamp between the start time and end time. Time format: Hours: yyyy MM DD hh:00:00", "zh_CN":"时间片,返回开始时间和结束时间包含的时间片。
   // 时间格式:5分钟:yyyy-MM-dd HH:mm"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
@@ -451,25 +451,25 @@ type ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceRes
   V6Value *string `json:"v6Value,omitempty" xml:"v6Value,omitempty" require:"true"`
 }
 
-func (s ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList) String() string {
+func (s ReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList) GoString() string {
+func (s ReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList) SetTimestamp(v string) *ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList {
+func (s *ReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList) SetTimestamp(v string) *ReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList) SetV4Value(v string) *ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList {
+func (s *ReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList) SetV4Value(v string) *ReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList {
   s.V4Value = &v
   return s
 }
 
-func (s *ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList) SetV6Value(v string) *ReportFlowIpVersionStatusCodeServiceReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList {
+func (s *ReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList) SetV6Value(v string) *ReportFlowIpVersionStatusCodeServiceResponseDataStatusCodeDataListDetailList {
   s.V6Value = &v
   return s
 }
@@ -589,7 +589,7 @@ func (s *ReportStatusCodeNodeOriginServiceRequest) SetGroupBy(v []*string) *Repo
 
 type ReportStatusCodeNodeOriginServiceResponse struct {
   // {"en":"Result", "zh_CN":"结果"}
-  Result []*ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportStatusCodeNodeOriginServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportStatusCodeNodeOriginServiceResponse) String() string {
@@ -600,82 +600,82 @@ func (s ReportStatusCodeNodeOriginServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportStatusCodeNodeOriginServiceResponse) SetResult(v []*ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResult) *ReportStatusCodeNodeOriginServiceResponse {
+func (s *ReportStatusCodeNodeOriginServiceResponse) SetResult(v []*ReportStatusCodeNodeOriginServiceResponseResult) *ReportStatusCodeNodeOriginServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResult struct     {
+type ReportStatusCodeNodeOriginServiceResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"Status code data", "zh_CN":"状态码数据"}
-  StatusCodeOriginData []*ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginData `json:"statusCodeOriginData,omitempty" xml:"statusCodeOriginData,omitempty" require:"true" type:"Repeated"`
+  StatusCodeOriginData []*ReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginData `json:"statusCodeOriginData,omitempty" xml:"statusCodeOriginData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResult) String() string {
+func (s ReportStatusCodeNodeOriginServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResult) GoString() string {
+func (s ReportStatusCodeNodeOriginServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResult) SetDomain(v string) *ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResult {
+func (s *ReportStatusCodeNodeOriginServiceResponseResult) SetDomain(v string) *ReportStatusCodeNodeOriginServiceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResult) SetStatusCodeOriginData(v []*ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginData) *ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResult {
+func (s *ReportStatusCodeNodeOriginServiceResponseResult) SetStatusCodeOriginData(v []*ReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginData) *ReportStatusCodeNodeOriginServiceResponseResult {
   s.StatusCodeOriginData = v
   return s
 }
 
-type ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginData struct     {
+type ReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginData struct     {
   // {"en":"Status code", "zh_CN":"状态码"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
   // {"en":"Request data", "zh_CN":"请求数据"}
-  RequestData []*ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
+  RequestData []*ReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginData) String() string {
+func (s ReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginData) GoString() string {
+func (s ReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginData) GoString() string {
   return s.String()
 }
 
-func (s *ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginData) SetStatusCode(v string) *ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginData {
+func (s *ReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginData) SetStatusCode(v string) *ReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginData {
   s.StatusCode = &v
   return s
 }
 
-func (s *ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginData) SetRequestData(v []*ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginDataRequestData) *ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginData {
+func (s *ReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginData) SetRequestData(v []*ReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginDataRequestData) *ReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginData {
   s.RequestData = v
   return s
 }
 
-type ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginDataRequestData struct     {
+type ReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginDataRequestData struct     {
   // {"en":"The format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range.The first time of the day was yyyy-MM-dd 00:05, and the last time was yyyy-MM-dd 24:00", "zh_CN":"时间，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05，最后一个时间片是yyyy-MM-dd 24:00。"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Requests of status code", "zh_CN":"状态码对应的请求数"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginDataRequestData) String() string {
+func (s ReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginDataRequestData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginDataRequestData) GoString() string {
+func (s ReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginDataRequestData) GoString() string {
   return s.String()
 }
 
-func (s *ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginDataRequestData) SetTimestamp(v string) *ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginDataRequestData {
+func (s *ReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginDataRequestData) SetTimestamp(v string) *ReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginDataRequestData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginDataRequestData) SetValue(v string) *ReportStatusCodeNodeOriginServiceReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginDataRequestData {
+func (s *ReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginDataRequestData) SetValue(v string) *ReportStatusCodeNodeOriginServiceResponseResultStatusCodeOriginDataRequestData {
   s.Value = &v
   return s
 }
@@ -796,7 +796,7 @@ type ReportStatusCodeOriginFailRateServiceResponse struct {
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Detailed data on the results of the request", "zh_CN":"请求结果的详细数据"}
-  Data []*ReportStatusCodeOriginFailRateServiceReportStatusCodeOriginFailRateServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportStatusCodeOriginFailRateServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportStatusCodeOriginFailRateServiceResponse) String() string {
@@ -817,12 +817,12 @@ func (s *ReportStatusCodeOriginFailRateServiceResponse) SetMessage(v string) *Re
   return s
 }
 
-func (s *ReportStatusCodeOriginFailRateServiceResponse) SetData(v []*ReportStatusCodeOriginFailRateServiceReportStatusCodeOriginFailRateServiceResponseData) *ReportStatusCodeOriginFailRateServiceResponse {
+func (s *ReportStatusCodeOriginFailRateServiceResponse) SetData(v []*ReportStatusCodeOriginFailRateServiceResponseData) *ReportStatusCodeOriginFailRateServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportStatusCodeOriginFailRateServiceReportStatusCodeOriginFailRateServiceResponseData struct     {
+type ReportStatusCodeOriginFailRateServiceResponseData struct     {
   // {"en":"Time, in yyyy-MM-dd HH:MM", "zh_CN":"时间，格式为yyyy-MM-dd HH:mm"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Total number of return requests", "zh_CN":"回源总请求数"}
@@ -833,30 +833,30 @@ type ReportStatusCodeOriginFailRateServiceReportStatusCodeOriginFailRateServiceR
   FailRate *string `json:"failRate,omitempty" xml:"failRate,omitempty" require:"true"`
 }
 
-func (s ReportStatusCodeOriginFailRateServiceReportStatusCodeOriginFailRateServiceResponseData) String() string {
+func (s ReportStatusCodeOriginFailRateServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportStatusCodeOriginFailRateServiceReportStatusCodeOriginFailRateServiceResponseData) GoString() string {
+func (s ReportStatusCodeOriginFailRateServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportStatusCodeOriginFailRateServiceReportStatusCodeOriginFailRateServiceResponseData) SetTimestamp(v string) *ReportStatusCodeOriginFailRateServiceReportStatusCodeOriginFailRateServiceResponseData {
+func (s *ReportStatusCodeOriginFailRateServiceResponseData) SetTimestamp(v string) *ReportStatusCodeOriginFailRateServiceResponseData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportStatusCodeOriginFailRateServiceReportStatusCodeOriginFailRateServiceResponseData) SetTotalRequest(v string) *ReportStatusCodeOriginFailRateServiceReportStatusCodeOriginFailRateServiceResponseData {
+func (s *ReportStatusCodeOriginFailRateServiceResponseData) SetTotalRequest(v string) *ReportStatusCodeOriginFailRateServiceResponseData {
   s.TotalRequest = &v
   return s
 }
 
-func (s *ReportStatusCodeOriginFailRateServiceReportStatusCodeOriginFailRateServiceResponseData) SetFailRequest(v string) *ReportStatusCodeOriginFailRateServiceReportStatusCodeOriginFailRateServiceResponseData {
+func (s *ReportStatusCodeOriginFailRateServiceResponseData) SetFailRequest(v string) *ReportStatusCodeOriginFailRateServiceResponseData {
   s.FailRequest = &v
   return s
 }
 
-func (s *ReportStatusCodeOriginFailRateServiceReportStatusCodeOriginFailRateServiceResponseData) SetFailRate(v string) *ReportStatusCodeOriginFailRateServiceReportStatusCodeOriginFailRateServiceResponseData {
+func (s *ReportStatusCodeOriginFailRateServiceResponseData) SetFailRate(v string) *ReportStatusCodeOriginFailRateServiceResponseData {
   s.FailRate = &v
   return s
 }
@@ -987,7 +987,7 @@ type QueryStatusCodeDistributioninCountriesResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*QueryStatusCodeDistributioninCountriesResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryStatusCodeDistributioninCountriesResponse) String() string {
@@ -1008,91 +1008,91 @@ func (s *QueryStatusCodeDistributioninCountriesResponse) SetMessage(v string) *Q
   return s
 }
 
-func (s *QueryStatusCodeDistributioninCountriesResponse) SetData(v []*QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseData) *QueryStatusCodeDistributioninCountriesResponse {
+func (s *QueryStatusCodeDistributioninCountriesResponse) SetData(v []*QueryStatusCodeDistributioninCountriesResponseData) *QueryStatusCodeDistributioninCountriesResponse {
   s.Data = v
   return s
 }
 
-type QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseData struct     {
+type QueryStatusCodeDistributioninCountriesResponseData struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  CountryData []*QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryData `json:"countryData,omitempty" xml:"countryData,omitempty" require:"true" type:"Repeated"`
+  CountryData []*QueryStatusCodeDistributioninCountriesResponseDataCountryData `json:"countryData,omitempty" xml:"countryData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseData) String() string {
+func (s QueryStatusCodeDistributioninCountriesResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseData) GoString() string {
+func (s QueryStatusCodeDistributioninCountriesResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseData) SetDomain(v string) *QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseData {
+func (s *QueryStatusCodeDistributioninCountriesResponseData) SetDomain(v string) *QueryStatusCodeDistributioninCountriesResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseData) SetCountryData(v []*QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryData) *QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseData {
+func (s *QueryStatusCodeDistributioninCountriesResponseData) SetCountryData(v []*QueryStatusCodeDistributioninCountriesResponseDataCountryData) *QueryStatusCodeDistributioninCountriesResponseData {
   s.CountryData = v
   return s
 }
 
-type QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryData struct     {
+type QueryStatusCodeDistributioninCountriesResponseDataCountryData struct     {
   // {"en":"country code", "zh_CN":"国家代码"}
   CountryCode *string `json:"countryCode,omitempty" xml:"countryCode,omitempty" require:"true"`
   // {"en":"country name", "zh_CN":"国家名称"}
   CountryName *string `json:"countryName,omitempty" xml:"countryName,omitempty" require:"true"`
-  StatusCodeData []*QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeData `json:"statusCodeData,omitempty" xml:"statusCodeData,omitempty" require:"true" type:"Repeated"`
+  StatusCodeData []*QueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeData `json:"statusCodeData,omitempty" xml:"statusCodeData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryData) String() string {
+func (s QueryStatusCodeDistributioninCountriesResponseDataCountryData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryData) GoString() string {
+func (s QueryStatusCodeDistributioninCountriesResponseDataCountryData) GoString() string {
   return s.String()
 }
 
-func (s *QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryData) SetCountryCode(v string) *QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryData {
+func (s *QueryStatusCodeDistributioninCountriesResponseDataCountryData) SetCountryCode(v string) *QueryStatusCodeDistributioninCountriesResponseDataCountryData {
   s.CountryCode = &v
   return s
 }
 
-func (s *QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryData) SetCountryName(v string) *QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryData {
+func (s *QueryStatusCodeDistributioninCountriesResponseDataCountryData) SetCountryName(v string) *QueryStatusCodeDistributioninCountriesResponseDataCountryData {
   s.CountryName = &v
   return s
 }
 
-func (s *QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryData) SetStatusCodeData(v []*QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeData) *QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryData {
+func (s *QueryStatusCodeDistributioninCountriesResponseDataCountryData) SetStatusCodeData(v []*QueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeData) *QueryStatusCodeDistributioninCountriesResponseDataCountryData {
   s.StatusCodeData = v
   return s
 }
 
-type QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeData struct     {
+type QueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeData struct     {
   // {"en":"status code", "zh_CN":"状态码"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
-  RequestData []*QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
+  RequestData []*QueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeData) String() string {
+func (s QueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeData) GoString() string {
+func (s QueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeData) GoString() string {
   return s.String()
 }
 
-func (s *QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeData) SetStatusCode(v string) *QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeData {
+func (s *QueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeData) SetStatusCode(v string) *QueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeData {
   s.StatusCode = &v
   return s
 }
 
-func (s *QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeData) SetRequestData(v []*QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeDataRequestData) *QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeData {
+func (s *QueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeData) SetRequestData(v []*QueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeDataRequestData) *QueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeData {
   s.RequestData = v
   return s
 }
 
-type QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeDataRequestData struct     {
+type QueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeDataRequestData struct     {
   // {"en":"Time,
   // 1.        When   the data query granularity is 5m, the format is yyyy-MM-dd HH:mm; the data   value of every time slice represents the data value within the previous time   granularity range. The first time slice of the day is yyyy-MM-dd 12:05 AM,   and the last one is (yyyy-MM-dd+1) 00:00;
   // 2.        When   the data query granularity is 1h, the format is yyyy-MM-dd HH; the data value   of every time slice represents the data value within the previous time   granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and   the last one is (yyyy-MM-dd+1) 00;
@@ -1105,20 +1105,20 @@ type QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountrie
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeDataRequestData) String() string {
+func (s QueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeDataRequestData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeDataRequestData) GoString() string {
+func (s QueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeDataRequestData) GoString() string {
   return s.String()
 }
 
-func (s *QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeDataRequestData) SetTimestamp(v string) *QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeDataRequestData {
+func (s *QueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeDataRequestData) SetTimestamp(v string) *QueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeDataRequestData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeDataRequestData) SetValue(v string) *QueryStatusCodeDistributioninCountriesQueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeDataRequestData {
+func (s *QueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeDataRequestData) SetValue(v string) *QueryStatusCodeDistributioninCountriesResponseDataCountryDataStatusCodeDataRequestData {
   s.Value = &v
   return s
 }
@@ -1259,7 +1259,7 @@ func (s *QueryOriginStatusCodeDistributionRequest) SetQueryBy(v string) *QueryOr
 
 type QueryOriginStatusCodeDistributionResponse struct {
   // {"en":"result", "zh_CN":"结果"}
-  Result []*QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryOriginStatusCodeDistributionResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryOriginStatusCodeDistributionResponse) String() string {
@@ -1270,89 +1270,89 @@ func (s QueryOriginStatusCodeDistributionResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryOriginStatusCodeDistributionResponse) SetResult(v []*QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResult) *QueryOriginStatusCodeDistributionResponse {
+func (s *QueryOriginStatusCodeDistributionResponse) SetResult(v []*QueryOriginStatusCodeDistributionResponseResult) *QueryOriginStatusCodeDistributionResponse {
   s.Result = v
   return s
 }
 
-type QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResult struct     {
+type QueryOriginStatusCodeDistributionResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"Success, Redirect, Not-Modified, Permission, Not-Found, Server Error, Other", "zh_CN":"Success, Redirect, Not-Modified, Permission, Not-Found, Server Error, Other"}
   StatusCodeType *string `json:"statusCodeType,omitempty" xml:"statusCodeType,omitempty" require:"true"`
   // {"en":"statusCodeOriginData", "zh_CN":"回源状态码数据"}
-  StatusCodeOriginData []*QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResultStatusCodeOriginData `json:"statusCodeOriginData,omitempty" xml:"statusCodeOriginData,omitempty" require:"true" type:"Repeated"`
+  StatusCodeOriginData []*QueryOriginStatusCodeDistributionResponseResultStatusCodeOriginData `json:"statusCodeOriginData,omitempty" xml:"statusCodeOriginData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResult) String() string {
+func (s QueryOriginStatusCodeDistributionResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResult) GoString() string {
+func (s QueryOriginStatusCodeDistributionResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResult) SetDomain(v string) *QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResult {
+func (s *QueryOriginStatusCodeDistributionResponseResult) SetDomain(v string) *QueryOriginStatusCodeDistributionResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResult) SetStatusCodeType(v string) *QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResult {
+func (s *QueryOriginStatusCodeDistributionResponseResult) SetStatusCodeType(v string) *QueryOriginStatusCodeDistributionResponseResult {
   s.StatusCodeType = &v
   return s
 }
 
-func (s *QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResult) SetStatusCodeOriginData(v []*QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResultStatusCodeOriginData) *QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResult {
+func (s *QueryOriginStatusCodeDistributionResponseResult) SetStatusCodeOriginData(v []*QueryOriginStatusCodeDistributionResponseResultStatusCodeOriginData) *QueryOriginStatusCodeDistributionResponseResult {
   s.StatusCodeOriginData = v
   return s
 }
 
-type QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResultStatusCodeOriginData struct     {
+type QueryOriginStatusCodeDistributionResponseResultStatusCodeOriginData struct     {
   // {"en":"Status code", "zh_CN":"状态码"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
   // {"en":"requestData", "zh_CN":"数据"}
-  RequestData []*QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResultStatusCodeOriginDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
+  RequestData []*QueryOriginStatusCodeDistributionResponseResultStatusCodeOriginDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResultStatusCodeOriginData) String() string {
+func (s QueryOriginStatusCodeDistributionResponseResultStatusCodeOriginData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResultStatusCodeOriginData) GoString() string {
+func (s QueryOriginStatusCodeDistributionResponseResultStatusCodeOriginData) GoString() string {
   return s.String()
 }
 
-func (s *QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResultStatusCodeOriginData) SetStatusCode(v string) *QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResultStatusCodeOriginData {
+func (s *QueryOriginStatusCodeDistributionResponseResultStatusCodeOriginData) SetStatusCode(v string) *QueryOriginStatusCodeDistributionResponseResultStatusCodeOriginData {
   s.StatusCode = &v
   return s
 }
 
-func (s *QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResultStatusCodeOriginData) SetRequestData(v []*QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResultStatusCodeOriginDataRequestData) *QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResultStatusCodeOriginData {
+func (s *QueryOriginStatusCodeDistributionResponseResultStatusCodeOriginData) SetRequestData(v []*QueryOriginStatusCodeDistributionResponseResultStatusCodeOriginDataRequestData) *QueryOriginStatusCodeDistributionResponseResultStatusCodeOriginData {
   s.RequestData = v
   return s
 }
 
-type QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResultStatusCodeOriginDataRequestData struct     {
+type QueryOriginStatusCodeDistributionResponseResultStatusCodeOriginDataRequestData struct     {
   // {"en":"DateTime, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range.", "zh_CN":"时间,格式为yyyy-MM-dd HH:mm;每一个时间片数据值代表的是前一个时间粒度范围内的数据值。每一个时间片数据值代表的是前一个时间粒度范围内的数据值,比如yyyy-MM-dd 00:05,代表00:00到00:05范围内的数据。"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Number of requests of the status  code", "zh_CN":"状态码对应的请求数"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResultStatusCodeOriginDataRequestData) String() string {
+func (s QueryOriginStatusCodeDistributionResponseResultStatusCodeOriginDataRequestData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResultStatusCodeOriginDataRequestData) GoString() string {
+func (s QueryOriginStatusCodeDistributionResponseResultStatusCodeOriginDataRequestData) GoString() string {
   return s.String()
 }
 
-func (s *QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResultStatusCodeOriginDataRequestData) SetTimestamp(v string) *QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResultStatusCodeOriginDataRequestData {
+func (s *QueryOriginStatusCodeDistributionResponseResultStatusCodeOriginDataRequestData) SetTimestamp(v string) *QueryOriginStatusCodeDistributionResponseResultStatusCodeOriginDataRequestData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResultStatusCodeOriginDataRequestData) SetValue(v string) *QueryOriginStatusCodeDistributionQueryOriginStatusCodeDistributionResponseResultStatusCodeOriginDataRequestData {
+func (s *QueryOriginStatusCodeDistributionResponseResultStatusCodeOriginDataRequestData) SetValue(v string) *QueryOriginStatusCodeDistributionResponseResultStatusCodeOriginDataRequestData {
   s.Value = &v
   return s
 }
@@ -1490,7 +1490,7 @@ type ReportFlvStatusCodeRealTimeOriginTotalServiceResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*ReportFlvStatusCodeRealTimeOriginTotalServiceReportFlvStatusCodeRealTimeOriginTotalServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportFlvStatusCodeRealTimeOriginTotalServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportFlvStatusCodeRealTimeOriginTotalServiceResponse) String() string {
@@ -1511,56 +1511,56 @@ func (s *ReportFlvStatusCodeRealTimeOriginTotalServiceResponse) SetMessage(v str
   return s
 }
 
-func (s *ReportFlvStatusCodeRealTimeOriginTotalServiceResponse) SetData(v []*ReportFlvStatusCodeRealTimeOriginTotalServiceReportFlvStatusCodeRealTimeOriginTotalServiceResponseData) *ReportFlvStatusCodeRealTimeOriginTotalServiceResponse {
+func (s *ReportFlvStatusCodeRealTimeOriginTotalServiceResponse) SetData(v []*ReportFlvStatusCodeRealTimeOriginTotalServiceResponseData) *ReportFlvStatusCodeRealTimeOriginTotalServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportFlvStatusCodeRealTimeOriginTotalServiceReportFlvStatusCodeRealTimeOriginTotalServiceResponseData struct     {
+type ReportFlvStatusCodeRealTimeOriginTotalServiceResponseData struct     {
   // {"en":"Status code", "zh_CN":"状态码"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
-  DetailList []*ReportFlvStatusCodeRealTimeOriginTotalServiceReportFlvStatusCodeRealTimeOriginTotalServiceResponseDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+  DetailList []*ReportFlvStatusCodeRealTimeOriginTotalServiceResponseDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlvStatusCodeRealTimeOriginTotalServiceReportFlvStatusCodeRealTimeOriginTotalServiceResponseData) String() string {
+func (s ReportFlvStatusCodeRealTimeOriginTotalServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlvStatusCodeRealTimeOriginTotalServiceReportFlvStatusCodeRealTimeOriginTotalServiceResponseData) GoString() string {
+func (s ReportFlvStatusCodeRealTimeOriginTotalServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlvStatusCodeRealTimeOriginTotalServiceReportFlvStatusCodeRealTimeOriginTotalServiceResponseData) SetStatusCode(v string) *ReportFlvStatusCodeRealTimeOriginTotalServiceReportFlvStatusCodeRealTimeOriginTotalServiceResponseData {
+func (s *ReportFlvStatusCodeRealTimeOriginTotalServiceResponseData) SetStatusCode(v string) *ReportFlvStatusCodeRealTimeOriginTotalServiceResponseData {
   s.StatusCode = &v
   return s
 }
 
-func (s *ReportFlvStatusCodeRealTimeOriginTotalServiceReportFlvStatusCodeRealTimeOriginTotalServiceResponseData) SetDetailList(v []*ReportFlvStatusCodeRealTimeOriginTotalServiceReportFlvStatusCodeRealTimeOriginTotalServiceResponseDataDetailList) *ReportFlvStatusCodeRealTimeOriginTotalServiceReportFlvStatusCodeRealTimeOriginTotalServiceResponseData {
+func (s *ReportFlvStatusCodeRealTimeOriginTotalServiceResponseData) SetDetailList(v []*ReportFlvStatusCodeRealTimeOriginTotalServiceResponseDataDetailList) *ReportFlvStatusCodeRealTimeOriginTotalServiceResponseData {
   s.DetailList = v
   return s
 }
 
-type ReportFlvStatusCodeRealTimeOriginTotalServiceReportFlvStatusCodeRealTimeOriginTotalServiceResponseDataDetailList struct     {
+type ReportFlvStatusCodeRealTimeOriginTotalServiceResponseDataDetailList struct     {
   // {"en":" Time format: yyyy-MM-dd HH:mm", "zh_CN":"时间,格式为yyyy-MM-dd HH:mm"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"The total number of back-to-source requests", "zh_CN":"回源总请求数"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s ReportFlvStatusCodeRealTimeOriginTotalServiceReportFlvStatusCodeRealTimeOriginTotalServiceResponseDataDetailList) String() string {
+func (s ReportFlvStatusCodeRealTimeOriginTotalServiceResponseDataDetailList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlvStatusCodeRealTimeOriginTotalServiceReportFlvStatusCodeRealTimeOriginTotalServiceResponseDataDetailList) GoString() string {
+func (s ReportFlvStatusCodeRealTimeOriginTotalServiceResponseDataDetailList) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlvStatusCodeRealTimeOriginTotalServiceReportFlvStatusCodeRealTimeOriginTotalServiceResponseDataDetailList) SetTimestamp(v string) *ReportFlvStatusCodeRealTimeOriginTotalServiceReportFlvStatusCodeRealTimeOriginTotalServiceResponseDataDetailList {
+func (s *ReportFlvStatusCodeRealTimeOriginTotalServiceResponseDataDetailList) SetTimestamp(v string) *ReportFlvStatusCodeRealTimeOriginTotalServiceResponseDataDetailList {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportFlvStatusCodeRealTimeOriginTotalServiceReportFlvStatusCodeRealTimeOriginTotalServiceResponseDataDetailList) SetValue(v string) *ReportFlvStatusCodeRealTimeOriginTotalServiceReportFlvStatusCodeRealTimeOriginTotalServiceResponseDataDetailList {
+func (s *ReportFlvStatusCodeRealTimeOriginTotalServiceResponseDataDetailList) SetValue(v string) *ReportFlvStatusCodeRealTimeOriginTotalServiceResponseDataDetailList {
   s.Value = &v
   return s
 }
@@ -1738,7 +1738,7 @@ type QueryISPProvinceStatusCodeResponse struct {
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Detailed data on the results of the request", "zh_CN":"请求结果的详细数据"}
-  Data []*QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*QueryISPProvinceStatusCodeResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryISPProvinceStatusCodeResponse) String() string {
@@ -1759,80 +1759,80 @@ func (s *QueryISPProvinceStatusCodeResponse) SetMessage(v string) *QueryISPProvi
   return s
 }
 
-func (s *QueryISPProvinceStatusCodeResponse) SetData(v []*QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseData) *QueryISPProvinceStatusCodeResponse {
+func (s *QueryISPProvinceStatusCodeResponse) SetData(v []*QueryISPProvinceStatusCodeResponseData) *QueryISPProvinceStatusCodeResponse {
   s.Data = v
   return s
 }
 
-type QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseData struct     {
+type QueryISPProvinceStatusCodeResponseData struct     {
   // {"en":"domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  StatusCodeDataList []*QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseDataStatusCodeDataList `json:"statusCodeDataList,omitempty" xml:"statusCodeDataList,omitempty" require:"true" type:"Repeated"`
+  StatusCodeDataList []*QueryISPProvinceStatusCodeResponseDataStatusCodeDataList `json:"statusCodeDataList,omitempty" xml:"statusCodeDataList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseData) String() string {
+func (s QueryISPProvinceStatusCodeResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseData) GoString() string {
+func (s QueryISPProvinceStatusCodeResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseData) SetDomain(v string) *QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseData {
+func (s *QueryISPProvinceStatusCodeResponseData) SetDomain(v string) *QueryISPProvinceStatusCodeResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseData) SetStatusCodeDataList(v []*QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseDataStatusCodeDataList) *QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseData {
+func (s *QueryISPProvinceStatusCodeResponseData) SetStatusCodeDataList(v []*QueryISPProvinceStatusCodeResponseDataStatusCodeDataList) *QueryISPProvinceStatusCodeResponseData {
   s.StatusCodeDataList = v
   return s
 }
 
-type QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseDataStatusCodeDataList struct     {
+type QueryISPProvinceStatusCodeResponseDataStatusCodeDataList struct     {
   // {"en":"StatusCode", "zh_CN":"状态码"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
-  DetailList []*QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseDataStatusCodeDataListDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+  DetailList []*QueryISPProvinceStatusCodeResponseDataStatusCodeDataListDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseDataStatusCodeDataList) String() string {
+func (s QueryISPProvinceStatusCodeResponseDataStatusCodeDataList) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseDataStatusCodeDataList) GoString() string {
+func (s QueryISPProvinceStatusCodeResponseDataStatusCodeDataList) GoString() string {
   return s.String()
 }
 
-func (s *QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseDataStatusCodeDataList) SetStatusCode(v string) *QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseDataStatusCodeDataList {
+func (s *QueryISPProvinceStatusCodeResponseDataStatusCodeDataList) SetStatusCode(v string) *QueryISPProvinceStatusCodeResponseDataStatusCodeDataList {
   s.StatusCode = &v
   return s
 }
 
-func (s *QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseDataStatusCodeDataList) SetDetailList(v []*QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseDataStatusCodeDataListDetailList) *QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseDataStatusCodeDataList {
+func (s *QueryISPProvinceStatusCodeResponseDataStatusCodeDataList) SetDetailList(v []*QueryISPProvinceStatusCodeResponseDataStatusCodeDataListDetailList) *QueryISPProvinceStatusCodeResponseDataStatusCodeDataList {
   s.DetailList = v
   return s
 }
 
-type QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseDataStatusCodeDataListDetailList struct     {
+type QueryISPProvinceStatusCodeResponseDataStatusCodeDataListDetailList struct     {
   // {"en":"time, in yyyy-MM-dd HH:MM", "zh_CN":"时间，格式为yyyy-MM-dd HH:mm"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Total number of  requests", "zh_CN":"总请求数"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseDataStatusCodeDataListDetailList) String() string {
+func (s QueryISPProvinceStatusCodeResponseDataStatusCodeDataListDetailList) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseDataStatusCodeDataListDetailList) GoString() string {
+func (s QueryISPProvinceStatusCodeResponseDataStatusCodeDataListDetailList) GoString() string {
   return s.String()
 }
 
-func (s *QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseDataStatusCodeDataListDetailList) SetTimestamp(v string) *QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseDataStatusCodeDataListDetailList {
+func (s *QueryISPProvinceStatusCodeResponseDataStatusCodeDataListDetailList) SetTimestamp(v string) *QueryISPProvinceStatusCodeResponseDataStatusCodeDataListDetailList {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseDataStatusCodeDataListDetailList) SetValue(v string) *QueryISPProvinceStatusCodeQueryISPProvinceStatusCodeResponseDataStatusCodeDataListDetailList {
+func (s *QueryISPProvinceStatusCodeResponseDataStatusCodeDataListDetailList) SetValue(v string) *QueryISPProvinceStatusCodeResponseDataStatusCodeDataListDetailList {
   s.Value = &v
   return s
 }
@@ -1948,7 +1948,7 @@ func (s *ReportStatusCodeRealTimeEdgeServiceRequest) SetDataInterval(v string) *
 
 type ReportStatusCodeRealTimeEdgeServiceResponse struct {
   // {'en':'result', 'zh_CN':'结果'}
-  Result []*ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportStatusCodeRealTimeEdgeServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportStatusCodeRealTimeEdgeServiceResponse) String() string {
@@ -1959,75 +1959,75 @@ func (s ReportStatusCodeRealTimeEdgeServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportStatusCodeRealTimeEdgeServiceResponse) SetResult(v []*ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResult) *ReportStatusCodeRealTimeEdgeServiceResponse {
+func (s *ReportStatusCodeRealTimeEdgeServiceResponse) SetResult(v []*ReportStatusCodeRealTimeEdgeServiceResponseResult) *ReportStatusCodeRealTimeEdgeServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResult struct     {
+type ReportStatusCodeRealTimeEdgeServiceResponseResult struct     {
   // {'en':'statusCodeData', 'zh_CN':'状态码数据'}
-  StatusCodeData []*ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeData `json:"statusCodeData,omitempty" xml:"statusCodeData,omitempty" require:"true" type:"Repeated"`
+  StatusCodeData []*ReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeData `json:"statusCodeData,omitempty" xml:"statusCodeData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResult) String() string {
+func (s ReportStatusCodeRealTimeEdgeServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResult) GoString() string {
+func (s ReportStatusCodeRealTimeEdgeServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResult) SetStatusCodeData(v []*ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeData) *ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResult {
+func (s *ReportStatusCodeRealTimeEdgeServiceResponseResult) SetStatusCodeData(v []*ReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeData) *ReportStatusCodeRealTimeEdgeServiceResponseResult {
   s.StatusCodeData = v
   return s
 }
 
-type ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeData struct     {
+type ReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeData struct     {
   // {'en':'Status code', 'zh_CN':'状态码'}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
   // {'en':'requestData', 'zh_CN':'请求数数据'}
-  RequestData []*ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
+  RequestData []*ReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeData) String() string {
+func (s ReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeData) GoString() string {
+func (s ReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeData) GoString() string {
   return s.String()
 }
 
-func (s *ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeData) SetStatusCode(v string) *ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeData {
+func (s *ReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeData) SetStatusCode(v string) *ReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeData {
   s.StatusCode = &v
   return s
 }
 
-func (s *ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeData) SetRequestData(v []*ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeDataRequestData) *ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeData {
+func (s *ReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeData) SetRequestData(v []*ReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeDataRequestData) *ReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeData {
   s.RequestData = v
   return s
 }
 
-type ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeDataRequestData struct     {
+type ReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeDataRequestData struct     {
   // {'en':'DateTime, the format is   yyyy-MM-dd HH:mm; the data value of every time slice represents the data   value within the previous time granularity range.', 'zh_CN':'时间，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。比如yyyy-MM-dd 00:05，代表00:00到00:05范围内的数据。'}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {'en':'Number of requests for status codes', 'zh_CN':'状态码对应的请求数'}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeDataRequestData) String() string {
+func (s ReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeDataRequestData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeDataRequestData) GoString() string {
+func (s ReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeDataRequestData) GoString() string {
   return s.String()
 }
 
-func (s *ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeDataRequestData) SetTimestamp(v string) *ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeDataRequestData {
+func (s *ReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeDataRequestData) SetTimestamp(v string) *ReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeDataRequestData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeDataRequestData) SetValue(v string) *ReportStatusCodeRealTimeEdgeServiceReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeDataRequestData {
+func (s *ReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeDataRequestData) SetValue(v string) *ReportStatusCodeRealTimeEdgeServiceResponseResultStatusCodeDataRequestData {
   s.Value = &v
   return s
 }
@@ -2142,7 +2142,7 @@ type ReportFlowProtocolStatusCodeServiceResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportFlowProtocolStatusCodeServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportFlowProtocolStatusCodeServiceResponse) String() string {
@@ -2163,60 +2163,60 @@ func (s *ReportFlowProtocolStatusCodeServiceResponse) SetMessage(v string) *Repo
   return s
 }
 
-func (s *ReportFlowProtocolStatusCodeServiceResponse) SetData(v []*ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseData) *ReportFlowProtocolStatusCodeServiceResponse {
+func (s *ReportFlowProtocolStatusCodeServiceResponse) SetData(v []*ReportFlowProtocolStatusCodeServiceResponseData) *ReportFlowProtocolStatusCodeServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseData struct     {
+type ReportFlowProtocolStatusCodeServiceResponseData struct     {
   // {"en":"Domain. If merge date of all domains will not return domain", "zh_CN":"域名,聚合全部域名数据不返回该字段"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  StatusCodeDataList []*ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataList `json:"statusCodeDataList,omitempty" xml:"statusCodeDataList,omitempty" require:"true" type:"Repeated"`
+  StatusCodeDataList []*ReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataList `json:"statusCodeDataList,omitempty" xml:"statusCodeDataList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseData) String() string {
+func (s ReportFlowProtocolStatusCodeServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseData) GoString() string {
+func (s ReportFlowProtocolStatusCodeServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseData) SetDomain(v string) *ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseData {
+func (s *ReportFlowProtocolStatusCodeServiceResponseData) SetDomain(v string) *ReportFlowProtocolStatusCodeServiceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseData) SetStatusCodeDataList(v []*ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataList) *ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseData {
+func (s *ReportFlowProtocolStatusCodeServiceResponseData) SetStatusCodeDataList(v []*ReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataList) *ReportFlowProtocolStatusCodeServiceResponseData {
   s.StatusCodeDataList = v
   return s
 }
 
-type ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataList struct     {
+type ReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataList struct     {
   // {"en":"Status code", "zh_CN":"状态码"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
-  DetailList []*ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+  DetailList []*ReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataList) String() string {
+func (s ReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataList) GoString() string {
+func (s ReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataList) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataList) SetStatusCode(v string) *ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataList {
+func (s *ReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataList) SetStatusCode(v string) *ReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataList {
   s.StatusCode = &v
   return s
 }
 
-func (s *ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataList) SetDetailList(v []*ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList) *ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataList {
+func (s *ReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataList) SetDetailList(v []*ReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList) *ReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataList {
   s.DetailList = v
   return s
 }
 
-type ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList struct     {
+type ReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList struct     {
   // {"en":"timestamp,Returns the timestamp between the start time and end time. Time format: yyyy-MM-dd HH:mm", "zh_CN":"时间片,返回开始时间和结束时间包含的时间片。
   // 时间格式:
   // 5分钟:yyyy-MM-dd HH:mm"}
@@ -2227,25 +2227,25 @@ type ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceRespo
   HttpValue *string `json:"httpValue,omitempty" xml:"httpValue,omitempty" require:"true"`
 }
 
-func (s ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList) String() string {
+func (s ReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList) GoString() string {
+func (s ReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList) SetTimestamp(v string) *ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList {
+func (s *ReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList) SetTimestamp(v string) *ReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList) SetHttpsValue(v string) *ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList {
+func (s *ReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList) SetHttpsValue(v string) *ReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList {
   s.HttpsValue = &v
   return s
 }
 
-func (s *ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList) SetHttpValue(v string) *ReportFlowProtocolStatusCodeServiceReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList {
+func (s *ReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList) SetHttpValue(v string) *ReportFlowProtocolStatusCodeServiceResponseDataStatusCodeDataListDetailList {
   s.HttpValue = &v
   return s
 }
@@ -2394,7 +2394,7 @@ func (s *QueryStatusCodeDistributionOfeachISPandProvinceRequest) SetGroupBy(v []
 }
 
 type QueryStatusCodeDistributionOfeachISPandProvinceResponse struct {
-  Result []*QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryStatusCodeDistributionOfeachISPandProvinceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryStatusCodeDistributionOfeachISPandProvinceResponse) String() string {
@@ -2405,108 +2405,108 @@ func (s QueryStatusCodeDistributionOfeachISPandProvinceResponse) GoString() stri
   return s.String()
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceResponse) SetResult(v []*QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResult) *QueryStatusCodeDistributionOfeachISPandProvinceResponse {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceResponse) SetResult(v []*QueryStatusCodeDistributionOfeachISPandProvinceResponseResult) *QueryStatusCodeDistributionOfeachISPandProvinceResponse {
   s.Result = v
   return s
 }
 
-type QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResult struct     {
+type QueryStatusCodeDistributionOfeachISPandProvinceResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  IspData []*QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResult) String() string {
+func (s QueryStatusCodeDistributionOfeachISPandProvinceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResult) GoString() string {
+func (s QueryStatusCodeDistributionOfeachISPandProvinceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResult) SetDomain(v string) *QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResult {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceResponseResult) SetDomain(v string) *QueryStatusCodeDistributionOfeachISPandProvinceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResult) SetIspData(v []*QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspData) *QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResult {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceResponseResult) SetIspData(v []*QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspData) *QueryStatusCodeDistributionOfeachISPandProvinceResponseResult {
   s.IspData = v
   return s
 }
 
-type QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspData struct     {
+type QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspData struct     {
   // {"en":"ISP", "zh_CN":"运营商"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
-  ProvinceData []*QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspData) String() string {
+func (s QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspData) GoString() string {
+func (s QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspData) GoString() string {
   return s.String()
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspData) SetIsp(v string) *QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspData {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspData) SetIsp(v string) *QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspData {
   s.Isp = &v
   return s
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspData) SetProvinceData(v []*QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceData) *QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspData {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspData) SetProvinceData(v []*QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceData) *QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspData {
   s.ProvinceData = v
   return s
 }
 
-type QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceData struct     {
+type QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceData struct     {
   // {"en":"Province", "zh_CN":"省份"}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
-  StatusCodeData []*QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData `json:"statusCodeData,omitempty" xml:"statusCodeData,omitempty" require:"true" type:"Repeated"`
+  StatusCodeData []*QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData `json:"statusCodeData,omitempty" xml:"statusCodeData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceData) String() string {
+func (s QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceData) GoString() string {
+func (s QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceData) SetProvince(v string) *QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceData {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceData) SetProvince(v string) *QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceData {
   s.Province = &v
   return s
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceData) SetStatusCodeData(v []*QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData) *QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceData {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceData) SetStatusCodeData(v []*QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData) *QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceData {
   s.StatusCodeData = v
   return s
 }
 
-type QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData struct     {
+type QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData struct     {
   // {"en":"Return specific status code details such as 200, 201, 500, as well as aggregated 1XX, 2XX, 3XX, 4XX, 5XX, all, OTHERS. Return when values are available.", "zh_CN":"返回具体状态码明细如200,201,500，及聚合的1XX，2XX，3XX，4XX，5XX，all，OTHERS。有值时返回"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
-  RequestData []*QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
+  RequestData []*QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData) String() string {
+func (s QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData) GoString() string {
+func (s QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData) GoString() string {
   return s.String()
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData) SetStatusCode(v string) *QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData) SetStatusCode(v string) *QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData {
   s.StatusCode = &v
   return s
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData) SetRequestData(v []*QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData) *QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData) SetRequestData(v []*QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData) *QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeData {
   s.RequestData = v
   return s
 }
 
-type QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData struct     {
+type QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData struct     {
   // {"en":"Time,
   //                                                                     1.When the data query granularity is 1m, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01 AM, and the last one is (yyyy-MM-dd+1) 00:00;
   // 																	2.When the data query granularity is 5m, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 12:05 AM, and the last one is (yyyy-MM-dd+1) 00:00;
@@ -2521,20 +2521,20 @@ type QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionO
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData) String() string {
+func (s QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData) GoString() string {
+func (s QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData) GoString() string {
   return s.String()
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData) SetTimestamp(v string) *QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData) SetTimestamp(v string) *QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData) SetValue(v string) *QueryStatusCodeDistributionOfeachISPandProvinceQueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData) SetValue(v string) *QueryStatusCodeDistributionOfeachISPandProvinceResponseResultIspDataProvinceDataStatusCodeDataRequestData {
   s.Value = &v
   return s
 }
@@ -2666,7 +2666,7 @@ func (s *ReportStatusCodeLogServiceRequest) SetGroupBy(v []*string) *ReportStatu
 type ReportStatusCodeLogServiceResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportStatusCodeLogServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportStatusCodeLogServiceResponse) String() string {
@@ -2687,60 +2687,60 @@ func (s *ReportStatusCodeLogServiceResponse) SetMessage(v string) *ReportStatusC
   return s
 }
 
-func (s *ReportStatusCodeLogServiceResponse) SetData(v []*ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseData) *ReportStatusCodeLogServiceResponse {
+func (s *ReportStatusCodeLogServiceResponse) SetData(v []*ReportStatusCodeLogServiceResponseData) *ReportStatusCodeLogServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseData struct     {
+type ReportStatusCodeLogServiceResponseData struct     {
   // {'en':'Domain. If merge date of all domains will not return domain', 'zh_CN':'域名，聚合全部域名数据不返回该字段'}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  StatusCodeDataList []*ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseDataStatusCodeDataList `json:"statusCodeDataList,omitempty" xml:"statusCodeDataList,omitempty" require:"true" type:"Repeated"`
+  StatusCodeDataList []*ReportStatusCodeLogServiceResponseDataStatusCodeDataList `json:"statusCodeDataList,omitempty" xml:"statusCodeDataList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseData) String() string {
+func (s ReportStatusCodeLogServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseData) GoString() string {
+func (s ReportStatusCodeLogServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseData) SetDomain(v string) *ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseData {
+func (s *ReportStatusCodeLogServiceResponseData) SetDomain(v string) *ReportStatusCodeLogServiceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseData) SetStatusCodeDataList(v []*ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseDataStatusCodeDataList) *ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseData {
+func (s *ReportStatusCodeLogServiceResponseData) SetStatusCodeDataList(v []*ReportStatusCodeLogServiceResponseDataStatusCodeDataList) *ReportStatusCodeLogServiceResponseData {
   s.StatusCodeDataList = v
   return s
 }
 
-type ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseDataStatusCodeDataList struct     {
+type ReportStatusCodeLogServiceResponseDataStatusCodeDataList struct     {
   // {'en':'Status code', 'zh_CN':'状态码'}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
-  DetailList []*ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseDataStatusCodeDataListDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+  DetailList []*ReportStatusCodeLogServiceResponseDataStatusCodeDataListDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseDataStatusCodeDataList) String() string {
+func (s ReportStatusCodeLogServiceResponseDataStatusCodeDataList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseDataStatusCodeDataList) GoString() string {
+func (s ReportStatusCodeLogServiceResponseDataStatusCodeDataList) GoString() string {
   return s.String()
 }
 
-func (s *ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseDataStatusCodeDataList) SetStatusCode(v string) *ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseDataStatusCodeDataList {
+func (s *ReportStatusCodeLogServiceResponseDataStatusCodeDataList) SetStatusCode(v string) *ReportStatusCodeLogServiceResponseDataStatusCodeDataList {
   s.StatusCode = &v
   return s
 }
 
-func (s *ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseDataStatusCodeDataList) SetDetailList(v []*ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseDataStatusCodeDataListDetailList) *ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseDataStatusCodeDataList {
+func (s *ReportStatusCodeLogServiceResponseDataStatusCodeDataList) SetDetailList(v []*ReportStatusCodeLogServiceResponseDataStatusCodeDataListDetailList) *ReportStatusCodeLogServiceResponseDataStatusCodeDataList {
   s.DetailList = v
   return s
 }
 
-type ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseDataStatusCodeDataListDetailList struct     {
+type ReportStatusCodeLogServiceResponseDataStatusCodeDataListDetailList struct     {
   // {'en':'timestamp,Returns the timestamp between the start time and end time.Time format:
   //                                                                                  Hours: yyyy MM DD hh:00:00', 
   //                                                                                  'zh_CN':'时间片,返回开始时间和结束时间包含的时间片。
@@ -2751,20 +2751,20 @@ type ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseDataStatusCodeD
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseDataStatusCodeDataListDetailList) String() string {
+func (s ReportStatusCodeLogServiceResponseDataStatusCodeDataListDetailList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseDataStatusCodeDataListDetailList) GoString() string {
+func (s ReportStatusCodeLogServiceResponseDataStatusCodeDataListDetailList) GoString() string {
   return s.String()
 }
 
-func (s *ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseDataStatusCodeDataListDetailList) SetTimestamp(v string) *ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseDataStatusCodeDataListDetailList {
+func (s *ReportStatusCodeLogServiceResponseDataStatusCodeDataListDetailList) SetTimestamp(v string) *ReportStatusCodeLogServiceResponseDataStatusCodeDataListDetailList {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseDataStatusCodeDataListDetailList) SetValue(v string) *ReportStatusCodeLogServiceReportStatusCodeLogServiceResponseDataStatusCodeDataListDetailList {
+func (s *ReportStatusCodeLogServiceResponseDataStatusCodeDataListDetailList) SetValue(v string) *ReportStatusCodeLogServiceResponseDataStatusCodeDataListDetailList {
   s.Value = &v
   return s
 }
@@ -2913,7 +2913,7 @@ func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPRequest) SetIsSt
 }
 
 type QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponse struct {
-  Result []*QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponse) String() string {
@@ -2924,108 +2924,108 @@ func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponse) GoStrin
   return s.String()
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponse) SetResult(v []*QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResult) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponse {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponse) SetResult(v []*QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResult) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponse {
   s.Result = v
   return s
 }
 
-type QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResult struct     {
+type QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  IspData []*QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResult) String() string {
+func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResult) GoString() string {
+func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResult) SetDomain(v string) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResult {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResult) SetDomain(v string) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResult) SetIspData(v []*QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspData) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResult {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResult) SetIspData(v []*QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspData) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResult {
   s.IspData = v
   return s
 }
 
-type QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspData struct     {
+type QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspData struct     {
   // {"en":"ISP", "zh_CN":"运营商"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
-  ProvinceData []*QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspData) String() string {
+func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspData) GoString() string {
+func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspData) GoString() string {
   return s.String()
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspData) SetIsp(v string) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspData {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspData) SetIsp(v string) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspData {
   s.Isp = &v
   return s
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspData) SetProvinceData(v []*QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceData) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspData {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspData) SetProvinceData(v []*QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceData) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspData {
   s.ProvinceData = v
   return s
 }
 
-type QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceData struct     {
+type QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceData struct     {
   // {"en":"Province", "zh_CN":"省份"}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
-  StatusCodeData []*QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeData `json:"statusCodeData,omitempty" xml:"statusCodeData,omitempty" require:"true" type:"Repeated"`
+  StatusCodeData []*QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeData `json:"statusCodeData,omitempty" xml:"statusCodeData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceData) String() string {
+func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceData) GoString() string {
+func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceData) SetProvince(v string) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceData {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceData) SetProvince(v string) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceData {
   s.Province = &v
   return s
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceData) SetStatusCodeData(v []*QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeData) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceData {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceData) SetStatusCodeData(v []*QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeData) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceData {
   s.StatusCodeData = v
   return s
 }
 
-type QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeData struct     {
+type QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeData struct     {
   // {"en":"Status codes, with options of: '200', '500' and 'Others'", "zh_CN":"状态码,取值可能为:'200'、'500'、'其他'等"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
-  RequestData []*QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
+  RequestData []*QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeData) String() string {
+func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeData) GoString() string {
+func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeData) GoString() string {
   return s.String()
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeData) SetStatusCode(v string) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeData {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeData) SetStatusCode(v string) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeData {
   s.StatusCode = &v
   return s
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeData) SetRequestData(v []*QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeDataRequestData) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeData {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeData) SetRequestData(v []*QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeDataRequestData) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeData {
   s.RequestData = v
   return s
 }
 
-type QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeDataRequestData struct     {
+type QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeDataRequestData struct     {
   // {"en":"Time,
   // 																	1.When the data query granularity is 5m, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 12:05 AM, and the last one is (yyyy-MM-dd+1) 00:00;
   // 																	2.When the data query granularity is 1h, the format is yyyy-MM-dd HH; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is (yyyy-MM-dd+1) 00;
@@ -3038,20 +3038,20 @@ type QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistr
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeDataRequestData) String() string {
+func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeDataRequestData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeDataRequestData) GoString() string {
+func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeDataRequestData) GoString() string {
   return s.String()
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeDataRequestData) SetTimestamp(v string) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeDataRequestData {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeDataRequestData) SetTimestamp(v string) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeDataRequestData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeDataRequestData) SetValue(v string) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPQueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeDataRequestData {
+func (s *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeDataRequestData) SetValue(v string) *QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseResultIspDataProvinceDataStatusCodeDataRequestData {
   s.Value = &v
   return s
 }
@@ -3195,7 +3195,7 @@ func (s *QueryStatusCodeDistributionRequest) SetQueryBy(v string) *QueryStatusCo
 
 type QueryStatusCodeDistributionResponse struct {
   // {"en":"result", "zh_CN":"结果"}
-  Result []*QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryStatusCodeDistributionResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryStatusCodeDistributionResponse) String() string {
@@ -3206,37 +3206,37 @@ func (s QueryStatusCodeDistributionResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryStatusCodeDistributionResponse) SetResult(v []*QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResult) *QueryStatusCodeDistributionResponse {
+func (s *QueryStatusCodeDistributionResponse) SetResult(v []*QueryStatusCodeDistributionResponseResult) *QueryStatusCodeDistributionResponse {
   s.Result = v
   return s
 }
 
-type QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResult struct     {
+type QueryStatusCodeDistributionResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"statusCodeData", "zh_CN":"状态码数据"}
-  StatusCodeData []*QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeData `json:"statusCodeData,omitempty" xml:"statusCodeData,omitempty" require:"true" type:"Repeated"`
+  StatusCodeData []*QueryStatusCodeDistributionResponseResultStatusCodeData `json:"statusCodeData,omitempty" xml:"statusCodeData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResult) String() string {
+func (s QueryStatusCodeDistributionResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResult) GoString() string {
+func (s QueryStatusCodeDistributionResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResult) SetDomain(v string) *QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResult {
+func (s *QueryStatusCodeDistributionResponseResult) SetDomain(v string) *QueryStatusCodeDistributionResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResult) SetStatusCodeData(v []*QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeData) *QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResult {
+func (s *QueryStatusCodeDistributionResponseResult) SetStatusCodeData(v []*QueryStatusCodeDistributionResponseResultStatusCodeData) *QueryStatusCodeDistributionResponseResult {
   s.StatusCodeData = v
   return s
 }
 
-type QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeData struct     {
+type QueryStatusCodeDistributionResponseResultStatusCodeData struct     {
   // {"en":"Status code", "zh_CN":"状态码"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
   // {"en":"totalRequest", "zh_CN":"总请求数"}
@@ -3244,58 +3244,58 @@ type QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusC
   // {"en":"Success, Redirect, Not-Modified, Permission, Not-Found, Server Error, Other", "zh_CN":"Success, Redirect, Not-Modified, Permission, Not-Found, Server Error, Other"}
   StatusCodeType *string `json:"statusCodeType,omitempty" xml:"statusCodeType,omitempty" require:"true"`
   // {"en":"requestData", "zh_CN":"请求数数据"}
-  RequestData []*QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
+  RequestData []*QueryStatusCodeDistributionResponseResultStatusCodeDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeData) String() string {
+func (s QueryStatusCodeDistributionResponseResultStatusCodeData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeData) GoString() string {
+func (s QueryStatusCodeDistributionResponseResultStatusCodeData) GoString() string {
   return s.String()
 }
 
-func (s *QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeData) SetStatusCode(v string) *QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeData {
+func (s *QueryStatusCodeDistributionResponseResultStatusCodeData) SetStatusCode(v string) *QueryStatusCodeDistributionResponseResultStatusCodeData {
   s.StatusCode = &v
   return s
 }
 
-func (s *QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeData) SetTotalRequest(v string) *QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeData {
+func (s *QueryStatusCodeDistributionResponseResultStatusCodeData) SetTotalRequest(v string) *QueryStatusCodeDistributionResponseResultStatusCodeData {
   s.TotalRequest = &v
   return s
 }
 
-func (s *QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeData) SetStatusCodeType(v string) *QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeData {
+func (s *QueryStatusCodeDistributionResponseResultStatusCodeData) SetStatusCodeType(v string) *QueryStatusCodeDistributionResponseResultStatusCodeData {
   s.StatusCodeType = &v
   return s
 }
 
-func (s *QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeData) SetRequestData(v []*QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeDataRequestData) *QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeData {
+func (s *QueryStatusCodeDistributionResponseResultStatusCodeData) SetRequestData(v []*QueryStatusCodeDistributionResponseResultStatusCodeDataRequestData) *QueryStatusCodeDistributionResponseResultStatusCodeData {
   s.RequestData = v
   return s
 }
 
-type QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeDataRequestData struct     {
+type QueryStatusCodeDistributionResponseResultStatusCodeDataRequestData struct     {
   // {"en":"DateTime, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range.", "zh_CN":"时间，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。比如yyyy-MM-dd 00:05，代表00:00到00:05范围内的数据。"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Number of requests for status codes", "zh_CN":"状态码对应的请求数"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeDataRequestData) String() string {
+func (s QueryStatusCodeDistributionResponseResultStatusCodeDataRequestData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeDataRequestData) GoString() string {
+func (s QueryStatusCodeDistributionResponseResultStatusCodeDataRequestData) GoString() string {
   return s.String()
 }
 
-func (s *QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeDataRequestData) SetTimestamp(v string) *QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeDataRequestData {
+func (s *QueryStatusCodeDistributionResponseResultStatusCodeDataRequestData) SetTimestamp(v string) *QueryStatusCodeDistributionResponseResultStatusCodeDataRequestData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeDataRequestData) SetValue(v string) *QueryStatusCodeDistributionQueryStatusCodeDistributionResponseResultStatusCodeDataRequestData {
+func (s *QueryStatusCodeDistributionResponseResultStatusCodeDataRequestData) SetValue(v string) *QueryStatusCodeDistributionResponseResultStatusCodeDataRequestData {
   s.Value = &v
   return s
 }
@@ -3360,7 +3360,7 @@ func (s ReportStatusAllServiceRequest) GoString() string {
 
 type ReportStatusAllServiceResponse struct {
   // {'en':'statusCodeData', 'zh_CN':'状态码汇总'}
-  StatusCodeDataList []*ReportStatusAllServiceReportStatusAllServiceResponseStatusCodeDataList `json:"status-code-data,omitempty" xml:"status-code-data,omitempty" require:"true" type:"Repeated"`
+  StatusCodeDataList []*ReportStatusAllServiceResponseStatusCodeDataList `json:"status-code-data,omitempty" xml:"status-code-data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportStatusAllServiceResponse) String() string {
@@ -3371,32 +3371,32 @@ func (s ReportStatusAllServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportStatusAllServiceResponse) SetStatusCodeDataList(v []*ReportStatusAllServiceReportStatusAllServiceResponseStatusCodeDataList) *ReportStatusAllServiceResponse {
+func (s *ReportStatusAllServiceResponse) SetStatusCodeDataList(v []*ReportStatusAllServiceResponseStatusCodeDataList) *ReportStatusAllServiceResponse {
   s.StatusCodeDataList = v
   return s
 }
 
-type ReportStatusAllServiceReportStatusAllServiceResponseStatusCodeDataList struct     {
+type ReportStatusAllServiceResponseStatusCodeDataList struct     {
   // {"en":"Status code", "zh_CN":"状态码"}
   StatusCode *string `json:"status-code,omitempty" xml:"status-code,omitempty" require:"true"`
   // {"en":"Number of requests of the status   code", "zh_CN":"状态码对应的请求数"}
   Hit *string `json:"hit,omitempty" xml:"hit,omitempty" require:"true"`
 }
 
-func (s ReportStatusAllServiceReportStatusAllServiceResponseStatusCodeDataList) String() string {
+func (s ReportStatusAllServiceResponseStatusCodeDataList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportStatusAllServiceReportStatusAllServiceResponseStatusCodeDataList) GoString() string {
+func (s ReportStatusAllServiceResponseStatusCodeDataList) GoString() string {
   return s.String()
 }
 
-func (s *ReportStatusAllServiceReportStatusAllServiceResponseStatusCodeDataList) SetStatusCode(v string) *ReportStatusAllServiceReportStatusAllServiceResponseStatusCodeDataList {
+func (s *ReportStatusAllServiceResponseStatusCodeDataList) SetStatusCode(v string) *ReportStatusAllServiceResponseStatusCodeDataList {
   s.StatusCode = &v
   return s
 }
 
-func (s *ReportStatusAllServiceReportStatusAllServiceResponseStatusCodeDataList) SetHit(v string) *ReportStatusAllServiceReportStatusAllServiceResponseStatusCodeDataList {
+func (s *ReportStatusAllServiceResponseStatusCodeDataList) SetHit(v string) *ReportStatusAllServiceResponseStatusCodeDataList {
   s.Hit = &v
   return s
 }
@@ -3563,7 +3563,7 @@ type ReportStatusCodeUrlTopServiceResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*ReportStatusCodeUrlTopServiceReportStatusCodeUrlTopServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportStatusCodeUrlTopServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportStatusCodeUrlTopServiceResponse) String() string {
@@ -3584,32 +3584,32 @@ func (s *ReportStatusCodeUrlTopServiceResponse) SetMessage(v string) *ReportStat
   return s
 }
 
-func (s *ReportStatusCodeUrlTopServiceResponse) SetData(v []*ReportStatusCodeUrlTopServiceReportStatusCodeUrlTopServiceResponseData) *ReportStatusCodeUrlTopServiceResponse {
+func (s *ReportStatusCodeUrlTopServiceResponse) SetData(v []*ReportStatusCodeUrlTopServiceResponseData) *ReportStatusCodeUrlTopServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportStatusCodeUrlTopServiceReportStatusCodeUrlTopServiceResponseData struct     {
+type ReportStatusCodeUrlTopServiceResponseData struct     {
   // {"en":"url", "zh_CN":"URL"}
   Url *string `json:"url,omitempty" xml:"url,omitempty" require:"true"`
   // {"en":"Number of requests", "zh_CN":"请求数"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s ReportStatusCodeUrlTopServiceReportStatusCodeUrlTopServiceResponseData) String() string {
+func (s ReportStatusCodeUrlTopServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportStatusCodeUrlTopServiceReportStatusCodeUrlTopServiceResponseData) GoString() string {
+func (s ReportStatusCodeUrlTopServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportStatusCodeUrlTopServiceReportStatusCodeUrlTopServiceResponseData) SetUrl(v string) *ReportStatusCodeUrlTopServiceReportStatusCodeUrlTopServiceResponseData {
+func (s *ReportStatusCodeUrlTopServiceResponseData) SetUrl(v string) *ReportStatusCodeUrlTopServiceResponseData {
   s.Url = &v
   return s
 }
 
-func (s *ReportStatusCodeUrlTopServiceReportStatusCodeUrlTopServiceResponseData) SetValue(v string) *ReportStatusCodeUrlTopServiceReportStatusCodeUrlTopServiceResponseData {
+func (s *ReportStatusCodeUrlTopServiceResponseData) SetValue(v string) *ReportStatusCodeUrlTopServiceResponseData {
   s.Value = &v
   return s
 }
@@ -3725,7 +3725,7 @@ type ReportFlowProtocolOneMinStatusCodeServiceResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportFlowProtocolOneMinStatusCodeServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportFlowProtocolOneMinStatusCodeServiceResponse) String() string {
@@ -3746,60 +3746,60 @@ func (s *ReportFlowProtocolOneMinStatusCodeServiceResponse) SetMessage(v string)
   return s
 }
 
-func (s *ReportFlowProtocolOneMinStatusCodeServiceResponse) SetData(v []*ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseData) *ReportFlowProtocolOneMinStatusCodeServiceResponse {
+func (s *ReportFlowProtocolOneMinStatusCodeServiceResponse) SetData(v []*ReportFlowProtocolOneMinStatusCodeServiceResponseData) *ReportFlowProtocolOneMinStatusCodeServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseData struct     {
+type ReportFlowProtocolOneMinStatusCodeServiceResponseData struct     {
   // {"en":"Domain. If merge date of all domains will not return domain", "zh_CN":"域名,聚合全部域名数据不返回该字段"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  StatusCodeDataList []*ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataList `json:"statusCodeDataList,omitempty" xml:"statusCodeDataList,omitempty" require:"true" type:"Repeated"`
+  StatusCodeDataList []*ReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataList `json:"statusCodeDataList,omitempty" xml:"statusCodeDataList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseData) String() string {
+func (s ReportFlowProtocolOneMinStatusCodeServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseData) GoString() string {
+func (s ReportFlowProtocolOneMinStatusCodeServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseData) SetDomain(v string) *ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseData {
+func (s *ReportFlowProtocolOneMinStatusCodeServiceResponseData) SetDomain(v string) *ReportFlowProtocolOneMinStatusCodeServiceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseData) SetStatusCodeDataList(v []*ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataList) *ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseData {
+func (s *ReportFlowProtocolOneMinStatusCodeServiceResponseData) SetStatusCodeDataList(v []*ReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataList) *ReportFlowProtocolOneMinStatusCodeServiceResponseData {
   s.StatusCodeDataList = v
   return s
 }
 
-type ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataList struct     {
+type ReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataList struct     {
   // {"en":"Status code", "zh_CN":"状态码"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
-  DetailList []*ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+  DetailList []*ReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataList) String() string {
+func (s ReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataList) GoString() string {
+func (s ReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataList) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataList) SetStatusCode(v string) *ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataList {
+func (s *ReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataList) SetStatusCode(v string) *ReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataList {
   s.StatusCode = &v
   return s
 }
 
-func (s *ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataList) SetDetailList(v []*ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList) *ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataList {
+func (s *ReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataList) SetDetailList(v []*ReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList) *ReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataList {
   s.DetailList = v
   return s
 }
 
-type ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList struct     {
+type ReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList struct     {
   // {"en":"timestamp,Returns the timestamp between the start time and end time. Time format: yyyy-MM-dd HH:mm", "zh_CN":"时间片,返回开始时间和结束时间包含的时间片。时间格式:1分钟:yyyy-MM-dd HH:mm"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"https", "zh_CN":"https数据"}
@@ -3808,25 +3808,25 @@ type ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCode
   HttpValue *string `json:"httpValue,omitempty" xml:"httpValue,omitempty" require:"true"`
 }
 
-func (s ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList) String() string {
+func (s ReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList) GoString() string {
+func (s ReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList) SetTimestamp(v string) *ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList {
+func (s *ReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList) SetTimestamp(v string) *ReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList) SetHttpsValue(v string) *ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList {
+func (s *ReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList) SetHttpsValue(v string) *ReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList {
   s.HttpsValue = &v
   return s
 }
 
-func (s *ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList) SetHttpValue(v string) *ReportFlowProtocolOneMinStatusCodeServiceReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList {
+func (s *ReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList) SetHttpValue(v string) *ReportFlowProtocolOneMinStatusCodeServiceResponseDataStatusCodeDataListDetailList {
   s.HttpValue = &v
   return s
 }
@@ -3968,7 +3968,7 @@ type QueryRealTimeOriginStatusCodeResponse struct {
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Detailed data on the results of the request", "zh_CN":"请求结果的详细数据"}
-  Data []*QueryRealTimeOriginStatusCodeQueryRealTimeOriginStatusCodeResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*QueryRealTimeOriginStatusCodeResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
   // {"en":"StatusCode", "zh_CN":"状态码"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
   // {"en":"Success, Redirect, Not-Modified, Permission, Not-Found, Server Error, Other", "zh_CN":"Success、Redirect、Not-Modified、Permission、Not-Found、Server Error、Other"}
@@ -3993,7 +3993,7 @@ func (s *QueryRealTimeOriginStatusCodeResponse) SetMessage(v string) *QueryRealT
   return s
 }
 
-func (s *QueryRealTimeOriginStatusCodeResponse) SetData(v []*QueryRealTimeOriginStatusCodeQueryRealTimeOriginStatusCodeResponseData) *QueryRealTimeOriginStatusCodeResponse {
+func (s *QueryRealTimeOriginStatusCodeResponse) SetData(v []*QueryRealTimeOriginStatusCodeResponseData) *QueryRealTimeOriginStatusCodeResponse {
   s.Data = v
   return s
 }
@@ -4008,27 +4008,27 @@ func (s *QueryRealTimeOriginStatusCodeResponse) SetStatusCodeType(v string) *Que
   return s
 }
 
-type QueryRealTimeOriginStatusCodeQueryRealTimeOriginStatusCodeResponseData struct     {
+type QueryRealTimeOriginStatusCodeResponseData struct     {
   // {"en":"time, in yyyy-MM-dd HH:MM", "zh_CN":"时间，格式为yyyy-MM-dd HH:mm"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Total number of return requests", "zh_CN":"回源总请求数"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryRealTimeOriginStatusCodeQueryRealTimeOriginStatusCodeResponseData) String() string {
+func (s QueryRealTimeOriginStatusCodeResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryRealTimeOriginStatusCodeQueryRealTimeOriginStatusCodeResponseData) GoString() string {
+func (s QueryRealTimeOriginStatusCodeResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryRealTimeOriginStatusCodeQueryRealTimeOriginStatusCodeResponseData) SetTimestamp(v string) *QueryRealTimeOriginStatusCodeQueryRealTimeOriginStatusCodeResponseData {
+func (s *QueryRealTimeOriginStatusCodeResponseData) SetTimestamp(v string) *QueryRealTimeOriginStatusCodeResponseData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryRealTimeOriginStatusCodeQueryRealTimeOriginStatusCodeResponseData) SetValue(v string) *QueryRealTimeOriginStatusCodeQueryRealTimeOriginStatusCodeResponseData {
+func (s *QueryRealTimeOriginStatusCodeResponseData) SetValue(v string) *QueryRealTimeOriginStatusCodeResponseData {
   s.Value = &v
   return s
 }
@@ -4142,7 +4142,7 @@ func (s *ReportStatusCodeRealTimeOriginServiceRequest) SetDataInterval(v string)
 }
 
 type ReportStatusCodeRealTimeOriginServiceResponse struct {
-  Result []*ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportStatusCodeRealTimeOriginServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportStatusCodeRealTimeOriginServiceResponse) String() string {
@@ -4153,73 +4153,73 @@ func (s ReportStatusCodeRealTimeOriginServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportStatusCodeRealTimeOriginServiceResponse) SetResult(v []*ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResult) *ReportStatusCodeRealTimeOriginServiceResponse {
+func (s *ReportStatusCodeRealTimeOriginServiceResponse) SetResult(v []*ReportStatusCodeRealTimeOriginServiceResponseResult) *ReportStatusCodeRealTimeOriginServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResult struct     {
-  StatusCodeOriginData []*ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginData `json:"statusCodeOriginData,omitempty" xml:"statusCodeOriginData,omitempty" require:"true" type:"Repeated"`
+type ReportStatusCodeRealTimeOriginServiceResponseResult struct     {
+  StatusCodeOriginData []*ReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginData `json:"statusCodeOriginData,omitempty" xml:"statusCodeOriginData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResult) String() string {
+func (s ReportStatusCodeRealTimeOriginServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResult) GoString() string {
+func (s ReportStatusCodeRealTimeOriginServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResult) SetStatusCodeOriginData(v []*ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginData) *ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResult {
+func (s *ReportStatusCodeRealTimeOriginServiceResponseResult) SetStatusCodeOriginData(v []*ReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginData) *ReportStatusCodeRealTimeOriginServiceResponseResult {
   s.StatusCodeOriginData = v
   return s
 }
 
-type ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginData struct     {
+type ReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginData struct     {
   // {"en":"Back to origin status code type", "zh_CN":"回源状态码类型"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
-  RequestData []*ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
+  RequestData []*ReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginData) String() string {
+func (s ReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginData) GoString() string {
+func (s ReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginData) GoString() string {
   return s.String()
 }
 
-func (s *ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginData) SetStatusCode(v string) *ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginData {
+func (s *ReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginData) SetStatusCode(v string) *ReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginData {
   s.StatusCode = &v
   return s
 }
 
-func (s *ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginData) SetRequestData(v []*ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginDataRequestData) *ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginData {
+func (s *ReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginData) SetRequestData(v []*ReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginDataRequestData) *ReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginData {
   s.RequestData = v
   return s
 }
 
-type ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginDataRequestData struct     {
+type ReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginDataRequestData struct     {
   // {"en":"The data granularity is 1 minute, and the format is yyyy MM dd HH: mm", "zh_CN":"数据粒度为1分钟,格式为yyyy-MM-dd HH:mm;"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Requests of back to origin status code", "zh_CN":"回源状态码请求数"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginDataRequestData) String() string {
+func (s ReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginDataRequestData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginDataRequestData) GoString() string {
+func (s ReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginDataRequestData) GoString() string {
   return s.String()
 }
 
-func (s *ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginDataRequestData) SetTimestamp(v string) *ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginDataRequestData {
+func (s *ReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginDataRequestData) SetTimestamp(v string) *ReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginDataRequestData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginDataRequestData) SetValue(v string) *ReportStatusCodeRealTimeOriginServiceReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginDataRequestData {
+func (s *ReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginDataRequestData) SetValue(v string) *ReportStatusCodeRealTimeOriginServiceResponseResultStatusCodeOriginDataRequestData {
   s.Value = &v
   return s
 }

@@ -960,7 +960,7 @@ type QueryCertificateRelatedDomainsResponse struct {
   // {"en":"Response error message if failed.", "zh_CN":"接口响应信息，success代表成功，失败则提供失败信息。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data array.", "zh_CN":"接口响应数据"}
-  Data *QueryCertificateRelatedDomainsQueryCertificateRelatedDomainsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryCertificateRelatedDomainsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryCertificateRelatedDomainsResponse) String() string {
@@ -981,57 +981,57 @@ func (s *QueryCertificateRelatedDomainsResponse) SetMessage(v string) *QueryCert
   return s
 }
 
-func (s *QueryCertificateRelatedDomainsResponse) SetData(v *QueryCertificateRelatedDomainsQueryCertificateRelatedDomainsResponseData) *QueryCertificateRelatedDomainsResponse {
+func (s *QueryCertificateRelatedDomainsResponse) SetData(v *QueryCertificateRelatedDomainsResponseData) *QueryCertificateRelatedDomainsResponse {
   s.Data = v
   return s
 }
 
-type QueryCertificateRelatedDomainsQueryCertificateRelatedDomainsResponseData struct {
+type QueryCertificateRelatedDomainsResponseData struct {
   // {"en":"Certificate ID", "zh_CN":"证书ID"}
   CertificateId *int `json:"certificateId,omitempty" xml:"certificateId,omitempty" require:"true"`
   // {"en":"Certificate related domains", "zh_CN":"在用该证书的加速域名列表"}
-  Domains []*QueryCertificateRelatedDomainsQueryCertificateRelatedDomainsResponseDataDomains `json:"domains,omitempty" xml:"domains,omitempty" require:"true" type:"Repeated"`
+  Domains []*QueryCertificateRelatedDomainsResponseDataDomains `json:"domains,omitempty" xml:"domains,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryCertificateRelatedDomainsQueryCertificateRelatedDomainsResponseData) String() string {
+func (s QueryCertificateRelatedDomainsResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCertificateRelatedDomainsQueryCertificateRelatedDomainsResponseData) GoString() string {
+func (s QueryCertificateRelatedDomainsResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryCertificateRelatedDomainsQueryCertificateRelatedDomainsResponseData) SetCertificateId(v int) *QueryCertificateRelatedDomainsQueryCertificateRelatedDomainsResponseData {
+func (s *QueryCertificateRelatedDomainsResponseData) SetCertificateId(v int) *QueryCertificateRelatedDomainsResponseData {
   s.CertificateId = &v
   return s
 }
 
-func (s *QueryCertificateRelatedDomainsQueryCertificateRelatedDomainsResponseData) SetDomains(v []*QueryCertificateRelatedDomainsQueryCertificateRelatedDomainsResponseDataDomains) *QueryCertificateRelatedDomainsQueryCertificateRelatedDomainsResponseData {
+func (s *QueryCertificateRelatedDomainsResponseData) SetDomains(v []*QueryCertificateRelatedDomainsResponseDataDomains) *QueryCertificateRelatedDomainsResponseData {
   s.Domains = v
   return s
 }
 
-type QueryCertificateRelatedDomainsQueryCertificateRelatedDomainsResponseDataDomains struct     {
+type QueryCertificateRelatedDomainsResponseDataDomains struct     {
   // {"en":"Domain ID", "zh_CN":"域名id"}
   DomainId *int `json:"domainId,omitempty" xml:"domainId,omitempty" require:"true"`
   // {"en":"Domain name", "zh_CN":"域名名称"}
   DomainName *string `json:"domainName,omitempty" xml:"domainName,omitempty" require:"true"`
 }
 
-func (s QueryCertificateRelatedDomainsQueryCertificateRelatedDomainsResponseDataDomains) String() string {
+func (s QueryCertificateRelatedDomainsResponseDataDomains) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCertificateRelatedDomainsQueryCertificateRelatedDomainsResponseDataDomains) GoString() string {
+func (s QueryCertificateRelatedDomainsResponseDataDomains) GoString() string {
   return s.String()
 }
 
-func (s *QueryCertificateRelatedDomainsQueryCertificateRelatedDomainsResponseDataDomains) SetDomainId(v int) *QueryCertificateRelatedDomainsQueryCertificateRelatedDomainsResponseDataDomains {
+func (s *QueryCertificateRelatedDomainsResponseDataDomains) SetDomainId(v int) *QueryCertificateRelatedDomainsResponseDataDomains {
   s.DomainId = &v
   return s
 }
 
-func (s *QueryCertificateRelatedDomainsQueryCertificateRelatedDomainsResponseDataDomains) SetDomainName(v string) *QueryCertificateRelatedDomainsQueryCertificateRelatedDomainsResponseDataDomains {
+func (s *QueryCertificateRelatedDomainsResponseDataDomains) SetDomainName(v string) *QueryCertificateRelatedDomainsResponseDataDomains {
   s.DomainName = &v
   return s
 }
@@ -1282,7 +1282,7 @@ type QueryCertificateInfoResponse struct {
   // {"en":"Response error message if failed.", "zh_CN":"接口响应信息，success代表成功，失败则提供失败信息。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data array.", "zh_CN":"接口响应数据"}
-  Data *QueryCertificateInfoQueryCertificateInfoResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryCertificateInfoResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryCertificateInfoResponse) String() string {
@@ -1303,12 +1303,12 @@ func (s *QueryCertificateInfoResponse) SetMessage(v string) *QueryCertificateInf
   return s
 }
 
-func (s *QueryCertificateInfoResponse) SetData(v *QueryCertificateInfoQueryCertificateInfoResponseData) *QueryCertificateInfoResponse {
+func (s *QueryCertificateInfoResponse) SetData(v *QueryCertificateInfoResponseData) *QueryCertificateInfoResponse {
   s.Data = v
   return s
 }
 
-type QueryCertificateInfoQueryCertificateInfoResponseData struct {
+type QueryCertificateInfoResponseData struct {
   // {"en":"certificate Id", "zh_CN":"证书ID。"}
   CertificateId *int `json:"certificateId,omitempty" xml:"certificateId,omitempty" require:"true"`
   // {"en":"certificate name", "zh_CN":"证书名称。"}
@@ -1324,71 +1324,71 @@ type QueryCertificateInfoQueryCertificateInfoResponseData struct {
   // {"en":"common name", "zh_CN":"证书绑定的主域名。"}
   CommonName *string `json:"commonName,omitempty" xml:"commonName,omitempty" require:"true"`
   // {"en":"Subject Alternative Names", "zh_CN":"证书绑定的附加域名列表。"}
-  SubjectAlternativeNames []*QueryCertificateInfoQueryCertificateInfoResponseDataSubjectAlternativeNames `json:"subjectAlternativeNames,omitempty" xml:"subjectAlternativeNames,omitempty" require:"true" type:"Repeated"`
+  SubjectAlternativeNames []*QueryCertificateInfoResponseDataSubjectAlternativeNames `json:"subjectAlternativeNames,omitempty" xml:"subjectAlternativeNames,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryCertificateInfoQueryCertificateInfoResponseData) String() string {
+func (s QueryCertificateInfoResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCertificateInfoQueryCertificateInfoResponseData) GoString() string {
+func (s QueryCertificateInfoResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryCertificateInfoQueryCertificateInfoResponseData) SetCertificateId(v int) *QueryCertificateInfoQueryCertificateInfoResponseData {
+func (s *QueryCertificateInfoResponseData) SetCertificateId(v int) *QueryCertificateInfoResponseData {
   s.CertificateId = &v
   return s
 }
 
-func (s *QueryCertificateInfoQueryCertificateInfoResponseData) SetName(v string) *QueryCertificateInfoQueryCertificateInfoResponseData {
+func (s *QueryCertificateInfoResponseData) SetName(v string) *QueryCertificateInfoResponseData {
   s.Name = &v
   return s
 }
 
-func (s *QueryCertificateInfoQueryCertificateInfoResponseData) SetComment(v string) *QueryCertificateInfoQueryCertificateInfoResponseData {
+func (s *QueryCertificateInfoResponseData) SetComment(v string) *QueryCertificateInfoResponseData {
   s.Comment = &v
   return s
 }
 
-func (s *QueryCertificateInfoQueryCertificateInfoResponseData) SetSerial(v string) *QueryCertificateInfoQueryCertificateInfoResponseData {
+func (s *QueryCertificateInfoResponseData) SetSerial(v string) *QueryCertificateInfoResponseData {
   s.Serial = &v
   return s
 }
 
-func (s *QueryCertificateInfoQueryCertificateInfoResponseData) SetNotBefore(v string) *QueryCertificateInfoQueryCertificateInfoResponseData {
+func (s *QueryCertificateInfoResponseData) SetNotBefore(v string) *QueryCertificateInfoResponseData {
   s.NotBefore = &v
   return s
 }
 
-func (s *QueryCertificateInfoQueryCertificateInfoResponseData) SetNotAfter(v string) *QueryCertificateInfoQueryCertificateInfoResponseData {
+func (s *QueryCertificateInfoResponseData) SetNotAfter(v string) *QueryCertificateInfoResponseData {
   s.NotAfter = &v
   return s
 }
 
-func (s *QueryCertificateInfoQueryCertificateInfoResponseData) SetCommonName(v string) *QueryCertificateInfoQueryCertificateInfoResponseData {
+func (s *QueryCertificateInfoResponseData) SetCommonName(v string) *QueryCertificateInfoResponseData {
   s.CommonName = &v
   return s
 }
 
-func (s *QueryCertificateInfoQueryCertificateInfoResponseData) SetSubjectAlternativeNames(v []*QueryCertificateInfoQueryCertificateInfoResponseDataSubjectAlternativeNames) *QueryCertificateInfoQueryCertificateInfoResponseData {
+func (s *QueryCertificateInfoResponseData) SetSubjectAlternativeNames(v []*QueryCertificateInfoResponseDataSubjectAlternativeNames) *QueryCertificateInfoResponseData {
   s.SubjectAlternativeNames = v
   return s
 }
 
-type QueryCertificateInfoQueryCertificateInfoResponseDataSubjectAlternativeNames struct     {
+type QueryCertificateInfoResponseDataSubjectAlternativeNames struct     {
   // {"en":"Subject Alternative Name", "zh_CN":"证书绑定的附加域名"}
   SubjectAlternativeName *string `json:"subjectAlternativeName,omitempty" xml:"subjectAlternativeName,omitempty" require:"true"`
 }
 
-func (s QueryCertificateInfoQueryCertificateInfoResponseDataSubjectAlternativeNames) String() string {
+func (s QueryCertificateInfoResponseDataSubjectAlternativeNames) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCertificateInfoQueryCertificateInfoResponseDataSubjectAlternativeNames) GoString() string {
+func (s QueryCertificateInfoResponseDataSubjectAlternativeNames) GoString() string {
   return s.String()
 }
 
-func (s *QueryCertificateInfoQueryCertificateInfoResponseDataSubjectAlternativeNames) SetSubjectAlternativeName(v string) *QueryCertificateInfoQueryCertificateInfoResponseDataSubjectAlternativeNames {
+func (s *QueryCertificateInfoResponseDataSubjectAlternativeNames) SetSubjectAlternativeName(v string) *QueryCertificateInfoResponseDataSubjectAlternativeNames {
   s.SubjectAlternativeName = &v
   return s
 }
@@ -1460,7 +1460,7 @@ func (s QueryCertificateListRequest) GoString() string {
 
 type QueryCertificateListResponse struct {
   // {"en":"Certificate list information", "zh_CN":"证书列表信息"}
-  SslCertificates []*QueryCertificateListQueryCertificateListResponseSslCertificates `json:"ssl-certificates,omitempty" xml:"ssl-certificates,omitempty" require:"true" type:"Repeated"`
+  SslCertificates []*QueryCertificateListResponseSslCertificates `json:"ssl-certificates,omitempty" xml:"ssl-certificates,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryCertificateListResponse) String() string {
@@ -1471,12 +1471,12 @@ func (s QueryCertificateListResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryCertificateListResponse) SetSslCertificates(v []*QueryCertificateListQueryCertificateListResponseSslCertificates) *QueryCertificateListResponse {
+func (s *QueryCertificateListResponse) SetSslCertificates(v []*QueryCertificateListResponseSslCertificates) *QueryCertificateListResponse {
   s.SslCertificates = v
   return s
 }
 
-type QueryCertificateListQueryCertificateListResponseSslCertificates struct     {
+type QueryCertificateListResponseSslCertificates struct     {
   // {"en":"Certificate ID", "zh_CN":"证书ID"}
   CertificateId *string `json:"certificate-id,omitempty" xml:"certificate-id,omitempty" require:"true"`
   // {"en":"Certificate name, unique to customer granularity", "zh_CN":"证书名称，客户粒度下是唯一的"}
@@ -1491,7 +1491,7 @@ type QueryCertificateListQueryCertificateListResponseSslCertificates struct     
   // {"en":"Certificate effective end time (CST), such as 2018-08-01 19:00:00", "zh_CN":"证书有效期的到期时间（CST时区），例如：2018-08-01 19:00:00"}
   CertificateValidityTo *string `json:"certificate-validity-to,omitempty" xml:"certificate-validity-to,omitempty" require:"true"`
   // {"en":"List of domain names using the current certificate", "zh_CN":"使用当前证书的域名列表"}
-  RelatedDomains []*QueryCertificateListQueryCertificateListResponseSslCertificatesRelatedDomains `json:"related-domains,omitempty" xml:"related-domains,omitempty" require:"true" type:"Repeated"`
+  RelatedDomains []*QueryCertificateListResponseSslCertificatesRelatedDomains `json:"related-domains,omitempty" xml:"related-domains,omitempty" require:"true" type:"Repeated"`
   // {"en":"dns-names", "zh_CN":"授权域名列表，证书使用者可选名称，父标签"}
   DnsNames []*string `json:"dns-names,omitempty" xml:"dns-names,omitempty" require:"true" type:"Repeated"`
   // {"en":"The CRT certificate serial number", "zh_CN":"crt证书序列号"}
@@ -1506,100 +1506,100 @@ type QueryCertificateListQueryCertificateListResponseSslCertificates struct     
   CertificateIssuer *string `json:"certificate-issuer,omitempty" xml:"certificate-issuer,omitempty" require:"true"`
 }
 
-func (s QueryCertificateListQueryCertificateListResponseSslCertificates) String() string {
+func (s QueryCertificateListResponseSslCertificates) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCertificateListQueryCertificateListResponseSslCertificates) GoString() string {
+func (s QueryCertificateListResponseSslCertificates) GoString() string {
   return s.String()
 }
 
-func (s *QueryCertificateListQueryCertificateListResponseSslCertificates) SetCertificateId(v string) *QueryCertificateListQueryCertificateListResponseSslCertificates {
+func (s *QueryCertificateListResponseSslCertificates) SetCertificateId(v string) *QueryCertificateListResponseSslCertificates {
   s.CertificateId = &v
   return s
 }
 
-func (s *QueryCertificateListQueryCertificateListResponseSslCertificates) SetName(v string) *QueryCertificateListQueryCertificateListResponseSslCertificates {
+func (s *QueryCertificateListResponseSslCertificates) SetName(v string) *QueryCertificateListResponseSslCertificates {
   s.Name = &v
   return s
 }
 
-func (s *QueryCertificateListQueryCertificateListResponseSslCertificates) SetComment(v string) *QueryCertificateListQueryCertificateListResponseSslCertificates {
+func (s *QueryCertificateListResponseSslCertificates) SetComment(v string) *QueryCertificateListResponseSslCertificates {
   s.Comment = &v
   return s
 }
 
-func (s *QueryCertificateListQueryCertificateListResponseSslCertificates) SetShareSsl(v string) *QueryCertificateListQueryCertificateListResponseSslCertificates {
+func (s *QueryCertificateListResponseSslCertificates) SetShareSsl(v string) *QueryCertificateListResponseSslCertificates {
   s.ShareSsl = &v
   return s
 }
 
-func (s *QueryCertificateListQueryCertificateListResponseSslCertificates) SetCertificateValidityFrom(v string) *QueryCertificateListQueryCertificateListResponseSslCertificates {
+func (s *QueryCertificateListResponseSslCertificates) SetCertificateValidityFrom(v string) *QueryCertificateListResponseSslCertificates {
   s.CertificateValidityFrom = &v
   return s
 }
 
-func (s *QueryCertificateListQueryCertificateListResponseSslCertificates) SetCertificateValidityTo(v string) *QueryCertificateListQueryCertificateListResponseSslCertificates {
+func (s *QueryCertificateListResponseSslCertificates) SetCertificateValidityTo(v string) *QueryCertificateListResponseSslCertificates {
   s.CertificateValidityTo = &v
   return s
 }
 
-func (s *QueryCertificateListQueryCertificateListResponseSslCertificates) SetRelatedDomains(v []*QueryCertificateListQueryCertificateListResponseSslCertificatesRelatedDomains) *QueryCertificateListQueryCertificateListResponseSslCertificates {
+func (s *QueryCertificateListResponseSslCertificates) SetRelatedDomains(v []*QueryCertificateListResponseSslCertificatesRelatedDomains) *QueryCertificateListResponseSslCertificates {
   s.RelatedDomains = v
   return s
 }
 
-func (s *QueryCertificateListQueryCertificateListResponseSslCertificates) SetDnsNames(v []*string) *QueryCertificateListQueryCertificateListResponseSslCertificates {
+func (s *QueryCertificateListResponseSslCertificates) SetDnsNames(v []*string) *QueryCertificateListResponseSslCertificates {
   s.DnsNames = v
   return s
 }
 
-func (s *QueryCertificateListQueryCertificateListResponseSslCertificates) SetCertificateSerial(v string) *QueryCertificateListQueryCertificateListResponseSslCertificates {
+func (s *QueryCertificateListResponseSslCertificates) SetCertificateSerial(v string) *QueryCertificateListResponseSslCertificates {
   s.CertificateSerial = &v
   return s
 }
 
-func (s *QueryCertificateListQueryCertificateListResponseSslCertificates) SetCrtMd5(v string) *QueryCertificateListQueryCertificateListResponseSslCertificates {
+func (s *QueryCertificateListResponseSslCertificates) SetCrtMd5(v string) *QueryCertificateListResponseSslCertificates {
   s.CrtMd5 = &v
   return s
 }
 
-func (s *QueryCertificateListQueryCertificateListResponseSslCertificates) SetKeyMd5(v string) *QueryCertificateListQueryCertificateListResponseSslCertificates {
+func (s *QueryCertificateListResponseSslCertificates) SetKeyMd5(v string) *QueryCertificateListResponseSslCertificates {
   s.KeyMd5 = &v
   return s
 }
 
-func (s *QueryCertificateListQueryCertificateListResponseSslCertificates) SetCaMd5(v string) *QueryCertificateListQueryCertificateListResponseSslCertificates {
+func (s *QueryCertificateListResponseSslCertificates) SetCaMd5(v string) *QueryCertificateListResponseSslCertificates {
   s.CaMd5 = &v
   return s
 }
 
-func (s *QueryCertificateListQueryCertificateListResponseSslCertificates) SetCertificateIssuer(v string) *QueryCertificateListQueryCertificateListResponseSslCertificates {
+func (s *QueryCertificateListResponseSslCertificates) SetCertificateIssuer(v string) *QueryCertificateListResponseSslCertificates {
   s.CertificateIssuer = &v
   return s
 }
 
-type QueryCertificateListQueryCertificateListResponseSslCertificatesRelatedDomains struct     {
+type QueryCertificateListResponseSslCertificatesRelatedDomains struct     {
   // {"en":"Accelerated domain name ID", "zh_CN":"加速域名ID"}
   DomainId *string `json:"domain-id,omitempty" xml:"domain-id,omitempty" require:"true"`
   // {"en":"Name of accelerated domain name", "zh_CN":"加速域名的名称"}
   DomainName *string `json:"domain-name,omitempty" xml:"domain-name,omitempty" require:"true"`
 }
 
-func (s QueryCertificateListQueryCertificateListResponseSslCertificatesRelatedDomains) String() string {
+func (s QueryCertificateListResponseSslCertificatesRelatedDomains) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCertificateListQueryCertificateListResponseSslCertificatesRelatedDomains) GoString() string {
+func (s QueryCertificateListResponseSslCertificatesRelatedDomains) GoString() string {
   return s.String()
 }
 
-func (s *QueryCertificateListQueryCertificateListResponseSslCertificatesRelatedDomains) SetDomainId(v string) *QueryCertificateListQueryCertificateListResponseSslCertificatesRelatedDomains {
+func (s *QueryCertificateListResponseSslCertificatesRelatedDomains) SetDomainId(v string) *QueryCertificateListResponseSslCertificatesRelatedDomains {
   s.DomainId = &v
   return s
 }
 
-func (s *QueryCertificateListQueryCertificateListResponseSslCertificatesRelatedDomains) SetDomainName(v string) *QueryCertificateListQueryCertificateListResponseSslCertificatesRelatedDomains {
+func (s *QueryCertificateListResponseSslCertificatesRelatedDomains) SetDomainName(v string) *QueryCertificateListResponseSslCertificatesRelatedDomains {
   s.DomainName = &v
   return s
 }
@@ -1668,7 +1668,7 @@ type QueryCertificateContentResponse struct {
   // {"en":"Response error message if failed.", "zh_CN":"接口响应信息，success代表成功，失败则提供失败信息。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data array.", "zh_CN":"接口响应数据"}
-  Data *QueryCertificateContentQueryCertificateContentResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryCertificateContentResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryCertificateContentResponse) String() string {
@@ -1689,32 +1689,32 @@ func (s *QueryCertificateContentResponse) SetMessage(v string) *QueryCertificate
   return s
 }
 
-func (s *QueryCertificateContentResponse) SetData(v *QueryCertificateContentQueryCertificateContentResponseData) *QueryCertificateContentResponse {
+func (s *QueryCertificateContentResponse) SetData(v *QueryCertificateContentResponseData) *QueryCertificateContentResponse {
   s.Data = v
   return s
 }
 
-type QueryCertificateContentQueryCertificateContentResponseData struct {
+type QueryCertificateContentResponseData struct {
   // {"en":"Certificate ID", "zh_CN":"证书ID"}
   CertificateId *int `json:"certificateId,omitempty" xml:"certificateId,omitempty" require:"true"`
   // {"en":"Certificate content", "zh_CN":"证书内容，PEM格式"}
   Certificate *string `json:"certificate,omitempty" xml:"certificate,omitempty" require:"true"`
 }
 
-func (s QueryCertificateContentQueryCertificateContentResponseData) String() string {
+func (s QueryCertificateContentResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCertificateContentQueryCertificateContentResponseData) GoString() string {
+func (s QueryCertificateContentResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryCertificateContentQueryCertificateContentResponseData) SetCertificateId(v int) *QueryCertificateContentQueryCertificateContentResponseData {
+func (s *QueryCertificateContentResponseData) SetCertificateId(v int) *QueryCertificateContentResponseData {
   s.CertificateId = &v
   return s
 }
 
-func (s *QueryCertificateContentQueryCertificateContentResponseData) SetCertificate(v string) *QueryCertificateContentQueryCertificateContentResponseData {
+func (s *QueryCertificateContentResponseData) SetCertificate(v string) *QueryCertificateContentResponseData {
   s.Certificate = &v
   return s
 }

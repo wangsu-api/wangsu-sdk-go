@@ -116,7 +116,7 @@ func (s GetListOfPropertyVersionsResponseHeader) GoString() string {
 
 type GetListOfPropertyVersionsResponse struct {
   // {"en" : "A summary of each version of the property.", "zh_CN": "加速项目每个版本的摘要。"}
-  PropertyVersions []*GetListOfPropertyVersionsGetListOfPropertyVersionsResponsePropertyVersions `json:"propertyVersions,omitempty" xml:"propertyVersions,omitempty" require:"true" type:"Repeated"`
+  PropertyVersions []*GetListOfPropertyVersionsResponsePropertyVersions `json:"propertyVersions,omitempty" xml:"propertyVersions,omitempty" require:"true" type:"Repeated"`
   // {"en" : "Range: >= 0 
   // Indicates the number of versions of the property.", "zh_CN": "取值范围: >= 0 
   // 加速项目的版本数量。"}
@@ -131,7 +131,7 @@ func (s GetListOfPropertyVersionsResponse) GoString() string {
   return s.String()
 }
 
-func (s *GetListOfPropertyVersionsResponse) SetPropertyVersions(v []*GetListOfPropertyVersionsGetListOfPropertyVersionsResponsePropertyVersions) *GetListOfPropertyVersionsResponse {
+func (s *GetListOfPropertyVersionsResponse) SetPropertyVersions(v []*GetListOfPropertyVersionsResponsePropertyVersions) *GetListOfPropertyVersionsResponse {
   s.PropertyVersions = v
   return s
 }
@@ -141,7 +141,7 @@ func (s *GetListOfPropertyVersionsResponse) SetCount(v int) *GetListOfPropertyVe
   return s
 }
 
-type GetListOfPropertyVersionsGetListOfPropertyVersionsResponsePropertyVersions struct     {
+type GetListOfPropertyVersionsResponsePropertyVersions struct     {
   // {"en" : "Range: >= 1 
   // A version number.", "zh_CN": "取值范围: >= 1 
   // 版本号。"}
@@ -164,45 +164,45 @@ type GetListOfPropertyVersionsGetListOfPropertyVersionsResponsePropertyVersions 
   LastValidationStatus *string `json:"lastValidationStatus,omitempty" xml:"lastValidationStatus,omitempty"`
 }
 
-func (s GetListOfPropertyVersionsGetListOfPropertyVersionsResponsePropertyVersions) String() string {
+func (s GetListOfPropertyVersionsResponsePropertyVersions) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetListOfPropertyVersionsGetListOfPropertyVersionsResponsePropertyVersions) GoString() string {
+func (s GetListOfPropertyVersionsResponsePropertyVersions) GoString() string {
   return s.String()
 }
 
-func (s *GetListOfPropertyVersionsGetListOfPropertyVersionsResponsePropertyVersions) SetVersion(v int) *GetListOfPropertyVersionsGetListOfPropertyVersionsResponsePropertyVersions {
+func (s *GetListOfPropertyVersionsResponsePropertyVersions) SetVersion(v int) *GetListOfPropertyVersionsResponsePropertyVersions {
   s.Version = &v
   return s
 }
 
-func (s *GetListOfPropertyVersionsGetListOfPropertyVersionsResponsePropertyVersions) SetDescription(v string) *GetListOfPropertyVersionsGetListOfPropertyVersionsResponsePropertyVersions {
+func (s *GetListOfPropertyVersionsResponsePropertyVersions) SetDescription(v string) *GetListOfPropertyVersionsResponsePropertyVersions {
   s.Description = &v
   return s
 }
 
-func (s *GetListOfPropertyVersionsGetListOfPropertyVersionsResponsePropertyVersions) SetCreationTime(v string) *GetListOfPropertyVersionsGetListOfPropertyVersionsResponsePropertyVersions {
+func (s *GetListOfPropertyVersionsResponsePropertyVersions) SetCreationTime(v string) *GetListOfPropertyVersionsResponsePropertyVersions {
   s.CreationTime = &v
   return s
 }
 
-func (s *GetListOfPropertyVersionsGetListOfPropertyVersionsResponsePropertyVersions) SetHostnames(v []*string) *GetListOfPropertyVersionsGetListOfPropertyVersionsResponsePropertyVersions {
+func (s *GetListOfPropertyVersionsResponsePropertyVersions) SetHostnames(v []*string) *GetListOfPropertyVersionsResponsePropertyVersions {
   s.Hostnames = v
   return s
 }
 
-func (s *GetListOfPropertyVersionsGetListOfPropertyVersionsResponsePropertyVersions) SetFrozen(v bool) *GetListOfPropertyVersionsGetListOfPropertyVersionsResponsePropertyVersions {
+func (s *GetListOfPropertyVersionsResponsePropertyVersions) SetFrozen(v bool) *GetListOfPropertyVersionsResponsePropertyVersions {
   s.Frozen = &v
   return s
 }
 
-func (s *GetListOfPropertyVersionsGetListOfPropertyVersionsResponsePropertyVersions) SetLastUpdateTime(v string) *GetListOfPropertyVersionsGetListOfPropertyVersionsResponsePropertyVersions {
+func (s *GetListOfPropertyVersionsResponsePropertyVersions) SetLastUpdateTime(v string) *GetListOfPropertyVersionsResponsePropertyVersions {
   s.LastUpdateTime = &v
   return s
 }
 
-func (s *GetListOfPropertyVersionsGetListOfPropertyVersionsResponsePropertyVersions) SetLastValidationStatus(v string) *GetListOfPropertyVersionsGetListOfPropertyVersionsResponsePropertyVersions {
+func (s *GetListOfPropertyVersionsResponsePropertyVersions) SetLastValidationStatus(v string) *GetListOfPropertyVersionsResponsePropertyVersions {
   s.LastValidationStatus = &v
   return s
 }
@@ -672,9 +672,9 @@ type GetAPropertyVersionResponse struct {
   // {"en" : "Version number.", "zh_CN": "版本号。"}
   Version *int `json:"version,omitempty" xml:"version,omitempty" require:"true"`
   // {"en" : "Describes a property configuration. This contains all the settings.", "zh_CN": "描述加速项目的所有配置信息。"}
-  Configs *GetAPropertyVersionGetAPropertyVersionResponseConfigs `json:"configs,omitempty" xml:"configs,omitempty" require:"true" type:"Struct"`
+  Configs *GetAPropertyVersionResponseConfigs `json:"configs,omitempty" xml:"configs,omitempty" require:"true" type:"Struct"`
   // {"en" : "Status of the property version.", "zh_CN": "状态信息。"}
-  Status *GetAPropertyVersionGetAPropertyVersionResponseStatus `json:"status,omitempty" xml:"status,omitempty" require:"true" type:"Struct"`
+  Status *GetAPropertyVersionResponseStatus `json:"status,omitempty" xml:"status,omitempty" require:"true" type:"Struct"`
 }
 
 func (s GetAPropertyVersionResponse) String() string {
@@ -690,17 +690,17 @@ func (s *GetAPropertyVersionResponse) SetVersion(v int) *GetAPropertyVersionResp
   return s
 }
 
-func (s *GetAPropertyVersionResponse) SetConfigs(v *GetAPropertyVersionGetAPropertyVersionResponseConfigs) *GetAPropertyVersionResponse {
+func (s *GetAPropertyVersionResponse) SetConfigs(v *GetAPropertyVersionResponseConfigs) *GetAPropertyVersionResponse {
   s.Configs = v
   return s
 }
 
-func (s *GetAPropertyVersionResponse) SetStatus(v *GetAPropertyVersionGetAPropertyVersionResponseStatus) *GetAPropertyVersionResponse {
+func (s *GetAPropertyVersionResponse) SetStatus(v *GetAPropertyVersionResponseStatus) *GetAPropertyVersionResponse {
   s.Status = v
   return s
 }
 
-type GetAPropertyVersionGetAPropertyVersionResponseConfigs struct {
+type GetAPropertyVersionResponseConfigs struct {
   // {"en" : "A description of the version.
   // ", "zh_CN": "版本描述。"}
   Description *string `json:"description,omitempty" xml:"description,omitempty"`
@@ -713,7 +713,7 @@ type GetAPropertyVersionGetAPropertyVersionResponseConfigs struct {
   // 同一个加速域名在同一时间只能存在于一个已部署的加速项目中，但泛域名可以与关联的完全限定域名一同部署。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
   // {"en" : "This optional field allows you to configure notifications about client requests to be sent to a remote server. It can be used only if you have access to our realtime_log_switch directive. Please contact our support team if you require this feature.", "zh_CN": "此可选字段用来配置发送消息通知（即实时日志）到您的远程服务器。当有客户端请求访问您的加速域名时，将触发通知。这是高级功能，如果您需要此功能，请联系我们的技术支持开通。"}
-  RealTimeLog *GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLog `json:"realTimeLog,omitempty" xml:"realTimeLog,omitempty" type:"Struct"`
+  RealTimeLog *GetAPropertyVersionResponseConfigsRealTimeLog `json:"realTimeLog,omitempty" xml:"realTimeLog,omitempty" type:"Struct"`
   // {"en" : "Range: <= 65530 characters 
   // Refer to Edge Logic Introduction.", "zh_CN": "取值范围: <= 65530 字符 
   // 自定义边缘逻辑。参考边缘逻辑介绍。"}
@@ -727,7 +727,7 @@ type GetAPropertyVersionGetAPropertyVersionResponseConfigs struct {
   // 此字段可以设置为布尔值或字符串。如果设置为true，则CDN Pro服务器会将所有HTTP请求重定向到HTTPS，并返回301状态码。如果您希望在重定向请求时返回不同的状态码，可在此处指定需要的状态码，如'302'、'307'或'308'。"}
   RedirectHttpToHttps *string `json:"redirectHttpToHttps,omitempty" xml:"redirectHttpToHttps,omitempty"`
   // {"en" : "Describes the origin servers for the property's content.", "zh_CN": "描述加速项目对应的源站。"}
-  Origins []*GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins `json:"origins,omitempty" xml:"origins,omitempty" type:"Repeated"`
+  Origins []*GetAPropertyVersionResponseConfigsOrigins `json:"origins,omitempty" xml:"origins,omitempty" type:"Repeated"`
   // {"en" : "Default: 1 
   // The value must be set to 1 at this time.", "zh_CN": "默认值: 1 
   // 当前仅允许值为1。"}
@@ -798,7 +798,7 @@ type GetAPropertyVersionGetAPropertyVersionResponseConfigs struct {
   // ", "zh_CN": "指该加速项目用到的证书ID。仅设置tlsCertificateId1字段而不设置tlsCertificateId字段是无效的。如果未设置tlsCertificateId，则不会为此加速项目启用HTTPS。此功能允许您指定两个不同类型的证书，即一个RSA，一个EC。如果指定了两个相同类型的证书，则将忽略tlsCertificateId指定的证书。"}
   TlsCertificateId1 *int `json:"tlsCertificateId1,omitempty" xml:"tlsCertificateId1,omitempty"`
   // {"en" : "This object allows you to support video players requesting partial content through query string parameters. If you specify videoSeek, you must enter a value for startParameter.", "zh_CN": "此对象用来支持视频播放器通过指定查询参数来请求部分内容。当videoSeek对象存在时，必须为startParameter设置一个值。"}
-  VideoSeek *GetAPropertyVersionGetAPropertyVersionResponseConfigsVideoSeek `json:"videoSeek,omitempty" xml:"videoSeek,omitempty" type:"Struct"`
+  VideoSeek *GetAPropertyVersionResponseConfigsVideoSeek `json:"videoSeek,omitempty" xml:"videoSeek,omitempty" type:"Struct"`
   // {"en" : "Default: 1800 Range: [ 300 .. 86400 ] 
   // Lifespan of TLS session ticket in seconds.", "zh_CN": "默认值: 1800 取值范围: [ 300 .. 86400 ] 
   // TLS会话ticket的有效期（秒）。"}
@@ -816,7 +816,7 @@ type GetAPropertyVersionGetAPropertyVersionResponseConfigs struct {
   // <table><tr><th>值</th><th>内容类型</th></tr><tr><td>1</td><td>即时通信</td></tr><tr><td>2</td><td>搜索引擎</td></tr><tr><td>3</td><td>综合门户</td></tr><tr><td>4</td><td>网上邮局</td></tr><tr><td>5</td><td>网络新闻</td></tr><tr><td>6</td><td>博客/个人空间</td></tr><tr><td>7</td><td>网络广告</td></tr><tr><td>8</td><td>单位门户网站</td></tr><tr><td>9</td><td>网络购物</td></tr><tr><td>10</td><td>网上支付</td></tr><tr><td>11</td><td>网上银行</td></tr><tr><td>12</td><td>网上炒股</td></tr><tr><td>13</td><td>网络游戏</td></tr><tr><td>14</td><td>网络音乐</td></tr><tr><td>15</td><td>网络影视</td></tr><tr><td>16</td><td>网络图片</td></tr><tr><td>17</td><td>软件下载</td></tr><tr><td>18</td><td>网上求职</td></tr><tr><td>19</td><td>在线交友</td></tr><tr><td>20</td><td>网上房产</td></tr><tr><td>21</td><td>网络教育</td></tr><tr><td>22</td><td>网站建设</td></tr><tr><td>23</td><td>WAP</td></tr><tr><td>24</td><td>其他</td></tr></table>"}
   BeianContentType *int `json:"beianContentType,omitempty" xml:"beianContentType,omitempty"`
   // {"en" : "Specify one or more access control rules to restrict access to your content. More advanced configuration can be done using Edge Logic. These access control rules take precedence over Edge Logic if both are defined.", "zh_CN": "指定一个或多个访问控制规则以限制对内容的访问。可以使用边缘逻辑进行更高级的配置。此处定义的访问控制规则，优先级高于边缘逻辑。"}
-  AccessControlRules []*GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRules `json:"accessControlRules,omitempty" xml:"accessControlRules,omitempty" type:"Repeated"`
+  AccessControlRules []*GetAPropertyVersionResponseConfigsAccessControlRules `json:"accessControlRules,omitempty" xml:"accessControlRules,omitempty" type:"Repeated"`
   // {"en" : "Default: False 
   // By default, CDN Pro takes control of the contents under the /.well-known/{acme-challenge, pki-validation} directories to support certificate auto-renew for properties. If for any reason you need to manage these two directories by yourself on the origin, for example, to implement your own certificate auto-renew mechanism, you can use this configuration option to disable the default behavior by setting its value to true. For more information about our support for certificate auto-renewal, refer to the description of the autoRenew field in the Create a certificate API.", "zh_CN": "默认值: False 
   // 默认情况下，CDN Pro控制/.well-known/{acme-challenge, pki-validation}目录下的内容，以支持加速项目的证书自动更新功能。如果您需要自己在源站管理这两个目录，例如，为了实现您自己的证书自动更新机制，您可以将此字段设置为true来禁用默认行为。关于证书自动更新的更多信息，请参考'创建证书'接口中autoRenew字段的说明。"}
@@ -828,7 +828,7 @@ type GetAPropertyVersionGetAPropertyVersionResponseConfigs struct {
   // 如果在加速项目的边缘逻辑中使用了'rewrite'指令，可使用该字段来控制客户端请求的URI如何合并到缓存键（Cache Key）中 。默认值'preRewrite'指将改写前的URI放入缓存键，而'postRewrite'则使用改写后的URI。如果您的'rewrite'指令将多个不同的URI改写为相同的值，则使用'postRewrite'可以提高缓存命中率。"}
   CacheKeyUri *string `json:"cacheKeyUri,omitempty" xml:"cacheKeyUri,omitempty"`
   // {"en" : "This field lists ports other than the default 80 used to handle HTTP requests and ports other than the default 443 used to handle HTTPS requests. ", "zh_CN": "除标准的80，443端口外，我们还支持一些扩展端口。可用该字段指定用于处理HTTP和HTTPS请求的扩展端口。"}
-  ExtraServicePorts *GetAPropertyVersionGetAPropertyVersionResponseConfigsExtraServicePorts `json:"extraServicePorts,omitempty" xml:"extraServicePorts,omitempty" type:"Struct"`
+  ExtraServicePorts *GetAPropertyVersionResponseConfigsExtraServicePorts `json:"extraServicePorts,omitempty" xml:"extraServicePorts,omitempty" type:"Struct"`
   // {"en" : "Range: <= 65530 characters 
   // This field allows you to enter Edge Logic to customize load balancing. A subset of the  directives can be used. Refer to the basic directives listed in the baseLbDirectives field of the response to the system configuration API. Currently, these include 'if', 'else', 'elseif', 'set', 'return', 'add_header', 'deny', 'allow', 'access_log_sampling', and 'proxy_set_header.' In addition, some advanced Edge Logic directives, identified by the system configuration API's advancedLbDirectives, can be enabled for your account if needed. Please contact our support team if you require any of them. <br/> Example use: <br />
   // if ($http_user_agent = bot) { return 403;}
@@ -846,155 +846,155 @@ type GetAPropertyVersionGetAPropertyVersionResponseConfigs struct {
   Tls0Rtt *bool `json:"tls0Rtt,omitempty" xml:"tls0Rtt,omitempty"`
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseConfigs) String() string {
+func (s GetAPropertyVersionResponseConfigs) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseConfigs) GoString() string {
+func (s GetAPropertyVersionResponseConfigs) GoString() string {
   return s.String()
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetDescription(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetDescription(v string) *GetAPropertyVersionResponseConfigs {
   s.Description = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetCacheKeyHostname(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetCacheKeyHostname(v string) *GetAPropertyVersionResponseConfigs {
   s.CacheKeyHostname = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetHostnames(v []*string) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetHostnames(v []*string) *GetAPropertyVersionResponseConfigs {
   s.Hostnames = v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetRealTimeLog(v *GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLog) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetRealTimeLog(v *GetAPropertyVersionResponseConfigsRealTimeLog) *GetAPropertyVersionResponseConfigs {
   s.RealTimeLog = v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetEdgeLogic(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetEdgeLogic(v string) *GetAPropertyVersionResponseConfigs {
   s.EdgeLogic = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetHasBeian(v bool) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetHasBeian(v bool) *GetAPropertyVersionResponseConfigs {
   s.HasBeian = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetRedirectHttpToHttps(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetRedirectHttpToHttps(v string) *GetAPropertyVersionResponseConfigs {
   s.RedirectHttpToHttps = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetOrigins(v []*GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetOrigins(v []*GetAPropertyVersionResponseConfigsOrigins) *GetAPropertyVersionResponseConfigs {
   s.Origins = v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetSyntaxVersion(v int) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetSyntaxVersion(v int) *GetAPropertyVersionResponseConfigs {
   s.SyntaxVersion = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetDisableHttp2(v bool) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetDisableHttp2(v bool) *GetAPropertyVersionResponseConfigs {
   s.DisableHttp2 = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetSchemeInCacheKey(v bool) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetSchemeInCacheKey(v bool) *GetAPropertyVersionResponseConfigs {
   s.SchemeInCacheKey = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetTlsMaxVersion(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetTlsMaxVersion(v string) *GetAPropertyVersionResponseConfigs {
   s.TlsMaxVersion = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetLoadBalancerHashKey(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetLoadBalancerHashKey(v string) *GetAPropertyVersionResponseConfigs {
   s.LoadBalancerHashKey = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetTlsCertificateId(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetTlsCertificateId(v string) *GetAPropertyVersionResponseConfigs {
   s.TlsCertificateId = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetTlsMinVersion(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetTlsMinVersion(v string) *GetAPropertyVersionResponseConfigs {
   s.TlsMinVersion = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetTlsCiphers(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetTlsCiphers(v string) *GetAPropertyVersionResponseConfigs {
   s.TlsCiphers = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetAllowProtocolDowngrade(v bool) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetAllowProtocolDowngrade(v bool) *GetAPropertyVersionResponseConfigs {
   s.AllowProtocolDowngrade = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetTlsCertificateId1(v int) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetTlsCertificateId1(v int) *GetAPropertyVersionResponseConfigs {
   s.TlsCertificateId1 = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetVideoSeek(v *GetAPropertyVersionGetAPropertyVersionResponseConfigsVideoSeek) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetVideoSeek(v *GetAPropertyVersionResponseConfigsVideoSeek) *GetAPropertyVersionResponseConfigs {
   s.VideoSeek = v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetTlsSessionTimeout(v int) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetTlsSessionTimeout(v int) *GetAPropertyVersionResponseConfigs {
   s.TlsSessionTimeout = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetEnableOcspStapling(v bool) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetEnableOcspStapling(v bool) *GetAPropertyVersionResponseConfigs {
   s.EnableOcspStapling = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetBeianContentType(v int) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetBeianContentType(v int) *GetAPropertyVersionResponseConfigs {
   s.BeianContentType = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetAccessControlRules(v []*GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRules) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetAccessControlRules(v []*GetAPropertyVersionResponseConfigsAccessControlRules) *GetAPropertyVersionResponseConfigs {
   s.AccessControlRules = v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetDisableCertAutomation(v bool) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetDisableCertAutomation(v bool) *GetAPropertyVersionResponseConfigs {
   s.DisableCertAutomation = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetCacheKeyUri(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetCacheKeyUri(v string) *GetAPropertyVersionResponseConfigs {
   s.CacheKeyUri = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetExtraServicePorts(v *GetAPropertyVersionGetAPropertyVersionResponseConfigsExtraServicePorts) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetExtraServicePorts(v *GetAPropertyVersionResponseConfigsExtraServicePorts) *GetAPropertyVersionResponseConfigs {
   s.ExtraServicePorts = v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetLoadBalancerLogic(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetLoadBalancerLogic(v string) *GetAPropertyVersionResponseConfigs {
   s.LoadBalancerLogic = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigs) SetTls0Rtt(v bool) *GetAPropertyVersionGetAPropertyVersionResponseConfigs {
+func (s *GetAPropertyVersionResponseConfigs) SetTls0Rtt(v bool) *GetAPropertyVersionResponseConfigs {
   s.Tls0Rtt = &v
   return s
 }
 
-type GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLog struct {
+type GetAPropertyVersionResponseConfigsRealTimeLog struct {
   // {"en" : "The URL that receives the notifications. It must begin with 'http' or 'https'. The server should support the POST method. This is a required field.", "zh_CN": "接收通知的服务器URL地址。必须以'http'或'https'开头。服务器须支持POST方法。这是必填字段。"}
   LogUrl *string `json:"logUrl,omitempty" xml:"logUrl,omitempty" require:"true"`
   // {"en" : "Default: 1 Range: [ 1 .. 65536 ] 
@@ -1014,68 +1014,68 @@ type GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLog struct {
   // <table><tr><th>变量名称</th><th>描述</th></tr><tr><td>$body_bytes_sent</td><td>响应体大小。</td></tr><tr><td>$bytes_sent</td><td>响应的大小，包括响应体、响应头和响应行。</td></tr><tr><td>$client_country_code</td><td>客户端请求来源国家，以ISO 3166-1国家代码表示。例如'US'。如果国家/地区未知，则返回'ZZ'。</td></tr><tr><td>$client_real_ip</td><td>客户端请求的IP地址。</td></tr><tr><td>$cookie_x</td><td>获取某个cookie。例如，指定$cookie_account可获取名为'account'的cookie值。</td></tr><tr><td>$http_x</td><td>从原始请求中获取某个HTTP请求头。请求头名称需转换为小写，并用下划线替换连字符。例如，指定$http_user_agent来获取User-Agent的值。</td></tr><tr><td>$msec</td><td>当前unix时间，以毫秒为单位。</td></tr><tr><td>$qtl_req_id</td><td>请求的唯一标识符。</td></tr><tr><td>$request_uri</td><td>HTTP请求URI。</td></tr><tr><td>$request_method</td><td>用于访问源站的HTTP请求方法。</td></tr><tr><td>$request_time</td><td>响应时间，以毫秒为单位。这是从接收到请求的第一个字节到服务端响应最后一个字节之间的时间。</td></tr><tr><td>$sc_completed</td><td>1表示对象的最后一个字节已返回给用户，否则为0。</td></tr><tr><td>$sc_initial</td><td>1表示对象的第一个字节已返回给用户，否则为0。</td></tr><tr><td>$scheme</td><td>表示用户请求的协议（'http'或'https'）。</td></tr><tr><td>$sent_http_content_length</td><td>原始文件大小。</td></tr><tr><td>$sent_http_x</td><td>获取在对客户端响应中某个HTTP响应头的值。响应头名称需转换为小写，并用下划线替换连字符。例如，$sent_http_etag可获取ETag头的值。</td></tr><tr><td>$server_addr</td><td>为用户请求提供服务的边缘节点的IP地址。</td></tr><tr><td>$server_protocol</td><td>表示用户请求中使用的HTTP版本，可以是'HTTP/1.0'、'HTTP/1.1'或'HTTP/2.0'。</td></tr><tr><td>$ssl_cipher</td><td>表示用于TLS（SSL）连接的加密算法套件。</td></tr><tr><td>$ssl_server_name</td><td>客户端发起TLS（SSL）连接所要连接的域名。仅由支持SNI（Server Name Indication）的客户端发送。</td></tr><tr><td>$ssl_protocol</td><td>表示用于TLS（SSL）连接的TLS版本。例如，'SSLv3'、'TLSv1'、'TLSv1.1'、'TLSv1.2'和'unknown'。</td></tr><tr><td>$status</td><td>用户请求的HTTP状态码。</td></tr><tr><td>$tcpinfo_rtt</td><td>数据包往返目的地所用的时间，以微秒为单位。</td></tr></table>"}
   Format *string `json:"format,omitempty" xml:"format,omitempty"`
   // {"en" : "HTTP header names and values to be sent to the notification server. A header name can contain any alphanumeric character or hyphen, '-'. A header value can contain any printable characters. It can also include any of the built-in variables supported in the format field of the realTimeLog object.", "zh_CN": "需要发送到远程服务器的HTTP请求头名称和值。请求头名称可以包含任何字母，数字或连字符'-'。值可以包含任何可打印字符，也可以使用realTimeLog对象format字段中支持的任何内置变量。"}
-  Headers []*GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLogHeaders `json:"headers,omitempty" xml:"headers,omitempty" type:"Repeated"`
+  Headers []*GetAPropertyVersionResponseConfigsRealTimeLogHeaders `json:"headers,omitempty" xml:"headers,omitempty" type:"Repeated"`
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLog) String() string {
+func (s GetAPropertyVersionResponseConfigsRealTimeLog) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLog) GoString() string {
+func (s GetAPropertyVersionResponseConfigsRealTimeLog) GoString() string {
   return s.String()
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLog) SetLogUrl(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLog {
+func (s *GetAPropertyVersionResponseConfigsRealTimeLog) SetLogUrl(v string) *GetAPropertyVersionResponseConfigsRealTimeLog {
   s.LogUrl = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLog) SetSampleRate(v int) *GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLog {
+func (s *GetAPropertyVersionResponseConfigsRealTimeLog) SetSampleRate(v int) *GetAPropertyVersionResponseConfigsRealTimeLog {
   s.SampleRate = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLog) SetEscape(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLog {
+func (s *GetAPropertyVersionResponseConfigsRealTimeLog) SetEscape(v string) *GetAPropertyVersionResponseConfigsRealTimeLog {
   s.Escape = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLog) SetFormat(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLog {
+func (s *GetAPropertyVersionResponseConfigsRealTimeLog) SetFormat(v string) *GetAPropertyVersionResponseConfigsRealTimeLog {
   s.Format = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLog) SetHeaders(v []*GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLogHeaders) *GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLog {
+func (s *GetAPropertyVersionResponseConfigsRealTimeLog) SetHeaders(v []*GetAPropertyVersionResponseConfigsRealTimeLogHeaders) *GetAPropertyVersionResponseConfigsRealTimeLog {
   s.Headers = v
   return s
 }
 
-type GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLogHeaders struct     {
+type GetAPropertyVersionResponseConfigsRealTimeLogHeaders struct     {
   // {"en" : "Name of an HTTP header.", "zh_CN": "HTTP标头名称"}
   Name *string `json:"name,omitempty" xml:"name,omitempty"`
   // {"en" : "Value of an HTTP header.", "zh_CN": "HTTP标头值"}
   Value *string `json:"value,omitempty" xml:"value,omitempty"`
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLogHeaders) String() string {
+func (s GetAPropertyVersionResponseConfigsRealTimeLogHeaders) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLogHeaders) GoString() string {
+func (s GetAPropertyVersionResponseConfigsRealTimeLogHeaders) GoString() string {
   return s.String()
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLogHeaders) SetName(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLogHeaders {
+func (s *GetAPropertyVersionResponseConfigsRealTimeLogHeaders) SetName(v string) *GetAPropertyVersionResponseConfigsRealTimeLogHeaders {
   s.Name = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLogHeaders) SetValue(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsRealTimeLogHeaders {
+func (s *GetAPropertyVersionResponseConfigsRealTimeLogHeaders) SetValue(v string) *GetAPropertyVersionResponseConfigsRealTimeLogHeaders {
   s.Value = &v
   return s
 }
 
-type GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins struct     {
+type GetAPropertyVersionResponseConfigsOrigins struct     {
   // {"en" : "^[a-zA-z0-9_] 
   // Name of an origin. It must be unique within this property.
   // ", "zh_CN": "^[a-zA-z0-9_] 
@@ -1179,7 +1179,7 @@ type GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins struct     {
   // 'secretKey':'d12345678abcdefghi'
   // }}
   // "}
-  Authentication *GetAPropertyVersionGetAPropertyVersionResponseConfigsOriginsAuthentication `json:"authentication,omitempty" xml:"authentication,omitempty" type:"Struct"`
+  Authentication *GetAPropertyVersionResponseConfigsOriginsAuthentication `json:"authentication,omitempty" xml:"authentication,omitempty" type:"Struct"`
   // {"en" : "Default: 60 Range: [ 5 .. 600 ] 
   // Timeout in seconds during which an idle keepalive connection to an upstream server will stay open. A service quota setting of maxUpstreamKeepaliveTimeOut can change the maximum permitted value.", "zh_CN": "默认值: 60 取值范围: [ 5 .. 600 ] 
   // 该字段用于指定CDN Pro服务器和源站建连的Keep-Alive超时时间，单位为秒。通过maxUpstreamKeepaliveTimeOut 该服务设置项可以更改允许的最大值。如果需要调整最大值，请联系我们的技术支持。"}
@@ -1194,88 +1194,88 @@ type GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins struct     {
   Shield *string `json:"shield,omitempty" xml:"shield,omitempty"`
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins) String() string {
+func (s GetAPropertyVersionResponseConfigsOrigins) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins) GoString() string {
+func (s GetAPropertyVersionResponseConfigsOrigins) GoString() string {
   return s.String()
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins) SetName(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins {
+func (s *GetAPropertyVersionResponseConfigsOrigins) SetName(v string) *GetAPropertyVersionResponseConfigsOrigins {
   s.Name = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins) SetServers(v []*string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins {
+func (s *GetAPropertyVersionResponseConfigsOrigins) SetServers(v []*string) *GetAPropertyVersionResponseConfigsOrigins {
   s.Servers = v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins) SetSupportedProtocol(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins {
+func (s *GetAPropertyVersionResponseConfigsOrigins) SetSupportedProtocol(v string) *GetAPropertyVersionResponseConfigsOrigins {
   s.SupportedProtocol = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins) SetDirectConnection(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins {
+func (s *GetAPropertyVersionResponseConfigsOrigins) SetDirectConnection(v string) *GetAPropertyVersionResponseConfigsOrigins {
   s.DirectConnection = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins) SetHostHeader(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins {
+func (s *GetAPropertyVersionResponseConfigsOrigins) SetHostHeader(v string) *GetAPropertyVersionResponseConfigsOrigins {
   s.HostHeader = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins) SetVerifyOrigin(v bool) *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins {
+func (s *GetAPropertyVersionResponseConfigsOrigins) SetVerifyOrigin(v bool) *GetAPropertyVersionResponseConfigsOrigins {
   s.VerifyOrigin = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins) SetAuthentication(v *GetAPropertyVersionGetAPropertyVersionResponseConfigsOriginsAuthentication) *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins {
+func (s *GetAPropertyVersionResponseConfigsOrigins) SetAuthentication(v *GetAPropertyVersionResponseConfigsOriginsAuthentication) *GetAPropertyVersionResponseConfigsOrigins {
   s.Authentication = v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins) SetKeepAliveTimeout(v int) *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins {
+func (s *GetAPropertyVersionResponseConfigsOrigins) SetKeepAliveTimeout(v int) *GetAPropertyVersionResponseConfigsOrigins {
   s.KeepAliveTimeout = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins) SetPeerFailureTimeout(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins {
+func (s *GetAPropertyVersionResponseConfigsOrigins) SetPeerFailureTimeout(v string) *GetAPropertyVersionResponseConfigsOrigins {
   s.PeerFailureTimeout = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins) SetTlsCertificateId(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins {
+func (s *GetAPropertyVersionResponseConfigsOrigins) SetTlsCertificateId(v string) *GetAPropertyVersionResponseConfigsOrigins {
   s.TlsCertificateId = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins) SetShield(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsOrigins {
+func (s *GetAPropertyVersionResponseConfigsOrigins) SetShield(v string) *GetAPropertyVersionResponseConfigsOrigins {
   s.Shield = &v
   return s
 }
 
-type GetAPropertyVersionGetAPropertyVersionResponseConfigsOriginsAuthentication struct {
+type GetAPropertyVersionResponseConfigsOriginsAuthentication struct {
   // {"en" : "Authentication method.", "zh_CN": "鉴权方法。"}
   MethodName *string `json:"methodName,omitempty" xml:"methodName,omitempty"`
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseConfigsOriginsAuthentication) String() string {
+func (s GetAPropertyVersionResponseConfigsOriginsAuthentication) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseConfigsOriginsAuthentication) GoString() string {
+func (s GetAPropertyVersionResponseConfigsOriginsAuthentication) GoString() string {
   return s.String()
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsOriginsAuthentication) SetMethodName(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsOriginsAuthentication {
+func (s *GetAPropertyVersionResponseConfigsOriginsAuthentication) SetMethodName(v string) *GetAPropertyVersionResponseConfigsOriginsAuthentication {
   s.MethodName = &v
   return s
 }
 
-type GetAPropertyVersionGetAPropertyVersionResponseConfigsVideoSeek struct {
+type GetAPropertyVersionResponseConfigsVideoSeek struct {
   // {"en" : "Range: [ 1 .. 31 ] characters 
   // Name of the query parameter indicating the starting offset in bytes of the content to fetch. The parameter name should begin with a letter (a-z, A-Z) and may be followed by up to 30 letters and numbers.", "zh_CN": "取值范围: [ 1 .. 31 ] 字符 
   // 查询参数的名称，用来指定要获取的内容的起始位置（以字节计算）。参数名称应以字母（a-z，A-Z）开头，后面最多可以有30个字母和数字。"}
@@ -1286,59 +1286,59 @@ type GetAPropertyVersionGetAPropertyVersionResponseConfigsVideoSeek struct {
   EndParameter *string `json:"endParameter,omitempty" xml:"endParameter,omitempty"`
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseConfigsVideoSeek) String() string {
+func (s GetAPropertyVersionResponseConfigsVideoSeek) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseConfigsVideoSeek) GoString() string {
+func (s GetAPropertyVersionResponseConfigsVideoSeek) GoString() string {
   return s.String()
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsVideoSeek) SetStartParameter(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsVideoSeek {
+func (s *GetAPropertyVersionResponseConfigsVideoSeek) SetStartParameter(v string) *GetAPropertyVersionResponseConfigsVideoSeek {
   s.StartParameter = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsVideoSeek) SetEndParameter(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsVideoSeek {
+func (s *GetAPropertyVersionResponseConfigsVideoSeek) SetEndParameter(v string) *GetAPropertyVersionResponseConfigsVideoSeek {
   s.EndParameter = &v
   return s
 }
 
-type GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRules struct     {
+type GetAPropertyVersionResponseConfigsAccessControlRules struct     {
   // {"en" : "Range: [ 0 .. 60 ] characters 
   // An optional ID for the access control rule.", "zh_CN": "取值范围: [ 0 .. 60 ] 字符 
   // 访问控制规则ID。"}
   Id *string `json:"id,omitempty" xml:"id,omitempty"`
   // {"en" : "Specify the conditions that the incoming request must match. At least one condition must be specified. If multiple are specified, all must match.", "zh_CN": "指定客户端请求必须匹配的条件。必须至少指定一个条件。如果指定了多个条件，则必须全部匹配。"}
-  Conditions *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesConditions `json:"conditions,omitempty" xml:"conditions,omitempty" type:"Struct"`
+  Conditions *GetAPropertyVersionResponseConfigsAccessControlRulesConditions `json:"conditions,omitempty" xml:"conditions,omitempty" type:"Struct"`
   // {"en" : "Indicates the action to take in response to a request that matches the conditions of the access control rule.", "zh_CN": "对于匹配到以上条件的请求所采取的相应操作。"}
-  Action *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesAction `json:"action,omitempty" xml:"action,omitempty" type:"Struct"`
+  Action *GetAPropertyVersionResponseConfigsAccessControlRulesAction `json:"action,omitempty" xml:"action,omitempty" type:"Struct"`
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRules) String() string {
+func (s GetAPropertyVersionResponseConfigsAccessControlRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRules) GoString() string {
+func (s GetAPropertyVersionResponseConfigsAccessControlRules) GoString() string {
   return s.String()
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRules) SetId(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRules {
+func (s *GetAPropertyVersionResponseConfigsAccessControlRules) SetId(v string) *GetAPropertyVersionResponseConfigsAccessControlRules {
   s.Id = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRules) SetConditions(v *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesConditions) *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRules {
+func (s *GetAPropertyVersionResponseConfigsAccessControlRules) SetConditions(v *GetAPropertyVersionResponseConfigsAccessControlRulesConditions) *GetAPropertyVersionResponseConfigsAccessControlRules {
   s.Conditions = v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRules) SetAction(v *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesAction) *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRules {
+func (s *GetAPropertyVersionResponseConfigsAccessControlRules) SetAction(v *GetAPropertyVersionResponseConfigsAccessControlRulesAction) *GetAPropertyVersionResponseConfigsAccessControlRules {
   s.Action = v
   return s
 }
 
-type GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesConditions struct {
+type GetAPropertyVersionResponseConfigsAccessControlRulesConditions struct {
   // {"en" : "Enum: https,http 
   // Indicates whether the incoming request uses HTTP or HTTPS.", "zh_CN": "取值范围: https,http 
   // 客户端请求的协议，HTTP或HTTPS。"}
@@ -1357,45 +1357,45 @@ type GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesCond
   ClientIpRange []*string `json:"clientIpRange,omitempty" xml:"clientIpRange,omitempty" type:"Repeated"`
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesConditions) String() string {
+func (s GetAPropertyVersionResponseConfigsAccessControlRulesConditions) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesConditions) GoString() string {
+func (s GetAPropertyVersionResponseConfigsAccessControlRulesConditions) GoString() string {
   return s.String()
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesConditions) SetScheme(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesConditions {
+func (s *GetAPropertyVersionResponseConfigsAccessControlRulesConditions) SetScheme(v string) *GetAPropertyVersionResponseConfigsAccessControlRulesConditions {
   s.Scheme = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesConditions) SetHostname(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesConditions {
+func (s *GetAPropertyVersionResponseConfigsAccessControlRulesConditions) SetHostname(v string) *GetAPropertyVersionResponseConfigsAccessControlRulesConditions {
   s.Hostname = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesConditions) SetUri(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesConditions {
+func (s *GetAPropertyVersionResponseConfigsAccessControlRulesConditions) SetUri(v string) *GetAPropertyVersionResponseConfigsAccessControlRulesConditions {
   s.Uri = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesConditions) SetServerRegions(v []*string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesConditions {
+func (s *GetAPropertyVersionResponseConfigsAccessControlRulesConditions) SetServerRegions(v []*string) *GetAPropertyVersionResponseConfigsAccessControlRulesConditions {
   s.ServerRegions = v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesConditions) SetClientRegions(v []*string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesConditions {
+func (s *GetAPropertyVersionResponseConfigsAccessControlRulesConditions) SetClientRegions(v []*string) *GetAPropertyVersionResponseConfigsAccessControlRulesConditions {
   s.ClientRegions = v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesConditions) SetClientIpRange(v []*string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesConditions {
+func (s *GetAPropertyVersionResponseConfigsAccessControlRulesConditions) SetClientIpRange(v []*string) *GetAPropertyVersionResponseConfigsAccessControlRulesConditions {
   s.ClientIpRange = v
   return s
 }
 
-type GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesAction struct {
+type GetAPropertyVersionResponseConfigsAccessControlRulesAction struct {
   // {"en" : "Indicates the HTTP status code to respond with. It must be in the range 300-309, 400-409, or 500-509 to indicate a redirection or error.", "zh_CN": "响应的HTTP状态码，范围必须在300-309、400-409或500-509之间，分别表示重定向或错误。"}
   Status *string `json:"status,omitempty" xml:"status,omitempty" require:"true"`
   // {"en" : "Range: <= 200 characters 
@@ -1404,50 +1404,50 @@ type GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesActi
   Message *string `json:"message,omitempty" xml:"message,omitempty"`
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesAction) String() string {
+func (s GetAPropertyVersionResponseConfigsAccessControlRulesAction) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesAction) GoString() string {
+func (s GetAPropertyVersionResponseConfigsAccessControlRulesAction) GoString() string {
   return s.String()
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesAction) SetStatus(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesAction {
+func (s *GetAPropertyVersionResponseConfigsAccessControlRulesAction) SetStatus(v string) *GetAPropertyVersionResponseConfigsAccessControlRulesAction {
   s.Status = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesAction) SetMessage(v string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsAccessControlRulesAction {
+func (s *GetAPropertyVersionResponseConfigsAccessControlRulesAction) SetMessage(v string) *GetAPropertyVersionResponseConfigsAccessControlRulesAction {
   s.Message = &v
   return s
 }
 
-type GetAPropertyVersionGetAPropertyVersionResponseConfigsExtraServicePorts struct {
+type GetAPropertyVersionResponseConfigsExtraServicePorts struct {
   // {"en" : "This is a list of ports other than 80 which are used to handle HTTP requests. The available values can be found in the systemConfigs API's response. If you need another port, please contact our support team.", "zh_CN": "指定用于处理HTTP请求的端口列表（80端口除外）。可通过调用'获取系统配置'接口来查询系统支持的端口。如果您需要开通其他端口，请联系技术支持。"}
   Http []*string `json:"http,omitempty" xml:"http,omitempty" type:"Repeated"`
   // {"en" : "This is a list of ports other than 443 which are used to handle HTTPS requests. The available values can be found in the systemConfigs API's response. If you need another port, please contact our support team.", "zh_CN": "指定用于处理HTTPS请求的端口列表（443端口除外）。可通过调用'获取系统配置'接口来查询系统支持的端口。如果您需要开通其他端口，请联系技术支持。"}
   Https []*string `json:"https,omitempty" xml:"https,omitempty" type:"Repeated"`
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseConfigsExtraServicePorts) String() string {
+func (s GetAPropertyVersionResponseConfigsExtraServicePorts) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseConfigsExtraServicePorts) GoString() string {
+func (s GetAPropertyVersionResponseConfigsExtraServicePorts) GoString() string {
   return s.String()
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsExtraServicePorts) SetHttp(v []*string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsExtraServicePorts {
+func (s *GetAPropertyVersionResponseConfigsExtraServicePorts) SetHttp(v []*string) *GetAPropertyVersionResponseConfigsExtraServicePorts {
   s.Http = v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseConfigsExtraServicePorts) SetHttps(v []*string) *GetAPropertyVersionGetAPropertyVersionResponseConfigsExtraServicePorts {
+func (s *GetAPropertyVersionResponseConfigsExtraServicePorts) SetHttps(v []*string) *GetAPropertyVersionResponseConfigsExtraServicePorts {
   s.Https = v
   return s
 }
 
-type GetAPropertyVersionGetAPropertyVersionResponseStatus struct {
+type GetAPropertyVersionResponseStatus struct {
   // {"en" : "Result of the last validation of the property version.", "zh_CN": "该版本最近一次配置验证的结果。"}
   LastValidationStatus *string `json:"lastValidationStatus,omitempty" xml:"lastValidationStatus,omitempty"`
   // {"en" : "Flag indicating if the version is frozen. A property version will be freezed after it is deployed to either staging or production environment.", "zh_CN": "该版本是否被冻结。当一个版本部署到演练或生产环境后，该版本即被冻结，不可更改。"}
@@ -1462,40 +1462,40 @@ type GetAPropertyVersionGetAPropertyVersionResponseStatus struct {
   InStaging *bool `json:"inStaging,omitempty" xml:"inStaging,omitempty"`
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseStatus) String() string {
+func (s GetAPropertyVersionResponseStatus) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAPropertyVersionGetAPropertyVersionResponseStatus) GoString() string {
+func (s GetAPropertyVersionResponseStatus) GoString() string {
   return s.String()
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseStatus) SetLastValidationStatus(v string) *GetAPropertyVersionGetAPropertyVersionResponseStatus {
+func (s *GetAPropertyVersionResponseStatus) SetLastValidationStatus(v string) *GetAPropertyVersionResponseStatus {
   s.LastValidationStatus = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseStatus) SetFrozen(v bool) *GetAPropertyVersionGetAPropertyVersionResponseStatus {
+func (s *GetAPropertyVersionResponseStatus) SetFrozen(v bool) *GetAPropertyVersionResponseStatus {
   s.Frozen = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseStatus) SetCreationTime(v string) *GetAPropertyVersionGetAPropertyVersionResponseStatus {
+func (s *GetAPropertyVersionResponseStatus) SetCreationTime(v string) *GetAPropertyVersionResponseStatus {
   s.CreationTime = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseStatus) SetLastUpdateTime(v string) *GetAPropertyVersionGetAPropertyVersionResponseStatus {
+func (s *GetAPropertyVersionResponseStatus) SetLastUpdateTime(v string) *GetAPropertyVersionResponseStatus {
   s.LastUpdateTime = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseStatus) SetInProduction(v bool) *GetAPropertyVersionGetAPropertyVersionResponseStatus {
+func (s *GetAPropertyVersionResponseStatus) SetInProduction(v bool) *GetAPropertyVersionResponseStatus {
   s.InProduction = &v
   return s
 }
 
-func (s *GetAPropertyVersionGetAPropertyVersionResponseStatus) SetInStaging(v bool) *GetAPropertyVersionGetAPropertyVersionResponseStatus {
+func (s *GetAPropertyVersionResponseStatus) SetInStaging(v bool) *GetAPropertyVersionResponseStatus {
   s.InStaging = &v
   return s
 }
@@ -1664,7 +1664,7 @@ func (s GetListOfPropertiesResponseHeader) GoString() string {
 
 type GetListOfPropertiesResponse struct {
   // {"en" : "List of properties.", "zh_CN": "加速项目列表。"}
-  Properties []*GetListOfPropertiesGetListOfPropertiesResponseProperties `json:"properties,omitempty" xml:"properties,omitempty" require:"true" type:"Repeated"`
+  Properties []*GetListOfPropertiesResponseProperties `json:"properties,omitempty" xml:"properties,omitempty" require:"true" type:"Repeated"`
   // {"en" : "Range: >= 0 
   // Number of properties.
   // ", "zh_CN": "取值范围: >= 0 
@@ -1680,7 +1680,7 @@ func (s GetListOfPropertiesResponse) GoString() string {
   return s.String()
 }
 
-func (s *GetListOfPropertiesResponse) SetProperties(v []*GetListOfPropertiesGetListOfPropertiesResponseProperties) *GetListOfPropertiesResponse {
+func (s *GetListOfPropertiesResponse) SetProperties(v []*GetListOfPropertiesResponseProperties) *GetListOfPropertiesResponse {
   s.Properties = v
   return s
 }
@@ -1690,7 +1690,7 @@ func (s *GetListOfPropertiesResponse) SetCount(v int) *GetListOfPropertiesRespon
   return s
 }
 
-type GetListOfPropertiesGetListOfPropertiesResponseProperties struct     {
+type GetListOfPropertiesResponseProperties struct     {
   // {"en" : "ID of the property.", "zh_CN": "加速项目ID。"}
   Id *string `json:"id,omitempty" xml:"id,omitempty"`
   // {"en" : "A description of the property.
@@ -1710,110 +1710,110 @@ type GetListOfPropertiesGetListOfPropertiesResponseProperties struct     {
   // 服务类型，即全站加速，网页加速，点播加速及下载加速。"}
   LegacyType *string `json:"legacyType,omitempty" xml:"legacyType,omitempty"`
   // {"en" : "Describes the version of the property deployed to staging.", "zh_CN": "描述部署到演练环境的加速项目版本。"}
-  StagingVersion *GetListOfPropertiesGetListOfPropertiesResponsePropertiesStagingVersion `json:"stagingVersion,omitempty" xml:"stagingVersion,omitempty" type:"Struct"`
+  StagingVersion *GetListOfPropertiesResponsePropertiesStagingVersion `json:"stagingVersion,omitempty" xml:"stagingVersion,omitempty" type:"Struct"`
   // {"en" : "Describes the version of the property deployed to production.", "zh_CN": "描述部署到生产环境的加速项目版本。"}
-  ProductionVersion *GetListOfPropertiesGetListOfPropertiesResponsePropertiesProductionVersion `json:"productionVersion,omitempty" xml:"productionVersion,omitempty" type:"Struct"`
+  ProductionVersion *GetListOfPropertiesResponsePropertiesProductionVersion `json:"productionVersion,omitempty" xml:"productionVersion,omitempty" type:"Struct"`
 }
 
-func (s GetListOfPropertiesGetListOfPropertiesResponseProperties) String() string {
+func (s GetListOfPropertiesResponseProperties) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetListOfPropertiesGetListOfPropertiesResponseProperties) GoString() string {
+func (s GetListOfPropertiesResponseProperties) GoString() string {
   return s.String()
 }
 
-func (s *GetListOfPropertiesGetListOfPropertiesResponseProperties) SetId(v string) *GetListOfPropertiesGetListOfPropertiesResponseProperties {
+func (s *GetListOfPropertiesResponseProperties) SetId(v string) *GetListOfPropertiesResponseProperties {
   s.Id = &v
   return s
 }
 
-func (s *GetListOfPropertiesGetListOfPropertiesResponseProperties) SetDescription(v string) *GetListOfPropertiesGetListOfPropertiesResponseProperties {
+func (s *GetListOfPropertiesResponseProperties) SetDescription(v string) *GetListOfPropertiesResponseProperties {
   s.Description = &v
   return s
 }
 
-func (s *GetListOfPropertiesGetListOfPropertiesResponseProperties) SetName(v string) *GetListOfPropertiesGetListOfPropertiesResponseProperties {
+func (s *GetListOfPropertiesResponseProperties) SetName(v string) *GetListOfPropertiesResponseProperties {
   s.Name = &v
   return s
 }
 
-func (s *GetListOfPropertiesGetListOfPropertiesResponseProperties) SetCreationTime(v string) *GetListOfPropertiesGetListOfPropertiesResponseProperties {
+func (s *GetListOfPropertiesResponseProperties) SetCreationTime(v string) *GetListOfPropertiesResponseProperties {
   s.CreationTime = &v
   return s
 }
 
-func (s *GetListOfPropertiesGetListOfPropertiesResponseProperties) SetLastUpdateTime(v string) *GetListOfPropertiesGetListOfPropertiesResponseProperties {
+func (s *GetListOfPropertiesResponseProperties) SetLastUpdateTime(v string) *GetListOfPropertiesResponseProperties {
   s.LastUpdateTime = &v
   return s
 }
 
-func (s *GetListOfPropertiesGetListOfPropertiesResponseProperties) SetLatestVersion(v int) *GetListOfPropertiesGetListOfPropertiesResponseProperties {
+func (s *GetListOfPropertiesResponseProperties) SetLatestVersion(v int) *GetListOfPropertiesResponseProperties {
   s.LatestVersion = &v
   return s
 }
 
-func (s *GetListOfPropertiesGetListOfPropertiesResponseProperties) SetLegacyType(v string) *GetListOfPropertiesGetListOfPropertiesResponseProperties {
+func (s *GetListOfPropertiesResponseProperties) SetLegacyType(v string) *GetListOfPropertiesResponseProperties {
   s.LegacyType = &v
   return s
 }
 
-func (s *GetListOfPropertiesGetListOfPropertiesResponseProperties) SetStagingVersion(v *GetListOfPropertiesGetListOfPropertiesResponsePropertiesStagingVersion) *GetListOfPropertiesGetListOfPropertiesResponseProperties {
+func (s *GetListOfPropertiesResponseProperties) SetStagingVersion(v *GetListOfPropertiesResponsePropertiesStagingVersion) *GetListOfPropertiesResponseProperties {
   s.StagingVersion = v
   return s
 }
 
-func (s *GetListOfPropertiesGetListOfPropertiesResponseProperties) SetProductionVersion(v *GetListOfPropertiesGetListOfPropertiesResponsePropertiesProductionVersion) *GetListOfPropertiesGetListOfPropertiesResponseProperties {
+func (s *GetListOfPropertiesResponseProperties) SetProductionVersion(v *GetListOfPropertiesResponsePropertiesProductionVersion) *GetListOfPropertiesResponseProperties {
   s.ProductionVersion = v
   return s
 }
 
-type GetListOfPropertiesGetListOfPropertiesResponsePropertiesStagingVersion struct {
+type GetListOfPropertiesResponsePropertiesStagingVersion struct {
   // {"en" : "Property version deployed to staging.", "zh_CN": "部署到演练环境的加速项目版本号。"}
   Version *int `json:"version,omitempty" xml:"version,omitempty"`
   // {"en" : "Hostnames of the property deployed to staging.", "zh_CN": "加速域名。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
 }
 
-func (s GetListOfPropertiesGetListOfPropertiesResponsePropertiesStagingVersion) String() string {
+func (s GetListOfPropertiesResponsePropertiesStagingVersion) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetListOfPropertiesGetListOfPropertiesResponsePropertiesStagingVersion) GoString() string {
+func (s GetListOfPropertiesResponsePropertiesStagingVersion) GoString() string {
   return s.String()
 }
 
-func (s *GetListOfPropertiesGetListOfPropertiesResponsePropertiesStagingVersion) SetVersion(v int) *GetListOfPropertiesGetListOfPropertiesResponsePropertiesStagingVersion {
+func (s *GetListOfPropertiesResponsePropertiesStagingVersion) SetVersion(v int) *GetListOfPropertiesResponsePropertiesStagingVersion {
   s.Version = &v
   return s
 }
 
-func (s *GetListOfPropertiesGetListOfPropertiesResponsePropertiesStagingVersion) SetHostnames(v []*string) *GetListOfPropertiesGetListOfPropertiesResponsePropertiesStagingVersion {
+func (s *GetListOfPropertiesResponsePropertiesStagingVersion) SetHostnames(v []*string) *GetListOfPropertiesResponsePropertiesStagingVersion {
   s.Hostnames = v
   return s
 }
 
-type GetListOfPropertiesGetListOfPropertiesResponsePropertiesProductionVersion struct {
+type GetListOfPropertiesResponsePropertiesProductionVersion struct {
   // {"en" : "Property version deployed to production.", "zh_CN": "部署到生产环境的加速项目版本号。"}
   Version *int `json:"version,omitempty" xml:"version,omitempty"`
   // {"en" : "Hostnames of the property deployed to production.", "zh_CN": "加速域名。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
 }
 
-func (s GetListOfPropertiesGetListOfPropertiesResponsePropertiesProductionVersion) String() string {
+func (s GetListOfPropertiesResponsePropertiesProductionVersion) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetListOfPropertiesGetListOfPropertiesResponsePropertiesProductionVersion) GoString() string {
+func (s GetListOfPropertiesResponsePropertiesProductionVersion) GoString() string {
   return s.String()
 }
 
-func (s *GetListOfPropertiesGetListOfPropertiesResponsePropertiesProductionVersion) SetVersion(v int) *GetListOfPropertiesGetListOfPropertiesResponsePropertiesProductionVersion {
+func (s *GetListOfPropertiesResponsePropertiesProductionVersion) SetVersion(v int) *GetListOfPropertiesResponsePropertiesProductionVersion {
   s.Version = &v
   return s
 }
 
-func (s *GetListOfPropertiesGetListOfPropertiesResponsePropertiesProductionVersion) SetHostnames(v []*string) *GetListOfPropertiesGetListOfPropertiesResponsePropertiesProductionVersion {
+func (s *GetListOfPropertiesResponsePropertiesProductionVersion) SetHostnames(v []*string) *GetListOfPropertiesResponsePropertiesProductionVersion {
   s.Hostnames = v
   return s
 }
@@ -1874,7 +1874,7 @@ type CreateAPropertyVersionRequest struct {
   // 同一个加速域名在同一时间只能存在于一个已部署的加速项目中，但泛域名可以与关联的完全限定域名一同部署。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
   // {"en" : "This optional field allows you to configure notifications about client requests to be sent to a remote server. It can be used only if you have access to our realtime_log_switch directive. Please contact our support team if you require this feature.", "zh_CN": "此可选字段用来配置发送消息通知（即实时日志）到您的远程服务器。当有客户端请求访问您的加速域名时，将触发通知。这是高级功能，如果您需要此功能，请联系我们的技术支持开通。"}
-  RealTimeLog *CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLog `json:"realTimeLog,omitempty" xml:"realTimeLog,omitempty" type:"Struct"`
+  RealTimeLog *CreateAPropertyVersionRequestRealTimeLog `json:"realTimeLog,omitempty" xml:"realTimeLog,omitempty" type:"Struct"`
   // {"en" : "Range: <= 65530 characters 
   // Refer to Edge Logic Introduction.", "zh_CN": "取值范围: <= 65530 字符 
   // 自定义边缘逻辑。参考边缘逻辑介绍。"}
@@ -1888,7 +1888,7 @@ type CreateAPropertyVersionRequest struct {
   // 此字段可以设置为布尔值或字符串。如果设置为true，则CDN Pro服务器会将所有HTTP请求重定向到HTTPS，并返回301状态码。如果您希望在重定向请求时返回不同的状态码，可在此处指定需要的状态码，如'302'、'307'或'308'。"}
   RedirectHttpToHttps *string `json:"redirectHttpToHttps,omitempty" xml:"redirectHttpToHttps,omitempty"`
   // {"en" : "Describes the origin servers for the property's content.", "zh_CN": "描述加速项目对应的源站。"}
-  Origins []*CreateAPropertyVersionCreateAPropertyVersionRequestOrigins `json:"origins,omitempty" xml:"origins,omitempty" type:"Repeated"`
+  Origins []*CreateAPropertyVersionRequestOrigins `json:"origins,omitempty" xml:"origins,omitempty" type:"Repeated"`
   // {"en" : "Default: 1 
   // The value must be set to 1 at this time.", "zh_CN": "默认值: 1 
   // 当前仅允许值为1。"}
@@ -1963,7 +1963,7 @@ type CreateAPropertyVersionRequest struct {
   // ", "zh_CN": "指该加速项目用到的证书ID。仅设置tlsCertificateId1字段而不设置tlsCertificateId字段是无效的。如果未设置tlsCertificateId，则不会为此加速项目启用HTTPS。此功能允许您指定两个不同类型的证书，即一个RSA，一个EC。如果指定了两个相同类型的证书，则将忽略tlsCertificateId指定的证书。"}
   TlsCertificateId1 *string `json:"tlsCertificateId1,omitempty" xml:"tlsCertificateId1,omitempty"`
   // {"en" : "This object allows you to support video players requesting partial content through query string parameters. If you specify videoSeek, you must enter a value for startParameter.", "zh_CN": "此对象用来支持视频播放器通过指定查询参数来请求部分内容。当videoSeek对象存在时，必须为startParameter设置一个值。"}
-  VideoSeek *CreateAPropertyVersionCreateAPropertyVersionRequestVideoSeek `json:"videoSeek,omitempty" xml:"videoSeek,omitempty" type:"Struct"`
+  VideoSeek *CreateAPropertyVersionRequestVideoSeek `json:"videoSeek,omitempty" xml:"videoSeek,omitempty" type:"Struct"`
   // {"en" : "Default: 1800 Range: [ 300 .. 86400 ] 
   // Lifespan of TLS session ticket in seconds.", "zh_CN": "默认值: 1800 取值范围: [ 300 .. 86400 ] 
   // TLS会话ticket的有效期（秒）。"}
@@ -1994,7 +1994,7 @@ type CreateAPropertyVersionRequest struct {
   // off：忽略客户端请求的IP协议版本，随机选择可用的IPv4或IPv6地址回源"}
   FollowClientIpVersion *string `json:"followClientIpVersion,omitempty" xml:"followClientIpVersion,omitempty"`
   // {"en" : "Specify one or more access control rules to restrict access to your content. More advanced configuration can be done using Edge Logic. These access control rules take precedence over Edge Logic if both are defined.", "zh_CN": "指定一个或多个访问控制规则以限制对内容的访问。可以使用边缘逻辑进行更高级的配置。此处定义的访问控制规则，优先级高于边缘逻辑。"}
-  AccessControlRules []*CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRules `json:"accessControlRules,omitempty" xml:"accessControlRules,omitempty" type:"Repeated"`
+  AccessControlRules []*CreateAPropertyVersionRequestAccessControlRules `json:"accessControlRules,omitempty" xml:"accessControlRules,omitempty" type:"Repeated"`
   // {"en" : "Default: False 
   // By default, CDN Pro takes control of the contents under the /.well-known/{acme-challenge, pki-validation} directories to support certificate auto-renew for properties. If for any reason you need to manage these two directories by yourself on the origin, for example, to implement your own certificate auto-renew mechanism, you can use this configuration option to disable the default behavior by setting its value to true. For more information about our support for certificate auto-renewal, refer to the description of the autoRenew field in the Create a certificate API.", "zh_CN": "默认值: False 
   // 默认情况下，CDN Pro控制/.well-known/{acme-challenge, pki-validation}目录下的内容，以支持加速项目的证书自动更新功能。如果您需要自己在源站管理这两个目录，例如，为了实现您自己的证书自动更新机制，您可以将此字段设置为true来禁用默认行为。关于证书自动更新的更多信息，请参考'创建证书'接口中autoRenew字段的说明。"}
@@ -2006,7 +2006,7 @@ type CreateAPropertyVersionRequest struct {
   // 如果在加速项目的边缘逻辑中使用了'rewrite'指令，可使用该字段来控制客户端请求的URI如何合并到缓存键（Cache Key）中 。默认值'preRewrite'指将改写前的URI放入缓存键，而'postRewrite'则使用改写后的URI。如果您的'rewrite'指令将多个不同的URI改写为相同的值，则使用'postRewrite'可以提高缓存命中率。"}
   CacheKeyUri *string `json:"cacheKeyUri,omitempty" xml:"cacheKeyUri,omitempty"`
   // {"en" : "This field lists ports other than the default 80 used to handle HTTP requests and ports other than the default 443 used to handle HTTPS requests. ", "zh_CN": "除标准的80，443端口外，我们还支持一些扩展端口。可用该字段指定用于处理HTTP和HTTPS请求的扩展端口。"}
-  ExtraServicePorts *CreateAPropertyVersionCreateAPropertyVersionRequestExtraServicePorts `json:"extraServicePorts,omitempty" xml:"extraServicePorts,omitempty" type:"Struct"`
+  ExtraServicePorts *CreateAPropertyVersionRequestExtraServicePorts `json:"extraServicePorts,omitempty" xml:"extraServicePorts,omitempty" type:"Struct"`
   // {"en" : "Range: <= 65530 characters 
   // This field allows you to enter Edge Logic to customize load balancing. A subset of the  directives can be used. Refer to the basic directives listed in the baseLbDirectives field of the response to the system configuration API. Currently, these include 'if', 'else', 'elseif', 'set', 'return', 'add_header', 'deny', 'allow', 'access_log_sampling', and 'proxy_set_header.' In addition, some advanced Edge Logic directives, identified by the system configuration API's advancedLbDirectives, can be enabled for your account if needed. Please contact our support team if you require any of them. <br/> Example use: <br />
   // if ($http_user_agent = bot) { return 403;}
@@ -2047,7 +2047,7 @@ func (s *CreateAPropertyVersionRequest) SetHostnames(v []*string) *CreateAProper
   return s
 }
 
-func (s *CreateAPropertyVersionRequest) SetRealTimeLog(v *CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLog) *CreateAPropertyVersionRequest {
+func (s *CreateAPropertyVersionRequest) SetRealTimeLog(v *CreateAPropertyVersionRequestRealTimeLog) *CreateAPropertyVersionRequest {
   s.RealTimeLog = v
   return s
 }
@@ -2067,7 +2067,7 @@ func (s *CreateAPropertyVersionRequest) SetRedirectHttpToHttps(v string) *Create
   return s
 }
 
-func (s *CreateAPropertyVersionRequest) SetOrigins(v []*CreateAPropertyVersionCreateAPropertyVersionRequestOrigins) *CreateAPropertyVersionRequest {
+func (s *CreateAPropertyVersionRequest) SetOrigins(v []*CreateAPropertyVersionRequestOrigins) *CreateAPropertyVersionRequest {
   s.Origins = v
   return s
 }
@@ -2127,7 +2127,7 @@ func (s *CreateAPropertyVersionRequest) SetTlsCertificateId1(v string) *CreateAP
   return s
 }
 
-func (s *CreateAPropertyVersionRequest) SetVideoSeek(v *CreateAPropertyVersionCreateAPropertyVersionRequestVideoSeek) *CreateAPropertyVersionRequest {
+func (s *CreateAPropertyVersionRequest) SetVideoSeek(v *CreateAPropertyVersionRequestVideoSeek) *CreateAPropertyVersionRequest {
   s.VideoSeek = v
   return s
 }
@@ -2157,7 +2157,7 @@ func (s *CreateAPropertyVersionRequest) SetFollowClientIpVersion(v string) *Crea
   return s
 }
 
-func (s *CreateAPropertyVersionRequest) SetAccessControlRules(v []*CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRules) *CreateAPropertyVersionRequest {
+func (s *CreateAPropertyVersionRequest) SetAccessControlRules(v []*CreateAPropertyVersionRequestAccessControlRules) *CreateAPropertyVersionRequest {
   s.AccessControlRules = v
   return s
 }
@@ -2172,7 +2172,7 @@ func (s *CreateAPropertyVersionRequest) SetCacheKeyUri(v string) *CreateAPropert
   return s
 }
 
-func (s *CreateAPropertyVersionRequest) SetExtraServicePorts(v *CreateAPropertyVersionCreateAPropertyVersionRequestExtraServicePorts) *CreateAPropertyVersionRequest {
+func (s *CreateAPropertyVersionRequest) SetExtraServicePorts(v *CreateAPropertyVersionRequestExtraServicePorts) *CreateAPropertyVersionRequest {
   s.ExtraServicePorts = v
   return s
 }
@@ -2187,7 +2187,7 @@ func (s *CreateAPropertyVersionRequest) SetTls0Rtt(v bool) *CreateAPropertyVersi
   return s
 }
 
-type CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLog struct {
+type CreateAPropertyVersionRequestRealTimeLog struct {
   // {"en" : "The URL that receives the notifications. It must begin with 'http' or 'https'. The server should support the POST method. This is a required field.", "zh_CN": "接收通知的服务器URL地址。必须以'http'或'https'开头。服务器须支持POST方法。这是必填字段。"}
   LogUrl *string `json:"logUrl,omitempty" xml:"logUrl,omitempty" require:"true"`
   // {"en" : "Default: 1 Range: [ 1 .. 65536 ] 
@@ -2207,68 +2207,68 @@ type CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLog struct {
   // <table><tr><th>变量名称</th><th>描述</th></tr><tr><td>$body_bytes_sent</td><td>响应体大小。</td></tr><tr><td>$bytes_sent</td><td>响应的大小，包括响应体、响应头和响应行。</td></tr><tr><td>$client_country_code</td><td>客户端请求来源国家，以ISO 3166-1国家代码表示。例如'US'。如果国家/地区未知，则返回'ZZ'。</td></tr><tr><td>$client_real_ip</td><td>客户端请求的IP地址。</td></tr><tr><td>$cookie_x</td><td>获取某个cookie。例如，指定$cookie_account可获取名为'account'的cookie值。</td></tr><tr><td>$http_x</td><td>从原始请求中获取某个HTTP请求头。请求头名称需转换为小写，并用下划线替换连字符。例如，指定$http_user_agent来获取User-Agent的值。</td></tr><tr><td>$msec</td><td>当前unix时间，以毫秒为单位。</td></tr><tr><td>$qtl_req_id</td><td>请求的唯一标识符。</td></tr><tr><td>$request_uri</td><td>HTTP请求URI。</td></tr><tr><td>$request_method</td><td>用于访问源站的HTTP请求方法。</td></tr><tr><td>$request_time</td><td>响应时间，以毫秒为单位。这是从接收到请求的第一个字节到服务端响应最后一个字节之间的时间。</td></tr><tr><td>$sc_completed</td><td>1表示对象的最后一个字节已返回给用户，否则为0。</td></tr><tr><td>$sc_initial</td><td>1表示对象的第一个字节已返回给用户，否则为0。</td></tr><tr><td>$scheme</td><td>表示用户请求的协议（'http'或'https'）。</td></tr><tr><td>$sent_http_content_length</td><td>原始文件大小。</td></tr><tr><td>$sent_http_x</td><td>获取在对客户端响应中某个HTTP响应头的值。响应头名称需转换为小写，并用下划线替换连字符。例如，$sent_http_etag可获取ETag头的值。</td></tr><tr><td>$server_addr</td><td>为用户请求提供服务的边缘节点的IP地址。</td></tr><tr><td>$server_protocol</td><td>表示用户请求中使用的HTTP版本，可以是'HTTP/1.0'、'HTTP/1.1'或'HTTP/2.0'。</td></tr><tr><td>$ssl_cipher</td><td>表示用于TLS（SSL）连接的加密算法套件。</td></tr><tr><td>$ssl_server_name</td><td>客户端发起TLS（SSL）连接所要连接的域名。仅由支持SNI（Server Name Indication）的客户端发送。</td></tr><tr><td>$ssl_protocol</td><td>表示用于TLS（SSL）连接的TLS版本。例如，'SSLv3'、'TLSv1'、'TLSv1.1'、'TLSv1.2'和'unknown'。</td></tr><tr><td>$status</td><td>用户请求的HTTP状态码。</td></tr><tr><td>$tcpinfo_rtt</td><td>数据包往返目的地所用的时间，以微秒为单位。</td></tr></table>"}
   Format *string `json:"format,omitempty" xml:"format,omitempty"`
   // {"en" : "HTTP header names and values to be sent to the notification server. A header name can contain any alphanumeric character or hyphen, '-'. A header value can contain any printable characters. It can also include any of the built-in variables supported in the format field of the realTimeLog object.", "zh_CN": "需要发送到远程服务器的HTTP请求头名称和值。请求头名称可以包含任何字母，数字或连字符'-'。值可以包含任何可打印字符，也可以使用realTimeLog对象format字段中支持的任何内置变量。"}
-  Headers []*CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLogHeaders `json:"headers,omitempty" xml:"headers,omitempty" type:"Repeated"`
+  Headers []*CreateAPropertyVersionRequestRealTimeLogHeaders `json:"headers,omitempty" xml:"headers,omitempty" type:"Repeated"`
 }
 
-func (s CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLog) String() string {
+func (s CreateAPropertyVersionRequestRealTimeLog) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLog) GoString() string {
+func (s CreateAPropertyVersionRequestRealTimeLog) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLog) SetLogUrl(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLog {
+func (s *CreateAPropertyVersionRequestRealTimeLog) SetLogUrl(v string) *CreateAPropertyVersionRequestRealTimeLog {
   s.LogUrl = &v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLog) SetSampleRate(v int) *CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLog {
+func (s *CreateAPropertyVersionRequestRealTimeLog) SetSampleRate(v int) *CreateAPropertyVersionRequestRealTimeLog {
   s.SampleRate = &v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLog) SetEscape(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLog {
+func (s *CreateAPropertyVersionRequestRealTimeLog) SetEscape(v string) *CreateAPropertyVersionRequestRealTimeLog {
   s.Escape = &v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLog) SetFormat(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLog {
+func (s *CreateAPropertyVersionRequestRealTimeLog) SetFormat(v string) *CreateAPropertyVersionRequestRealTimeLog {
   s.Format = &v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLog) SetHeaders(v []*CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLogHeaders) *CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLog {
+func (s *CreateAPropertyVersionRequestRealTimeLog) SetHeaders(v []*CreateAPropertyVersionRequestRealTimeLogHeaders) *CreateAPropertyVersionRequestRealTimeLog {
   s.Headers = v
   return s
 }
 
-type CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLogHeaders struct     {
+type CreateAPropertyVersionRequestRealTimeLogHeaders struct     {
   // {"en" : "Name of an HTTP header.", "zh_CN": "HTTP标头名称"}
   Name *string `json:"name,omitempty" xml:"name,omitempty"`
   // {"en" : "Value of an HTTP header.", "zh_CN": "HTTP标头值"}
   Value *string `json:"value,omitempty" xml:"value,omitempty"`
 }
 
-func (s CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLogHeaders) String() string {
+func (s CreateAPropertyVersionRequestRealTimeLogHeaders) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLogHeaders) GoString() string {
+func (s CreateAPropertyVersionRequestRealTimeLogHeaders) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLogHeaders) SetName(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLogHeaders {
+func (s *CreateAPropertyVersionRequestRealTimeLogHeaders) SetName(v string) *CreateAPropertyVersionRequestRealTimeLogHeaders {
   s.Name = &v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLogHeaders) SetValue(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestRealTimeLogHeaders {
+func (s *CreateAPropertyVersionRequestRealTimeLogHeaders) SetValue(v string) *CreateAPropertyVersionRequestRealTimeLogHeaders {
   s.Value = &v
   return s
 }
 
-type CreateAPropertyVersionCreateAPropertyVersionRequestOrigins struct     {
+type CreateAPropertyVersionRequestOrigins struct     {
   // {"en" : "^[a-zA-z0-9_] 
   // Name of an origin. It must be unique within this property.
   // ", "zh_CN": "^[a-zA-z0-9_] 
@@ -2379,7 +2379,7 @@ type CreateAPropertyVersionCreateAPropertyVersionRequestOrigins struct     {
   // 'secretKey':'d12345678abcdefghi'
   // }}
   // "}
-  Authentication *CreateAPropertyVersionCreateAPropertyVersionRequestOriginsAuthentication `json:"authentication,omitempty" xml:"authentication,omitempty" type:"Struct"`
+  Authentication *CreateAPropertyVersionRequestOriginsAuthentication `json:"authentication,omitempty" xml:"authentication,omitempty" type:"Struct"`
   // {"en" : "Default: 60 Range: [ 5 .. 600 ] 
   // Timeout in seconds during which an idle keepalive connection to an upstream server will stay open. A service quota setting of maxUpstreamKeepaliveTimeOut can change the maximum permitted value.", "zh_CN": "默认值: 60 取值范围: [ 5 .. 600 ] 
   // 该字段用于指定CDN Pro服务器和源站建连的Keep-Alive超时时间，单位为秒。通过maxUpstreamKeepaliveTimeOut 该服务设置项可以更改允许的最大值。如果需要调整最大值，请联系我们的技术支持。"}
@@ -2394,88 +2394,88 @@ type CreateAPropertyVersionCreateAPropertyVersionRequestOrigins struct     {
   Shield *string `json:"shield,omitempty" xml:"shield,omitempty"`
 }
 
-func (s CreateAPropertyVersionCreateAPropertyVersionRequestOrigins) String() string {
+func (s CreateAPropertyVersionRequestOrigins) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPropertyVersionCreateAPropertyVersionRequestOrigins) GoString() string {
+func (s CreateAPropertyVersionRequestOrigins) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins) SetName(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins {
+func (s *CreateAPropertyVersionRequestOrigins) SetName(v string) *CreateAPropertyVersionRequestOrigins {
   s.Name = &v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins) SetServers(v []*string) *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins {
+func (s *CreateAPropertyVersionRequestOrigins) SetServers(v []*string) *CreateAPropertyVersionRequestOrigins {
   s.Servers = v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins) SetSupportedProtocol(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins {
+func (s *CreateAPropertyVersionRequestOrigins) SetSupportedProtocol(v string) *CreateAPropertyVersionRequestOrigins {
   s.SupportedProtocol = &v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins) SetDirectConnection(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins {
+func (s *CreateAPropertyVersionRequestOrigins) SetDirectConnection(v string) *CreateAPropertyVersionRequestOrigins {
   s.DirectConnection = &v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins) SetHostHeader(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins {
+func (s *CreateAPropertyVersionRequestOrigins) SetHostHeader(v string) *CreateAPropertyVersionRequestOrigins {
   s.HostHeader = &v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins) SetVerifyOrigin(v bool) *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins {
+func (s *CreateAPropertyVersionRequestOrigins) SetVerifyOrigin(v bool) *CreateAPropertyVersionRequestOrigins {
   s.VerifyOrigin = &v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins) SetAuthentication(v *CreateAPropertyVersionCreateAPropertyVersionRequestOriginsAuthentication) *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins {
+func (s *CreateAPropertyVersionRequestOrigins) SetAuthentication(v *CreateAPropertyVersionRequestOriginsAuthentication) *CreateAPropertyVersionRequestOrigins {
   s.Authentication = v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins) SetKeepAliveTimeout(v int) *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins {
+func (s *CreateAPropertyVersionRequestOrigins) SetKeepAliveTimeout(v int) *CreateAPropertyVersionRequestOrigins {
   s.KeepAliveTimeout = &v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins) SetPeerFailureTimeout(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins {
+func (s *CreateAPropertyVersionRequestOrigins) SetPeerFailureTimeout(v string) *CreateAPropertyVersionRequestOrigins {
   s.PeerFailureTimeout = &v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins) SetTlsCertificateId(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins {
+func (s *CreateAPropertyVersionRequestOrigins) SetTlsCertificateId(v string) *CreateAPropertyVersionRequestOrigins {
   s.TlsCertificateId = &v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins) SetShield(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestOrigins {
+func (s *CreateAPropertyVersionRequestOrigins) SetShield(v string) *CreateAPropertyVersionRequestOrigins {
   s.Shield = &v
   return s
 }
 
-type CreateAPropertyVersionCreateAPropertyVersionRequestOriginsAuthentication struct {
+type CreateAPropertyVersionRequestOriginsAuthentication struct {
   // {"en" : "Authentication method.", "zh_CN": "鉴权方法。"}
   MethodName *string `json:"methodName,omitempty" xml:"methodName,omitempty"`
 }
 
-func (s CreateAPropertyVersionCreateAPropertyVersionRequestOriginsAuthentication) String() string {
+func (s CreateAPropertyVersionRequestOriginsAuthentication) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPropertyVersionCreateAPropertyVersionRequestOriginsAuthentication) GoString() string {
+func (s CreateAPropertyVersionRequestOriginsAuthentication) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestOriginsAuthentication) SetMethodName(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestOriginsAuthentication {
+func (s *CreateAPropertyVersionRequestOriginsAuthentication) SetMethodName(v string) *CreateAPropertyVersionRequestOriginsAuthentication {
   s.MethodName = &v
   return s
 }
 
-type CreateAPropertyVersionCreateAPropertyVersionRequestVideoSeek struct {
+type CreateAPropertyVersionRequestVideoSeek struct {
   // {"en" : "Range: [ 1 .. 31 ] characters 
   // Name of the query parameter indicating the starting offset in bytes of the content to fetch. The parameter name should begin with a letter (a-z, A-Z) and may be followed by up to 30 letters and numbers.", "zh_CN": "取值范围: [ 1 .. 31 ] 字符 
   // 查询参数的名称，用来指定要获取的内容的起始位置（以字节计算）。参数名称应以字母（a-z，A-Z）开头，后面最多可以有30个字母和数字。"}
@@ -2486,59 +2486,59 @@ type CreateAPropertyVersionCreateAPropertyVersionRequestVideoSeek struct {
   EndParameter *string `json:"endParameter,omitempty" xml:"endParameter,omitempty"`
 }
 
-func (s CreateAPropertyVersionCreateAPropertyVersionRequestVideoSeek) String() string {
+func (s CreateAPropertyVersionRequestVideoSeek) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPropertyVersionCreateAPropertyVersionRequestVideoSeek) GoString() string {
+func (s CreateAPropertyVersionRequestVideoSeek) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestVideoSeek) SetStartParameter(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestVideoSeek {
+func (s *CreateAPropertyVersionRequestVideoSeek) SetStartParameter(v string) *CreateAPropertyVersionRequestVideoSeek {
   s.StartParameter = &v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestVideoSeek) SetEndParameter(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestVideoSeek {
+func (s *CreateAPropertyVersionRequestVideoSeek) SetEndParameter(v string) *CreateAPropertyVersionRequestVideoSeek {
   s.EndParameter = &v
   return s
 }
 
-type CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRules struct     {
+type CreateAPropertyVersionRequestAccessControlRules struct     {
   // {"en" : "Range: [ 0 .. 60 ] characters 
   // An optional ID for the access control rule.", "zh_CN": "取值范围: [ 0 .. 60 ] 字符 
   // 访问控制规则ID。"}
   Id *string `json:"id,omitempty" xml:"id,omitempty"`
   // {"en" : "Specify the conditions that the incoming request must match. At least one condition must be specified. If multiple are specified, all must match.", "zh_CN": "指定客户端请求必须匹配的条件。必须至少指定一个条件。如果指定了多个条件，则必须全部匹配。"}
-  Conditions *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesConditions `json:"conditions,omitempty" xml:"conditions,omitempty" type:"Struct"`
+  Conditions *CreateAPropertyVersionRequestAccessControlRulesConditions `json:"conditions,omitempty" xml:"conditions,omitempty" type:"Struct"`
   // {"en" : "Indicates the action to take in response to a request that matches the conditions of the access control rule.", "zh_CN": "对于匹配到以上条件的请求所采取的相应操作。"}
-  Action *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesAction `json:"action,omitempty" xml:"action,omitempty" type:"Struct"`
+  Action *CreateAPropertyVersionRequestAccessControlRulesAction `json:"action,omitempty" xml:"action,omitempty" type:"Struct"`
 }
 
-func (s CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRules) String() string {
+func (s CreateAPropertyVersionRequestAccessControlRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRules) GoString() string {
+func (s CreateAPropertyVersionRequestAccessControlRules) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRules) SetId(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRules {
+func (s *CreateAPropertyVersionRequestAccessControlRules) SetId(v string) *CreateAPropertyVersionRequestAccessControlRules {
   s.Id = &v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRules) SetConditions(v *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesConditions) *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRules {
+func (s *CreateAPropertyVersionRequestAccessControlRules) SetConditions(v *CreateAPropertyVersionRequestAccessControlRulesConditions) *CreateAPropertyVersionRequestAccessControlRules {
   s.Conditions = v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRules) SetAction(v *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesAction) *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRules {
+func (s *CreateAPropertyVersionRequestAccessControlRules) SetAction(v *CreateAPropertyVersionRequestAccessControlRulesAction) *CreateAPropertyVersionRequestAccessControlRules {
   s.Action = v
   return s
 }
 
-type CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesConditions struct {
+type CreateAPropertyVersionRequestAccessControlRulesConditions struct {
   // {"en" : "Enum: https,http 
   // Indicates whether the incoming request uses HTTP or HTTPS.", "zh_CN": "取值范围: https,http 
   // 客户端请求的协议，HTTP或HTTPS。"}
@@ -2557,45 +2557,45 @@ type CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesCondit
   ClientIpRange []*string `json:"clientIpRange,omitempty" xml:"clientIpRange,omitempty" type:"Repeated"`
 }
 
-func (s CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesConditions) String() string {
+func (s CreateAPropertyVersionRequestAccessControlRulesConditions) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesConditions) GoString() string {
+func (s CreateAPropertyVersionRequestAccessControlRulesConditions) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesConditions) SetScheme(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesConditions {
+func (s *CreateAPropertyVersionRequestAccessControlRulesConditions) SetScheme(v string) *CreateAPropertyVersionRequestAccessControlRulesConditions {
   s.Scheme = &v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesConditions) SetHostname(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesConditions {
+func (s *CreateAPropertyVersionRequestAccessControlRulesConditions) SetHostname(v string) *CreateAPropertyVersionRequestAccessControlRulesConditions {
   s.Hostname = &v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesConditions) SetUri(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesConditions {
+func (s *CreateAPropertyVersionRequestAccessControlRulesConditions) SetUri(v string) *CreateAPropertyVersionRequestAccessControlRulesConditions {
   s.Uri = &v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesConditions) SetServerRegions(v []*string) *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesConditions {
+func (s *CreateAPropertyVersionRequestAccessControlRulesConditions) SetServerRegions(v []*string) *CreateAPropertyVersionRequestAccessControlRulesConditions {
   s.ServerRegions = v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesConditions) SetClientRegions(v []*string) *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesConditions {
+func (s *CreateAPropertyVersionRequestAccessControlRulesConditions) SetClientRegions(v []*string) *CreateAPropertyVersionRequestAccessControlRulesConditions {
   s.ClientRegions = v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesConditions) SetClientIpRange(v []*string) *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesConditions {
+func (s *CreateAPropertyVersionRequestAccessControlRulesConditions) SetClientIpRange(v []*string) *CreateAPropertyVersionRequestAccessControlRulesConditions {
   s.ClientIpRange = v
   return s
 }
 
-type CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesAction struct {
+type CreateAPropertyVersionRequestAccessControlRulesAction struct {
   // {"en" : "Indicates the HTTP status code to respond with. It must be in the range 300-309, 400-409, or 500-509 to indicate a redirection or error.", "zh_CN": "响应的HTTP状态码，范围必须在300-309、400-409或500-509之间，分别表示重定向或错误。"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
   // {"en" : "Range: <= 200 characters 
@@ -2604,45 +2604,45 @@ type CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesAction
   Message *string `json:"message,omitempty" xml:"message,omitempty"`
 }
 
-func (s CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesAction) String() string {
+func (s CreateAPropertyVersionRequestAccessControlRulesAction) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesAction) GoString() string {
+func (s CreateAPropertyVersionRequestAccessControlRulesAction) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesAction) SetStatusCode(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesAction {
+func (s *CreateAPropertyVersionRequestAccessControlRulesAction) SetStatusCode(v string) *CreateAPropertyVersionRequestAccessControlRulesAction {
   s.StatusCode = &v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesAction) SetMessage(v string) *CreateAPropertyVersionCreateAPropertyVersionRequestAccessControlRulesAction {
+func (s *CreateAPropertyVersionRequestAccessControlRulesAction) SetMessage(v string) *CreateAPropertyVersionRequestAccessControlRulesAction {
   s.Message = &v
   return s
 }
 
-type CreateAPropertyVersionCreateAPropertyVersionRequestExtraServicePorts struct {
+type CreateAPropertyVersionRequestExtraServicePorts struct {
   // {"en" : "This is a list of ports other than 80 which are used to handle HTTP requests. The available values can be found in the systemConfigs API's response. If you need another port, please contact our support team.", "zh_CN": "指定用于处理HTTP请求的端口列表（80端口除外）。可通过调用'获取系统配置'接口来查询系统支持的端口。如果您需要开通其他端口，请联系技术支持。"}
   Http []*string `json:"http,omitempty" xml:"http,omitempty" type:"Repeated"`
   // {"en" : "This is a list of ports other than 443 which are used to handle HTTPS requests. The available values can be found in the systemConfigs API's response. If you need another port, please contact our support team.", "zh_CN": "指定用于处理HTTPS请求的端口列表（443端口除外）。可通过调用'获取系统配置'接口来查询系统支持的端口。如果您需要开通其他端口，请联系技术支持。"}
   Https []*string `json:"https,omitempty" xml:"https,omitempty" type:"Repeated"`
 }
 
-func (s CreateAPropertyVersionCreateAPropertyVersionRequestExtraServicePorts) String() string {
+func (s CreateAPropertyVersionRequestExtraServicePorts) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPropertyVersionCreateAPropertyVersionRequestExtraServicePorts) GoString() string {
+func (s CreateAPropertyVersionRequestExtraServicePorts) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestExtraServicePorts) SetHttp(v []*string) *CreateAPropertyVersionCreateAPropertyVersionRequestExtraServicePorts {
+func (s *CreateAPropertyVersionRequestExtraServicePorts) SetHttp(v []*string) *CreateAPropertyVersionRequestExtraServicePorts {
   s.Http = v
   return s
 }
 
-func (s *CreateAPropertyVersionCreateAPropertyVersionRequestExtraServicePorts) SetHttps(v []*string) *CreateAPropertyVersionCreateAPropertyVersionRequestExtraServicePorts {
+func (s *CreateAPropertyVersionRequestExtraServicePorts) SetHttps(v []*string) *CreateAPropertyVersionRequestExtraServicePorts {
   s.Https = v
   return s
 }
@@ -2739,7 +2739,7 @@ type UpdateAPropertyVersionRequest struct {
   // 同一个加速域名在同一时间只能存在于一个已部署的加速项目中，但泛域名可以与关联的完全限定域名一同部署。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
   // {"en" : "This optional field allows you to configure notifications about client requests to be sent to a remote server. It can be used only if you have access to our realtime_log_switch directive. Please contact our support team if you require this feature.", "zh_CN": "此可选字段用来配置发送消息通知（即实时日志）到您的远程服务器。当有客户端请求访问您的加速域名时，将触发通知。这是高级功能，如果您需要此功能，请联系我们的技术支持开通。"}
-  RealTimeLog *UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLog `json:"realTimeLog,omitempty" xml:"realTimeLog,omitempty" type:"Struct"`
+  RealTimeLog *UpdateAPropertyVersionRequestRealTimeLog `json:"realTimeLog,omitempty" xml:"realTimeLog,omitempty" type:"Struct"`
   // {"en" : "Range: <= 65530 characters 
   // Refer to Edge Logic Introduction.", "zh_CN": "取值范围: <= 65530 字符 
   // 自定义边缘逻辑。参考边缘逻辑介绍。"}
@@ -2753,7 +2753,7 @@ type UpdateAPropertyVersionRequest struct {
   // 此字段可以设置为布尔值或字符串。如果设置为true，则CDN Pro服务器会将所有HTTP请求重定向到HTTPS，并返回301状态码。如果您希望在重定向请求时返回不同的状态码，可在此处指定需要的状态码，如'302'、'307'或'308'。"}
   RedirectHttpToHttps *string `json:"redirectHttpToHttps,omitempty" xml:"redirectHttpToHttps,omitempty"`
   // {"en" : "Describes the origin servers for the property's content.", "zh_CN": "描述加速项目对应的源站。"}
-  Origins []*UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins `json:"origins,omitempty" xml:"origins,omitempty" type:"Repeated"`
+  Origins []*UpdateAPropertyVersionRequestOrigins `json:"origins,omitempty" xml:"origins,omitempty" type:"Repeated"`
   // {"en" : "Default: 1 
   // The value must be set to 1 at this time.", "zh_CN": "默认值: 1 
   // 当前仅允许值为1。"}
@@ -2828,7 +2828,7 @@ type UpdateAPropertyVersionRequest struct {
   // ", "zh_CN": "指该加速项目用到的证书ID。仅设置tlsCertificateId1字段而不设置tlsCertificateId字段是无效的。如果未设置tlsCertificateId，则不会为此加速项目启用HTTPS。此功能允许您指定两个不同类型的证书，即一个RSA，一个EC。如果指定了两个相同类型的证书，则将忽略tlsCertificateId指定的证书。"}
   TlsCertificateId1 *string `json:"tlsCertificateId1,omitempty" xml:"tlsCertificateId1,omitempty"`
   // {"en" : "This object allows you to support video players requesting partial content through query string parameters. If you specify videoSeek, you must enter a value for startParameter.", "zh_CN": "此对象用来支持视频播放器通过指定查询参数来请求部分内容。当videoSeek对象存在时，必须为startParameter设置一个值。"}
-  VideoSeek *UpdateAPropertyVersionUpdateAPropertyVersionRequestVideoSeek `json:"videoSeek,omitempty" xml:"videoSeek,omitempty" type:"Struct"`
+  VideoSeek *UpdateAPropertyVersionRequestVideoSeek `json:"videoSeek,omitempty" xml:"videoSeek,omitempty" type:"Struct"`
   // {"en" : "Default: 1800 Range: [ 300 .. 86400 ] 
   // Lifespan of TLS session ticket in seconds.", "zh_CN": "默认值: 1800 取值范围: [ 300 .. 86400 ] 
   // TLS会话ticket的有效期（秒）。"}
@@ -2859,7 +2859,7 @@ type UpdateAPropertyVersionRequest struct {
   // off：忽略客户端请求的IP协议版本，随机选择可用的IPv4或IPv6地址回源"}
   FollowClientIpVersion *string `json:"followClientIpVersion,omitempty" xml:"followClientIpVersion,omitempty"`
   // {"en" : "Specify one or more access control rules to restrict access to your content. More advanced configuration can be done using Edge Logic. These access control rules take precedence over Edge Logic if both are defined.", "zh_CN": "指定一个或多个访问控制规则以限制对内容的访问。可以使用边缘逻辑进行更高级的配置。此处定义的访问控制规则，优先级高于边缘逻辑。"}
-  AccessControlRules []*UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRules `json:"accessControlRules,omitempty" xml:"accessControlRules,omitempty" type:"Repeated"`
+  AccessControlRules []*UpdateAPropertyVersionRequestAccessControlRules `json:"accessControlRules,omitempty" xml:"accessControlRules,omitempty" type:"Repeated"`
   // {"en" : "Default: False 
   // By default, CDN Pro takes control of the contents under the /.well-known/{acme-challenge, pki-validation} directories to support certificate auto-renew for properties. If for any reason you need to manage these two directories by yourself on the origin, for example, to implement your own certificate auto-renew mechanism, you can use this configuration option to disable the default behavior by setting its value to true. For more information about our support for certificate auto-renewal, refer to the description of the autoRenew field in the Create a certificate API.", "zh_CN": "默认值: False 
   // 默认情况下，CDN Pro控制/.well-known/{acme-challenge, pki-validation}目录下的内容，以支持加速项目的证书自动更新功能。如果您需要自己在源站管理这两个目录，例如，为了实现您自己的证书自动更新机制，您可以将此字段设置为true来禁用默认行为。关于证书自动更新的更多信息，请参考'创建证书'接口中autoRenew字段的说明。"}
@@ -2871,7 +2871,7 @@ type UpdateAPropertyVersionRequest struct {
   // 如果在加速项目的边缘逻辑中使用了'rewrite'指令，可使用该字段来控制客户端请求的URI如何合并到缓存键（Cache Key）中 。默认值'preRewrite'指将改写前的URI放入缓存键，而'postRewrite'则使用改写后的URI。如果您的'rewrite'指令将多个不同的URI改写为相同的值，则使用'postRewrite'可以提高缓存命中率。"}
   CacheKeyUri *string `json:"cacheKeyUri,omitempty" xml:"cacheKeyUri,omitempty"`
   // {"en" : "This field lists ports other than the default 80 used to handle HTTP requests and ports other than the default 443 used to handle HTTPS requests. ", "zh_CN": "除标准的80，443端口外，我们还支持一些扩展端口。可用该字段指定用于处理HTTP和HTTPS请求的扩展端口。"}
-  ExtraServicePorts *UpdateAPropertyVersionUpdateAPropertyVersionRequestExtraServicePorts `json:"extraServicePorts,omitempty" xml:"extraServicePorts,omitempty" type:"Struct"`
+  ExtraServicePorts *UpdateAPropertyVersionRequestExtraServicePorts `json:"extraServicePorts,omitempty" xml:"extraServicePorts,omitempty" type:"Struct"`
   // {"en" : "Range: <= 65530 characters 
   // This field allows you to enter Edge Logic to customize load balancing. A subset of the  directives can be used. Refer to the basic directives listed in the baseLbDirectives field of the response to the system configuration API. Currently, these include 'if', 'else', 'elseif', 'set', 'return', 'add_header', 'deny', 'allow', 'access_log_sampling', and 'proxy_set_header.' In addition, some advanced Edge Logic directives, identified by the system configuration API's advancedLbDirectives, can be enabled for your account if needed. Please contact our support team if you require any of them. <br/> Example use: <br />
   // if ($http_user_agent = bot) { return 403;}
@@ -2912,7 +2912,7 @@ func (s *UpdateAPropertyVersionRequest) SetHostnames(v []*string) *UpdateAProper
   return s
 }
 
-func (s *UpdateAPropertyVersionRequest) SetRealTimeLog(v *UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLog) *UpdateAPropertyVersionRequest {
+func (s *UpdateAPropertyVersionRequest) SetRealTimeLog(v *UpdateAPropertyVersionRequestRealTimeLog) *UpdateAPropertyVersionRequest {
   s.RealTimeLog = v
   return s
 }
@@ -2932,7 +2932,7 @@ func (s *UpdateAPropertyVersionRequest) SetRedirectHttpToHttps(v string) *Update
   return s
 }
 
-func (s *UpdateAPropertyVersionRequest) SetOrigins(v []*UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins) *UpdateAPropertyVersionRequest {
+func (s *UpdateAPropertyVersionRequest) SetOrigins(v []*UpdateAPropertyVersionRequestOrigins) *UpdateAPropertyVersionRequest {
   s.Origins = v
   return s
 }
@@ -2992,7 +2992,7 @@ func (s *UpdateAPropertyVersionRequest) SetTlsCertificateId1(v string) *UpdateAP
   return s
 }
 
-func (s *UpdateAPropertyVersionRequest) SetVideoSeek(v *UpdateAPropertyVersionUpdateAPropertyVersionRequestVideoSeek) *UpdateAPropertyVersionRequest {
+func (s *UpdateAPropertyVersionRequest) SetVideoSeek(v *UpdateAPropertyVersionRequestVideoSeek) *UpdateAPropertyVersionRequest {
   s.VideoSeek = v
   return s
 }
@@ -3022,7 +3022,7 @@ func (s *UpdateAPropertyVersionRequest) SetFollowClientIpVersion(v string) *Upda
   return s
 }
 
-func (s *UpdateAPropertyVersionRequest) SetAccessControlRules(v []*UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRules) *UpdateAPropertyVersionRequest {
+func (s *UpdateAPropertyVersionRequest) SetAccessControlRules(v []*UpdateAPropertyVersionRequestAccessControlRules) *UpdateAPropertyVersionRequest {
   s.AccessControlRules = v
   return s
 }
@@ -3037,7 +3037,7 @@ func (s *UpdateAPropertyVersionRequest) SetCacheKeyUri(v string) *UpdateAPropert
   return s
 }
 
-func (s *UpdateAPropertyVersionRequest) SetExtraServicePorts(v *UpdateAPropertyVersionUpdateAPropertyVersionRequestExtraServicePorts) *UpdateAPropertyVersionRequest {
+func (s *UpdateAPropertyVersionRequest) SetExtraServicePorts(v *UpdateAPropertyVersionRequestExtraServicePorts) *UpdateAPropertyVersionRequest {
   s.ExtraServicePorts = v
   return s
 }
@@ -3052,7 +3052,7 @@ func (s *UpdateAPropertyVersionRequest) SetTls0Rtt(v bool) *UpdateAPropertyVersi
   return s
 }
 
-type UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLog struct {
+type UpdateAPropertyVersionRequestRealTimeLog struct {
   // {"en" : "The URL that receives the notifications. It must begin with 'http' or 'https'. The server should support the POST method. This is a required field.", "zh_CN": "接收通知的服务器URL地址。必须以'http'或'https'开头。服务器须支持POST方法。这是必填字段。"}
   LogUrl *string `json:"logUrl,omitempty" xml:"logUrl,omitempty" require:"true"`
   // {"en" : "Default: 1 Range: [ 1 .. 65536 ] 
@@ -3072,68 +3072,68 @@ type UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLog struct {
   // <table><tr><th>变量名称</th><th>描述</th></tr><tr><td>$body_bytes_sent</td><td>响应体大小。</td></tr><tr><td>$bytes_sent</td><td>响应的大小，包括响应体、响应头和响应行。</td></tr><tr><td>$client_country_code</td><td>客户端请求来源国家，以ISO 3166-1国家代码表示。例如'US'。如果国家/地区未知，则返回'ZZ'。</td></tr><tr><td>$client_real_ip</td><td>客户端请求的IP地址。</td></tr><tr><td>$cookie_x</td><td>获取某个cookie。例如，指定$cookie_account可获取名为'account'的cookie值。</td></tr><tr><td>$http_x</td><td>从原始请求中获取某个HTTP请求头。请求头名称需转换为小写，并用下划线替换连字符。例如，指定$http_user_agent来获取User-Agent的值。</td></tr><tr><td>$msec</td><td>当前unix时间，以毫秒为单位。</td></tr><tr><td>$qtl_req_id</td><td>请求的唯一标识符。</td></tr><tr><td>$request_uri</td><td>HTTP请求URI。</td></tr><tr><td>$request_method</td><td>用于访问源站的HTTP请求方法。</td></tr><tr><td>$request_time</td><td>响应时间，以毫秒为单位。这是从接收到请求的第一个字节到服务端响应最后一个字节之间的时间。</td></tr><tr><td>$sc_completed</td><td>1表示对象的最后一个字节已返回给用户，否则为0。</td></tr><tr><td>$sc_initial</td><td>1表示对象的第一个字节已返回给用户，否则为0。</td></tr><tr><td>$scheme</td><td>表示用户请求的协议（'http'或'https'）。</td></tr><tr><td>$sent_http_content_length</td><td>原始文件大小。</td></tr><tr><td>$sent_http_x</td><td>获取在对客户端响应中某个HTTP响应头的值。响应头名称需转换为小写，并用下划线替换连字符。例如，$sent_http_etag可获取ETag头的值。</td></tr><tr><td>$server_addr</td><td>为用户请求提供服务的边缘节点的IP地址。</td></tr><tr><td>$server_protocol</td><td>表示用户请求中使用的HTTP版本，可以是'HTTP/1.0'、'HTTP/1.1'或'HTTP/2.0'。</td></tr><tr><td>$ssl_cipher</td><td>表示用于TLS（SSL）连接的加密算法套件。</td></tr><tr><td>$ssl_server_name</td><td>客户端发起TLS（SSL）连接所要连接的域名。仅由支持SNI（Server Name Indication）的客户端发送。</td></tr><tr><td>$ssl_protocol</td><td>表示用于TLS（SSL）连接的TLS版本。例如，'SSLv3'、'TLSv1'、'TLSv1.1'、'TLSv1.2'和'unknown'。</td></tr><tr><td>$status</td><td>用户请求的HTTP状态码。</td></tr><tr><td>$tcpinfo_rtt</td><td>数据包往返目的地所用的时间，以微秒为单位。</td></tr></table>"}
   Format *string `json:"format,omitempty" xml:"format,omitempty"`
   // {"en" : "HTTP header names and values to be sent to the notification server. A header name can contain any alphanumeric character or hyphen, '-'. A header value can contain any printable characters. It can also include any of the built-in variables supported in the format field of the realTimeLog object.", "zh_CN": "需要发送到远程服务器的HTTP请求头名称和值。请求头名称可以包含任何字母，数字或连字符'-'。值可以包含任何可打印字符，也可以使用realTimeLog对象format字段中支持的任何内置变量。"}
-  Headers []*UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLogHeaders `json:"headers,omitempty" xml:"headers,omitempty" type:"Repeated"`
+  Headers []*UpdateAPropertyVersionRequestRealTimeLogHeaders `json:"headers,omitempty" xml:"headers,omitempty" type:"Repeated"`
 }
 
-func (s UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLog) String() string {
+func (s UpdateAPropertyVersionRequestRealTimeLog) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLog) GoString() string {
+func (s UpdateAPropertyVersionRequestRealTimeLog) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLog) SetLogUrl(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLog {
+func (s *UpdateAPropertyVersionRequestRealTimeLog) SetLogUrl(v string) *UpdateAPropertyVersionRequestRealTimeLog {
   s.LogUrl = &v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLog) SetSampleRate(v int) *UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLog {
+func (s *UpdateAPropertyVersionRequestRealTimeLog) SetSampleRate(v int) *UpdateAPropertyVersionRequestRealTimeLog {
   s.SampleRate = &v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLog) SetEscape(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLog {
+func (s *UpdateAPropertyVersionRequestRealTimeLog) SetEscape(v string) *UpdateAPropertyVersionRequestRealTimeLog {
   s.Escape = &v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLog) SetFormat(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLog {
+func (s *UpdateAPropertyVersionRequestRealTimeLog) SetFormat(v string) *UpdateAPropertyVersionRequestRealTimeLog {
   s.Format = &v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLog) SetHeaders(v []*UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLogHeaders) *UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLog {
+func (s *UpdateAPropertyVersionRequestRealTimeLog) SetHeaders(v []*UpdateAPropertyVersionRequestRealTimeLogHeaders) *UpdateAPropertyVersionRequestRealTimeLog {
   s.Headers = v
   return s
 }
 
-type UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLogHeaders struct     {
+type UpdateAPropertyVersionRequestRealTimeLogHeaders struct     {
   // {"en" : "Name of an HTTP header.", "zh_CN": "HTTP标头名称"}
   Name *string `json:"name,omitempty" xml:"name,omitempty"`
   // {"en" : "Value of an HTTP header.", "zh_CN": "HTTP标头值"}
   Value *string `json:"value,omitempty" xml:"value,omitempty"`
 }
 
-func (s UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLogHeaders) String() string {
+func (s UpdateAPropertyVersionRequestRealTimeLogHeaders) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLogHeaders) GoString() string {
+func (s UpdateAPropertyVersionRequestRealTimeLogHeaders) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLogHeaders) SetName(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLogHeaders {
+func (s *UpdateAPropertyVersionRequestRealTimeLogHeaders) SetName(v string) *UpdateAPropertyVersionRequestRealTimeLogHeaders {
   s.Name = &v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLogHeaders) SetValue(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestRealTimeLogHeaders {
+func (s *UpdateAPropertyVersionRequestRealTimeLogHeaders) SetValue(v string) *UpdateAPropertyVersionRequestRealTimeLogHeaders {
   s.Value = &v
   return s
 }
 
-type UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins struct     {
+type UpdateAPropertyVersionRequestOrigins struct     {
   // {"en" : "^[a-zA-z0-9_] 
   // Name of an origin. It must be unique within this property.
   // ", "zh_CN": "^[a-zA-z0-9_] 
@@ -3244,7 +3244,7 @@ type UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins struct     {
   // 'secretKey':'d12345678abcdefghi'
   // }}
   // "}
-  Authentication *UpdateAPropertyVersionUpdateAPropertyVersionRequestOriginsAuthentication `json:"authentication,omitempty" xml:"authentication,omitempty" type:"Struct"`
+  Authentication *UpdateAPropertyVersionRequestOriginsAuthentication `json:"authentication,omitempty" xml:"authentication,omitempty" type:"Struct"`
   // {"en" : "Default: 60 Range: [ 5 .. 600 ] 
   // Timeout in seconds during which an idle keepalive connection to an upstream server will stay open. A service quota setting of maxUpstreamKeepaliveTimeOut can change the maximum permitted value.", "zh_CN": "默认值: 60 取值范围: [ 5 .. 600 ] 
   // 该字段用于指定CDN Pro服务器和源站建连的Keep-Alive超时时间，单位为秒。通过maxUpstreamKeepaliveTimeOut 该服务设置项可以更改允许的最大值。如果需要调整最大值，请联系我们的技术支持。"}
@@ -3259,88 +3259,88 @@ type UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins struct     {
   Shield *string `json:"shield,omitempty" xml:"shield,omitempty"`
 }
 
-func (s UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins) String() string {
+func (s UpdateAPropertyVersionRequestOrigins) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins) GoString() string {
+func (s UpdateAPropertyVersionRequestOrigins) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins) SetName(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins {
+func (s *UpdateAPropertyVersionRequestOrigins) SetName(v string) *UpdateAPropertyVersionRequestOrigins {
   s.Name = &v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins) SetServers(v []*string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins {
+func (s *UpdateAPropertyVersionRequestOrigins) SetServers(v []*string) *UpdateAPropertyVersionRequestOrigins {
   s.Servers = v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins) SetSupportedProtocol(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins {
+func (s *UpdateAPropertyVersionRequestOrigins) SetSupportedProtocol(v string) *UpdateAPropertyVersionRequestOrigins {
   s.SupportedProtocol = &v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins) SetDirectConnection(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins {
+func (s *UpdateAPropertyVersionRequestOrigins) SetDirectConnection(v string) *UpdateAPropertyVersionRequestOrigins {
   s.DirectConnection = &v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins) SetHostHeader(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins {
+func (s *UpdateAPropertyVersionRequestOrigins) SetHostHeader(v string) *UpdateAPropertyVersionRequestOrigins {
   s.HostHeader = &v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins) SetVerifyOrigin(v bool) *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins {
+func (s *UpdateAPropertyVersionRequestOrigins) SetVerifyOrigin(v bool) *UpdateAPropertyVersionRequestOrigins {
   s.VerifyOrigin = &v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins) SetAuthentication(v *UpdateAPropertyVersionUpdateAPropertyVersionRequestOriginsAuthentication) *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins {
+func (s *UpdateAPropertyVersionRequestOrigins) SetAuthentication(v *UpdateAPropertyVersionRequestOriginsAuthentication) *UpdateAPropertyVersionRequestOrigins {
   s.Authentication = v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins) SetKeepAliveTimeout(v int) *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins {
+func (s *UpdateAPropertyVersionRequestOrigins) SetKeepAliveTimeout(v int) *UpdateAPropertyVersionRequestOrigins {
   s.KeepAliveTimeout = &v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins) SetPeerFailureTimeout(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins {
+func (s *UpdateAPropertyVersionRequestOrigins) SetPeerFailureTimeout(v string) *UpdateAPropertyVersionRequestOrigins {
   s.PeerFailureTimeout = &v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins) SetTlsCertificateId(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins {
+func (s *UpdateAPropertyVersionRequestOrigins) SetTlsCertificateId(v string) *UpdateAPropertyVersionRequestOrigins {
   s.TlsCertificateId = &v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins) SetShield(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestOrigins {
+func (s *UpdateAPropertyVersionRequestOrigins) SetShield(v string) *UpdateAPropertyVersionRequestOrigins {
   s.Shield = &v
   return s
 }
 
-type UpdateAPropertyVersionUpdateAPropertyVersionRequestOriginsAuthentication struct {
+type UpdateAPropertyVersionRequestOriginsAuthentication struct {
   // {"en" : "Authentication method.", "zh_CN": "鉴权方法。"}
   MethodName *string `json:"methodName,omitempty" xml:"methodName,omitempty"`
 }
 
-func (s UpdateAPropertyVersionUpdateAPropertyVersionRequestOriginsAuthentication) String() string {
+func (s UpdateAPropertyVersionRequestOriginsAuthentication) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateAPropertyVersionUpdateAPropertyVersionRequestOriginsAuthentication) GoString() string {
+func (s UpdateAPropertyVersionRequestOriginsAuthentication) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestOriginsAuthentication) SetMethodName(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestOriginsAuthentication {
+func (s *UpdateAPropertyVersionRequestOriginsAuthentication) SetMethodName(v string) *UpdateAPropertyVersionRequestOriginsAuthentication {
   s.MethodName = &v
   return s
 }
 
-type UpdateAPropertyVersionUpdateAPropertyVersionRequestVideoSeek struct {
+type UpdateAPropertyVersionRequestVideoSeek struct {
   // {"en" : "Range: [ 1 .. 31 ] characters 
   // Name of the query parameter indicating the starting offset in bytes of the content to fetch. The parameter name should begin with a letter (a-z, A-Z) and may be followed by up to 30 letters and numbers.", "zh_CN": "取值范围: [ 1 .. 31 ] 字符 
   // 查询参数的名称，用来指定要获取的内容的起始位置（以字节计算）。参数名称应以字母（a-z，A-Z）开头，后面最多可以有30个字母和数字。"}
@@ -3351,59 +3351,59 @@ type UpdateAPropertyVersionUpdateAPropertyVersionRequestVideoSeek struct {
   EndParameter *string `json:"endParameter,omitempty" xml:"endParameter,omitempty"`
 }
 
-func (s UpdateAPropertyVersionUpdateAPropertyVersionRequestVideoSeek) String() string {
+func (s UpdateAPropertyVersionRequestVideoSeek) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateAPropertyVersionUpdateAPropertyVersionRequestVideoSeek) GoString() string {
+func (s UpdateAPropertyVersionRequestVideoSeek) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestVideoSeek) SetStartParameter(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestVideoSeek {
+func (s *UpdateAPropertyVersionRequestVideoSeek) SetStartParameter(v string) *UpdateAPropertyVersionRequestVideoSeek {
   s.StartParameter = &v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestVideoSeek) SetEndParameter(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestVideoSeek {
+func (s *UpdateAPropertyVersionRequestVideoSeek) SetEndParameter(v string) *UpdateAPropertyVersionRequestVideoSeek {
   s.EndParameter = &v
   return s
 }
 
-type UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRules struct     {
+type UpdateAPropertyVersionRequestAccessControlRules struct     {
   // {"en" : "Range: [ 0 .. 60 ] characters 
   // An optional ID for the access control rule.", "zh_CN": "取值范围: [ 0 .. 60 ] 字符 
   // 访问控制规则ID。"}
   Id *string `json:"id,omitempty" xml:"id,omitempty"`
   // {"en" : "Specify the conditions that the incoming request must match. At least one condition must be specified. If multiple are specified, all must match.", "zh_CN": "指定客户端请求必须匹配的条件。必须至少指定一个条件。如果指定了多个条件，则必须全部匹配。"}
-  Conditions *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesConditions `json:"conditions,omitempty" xml:"conditions,omitempty" type:"Struct"`
+  Conditions *UpdateAPropertyVersionRequestAccessControlRulesConditions `json:"conditions,omitempty" xml:"conditions,omitempty" type:"Struct"`
   // {"en" : "Indicates the action to take in response to a request that matches the conditions of the access control rule.", "zh_CN": "对于匹配到以上条件的请求所采取的相应操作。"}
-  Action *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesAction `json:"action,omitempty" xml:"action,omitempty" type:"Struct"`
+  Action *UpdateAPropertyVersionRequestAccessControlRulesAction `json:"action,omitempty" xml:"action,omitempty" type:"Struct"`
 }
 
-func (s UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRules) String() string {
+func (s UpdateAPropertyVersionRequestAccessControlRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRules) GoString() string {
+func (s UpdateAPropertyVersionRequestAccessControlRules) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRules) SetId(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRules {
+func (s *UpdateAPropertyVersionRequestAccessControlRules) SetId(v string) *UpdateAPropertyVersionRequestAccessControlRules {
   s.Id = &v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRules) SetConditions(v *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesConditions) *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRules {
+func (s *UpdateAPropertyVersionRequestAccessControlRules) SetConditions(v *UpdateAPropertyVersionRequestAccessControlRulesConditions) *UpdateAPropertyVersionRequestAccessControlRules {
   s.Conditions = v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRules) SetAction(v *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesAction) *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRules {
+func (s *UpdateAPropertyVersionRequestAccessControlRules) SetAction(v *UpdateAPropertyVersionRequestAccessControlRulesAction) *UpdateAPropertyVersionRequestAccessControlRules {
   s.Action = v
   return s
 }
 
-type UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesConditions struct {
+type UpdateAPropertyVersionRequestAccessControlRulesConditions struct {
   // {"en" : "Enum: https,http 
   // Indicates whether the incoming request uses HTTP or HTTPS.", "zh_CN": "取值范围: https,http 
   // 客户端请求的协议，HTTP或HTTPS。"}
@@ -3422,45 +3422,45 @@ type UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesCondit
   ClientIpRange []*string `json:"clientIpRange,omitempty" xml:"clientIpRange,omitempty" type:"Repeated"`
 }
 
-func (s UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesConditions) String() string {
+func (s UpdateAPropertyVersionRequestAccessControlRulesConditions) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesConditions) GoString() string {
+func (s UpdateAPropertyVersionRequestAccessControlRulesConditions) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesConditions) SetScheme(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesConditions {
+func (s *UpdateAPropertyVersionRequestAccessControlRulesConditions) SetScheme(v string) *UpdateAPropertyVersionRequestAccessControlRulesConditions {
   s.Scheme = &v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesConditions) SetHostname(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesConditions {
+func (s *UpdateAPropertyVersionRequestAccessControlRulesConditions) SetHostname(v string) *UpdateAPropertyVersionRequestAccessControlRulesConditions {
   s.Hostname = &v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesConditions) SetUri(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesConditions {
+func (s *UpdateAPropertyVersionRequestAccessControlRulesConditions) SetUri(v string) *UpdateAPropertyVersionRequestAccessControlRulesConditions {
   s.Uri = &v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesConditions) SetServerRegions(v []*string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesConditions {
+func (s *UpdateAPropertyVersionRequestAccessControlRulesConditions) SetServerRegions(v []*string) *UpdateAPropertyVersionRequestAccessControlRulesConditions {
   s.ServerRegions = v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesConditions) SetClientRegions(v []*string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesConditions {
+func (s *UpdateAPropertyVersionRequestAccessControlRulesConditions) SetClientRegions(v []*string) *UpdateAPropertyVersionRequestAccessControlRulesConditions {
   s.ClientRegions = v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesConditions) SetClientIpRange(v []*string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesConditions {
+func (s *UpdateAPropertyVersionRequestAccessControlRulesConditions) SetClientIpRange(v []*string) *UpdateAPropertyVersionRequestAccessControlRulesConditions {
   s.ClientIpRange = v
   return s
 }
 
-type UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesAction struct {
+type UpdateAPropertyVersionRequestAccessControlRulesAction struct {
   // {"en" : "Indicates the HTTP status code to respond with. It must be in the range 300-309, 400-409, or 500-509 to indicate a redirection or error.", "zh_CN": "响应的HTTP状态码，范围必须在300-309、400-409或500-509之间，分别表示重定向或错误。"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
   // {"en" : "Range: <= 200 characters 
@@ -3469,45 +3469,45 @@ type UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesAction
   Message *string `json:"message,omitempty" xml:"message,omitempty"`
 }
 
-func (s UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesAction) String() string {
+func (s UpdateAPropertyVersionRequestAccessControlRulesAction) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesAction) GoString() string {
+func (s UpdateAPropertyVersionRequestAccessControlRulesAction) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesAction) SetStatusCode(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesAction {
+func (s *UpdateAPropertyVersionRequestAccessControlRulesAction) SetStatusCode(v string) *UpdateAPropertyVersionRequestAccessControlRulesAction {
   s.StatusCode = &v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesAction) SetMessage(v string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestAccessControlRulesAction {
+func (s *UpdateAPropertyVersionRequestAccessControlRulesAction) SetMessage(v string) *UpdateAPropertyVersionRequestAccessControlRulesAction {
   s.Message = &v
   return s
 }
 
-type UpdateAPropertyVersionUpdateAPropertyVersionRequestExtraServicePorts struct {
+type UpdateAPropertyVersionRequestExtraServicePorts struct {
   // {"en" : "This is a list of ports other than 80 which are used to handle HTTP requests. The available values can be found in the systemConfigs API's response. If you need another port, please contact our support team.", "zh_CN": "指定用于处理HTTP请求的端口列表（80端口除外）。可通过调用'获取系统配置'接口来查询系统支持的端口。如果您需要开通其他端口，请联系技术支持。"}
   Http []*string `json:"http,omitempty" xml:"http,omitempty" type:"Repeated"`
   // {"en" : "This is a list of ports other than 443 which are used to handle HTTPS requests. The available values can be found in the systemConfigs API's response. If you need another port, please contact our support team.", "zh_CN": "指定用于处理HTTPS请求的端口列表（443端口除外）。可通过调用'获取系统配置'接口来查询系统支持的端口。如果您需要开通其他端口，请联系技术支持。"}
   Https []*string `json:"https,omitempty" xml:"https,omitempty" type:"Repeated"`
 }
 
-func (s UpdateAPropertyVersionUpdateAPropertyVersionRequestExtraServicePorts) String() string {
+func (s UpdateAPropertyVersionRequestExtraServicePorts) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateAPropertyVersionUpdateAPropertyVersionRequestExtraServicePorts) GoString() string {
+func (s UpdateAPropertyVersionRequestExtraServicePorts) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestExtraServicePorts) SetHttp(v []*string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestExtraServicePorts {
+func (s *UpdateAPropertyVersionRequestExtraServicePorts) SetHttp(v []*string) *UpdateAPropertyVersionRequestExtraServicePorts {
   s.Http = v
   return s
 }
 
-func (s *UpdateAPropertyVersionUpdateAPropertyVersionRequestExtraServicePorts) SetHttps(v []*string) *UpdateAPropertyVersionUpdateAPropertyVersionRequestExtraServicePorts {
+func (s *UpdateAPropertyVersionRequestExtraServicePorts) SetHttps(v []*string) *UpdateAPropertyVersionRequestExtraServicePorts {
   s.Https = v
   return s
 }
@@ -3581,7 +3581,7 @@ type CreateAPropertyRequest struct {
   // 加速项目的描述。"}
   Description *string `json:"description,omitempty" xml:"description,omitempty"`
   // {"en" : "Describes a property configuration. This contains all the settings.", "zh_CN": "描述加速项目的所有配置信息。"}
-  Version *CreateAPropertyCreateAPropertyRequestVersion `json:"version,omitempty" xml:"version,omitempty" require:"true" type:"Struct"`
+  Version *CreateAPropertyRequestVersion `json:"version,omitempty" xml:"version,omitempty" require:"true" type:"Struct"`
 }
 
 func (s CreateAPropertyRequest) String() string {
@@ -3607,12 +3607,12 @@ func (s *CreateAPropertyRequest) SetDescription(v string) *CreateAPropertyReques
   return s
 }
 
-func (s *CreateAPropertyRequest) SetVersion(v *CreateAPropertyCreateAPropertyRequestVersion) *CreateAPropertyRequest {
+func (s *CreateAPropertyRequest) SetVersion(v *CreateAPropertyRequestVersion) *CreateAPropertyRequest {
   s.Version = v
   return s
 }
 
-type CreateAPropertyCreateAPropertyRequestVersion struct {
+type CreateAPropertyRequestVersion struct {
   // {"en" : "A description of the version.
   // ", "zh_CN": "版本描述。"}
   Description *string `json:"description,omitempty" xml:"description,omitempty"`
@@ -3625,7 +3625,7 @@ type CreateAPropertyCreateAPropertyRequestVersion struct {
   // 同一个加速域名在同一时间只能存在于一个已部署的加速项目中，但泛域名可以与关联的完全限定域名一同部署。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
   // {"en" : "This optional field allows you to configure notifications about client requests to be sent to a remote server. This is an advanced feature. Please contact our support team if you require this feature.", "zh_CN": "此可选字段用来配置发送消息通知（即实时日志）到您的远程服务器。当有客户端请求访问您的加速域名时，将触发通知。这是高级功能，如果您需要此功能，请联系我们的技术支持开通。"}
-  RealTimeLog *CreateAPropertyCreateAPropertyRequestVersionRealTimeLog `json:"realTimeLog,omitempty" xml:"realTimeLog,omitempty" type:"Struct"`
+  RealTimeLog *CreateAPropertyRequestVersionRealTimeLog `json:"realTimeLog,omitempty" xml:"realTimeLog,omitempty" type:"Struct"`
   // {"en" : "Range: <= 65530 characters 
   // Refer to Edge Logic Introduction.", "zh_CN": "取值范围: <= 65530 字符 
   // 自定义边缘逻辑。参考边缘逻辑介绍。"}
@@ -3639,7 +3639,7 @@ type CreateAPropertyCreateAPropertyRequestVersion struct {
   // 此字段可以设置为布尔值或字符串。如果设置为true，则CDN Pro服务器会将所有HTTP请求重定向到HTTPS，并返回301状态码。如果您希望在重定向请求时返回不同的状态码，可在此处指定需要的状态码，如'302'、'307'或'308'。"}
   RedirectHttpToHttps *string `json:"redirectHttpToHttps,omitempty" xml:"redirectHttpToHttps,omitempty"`
   // {"en" : "Describes the origin servers for the property's content.", "zh_CN": "描述加速项目对应的源站。"}
-  Origins []*CreateAPropertyCreateAPropertyRequestVersionOrigins `json:"origins,omitempty" xml:"origins,omitempty" type:"Repeated"`
+  Origins []*CreateAPropertyRequestVersionOrigins `json:"origins,omitempty" xml:"origins,omitempty" type:"Repeated"`
   // {"en" : "Default: 1 
   // The value must be set to 1 at this time.", "zh_CN": "默认值: 1 
   // 当前仅允许值为1。"}
@@ -3714,7 +3714,7 @@ type CreateAPropertyCreateAPropertyRequestVersion struct {
   // ", "zh_CN": "指该加速项目用到的证书ID。仅设置tlsCertificateId1字段而不设置tlsCertificateId字段是无效的。如果未设置tlsCertificateId，则不会为此加速项目启用HTTPS。此功能允许您指定两个不同类型的证书，即一个RSA，一个EC。如果指定了两个相同类型的证书，则将忽略tlsCertificateId指定的证书。"}
   TlsCertificateId1 *string `json:"tlsCertificateId1,omitempty" xml:"tlsCertificateId1,omitempty"`
   // {"en" : "This object allows you to support video players requesting partial content through query string parameters. If you specify videoSeek, you must enter a value for startParameter.", "zh_CN": "此对象用来支持视频播放器通过指定查询参数来请求部分内容。当videoSeek对象存在时，必须为startParameter设置一个值。"}
-  VideoSeek *CreateAPropertyCreateAPropertyRequestVersionVideoSeek `json:"videoSeek,omitempty" xml:"videoSeek,omitempty" type:"Struct"`
+  VideoSeek *CreateAPropertyRequestVersionVideoSeek `json:"videoSeek,omitempty" xml:"videoSeek,omitempty" type:"Struct"`
   // {"en" : "Default: 1800 Range: [ 300 .. 86400 ] 
   // Lifespan of TLS session ticket in seconds.", "zh_CN": "默认值: 1800 取值范围: [ 300 .. 86400 ] 
   // TLS会话ticket的有效期（秒）。"}
@@ -3745,7 +3745,7 @@ type CreateAPropertyCreateAPropertyRequestVersion struct {
   // off：忽略客户端请求的IP协议版本，随机选择可用的IPv4或IPv6地址回源"}
   FollowClientIpVersion *string `json:"followClientIpVersion,omitempty" xml:"followClientIpVersion,omitempty"`
   // {"en" : "Specify one or more access control rules to restrict access to your content. More advanced configuration can be done using Edge Logic. These access control rules take precedence over Edge Logic if both are defined.", "zh_CN": "指定一个或多个访问控制规则以限制对内容的访问。可以使用边缘逻辑进行更高级的配置。此处定义的访问控制规则，优先级高于边缘逻辑。"}
-  AccessControlRules []*CreateAPropertyCreateAPropertyRequestVersionAccessControlRules `json:"accessControlRules,omitempty" xml:"accessControlRules,omitempty" type:"Repeated"`
+  AccessControlRules []*CreateAPropertyRequestVersionAccessControlRules `json:"accessControlRules,omitempty" xml:"accessControlRules,omitempty" type:"Repeated"`
   // {"en" : "Default: False 
   // By default, CDN Pro takes control of the contents under the /.well-known/{acme-challenge, pki-validation} directories to support certificate auto-renew for properties. If for any reason you need to manage these two directories by yourself on the origin, for example, to implement your own certificate auto-renew mechanism, you can use this configuration option to disable the default behavior by setting its value to true. For more information about our support for certificate auto-renewal, refer to the description of the autoRenew field in the Create a certificate API.", "zh_CN": "默认值: False 
   // 默认情况下，CDN Pro控制/.well-known/{acme-challenge, pki-validation}目录下的内容，以支持加速项目的证书自动更新功能。如果您需要自己在源站管理这两个目录，例如，为了实现您自己的证书自动更新机制，您可以将此字段设置为true来禁用默认行为。关于证书自动更新的更多信息，请参考'创建证书'接口中autoRenew字段的说明。"}
@@ -3757,7 +3757,7 @@ type CreateAPropertyCreateAPropertyRequestVersion struct {
   // 如果在加速项目的边缘逻辑中使用了'rewrite'指令，可使用该字段来控制客户端请求的URI如何合并到缓存键（Cache Key）中 。默认值'preRewrite'指将改写前的URI放入缓存键，而'postRewrite'则使用改写后的URI。如果您的'rewrite'指令将多个不同的URI改写为相同的值，则使用'postRewrite'可以提高缓存命中率。"}
   CacheKeyUri *string `json:"cacheKeyUri,omitempty" xml:"cacheKeyUri,omitempty"`
   // {"en" : "This field lists ports other than the default 80 used to handle HTTP requests and ports other than the default 443 used to handle HTTPS requests. ", "zh_CN": "除标准的80，443端口外，我们还支持一些扩展端口。可用该字段指定用于处理HTTP和HTTPS请求的扩展端口。"}
-  ExtraServicePorts *CreateAPropertyCreateAPropertyRequestVersionExtraServicePorts `json:"extraServicePorts,omitempty" xml:"extraServicePorts,omitempty" type:"Struct"`
+  ExtraServicePorts *CreateAPropertyRequestVersionExtraServicePorts `json:"extraServicePorts,omitempty" xml:"extraServicePorts,omitempty" type:"Struct"`
   // {"en" : "Range: <= 65530 characters 
   // This field allows you to enter Edge Logic to customize load balancing. A subset of the  directives can be used. Refer to the basic directives listed in the baseLbDirectives field of the response to the system configuration API. Currently, these include 'if', 'else', 'elseif', 'set', 'return', 'add_header', 'deny', 'allow', 'access_log_sampling', and 'proxy_set_header.' In addition, some advanced Edge Logic directives, identified by the system configuration API's advancedLbDirectives, can be enabled for your account if needed. Please contact our support team if you require any of them. <br/> Example use: <br />
   // if ($http_user_agent = bot) { return 403;}
@@ -3775,170 +3775,170 @@ type CreateAPropertyCreateAPropertyRequestVersion struct {
   Tls0Rtt *bool `json:"tls0Rtt,omitempty" xml:"tls0Rtt,omitempty"`
 }
 
-func (s CreateAPropertyCreateAPropertyRequestVersion) String() string {
+func (s CreateAPropertyRequestVersion) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPropertyCreateAPropertyRequestVersion) GoString() string {
+func (s CreateAPropertyRequestVersion) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetDescription(v string) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetDescription(v string) *CreateAPropertyRequestVersion {
   s.Description = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetCacheKeyHostname(v string) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetCacheKeyHostname(v string) *CreateAPropertyRequestVersion {
   s.CacheKeyHostname = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetHostnames(v []*string) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetHostnames(v []*string) *CreateAPropertyRequestVersion {
   s.Hostnames = v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetRealTimeLog(v *CreateAPropertyCreateAPropertyRequestVersionRealTimeLog) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetRealTimeLog(v *CreateAPropertyRequestVersionRealTimeLog) *CreateAPropertyRequestVersion {
   s.RealTimeLog = v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetEdgeLogic(v string) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetEdgeLogic(v string) *CreateAPropertyRequestVersion {
   s.EdgeLogic = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetHasBeian(v bool) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetHasBeian(v bool) *CreateAPropertyRequestVersion {
   s.HasBeian = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetRedirectHttpToHttps(v string) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetRedirectHttpToHttps(v string) *CreateAPropertyRequestVersion {
   s.RedirectHttpToHttps = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetOrigins(v []*CreateAPropertyCreateAPropertyRequestVersionOrigins) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetOrigins(v []*CreateAPropertyRequestVersionOrigins) *CreateAPropertyRequestVersion {
   s.Origins = v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetSyntaxVersion(v int) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetSyntaxVersion(v int) *CreateAPropertyRequestVersion {
   s.SyntaxVersion = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetDisableHttp2(v bool) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetDisableHttp2(v bool) *CreateAPropertyRequestVersion {
   s.DisableHttp2 = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetEnableHttp3(v bool) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetEnableHttp3(v bool) *CreateAPropertyRequestVersion {
   s.EnableHttp3 = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetSchemeInCacheKey(v bool) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetSchemeInCacheKey(v bool) *CreateAPropertyRequestVersion {
   s.SchemeInCacheKey = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetTlsMaxVersion(v string) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetTlsMaxVersion(v string) *CreateAPropertyRequestVersion {
   s.TlsMaxVersion = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetLoadBalancerHashKey(v string) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetLoadBalancerHashKey(v string) *CreateAPropertyRequestVersion {
   s.LoadBalancerHashKey = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetTlsCertificateId(v string) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetTlsCertificateId(v string) *CreateAPropertyRequestVersion {
   s.TlsCertificateId = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetTlsMinVersion(v string) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetTlsMinVersion(v string) *CreateAPropertyRequestVersion {
   s.TlsMinVersion = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetTlsCiphers(v string) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetTlsCiphers(v string) *CreateAPropertyRequestVersion {
   s.TlsCiphers = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetAllowProtocolDowngrade(v bool) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetAllowProtocolDowngrade(v bool) *CreateAPropertyRequestVersion {
   s.AllowProtocolDowngrade = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetTlsCertificateId1(v string) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetTlsCertificateId1(v string) *CreateAPropertyRequestVersion {
   s.TlsCertificateId1 = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetVideoSeek(v *CreateAPropertyCreateAPropertyRequestVersionVideoSeek) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetVideoSeek(v *CreateAPropertyRequestVersionVideoSeek) *CreateAPropertyRequestVersion {
   s.VideoSeek = v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetTlsSessionTimeout(v int) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetTlsSessionTimeout(v int) *CreateAPropertyRequestVersion {
   s.TlsSessionTimeout = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetEnableOcspStapling(v bool) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetEnableOcspStapling(v bool) *CreateAPropertyRequestVersion {
   s.EnableOcspStapling = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetBeianContentType(v int) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetBeianContentType(v int) *CreateAPropertyRequestVersion {
   s.BeianContentType = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetEnableIpv6Origin(v bool) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetEnableIpv6Origin(v bool) *CreateAPropertyRequestVersion {
   s.EnableIpv6Origin = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetFollowClientIpVersion(v string) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetFollowClientIpVersion(v string) *CreateAPropertyRequestVersion {
   s.FollowClientIpVersion = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetAccessControlRules(v []*CreateAPropertyCreateAPropertyRequestVersionAccessControlRules) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetAccessControlRules(v []*CreateAPropertyRequestVersionAccessControlRules) *CreateAPropertyRequestVersion {
   s.AccessControlRules = v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetDisableCertAutomation(v bool) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetDisableCertAutomation(v bool) *CreateAPropertyRequestVersion {
   s.DisableCertAutomation = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetCacheKeyUri(v string) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetCacheKeyUri(v string) *CreateAPropertyRequestVersion {
   s.CacheKeyUri = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetExtraServicePorts(v *CreateAPropertyCreateAPropertyRequestVersionExtraServicePorts) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetExtraServicePorts(v *CreateAPropertyRequestVersionExtraServicePorts) *CreateAPropertyRequestVersion {
   s.ExtraServicePorts = v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetLoadBalancerLogic(v string) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetLoadBalancerLogic(v string) *CreateAPropertyRequestVersion {
   s.LoadBalancerLogic = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersion) SetTls0Rtt(v bool) *CreateAPropertyCreateAPropertyRequestVersion {
+func (s *CreateAPropertyRequestVersion) SetTls0Rtt(v bool) *CreateAPropertyRequestVersion {
   s.Tls0Rtt = &v
   return s
 }
 
-type CreateAPropertyCreateAPropertyRequestVersionRealTimeLog struct {
+type CreateAPropertyRequestVersionRealTimeLog struct {
   // {"en" : "The URL that receives the notifications. It must begin with 'http' or 'https'. The server should support the POST method. This is a required field.", "zh_CN": "接收通知的服务器URL地址。必须以'http'或'https'开头。服务器须支持POST方法。这是必填字段。"}
   LogUrl *string `json:"logUrl,omitempty" xml:"logUrl,omitempty" require:"true"`
   // {"en" : "Default: 1 Range: [ 1 .. 65536 ] 
@@ -3958,68 +3958,68 @@ type CreateAPropertyCreateAPropertyRequestVersionRealTimeLog struct {
   // <table><tr><th>变量名称</th><th>描述</th></tr><tr><td>$body_bytes_sent</td><td>响应体大小。</td></tr><tr><td>$bytes_sent</td><td>响应的大小，包括响应体、响应头和响应行。</td></tr><tr><td>$client_country_code</td><td>客户端请求来源国家，以ISO 3166-1国家代码表示。例如'US'。如果国家/地区未知，则返回'ZZ'。</td></tr><tr><td>$client_real_ip</td><td>客户端请求的IP地址。</td></tr><tr><td>$cookie_x</td><td>获取某个cookie。例如，指定$cookie_account可获取名为'account'的cookie值。</td></tr><tr><td>$http_x</td><td>从原始请求中获取某个HTTP请求头。请求头名称需转换为小写，并用下划线替换连字符。例如，指定$http_user_agent来获取User-Agent的值。</td></tr><tr><td>$msec</td><td>当前unix时间，以毫秒为单位。</td></tr><tr><td>$qtl_req_id</td><td>请求的唯一标识符。</td></tr><tr><td>$request_uri</td><td>HTTP请求URI。</td></tr><tr><td>$request_method</td><td>用于访问源站的HTTP请求方法。</td></tr><tr><td>$request_time</td><td>响应时间，以毫秒为单位。这是从接收到请求的第一个字节到服务端响应最后一个字节之间的时间。</td></tr><tr><td>$sc_completed</td><td>1表示对象的最后一个字节已返回给用户，否则为0。</td></tr><tr><td>$sc_initial</td><td>1表示对象的第一个字节已返回给用户，否则为0。</td></tr><tr><td>$scheme</td><td>表示用户请求的协议（'http'或'https'）。</td></tr><tr><td>$sent_http_content_length</td><td>原始文件大小。</td></tr><tr><td>$sent_http_x</td><td>获取在对客户端响应中某个HTTP响应头的值。响应头名称需转换为小写，并用下划线替换连字符。例如，$sent_http_etag可获取ETag头的值。</td></tr><tr><td>$server_addr</td><td>为用户请求提供服务的边缘节点的IP地址。</td></tr><tr><td>$server_protocol</td><td>表示用户请求中使用的HTTP版本，可以是'HTTP/1.0'、'HTTP/1.1'或'HTTP/2.0'。</td></tr><tr><td>$ssl_cipher</td><td>表示用于TLS（SSL）连接的加密算法套件。</td></tr><tr><td>$ssl_server_name</td><td>客户端发起TLS（SSL）连接所要连接的域名。仅由支持SNI（Server Name Indication）的客户端发送。</td></tr><tr><td>$ssl_protocol</td><td>表示用于TLS（SSL）连接的TLS版本。例如，'SSLv3'、'TLSv1'、'TLSv1.1'、'TLSv1.2'和'unknown'。</td></tr><tr><td>$status</td><td>用户请求的HTTP状态码。</td></tr><tr><td>$tcpinfo_rtt</td><td>数据包往返目的地所用的时间，以微秒为单位。</td></tr></table>"}
   Format *string `json:"format,omitempty" xml:"format,omitempty"`
   // {"en" : "HTTP header names and values to be sent to the notification server. A header name can contain any alphanumeric character or hyphen, '-'. A header value can contain any printable characters. It can also include any of the built-in variables supported in the format field of the realTimeLog object.", "zh_CN": "需要发送到远程服务器的HTTP请求头名称和值。请求头名称可以包含任何字母，数字或连字符'-'。值可以包含任何可打印字符，也可以使用realTimeLog对象format字段中支持的任何内置变量。"}
-  Headers []*CreateAPropertyCreateAPropertyRequestVersionRealTimeLogHeaders `json:"headers,omitempty" xml:"headers,omitempty" type:"Repeated"`
+  Headers []*CreateAPropertyRequestVersionRealTimeLogHeaders `json:"headers,omitempty" xml:"headers,omitempty" type:"Repeated"`
 }
 
-func (s CreateAPropertyCreateAPropertyRequestVersionRealTimeLog) String() string {
+func (s CreateAPropertyRequestVersionRealTimeLog) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPropertyCreateAPropertyRequestVersionRealTimeLog) GoString() string {
+func (s CreateAPropertyRequestVersionRealTimeLog) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionRealTimeLog) SetLogUrl(v string) *CreateAPropertyCreateAPropertyRequestVersionRealTimeLog {
+func (s *CreateAPropertyRequestVersionRealTimeLog) SetLogUrl(v string) *CreateAPropertyRequestVersionRealTimeLog {
   s.LogUrl = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionRealTimeLog) SetSampleRate(v int) *CreateAPropertyCreateAPropertyRequestVersionRealTimeLog {
+func (s *CreateAPropertyRequestVersionRealTimeLog) SetSampleRate(v int) *CreateAPropertyRequestVersionRealTimeLog {
   s.SampleRate = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionRealTimeLog) SetEscape(v string) *CreateAPropertyCreateAPropertyRequestVersionRealTimeLog {
+func (s *CreateAPropertyRequestVersionRealTimeLog) SetEscape(v string) *CreateAPropertyRequestVersionRealTimeLog {
   s.Escape = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionRealTimeLog) SetFormat(v string) *CreateAPropertyCreateAPropertyRequestVersionRealTimeLog {
+func (s *CreateAPropertyRequestVersionRealTimeLog) SetFormat(v string) *CreateAPropertyRequestVersionRealTimeLog {
   s.Format = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionRealTimeLog) SetHeaders(v []*CreateAPropertyCreateAPropertyRequestVersionRealTimeLogHeaders) *CreateAPropertyCreateAPropertyRequestVersionRealTimeLog {
+func (s *CreateAPropertyRequestVersionRealTimeLog) SetHeaders(v []*CreateAPropertyRequestVersionRealTimeLogHeaders) *CreateAPropertyRequestVersionRealTimeLog {
   s.Headers = v
   return s
 }
 
-type CreateAPropertyCreateAPropertyRequestVersionRealTimeLogHeaders struct     {
+type CreateAPropertyRequestVersionRealTimeLogHeaders struct     {
   // {"en" : "Name of an HTTP header.", "zh_CN": "HTTP标头名称"}
   Name *string `json:"name,omitempty" xml:"name,omitempty"`
   // {"en" : "Value of an HTTP header.", "zh_CN": "HTTP标头值"}
   Value *string `json:"value,omitempty" xml:"value,omitempty"`
 }
 
-func (s CreateAPropertyCreateAPropertyRequestVersionRealTimeLogHeaders) String() string {
+func (s CreateAPropertyRequestVersionRealTimeLogHeaders) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPropertyCreateAPropertyRequestVersionRealTimeLogHeaders) GoString() string {
+func (s CreateAPropertyRequestVersionRealTimeLogHeaders) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionRealTimeLogHeaders) SetName(v string) *CreateAPropertyCreateAPropertyRequestVersionRealTimeLogHeaders {
+func (s *CreateAPropertyRequestVersionRealTimeLogHeaders) SetName(v string) *CreateAPropertyRequestVersionRealTimeLogHeaders {
   s.Name = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionRealTimeLogHeaders) SetValue(v string) *CreateAPropertyCreateAPropertyRequestVersionRealTimeLogHeaders {
+func (s *CreateAPropertyRequestVersionRealTimeLogHeaders) SetValue(v string) *CreateAPropertyRequestVersionRealTimeLogHeaders {
   s.Value = &v
   return s
 }
 
-type CreateAPropertyCreateAPropertyRequestVersionOrigins struct     {
+type CreateAPropertyRequestVersionOrigins struct     {
   // {"en" : "^[a-zA-z0-9_] 
   // Name of an origin. It must be unique within this property.
   // ", "zh_CN": "^[a-zA-z0-9_] 
@@ -4130,7 +4130,7 @@ type CreateAPropertyCreateAPropertyRequestVersionOrigins struct     {
   // 'secretKey':'d12345678abcdefghi'
   // }}
   // "}
-  Authentication *CreateAPropertyCreateAPropertyRequestVersionOriginsAuthentication `json:"authentication,omitempty" xml:"authentication,omitempty" type:"Struct"`
+  Authentication *CreateAPropertyRequestVersionOriginsAuthentication `json:"authentication,omitempty" xml:"authentication,omitempty" type:"Struct"`
   // {"en" : "Default: 60 Range: [ 5 .. 600 ] 
   // Timeout in seconds during which an idle keepalive connection to an upstream server will stay open. A service quota setting of maxUpstreamKeepaliveTimeOut can change the maximum permitted value.", "zh_CN": "默认值: 60 取值范围: [ 5 .. 600 ] 
   // 该字段用于指定CDN Pro服务器和源站建连的Keep-Alive超时时间，单位为秒。通过maxUpstreamKeepaliveTimeOut 该服务设置项可以更改允许的最大值。如果需要调整最大值，请联系我们的技术支持。"}
@@ -4145,88 +4145,88 @@ type CreateAPropertyCreateAPropertyRequestVersionOrigins struct     {
   Shield *string `json:"shield,omitempty" xml:"shield,omitempty"`
 }
 
-func (s CreateAPropertyCreateAPropertyRequestVersionOrigins) String() string {
+func (s CreateAPropertyRequestVersionOrigins) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPropertyCreateAPropertyRequestVersionOrigins) GoString() string {
+func (s CreateAPropertyRequestVersionOrigins) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionOrigins) SetName(v string) *CreateAPropertyCreateAPropertyRequestVersionOrigins {
+func (s *CreateAPropertyRequestVersionOrigins) SetName(v string) *CreateAPropertyRequestVersionOrigins {
   s.Name = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionOrigins) SetServers(v []*string) *CreateAPropertyCreateAPropertyRequestVersionOrigins {
+func (s *CreateAPropertyRequestVersionOrigins) SetServers(v []*string) *CreateAPropertyRequestVersionOrigins {
   s.Servers = v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionOrigins) SetSupportedProtocol(v string) *CreateAPropertyCreateAPropertyRequestVersionOrigins {
+func (s *CreateAPropertyRequestVersionOrigins) SetSupportedProtocol(v string) *CreateAPropertyRequestVersionOrigins {
   s.SupportedProtocol = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionOrigins) SetDirectConnection(v string) *CreateAPropertyCreateAPropertyRequestVersionOrigins {
+func (s *CreateAPropertyRequestVersionOrigins) SetDirectConnection(v string) *CreateAPropertyRequestVersionOrigins {
   s.DirectConnection = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionOrigins) SetHostHeader(v string) *CreateAPropertyCreateAPropertyRequestVersionOrigins {
+func (s *CreateAPropertyRequestVersionOrigins) SetHostHeader(v string) *CreateAPropertyRequestVersionOrigins {
   s.HostHeader = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionOrigins) SetVerifyOrigin(v bool) *CreateAPropertyCreateAPropertyRequestVersionOrigins {
+func (s *CreateAPropertyRequestVersionOrigins) SetVerifyOrigin(v bool) *CreateAPropertyRequestVersionOrigins {
   s.VerifyOrigin = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionOrigins) SetAuthentication(v *CreateAPropertyCreateAPropertyRequestVersionOriginsAuthentication) *CreateAPropertyCreateAPropertyRequestVersionOrigins {
+func (s *CreateAPropertyRequestVersionOrigins) SetAuthentication(v *CreateAPropertyRequestVersionOriginsAuthentication) *CreateAPropertyRequestVersionOrigins {
   s.Authentication = v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionOrigins) SetKeepAliveTimeout(v int) *CreateAPropertyCreateAPropertyRequestVersionOrigins {
+func (s *CreateAPropertyRequestVersionOrigins) SetKeepAliveTimeout(v int) *CreateAPropertyRequestVersionOrigins {
   s.KeepAliveTimeout = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionOrigins) SetPeerFailureTimeout(v string) *CreateAPropertyCreateAPropertyRequestVersionOrigins {
+func (s *CreateAPropertyRequestVersionOrigins) SetPeerFailureTimeout(v string) *CreateAPropertyRequestVersionOrigins {
   s.PeerFailureTimeout = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionOrigins) SetTlsCertificateId(v string) *CreateAPropertyCreateAPropertyRequestVersionOrigins {
+func (s *CreateAPropertyRequestVersionOrigins) SetTlsCertificateId(v string) *CreateAPropertyRequestVersionOrigins {
   s.TlsCertificateId = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionOrigins) SetShield(v string) *CreateAPropertyCreateAPropertyRequestVersionOrigins {
+func (s *CreateAPropertyRequestVersionOrigins) SetShield(v string) *CreateAPropertyRequestVersionOrigins {
   s.Shield = &v
   return s
 }
 
-type CreateAPropertyCreateAPropertyRequestVersionOriginsAuthentication struct {
+type CreateAPropertyRequestVersionOriginsAuthentication struct {
   // {"en" : "Authentication method.", "zh_CN": "鉴权方法。"}
   MethodName *string `json:"methodName,omitempty" xml:"methodName,omitempty"`
 }
 
-func (s CreateAPropertyCreateAPropertyRequestVersionOriginsAuthentication) String() string {
+func (s CreateAPropertyRequestVersionOriginsAuthentication) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPropertyCreateAPropertyRequestVersionOriginsAuthentication) GoString() string {
+func (s CreateAPropertyRequestVersionOriginsAuthentication) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionOriginsAuthentication) SetMethodName(v string) *CreateAPropertyCreateAPropertyRequestVersionOriginsAuthentication {
+func (s *CreateAPropertyRequestVersionOriginsAuthentication) SetMethodName(v string) *CreateAPropertyRequestVersionOriginsAuthentication {
   s.MethodName = &v
   return s
 }
 
-type CreateAPropertyCreateAPropertyRequestVersionVideoSeek struct {
+type CreateAPropertyRequestVersionVideoSeek struct {
   // {"en" : "Range: [ 1 .. 31 ] characters 
   // Name of the query parameter indicating the starting offset in bytes of the content to fetch. The parameter name should begin with a letter (a-z, A-Z) and may be followed by up to 30 letters and numbers.", "zh_CN": "取值范围: [ 1 .. 31 ] 字符 
   // 查询参数的名称，用来指定要获取的内容的起始位置（以字节计算）。参数名称应以字母（a-z，A-Z）开头，后面最多可以有30个字母和数字。"}
@@ -4237,59 +4237,59 @@ type CreateAPropertyCreateAPropertyRequestVersionVideoSeek struct {
   EndParameter *string `json:"endParameter,omitempty" xml:"endParameter,omitempty"`
 }
 
-func (s CreateAPropertyCreateAPropertyRequestVersionVideoSeek) String() string {
+func (s CreateAPropertyRequestVersionVideoSeek) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPropertyCreateAPropertyRequestVersionVideoSeek) GoString() string {
+func (s CreateAPropertyRequestVersionVideoSeek) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionVideoSeek) SetStartParameter(v string) *CreateAPropertyCreateAPropertyRequestVersionVideoSeek {
+func (s *CreateAPropertyRequestVersionVideoSeek) SetStartParameter(v string) *CreateAPropertyRequestVersionVideoSeek {
   s.StartParameter = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionVideoSeek) SetEndParameter(v string) *CreateAPropertyCreateAPropertyRequestVersionVideoSeek {
+func (s *CreateAPropertyRequestVersionVideoSeek) SetEndParameter(v string) *CreateAPropertyRequestVersionVideoSeek {
   s.EndParameter = &v
   return s
 }
 
-type CreateAPropertyCreateAPropertyRequestVersionAccessControlRules struct     {
+type CreateAPropertyRequestVersionAccessControlRules struct     {
   // {"en" : "Range: [ 0 .. 60 ] characters 
   // An optional ID for the access control rule.", "zh_CN": "取值范围: [ 0 .. 60 ] 字符 
   // 访问控制规则ID。"}
   Id *string `json:"id,omitempty" xml:"id,omitempty"`
   // {"en" : "Specify the conditions that the incoming request must match. At least one condition must be specified. If multiple are specified, all must match.", "zh_CN": "指定客户端请求必须匹配的条件。必须至少指定一个条件。如果指定了多个条件，则必须全部匹配。"}
-  Conditions *CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesConditions `json:"conditions,omitempty" xml:"conditions,omitempty" type:"Struct"`
+  Conditions *CreateAPropertyRequestVersionAccessControlRulesConditions `json:"conditions,omitempty" xml:"conditions,omitempty" type:"Struct"`
   // {"en" : "Indicates the action to take in response to a request that matches the conditions of the access control rule.", "zh_CN": "对于匹配到以上条件的请求所采取的相应操作。"}
-  Action *CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesAction `json:"action,omitempty" xml:"action,omitempty" type:"Struct"`
+  Action *CreateAPropertyRequestVersionAccessControlRulesAction `json:"action,omitempty" xml:"action,omitempty" type:"Struct"`
 }
 
-func (s CreateAPropertyCreateAPropertyRequestVersionAccessControlRules) String() string {
+func (s CreateAPropertyRequestVersionAccessControlRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPropertyCreateAPropertyRequestVersionAccessControlRules) GoString() string {
+func (s CreateAPropertyRequestVersionAccessControlRules) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionAccessControlRules) SetId(v string) *CreateAPropertyCreateAPropertyRequestVersionAccessControlRules {
+func (s *CreateAPropertyRequestVersionAccessControlRules) SetId(v string) *CreateAPropertyRequestVersionAccessControlRules {
   s.Id = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionAccessControlRules) SetConditions(v *CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesConditions) *CreateAPropertyCreateAPropertyRequestVersionAccessControlRules {
+func (s *CreateAPropertyRequestVersionAccessControlRules) SetConditions(v *CreateAPropertyRequestVersionAccessControlRulesConditions) *CreateAPropertyRequestVersionAccessControlRules {
   s.Conditions = v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionAccessControlRules) SetAction(v *CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesAction) *CreateAPropertyCreateAPropertyRequestVersionAccessControlRules {
+func (s *CreateAPropertyRequestVersionAccessControlRules) SetAction(v *CreateAPropertyRequestVersionAccessControlRulesAction) *CreateAPropertyRequestVersionAccessControlRules {
   s.Action = v
   return s
 }
 
-type CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesConditions struct {
+type CreateAPropertyRequestVersionAccessControlRulesConditions struct {
   // {"en" : "Enum: https,http 
   // Indicates whether the incoming request uses HTTP or HTTPS.", "zh_CN": "取值范围: https,http 
   // 客户端请求的协议，HTTP或HTTPS。"}
@@ -4308,45 +4308,45 @@ type CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesConditions st
   ClientIpRange []*string `json:"clientIpRange,omitempty" xml:"clientIpRange,omitempty" type:"Repeated"`
 }
 
-func (s CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesConditions) String() string {
+func (s CreateAPropertyRequestVersionAccessControlRulesConditions) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesConditions) GoString() string {
+func (s CreateAPropertyRequestVersionAccessControlRulesConditions) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesConditions) SetScheme(v string) *CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesConditions {
+func (s *CreateAPropertyRequestVersionAccessControlRulesConditions) SetScheme(v string) *CreateAPropertyRequestVersionAccessControlRulesConditions {
   s.Scheme = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesConditions) SetHostname(v string) *CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesConditions {
+func (s *CreateAPropertyRequestVersionAccessControlRulesConditions) SetHostname(v string) *CreateAPropertyRequestVersionAccessControlRulesConditions {
   s.Hostname = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesConditions) SetUri(v string) *CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesConditions {
+func (s *CreateAPropertyRequestVersionAccessControlRulesConditions) SetUri(v string) *CreateAPropertyRequestVersionAccessControlRulesConditions {
   s.Uri = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesConditions) SetServerRegions(v []*string) *CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesConditions {
+func (s *CreateAPropertyRequestVersionAccessControlRulesConditions) SetServerRegions(v []*string) *CreateAPropertyRequestVersionAccessControlRulesConditions {
   s.ServerRegions = v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesConditions) SetClientRegions(v []*string) *CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesConditions {
+func (s *CreateAPropertyRequestVersionAccessControlRulesConditions) SetClientRegions(v []*string) *CreateAPropertyRequestVersionAccessControlRulesConditions {
   s.ClientRegions = v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesConditions) SetClientIpRange(v []*string) *CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesConditions {
+func (s *CreateAPropertyRequestVersionAccessControlRulesConditions) SetClientIpRange(v []*string) *CreateAPropertyRequestVersionAccessControlRulesConditions {
   s.ClientIpRange = v
   return s
 }
 
-type CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesAction struct {
+type CreateAPropertyRequestVersionAccessControlRulesAction struct {
   // {"en" : "Indicates the HTTP status code to respond with. It must be in the range 300-309, 400-409, or 500-509 to indicate a redirection or error.", "zh_CN": "响应的HTTP状态码，范围必须在300-309、400-409或500-509之间，分别表示重定向或错误。"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
   // {"en" : "Range: <= 200 characters 
@@ -4355,45 +4355,45 @@ type CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesAction struct
   Message *string `json:"message,omitempty" xml:"message,omitempty"`
 }
 
-func (s CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesAction) String() string {
+func (s CreateAPropertyRequestVersionAccessControlRulesAction) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesAction) GoString() string {
+func (s CreateAPropertyRequestVersionAccessControlRulesAction) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesAction) SetStatusCode(v string) *CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesAction {
+func (s *CreateAPropertyRequestVersionAccessControlRulesAction) SetStatusCode(v string) *CreateAPropertyRequestVersionAccessControlRulesAction {
   s.StatusCode = &v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesAction) SetMessage(v string) *CreateAPropertyCreateAPropertyRequestVersionAccessControlRulesAction {
+func (s *CreateAPropertyRequestVersionAccessControlRulesAction) SetMessage(v string) *CreateAPropertyRequestVersionAccessControlRulesAction {
   s.Message = &v
   return s
 }
 
-type CreateAPropertyCreateAPropertyRequestVersionExtraServicePorts struct {
+type CreateAPropertyRequestVersionExtraServicePorts struct {
   // {"en" : "This is a list of ports other than 80 which are used to handle HTTP requests. The available values can be found in the systemConfigs API's response. If you need another port, please contact our support team.", "zh_CN": "指定用于处理HTTP请求的端口列表（80端口除外）。可通过调用'获取系统配置'接口来查询系统支持的端口。如果您需要开通其他端口，请联系技术支持。"}
   Http []*string `json:"http,omitempty" xml:"http,omitempty" type:"Repeated"`
   // {"en" : "This is a list of ports other than 443 which are used to handle HTTPS requests. The available values can be found in the systemConfigs API's response. If you need another port, please contact our support team.", "zh_CN": "指定用于处理HTTPS请求的端口列表（443端口除外）。可通过调用'获取系统配置'接口来查询系统支持的端口。如果您需要开通其他端口，请联系技术支持。"}
   Https []*string `json:"https,omitempty" xml:"https,omitempty" type:"Repeated"`
 }
 
-func (s CreateAPropertyCreateAPropertyRequestVersionExtraServicePorts) String() string {
+func (s CreateAPropertyRequestVersionExtraServicePorts) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPropertyCreateAPropertyRequestVersionExtraServicePorts) GoString() string {
+func (s CreateAPropertyRequestVersionExtraServicePorts) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionExtraServicePorts) SetHttp(v []*string) *CreateAPropertyCreateAPropertyRequestVersionExtraServicePorts {
+func (s *CreateAPropertyRequestVersionExtraServicePorts) SetHttp(v []*string) *CreateAPropertyRequestVersionExtraServicePorts {
   s.Http = v
   return s
 }
 
-func (s *CreateAPropertyCreateAPropertyRequestVersionExtraServicePorts) SetHttps(v []*string) *CreateAPropertyCreateAPropertyRequestVersionExtraServicePorts {
+func (s *CreateAPropertyRequestVersionExtraServicePorts) SetHttps(v []*string) *CreateAPropertyRequestVersionExtraServicePorts {
   s.Https = v
   return s
 }

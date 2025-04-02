@@ -11,7 +11,7 @@ type EditAccessSpeedLimitRequest struct {
   // 2. Clear the configuration for blank access-speed-rules", "zh_CN":"访问限速配置
   // 1.需要访问限速时，此项必填
   // 2.只有空标签access-speed-rules时清空访问限速配置"}
-  AccessSpeedRules []*EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules `json:"access-speed-rules,omitempty" xml:"access-speed-rules,omitempty" require:"true" type:"Repeated"`
+  AccessSpeedRules []*EditAccessSpeedLimitRequestAccessSpeedRules `json:"access-speed-rules,omitempty" xml:"access-speed-rules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s EditAccessSpeedLimitRequest) String() string {
@@ -22,12 +22,12 @@ func (s EditAccessSpeedLimitRequest) GoString() string {
   return s.String()
 }
 
-func (s *EditAccessSpeedLimitRequest) SetAccessSpeedRules(v []*EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules) *EditAccessSpeedLimitRequest {
+func (s *EditAccessSpeedLimitRequest) SetAccessSpeedRules(v []*EditAccessSpeedLimitRequestAccessSpeedRules) *EditAccessSpeedLimitRequest {
   s.AccessSpeedRules = v
   return s
 }
 
-type EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules struct     {
+type EditAccessSpeedLimitRequestAccessSpeedRules struct     {
   // {"en":"The url matching mode supports fuzzy regularization. If all matches, the input parameters can be configured as: *.", "zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*"}
   PathPattern *string `json:"path-pattern,omitempty" xml:"path-pattern,omitempty" require:"true"`
   // {"en":"The speed limit method can be limited by the start size (unit: KB) or the start time (unit: s), both of which are mutually exclusive
@@ -51,50 +51,50 @@ type EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules struct     
   DataId *int64 `json:"data-id,omitempty" xml:"data-id,omitempty"`
 }
 
-func (s EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules) String() string {
+func (s EditAccessSpeedLimitRequestAccessSpeedRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules) GoString() string {
+func (s EditAccessSpeedLimitRequestAccessSpeedRules) GoString() string {
   return s.String()
 }
 
-func (s *EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules) SetPathPattern(v string) *EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules {
+func (s *EditAccessSpeedLimitRequestAccessSpeedRules) SetPathPattern(v string) *EditAccessSpeedLimitRequestAccessSpeedRules {
   s.PathPattern = &v
   return s
 }
 
-func (s *EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules) SetLimitMode(v string) *EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules {
+func (s *EditAccessSpeedLimitRequestAccessSpeedRules) SetLimitMode(v string) *EditAccessSpeedLimitRequestAccessSpeedRules {
   s.LimitMode = &v
   return s
 }
 
-func (s *EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules) SetStartSize(v string) *EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules {
+func (s *EditAccessSpeedLimitRequestAccessSpeedRules) SetStartSize(v string) *EditAccessSpeedLimitRequestAccessSpeedRules {
   s.StartSize = &v
   return s
 }
 
-func (s *EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules) SetStartTime(v string) *EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules {
+func (s *EditAccessSpeedLimitRequestAccessSpeedRules) SetStartTime(v string) *EditAccessSpeedLimitRequestAccessSpeedRules {
   s.StartTime = &v
   return s
 }
 
-func (s *EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules) SetStartSpeed(v string) *EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules {
+func (s *EditAccessSpeedLimitRequestAccessSpeedRules) SetStartSpeed(v string) *EditAccessSpeedLimitRequestAccessSpeedRules {
   s.StartSpeed = &v
   return s
 }
 
-func (s *EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules) SetPriority(v string) *EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules {
+func (s *EditAccessSpeedLimitRequestAccessSpeedRules) SetPriority(v string) *EditAccessSpeedLimitRequestAccessSpeedRules {
   s.Priority = &v
   return s
 }
 
-func (s *EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules) SetSpeed(v string) *EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules {
+func (s *EditAccessSpeedLimitRequestAccessSpeedRules) SetSpeed(v string) *EditAccessSpeedLimitRequestAccessSpeedRules {
   s.Speed = &v
   return s
 }
 
-func (s *EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules) SetDataId(v int64) *EditAccessSpeedLimitEditAccessSpeedLimitRequestAccessSpeedRules {
+func (s *EditAccessSpeedLimitRequestAccessSpeedRules) SetDataId(v int64) *EditAccessSpeedLimitRequestAccessSpeedRules {
   s.DataId = &v
   return s
 }
@@ -196,7 +196,7 @@ type PredeployCompressionConfigRequest struct {
   // {"en":"Compress setting config", "zh_CN":"压缩响应功能配置
   // 1.需要设置压缩响应配置时，此项必填
   // 2.为<compression-settings/>空时清空压缩响应配置"}
-  CompressionSettings *PredeployCompressionConfigPredeployCompressionConfigRequestCompressionSettings `json:"compression-settings,omitempty" xml:"compression-settings,omitempty" require:"true" type:"Struct"`
+  CompressionSettings *PredeployCompressionConfigRequestCompressionSettings `json:"compression-settings,omitempty" xml:"compression-settings,omitempty" require:"true" type:"Struct"`
 }
 
 func (s PredeployCompressionConfigRequest) String() string {
@@ -207,12 +207,12 @@ func (s PredeployCompressionConfigRequest) GoString() string {
   return s.String()
 }
 
-func (s *PredeployCompressionConfigRequest) SetCompressionSettings(v *PredeployCompressionConfigPredeployCompressionConfigRequestCompressionSettings) *PredeployCompressionConfigRequest {
+func (s *PredeployCompressionConfigRequest) SetCompressionSettings(v *PredeployCompressionConfigRequestCompressionSettings) *PredeployCompressionConfigRequest {
   s.CompressionSettings = v
   return s
 }
 
-type PredeployCompressionConfigPredeployCompressionConfigRequestCompressionSettings struct {
+type PredeployCompressionConfigRequestCompressionSettings struct {
   // {"en":"To enable compress setting, allowed true or false.", "zh_CN":"开启压缩响应功能：允许值为true和false"}
   CompressionEnabled *string `json:"compression-enabled,omitempty" xml:"compression-enabled,omitempty" require:"true"`
   // {"en":"The url matching mode. If all matches, the input parameters can be configured as: .*", "zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*"}
@@ -225,35 +225,35 @@ type PredeployCompressionConfigPredeployCompressionConfigRequestCompressionSetti
   BrTypes *string `json:"br-types,omitempty" xml:"br-types,omitempty"`
 }
 
-func (s PredeployCompressionConfigPredeployCompressionConfigRequestCompressionSettings) String() string {
+func (s PredeployCompressionConfigRequestCompressionSettings) String() string {
   return tea.Prettify(s)
 }
 
-func (s PredeployCompressionConfigPredeployCompressionConfigRequestCompressionSettings) GoString() string {
+func (s PredeployCompressionConfigRequestCompressionSettings) GoString() string {
   return s.String()
 }
 
-func (s *PredeployCompressionConfigPredeployCompressionConfigRequestCompressionSettings) SetCompressionEnabled(v string) *PredeployCompressionConfigPredeployCompressionConfigRequestCompressionSettings {
+func (s *PredeployCompressionConfigRequestCompressionSettings) SetCompressionEnabled(v string) *PredeployCompressionConfigRequestCompressionSettings {
   s.CompressionEnabled = &v
   return s
 }
 
-func (s *PredeployCompressionConfigPredeployCompressionConfigRequestCompressionSettings) SetPathPattern(v string) *PredeployCompressionConfigPredeployCompressionConfigRequestCompressionSettings {
+func (s *PredeployCompressionConfigRequestCompressionSettings) SetPathPattern(v string) *PredeployCompressionConfigRequestCompressionSettings {
   s.PathPattern = &v
   return s
 }
 
-func (s *PredeployCompressionConfigPredeployCompressionConfigRequestCompressionSettings) SetIgnoreLetterCase(v string) *PredeployCompressionConfigPredeployCompressionConfigRequestCompressionSettings {
+func (s *PredeployCompressionConfigRequestCompressionSettings) SetIgnoreLetterCase(v string) *PredeployCompressionConfigRequestCompressionSettings {
   s.IgnoreLetterCase = &v
   return s
 }
 
-func (s *PredeployCompressionConfigPredeployCompressionConfigRequestCompressionSettings) SetFileTypes(v []*string) *PredeployCompressionConfigPredeployCompressionConfigRequestCompressionSettings {
+func (s *PredeployCompressionConfigRequestCompressionSettings) SetFileTypes(v []*string) *PredeployCompressionConfigRequestCompressionSettings {
   s.FileTypes = v
   return s
 }
 
-func (s *PredeployCompressionConfigPredeployCompressionConfigRequestCompressionSettings) SetBrTypes(v string) *PredeployCompressionConfigPredeployCompressionConfigRequestCompressionSettings {
+func (s *PredeployCompressionConfigRequestCompressionSettings) SetBrTypes(v string) *PredeployCompressionConfigRequestCompressionSettings {
   s.BrTypes = &v
   return s
 }
@@ -456,7 +456,7 @@ type EditHttpHeaderConfigRequest struct {
   // 注意：
   // 1. 需要取消http头设置时，可以传入空节点<header-modify-rules></header-modify-rules>。
   // 2. 表示需要设置http头，此项必填"}
-  HeaderModifyRules []*EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules `json:"header-modify-rules,omitempty" xml:"header-modify-rules,omitempty" require:"true" type:"Repeated"`
+  HeaderModifyRules []*EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules `json:"header-modify-rules,omitempty" xml:"header-modify-rules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s EditHttpHeaderConfigRequest) String() string {
@@ -467,12 +467,12 @@ func (s EditHttpHeaderConfigRequest) GoString() string {
   return s.String()
 }
 
-func (s *EditHttpHeaderConfigRequest) SetHeaderModifyRules(v []*EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) *EditHttpHeaderConfigRequest {
+func (s *EditHttpHeaderConfigRequest) SetHeaderModifyRules(v []*EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) *EditHttpHeaderConfigRequest {
   s.HeaderModifyRules = v
   return s
 }
 
-type EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules struct     {
+type EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。
   // data-id可以通过查询接口获取。
   // 注意：添加grid类型标识：data-id，每一组配置对应一个data-id：
@@ -591,115 +591,115 @@ type EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderMo
   ExceptEditHttpHeaderConfigRequestHeader *string `json:"except-request-header,omitempty" xml:"except-request-header,omitempty"`
 }
 
-func (s EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) String() string {
+func (s EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) GoString() string {
+func (s EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) GoString() string {
   return s.String()
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetDataId(v int64) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetDataId(v int64) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.DataId = &v
   return s
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetPathPattern(v string) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetPathPattern(v string) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.PathPattern = &v
   return s
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetExceptPathPattern(v string) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetExceptPathPattern(v string) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetCustomPattern(v string) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetCustomPattern(v string) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.CustomPattern = &v
   return s
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetFileType(v string) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetFileType(v string) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.FileType = &v
   return s
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetCustomFileType(v string) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetCustomFileType(v string) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.CustomFileType = &v
   return s
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetDirectory(v string) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetDirectory(v string) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.Directory = &v
   return s
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetSpecifyUrl(v string) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetSpecifyUrl(v string) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.SpecifyUrl = &v
   return s
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetRequestMethod(v string) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetRequestMethod(v string) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.RequestMethod = &v
   return s
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetHeaderDirection(v string) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetHeaderDirection(v string) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.HeaderDirection = &v
   return s
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetAction(v string) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetAction(v string) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.Action = &v
   return s
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetAllowRegexp(v string) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetAllowRegexp(v string) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.AllowRegexp = &v
   return s
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetHeaderName(v string) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetHeaderName(v string) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.HeaderName = &v
   return s
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetHeaderValue(v string) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetHeaderValue(v string) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.HeaderValue = &v
   return s
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetHeaderValueOld(v string) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetHeaderValueOld(v string) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.HeaderValueOld = &v
   return s
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetEditHttpHeaderConfigRequestHeader(v string) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetEditHttpHeaderConfigRequestHeader(v string) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.EditHttpHeaderConfigRequestHeader = &v
   return s
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetPriority(v string) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetPriority(v string) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.Priority = &v
   return s
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetExceptFileType(v string) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetExceptFileType(v string) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.ExceptFileType = &v
   return s
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetExceptDirectory(v string) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetExceptDirectory(v string) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.ExceptDirectory = &v
   return s
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetExceptRequestMethod(v string) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetExceptRequestMethod(v string) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.ExceptRequestMethod = &v
   return s
 }
 
-func (s *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetExceptEditHttpHeaderConfigRequestHeader(v string) *EditHttpHeaderConfigEditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
+func (s *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules) SetExceptEditHttpHeaderConfigRequestHeader(v string) *EditHttpHeaderConfigEditHttpHeaderConfigRequestHeaderModifyRules {
   s.ExceptEditHttpHeaderConfigRequestHeader = &v
   return s
 }
@@ -811,7 +811,7 @@ type UpdateScreenshotConfigurationRequest struct {
   // 1.需要设置截图配置时，此项必填
   // 2.为<screenshotRules/>时清空配置
   // 3.只支持jpg格式的截图"}
-  ScreenshotRules []*UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules `json:"screenshotRules,omitempty" xml:"screenshotRules,omitempty" type:"Repeated"`
+  ScreenshotRules []*UpdateScreenshotConfigurationRequestScreenshotRules `json:"screenshotRules,omitempty" xml:"screenshotRules,omitempty" type:"Repeated"`
 }
 
 func (s UpdateScreenshotConfigurationRequest) String() string {
@@ -822,12 +822,12 @@ func (s UpdateScreenshotConfigurationRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateScreenshotConfigurationRequest) SetScreenshotRules(v []*UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules) *UpdateScreenshotConfigurationRequest {
+func (s *UpdateScreenshotConfigurationRequest) SetScreenshotRules(v []*UpdateScreenshotConfigurationRequestScreenshotRules) *UpdateScreenshotConfigurationRequest {
   s.ScreenshotRules = v
   return s
 }
 
-type UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules struct     {
+type UpdateScreenshotConfigurationRequestScreenshotRules struct     {
   // {"en":"If screenshot is enabled, the values of [true] and [false] are optional.If true, spaceName is required, and if false, other configuration items will be cleared with invalid arguments.", "zh_CN":"是否开启截图，可选值为true、false
   // 为true时，spaceName必填；
   // 为false时，其他配置项会被清空，且入参无效"}
@@ -867,55 +867,55 @@ type UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshot
   DataId *int `json:"dataId,omitempty" xml:"dataId,omitempty"`
 }
 
-func (s UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules) String() string {
+func (s UpdateScreenshotConfigurationRequestScreenshotRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules) GoString() string {
+func (s UpdateScreenshotConfigurationRequestScreenshotRules) GoString() string {
   return s.String()
 }
 
-func (s *UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules) SetScreenshotEnabled(v bool) *UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules {
+func (s *UpdateScreenshotConfigurationRequestScreenshotRules) SetScreenshotEnabled(v bool) *UpdateScreenshotConfigurationRequestScreenshotRules {
   s.ScreenshotEnabled = &v
   return s
 }
 
-func (s *UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules) SetSpaceName(v string) *UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules {
+func (s *UpdateScreenshotConfigurationRequestScreenshotRules) SetSpaceName(v string) *UpdateScreenshotConfigurationRequestScreenshotRules {
   s.SpaceName = &v
   return s
 }
 
-func (s *UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules) SetInterval(v int) *UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules {
+func (s *UpdateScreenshotConfigurationRequestScreenshotRules) SetInterval(v int) *UpdateScreenshotConfigurationRequestScreenshotRules {
   s.Interval = &v
   return s
 }
 
-func (s *UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules) SetWidth(v int) *UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules {
+func (s *UpdateScreenshotConfigurationRequestScreenshotRules) SetWidth(v int) *UpdateScreenshotConfigurationRequestScreenshotRules {
   s.Width = &v
   return s
 }
 
-func (s *UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules) SetHigh(v int) *UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules {
+func (s *UpdateScreenshotConfigurationRequestScreenshotRules) SetHigh(v int) *UpdateScreenshotConfigurationRequestScreenshotRules {
   s.High = &v
   return s
 }
 
-func (s *UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules) SetOverwrite(v string) *UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules {
+func (s *UpdateScreenshotConfigurationRequestScreenshotRules) SetOverwrite(v string) *UpdateScreenshotConfigurationRequestScreenshotRules {
   s.Overwrite = &v
   return s
 }
 
-func (s *UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules) SetNoticeAddress(v string) *UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules {
+func (s *UpdateScreenshotConfigurationRequestScreenshotRules) SetNoticeAddress(v string) *UpdateScreenshotConfigurationRequestScreenshotRules {
   s.NoticeAddress = &v
   return s
 }
 
-func (s *UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules) SetPublishPoints(v []*string) *UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules {
+func (s *UpdateScreenshotConfigurationRequestScreenshotRules) SetPublishPoints(v []*string) *UpdateScreenshotConfigurationRequestScreenshotRules {
   s.PublishPoints = v
   return s
 }
 
-func (s *UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules) SetDataId(v int) *UpdateScreenshotConfigurationUpdateScreenshotConfigurationRequestScreenshotRules {
+func (s *UpdateScreenshotConfigurationRequestScreenshotRules) SetDataId(v int) *UpdateScreenshotConfigurationRequestScreenshotRules {
   s.DataId = &v
   return s
 }
@@ -1214,7 +1214,7 @@ type QueryLiveDomainOriginsResponse struct {
   // {"en":"Reponse message.", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data", "zh_CN":"响应数据"}
-  Data *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryLiveDomainOriginsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryLiveDomainOriginsResponse) String() string {
@@ -1235,12 +1235,12 @@ func (s *QueryLiveDomainOriginsResponse) SetMessage(v string) *QueryLiveDomainOr
   return s
 }
 
-func (s *QueryLiveDomainOriginsResponse) SetData(v *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData) *QueryLiveDomainOriginsResponse {
+func (s *QueryLiveDomainOriginsResponse) SetData(v *QueryLiveDomainOriginsResponseData) *QueryLiveDomainOriginsResponse {
   s.Data = v
   return s
 }
 
-type QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData struct {
+type QueryLiveDomainOriginsResponseData struct {
   // {"en":"Origin Address", "zh_CN":"普通源"}
   OriginAddress *string `json:"originAddress,omitempty" xml:"originAddress,omitempty" require:"true"`
   // {"en":"Origin Host", "zh_CN":"回源主机名"}
@@ -1256,90 +1256,90 @@ type QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData struct {
   // {"en":"Enable Advanced Origins", "zh_CN":"是否启用高级源"}
   AdvancedOrigins *bool `json:"advancedOrigins,omitempty" xml:"advancedOrigins,omitempty" require:"true"`
   // {"en":"Advanced Origins", "zh_CN":"高级源"}
-  Origins *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOrigins `json:"origins,omitempty" xml:"origins,omitempty" require:"true" type:"Struct"`
+  Origins *QueryLiveDomainOriginsResponseDataOrigins `json:"origins,omitempty" xml:"origins,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData) String() string {
+func (s QueryLiveDomainOriginsResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData) GoString() string {
+func (s QueryLiveDomainOriginsResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData) SetOriginAddress(v string) *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData {
+func (s *QueryLiveDomainOriginsResponseData) SetOriginAddress(v string) *QueryLiveDomainOriginsResponseData {
   s.OriginAddress = &v
   return s
 }
 
-func (s *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData) SetOriginHost(v string) *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData {
+func (s *QueryLiveDomainOriginsResponseData) SetOriginHost(v string) *QueryLiveDomainOriginsResponseData {
   s.OriginHost = &v
   return s
 }
 
-func (s *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData) SetOriginProtocol(v string) *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData {
+func (s *QueryLiveDomainOriginsResponseData) SetOriginProtocol(v string) *QueryLiveDomainOriginsResponseData {
   s.OriginProtocol = &v
   return s
 }
 
-func (s *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData) SetOriginPort(v int) *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData {
+func (s *QueryLiveDomainOriginsResponseData) SetOriginPort(v int) *QueryLiveDomainOriginsResponseData {
   s.OriginPort = &v
   return s
 }
 
-func (s *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData) SetEnableHttps(v bool) *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData {
+func (s *QueryLiveDomainOriginsResponseData) SetEnableHttps(v bool) *QueryLiveDomainOriginsResponseData {
   s.EnableHttps = &v
   return s
 }
 
-func (s *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData) SetClientIpHeader(v string) *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData {
+func (s *QueryLiveDomainOriginsResponseData) SetClientIpHeader(v string) *QueryLiveDomainOriginsResponseData {
   s.ClientIpHeader = &v
   return s
 }
 
-func (s *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData) SetAdvancedOrigins(v bool) *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData {
+func (s *QueryLiveDomainOriginsResponseData) SetAdvancedOrigins(v bool) *QueryLiveDomainOriginsResponseData {
   s.AdvancedOrigins = &v
   return s
 }
 
-func (s *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData) SetOrigins(v *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOrigins) *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseData {
+func (s *QueryLiveDomainOriginsResponseData) SetOrigins(v *QueryLiveDomainOriginsResponseDataOrigins) *QueryLiveDomainOriginsResponseData {
   s.Origins = v
   return s
 }
 
-type QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOrigins struct {
+type QueryLiveDomainOriginsResponseDataOrigins struct {
   // {"en":"Servers", "zh_CN":"源站主机对象"}
-  Servers []*QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOriginsServers `json:"servers,omitempty" xml:"servers,omitempty" require:"true" type:"Repeated"`
+  Servers []*QueryLiveDomainOriginsResponseDataOriginsServers `json:"servers,omitempty" xml:"servers,omitempty" require:"true" type:"Repeated"`
   // {"en":"Upstream Polling Enable Control", "zh_CN":"多个server默认主备"}
   RoundRobin *bool `json:"roundRobin,omitempty" xml:"roundRobin,omitempty" require:"true"`
   // {"en":"Origin Host", "zh_CN":"回源主机名"}
   OriginHost *string `json:"originHost,omitempty" xml:"originHost,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOrigins) String() string {
+func (s QueryLiveDomainOriginsResponseDataOrigins) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOrigins) GoString() string {
+func (s QueryLiveDomainOriginsResponseDataOrigins) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOrigins) SetServers(v []*QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOriginsServers) *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOrigins {
+func (s *QueryLiveDomainOriginsResponseDataOrigins) SetServers(v []*QueryLiveDomainOriginsResponseDataOriginsServers) *QueryLiveDomainOriginsResponseDataOrigins {
   s.Servers = v
   return s
 }
 
-func (s *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOrigins) SetRoundRobin(v bool) *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOrigins {
+func (s *QueryLiveDomainOriginsResponseDataOrigins) SetRoundRobin(v bool) *QueryLiveDomainOriginsResponseDataOrigins {
   s.RoundRobin = &v
   return s
 }
 
-func (s *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOrigins) SetOriginHost(v string) *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOrigins {
+func (s *QueryLiveDomainOriginsResponseDataOrigins) SetOriginHost(v string) *QueryLiveDomainOriginsResponseDataOrigins {
   s.OriginHost = &v
   return s
 }
 
-type QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOriginsServers struct     {
+type QueryLiveDomainOriginsResponseDataOriginsServers struct     {
   // {"en":"Address", "zh_CN":"源站地址"}
   Address *string `json:"address,omitempty" xml:"address,omitempty" require:"true"`
   // {"en":"Priority", "zh_CN":"优先级"}
@@ -1350,30 +1350,30 @@ type QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOriginsServers stru
   OriginHost *string `json:"originHost,omitempty" xml:"originHost,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOriginsServers) String() string {
+func (s QueryLiveDomainOriginsResponseDataOriginsServers) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOriginsServers) GoString() string {
+func (s QueryLiveDomainOriginsResponseDataOriginsServers) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOriginsServers) SetAddress(v string) *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOriginsServers {
+func (s *QueryLiveDomainOriginsResponseDataOriginsServers) SetAddress(v string) *QueryLiveDomainOriginsResponseDataOriginsServers {
   s.Address = &v
   return s
 }
 
-func (s *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOriginsServers) SetPriority(v int) *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOriginsServers {
+func (s *QueryLiveDomainOriginsResponseDataOriginsServers) SetPriority(v int) *QueryLiveDomainOriginsResponseDataOriginsServers {
   s.Priority = &v
   return s
 }
 
-func (s *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOriginsServers) SetWeight(v int) *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOriginsServers {
+func (s *QueryLiveDomainOriginsResponseDataOriginsServers) SetWeight(v int) *QueryLiveDomainOriginsResponseDataOriginsServers {
   s.Weight = &v
   return s
 }
 
-func (s *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOriginsServers) SetOriginHost(v string) *QueryLiveDomainOriginsQueryLiveDomainOriginsResponseDataOriginsServers {
+func (s *QueryLiveDomainOriginsResponseDataOriginsServers) SetOriginHost(v string) *QueryLiveDomainOriginsResponseDataOriginsServers {
   s.OriginHost = &v
   return s
 }
@@ -1450,7 +1450,7 @@ type QueryHttpHeaderConfigResponse struct {
   DomainName *string `json:"domain-name,omitempty" xml:"domain-name,omitempty" require:"true"`
   // {"en":"Domain name or domain name id to query configuration", "zh_CN":"需要查询配置的域名或域名id"}
   DomainId *string `json:"domain-id,omitempty" xml:"domain-id,omitempty" require:"true"`
-  HeaderModifyRules []*QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules `json:"header-modify-rules,omitempty" xml:"header-modify-rules,omitempty" require:"true" type:"Repeated"`
+  HeaderModifyRules []*QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules `json:"header-modify-rules,omitempty" xml:"header-modify-rules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryHttpHeaderConfigResponse) String() string {
@@ -1471,12 +1471,12 @@ func (s *QueryHttpHeaderConfigResponse) SetDomainId(v string) *QueryHttpHeaderCo
   return s
 }
 
-func (s *QueryHttpHeaderConfigResponse) SetHeaderModifyRules(v []*QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) *QueryHttpHeaderConfigResponse {
+func (s *QueryHttpHeaderConfigResponse) SetHeaderModifyRules(v []*QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) *QueryHttpHeaderConfigResponse {
   s.HeaderModifyRules = v
   return s
 }
 
-type QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules struct     {
+type QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules struct     {
   // {"en":"Exception url matching pattern, support regular. Example: ", "zh_CN":"例外的url匹配模式，支持正则。 入参参考："}
   ExceptPathPattern *string `json:"except-path-pattern,omitempty" xml:"except-path-pattern,omitempty" require:"true"`
   // {"en":"Matching conditions: specify common types, optional values are all or homepage. 1. all: all files 2. homepage: home page", "zh_CN":"匹配条件：指定常用类型，可选值为all或homepage 1、all：全部文件 2、homepage：首页"}
@@ -1593,115 +1593,115 @@ type QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHead
   ExceptQueryHttpHeaderConfigRequestHeader *string `json:"except-request-header,omitempty" xml:"except-request-header,omitempty" require:"true"`
 }
 
-func (s QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) String() string {
+func (s QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) GoString() string {
+func (s QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetExceptPathPattern(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetExceptPathPattern(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetCustomPattern(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetCustomPattern(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.CustomPattern = &v
   return s
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetFileType(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetFileType(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.FileType = &v
   return s
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetCustomFileType(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetCustomFileType(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.CustomFileType = &v
   return s
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetDirectory(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetDirectory(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.Directory = &v
   return s
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetSpecifyUrl(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetSpecifyUrl(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.SpecifyUrl = &v
   return s
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetRequestMethod(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetRequestMethod(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.RequestMethod = &v
   return s
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetDataId(v int) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetDataId(v int) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.DataId = &v
   return s
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetPathPattern(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetPathPattern(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.PathPattern = &v
   return s
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetHeaderDirection(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetHeaderDirection(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.HeaderDirection = &v
   return s
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetAction(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetAction(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.Action = &v
   return s
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetAllowRegexp(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetAllowRegexp(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.AllowRegexp = &v
   return s
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetHeaderName(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetHeaderName(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.HeaderName = &v
   return s
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetHeaderValue(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetHeaderValue(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.HeaderValue = &v
   return s
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetHeaderValueOld(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetHeaderValueOld(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.HeaderValueOld = &v
   return s
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetRequesHeader(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetRequesHeader(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.RequesHeader = &v
   return s
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetPriority(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetPriority(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.Priority = &v
   return s
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetExceptFileType(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetExceptFileType(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.ExceptFileType = &v
   return s
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetExceptDirectory(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetExceptDirectory(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.ExceptDirectory = &v
   return s
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetExceptRequestMethod(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetExceptRequestMethod(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.ExceptRequestMethod = &v
   return s
 }
 
-func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetExceptQueryHttpHeaderConfigRequestHeader(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
+func (s *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules) SetExceptQueryHttpHeaderConfigRequestHeader(v string) *QueryHttpHeaderConfigQueryHttpHeaderConfigResponseHeaderModifyRules {
   s.ExceptQueryHttpHeaderConfigRequestHeader = &v
   return s
 }
@@ -1805,7 +1805,7 @@ type UpdateLiveDomainMiscResponse struct {
   // {"en":"Reponse message.", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data", "zh_CN":"响应数据"}
-  Data *UpdateLiveDomainMiscUpdateLiveDomainMiscResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *UpdateLiveDomainMiscResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s UpdateLiveDomainMiscResponse) String() string {
@@ -1826,25 +1826,25 @@ func (s *UpdateLiveDomainMiscResponse) SetMessage(v string) *UpdateLiveDomainMis
   return s
 }
 
-func (s *UpdateLiveDomainMiscResponse) SetData(v *UpdateLiveDomainMiscUpdateLiveDomainMiscResponseData) *UpdateLiveDomainMiscResponse {
+func (s *UpdateLiveDomainMiscResponse) SetData(v *UpdateLiveDomainMiscResponseData) *UpdateLiveDomainMiscResponse {
   s.Data = v
   return s
 }
 
-type UpdateLiveDomainMiscUpdateLiveDomainMiscResponseData struct {
+type UpdateLiveDomainMiscResponseData struct {
   // {"en":"The preliminary deployment id", "zh_CN":"预部署id"}
   PreDeployId *string `json:"preDeployId,omitempty" xml:"preDeployId,omitempty" require:"true"`
 }
 
-func (s UpdateLiveDomainMiscUpdateLiveDomainMiscResponseData) String() string {
+func (s UpdateLiveDomainMiscResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainMiscUpdateLiveDomainMiscResponseData) GoString() string {
+func (s UpdateLiveDomainMiscResponseData) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainMiscUpdateLiveDomainMiscResponseData) SetPreDeployId(v string) *UpdateLiveDomainMiscUpdateLiveDomainMiscResponseData {
+func (s *UpdateLiveDomainMiscResponseData) SetPreDeployId(v string) *UpdateLiveDomainMiscResponseData {
   s.PreDeployId = &v
   return s
 }
@@ -1911,7 +1911,7 @@ type UpdateCacheKeyConfigurationRequest struct {
   // 2. Configuration of clearing for <cacheKeyRules/>.", "zh_CN":"配置自定义缓存key功能。
   // 1. 需要设置自定义缓存key配置时，此项必填
   // 2. 为<cacheKeyRules/>时清空自定义缓存key配置"}
-  CacheKeyRules []*UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules `json:"cacheKeyRules,omitempty" xml:"cacheKeyRules,omitempty" require:"true" type:"Repeated"`
+  CacheKeyRules []*UpdateCacheKeyConfigurationRequestCacheKeyRules `json:"cacheKeyRules,omitempty" xml:"cacheKeyRules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s UpdateCacheKeyConfigurationRequest) String() string {
@@ -1922,12 +1922,12 @@ func (s UpdateCacheKeyConfigurationRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateCacheKeyConfigurationRequest) SetCacheKeyRules(v []*UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules) *UpdateCacheKeyConfigurationRequest {
+func (s *UpdateCacheKeyConfigurationRequest) SetCacheKeyRules(v []*UpdateCacheKeyConfigurationRequestCacheKeyRules) *UpdateCacheKeyConfigurationRequest {
   s.CacheKeyRules = v
   return s
 }
 
-type UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules struct     {
+type UpdateCacheKeyConfigurationRequestCacheKeyRules struct     {
   // {"en":"The url matching mode supports fuzzy regularization. If all matches, the input parameters can be configured as: *", "zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*"}
   PathPattern *string `json:"pathPattern,omitempty" xml:"pathPattern,omitempty"`
   // {"en":"Specify a uri, such as /test/specifyurl", "zh_CN":"指定具体的uri，如/test/specifyurl"}
@@ -1968,70 +1968,70 @@ type UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules 
   DataId *int64 `json:"dataId,omitempty" xml:"dataId,omitempty"`
 }
 
-func (s UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules) String() string {
+func (s UpdateCacheKeyConfigurationRequestCacheKeyRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules) GoString() string {
+func (s UpdateCacheKeyConfigurationRequestCacheKeyRules) GoString() string {
   return s.String()
 }
 
-func (s *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules) SetPathPattern(v string) *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules {
+func (s *UpdateCacheKeyConfigurationRequestCacheKeyRules) SetPathPattern(v string) *UpdateCacheKeyConfigurationRequestCacheKeyRules {
   s.PathPattern = &v
   return s
 }
 
-func (s *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules) SetSpecifyUrl(v string) *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules {
+func (s *UpdateCacheKeyConfigurationRequestCacheKeyRules) SetSpecifyUrl(v string) *UpdateCacheKeyConfigurationRequestCacheKeyRules {
   s.SpecifyUrl = &v
   return s
 }
 
-func (s *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules) SetFullMatch4SpecifyUrl(v string) *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules {
+func (s *UpdateCacheKeyConfigurationRequestCacheKeyRules) SetFullMatch4SpecifyUrl(v string) *UpdateCacheKeyConfigurationRequestCacheKeyRules {
   s.FullMatch4SpecifyUrl = &v
   return s
 }
 
-func (s *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules) SetCustomPattern(v string) *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules {
+func (s *UpdateCacheKeyConfigurationRequestCacheKeyRules) SetCustomPattern(v string) *UpdateCacheKeyConfigurationRequestCacheKeyRules {
   s.CustomPattern = &v
   return s
 }
 
-func (s *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules) SetFileType(v string) *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules {
+func (s *UpdateCacheKeyConfigurationRequestCacheKeyRules) SetFileType(v string) *UpdateCacheKeyConfigurationRequestCacheKeyRules {
   s.FileType = &v
   return s
 }
 
-func (s *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules) SetCustomFileType(v string) *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules {
+func (s *UpdateCacheKeyConfigurationRequestCacheKeyRules) SetCustomFileType(v string) *UpdateCacheKeyConfigurationRequestCacheKeyRules {
   s.CustomFileType = &v
   return s
 }
 
-func (s *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules) SetDirectory(v string) *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules {
+func (s *UpdateCacheKeyConfigurationRequestCacheKeyRules) SetDirectory(v string) *UpdateCacheKeyConfigurationRequestCacheKeyRules {
   s.Directory = &v
   return s
 }
 
-func (s *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules) SetIgnoreCase(v string) *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules {
+func (s *UpdateCacheKeyConfigurationRequestCacheKeyRules) SetIgnoreCase(v string) *UpdateCacheKeyConfigurationRequestCacheKeyRules {
   s.IgnoreCase = &v
   return s
 }
 
-func (s *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules) SetHeaderName(v string) *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules {
+func (s *UpdateCacheKeyConfigurationRequestCacheKeyRules) SetHeaderName(v string) *UpdateCacheKeyConfigurationRequestCacheKeyRules {
   s.HeaderName = &v
   return s
 }
 
-func (s *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules) SetParameterOfHeader(v string) *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules {
+func (s *UpdateCacheKeyConfigurationRequestCacheKeyRules) SetParameterOfHeader(v string) *UpdateCacheKeyConfigurationRequestCacheKeyRules {
   s.ParameterOfHeader = &v
   return s
 }
 
-func (s *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules) SetPriority(v string) *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules {
+func (s *UpdateCacheKeyConfigurationRequestCacheKeyRules) SetPriority(v string) *UpdateCacheKeyConfigurationRequestCacheKeyRules {
   s.Priority = &v
   return s
 }
 
-func (s *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules) SetDataId(v int64) *UpdateCacheKeyConfigurationUpdateCacheKeyConfigurationRequestCacheKeyRules {
+func (s *UpdateCacheKeyConfigurationRequestCacheKeyRules) SetDataId(v int64) *UpdateCacheKeyConfigurationRequestCacheKeyRules {
   s.DataId = &v
   return s
 }
@@ -2139,7 +2139,7 @@ type QueryWebsocketConfigResponse struct {
   // {"en":"Response information, success when successful", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"data content, parent node.", "zh_CN":"数据内容，父标签"}
-  Data *QueryWebsocketConfigQueryWebsocketConfigResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryWebsocketConfigResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryWebsocketConfigResponse) String() string {
@@ -2160,12 +2160,12 @@ func (s *QueryWebsocketConfigResponse) SetMessage(v string) *QueryWebsocketConfi
   return s
 }
 
-func (s *QueryWebsocketConfigResponse) SetData(v *QueryWebsocketConfigQueryWebsocketConfigResponseData) *QueryWebsocketConfigResponse {
+func (s *QueryWebsocketConfigResponse) SetData(v *QueryWebsocketConfigResponseData) *QueryWebsocketConfigResponse {
   s.Data = v
   return s
 }
 
-type QueryWebsocketConfigQueryWebsocketConfigResponseData struct {
+type QueryWebsocketConfigResponseData struct {
   // {"en":"domain id", "zh_CN":"域名id"}
   DomainId *int `json:"domainId,omitempty" xml:"domainId,omitempty" require:"true"`
   // {"en":"domain name", "zh_CN":"域名名称"}
@@ -2173,46 +2173,46 @@ type QueryWebsocketConfigQueryWebsocketConfigResponseData struct {
   // {"en":"Open or close websocket function, parent node, you can set <websocketSwitch/> to clear this configuration.
   // Scope of application: wsa, web pages", "zh_CN":"开启或关闭websocket功能，父标签，为<websocketSwitch/>则清空websocket开关配置
   // 适用范围：wsa、网页"}
-  WebsocketSwitch *QueryWebsocketConfigQueryWebsocketConfigResponseDataWebsocketSwitch `json:"websocketSwitch,omitempty" xml:"websocketSwitch,omitempty" require:"true" type:"Struct"`
+  WebsocketSwitch *QueryWebsocketConfigResponseDataWebsocketSwitch `json:"websocketSwitch,omitempty" xml:"websocketSwitch,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryWebsocketConfigQueryWebsocketConfigResponseData) String() string {
+func (s QueryWebsocketConfigResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryWebsocketConfigQueryWebsocketConfigResponseData) GoString() string {
+func (s QueryWebsocketConfigResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryWebsocketConfigQueryWebsocketConfigResponseData) SetDomainId(v int) *QueryWebsocketConfigQueryWebsocketConfigResponseData {
+func (s *QueryWebsocketConfigResponseData) SetDomainId(v int) *QueryWebsocketConfigResponseData {
   s.DomainId = &v
   return s
 }
 
-func (s *QueryWebsocketConfigQueryWebsocketConfigResponseData) SetDomainName(v string) *QueryWebsocketConfigQueryWebsocketConfigResponseData {
+func (s *QueryWebsocketConfigResponseData) SetDomainName(v string) *QueryWebsocketConfigResponseData {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryWebsocketConfigQueryWebsocketConfigResponseData) SetWebsocketSwitch(v *QueryWebsocketConfigQueryWebsocketConfigResponseDataWebsocketSwitch) *QueryWebsocketConfigQueryWebsocketConfigResponseData {
+func (s *QueryWebsocketConfigResponseData) SetWebsocketSwitch(v *QueryWebsocketConfigResponseDataWebsocketSwitch) *QueryWebsocketConfigResponseData {
   s.WebsocketSwitch = v
   return s
 }
 
-type QueryWebsocketConfigQueryWebsocketConfigResponseDataWebsocketSwitch struct {
+type QueryWebsocketConfigResponseDataWebsocketSwitch struct {
   // {"en":"Whether to turn on the websocket function, the allowable values are true and false, default false", "zh_CN":"是否开启websocket功能,允许值为true和false，默认为否"}
   EnableWebsocket *bool `json:"enableWebsocket,omitempty" xml:"enableWebsocket,omitempty" require:"true"`
 }
 
-func (s QueryWebsocketConfigQueryWebsocketConfigResponseDataWebsocketSwitch) String() string {
+func (s QueryWebsocketConfigResponseDataWebsocketSwitch) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryWebsocketConfigQueryWebsocketConfigResponseDataWebsocketSwitch) GoString() string {
+func (s QueryWebsocketConfigResponseDataWebsocketSwitch) GoString() string {
   return s.String()
 }
 
-func (s *QueryWebsocketConfigQueryWebsocketConfigResponseDataWebsocketSwitch) SetEnableWebsocket(v bool) *QueryWebsocketConfigQueryWebsocketConfigResponseDataWebsocketSwitch {
+func (s *QueryWebsocketConfigResponseDataWebsocketSwitch) SetEnableWebsocket(v bool) *QueryWebsocketConfigResponseDataWebsocketSwitch {
   s.EnableWebsocket = &v
   return s
 }
@@ -2279,7 +2279,7 @@ type EditOriginUriAndHostRequest struct {
   // 2. Rewrite configuration for clearing the return path for <origin-rules-rewrites/>.", "zh_CN":"回源路径改写配置
   // 1.需要设置回源路径改写配置时，此项必填
   // 2.为<origin-rules-rewrites/>时清空回源路径改写配置"}
-  OriginRulesRewrites []*EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites `json:"originRulesRewrites,omitempty" xml:"originRulesRewrites,omitempty" require:"true" type:"Repeated"`
+  OriginRulesRewrites []*EditOriginUriAndHostRequestOriginRulesRewrites `json:"originRulesRewrites,omitempty" xml:"originRulesRewrites,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s EditOriginUriAndHostRequest) String() string {
@@ -2290,12 +2290,12 @@ func (s EditOriginUriAndHostRequest) GoString() string {
   return s.String()
 }
 
-func (s *EditOriginUriAndHostRequest) SetOriginRulesRewrites(v []*EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites) *EditOriginUriAndHostRequest {
+func (s *EditOriginUriAndHostRequest) SetOriginRulesRewrites(v []*EditOriginUriAndHostRequestOriginRulesRewrites) *EditOriginUriAndHostRequest {
   s.OriginRulesRewrites = v
   return s
 }
 
-type EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites struct     {
+type EditOriginUriAndHostRequestOriginRulesRewrites struct     {
   // {"en":"Add a grid type identifier to represent a specific group of configurations when a customer has multiple groups of configurations.
   // Note: Add grid type identifier: data-id, each group configuration corresponds to a data-id: a. If the customer has passed data-id, specify that modifying one group of configuration items content does not require modifying other group configuration content does not need to be included; B. If the customer enters multiple groups of configuration, some of them have data-id, some have not. If there is transmission, the expression of data-id is used to modify a specific group of configurations, but no expression of data-id is used to add a new group of configurations on the original basis; C. If no data-id is transmitted to the customer, it means that the original configuration is completely covered by this configuration; D. If no configuration parameters are transmitted to the customer, only the domain name and the second level are transmitted. Label, which indicates that clearing this interface corresponds to all configuration of domain name secondary service. (c, D content is consistent with the current solution); e, a gird tag can not be empty, if there is no specific configuration item, then data-id must be filled in, and the value is the actual data-id, indicating the value of clearing this data-id corresponding configuration item;", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置
   // 注意：添加grid类型标识：data-id，每一组配置对应一个data-id：a、如果客户有传data-id，说明指定修改其中一组配置项内容，不需求修改其他组配置内容不需要入参；b、如果客户入参多组配置，其中有些组配置有传data-id，有些没有传，则有传data-id的表示修改具体某组配置，没有传data-id的表示在原来基础上新增一组配置；c、如果客户入参都没有传data-id,表示用本次的配置全量覆盖原先配置；d、如果客户入参没有传任何配置项参数，只传了域名和二级标签，表示清空这个接口对应域名二级服务所有配置。（c、d内容和当前方案实现一致）；e、一个gird标签下的入参不能为空，如果，没有具体的配置项，则data-id必填，且值为实际存在的data-id,表示清空这个data-id对应配置项的值；"}
@@ -2344,65 +2344,65 @@ type EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites struct  
   AfterRewritedUri *string `json:"afterRewritedUri,omitempty" xml:"afterRewritedUri,omitempty"`
 }
 
-func (s EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites) String() string {
+func (s EditOriginUriAndHostRequestOriginRulesRewrites) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites) GoString() string {
+func (s EditOriginUriAndHostRequestOriginRulesRewrites) GoString() string {
   return s.String()
 }
 
-func (s *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites) SetDataId(v int64) *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites {
+func (s *EditOriginUriAndHostRequestOriginRulesRewrites) SetDataId(v int64) *EditOriginUriAndHostRequestOriginRulesRewrites {
   s.DataId = &v
   return s
 }
 
-func (s *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites) SetPathPattern(v string) *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites {
+func (s *EditOriginUriAndHostRequestOriginRulesRewrites) SetPathPattern(v string) *EditOriginUriAndHostRequestOriginRulesRewrites {
   s.PathPattern = &v
   return s
 }
 
-func (s *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites) SetPathPatternHttp(v string) *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites {
+func (s *EditOriginUriAndHostRequestOriginRulesRewrites) SetPathPatternHttp(v string) *EditOriginUriAndHostRequestOriginRulesRewrites {
   s.PathPatternHttp = &v
   return s
 }
 
-func (s *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites) SetExceptPathPattern(v string) *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites {
+func (s *EditOriginUriAndHostRequestOriginRulesRewrites) SetExceptPathPattern(v string) *EditOriginUriAndHostRequestOriginRulesRewrites {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites) SetExceptPathPatternHttp(v string) *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites {
+func (s *EditOriginUriAndHostRequestOriginRulesRewrites) SetExceptPathPatternHttp(v string) *EditOriginUriAndHostRequestOriginRulesRewrites {
   s.ExceptPathPatternHttp = &v
   return s
 }
 
-func (s *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites) SetIgnoreLetterCase(v string) *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites {
+func (s *EditOriginUriAndHostRequestOriginRulesRewrites) SetIgnoreLetterCase(v string) *EditOriginUriAndHostRequestOriginRulesRewrites {
   s.IgnoreLetterCase = &v
   return s
 }
 
-func (s *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites) SetOriginInfo(v string) *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites {
+func (s *EditOriginUriAndHostRequestOriginRulesRewrites) SetOriginInfo(v string) *EditOriginUriAndHostRequestOriginRulesRewrites {
   s.OriginInfo = &v
   return s
 }
 
-func (s *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites) SetPriority(v string) *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites {
+func (s *EditOriginUriAndHostRequestOriginRulesRewrites) SetPriority(v string) *EditOriginUriAndHostRequestOriginRulesRewrites {
   s.Priority = &v
   return s
 }
 
-func (s *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites) SetOriginHost(v string) *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites {
+func (s *EditOriginUriAndHostRequestOriginRulesRewrites) SetOriginHost(v string) *EditOriginUriAndHostRequestOriginRulesRewrites {
   s.OriginHost = &v
   return s
 }
 
-func (s *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites) SetBeforeRewritedUri(v string) *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites {
+func (s *EditOriginUriAndHostRequestOriginRulesRewrites) SetBeforeRewritedUri(v string) *EditOriginUriAndHostRequestOriginRulesRewrites {
   s.BeforeRewritedUri = &v
   return s
 }
 
-func (s *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites) SetAfterRewritedUri(v string) *EditOriginUriAndHostEditOriginUriAndHostRequestOriginRulesRewrites {
+func (s *EditOriginUriAndHostRequestOriginRulesRewrites) SetAfterRewritedUri(v string) *EditOriginUriAndHostRequestOriginRulesRewrites {
   s.AfterRewritedUri = &v
   return s
 }
@@ -2509,7 +2509,7 @@ type QuerysourceverificationconfigResponse struct {
   // 注意：
   // 1、需要取消花椒转推回源带参数鉴权配置时，可以传入空节点<source-verification></source-verification>。
   // 2、表示需要设置花椒转推回源带参数鉴权配置时，此项必填"}
-  SourceVerification *QuerysourceverificationconfigQuerysourceverificationconfigResponseSourceVerification `json:"source-verification,omitempty" xml:"source-verification,omitempty" require:"true" type:"Struct"`
+  SourceVerification *QuerysourceverificationconfigResponseSourceVerification `json:"source-verification,omitempty" xml:"source-verification,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QuerysourceverificationconfigResponse) String() string {
@@ -2520,12 +2520,12 @@ func (s QuerysourceverificationconfigResponse) GoString() string {
   return s.String()
 }
 
-func (s *QuerysourceverificationconfigResponse) SetSourceVerification(v *QuerysourceverificationconfigQuerysourceverificationconfigResponseSourceVerification) *QuerysourceverificationconfigResponse {
+func (s *QuerysourceverificationconfigResponse) SetSourceVerification(v *QuerysourceverificationconfigResponseSourceVerification) *QuerysourceverificationconfigResponse {
   s.SourceVerification = v
   return s
 }
 
-type QuerysourceverificationconfigQuerysourceverificationconfigResponseSourceVerification struct {
+type QuerysourceverificationconfigResponseSourceVerification struct {
   // {"en":"", "zh_CN":"生效位置，代表配置生效的位置。可选值，多个分号隔开
   // Cache:边缘
   // stfuCache：静态中转
@@ -2555,45 +2555,45 @@ type QuerysourceverificationconfigQuerysourceverificationconfigResponseSourceVer
   OtherQuerysourceverificationconfigParameters *string `json:"other-parameters,omitempty" xml:"other-parameters,omitempty" require:"true"`
 }
 
-func (s QuerysourceverificationconfigQuerysourceverificationconfigResponseSourceVerification) String() string {
+func (s QuerysourceverificationconfigResponseSourceVerification) String() string {
   return tea.Prettify(s)
 }
 
-func (s QuerysourceverificationconfigQuerysourceverificationconfigResponseSourceVerification) GoString() string {
+func (s QuerysourceverificationconfigResponseSourceVerification) GoString() string {
   return s.String()
 }
 
-func (s *QuerysourceverificationconfigQuerysourceverificationconfigResponseSourceVerification) SetSwitchPosition(v string) *QuerysourceverificationconfigQuerysourceverificationconfigResponseSourceVerification {
+func (s *QuerysourceverificationconfigResponseSourceVerification) SetSwitchPosition(v string) *QuerysourceverificationconfigResponseSourceVerification {
   s.SwitchPosition = &v
   return s
 }
 
-func (s *QuerysourceverificationconfigQuerysourceverificationconfigResponseSourceVerification) SetRefSwitch(v string) *QuerysourceverificationconfigQuerysourceverificationconfigResponseSourceVerification {
+func (s *QuerysourceverificationconfigResponseSourceVerification) SetRefSwitch(v string) *QuerysourceverificationconfigResponseSourceVerification {
   s.RefSwitch = &v
   return s
 }
 
-func (s *QuerysourceverificationconfigQuerysourceverificationconfigResponseSourceVerification) SetMd5Path(v string) *QuerysourceverificationconfigQuerysourceverificationconfigResponseSourceVerification {
+func (s *QuerysourceverificationconfigResponseSourceVerification) SetMd5Path(v string) *QuerysourceverificationconfigResponseSourceVerification {
   s.Md5Path = &v
   return s
 }
 
-func (s *QuerysourceverificationconfigQuerysourceverificationconfigResponseSourceVerification) SetTimeOffset(v int) *QuerysourceverificationconfigQuerysourceverificationconfigResponseSourceVerification {
+func (s *QuerysourceverificationconfigResponseSourceVerification) SetTimeOffset(v int) *QuerysourceverificationconfigResponseSourceVerification {
   s.TimeOffset = &v
   return s
 }
 
-func (s *QuerysourceverificationconfigQuerysourceverificationconfigResponseSourceVerification) SetSignName(v string) *QuerysourceverificationconfigQuerysourceverificationconfigResponseSourceVerification {
+func (s *QuerysourceverificationconfigResponseSourceVerification) SetSignName(v string) *QuerysourceverificationconfigResponseSourceVerification {
   s.SignName = &v
   return s
 }
 
-func (s *QuerysourceverificationconfigQuerysourceverificationconfigResponseSourceVerification) SetTimeName(v string) *QuerysourceverificationconfigQuerysourceverificationconfigResponseSourceVerification {
+func (s *QuerysourceverificationconfigResponseSourceVerification) SetTimeName(v string) *QuerysourceverificationconfigResponseSourceVerification {
   s.TimeName = &v
   return s
 }
 
-func (s *QuerysourceverificationconfigQuerysourceverificationconfigResponseSourceVerification) SetOtherQuerysourceverificationconfigParameters(v string) *QuerysourceverificationconfigQuerysourceverificationconfigResponseSourceVerification {
+func (s *QuerysourceverificationconfigResponseSourceVerification) SetOtherQuerysourceverificationconfigParameters(v string) *QuerysourceverificationconfigResponseSourceVerification {
   s.OtherQuerysourceverificationconfigParameters = &v
   return s
 }
@@ -2669,7 +2669,7 @@ type QueryAppaDomainPortInfoForWplusResponse struct {
   // {"en":"query result message", "zh_CN":"查询结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"query datas", "zh_CN":"查询数据"}
-  Data *QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryAppaDomainPortInfoForWplusResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryAppaDomainPortInfoForWplusResponse) String() string {
@@ -2690,12 +2690,12 @@ func (s *QueryAppaDomainPortInfoForWplusResponse) SetMessage(v string) *QueryApp
   return s
 }
 
-func (s *QueryAppaDomainPortInfoForWplusResponse) SetData(v *QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData) *QueryAppaDomainPortInfoForWplusResponse {
+func (s *QueryAppaDomainPortInfoForWplusResponse) SetData(v *QueryAppaDomainPortInfoForWplusResponseData) *QueryAppaDomainPortInfoForWplusResponse {
   s.Data = v
   return s
 }
 
-type QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData struct {
+type QueryAppaDomainPortInfoForWplusResponseData struct {
   // {"en":"domain name", "zh_CN":"域名名称"}
   DomainName *string `json:"domainName,omitempty" xml:"domainName,omitempty" require:"true"`
   // {"en":"tcp listening port", "zh_CN":"TCP监听端口"}
@@ -2714,50 +2714,50 @@ type QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData 
   TcpAdvSrcs []*string `json:"tcpAdvSrcs,omitempty" xml:"tcpAdvSrcs,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData) String() string {
+func (s QueryAppaDomainPortInfoForWplusResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData) GoString() string {
+func (s QueryAppaDomainPortInfoForWplusResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData) SetDomainName(v string) *QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData {
+func (s *QueryAppaDomainPortInfoForWplusResponseData) SetDomainName(v string) *QueryAppaDomainPortInfoForWplusResponseData {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData) SetTcpListeningPorts(v []*string) *QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData {
+func (s *QueryAppaDomainPortInfoForWplusResponseData) SetTcpListeningPorts(v []*string) *QueryAppaDomainPortInfoForWplusResponseData {
   s.TcpListeningPorts = v
   return s
 }
 
-func (s *QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData) SetTcpListeningPortHttpLs(v []*string) *QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData {
+func (s *QueryAppaDomainPortInfoForWplusResponseData) SetTcpListeningPortHttpLs(v []*string) *QueryAppaDomainPortInfoForWplusResponseData {
   s.TcpListeningPortHttpLs = v
   return s
 }
 
-func (s *QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData) SetTcpListeningPortHttpsLs(v []*string) *QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData {
+func (s *QueryAppaDomainPortInfoForWplusResponseData) SetTcpListeningPortHttpsLs(v []*string) *QueryAppaDomainPortInfoForWplusResponseData {
   s.TcpListeningPortHttpsLs = v
   return s
 }
 
-func (s *QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData) SetFtpControlPorts(v []*string) *QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData {
+func (s *QueryAppaDomainPortInfoForWplusResponseData) SetFtpControlPorts(v []*string) *QueryAppaDomainPortInfoForWplusResponseData {
   s.FtpControlPorts = v
   return s
 }
 
-func (s *QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData) SetFtpDataPorts(v []*string) *QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData {
+func (s *QueryAppaDomainPortInfoForWplusResponseData) SetFtpDataPorts(v []*string) *QueryAppaDomainPortInfoForWplusResponseData {
   s.FtpDataPorts = v
   return s
 }
 
-func (s *QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData) SetUdpListeningPorts(v []*string) *QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData {
+func (s *QueryAppaDomainPortInfoForWplusResponseData) SetUdpListeningPorts(v []*string) *QueryAppaDomainPortInfoForWplusResponseData {
   s.UdpListeningPorts = v
   return s
 }
 
-func (s *QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData) SetTcpAdvSrcs(v []*string) *QueryAppaDomainPortInfoForWplusQueryAppaDomainPortInfoForWplusResponseData {
+func (s *QueryAppaDomainPortInfoForWplusResponseData) SetTcpAdvSrcs(v []*string) *QueryAppaDomainPortInfoForWplusResponseData {
   s.TcpAdvSrcs = v
   return s
 }
@@ -2815,7 +2815,7 @@ type UpdateGlobalTransCodingConfigForWplusRequest struct {
   // 2. Configuration of clearing for <transCodeSwitch/>.", "zh_CN":"转码全局配置，父标签
   // 1.需要设置转码功能时，此项必填
   // 2.为<transCodeSwitch/>时清空配置"}
-  TransCodeSwitch *UpdateGlobalTransCodingConfigForWplusUpdateGlobalTransCodingConfigForWplusRequestTransCodeSwitch `json:"transCodeSwitch,omitempty" xml:"transCodeSwitch,omitempty" require:"true" type:"Struct"`
+  TransCodeSwitch *UpdateGlobalTransCodingConfigForWplusRequestTransCodeSwitch `json:"transCodeSwitch,omitempty" xml:"transCodeSwitch,omitempty" require:"true" type:"Struct"`
 }
 
 func (s UpdateGlobalTransCodingConfigForWplusRequest) String() string {
@@ -2826,12 +2826,12 @@ func (s UpdateGlobalTransCodingConfigForWplusRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateGlobalTransCodingConfigForWplusRequest) SetTransCodeSwitch(v *UpdateGlobalTransCodingConfigForWplusUpdateGlobalTransCodingConfigForWplusRequestTransCodeSwitch) *UpdateGlobalTransCodingConfigForWplusRequest {
+func (s *UpdateGlobalTransCodingConfigForWplusRequest) SetTransCodeSwitch(v *UpdateGlobalTransCodingConfigForWplusRequestTransCodeSwitch) *UpdateGlobalTransCodingConfigForWplusRequest {
   s.TransCodeSwitch = v
   return s
 }
 
-type UpdateGlobalTransCodingConfigForWplusUpdateGlobalTransCodingConfigForWplusRequestTransCodeSwitch struct {
+type UpdateGlobalTransCodingConfigForWplusRequestTransCodeSwitch struct {
   // {"en":"Turn on transcoding, the optional values are true and false.
   // Please note: only transcoding stream names without underscores is supported. Please contact technical support if necessary.", "zh_CN":"开启转码，可选值为true（开启）、false（关闭）。
   // 请注意：只支持流名不带下划线的转码，若需要，请联系技术支持。"}
@@ -2840,20 +2840,20 @@ type UpdateGlobalTransCodingConfigForWplusUpdateGlobalTransCodingConfigForWplusR
   PullDomainName *string `json:"pullDomainName,omitempty" xml:"pullDomainName,omitempty" require:"true"`
 }
 
-func (s UpdateGlobalTransCodingConfigForWplusUpdateGlobalTransCodingConfigForWplusRequestTransCodeSwitch) String() string {
+func (s UpdateGlobalTransCodingConfigForWplusRequestTransCodeSwitch) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateGlobalTransCodingConfigForWplusUpdateGlobalTransCodingConfigForWplusRequestTransCodeSwitch) GoString() string {
+func (s UpdateGlobalTransCodingConfigForWplusRequestTransCodeSwitch) GoString() string {
   return s.String()
 }
 
-func (s *UpdateGlobalTransCodingConfigForWplusUpdateGlobalTransCodingConfigForWplusRequestTransCodeSwitch) SetTransCodeEnabled(v bool) *UpdateGlobalTransCodingConfigForWplusUpdateGlobalTransCodingConfigForWplusRequestTransCodeSwitch {
+func (s *UpdateGlobalTransCodingConfigForWplusRequestTransCodeSwitch) SetTransCodeEnabled(v bool) *UpdateGlobalTransCodingConfigForWplusRequestTransCodeSwitch {
   s.TransCodeEnabled = &v
   return s
 }
 
-func (s *UpdateGlobalTransCodingConfigForWplusUpdateGlobalTransCodingConfigForWplusRequestTransCodeSwitch) SetPullDomainName(v string) *UpdateGlobalTransCodingConfigForWplusUpdateGlobalTransCodingConfigForWplusRequestTransCodeSwitch {
+func (s *UpdateGlobalTransCodingConfigForWplusRequestTransCodeSwitch) SetPullDomainName(v string) *UpdateGlobalTransCodingConfigForWplusRequestTransCodeSwitch {
   s.PullDomainName = &v
   return s
 }
@@ -2966,7 +2966,7 @@ type QueryIgnoreProtocolResponse struct {
   // 2.<ignore-protocol-rules/>:Clear the configuration ignore about protocol cache and pushing", "zh_CN":"忽略协议缓存和推送配置，父标签
   // 1.需要设置忽略协议缓存和推送配置时，此项必填
   // 2.为<ignore-protocol-rules/>时清空忽略协议缓存和推送的配置"}
-  IgnoreProtocolRules []*QueryIgnoreProtocolQueryIgnoreProtocolResponseIgnoreProtocolRules `json:"ignore-protocol-rules,omitempty" xml:"ignore-protocol-rules,omitempty" require:"true" type:"Repeated"`
+  IgnoreProtocolRules []*QueryIgnoreProtocolResponseIgnoreProtocolRules `json:"ignore-protocol-rules,omitempty" xml:"ignore-protocol-rules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryIgnoreProtocolResponse) String() string {
@@ -2987,12 +2987,12 @@ func (s *QueryIgnoreProtocolResponse) SetDomainId(v string) *QueryIgnoreProtocol
   return s
 }
 
-func (s *QueryIgnoreProtocolResponse) SetIgnoreProtocolRules(v []*QueryIgnoreProtocolQueryIgnoreProtocolResponseIgnoreProtocolRules) *QueryIgnoreProtocolResponse {
+func (s *QueryIgnoreProtocolResponse) SetIgnoreProtocolRules(v []*QueryIgnoreProtocolResponseIgnoreProtocolRules) *QueryIgnoreProtocolResponse {
   s.IgnoreProtocolRules = v
   return s
 }
 
-type QueryIgnoreProtocolQueryIgnoreProtocolResponseIgnoreProtocolRules struct     {
+type QueryIgnoreProtocolResponseIgnoreProtocolRules struct     {
   // {"en":"Url matching pattern, support regular, if all matches, input parameters can be configured as:.*", "zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*"}
   PathPattern *string `json:"path-pattern,omitempty" xml:"path-pattern,omitempty" require:"true"`
   // {"en":"The exception url matches the pattern in the same format as the path-pattern", "zh_CN":"例外的url匹配模式，格式同path-pattern"}
@@ -3015,35 +3015,35 @@ type QueryIgnoreProtocolQueryIgnoreProtocolResponseIgnoreProtocolRules struct   
   DataId *int64 `json:"data-id,omitempty" xml:"data-id,omitempty" require:"true"`
 }
 
-func (s QueryIgnoreProtocolQueryIgnoreProtocolResponseIgnoreProtocolRules) String() string {
+func (s QueryIgnoreProtocolResponseIgnoreProtocolRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryIgnoreProtocolQueryIgnoreProtocolResponseIgnoreProtocolRules) GoString() string {
+func (s QueryIgnoreProtocolResponseIgnoreProtocolRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryIgnoreProtocolQueryIgnoreProtocolResponseIgnoreProtocolRules) SetPathPattern(v string) *QueryIgnoreProtocolQueryIgnoreProtocolResponseIgnoreProtocolRules {
+func (s *QueryIgnoreProtocolResponseIgnoreProtocolRules) SetPathPattern(v string) *QueryIgnoreProtocolResponseIgnoreProtocolRules {
   s.PathPattern = &v
   return s
 }
 
-func (s *QueryIgnoreProtocolQueryIgnoreProtocolResponseIgnoreProtocolRules) SetExceptPathPattern(v string) *QueryIgnoreProtocolQueryIgnoreProtocolResponseIgnoreProtocolRules {
+func (s *QueryIgnoreProtocolResponseIgnoreProtocolRules) SetExceptPathPattern(v string) *QueryIgnoreProtocolResponseIgnoreProtocolRules {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *QueryIgnoreProtocolQueryIgnoreProtocolResponseIgnoreProtocolRules) SetCacheIgnoreProtocol(v string) *QueryIgnoreProtocolQueryIgnoreProtocolResponseIgnoreProtocolRules {
+func (s *QueryIgnoreProtocolResponseIgnoreProtocolRules) SetCacheIgnoreProtocol(v string) *QueryIgnoreProtocolResponseIgnoreProtocolRules {
   s.CacheIgnoreProtocol = &v
   return s
 }
 
-func (s *QueryIgnoreProtocolQueryIgnoreProtocolResponseIgnoreProtocolRules) SetPurgeIgnoreProtocol(v string) *QueryIgnoreProtocolQueryIgnoreProtocolResponseIgnoreProtocolRules {
+func (s *QueryIgnoreProtocolResponseIgnoreProtocolRules) SetPurgeIgnoreProtocol(v string) *QueryIgnoreProtocolResponseIgnoreProtocolRules {
   s.PurgeIgnoreProtocol = &v
   return s
 }
 
-func (s *QueryIgnoreProtocolQueryIgnoreProtocolResponseIgnoreProtocolRules) SetDataId(v int64) *QueryIgnoreProtocolQueryIgnoreProtocolResponseIgnoreProtocolRules {
+func (s *QueryIgnoreProtocolResponseIgnoreProtocolRules) SetDataId(v int64) *QueryIgnoreProtocolResponseIgnoreProtocolRules {
   s.DataId = &v
   return s
 }
@@ -3235,7 +3235,7 @@ type UpdatesourceverificationconfigRequest struct {
   // 注意：
   // 1、需要取消花椒转推回源带参数鉴权配置时，可以传入空节点<source-verification></source-verification>。
   // 2、表示需要设置花椒转推回源带参数鉴权配置时，此项必填"}
-  SourceVerification *UpdatesourceverificationconfigUpdatesourceverificationconfigRequestSourceVerification `json:"source-verification,omitempty" xml:"source-verification,omitempty" require:"true" type:"Struct"`
+  SourceVerification *UpdatesourceverificationconfigRequestSourceVerification `json:"source-verification,omitempty" xml:"source-verification,omitempty" require:"true" type:"Struct"`
 }
 
 func (s UpdatesourceverificationconfigRequest) String() string {
@@ -3246,12 +3246,12 @@ func (s UpdatesourceverificationconfigRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdatesourceverificationconfigRequest) SetSourceVerification(v *UpdatesourceverificationconfigUpdatesourceverificationconfigRequestSourceVerification) *UpdatesourceverificationconfigRequest {
+func (s *UpdatesourceverificationconfigRequest) SetSourceVerification(v *UpdatesourceverificationconfigRequestSourceVerification) *UpdatesourceverificationconfigRequest {
   s.SourceVerification = v
   return s
 }
 
-type UpdatesourceverificationconfigUpdatesourceverificationconfigRequestSourceVerification struct {
+type UpdatesourceverificationconfigRequestSourceVerification struct {
   // {"en":"", "zh_CN":"生效位置，代表配置生效的位置。可选值，多个分号隔开
   // Cache:边缘
   // stfuCache：静态中转
@@ -3281,45 +3281,45 @@ type UpdatesourceverificationconfigUpdatesourceverificationconfigRequestSourceVe
   OtherUpdatesourceverificationconfigParameters *string `json:"other-parameters,omitempty" xml:"other-parameters,omitempty"`
 }
 
-func (s UpdatesourceverificationconfigUpdatesourceverificationconfigRequestSourceVerification) String() string {
+func (s UpdatesourceverificationconfigRequestSourceVerification) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdatesourceverificationconfigUpdatesourceverificationconfigRequestSourceVerification) GoString() string {
+func (s UpdatesourceverificationconfigRequestSourceVerification) GoString() string {
   return s.String()
 }
 
-func (s *UpdatesourceverificationconfigUpdatesourceverificationconfigRequestSourceVerification) SetSwitchPosition(v string) *UpdatesourceverificationconfigUpdatesourceverificationconfigRequestSourceVerification {
+func (s *UpdatesourceverificationconfigRequestSourceVerification) SetSwitchPosition(v string) *UpdatesourceverificationconfigRequestSourceVerification {
   s.SwitchPosition = &v
   return s
 }
 
-func (s *UpdatesourceverificationconfigUpdatesourceverificationconfigRequestSourceVerification) SetRefSwitch(v string) *UpdatesourceverificationconfigUpdatesourceverificationconfigRequestSourceVerification {
+func (s *UpdatesourceverificationconfigRequestSourceVerification) SetRefSwitch(v string) *UpdatesourceverificationconfigRequestSourceVerification {
   s.RefSwitch = &v
   return s
 }
 
-func (s *UpdatesourceverificationconfigUpdatesourceverificationconfigRequestSourceVerification) SetMd5Path(v string) *UpdatesourceverificationconfigUpdatesourceverificationconfigRequestSourceVerification {
+func (s *UpdatesourceverificationconfigRequestSourceVerification) SetMd5Path(v string) *UpdatesourceverificationconfigRequestSourceVerification {
   s.Md5Path = &v
   return s
 }
 
-func (s *UpdatesourceverificationconfigUpdatesourceverificationconfigRequestSourceVerification) SetTimeOffset(v int) *UpdatesourceverificationconfigUpdatesourceverificationconfigRequestSourceVerification {
+func (s *UpdatesourceverificationconfigRequestSourceVerification) SetTimeOffset(v int) *UpdatesourceverificationconfigRequestSourceVerification {
   s.TimeOffset = &v
   return s
 }
 
-func (s *UpdatesourceverificationconfigUpdatesourceverificationconfigRequestSourceVerification) SetSignName(v string) *UpdatesourceverificationconfigUpdatesourceverificationconfigRequestSourceVerification {
+func (s *UpdatesourceverificationconfigRequestSourceVerification) SetSignName(v string) *UpdatesourceverificationconfigRequestSourceVerification {
   s.SignName = &v
   return s
 }
 
-func (s *UpdatesourceverificationconfigUpdatesourceverificationconfigRequestSourceVerification) SetTimeName(v string) *UpdatesourceverificationconfigUpdatesourceverificationconfigRequestSourceVerification {
+func (s *UpdatesourceverificationconfigRequestSourceVerification) SetTimeName(v string) *UpdatesourceverificationconfigRequestSourceVerification {
   s.TimeName = &v
   return s
 }
 
-func (s *UpdatesourceverificationconfigUpdatesourceverificationconfigRequestSourceVerification) SetOtherUpdatesourceverificationconfigParameters(v string) *UpdatesourceverificationconfigUpdatesourceverificationconfigRequestSourceVerification {
+func (s *UpdatesourceverificationconfigRequestSourceVerification) SetOtherUpdatesourceverificationconfigParameters(v string) *UpdatesourceverificationconfigRequestSourceVerification {
   s.OtherUpdatesourceverificationconfigParameters = &v
   return s
 }
@@ -3434,7 +3434,7 @@ type QueryDomainResponse struct {
   // {"en":"Response code, 200 means successful.", "zh_CN":"接口响应code，200代表成功。"}
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"data result.", "zh_CN":"查询结果"}
-  Result *QueryDomainQueryDomainResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Struct"`
+  Result *QueryDomainResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryDomainResponse) String() string {
@@ -3450,48 +3450,48 @@ func (s *QueryDomainResponse) SetCode(v string) *QueryDomainResponse {
   return s
 }
 
-func (s *QueryDomainResponse) SetResult(v *QueryDomainQueryDomainResponseResult) *QueryDomainResponse {
+func (s *QueryDomainResponse) SetResult(v *QueryDomainResponseResult) *QueryDomainResponse {
   s.Result = v
   return s
 }
 
-type QueryDomainQueryDomainResponseResult struct {
+type QueryDomainResponseResult struct {
   // {"en":"domain list", "zh_CN":"域名配置列表"}
-  Domains *QueryDomainQueryDomainResponseResultDomains `json:"domains,omitempty" xml:"domains,omitempty" require:"true" type:"Struct"`
+  Domains *QueryDomainResponseResultDomains `json:"domains,omitempty" xml:"domains,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryDomainQueryDomainResponseResult) String() string {
+func (s QueryDomainResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDomainQueryDomainResponseResult) GoString() string {
+func (s QueryDomainResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryDomainQueryDomainResponseResult) SetDomains(v *QueryDomainQueryDomainResponseResultDomains) *QueryDomainQueryDomainResponseResult {
+func (s *QueryDomainResponseResult) SetDomains(v *QueryDomainResponseResultDomains) *QueryDomainResponseResult {
   s.Domains = v
   return s
 }
 
-type QueryDomainQueryDomainResponseResultDomains struct {
+type QueryDomainResponseResultDomains struct {
   // {"en":"domain config", "zh_CN":"域名配置"}
-  Domain *QueryDomainQueryDomainResponseResultDomainsDomain `json:"domain,omitempty" xml:"domain,omitempty" type:"Struct"`
+  Domain *QueryDomainResponseResultDomainsDomain `json:"domain,omitempty" xml:"domain,omitempty" type:"Struct"`
 }
 
-func (s QueryDomainQueryDomainResponseResultDomains) String() string {
+func (s QueryDomainResponseResultDomains) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDomainQueryDomainResponseResultDomains) GoString() string {
+func (s QueryDomainResponseResultDomains) GoString() string {
   return s.String()
 }
 
-func (s *QueryDomainQueryDomainResponseResultDomains) SetDomain(v *QueryDomainQueryDomainResponseResultDomainsDomain) *QueryDomainQueryDomainResponseResultDomains {
+func (s *QueryDomainResponseResultDomains) SetDomain(v *QueryDomainResponseResultDomainsDomain) *QueryDomainResponseResultDomains {
   s.Domain = v
   return s
 }
 
-type QueryDomainQueryDomainResponseResultDomainsDomain struct {
+type QueryDomainResponseResultDomainsDomain struct {
   // {"en":"domain name", "zh_CN":"域名"}
   DomainName *string `json:"domain-name,omitempty" xml:"domain-name,omitempty" require:"true"`
   // {"en":"The origin server address, which can be an IP or a domain name. 1. IPs should be separated by semicolons and multiple IPs are supported. 2. Only one domain name is allowed. 3. The maximum length must not exceed 500 characters.", "zh_CN":"回源地址，可以是IP或域名。 1、IP以分号分隔，支持多个。 2、域名只能一个。 3、限制最大不能超过500个字符长度。"}
@@ -3516,65 +3516,65 @@ type QueryDomainQueryDomainResponseResultDomainsDomain struct {
   Version *string `json:"version,omitempty" xml:"version,omitempty" require:"true"`
 }
 
-func (s QueryDomainQueryDomainResponseResultDomainsDomain) String() string {
+func (s QueryDomainResponseResultDomainsDomain) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDomainQueryDomainResponseResultDomainsDomain) GoString() string {
+func (s QueryDomainResponseResultDomainsDomain) GoString() string {
   return s.String()
 }
 
-func (s *QueryDomainQueryDomainResponseResultDomainsDomain) SetDomainName(v string) *QueryDomainQueryDomainResponseResultDomainsDomain {
+func (s *QueryDomainResponseResultDomainsDomain) SetDomainName(v string) *QueryDomainResponseResultDomainsDomain {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryDomainQueryDomainResponseResultDomainsDomain) SetSrcIp(v string) *QueryDomainQueryDomainResponseResultDomainsDomain {
+func (s *QueryDomainResponseResultDomainsDomain) SetSrcIp(v string) *QueryDomainResponseResultDomainsDomain {
   s.SrcIp = &v
   return s
 }
 
-func (s *QueryDomainQueryDomainResponseResultDomainsDomain) SetCname(v string) *QueryDomainQueryDomainResponseResultDomainsDomain {
+func (s *QueryDomainResponseResultDomainsDomain) SetCname(v string) *QueryDomainResponseResultDomainsDomain {
   s.Cname = &v
   return s
 }
 
-func (s *QueryDomainQueryDomainResponseResultDomainsDomain) SetStatus(v string) *QueryDomainQueryDomainResponseResultDomainsDomain {
+func (s *QueryDomainResponseResultDomainsDomain) SetStatus(v string) *QueryDomainResponseResultDomainsDomain {
   s.Status = &v
   return s
 }
 
-func (s *QueryDomainQueryDomainResponseResultDomainsDomain) SetCustSuitType(v string) *QueryDomainQueryDomainResponseResultDomainsDomain {
+func (s *QueryDomainResponseResultDomainsDomain) SetCustSuitType(v string) *QueryDomainResponseResultDomainsDomain {
   s.CustSuitType = &v
   return s
 }
 
-func (s *QueryDomainQueryDomainResponseResultDomainsDomain) SetCreateTime(v string) *QueryDomainQueryDomainResponseResultDomainsDomain {
+func (s *QueryDomainResponseResultDomainsDomain) SetCreateTime(v string) *QueryDomainResponseResultDomainsDomain {
   s.CreateTime = &v
   return s
 }
 
-func (s *QueryDomainQueryDomainResponseResultDomainsDomain) SetTestUrl(v string) *QueryDomainQueryDomainResponseResultDomainsDomain {
+func (s *QueryDomainResponseResultDomainsDomain) SetTestUrl(v string) *QueryDomainResponseResultDomainsDomain {
   s.TestUrl = &v
   return s
 }
 
-func (s *QueryDomainQueryDomainResponseResultDomainsDomain) SetCanChangeSrc(v string) *QueryDomainQueryDomainResponseResultDomainsDomain {
+func (s *QueryDomainResponseResultDomainsDomain) SetCanChangeSrc(v string) *QueryDomainResponseResultDomainsDomain {
   s.CanChangeSrc = &v
   return s
 }
 
-func (s *QueryDomainQueryDomainResponseResultDomainsDomain) SetCanChangeAdvSrc(v string) *QueryDomainQueryDomainResponseResultDomainsDomain {
+func (s *QueryDomainResponseResultDomainsDomain) SetCanChangeAdvSrc(v string) *QueryDomainResponseResultDomainsDomain {
   s.CanChangeAdvSrc = &v
   return s
 }
 
-func (s *QueryDomainQueryDomainResponseResultDomainsDomain) SetIsUseSsl(v string) *QueryDomainQueryDomainResponseResultDomainsDomain {
+func (s *QueryDomainResponseResultDomainsDomain) SetIsUseSsl(v string) *QueryDomainResponseResultDomainsDomain {
   s.IsUseSsl = &v
   return s
 }
 
-func (s *QueryDomainQueryDomainResponseResultDomainsDomain) SetVersion(v string) *QueryDomainQueryDomainResponseResultDomainsDomain {
+func (s *QueryDomainResponseResultDomainsDomain) SetVersion(v string) *QueryDomainResponseResultDomainsDomain {
   s.Version = &v
   return s
 }
@@ -3666,7 +3666,7 @@ type QueryCompressionConfigResponse struct {
   // {"en":"Compress setting config", "zh_CN":"压缩响应功能配置
   // 1.需要设置压缩响应配置时，此项必填
   // 2.为<compression-settings/>空时清空压缩响应配置"}
-  CompressionSettings *QueryCompressionConfigQueryCompressionConfigResponseCompressionSettings `json:"compression-settings,omitempty" xml:"compression-settings,omitempty" require:"true" type:"Struct"`
+  CompressionSettings *QueryCompressionConfigResponseCompressionSettings `json:"compression-settings,omitempty" xml:"compression-settings,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryCompressionConfigResponse) String() string {
@@ -3687,12 +3687,12 @@ func (s *QueryCompressionConfigResponse) SetDomainName(v string) *QueryCompressi
   return s
 }
 
-func (s *QueryCompressionConfigResponse) SetCompressionSettings(v *QueryCompressionConfigQueryCompressionConfigResponseCompressionSettings) *QueryCompressionConfigResponse {
+func (s *QueryCompressionConfigResponse) SetCompressionSettings(v *QueryCompressionConfigResponseCompressionSettings) *QueryCompressionConfigResponse {
   s.CompressionSettings = v
   return s
 }
 
-type QueryCompressionConfigQueryCompressionConfigResponseCompressionSettings struct {
+type QueryCompressionConfigResponseCompressionSettings struct {
   // {"en":"To enable compress setting, allowed true or false.", "zh_CN":"开启压缩响应功能：允许值为true和false"}
   CompressionEnabled *string `json:"compression-enabled,omitempty" xml:"compression-enabled,omitempty" require:"true"`
   // {"en":"The url matching mode. If all matches, the input parameters can be configured as: .*", "zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*"}
@@ -3707,40 +3707,40 @@ type QueryCompressionConfigQueryCompressionConfigResponseCompressionSettings str
   BrTypes *string `json:"br-types,omitempty" xml:"br-types,omitempty"`
 }
 
-func (s QueryCompressionConfigQueryCompressionConfigResponseCompressionSettings) String() string {
+func (s QueryCompressionConfigResponseCompressionSettings) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCompressionConfigQueryCompressionConfigResponseCompressionSettings) GoString() string {
+func (s QueryCompressionConfigResponseCompressionSettings) GoString() string {
   return s.String()
 }
 
-func (s *QueryCompressionConfigQueryCompressionConfigResponseCompressionSettings) SetCompressionEnabled(v string) *QueryCompressionConfigQueryCompressionConfigResponseCompressionSettings {
+func (s *QueryCompressionConfigResponseCompressionSettings) SetCompressionEnabled(v string) *QueryCompressionConfigResponseCompressionSettings {
   s.CompressionEnabled = &v
   return s
 }
 
-func (s *QueryCompressionConfigQueryCompressionConfigResponseCompressionSettings) SetPathPattern(v string) *QueryCompressionConfigQueryCompressionConfigResponseCompressionSettings {
+func (s *QueryCompressionConfigResponseCompressionSettings) SetPathPattern(v string) *QueryCompressionConfigResponseCompressionSettings {
   s.PathPattern = &v
   return s
 }
 
-func (s *QueryCompressionConfigQueryCompressionConfigResponseCompressionSettings) SetIgnoreLetterCase(v string) *QueryCompressionConfigQueryCompressionConfigResponseCompressionSettings {
+func (s *QueryCompressionConfigResponseCompressionSettings) SetIgnoreLetterCase(v string) *QueryCompressionConfigResponseCompressionSettings {
   s.IgnoreLetterCase = &v
   return s
 }
 
-func (s *QueryCompressionConfigQueryCompressionConfigResponseCompressionSettings) SetFileTypes(v []*string) *QueryCompressionConfigQueryCompressionConfigResponseCompressionSettings {
+func (s *QueryCompressionConfigResponseCompressionSettings) SetFileTypes(v []*string) *QueryCompressionConfigResponseCompressionSettings {
   s.FileTypes = v
   return s
 }
 
-func (s *QueryCompressionConfigQueryCompressionConfigResponseCompressionSettings) SetFileTypeOthers(v []*string) *QueryCompressionConfigQueryCompressionConfigResponseCompressionSettings {
+func (s *QueryCompressionConfigResponseCompressionSettings) SetFileTypeOthers(v []*string) *QueryCompressionConfigResponseCompressionSettings {
   s.FileTypeOthers = v
   return s
 }
 
-func (s *QueryCompressionConfigQueryCompressionConfigResponseCompressionSettings) SetBrTypes(v string) *QueryCompressionConfigQueryCompressionConfigResponseCompressionSettings {
+func (s *QueryCompressionConfigResponseCompressionSettings) SetBrTypes(v string) *QueryCompressionConfigResponseCompressionSettings {
   s.BrTypes = &v
   return s
 }
@@ -3833,7 +3833,7 @@ type UpdateDomainSrcStrategyForWplusRequest struct {
   // 不传：表示不修改"}
   Follow302 *bool `json:"follow302,omitempty" xml:"follow302,omitempty"`
   // {"en":"Configuring Advanced Origin Policy", "zh_CN":"设置高级源策略"}
-  AdvSrcSetting *UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSetting `json:"advSrcSetting,omitempty" xml:"advSrcSetting,omitempty" type:"Struct"`
+  AdvSrcSetting *UpdateDomainSrcStrategyForWplusRequestAdvSrcSetting `json:"advSrcSetting,omitempty" xml:"advSrcSetting,omitempty" type:"Struct"`
 }
 
 func (s UpdateDomainSrcStrategyForWplusRequest) String() string {
@@ -3864,12 +3864,12 @@ func (s *UpdateDomainSrcStrategyForWplusRequest) SetFollow302(v bool) *UpdateDom
   return s
 }
 
-func (s *UpdateDomainSrcStrategyForWplusRequest) SetAdvSrcSetting(v *UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSetting) *UpdateDomainSrcStrategyForWplusRequest {
+func (s *UpdateDomainSrcStrategyForWplusRequest) SetAdvSrcSetting(v *UpdateDomainSrcStrategyForWplusRequestAdvSrcSetting) *UpdateDomainSrcStrategyForWplusRequest {
   s.AdvSrcSetting = v
   return s
 }
 
-type UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSetting struct {
+type UpdateDomainSrcStrategyForWplusRequestAdvSrcSetting struct {
   // {"en":"Whether to use Advanced origin; the optional values are true or false.
   // Enable Advanced Origin
   // false: Disable advanced origin
@@ -3888,58 +3888,58 @@ type UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrc
   DetectUrl *string `json:"detectUrl,omitempty" xml:"detectUrl,omitempty"`
   // {"en":"Advanced origin monitoring period, in seconds. Optional value is an integer greater than or equal to 0; 0 means no monitoring.", "zh_CN":"高级源监控周期，单位秒，可选值为大于等于0的整数，0表示不监控"}
   DetectPeriod *int `json:"detectPeriod,omitempty" xml:"detectPeriod,omitempty"`
-  AdvSrcConfigs []*UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSettingAdvSrcConfigs `json:"advSrcConfigs,omitempty" xml:"advSrcConfigs,omitempty" type:"Repeated"`
+  AdvSrcConfigs []*UpdateDomainSrcStrategyForWplusRequestAdvSrcSettingAdvSrcConfigs `json:"advSrcConfigs,omitempty" xml:"advSrcConfigs,omitempty" type:"Repeated"`
 }
 
-func (s UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSetting) String() string {
+func (s UpdateDomainSrcStrategyForWplusRequestAdvSrcSetting) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSetting) GoString() string {
+func (s UpdateDomainSrcStrategyForWplusRequestAdvSrcSetting) GoString() string {
   return s.String()
 }
 
-func (s *UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSetting) SetUseAdvSrc(v bool) *UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSetting {
+func (s *UpdateDomainSrcStrategyForWplusRequestAdvSrcSetting) SetUseAdvSrc(v bool) *UpdateDomainSrcStrategyForWplusRequestAdvSrcSetting {
   s.UseAdvSrc = &v
   return s
 }
 
-func (s *UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSetting) SetDetectUrl(v string) *UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSetting {
+func (s *UpdateDomainSrcStrategyForWplusRequestAdvSrcSetting) SetDetectUrl(v string) *UpdateDomainSrcStrategyForWplusRequestAdvSrcSetting {
   s.DetectUrl = &v
   return s
 }
 
-func (s *UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSetting) SetDetectPeriod(v int) *UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSetting {
+func (s *UpdateDomainSrcStrategyForWplusRequestAdvSrcSetting) SetDetectPeriod(v int) *UpdateDomainSrcStrategyForWplusRequestAdvSrcSetting {
   s.DetectPeriod = &v
   return s
 }
 
-func (s *UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSetting) SetAdvSrcConfigs(v []*UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSettingAdvSrcConfigs) *UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSetting {
+func (s *UpdateDomainSrcStrategyForWplusRequestAdvSrcSetting) SetAdvSrcConfigs(v []*UpdateDomainSrcStrategyForWplusRequestAdvSrcSettingAdvSrcConfigs) *UpdateDomainSrcStrategyForWplusRequestAdvSrcSetting {
   s.AdvSrcConfigs = v
   return s
 }
 
-type UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSettingAdvSrcConfigs struct     {
+type UpdateDomainSrcStrategyForWplusRequestAdvSrcSettingAdvSrcConfigs struct     {
   // {"en":"Advanced origin primarily involves Back-to-origin IP/domain, supports multiple IPs/domains, and must be unique.", "zh_CN":"高级源主要回源IP/域名，支持多个IP/域名，不能重复"}
   MasterIps []*string `json:"masterIps,omitempty" xml:"masterIps,omitempty" type:"Repeated"`
   // {"en":"Advanced origin backup to back-to-origin IP/domain supports multiple IPs/domains without duplication.", "zh_CN":"高级源备用回源IP/域名，支持多个IP/域名，不能重复"}
   BackupIps []*string `json:"backupIps,omitempty" xml:"backupIps,omitempty" type:"Repeated"`
 }
 
-func (s UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSettingAdvSrcConfigs) String() string {
+func (s UpdateDomainSrcStrategyForWplusRequestAdvSrcSettingAdvSrcConfigs) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSettingAdvSrcConfigs) GoString() string {
+func (s UpdateDomainSrcStrategyForWplusRequestAdvSrcSettingAdvSrcConfigs) GoString() string {
   return s.String()
 }
 
-func (s *UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSettingAdvSrcConfigs) SetMasterIps(v []*string) *UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSettingAdvSrcConfigs {
+func (s *UpdateDomainSrcStrategyForWplusRequestAdvSrcSettingAdvSrcConfigs) SetMasterIps(v []*string) *UpdateDomainSrcStrategyForWplusRequestAdvSrcSettingAdvSrcConfigs {
   s.MasterIps = v
   return s
 }
 
-func (s *UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSettingAdvSrcConfigs) SetBackupIps(v []*string) *UpdateDomainSrcStrategyForWplusUpdateDomainSrcStrategyForWplusRequestAdvSrcSettingAdvSrcConfigs {
+func (s *UpdateDomainSrcStrategyForWplusRequestAdvSrcSettingAdvSrcConfigs) SetBackupIps(v []*string) *UpdateDomainSrcStrategyForWplusRequestAdvSrcSettingAdvSrcConfigs {
   s.BackupIps = v
   return s
 }
@@ -4051,7 +4051,7 @@ type QueryHttpCodeCasheConfigResponse struct {
   // 2. Configuration of Clear State Code Caching Rules for <http-code-cache-rules/>.", "zh_CN":"状态码缓存规则配置，父标签
   // 1.需要设置状态码缓存规则时，此项必填
   // 2.为<http-code-cache-rules/>时清空状态码缓存规则配置"}
-  HttpCodeCacheRules []*QueryHttpCodeCasheConfigQueryHttpCodeCasheConfigResponseHttpCodeCacheRules `json:"http-code-cache-rules,omitempty" xml:"http-code-cache-rules,omitempty" require:"true" type:"Repeated"`
+  HttpCodeCacheRules []*QueryHttpCodeCasheConfigResponseHttpCodeCacheRules `json:"http-code-cache-rules,omitempty" xml:"http-code-cache-rules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryHttpCodeCasheConfigResponse) String() string {
@@ -4072,12 +4072,12 @@ func (s *QueryHttpCodeCasheConfigResponse) SetDomainId(v string) *QueryHttpCodeC
   return s
 }
 
-func (s *QueryHttpCodeCasheConfigResponse) SetHttpCodeCacheRules(v []*QueryHttpCodeCasheConfigQueryHttpCodeCasheConfigResponseHttpCodeCacheRules) *QueryHttpCodeCasheConfigResponse {
+func (s *QueryHttpCodeCasheConfigResponse) SetHttpCodeCacheRules(v []*QueryHttpCodeCasheConfigResponseHttpCodeCacheRules) *QueryHttpCodeCasheConfigResponse {
   s.HttpCodeCacheRules = v
   return s
 }
 
-type QueryHttpCodeCasheConfigQueryHttpCodeCasheConfigResponseHttpCodeCacheRules struct     {
+type QueryHttpCodeCasheConfigResponseHttpCodeCacheRules struct     {
   // {"en":"Configure HTTP status code, parent node", "zh_CN":"配置http状态码，父标签"}
   HttpCodes []*int32 `json:"http-codes,omitempty" xml:"http-codes,omitempty" require:"true" type:"Repeated"`
   // {"en":"Define the caching time of the specified status code in units s, 0 to indicate no caching", "zh_CN":"配置指定的状态码的缓存时间，单位s，0表示不缓存"}
@@ -4086,25 +4086,25 @@ type QueryHttpCodeCasheConfigQueryHttpCodeCasheConfigResponseHttpCodeCacheRules 
   DataId *int `json:"data-id,omitempty" xml:"data-id,omitempty" require:"true"`
 }
 
-func (s QueryHttpCodeCasheConfigQueryHttpCodeCasheConfigResponseHttpCodeCacheRules) String() string {
+func (s QueryHttpCodeCasheConfigResponseHttpCodeCacheRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryHttpCodeCasheConfigQueryHttpCodeCasheConfigResponseHttpCodeCacheRules) GoString() string {
+func (s QueryHttpCodeCasheConfigResponseHttpCodeCacheRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryHttpCodeCasheConfigQueryHttpCodeCasheConfigResponseHttpCodeCacheRules) SetHttpCodes(v []*int32) *QueryHttpCodeCasheConfigQueryHttpCodeCasheConfigResponseHttpCodeCacheRules {
+func (s *QueryHttpCodeCasheConfigResponseHttpCodeCacheRules) SetHttpCodes(v []*int32) *QueryHttpCodeCasheConfigResponseHttpCodeCacheRules {
   s.HttpCodes = v
   return s
 }
 
-func (s *QueryHttpCodeCasheConfigQueryHttpCodeCasheConfigResponseHttpCodeCacheRules) SetCacheTtl(v int) *QueryHttpCodeCasheConfigQueryHttpCodeCasheConfigResponseHttpCodeCacheRules {
+func (s *QueryHttpCodeCasheConfigResponseHttpCodeCacheRules) SetCacheTtl(v int) *QueryHttpCodeCasheConfigResponseHttpCodeCacheRules {
   s.CacheTtl = &v
   return s
 }
 
-func (s *QueryHttpCodeCasheConfigQueryHttpCodeCasheConfigResponseHttpCodeCacheRules) SetDataId(v int) *QueryHttpCodeCasheConfigQueryHttpCodeCasheConfigResponseHttpCodeCacheRules {
+func (s *QueryHttpCodeCasheConfigResponseHttpCodeCacheRules) SetDataId(v int) *QueryHttpCodeCasheConfigResponseHttpCodeCacheRules {
   s.DataId = &v
   return s
 }
@@ -4309,7 +4309,7 @@ type QueryAccessspeedConfigResponse struct {
   // 2.When you want to cancel it, please pass <access-speed-rules/>", "zh_CN":"访问限速配置
   // 1.需要访问限速时，此项必填
   // 2.为<access-speed-rules/>时清空访问限速配置"}
-  AccessSpeedRules []*QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules `json:"access-speed-rules,omitempty" xml:"access-speed-rules,omitempty" require:"true" type:"Repeated"`
+  AccessSpeedRules []*QueryAccessspeedConfigResponseAccessSpeedRules `json:"access-speed-rules,omitempty" xml:"access-speed-rules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryAccessspeedConfigResponse) String() string {
@@ -4330,12 +4330,12 @@ func (s *QueryAccessspeedConfigResponse) SetDomainId(v string) *QueryAccessspeed
   return s
 }
 
-func (s *QueryAccessspeedConfigResponse) SetAccessSpeedRules(v []*QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules) *QueryAccessspeedConfigResponse {
+func (s *QueryAccessspeedConfigResponse) SetAccessSpeedRules(v []*QueryAccessspeedConfigResponseAccessSpeedRules) *QueryAccessspeedConfigResponse {
   s.AccessSpeedRules = v
   return s
 }
 
-type QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules struct     {
+type QueryAccessspeedConfigResponseAccessSpeedRules struct     {
   // {"en":"The url matching mode. If all matches, the input parameters can be configured as: .*", "zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*"}
   PathPattern *string `json:"path-pattern,omitempty" xml:"path-pattern,omitempty" require:"true"`
   // {"en":"Define the limitation mode. Allowed 'size'(with unit KB) or 'time'(with unit s). You can define only one mode in the same time.", "zh_CN":"限速方式，可按开始大小（单位KB）或开始时间（单位s）限速，两者互斥
@@ -4359,50 +4359,50 @@ type QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules struct
   DataId *int64 `json:"dataId,omitempty" xml:"dataId,omitempty"`
 }
 
-func (s QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules) String() string {
+func (s QueryAccessspeedConfigResponseAccessSpeedRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules) GoString() string {
+func (s QueryAccessspeedConfigResponseAccessSpeedRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules) SetPathPattern(v string) *QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules {
+func (s *QueryAccessspeedConfigResponseAccessSpeedRules) SetPathPattern(v string) *QueryAccessspeedConfigResponseAccessSpeedRules {
   s.PathPattern = &v
   return s
 }
 
-func (s *QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules) SetLimitMode(v string) *QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules {
+func (s *QueryAccessspeedConfigResponseAccessSpeedRules) SetLimitMode(v string) *QueryAccessspeedConfigResponseAccessSpeedRules {
   s.LimitMode = &v
   return s
 }
 
-func (s *QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules) SetStartSize(v string) *QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules {
+func (s *QueryAccessspeedConfigResponseAccessSpeedRules) SetStartSize(v string) *QueryAccessspeedConfigResponseAccessSpeedRules {
   s.StartSize = &v
   return s
 }
 
-func (s *QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules) SetStartTime(v string) *QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules {
+func (s *QueryAccessspeedConfigResponseAccessSpeedRules) SetStartTime(v string) *QueryAccessspeedConfigResponseAccessSpeedRules {
   s.StartTime = &v
   return s
 }
 
-func (s *QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules) SetStartSpeed(v string) *QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules {
+func (s *QueryAccessspeedConfigResponseAccessSpeedRules) SetStartSpeed(v string) *QueryAccessspeedConfigResponseAccessSpeedRules {
   s.StartSpeed = &v
   return s
 }
 
-func (s *QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules) SetSpeed(v string) *QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules {
+func (s *QueryAccessspeedConfigResponseAccessSpeedRules) SetSpeed(v string) *QueryAccessspeedConfigResponseAccessSpeedRules {
   s.Speed = &v
   return s
 }
 
-func (s *QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules) SetPriority(v string) *QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules {
+func (s *QueryAccessspeedConfigResponseAccessSpeedRules) SetPriority(v string) *QueryAccessspeedConfigResponseAccessSpeedRules {
   s.Priority = &v
   return s
 }
 
-func (s *QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules) SetDataId(v int64) *QueryAccessspeedConfigQueryAccessspeedConfigResponseAccessSpeedRules {
+func (s *QueryAccessspeedConfigResponseAccessSpeedRules) SetDataId(v int64) *QueryAccessspeedConfigResponseAccessSpeedRules {
   s.DataId = &v
   return s
 }
@@ -4478,7 +4478,7 @@ type QueryLiveDomainHlsResponse struct {
   // {"en":"Reponse message.", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data", "zh_CN":"响应数据"}
-  Data *QueryLiveDomainHlsQueryLiveDomainHlsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryLiveDomainHlsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryLiveDomainHlsResponse) String() string {
@@ -4499,44 +4499,44 @@ func (s *QueryLiveDomainHlsResponse) SetMessage(v string) *QueryLiveDomainHlsRes
   return s
 }
 
-func (s *QueryLiveDomainHlsResponse) SetData(v *QueryLiveDomainHlsQueryLiveDomainHlsResponseData) *QueryLiveDomainHlsResponse {
+func (s *QueryLiveDomainHlsResponse) SetData(v *QueryLiveDomainHlsResponseData) *QueryLiveDomainHlsResponse {
   s.Data = v
   return s
 }
 
-type QueryLiveDomainHlsQueryLiveDomainHlsResponseData struct {
+type QueryLiveDomainHlsResponseData struct {
   // {"en":"Slices", "zh_CN":"多协议输出-HLS"}
-  Slices *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataSlices `json:"slices,omitempty" xml:"slices,omitempty" type:"Struct"`
+  Slices *QueryLiveDomainHlsResponseDataSlices `json:"slices,omitempty" xml:"slices,omitempty" type:"Struct"`
   // {"en":"Cache Time Rules", "zh_CN":"节点缓存-缓存时间配置"}
-  CacheTimeRules []*QueryLiveDomainHlsQueryLiveDomainHlsResponseDataCacheTimeRules `json:"cacheTimeRules,omitempty" xml:"cacheTimeRules,omitempty" type:"Repeated"`
+  CacheTimeRules []*QueryLiveDomainHlsResponseDataCacheTimeRules `json:"cacheTimeRules,omitempty" xml:"cacheTimeRules,omitempty" type:"Repeated"`
   // {"en":"Query String Rules", "zh_CN":"节点缓存-带问号缓存配置"}
-  QueryStringRules []*QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules `json:"queryStringRules,omitempty" xml:"queryStringRules,omitempty" type:"Repeated"`
+  QueryStringRules []*QueryLiveDomainHlsResponseDataQueryStringRules `json:"queryStringRules,omitempty" xml:"queryStringRules,omitempty" type:"Repeated"`
 }
 
-func (s QueryLiveDomainHlsQueryLiveDomainHlsResponseData) String() string {
+func (s QueryLiveDomainHlsResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainHlsQueryLiveDomainHlsResponseData) GoString() string {
+func (s QueryLiveDomainHlsResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseData) SetSlices(v *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataSlices) *QueryLiveDomainHlsQueryLiveDomainHlsResponseData {
+func (s *QueryLiveDomainHlsResponseData) SetSlices(v *QueryLiveDomainHlsResponseDataSlices) *QueryLiveDomainHlsResponseData {
   s.Slices = v
   return s
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseData) SetCacheTimeRules(v []*QueryLiveDomainHlsQueryLiveDomainHlsResponseDataCacheTimeRules) *QueryLiveDomainHlsQueryLiveDomainHlsResponseData {
+func (s *QueryLiveDomainHlsResponseData) SetCacheTimeRules(v []*QueryLiveDomainHlsResponseDataCacheTimeRules) *QueryLiveDomainHlsResponseData {
   s.CacheTimeRules = v
   return s
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseData) SetQueryStringRules(v []*QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules) *QueryLiveDomainHlsQueryLiveDomainHlsResponseData {
+func (s *QueryLiveDomainHlsResponseData) SetQueryStringRules(v []*QueryLiveDomainHlsResponseDataQueryStringRules) *QueryLiveDomainHlsResponseData {
   s.QueryStringRules = v
   return s
 }
 
-type QueryLiveDomainHlsQueryLiveDomainHlsResponseDataSlices struct {
+type QueryLiveDomainHlsResponseDataSlices struct {
   // {"en":"Enable HLS", "zh_CN":"是否启用HLS"}
   EnableHls *bool `json:"enableHls,omitempty" xml:"enableHls,omitempty" require:"true"`
   // {"en":"M3u8 Seg Num", "zh_CN":"普通m3u8切片个数"}
@@ -4549,40 +4549,40 @@ type QueryLiveDomainHlsQueryLiveDomainHlsResponseDataSlices struct {
   NewMetaSeqReset *bool `json:"newMetaSeqReset,omitempty" xml:"newMetaSeqReset,omitempty"`
 }
 
-func (s QueryLiveDomainHlsQueryLiveDomainHlsResponseDataSlices) String() string {
+func (s QueryLiveDomainHlsResponseDataSlices) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainHlsQueryLiveDomainHlsResponseDataSlices) GoString() string {
+func (s QueryLiveDomainHlsResponseDataSlices) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataSlices) SetEnableHls(v bool) *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataSlices {
+func (s *QueryLiveDomainHlsResponseDataSlices) SetEnableHls(v bool) *QueryLiveDomainHlsResponseDataSlices {
   s.EnableHls = &v
   return s
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataSlices) SetM3u8SegNum(v int) *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataSlices {
+func (s *QueryLiveDomainHlsResponseDataSlices) SetM3u8SegNum(v int) *QueryLiveDomainHlsResponseDataSlices {
   s.M3u8SegNum = &v
   return s
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataSlices) SetFirstM3u8SegNum(v int) *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataSlices {
+func (s *QueryLiveDomainHlsResponseDataSlices) SetFirstM3u8SegNum(v int) *QueryLiveDomainHlsResponseDataSlices {
   s.FirstM3u8SegNum = &v
   return s
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataSlices) SetSegDuration(v int) *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataSlices {
+func (s *QueryLiveDomainHlsResponseDataSlices) SetSegDuration(v int) *QueryLiveDomainHlsResponseDataSlices {
   s.SegDuration = &v
   return s
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataSlices) SetNewMetaSeqReset(v bool) *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataSlices {
+func (s *QueryLiveDomainHlsResponseDataSlices) SetNewMetaSeqReset(v bool) *QueryLiveDomainHlsResponseDataSlices {
   s.NewMetaSeqReset = &v
   return s
 }
 
-type QueryLiveDomainHlsQueryLiveDomainHlsResponseDataCacheTimeRules struct     {
+type QueryLiveDomainHlsResponseDataCacheTimeRules struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。
   // dataId可以通过查询接口获取。
   // 注意：添加grid类型标识：dataId，每一组配置对应一个dataId：
@@ -4602,45 +4602,45 @@ type QueryLiveDomainHlsQueryLiveDomainHlsResponseDataCacheTimeRules struct     {
   CacheTime *string `json:"cacheTime,omitempty" xml:"cacheTime,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainHlsQueryLiveDomainHlsResponseDataCacheTimeRules) String() string {
+func (s QueryLiveDomainHlsResponseDataCacheTimeRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainHlsQueryLiveDomainHlsResponseDataCacheTimeRules) GoString() string {
+func (s QueryLiveDomainHlsResponseDataCacheTimeRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataCacheTimeRules) SetDataId(v string) *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataCacheTimeRules {
+func (s *QueryLiveDomainHlsResponseDataCacheTimeRules) SetDataId(v string) *QueryLiveDomainHlsResponseDataCacheTimeRules {
   s.DataId = &v
   return s
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataCacheTimeRules) SetPriority(v int) *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataCacheTimeRules {
+func (s *QueryLiveDomainHlsResponseDataCacheTimeRules) SetPriority(v int) *QueryLiveDomainHlsResponseDataCacheTimeRules {
   s.Priority = &v
   return s
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataCacheTimeRules) SetUrlRegex(v string) *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataCacheTimeRules {
+func (s *QueryLiveDomainHlsResponseDataCacheTimeRules) SetUrlRegex(v string) *QueryLiveDomainHlsResponseDataCacheTimeRules {
   s.UrlRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataCacheTimeRules) SetFileTypes(v []*string) *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataCacheTimeRules {
+func (s *QueryLiveDomainHlsResponseDataCacheTimeRules) SetFileTypes(v []*string) *QueryLiveDomainHlsResponseDataCacheTimeRules {
   s.FileTypes = v
   return s
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataCacheTimeRules) SetFileQueryLiveDomainHlsPaths(v []*string) *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataCacheTimeRules {
+func (s *QueryLiveDomainHlsResponseDataCacheTimeRules) SetFileQueryLiveDomainHlsPaths(v []*string) *QueryLiveDomainHlsResponseDataCacheTimeRules {
   s.FileQueryLiveDomainHlsPaths = v
   return s
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataCacheTimeRules) SetCacheTime(v string) *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataCacheTimeRules {
+func (s *QueryLiveDomainHlsResponseDataCacheTimeRules) SetCacheTime(v string) *QueryLiveDomainHlsResponseDataCacheTimeRules {
   s.CacheTime = &v
   return s
 }
 
-type QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules struct     {
+type QueryLiveDomainHlsResponseDataQueryStringRules struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。
   // dataId可以通过查询接口获取。
   // 注意：添加grid类型标识：dataId，每一组配置对应一个dataId：
@@ -4664,50 +4664,50 @@ type QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules struct    
   QueryString2Origin *bool `json:"queryString2Origin,omitempty" xml:"queryString2Origin,omitempty"`
 }
 
-func (s QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules) String() string {
+func (s QueryLiveDomainHlsResponseDataQueryStringRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules) GoString() string {
+func (s QueryLiveDomainHlsResponseDataQueryStringRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules) SetDataId(v string) *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules {
+func (s *QueryLiveDomainHlsResponseDataQueryStringRules) SetDataId(v string) *QueryLiveDomainHlsResponseDataQueryStringRules {
   s.DataId = &v
   return s
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules) SetPriority(v int) *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules {
+func (s *QueryLiveDomainHlsResponseDataQueryStringRules) SetPriority(v int) *QueryLiveDomainHlsResponseDataQueryStringRules {
   s.Priority = &v
   return s
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules) SetUrlRegex(v string) *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules {
+func (s *QueryLiveDomainHlsResponseDataQueryStringRules) SetUrlRegex(v string) *QueryLiveDomainHlsResponseDataQueryStringRules {
   s.UrlRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules) SetFileTypes(v []*string) *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules {
+func (s *QueryLiveDomainHlsResponseDataQueryStringRules) SetFileTypes(v []*string) *QueryLiveDomainHlsResponseDataQueryStringRules {
   s.FileTypes = v
   return s
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules) SetFileQueryLiveDomainHlsPaths(v []*string) *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules {
+func (s *QueryLiveDomainHlsResponseDataQueryStringRules) SetFileQueryLiveDomainHlsPaths(v []*string) *QueryLiveDomainHlsResponseDataQueryStringRules {
   s.FileQueryLiveDomainHlsPaths = v
   return s
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules) SetIgnoreQueryString(v bool) *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules {
+func (s *QueryLiveDomainHlsResponseDataQueryStringRules) SetIgnoreQueryString(v bool) *QueryLiveDomainHlsResponseDataQueryStringRules {
   s.IgnoreQueryString = &v
   return s
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules) SetIgnoreCase(v bool) *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules {
+func (s *QueryLiveDomainHlsResponseDataQueryStringRules) SetIgnoreCase(v bool) *QueryLiveDomainHlsResponseDataQueryStringRules {
   s.IgnoreCase = &v
   return s
 }
 
-func (s *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules) SetQueryString2Origin(v bool) *QueryLiveDomainHlsQueryLiveDomainHlsResponseDataQueryStringRules {
+func (s *QueryLiveDomainHlsResponseDataQueryStringRules) SetQueryString2Origin(v bool) *QueryLiveDomainHlsResponseDataQueryStringRules {
   s.QueryString2Origin = &v
   return s
 }
@@ -4793,7 +4793,7 @@ type QueryAliyunOssAuthorizationConfigResponse struct {
   // 2.为<aliyun-oss-access-authorization-rules/>时清空Aliyun OSS鉴权的配置
   // 3.点播下载支持，网页wsa不支持
   // 4.Amason S3和Aliyun OSS不可同时配置"}
-  AliyunOssAccessAuthorizationRules []*QueryAliyunOssAuthorizationConfigQueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules `json:"aliyun-oss-access-authorization-rules,omitempty" xml:"aliyun-oss-access-authorization-rules,omitempty" require:"true" type:"Repeated"`
+  AliyunOssAccessAuthorizationRules []*QueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules `json:"aliyun-oss-access-authorization-rules,omitempty" xml:"aliyun-oss-access-authorization-rules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryAliyunOssAuthorizationConfigResponse) String() string {
@@ -4814,12 +4814,12 @@ func (s *QueryAliyunOssAuthorizationConfigResponse) SetDomainId(v string) *Query
   return s
 }
 
-func (s *QueryAliyunOssAuthorizationConfigResponse) SetAliyunOssAccessAuthorizationRules(v []*QueryAliyunOssAuthorizationConfigQueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules) *QueryAliyunOssAuthorizationConfigResponse {
+func (s *QueryAliyunOssAuthorizationConfigResponse) SetAliyunOssAccessAuthorizationRules(v []*QueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules) *QueryAliyunOssAuthorizationConfigResponse {
   s.AliyunOssAccessAuthorizationRules = v
   return s
 }
 
-type QueryAliyunOssAuthorizationConfigQueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules struct     {
+type QueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules struct     {
   // {"en":"Define whether to add Authorization header when back to Aliyun OSS source. Allowed  true and false.", "zh_CN":"是否添加鉴权头部，为true，则回源按照Aliyun OSS的算法添加 添加Authorization头部。
   // 允许值为true和false，默认为false"}
   AddAuthorizationHeader *string `json:"add-authorization-header,omitempty" xml:"add-authorization-header,omitempty" require:"true"`
@@ -4831,30 +4831,30 @@ type QueryAliyunOssAuthorizationConfigQueryAliyunOssAuthorizationConfigResponseA
   DataId *int64 `json:"data-id,omitempty" xml:"data-id,omitempty" require:"true"`
 }
 
-func (s QueryAliyunOssAuthorizationConfigQueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules) String() string {
+func (s QueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAliyunOssAuthorizationConfigQueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules) GoString() string {
+func (s QueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryAliyunOssAuthorizationConfigQueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules) SetAddAuthorizationHeader(v string) *QueryAliyunOssAuthorizationConfigQueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules {
+func (s *QueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules) SetAddAuthorizationHeader(v string) *QueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules {
   s.AddAuthorizationHeader = &v
   return s
 }
 
-func (s *QueryAliyunOssAuthorizationConfigQueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules) SetAccessKey(v string) *QueryAliyunOssAuthorizationConfigQueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules {
+func (s *QueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules) SetAccessKey(v string) *QueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules {
   s.AccessKey = &v
   return s
 }
 
-func (s *QueryAliyunOssAuthorizationConfigQueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules) SetAccessKeyId(v string) *QueryAliyunOssAuthorizationConfigQueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules {
+func (s *QueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules) SetAccessKeyId(v string) *QueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules {
   s.AccessKeyId = &v
   return s
 }
 
-func (s *QueryAliyunOssAuthorizationConfigQueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules) SetDataId(v int64) *QueryAliyunOssAuthorizationConfigQueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules {
+func (s *QueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules) SetDataId(v int64) *QueryAliyunOssAuthorizationConfigResponseAliyunOssAccessAuthorizationRules {
   s.DataId = &v
   return s
 }
@@ -4919,7 +4919,7 @@ type UpdateStreamNotificationConfigRequest struct {
   // 2. Use \"streamNotifications\":[] to clear Streaming notify Configuration.", "zh_CN":"推流状态反馈配置
   // 1.需要设置推流状态反馈配置时，此项必填
   // 2.为\"streamNotifications\":[]时清空配置"}
-  StreamNotifications []*UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotifications `json:"streamNotifications,omitempty" xml:"streamNotifications,omitempty" require:"true" type:"Repeated"`
+  StreamNotifications []*UpdateStreamNotificationConfigRequestStreamNotifications `json:"streamNotifications,omitempty" xml:"streamNotifications,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s UpdateStreamNotificationConfigRequest) String() string {
@@ -4930,12 +4930,12 @@ func (s UpdateStreamNotificationConfigRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateStreamNotificationConfigRequest) SetStreamNotifications(v []*UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotifications) *UpdateStreamNotificationConfigRequest {
+func (s *UpdateStreamNotificationConfigRequest) SetStreamNotifications(v []*UpdateStreamNotificationConfigRequestStreamNotifications) *UpdateStreamNotificationConfigRequest {
   s.StreamNotifications = v
   return s
 }
 
-type UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotifications struct     {
+type UpdateStreamNotificationConfigRequestStreamNotifications struct     {
   // {"en":"Switch for streaming notification feature. The optional values are true and false.", "zh_CN":"推流状态反馈开关配置，可选值为true和false。
   // 为true则开启，且需完整设置配置信息
   // 为false则其他入参无效。"}
@@ -4953,45 +4953,45 @@ type UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNo
   // {"en":"Request method, support POST and GET.", "zh_CN":"推流汇报请求方式，支持POST和GET"}
   NotifyMethod *string `json:"notifyMethod,omitempty" xml:"notifyMethod,omitempty"`
   // {"en":"notifyParams", "zh_CN":"设置推流开始的汇报参数，推流结束的汇报参数。最多只能有一个开始，一个结束。"}
-  NotifyParams []*UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams `json:"notifyParams,omitempty" xml:"notifyParams,omitempty" require:"true" type:"Repeated"`
+  NotifyParams []*UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams `json:"notifyParams,omitempty" xml:"notifyParams,omitempty" require:"true" type:"Repeated"`
   // {"en":"Data-id is to indicate a specific group configuration when the client has multiple groups of configurations. Data-id can be retrieved through a query interface. Note: A. If data-id is passed, it means that one group of configuration items is specified to be modified, and no other group configuration items need to be modified. B. If multiple groups of configurations are included, some of them are configured with data-id and others are not, then the expression of data-id is used to modify a specific group of configurations, and a new group of configurations is added on the original basis without the expression of data-id. C. If the data-id is not transmitted, it means that the original configuration will be fully covered by this configuration. D. If no configuration parameter is passed, only domain name and secondary label are passed, which means that all configuration of domain name secondary service corresponding to this interface is cleared. E. If there is no specific configuration item in a set of configurations, the data-id must be filled in, and the value is the actual data-id, which means clearing the value of the corresponding data-id configuration item; it is not allowed that there is no specific configuration item or data-id in a set of configurations.", "zh_CN":"配置多组配置时，具体某组配置的id。dataId可以通过查询接口获取。 注意： a、如果有传dataId，说明指定修改其中一组配置项内容，不需求修改其他组配置内容不需要入参； b、如果入参多组配置，其中有些组配置有传dataId，有些没有传，则有传dataId的表示修改具体某组配置，没有传dataId的表示在原来基础上新增一组配置； c、如果入参都没有传dataId,表示用本次的配置全量覆盖原先配置； d、如果入参没有传任何配置项参数，只传了域名和二级标签，表示清空这个接口对应域名二级服务所有配置； e、如果一组配置没有具体的配置项，则dataId必填，且值为实际存在的dataId，表示清空这个dataId对应配置项的值；不允许一组配置没有具体的配置项也没有dataId。"}
   DataId *int64 `json:"dataId,omitempty" xml:"dataId,omitempty"`
 }
 
-func (s UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotifications) String() string {
+func (s UpdateStreamNotificationConfigRequestStreamNotifications) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotifications) GoString() string {
+func (s UpdateStreamNotificationConfigRequestStreamNotifications) GoString() string {
   return s.String()
 }
 
-func (s *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotifications) SetEnableStreamNotification(v bool) *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotifications {
+func (s *UpdateStreamNotificationConfigRequestStreamNotifications) SetEnableStreamNotification(v bool) *UpdateStreamNotificationConfigRequestStreamNotifications {
   s.EnableStreamNotification = &v
   return s
 }
 
-func (s *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotifications) SetNotifyAddress(v string) *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotifications {
+func (s *UpdateStreamNotificationConfigRequestStreamNotifications) SetNotifyAddress(v string) *UpdateStreamNotificationConfigRequestStreamNotifications {
   s.NotifyAddress = &v
   return s
 }
 
-func (s *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotifications) SetNotifyMethod(v string) *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotifications {
+func (s *UpdateStreamNotificationConfigRequestStreamNotifications) SetNotifyMethod(v string) *UpdateStreamNotificationConfigRequestStreamNotifications {
   s.NotifyMethod = &v
   return s
 }
 
-func (s *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotifications) SetNotifyParams(v []*UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotifications {
+func (s *UpdateStreamNotificationConfigRequestStreamNotifications) SetNotifyParams(v []*UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) *UpdateStreamNotificationConfigRequestStreamNotifications {
   s.NotifyParams = v
   return s
 }
 
-func (s *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotifications) SetDataId(v int64) *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotifications {
+func (s *UpdateStreamNotificationConfigRequestStreamNotifications) SetDataId(v int64) *UpdateStreamNotificationConfigRequestStreamNotifications {
   s.DataId = &v
   return s
 }
 
-type UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams struct     {
+type UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams struct     {
   // {"en":"notifyType", "zh_CN":"可选值：publish_start、publish_end，分别表示推流开始和推流结束(断流)"}
   NotifyType *string `json:"notifyType,omitempty" xml:"notifyType,omitempty" require:"true"`
   // {"en":"Notify path, it should start with a slash.", "zh_CN":"推流汇报路径，/ 开头"}
@@ -5014,60 +5014,60 @@ type UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNo
   CustomParams *string `json:"customParams,omitempty" xml:"customParams,omitempty"`
 }
 
-func (s UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) String() string {
+func (s UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) GoString() string {
+func (s UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) GoString() string {
   return s.String()
 }
 
-func (s *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) SetNotifyType(v string) *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams {
+func (s *UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) SetNotifyType(v string) *UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams {
   s.NotifyType = &v
   return s
 }
 
-func (s *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) SetPath(v string) *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams {
+func (s *UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) SetPath(v string) *UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams {
   s.Path = &v
   return s
 }
 
-func (s *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) SetId(v string) *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams {
+func (s *UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) SetId(v string) *UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams {
   s.Id = &v
   return s
 }
 
-func (s *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) SetClientIp(v string) *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams {
+func (s *UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) SetClientIp(v string) *UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams {
   s.ClientIp = &v
   return s
 }
 
-func (s *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) SetNodeIp(v string) *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams {
+func (s *UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) SetNodeIp(v string) *UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams {
   s.NodeIp = &v
   return s
 }
 
-func (s *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) SetApp(v string) *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams {
+func (s *UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) SetApp(v string) *UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams {
   s.App = &v
   return s
 }
 
-func (s *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) SetAppName(v string) *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams {
+func (s *UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) SetAppName(v string) *UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams {
   s.AppName = &v
   return s
 }
 
-func (s *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) SetPort(v string) *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams {
+func (s *UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) SetPort(v string) *UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams {
   s.Port = &v
   return s
 }
 
-func (s *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) SetMillTime(v string) *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams {
+func (s *UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) SetMillTime(v string) *UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams {
   s.MillTime = &v
   return s
 }
 
-func (s *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) SetCustomParams(v string) *UpdateStreamNotificationConfigUpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams {
+func (s *UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams) SetCustomParams(v string) *UpdateStreamNotificationConfigRequestStreamNotificationsNotifyParams {
   s.CustomParams = &v
   return s
 }
@@ -5168,7 +5168,7 @@ type QueryAppaCarryClientIpConfigResponse struct {
   // {"en":"Response error message if failed.", "zh_CN":"接口响应信息，success代表成功，失败则提供失败信息。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data array.", "zh_CN":"接口响应数据"}
-  Data *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryAppaCarryClientIpConfigResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryAppaCarryClientIpConfigResponse) String() string {
@@ -5189,69 +5189,69 @@ func (s *QueryAppaCarryClientIpConfigResponse) SetMessage(v string) *QueryAppaCa
   return s
 }
 
-func (s *QueryAppaCarryClientIpConfigResponse) SetData(v *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseData) *QueryAppaCarryClientIpConfigResponse {
+func (s *QueryAppaCarryClientIpConfigResponse) SetData(v *QueryAppaCarryClientIpConfigResponseData) *QueryAppaCarryClientIpConfigResponse {
   s.Data = v
   return s
 }
 
-type QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseData struct {
+type QueryAppaCarryClientIpConfigResponseData struct {
   // {"en":"Domain ID.", "zh_CN":"域名ID"}
   DomainId *string `json:"domainId,omitempty" xml:"domainId,omitempty" require:"true"`
   // {"en":"Domain name.", "zh_CN":"域名名称"}
   DomainName *string `json:"domainName,omitempty" xml:"domainName,omitempty" require:"true"`
   // {"en":"Carry client IP configuration.", "zh_CN":"携带用户IP回源配置配置。"}
-  CarryClientIp *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIp `json:"carryClientIp,omitempty" xml:"carryClientIp,omitempty" require:"true" type:"Struct"`
+  CarryClientIp *QueryAppaCarryClientIpConfigResponseDataCarryClientIp `json:"carryClientIp,omitempty" xml:"carryClientIp,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseData) String() string {
+func (s QueryAppaCarryClientIpConfigResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseData) GoString() string {
+func (s QueryAppaCarryClientIpConfigResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseData) SetDomainId(v string) *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseData {
+func (s *QueryAppaCarryClientIpConfigResponseData) SetDomainId(v string) *QueryAppaCarryClientIpConfigResponseData {
   s.DomainId = &v
   return s
 }
 
-func (s *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseData) SetDomainName(v string) *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseData {
+func (s *QueryAppaCarryClientIpConfigResponseData) SetDomainName(v string) *QueryAppaCarryClientIpConfigResponseData {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseData) SetCarryClientIp(v *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIp) *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseData {
+func (s *QueryAppaCarryClientIpConfigResponseData) SetCarryClientIp(v *QueryAppaCarryClientIpConfigResponseDataCarryClientIp) *QueryAppaCarryClientIpConfigResponseData {
   s.CarryClientIp = v
   return s
 }
 
-type QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIp struct {
+type QueryAppaCarryClientIpConfigResponseDataCarryClientIp struct {
   // {"en":"Carry client IP configuration for TCP.", "zh_CN":"TCP协议携带用户IP回源功能配置。"}
-  TcpCarryClientIp *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp `json:"tcpCarryClientIp,omitempty" xml:"tcpCarryClientIp,omitempty" require:"true" type:"Struct"`
+  TcpCarryClientIp *QueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp `json:"tcpCarryClientIp,omitempty" xml:"tcpCarryClientIp,omitempty" require:"true" type:"Struct"`
   // {"en":"Carry client IP configuration for HTTP.", "zh_CN":"HTTP协议携带用户IP回源功能。"}
-  HttpCarryClientIp *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp `json:"httpCarryClientIp,omitempty" xml:"httpCarryClientIp,omitempty" require:"true" type:"Struct"`
+  HttpCarryClientIp *QueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp `json:"httpCarryClientIp,omitempty" xml:"httpCarryClientIp,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIp) String() string {
+func (s QueryAppaCarryClientIpConfigResponseDataCarryClientIp) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIp) GoString() string {
+func (s QueryAppaCarryClientIpConfigResponseDataCarryClientIp) GoString() string {
   return s.String()
 }
 
-func (s *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIp) SetTcpCarryClientIp(v *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp) *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIp {
+func (s *QueryAppaCarryClientIpConfigResponseDataCarryClientIp) SetTcpCarryClientIp(v *QueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp) *QueryAppaCarryClientIpConfigResponseDataCarryClientIp {
   s.TcpCarryClientIp = v
   return s
 }
 
-func (s *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIp) SetHttpCarryClientIp(v *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp) *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIp {
+func (s *QueryAppaCarryClientIpConfigResponseDataCarryClientIp) SetHttpCarryClientIp(v *QueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp) *QueryAppaCarryClientIpConfigResponseDataCarryClientIp {
   s.HttpCarryClientIp = v
   return s
 }
 
-type QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp struct {
+type QueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp struct {
   // {"en":"The function switch of TCP carry client IP.
   // true：Enabled
   // false：Disabled", "zh_CN":"TCP协议携带用户IP回源功能开关。
@@ -5280,40 +5280,40 @@ type QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryCl
   TcpOptionCode *string `json:"tcpOptionCode,omitempty" xml:"tcpOptionCode,omitempty" require:"true"`
 }
 
-func (s QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp) String() string {
+func (s QueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp) GoString() string {
+func (s QueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp) GoString() string {
   return s.String()
 }
 
-func (s *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp) SetCarryClientIpEnabled(v string) *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp {
+func (s *QueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp) SetCarryClientIpEnabled(v string) *QueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp {
   s.CarryClientIpEnabled = &v
   return s
 }
 
-func (s *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp) SetProtocol(v string) *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp {
+func (s *QueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp) SetProtocol(v string) *QueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp {
   s.Protocol = &v
   return s
 }
 
-func (s *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp) SetPacketNum(v string) *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp {
+func (s *QueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp) SetPacketNum(v string) *QueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp {
   s.PacketNum = &v
   return s
 }
 
-func (s *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp) SetMode(v int) *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp {
+func (s *QueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp) SetMode(v int) *QueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp {
   s.Mode = &v
   return s
 }
 
-func (s *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp) SetTcpOptionCode(v string) *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp {
+func (s *QueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp) SetTcpOptionCode(v string) *QueryAppaCarryClientIpConfigResponseDataCarryClientIpTcpCarryClientIp {
   s.TcpOptionCode = &v
   return s
 }
 
-type QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp struct {
+type QueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp struct {
   // {"en":"The function switch of carry client IP through the HTTP header.
   // true：Enabled.
   // false：Disabled.", "zh_CN":"HTTP协议通过HTTP头部携带用户IP回源的功能开关。
@@ -5326,25 +5326,25 @@ type QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryCl
   HttpHeaderName *string `json:"httpHeaderName,omitempty" xml:"httpHeaderName,omitempty" require:"true"`
 }
 
-func (s QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp) String() string {
+func (s QueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp) GoString() string {
+func (s QueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp) GoString() string {
   return s.String()
 }
 
-func (s *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp) SetCarryClientIpEnabled(v string) *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp {
+func (s *QueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp) SetCarryClientIpEnabled(v string) *QueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp {
   s.CarryClientIpEnabled = &v
   return s
 }
 
-func (s *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp) SetPorts(v []*string) *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp {
+func (s *QueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp) SetPorts(v []*string) *QueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp {
   s.Ports = v
   return s
 }
 
-func (s *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp) SetHttpHeaderName(v string) *QueryAppaCarryClientIpConfigQueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp {
+func (s *QueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp) SetHttpHeaderName(v string) *QueryAppaCarryClientIpConfigResponseDataCarryClientIpHttpCarryClientIp {
   s.HttpHeaderName = &v
   return s
 }
@@ -5420,7 +5420,7 @@ type QueryCloudStorageBasicConfigurationResponse struct {
   // {"en":"Response information, when success is successful", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"response data", "zh_CN":"响应数据"}
-  Data *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryCloudStorageBasicConfigurationResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryCloudStorageBasicConfigurationResponse) String() string {
@@ -5441,12 +5441,12 @@ func (s *QueryCloudStorageBasicConfigurationResponse) SetMessage(v string) *Quer
   return s
 }
 
-func (s *QueryCloudStorageBasicConfigurationResponse) SetData(v *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseData) *QueryCloudStorageBasicConfigurationResponse {
+func (s *QueryCloudStorageBasicConfigurationResponse) SetData(v *QueryCloudStorageBasicConfigurationResponseData) *QueryCloudStorageBasicConfigurationResponse {
   s.Data = v
   return s
 }
 
-type QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseData struct {
+type QueryCloudStorageBasicConfigurationResponseData struct {
   // {"en":"domain id", "zh_CN":"域名ID"}
   DomainId *int `json:"domainId,omitempty" xml:"domainId,omitempty" require:"true"`
   // {"en":"domain name", "zh_CN":"域名"}
@@ -5456,33 +5456,33 @@ type QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationRespo
   // 2. Configuration of clearing for <cloudStorageRules/>.", "zh_CN":"云存储配置，父标签
   // 1.需要设置录制/截图功能时，此项必填
   // 2.为<cloudStorageRules/>时清空配置"}
-  CloudStorageRules []*QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules `json:"cloudStorageRules,omitempty" xml:"cloudStorageRules,omitempty" require:"true" type:"Repeated"`
+  CloudStorageRules []*QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules `json:"cloudStorageRules,omitempty" xml:"cloudStorageRules,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseData) String() string {
+func (s QueryCloudStorageBasicConfigurationResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseData) GoString() string {
+func (s QueryCloudStorageBasicConfigurationResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseData) SetDomainId(v int) *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseData {
+func (s *QueryCloudStorageBasicConfigurationResponseData) SetDomainId(v int) *QueryCloudStorageBasicConfigurationResponseData {
   s.DomainId = &v
   return s
 }
 
-func (s *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseData) SetDomainName(v string) *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseData {
+func (s *QueryCloudStorageBasicConfigurationResponseData) SetDomainName(v string) *QueryCloudStorageBasicConfigurationResponseData {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseData) SetCloudStorageRules(v []*QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseData {
+func (s *QueryCloudStorageBasicConfigurationResponseData) SetCloudStorageRules(v []*QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) *QueryCloudStorageBasicConfigurationResponseData {
   s.CloudStorageRules = v
   return s
 }
 
-type QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules struct     {
+type QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules struct     {
   // {"en":"This item is to open cloud storage. The optional vaules are true and false.", "zh_CN":"是否开启云存储，可选择为true、false"}
   StorageEnabled *bool `json:"storageEnabled,omitempty" xml:"storageEnabled,omitempty" require:"true"`
   // {"en":"Access Key ID for uploading files.", "zh_CN":"上传文件密钥ID，Access Key ID"}
@@ -5512,55 +5512,55 @@ type QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationRespo
   DataId *int `json:"dataId,omitempty" xml:"dataId,omitempty" require:"true"`
 }
 
-func (s QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) String() string {
+func (s QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) GoString() string {
+func (s QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) SetStorageEnabled(v bool) *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules {
+func (s *QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) SetStorageEnabled(v bool) *QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules {
   s.StorageEnabled = &v
   return s
 }
 
-func (s *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) SetAccessKeyId(v string) *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules {
+func (s *QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) SetAccessKeyId(v string) *QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules {
   s.AccessKeyId = &v
   return s
 }
 
-func (s *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) SetAccessKey(v string) *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules {
+func (s *QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) SetAccessKey(v string) *QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules {
   s.AccessKey = &v
   return s
 }
 
-func (s *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) SetStorageManageDomain(v string) *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules {
+func (s *QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) SetStorageManageDomain(v string) *QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules {
   s.StorageManageDomain = &v
   return s
 }
 
-func (s *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) SetPullAddress(v string) *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules {
+func (s *QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) SetPullAddress(v string) *QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules {
   s.PullAddress = &v
   return s
 }
 
-func (s *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) SetNoticeAddress(v string) *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules {
+func (s *QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) SetNoticeAddress(v string) *QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules {
   s.NoticeAddress = &v
   return s
 }
 
-func (s *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) SetMergeNotice(v bool) *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules {
+func (s *QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) SetMergeNotice(v bool) *QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules {
   s.MergeNotice = &v
   return s
 }
 
-func (s *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) SetPublishPoints(v []*string) *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules {
+func (s *QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) SetPublishPoints(v []*string) *QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules {
   s.PublishPoints = v
   return s
 }
 
-func (s *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) SetDataId(v int) *QueryCloudStorageBasicConfigurationQueryCloudStorageBasicConfigurationResponseDataCloudStorageRules {
+func (s *QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules) SetDataId(v int) *QueryCloudStorageBasicConfigurationResponseDataCloudStorageRules {
   s.DataId = &v
   return s
 }
@@ -5636,7 +5636,7 @@ type QueryLiveDomainMiscResponse struct {
   // {"en":"Reponse message.", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data", "zh_CN":"响应数据"}
-  Data *QueryLiveDomainMiscQueryLiveDomainMiscResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryLiveDomainMiscResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryLiveDomainMiscResponse) String() string {
@@ -5657,12 +5657,12 @@ func (s *QueryLiveDomainMiscResponse) SetMessage(v string) *QueryLiveDomainMiscR
   return s
 }
 
-func (s *QueryLiveDomainMiscResponse) SetData(v *QueryLiveDomainMiscQueryLiveDomainMiscResponseData) *QueryLiveDomainMiscResponse {
+func (s *QueryLiveDomainMiscResponse) SetData(v *QueryLiveDomainMiscResponseData) *QueryLiveDomainMiscResponse {
   s.Data = v
   return s
 }
 
-type QueryLiveDomainMiscQueryLiveDomainMiscResponseData struct {
+type QueryLiveDomainMiscResponseData struct {
   // {"en":"Enable HTTP2", "zh_CN":"是否启用HTTP2"}
   EnableHttp2 *bool `json:"enableHttp2,omitempty" xml:"enableHttp2,omitempty" require:"true"`
   // {"en":"Redirect Http To Https", "zh_CN":"请求协议类型"}
@@ -5673,30 +5673,30 @@ type QueryLiveDomainMiscQueryLiveDomainMiscResponseData struct {
   DisableHdl *bool `json:"disableHdl,omitempty" xml:"disableHdl,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainMiscQueryLiveDomainMiscResponseData) String() string {
+func (s QueryLiveDomainMiscResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainMiscQueryLiveDomainMiscResponseData) GoString() string {
+func (s QueryLiveDomainMiscResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainMiscQueryLiveDomainMiscResponseData) SetEnableHttp2(v bool) *QueryLiveDomainMiscQueryLiveDomainMiscResponseData {
+func (s *QueryLiveDomainMiscResponseData) SetEnableHttp2(v bool) *QueryLiveDomainMiscResponseData {
   s.EnableHttp2 = &v
   return s
 }
 
-func (s *QueryLiveDomainMiscQueryLiveDomainMiscResponseData) SetRedirectHttpToHttps(v bool) *QueryLiveDomainMiscQueryLiveDomainMiscResponseData {
+func (s *QueryLiveDomainMiscResponseData) SetRedirectHttpToHttps(v bool) *QueryLiveDomainMiscResponseData {
   s.RedirectHttpToHttps = &v
   return s
 }
 
-func (s *QueryLiveDomainMiscQueryLiveDomainMiscResponseData) SetDisableRtmp(v bool) *QueryLiveDomainMiscQueryLiveDomainMiscResponseData {
+func (s *QueryLiveDomainMiscResponseData) SetDisableRtmp(v bool) *QueryLiveDomainMiscResponseData {
   s.DisableRtmp = &v
   return s
 }
 
-func (s *QueryLiveDomainMiscQueryLiveDomainMiscResponseData) SetDisableHdl(v bool) *QueryLiveDomainMiscQueryLiveDomainMiscResponseData {
+func (s *QueryLiveDomainMiscResponseData) SetDisableHdl(v bool) *QueryLiveDomainMiscResponseData {
   s.DisableHdl = &v
   return s
 }
@@ -5767,7 +5767,7 @@ type UpdateAliyunOssAuthorizationConfigRequest struct {
   // 2.为<aliyun-oss-access-authorization-rules/>时清空Aliyun OSS鉴权的配置
   // 3.点播下载支持，网页wsa不支持
   // 4.Amason S3和Aliyun OSS不可同时配置"}
-  AliyunOssAccessAuthorizationRules []*UpdateAliyunOssAuthorizationConfigUpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules `json:"aliyun-oss-access-authorization-rules,omitempty" xml:"aliyun-oss-access-authorization-rules,omitempty" require:"true" type:"Repeated"`
+  AliyunOssAccessAuthorizationRules []*UpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules `json:"aliyun-oss-access-authorization-rules,omitempty" xml:"aliyun-oss-access-authorization-rules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s UpdateAliyunOssAuthorizationConfigRequest) String() string {
@@ -5778,12 +5778,12 @@ func (s UpdateAliyunOssAuthorizationConfigRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAliyunOssAuthorizationConfigRequest) SetAliyunOssAccessAuthorizationRules(v []*UpdateAliyunOssAuthorizationConfigUpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules) *UpdateAliyunOssAuthorizationConfigRequest {
+func (s *UpdateAliyunOssAuthorizationConfigRequest) SetAliyunOssAccessAuthorizationRules(v []*UpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules) *UpdateAliyunOssAuthorizationConfigRequest {
   s.AliyunOssAccessAuthorizationRules = v
   return s
 }
 
-type UpdateAliyunOssAuthorizationConfigUpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules struct     {
+type UpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules struct     {
   // {"en":"Define whether to add Authorization header when back to Aliyun OSS source. Allowed  true and false.", "zh_CN":"是否添加鉴权头部，为true，则回源按照Aliyun OSS的算法添加 添加Authorization头部。
   // 允许值为true和false，默认为false"}
   AddAuthorizationHeader *string `json:"add-authorization-header,omitempty" xml:"add-authorization-header,omitempty" require:"true"`
@@ -5805,30 +5805,30 @@ type UpdateAliyunOssAuthorizationConfigUpdateAliyunOssAuthorizationConfigRequest
   DataId *int64 `json:"data-id,omitempty" xml:"data-id,omitempty"`
 }
 
-func (s UpdateAliyunOssAuthorizationConfigUpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules) String() string {
+func (s UpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateAliyunOssAuthorizationConfigUpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules) GoString() string {
+func (s UpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAliyunOssAuthorizationConfigUpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules) SetAddAuthorizationHeader(v string) *UpdateAliyunOssAuthorizationConfigUpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules {
+func (s *UpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules) SetAddAuthorizationHeader(v string) *UpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules {
   s.AddAuthorizationHeader = &v
   return s
 }
 
-func (s *UpdateAliyunOssAuthorizationConfigUpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules) SetAccessKey(v string) *UpdateAliyunOssAuthorizationConfigUpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules {
+func (s *UpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules) SetAccessKey(v string) *UpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules {
   s.AccessKey = &v
   return s
 }
 
-func (s *UpdateAliyunOssAuthorizationConfigUpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules) SetAccessKeyId(v string) *UpdateAliyunOssAuthorizationConfigUpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules {
+func (s *UpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules) SetAccessKeyId(v string) *UpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules {
   s.AccessKeyId = &v
   return s
 }
 
-func (s *UpdateAliyunOssAuthorizationConfigUpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules) SetDataId(v int64) *UpdateAliyunOssAuthorizationConfigUpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules {
+func (s *UpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules) SetDataId(v int64) *UpdateAliyunOssAuthorizationConfigRequestAliyunOssAccessAuthorizationRules {
   s.DataId = &v
   return s
 }
@@ -5929,7 +5929,7 @@ type QueryLiveDomainDetailResponse struct {
   // {"en":"Reponse message.", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data", "zh_CN":"响应数据"}
-  Data *QueryLiveDomainDetailQueryLiveDomainDetailResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryLiveDomainDetailResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryLiveDomainDetailResponse) String() string {
@@ -5950,12 +5950,12 @@ func (s *QueryLiveDomainDetailResponse) SetMessage(v string) *QueryLiveDomainDet
   return s
 }
 
-func (s *QueryLiveDomainDetailResponse) SetData(v *QueryLiveDomainDetailQueryLiveDomainDetailResponseData) *QueryLiveDomainDetailResponse {
+func (s *QueryLiveDomainDetailResponse) SetData(v *QueryLiveDomainDetailResponseData) *QueryLiveDomainDetailResponse {
   s.Data = v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseData struct {
+type QueryLiveDomainDetailResponseData struct {
   // {"en":"product", "zh_CN":"商品名称"}
   Product *string `json:"product,omitempty" xml:"product,omitempty" require:"true"`
   // {"en":"domain", "zh_CN":"加速域名"}
@@ -5981,118 +5981,118 @@ type QueryLiveDomainDetailQueryLiveDomainDetailResponseData struct {
   // {"en":"updateTime", "zh_CN":"域名更新时间"}
   UpdateTime *string `json:"updateTime,omitempty" xml:"updateTime,omitempty" require:"true"`
   // {"en":"Origins Config", "zh_CN":"源站配置"}
-  Origins *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins `json:"origins,omitempty" xml:"origins,omitempty" require:"true" type:"Struct"`
+  Origins *QueryLiveDomainDetailResponseDataOrigins `json:"origins,omitempty" xml:"origins,omitempty" require:"true" type:"Struct"`
   // {"en":"Access Ctrls", "zh_CN":"访问控制"}
-  AccessCtrls *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrls `json:"accessCtrls,omitempty" xml:"accessCtrls,omitempty" require:"true" type:"Struct"`
+  AccessCtrls *QueryLiveDomainDetailResponseDataAccessCtrls `json:"accessCtrls,omitempty" xml:"accessCtrls,omitempty" require:"true" type:"Struct"`
   // {"en":"Header Rules", "zh_CN":"HTTP头部控制"}
-  HeaderRules []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules `json:"headerRules,omitempty" xml:"headerRules,omitempty" require:"true" type:"Repeated"`
+  HeaderRules []*QueryLiveDomainDetailResponseDataHeaderRules `json:"headerRules,omitempty" xml:"headerRules,omitempty" require:"true" type:"Repeated"`
   // {"en":"HLS Config", "zh_CN":"切片配置"}
-  Hls *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHls `json:"hls,omitempty" xml:"hls,omitempty" require:"true" type:"Struct"`
+  Hls *QueryLiveDomainDetailResponseDataHls `json:"hls,omitempty" xml:"hls,omitempty" require:"true" type:"Struct"`
   // {"en":"Publish Reports", "zh_CN":"推流汇报"}
-  PublishReports []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports `json:"publishReports,omitempty" xml:"publishReports,omitempty" require:"true" type:"Repeated"`
+  PublishReports []*QueryLiveDomainDetailResponseDataPublishReports `json:"publishReports,omitempty" xml:"publishReports,omitempty" require:"true" type:"Repeated"`
   // {"en":"MISC Config", "zh_CN":"MISC配置"}
-  Misc *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataMisc `json:"misc,omitempty" xml:"misc,omitempty" require:"true" type:"Struct"`
+  Misc *QueryLiveDomainDetailResponseDataMisc `json:"misc,omitempty" xml:"misc,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseData) String() string {
+func (s QueryLiveDomainDetailResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseData) GoString() string {
+func (s QueryLiveDomainDetailResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseData) SetProduct(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseData {
+func (s *QueryLiveDomainDetailResponseData) SetProduct(v string) *QueryLiveDomainDetailResponseData {
   s.Product = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseData) SetDomain(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseData {
+func (s *QueryLiveDomainDetailResponseData) SetDomain(v string) *QueryLiveDomainDetailResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseData) SetDomainType(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseData {
+func (s *QueryLiveDomainDetailResponseData) SetDomainType(v string) *QueryLiveDomainDetailResponseData {
   s.DomainType = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseData) SetLiveMode(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseData {
+func (s *QueryLiveDomainDetailResponseData) SetLiveMode(v string) *QueryLiveDomainDetailResponseData {
   s.LiveMode = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseData) SetPublishDomain(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseData {
+func (s *QueryLiveDomainDetailResponseData) SetPublishDomain(v string) *QueryLiveDomainDetailResponseData {
   s.PublishDomain = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseData) SetCname(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseData {
+func (s *QueryLiveDomainDetailResponseData) SetCname(v string) *QueryLiveDomainDetailResponseData {
   s.Cname = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseData) SetHlsOrigin(v bool) *QueryLiveDomainDetailQueryLiveDomainDetailResponseData {
+func (s *QueryLiveDomainDetailResponseData) SetHlsOrigin(v bool) *QueryLiveDomainDetailResponseData {
   s.HlsOrigin = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseData) SetSliceArch(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseData {
+func (s *QueryLiveDomainDetailResponseData) SetSliceArch(v string) *QueryLiveDomainDetailResponseData {
   s.SliceArch = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseData) SetAppNames(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseData {
+func (s *QueryLiveDomainDetailResponseData) SetAppNames(v []*string) *QueryLiveDomainDetailResponseData {
   s.AppNames = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseData) SetStatus(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseData {
+func (s *QueryLiveDomainDetailResponseData) SetStatus(v string) *QueryLiveDomainDetailResponseData {
   s.Status = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseData) SetCreateTime(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseData {
+func (s *QueryLiveDomainDetailResponseData) SetCreateTime(v string) *QueryLiveDomainDetailResponseData {
   s.CreateTime = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseData) SetUpdateTime(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseData {
+func (s *QueryLiveDomainDetailResponseData) SetUpdateTime(v string) *QueryLiveDomainDetailResponseData {
   s.UpdateTime = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseData) SetOrigins(v *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins) *QueryLiveDomainDetailQueryLiveDomainDetailResponseData {
+func (s *QueryLiveDomainDetailResponseData) SetOrigins(v *QueryLiveDomainDetailResponseDataOrigins) *QueryLiveDomainDetailResponseData {
   s.Origins = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseData) SetAccessCtrls(v *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrls) *QueryLiveDomainDetailQueryLiveDomainDetailResponseData {
+func (s *QueryLiveDomainDetailResponseData) SetAccessCtrls(v *QueryLiveDomainDetailResponseDataAccessCtrls) *QueryLiveDomainDetailResponseData {
   s.AccessCtrls = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseData) SetHeaderRules(v []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules) *QueryLiveDomainDetailQueryLiveDomainDetailResponseData {
+func (s *QueryLiveDomainDetailResponseData) SetHeaderRules(v []*QueryLiveDomainDetailResponseDataHeaderRules) *QueryLiveDomainDetailResponseData {
   s.HeaderRules = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseData) SetHls(v *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHls) *QueryLiveDomainDetailQueryLiveDomainDetailResponseData {
+func (s *QueryLiveDomainDetailResponseData) SetHls(v *QueryLiveDomainDetailResponseDataHls) *QueryLiveDomainDetailResponseData {
   s.Hls = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseData) SetPublishReports(v []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports) *QueryLiveDomainDetailQueryLiveDomainDetailResponseData {
+func (s *QueryLiveDomainDetailResponseData) SetPublishReports(v []*QueryLiveDomainDetailResponseDataPublishReports) *QueryLiveDomainDetailResponseData {
   s.PublishReports = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseData) SetMisc(v *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataMisc) *QueryLiveDomainDetailQueryLiveDomainDetailResponseData {
+func (s *QueryLiveDomainDetailResponseData) SetMisc(v *QueryLiveDomainDetailResponseDataMisc) *QueryLiveDomainDetailResponseData {
   s.Misc = v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins struct {
+type QueryLiveDomainDetailResponseDataOrigins struct {
   // {"en":"Origin Address", "zh_CN":"普通源"}
   OriginAddress *string `json:"originAddress,omitempty" xml:"originAddress,omitempty" require:"true"`
   // {"en":"Origin Host", "zh_CN":"回源主机名"}
@@ -6108,90 +6108,90 @@ type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins struct {
   // {"en":"Enable Advanced Origins", "zh_CN":"是否启用高级源"}
   AdvancedOrigins *bool `json:"advancedOrigins,omitempty" xml:"advancedOrigins,omitempty" require:"true"`
   // {"en":"Advanced Origins", "zh_CN":"高级源"}
-  Origins *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOrigins `json:"origins,omitempty" xml:"origins,omitempty" require:"true" type:"Struct"`
+  Origins *QueryLiveDomainDetailResponseDataOriginsOrigins `json:"origins,omitempty" xml:"origins,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins) String() string {
+func (s QueryLiveDomainDetailResponseDataOrigins) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins) GoString() string {
+func (s QueryLiveDomainDetailResponseDataOrigins) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins) SetOriginAddress(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins {
+func (s *QueryLiveDomainDetailResponseDataOrigins) SetOriginAddress(v string) *QueryLiveDomainDetailResponseDataOrigins {
   s.OriginAddress = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins) SetOriginHost(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins {
+func (s *QueryLiveDomainDetailResponseDataOrigins) SetOriginHost(v string) *QueryLiveDomainDetailResponseDataOrigins {
   s.OriginHost = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins) SetOriginProtocol(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins {
+func (s *QueryLiveDomainDetailResponseDataOrigins) SetOriginProtocol(v string) *QueryLiveDomainDetailResponseDataOrigins {
   s.OriginProtocol = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins) SetOriginPort(v int) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins {
+func (s *QueryLiveDomainDetailResponseDataOrigins) SetOriginPort(v int) *QueryLiveDomainDetailResponseDataOrigins {
   s.OriginPort = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins) SetEnableHttps(v bool) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins {
+func (s *QueryLiveDomainDetailResponseDataOrigins) SetEnableHttps(v bool) *QueryLiveDomainDetailResponseDataOrigins {
   s.EnableHttps = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins) SetClientIpHeader(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins {
+func (s *QueryLiveDomainDetailResponseDataOrigins) SetClientIpHeader(v string) *QueryLiveDomainDetailResponseDataOrigins {
   s.ClientIpHeader = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins) SetAdvancedOrigins(v bool) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins {
+func (s *QueryLiveDomainDetailResponseDataOrigins) SetAdvancedOrigins(v bool) *QueryLiveDomainDetailResponseDataOrigins {
   s.AdvancedOrigins = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins) SetOrigins(v *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOrigins) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOrigins {
+func (s *QueryLiveDomainDetailResponseDataOrigins) SetOrigins(v *QueryLiveDomainDetailResponseDataOriginsOrigins) *QueryLiveDomainDetailResponseDataOrigins {
   s.Origins = v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOrigins struct {
+type QueryLiveDomainDetailResponseDataOriginsOrigins struct {
   // {"en":"Servers", "zh_CN":"源站主机对象"}
-  Servers []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOriginsServers `json:"servers,omitempty" xml:"servers,omitempty" require:"true" type:"Repeated"`
+  Servers []*QueryLiveDomainDetailResponseDataOriginsOriginsServers `json:"servers,omitempty" xml:"servers,omitempty" require:"true" type:"Repeated"`
   // {"en":"Upstream Polling Enable Control", "zh_CN":"多个server默认主备"}
   RoundRobin *bool `json:"roundRobin,omitempty" xml:"roundRobin,omitempty" require:"true"`
   // {"en":"Origin Host", "zh_CN":"回源主机名"}
   OriginHost *string `json:"originHost,omitempty" xml:"originHost,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOrigins) String() string {
+func (s QueryLiveDomainDetailResponseDataOriginsOrigins) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOrigins) GoString() string {
+func (s QueryLiveDomainDetailResponseDataOriginsOrigins) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOrigins) SetServers(v []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOriginsServers) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOrigins {
+func (s *QueryLiveDomainDetailResponseDataOriginsOrigins) SetServers(v []*QueryLiveDomainDetailResponseDataOriginsOriginsServers) *QueryLiveDomainDetailResponseDataOriginsOrigins {
   s.Servers = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOrigins) SetRoundRobin(v bool) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOrigins {
+func (s *QueryLiveDomainDetailResponseDataOriginsOrigins) SetRoundRobin(v bool) *QueryLiveDomainDetailResponseDataOriginsOrigins {
   s.RoundRobin = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOrigins) SetOriginHost(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOrigins {
+func (s *QueryLiveDomainDetailResponseDataOriginsOrigins) SetOriginHost(v string) *QueryLiveDomainDetailResponseDataOriginsOrigins {
   s.OriginHost = &v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOriginsServers struct     {
+type QueryLiveDomainDetailResponseDataOriginsOriginsServers struct     {
   // {"en":"Address", "zh_CN":"源站地址"}
   Address *string `json:"address,omitempty" xml:"address,omitempty" require:"true"`
   // {"en":"Priority", "zh_CN":"优先级"}
@@ -6202,88 +6202,88 @@ type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOriginsServers
   OriginHost *string `json:"originHost,omitempty" xml:"originHost,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOriginsServers) String() string {
+func (s QueryLiveDomainDetailResponseDataOriginsOriginsServers) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOriginsServers) GoString() string {
+func (s QueryLiveDomainDetailResponseDataOriginsOriginsServers) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOriginsServers) SetAddress(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOriginsServers {
+func (s *QueryLiveDomainDetailResponseDataOriginsOriginsServers) SetAddress(v string) *QueryLiveDomainDetailResponseDataOriginsOriginsServers {
   s.Address = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOriginsServers) SetPriority(v int) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOriginsServers {
+func (s *QueryLiveDomainDetailResponseDataOriginsOriginsServers) SetPriority(v int) *QueryLiveDomainDetailResponseDataOriginsOriginsServers {
   s.Priority = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOriginsServers) SetWeight(v int) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOriginsServers {
+func (s *QueryLiveDomainDetailResponseDataOriginsOriginsServers) SetWeight(v int) *QueryLiveDomainDetailResponseDataOriginsOriginsServers {
   s.Weight = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOriginsServers) SetOriginHost(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataOriginsOriginsServers {
+func (s *QueryLiveDomainDetailResponseDataOriginsOriginsServers) SetOriginHost(v string) *QueryLiveDomainDetailResponseDataOriginsOriginsServers {
   s.OriginHost = &v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrls struct {
+type QueryLiveDomainDetailResponseDataAccessCtrls struct {
   // {"en":"IP Filters", "zh_CN":"IP访问控制"}
-  IpFilters []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsIpFilters `json:"ipFilters,omitempty" xml:"ipFilters,omitempty" require:"true" type:"Repeated"`
+  IpFilters []*QueryLiveDomainDetailResponseDataAccessCtrlsIpFilters `json:"ipFilters,omitempty" xml:"ipFilters,omitempty" require:"true" type:"Repeated"`
   // {"en":"Referer Filters", "zh_CN":"Refferer访问控制"}
-  RefererFilters []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters `json:"refererFilters,omitempty" xml:"refererFilters,omitempty" require:"true" type:"Repeated"`
+  RefererFilters []*QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters `json:"refererFilters,omitempty" xml:"refererFilters,omitempty" require:"true" type:"Repeated"`
   // {"en":"UA Filters", "zh_CN":"UA访问控制"}
-  UaFilters []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUaFilters `json:"uaFilters,omitempty" xml:"uaFilters,omitempty" require:"true" type:"Repeated"`
+  UaFilters []*QueryLiveDomainDetailResponseDataAccessCtrlsUaFilters `json:"uaFilters,omitempty" xml:"uaFilters,omitempty" require:"true" type:"Repeated"`
   // {"en":"URL Auths", "zh_CN":"URL Auths"}
-  UrlAuths []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths `json:"urlAuths,omitempty" xml:"urlAuths,omitempty" require:"true" type:"Repeated"`
+  UrlAuths []*QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths `json:"urlAuths,omitempty" xml:"urlAuths,omitempty" require:"true" type:"Repeated"`
   // {"en":"Remote Auths", "zh_CN":"Remote Auths"}
-  RemoteAuths []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths `json:"remoteAuths,omitempty" xml:"remoteAuths,omitempty" require:"true" type:"Repeated"`
+  RemoteAuths []*QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths `json:"remoteAuths,omitempty" xml:"remoteAuths,omitempty" require:"true" type:"Repeated"`
   // {"en":"Combined Filters", "zh_CN":"访问控制组合"}
-  CombinedFilters []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters `json:"combinedFilters,omitempty" xml:"combinedFilters,omitempty" require:"true" type:"Repeated"`
+  CombinedFilters []*QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters `json:"combinedFilters,omitempty" xml:"combinedFilters,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrls) String() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrls) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrls) GoString() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrls) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrls) SetIpFilters(v []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsIpFilters) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrls {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrls) SetIpFilters(v []*QueryLiveDomainDetailResponseDataAccessCtrlsIpFilters) *QueryLiveDomainDetailResponseDataAccessCtrls {
   s.IpFilters = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrls) SetRefererFilters(v []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrls {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrls) SetRefererFilters(v []*QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) *QueryLiveDomainDetailResponseDataAccessCtrls {
   s.RefererFilters = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrls) SetUaFilters(v []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUaFilters) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrls {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrls) SetUaFilters(v []*QueryLiveDomainDetailResponseDataAccessCtrlsUaFilters) *QueryLiveDomainDetailResponseDataAccessCtrls {
   s.UaFilters = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrls) SetUrlAuths(v []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrls {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrls) SetUrlAuths(v []*QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) *QueryLiveDomainDetailResponseDataAccessCtrls {
   s.UrlAuths = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrls) SetRemoteAuths(v []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrls {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrls) SetRemoteAuths(v []*QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) *QueryLiveDomainDetailResponseDataAccessCtrls {
   s.RemoteAuths = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrls) SetCombinedFilters(v []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrls {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrls) SetCombinedFilters(v []*QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) *QueryLiveDomainDetailResponseDataAccessCtrls {
   s.CombinedFilters = v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsIpFilters struct     {
+type QueryLiveDomainDetailResponseDataAccessCtrlsIpFilters struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。"}
   DataId *string `json:"dataId,omitempty" xml:"dataId,omitempty" require:"true"`
   // {"en":"Priority", "zh_CN":"优先级"}
@@ -6300,50 +6300,50 @@ type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsIpFilters 
   Ips []*string `json:"ips,omitempty" xml:"ips,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsIpFilters) String() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsIpFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsIpFilters) GoString() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsIpFilters) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsIpFilters) SetDataId(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsIpFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsIpFilters) SetDataId(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsIpFilters {
   s.DataId = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsIpFilters) SetPriority(v int) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsIpFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsIpFilters) SetPriority(v int) *QueryLiveDomainDetailResponseDataAccessCtrlsIpFilters {
   s.Priority = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsIpFilters) SetUrlRegex(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsIpFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsIpFilters) SetUrlRegex(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsIpFilters {
   s.UrlRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsIpFilters) SetFileTypes(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsIpFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsIpFilters) SetFileTypes(v []*string) *QueryLiveDomainDetailResponseDataAccessCtrlsIpFilters {
   s.FileTypes = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsIpFilters) SetFileQueryLiveDomainDetailPaths(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsIpFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsIpFilters) SetFileQueryLiveDomainDetailPaths(v []*string) *QueryLiveDomainDetailResponseDataAccessCtrlsIpFilters {
   s.FileQueryLiveDomainDetailPaths = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsIpFilters) SetType(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsIpFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsIpFilters) SetType(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsIpFilters {
   s.Type = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsIpFilters) SetIps(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsIpFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsIpFilters) SetIps(v []*string) *QueryLiveDomainDetailResponseDataAccessCtrlsIpFilters {
   s.Ips = v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters struct     {
+type QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。"}
   DataId *string `json:"dataId,omitempty" xml:"dataId,omitempty" require:"true"`
   // {"en":"Priority", "zh_CN":"优先级"}
@@ -6366,65 +6366,65 @@ type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFil
   AllowEmptyReferer *bool `json:"allowEmptyReferer,omitempty" xml:"allowEmptyReferer,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) String() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) GoString() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) SetDataId(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) SetDataId(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters {
   s.DataId = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) SetPriority(v int) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) SetPriority(v int) *QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters {
   s.Priority = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) SetUrlRegex(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) SetUrlRegex(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters {
   s.UrlRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) SetFileTypes(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) SetFileTypes(v []*string) *QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters {
   s.FileTypes = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) SetFileQueryLiveDomainDetailPaths(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) SetFileQueryLiveDomainDetailPaths(v []*string) *QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters {
   s.FileQueryLiveDomainDetailPaths = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) SetType(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) SetType(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters {
   s.Type = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) SetRefererRegex(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) SetRefererRegex(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters {
   s.RefererRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) SetRefererUrl(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) SetRefererUrl(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters {
   s.RefererUrl = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) SetRefererDomain(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) SetRefererDomain(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters {
   s.RefererDomain = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) SetAllowEmptyReferer(v bool) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters) SetAllowEmptyReferer(v bool) *QueryLiveDomainDetailResponseDataAccessCtrlsRefererFilters {
   s.AllowEmptyReferer = &v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUaFilters struct     {
+type QueryLiveDomainDetailResponseDataAccessCtrlsUaFilters struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。"}
   DataId *string `json:"dataId,omitempty" xml:"dataId,omitempty" require:"true"`
   // {"en":"Priority", "zh_CN":"优先级"}
@@ -6441,50 +6441,50 @@ type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUaFilters 
   UaRegex []*string `json:"uaRegex,omitempty" xml:"uaRegex,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUaFilters) String() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsUaFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUaFilters) GoString() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsUaFilters) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUaFilters) SetDataId(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUaFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsUaFilters) SetDataId(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsUaFilters {
   s.DataId = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUaFilters) SetPriority(v int) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUaFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsUaFilters) SetPriority(v int) *QueryLiveDomainDetailResponseDataAccessCtrlsUaFilters {
   s.Priority = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUaFilters) SetUrlRegex(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUaFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsUaFilters) SetUrlRegex(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsUaFilters {
   s.UrlRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUaFilters) SetFileTypes(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUaFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsUaFilters) SetFileTypes(v []*string) *QueryLiveDomainDetailResponseDataAccessCtrlsUaFilters {
   s.FileTypes = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUaFilters) SetFileQueryLiveDomainDetailPaths(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUaFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsUaFilters) SetFileQueryLiveDomainDetailPaths(v []*string) *QueryLiveDomainDetailResponseDataAccessCtrlsUaFilters {
   s.FileQueryLiveDomainDetailPaths = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUaFilters) SetType(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUaFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsUaFilters) SetType(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsUaFilters {
   s.Type = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUaFilters) SetUaRegex(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUaFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsUaFilters) SetUaRegex(v []*string) *QueryLiveDomainDetailResponseDataAccessCtrlsUaFilters {
   s.UaRegex = v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths struct     {
+type QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。"}
   DataId *string `json:"dataId,omitempty" xml:"dataId,omitempty" require:"true"`
   // {"en":"URL Regex", "zh_CN":"url匹配规则"}
@@ -6509,70 +6509,70 @@ type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths s
   Period *int `json:"period,omitempty" xml:"period,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) String() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) GoString() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetDataId(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetDataId(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
   s.DataId = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetUrlRegex(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetUrlRegex(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
   s.UrlRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetFileTypes(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetFileTypes(v []*string) *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
   s.FileTypes = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetFileQueryLiveDomainDetailPaths(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetFileQueryLiveDomainDetailPaths(v []*string) *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
   s.FileQueryLiveDomainDetailPaths = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetSignKeys(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetSignKeys(v []*string) *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
   s.SignKeys = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetTimeFormat(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetTimeFormat(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
   s.TimeFormat = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetCipherCombination(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetCipherCombination(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
   s.CipherCombination = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetSignAglo(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetSignAglo(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
   s.SignAglo = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetTimeArg(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetTimeArg(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
   s.TimeArg = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetSecretArg(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetSecretArg(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
   s.SecretArg = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetPeriod(v int) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths) SetPeriod(v int) *QueryLiveDomainDetailResponseDataAccessCtrlsUrlAuths {
   s.Period = &v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths struct     {
+type QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。"}
   DataId *string `json:"dataId,omitempty" xml:"dataId,omitempty" require:"true"`
   // {"en":"Enabled", "zh_CN":"是否启用回源鉴权"}
@@ -6584,13 +6584,13 @@ type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuth
   // {"en":"Auth URI", "zh_CN":"回源鉴权URI"}
   AuthUri *string `json:"authUri,omitempty" xml:"authUri,omitempty" require:"true"`
   // {"en":"Auth Args", "zh_CN":"回源鉴权请求参数"}
-  AuthArgs []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthArgs `json:"authArgs,omitempty" xml:"authArgs,omitempty" require:"true" type:"Repeated"`
+  AuthArgs []*QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthArgs `json:"authArgs,omitempty" xml:"authArgs,omitempty" require:"true" type:"Repeated"`
   // {"en":"Auth Method, Enum [GET, POST]", "zh_CN":"回源鉴权请求方法，可选值[GET, POST]"}
   AuthMethod *string `json:"authMethod,omitempty" xml:"authMethod,omitempty" require:"true"`
   // {"en":"Auth Use Https", "zh_CN":"回源鉴权是否启用HTTPS"}
   AuthUseHttps *bool `json:"authUseHttps,omitempty" xml:"authUseHttps,omitempty" require:"true"`
   // {"en":"Auth Result", "zh_CN":"鉴权结果判定，成功或失败的标识"}
-  AuthResult *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult `json:"authResult,omitempty" xml:"authResult,omitempty" require:"true" type:"Struct"`
+  AuthResult *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult `json:"authResult,omitempty" xml:"authResult,omitempty" require:"true" type:"Struct"`
   // {"en":"Auth Timeout, [1, 10]", "zh_CN":"鉴权超时时间，[1, 10]"}
   AuthTimeout *int `json:"authTimeout,omitempty" xml:"authTimeout,omitempty" require:"true"`
   // {"en":"Auth Timeout, [0, 30]", "zh_CN":"鉴权重试次数，[0, 30]"}
@@ -6599,100 +6599,100 @@ type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuth
   TimeoutAction *string `json:"timeoutAction,omitempty" xml:"timeoutAction,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) String() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) GoString() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetDataId(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetDataId(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
   s.DataId = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetEnabled(v bool) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetEnabled(v bool) *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
   s.Enabled = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetAuthAddress(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetAuthAddress(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
   s.AuthAddress = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetAuthHost(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetAuthHost(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
   s.AuthHost = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetAuthUri(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetAuthUri(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
   s.AuthUri = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetAuthArgs(v []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthArgs) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetAuthArgs(v []*QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthArgs) *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
   s.AuthArgs = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetAuthMethod(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetAuthMethod(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
   s.AuthMethod = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetAuthUseHttps(v bool) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetAuthUseHttps(v bool) *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
   s.AuthUseHttps = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetAuthResult(v *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetAuthResult(v *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult) *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
   s.AuthResult = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetAuthTimeout(v int) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetAuthTimeout(v int) *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
   s.AuthTimeout = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetRetryTimes(v int) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetRetryTimes(v int) *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
   s.RetryTimes = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetTimeoutAction(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths) SetTimeoutAction(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuths {
   s.TimeoutAction = &v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthArgs struct     {
+type QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthArgs struct     {
   // {"en":"Arg Name", "zh_CN":"参数名称"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {"en":"Arg Value", "zh_CN":"参数值"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthArgs) String() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthArgs) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthArgs) GoString() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthArgs) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthArgs) SetName(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthArgs {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthArgs) SetName(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthArgs {
   s.Name = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthArgs) SetValue(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthArgs {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthArgs) SetValue(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthArgs {
   s.Value = &v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult struct {
+type QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult struct {
   // {"en":"Auth Result Success Codes", "zh_CN":"鉴权成功响应状态码"}
   SuccessCodes []*string `json:"successCodes,omitempty" xml:"successCodes,omitempty" require:"true" type:"Repeated"`
   // {"en":"Auth Result Failed Codes", "zh_CN":"鉴权失败响应状态码"}
@@ -6703,35 +6703,35 @@ type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuth
   FailedBody *string `json:"failedBody,omitempty" xml:"failedBody,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult) String() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult) GoString() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult) SetSuccessCodes(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult) SetSuccessCodes(v []*string) *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult {
   s.SuccessCodes = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult) SetFailedCodes(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult) SetFailedCodes(v []*string) *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult {
   s.FailedCodes = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult) SetSuccessBody(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult) SetSuccessBody(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult {
   s.SuccessBody = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult) SetFailedBody(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult) SetFailedBody(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsRemoteAuthsAuthResult {
   s.FailedBody = &v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters struct     {
+type QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。"}
   DataId *string `json:"dataId,omitempty" xml:"dataId,omitempty" require:"true"`
   // {"en":"Priority", "zh_CN":"优先级"}
@@ -6751,146 +6751,146 @@ type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFi
   // {"en":"Exclude File QueryLiveDomainDetailPaths", "zh_CN":"文件目录取反"}
   ExcludeFileQueryLiveDomainDetailPaths []*string `json:"excludeFileQueryLiveDomainDetailPaths,omitempty" xml:"excludeFileQueryLiveDomainDetailPaths,omitempty" require:"true" type:"Repeated"`
   // {"en":"IP Filter", "zh_CN":"IP黑白名单"}
-  IpFilter *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersIpFilter `json:"ipFilter,omitempty" xml:"ipFilter,omitempty" require:"true" type:"Struct"`
+  IpFilter *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersIpFilter `json:"ipFilter,omitempty" xml:"ipFilter,omitempty" require:"true" type:"Struct"`
   // {"en":"UA Filter", "zh_CN":"UA黑白名单"}
-  UaFilter *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersUaFilter `json:"uaFilter,omitempty" xml:"uaFilter,omitempty" require:"true" type:"Struct"`
+  UaFilter *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersUaFilter `json:"uaFilter,omitempty" xml:"uaFilter,omitempty" require:"true" type:"Struct"`
   // {"en":"Referer Filter", "zh_CN":"referer黑白名单"}
-  RefererFilter *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter `json:"refererFilter,omitempty" xml:"refererFilter,omitempty" require:"true" type:"Struct"`
+  RefererFilter *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter `json:"refererFilter,omitempty" xml:"refererFilter,omitempty" require:"true" type:"Struct"`
   // {"en":"Control Action", "zh_CN":"控制动作"}
   Action *string `json:"action,omitempty" xml:"action,omitempty" require:"true"`
   // {"en":"Redirect URL", "zh_CN":"跳转到URL"}
   RedirectUrl *string `json:"redirectUrl,omitempty" xml:"redirectUrl,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) String() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) GoString() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetDataId(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetDataId(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
   s.DataId = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetPriority(v int) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetPriority(v int) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
   s.Priority = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetUrl(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetUrl(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
   s.Url = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetUrlRegex(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetUrlRegex(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
   s.UrlRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetExcludeUrlRegex(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetExcludeUrlRegex(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
   s.ExcludeUrlRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetFileTypes(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetFileTypes(v []*string) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
   s.FileTypes = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetExcludeFileTypes(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetExcludeFileTypes(v []*string) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
   s.ExcludeFileTypes = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetFileQueryLiveDomainDetailPaths(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetFileQueryLiveDomainDetailPaths(v []*string) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
   s.FileQueryLiveDomainDetailPaths = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetExcludeFileQueryLiveDomainDetailPaths(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetExcludeFileQueryLiveDomainDetailPaths(v []*string) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
   s.ExcludeFileQueryLiveDomainDetailPaths = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetIpFilter(v *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersIpFilter) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetIpFilter(v *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersIpFilter) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
   s.IpFilter = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetUaFilter(v *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersUaFilter) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetUaFilter(v *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersUaFilter) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
   s.UaFilter = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetRefererFilter(v *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetRefererFilter(v *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
   s.RefererFilter = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetAction(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetAction(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
   s.Action = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetRedirectUrl(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters) SetRedirectUrl(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFilters {
   s.RedirectUrl = &v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersIpFilter struct {
+type QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersIpFilter struct {
   // {"en":"Blacklist or Whitelist, Enum[blacklist, whitelist]", "zh_CN":"黑名单或白名单，可选值[blacklist, whitelist]"}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
   // {"en":"IP List", "zh_CN":"IP或IP段"}
   Ips []*string `json:"ips,omitempty" xml:"ips,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersIpFilter) String() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersIpFilter) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersIpFilter) GoString() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersIpFilter) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersIpFilter) SetType(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersIpFilter {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersIpFilter) SetType(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersIpFilter {
   s.Type = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersIpFilter) SetIps(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersIpFilter {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersIpFilter) SetIps(v []*string) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersIpFilter {
   s.Ips = v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersUaFilter struct {
+type QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersUaFilter struct {
   // {"en":"Blacklist or Whitelist, Enum[blacklist, whitelist]", "zh_CN":"黑名单或白名单，可选值[blacklist, whitelist]"}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
   // {"en":"UA Regex", "zh_CN":"客户端UA，支持正则"}
   UaRegex []*string `json:"uaRegex,omitempty" xml:"uaRegex,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersUaFilter) String() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersUaFilter) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersUaFilter) GoString() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersUaFilter) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersUaFilter) SetType(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersUaFilter {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersUaFilter) SetType(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersUaFilter {
   s.Type = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersUaFilter) SetUaRegex(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersUaFilter {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersUaFilter) SetUaRegex(v []*string) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersUaFilter {
   s.UaRegex = v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter struct {
+type QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter struct {
   // {"en":"Blacklist or Whitelist, Enum[blacklist, whitelist]", "zh_CN":"黑名单或白名单，可选值[blacklist, whitelist]"}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
   // {"en":"Referer Regex", "zh_CN":"Referer正则"}
@@ -6903,40 +6903,40 @@ type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFi
   AllowEmptyReferer *bool `json:"allowEmptyReferer,omitempty" xml:"allowEmptyReferer,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter) String() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter) GoString() string {
+func (s QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter) SetType(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter) SetType(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter {
   s.Type = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter) SetRefererRegex(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter) SetRefererRegex(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter {
   s.RefererRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter) SetRefererUrl(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter) SetRefererUrl(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter {
   s.RefererUrl = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter) SetRefererDomain(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter) SetRefererDomain(v string) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter {
   s.RefererDomain = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter) SetAllowEmptyReferer(v bool) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter {
+func (s *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter) SetAllowEmptyReferer(v bool) *QueryLiveDomainDetailResponseDataAccessCtrlsCombinedFiltersRefererFilter {
   s.AllowEmptyReferer = &v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules struct     {
+type QueryLiveDomainDetailResponseDataHeaderRules struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。
   // dataId可以通过查询接口获取。
   // 注意：添加grid类型标识：dataId，每一组配置对应一个dataId：
@@ -6960,87 +6960,87 @@ type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules struct   
   HeaderValue *string `json:"headerValue,omitempty" xml:"headerValue,omitempty"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules) String() string {
+func (s QueryLiveDomainDetailResponseDataHeaderRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules) GoString() string {
+func (s QueryLiveDomainDetailResponseDataHeaderRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules) SetDataId(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules {
+func (s *QueryLiveDomainDetailResponseDataHeaderRules) SetDataId(v string) *QueryLiveDomainDetailResponseDataHeaderRules {
   s.DataId = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules) SetUrlRegex(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules {
+func (s *QueryLiveDomainDetailResponseDataHeaderRules) SetUrlRegex(v string) *QueryLiveDomainDetailResponseDataHeaderRules {
   s.UrlRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules) SetFileTypes(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules {
+func (s *QueryLiveDomainDetailResponseDataHeaderRules) SetFileTypes(v []*string) *QueryLiveDomainDetailResponseDataHeaderRules {
   s.FileTypes = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules) SetFileQueryLiveDomainDetailPaths(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules {
+func (s *QueryLiveDomainDetailResponseDataHeaderRules) SetFileQueryLiveDomainDetailPaths(v []*string) *QueryLiveDomainDetailResponseDataHeaderRules {
   s.FileQueryLiveDomainDetailPaths = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules) SetHeaderName(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules {
+func (s *QueryLiveDomainDetailResponseDataHeaderRules) SetHeaderName(v string) *QueryLiveDomainDetailResponseDataHeaderRules {
   s.HeaderName = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules) SetHeaderType(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules {
+func (s *QueryLiveDomainDetailResponseDataHeaderRules) SetHeaderType(v string) *QueryLiveDomainDetailResponseDataHeaderRules {
   s.HeaderType = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules) SetAction(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules {
+func (s *QueryLiveDomainDetailResponseDataHeaderRules) SetAction(v string) *QueryLiveDomainDetailResponseDataHeaderRules {
   s.Action = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules) SetHeaderValue(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHeaderRules {
+func (s *QueryLiveDomainDetailResponseDataHeaderRules) SetHeaderValue(v string) *QueryLiveDomainDetailResponseDataHeaderRules {
   s.HeaderValue = &v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHls struct {
+type QueryLiveDomainDetailResponseDataHls struct {
   // {"en":"Slices", "zh_CN":"多协议输出-HLS"}
-  Slices *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsSlices `json:"slices,omitempty" xml:"slices,omitempty" type:"Struct"`
+  Slices *QueryLiveDomainDetailResponseDataHlsSlices `json:"slices,omitempty" xml:"slices,omitempty" type:"Struct"`
   // {"en":"Cache Time Rules", "zh_CN":"节点缓存-缓存时间配置"}
-  CacheTimeRules []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsCacheTimeRules `json:"cacheTimeRules,omitempty" xml:"cacheTimeRules,omitempty" type:"Repeated"`
+  CacheTimeRules []*QueryLiveDomainDetailResponseDataHlsCacheTimeRules `json:"cacheTimeRules,omitempty" xml:"cacheTimeRules,omitempty" type:"Repeated"`
   // {"en":"Query String Rules", "zh_CN":"节点缓存-带问号缓存配置"}
-  QueryStringRules []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules `json:"queryStringRules,omitempty" xml:"queryStringRules,omitempty" type:"Repeated"`
+  QueryStringRules []*QueryLiveDomainDetailResponseDataHlsQueryStringRules `json:"queryStringRules,omitempty" xml:"queryStringRules,omitempty" type:"Repeated"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHls) String() string {
+func (s QueryLiveDomainDetailResponseDataHls) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHls) GoString() string {
+func (s QueryLiveDomainDetailResponseDataHls) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHls) SetSlices(v *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsSlices) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHls {
+func (s *QueryLiveDomainDetailResponseDataHls) SetSlices(v *QueryLiveDomainDetailResponseDataHlsSlices) *QueryLiveDomainDetailResponseDataHls {
   s.Slices = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHls) SetCacheTimeRules(v []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsCacheTimeRules) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHls {
+func (s *QueryLiveDomainDetailResponseDataHls) SetCacheTimeRules(v []*QueryLiveDomainDetailResponseDataHlsCacheTimeRules) *QueryLiveDomainDetailResponseDataHls {
   s.CacheTimeRules = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHls) SetQueryStringRules(v []*QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHls {
+func (s *QueryLiveDomainDetailResponseDataHls) SetQueryStringRules(v []*QueryLiveDomainDetailResponseDataHlsQueryStringRules) *QueryLiveDomainDetailResponseDataHls {
   s.QueryStringRules = v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsSlices struct {
+type QueryLiveDomainDetailResponseDataHlsSlices struct {
   // {"en":"Enable HLS", "zh_CN":"是否启用HLS"}
   EnableHls *bool `json:"enableHls,omitempty" xml:"enableHls,omitempty" require:"true"`
   // {"en":"M3u8 Seg Num", "zh_CN":"普通m3u8切片个数"}
@@ -7053,40 +7053,40 @@ type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsSlices struct {
   NewMetaSeqReset *bool `json:"newMetaSeqReset,omitempty" xml:"newMetaSeqReset,omitempty"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsSlices) String() string {
+func (s QueryLiveDomainDetailResponseDataHlsSlices) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsSlices) GoString() string {
+func (s QueryLiveDomainDetailResponseDataHlsSlices) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsSlices) SetEnableHls(v bool) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsSlices {
+func (s *QueryLiveDomainDetailResponseDataHlsSlices) SetEnableHls(v bool) *QueryLiveDomainDetailResponseDataHlsSlices {
   s.EnableHls = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsSlices) SetM3u8SegNum(v int) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsSlices {
+func (s *QueryLiveDomainDetailResponseDataHlsSlices) SetM3u8SegNum(v int) *QueryLiveDomainDetailResponseDataHlsSlices {
   s.M3u8SegNum = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsSlices) SetFirstM3u8SegNum(v int) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsSlices {
+func (s *QueryLiveDomainDetailResponseDataHlsSlices) SetFirstM3u8SegNum(v int) *QueryLiveDomainDetailResponseDataHlsSlices {
   s.FirstM3u8SegNum = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsSlices) SetSegDuration(v int) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsSlices {
+func (s *QueryLiveDomainDetailResponseDataHlsSlices) SetSegDuration(v int) *QueryLiveDomainDetailResponseDataHlsSlices {
   s.SegDuration = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsSlices) SetNewMetaSeqReset(v bool) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsSlices {
+func (s *QueryLiveDomainDetailResponseDataHlsSlices) SetNewMetaSeqReset(v bool) *QueryLiveDomainDetailResponseDataHlsSlices {
   s.NewMetaSeqReset = &v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsCacheTimeRules struct     {
+type QueryLiveDomainDetailResponseDataHlsCacheTimeRules struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。
   // dataId可以通过查询接口获取。
   // 注意：添加grid类型标识：dataId，每一组配置对应一个dataId：
@@ -7106,45 +7106,45 @@ type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsCacheTimeRules str
   CacheTime *string `json:"cacheTime,omitempty" xml:"cacheTime,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsCacheTimeRules) String() string {
+func (s QueryLiveDomainDetailResponseDataHlsCacheTimeRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsCacheTimeRules) GoString() string {
+func (s QueryLiveDomainDetailResponseDataHlsCacheTimeRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsCacheTimeRules) SetDataId(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsCacheTimeRules {
+func (s *QueryLiveDomainDetailResponseDataHlsCacheTimeRules) SetDataId(v string) *QueryLiveDomainDetailResponseDataHlsCacheTimeRules {
   s.DataId = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsCacheTimeRules) SetPriority(v int) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsCacheTimeRules {
+func (s *QueryLiveDomainDetailResponseDataHlsCacheTimeRules) SetPriority(v int) *QueryLiveDomainDetailResponseDataHlsCacheTimeRules {
   s.Priority = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsCacheTimeRules) SetUrlRegex(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsCacheTimeRules {
+func (s *QueryLiveDomainDetailResponseDataHlsCacheTimeRules) SetUrlRegex(v string) *QueryLiveDomainDetailResponseDataHlsCacheTimeRules {
   s.UrlRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsCacheTimeRules) SetFileTypes(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsCacheTimeRules {
+func (s *QueryLiveDomainDetailResponseDataHlsCacheTimeRules) SetFileTypes(v []*string) *QueryLiveDomainDetailResponseDataHlsCacheTimeRules {
   s.FileTypes = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsCacheTimeRules) SetFileQueryLiveDomainDetailPaths(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsCacheTimeRules {
+func (s *QueryLiveDomainDetailResponseDataHlsCacheTimeRules) SetFileQueryLiveDomainDetailPaths(v []*string) *QueryLiveDomainDetailResponseDataHlsCacheTimeRules {
   s.FileQueryLiveDomainDetailPaths = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsCacheTimeRules) SetCacheTime(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsCacheTimeRules {
+func (s *QueryLiveDomainDetailResponseDataHlsCacheTimeRules) SetCacheTime(v string) *QueryLiveDomainDetailResponseDataHlsCacheTimeRules {
   s.CacheTime = &v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules struct     {
+type QueryLiveDomainDetailResponseDataHlsQueryStringRules struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。
   // dataId可以通过查询接口获取。
   // 注意：添加grid类型标识：dataId，每一组配置对应一个dataId：
@@ -7168,55 +7168,55 @@ type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules s
   QueryString2Origin *bool `json:"queryString2Origin,omitempty" xml:"queryString2Origin,omitempty"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules) String() string {
+func (s QueryLiveDomainDetailResponseDataHlsQueryStringRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules) GoString() string {
+func (s QueryLiveDomainDetailResponseDataHlsQueryStringRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules) SetDataId(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules {
+func (s *QueryLiveDomainDetailResponseDataHlsQueryStringRules) SetDataId(v string) *QueryLiveDomainDetailResponseDataHlsQueryStringRules {
   s.DataId = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules) SetPriority(v int) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules {
+func (s *QueryLiveDomainDetailResponseDataHlsQueryStringRules) SetPriority(v int) *QueryLiveDomainDetailResponseDataHlsQueryStringRules {
   s.Priority = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules) SetUrlRegex(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules {
+func (s *QueryLiveDomainDetailResponseDataHlsQueryStringRules) SetUrlRegex(v string) *QueryLiveDomainDetailResponseDataHlsQueryStringRules {
   s.UrlRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules) SetFileTypes(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules {
+func (s *QueryLiveDomainDetailResponseDataHlsQueryStringRules) SetFileTypes(v []*string) *QueryLiveDomainDetailResponseDataHlsQueryStringRules {
   s.FileTypes = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules) SetFileQueryLiveDomainDetailPaths(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules {
+func (s *QueryLiveDomainDetailResponseDataHlsQueryStringRules) SetFileQueryLiveDomainDetailPaths(v []*string) *QueryLiveDomainDetailResponseDataHlsQueryStringRules {
   s.FileQueryLiveDomainDetailPaths = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules) SetIgnoreQueryString(v bool) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules {
+func (s *QueryLiveDomainDetailResponseDataHlsQueryStringRules) SetIgnoreQueryString(v bool) *QueryLiveDomainDetailResponseDataHlsQueryStringRules {
   s.IgnoreQueryString = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules) SetIgnoreCase(v bool) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules {
+func (s *QueryLiveDomainDetailResponseDataHlsQueryStringRules) SetIgnoreCase(v bool) *QueryLiveDomainDetailResponseDataHlsQueryStringRules {
   s.IgnoreCase = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules) SetQueryString2Origin(v bool) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataHlsQueryStringRules {
+func (s *QueryLiveDomainDetailResponseDataHlsQueryStringRules) SetQueryString2Origin(v bool) *QueryLiveDomainDetailResponseDataHlsQueryStringRules {
   s.QueryString2Origin = &v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports struct     {
+type QueryLiveDomainDetailResponseDataPublishReports struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。
   // dataId可以通过查询接口获取。
   // 注意：添加grid类型标识：dataId，每一组配置对应一个dataId：
@@ -7239,77 +7239,77 @@ type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports struct
   // {"en":"Start Uri", "zh_CN":"推流开始汇报URI"}
   StartUri *string `json:"startUri,omitempty" xml:"startUri,omitempty" require:"true"`
   // {"en":"Start Args", "zh_CN":"推流开始汇报参数"}
-  StartArgs *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs `json:"startArgs,omitempty" xml:"startArgs,omitempty" require:"true" type:"Struct"`
+  StartArgs *QueryLiveDomainDetailResponseDataPublishReportsStartArgs `json:"startArgs,omitempty" xml:"startArgs,omitempty" require:"true" type:"Struct"`
   // {"en":"Stop Uri", "zh_CN":"推流结束汇报URI"}
   StopUri *string `json:"stopUri,omitempty" xml:"stopUri,omitempty" require:"true"`
   // {"en":"Stop Args", "zh_CN":"推流结束汇报参数"}
-  StopArgs *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs `json:"stopArgs,omitempty" xml:"stopArgs,omitempty" require:"true" type:"Struct"`
+  StopArgs *QueryLiveDomainDetailResponseDataPublishReportsStopArgs `json:"stopArgs,omitempty" xml:"stopArgs,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports) String() string {
+func (s QueryLiveDomainDetailResponseDataPublishReports) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports) GoString() string {
+func (s QueryLiveDomainDetailResponseDataPublishReports) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports) SetDataId(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports {
+func (s *QueryLiveDomainDetailResponseDataPublishReports) SetDataId(v string) *QueryLiveDomainDetailResponseDataPublishReports {
   s.DataId = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports) SetAppNames(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports {
+func (s *QueryLiveDomainDetailResponseDataPublishReports) SetAppNames(v []*string) *QueryLiveDomainDetailResponseDataPublishReports {
   s.AppNames = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports) SetEnabled(v bool) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports {
+func (s *QueryLiveDomainDetailResponseDataPublishReports) SetEnabled(v bool) *QueryLiveDomainDetailResponseDataPublishReports {
   s.Enabled = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports) SetReportMethod(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports {
+func (s *QueryLiveDomainDetailResponseDataPublishReports) SetReportMethod(v string) *QueryLiveDomainDetailResponseDataPublishReports {
   s.ReportMethod = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports) SetReportAddress(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports {
+func (s *QueryLiveDomainDetailResponseDataPublishReports) SetReportAddress(v string) *QueryLiveDomainDetailResponseDataPublishReports {
   s.ReportAddress = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports) SetEnableHttps(v bool) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports {
+func (s *QueryLiveDomainDetailResponseDataPublishReports) SetEnableHttps(v bool) *QueryLiveDomainDetailResponseDataPublishReports {
   s.EnableHttps = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports) SetSignKey(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports {
+func (s *QueryLiveDomainDetailResponseDataPublishReports) SetSignKey(v string) *QueryLiveDomainDetailResponseDataPublishReports {
   s.SignKey = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports) SetStartUri(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports {
+func (s *QueryLiveDomainDetailResponseDataPublishReports) SetStartUri(v string) *QueryLiveDomainDetailResponseDataPublishReports {
   s.StartUri = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports) SetStartArgs(v *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports {
+func (s *QueryLiveDomainDetailResponseDataPublishReports) SetStartArgs(v *QueryLiveDomainDetailResponseDataPublishReportsStartArgs) *QueryLiveDomainDetailResponseDataPublishReports {
   s.StartArgs = v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports) SetStopUri(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports {
+func (s *QueryLiveDomainDetailResponseDataPublishReports) SetStopUri(v string) *QueryLiveDomainDetailResponseDataPublishReports {
   s.StopUri = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports) SetStopArgs(v *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReports {
+func (s *QueryLiveDomainDetailResponseDataPublishReports) SetStopArgs(v *QueryLiveDomainDetailResponseDataPublishReportsStopArgs) *QueryLiveDomainDetailResponseDataPublishReports {
   s.StopArgs = v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs struct {
+type QueryLiveDomainDetailResponseDataPublishReportsStartArgs struct {
   // {"en":"Client IP", "zh_CN":"客户端IP汇报参数名称"}
   ClientIp *string `json:"clientIp,omitempty" xml:"clientIp,omitempty" require:"true"`
   // {"en":"Server IP", "zh_CN":"服务器IP汇报参数名称"}
@@ -7332,65 +7332,65 @@ type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartAr
   RequestArgs []*string `json:"requestArgs,omitempty" xml:"requestArgs,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs) String() string {
+func (s QueryLiveDomainDetailResponseDataPublishReportsStartArgs) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs) GoString() string {
+func (s QueryLiveDomainDetailResponseDataPublishReportsStartArgs) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs) SetClientIp(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs {
+func (s *QueryLiveDomainDetailResponseDataPublishReportsStartArgs) SetClientIp(v string) *QueryLiveDomainDetailResponseDataPublishReportsStartArgs {
   s.ClientIp = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs) SetServerIp(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs {
+func (s *QueryLiveDomainDetailResponseDataPublishReportsStartArgs) SetServerIp(v string) *QueryLiveDomainDetailResponseDataPublishReportsStartArgs {
   s.ServerIp = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs) SetStreamName(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs {
+func (s *QueryLiveDomainDetailResponseDataPublishReportsStartArgs) SetStreamName(v string) *QueryLiveDomainDetailResponseDataPublishReportsStartArgs {
   s.StreamName = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs) SetHost(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs {
+func (s *QueryLiveDomainDetailResponseDataPublishReportsStartArgs) SetHost(v string) *QueryLiveDomainDetailResponseDataPublishReportsStartArgs {
   s.Host = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs) SetAppName(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs {
+func (s *QueryLiveDomainDetailResponseDataPublishReportsStartArgs) SetAppName(v string) *QueryLiveDomainDetailResponseDataPublishReportsStartArgs {
   s.AppName = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs) SetPort(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs {
+func (s *QueryLiveDomainDetailResponseDataPublishReportsStartArgs) SetPort(v string) *QueryLiveDomainDetailResponseDataPublishReportsStartArgs {
   s.Port = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs) SetTime(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs {
+func (s *QueryLiveDomainDetailResponseDataPublishReportsStartArgs) SetTime(v string) *QueryLiveDomainDetailResponseDataPublishReportsStartArgs {
   s.Time = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs) SetMilltime(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs {
+func (s *QueryLiveDomainDetailResponseDataPublishReportsStartArgs) SetMilltime(v string) *QueryLiveDomainDetailResponseDataPublishReportsStartArgs {
   s.Milltime = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs) SetMd5Sign(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs {
+func (s *QueryLiveDomainDetailResponseDataPublishReportsStartArgs) SetMd5Sign(v string) *QueryLiveDomainDetailResponseDataPublishReportsStartArgs {
   s.Md5Sign = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs) SetRequestArgs(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStartArgs {
+func (s *QueryLiveDomainDetailResponseDataPublishReportsStartArgs) SetRequestArgs(v []*string) *QueryLiveDomainDetailResponseDataPublishReportsStartArgs {
   s.RequestArgs = v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs struct {
+type QueryLiveDomainDetailResponseDataPublishReportsStopArgs struct {
   // {"en":"Client IP", "zh_CN":"客户端IP汇报参数名称"}
   ClientIp *string `json:"clientIp,omitempty" xml:"clientIp,omitempty" require:"true"`
   // {"en":"Server IP", "zh_CN":"服务器IP汇报参数名称"}
@@ -7413,65 +7413,65 @@ type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArg
   RequestArgs []*string `json:"requestArgs,omitempty" xml:"requestArgs,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs) String() string {
+func (s QueryLiveDomainDetailResponseDataPublishReportsStopArgs) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs) GoString() string {
+func (s QueryLiveDomainDetailResponseDataPublishReportsStopArgs) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs) SetClientIp(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs {
+func (s *QueryLiveDomainDetailResponseDataPublishReportsStopArgs) SetClientIp(v string) *QueryLiveDomainDetailResponseDataPublishReportsStopArgs {
   s.ClientIp = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs) SetServerIp(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs {
+func (s *QueryLiveDomainDetailResponseDataPublishReportsStopArgs) SetServerIp(v string) *QueryLiveDomainDetailResponseDataPublishReportsStopArgs {
   s.ServerIp = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs) SetStreamName(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs {
+func (s *QueryLiveDomainDetailResponseDataPublishReportsStopArgs) SetStreamName(v string) *QueryLiveDomainDetailResponseDataPublishReportsStopArgs {
   s.StreamName = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs) SetHost(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs {
+func (s *QueryLiveDomainDetailResponseDataPublishReportsStopArgs) SetHost(v string) *QueryLiveDomainDetailResponseDataPublishReportsStopArgs {
   s.Host = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs) SetAppName(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs {
+func (s *QueryLiveDomainDetailResponseDataPublishReportsStopArgs) SetAppName(v string) *QueryLiveDomainDetailResponseDataPublishReportsStopArgs {
   s.AppName = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs) SetPort(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs {
+func (s *QueryLiveDomainDetailResponseDataPublishReportsStopArgs) SetPort(v string) *QueryLiveDomainDetailResponseDataPublishReportsStopArgs {
   s.Port = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs) SetTime(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs {
+func (s *QueryLiveDomainDetailResponseDataPublishReportsStopArgs) SetTime(v string) *QueryLiveDomainDetailResponseDataPublishReportsStopArgs {
   s.Time = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs) SetMilltime(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs {
+func (s *QueryLiveDomainDetailResponseDataPublishReportsStopArgs) SetMilltime(v string) *QueryLiveDomainDetailResponseDataPublishReportsStopArgs {
   s.Milltime = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs) SetMd5Sign(v string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs {
+func (s *QueryLiveDomainDetailResponseDataPublishReportsStopArgs) SetMd5Sign(v string) *QueryLiveDomainDetailResponseDataPublishReportsStopArgs {
   s.Md5Sign = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs) SetRequestArgs(v []*string) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataPublishReportsStopArgs {
+func (s *QueryLiveDomainDetailResponseDataPublishReportsStopArgs) SetRequestArgs(v []*string) *QueryLiveDomainDetailResponseDataPublishReportsStopArgs {
   s.RequestArgs = v
   return s
 }
 
-type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataMisc struct {
+type QueryLiveDomainDetailResponseDataMisc struct {
   // {"en":"Enable HTTP2", "zh_CN":"是否启用HTTP2"}
   EnableHttp2 *bool `json:"enableHttp2,omitempty" xml:"enableHttp2,omitempty" require:"true"`
   // {"en":"Redirect Http To Https", "zh_CN":"请求协议类型"}
@@ -7482,30 +7482,30 @@ type QueryLiveDomainDetailQueryLiveDomainDetailResponseDataMisc struct {
   DisableHdl *bool `json:"disableHdl,omitempty" xml:"disableHdl,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataMisc) String() string {
+func (s QueryLiveDomainDetailResponseDataMisc) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainDetailQueryLiveDomainDetailResponseDataMisc) GoString() string {
+func (s QueryLiveDomainDetailResponseDataMisc) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataMisc) SetEnableHttp2(v bool) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataMisc {
+func (s *QueryLiveDomainDetailResponseDataMisc) SetEnableHttp2(v bool) *QueryLiveDomainDetailResponseDataMisc {
   s.EnableHttp2 = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataMisc) SetRedirectHttpToHttps(v bool) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataMisc {
+func (s *QueryLiveDomainDetailResponseDataMisc) SetRedirectHttpToHttps(v bool) *QueryLiveDomainDetailResponseDataMisc {
   s.RedirectHttpToHttps = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataMisc) SetDisableRtmp(v bool) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataMisc {
+func (s *QueryLiveDomainDetailResponseDataMisc) SetDisableRtmp(v bool) *QueryLiveDomainDetailResponseDataMisc {
   s.DisableRtmp = &v
   return s
 }
 
-func (s *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataMisc) SetDisableHdl(v bool) *QueryLiveDomainDetailQueryLiveDomainDetailResponseDataMisc {
+func (s *QueryLiveDomainDetailResponseDataMisc) SetDisableHdl(v bool) *QueryLiveDomainDetailResponseDataMisc {
   s.DisableHdl = &v
   return s
 }
@@ -7583,7 +7583,7 @@ type QueryHttp2SettingsConfigForWplusResponse struct {
   // {"en":"Domain name or domain name id to query configuration", "zh_CN":"需要查询配置的域名id（domainId）"}
   DomainId *string `json:"domainId,omitempty" xml:"domainId,omitempty" require:"true"`
   // {"en":"Http2.0 settings, used to enable or disable http2.0, parent node.", "zh_CN":"http2.0设置，用于设置http2.0的开启或关闭，父标签"}
-  Http2Settings *QueryHttp2SettingsConfigForWplusQueryHttp2SettingsConfigForWplusResponseHttp2Settings `json:"http2Settings,omitempty" xml:"http2Settings,omitempty" require:"true" type:"Struct"`
+  Http2Settings *QueryHttp2SettingsConfigForWplusResponseHttp2Settings `json:"http2Settings,omitempty" xml:"http2Settings,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryHttp2SettingsConfigForWplusResponse) String() string {
@@ -7604,12 +7604,12 @@ func (s *QueryHttp2SettingsConfigForWplusResponse) SetDomainId(v string) *QueryH
   return s
 }
 
-func (s *QueryHttp2SettingsConfigForWplusResponse) SetHttp2Settings(v *QueryHttp2SettingsConfigForWplusQueryHttp2SettingsConfigForWplusResponseHttp2Settings) *QueryHttp2SettingsConfigForWplusResponse {
+func (s *QueryHttp2SettingsConfigForWplusResponse) SetHttp2Settings(v *QueryHttp2SettingsConfigForWplusResponseHttp2Settings) *QueryHttp2SettingsConfigForWplusResponse {
   s.Http2Settings = v
   return s
 }
 
-type QueryHttp2SettingsConfigForWplusQueryHttp2SettingsConfigForWplusResponseHttp2Settings struct {
+type QueryHttp2SettingsConfigForWplusResponseHttp2Settings struct {
   // {"en":"Enable http2.0. The optional values are true and false. If it is empty, the default value is false. True means http2.0 is on; false means http2.0 is off.", "zh_CN":"开启http2.0，可选值为true和false，为空时默认为false。true表示开启http2.0；false表示关闭http2.0"}
   EnableHttp2 *bool `json:"enableHttp2,omitempty" xml:"enableHttp2,omitempty" require:"true"`
   // {"en":"Back-to-origin protocol, the optional value is
@@ -7622,20 +7622,20 @@ type QueryHttp2SettingsConfigForWplusQueryHttp2SettingsConfigForWplusResponseHtt
   BackToOriginProtocol *string `json:"backToOriginProtocol,omitempty" xml:"backToOriginProtocol,omitempty" require:"true"`
 }
 
-func (s QueryHttp2SettingsConfigForWplusQueryHttp2SettingsConfigForWplusResponseHttp2Settings) String() string {
+func (s QueryHttp2SettingsConfigForWplusResponseHttp2Settings) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryHttp2SettingsConfigForWplusQueryHttp2SettingsConfigForWplusResponseHttp2Settings) GoString() string {
+func (s QueryHttp2SettingsConfigForWplusResponseHttp2Settings) GoString() string {
   return s.String()
 }
 
-func (s *QueryHttp2SettingsConfigForWplusQueryHttp2SettingsConfigForWplusResponseHttp2Settings) SetEnableHttp2(v bool) *QueryHttp2SettingsConfigForWplusQueryHttp2SettingsConfigForWplusResponseHttp2Settings {
+func (s *QueryHttp2SettingsConfigForWplusResponseHttp2Settings) SetEnableHttp2(v bool) *QueryHttp2SettingsConfigForWplusResponseHttp2Settings {
   s.EnableHttp2 = &v
   return s
 }
 
-func (s *QueryHttp2SettingsConfigForWplusQueryHttp2SettingsConfigForWplusResponseHttp2Settings) SetBackToOriginProtocol(v string) *QueryHttp2SettingsConfigForWplusQueryHttp2SettingsConfigForWplusResponseHttp2Settings {
+func (s *QueryHttp2SettingsConfigForWplusResponseHttp2Settings) SetBackToOriginProtocol(v string) *QueryHttp2SettingsConfigForWplusResponseHttp2Settings {
   s.BackToOriginProtocol = &v
   return s
 }
@@ -7711,7 +7711,7 @@ type QueryLiveDomainPublishReportsResponse struct {
   // {"en":"Reponse message.", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data", "zh_CN":"响应数据"}
-  Data *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryLiveDomainPublishReportsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryLiveDomainPublishReportsResponse) String() string {
@@ -7732,30 +7732,30 @@ func (s *QueryLiveDomainPublishReportsResponse) SetMessage(v string) *QueryLiveD
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsResponse) SetData(v *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseData) *QueryLiveDomainPublishReportsResponse {
+func (s *QueryLiveDomainPublishReportsResponse) SetData(v *QueryLiveDomainPublishReportsResponseData) *QueryLiveDomainPublishReportsResponse {
   s.Data = v
   return s
 }
 
-type QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseData struct {
+type QueryLiveDomainPublishReportsResponseData struct {
   // {"en":"Publish Reports", "zh_CN":"推流汇报配置"}
-  PublishReports []*QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports `json:"publishReports,omitempty" xml:"publishReports,omitempty" require:"true" type:"Repeated"`
+  PublishReports []*QueryLiveDomainPublishReportsResponseDataPublishReports `json:"publishReports,omitempty" xml:"publishReports,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseData) String() string {
+func (s QueryLiveDomainPublishReportsResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseData) GoString() string {
+func (s QueryLiveDomainPublishReportsResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseData) SetPublishReports(v []*QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseData {
+func (s *QueryLiveDomainPublishReportsResponseData) SetPublishReports(v []*QueryLiveDomainPublishReportsResponseDataPublishReports) *QueryLiveDomainPublishReportsResponseData {
   s.PublishReports = v
   return s
 }
 
-type QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports struct     {
+type QueryLiveDomainPublishReportsResponseDataPublishReports struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。
   // dataId可以通过查询接口获取。
   // 注意：添加grid类型标识：dataId，每一组配置对应一个dataId：
@@ -7778,77 +7778,77 @@ type QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPubli
   // {"en":"Start Uri", "zh_CN":"推流开始汇报URI"}
   StartUri *string `json:"startUri,omitempty" xml:"startUri,omitempty" require:"true"`
   // {"en":"Start Args", "zh_CN":"推流开始汇报参数"}
-  StartArgs *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs `json:"startArgs,omitempty" xml:"startArgs,omitempty" require:"true" type:"Struct"`
+  StartArgs *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs `json:"startArgs,omitempty" xml:"startArgs,omitempty" require:"true" type:"Struct"`
   // {"en":"Stop Uri", "zh_CN":"推流结束汇报URI"}
   StopUri *string `json:"stopUri,omitempty" xml:"stopUri,omitempty" require:"true"`
   // {"en":"Stop Args", "zh_CN":"推流结束汇报参数"}
-  StopArgs *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs `json:"stopArgs,omitempty" xml:"stopArgs,omitempty" require:"true" type:"Struct"`
+  StopArgs *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs `json:"stopArgs,omitempty" xml:"stopArgs,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports) String() string {
+func (s QueryLiveDomainPublishReportsResponseDataPublishReports) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports) GoString() string {
+func (s QueryLiveDomainPublishReportsResponseDataPublishReports) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports) SetDataId(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReports) SetDataId(v string) *QueryLiveDomainPublishReportsResponseDataPublishReports {
   s.DataId = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports) SetAppNames(v []*string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReports) SetAppNames(v []*string) *QueryLiveDomainPublishReportsResponseDataPublishReports {
   s.AppNames = v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports) SetEnabled(v bool) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReports) SetEnabled(v bool) *QueryLiveDomainPublishReportsResponseDataPublishReports {
   s.Enabled = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports) SetReportMethod(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReports) SetReportMethod(v string) *QueryLiveDomainPublishReportsResponseDataPublishReports {
   s.ReportMethod = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports) SetReportAddress(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReports) SetReportAddress(v string) *QueryLiveDomainPublishReportsResponseDataPublishReports {
   s.ReportAddress = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports) SetEnableHttps(v bool) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReports) SetEnableHttps(v bool) *QueryLiveDomainPublishReportsResponseDataPublishReports {
   s.EnableHttps = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports) SetSignKey(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReports) SetSignKey(v string) *QueryLiveDomainPublishReportsResponseDataPublishReports {
   s.SignKey = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports) SetStartUri(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReports) SetStartUri(v string) *QueryLiveDomainPublishReportsResponseDataPublishReports {
   s.StartUri = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports) SetStartArgs(v *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReports) SetStartArgs(v *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) *QueryLiveDomainPublishReportsResponseDataPublishReports {
   s.StartArgs = v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports) SetStopUri(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReports) SetStopUri(v string) *QueryLiveDomainPublishReportsResponseDataPublishReports {
   s.StopUri = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports) SetStopArgs(v *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReports {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReports) SetStopArgs(v *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) *QueryLiveDomainPublishReportsResponseDataPublishReports {
   s.StopArgs = v
   return s
 }
 
-type QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs struct {
+type QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs struct {
   // {"en":"Client IP", "zh_CN":"客户端IP汇报参数名称"}
   ClientIp *string `json:"clientIp,omitempty" xml:"clientIp,omitempty" require:"true"`
   // {"en":"Server IP", "zh_CN":"服务器IP汇报参数名称"}
@@ -7871,65 +7871,65 @@ type QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPubli
   RequestArgs []*string `json:"requestArgs,omitempty" xml:"requestArgs,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) String() string {
+func (s QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) GoString() string {
+func (s QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) SetClientIp(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) SetClientIp(v string) *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs {
   s.ClientIp = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) SetServerIp(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) SetServerIp(v string) *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs {
   s.ServerIp = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) SetStreamName(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) SetStreamName(v string) *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs {
   s.StreamName = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) SetHost(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) SetHost(v string) *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs {
   s.Host = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) SetAppName(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) SetAppName(v string) *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs {
   s.AppName = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) SetPort(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) SetPort(v string) *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs {
   s.Port = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) SetTime(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) SetTime(v string) *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs {
   s.Time = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) SetMilltime(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) SetMilltime(v string) *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs {
   s.Milltime = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) SetMd5Sign(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) SetMd5Sign(v string) *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs {
   s.Md5Sign = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) SetRequestArgs(v []*string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs) SetRequestArgs(v []*string) *QueryLiveDomainPublishReportsResponseDataPublishReportsStartArgs {
   s.RequestArgs = v
   return s
 }
 
-type QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs struct {
+type QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs struct {
   // {"en":"Client IP", "zh_CN":"客户端IP汇报参数名称"}
   ClientIp *string `json:"clientIp,omitempty" xml:"clientIp,omitempty" require:"true"`
   // {"en":"Server IP", "zh_CN":"服务器IP汇报参数名称"}
@@ -7952,60 +7952,60 @@ type QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPubli
   RequestArgs []*string `json:"requestArgs,omitempty" xml:"requestArgs,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) String() string {
+func (s QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) GoString() string {
+func (s QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) SetClientIp(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) SetClientIp(v string) *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs {
   s.ClientIp = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) SetServerIp(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) SetServerIp(v string) *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs {
   s.ServerIp = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) SetStreamName(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) SetStreamName(v string) *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs {
   s.StreamName = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) SetHost(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) SetHost(v string) *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs {
   s.Host = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) SetAppName(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) SetAppName(v string) *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs {
   s.AppName = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) SetPort(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) SetPort(v string) *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs {
   s.Port = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) SetTime(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) SetTime(v string) *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs {
   s.Time = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) SetMilltime(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) SetMilltime(v string) *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs {
   s.Milltime = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) SetMd5Sign(v string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) SetMd5Sign(v string) *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs {
   s.Md5Sign = &v
   return s
 }
 
-func (s *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) SetRequestArgs(v []*string) *QueryLiveDomainPublishReportsQueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs {
+func (s *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs) SetRequestArgs(v []*string) *QueryLiveDomainPublishReportsResponseDataPublishReportsStopArgs {
   s.RequestArgs = v
   return s
 }
@@ -8083,7 +8083,7 @@ type QueryRecordingBasicConfigurationResponse struct {
   // {"en":"Response information, when success is successful", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"response data", "zh_CN":"响应数据"}
-  Data *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryRecordingBasicConfigurationResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryRecordingBasicConfigurationResponse) String() string {
@@ -8104,12 +8104,12 @@ func (s *QueryRecordingBasicConfigurationResponse) SetMessage(v string) *QueryRe
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationResponse) SetData(v *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseData) *QueryRecordingBasicConfigurationResponse {
+func (s *QueryRecordingBasicConfigurationResponse) SetData(v *QueryRecordingBasicConfigurationResponseData) *QueryRecordingBasicConfigurationResponse {
   s.Data = v
   return s
 }
 
-type QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseData struct {
+type QueryRecordingBasicConfigurationResponseData struct {
   // {"en":"domain id", "zh_CN":"域名ID"}
   DomainId *int `json:"domainId,omitempty" xml:"domainId,omitempty" require:"true"`
   // {"en":"domain name", "zh_CN":"域名"}
@@ -8119,45 +8119,45 @@ type QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDat
   // 2. Configuration of clearing for <recordRules/>.", "zh_CN":"录制配置，父标签
   // 1.需要设置录制配置时，此项必填
   // 2.为<recordRules/>时清空配置"}
-  RecordRules []*QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRules `json:"recordRules,omitempty" xml:"recordRules,omitempty" require:"true" type:"Repeated"`
+  RecordRules []*QueryRecordingBasicConfigurationResponseDataRecordRules `json:"recordRules,omitempty" xml:"recordRules,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseData) String() string {
+func (s QueryRecordingBasicConfigurationResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseData) GoString() string {
+func (s QueryRecordingBasicConfigurationResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseData) SetDomainId(v int) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseData {
+func (s *QueryRecordingBasicConfigurationResponseData) SetDomainId(v int) *QueryRecordingBasicConfigurationResponseData {
   s.DomainId = &v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseData) SetDomainName(v string) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseData {
+func (s *QueryRecordingBasicConfigurationResponseData) SetDomainName(v string) *QueryRecordingBasicConfigurationResponseData {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseData) SetRecordRules(v []*QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRules) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseData {
+func (s *QueryRecordingBasicConfigurationResponseData) SetRecordRules(v []*QueryRecordingBasicConfigurationResponseDataRecordRules) *QueryRecordingBasicConfigurationResponseData {
   s.RecordRules = v
   return s
 }
 
-type QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRules struct     {
+type QueryRecordingBasicConfigurationResponseDataRecordRules struct     {
   // {"en":"Flv recording configuration, parent node, Set <flvSettings/>  to clear the configuration.
   // flvRecordEnabled is required when flvSettings is not empty", "zh_CN":"flv录制配置，父标签，<flvSettings/>则清除配置
   // flvSettings不为空时，flvRecordEnabled必填"}
-  FlvSettings *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings `json:"flvSettings,omitempty" xml:"flvSettings,omitempty" require:"true" type:"Struct"`
+  FlvSettings *QueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings `json:"flvSettings,omitempty" xml:"flvSettings,omitempty" require:"true" type:"Struct"`
   // {"en":"M3u8 recording configuration, parent node, Set <m3u8Settings/>  to clear the configuration.
   // m3u8RecordEnabled is required when m3u8Settings is not empty", "zh_CN":"m3u8录制配置，父标签，<m3u8Settings/>则清除配置
   // m3u8Settings不为空时，m3u8RecordEnabled必填"}
-  M3u8Settings *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings `json:"m3u8Settings,omitempty" xml:"m3u8Settings,omitempty" require:"true" type:"Struct"`
+  M3u8Settings *QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings `json:"m3u8Settings,omitempty" xml:"m3u8Settings,omitempty" require:"true" type:"Struct"`
   // {"en":"Mp4 recording configuration, parent node, Set <mp4Settings/>  to clear the configuration.
   // mp4RecordEnabled is required when mp4Settings is not empty", "zh_CN":"mp4录制配置，父标签，<mp4Settings/>则清除配置
   // mp4Settings不为空时，mp4RecordEnabled必填"}
-  Mp4Settings *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings `json:"mp4Settings,omitempty" xml:"mp4Settings,omitempty" require:"true" type:"Struct"`
+  Mp4Settings *QueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings `json:"mp4Settings,omitempty" xml:"mp4Settings,omitempty" require:"true" type:"Struct"`
   // {"en":"Setting publish point of pull push domain. This is parent Tag.
   // example:
   // <publishPoints>
@@ -8173,40 +8173,40 @@ type QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDat
   DataId *int `json:"dataId,omitempty" xml:"dataId,omitempty" require:"true"`
 }
 
-func (s QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRules) String() string {
+func (s QueryRecordingBasicConfigurationResponseDataRecordRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRules) GoString() string {
+func (s QueryRecordingBasicConfigurationResponseDataRecordRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRules) SetFlvSettings(v *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRules {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRules) SetFlvSettings(v *QueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings) *QueryRecordingBasicConfigurationResponseDataRecordRules {
   s.FlvSettings = v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRules) SetM3u8Settings(v *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRules {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRules) SetM3u8Settings(v *QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) *QueryRecordingBasicConfigurationResponseDataRecordRules {
   s.M3u8Settings = v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRules) SetMp4Settings(v *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRules {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRules) SetMp4Settings(v *QueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings) *QueryRecordingBasicConfigurationResponseDataRecordRules {
   s.Mp4Settings = v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRules) SetPublishPoints(v []*string) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRules {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRules) SetPublishPoints(v []*string) *QueryRecordingBasicConfigurationResponseDataRecordRules {
   s.PublishPoints = v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRules) SetDataId(v int) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRules {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRules) SetDataId(v int) *QueryRecordingBasicConfigurationResponseDataRecordRules {
   s.DataId = &v
   return s
 }
 
-type QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings struct {
+type QueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings struct {
   // {"en":"This item is to enable flv recording, the optional values are true and false.
   // flvSpaceName is required when flv recording is enabled. If false,  flvSpaceName,flvRecordPeriod and flvFileName will be cleared.", "zh_CN":"是否开启flv录制，可选值为true、false
   // 为是时，flvSpaceName必填;为否时，flvSpaceName、flvRecordPeriod、flvFileName"}
@@ -8231,40 +8231,40 @@ type QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDat
   FlvNoticeAddress *string `json:"flvNoticeAddress,omitempty" xml:"flvNoticeAddress,omitempty" require:"true"`
 }
 
-func (s QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings) String() string {
+func (s QueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings) GoString() string {
+func (s QueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings) GoString() string {
   return s.String()
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings) SetFlvRecordEnabled(v bool) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings) SetFlvRecordEnabled(v bool) *QueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings {
   s.FlvRecordEnabled = &v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings) SetFlvSpaceName(v string) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings) SetFlvSpaceName(v string) *QueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings {
   s.FlvSpaceName = &v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings) SetFlvFileName(v string) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings) SetFlvFileName(v string) *QueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings {
   s.FlvFileName = &v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings) SetFlvRecordPeriod(v int) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings) SetFlvRecordPeriod(v int) *QueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings {
   s.FlvRecordPeriod = &v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings) SetFlvNoticeAddress(v string) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings) SetFlvNoticeAddress(v string) *QueryRecordingBasicConfigurationResponseDataRecordRulesFlvSettings {
   s.FlvNoticeAddress = &v
   return s
 }
 
-type QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings struct {
+type QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings struct {
   // {"en":"This item is to enable m3u8 recording, the optional values are true and false.
   // m3u8SpaceName is required when flv recording is enabled. If false, m3u8SpaceName, m3u8RecordPeriod, m3u8FileName, timeShift, segmentTime, mergeTsNumber, waitTime4Keyframe will be cleared.", "zh_CN":"是否开启m3u8录制，可选值为true、false
   // 为是时，m3u8SpaceName必填。为否时，清空m3u8SpaceName、m3u8RecordPeriod、m3u8FileName、timeShift、segmentTime、mergeTsNumber、waitTime4Keyframe"}
@@ -8305,60 +8305,60 @@ type QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDat
   M3u8NoticeAddress *string `json:"m3u8NoticeAddress,omitempty" xml:"m3u8NoticeAddress,omitempty" require:"true"`
 }
 
-func (s QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) String() string {
+func (s QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) GoString() string {
+func (s QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) GoString() string {
   return s.String()
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) SetM3u8RecordEnabled(v bool) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) SetM3u8RecordEnabled(v bool) *QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings {
   s.M3u8RecordEnabled = &v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) SetM3u8SpaceName(v string) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) SetM3u8SpaceName(v string) *QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings {
   s.M3u8SpaceName = &v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) SetM3u8RecordPeriod(v int) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) SetM3u8RecordPeriod(v int) *QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings {
   s.M3u8RecordPeriod = &v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) SetM3u8FileName(v string) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) SetM3u8FileName(v string) *QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings {
   s.M3u8FileName = &v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) SetTimeShift(v bool) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) SetTimeShift(v bool) *QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings {
   s.TimeShift = &v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) SetSegmentTime(v int) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) SetSegmentTime(v int) *QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings {
   s.SegmentTime = &v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) SetMergeTsNumber(v int) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) SetMergeTsNumber(v int) *QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings {
   s.MergeTsNumber = &v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) SetWaitTime4Keyframe(v int) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) SetWaitTime4Keyframe(v int) *QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings {
   s.WaitTime4Keyframe = &v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) SetM3u8NoticeAddress(v string) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings) SetM3u8NoticeAddress(v string) *QueryRecordingBasicConfigurationResponseDataRecordRulesM3u8Settings {
   s.M3u8NoticeAddress = &v
   return s
 }
 
-type QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings struct {
+type QueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings struct {
   // {"en":"This item is to enable mp4 recording, the optional values are true and false.
   // mp4SpaceName is required when mp4 recording is enabled. If false,  mp3SpaceName and mp3RecordPeriod will be cleared.", "zh_CN":"是否开启mp4录制，可选值为true、false
   // 为是时，mp4SpaceName必填。为否时，清空mp4SpaceName和mp4RecordPeriod"}
@@ -8376,30 +8376,30 @@ type QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDat
   Mp4NoticeAddress *string `json:"mp4NoticeAddress,omitempty" xml:"mp4NoticeAddress,omitempty" require:"true"`
 }
 
-func (s QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings) String() string {
+func (s QueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings) GoString() string {
+func (s QueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings) GoString() string {
   return s.String()
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings) SetMp4RecordEnabled(v bool) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings) SetMp4RecordEnabled(v bool) *QueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings {
   s.Mp4RecordEnabled = &v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings) SetMp4SpaceName(v string) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings) SetMp4SpaceName(v string) *QueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings {
   s.Mp4SpaceName = &v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings) SetMp4RecordPeriod(v int) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings) SetMp4RecordPeriod(v int) *QueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings {
   s.Mp4RecordPeriod = &v
   return s
 }
 
-func (s *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings) SetMp4NoticeAddress(v string) *QueryRecordingBasicConfigurationQueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings {
+func (s *QueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings) SetMp4NoticeAddress(v string) *QueryRecordingBasicConfigurationResponseDataRecordRulesMp4Settings {
   s.Mp4NoticeAddress = &v
   return s
 }
@@ -8465,7 +8465,7 @@ type EditIgnoreProtocolRequest struct {
   // 2.<ignore-protocol-rules/>:Clear the configuration ignore about protocol cache and pushing", "zh_CN":"忽略协议缓存和推送配置，父标签
   // 1.需要设置忽略协议缓存和推送配置时，此项必填
   // 2.为<ignore-protocol-rules/>时清空忽略协议缓存和推送的配置"}
-  IgnoreProtocolRules []*EditIgnoreProtocolEditIgnoreProtocolRequestIgnoreProtocolRules `json:"ignore-protocol-rules,omitempty" xml:"ignore-protocol-rules,omitempty" require:"true" type:"Repeated"`
+  IgnoreProtocolRules []*EditIgnoreProtocolRequestIgnoreProtocolRules `json:"ignore-protocol-rules,omitempty" xml:"ignore-protocol-rules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s EditIgnoreProtocolRequest) String() string {
@@ -8476,12 +8476,12 @@ func (s EditIgnoreProtocolRequest) GoString() string {
   return s.String()
 }
 
-func (s *EditIgnoreProtocolRequest) SetIgnoreProtocolRules(v []*EditIgnoreProtocolEditIgnoreProtocolRequestIgnoreProtocolRules) *EditIgnoreProtocolRequest {
+func (s *EditIgnoreProtocolRequest) SetIgnoreProtocolRules(v []*EditIgnoreProtocolRequestIgnoreProtocolRules) *EditIgnoreProtocolRequest {
   s.IgnoreProtocolRules = v
   return s
 }
 
-type EditIgnoreProtocolEditIgnoreProtocolRequestIgnoreProtocolRules struct     {
+type EditIgnoreProtocolRequestIgnoreProtocolRules struct     {
   // {"en":"Url matching pattern, support regular, if all matches, input parameters can be configured as:.*", "zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*"}
   PathPattern *string `json:"path-pattern,omitempty" xml:"path-pattern,omitempty" require:"true"`
   // {"en":"The exception url matches the pattern in the same format as the path-pattern", "zh_CN":"例外的url匹配模式，格式同path-pattern"}
@@ -8504,35 +8504,35 @@ type EditIgnoreProtocolEditIgnoreProtocolRequestIgnoreProtocolRules struct     {
   DataId *int64 `json:"data-id,omitempty" xml:"data-id,omitempty"`
 }
 
-func (s EditIgnoreProtocolEditIgnoreProtocolRequestIgnoreProtocolRules) String() string {
+func (s EditIgnoreProtocolRequestIgnoreProtocolRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditIgnoreProtocolEditIgnoreProtocolRequestIgnoreProtocolRules) GoString() string {
+func (s EditIgnoreProtocolRequestIgnoreProtocolRules) GoString() string {
   return s.String()
 }
 
-func (s *EditIgnoreProtocolEditIgnoreProtocolRequestIgnoreProtocolRules) SetPathPattern(v string) *EditIgnoreProtocolEditIgnoreProtocolRequestIgnoreProtocolRules {
+func (s *EditIgnoreProtocolRequestIgnoreProtocolRules) SetPathPattern(v string) *EditIgnoreProtocolRequestIgnoreProtocolRules {
   s.PathPattern = &v
   return s
 }
 
-func (s *EditIgnoreProtocolEditIgnoreProtocolRequestIgnoreProtocolRules) SetExceptPathPattern(v string) *EditIgnoreProtocolEditIgnoreProtocolRequestIgnoreProtocolRules {
+func (s *EditIgnoreProtocolRequestIgnoreProtocolRules) SetExceptPathPattern(v string) *EditIgnoreProtocolRequestIgnoreProtocolRules {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *EditIgnoreProtocolEditIgnoreProtocolRequestIgnoreProtocolRules) SetCacheIgnoreProtocol(v string) *EditIgnoreProtocolEditIgnoreProtocolRequestIgnoreProtocolRules {
+func (s *EditIgnoreProtocolRequestIgnoreProtocolRules) SetCacheIgnoreProtocol(v string) *EditIgnoreProtocolRequestIgnoreProtocolRules {
   s.CacheIgnoreProtocol = &v
   return s
 }
 
-func (s *EditIgnoreProtocolEditIgnoreProtocolRequestIgnoreProtocolRules) SetPurgeIgnoreProtocol(v string) *EditIgnoreProtocolEditIgnoreProtocolRequestIgnoreProtocolRules {
+func (s *EditIgnoreProtocolRequestIgnoreProtocolRules) SetPurgeIgnoreProtocol(v string) *EditIgnoreProtocolRequestIgnoreProtocolRules {
   s.PurgeIgnoreProtocol = &v
   return s
 }
 
-func (s *EditIgnoreProtocolEditIgnoreProtocolRequestIgnoreProtocolRules) SetDataId(v int64) *EditIgnoreProtocolEditIgnoreProtocolRequestIgnoreProtocolRules {
+func (s *EditIgnoreProtocolRequestIgnoreProtocolRules) SetDataId(v int64) *EditIgnoreProtocolRequestIgnoreProtocolRules {
   s.DataId = &v
   return s
 }
@@ -8644,7 +8644,7 @@ type EditHttpCodeCacheRequest struct {
   // 2. Configuration of Clear Status Code Caching Rules for <http-code-cache-rules/>.", "zh_CN":"状态码缓存规则配置，父标签
   // 1.需要设置状态码缓存规则时，此项必填
   // 2.为<http-code-cache-rules/>时清空状态码缓存规则配置"}
-  HttpCodeCacheRules []*EditHttpCodeCacheEditHttpCodeCacheRequestHttpCodeCacheRules `json:"http-code-cache-rules,omitempty" xml:"http-code-cache-rules,omitempty" require:"true" type:"Repeated"`
+  HttpCodeCacheRules []*EditHttpCodeCacheRequestHttpCodeCacheRules `json:"http-code-cache-rules,omitempty" xml:"http-code-cache-rules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s EditHttpCodeCacheRequest) String() string {
@@ -8655,12 +8655,12 @@ func (s EditHttpCodeCacheRequest) GoString() string {
   return s.String()
 }
 
-func (s *EditHttpCodeCacheRequest) SetHttpCodeCacheRules(v []*EditHttpCodeCacheEditHttpCodeCacheRequestHttpCodeCacheRules) *EditHttpCodeCacheRequest {
+func (s *EditHttpCodeCacheRequest) SetHttpCodeCacheRules(v []*EditHttpCodeCacheRequestHttpCodeCacheRules) *EditHttpCodeCacheRequest {
   s.HttpCodeCacheRules = v
   return s
 }
 
-type EditHttpCodeCacheEditHttpCodeCacheRequestHttpCodeCacheRules struct     {
+type EditHttpCodeCacheRequestHttpCodeCacheRules struct     {
   // {"en":"Configure HTTP status code, parent node", "zh_CN":"配置http状态码，父标签"}
   HttpCodes []*string `json:"http-codes,omitempty" xml:"http-codes,omitempty" require:"true" type:"Repeated"`
   // {"en":"Define the caching time of the specified status code in units s, 0 to indicate no caching", "zh_CN":"配置指定的状态码的缓存时间，单位s，0表示不缓存"}
@@ -8679,25 +8679,25 @@ type EditHttpCodeCacheEditHttpCodeCacheRequestHttpCodeCacheRules struct     {
   DataId *int64 `json:"data-id,omitempty" xml:"data-id,omitempty"`
 }
 
-func (s EditHttpCodeCacheEditHttpCodeCacheRequestHttpCodeCacheRules) String() string {
+func (s EditHttpCodeCacheRequestHttpCodeCacheRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditHttpCodeCacheEditHttpCodeCacheRequestHttpCodeCacheRules) GoString() string {
+func (s EditHttpCodeCacheRequestHttpCodeCacheRules) GoString() string {
   return s.String()
 }
 
-func (s *EditHttpCodeCacheEditHttpCodeCacheRequestHttpCodeCacheRules) SetHttpCodes(v []*string) *EditHttpCodeCacheEditHttpCodeCacheRequestHttpCodeCacheRules {
+func (s *EditHttpCodeCacheRequestHttpCodeCacheRules) SetHttpCodes(v []*string) *EditHttpCodeCacheRequestHttpCodeCacheRules {
   s.HttpCodes = v
   return s
 }
 
-func (s *EditHttpCodeCacheEditHttpCodeCacheRequestHttpCodeCacheRules) SetCacheTtl(v string) *EditHttpCodeCacheEditHttpCodeCacheRequestHttpCodeCacheRules {
+func (s *EditHttpCodeCacheRequestHttpCodeCacheRules) SetCacheTtl(v string) *EditHttpCodeCacheRequestHttpCodeCacheRules {
   s.CacheTtl = &v
   return s
 }
 
-func (s *EditHttpCodeCacheEditHttpCodeCacheRequestHttpCodeCacheRules) SetDataId(v int64) *EditHttpCodeCacheEditHttpCodeCacheRequestHttpCodeCacheRules {
+func (s *EditHttpCodeCacheRequestHttpCodeCacheRules) SetDataId(v int64) *EditHttpCodeCacheRequestHttpCodeCacheRules {
   s.DataId = &v
   return s
 }
@@ -8785,7 +8785,7 @@ type EditWebsocketConfigRequest struct {
   // {"en":"Open or close websocket function, parent node, you can set <websocketSwitch/> to clear this configuration.
   // Scope of application: wsa, web pages", "zh_CN":"开启或关闭websocket功能，父标签，为<websocketSwitch/>则清空websocket开关配置
   // 适用范围：wsa、网页"}
-  WebsocketSwitch *EditWebsocketConfigEditWebsocketConfigRequestWebsocketSwitch `json:"websocketSwitch,omitempty" xml:"websocketSwitch,omitempty" require:"true" type:"Struct"`
+  WebsocketSwitch *EditWebsocketConfigRequestWebsocketSwitch `json:"websocketSwitch,omitempty" xml:"websocketSwitch,omitempty" require:"true" type:"Struct"`
 }
 
 func (s EditWebsocketConfigRequest) String() string {
@@ -8796,25 +8796,25 @@ func (s EditWebsocketConfigRequest) GoString() string {
   return s.String()
 }
 
-func (s *EditWebsocketConfigRequest) SetWebsocketSwitch(v *EditWebsocketConfigEditWebsocketConfigRequestWebsocketSwitch) *EditWebsocketConfigRequest {
+func (s *EditWebsocketConfigRequest) SetWebsocketSwitch(v *EditWebsocketConfigRequestWebsocketSwitch) *EditWebsocketConfigRequest {
   s.WebsocketSwitch = v
   return s
 }
 
-type EditWebsocketConfigEditWebsocketConfigRequestWebsocketSwitch struct {
+type EditWebsocketConfigRequestWebsocketSwitch struct {
   // {"en":"Whether to turn on the websocket function, the allowable values are true and false, default false", "zh_CN":"是否开启websocket功能,允许值为true和false，默认为否"}
   EnableWebsocket *bool `json:"enableWebsocket,omitempty" xml:"enableWebsocket,omitempty"`
 }
 
-func (s EditWebsocketConfigEditWebsocketConfigRequestWebsocketSwitch) String() string {
+func (s EditWebsocketConfigRequestWebsocketSwitch) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditWebsocketConfigEditWebsocketConfigRequestWebsocketSwitch) GoString() string {
+func (s EditWebsocketConfigRequestWebsocketSwitch) GoString() string {
   return s.String()
 }
 
-func (s *EditWebsocketConfigEditWebsocketConfigRequestWebsocketSwitch) SetEnableWebsocket(v bool) *EditWebsocketConfigEditWebsocketConfigRequestWebsocketSwitch {
+func (s *EditWebsocketConfigRequestWebsocketSwitch) SetEnableWebsocket(v bool) *EditWebsocketConfigRequestWebsocketSwitch {
   s.EnableWebsocket = &v
   return s
 }
@@ -8918,7 +8918,7 @@ type UpdateRecordingBasicConfigurationRequest struct {
   // 2. Configuration of clearing for <recordRules/>.", "zh_CN":"录制配置，父标签
   // 1.需要设置录制配置时，此项必填
   // 2.为<recordRules/>时清空配置"}
-  RecordRules []*UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRules `json:"recordRules,omitempty" xml:"recordRules,omitempty" require:"true" type:"Repeated"`
+  RecordRules []*UpdateRecordingBasicConfigurationRequestRecordRules `json:"recordRules,omitempty" xml:"recordRules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s UpdateRecordingBasicConfigurationRequest) String() string {
@@ -8929,24 +8929,24 @@ func (s UpdateRecordingBasicConfigurationRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateRecordingBasicConfigurationRequest) SetRecordRules(v []*UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRules) *UpdateRecordingBasicConfigurationRequest {
+func (s *UpdateRecordingBasicConfigurationRequest) SetRecordRules(v []*UpdateRecordingBasicConfigurationRequestRecordRules) *UpdateRecordingBasicConfigurationRequest {
   s.RecordRules = v
   return s
 }
 
-type UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRules struct     {
+type UpdateRecordingBasicConfigurationRequestRecordRules struct     {
   // {"en":"Flv recording configuration, parent node, Set <flvSettings/>  to clear the configuration.
   // flvRecordEnabled is required when flvSettings is not empty", "zh_CN":"flv录制配置，父标签，<flvSettings/>则清除配置
   // flvSettings不为空时，flvRecordEnabled必填"}
-  FlvSettings *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings `json:"flvSettings,omitempty" xml:"flvSettings,omitempty" type:"Struct"`
+  FlvSettings *UpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings `json:"flvSettings,omitempty" xml:"flvSettings,omitempty" type:"Struct"`
   // {"en":"M3u8 recording configuration, parent node, Set <m3u8Settings/>  to clear the configuration.
   // m3u8RecordEnabled is required when m3u8Settings is not empty", "zh_CN":"m3u8录制配置，父标签，<m3u8Settings/>则清除配置
   // m3u8Settings不为空时，m3u8RecordEnabled必填"}
-  M3u8Settings *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings `json:"m3u8Settings,omitempty" xml:"m3u8Settings,omitempty" type:"Struct"`
+  M3u8Settings *UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings `json:"m3u8Settings,omitempty" xml:"m3u8Settings,omitempty" type:"Struct"`
   // {"en":"Mp4 recording configuration, parent node, Set <mp4Settings/>  to clear the configuration.
   // mp4RecordEnabled is required when mp4Settings is not empty", "zh_CN":"mp4录制配置，父标签，<mp4Settings/>则清除配置
   // mp4Settings不为空时，mp4RecordEnabled必填"}
-  Mp4Settings *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings `json:"mp4Settings,omitempty" xml:"mp4Settings,omitempty" type:"Struct"`
+  Mp4Settings *UpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings `json:"mp4Settings,omitempty" xml:"mp4Settings,omitempty" type:"Struct"`
   // {"en":"Setting publish point of pull push domain. This is parent Tag.
   // example:
   // <publishPoints>
@@ -8962,40 +8962,40 @@ type UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRe
   DataId *int `json:"dataId,omitempty" xml:"dataId,omitempty"`
 }
 
-func (s UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRules) String() string {
+func (s UpdateRecordingBasicConfigurationRequestRecordRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRules) GoString() string {
+func (s UpdateRecordingBasicConfigurationRequestRecordRules) GoString() string {
   return s.String()
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRules) SetFlvSettings(v *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRules {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRules) SetFlvSettings(v *UpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings) *UpdateRecordingBasicConfigurationRequestRecordRules {
   s.FlvSettings = v
   return s
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRules) SetM3u8Settings(v *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRules {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRules) SetM3u8Settings(v *UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) *UpdateRecordingBasicConfigurationRequestRecordRules {
   s.M3u8Settings = v
   return s
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRules) SetMp4Settings(v *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRules {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRules) SetMp4Settings(v *UpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings) *UpdateRecordingBasicConfigurationRequestRecordRules {
   s.Mp4Settings = v
   return s
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRules) SetPublishPoints(v []*string) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRules {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRules) SetPublishPoints(v []*string) *UpdateRecordingBasicConfigurationRequestRecordRules {
   s.PublishPoints = v
   return s
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRules) SetDataId(v int) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRules {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRules) SetDataId(v int) *UpdateRecordingBasicConfigurationRequestRecordRules {
   s.DataId = &v
   return s
 }
 
-type UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings struct {
+type UpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings struct {
   // {"en":"This item is to enable flv recording, the optional values are true and false.
   // flvSpaceName is required when flv recording is enabled. If false,  flvSpaceName,flvRecordPeriod and flvFileName will be cleared.", "zh_CN":"是否开启flv录制，可选值为true、false
   // 为是时，flvSpaceName必填;为否时，flvSpaceName、flvRecordPeriod、flvFileName"}
@@ -9023,40 +9023,40 @@ type UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRe
   FlvNoticeAddress *string `json:"flvNoticeAddress,omitempty" xml:"flvNoticeAddress,omitempty"`
 }
 
-func (s UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings) String() string {
+func (s UpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings) GoString() string {
+func (s UpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings) GoString() string {
   return s.String()
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings) SetFlvRecordEnabled(v bool) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings) SetFlvRecordEnabled(v bool) *UpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings {
   s.FlvRecordEnabled = &v
   return s
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings) SetFlvSpaceName(v string) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings) SetFlvSpaceName(v string) *UpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings {
   s.FlvSpaceName = &v
   return s
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings) SetFlvFileName(v string) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings) SetFlvFileName(v string) *UpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings {
   s.FlvFileName = &v
   return s
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings) SetFlvRecordPeriod(v int) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings) SetFlvRecordPeriod(v int) *UpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings {
   s.FlvRecordPeriod = &v
   return s
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings) SetFlvNoticeAddress(v string) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings) SetFlvNoticeAddress(v string) *UpdateRecordingBasicConfigurationRequestRecordRulesFlvSettings {
   s.FlvNoticeAddress = &v
   return s
 }
 
-type UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings struct {
+type UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings struct {
   // {"en":"This item is to enable m3u8 recording, the optional values are true and false.
   // m3u8SpaceName is required when flv recording is enabled. If false, m3u8SpaceName, m3u8RecordPeriod, m3u8FileName, timeShift, segmentTime, mergeTsNumber, waitTime4Keyframe will be cleared.", "zh_CN":"是否开启m3u8录制，可选值为true、false
   // 为是时，m3u8SpaceName必填。为否时，清空m3u8SpaceName、m3u8RecordPeriod、m3u8FileName、timeShift、segmentTime、mergeTsNumber、waitTime4Keyframe"}
@@ -9097,60 +9097,60 @@ type UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRe
   M3u8NoticeAddress *string `json:"m3u8NoticeAddress,omitempty" xml:"m3u8NoticeAddress,omitempty"`
 }
 
-func (s UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) String() string {
+func (s UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) GoString() string {
+func (s UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) GoString() string {
   return s.String()
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) SetM3u8RecordEnabled(v bool) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) SetM3u8RecordEnabled(v bool) *UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings {
   s.M3u8RecordEnabled = &v
   return s
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) SetM3u8SpaceName(v string) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) SetM3u8SpaceName(v string) *UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings {
   s.M3u8SpaceName = &v
   return s
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) SetM3u8RecordPeriod(v int) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) SetM3u8RecordPeriod(v int) *UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings {
   s.M3u8RecordPeriod = &v
   return s
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) SetM3u8FileName(v string) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) SetM3u8FileName(v string) *UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings {
   s.M3u8FileName = &v
   return s
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) SetTimeShift(v bool) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) SetTimeShift(v bool) *UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings {
   s.TimeShift = &v
   return s
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) SetSegmentTime(v int) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) SetSegmentTime(v int) *UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings {
   s.SegmentTime = &v
   return s
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) SetMergeTsNumber(v int) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) SetMergeTsNumber(v int) *UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings {
   s.MergeTsNumber = &v
   return s
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) SetWaitTime4Keyframe(v int) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) SetWaitTime4Keyframe(v int) *UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings {
   s.WaitTime4Keyframe = &v
   return s
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) SetM3u8NoticeAddress(v string) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings) SetM3u8NoticeAddress(v string) *UpdateRecordingBasicConfigurationRequestRecordRulesM3u8Settings {
   s.M3u8NoticeAddress = &v
   return s
 }
 
-type UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings struct {
+type UpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings struct {
   // {"en":"This item is to enable mp4 recording, the optional values are true and false.
   // mp4SpaceName is required when mp4 recording is enabled. If false,  mp4SpaceName, mp4RecordPeriod and mp4FileName will be cleared.", "zh_CN":"是否开启mp4录制，可选值为true、false
   // 为是时，mp4SpaceName必填。为否时，清空mp4SpaceName、mp4RecordPeriod、mp4FileName"}
@@ -9178,35 +9178,35 @@ type UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRe
   Mp4NoticeAddress *string `json:"mp4NoticeAddress,omitempty" xml:"mp4NoticeAddress,omitempty"`
 }
 
-func (s UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings) String() string {
+func (s UpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings) GoString() string {
+func (s UpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings) GoString() string {
   return s.String()
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings) SetMp4RecordEnabled(v bool) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings) SetMp4RecordEnabled(v bool) *UpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings {
   s.Mp4RecordEnabled = &v
   return s
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings) SetMp4SpaceName(v string) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings) SetMp4SpaceName(v string) *UpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings {
   s.Mp4SpaceName = &v
   return s
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings) SetMp4FileName(v string) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings) SetMp4FileName(v string) *UpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings {
   s.Mp4FileName = &v
   return s
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings) SetMp4RecordPeriod(v int) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings) SetMp4RecordPeriod(v int) *UpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings {
   s.Mp4RecordPeriod = &v
   return s
 }
 
-func (s *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings) SetMp4NoticeAddress(v string) *UpdateRecordingBasicConfigurationUpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings {
+func (s *UpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings) SetMp4NoticeAddress(v string) *UpdateRecordingBasicConfigurationRequestRecordRulesMp4Settings {
   s.Mp4NoticeAddress = &v
   return s
 }
@@ -9299,7 +9299,7 @@ func (s UpdateRecordingBasicConfigurationResponseHeader) GoString() string {
 
 type EditBack2originProtocolRewriteConfigRequest struct {
   // {"en":"Back to origin rewrite rule.", "zh_CN":"修改回源协议和端口；若要按原始请求回源，则可清空该对象，示例\"backToOriginRewriteRule\":{}"}
-  BackToOriginRewriteRule *EditBack2originProtocolRewriteConfigEditBack2originProtocolRewriteConfigRequestBackToOriginRewriteRule `json:"backToOriginRewriteRule,omitempty" xml:"backToOriginRewriteRule,omitempty" require:"true" type:"Struct"`
+  BackToOriginRewriteRule *EditBack2originProtocolRewriteConfigRequestBackToOriginRewriteRule `json:"backToOriginRewriteRule,omitempty" xml:"backToOriginRewriteRule,omitempty" require:"true" type:"Struct"`
 }
 
 func (s EditBack2originProtocolRewriteConfigRequest) String() string {
@@ -9310,32 +9310,32 @@ func (s EditBack2originProtocolRewriteConfigRequest) GoString() string {
   return s.String()
 }
 
-func (s *EditBack2originProtocolRewriteConfigRequest) SetBackToOriginRewriteRule(v *EditBack2originProtocolRewriteConfigEditBack2originProtocolRewriteConfigRequestBackToOriginRewriteRule) *EditBack2originProtocolRewriteConfigRequest {
+func (s *EditBack2originProtocolRewriteConfigRequest) SetBackToOriginRewriteRule(v *EditBack2originProtocolRewriteConfigRequestBackToOriginRewriteRule) *EditBack2originProtocolRewriteConfigRequest {
   s.BackToOriginRewriteRule = v
   return s
 }
 
-type EditBack2originProtocolRewriteConfigEditBack2originProtocolRewriteConfigRequestBackToOriginRewriteRule struct {
+type EditBack2originProtocolRewriteConfigRequestBackToOriginRewriteRule struct {
   // {"en":"The specified protocol is either http or https.", "zh_CN":"改写后的回源协议，可选值：http、https"}
   Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty"`
   // {"en":"If the protocol is http, the default is 80. If the protocol is https, the default is 443", "zh_CN":"改写后的回源端口，若protocol为http时，默认为80，若protocol为https时，默认为443"}
   Port *string `json:"port,omitempty" xml:"port,omitempty"`
 }
 
-func (s EditBack2originProtocolRewriteConfigEditBack2originProtocolRewriteConfigRequestBackToOriginRewriteRule) String() string {
+func (s EditBack2originProtocolRewriteConfigRequestBackToOriginRewriteRule) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditBack2originProtocolRewriteConfigEditBack2originProtocolRewriteConfigRequestBackToOriginRewriteRule) GoString() string {
+func (s EditBack2originProtocolRewriteConfigRequestBackToOriginRewriteRule) GoString() string {
   return s.String()
 }
 
-func (s *EditBack2originProtocolRewriteConfigEditBack2originProtocolRewriteConfigRequestBackToOriginRewriteRule) SetProtocol(v string) *EditBack2originProtocolRewriteConfigEditBack2originProtocolRewriteConfigRequestBackToOriginRewriteRule {
+func (s *EditBack2originProtocolRewriteConfigRequestBackToOriginRewriteRule) SetProtocol(v string) *EditBack2originProtocolRewriteConfigRequestBackToOriginRewriteRule {
   s.Protocol = &v
   return s
 }
 
-func (s *EditBack2originProtocolRewriteConfigEditBack2originProtocolRewriteConfigRequestBackToOriginRewriteRule) SetPort(v string) *EditBack2originProtocolRewriteConfigEditBack2originProtocolRewriteConfigRequestBackToOriginRewriteRule {
+func (s *EditBack2originProtocolRewriteConfigRequestBackToOriginRewriteRule) SetPort(v string) *EditBack2originProtocolRewriteConfigRequestBackToOriginRewriteRule {
   s.Port = &v
   return s
 }
@@ -9471,7 +9471,7 @@ type GetAppaDomainConfigResponse struct {
   //    [{'originIp':'3.3.3.3','weight':10}]
   //   }
   // ]"}
-  OriginConfig []*GetAppaDomainConfigGetAppaDomainConfigResponseOriginConfig `json:"originConfig,omitempty" xml:"originConfig,omitempty" require:"true" type:"Repeated"`
+  OriginConfig []*GetAppaDomainConfigResponseOriginConfig `json:"originConfig,omitempty" xml:"originConfig,omitempty" require:"true" type:"Repeated"`
   // {'en':'HTTP port. The value is an integer ranging from 1 to 65535. Multiple ports are supported and can be configured in the following format:httpPorts:["9001"]Note: 1. Ports 2012, 2323, 2443, 4031, 12012, 20121, 57891, 62016, 65383, and 65529 do not support.2. The HTTP port and HTTPS port and TCP port must be unique.3. At least one HTTP port or HTTPS port or TCP port or UDP port must be configured.', 'zh_CN':'HTTP端口，取值范围为1-65535的整数，可配置多个，格式如：httpPorts:["9001"]注意：1、端口2012、2323、2443、4031、12012、20121、57891、62016、65383、65529不支持配置。2、HTTP端口和HTTPS端口和TCP端口不能重复。3、HTTP端口和HTTPS端口和TCP端口和UDP端口必须至少配置一个。'}
   HttpPorts []*string `json:"httpPorts,omitempty" xml:"httpPorts,omitempty" type:"Repeated"`
   // {'en':'HTTPS port. The value is an integer ranging from 1 to 65535. Multiple ports are supported and can be configured in the following format:httpPorts:["9002","9003"]Note: 1. Ports 2012, 2323, 2443, 4031, 12012, 20121, 57891, 62016, 65383, and 65529 do not support.2. The HTTP port and HTTPS port and TCP port must be unique.3. At least one HTTP port or HTTPS port or TCP port or UDP port must be configured.', 'zh_CN':'HTTPS端口，取值范围为1-65535的整数，可配置多个，格式如：httpsPorts:["9002","9003"]注意：1、端口2012、2323、2443、4031、12012、20121、57891、62016、65383、65529不支持配置。2、HTTP端口和HTTPS端口和TCP端口不能重复。3、HTTP端口和HTTPS端口和TCP端口和UDP端口必须至少配置一个。'}
@@ -9505,7 +9505,7 @@ func (s *GetAppaDomainConfigResponse) SetServiceType(v string) *GetAppaDomainCon
   return s
 }
 
-func (s *GetAppaDomainConfigResponse) SetOriginConfig(v []*GetAppaDomainConfigGetAppaDomainConfigResponseOriginConfig) *GetAppaDomainConfigResponse {
+func (s *GetAppaDomainConfigResponse) SetOriginConfig(v []*GetAppaDomainConfigResponseOriginConfig) *GetAppaDomainConfigResponse {
   s.OriginConfig = v
   return s
 }
@@ -9530,59 +9530,59 @@ func (s *GetAppaDomainConfigResponse) SetUdpPorts(v []*string) *GetAppaDomainCon
   return s
 }
 
-type GetAppaDomainConfigGetAppaDomainConfigResponseOriginConfig struct     {
+type GetAppaDomainConfigResponseOriginConfig struct     {
   // {"en":"The level of the origin, which value can be an integer ranging from 1 to 5. Note:1. Must be configured level by level start from level 1. The same level cannot be configured repeatedly.2. The lower the value, the higher the priority.", "zh_CN":"层级，可选值为1-5的整数。注意：1、必须从层级1开始逐级配置，相同层级不能重复配置。2、数值越低，优先级越高。"}
   Level *int32 `json:"level,omitempty" xml:"level,omitempty" require:"true"`
   // {"en":"Origin selection strategy supports fast, robin and hash. The value can be: fast: Fast strategy, robin: Robin strategy,hash: Hash strategy", "zh_CN":"选源策略，支持快速、轮询、哈希，可选值为:fast：快速,robin：轮询,hash：哈希"}
   Strategy *string `json:"strategy,omitempty" xml:"strategy,omitempty" require:"true"`
   // {"en":"Origin information of a certain level. A level can be configured with multiple origin IP addresses or domain names.Example:'origin':[{'originIp':'1.1.1.1','weight':10},{'originIp':'2.2.2.2','weight':20}]", "zh_CN":"某个层级的源信息。一个层级可以配置多个回源IP/域名。示例：'origin':[{'originIp':'1.1.1.1','weight':10},{'originIp':'2.2.2.2','weight':20}]"}
-  Origin []*GetAppaDomainConfigGetAppaDomainConfigResponseOriginConfigOrigin `json:"origin,omitempty" xml:"origin,omitempty" require:"true" type:"Repeated"`
+  Origin []*GetAppaDomainConfigResponseOriginConfigOrigin `json:"origin,omitempty" xml:"origin,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s GetAppaDomainConfigGetAppaDomainConfigResponseOriginConfig) String() string {
+func (s GetAppaDomainConfigResponseOriginConfig) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAppaDomainConfigGetAppaDomainConfigResponseOriginConfig) GoString() string {
+func (s GetAppaDomainConfigResponseOriginConfig) GoString() string {
   return s.String()
 }
 
-func (s *GetAppaDomainConfigGetAppaDomainConfigResponseOriginConfig) SetLevel(v int32) *GetAppaDomainConfigGetAppaDomainConfigResponseOriginConfig {
+func (s *GetAppaDomainConfigResponseOriginConfig) SetLevel(v int32) *GetAppaDomainConfigResponseOriginConfig {
   s.Level = &v
   return s
 }
 
-func (s *GetAppaDomainConfigGetAppaDomainConfigResponseOriginConfig) SetStrategy(v string) *GetAppaDomainConfigGetAppaDomainConfigResponseOriginConfig {
+func (s *GetAppaDomainConfigResponseOriginConfig) SetStrategy(v string) *GetAppaDomainConfigResponseOriginConfig {
   s.Strategy = &v
   return s
 }
 
-func (s *GetAppaDomainConfigGetAppaDomainConfigResponseOriginConfig) SetOrigin(v []*GetAppaDomainConfigGetAppaDomainConfigResponseOriginConfigOrigin) *GetAppaDomainConfigGetAppaDomainConfigResponseOriginConfig {
+func (s *GetAppaDomainConfigResponseOriginConfig) SetOrigin(v []*GetAppaDomainConfigResponseOriginConfigOrigin) *GetAppaDomainConfigResponseOriginConfig {
   s.Origin = v
   return s
 }
 
-type GetAppaDomainConfigGetAppaDomainConfigResponseOriginConfigOrigin struct     {
+type GetAppaDomainConfigResponseOriginConfigOrigin struct     {
   // {"en":"Origin address, which can be an IP or domain name.", "zh_CN":"回源IP/域名，可配置一个IP或域名。"}
   OriginIp *string `json:"originIp,omitempty" xml:"originIp,omitempty" require:"true"`
   // {"en":"Weight, which is only useful for robin strategy. The value is an integer ranging from 1 to 10000. If this parameter is not specified, the default value is 10.", "zh_CN":"权重，只对轮询策略有用。取值范围为1-10000的整数，不填默认为10。"}
   Weight *int32 `json:"weight,omitempty" xml:"weight,omitempty"`
 }
 
-func (s GetAppaDomainConfigGetAppaDomainConfigResponseOriginConfigOrigin) String() string {
+func (s GetAppaDomainConfigResponseOriginConfigOrigin) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAppaDomainConfigGetAppaDomainConfigResponseOriginConfigOrigin) GoString() string {
+func (s GetAppaDomainConfigResponseOriginConfigOrigin) GoString() string {
   return s.String()
 }
 
-func (s *GetAppaDomainConfigGetAppaDomainConfigResponseOriginConfigOrigin) SetOriginIp(v string) *GetAppaDomainConfigGetAppaDomainConfigResponseOriginConfigOrigin {
+func (s *GetAppaDomainConfigResponseOriginConfigOrigin) SetOriginIp(v string) *GetAppaDomainConfigResponseOriginConfigOrigin {
   s.OriginIp = &v
   return s
 }
 
-func (s *GetAppaDomainConfigGetAppaDomainConfigResponseOriginConfigOrigin) SetWeight(v int32) *GetAppaDomainConfigGetAppaDomainConfigResponseOriginConfigOrigin {
+func (s *GetAppaDomainConfigResponseOriginConfigOrigin) SetWeight(v int32) *GetAppaDomainConfigResponseOriginConfigOrigin {
   s.Weight = &v
   return s
 }
@@ -9854,7 +9854,7 @@ func (s *QueryCdnwContractDomainsByCustomerRequest) SetItemId(v string) *QueryCd
 
 type QueryCdnwContractDomainsByCustomerResponse struct {
   // {"en":"contract items", "zh_CN":"合同列表"}
-  ContractItems []*QueryCdnwContractDomainsByCustomerQueryCdnwContractDomainsByCustomerResponseContractItems `json:"contract_items,omitempty" xml:"contract_items,omitempty" require:"true" type:"Repeated"`
+  ContractItems []*QueryCdnwContractDomainsByCustomerResponseContractItems `json:"contract_items,omitempty" xml:"contract_items,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryCdnwContractDomainsByCustomerResponse) String() string {
@@ -9865,12 +9865,12 @@ func (s QueryCdnwContractDomainsByCustomerResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryCdnwContractDomainsByCustomerResponse) SetContractItems(v []*QueryCdnwContractDomainsByCustomerQueryCdnwContractDomainsByCustomerResponseContractItems) *QueryCdnwContractDomainsByCustomerResponse {
+func (s *QueryCdnwContractDomainsByCustomerResponse) SetContractItems(v []*QueryCdnwContractDomainsByCustomerResponseContractItems) *QueryCdnwContractDomainsByCustomerResponse {
   s.ContractItems = v
   return s
 }
 
-type QueryCdnwContractDomainsByCustomerQueryCdnwContractDomainsByCustomerResponseContractItems struct     {
+type QueryCdnwContractDomainsByCustomerResponseContractItems struct     {
   // {"en":"cncCustomerCode.", "zh_CN":"客户编码"}
   CncCustomerCode *string `json:"cnc_customer_code,omitempty" xml:"cnc_customer_code,omitempty" require:"true"`
   // {"en":"contractId.", "zh_CN":"合同ID"}
@@ -9881,30 +9881,30 @@ type QueryCdnwContractDomainsByCustomerQueryCdnwContractDomainsByCustomerRespons
   Domains []*string `json:"domains,omitempty" xml:"domains,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryCdnwContractDomainsByCustomerQueryCdnwContractDomainsByCustomerResponseContractItems) String() string {
+func (s QueryCdnwContractDomainsByCustomerResponseContractItems) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCdnwContractDomainsByCustomerQueryCdnwContractDomainsByCustomerResponseContractItems) GoString() string {
+func (s QueryCdnwContractDomainsByCustomerResponseContractItems) GoString() string {
   return s.String()
 }
 
-func (s *QueryCdnwContractDomainsByCustomerQueryCdnwContractDomainsByCustomerResponseContractItems) SetCncCustomerCode(v string) *QueryCdnwContractDomainsByCustomerQueryCdnwContractDomainsByCustomerResponseContractItems {
+func (s *QueryCdnwContractDomainsByCustomerResponseContractItems) SetCncCustomerCode(v string) *QueryCdnwContractDomainsByCustomerResponseContractItems {
   s.CncCustomerCode = &v
   return s
 }
 
-func (s *QueryCdnwContractDomainsByCustomerQueryCdnwContractDomainsByCustomerResponseContractItems) SetContractId(v string) *QueryCdnwContractDomainsByCustomerQueryCdnwContractDomainsByCustomerResponseContractItems {
+func (s *QueryCdnwContractDomainsByCustomerResponseContractItems) SetContractId(v string) *QueryCdnwContractDomainsByCustomerResponseContractItems {
   s.ContractId = &v
   return s
 }
 
-func (s *QueryCdnwContractDomainsByCustomerQueryCdnwContractDomainsByCustomerResponseContractItems) SetItemId(v string) *QueryCdnwContractDomainsByCustomerQueryCdnwContractDomainsByCustomerResponseContractItems {
+func (s *QueryCdnwContractDomainsByCustomerResponseContractItems) SetItemId(v string) *QueryCdnwContractDomainsByCustomerResponseContractItems {
   s.ItemId = &v
   return s
 }
 
-func (s *QueryCdnwContractDomainsByCustomerQueryCdnwContractDomainsByCustomerResponseContractItems) SetDomains(v []*string) *QueryCdnwContractDomainsByCustomerQueryCdnwContractDomainsByCustomerResponseContractItems {
+func (s *QueryCdnwContractDomainsByCustomerResponseContractItems) SetDomains(v []*string) *QueryCdnwContractDomainsByCustomerResponseContractItems {
   s.Domains = v
   return s
 }
@@ -10073,7 +10073,7 @@ type EditQueryStringUrlConfigRequest struct {
   // 2. Configuration of clearing query string settings for <query-string-settings/>.", "zh_CN":"查询串设置配置，父标签
   // 1.需要设置查询串配置时，此项必填
   // 2.为<query-string-settings/>时清空查询串设置的配置"}
-  QueryStringSettings []*EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings `json:"query-string-settings,omitempty" xml:"query-string-settings,omitempty" require:"true" type:"Repeated"`
+  QueryStringSettings []*EditQueryStringUrlConfigRequestQueryStringSettings `json:"query-string-settings,omitempty" xml:"query-string-settings,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s EditQueryStringUrlConfigRequest) String() string {
@@ -10084,12 +10084,12 @@ func (s EditQueryStringUrlConfigRequest) GoString() string {
   return s.String()
 }
 
-func (s *EditQueryStringUrlConfigRequest) SetQueryStringSettings(v []*EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings) *EditQueryStringUrlConfigRequest {
+func (s *EditQueryStringUrlConfigRequest) SetQueryStringSettings(v []*EditQueryStringUrlConfigRequestQueryStringSettings) *EditQueryStringUrlConfigRequest {
   s.QueryStringSettings = v
   return s
 }
 
-type EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings struct     {
+type EditQueryStringUrlConfigRequestQueryStringSettings struct     {
   // {"en":"The url matching mode. If all matches, the input parameters can be configured as: .*", "zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*
   // 注：url匹配模式、文件类型（自定义文件类型）、常用类型、指定url、目录，有且仅有一项必填"}
   PathPattern *string `json:"path-pattern,omitempty" xml:"path-pattern,omitempty"`
@@ -10152,85 +10152,85 @@ type EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings 
   DataId *int64 `json:"data-id,omitempty" xml:"data-id,omitempty"`
 }
 
-func (s EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings) String() string {
+func (s EditQueryStringUrlConfigRequestQueryStringSettings) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings) GoString() string {
+func (s EditQueryStringUrlConfigRequestQueryStringSettings) GoString() string {
   return s.String()
 }
 
-func (s *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings) SetPathPattern(v string) *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings {
+func (s *EditQueryStringUrlConfigRequestQueryStringSettings) SetPathPattern(v string) *EditQueryStringUrlConfigRequestQueryStringSettings {
   s.PathPattern = &v
   return s
 }
 
-func (s *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings) SetFileTypes(v string) *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings {
+func (s *EditQueryStringUrlConfigRequestQueryStringSettings) SetFileTypes(v string) *EditQueryStringUrlConfigRequestQueryStringSettings {
   s.FileTypes = &v
   return s
 }
 
-func (s *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings) SetCustomFileTypes(v string) *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings {
+func (s *EditQueryStringUrlConfigRequestQueryStringSettings) SetCustomFileTypes(v string) *EditQueryStringUrlConfigRequestQueryStringSettings {
   s.CustomFileTypes = &v
   return s
 }
 
-func (s *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings) SetCustomPattern(v string) *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings {
+func (s *EditQueryStringUrlConfigRequestQueryStringSettings) SetCustomPattern(v string) *EditQueryStringUrlConfigRequestQueryStringSettings {
   s.CustomPattern = &v
   return s
 }
 
-func (s *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings) SetSpecifyUrlPattern(v string) *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings {
+func (s *EditQueryStringUrlConfigRequestQueryStringSettings) SetSpecifyUrlPattern(v string) *EditQueryStringUrlConfigRequestQueryStringSettings {
   s.SpecifyUrlPattern = &v
   return s
 }
 
-func (s *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings) SetDirectories(v string) *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings {
+func (s *EditQueryStringUrlConfigRequestQueryStringSettings) SetDirectories(v string) *EditQueryStringUrlConfigRequestQueryStringSettings {
   s.Directories = &v
   return s
 }
 
-func (s *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings) SetPriority(v string) *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings {
+func (s *EditQueryStringUrlConfigRequestQueryStringSettings) SetPriority(v string) *EditQueryStringUrlConfigRequestQueryStringSettings {
   s.Priority = &v
   return s
 }
 
-func (s *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings) SetIgnoreLetterCase(v string) *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings {
+func (s *EditQueryStringUrlConfigRequestQueryStringSettings) SetIgnoreLetterCase(v string) *EditQueryStringUrlConfigRequestQueryStringSettings {
   s.IgnoreLetterCase = &v
   return s
 }
 
-func (s *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings) SetIgnoreQueryString(v string) *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings {
+func (s *EditQueryStringUrlConfigRequestQueryStringSettings) SetIgnoreQueryString(v string) *EditQueryStringUrlConfigRequestQueryStringSettings {
   s.IgnoreQueryString = &v
   return s
 }
 
-func (s *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings) SetQueryStringKept(v string) *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings {
+func (s *EditQueryStringUrlConfigRequestQueryStringSettings) SetQueryStringKept(v string) *EditQueryStringUrlConfigRequestQueryStringSettings {
   s.QueryStringKept = &v
   return s
 }
 
-func (s *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings) SetQueryStringRemoved(v string) *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings {
+func (s *EditQueryStringUrlConfigRequestQueryStringSettings) SetQueryStringRemoved(v string) *EditQueryStringUrlConfigRequestQueryStringSettings {
   s.QueryStringRemoved = &v
   return s
 }
 
-func (s *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings) SetSourceWithQuery(v string) *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings {
+func (s *EditQueryStringUrlConfigRequestQueryStringSettings) SetSourceWithQuery(v string) *EditQueryStringUrlConfigRequestQueryStringSettings {
   s.SourceWithQuery = &v
   return s
 }
 
-func (s *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings) SetSourceKeyKept(v string) *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings {
+func (s *EditQueryStringUrlConfigRequestQueryStringSettings) SetSourceKeyKept(v string) *EditQueryStringUrlConfigRequestQueryStringSettings {
   s.SourceKeyKept = &v
   return s
 }
 
-func (s *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings) SetSourceKeyRemoved(v string) *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings {
+func (s *EditQueryStringUrlConfigRequestQueryStringSettings) SetSourceKeyRemoved(v string) *EditQueryStringUrlConfigRequestQueryStringSettings {
   s.SourceKeyRemoved = &v
   return s
 }
 
-func (s *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings) SetDataId(v int64) *EditQueryStringUrlConfigEditQueryStringUrlConfigRequestQueryStringSettings {
+func (s *EditQueryStringUrlConfigRequestQueryStringSettings) SetDataId(v int64) *EditQueryStringUrlConfigRequestQueryStringSettings {
   s.DataId = &v
   return s
 }
@@ -10320,7 +10320,7 @@ type UpdateVariableConfigRequest struct {
   // 2. Empty the configuration for variables", "zh_CN":"变量配置，复合对象
   // 1.需要设置变量配置时，此项必填
   // 2.为时清空配置"}
-  Variables []*UpdateVariableConfigUpdateVariableConfigRequestVariables `json:"variables,omitempty" xml:"variables,omitempty" require:"true" type:"Repeated"`
+  Variables []*UpdateVariableConfigRequestVariables `json:"variables,omitempty" xml:"variables,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s UpdateVariableConfigRequest) String() string {
@@ -10331,12 +10331,12 @@ func (s UpdateVariableConfigRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateVariableConfigRequest) SetVariables(v []*UpdateVariableConfigUpdateVariableConfigRequestVariables) *UpdateVariableConfigRequest {
+func (s *UpdateVariableConfigRequest) SetVariables(v []*UpdateVariableConfigRequestVariables) *UpdateVariableConfigRequest {
   s.Variables = v
   return s
 }
 
-type UpdateVariableConfigUpdateVariableConfigRequestVariables struct     {
+type UpdateVariableConfigRequestVariables struct     {
   // {"en":"variable name", "zh_CN":"函数变量名称"}
   VariableName *string `json:"variable-name,omitempty" xml:"variable-name,omitempty"`
   // {"en":"Function Condition Type:
@@ -10405,45 +10405,45 @@ type UpdateVariableConfigUpdateVariableConfigRequestVariables struct     {
   DataId *int `json:"data-id,omitempty" xml:"data-id,omitempty"`
 }
 
-func (s UpdateVariableConfigUpdateVariableConfigRequestVariables) String() string {
+func (s UpdateVariableConfigRequestVariables) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateVariableConfigUpdateVariableConfigRequestVariables) GoString() string {
+func (s UpdateVariableConfigRequestVariables) GoString() string {
   return s.String()
 }
 
-func (s *UpdateVariableConfigUpdateVariableConfigRequestVariables) SetVariableName(v string) *UpdateVariableConfigUpdateVariableConfigRequestVariables {
+func (s *UpdateVariableConfigRequestVariables) SetVariableName(v string) *UpdateVariableConfigRequestVariables {
   s.VariableName = &v
   return s
 }
 
-func (s *UpdateVariableConfigUpdateVariableConfigRequestVariables) SetConditionType(v string) *UpdateVariableConfigUpdateVariableConfigRequestVariables {
+func (s *UpdateVariableConfigRequestVariables) SetConditionType(v string) *UpdateVariableConfigRequestVariables {
   s.ConditionType = &v
   return s
 }
 
-func (s *UpdateVariableConfigUpdateVariableConfigRequestVariables) SetOption(v string) *UpdateVariableConfigUpdateVariableConfigRequestVariables {
+func (s *UpdateVariableConfigRequestVariables) SetOption(v string) *UpdateVariableConfigRequestVariables {
   s.Option = &v
   return s
 }
 
-func (s *UpdateVariableConfigUpdateVariableConfigRequestVariables) SetExpression1(v string) *UpdateVariableConfigUpdateVariableConfigRequestVariables {
+func (s *UpdateVariableConfigRequestVariables) SetExpression1(v string) *UpdateVariableConfigRequestVariables {
   s.Expression1 = &v
   return s
 }
 
-func (s *UpdateVariableConfigUpdateVariableConfigRequestVariables) SetExpression2(v string) *UpdateVariableConfigUpdateVariableConfigRequestVariables {
+func (s *UpdateVariableConfigRequestVariables) SetExpression2(v string) *UpdateVariableConfigRequestVariables {
   s.Expression2 = &v
   return s
 }
 
-func (s *UpdateVariableConfigUpdateVariableConfigRequestVariables) SetExpression3(v string) *UpdateVariableConfigUpdateVariableConfigRequestVariables {
+func (s *UpdateVariableConfigRequestVariables) SetExpression3(v string) *UpdateVariableConfigRequestVariables {
   s.Expression3 = &v
   return s
 }
 
-func (s *UpdateVariableConfigUpdateVariableConfigRequestVariables) SetDataId(v int) *UpdateVariableConfigUpdateVariableConfigRequestVariables {
+func (s *UpdateVariableConfigRequestVariables) SetDataId(v int) *UpdateVariableConfigRequestVariables {
   s.DataId = &v
   return s
 }
@@ -10557,7 +10557,7 @@ type UpdateLiveDomainOriginsRequest struct {
   // {"en":"Enable Advanced Origins", "zh_CN":"是否启用高级源"}
   AdvancedOrigins *bool `json:"advancedOrigins,omitempty" xml:"advancedOrigins,omitempty"`
   // {"en":"Advanced Origins", "zh_CN":"高级源"}
-  Origins *UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOrigins `json:"origins,omitempty" xml:"origins,omitempty" type:"Struct"`
+  Origins *UpdateLiveDomainOriginsRequestOrigins `json:"origins,omitempty" xml:"origins,omitempty" type:"Struct"`
 }
 
 func (s UpdateLiveDomainOriginsRequest) String() string {
@@ -10603,44 +10603,44 @@ func (s *UpdateLiveDomainOriginsRequest) SetAdvancedOrigins(v bool) *UpdateLiveD
   return s
 }
 
-func (s *UpdateLiveDomainOriginsRequest) SetOrigins(v *UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOrigins) *UpdateLiveDomainOriginsRequest {
+func (s *UpdateLiveDomainOriginsRequest) SetOrigins(v *UpdateLiveDomainOriginsRequestOrigins) *UpdateLiveDomainOriginsRequest {
   s.Origins = v
   return s
 }
 
-type UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOrigins struct {
+type UpdateLiveDomainOriginsRequestOrigins struct {
   // {"en":"Servers", "zh_CN":"源站主机对象"}
-  Servers []*UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOriginsServers `json:"servers,omitempty" xml:"servers,omitempty" require:"true" type:"Repeated"`
+  Servers []*UpdateLiveDomainOriginsRequestOriginsServers `json:"servers,omitempty" xml:"servers,omitempty" require:"true" type:"Repeated"`
   // {"en":"Upstream Polling Enable Control", "zh_CN":"多个server默认主备"}
   RoundRobin *bool `json:"roundRobin,omitempty" xml:"roundRobin,omitempty"`
   // {"en":"Origin Host", "zh_CN":"回源主机名"}
   OriginHost *string `json:"originHost,omitempty" xml:"originHost,omitempty"`
 }
 
-func (s UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOrigins) String() string {
+func (s UpdateLiveDomainOriginsRequestOrigins) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOrigins) GoString() string {
+func (s UpdateLiveDomainOriginsRequestOrigins) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOrigins) SetServers(v []*UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOriginsServers) *UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOrigins {
+func (s *UpdateLiveDomainOriginsRequestOrigins) SetServers(v []*UpdateLiveDomainOriginsRequestOriginsServers) *UpdateLiveDomainOriginsRequestOrigins {
   s.Servers = v
   return s
 }
 
-func (s *UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOrigins) SetRoundRobin(v bool) *UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOrigins {
+func (s *UpdateLiveDomainOriginsRequestOrigins) SetRoundRobin(v bool) *UpdateLiveDomainOriginsRequestOrigins {
   s.RoundRobin = &v
   return s
 }
 
-func (s *UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOrigins) SetOriginHost(v string) *UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOrigins {
+func (s *UpdateLiveDomainOriginsRequestOrigins) SetOriginHost(v string) *UpdateLiveDomainOriginsRequestOrigins {
   s.OriginHost = &v
   return s
 }
 
-type UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOriginsServers struct     {
+type UpdateLiveDomainOriginsRequestOriginsServers struct     {
   // {"en":"Address", "zh_CN":"源站地址"}
   Address *string `json:"address,omitempty" xml:"address,omitempty" require:"true"`
   // {"en":"Priority", "zh_CN":"优先级"}
@@ -10651,30 +10651,30 @@ type UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOriginsServers struct 
   OriginHost *string `json:"originHost,omitempty" xml:"originHost,omitempty"`
 }
 
-func (s UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOriginsServers) String() string {
+func (s UpdateLiveDomainOriginsRequestOriginsServers) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOriginsServers) GoString() string {
+func (s UpdateLiveDomainOriginsRequestOriginsServers) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOriginsServers) SetAddress(v string) *UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOriginsServers {
+func (s *UpdateLiveDomainOriginsRequestOriginsServers) SetAddress(v string) *UpdateLiveDomainOriginsRequestOriginsServers {
   s.Address = &v
   return s
 }
 
-func (s *UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOriginsServers) SetPriority(v int) *UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOriginsServers {
+func (s *UpdateLiveDomainOriginsRequestOriginsServers) SetPriority(v int) *UpdateLiveDomainOriginsRequestOriginsServers {
   s.Priority = &v
   return s
 }
 
-func (s *UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOriginsServers) SetWeight(v int) *UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOriginsServers {
+func (s *UpdateLiveDomainOriginsRequestOriginsServers) SetWeight(v int) *UpdateLiveDomainOriginsRequestOriginsServers {
   s.Weight = &v
   return s
 }
 
-func (s *UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOriginsServers) SetOriginHost(v string) *UpdateLiveDomainOriginsUpdateLiveDomainOriginsRequestOriginsServers {
+func (s *UpdateLiveDomainOriginsRequestOriginsServers) SetOriginHost(v string) *UpdateLiveDomainOriginsRequestOriginsServers {
   s.OriginHost = &v
   return s
 }
@@ -10685,7 +10685,7 @@ type UpdateLiveDomainOriginsResponse struct {
   // {"en":"Reponse message.", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data", "zh_CN":"响应数据"}
-  Data *UpdateLiveDomainOriginsUpdateLiveDomainOriginsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *UpdateLiveDomainOriginsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s UpdateLiveDomainOriginsResponse) String() string {
@@ -10706,25 +10706,25 @@ func (s *UpdateLiveDomainOriginsResponse) SetMessage(v string) *UpdateLiveDomain
   return s
 }
 
-func (s *UpdateLiveDomainOriginsResponse) SetData(v *UpdateLiveDomainOriginsUpdateLiveDomainOriginsResponseData) *UpdateLiveDomainOriginsResponse {
+func (s *UpdateLiveDomainOriginsResponse) SetData(v *UpdateLiveDomainOriginsResponseData) *UpdateLiveDomainOriginsResponse {
   s.Data = v
   return s
 }
 
-type UpdateLiveDomainOriginsUpdateLiveDomainOriginsResponseData struct {
+type UpdateLiveDomainOriginsResponseData struct {
   // {"en":"The preliminary deployment id", "zh_CN":"预部署id"}
   PreDeployId *string `json:"preDeployId,omitempty" xml:"preDeployId,omitempty" require:"true"`
 }
 
-func (s UpdateLiveDomainOriginsUpdateLiveDomainOriginsResponseData) String() string {
+func (s UpdateLiveDomainOriginsResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainOriginsUpdateLiveDomainOriginsResponseData) GoString() string {
+func (s UpdateLiveDomainOriginsResponseData) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainOriginsUpdateLiveDomainOriginsResponseData) SetPreDeployId(v string) *UpdateLiveDomainOriginsUpdateLiveDomainOriginsResponseData {
+func (s *UpdateLiveDomainOriginsResponseData) SetPreDeployId(v string) *UpdateLiveDomainOriginsResponseData {
   s.PreDeployId = &v
   return s
 }
@@ -10802,7 +10802,7 @@ type QueryVariableConfigResponse struct {
   // {"en":"Response information, when success is successful", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"The response data", "zh_CN":"响应数据"}
-  Data *QueryVariableConfigQueryVariableConfigResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryVariableConfigResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
   // {"en":"Uniquely labeled id for querying each requested task (for all interfaces)", "zh_CN":"唯一标示的id，用于查询每次请求的任务 （适用全部接口）"}
   XCncRequestId *string `json:"x-cnc-request-id,omitempty" xml:"x-cnc-request-id,omitempty" require:"true"`
 }
@@ -10825,7 +10825,7 @@ func (s *QueryVariableConfigResponse) SetMessage(v string) *QueryVariableConfigR
   return s
 }
 
-func (s *QueryVariableConfigResponse) SetData(v *QueryVariableConfigQueryVariableConfigResponseData) *QueryVariableConfigResponse {
+func (s *QueryVariableConfigResponse) SetData(v *QueryVariableConfigResponseData) *QueryVariableConfigResponse {
   s.Data = v
   return s
 }
@@ -10835,7 +10835,7 @@ func (s *QueryVariableConfigResponse) SetXCncRequestId(v string) *QueryVariableC
   return s
 }
 
-type QueryVariableConfigQueryVariableConfigResponseData struct {
+type QueryVariableConfigResponseData struct {
   // {"en":"domain id.", "zh_CN":"域名id"}
   DomainId *string `json:"domainId,omitempty" xml:"domainId,omitempty" require:"true"`
   // {"en":"domain name.", "zh_CN":"域名名称"}
@@ -10845,33 +10845,33 @@ type QueryVariableConfigQueryVariableConfigResponseData struct {
   // 2. Empty the configuration for variables", "zh_CN":"变量配置，复合对象
   // 1.需要设置变量配置时，此项必填
   // 2.为时清空配置"}
-  Variables []*QueryVariableConfigQueryVariableConfigResponseDataVariables `json:"variables,omitempty" xml:"variables,omitempty" require:"true" type:"Repeated"`
+  Variables []*QueryVariableConfigResponseDataVariables `json:"variables,omitempty" xml:"variables,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryVariableConfigQueryVariableConfigResponseData) String() string {
+func (s QueryVariableConfigResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryVariableConfigQueryVariableConfigResponseData) GoString() string {
+func (s QueryVariableConfigResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryVariableConfigQueryVariableConfigResponseData) SetDomainId(v string) *QueryVariableConfigQueryVariableConfigResponseData {
+func (s *QueryVariableConfigResponseData) SetDomainId(v string) *QueryVariableConfigResponseData {
   s.DomainId = &v
   return s
 }
 
-func (s *QueryVariableConfigQueryVariableConfigResponseData) SetDomainName(v string) *QueryVariableConfigQueryVariableConfigResponseData {
+func (s *QueryVariableConfigResponseData) SetDomainName(v string) *QueryVariableConfigResponseData {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryVariableConfigQueryVariableConfigResponseData) SetVariables(v []*QueryVariableConfigQueryVariableConfigResponseDataVariables) *QueryVariableConfigQueryVariableConfigResponseData {
+func (s *QueryVariableConfigResponseData) SetVariables(v []*QueryVariableConfigResponseDataVariables) *QueryVariableConfigResponseData {
   s.Variables = v
   return s
 }
 
-type QueryVariableConfigQueryVariableConfigResponseDataVariables struct     {
+type QueryVariableConfigResponseDataVariables struct     {
   // {"en":"variable name", "zh_CN":"函数变量名称"}
   VariableName *string `json:"variable-name,omitempty" xml:"variable-name,omitempty"`
   // {"en":"Function Condition Type:
@@ -10940,45 +10940,45 @@ type QueryVariableConfigQueryVariableConfigResponseDataVariables struct     {
   DataId *int `json:"data-id,omitempty" xml:"data-id,omitempty"`
 }
 
-func (s QueryVariableConfigQueryVariableConfigResponseDataVariables) String() string {
+func (s QueryVariableConfigResponseDataVariables) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryVariableConfigQueryVariableConfigResponseDataVariables) GoString() string {
+func (s QueryVariableConfigResponseDataVariables) GoString() string {
   return s.String()
 }
 
-func (s *QueryVariableConfigQueryVariableConfigResponseDataVariables) SetVariableName(v string) *QueryVariableConfigQueryVariableConfigResponseDataVariables {
+func (s *QueryVariableConfigResponseDataVariables) SetVariableName(v string) *QueryVariableConfigResponseDataVariables {
   s.VariableName = &v
   return s
 }
 
-func (s *QueryVariableConfigQueryVariableConfigResponseDataVariables) SetConditionType(v string) *QueryVariableConfigQueryVariableConfigResponseDataVariables {
+func (s *QueryVariableConfigResponseDataVariables) SetConditionType(v string) *QueryVariableConfigResponseDataVariables {
   s.ConditionType = &v
   return s
 }
 
-func (s *QueryVariableConfigQueryVariableConfigResponseDataVariables) SetOption(v string) *QueryVariableConfigQueryVariableConfigResponseDataVariables {
+func (s *QueryVariableConfigResponseDataVariables) SetOption(v string) *QueryVariableConfigResponseDataVariables {
   s.Option = &v
   return s
 }
 
-func (s *QueryVariableConfigQueryVariableConfigResponseDataVariables) SetExpression1(v string) *QueryVariableConfigQueryVariableConfigResponseDataVariables {
+func (s *QueryVariableConfigResponseDataVariables) SetExpression1(v string) *QueryVariableConfigResponseDataVariables {
   s.Expression1 = &v
   return s
 }
 
-func (s *QueryVariableConfigQueryVariableConfigResponseDataVariables) SetExpression2(v string) *QueryVariableConfigQueryVariableConfigResponseDataVariables {
+func (s *QueryVariableConfigResponseDataVariables) SetExpression2(v string) *QueryVariableConfigResponseDataVariables {
   s.Expression2 = &v
   return s
 }
 
-func (s *QueryVariableConfigQueryVariableConfigResponseDataVariables) SetExpression3(v string) *QueryVariableConfigQueryVariableConfigResponseDataVariables {
+func (s *QueryVariableConfigResponseDataVariables) SetExpression3(v string) *QueryVariableConfigResponseDataVariables {
   s.Expression3 = &v
   return s
 }
 
-func (s *QueryVariableConfigQueryVariableConfigResponseDataVariables) SetDataId(v int) *QueryVariableConfigQueryVariableConfigResponseDataVariables {
+func (s *QueryVariableConfigResponseDataVariables) SetDataId(v int) *QueryVariableConfigResponseDataVariables {
   s.DataId = &v
   return s
 }
@@ -11089,9 +11089,9 @@ type GetBasicConfigurationOfDomainResponse struct {
   // {"en":"Shared first level alias", "zh_CN":"共用一级别名"}
   CnameLabel *string `json:"cname-label,omitempty" xml:"cname-label,omitempty" require:"true"`
   // {"en":"Return source policy setting, used to set the source station information and return source policy of the accelerated domain name", "zh_CN":"回源策略设置，用于设置加速域名的源站信息和回源策略"}
-  OriginConfig *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfig `json:"origin-config,omitempty" xml:"origin-config,omitempty" require:"true" type:"Struct"`
+  OriginConfig *GetBasicConfigurationOfDomainResponseOriginConfig `json:"origin-config,omitempty" xml:"origin-config,omitempty" require:"true" type:"Struct"`
   // {"en":"Ssl certificate settings, used to set the ssl certificate configuration for the accelerated domain name", "zh_CN":"ssl证书设置，用于设置加速域名的ssl证书配置"}
-  Ssl *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseSsl `json:"ssl,omitempty" xml:"ssl,omitempty" require:"true" type:"Struct"`
+  Ssl *GetBasicConfigurationOfDomainResponseSsl `json:"ssl,omitempty" xml:"ssl,omitempty" require:"true" type:"Struct"`
   // {"en":"Cache rule settings for setting cache rules for accelerated domain names", "zh_CN":"查询缓存时间配置，请使用新接口：【查询缓存时间配置】接口"}
   CacheBehaviors map[string]interface{} `json:"cache-behaviors,omitempty" xml:"cache-behaviors,omitempty" require:"true"`
   // {"en":"Cache file HOST (not return by default, application is required to use)", "zh_CN":"缓存文件HOST（默认不返回，使用需申请）
@@ -11107,10 +11107,10 @@ type GetBasicConfigurationOfDomainResponse struct {
   // {"en":"The live push-pull stream type, the optional values are pull and push, pull means pull flow; push means push flow.", "zh_CN":"直播推拉流类型，可选值为pull和push，pull表示拉流；   push表示推流。"}
   DomainStreamType *string `json:"domain-stream-type,omitempty" xml:"domain-stream-type,omitempty" require:"true"`
   // {"en":"Live domain name configuration, rtmp live acceleration domain name push-pull flow", "zh_CN":"直播域名配置，rtmp直播加速域名的推拉流"}
-  LiveConfig *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseLiveConfig `json:"live-config,omitempty" xml:"live-config,omitempty" require:"true" type:"Struct"`
+  LiveConfig *GetBasicConfigurationOfDomainResponseLiveConfig `json:"live-config,omitempty" xml:"live-config,omitempty" require:"true" type:"Struct"`
   // {"en":"The launch point of the live push-pull domain name", "zh_CN":"直播推拉流域名的发布点
   // 注意：拉流和对应的推流域名，发布点是相同的"}
-  PublishPoints *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponsePublishPoints `json:"publish-points,omitempty" xml:"publish-points,omitempty" require:"true" type:"Struct"`
+  PublishPoints *GetBasicConfigurationOfDomainResponsePublishPoints `json:"publish-points,omitempty" xml:"publish-points,omitempty" require:"true" type:"Struct"`
 }
 
 func (s GetBasicConfigurationOfDomainResponse) String() string {
@@ -11181,12 +11181,12 @@ func (s *GetBasicConfigurationOfDomainResponse) SetCnameLabel(v string) *GetBasi
   return s
 }
 
-func (s *GetBasicConfigurationOfDomainResponse) SetOriginConfig(v *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfig) *GetBasicConfigurationOfDomainResponse {
+func (s *GetBasicConfigurationOfDomainResponse) SetOriginConfig(v *GetBasicConfigurationOfDomainResponseOriginConfig) *GetBasicConfigurationOfDomainResponse {
   s.OriginConfig = v
   return s
 }
 
-func (s *GetBasicConfigurationOfDomainResponse) SetSsl(v *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseSsl) *GetBasicConfigurationOfDomainResponse {
+func (s *GetBasicConfigurationOfDomainResponse) SetSsl(v *GetBasicConfigurationOfDomainResponseSsl) *GetBasicConfigurationOfDomainResponse {
   s.Ssl = v
   return s
 }
@@ -11216,17 +11216,17 @@ func (s *GetBasicConfigurationOfDomainResponse) SetDomainStreamType(v string) *G
   return s
 }
 
-func (s *GetBasicConfigurationOfDomainResponse) SetLiveConfig(v *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseLiveConfig) *GetBasicConfigurationOfDomainResponse {
+func (s *GetBasicConfigurationOfDomainResponse) SetLiveConfig(v *GetBasicConfigurationOfDomainResponseLiveConfig) *GetBasicConfigurationOfDomainResponse {
   s.LiveConfig = v
   return s
 }
 
-func (s *GetBasicConfigurationOfDomainResponse) SetPublishPoints(v *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponsePublishPoints) *GetBasicConfigurationOfDomainResponse {
+func (s *GetBasicConfigurationOfDomainResponse) SetPublishPoints(v *GetBasicConfigurationOfDomainResponsePublishPoints) *GetBasicConfigurationOfDomainResponse {
   s.PublishPoints = v
   return s
 }
 
-type GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfig struct {
+type GetBasicConfigurationOfDomainResponseOriginConfig struct {
   // {"en":"Return source address, which can be IP or domain name.", "zh_CN":"回源地址，可以是IP或域名。
   // 1、IP以分号分隔，支持多个。
   // 2、域名只能一个。
@@ -11235,91 +11235,91 @@ type GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginCon
   // {"en":"Back to the source HOST, used to change the HOST field in the source HTTP request header.", "zh_CN":"回源HOST，用于更改回源HTTP请求头中的HOST字段。"}
   DefaultOriginHostHeader *string `json:"default-origin-host-header,omitempty" xml:"default-origin-host-header,omitempty" require:"true"`
   // {"en":"advance origin config", "zh_CN":"高级源配置"}
-  AdvOriginConfigs *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs `json:"adv-origin-configs,omitempty" xml:"adv-origin-configs,omitempty" require:"true" type:"Struct"`
+  AdvOriginConfigs *GetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs `json:"adv-origin-configs,omitempty" xml:"adv-origin-configs,omitempty" require:"true" type:"Struct"`
 }
 
-func (s GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfig) String() string {
+func (s GetBasicConfigurationOfDomainResponseOriginConfig) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfig) GoString() string {
+func (s GetBasicConfigurationOfDomainResponseOriginConfig) GoString() string {
   return s.String()
 }
 
-func (s *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfig) SetOriginIps(v string) *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfig {
+func (s *GetBasicConfigurationOfDomainResponseOriginConfig) SetOriginIps(v string) *GetBasicConfigurationOfDomainResponseOriginConfig {
   s.OriginIps = &v
   return s
 }
 
-func (s *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfig) SetDefaultOriginHostHeader(v string) *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfig {
+func (s *GetBasicConfigurationOfDomainResponseOriginConfig) SetDefaultOriginHostHeader(v string) *GetBasicConfigurationOfDomainResponseOriginConfig {
   s.DefaultOriginHostHeader = &v
   return s
 }
 
-func (s *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfig) SetAdvOriginConfigs(v *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs) *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfig {
+func (s *GetBasicConfigurationOfDomainResponseOriginConfig) SetAdvOriginConfigs(v *GetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs) *GetBasicConfigurationOfDomainResponseOriginConfig {
   s.AdvOriginConfigs = v
   return s
 }
 
-type GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs struct {
+type GetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs struct {
   // {"en":"The advanced source monitors the url, and requests <master-ips> through the url. If the response is not 2**, 3** response, it is considered that the primary source ip is faulty, and <backup-ips> is used at this time.", "zh_CN":"高级源监控url，通过该url请求<master-ips>，如果返回非2**，3**响应时，认为主要回源ip故障，此时使用<backup-ips>。
   // 完整的url，例如：http://a.example.com/test.html"}
   DetectUrl *string `json:"detect-url,omitempty" xml:"detect-url,omitempty" require:"true"`
   // {"en":"Advanced source monitoring period, in seconds, optional as an integer greater than or equal to 0, 0 means no monitoring", "zh_CN":"高级源监控周期，单位秒，可选值为大于等于0的整数，0表示不监控"}
   DetectPeriod *int `json:"detect-period,omitempty" xml:"detect-period,omitempty" require:"true"`
   // {"en":"advance origin config", "zh_CN":"高级源配置"}
-  AdvOriginConfig *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigsAdvOriginConfig `json:"adv-origin-config,omitempty" xml:"adv-origin-config,omitempty" require:"true" type:"Struct"`
+  AdvOriginConfig *GetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigsAdvOriginConfig `json:"adv-origin-config,omitempty" xml:"adv-origin-config,omitempty" require:"true" type:"Struct"`
 }
 
-func (s GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs) String() string {
+func (s GetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs) GoString() string {
+func (s GetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs) GoString() string {
   return s.String()
 }
 
-func (s *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs) SetDetectUrl(v string) *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs {
+func (s *GetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs) SetDetectUrl(v string) *GetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs {
   s.DetectUrl = &v
   return s
 }
 
-func (s *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs) SetDetectPeriod(v int) *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs {
+func (s *GetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs) SetDetectPeriod(v int) *GetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs {
   s.DetectPeriod = &v
   return s
 }
 
-func (s *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs) SetAdvOriginConfig(v *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigsAdvOriginConfig) *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs {
+func (s *GetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs) SetAdvOriginConfig(v *GetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigsAdvOriginConfig) *GetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigs {
   s.AdvOriginConfig = v
   return s
 }
 
-type GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigsAdvOriginConfig struct {
+type GetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigsAdvOriginConfig struct {
   // {"en":"The advanced source mainly returns the source IP. Multiple IPs are separated by a semicolon \";\", and the return source IP cannot be repeated.", "zh_CN":"高级源主要回源IP，多个IP用分号“;”分隔，回源IP不能重复"}
   MasterIps *string `json:"master-ips,omitempty" xml:"master-ips,omitempty" require:"true"`
   // {"en":"Advanced source backup source IP, multiple IPs are separated by semicolon \";\", and the return source IP cannot be duplicated.", "zh_CN":"高级源备用回源IP，多个IP用分号“;”分隔，回源IP不能重复"}
   BackupIps *string `json:"backup-ips,omitempty" xml:"backup-ips,omitempty" require:"true"`
 }
 
-func (s GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigsAdvOriginConfig) String() string {
+func (s GetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigsAdvOriginConfig) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigsAdvOriginConfig) GoString() string {
+func (s GetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigsAdvOriginConfig) GoString() string {
   return s.String()
 }
 
-func (s *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigsAdvOriginConfig) SetMasterIps(v string) *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigsAdvOriginConfig {
+func (s *GetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigsAdvOriginConfig) SetMasterIps(v string) *GetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigsAdvOriginConfig {
   s.MasterIps = &v
   return s
 }
 
-func (s *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigsAdvOriginConfig) SetBackupIps(v string) *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigsAdvOriginConfig {
+func (s *GetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigsAdvOriginConfig) SetBackupIps(v string) *GetBasicConfigurationOfDomainResponseOriginConfigAdvOriginConfigsAdvOriginConfig {
   s.BackupIps = &v
   return s
 }
 
-type GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseSsl struct {
+type GetBasicConfigurationOfDomainResponseSsl struct {
   // {"en":"Use a certificate, the optional values are true and false, true means to use the certificate, false means not to use the certificate", "zh_CN":"使用证书，可选值为true和false，true表示使用证书，false表示不使用证书"}
   UseSsl *string `json:"use-ssl,omitempty" xml:"use-ssl,omitempty" require:"true"`
   // {"en":"Use sni certificate, the optional values are true and false, true means use sni certificate, false means use non-sni traditional certificate", "zh_CN":"使用sni证书，可选值为true和false，true表示使用sni证书，false表示使用非sni的传统证书"}
@@ -11328,30 +11328,30 @@ type GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseSsl struc
   SslCertificateId *int `json:"ssl-certificate-id,omitempty" xml:"ssl-certificate-id,omitempty" require:"true"`
 }
 
-func (s GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseSsl) String() string {
+func (s GetBasicConfigurationOfDomainResponseSsl) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseSsl) GoString() string {
+func (s GetBasicConfigurationOfDomainResponseSsl) GoString() string {
   return s.String()
 }
 
-func (s *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseSsl) SetUseSsl(v string) *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseSsl {
+func (s *GetBasicConfigurationOfDomainResponseSsl) SetUseSsl(v string) *GetBasicConfigurationOfDomainResponseSsl {
   s.UseSsl = &v
   return s
 }
 
-func (s *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseSsl) SetUseForSni(v string) *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseSsl {
+func (s *GetBasicConfigurationOfDomainResponseSsl) SetUseForSni(v string) *GetBasicConfigurationOfDomainResponseSsl {
   s.UseForSni = &v
   return s
 }
 
-func (s *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseSsl) SetSslCertificateId(v int) *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseSsl {
+func (s *GetBasicConfigurationOfDomainResponseSsl) SetSslCertificateId(v int) *GetBasicConfigurationOfDomainResponseSsl {
   s.SslCertificateId = &v
   return s
 }
 
-type GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseLiveConfig struct {
+type GetBasicConfigurationOfDomainResponseLiveConfig struct {
   // {"en":"The live push-pull stream type, the optional values are pull and push.", "zh_CN":"直播推拉流类型，可选值为pull和push，pull表示拉流；   push表示推流。"}
   StreamType *string `json:"stream-type,omitempty" xml:"stream-type,omitempty" require:"true"`
   // {"en":"Source station IP. When the stream-type is pull, at least one of the source station IP and the companion push stream domain name is not empty.", "zh_CN":"源站IP，当stream-type为pull时，源站IP和配套推流域名至少一个不为空。
@@ -11362,43 +11362,43 @@ type GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseLiveConfi
   OriginPushHost *string `json:"origin-push-host,omitempty" xml:"origin-push-host,omitempty" require:"true"`
 }
 
-func (s GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseLiveConfig) String() string {
+func (s GetBasicConfigurationOfDomainResponseLiveConfig) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseLiveConfig) GoString() string {
+func (s GetBasicConfigurationOfDomainResponseLiveConfig) GoString() string {
   return s.String()
 }
 
-func (s *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseLiveConfig) SetStreamType(v string) *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseLiveConfig {
+func (s *GetBasicConfigurationOfDomainResponseLiveConfig) SetStreamType(v string) *GetBasicConfigurationOfDomainResponseLiveConfig {
   s.StreamType = &v
   return s
 }
 
-func (s *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseLiveConfig) SetOriginIps(v string) *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseLiveConfig {
+func (s *GetBasicConfigurationOfDomainResponseLiveConfig) SetOriginIps(v string) *GetBasicConfigurationOfDomainResponseLiveConfig {
   s.OriginIps = &v
   return s
 }
 
-func (s *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseLiveConfig) SetOriginPushHost(v string) *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponseLiveConfig {
+func (s *GetBasicConfigurationOfDomainResponseLiveConfig) SetOriginPushHost(v string) *GetBasicConfigurationOfDomainResponseLiveConfig {
   s.OriginPushHost = &v
   return s
 }
 
-type GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponsePublishPoints struct {
+type GetBasicConfigurationOfDomainResponsePublishPoints struct {
   // {"en":"Release point, support multiple, the system default is \"/\"", "zh_CN":"发布点，支持多个，系统默认值为“/”"}
   Uri *string `json:"uri,omitempty" xml:"uri,omitempty" require:"true"`
 }
 
-func (s GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponsePublishPoints) String() string {
+func (s GetBasicConfigurationOfDomainResponsePublishPoints) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponsePublishPoints) GoString() string {
+func (s GetBasicConfigurationOfDomainResponsePublishPoints) GoString() string {
   return s.String()
 }
 
-func (s *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponsePublishPoints) SetUri(v string) *GetBasicConfigurationOfDomainGetBasicConfigurationOfDomainResponsePublishPoints {
+func (s *GetBasicConfigurationOfDomainResponsePublishPoints) SetUri(v string) *GetBasicConfigurationOfDomainResponsePublishPoints {
   s.Uri = &v
   return s
 }
@@ -11495,7 +11495,7 @@ type QueryGlobalTransCodingConfigForWplusResponse struct {
   // {"en":"Response information, when success is successful", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"response data", "zh_CN":"响应数据"}
-  Data *QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryGlobalTransCodingConfigForWplusResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryGlobalTransCodingConfigForWplusResponse) String() string {
@@ -11516,12 +11516,12 @@ func (s *QueryGlobalTransCodingConfigForWplusResponse) SetMessage(v string) *Que
   return s
 }
 
-func (s *QueryGlobalTransCodingConfigForWplusResponse) SetData(v *QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusResponseData) *QueryGlobalTransCodingConfigForWplusResponse {
+func (s *QueryGlobalTransCodingConfigForWplusResponse) SetData(v *QueryGlobalTransCodingConfigForWplusResponseData) *QueryGlobalTransCodingConfigForWplusResponse {
   s.Data = v
   return s
 }
 
-type QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusResponseData struct {
+type QueryGlobalTransCodingConfigForWplusResponseData struct {
   // {"en":"domain id", "zh_CN":"域名ID"}
   DomainId *int `json:"domainId,omitempty" xml:"domainId,omitempty" require:"true"`
   // {"en":"domain name", "zh_CN":"域名"}
@@ -11531,53 +11531,53 @@ type QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusRes
   // 2. Configuration of clearing for <transCodeSwitch/>.", "zh_CN":"转码全局配置，父标签
   // 1.需要设置转码功能时，此项必填
   // 2.为<transCodeSwitch/>时清空配置"}
-  TransCodeSwitch *QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusResponseDataTransCodeSwitch `json:"transCodeSwitch,omitempty" xml:"transCodeSwitch,omitempty" require:"true" type:"Struct"`
+  TransCodeSwitch *QueryGlobalTransCodingConfigForWplusResponseDataTransCodeSwitch `json:"transCodeSwitch,omitempty" xml:"transCodeSwitch,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusResponseData) String() string {
+func (s QueryGlobalTransCodingConfigForWplusResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusResponseData) GoString() string {
+func (s QueryGlobalTransCodingConfigForWplusResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusResponseData) SetDomainId(v int) *QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusResponseData {
+func (s *QueryGlobalTransCodingConfigForWplusResponseData) SetDomainId(v int) *QueryGlobalTransCodingConfigForWplusResponseData {
   s.DomainId = &v
   return s
 }
 
-func (s *QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusResponseData) SetDomainName(v string) *QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusResponseData {
+func (s *QueryGlobalTransCodingConfigForWplusResponseData) SetDomainName(v string) *QueryGlobalTransCodingConfigForWplusResponseData {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusResponseData) SetTransCodeSwitch(v *QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusResponseDataTransCodeSwitch) *QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusResponseData {
+func (s *QueryGlobalTransCodingConfigForWplusResponseData) SetTransCodeSwitch(v *QueryGlobalTransCodingConfigForWplusResponseDataTransCodeSwitch) *QueryGlobalTransCodingConfigForWplusResponseData {
   s.TransCodeSwitch = v
   return s
 }
 
-type QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusResponseDataTransCodeSwitch struct {
+type QueryGlobalTransCodingConfigForWplusResponseDataTransCodeSwitch struct {
   // {"en":"Turn on transcoding, the optional values are true and false.", "zh_CN":"开启转码，可选值为true（开启）、false（关闭）"}
   TransCodeEnabled *bool `json:"transCodeEnabled,omitempty" xml:"transCodeEnabled,omitempty" require:"true"`
   // {"en":"Transcoding pull stream domain name, this item is required when transcoding is enabled.", "zh_CN":"转码拉流域名"}
   PullDomainName *string `json:"pullDomainName,omitempty" xml:"pullDomainName,omitempty" require:"true"`
 }
 
-func (s QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusResponseDataTransCodeSwitch) String() string {
+func (s QueryGlobalTransCodingConfigForWplusResponseDataTransCodeSwitch) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusResponseDataTransCodeSwitch) GoString() string {
+func (s QueryGlobalTransCodingConfigForWplusResponseDataTransCodeSwitch) GoString() string {
   return s.String()
 }
 
-func (s *QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusResponseDataTransCodeSwitch) SetTransCodeEnabled(v bool) *QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusResponseDataTransCodeSwitch {
+func (s *QueryGlobalTransCodingConfigForWplusResponseDataTransCodeSwitch) SetTransCodeEnabled(v bool) *QueryGlobalTransCodingConfigForWplusResponseDataTransCodeSwitch {
   s.TransCodeEnabled = &v
   return s
 }
 
-func (s *QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusResponseDataTransCodeSwitch) SetPullDomainName(v string) *QueryGlobalTransCodingConfigForWplusQueryGlobalTransCodingConfigForWplusResponseDataTransCodeSwitch {
+func (s *QueryGlobalTransCodingConfigForWplusResponseDataTransCodeSwitch) SetPullDomainName(v string) *QueryGlobalTransCodingConfigForWplusResponseDataTransCodeSwitch {
   s.PullDomainName = &v
   return s
 }
@@ -11649,7 +11649,7 @@ func (s QueryCdnwContractDomainsRequest) GoString() string {
 
 type QueryCdnwContractDomainsResponse struct {
   // {"en":"contract items", "zh_CN":"合同列表"}
-  ContractItems []*QueryCdnwContractDomainsQueryCdnwContractDomainsResponseContractItems `json:"contract_items,omitempty" xml:"contract_items,omitempty" require:"true" type:"Repeated"`
+  ContractItems []*QueryCdnwContractDomainsResponseContractItems `json:"contract_items,omitempty" xml:"contract_items,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryCdnwContractDomainsResponse) String() string {
@@ -11660,12 +11660,12 @@ func (s QueryCdnwContractDomainsResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryCdnwContractDomainsResponse) SetContractItems(v []*QueryCdnwContractDomainsQueryCdnwContractDomainsResponseContractItems) *QueryCdnwContractDomainsResponse {
+func (s *QueryCdnwContractDomainsResponse) SetContractItems(v []*QueryCdnwContractDomainsResponseContractItems) *QueryCdnwContractDomainsResponse {
   s.ContractItems = v
   return s
 }
 
-type QueryCdnwContractDomainsQueryCdnwContractDomainsResponseContractItems struct     {
+type QueryCdnwContractDomainsResponseContractItems struct     {
   // {"en":"cncCustomerCode.", "zh_CN":"客户编码"}
   CncCustomerCode *string `json:"cnc_customer_code,omitempty" xml:"cnc_customer_code,omitempty" require:"true"`
   // {"en":"contractId.", "zh_CN":"合同ID"}
@@ -11676,30 +11676,30 @@ type QueryCdnwContractDomainsQueryCdnwContractDomainsResponseContractItems struc
   Domains []*string `json:"domains,omitempty" xml:"domains,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryCdnwContractDomainsQueryCdnwContractDomainsResponseContractItems) String() string {
+func (s QueryCdnwContractDomainsResponseContractItems) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCdnwContractDomainsQueryCdnwContractDomainsResponseContractItems) GoString() string {
+func (s QueryCdnwContractDomainsResponseContractItems) GoString() string {
   return s.String()
 }
 
-func (s *QueryCdnwContractDomainsQueryCdnwContractDomainsResponseContractItems) SetCncCustomerCode(v string) *QueryCdnwContractDomainsQueryCdnwContractDomainsResponseContractItems {
+func (s *QueryCdnwContractDomainsResponseContractItems) SetCncCustomerCode(v string) *QueryCdnwContractDomainsResponseContractItems {
   s.CncCustomerCode = &v
   return s
 }
 
-func (s *QueryCdnwContractDomainsQueryCdnwContractDomainsResponseContractItems) SetContractId(v string) *QueryCdnwContractDomainsQueryCdnwContractDomainsResponseContractItems {
+func (s *QueryCdnwContractDomainsResponseContractItems) SetContractId(v string) *QueryCdnwContractDomainsResponseContractItems {
   s.ContractId = &v
   return s
 }
 
-func (s *QueryCdnwContractDomainsQueryCdnwContractDomainsResponseContractItems) SetItemId(v string) *QueryCdnwContractDomainsQueryCdnwContractDomainsResponseContractItems {
+func (s *QueryCdnwContractDomainsResponseContractItems) SetItemId(v string) *QueryCdnwContractDomainsResponseContractItems {
   s.ItemId = &v
   return s
 }
 
-func (s *QueryCdnwContractDomainsQueryCdnwContractDomainsResponseContractItems) SetDomains(v []*string) *QueryCdnwContractDomainsQueryCdnwContractDomainsResponseContractItems {
+func (s *QueryCdnwContractDomainsResponseContractItems) SetDomains(v []*string) *QueryCdnwContractDomainsResponseContractItems {
   s.Domains = v
   return s
 }
@@ -11772,7 +11772,7 @@ type QueryTOSAuthorizationConfigResponse struct {
   // 2. Configuration of clearing for <tos-access-authorization-rules/>.", "zh_CN":"TOS回源鉴权配置，父标签
   // 1.需要设置TOS回源鉴权时，此项必填
   // 2.为<tos-access-authorization-rules/>时清空TOS回源鉴权配置的配置"}
-  TosAccessAuthorizationRules []*QueryTOSAuthorizationConfigQueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules `json:"tos-access-authorization-rules,omitempty" xml:"tos-access-authorization-rules,omitempty" require:"true" type:"Repeated"`
+  TosAccessAuthorizationRules []*QueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules `json:"tos-access-authorization-rules,omitempty" xml:"tos-access-authorization-rules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryTOSAuthorizationConfigResponse) String() string {
@@ -11793,12 +11793,12 @@ func (s *QueryTOSAuthorizationConfigResponse) SetDomainId(v string) *QueryTOSAut
   return s
 }
 
-func (s *QueryTOSAuthorizationConfigResponse) SetTosAccessAuthorizationRules(v []*QueryTOSAuthorizationConfigQueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules) *QueryTOSAuthorizationConfigResponse {
+func (s *QueryTOSAuthorizationConfigResponse) SetTosAccessAuthorizationRules(v []*QueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules) *QueryTOSAuthorizationConfigResponse {
   s.TosAccessAuthorizationRules = v
   return s
 }
 
-type QueryTOSAuthorizationConfigQueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules struct     {
+type QueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules struct     {
   // {"en":"The url matching mode. If all matches, the input parameters can be configured as: .*", "zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*"}
   PathPattern *string `json:"path-pattern,omitempty" xml:"path-pattern,omitempty" require:"true"`
   // {"en":"The exception url matching mode.", "zh_CN":"例外的url匹配模式，格式同path-pattern"}
@@ -11815,45 +11815,45 @@ type QueryTOSAuthorizationConfigQueryTOSAuthorizationConfigResponseTosAccessAuth
   DataId *int64 `json:"data-id,omitempty" xml:"data-id,omitempty" require:"true"`
 }
 
-func (s QueryTOSAuthorizationConfigQueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules) String() string {
+func (s QueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryTOSAuthorizationConfigQueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules) GoString() string {
+func (s QueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryTOSAuthorizationConfigQueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules) SetPathPattern(v string) *QueryTOSAuthorizationConfigQueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules {
+func (s *QueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules) SetPathPattern(v string) *QueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules {
   s.PathPattern = &v
   return s
 }
 
-func (s *QueryTOSAuthorizationConfigQueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules) SetExceptPathPattern(v string) *QueryTOSAuthorizationConfigQueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules {
+func (s *QueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules) SetExceptPathPattern(v string) *QueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *QueryTOSAuthorizationConfigQueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules) SetAccessKey(v string) *QueryTOSAuthorizationConfigQueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules {
+func (s *QueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules) SetAccessKey(v string) *QueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules {
   s.AccessKey = &v
   return s
 }
 
-func (s *QueryTOSAuthorizationConfigQueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules) SetAccessKeyId(v string) *QueryTOSAuthorizationConfigQueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules {
+func (s *QueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules) SetAccessKeyId(v string) *QueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules {
   s.AccessKeyId = &v
   return s
 }
 
-func (s *QueryTOSAuthorizationConfigQueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules) SetHeaderName(v string) *QueryTOSAuthorizationConfigQueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules {
+func (s *QueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules) SetHeaderName(v string) *QueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules {
   s.HeaderName = &v
   return s
 }
 
-func (s *QueryTOSAuthorizationConfigQueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules) SetExpireTime(v string) *QueryTOSAuthorizationConfigQueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules {
+func (s *QueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules) SetExpireTime(v string) *QueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules {
   s.ExpireTime = &v
   return s
 }
 
-func (s *QueryTOSAuthorizationConfigQueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules) SetDataId(v int64) *QueryTOSAuthorizationConfigQueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules {
+func (s *QueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules) SetDataId(v int64) *QueryTOSAuthorizationConfigResponseTosAccessAuthorizationRules {
   s.DataId = &v
   return s
 }
@@ -11929,7 +11929,7 @@ type QuerySingleTransCodingConfigForWplusResponse struct {
   // {"en":"Response information, when success is successful", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"response data", "zh_CN":"响应数据"}
-  Data *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QuerySingleTransCodingConfigForWplusResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
   // {"en":"Uniquely labeled id for querying each requested task (for all interfaces)", "zh_CN":"唯一标示的id，用于查询每次请求的任务 （适用全部接口）"}
   XCncRequestId *string `json:"x-cnc-request-id,omitempty" xml:"x-cnc-request-id,omitempty" require:"true"`
 }
@@ -11952,7 +11952,7 @@ func (s *QuerySingleTransCodingConfigForWplusResponse) SetMessage(v string) *Que
   return s
 }
 
-func (s *QuerySingleTransCodingConfigForWplusResponse) SetData(v *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseData) *QuerySingleTransCodingConfigForWplusResponse {
+func (s *QuerySingleTransCodingConfigForWplusResponse) SetData(v *QuerySingleTransCodingConfigForWplusResponseData) *QuerySingleTransCodingConfigForWplusResponse {
   s.Data = v
   return s
 }
@@ -11962,7 +11962,7 @@ func (s *QuerySingleTransCodingConfigForWplusResponse) SetXCncRequestId(v string
   return s
 }
 
-type QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseData struct {
+type QuerySingleTransCodingConfigForWplusResponseData struct {
   // {"en":"domain id", "zh_CN":"域名ID"}
   DomainId *int `json:"domainId,omitempty" xml:"domainId,omitempty" require:"true"`
   // {"en":"domain name", "zh_CN":"域名"}
@@ -11972,33 +11972,33 @@ type QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusRes
   // 2. Configuration of clearing for <transCodes/>.", "zh_CN":"转码配置，父标签
   // 1.需要设置转码配置时，此项必填
   // 2.为<transCodes/>时清空配置"}
-  TransCodes []*QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes `json:"transCodes,omitempty" xml:"transCodes,omitempty" require:"true" type:"Repeated"`
+  TransCodes []*QuerySingleTransCodingConfigForWplusResponseDataTransCodes `json:"transCodes,omitempty" xml:"transCodes,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseData) String() string {
+func (s QuerySingleTransCodingConfigForWplusResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseData) GoString() string {
+func (s QuerySingleTransCodingConfigForWplusResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseData) SetDomainId(v int) *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseData {
+func (s *QuerySingleTransCodingConfigForWplusResponseData) SetDomainId(v int) *QuerySingleTransCodingConfigForWplusResponseData {
   s.DomainId = &v
   return s
 }
 
-func (s *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseData) SetDomainName(v string) *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseData {
+func (s *QuerySingleTransCodingConfigForWplusResponseData) SetDomainName(v string) *QuerySingleTransCodingConfigForWplusResponseData {
   s.DomainName = &v
   return s
 }
 
-func (s *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseData) SetTransCodes(v []*QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes) *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseData {
+func (s *QuerySingleTransCodingConfigForWplusResponseData) SetTransCodes(v []*QuerySingleTransCodingConfigForWplusResponseDataTransCodes) *QuerySingleTransCodingConfigForWplusResponseData {
   s.TransCodes = v
   return s
 }
 
-type QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes struct     {
+type QuerySingleTransCodingConfigForWplusResponseDataTransCodes struct     {
   // {"en":"Transcoding template. Define a template. The optional values are lld, lsd, lhd, lud,  l2k, l4k. The corresponding resolution/rate are as follows.
   // 
   // lld: smooth, which means that the resolution of the original flow is 640 * 360, and the transcoding rate is 500kbps
@@ -12037,7 +12037,7 @@ type QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusRes
   // {"en":"Custom audio transcoding, such as:
   // <customAudioTranscode><audioCodec>aac</audioCodec><audioBitrate>129</audioBitrate></customAudioTranscode>", "zh_CN":"自定义音频转码，父标签，格式如：
   // <customAudioTranscode><audioCodec>aac</audioCodec><audioBitrate>129</audioBitrate></customAudioTranscode>"}
-  CustomAudioTranscode *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodesCustomAudioTranscode `json:"customAudioTranscode,omitempty" xml:"customAudioTranscode,omitempty" require:"true" type:"Struct"`
+  CustomAudioTranscode *QuerySingleTransCodingConfigForWplusResponseDataTransCodesCustomAudioTranscode `json:"customAudioTranscode,omitempty" xml:"customAudioTranscode,omitempty" require:"true" type:"Struct"`
   // {"en":"Frame rate, scope [1,61].", "zh_CN":"帧率，范围【1，60】"}
   FrameRate *int `json:"frameRate,omitempty" xml:"frameRate,omitempty" require:"true"`
   // {"en":"Gop, scope [1,11].", "zh_CN":"gop，范围【1，10】"}
@@ -12060,80 +12060,80 @@ type QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusRes
   PublishPoints []*string `json:"publishPoints,omitempty" xml:"publishPoints,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes) String() string {
+func (s QuerySingleTransCodingConfigForWplusResponseDataTransCodes) String() string {
   return tea.Prettify(s)
 }
 
-func (s QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes) GoString() string {
+func (s QuerySingleTransCodingConfigForWplusResponseDataTransCodes) GoString() string {
   return s.String()
 }
 
-func (s *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes) SetTemplate(v string) *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes {
+func (s *QuerySingleTransCodingConfigForWplusResponseDataTransCodes) SetTemplate(v string) *QuerySingleTransCodingConfigForWplusResponseDataTransCodes {
   s.Template = &v
   return s
 }
 
-func (s *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes) SetDataId(v int) *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes {
+func (s *QuerySingleTransCodingConfigForWplusResponseDataTransCodes) SetDataId(v int) *QuerySingleTransCodingConfigForWplusResponseDataTransCodes {
   s.DataId = &v
   return s
 }
 
-func (s *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes) SetAudioTemplate(v string) *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes {
+func (s *QuerySingleTransCodingConfigForWplusResponseDataTransCodes) SetAudioTemplate(v string) *QuerySingleTransCodingConfigForWplusResponseDataTransCodes {
   s.AudioTemplate = &v
   return s
 }
 
-func (s *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes) SetCustomAudioTranscode(v *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodesCustomAudioTranscode) *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes {
+func (s *QuerySingleTransCodingConfigForWplusResponseDataTransCodes) SetCustomAudioTranscode(v *QuerySingleTransCodingConfigForWplusResponseDataTransCodesCustomAudioTranscode) *QuerySingleTransCodingConfigForWplusResponseDataTransCodes {
   s.CustomAudioTranscode = v
   return s
 }
 
-func (s *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes) SetFrameRate(v int) *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes {
+func (s *QuerySingleTransCodingConfigForWplusResponseDataTransCodes) SetFrameRate(v int) *QuerySingleTransCodingConfigForWplusResponseDataTransCodes {
   s.FrameRate = &v
   return s
 }
 
-func (s *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes) SetGop(v int) *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes {
+func (s *QuerySingleTransCodingConfigForWplusResponseDataTransCodes) SetGop(v int) *QuerySingleTransCodingConfigForWplusResponseDataTransCodes {
   s.Gop = &v
   return s
 }
 
-func (s *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes) SetHeightAdaptive(v bool) *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes {
+func (s *QuerySingleTransCodingConfigForWplusResponseDataTransCodes) SetHeightAdaptive(v bool) *QuerySingleTransCodingConfigForWplusResponseDataTransCodes {
   s.HeightAdaptive = &v
   return s
 }
 
-func (s *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes) SetLimitLow2High(v bool) *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes {
+func (s *QuerySingleTransCodingConfigForWplusResponseDataTransCodes) SetLimitLow2High(v bool) *QuerySingleTransCodingConfigForWplusResponseDataTransCodes {
   s.LimitLow2High = &v
   return s
 }
 
-func (s *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes) SetPublishPoints(v []*string) *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodes {
+func (s *QuerySingleTransCodingConfigForWplusResponseDataTransCodes) SetPublishPoints(v []*string) *QuerySingleTransCodingConfigForWplusResponseDataTransCodes {
   s.PublishPoints = v
   return s
 }
 
-type QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodesCustomAudioTranscode struct {
+type QuerySingleTransCodingConfigForWplusResponseDataTransCodesCustomAudioTranscode struct {
   // {"en":"Custom audio format, support: aac and mp4.", "zh_CN":"自定义音频格式，支持入参：aac,mp4"}
   AudioCodec *string `json:"audioCodec,omitempty" xml:"audioCodec,omitempty" require:"true"`
   // {"en":"Custom audio bitrate, unit kbps, scope [0,257].", "zh_CN":"自定义音频码率，单位kbps，范围【0，256】"}
   AudioBitrate *int `json:"audioBitrate,omitempty" xml:"audioBitrate,omitempty" require:"true"`
 }
 
-func (s QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodesCustomAudioTranscode) String() string {
+func (s QuerySingleTransCodingConfigForWplusResponseDataTransCodesCustomAudioTranscode) String() string {
   return tea.Prettify(s)
 }
 
-func (s QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodesCustomAudioTranscode) GoString() string {
+func (s QuerySingleTransCodingConfigForWplusResponseDataTransCodesCustomAudioTranscode) GoString() string {
   return s.String()
 }
 
-func (s *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodesCustomAudioTranscode) SetAudioCodec(v string) *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodesCustomAudioTranscode {
+func (s *QuerySingleTransCodingConfigForWplusResponseDataTransCodesCustomAudioTranscode) SetAudioCodec(v string) *QuerySingleTransCodingConfigForWplusResponseDataTransCodesCustomAudioTranscode {
   s.AudioCodec = &v
   return s
 }
 
-func (s *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodesCustomAudioTranscode) SetAudioBitrate(v int) *QuerySingleTransCodingConfigForWplusQuerySingleTransCodingConfigForWplusResponseDataTransCodesCustomAudioTranscode {
+func (s *QuerySingleTransCodingConfigForWplusResponseDataTransCodesCustomAudioTranscode) SetAudioBitrate(v int) *QuerySingleTransCodingConfigForWplusResponseDataTransCodesCustomAudioTranscode {
   s.AudioBitrate = &v
   return s
 }
@@ -12216,9 +12216,9 @@ type EditDomainConfigRequest struct {
   // 5、支持通过修改cname-label达到修改cname的目的。"}
   CnameLabel *string `json:"cname-label,omitempty" xml:"cname-label,omitempty"`
   // {"en":"Back to origin policy settings for setting source site information and return source policies for accelerated domain names", "zh_CN":"回源策略设置，用于设置加速域名的源站信息和回源策略"}
-  OriginConfig *EditDomainConfigEditDomainConfigRequestOriginConfig `json:"origin-config,omitempty" xml:"origin-config,omitempty" type:"Struct"`
+  OriginConfig *EditDomainConfigRequestOriginConfig `json:"origin-config,omitempty" xml:"origin-config,omitempty" type:"Struct"`
   // {"en":"SSL settings, to bind a certificate with the accelerated domain. You can use the interface [AddCertificate] to upload your  certificates. If you want to modify a certificate, please use the interface: [UpdateCertificate]", "zh_CN":"ssl证书设置，用于设置加速域名的ssl证书配置。上传证书请使用接口：【新增证书V2】；若要修改证书，请使用接口：【修改证书V2】"}
-  Ssl *EditDomainConfigEditDomainConfigRequestSsl `json:"ssl,omitempty" xml:"ssl,omitempty" type:"Struct"`
+  Ssl *EditDomainConfigRequestSsl `json:"ssl,omitempty" xml:"ssl,omitempty" type:"Struct"`
   // {"en":"Cache file HOST.
   // Cache rules for caching HOST domain names and accelerated domain names must be consistent.", "zh_CN":"缓存文件HOST。缓存HOST域名和加速域名的缓存规则必须一致。"}
   CacheHost *string `json:"cache-host,omitempty" xml:"cache-host,omitempty"`
@@ -12230,7 +12230,7 @@ type EditDomainConfigRequest struct {
   // {"en":"Pass the response header of client IP. The optional values are Cdn-Src-Ip and X-Forwarded-For. The default value is Cdn-Src-Ip.", "zh_CN":"传递客户端ip的响应头部，可选值为Cdn-Src-Ip和X-Forwarded-For，默认值为Cdn-Src-Ip"}
   HeaderOfClientip *string `json:"header-of-clientip,omitempty" xml:"header-of-clientip,omitempty"`
   // {"en":"Live domain name configuration, used to set the push flow of live acceleration domain name", "zh_CN":"直播域名配置，用于设置直播加速域名的推拉流"}
-  LiveConfig *EditDomainConfigEditDomainConfigRequestLiveConfig `json:"live-config,omitempty" xml:"live-config,omitempty" type:"Struct"`
+  LiveConfig *EditDomainConfigRequestLiveConfig `json:"live-config,omitempty" xml:"live-config,omitempty" type:"Struct"`
   // {"en":"Set the publishing point of the live push-pull domain.
   // Note:
   // 1. The pull stream and the corresponding push stream domain must be configured with the same publishing point.
@@ -12240,7 +12240,7 @@ type EditDomainConfigRequest struct {
   // 1、拉流和对应的推流域名，必须配置相同的发布点；
   // 2、不想修改发布点时，不要传入该节点及以下入参；
   // 3、发布点采用覆盖式更新，每次修改时，需要提交全部发布点，不能仅提交需要修改的部分。"}
-  PublishPoints []*EditDomainConfigEditDomainConfigRequestPublishPoints `json:"publish-points,omitempty" xml:"publish-points,omitempty" type:"Repeated"`
+  PublishPoints []*EditDomainConfigRequestPublishPoints `json:"publish-points,omitempty" xml:"publish-points,omitempty" type:"Repeated"`
 }
 
 func (s EditDomainConfigRequest) String() string {
@@ -12271,12 +12271,12 @@ func (s *EditDomainConfigRequest) SetCnameLabel(v string) *EditDomainConfigReque
   return s
 }
 
-func (s *EditDomainConfigRequest) SetOriginConfig(v *EditDomainConfigEditDomainConfigRequestOriginConfig) *EditDomainConfigRequest {
+func (s *EditDomainConfigRequest) SetOriginConfig(v *EditDomainConfigRequestOriginConfig) *EditDomainConfigRequest {
   s.OriginConfig = v
   return s
 }
 
-func (s *EditDomainConfigRequest) SetSsl(v *EditDomainConfigEditDomainConfigRequestSsl) *EditDomainConfigRequest {
+func (s *EditDomainConfigRequest) SetSsl(v *EditDomainConfigRequestSsl) *EditDomainConfigRequest {
   s.Ssl = v
   return s
 }
@@ -12296,17 +12296,17 @@ func (s *EditDomainConfigRequest) SetHeaderOfClientip(v string) *EditDomainConfi
   return s
 }
 
-func (s *EditDomainConfigRequest) SetLiveConfig(v *EditDomainConfigEditDomainConfigRequestLiveConfig) *EditDomainConfigRequest {
+func (s *EditDomainConfigRequest) SetLiveConfig(v *EditDomainConfigRequestLiveConfig) *EditDomainConfigRequest {
   s.LiveConfig = v
   return s
 }
 
-func (s *EditDomainConfigRequest) SetPublishPoints(v []*EditDomainConfigEditDomainConfigRequestPublishPoints) *EditDomainConfigRequest {
+func (s *EditDomainConfigRequest) SetPublishPoints(v []*EditDomainConfigRequestPublishPoints) *EditDomainConfigRequest {
   s.PublishPoints = v
   return s
 }
 
-type EditDomainConfigEditDomainConfigRequestOriginConfig struct {
+type EditDomainConfigRequestOriginConfig struct {
   // {"en":"Origin address, which can be an IP or domain name.
   // 1. Multiple IPs are supported, separated by semicolons.
   // 2. Only one domain name is allowed. IP and domain name cannot exist at the same time.
@@ -12326,25 +12326,25 @@ type EditDomainConfigEditDomainConfigRequestOriginConfig struct {
   DefaultOriginHostHeader *string `json:"default-origin-host-header,omitempty" xml:"default-origin-host-header,omitempty"`
 }
 
-func (s EditDomainConfigEditDomainConfigRequestOriginConfig) String() string {
+func (s EditDomainConfigRequestOriginConfig) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditDomainConfigEditDomainConfigRequestOriginConfig) GoString() string {
+func (s EditDomainConfigRequestOriginConfig) GoString() string {
   return s.String()
 }
 
-func (s *EditDomainConfigEditDomainConfigRequestOriginConfig) SetOriginIps(v string) *EditDomainConfigEditDomainConfigRequestOriginConfig {
+func (s *EditDomainConfigRequestOriginConfig) SetOriginIps(v string) *EditDomainConfigRequestOriginConfig {
   s.OriginIps = &v
   return s
 }
 
-func (s *EditDomainConfigEditDomainConfigRequestOriginConfig) SetDefaultOriginHostHeader(v string) *EditDomainConfigEditDomainConfigRequestOriginConfig {
+func (s *EditDomainConfigRequestOriginConfig) SetDefaultOriginHostHeader(v string) *EditDomainConfigRequestOriginConfig {
   s.DefaultOriginHostHeader = &v
   return s
 }
 
-type EditDomainConfigEditDomainConfigRequestSsl struct {
+type EditDomainConfigRequestSsl struct {
   // {"en":"Use a certificate, the optional values are true and false, true means to use the certificate, false means not to use the certificate", "zh_CN":"使用证书，可选值为true和false，true表示使用证书，false表示不使用证书"}
   UseSsl *string `json:"use-ssl,omitempty" xml:"use-ssl,omitempty"`
   // {"en":"Use sni certificate, the optional values are true and false, true means use sni certificate, false means use shared certificate (not supported)", "zh_CN":"使用sni证书，可选值为true和false，true表示使用sni证书，false表示使用合用证书（暂不支持）"}
@@ -12354,30 +12354,30 @@ type EditDomainConfigEditDomainConfigRequestSsl struct {
   SslCertificateId *int `json:"ssl-certificate-id,omitempty" xml:"ssl-certificate-id,omitempty"`
 }
 
-func (s EditDomainConfigEditDomainConfigRequestSsl) String() string {
+func (s EditDomainConfigRequestSsl) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditDomainConfigEditDomainConfigRequestSsl) GoString() string {
+func (s EditDomainConfigRequestSsl) GoString() string {
   return s.String()
 }
 
-func (s *EditDomainConfigEditDomainConfigRequestSsl) SetUseSsl(v string) *EditDomainConfigEditDomainConfigRequestSsl {
+func (s *EditDomainConfigRequestSsl) SetUseSsl(v string) *EditDomainConfigRequestSsl {
   s.UseSsl = &v
   return s
 }
 
-func (s *EditDomainConfigEditDomainConfigRequestSsl) SetUseForSni(v string) *EditDomainConfigEditDomainConfigRequestSsl {
+func (s *EditDomainConfigRequestSsl) SetUseForSni(v string) *EditDomainConfigRequestSsl {
   s.UseForSni = &v
   return s
 }
 
-func (s *EditDomainConfigEditDomainConfigRequestSsl) SetSslCertificateId(v int) *EditDomainConfigEditDomainConfigRequestSsl {
+func (s *EditDomainConfigRequestSsl) SetSslCertificateId(v int) *EditDomainConfigRequestSsl {
   s.SslCertificateId = &v
   return s
 }
 
-type EditDomainConfigEditDomainConfigRequestLiveConfig struct {
+type EditDomainConfigRequestLiveConfig struct {
   // {"en":"Source station IP. When the stream-type is pull, at least one of the source station IP and the companion push stream domain name is not empty.
   // 1. If it is a push-pull flow package, fill in 127.0.0.1, and the system will also default to 127.0.0.1.
   // 2. If it is directly returning to the source, fill in the source IP of the source pull stream.
@@ -12389,38 +12389,38 @@ type EditDomainConfigEditDomainConfigRequestLiveConfig struct {
   OriginPushHost *string `json:"origin-push-host,omitempty" xml:"origin-push-host,omitempty"`
 }
 
-func (s EditDomainConfigEditDomainConfigRequestLiveConfig) String() string {
+func (s EditDomainConfigRequestLiveConfig) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditDomainConfigEditDomainConfigRequestLiveConfig) GoString() string {
+func (s EditDomainConfigRequestLiveConfig) GoString() string {
   return s.String()
 }
 
-func (s *EditDomainConfigEditDomainConfigRequestLiveConfig) SetLiveConfigOriginIps(v string) *EditDomainConfigEditDomainConfigRequestLiveConfig {
+func (s *EditDomainConfigRequestLiveConfig) SetLiveConfigOriginIps(v string) *EditDomainConfigRequestLiveConfig {
   s.LiveConfigOriginIps = &v
   return s
 }
 
-func (s *EditDomainConfigEditDomainConfigRequestLiveConfig) SetOriginPushHost(v string) *EditDomainConfigEditDomainConfigRequestLiveConfig {
+func (s *EditDomainConfigRequestLiveConfig) SetOriginPushHost(v string) *EditDomainConfigRequestLiveConfig {
   s.OriginPushHost = &v
   return s
 }
 
-type EditDomainConfigEditDomainConfigRequestPublishPoints struct     {
+type EditDomainConfigRequestPublishPoints struct     {
   // {"en":"Livestream domain settings. Publish point, support multiple, do not pass the system by default to generate a publishing point uri for [/]", "zh_CN":"发布点，支持多个，不传系统默认生成一条发布点uri为“/”"}
   Uri *string `json:"uri,omitempty" xml:"uri,omitempty"`
 }
 
-func (s EditDomainConfigEditDomainConfigRequestPublishPoints) String() string {
+func (s EditDomainConfigRequestPublishPoints) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditDomainConfigEditDomainConfigRequestPublishPoints) GoString() string {
+func (s EditDomainConfigRequestPublishPoints) GoString() string {
   return s.String()
 }
 
-func (s *EditDomainConfigEditDomainConfigRequestPublishPoints) SetUri(v string) *EditDomainConfigEditDomainConfigRequestPublishPoints {
+func (s *EditDomainConfigRequestPublishPoints) SetUri(v string) *EditDomainConfigRequestPublishPoints {
   s.Uri = &v
   return s
 }
@@ -12542,7 +12542,7 @@ type QueryLiveDomainAccessCtrlsResponse struct {
   // {"en":"Reponse message.", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data", "zh_CN":"响应数据"}
-  Data *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryLiveDomainAccessCtrlsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryLiveDomainAccessCtrlsResponse) String() string {
@@ -12563,65 +12563,65 @@ func (s *QueryLiveDomainAccessCtrlsResponse) SetMessage(v string) *QueryLiveDoma
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsResponse) SetData(v *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseData) *QueryLiveDomainAccessCtrlsResponse {
+func (s *QueryLiveDomainAccessCtrlsResponse) SetData(v *QueryLiveDomainAccessCtrlsResponseData) *QueryLiveDomainAccessCtrlsResponse {
   s.Data = v
   return s
 }
 
-type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseData struct {
+type QueryLiveDomainAccessCtrlsResponseData struct {
   // {"en":"IP Filters", "zh_CN":"IP访问控制"}
-  IpFilters []*QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataIpFilters `json:"ipFilters,omitempty" xml:"ipFilters,omitempty" require:"true" type:"Repeated"`
+  IpFilters []*QueryLiveDomainAccessCtrlsResponseDataIpFilters `json:"ipFilters,omitempty" xml:"ipFilters,omitempty" require:"true" type:"Repeated"`
   // {"en":"Referer Filters", "zh_CN":"Refferer访问控制"}
-  RefererFilters []*QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters `json:"refererFilters,omitempty" xml:"refererFilters,omitempty" require:"true" type:"Repeated"`
+  RefererFilters []*QueryLiveDomainAccessCtrlsResponseDataRefererFilters `json:"refererFilters,omitempty" xml:"refererFilters,omitempty" require:"true" type:"Repeated"`
   // {"en":"UA Filters", "zh_CN":"UA访问控制"}
-  UaFilters []*QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUaFilters `json:"uaFilters,omitempty" xml:"uaFilters,omitempty" require:"true" type:"Repeated"`
+  UaFilters []*QueryLiveDomainAccessCtrlsResponseDataUaFilters `json:"uaFilters,omitempty" xml:"uaFilters,omitempty" require:"true" type:"Repeated"`
   // {"en":"URL Auths", "zh_CN":"URL Auths"}
-  UrlAuths []*QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths `json:"urlAuths,omitempty" xml:"urlAuths,omitempty" require:"true" type:"Repeated"`
+  UrlAuths []*QueryLiveDomainAccessCtrlsResponseDataUrlAuths `json:"urlAuths,omitempty" xml:"urlAuths,omitempty" require:"true" type:"Repeated"`
   // {"en":"Remote Auths", "zh_CN":"Remote Auths"}
-  RemoteAuths []*QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths `json:"remoteAuths,omitempty" xml:"remoteAuths,omitempty" require:"true" type:"Repeated"`
+  RemoteAuths []*QueryLiveDomainAccessCtrlsResponseDataRemoteAuths `json:"remoteAuths,omitempty" xml:"remoteAuths,omitempty" require:"true" type:"Repeated"`
   // {"en":"Combined Filters", "zh_CN":"访问控制组合"}
-  CombinedFilters []*QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters `json:"combinedFilters,omitempty" xml:"combinedFilters,omitempty" require:"true" type:"Repeated"`
+  CombinedFilters []*QueryLiveDomainAccessCtrlsResponseDataCombinedFilters `json:"combinedFilters,omitempty" xml:"combinedFilters,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseData) String() string {
+func (s QueryLiveDomainAccessCtrlsResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseData) GoString() string {
+func (s QueryLiveDomainAccessCtrlsResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseData) SetIpFilters(v []*QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataIpFilters) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseData {
+func (s *QueryLiveDomainAccessCtrlsResponseData) SetIpFilters(v []*QueryLiveDomainAccessCtrlsResponseDataIpFilters) *QueryLiveDomainAccessCtrlsResponseData {
   s.IpFilters = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseData) SetRefererFilters(v []*QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseData {
+func (s *QueryLiveDomainAccessCtrlsResponseData) SetRefererFilters(v []*QueryLiveDomainAccessCtrlsResponseDataRefererFilters) *QueryLiveDomainAccessCtrlsResponseData {
   s.RefererFilters = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseData) SetUaFilters(v []*QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUaFilters) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseData {
+func (s *QueryLiveDomainAccessCtrlsResponseData) SetUaFilters(v []*QueryLiveDomainAccessCtrlsResponseDataUaFilters) *QueryLiveDomainAccessCtrlsResponseData {
   s.UaFilters = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseData) SetUrlAuths(v []*QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseData {
+func (s *QueryLiveDomainAccessCtrlsResponseData) SetUrlAuths(v []*QueryLiveDomainAccessCtrlsResponseDataUrlAuths) *QueryLiveDomainAccessCtrlsResponseData {
   s.UrlAuths = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseData) SetRemoteAuths(v []*QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseData {
+func (s *QueryLiveDomainAccessCtrlsResponseData) SetRemoteAuths(v []*QueryLiveDomainAccessCtrlsResponseDataRemoteAuths) *QueryLiveDomainAccessCtrlsResponseData {
   s.RemoteAuths = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseData) SetCombinedFilters(v []*QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseData {
+func (s *QueryLiveDomainAccessCtrlsResponseData) SetCombinedFilters(v []*QueryLiveDomainAccessCtrlsResponseDataCombinedFilters) *QueryLiveDomainAccessCtrlsResponseData {
   s.CombinedFilters = v
   return s
 }
 
-type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataIpFilters struct     {
+type QueryLiveDomainAccessCtrlsResponseDataIpFilters struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。"}
   DataId *string `json:"dataId,omitempty" xml:"dataId,omitempty" require:"true"`
   // {"en":"Priority", "zh_CN":"优先级"}
@@ -12638,50 +12638,50 @@ type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataIpFilters s
   Ips []*string `json:"ips,omitempty" xml:"ips,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataIpFilters) String() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataIpFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataIpFilters) GoString() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataIpFilters) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataIpFilters) SetDataId(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataIpFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataIpFilters) SetDataId(v string) *QueryLiveDomainAccessCtrlsResponseDataIpFilters {
   s.DataId = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataIpFilters) SetPriority(v int) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataIpFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataIpFilters) SetPriority(v int) *QueryLiveDomainAccessCtrlsResponseDataIpFilters {
   s.Priority = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataIpFilters) SetUrlRegex(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataIpFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataIpFilters) SetUrlRegex(v string) *QueryLiveDomainAccessCtrlsResponseDataIpFilters {
   s.UrlRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataIpFilters) SetFileTypes(v []*string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataIpFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataIpFilters) SetFileTypes(v []*string) *QueryLiveDomainAccessCtrlsResponseDataIpFilters {
   s.FileTypes = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataIpFilters) SetFileQueryLiveDomainAccessCtrlsPaths(v []*string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataIpFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataIpFilters) SetFileQueryLiveDomainAccessCtrlsPaths(v []*string) *QueryLiveDomainAccessCtrlsResponseDataIpFilters {
   s.FileQueryLiveDomainAccessCtrlsPaths = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataIpFilters) SetType(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataIpFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataIpFilters) SetType(v string) *QueryLiveDomainAccessCtrlsResponseDataIpFilters {
   s.Type = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataIpFilters) SetIps(v []*string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataIpFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataIpFilters) SetIps(v []*string) *QueryLiveDomainAccessCtrlsResponseDataIpFilters {
   s.Ips = v
   return s
 }
 
-type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters struct     {
+type QueryLiveDomainAccessCtrlsResponseDataRefererFilters struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。"}
   DataId *string `json:"dataId,omitempty" xml:"dataId,omitempty" require:"true"`
   // {"en":"Priority", "zh_CN":"优先级"}
@@ -12704,65 +12704,65 @@ type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilt
   AllowEmptyReferer *bool `json:"allowEmptyReferer,omitempty" xml:"allowEmptyReferer,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters) String() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataRefererFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters) GoString() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataRefererFilters) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters) SetDataId(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRefererFilters) SetDataId(v string) *QueryLiveDomainAccessCtrlsResponseDataRefererFilters {
   s.DataId = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters) SetPriority(v int) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRefererFilters) SetPriority(v int) *QueryLiveDomainAccessCtrlsResponseDataRefererFilters {
   s.Priority = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters) SetUrlRegex(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRefererFilters) SetUrlRegex(v string) *QueryLiveDomainAccessCtrlsResponseDataRefererFilters {
   s.UrlRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters) SetFileTypes(v []*string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRefererFilters) SetFileTypes(v []*string) *QueryLiveDomainAccessCtrlsResponseDataRefererFilters {
   s.FileTypes = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters) SetFileQueryLiveDomainAccessCtrlsPaths(v []*string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRefererFilters) SetFileQueryLiveDomainAccessCtrlsPaths(v []*string) *QueryLiveDomainAccessCtrlsResponseDataRefererFilters {
   s.FileQueryLiveDomainAccessCtrlsPaths = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters) SetType(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRefererFilters) SetType(v string) *QueryLiveDomainAccessCtrlsResponseDataRefererFilters {
   s.Type = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters) SetRefererRegex(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRefererFilters) SetRefererRegex(v string) *QueryLiveDomainAccessCtrlsResponseDataRefererFilters {
   s.RefererRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters) SetRefererUrl(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRefererFilters) SetRefererUrl(v string) *QueryLiveDomainAccessCtrlsResponseDataRefererFilters {
   s.RefererUrl = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters) SetRefererDomain(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRefererFilters) SetRefererDomain(v string) *QueryLiveDomainAccessCtrlsResponseDataRefererFilters {
   s.RefererDomain = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters) SetAllowEmptyReferer(v bool) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRefererFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRefererFilters) SetAllowEmptyReferer(v bool) *QueryLiveDomainAccessCtrlsResponseDataRefererFilters {
   s.AllowEmptyReferer = &v
   return s
 }
 
-type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUaFilters struct     {
+type QueryLiveDomainAccessCtrlsResponseDataUaFilters struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。"}
   DataId *string `json:"dataId,omitempty" xml:"dataId,omitempty" require:"true"`
   // {"en":"Priority", "zh_CN":"优先级"}
@@ -12779,50 +12779,50 @@ type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUaFilters s
   UaRegex []*string `json:"uaRegex,omitempty" xml:"uaRegex,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUaFilters) String() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataUaFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUaFilters) GoString() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataUaFilters) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUaFilters) SetDataId(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUaFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataUaFilters) SetDataId(v string) *QueryLiveDomainAccessCtrlsResponseDataUaFilters {
   s.DataId = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUaFilters) SetPriority(v int) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUaFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataUaFilters) SetPriority(v int) *QueryLiveDomainAccessCtrlsResponseDataUaFilters {
   s.Priority = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUaFilters) SetUrlRegex(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUaFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataUaFilters) SetUrlRegex(v string) *QueryLiveDomainAccessCtrlsResponseDataUaFilters {
   s.UrlRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUaFilters) SetFileTypes(v []*string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUaFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataUaFilters) SetFileTypes(v []*string) *QueryLiveDomainAccessCtrlsResponseDataUaFilters {
   s.FileTypes = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUaFilters) SetFileQueryLiveDomainAccessCtrlsPaths(v []*string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUaFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataUaFilters) SetFileQueryLiveDomainAccessCtrlsPaths(v []*string) *QueryLiveDomainAccessCtrlsResponseDataUaFilters {
   s.FileQueryLiveDomainAccessCtrlsPaths = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUaFilters) SetType(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUaFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataUaFilters) SetType(v string) *QueryLiveDomainAccessCtrlsResponseDataUaFilters {
   s.Type = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUaFilters) SetUaRegex(v []*string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUaFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataUaFilters) SetUaRegex(v []*string) *QueryLiveDomainAccessCtrlsResponseDataUaFilters {
   s.UaRegex = v
   return s
 }
 
-type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths struct     {
+type QueryLiveDomainAccessCtrlsResponseDataUrlAuths struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。"}
   DataId *string `json:"dataId,omitempty" xml:"dataId,omitempty" require:"true"`
   // {"en":"URL Regex", "zh_CN":"url匹配规则"}
@@ -12847,70 +12847,70 @@ type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths st
   Period *int `json:"period,omitempty" xml:"period,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths) String() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataUrlAuths) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths) GoString() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataUrlAuths) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetDataId(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetDataId(v string) *QueryLiveDomainAccessCtrlsResponseDataUrlAuths {
   s.DataId = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetUrlRegex(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetUrlRegex(v string) *QueryLiveDomainAccessCtrlsResponseDataUrlAuths {
   s.UrlRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetFileTypes(v []*string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetFileTypes(v []*string) *QueryLiveDomainAccessCtrlsResponseDataUrlAuths {
   s.FileTypes = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetFileQueryLiveDomainAccessCtrlsPaths(v []*string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetFileQueryLiveDomainAccessCtrlsPaths(v []*string) *QueryLiveDomainAccessCtrlsResponseDataUrlAuths {
   s.FileQueryLiveDomainAccessCtrlsPaths = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetSignKeys(v []*string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetSignKeys(v []*string) *QueryLiveDomainAccessCtrlsResponseDataUrlAuths {
   s.SignKeys = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetTimeFormat(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetTimeFormat(v string) *QueryLiveDomainAccessCtrlsResponseDataUrlAuths {
   s.TimeFormat = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetCipherCombination(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetCipherCombination(v string) *QueryLiveDomainAccessCtrlsResponseDataUrlAuths {
   s.CipherCombination = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetSignAglo(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetSignAglo(v string) *QueryLiveDomainAccessCtrlsResponseDataUrlAuths {
   s.SignAglo = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetTimeArg(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetTimeArg(v string) *QueryLiveDomainAccessCtrlsResponseDataUrlAuths {
   s.TimeArg = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetSecretArg(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetSecretArg(v string) *QueryLiveDomainAccessCtrlsResponseDataUrlAuths {
   s.SecretArg = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetPeriod(v int) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataUrlAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataUrlAuths) SetPeriod(v int) *QueryLiveDomainAccessCtrlsResponseDataUrlAuths {
   s.Period = &v
   return s
 }
 
-type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths struct     {
+type QueryLiveDomainAccessCtrlsResponseDataRemoteAuths struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。"}
   DataId *string `json:"dataId,omitempty" xml:"dataId,omitempty" require:"true"`
   // {"en":"Enabled", "zh_CN":"是否启用回源鉴权"}
@@ -12922,13 +12922,13 @@ type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths
   // {"en":"Auth URI", "zh_CN":"回源鉴权URI"}
   AuthUri *string `json:"authUri,omitempty" xml:"authUri,omitempty" require:"true"`
   // {"en":"Auth Args", "zh_CN":"回源鉴权请求参数"}
-  AuthArgs []*QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthArgs `json:"authArgs,omitempty" xml:"authArgs,omitempty" require:"true" type:"Repeated"`
+  AuthArgs []*QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthArgs `json:"authArgs,omitempty" xml:"authArgs,omitempty" require:"true" type:"Repeated"`
   // {"en":"Auth Method, Enum [GET, POST]", "zh_CN":"回源鉴权请求方法，可选值[GET, POST]"}
   AuthMethod *string `json:"authMethod,omitempty" xml:"authMethod,omitempty" require:"true"`
   // {"en":"Auth Use Https", "zh_CN":"回源鉴权是否启用HTTPS"}
   AuthUseHttps *bool `json:"authUseHttps,omitempty" xml:"authUseHttps,omitempty" require:"true"`
   // {"en":"Auth Result", "zh_CN":"鉴权结果判定，成功或失败的标识"}
-  AuthResult *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult `json:"authResult,omitempty" xml:"authResult,omitempty" require:"true" type:"Struct"`
+  AuthResult *QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult `json:"authResult,omitempty" xml:"authResult,omitempty" require:"true" type:"Struct"`
   // {"en":"Auth Timeout, [1, 10]", "zh_CN":"鉴权超时时间，[1, 10]"}
   AuthTimeout *int `json:"authTimeout,omitempty" xml:"authTimeout,omitempty" require:"true"`
   // {"en":"Auth Timeout, [0, 30]", "zh_CN":"鉴权重试次数，[0, 30]"}
@@ -12937,100 +12937,100 @@ type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths
   TimeoutAction *string `json:"timeoutAction,omitempty" xml:"timeoutAction,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths) String() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataRemoteAuths) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths) GoString() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataRemoteAuths) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetDataId(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetDataId(v string) *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
   s.DataId = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetEnabled(v bool) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetEnabled(v bool) *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
   s.Enabled = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetAuthAddress(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetAuthAddress(v string) *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
   s.AuthAddress = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetAuthHost(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetAuthHost(v string) *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
   s.AuthHost = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetAuthUri(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetAuthUri(v string) *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
   s.AuthUri = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetAuthArgs(v []*QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthArgs) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetAuthArgs(v []*QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthArgs) *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
   s.AuthArgs = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetAuthMethod(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetAuthMethod(v string) *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
   s.AuthMethod = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetAuthUseHttps(v bool) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetAuthUseHttps(v bool) *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
   s.AuthUseHttps = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetAuthResult(v *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetAuthResult(v *QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult) *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
   s.AuthResult = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetAuthTimeout(v int) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetAuthTimeout(v int) *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
   s.AuthTimeout = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetRetryTimes(v int) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetRetryTimes(v int) *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
   s.RetryTimes = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetTimeoutAction(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths) SetTimeoutAction(v string) *QueryLiveDomainAccessCtrlsResponseDataRemoteAuths {
   s.TimeoutAction = &v
   return s
 }
 
-type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthArgs struct     {
+type QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthArgs struct     {
   // {"en":"Arg Name", "zh_CN":"参数名称"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {"en":"Arg Value", "zh_CN":"参数值"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthArgs) String() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthArgs) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthArgs) GoString() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthArgs) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthArgs) SetName(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthArgs {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthArgs) SetName(v string) *QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthArgs {
   s.Name = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthArgs) SetValue(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthArgs {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthArgs) SetValue(v string) *QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthArgs {
   s.Value = &v
   return s
 }
 
-type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult struct {
+type QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult struct {
   // {"en":"Auth Result Success Codes", "zh_CN":"鉴权成功响应状态码"}
   SuccessCodes []*string `json:"successCodes,omitempty" xml:"successCodes,omitempty" require:"true" type:"Repeated"`
   // {"en":"Auth Result Failed Codes", "zh_CN":"鉴权失败响应状态码"}
@@ -13041,35 +13041,35 @@ type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuths
   FailedBody *string `json:"failedBody,omitempty" xml:"failedBody,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult) String() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult) GoString() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult) SetSuccessCodes(v []*string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult) SetSuccessCodes(v []*string) *QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult {
   s.SuccessCodes = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult) SetFailedCodes(v []*string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult) SetFailedCodes(v []*string) *QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult {
   s.FailedCodes = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult) SetSuccessBody(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult) SetSuccessBody(v string) *QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult {
   s.SuccessBody = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult) SetFailedBody(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult {
+func (s *QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult) SetFailedBody(v string) *QueryLiveDomainAccessCtrlsResponseDataRemoteAuthsAuthResult {
   s.FailedBody = &v
   return s
 }
 
-type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters struct     {
+type QueryLiveDomainAccessCtrlsResponseDataCombinedFilters struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。"}
   DataId *string `json:"dataId,omitempty" xml:"dataId,omitempty" require:"true"`
   // {"en":"Priority", "zh_CN":"优先级"}
@@ -13089,146 +13089,146 @@ type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFil
   // {"en":"Exclude File QueryLiveDomainAccessCtrlsPaths", "zh_CN":"文件目录取反"}
   ExcludeFileQueryLiveDomainAccessCtrlsPaths []*string `json:"excludeFileQueryLiveDomainAccessCtrlsPaths,omitempty" xml:"excludeFileQueryLiveDomainAccessCtrlsPaths,omitempty" require:"true" type:"Repeated"`
   // {"en":"IP Filter", "zh_CN":"IP黑白名单"}
-  IpFilter *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersIpFilter `json:"ipFilter,omitempty" xml:"ipFilter,omitempty" require:"true" type:"Struct"`
+  IpFilter *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersIpFilter `json:"ipFilter,omitempty" xml:"ipFilter,omitempty" require:"true" type:"Struct"`
   // {"en":"UA Filter", "zh_CN":"UA黑白名单"}
-  UaFilter *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersUaFilter `json:"uaFilter,omitempty" xml:"uaFilter,omitempty" require:"true" type:"Struct"`
+  UaFilter *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersUaFilter `json:"uaFilter,omitempty" xml:"uaFilter,omitempty" require:"true" type:"Struct"`
   // {"en":"Referer Filter", "zh_CN":"referer黑白名单"}
-  RefererFilter *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter `json:"refererFilter,omitempty" xml:"refererFilter,omitempty" require:"true" type:"Struct"`
+  RefererFilter *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter `json:"refererFilter,omitempty" xml:"refererFilter,omitempty" require:"true" type:"Struct"`
   // {"en":"Control Action", "zh_CN":"控制动作"}
   Action *string `json:"action,omitempty" xml:"action,omitempty" require:"true"`
   // {"en":"Redirect URL", "zh_CN":"跳转到URL"}
   RedirectUrl *string `json:"redirectUrl,omitempty" xml:"redirectUrl,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters) String() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataCombinedFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters) GoString() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataCombinedFilters) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetDataId(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetDataId(v string) *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
   s.DataId = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetPriority(v int) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetPriority(v int) *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
   s.Priority = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetUrl(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetUrl(v string) *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
   s.Url = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetUrlRegex(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetUrlRegex(v string) *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
   s.UrlRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetExcludeUrlRegex(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetExcludeUrlRegex(v string) *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
   s.ExcludeUrlRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetFileTypes(v []*string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetFileTypes(v []*string) *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
   s.FileTypes = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetExcludeFileTypes(v []*string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetExcludeFileTypes(v []*string) *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
   s.ExcludeFileTypes = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetFileQueryLiveDomainAccessCtrlsPaths(v []*string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetFileQueryLiveDomainAccessCtrlsPaths(v []*string) *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
   s.FileQueryLiveDomainAccessCtrlsPaths = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetExcludeFileQueryLiveDomainAccessCtrlsPaths(v []*string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetExcludeFileQueryLiveDomainAccessCtrlsPaths(v []*string) *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
   s.ExcludeFileQueryLiveDomainAccessCtrlsPaths = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetIpFilter(v *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersIpFilter) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetIpFilter(v *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersIpFilter) *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
   s.IpFilter = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetUaFilter(v *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersUaFilter) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetUaFilter(v *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersUaFilter) *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
   s.UaFilter = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetRefererFilter(v *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetRefererFilter(v *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter) *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
   s.RefererFilter = v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetAction(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetAction(v string) *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
   s.Action = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetRedirectUrl(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters) SetRedirectUrl(v string) *QueryLiveDomainAccessCtrlsResponseDataCombinedFilters {
   s.RedirectUrl = &v
   return s
 }
 
-type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersIpFilter struct {
+type QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersIpFilter struct {
   // {"en":"Blacklist or Whitelist, Enum[blacklist, whitelist]", "zh_CN":"黑名单或白名单，可选值[blacklist, whitelist]"}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
   // {"en":"IP List", "zh_CN":"IP或IP段"}
   Ips []*string `json:"ips,omitempty" xml:"ips,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersIpFilter) String() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersIpFilter) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersIpFilter) GoString() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersIpFilter) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersIpFilter) SetType(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersIpFilter {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersIpFilter) SetType(v string) *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersIpFilter {
   s.Type = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersIpFilter) SetIps(v []*string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersIpFilter {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersIpFilter) SetIps(v []*string) *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersIpFilter {
   s.Ips = v
   return s
 }
 
-type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersUaFilter struct {
+type QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersUaFilter struct {
   // {"en":"Blacklist or Whitelist, Enum[blacklist, whitelist]", "zh_CN":"黑名单或白名单，可选值[blacklist, whitelist]"}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
   // {"en":"UA Regex", "zh_CN":"客户端UA，支持正则"}
   UaRegex []*string `json:"uaRegex,omitempty" xml:"uaRegex,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersUaFilter) String() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersUaFilter) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersUaFilter) GoString() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersUaFilter) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersUaFilter) SetType(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersUaFilter {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersUaFilter) SetType(v string) *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersUaFilter {
   s.Type = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersUaFilter) SetUaRegex(v []*string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersUaFilter {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersUaFilter) SetUaRegex(v []*string) *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersUaFilter {
   s.UaRegex = v
   return s
 }
 
-type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter struct {
+type QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter struct {
   // {"en":"Blacklist or Whitelist, Enum[blacklist, whitelist]", "zh_CN":"黑名单或白名单，可选值[blacklist, whitelist]"}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
   // {"en":"Referer Regex", "zh_CN":"Referer正则"}
@@ -13241,35 +13241,35 @@ type QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFil
   AllowEmptyReferer *bool `json:"allowEmptyReferer,omitempty" xml:"allowEmptyReferer,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter) String() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter) GoString() string {
+func (s QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter) SetType(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter) SetType(v string) *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter {
   s.Type = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter) SetRefererRegex(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter) SetRefererRegex(v string) *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter {
   s.RefererRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter) SetRefererUrl(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter) SetRefererUrl(v string) *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter {
   s.RefererUrl = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter) SetRefererDomain(v string) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter) SetRefererDomain(v string) *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter {
   s.RefererDomain = &v
   return s
 }
 
-func (s *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter) SetAllowEmptyReferer(v bool) *QueryLiveDomainAccessCtrlsQueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter {
+func (s *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter) SetAllowEmptyReferer(v bool) *QueryLiveDomainAccessCtrlsResponseDataCombinedFiltersRefererFilter {
   s.AllowEmptyReferer = &v
   return s
 }
@@ -13332,15 +13332,15 @@ func (s QueryLiveDomainAccessCtrlsResponseHeader) GoString() string {
 
 type UpdateLiveDomainAccessCtrlsRequest struct {
   // {"en":"IP Filters", "zh_CN":"IP访问控制"}
-  IpFilters []*UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestIpFilters `json:"ipFilters,omitempty" xml:"ipFilters,omitempty" type:"Repeated"`
+  IpFilters []*UpdateLiveDomainAccessCtrlsRequestIpFilters `json:"ipFilters,omitempty" xml:"ipFilters,omitempty" type:"Repeated"`
   // {"en":"Referer Filters", "zh_CN":"Refferer访问控制"}
-  RefererFilters []*UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters `json:"refererFilters,omitempty" xml:"refererFilters,omitempty" type:"Repeated"`
+  RefererFilters []*UpdateLiveDomainAccessCtrlsRequestRefererFilters `json:"refererFilters,omitempty" xml:"refererFilters,omitempty" type:"Repeated"`
   // {"en":"UA Filters", "zh_CN":"UA访问控制"}
-  UaFilters []*UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUaFilters `json:"uaFilters,omitempty" xml:"uaFilters,omitempty" type:"Repeated"`
+  UaFilters []*UpdateLiveDomainAccessCtrlsRequestUaFilters `json:"uaFilters,omitempty" xml:"uaFilters,omitempty" type:"Repeated"`
   // {"en":"URL Auths", "zh_CN":"URL Auths"}
-  UrlAuths []*UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths `json:"urlAuths,omitempty" xml:"urlAuths,omitempty" type:"Repeated"`
+  UrlAuths []*UpdateLiveDomainAccessCtrlsRequestUrlAuths `json:"urlAuths,omitempty" xml:"urlAuths,omitempty" type:"Repeated"`
   // {"en":"Remote Auths", "zh_CN":"Remote Auths"}
-  RemoteAuths []*UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths `json:"remoteAuths,omitempty" xml:"remoteAuths,omitempty" type:"Repeated"`
+  RemoteAuths []*UpdateLiveDomainAccessCtrlsRequestRemoteAuths `json:"remoteAuths,omitempty" xml:"remoteAuths,omitempty" type:"Repeated"`
 }
 
 func (s UpdateLiveDomainAccessCtrlsRequest) String() string {
@@ -13351,32 +13351,32 @@ func (s UpdateLiveDomainAccessCtrlsRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainAccessCtrlsRequest) SetIpFilters(v []*UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestIpFilters) *UpdateLiveDomainAccessCtrlsRequest {
+func (s *UpdateLiveDomainAccessCtrlsRequest) SetIpFilters(v []*UpdateLiveDomainAccessCtrlsRequestIpFilters) *UpdateLiveDomainAccessCtrlsRequest {
   s.IpFilters = v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsRequest) SetRefererFilters(v []*UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters) *UpdateLiveDomainAccessCtrlsRequest {
+func (s *UpdateLiveDomainAccessCtrlsRequest) SetRefererFilters(v []*UpdateLiveDomainAccessCtrlsRequestRefererFilters) *UpdateLiveDomainAccessCtrlsRequest {
   s.RefererFilters = v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsRequest) SetUaFilters(v []*UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUaFilters) *UpdateLiveDomainAccessCtrlsRequest {
+func (s *UpdateLiveDomainAccessCtrlsRequest) SetUaFilters(v []*UpdateLiveDomainAccessCtrlsRequestUaFilters) *UpdateLiveDomainAccessCtrlsRequest {
   s.UaFilters = v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsRequest) SetUrlAuths(v []*UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths) *UpdateLiveDomainAccessCtrlsRequest {
+func (s *UpdateLiveDomainAccessCtrlsRequest) SetUrlAuths(v []*UpdateLiveDomainAccessCtrlsRequestUrlAuths) *UpdateLiveDomainAccessCtrlsRequest {
   s.UrlAuths = v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsRequest) SetRemoteAuths(v []*UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths) *UpdateLiveDomainAccessCtrlsRequest {
+func (s *UpdateLiveDomainAccessCtrlsRequest) SetRemoteAuths(v []*UpdateLiveDomainAccessCtrlsRequestRemoteAuths) *UpdateLiveDomainAccessCtrlsRequest {
   s.RemoteAuths = v
   return s
 }
 
-type UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestIpFilters struct     {
+type UpdateLiveDomainAccessCtrlsRequestIpFilters struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。
   // dataId可以通过查询接口获取。
   // 注意：添加grid类型标识：dataId，每一组配置对应一个dataId：
@@ -13398,50 +13398,50 @@ type UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestIpFilters stru
   Ips []*string `json:"ips,omitempty" xml:"ips,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestIpFilters) String() string {
+func (s UpdateLiveDomainAccessCtrlsRequestIpFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestIpFilters) GoString() string {
+func (s UpdateLiveDomainAccessCtrlsRequestIpFilters) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestIpFilters) SetDataId(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestIpFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestIpFilters) SetDataId(v string) *UpdateLiveDomainAccessCtrlsRequestIpFilters {
   s.DataId = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestIpFilters) SetPriority(v int) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestIpFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestIpFilters) SetPriority(v int) *UpdateLiveDomainAccessCtrlsRequestIpFilters {
   s.Priority = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestIpFilters) SetUrlRegex(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestIpFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestIpFilters) SetUrlRegex(v string) *UpdateLiveDomainAccessCtrlsRequestIpFilters {
   s.UrlRegex = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestIpFilters) SetFileTypes(v []*string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestIpFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestIpFilters) SetFileTypes(v []*string) *UpdateLiveDomainAccessCtrlsRequestIpFilters {
   s.FileTypes = v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestIpFilters) SetFileUpdateLiveDomainAccessCtrlsPaths(v []*string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestIpFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestIpFilters) SetFileUpdateLiveDomainAccessCtrlsPaths(v []*string) *UpdateLiveDomainAccessCtrlsRequestIpFilters {
   s.FileUpdateLiveDomainAccessCtrlsPaths = v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestIpFilters) SetType(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestIpFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestIpFilters) SetType(v string) *UpdateLiveDomainAccessCtrlsRequestIpFilters {
   s.Type = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestIpFilters) SetIps(v []*string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestIpFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestIpFilters) SetIps(v []*string) *UpdateLiveDomainAccessCtrlsRequestIpFilters {
   s.Ips = v
   return s
 }
 
-type UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters struct     {
+type UpdateLiveDomainAccessCtrlsRequestRefererFilters struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。
   // dataId可以通过查询接口获取。
   // 注意：添加grid类型标识：dataId，每一组配置对应一个dataId：
@@ -13469,65 +13469,65 @@ type UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters
   AllowEmptyReferer *bool `json:"allowEmptyReferer,omitempty" xml:"allowEmptyReferer,omitempty"`
 }
 
-func (s UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters) String() string {
+func (s UpdateLiveDomainAccessCtrlsRequestRefererFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters) GoString() string {
+func (s UpdateLiveDomainAccessCtrlsRequestRefererFilters) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters) SetDataId(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestRefererFilters) SetDataId(v string) *UpdateLiveDomainAccessCtrlsRequestRefererFilters {
   s.DataId = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters) SetPriority(v int) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestRefererFilters) SetPriority(v int) *UpdateLiveDomainAccessCtrlsRequestRefererFilters {
   s.Priority = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters) SetUrlRegex(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestRefererFilters) SetUrlRegex(v string) *UpdateLiveDomainAccessCtrlsRequestRefererFilters {
   s.UrlRegex = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters) SetFileTypes(v []*string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestRefererFilters) SetFileTypes(v []*string) *UpdateLiveDomainAccessCtrlsRequestRefererFilters {
   s.FileTypes = v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters) SetFileUpdateLiveDomainAccessCtrlsPaths(v []*string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestRefererFilters) SetFileUpdateLiveDomainAccessCtrlsPaths(v []*string) *UpdateLiveDomainAccessCtrlsRequestRefererFilters {
   s.FileUpdateLiveDomainAccessCtrlsPaths = v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters) SetType(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestRefererFilters) SetType(v string) *UpdateLiveDomainAccessCtrlsRequestRefererFilters {
   s.Type = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters) SetRefererRegex(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestRefererFilters) SetRefererRegex(v string) *UpdateLiveDomainAccessCtrlsRequestRefererFilters {
   s.RefererRegex = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters) SetRefererUrl(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestRefererFilters) SetRefererUrl(v string) *UpdateLiveDomainAccessCtrlsRequestRefererFilters {
   s.RefererUrl = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters) SetRefererDomain(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestRefererFilters) SetRefererDomain(v string) *UpdateLiveDomainAccessCtrlsRequestRefererFilters {
   s.RefererDomain = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters) SetAllowEmptyReferer(v bool) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRefererFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestRefererFilters) SetAllowEmptyReferer(v bool) *UpdateLiveDomainAccessCtrlsRequestRefererFilters {
   s.AllowEmptyReferer = &v
   return s
 }
 
-type UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUaFilters struct     {
+type UpdateLiveDomainAccessCtrlsRequestUaFilters struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。
   // dataId可以通过查询接口获取。
   // 注意：添加grid类型标识：dataId，每一组配置对应一个dataId：
@@ -13549,50 +13549,50 @@ type UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUaFilters stru
   UaRegex []*string `json:"uaRegex,omitempty" xml:"uaRegex,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUaFilters) String() string {
+func (s UpdateLiveDomainAccessCtrlsRequestUaFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUaFilters) GoString() string {
+func (s UpdateLiveDomainAccessCtrlsRequestUaFilters) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUaFilters) SetDataId(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUaFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestUaFilters) SetDataId(v string) *UpdateLiveDomainAccessCtrlsRequestUaFilters {
   s.DataId = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUaFilters) SetPriority(v int) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUaFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestUaFilters) SetPriority(v int) *UpdateLiveDomainAccessCtrlsRequestUaFilters {
   s.Priority = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUaFilters) SetUrlRegex(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUaFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestUaFilters) SetUrlRegex(v string) *UpdateLiveDomainAccessCtrlsRequestUaFilters {
   s.UrlRegex = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUaFilters) SetFileTypes(v []*string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUaFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestUaFilters) SetFileTypes(v []*string) *UpdateLiveDomainAccessCtrlsRequestUaFilters {
   s.FileTypes = v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUaFilters) SetFileUpdateLiveDomainAccessCtrlsPaths(v []*string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUaFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestUaFilters) SetFileUpdateLiveDomainAccessCtrlsPaths(v []*string) *UpdateLiveDomainAccessCtrlsRequestUaFilters {
   s.FileUpdateLiveDomainAccessCtrlsPaths = v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUaFilters) SetType(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUaFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestUaFilters) SetType(v string) *UpdateLiveDomainAccessCtrlsRequestUaFilters {
   s.Type = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUaFilters) SetUaRegex(v []*string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUaFilters {
+func (s *UpdateLiveDomainAccessCtrlsRequestUaFilters) SetUaRegex(v []*string) *UpdateLiveDomainAccessCtrlsRequestUaFilters {
   s.UaRegex = v
   return s
 }
 
-type UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths struct     {
+type UpdateLiveDomainAccessCtrlsRequestUrlAuths struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。
   // dataId可以通过查询接口获取。
   // 注意：添加grid类型标识：dataId，每一组配置对应一个dataId：
@@ -13620,65 +13620,65 @@ type UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths struc
   Period *int `json:"period,omitempty" xml:"period,omitempty"`
 }
 
-func (s UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths) String() string {
+func (s UpdateLiveDomainAccessCtrlsRequestUrlAuths) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths) GoString() string {
+func (s UpdateLiveDomainAccessCtrlsRequestUrlAuths) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths) SetDataId(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestUrlAuths) SetDataId(v string) *UpdateLiveDomainAccessCtrlsRequestUrlAuths {
   s.DataId = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths) SetUrlRegex(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestUrlAuths) SetUrlRegex(v string) *UpdateLiveDomainAccessCtrlsRequestUrlAuths {
   s.UrlRegex = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths) SetFileTypes(v []*string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestUrlAuths) SetFileTypes(v []*string) *UpdateLiveDomainAccessCtrlsRequestUrlAuths {
   s.FileTypes = v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths) SetFileUpdateLiveDomainAccessCtrlsPaths(v []*string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestUrlAuths) SetFileUpdateLiveDomainAccessCtrlsPaths(v []*string) *UpdateLiveDomainAccessCtrlsRequestUrlAuths {
   s.FileUpdateLiveDomainAccessCtrlsPaths = v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths) SetSignKeys(v []*string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestUrlAuths) SetSignKeys(v []*string) *UpdateLiveDomainAccessCtrlsRequestUrlAuths {
   s.SignKeys = v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths) SetTimeFormat(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestUrlAuths) SetTimeFormat(v string) *UpdateLiveDomainAccessCtrlsRequestUrlAuths {
   s.TimeFormat = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths) SetCipherCombination(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestUrlAuths) SetCipherCombination(v string) *UpdateLiveDomainAccessCtrlsRequestUrlAuths {
   s.CipherCombination = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths) SetTimeArg(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestUrlAuths) SetTimeArg(v string) *UpdateLiveDomainAccessCtrlsRequestUrlAuths {
   s.TimeArg = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths) SetSecretArg(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestUrlAuths) SetSecretArg(v string) *UpdateLiveDomainAccessCtrlsRequestUrlAuths {
   s.SecretArg = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths) SetPeriod(v int) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestUrlAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestUrlAuths) SetPeriod(v int) *UpdateLiveDomainAccessCtrlsRequestUrlAuths {
   s.Period = &v
   return s
 }
 
-type UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths struct     {
+type UpdateLiveDomainAccessCtrlsRequestRemoteAuths struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。
   // dataId可以通过查询接口获取。
   // 注意：添加grid类型标识：dataId，每一组配置对应一个dataId：
@@ -13695,13 +13695,13 @@ type UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths st
   // {"en":"Auth URI", "zh_CN":"回源鉴权URI"}
   AuthUri *string `json:"authUri,omitempty" xml:"authUri,omitempty" require:"true"`
   // {"en":"Auth Args", "zh_CN":"回源鉴权请求参数"}
-  AuthArgs []*UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthArgs `json:"authArgs,omitempty" xml:"authArgs,omitempty" require:"true" type:"Repeated"`
+  AuthArgs []*UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthArgs `json:"authArgs,omitempty" xml:"authArgs,omitempty" require:"true" type:"Repeated"`
   // {"en":"Auth Method, Enum [GET, POST]", "zh_CN":"回源鉴权请求方法，可选值[GET, POST]"}
   AuthMethod *string `json:"authMethod,omitempty" xml:"authMethod,omitempty"`
   // {"en":"Auth Use Https", "zh_CN":"回源鉴权是否启用HTTPS"}
   AuthUseHttps *bool `json:"authUseHttps,omitempty" xml:"authUseHttps,omitempty"`
   // {"en":"Auth Result", "zh_CN":"鉴权结果判定，成功或失败的标识"}
-  AuthResult *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult `json:"authResult,omitempty" xml:"authResult,omitempty" require:"true" type:"Struct"`
+  AuthResult *UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult `json:"authResult,omitempty" xml:"authResult,omitempty" require:"true" type:"Struct"`
   // {"en":"Auth Timeout, [1, 10]", "zh_CN":"鉴权超时时间，[1, 10]"}
   AuthTimeout *int `json:"authTimeout,omitempty" xml:"authTimeout,omitempty"`
   // {"en":"Auth Timeout, [0, 30]", "zh_CN":"鉴权重试次数，[0, 30]"}
@@ -13710,100 +13710,100 @@ type UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths st
   TimeoutAction *string `json:"timeoutAction,omitempty" xml:"timeoutAction,omitempty"`
 }
 
-func (s UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths) String() string {
+func (s UpdateLiveDomainAccessCtrlsRequestRemoteAuths) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths) GoString() string {
+func (s UpdateLiveDomainAccessCtrlsRequestRemoteAuths) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetDataId(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetDataId(v string) *UpdateLiveDomainAccessCtrlsRequestRemoteAuths {
   s.DataId = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetEnabled(v bool) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetEnabled(v bool) *UpdateLiveDomainAccessCtrlsRequestRemoteAuths {
   s.Enabled = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetAuthAddress(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetAuthAddress(v string) *UpdateLiveDomainAccessCtrlsRequestRemoteAuths {
   s.AuthAddress = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetAuthHost(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetAuthHost(v string) *UpdateLiveDomainAccessCtrlsRequestRemoteAuths {
   s.AuthHost = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetAuthUri(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetAuthUri(v string) *UpdateLiveDomainAccessCtrlsRequestRemoteAuths {
   s.AuthUri = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetAuthArgs(v []*UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthArgs) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetAuthArgs(v []*UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthArgs) *UpdateLiveDomainAccessCtrlsRequestRemoteAuths {
   s.AuthArgs = v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetAuthMethod(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetAuthMethod(v string) *UpdateLiveDomainAccessCtrlsRequestRemoteAuths {
   s.AuthMethod = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetAuthUseHttps(v bool) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetAuthUseHttps(v bool) *UpdateLiveDomainAccessCtrlsRequestRemoteAuths {
   s.AuthUseHttps = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetAuthResult(v *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetAuthResult(v *UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult) *UpdateLiveDomainAccessCtrlsRequestRemoteAuths {
   s.AuthResult = v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetAuthTimeout(v int) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetAuthTimeout(v int) *UpdateLiveDomainAccessCtrlsRequestRemoteAuths {
   s.AuthTimeout = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetRetryTimes(v int) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetRetryTimes(v int) *UpdateLiveDomainAccessCtrlsRequestRemoteAuths {
   s.RetryTimes = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetTimeoutAction(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuths {
+func (s *UpdateLiveDomainAccessCtrlsRequestRemoteAuths) SetTimeoutAction(v string) *UpdateLiveDomainAccessCtrlsRequestRemoteAuths {
   s.TimeoutAction = &v
   return s
 }
 
-type UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthArgs struct     {
+type UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthArgs struct     {
   // {"en":"Arg Name", "zh_CN":"参数名称"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {"en":"Arg Value", "zh_CN":"参数值"}
   Value *string `json:"value,omitempty" xml:"value,omitempty"`
 }
 
-func (s UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthArgs) String() string {
+func (s UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthArgs) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthArgs) GoString() string {
+func (s UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthArgs) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthArgs) SetName(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthArgs {
+func (s *UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthArgs) SetName(v string) *UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthArgs {
   s.Name = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthArgs) SetValue(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthArgs {
+func (s *UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthArgs) SetValue(v string) *UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthArgs {
   s.Value = &v
   return s
 }
 
-type UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult struct {
+type UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult struct {
   // {"en":"Auth Result Success Codes", "zh_CN":"鉴权成功响应状态码"}
   SuccessCodes []*string `json:"successCodes,omitempty" xml:"successCodes,omitempty" type:"Repeated"`
   // {"en":"Auth Result Failed Codes", "zh_CN":"鉴权失败响应状态码"}
@@ -13814,30 +13814,30 @@ type UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAut
   FailedBody *string `json:"failedBody,omitempty" xml:"failedBody,omitempty"`
 }
 
-func (s UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult) String() string {
+func (s UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult) GoString() string {
+func (s UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult) SetSuccessCodes(v []*string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult {
+func (s *UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult) SetSuccessCodes(v []*string) *UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult {
   s.SuccessCodes = v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult) SetFailedCodes(v []*string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult {
+func (s *UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult) SetFailedCodes(v []*string) *UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult {
   s.FailedCodes = v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult) SetSuccessBody(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult {
+func (s *UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult) SetSuccessBody(v string) *UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult {
   s.SuccessBody = &v
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult) SetFailedBody(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult {
+func (s *UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult) SetFailedBody(v string) *UpdateLiveDomainAccessCtrlsRequestRemoteAuthsAuthResult {
   s.FailedBody = &v
   return s
 }
@@ -13848,7 +13848,7 @@ type UpdateLiveDomainAccessCtrlsResponse struct {
   // {"en":"Reponse message.", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data", "zh_CN":"响应数据"}
-  Data *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *UpdateLiveDomainAccessCtrlsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s UpdateLiveDomainAccessCtrlsResponse) String() string {
@@ -13869,25 +13869,25 @@ func (s *UpdateLiveDomainAccessCtrlsResponse) SetMessage(v string) *UpdateLiveDo
   return s
 }
 
-func (s *UpdateLiveDomainAccessCtrlsResponse) SetData(v *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsResponseData) *UpdateLiveDomainAccessCtrlsResponse {
+func (s *UpdateLiveDomainAccessCtrlsResponse) SetData(v *UpdateLiveDomainAccessCtrlsResponseData) *UpdateLiveDomainAccessCtrlsResponse {
   s.Data = v
   return s
 }
 
-type UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsResponseData struct {
+type UpdateLiveDomainAccessCtrlsResponseData struct {
   // {"en":"The preliminary deployment id", "zh_CN":"预部署id"}
   PreDeployId *string `json:"preDeployId,omitempty" xml:"preDeployId,omitempty" require:"true"`
 }
 
-func (s UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsResponseData) String() string {
+func (s UpdateLiveDomainAccessCtrlsResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsResponseData) GoString() string {
+func (s UpdateLiveDomainAccessCtrlsResponseData) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsResponseData) SetPreDeployId(v string) *UpdateLiveDomainAccessCtrlsUpdateLiveDomainAccessCtrlsResponseData {
+func (s *UpdateLiveDomainAccessCtrlsResponseData) SetPreDeployId(v string) *UpdateLiveDomainAccessCtrlsResponseData {
   s.PreDeployId = &v
   return s
 }
@@ -13964,7 +13964,7 @@ type QueryInnerRedirectResponse struct {
   DomainId *string `json:"domain-id,omitempty" xml:"domain-id,omitempty" require:"true"`
   // {"en":"the domain whoes need query config", "zh_CN":"需要查询配置的域名"}
   DomainName *string `json:"domain-name,omitempty" xml:"domain-name,omitempty" require:"true"`
-  RewriteRuleSettings []*QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings `json:"rewrite-rule-settings,omitempty" xml:"rewrite-rule-settings,omitempty" require:"true" type:"Repeated"`
+  RewriteRuleSettings []*QueryInnerRedirectResponseRewriteRuleSettings `json:"rewrite-rule-settings,omitempty" xml:"rewrite-rule-settings,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryInnerRedirectResponse) String() string {
@@ -13985,12 +13985,12 @@ func (s *QueryInnerRedirectResponse) SetDomainName(v string) *QueryInnerRedirect
   return s
 }
 
-func (s *QueryInnerRedirectResponse) SetRewriteRuleSettings(v []*QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings) *QueryInnerRedirectResponse {
+func (s *QueryInnerRedirectResponse) SetRewriteRuleSettings(v []*QueryInnerRedirectResponseRewriteRuleSettings) *QueryInnerRedirectResponse {
   s.RewriteRuleSettings = v
   return s
 }
 
-type QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings struct     {
+type QueryInnerRedirectResponseRewriteRuleSettings struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置；data-id重复，已入参同个id最后一组为准生效"}
   DataId *string `json:"data-id,omitempty" xml:"data-id,omitempty" require:"true"`
   // {"en":"The url matching mode supports fuzzy regularization. If all matches, the input parameters can be configured as: *", "zh_CN":"url匹配模式，支持正则,  .*：匹配所有文件
@@ -14041,80 +14041,80 @@ type QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings struct     
   ExceptionQueryInnerRedirectRequestHeader *string `json:"exception-request-header,omitempty" xml:"exception-request-header,omitempty" require:"true"`
 }
 
-func (s QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings) String() string {
+func (s QueryInnerRedirectResponseRewriteRuleSettings) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings) GoString() string {
+func (s QueryInnerRedirectResponseRewriteRuleSettings) GoString() string {
   return s.String()
 }
 
-func (s *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings) SetDataId(v string) *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings {
+func (s *QueryInnerRedirectResponseRewriteRuleSettings) SetDataId(v string) *QueryInnerRedirectResponseRewriteRuleSettings {
   s.DataId = &v
   return s
 }
 
-func (s *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings) SetPathPattern(v string) *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings {
+func (s *QueryInnerRedirectResponseRewriteRuleSettings) SetPathPattern(v string) *QueryInnerRedirectResponseRewriteRuleSettings {
   s.PathPattern = &v
   return s
 }
 
-func (s *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings) SetExceptPathPattern(v string) *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings {
+func (s *QueryInnerRedirectResponseRewriteRuleSettings) SetExceptPathPattern(v string) *QueryInnerRedirectResponseRewriteRuleSettings {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings) SetCustomPattern(v string) *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings {
+func (s *QueryInnerRedirectResponseRewriteRuleSettings) SetCustomPattern(v string) *QueryInnerRedirectResponseRewriteRuleSettings {
   s.CustomPattern = &v
   return s
 }
 
-func (s *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings) SetDirectory(v string) *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings {
+func (s *QueryInnerRedirectResponseRewriteRuleSettings) SetDirectory(v string) *QueryInnerRedirectResponseRewriteRuleSettings {
   s.Directory = &v
   return s
 }
 
-func (s *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings) SetFileType(v string) *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings {
+func (s *QueryInnerRedirectResponseRewriteRuleSettings) SetFileType(v string) *QueryInnerRedirectResponseRewriteRuleSettings {
   s.FileType = &v
   return s
 }
 
-func (s *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings) SetIgnoreLetterCase(v string) *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings {
+func (s *QueryInnerRedirectResponseRewriteRuleSettings) SetIgnoreLetterCase(v string) *QueryInnerRedirectResponseRewriteRuleSettings {
   s.IgnoreLetterCase = &v
   return s
 }
 
-func (s *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings) SetPublishType(v string) *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings {
+func (s *QueryInnerRedirectResponseRewriteRuleSettings) SetPublishType(v string) *QueryInnerRedirectResponseRewriteRuleSettings {
   s.PublishType = &v
   return s
 }
 
-func (s *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings) SetPriority(v int) *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings {
+func (s *QueryInnerRedirectResponseRewriteRuleSettings) SetPriority(v int) *QueryInnerRedirectResponseRewriteRuleSettings {
   s.Priority = &v
   return s
 }
 
-func (s *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings) SetBeforeValue(v string) *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings {
+func (s *QueryInnerRedirectResponseRewriteRuleSettings) SetBeforeValue(v string) *QueryInnerRedirectResponseRewriteRuleSettings {
   s.BeforeValue = &v
   return s
 }
 
-func (s *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings) SetAfterValue(v string) *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings {
+func (s *QueryInnerRedirectResponseRewriteRuleSettings) SetAfterValue(v string) *QueryInnerRedirectResponseRewriteRuleSettings {
   s.AfterValue = &v
   return s
 }
 
-func (s *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings) SetRewriteType(v string) *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings {
+func (s *QueryInnerRedirectResponseRewriteRuleSettings) SetRewriteType(v string) *QueryInnerRedirectResponseRewriteRuleSettings {
   s.RewriteType = &v
   return s
 }
 
-func (s *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings) SetQueryInnerRedirectRequestHeader(v string) *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings {
+func (s *QueryInnerRedirectResponseRewriteRuleSettings) SetQueryInnerRedirectRequestHeader(v string) *QueryInnerRedirectResponseRewriteRuleSettings {
   s.QueryInnerRedirectRequestHeader = &v
   return s
 }
 
-func (s *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings) SetExceptionQueryInnerRedirectRequestHeader(v string) *QueryInnerRedirectQueryInnerRedirectResponseRewriteRuleSettings {
+func (s *QueryInnerRedirectResponseRewriteRuleSettings) SetExceptionQueryInnerRedirectRequestHeader(v string) *QueryInnerRedirectResponseRewriteRuleSettings {
   s.ExceptionQueryInnerRedirectRequestHeader = &v
   return s
 }
@@ -14182,7 +14182,7 @@ type EditDomainRedirectConfigRequest struct {
   // 1. 定义一组内部重定向内容，，如果有使用内部重定向内容，此项必填
   // 2. 需要清空域名下的内容重定向内容，可以传入空节点<rewrite-rule-settings></rewrite-rule-settings>
   // 3. 如果有开启其他高级配置（如防盗链配置），有些配置可能会有配置冲突，建议先与技术支持人员确认"}
-  RewriteRuleSettings []*EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings `json:"rewrite-rule-settings,omitempty" xml:"rewrite-rule-settings,omitempty" require:"true" type:"Repeated"`
+  RewriteRuleSettings []*EditDomainRedirectConfigRequestRewriteRuleSettings `json:"rewrite-rule-settings,omitempty" xml:"rewrite-rule-settings,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s EditDomainRedirectConfigRequest) String() string {
@@ -14193,12 +14193,12 @@ func (s EditDomainRedirectConfigRequest) GoString() string {
   return s.String()
 }
 
-func (s *EditDomainRedirectConfigRequest) SetRewriteRuleSettings(v []*EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings) *EditDomainRedirectConfigRequest {
+func (s *EditDomainRedirectConfigRequest) SetRewriteRuleSettings(v []*EditDomainRedirectConfigRequestRewriteRuleSettings) *EditDomainRedirectConfigRequest {
   s.RewriteRuleSettings = v
   return s
 }
 
-type EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings struct     {
+type EditDomainRedirectConfigRequestRewriteRuleSettings struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置；data-id重复，以入参同个id最后一组为准生效
   // data-id可以通过查询接口获取。
   // 注意：添加grid类型标识：data-id，每一组配置对应一个data-id：
@@ -14260,85 +14260,85 @@ type EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings 
   ExceptionEditDomainRedirectConfigRequestHeader *string `json:"exception-request-header,omitempty" xml:"exception-request-header,omitempty"`
 }
 
-func (s EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings) String() string {
+func (s EditDomainRedirectConfigRequestRewriteRuleSettings) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings) GoString() string {
+func (s EditDomainRedirectConfigRequestRewriteRuleSettings) GoString() string {
   return s.String()
 }
 
-func (s *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings) SetDataId(v int64) *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings {
+func (s *EditDomainRedirectConfigRequestRewriteRuleSettings) SetDataId(v int64) *EditDomainRedirectConfigRequestRewriteRuleSettings {
   s.DataId = &v
   return s
 }
 
-func (s *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings) SetPathPattern(v string) *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings {
+func (s *EditDomainRedirectConfigRequestRewriteRuleSettings) SetPathPattern(v string) *EditDomainRedirectConfigRequestRewriteRuleSettings {
   s.PathPattern = &v
   return s
 }
 
-func (s *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings) SetCustomPattern(v string) *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings {
+func (s *EditDomainRedirectConfigRequestRewriteRuleSettings) SetCustomPattern(v string) *EditDomainRedirectConfigRequestRewriteRuleSettings {
   s.CustomPattern = &v
   return s
 }
 
-func (s *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings) SetDirectory(v string) *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings {
+func (s *EditDomainRedirectConfigRequestRewriteRuleSettings) SetDirectory(v string) *EditDomainRedirectConfigRequestRewriteRuleSettings {
   s.Directory = &v
   return s
 }
 
-func (s *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings) SetFileType(v string) *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings {
+func (s *EditDomainRedirectConfigRequestRewriteRuleSettings) SetFileType(v string) *EditDomainRedirectConfigRequestRewriteRuleSettings {
   s.FileType = &v
   return s
 }
 
-func (s *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings) SetCustomFileType(v string) *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings {
+func (s *EditDomainRedirectConfigRequestRewriteRuleSettings) SetCustomFileType(v string) *EditDomainRedirectConfigRequestRewriteRuleSettings {
   s.CustomFileType = &v
   return s
 }
 
-func (s *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings) SetExceptPathPattern(v string) *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings {
+func (s *EditDomainRedirectConfigRequestRewriteRuleSettings) SetExceptPathPattern(v string) *EditDomainRedirectConfigRequestRewriteRuleSettings {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings) SetIgnoreLetterCase(v string) *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings {
+func (s *EditDomainRedirectConfigRequestRewriteRuleSettings) SetIgnoreLetterCase(v string) *EditDomainRedirectConfigRequestRewriteRuleSettings {
   s.IgnoreLetterCase = &v
   return s
 }
 
-func (s *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings) SetPublishType(v string) *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings {
+func (s *EditDomainRedirectConfigRequestRewriteRuleSettings) SetPublishType(v string) *EditDomainRedirectConfigRequestRewriteRuleSettings {
   s.PublishType = &v
   return s
 }
 
-func (s *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings) SetPriority(v string) *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings {
+func (s *EditDomainRedirectConfigRequestRewriteRuleSettings) SetPriority(v string) *EditDomainRedirectConfigRequestRewriteRuleSettings {
   s.Priority = &v
   return s
 }
 
-func (s *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings) SetBeforeValue(v string) *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings {
+func (s *EditDomainRedirectConfigRequestRewriteRuleSettings) SetBeforeValue(v string) *EditDomainRedirectConfigRequestRewriteRuleSettings {
   s.BeforeValue = &v
   return s
 }
 
-func (s *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings) SetAfterValue(v string) *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings {
+func (s *EditDomainRedirectConfigRequestRewriteRuleSettings) SetAfterValue(v string) *EditDomainRedirectConfigRequestRewriteRuleSettings {
   s.AfterValue = &v
   return s
 }
 
-func (s *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings) SetRewriteType(v string) *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings {
+func (s *EditDomainRedirectConfigRequestRewriteRuleSettings) SetRewriteType(v string) *EditDomainRedirectConfigRequestRewriteRuleSettings {
   s.RewriteType = &v
   return s
 }
 
-func (s *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings) SetEditDomainRedirectConfigRequestHeader(v string) *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings {
+func (s *EditDomainRedirectConfigRequestRewriteRuleSettings) SetEditDomainRedirectConfigRequestHeader(v string) *EditDomainRedirectConfigRequestRewriteRuleSettings {
   s.EditDomainRedirectConfigRequestHeader = &v
   return s
 }
 
-func (s *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings) SetExceptionEditDomainRedirectConfigRequestHeader(v string) *EditDomainRedirectConfigEditDomainRedirectConfigRequestRewriteRuleSettings {
+func (s *EditDomainRedirectConfigRequestRewriteRuleSettings) SetExceptionEditDomainRedirectConfigRequestHeader(v string) *EditDomainRedirectConfigRequestRewriteRuleSettings {
   s.ExceptionEditDomainRedirectConfigRequestHeader = &v
   return s
 }
@@ -14438,7 +14438,7 @@ func (s EditDomainRedirectConfigResponseHeader) GoString() string {
 
 type UpdateHttp2SettingsConfigForWplusRequest struct {
   // {"en":"Http2.0 settings, used to enable or disable http2.0, parent node.", "zh_CN":"http2.0设置，用于设置http2.0的开启或关闭，父标签"}
-  Http2Settings *UpdateHttp2SettingsConfigForWplusUpdateHttp2SettingsConfigForWplusRequestHttp2Settings `json:"http2Settings,omitempty" xml:"http2Settings,omitempty" require:"true" type:"Struct"`
+  Http2Settings *UpdateHttp2SettingsConfigForWplusRequestHttp2Settings `json:"http2Settings,omitempty" xml:"http2Settings,omitempty" require:"true" type:"Struct"`
 }
 
 func (s UpdateHttp2SettingsConfigForWplusRequest) String() string {
@@ -14449,12 +14449,12 @@ func (s UpdateHttp2SettingsConfigForWplusRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateHttp2SettingsConfigForWplusRequest) SetHttp2Settings(v *UpdateHttp2SettingsConfigForWplusUpdateHttp2SettingsConfigForWplusRequestHttp2Settings) *UpdateHttp2SettingsConfigForWplusRequest {
+func (s *UpdateHttp2SettingsConfigForWplusRequest) SetHttp2Settings(v *UpdateHttp2SettingsConfigForWplusRequestHttp2Settings) *UpdateHttp2SettingsConfigForWplusRequest {
   s.Http2Settings = v
   return s
 }
 
-type UpdateHttp2SettingsConfigForWplusUpdateHttp2SettingsConfigForWplusRequestHttp2Settings struct {
+type UpdateHttp2SettingsConfigForWplusRequestHttp2Settings struct {
   // {"en":"Enable http2.0. The optional values are true and false. If it is empty, the default value is false. True means http2.0 is on; false means http2.0 is off.", "zh_CN":"开启http2.0，可选值为true和false，为空时默认为false。true表示开启http2.0；false表示关闭http2.0"}
   EnableHttp2 *string `json:"enableHttp2,omitempty" xml:"enableHttp2,omitempty"`
   // {"en":"Back-to-origin protocol, the optional value is
@@ -14467,20 +14467,20 @@ type UpdateHttp2SettingsConfigForWplusUpdateHttp2SettingsConfigForWplusRequestHt
   BackToOriginProtocol *string `json:"backToOriginProtocol,omitempty" xml:"backToOriginProtocol,omitempty"`
 }
 
-func (s UpdateHttp2SettingsConfigForWplusUpdateHttp2SettingsConfigForWplusRequestHttp2Settings) String() string {
+func (s UpdateHttp2SettingsConfigForWplusRequestHttp2Settings) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateHttp2SettingsConfigForWplusUpdateHttp2SettingsConfigForWplusRequestHttp2Settings) GoString() string {
+func (s UpdateHttp2SettingsConfigForWplusRequestHttp2Settings) GoString() string {
   return s.String()
 }
 
-func (s *UpdateHttp2SettingsConfigForWplusUpdateHttp2SettingsConfigForWplusRequestHttp2Settings) SetEnableHttp2(v string) *UpdateHttp2SettingsConfigForWplusUpdateHttp2SettingsConfigForWplusRequestHttp2Settings {
+func (s *UpdateHttp2SettingsConfigForWplusRequestHttp2Settings) SetEnableHttp2(v string) *UpdateHttp2SettingsConfigForWplusRequestHttp2Settings {
   s.EnableHttp2 = &v
   return s
 }
 
-func (s *UpdateHttp2SettingsConfigForWplusUpdateHttp2SettingsConfigForWplusRequestHttp2Settings) SetBackToOriginProtocol(v string) *UpdateHttp2SettingsConfigForWplusUpdateHttp2SettingsConfigForWplusRequestHttp2Settings {
+func (s *UpdateHttp2SettingsConfigForWplusRequestHttp2Settings) SetBackToOriginProtocol(v string) *UpdateHttp2SettingsConfigForWplusRequestHttp2Settings {
   s.BackToOriginProtocol = &v
   return s
 }
@@ -14589,7 +14589,7 @@ type QueryAmazonS3AuthorizationConfigResponse struct {
   // 2.为<amazon-s3-access-authorization-rules/>时清空Amazon S3鉴权配置的配置
   // 3.点播下载支持，网页wsa不支持
   // 4.Amason S3和Aliyun OSS不可同时配置"}
-  AmazonS3AccessAuthorizationRules []*QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules `json:"amazon-s3-access-authorization-rules,omitempty" xml:"amazon-s3-access-authorization-rules,omitempty" require:"true" type:"Repeated"`
+  AmazonS3AccessAuthorizationRules []*QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules `json:"amazon-s3-access-authorization-rules,omitempty" xml:"amazon-s3-access-authorization-rules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryAmazonS3AuthorizationConfigResponse) String() string {
@@ -14610,12 +14610,12 @@ func (s *QueryAmazonS3AuthorizationConfigResponse) SetDomainId(v string) *QueryA
   return s
 }
 
-func (s *QueryAmazonS3AuthorizationConfigResponse) SetAmazonS3AccessAuthorizationRules(v []*QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) *QueryAmazonS3AuthorizationConfigResponse {
+func (s *QueryAmazonS3AuthorizationConfigResponse) SetAmazonS3AccessAuthorizationRules(v []*QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) *QueryAmazonS3AuthorizationConfigResponse {
   s.AmazonS3AccessAuthorizationRules = v
   return s
 }
 
-type QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules struct     {
+type QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules struct     {
   // {"en":"The url matching mode. If all matches, the input parameters can be configured as: .*", "zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*"}
   PathPattern *string `json:"path-pattern,omitempty" xml:"path-pattern,omitempty" require:"true"`
   // {"en":"The exception url matching mode.", "zh_CN":"例外的url匹配模式，格式同path-pattern"}
@@ -14635,50 +14635,50 @@ type QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAma
   DataId *int64 `json:"data-id,omitempty" xml:"data-id,omitempty" require:"true"`
 }
 
-func (s QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) String() string {
+func (s QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) GoString() string {
+func (s QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) SetPathPattern(v string) *QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules {
+func (s *QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) SetPathPattern(v string) *QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules {
   s.PathPattern = &v
   return s
 }
 
-func (s *QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) SetExceptPathPattern(v string) *QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules {
+func (s *QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) SetExceptPathPattern(v string) *QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) SetAddAuthorizationHeader(v string) *QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules {
+func (s *QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) SetAddAuthorizationHeader(v string) *QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules {
   s.AddAuthorizationHeader = &v
   return s
 }
 
-func (s *QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) SetAccessKey(v string) *QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules {
+func (s *QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) SetAccessKey(v string) *QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules {
   s.AccessKey = &v
   return s
 }
 
-func (s *QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) SetAccessKeyId(v string) *QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules {
+func (s *QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) SetAccessKeyId(v string) *QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules {
   s.AccessKeyId = &v
   return s
 }
 
-func (s *QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) SetSignatureVersion(v string) *QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules {
+func (s *QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) SetSignatureVersion(v string) *QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules {
   s.SignatureVersion = &v
   return s
 }
 
-func (s *QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) SetRegion(v string) *QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules {
+func (s *QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) SetRegion(v string) *QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules {
   s.Region = &v
   return s
 }
 
-func (s *QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) SetDataId(v int64) *QueryAmazonS3AuthorizationConfigQueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules {
+func (s *QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules) SetDataId(v int64) *QueryAmazonS3AuthorizationConfigResponseAmazonS3AccessAuthorizationRules {
   s.DataId = &v
   return s
 }
@@ -14754,7 +14754,7 @@ type QueryLiveDomainHeaderRulesResponse struct {
   // {"en":"Reponse message.", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data", "zh_CN":"响应数据"}
-  Data *QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryLiveDomainHeaderRulesResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryLiveDomainHeaderRulesResponse) String() string {
@@ -14775,30 +14775,30 @@ func (s *QueryLiveDomainHeaderRulesResponse) SetMessage(v string) *QueryLiveDoma
   return s
 }
 
-func (s *QueryLiveDomainHeaderRulesResponse) SetData(v *QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseData) *QueryLiveDomainHeaderRulesResponse {
+func (s *QueryLiveDomainHeaderRulesResponse) SetData(v *QueryLiveDomainHeaderRulesResponseData) *QueryLiveDomainHeaderRulesResponse {
   s.Data = v
   return s
 }
 
-type QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseData struct {
+type QueryLiveDomainHeaderRulesResponseData struct {
   // {"en":"Header Rules", "zh_CN":"HTTP头部控制"}
-  HeaderRules []*QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules `json:"headerRules,omitempty" xml:"headerRules,omitempty" require:"true" type:"Repeated"`
+  HeaderRules []*QueryLiveDomainHeaderRulesResponseDataHeaderRules `json:"headerRules,omitempty" xml:"headerRules,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseData) String() string {
+func (s QueryLiveDomainHeaderRulesResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseData) GoString() string {
+func (s QueryLiveDomainHeaderRulesResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseData) SetHeaderRules(v []*QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules) *QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseData {
+func (s *QueryLiveDomainHeaderRulesResponseData) SetHeaderRules(v []*QueryLiveDomainHeaderRulesResponseDataHeaderRules) *QueryLiveDomainHeaderRulesResponseData {
   s.HeaderRules = v
   return s
 }
 
-type QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules struct     {
+type QueryLiveDomainHeaderRulesResponseDataHeaderRules struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。
   // dataId可以通过查询接口获取。
   // 注意：添加grid类型标识：dataId，每一组配置对应一个dataId：
@@ -14822,50 +14822,50 @@ type QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules
   HeaderValue *string `json:"headerValue,omitempty" xml:"headerValue,omitempty"`
 }
 
-func (s QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules) String() string {
+func (s QueryLiveDomainHeaderRulesResponseDataHeaderRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules) GoString() string {
+func (s QueryLiveDomainHeaderRulesResponseDataHeaderRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules) SetDataId(v string) *QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules {
+func (s *QueryLiveDomainHeaderRulesResponseDataHeaderRules) SetDataId(v string) *QueryLiveDomainHeaderRulesResponseDataHeaderRules {
   s.DataId = &v
   return s
 }
 
-func (s *QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules) SetUrlRegex(v string) *QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules {
+func (s *QueryLiveDomainHeaderRulesResponseDataHeaderRules) SetUrlRegex(v string) *QueryLiveDomainHeaderRulesResponseDataHeaderRules {
   s.UrlRegex = &v
   return s
 }
 
-func (s *QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules) SetFileTypes(v []*string) *QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules {
+func (s *QueryLiveDomainHeaderRulesResponseDataHeaderRules) SetFileTypes(v []*string) *QueryLiveDomainHeaderRulesResponseDataHeaderRules {
   s.FileTypes = v
   return s
 }
 
-func (s *QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules) SetFileQueryLiveDomainHeaderRulesPaths(v []*string) *QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules {
+func (s *QueryLiveDomainHeaderRulesResponseDataHeaderRules) SetFileQueryLiveDomainHeaderRulesPaths(v []*string) *QueryLiveDomainHeaderRulesResponseDataHeaderRules {
   s.FileQueryLiveDomainHeaderRulesPaths = v
   return s
 }
 
-func (s *QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules) SetHeaderName(v string) *QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules {
+func (s *QueryLiveDomainHeaderRulesResponseDataHeaderRules) SetHeaderName(v string) *QueryLiveDomainHeaderRulesResponseDataHeaderRules {
   s.HeaderName = &v
   return s
 }
 
-func (s *QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules) SetHeaderType(v string) *QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules {
+func (s *QueryLiveDomainHeaderRulesResponseDataHeaderRules) SetHeaderType(v string) *QueryLiveDomainHeaderRulesResponseDataHeaderRules {
   s.HeaderType = &v
   return s
 }
 
-func (s *QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules) SetAction(v string) *QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules {
+func (s *QueryLiveDomainHeaderRulesResponseDataHeaderRules) SetAction(v string) *QueryLiveDomainHeaderRulesResponseDataHeaderRules {
   s.Action = &v
   return s
 }
 
-func (s *QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules) SetHeaderValue(v string) *QueryLiveDomainHeaderRulesQueryLiveDomainHeaderRulesResponseDataHeaderRules {
+func (s *QueryLiveDomainHeaderRulesResponseDataHeaderRules) SetHeaderValue(v string) *QueryLiveDomainHeaderRulesResponseDataHeaderRules {
   s.HeaderValue = &v
   return s
 }
@@ -14942,7 +14942,7 @@ type QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponse st
   DomainName *string `json:"domain-name,omitempty" xml:"domain-name,omitempty" require:"true"`
   // {"en":"the domain whoes need query config", "zh_CN":"需要查询配置的域名或域名id"}
   DomainId *string `json:"domain-id,omitempty" xml:"domain-id,omitempty" require:"true"`
-  CacheByRespHeaderViews []*QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews `json:"cache-by-respheaders,omitempty" xml:"cache-by-respheaders,omitempty" require:"true" type:"Repeated"`
+  CacheByRespHeaderViews []*QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews `json:"cache-by-respheaders,omitempty" xml:"cache-by-respheaders,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponse) String() string {
@@ -14963,12 +14963,12 @@ func (s *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigRespons
   return s
 }
 
-func (s *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponse) SetCacheByRespHeaderViews(v []*QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponse {
+func (s *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponse) SetCacheByRespHeaderViews(v []*QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponse {
   s.CacheByRespHeaderViews = v
   return s
 }
 
-type QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews struct     {
+type QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews struct     {
   // {"en":"Add grid type identity, represents the customer multi - group configuration, a specific group of configuration", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置"}
   DataId *int64 `json:"data-id,omitempty" xml:"data-id,omitempty" require:"true"`
   // {"en":"The name of the response header", "zh_CN":"响应头头部名称 需要缓存的响应头名称。如Cache-Control"}
@@ -14987,50 +14987,50 @@ type QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfi
   ResponseValue *string `json:"response-value,omitempty" xml:"response-value,omitempty" require:"true"`
 }
 
-func (s QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) String() string {
+func (s QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) GoString() string {
+func (s QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) GoString() string {
   return s.String()
 }
 
-func (s *QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) SetDataId(v int64) *QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews {
+func (s *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) SetDataId(v int64) *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews {
   s.DataId = &v
   return s
 }
 
-func (s *QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) SetQueryCacheByResponseHeaderConfigResponseHeader(v string) *QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews {
+func (s *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) SetQueryCacheByResponseHeaderConfigResponseHeader(v string) *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews {
   s.QueryCacheByResponseHeaderConfigResponseHeader = &v
   return s
 }
 
-func (s *QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) SetIsRepHeader(v string) *QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews {
+func (s *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) SetIsRepHeader(v string) *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews {
   s.IsRepHeader = &v
   return s
 }
 
-func (s *QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) SetPathPattern(v string) *QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews {
+func (s *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) SetPathPattern(v string) *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews {
   s.PathPattern = &v
   return s
 }
 
-func (s *QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) SetExceptPathPattern(v string) *QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews {
+func (s *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) SetExceptPathPattern(v string) *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) SetIgnoreLetterCase(v string) *QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews {
+func (s *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) SetIgnoreLetterCase(v string) *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews {
   s.IgnoreLetterCase = &v
   return s
 }
 
-func (s *QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) SetPriority(v string) *QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews {
+func (s *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) SetPriority(v string) *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews {
   s.Priority = &v
   return s
 }
 
-func (s *QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) SetResponseValue(v string) *QueryCacheByResponseHeaderConfigQueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews {
+func (s *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews) SetResponseValue(v string) *QueryCacheByQueryCacheByResponseHeaderConfigResponseHeaderConfigResponseCacheByRespHeaderViews {
   s.ResponseValue = &v
   return s
 }
@@ -15134,7 +15134,7 @@ type UpdateLiveDomainResponse struct {
   // {"en":"Reponse message.", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data", "zh_CN":"响应数据"}
-  Data *UpdateLiveDomainUpdateLiveDomainResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *UpdateLiveDomainResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s UpdateLiveDomainResponse) String() string {
@@ -15155,25 +15155,25 @@ func (s *UpdateLiveDomainResponse) SetMessage(v string) *UpdateLiveDomainRespons
   return s
 }
 
-func (s *UpdateLiveDomainResponse) SetData(v *UpdateLiveDomainUpdateLiveDomainResponseData) *UpdateLiveDomainResponse {
+func (s *UpdateLiveDomainResponse) SetData(v *UpdateLiveDomainResponseData) *UpdateLiveDomainResponse {
   s.Data = v
   return s
 }
 
-type UpdateLiveDomainUpdateLiveDomainResponseData struct {
+type UpdateLiveDomainResponseData struct {
   // {"en":"The preliminary deployment id", "zh_CN":"预部署id"}
   PreDeployId *string `json:"preDeployId,omitempty" xml:"preDeployId,omitempty" require:"true"`
 }
 
-func (s UpdateLiveDomainUpdateLiveDomainResponseData) String() string {
+func (s UpdateLiveDomainResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainUpdateLiveDomainResponseData) GoString() string {
+func (s UpdateLiveDomainResponseData) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainUpdateLiveDomainResponseData) SetPreDeployId(v string) *UpdateLiveDomainUpdateLiveDomainResponseData {
+func (s *UpdateLiveDomainResponseData) SetPreDeployId(v string) *UpdateLiveDomainResponseData {
   s.PreDeployId = &v
   return s
 }
@@ -15258,7 +15258,7 @@ type QueryLivestreamingAntihotlinkingConfigResponse struct {
   // {"en":"Response information, when success is successful", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"response data", "zh_CN":"响应数据"}
-  Data *QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryLivestreamingAntihotlinkingConfigResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryLivestreamingAntihotlinkingConfigResponse) String() string {
@@ -15279,12 +15279,12 @@ func (s *QueryLivestreamingAntihotlinkingConfigResponse) SetMessage(v string) *Q
   return s
 }
 
-func (s *QueryLivestreamingAntihotlinkingConfigResponse) SetData(v *QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseData) *QueryLivestreamingAntihotlinkingConfigResponse {
+func (s *QueryLivestreamingAntihotlinkingConfigResponse) SetData(v *QueryLivestreamingAntihotlinkingConfigResponseData) *QueryLivestreamingAntihotlinkingConfigResponse {
   s.Data = v
   return s
 }
 
-type QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseData struct {
+type QueryLivestreamingAntihotlinkingConfigResponseData struct {
   // {"en":"domain id", "zh_CN":"域名ID"}
   DomainId *string `json:"domainId,omitempty" xml:"domainId,omitempty" require:"true"`
   // {"en":"domain name", "zh_CN":"域名名称"}
@@ -15294,33 +15294,33 @@ type QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfi
   // 2. Clear the Streaming visit control configuration when <visitControlRules/>", "zh_CN":"流媒体防盗链配置，父标签
   // 1.需要设置流媒体防盗链配置时，此项必填
   // 2.为<visitControlRules/>时清空流媒体防盗链配置"}
-  VisitControlRules []*QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules `json:"visitControlRules,omitempty" xml:"visitControlRules,omitempty" require:"true" type:"Repeated"`
+  VisitControlRules []*QueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules `json:"visitControlRules,omitempty" xml:"visitControlRules,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseData) String() string {
+func (s QueryLivestreamingAntihotlinkingConfigResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseData) GoString() string {
+func (s QueryLivestreamingAntihotlinkingConfigResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseData) SetDomainId(v string) *QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseData {
+func (s *QueryLivestreamingAntihotlinkingConfigResponseData) SetDomainId(v string) *QueryLivestreamingAntihotlinkingConfigResponseData {
   s.DomainId = &v
   return s
 }
 
-func (s *QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseData) SetDomainName(v string) *QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseData {
+func (s *QueryLivestreamingAntihotlinkingConfigResponseData) SetDomainName(v string) *QueryLivestreamingAntihotlinkingConfigResponseData {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseData) SetVisitControlRules(v []*QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules) *QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseData {
+func (s *QueryLivestreamingAntihotlinkingConfigResponseData) SetVisitControlRules(v []*QueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules) *QueryLivestreamingAntihotlinkingConfigResponseData {
   s.VisitControlRules = v
   return s
 }
 
-type QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules struct     {
+type QueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules struct     {
   // {"en":"Control action, optional values: allow, forbid
   // Note: when add or modify a rule, you must configure both controlaction and IP, referer. At least one of IP and referer must be configured, otherwise the function will not work.", "zh_CN":"控制动作，允许或禁止，可选值：allow，forbid
   // 注意：配置或修改流媒体防盗链时，必须同时配置controlAction和ip、referer，ip和referer至少配置一项，否则此防盗链功能无效。"}
@@ -15363,40 +15363,40 @@ type QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfi
   DataId *int `json:"dataId,omitempty" xml:"dataId,omitempty" require:"true"`
 }
 
-func (s QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules) String() string {
+func (s QueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules) GoString() string {
+func (s QueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules) SetControlAction(v string) *QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules {
+func (s *QueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules) SetControlAction(v string) *QueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules {
   s.ControlAction = &v
   return s
 }
 
-func (s *QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules) SetIps(v []*string) *QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules {
+func (s *QueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules) SetIps(v []*string) *QueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules {
   s.Ips = v
   return s
 }
 
-func (s *QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules) SetReferers(v []*string) *QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules {
+func (s *QueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules) SetReferers(v []*string) *QueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules {
   s.Referers = v
   return s
 }
 
-func (s *QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules) SetAllowNullReferer(v bool) *QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules {
+func (s *QueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules) SetAllowNullReferer(v bool) *QueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules {
   s.AllowNullReferer = &v
   return s
 }
 
-func (s *QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules) SetControlRelation(v string) *QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules {
+func (s *QueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules) SetControlRelation(v string) *QueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules {
   s.ControlRelation = &v
   return s
 }
 
-func (s *QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules) SetDataId(v int) *QueryLivestreamingAntihotlinkingConfigQueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules {
+func (s *QueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules) SetDataId(v int) *QueryLivestreamingAntihotlinkingConfigResponseDataVisitControlRules {
   s.DataId = &v
   return s
 }
@@ -15478,7 +15478,7 @@ type QueryAntiHotlinkingConfigResponse struct {
   // 注意：
   // 1、需要取消防盗链配置设置时，可以传入空节点<cache-time-behaviors></cache-time-behaviors>。
   // 2、表示需要设置防盗链配置时，此项必填"}
-  VisitControlRules []*QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules `json:"visit-control-rules,omitempty" xml:"visit-control-rules,omitempty" require:"true" type:"Repeated"`
+  VisitControlRules []*QueryAntiHotlinkingConfigResponseVisitControlRules `json:"visit-control-rules,omitempty" xml:"visit-control-rules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryAntiHotlinkingConfigResponse) String() string {
@@ -15499,12 +15499,12 @@ func (s *QueryAntiHotlinkingConfigResponse) SetDomainId(v string) *QueryAntiHotl
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigResponse) SetVisitControlRules(v []*QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) *QueryAntiHotlinkingConfigResponse {
+func (s *QueryAntiHotlinkingConfigResponse) SetVisitControlRules(v []*QueryAntiHotlinkingConfigResponseVisitControlRules) *QueryAntiHotlinkingConfigResponse {
   s.VisitControlRules = v
   return s
 }
 
-type QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules struct     {
+type QueryAntiHotlinkingConfigResponseVisitControlRules struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置"}
   DataId *int32 `json:"data-id,omitempty" xml:"data-id,omitempty" require:"true"`
   // {"en":"The url matching mode supports regularization. If all matches, the input parameters can be configured as: .*", "zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*"}
@@ -15567,9 +15567,9 @@ type QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules
   // {"en":"Only true and false are allowed to be filled in ignoredcase.", "zh_CN":"是否忽略大小写。只允许填写true或false"}
   IgnoredCase *string `json:"ignored-case,omitempty" xml:"ignored-case,omitempty" require:"true"`
   // {"en":"You can set other visit control rules here.", "zh_CN":"配置其他访问控制策略，比如禁止访问的时间"}
-  AdvanceControlRules *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesAdvanceControlRules `json:"advance-control-rules,omitempty" xml:"advance-control-rules,omitempty" require:"true" type:"Struct"`
+  AdvanceControlRules *QueryAntiHotlinkingConfigResponseVisitControlRulesAdvanceControlRules `json:"advance-control-rules,omitempty" xml:"advance-control-rules,omitempty" require:"true" type:"Struct"`
   // {"en":"Identify IP black and white list anti-theft chain note: 1, a set of black and white list anti-theft chain, only one set under a data-id 2. When the air interface label indicates the exception of the IP segment configuration and the forbidden IP segment configuration.", "zh_CN":"标识IP黑白名单防盗链 注意： 1、表示一组黑白名单防盗链，一个data-id下只能一组 2、当传空标签表示清楚例外的IP段配置和禁止的IP段配置。"}
-  IpControlRule *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesIpControlRule `json:"ip-control-rule,omitempty" xml:"ip-control-rule,omitempty" require:"true" type:"Struct"`
+  IpControlRule *QueryAntiHotlinkingConfigResponseVisitControlRulesIpControlRule `json:"ip-control-rule,omitempty" xml:"ip-control-rule,omitempty" require:"true" type:"Struct"`
   // {"en":"The exception IP segment supports input IP or IP segment, and the IP segments are separated by a semicolon (;), such as 1.1.1.0/24; 2.2.2.2, some IP exceptions, no anti-theft chain", "zh_CN":"例外的IP段，支持输入IP或IP段，IP段之间用分号(;)隔开，如1.1.1.0/24;2.2.2.2，某些IP例外，不做防盗链"}
   AllowedIps *string `json:"allowed-ips,omitempty" xml:"allowed-ips,omitempty" require:"true"`
   // {"en":"Identify referer anti-theft chain
@@ -15581,150 +15581,150 @@ type QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules
   // 1、表示一组referer防盗链，一个data-id下只能一组
   // 2、当传空标签表示清除referer防盗链
   // 3、合法refer、（合法域名、合法URL）、非法refer、（非法域名、非法URL）这四项，一个data-id下只能配置一个或者都为空"}
-  RefererControlRule *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule `json:"referer-control-rule,omitempty" xml:"referer-control-rule,omitempty" require:"true" type:"Struct"`
+  RefererControlRule *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule `json:"referer-control-rule,omitempty" xml:"referer-control-rule,omitempty" require:"true" type:"Struct"`
   // {"en":"Configuration cookie control rules.Allow-cookie and forbidden-cookie are not allowed to be configured together.", "zh_CN":"配置Cookie防盗链策略。【允许的cookie】和【禁止的cookie】只允许配置一个"}
-  CookieControlRules *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules `json:"cookie-control-rules,omitempty" xml:"cookie-control-rules,omitempty" require:"true" type:"Struct"`
+  CookieControlRules *QueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules `json:"cookie-control-rules,omitempty" xml:"cookie-control-rules,omitempty" require:"true" type:"Struct"`
   // {"en":"Configuration custom header control rules.Header-whitelist and header-blacklist are not allowed to be configured together.", "zh_CN":"配置自定义头部防盗链。【头域黑名单】和【头域白名单】只允许配置一个"}
-  CustomHeaderControlRules *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules `json:"custom-header-control-rules,omitempty" xml:"custom-header-control-rules,omitempty" require:"true" type:"Struct"`
+  CustomHeaderControlRules *QueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules `json:"custom-header-control-rules,omitempty" xml:"custom-header-control-rules,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) String() string {
+func (s QueryAntiHotlinkingConfigResponseVisitControlRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) GoString() string {
+func (s QueryAntiHotlinkingConfigResponseVisitControlRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetDataId(v int32) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetDataId(v int32) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.DataId = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetPathPattern(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetPathPattern(v string) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.PathPattern = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetExceptPathPattern(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetExceptPathPattern(v string) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetCustomPattern(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetCustomPattern(v string) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.CustomPattern = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetFileType(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetFileType(v string) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.FileType = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetCustomFileType(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetCustomFileType(v string) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.CustomFileType = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetSpecifyUrlPattern(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetSpecifyUrlPattern(v string) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.SpecifyUrlPattern = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetDirectory(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetDirectory(v string) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.Directory = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetExceptFileType(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetExceptFileType(v string) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.ExceptFileType = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetExceptCustomFileType(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetExceptCustomFileType(v string) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.ExceptCustomFileType = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetExceptDirectory(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetExceptDirectory(v string) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.ExceptDirectory = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetControlAction(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetControlAction(v string) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.ControlAction = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetRewriteTo(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetRewriteTo(v string) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.RewriteTo = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetPriority(v int32) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetPriority(v int32) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.Priority = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetExceptionalRequest(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetExceptionalRequest(v string) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.ExceptionalRequest = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetIgnoredCase(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetIgnoredCase(v string) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.IgnoredCase = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetAdvanceControlRules(v *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesAdvanceControlRules) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetAdvanceControlRules(v *QueryAntiHotlinkingConfigResponseVisitControlRulesAdvanceControlRules) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.AdvanceControlRules = v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetIpControlRule(v *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesIpControlRule) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetIpControlRule(v *QueryAntiHotlinkingConfigResponseVisitControlRulesIpControlRule) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.IpControlRule = v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetAllowedIps(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetAllowedIps(v string) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.AllowedIps = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetRefererControlRule(v *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetRefererControlRule(v *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.RefererControlRule = v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetCookieControlRules(v *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetCookieControlRules(v *QueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.CookieControlRules = v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules) SetCustomHeaderControlRules(v *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRules) SetCustomHeaderControlRules(v *QueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules) *QueryAntiHotlinkingConfigResponseVisitControlRules {
   s.CustomHeaderControlRules = v
   return s
 }
 
-type QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesAdvanceControlRules struct {
+type QueryAntiHotlinkingConfigResponseVisitControlRulesAdvanceControlRules struct {
   // {"en":"The format is: YYYY start date - end date weekday start time - end date, Beijing time. For example: 2022 1/1-6/30 Mon 00:00-16:00, which means: 0:00-16:00 every Monday from January 1st to June 30th, 2017. You can only configure the start time, such as 00:00-16:00, which means 0:00 to 16:00 every day.", "zh_CN":"禁止访问的时间"}
   InvalidTime *string `json:"invalid-time,omitempty" xml:"invalid-time,omitempty" require:"true"`
 }
 
-func (s QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesAdvanceControlRules) String() string {
+func (s QueryAntiHotlinkingConfigResponseVisitControlRulesAdvanceControlRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesAdvanceControlRules) GoString() string {
+func (s QueryAntiHotlinkingConfigResponseVisitControlRulesAdvanceControlRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesAdvanceControlRules) SetInvalidTime(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesAdvanceControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesAdvanceControlRules) SetInvalidTime(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesAdvanceControlRules {
   s.InvalidTime = &v
   return s
 }
 
-type QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesIpControlRule struct {
+type QueryAntiHotlinkingConfigResponseVisitControlRulesIpControlRule struct {
   // {"en":"Prohibited IP segment
   // Input parameter limit reference interface limit
   // Forbidden IP and exceptional IP cannot be configured at the same time", "zh_CN":"禁止的IP段
@@ -15732,20 +15732,20 @@ type QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules
   ForbiddenIps *string `json:"forbidden-ips,omitempty" xml:"forbidden-ips,omitempty" require:"true"`
 }
 
-func (s QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesIpControlRule) String() string {
+func (s QueryAntiHotlinkingConfigResponseVisitControlRulesIpControlRule) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesIpControlRule) GoString() string {
+func (s QueryAntiHotlinkingConfigResponseVisitControlRulesIpControlRule) GoString() string {
   return s.String()
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesIpControlRule) SetForbiddenIps(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesIpControlRule {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesIpControlRule) SetForbiddenIps(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesIpControlRule {
   s.ForbiddenIps = &v
   return s
 }
 
-type QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule struct {
+type QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule struct {
   // {"en":"If any of the four terms 'nullreferer: legal referer, (legal domain name, legal URL), illegal referer, (illegal domain name, illegal URL)' is allowed, then 'nullreferer' cannot be null.If the four terms 'legal refer', 'legal domain name, legal URL', 'illegal refer', 'illegal domain name, illegal URL' are all null values, then 'whether to allow a null referer' must be null", "zh_CN":"是否允许空referer：合法refer、（合法域名、合法URL）、非法refer、（非法域名、非法URL）这四项任意一项有值，则&ldquo;是否允许空referer&rdquo;不能为空；合法refer、（合法域名、合法URL）、非法refer、（非法域名、非法URL）这四项都为空值，则&ldquo;是否允许空referer&rdquo;必须为空"}
   AllowNullReferer *string `json:"allow-null-referer,omitempty" xml:"allow-null-referer,omitempty" require:"true"`
   // {"en":"Legal referer.", "zh_CN":"合法referer.可以输入url或域名"}
@@ -15767,67 +15767,67 @@ type QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules
   // 注意：
   // 1、表示一组UA头防盗链，一个data-id下只能一组
   // 2、当传空标签表示清除UA头防盗链"}
-  UaControlRule *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleUaControlRule `json:"ua-control-rule,omitempty" xml:"ua-control-rule,omitempty" require:"true" type:"Struct"`
+  UaControlRule *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleUaControlRule `json:"ua-control-rule,omitempty" xml:"ua-control-rule,omitempty" require:"true" type:"Struct"`
   // {"en":"Configure other access control rules, such as invalid visitor regions, example:
   // advance-control-rules:{invalid-visitor-region:CN;JP;K}", "zh_CN":"配置其他访问控制策略，比如禁止的访客区域，JSON示例：
   // advance-control-rules:{invalid-visitor-region:CN;JP;KR}"}
-  AdvanceControlRules *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleAdvanceControlRules `json:"advance-control-rules,omitempty" xml:"advance-control-rules,omitempty" require:"true" type:"Struct"`
+  AdvanceControlRules *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleAdvanceControlRules `json:"advance-control-rules,omitempty" xml:"advance-control-rules,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) String() string {
+func (s QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) GoString() string {
+func (s QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) GoString() string {
   return s.String()
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) SetAllowNullReferer(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) SetAllowNullReferer(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule {
   s.AllowNullReferer = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) SetValidReferer(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) SetValidReferer(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule {
   s.ValidReferer = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) SetValidUrl(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) SetValidUrl(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule {
   s.ValidUrl = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) SetValidDomain(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) SetValidDomain(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule {
   s.ValidDomain = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) SetInvalidReferer(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) SetInvalidReferer(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule {
   s.InvalidReferer = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) SetInvalidUrl(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) SetInvalidUrl(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule {
   s.InvalidUrl = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) SetInvalidDomain(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) SetInvalidDomain(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule {
   s.InvalidDomain = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) SetUaControlRule(v *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleUaControlRule) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) SetUaControlRule(v *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleUaControlRule) *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule {
   s.UaControlRule = v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) SetAdvanceControlRules(v *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleAdvanceControlRules) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule) SetAdvanceControlRules(v *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleAdvanceControlRules) *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRule {
   s.AdvanceControlRules = v
   return s
 }
 
-type QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleUaControlRule struct {
+type QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleUaControlRule struct {
   // {"en":"Allows clients, regular matching, to configure multiple UA such as:
   // < valid user - agents > Android | iPhone < / valid - the user - agents >", "zh_CN":"允许的客户端，正则匹配，配置多个UA如：<valid-user-agents>Android|iPhone</valid-user-agents>"}
   ValidUserAgents *string `json:"valid-user-agents,omitempty" xml:"valid-user-agents,omitempty" require:"true"`
@@ -15836,25 +15836,25 @@ type QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules
   InvalidUserAgents *string `json:"invalid-user-agents,omitempty" xml:"invalid-user-agents,omitempty" require:"true"`
 }
 
-func (s QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleUaControlRule) String() string {
+func (s QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleUaControlRule) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleUaControlRule) GoString() string {
+func (s QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleUaControlRule) GoString() string {
   return s.String()
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleUaControlRule) SetValidUserAgents(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleUaControlRule {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleUaControlRule) SetValidUserAgents(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleUaControlRule {
   s.ValidUserAgents = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleUaControlRule) SetInvalidUserAgents(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleUaControlRule {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleUaControlRule) SetInvalidUserAgents(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleUaControlRule {
   s.InvalidUserAgents = &v
   return s
 }
 
-type QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleAdvanceControlRules struct {
+type QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleAdvanceControlRules struct {
   // {"en":"Forbidden visitor regions, separate with semicolons. Note:
   // 1. Only support ISO 3166-1-alpha-2 two-letter country codes.
   // 2. If you have special regional configuration requirements, please contact your technical support.
@@ -15873,25 +15873,25 @@ type QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules
   ValidVisitorRegion *string `json:"valid-visitor-region,omitempty" xml:"valid-visitor-region,omitempty" require:"true"`
 }
 
-func (s QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleAdvanceControlRules) String() string {
+func (s QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleAdvanceControlRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleAdvanceControlRules) GoString() string {
+func (s QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleAdvanceControlRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleAdvanceControlRules) SetInvalidVisitorRegion(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleAdvanceControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleAdvanceControlRules) SetInvalidVisitorRegion(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleAdvanceControlRules {
   s.InvalidVisitorRegion = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleAdvanceControlRules) SetValidVisitorRegion(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleAdvanceControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleAdvanceControlRules) SetValidVisitorRegion(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesRefererControlRuleAdvanceControlRules {
   s.ValidVisitorRegion = &v
   return s
 }
 
-type QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules struct {
+type QueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules struct {
   // {"en":"Allow Cookie.Fill in regular format, e.g(. *) (range1 | range2) (. *)", "zh_CN":"允许的cookie。填写正则格式，比如(.*)(range1|range2)(.*)。"}
   AllowCookie *string `json:"allow-cookie,omitempty" xml:"allow-cookie,omitempty" require:"true"`
   // {"en":"Allow Null Cookie.Only true and false are allowed to be filled in allow null cookie", "zh_CN":"是否允许空cookie。只允许填写true或false。"}
@@ -15900,30 +15900,30 @@ type QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules
   ForbiddenCookie *string `json:"forbidden-cookie,omitempty" xml:"forbidden-cookie,omitempty" require:"true"`
 }
 
-func (s QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules) String() string {
+func (s QueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules) GoString() string {
+func (s QueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules) SetAllowCookie(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules) SetAllowCookie(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules {
   s.AllowCookie = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules) SetAllowNullCookie(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules) SetAllowNullCookie(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules {
   s.AllowNullCookie = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules) SetForbiddenCookie(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules) SetForbiddenCookie(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesCookieControlRules {
   s.ForbiddenCookie = &v
   return s
 }
 
-type QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules struct {
+type QueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules struct {
   // {"en":"Header Direction.Can choose from the client or the server.Only allowed to fill client or server", "zh_CN":"来源。可选择来源于客户端还是服务端。客户端填写client，服务端填写server"}
   HeaderDirection *string `json:"header-direction,omitempty" xml:"header-direction,omitempty" require:"true"`
   // {"en":"Header Whitelist", "zh_CN":"头域白名单"}
@@ -15936,35 +15936,35 @@ type QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRules
   HeaderValueBlacklist *string `json:"header-value-blacklist,omitempty" xml:"header-value-blacklist,omitempty" require:"true"`
 }
 
-func (s QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules) String() string {
+func (s QueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules) GoString() string {
+func (s QueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules) SetHeaderDirection(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules) SetHeaderDirection(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules {
   s.HeaderDirection = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules) SetHeaderWhitelist(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules) SetHeaderWhitelist(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules {
   s.HeaderWhitelist = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules) SetHeaderValueWhitelist(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules) SetHeaderValueWhitelist(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules {
   s.HeaderValueWhitelist = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules) SetHeaderBlacklist(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules) SetHeaderBlacklist(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules {
   s.HeaderBlacklist = &v
   return s
 }
 
-func (s *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules) SetHeaderValueBlacklist(v string) *QueryAntiHotlinkingConfigQueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules {
+func (s *QueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules) SetHeaderValueBlacklist(v string) *QueryAntiHotlinkingConfigResponseVisitControlRulesCustomHeaderControlRules {
   s.HeaderValueBlacklist = &v
   return s
 }
@@ -16039,7 +16039,7 @@ type QueryCacheTimeResponse struct {
   DomainName *string `json:"domain-name,omitempty" xml:"domain-name,omitempty" require:"true"`
   // {"en":"Domain name or domain name id to query configuration", "zh_CN":"需要查询配置的域名id"}
   DomainId *string `json:"domain-id,omitempty" xml:"domain-id,omitempty" require:"true"`
-  CacheTimeBehaviors []*QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors `json:"cache-time-behaviors,omitempty" xml:"cache-time-behaviors,omitempty" require:"true" type:"Repeated"`
+  CacheTimeBehaviors []*QueryCacheTimeResponseCacheTimeBehaviors `json:"cache-time-behaviors,omitempty" xml:"cache-time-behaviors,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryCacheTimeResponse) String() string {
@@ -16060,12 +16060,12 @@ func (s *QueryCacheTimeResponse) SetDomainId(v string) *QueryCacheTimeResponse {
   return s
 }
 
-func (s *QueryCacheTimeResponse) SetCacheTimeBehaviors(v []*QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors) *QueryCacheTimeResponse {
+func (s *QueryCacheTimeResponse) SetCacheTimeBehaviors(v []*QueryCacheTimeResponseCacheTimeBehaviors) *QueryCacheTimeResponse {
   s.CacheTimeBehaviors = v
   return s
 }
 
-type QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors struct     {
+type QueryCacheTimeResponseCacheTimeBehaviors struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置"}
   DataId *int32 `json:"data-id,omitempty" xml:"data-id,omitempty" require:"true"`
   // {"en":"The url matching mode supports fuzzy regularization. If all matches, the input parameters can be configured as: *", "zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*"}
@@ -16141,95 +16141,95 @@ type QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors struct     {
   IgnoreAuthenticationHeader *bool `json:"ignore-authentication-header,omitempty" xml:"ignore-authentication-header,omitempty" require:"true"`
 }
 
-func (s QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors) String() string {
+func (s QueryCacheTimeResponseCacheTimeBehaviors) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors) GoString() string {
+func (s QueryCacheTimeResponseCacheTimeBehaviors) GoString() string {
   return s.String()
 }
 
-func (s *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors) SetDataId(v int32) *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors {
+func (s *QueryCacheTimeResponseCacheTimeBehaviors) SetDataId(v int32) *QueryCacheTimeResponseCacheTimeBehaviors {
   s.DataId = &v
   return s
 }
 
-func (s *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors) SetPathPattern(v string) *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors {
+func (s *QueryCacheTimeResponseCacheTimeBehaviors) SetPathPattern(v string) *QueryCacheTimeResponseCacheTimeBehaviors {
   s.PathPattern = &v
   return s
 }
 
-func (s *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors) SetExceptPathPattern(v string) *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors {
+func (s *QueryCacheTimeResponseCacheTimeBehaviors) SetExceptPathPattern(v string) *QueryCacheTimeResponseCacheTimeBehaviors {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors) SetCustomPattern(v string) *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors {
+func (s *QueryCacheTimeResponseCacheTimeBehaviors) SetCustomPattern(v string) *QueryCacheTimeResponseCacheTimeBehaviors {
   s.CustomPattern = &v
   return s
 }
 
-func (s *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors) SetFileType(v string) *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors {
+func (s *QueryCacheTimeResponseCacheTimeBehaviors) SetFileType(v string) *QueryCacheTimeResponseCacheTimeBehaviors {
   s.FileType = &v
   return s
 }
 
-func (s *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors) SetCustomFileType(v string) *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors {
+func (s *QueryCacheTimeResponseCacheTimeBehaviors) SetCustomFileType(v string) *QueryCacheTimeResponseCacheTimeBehaviors {
   s.CustomFileType = &v
   return s
 }
 
-func (s *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors) SetSpecifyUrlPattern(v string) *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors {
+func (s *QueryCacheTimeResponseCacheTimeBehaviors) SetSpecifyUrlPattern(v string) *QueryCacheTimeResponseCacheTimeBehaviors {
   s.SpecifyUrlPattern = &v
   return s
 }
 
-func (s *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors) SetDirectory(v string) *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors {
+func (s *QueryCacheTimeResponseCacheTimeBehaviors) SetDirectory(v string) *QueryCacheTimeResponseCacheTimeBehaviors {
   s.Directory = &v
   return s
 }
 
-func (s *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors) SetCacheTtl(v int32) *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors {
+func (s *QueryCacheTimeResponseCacheTimeBehaviors) SetCacheTtl(v int32) *QueryCacheTimeResponseCacheTimeBehaviors {
   s.CacheTtl = &v
   return s
 }
 
-func (s *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors) SetIgnoreCacheControl(v string) *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors {
+func (s *QueryCacheTimeResponseCacheTimeBehaviors) SetIgnoreCacheControl(v string) *QueryCacheTimeResponseCacheTimeBehaviors {
   s.IgnoreCacheControl = &v
   return s
 }
 
-func (s *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors) SetIsRespectServer(v string) *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors {
+func (s *QueryCacheTimeResponseCacheTimeBehaviors) SetIsRespectServer(v string) *QueryCacheTimeResponseCacheTimeBehaviors {
   s.IsRespectServer = &v
   return s
 }
 
-func (s *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors) SetIgnoreLetterCase(v string) *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors {
+func (s *QueryCacheTimeResponseCacheTimeBehaviors) SetIgnoreLetterCase(v string) *QueryCacheTimeResponseCacheTimeBehaviors {
   s.IgnoreLetterCase = &v
   return s
 }
 
-func (s *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors) SetReloadManage(v string) *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors {
+func (s *QueryCacheTimeResponseCacheTimeBehaviors) SetReloadManage(v string) *QueryCacheTimeResponseCacheTimeBehaviors {
   s.ReloadManage = &v
   return s
 }
 
-func (s *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors) SetPriority(v int32) *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors {
+func (s *QueryCacheTimeResponseCacheTimeBehaviors) SetPriority(v int32) *QueryCacheTimeResponseCacheTimeBehaviors {
   s.Priority = &v
   return s
 }
 
-func (s *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors) SetQueryCacheTimeRequestHeaderField(v string) *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors {
+func (s *QueryCacheTimeResponseCacheTimeBehaviors) SetQueryCacheTimeRequestHeaderField(v string) *QueryCacheTimeResponseCacheTimeBehaviors {
   s.QueryCacheTimeRequestHeaderField = &v
   return s
 }
 
-func (s *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors) SetValueQueryCacheTimeRequestHeader(v string) *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors {
+func (s *QueryCacheTimeResponseCacheTimeBehaviors) SetValueQueryCacheTimeRequestHeader(v string) *QueryCacheTimeResponseCacheTimeBehaviors {
   s.ValueQueryCacheTimeRequestHeader = &v
   return s
 }
 
-func (s *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors) SetIgnoreAuthenticationHeader(v bool) *QueryCacheTimeQueryCacheTimeResponseCacheTimeBehaviors {
+func (s *QueryCacheTimeResponseCacheTimeBehaviors) SetIgnoreAuthenticationHeader(v bool) *QueryCacheTimeResponseCacheTimeBehaviors {
   s.IgnoreAuthenticationHeader = &v
   return s
 }
@@ -16304,7 +16304,7 @@ type QueryDomainCertConfigResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"Response information, success when successful", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data *QueryDomainCertConfigQueryDomainCertConfigResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryDomainCertConfigResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryDomainCertConfigResponse) String() string {
@@ -16325,12 +16325,12 @@ func (s *QueryDomainCertConfigResponse) SetMessage(v string) *QueryDomainCertCon
   return s
 }
 
-func (s *QueryDomainCertConfigResponse) SetData(v *QueryDomainCertConfigQueryDomainCertConfigResponseData) *QueryDomainCertConfigResponse {
+func (s *QueryDomainCertConfigResponse) SetData(v *QueryDomainCertConfigResponseData) *QueryDomainCertConfigResponse {
   s.Data = v
   return s
 }
 
-type QueryDomainCertConfigQueryDomainCertConfigResponseData struct {
+type QueryDomainCertConfigResponseData struct {
   // {"en":"domain id", "zh_CN":"域名id"}
   DomainId *string `json:"domainId,omitempty" xml:"domainId,omitempty" require:"true"`
   // {"en":"domain name", "zh_CN":"域名名称"}
@@ -16345,40 +16345,40 @@ type QueryDomainCertConfigQueryDomainCertConfigResponseData struct {
   CipherSuites *string `json:"cipherSuites,omitempty" xml:"cipherSuites,omitempty" require:"true"`
 }
 
-func (s QueryDomainCertConfigQueryDomainCertConfigResponseData) String() string {
+func (s QueryDomainCertConfigResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDomainCertConfigQueryDomainCertConfigResponseData) GoString() string {
+func (s QueryDomainCertConfigResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryDomainCertConfigQueryDomainCertConfigResponseData) SetDomainId(v string) *QueryDomainCertConfigQueryDomainCertConfigResponseData {
+func (s *QueryDomainCertConfigResponseData) SetDomainId(v string) *QueryDomainCertConfigResponseData {
   s.DomainId = &v
   return s
 }
 
-func (s *QueryDomainCertConfigQueryDomainCertConfigResponseData) SetDomainName(v string) *QueryDomainCertConfigQueryDomainCertConfigResponseData {
+func (s *QueryDomainCertConfigResponseData) SetDomainName(v string) *QueryDomainCertConfigResponseData {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryDomainCertConfigQueryDomainCertConfigResponseData) SetCertificateId(v int) *QueryDomainCertConfigQueryDomainCertConfigResponseData {
+func (s *QueryDomainCertConfigResponseData) SetCertificateId(v int) *QueryDomainCertConfigResponseData {
   s.CertificateId = &v
   return s
 }
 
-func (s *QueryDomainCertConfigQueryDomainCertConfigResponseData) SetTLSVersion(v string) *QueryDomainCertConfigQueryDomainCertConfigResponseData {
+func (s *QueryDomainCertConfigResponseData) SetTLSVersion(v string) *QueryDomainCertConfigResponseData {
   s.TLSVersion = &v
   return s
 }
 
-func (s *QueryDomainCertConfigQueryDomainCertConfigResponseData) SetEnableOCSP(v string) *QueryDomainCertConfigQueryDomainCertConfigResponseData {
+func (s *QueryDomainCertConfigResponseData) SetEnableOCSP(v string) *QueryDomainCertConfigResponseData {
   s.EnableOCSP = &v
   return s
 }
 
-func (s *QueryDomainCertConfigQueryDomainCertConfigResponseData) SetCipherSuites(v string) *QueryDomainCertConfigQueryDomainCertConfigResponseData {
+func (s *QueryDomainCertConfigResponseData) SetCipherSuites(v string) *QueryDomainCertConfigResponseData {
   s.CipherSuites = &v
   return s
 }
@@ -16454,7 +16454,7 @@ type QueryLivestreamingTimestampAntihotlinkingConfigResponse struct {
   // {"en":"Response information, when success is successful", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"The response data", "zh_CN":"响应数据"}
-  Data *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryLivestreamingTimestampAntihotlinkingConfigResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
   // {"en":"Uniquely labeled id for querying each requested task (for all interfaces)", "zh_CN":"唯一标示的id，用于查询每次请求的任务 （适用全部接口）"}
   XCncRequestId *string `json:"x-cnc-request-id,omitempty" xml:"x-cnc-request-id,omitempty" require:"true"`
 }
@@ -16477,7 +16477,7 @@ func (s *QueryLivestreamingTimestampAntihotlinkingConfigResponse) SetMessage(v s
   return s
 }
 
-func (s *QueryLivestreamingTimestampAntihotlinkingConfigResponse) SetData(v *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseData) *QueryLivestreamingTimestampAntihotlinkingConfigResponse {
+func (s *QueryLivestreamingTimestampAntihotlinkingConfigResponse) SetData(v *QueryLivestreamingTimestampAntihotlinkingConfigResponseData) *QueryLivestreamingTimestampAntihotlinkingConfigResponse {
   s.Data = v
   return s
 }
@@ -16487,7 +16487,7 @@ func (s *QueryLivestreamingTimestampAntihotlinkingConfigResponse) SetXCncRequest
   return s
 }
 
-type QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseData struct {
+type QueryLivestreamingTimestampAntihotlinkingConfigResponseData struct {
   DomainId *string `json:"domainId,omitempty" xml:"domainId,omitempty" require:"true"`
   DomainName *string `json:"domainName,omitempty" xml:"domainName,omitempty" require:"true"`
   // {"en":"Streaming media anti-hotlinking configuration, parent tag
@@ -16495,33 +16495,33 @@ type QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampA
   // 2. Empty the configuration for <timestampVisitControls/>", "zh_CN":"流媒体防盗链配置，父标签
   // 1.需要设置流媒体防盗链配置时，此项必填
   // 2.为<timestampVisitControls/>时清空配置"}
-  TimestampVisitControlRules []*QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules `json:"timestampVisitControlRules,omitempty" xml:"timestampVisitControlRules,omitempty" require:"true" type:"Repeated"`
+  TimestampVisitControlRules []*QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules `json:"timestampVisitControlRules,omitempty" xml:"timestampVisitControlRules,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseData) String() string {
+func (s QueryLivestreamingTimestampAntihotlinkingConfigResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseData) GoString() string {
+func (s QueryLivestreamingTimestampAntihotlinkingConfigResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseData) SetDomainId(v string) *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseData {
+func (s *QueryLivestreamingTimestampAntihotlinkingConfigResponseData) SetDomainId(v string) *QueryLivestreamingTimestampAntihotlinkingConfigResponseData {
   s.DomainId = &v
   return s
 }
 
-func (s *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseData) SetDomainName(v string) *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseData {
+func (s *QueryLivestreamingTimestampAntihotlinkingConfigResponseData) SetDomainName(v string) *QueryLivestreamingTimestampAntihotlinkingConfigResponseData {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseData) SetTimestampVisitControlRules(v []*QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseData {
+func (s *QueryLivestreamingTimestampAntihotlinkingConfigResponseData) SetTimestampVisitControlRules(v []*QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) *QueryLivestreamingTimestampAntihotlinkingConfigResponseData {
   s.TimestampVisitControlRules = v
   return s
 }
 
-type QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules struct     {
+type QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules struct     {
   // {"en":"The name of the time parameter, and the default value is wsTime if no parameters are entered.", "zh_CN":"密文参数名称，未入参则默认值为wsSecret"}
   CipherParam *string `json:"cipherParam,omitempty" xml:"cipherParam,omitempty" require:"true"`
   // {"en":"The name of the time parameter, and the default value is wsTime if no parameters are entered.", "zh_CN":"时间参数名称，未入参则默认值为wsTime"}
@@ -16562,55 +16562,55 @@ type QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampA
   DataId *int `json:"dataId,omitempty" xml:"dataId,omitempty" require:"true"`
 }
 
-func (s QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) String() string {
+func (s QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) GoString() string {
+func (s QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) SetCipherParam(v string) *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules {
+func (s *QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) SetCipherParam(v string) *QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules {
   s.CipherParam = &v
   return s
 }
 
-func (s *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) SetTimeParam(v string) *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules {
+func (s *QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) SetTimeParam(v string) *QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules {
   s.TimeParam = &v
   return s
 }
 
-func (s *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) SetSecretKey(v string) *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules {
+func (s *QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) SetSecretKey(v string) *QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules {
   s.SecretKey = &v
   return s
 }
 
-func (s *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) SetTimeFormat(v string) *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules {
+func (s *QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) SetTimeFormat(v string) *QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules {
   s.TimeFormat = &v
   return s
 }
 
-func (s *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) SetEffectiveTimeMode(v string) *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules {
+func (s *QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) SetEffectiveTimeMode(v string) *QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules {
   s.EffectiveTimeMode = &v
   return s
 }
 
-func (s *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) SetEffectiveTime(v int) *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules {
+func (s *QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) SetEffectiveTime(v int) *QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules {
   s.EffectiveTime = &v
   return s
 }
 
-func (s *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) SetTolerantTime(v int) *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules {
+func (s *QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) SetTolerantTime(v int) *QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules {
   s.TolerantTime = &v
   return s
 }
 
-func (s *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) SetCipheCombination(v string) *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules {
+func (s *QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) SetCipheCombination(v string) *QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules {
   s.CipheCombination = &v
   return s
 }
 
-func (s *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) SetDataId(v int) *QueryLivestreamingTimestampAntihotlinkingConfigQueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules {
+func (s *QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules) SetDataId(v int) *QueryLivestreamingTimestampAntihotlinkingConfigResponseDataTimestampVisitControlRules {
   s.DataId = &v
   return s
 }
@@ -16671,7 +16671,7 @@ func (s QueryLivestreamingTimestampAntihotlinkingConfigResponseHeader) GoString(
 
 type UpdateLiveDomainHeaderRulesRequest struct {
   // {"en":"Header Rules", "zh_CN":"HTTP头部控制"}
-  HeaderRules []*UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules `json:"headerRules,omitempty" xml:"headerRules,omitempty" require:"true" type:"Repeated"`
+  HeaderRules []*UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules `json:"headerRules,omitempty" xml:"headerRules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s UpdateLiveDomainHeaderRulesRequest) String() string {
@@ -16682,12 +16682,12 @@ func (s UpdateLiveDomainHeaderRulesRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainHeaderRulesRequest) SetHeaderRules(v []*UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) *UpdateLiveDomainHeaderRulesRequest {
+func (s *UpdateLiveDomainHeaderRulesRequest) SetHeaderRules(v []*UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) *UpdateLiveDomainHeaderRulesRequest {
   s.HeaderRules = v
   return s
 }
 
-type UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules struct     {
+type UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。
   // dataId可以通过查询接口获取。
   // 注意：添加grid类型标识：dataId，每一组配置对应一个dataId：
@@ -16711,50 +16711,50 @@ type UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeade
   HeaderValue *string `json:"headerValue,omitempty" xml:"headerValue,omitempty"`
 }
 
-func (s UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) String() string {
+func (s UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) GoString() string {
+func (s UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) SetDataId(v string) *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules {
+func (s *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) SetDataId(v string) *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules {
   s.DataId = &v
   return s
 }
 
-func (s *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) SetUrlRegex(v string) *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules {
+func (s *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) SetUrlRegex(v string) *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules {
   s.UrlRegex = &v
   return s
 }
 
-func (s *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) SetFileTypes(v []*string) *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules {
+func (s *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) SetFileTypes(v []*string) *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules {
   s.FileTypes = v
   return s
 }
 
-func (s *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) SetFileUpdateLiveDomainHeaderRulesPaths(v []*string) *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules {
+func (s *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) SetFileUpdateLiveDomainHeaderRulesPaths(v []*string) *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules {
   s.FileUpdateLiveDomainHeaderRulesPaths = v
   return s
 }
 
-func (s *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) SetHeaderName(v string) *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules {
+func (s *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) SetHeaderName(v string) *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules {
   s.HeaderName = &v
   return s
 }
 
-func (s *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) SetHeaderType(v string) *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules {
+func (s *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) SetHeaderType(v string) *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules {
   s.HeaderType = &v
   return s
 }
 
-func (s *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) SetAction(v string) *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules {
+func (s *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) SetAction(v string) *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules {
   s.Action = &v
   return s
 }
 
-func (s *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) SetHeaderValue(v string) *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules {
+func (s *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules) SetHeaderValue(v string) *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesRequestHeaderRules {
   s.HeaderValue = &v
   return s
 }
@@ -16765,7 +16765,7 @@ type UpdateLiveDomainHeaderRulesResponse struct {
   // {"en":"Reponse message.", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data", "zh_CN":"响应数据"}
-  Data *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *UpdateLiveDomainHeaderRulesResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s UpdateLiveDomainHeaderRulesResponse) String() string {
@@ -16786,25 +16786,25 @@ func (s *UpdateLiveDomainHeaderRulesResponse) SetMessage(v string) *UpdateLiveDo
   return s
 }
 
-func (s *UpdateLiveDomainHeaderRulesResponse) SetData(v *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesResponseData) *UpdateLiveDomainHeaderRulesResponse {
+func (s *UpdateLiveDomainHeaderRulesResponse) SetData(v *UpdateLiveDomainHeaderRulesResponseData) *UpdateLiveDomainHeaderRulesResponse {
   s.Data = v
   return s
 }
 
-type UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesResponseData struct {
+type UpdateLiveDomainHeaderRulesResponseData struct {
   // {"en":"The preliminary deployment id", "zh_CN":"预部署id"}
   PreDeployId *string `json:"preDeployId,omitempty" xml:"preDeployId,omitempty" require:"true"`
 }
 
-func (s UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesResponseData) String() string {
+func (s UpdateLiveDomainHeaderRulesResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesResponseData) GoString() string {
+func (s UpdateLiveDomainHeaderRulesResponseData) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesResponseData) SetPreDeployId(v string) *UpdateLiveDomainHeaderRulesUpdateLiveDomainHeaderRulesResponseData {
+func (s *UpdateLiveDomainHeaderRulesResponseData) SetPreDeployId(v string) *UpdateLiveDomainHeaderRulesResponseData {
   s.PreDeployId = &v
   return s
 }
@@ -16870,7 +16870,7 @@ type AddBanUrltoDomianRequest struct {
   CustomerCode *string `json:"customer-code,omitempty" xml:"customer-code,omitempty"`
   // {"en":"illegal information", "zh_CN":"非法信息屏蔽配置标签
   // 注意：表示需要设置非法信息屏蔽配置时，此项必填"}
-  IllegalInformation []*AddBanUrltoDomianAddBanUrltoDomianRequestIllegalInformation `json:"illegal-information,omitempty" xml:"illegal-information,omitempty" require:"true" type:"Repeated"`
+  IllegalInformation []*AddBanUrltoDomianRequestIllegalInformation `json:"illegal-information,omitempty" xml:"illegal-information,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s AddBanUrltoDomianRequest) String() string {
@@ -16886,12 +16886,12 @@ func (s *AddBanUrltoDomianRequest) SetCustomerCode(v string) *AddBanUrltoDomianR
   return s
 }
 
-func (s *AddBanUrltoDomianRequest) SetIllegalInformation(v []*AddBanUrltoDomianAddBanUrltoDomianRequestIllegalInformation) *AddBanUrltoDomianRequest {
+func (s *AddBanUrltoDomianRequest) SetIllegalInformation(v []*AddBanUrltoDomianRequestIllegalInformation) *AddBanUrltoDomianRequest {
   s.IllegalInformation = v
   return s
 }
 
-type AddBanUrltoDomianAddBanUrltoDomianRequestIllegalInformation struct     {
+type AddBanUrltoDomianRequestIllegalInformation struct     {
   // {"en":"Area code, mandatory field, like Global.", "zh_CN":"需要设置非法信息屏蔽的区域。则此项必填.支持多个。如设置全球，则输入 Global"}
   Areas []*string `json:"areas,omitempty" xml:"areas,omitempty" require:"true" type:"Repeated"`
   // {"en":"URL", "zh_CN":"一个区域下配置需要非法信息屏蔽的url，如果某些区域有多个屏蔽url则有多组"}
@@ -16901,25 +16901,25 @@ type AddBanUrltoDomianAddBanUrltoDomianRequestIllegalInformation struct     {
   Method *string `json:"method,omitempty" xml:"method,omitempty"`
 }
 
-func (s AddBanUrltoDomianAddBanUrltoDomianRequestIllegalInformation) String() string {
+func (s AddBanUrltoDomianRequestIllegalInformation) String() string {
   return tea.Prettify(s)
 }
 
-func (s AddBanUrltoDomianAddBanUrltoDomianRequestIllegalInformation) GoString() string {
+func (s AddBanUrltoDomianRequestIllegalInformation) GoString() string {
   return s.String()
 }
 
-func (s *AddBanUrltoDomianAddBanUrltoDomianRequestIllegalInformation) SetAreas(v []*string) *AddBanUrltoDomianAddBanUrltoDomianRequestIllegalInformation {
+func (s *AddBanUrltoDomianRequestIllegalInformation) SetAreas(v []*string) *AddBanUrltoDomianRequestIllegalInformation {
   s.Areas = v
   return s
 }
 
-func (s *AddBanUrltoDomianAddBanUrltoDomianRequestIllegalInformation) SetBanUrls(v []*string) *AddBanUrltoDomianAddBanUrltoDomianRequestIllegalInformation {
+func (s *AddBanUrltoDomianRequestIllegalInformation) SetBanUrls(v []*string) *AddBanUrltoDomianRequestIllegalInformation {
   s.BanUrls = v
   return s
 }
 
-func (s *AddBanUrltoDomianAddBanUrltoDomianRequestIllegalInformation) SetMethod(v string) *AddBanUrltoDomianAddBanUrltoDomianRequestIllegalInformation {
+func (s *AddBanUrltoDomianRequestIllegalInformation) SetMethod(v string) *AddBanUrltoDomianRequestIllegalInformation {
   s.Method = &v
   return s
 }
@@ -17026,7 +17026,7 @@ func (s AddBanUrltoDomianResponseHeader) GoString() string {
 
 type EditDomainPropertyRequest struct {
   // {"en":"Origin config.", "zh_CN":"回源配置"}
-  OriginConfig *EditDomainPropertyEditDomainPropertyRequestOriginConfig `json:"origin-config,omitempty" xml:"origin-config,omitempty" require:"true" type:"Struct"`
+  OriginConfig *EditDomainPropertyRequestOriginConfig `json:"origin-config,omitempty" xml:"origin-config,omitempty" require:"true" type:"Struct"`
 }
 
 func (s EditDomainPropertyRequest) String() string {
@@ -17037,12 +17037,12 @@ func (s EditDomainPropertyRequest) GoString() string {
   return s.String()
 }
 
-func (s *EditDomainPropertyRequest) SetOriginConfig(v *EditDomainPropertyEditDomainPropertyRequestOriginConfig) *EditDomainPropertyRequest {
+func (s *EditDomainPropertyRequest) SetOriginConfig(v *EditDomainPropertyRequestOriginConfig) *EditDomainPropertyRequest {
   s.OriginConfig = v
   return s
 }
 
-type EditDomainPropertyEditDomainPropertyRequestOriginConfig struct {
+type EditDomainPropertyRequestOriginConfig struct {
   // {"en":"Back to source host, not required", "zh_CN":"回源host，非必填"}
   OriginHost *string `json:"origin-host,omitempty" xml:"origin-host,omitempty"`
   // {"en":"Source IP or domain name. 
@@ -17058,25 +17058,25 @@ type EditDomainPropertyEditDomainPropertyRequestOriginConfig struct {
   OriginPort *string `json:"origin-port,omitempty" xml:"origin-port,omitempty"`
 }
 
-func (s EditDomainPropertyEditDomainPropertyRequestOriginConfig) String() string {
+func (s EditDomainPropertyRequestOriginConfig) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditDomainPropertyEditDomainPropertyRequestOriginConfig) GoString() string {
+func (s EditDomainPropertyRequestOriginConfig) GoString() string {
   return s.String()
 }
 
-func (s *EditDomainPropertyEditDomainPropertyRequestOriginConfig) SetOriginHost(v string) *EditDomainPropertyEditDomainPropertyRequestOriginConfig {
+func (s *EditDomainPropertyRequestOriginConfig) SetOriginHost(v string) *EditDomainPropertyRequestOriginConfig {
   s.OriginHost = &v
   return s
 }
 
-func (s *EditDomainPropertyEditDomainPropertyRequestOriginConfig) SetOriginIps(v string) *EditDomainPropertyEditDomainPropertyRequestOriginConfig {
+func (s *EditDomainPropertyRequestOriginConfig) SetOriginIps(v string) *EditDomainPropertyRequestOriginConfig {
   s.OriginIps = &v
   return s
 }
 
-func (s *EditDomainPropertyEditDomainPropertyRequestOriginConfig) SetOriginPort(v string) *EditDomainPropertyEditDomainPropertyRequestOriginConfig {
+func (s *EditDomainPropertyRequestOriginConfig) SetOriginPort(v string) *EditDomainPropertyRequestOriginConfig {
   s.OriginPort = &v
   return s
 }
@@ -17181,7 +17181,7 @@ type QueryCacheKeyConfigurationResponse struct {
   // 2. Configuration of clearing for <cacheKeyRules/>.", "zh_CN":"配置自定义缓存key功能。
   // 1.需要设置自定义缓存key配置时，此项必填
   // 2.为<cacheKeyRules/>时清空自定义缓存key配置"}
-  CacheKeyRules []*QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules `json:"cacheKeyRules,omitempty" xml:"cacheKeyRules,omitempty" require:"true" type:"Repeated"`
+  CacheKeyRules []*QueryCacheKeyConfigurationResponseCacheKeyRules `json:"cacheKeyRules,omitempty" xml:"cacheKeyRules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryCacheKeyConfigurationResponse) String() string {
@@ -17202,12 +17202,12 @@ func (s *QueryCacheKeyConfigurationResponse) SetDomainName(v string) *QueryCache
   return s
 }
 
-func (s *QueryCacheKeyConfigurationResponse) SetCacheKeyRules(v []*QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules) *QueryCacheKeyConfigurationResponse {
+func (s *QueryCacheKeyConfigurationResponse) SetCacheKeyRules(v []*QueryCacheKeyConfigurationResponseCacheKeyRules) *QueryCacheKeyConfigurationResponse {
   s.CacheKeyRules = v
   return s
 }
 
-type QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules struct     {
+type QueryCacheKeyConfigurationResponseCacheKeyRules struct     {
   // {"en":"The url matching mode supports fuzzy regularization. If all matches, the input parameters can be configured as: *", "zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*"}
   PathPattern *string `json:"pathPattern,omitempty" xml:"pathPattern,omitempty" require:"true"`
   // {"en":"Specify a uri, such as /test/specifyurl", "zh_CN":"指定具体的url，如/test/specifyurl"}
@@ -17248,70 +17248,70 @@ type QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules s
   DataId *int64 `json:"dataId,omitempty" xml:"dataId,omitempty" require:"true"`
 }
 
-func (s QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules) String() string {
+func (s QueryCacheKeyConfigurationResponseCacheKeyRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules) GoString() string {
+func (s QueryCacheKeyConfigurationResponseCacheKeyRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules) SetPathPattern(v string) *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules {
+func (s *QueryCacheKeyConfigurationResponseCacheKeyRules) SetPathPattern(v string) *QueryCacheKeyConfigurationResponseCacheKeyRules {
   s.PathPattern = &v
   return s
 }
 
-func (s *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules) SetSpecifyUrl(v string) *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules {
+func (s *QueryCacheKeyConfigurationResponseCacheKeyRules) SetSpecifyUrl(v string) *QueryCacheKeyConfigurationResponseCacheKeyRules {
   s.SpecifyUrl = &v
   return s
 }
 
-func (s *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules) SetFullMatch4SpecifyUrl(v string) *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules {
+func (s *QueryCacheKeyConfigurationResponseCacheKeyRules) SetFullMatch4SpecifyUrl(v string) *QueryCacheKeyConfigurationResponseCacheKeyRules {
   s.FullMatch4SpecifyUrl = &v
   return s
 }
 
-func (s *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules) SetCustomPattern(v string) *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules {
+func (s *QueryCacheKeyConfigurationResponseCacheKeyRules) SetCustomPattern(v string) *QueryCacheKeyConfigurationResponseCacheKeyRules {
   s.CustomPattern = &v
   return s
 }
 
-func (s *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules) SetFileType(v string) *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules {
+func (s *QueryCacheKeyConfigurationResponseCacheKeyRules) SetFileType(v string) *QueryCacheKeyConfigurationResponseCacheKeyRules {
   s.FileType = &v
   return s
 }
 
-func (s *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules) SetCustomFileType(v string) *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules {
+func (s *QueryCacheKeyConfigurationResponseCacheKeyRules) SetCustomFileType(v string) *QueryCacheKeyConfigurationResponseCacheKeyRules {
   s.CustomFileType = &v
   return s
 }
 
-func (s *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules) SetDirectory(v string) *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules {
+func (s *QueryCacheKeyConfigurationResponseCacheKeyRules) SetDirectory(v string) *QueryCacheKeyConfigurationResponseCacheKeyRules {
   s.Directory = &v
   return s
 }
 
-func (s *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules) SetIgnoreCase(v string) *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules {
+func (s *QueryCacheKeyConfigurationResponseCacheKeyRules) SetIgnoreCase(v string) *QueryCacheKeyConfigurationResponseCacheKeyRules {
   s.IgnoreCase = &v
   return s
 }
 
-func (s *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules) SetHeaderName(v string) *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules {
+func (s *QueryCacheKeyConfigurationResponseCacheKeyRules) SetHeaderName(v string) *QueryCacheKeyConfigurationResponseCacheKeyRules {
   s.HeaderName = &v
   return s
 }
 
-func (s *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules) SetParameterOfHeader(v string) *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules {
+func (s *QueryCacheKeyConfigurationResponseCacheKeyRules) SetParameterOfHeader(v string) *QueryCacheKeyConfigurationResponseCacheKeyRules {
   s.ParameterOfHeader = &v
   return s
 }
 
-func (s *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules) SetPriority(v string) *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules {
+func (s *QueryCacheKeyConfigurationResponseCacheKeyRules) SetPriority(v string) *QueryCacheKeyConfigurationResponseCacheKeyRules {
   s.Priority = &v
   return s
 }
 
-func (s *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules) SetDataId(v int64) *QueryCacheKeyConfigurationQueryCacheKeyConfigurationResponseCacheKeyRules {
+func (s *QueryCacheKeyConfigurationResponseCacheKeyRules) SetDataId(v int64) *QueryCacheKeyConfigurationResponseCacheKeyRules {
   s.DataId = &v
   return s
 }
@@ -17375,7 +17375,7 @@ type UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequest s
   // 注意：
   // 1、需要取消根据响应头内容缓存文件配置设置时，可以传入空节点<cache-by-repheaers></cache-by-repheaers>。
   // 2、表示需要设置根据响应头内容缓存文件配置时，此项必填"}
-  CacheByRespheaders []*UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders `json:"cache-by-respheaders,omitempty" xml:"cache-by-respheaders,omitempty" require:"true" type:"Repeated"`
+  CacheByRespheaders []*UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders `json:"cache-by-respheaders,omitempty" xml:"cache-by-respheaders,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequest) String() string {
@@ -17386,12 +17386,12 @@ func (s UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigReques
   return s.String()
 }
 
-func (s *UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequest) SetCacheByRespheaders(v []*UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) *UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequest {
+func (s *UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequest) SetCacheByRespheaders(v []*UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) *UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequest {
   s.CacheByRespheaders = v
   return s
 }
 
-type UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders struct     {
+type UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders struct     {
   // {"en":"Add grid type identity, represents the customer multi - group configuration, a specific group of configuration", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置
   // 如果是新增一组配置项的值时，不需要传。如果指定修改具体data-id的配置项值时，需要传入对应配置项对应的data-id.可以通过查询接口获取"}
   DataId *int64 `json:"data-id,omitempty" xml:"data-id,omitempty"`
@@ -17416,50 +17416,50 @@ type UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderCo
   IsRespheader *string `json:"is-respheader,omitempty" xml:"is-respheader,omitempty" require:"true"`
 }
 
-func (s UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) String() string {
+func (s UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) GoString() string {
+func (s UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) GoString() string {
   return s.String()
 }
 
-func (s *UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) SetDataId(v int64) *UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders {
+func (s *UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) SetDataId(v int64) *UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders {
   s.DataId = &v
   return s
 }
 
-func (s *UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) SetUpdateCacheByResponseHeaderConfigResponseHeader(v string) *UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders {
+func (s *UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) SetUpdateCacheByResponseHeaderConfigResponseHeader(v string) *UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders {
   s.UpdateCacheByResponseHeaderConfigResponseHeader = &v
   return s
 }
 
-func (s *UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) SetPathPattern(v string) *UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders {
+func (s *UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) SetPathPattern(v string) *UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders {
   s.PathPattern = &v
   return s
 }
 
-func (s *UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) SetExceptPathPattern(v string) *UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders {
+func (s *UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) SetExceptPathPattern(v string) *UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) SetResponseValue(v string) *UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders {
+func (s *UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) SetResponseValue(v string) *UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders {
   s.ResponseValue = &v
   return s
 }
 
-func (s *UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) SetIgnoreLetterCase(v string) *UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders {
+func (s *UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) SetIgnoreLetterCase(v string) *UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders {
   s.IgnoreLetterCase = &v
   return s
 }
 
-func (s *UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) SetPriority(v string) *UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders {
+func (s *UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) SetPriority(v string) *UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders {
   s.Priority = &v
   return s
 }
 
-func (s *UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) SetIsRespheader(v string) *UpdateCacheByResponseHeaderConfigUpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders {
+func (s *UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders) SetIsRespheader(v string) *UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders {
   s.IsRespheader = &v
   return s
 }
@@ -17563,7 +17563,7 @@ type UpdateCloudStorageBasicConfigurationRequest struct {
   // 2. Configuration of clearing for <cloudStorageRules/>.", "zh_CN":"云存储配置，父标签
   // 1.需要设置录制/截图功能时，此项必填
   // 2.为<cloudStorageRules/>时清空配置"}
-  CloudStorageRules []*UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules `json:"cloudStorageRules,omitempty" xml:"cloudStorageRules,omitempty" require:"true" type:"Repeated"`
+  CloudStorageRules []*UpdateCloudStorageBasicConfigurationRequestCloudStorageRules `json:"cloudStorageRules,omitempty" xml:"cloudStorageRules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s UpdateCloudStorageBasicConfigurationRequest) String() string {
@@ -17574,12 +17574,12 @@ func (s UpdateCloudStorageBasicConfigurationRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateCloudStorageBasicConfigurationRequest) SetCloudStorageRules(v []*UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules) *UpdateCloudStorageBasicConfigurationRequest {
+func (s *UpdateCloudStorageBasicConfigurationRequest) SetCloudStorageRules(v []*UpdateCloudStorageBasicConfigurationRequestCloudStorageRules) *UpdateCloudStorageBasicConfigurationRequest {
   s.CloudStorageRules = v
   return s
 }
 
-type UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules struct     {
+type UpdateCloudStorageBasicConfigurationRequestCloudStorageRules struct     {
   // {"en":"This item is to open cloud storage. The optional vaules are true and false.", "zh_CN":"是否开启云存储，可选择为true、false"}
   StorageEnabled *bool `json:"storageEnabled,omitempty" xml:"storageEnabled,omitempty" require:"true"`
   // {"en":"Access Key ID for uploading files.", "zh_CN":"上传文件密钥ID，Access Key ID"}
@@ -17609,55 +17609,55 @@ type UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationReq
   DataId *int `json:"dataId,omitempty" xml:"dataId,omitempty"`
 }
 
-func (s UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules) String() string {
+func (s UpdateCloudStorageBasicConfigurationRequestCloudStorageRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules) GoString() string {
+func (s UpdateCloudStorageBasicConfigurationRequestCloudStorageRules) GoString() string {
   return s.String()
 }
 
-func (s *UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules) SetStorageEnabled(v bool) *UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules {
+func (s *UpdateCloudStorageBasicConfigurationRequestCloudStorageRules) SetStorageEnabled(v bool) *UpdateCloudStorageBasicConfigurationRequestCloudStorageRules {
   s.StorageEnabled = &v
   return s
 }
 
-func (s *UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules) SetAccessKeyId(v string) *UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules {
+func (s *UpdateCloudStorageBasicConfigurationRequestCloudStorageRules) SetAccessKeyId(v string) *UpdateCloudStorageBasicConfigurationRequestCloudStorageRules {
   s.AccessKeyId = &v
   return s
 }
 
-func (s *UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules) SetAccessKey(v string) *UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules {
+func (s *UpdateCloudStorageBasicConfigurationRequestCloudStorageRules) SetAccessKey(v string) *UpdateCloudStorageBasicConfigurationRequestCloudStorageRules {
   s.AccessKey = &v
   return s
 }
 
-func (s *UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules) SetStorageManageDomain(v string) *UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules {
+func (s *UpdateCloudStorageBasicConfigurationRequestCloudStorageRules) SetStorageManageDomain(v string) *UpdateCloudStorageBasicConfigurationRequestCloudStorageRules {
   s.StorageManageDomain = &v
   return s
 }
 
-func (s *UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules) SetPullAddress(v string) *UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules {
+func (s *UpdateCloudStorageBasicConfigurationRequestCloudStorageRules) SetPullAddress(v string) *UpdateCloudStorageBasicConfigurationRequestCloudStorageRules {
   s.PullAddress = &v
   return s
 }
 
-func (s *UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules) SetNoticeAddress(v string) *UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules {
+func (s *UpdateCloudStorageBasicConfigurationRequestCloudStorageRules) SetNoticeAddress(v string) *UpdateCloudStorageBasicConfigurationRequestCloudStorageRules {
   s.NoticeAddress = &v
   return s
 }
 
-func (s *UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules) SetMergeNotice(v bool) *UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules {
+func (s *UpdateCloudStorageBasicConfigurationRequestCloudStorageRules) SetMergeNotice(v bool) *UpdateCloudStorageBasicConfigurationRequestCloudStorageRules {
   s.MergeNotice = &v
   return s
 }
 
-func (s *UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules) SetPublishPoints(v []*string) *UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules {
+func (s *UpdateCloudStorageBasicConfigurationRequestCloudStorageRules) SetPublishPoints(v []*string) *UpdateCloudStorageBasicConfigurationRequestCloudStorageRules {
   s.PublishPoints = v
   return s
 }
 
-func (s *UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules) SetDataId(v int) *UpdateCloudStorageBasicConfigurationUpdateCloudStorageBasicConfigurationRequestCloudStorageRules {
+func (s *UpdateCloudStorageBasicConfigurationRequestCloudStorageRules) SetDataId(v int) *UpdateCloudStorageBasicConfigurationRequestCloudStorageRules {
   s.DataId = &v
   return s
 }
@@ -17750,11 +17750,11 @@ func (s UpdateCloudStorageBasicConfigurationResponseHeader) GoString() string {
 
 type UpdateLiveDomainHlsRequest struct {
   // {"en":"Slices", "zh_CN":"多协议输出-HLS"}
-  Slices *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestSlices `json:"slices,omitempty" xml:"slices,omitempty" type:"Struct"`
+  Slices *UpdateLiveDomainHlsRequestSlices `json:"slices,omitempty" xml:"slices,omitempty" type:"Struct"`
   // {"en":"Cache Time Rules", "zh_CN":"节点缓存-缓存时间配置"}
-  CacheTimeRules []*UpdateLiveDomainHlsUpdateLiveDomainHlsRequestCacheTimeRules `json:"cacheTimeRules,omitempty" xml:"cacheTimeRules,omitempty" type:"Repeated"`
+  CacheTimeRules []*UpdateLiveDomainHlsRequestCacheTimeRules `json:"cacheTimeRules,omitempty" xml:"cacheTimeRules,omitempty" type:"Repeated"`
   // {"en":"Query String Rules", "zh_CN":"节点缓存-带问号缓存配置"}
-  QueryStringRules []*UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules `json:"queryStringRules,omitempty" xml:"queryStringRules,omitempty" type:"Repeated"`
+  QueryStringRules []*UpdateLiveDomainHlsRequestQueryStringRules `json:"queryStringRules,omitempty" xml:"queryStringRules,omitempty" type:"Repeated"`
 }
 
 func (s UpdateLiveDomainHlsRequest) String() string {
@@ -17765,22 +17765,22 @@ func (s UpdateLiveDomainHlsRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainHlsRequest) SetSlices(v *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestSlices) *UpdateLiveDomainHlsRequest {
+func (s *UpdateLiveDomainHlsRequest) SetSlices(v *UpdateLiveDomainHlsRequestSlices) *UpdateLiveDomainHlsRequest {
   s.Slices = v
   return s
 }
 
-func (s *UpdateLiveDomainHlsRequest) SetCacheTimeRules(v []*UpdateLiveDomainHlsUpdateLiveDomainHlsRequestCacheTimeRules) *UpdateLiveDomainHlsRequest {
+func (s *UpdateLiveDomainHlsRequest) SetCacheTimeRules(v []*UpdateLiveDomainHlsRequestCacheTimeRules) *UpdateLiveDomainHlsRequest {
   s.CacheTimeRules = v
   return s
 }
 
-func (s *UpdateLiveDomainHlsRequest) SetQueryStringRules(v []*UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules) *UpdateLiveDomainHlsRequest {
+func (s *UpdateLiveDomainHlsRequest) SetQueryStringRules(v []*UpdateLiveDomainHlsRequestQueryStringRules) *UpdateLiveDomainHlsRequest {
   s.QueryStringRules = v
   return s
 }
 
-type UpdateLiveDomainHlsUpdateLiveDomainHlsRequestSlices struct {
+type UpdateLiveDomainHlsRequestSlices struct {
   // {"en":"Enable HLS", "zh_CN":"是否启用HLS"}
   EnableHls *bool `json:"enableHls,omitempty" xml:"enableHls,omitempty" require:"true"`
   // {"en":"M3u8 Seg Num", "zh_CN":"普通m3u8切片个数"}
@@ -17793,40 +17793,40 @@ type UpdateLiveDomainHlsUpdateLiveDomainHlsRequestSlices struct {
   NewMetaSeqReset *bool `json:"newMetaSeqReset,omitempty" xml:"newMetaSeqReset,omitempty"`
 }
 
-func (s UpdateLiveDomainHlsUpdateLiveDomainHlsRequestSlices) String() string {
+func (s UpdateLiveDomainHlsRequestSlices) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainHlsUpdateLiveDomainHlsRequestSlices) GoString() string {
+func (s UpdateLiveDomainHlsRequestSlices) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestSlices) SetEnableHls(v bool) *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestSlices {
+func (s *UpdateLiveDomainHlsRequestSlices) SetEnableHls(v bool) *UpdateLiveDomainHlsRequestSlices {
   s.EnableHls = &v
   return s
 }
 
-func (s *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestSlices) SetM3u8SegNum(v int) *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestSlices {
+func (s *UpdateLiveDomainHlsRequestSlices) SetM3u8SegNum(v int) *UpdateLiveDomainHlsRequestSlices {
   s.M3u8SegNum = &v
   return s
 }
 
-func (s *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestSlices) SetFirstM3u8SegNum(v int) *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestSlices {
+func (s *UpdateLiveDomainHlsRequestSlices) SetFirstM3u8SegNum(v int) *UpdateLiveDomainHlsRequestSlices {
   s.FirstM3u8SegNum = &v
   return s
 }
 
-func (s *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestSlices) SetSegDuration(v int) *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestSlices {
+func (s *UpdateLiveDomainHlsRequestSlices) SetSegDuration(v int) *UpdateLiveDomainHlsRequestSlices {
   s.SegDuration = &v
   return s
 }
 
-func (s *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestSlices) SetNewMetaSeqReset(v bool) *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestSlices {
+func (s *UpdateLiveDomainHlsRequestSlices) SetNewMetaSeqReset(v bool) *UpdateLiveDomainHlsRequestSlices {
   s.NewMetaSeqReset = &v
   return s
 }
 
-type UpdateLiveDomainHlsUpdateLiveDomainHlsRequestCacheTimeRules struct     {
+type UpdateLiveDomainHlsRequestCacheTimeRules struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。
   // dataId可以通过查询接口获取。
   // 注意：添加grid类型标识：dataId，每一组配置对应一个dataId：
@@ -17846,45 +17846,45 @@ type UpdateLiveDomainHlsUpdateLiveDomainHlsRequestCacheTimeRules struct     {
   CacheTime *string `json:"cacheTime,omitempty" xml:"cacheTime,omitempty" require:"true"`
 }
 
-func (s UpdateLiveDomainHlsUpdateLiveDomainHlsRequestCacheTimeRules) String() string {
+func (s UpdateLiveDomainHlsRequestCacheTimeRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainHlsUpdateLiveDomainHlsRequestCacheTimeRules) GoString() string {
+func (s UpdateLiveDomainHlsRequestCacheTimeRules) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestCacheTimeRules) SetDataId(v string) *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestCacheTimeRules {
+func (s *UpdateLiveDomainHlsRequestCacheTimeRules) SetDataId(v string) *UpdateLiveDomainHlsRequestCacheTimeRules {
   s.DataId = &v
   return s
 }
 
-func (s *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestCacheTimeRules) SetPriority(v int) *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestCacheTimeRules {
+func (s *UpdateLiveDomainHlsRequestCacheTimeRules) SetPriority(v int) *UpdateLiveDomainHlsRequestCacheTimeRules {
   s.Priority = &v
   return s
 }
 
-func (s *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestCacheTimeRules) SetUrlRegex(v string) *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestCacheTimeRules {
+func (s *UpdateLiveDomainHlsRequestCacheTimeRules) SetUrlRegex(v string) *UpdateLiveDomainHlsRequestCacheTimeRules {
   s.UrlRegex = &v
   return s
 }
 
-func (s *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestCacheTimeRules) SetFileTypes(v []*string) *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestCacheTimeRules {
+func (s *UpdateLiveDomainHlsRequestCacheTimeRules) SetFileTypes(v []*string) *UpdateLiveDomainHlsRequestCacheTimeRules {
   s.FileTypes = v
   return s
 }
 
-func (s *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestCacheTimeRules) SetFileUpdateLiveDomainHlsPaths(v []*string) *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestCacheTimeRules {
+func (s *UpdateLiveDomainHlsRequestCacheTimeRules) SetFileUpdateLiveDomainHlsPaths(v []*string) *UpdateLiveDomainHlsRequestCacheTimeRules {
   s.FileUpdateLiveDomainHlsPaths = v
   return s
 }
 
-func (s *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestCacheTimeRules) SetCacheTime(v string) *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestCacheTimeRules {
+func (s *UpdateLiveDomainHlsRequestCacheTimeRules) SetCacheTime(v string) *UpdateLiveDomainHlsRequestCacheTimeRules {
   s.CacheTime = &v
   return s
 }
 
-type UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules struct     {
+type UpdateLiveDomainHlsRequestQueryStringRules struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。
   // dataId可以通过查询接口获取。
   // 注意：添加grid类型标识：dataId，每一组配置对应一个dataId：
@@ -17908,50 +17908,50 @@ type UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules struct     {
   QueryString2Origin *bool `json:"queryString2Origin,omitempty" xml:"queryString2Origin,omitempty"`
 }
 
-func (s UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules) String() string {
+func (s UpdateLiveDomainHlsRequestQueryStringRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules) GoString() string {
+func (s UpdateLiveDomainHlsRequestQueryStringRules) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules) SetDataId(v string) *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules {
+func (s *UpdateLiveDomainHlsRequestQueryStringRules) SetDataId(v string) *UpdateLiveDomainHlsRequestQueryStringRules {
   s.DataId = &v
   return s
 }
 
-func (s *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules) SetPriority(v int) *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules {
+func (s *UpdateLiveDomainHlsRequestQueryStringRules) SetPriority(v int) *UpdateLiveDomainHlsRequestQueryStringRules {
   s.Priority = &v
   return s
 }
 
-func (s *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules) SetUrlRegex(v string) *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules {
+func (s *UpdateLiveDomainHlsRequestQueryStringRules) SetUrlRegex(v string) *UpdateLiveDomainHlsRequestQueryStringRules {
   s.UrlRegex = &v
   return s
 }
 
-func (s *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules) SetFileTypes(v []*string) *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules {
+func (s *UpdateLiveDomainHlsRequestQueryStringRules) SetFileTypes(v []*string) *UpdateLiveDomainHlsRequestQueryStringRules {
   s.FileTypes = v
   return s
 }
 
-func (s *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules) SetFileUpdateLiveDomainHlsPaths(v []*string) *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules {
+func (s *UpdateLiveDomainHlsRequestQueryStringRules) SetFileUpdateLiveDomainHlsPaths(v []*string) *UpdateLiveDomainHlsRequestQueryStringRules {
   s.FileUpdateLiveDomainHlsPaths = v
   return s
 }
 
-func (s *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules) SetIgnoreQueryString(v bool) *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules {
+func (s *UpdateLiveDomainHlsRequestQueryStringRules) SetIgnoreQueryString(v bool) *UpdateLiveDomainHlsRequestQueryStringRules {
   s.IgnoreQueryString = &v
   return s
 }
 
-func (s *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules) SetIgnoreCase(v bool) *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules {
+func (s *UpdateLiveDomainHlsRequestQueryStringRules) SetIgnoreCase(v bool) *UpdateLiveDomainHlsRequestQueryStringRules {
   s.IgnoreCase = &v
   return s
 }
 
-func (s *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules) SetQueryString2Origin(v bool) *UpdateLiveDomainHlsUpdateLiveDomainHlsRequestQueryStringRules {
+func (s *UpdateLiveDomainHlsRequestQueryStringRules) SetQueryString2Origin(v bool) *UpdateLiveDomainHlsRequestQueryStringRules {
   s.QueryString2Origin = &v
   return s
 }
@@ -17962,7 +17962,7 @@ type UpdateLiveDomainHlsResponse struct {
   // {"en":"Reponse message.", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data", "zh_CN":"响应数据"}
-  Data *UpdateLiveDomainHlsUpdateLiveDomainHlsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *UpdateLiveDomainHlsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s UpdateLiveDomainHlsResponse) String() string {
@@ -17983,25 +17983,25 @@ func (s *UpdateLiveDomainHlsResponse) SetMessage(v string) *UpdateLiveDomainHlsR
   return s
 }
 
-func (s *UpdateLiveDomainHlsResponse) SetData(v *UpdateLiveDomainHlsUpdateLiveDomainHlsResponseData) *UpdateLiveDomainHlsResponse {
+func (s *UpdateLiveDomainHlsResponse) SetData(v *UpdateLiveDomainHlsResponseData) *UpdateLiveDomainHlsResponse {
   s.Data = v
   return s
 }
 
-type UpdateLiveDomainHlsUpdateLiveDomainHlsResponseData struct {
+type UpdateLiveDomainHlsResponseData struct {
   // {"en":"The preliminary deployment id", "zh_CN":"预部署id"}
   PreDeployId *string `json:"preDeployId,omitempty" xml:"preDeployId,omitempty" require:"true"`
 }
 
-func (s UpdateLiveDomainHlsUpdateLiveDomainHlsResponseData) String() string {
+func (s UpdateLiveDomainHlsResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainHlsUpdateLiveDomainHlsResponseData) GoString() string {
+func (s UpdateLiveDomainHlsResponseData) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainHlsUpdateLiveDomainHlsResponseData) SetPreDeployId(v string) *UpdateLiveDomainHlsUpdateLiveDomainHlsResponseData {
+func (s *UpdateLiveDomainHlsResponseData) SetPreDeployId(v string) *UpdateLiveDomainHlsResponseData {
   s.PreDeployId = &v
   return s
 }
@@ -18079,7 +18079,7 @@ type QueryScreenshotConfigurationResponse struct {
   // {"en":"Response information, when success is successful", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"The response data", "zh_CN":"响应数据"}
-  Data *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryScreenshotConfigurationResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryScreenshotConfigurationResponse) String() string {
@@ -18100,44 +18100,44 @@ func (s *QueryScreenshotConfigurationResponse) SetMessage(v string) *QueryScreen
   return s
 }
 
-func (s *QueryScreenshotConfigurationResponse) SetData(v *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseData) *QueryScreenshotConfigurationResponse {
+func (s *QueryScreenshotConfigurationResponse) SetData(v *QueryScreenshotConfigurationResponseData) *QueryScreenshotConfigurationResponse {
   s.Data = v
   return s
 }
 
-type QueryScreenshotConfigurationQueryScreenshotConfigurationResponseData struct {
+type QueryScreenshotConfigurationResponseData struct {
   // {"en":"Domain name", "zh_CN":"查询的域名名称"}
   DomainName *string `json:"domainName,omitempty" xml:"domainName,omitempty" require:"true"`
   // {"en":"Domain id", "zh_CN":"查询的域名id"}
   DomainId *int `json:"domainId,omitempty" xml:"domainId,omitempty" require:"true"`
   // {"en":"Recording Configuration, parent node 1. When you need to use the screenshot function, this must be filled in.  2. Configuration of clearing for <screenshotRules/>.", "zh_CN":"截图配置，父标签 1.需要设置截图配置时，此项必填 2.为<screenshotRules/>时清空配置 3.只支持jpg格式的截图"}
-  ScreenshotRules []*QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules `json:"screenshotRules,omitempty" xml:"screenshotRules,omitempty" require:"true" type:"Repeated"`
+  ScreenshotRules []*QueryScreenshotConfigurationResponseDataScreenshotRules `json:"screenshotRules,omitempty" xml:"screenshotRules,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryScreenshotConfigurationQueryScreenshotConfigurationResponseData) String() string {
+func (s QueryScreenshotConfigurationResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryScreenshotConfigurationQueryScreenshotConfigurationResponseData) GoString() string {
+func (s QueryScreenshotConfigurationResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseData) SetDomainName(v string) *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseData {
+func (s *QueryScreenshotConfigurationResponseData) SetDomainName(v string) *QueryScreenshotConfigurationResponseData {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseData) SetDomainId(v int) *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseData {
+func (s *QueryScreenshotConfigurationResponseData) SetDomainId(v int) *QueryScreenshotConfigurationResponseData {
   s.DomainId = &v
   return s
 }
 
-func (s *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseData) SetScreenshotRules(v []*QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules) *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseData {
+func (s *QueryScreenshotConfigurationResponseData) SetScreenshotRules(v []*QueryScreenshotConfigurationResponseDataScreenshotRules) *QueryScreenshotConfigurationResponseData {
   s.ScreenshotRules = v
   return s
 }
 
-type QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules struct     {
+type QueryScreenshotConfigurationResponseDataScreenshotRules struct     {
   // {"en":"Screenshot space name, this must be filled when screenshot is opened.", "zh_CN":"截图空间名，开启截图时，此项必填"}
   SpaceName *string `json:"spaceName,omitempty" xml:"spaceName,omitempty" require:"true"`
   // {"en":"Screenshot interval. This is required when screenshot is enabled.When configured, it must be >=5s, for example, 30, which means taking screenshots every 30s.", "zh_CN":"截图时间间隔，单位秒（s）；开启截图时，此项必填。配置时，必须>=5s。例如30，表示间隔30s截图一次。"}
@@ -18173,50 +18173,50 @@ type QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreens
   DataId *int `json:"dataId,omitempty" xml:"dataId,omitempty" require:"true"`
 }
 
-func (s QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules) String() string {
+func (s QueryScreenshotConfigurationResponseDataScreenshotRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules) GoString() string {
+func (s QueryScreenshotConfigurationResponseDataScreenshotRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules) SetSpaceName(v string) *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules {
+func (s *QueryScreenshotConfigurationResponseDataScreenshotRules) SetSpaceName(v string) *QueryScreenshotConfigurationResponseDataScreenshotRules {
   s.SpaceName = &v
   return s
 }
 
-func (s *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules) SetInterval(v int) *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules {
+func (s *QueryScreenshotConfigurationResponseDataScreenshotRules) SetInterval(v int) *QueryScreenshotConfigurationResponseDataScreenshotRules {
   s.Interval = &v
   return s
 }
 
-func (s *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules) SetWidth(v int) *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules {
+func (s *QueryScreenshotConfigurationResponseDataScreenshotRules) SetWidth(v int) *QueryScreenshotConfigurationResponseDataScreenshotRules {
   s.Width = &v
   return s
 }
 
-func (s *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules) SetHigh(v int) *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules {
+func (s *QueryScreenshotConfigurationResponseDataScreenshotRules) SetHigh(v int) *QueryScreenshotConfigurationResponseDataScreenshotRules {
   s.High = &v
   return s
 }
 
-func (s *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules) SetOverwrite(v int) *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules {
+func (s *QueryScreenshotConfigurationResponseDataScreenshotRules) SetOverwrite(v int) *QueryScreenshotConfigurationResponseDataScreenshotRules {
   s.Overwrite = &v
   return s
 }
 
-func (s *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules) SetNoticeAddress(v string) *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules {
+func (s *QueryScreenshotConfigurationResponseDataScreenshotRules) SetNoticeAddress(v string) *QueryScreenshotConfigurationResponseDataScreenshotRules {
   s.NoticeAddress = &v
   return s
 }
 
-func (s *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules) SetPublishPoints(v []*string) *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules {
+func (s *QueryScreenshotConfigurationResponseDataScreenshotRules) SetPublishPoints(v []*string) *QueryScreenshotConfigurationResponseDataScreenshotRules {
   s.PublishPoints = v
   return s
 }
 
-func (s *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules) SetDataId(v int) *QueryScreenshotConfigurationQueryScreenshotConfigurationResponseDataScreenshotRules {
+func (s *QueryScreenshotConfigurationResponseDataScreenshotRules) SetDataId(v int) *QueryScreenshotConfigurationResponseDataScreenshotRules {
   s.DataId = &v
   return s
 }
@@ -18283,7 +18283,7 @@ type UpdatetimecontrolServiceRequest struct {
   // 3、时间有效性检验：按照年月日时分秒换算的当前时间，与请求url中所带的名文时间相减，判断是否超过设置的上下限（即前后60s内），时间差小于设置上下限的，系统才会给予正常的响应，否则拒绝请求，返回403
   // 4、日志记录没有带加密串的url
   // 6、需要清空时间戳防盗链规则时，可以只传入节点<timestamp-visit-control-rule></timestamp-visit-control-rule>"}
-  TimestampVisitControlRule *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule `json:"timestamp-visit-control-rule,omitempty" xml:"timestamp-visit-control-rule,omitempty" require:"true" type:"Struct"`
+  TimestampVisitControlRule *UpdatetimecontrolServiceRequestTimestampVisitControlRule `json:"timestamp-visit-control-rule,omitempty" xml:"timestamp-visit-control-rule,omitempty" require:"true" type:"Struct"`
 }
 
 func (s UpdatetimecontrolServiceRequest) String() string {
@@ -18294,12 +18294,12 @@ func (s UpdatetimecontrolServiceRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdatetimecontrolServiceRequest) SetTimestampVisitControlRule(v *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) *UpdatetimecontrolServiceRequest {
+func (s *UpdatetimecontrolServiceRequest) SetTimestampVisitControlRule(v *UpdatetimecontrolServiceRequestTimestampVisitControlRule) *UpdatetimecontrolServiceRequest {
   s.TimestampVisitControlRule = v
   return s
 }
 
-type UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule struct {
+type UpdatetimecontrolServiceRequestTimestampVisitControlRule struct {
   // {"en":"The url matching mode supports fuzzy regularization. If all matches, the input parameters can be configured as: *.
   // Verify the time stamp of the matched URL for anti-leeching; reject URLs that are not matched.", "zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*
   // 对匹配到的URL进行时间戳防盗链验证；未匹配到的URL，则拒绝。"}
@@ -18435,110 +18435,110 @@ type UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitContro
   UrlKey *string `json:"url-key,omitempty" xml:"url-key,omitempty"`
 }
 
-func (s UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) String() string {
+func (s UpdatetimecontrolServiceRequestTimestampVisitControlRule) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) GoString() string {
+func (s UpdatetimecontrolServiceRequestTimestampVisitControlRule) GoString() string {
   return s.String()
 }
 
-func (s *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) SetPathPattern(v string) *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule {
+func (s *UpdatetimecontrolServiceRequestTimestampVisitControlRule) SetPathPattern(v string) *UpdatetimecontrolServiceRequestTimestampVisitControlRule {
   s.PathPattern = &v
   return s
 }
 
-func (s *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) SetExceptPathPattern(v string) *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule {
+func (s *UpdatetimecontrolServiceRequestTimestampVisitControlRule) SetExceptPathPattern(v string) *UpdatetimecontrolServiceRequestTimestampVisitControlRule {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) SetProtocolOfPathPattern(v string) *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule {
+func (s *UpdatetimecontrolServiceRequestTimestampVisitControlRule) SetProtocolOfPathPattern(v string) *UpdatetimecontrolServiceRequestTimestampVisitControlRule {
   s.ProtocolOfPathPattern = &v
   return s
 }
 
-func (s *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) SetDirectory(v string) *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule {
+func (s *UpdatetimecontrolServiceRequestTimestampVisitControlRule) SetDirectory(v string) *UpdatetimecontrolServiceRequestTimestampVisitControlRule {
   s.Directory = &v
   return s
 }
 
-func (s *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) SetAllowedIps(v string) *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule {
+func (s *UpdatetimecontrolServiceRequestTimestampVisitControlRule) SetAllowedIps(v string) *UpdatetimecontrolServiceRequestTimestampVisitControlRule {
   s.AllowedIps = &v
   return s
 }
 
-func (s *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) SetIgnoreUriSlash(v string) *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule {
+func (s *UpdatetimecontrolServiceRequestTimestampVisitControlRule) SetIgnoreUriSlash(v string) *UpdatetimecontrolServiceRequestTimestampVisitControlRule {
   s.IgnoreUriSlash = &v
   return s
 }
 
-func (s *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) SetIgnoreKeyAndTimePosition(v string) *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule {
+func (s *UpdatetimecontrolServiceRequestTimestampVisitControlRule) SetIgnoreKeyAndTimePosition(v string) *UpdatetimecontrolServiceRequestTimestampVisitControlRule {
   s.IgnoreKeyAndTimePosition = &v
   return s
 }
 
-func (s *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) SetEncryptMethod(v string) *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule {
+func (s *UpdatetimecontrolServiceRequestTimestampVisitControlRule) SetEncryptMethod(v string) *UpdatetimecontrolServiceRequestTimestampVisitControlRule {
   s.EncryptMethod = &v
   return s
 }
 
-func (s *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) SetCipherCombination(v string) *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule {
+func (s *UpdatetimecontrolServiceRequestTimestampVisitControlRule) SetCipherCombination(v string) *UpdatetimecontrolServiceRequestTimestampVisitControlRule {
   s.CipherCombination = &v
   return s
 }
 
-func (s *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) SetSecretKey(v string) *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule {
+func (s *UpdatetimecontrolServiceRequestTimestampVisitControlRule) SetSecretKey(v string) *UpdatetimecontrolServiceRequestTimestampVisitControlRule {
   s.SecretKey = &v
   return s
 }
 
-func (s *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) SetCipherParam(v string) *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule {
+func (s *UpdatetimecontrolServiceRequestTimestampVisitControlRule) SetCipherParam(v string) *UpdatetimecontrolServiceRequestTimestampVisitControlRule {
   s.CipherParam = &v
   return s
 }
 
-func (s *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) SetTimeParam(v string) *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule {
+func (s *UpdatetimecontrolServiceRequestTimestampVisitControlRule) SetTimeParam(v string) *UpdatetimecontrolServiceRequestTimestampVisitControlRule {
   s.TimeParam = &v
   return s
 }
 
-func (s *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) SetLowerLimitExpiryTime(v int) *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule {
+func (s *UpdatetimecontrolServiceRequestTimestampVisitControlRule) SetLowerLimitExpiryTime(v int) *UpdatetimecontrolServiceRequestTimestampVisitControlRule {
   s.LowerLimitExpiryTime = &v
   return s
 }
 
-func (s *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) SetUpperLimitExpiryTime(v int) *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule {
+func (s *UpdatetimecontrolServiceRequestTimestampVisitControlRule) SetUpperLimitExpiryTime(v int) *UpdatetimecontrolServiceRequestTimestampVisitControlRule {
   s.UpperLimitExpiryTime = &v
   return s
 }
 
-func (s *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) SetMultipleSecretKeys(v string) *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule {
+func (s *UpdatetimecontrolServiceRequestTimestampVisitControlRule) SetMultipleSecretKeys(v string) *UpdatetimecontrolServiceRequestTimestampVisitControlRule {
   s.MultipleSecretKeys = &v
   return s
 }
 
-func (s *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) SetTimeFormat(v string) *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule {
+func (s *UpdatetimecontrolServiceRequestTimestampVisitControlRule) SetTimeFormat(v string) *UpdatetimecontrolServiceRequestTimestampVisitControlRule {
   s.TimeFormat = &v
   return s
 }
 
-func (s *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) SetRequestUrlStyle(v string) *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule {
+func (s *UpdatetimecontrolServiceRequestTimestampVisitControlRule) SetRequestUrlStyle(v string) *UpdatetimecontrolServiceRequestTimestampVisitControlRule {
   s.RequestUrlStyle = &v
   return s
 }
 
-func (s *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) SetDstStyle(v int) *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule {
+func (s *UpdatetimecontrolServiceRequestTimestampVisitControlRule) SetDstStyle(v int) *UpdatetimecontrolServiceRequestTimestampVisitControlRule {
   s.DstStyle = &v
   return s
 }
 
-func (s *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) SetLogFormat(v string) *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule {
+func (s *UpdatetimecontrolServiceRequestTimestampVisitControlRule) SetLogFormat(v string) *UpdatetimecontrolServiceRequestTimestampVisitControlRule {
   s.LogFormat = &v
   return s
 }
 
-func (s *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule) SetUrlKey(v string) *UpdatetimecontrolServiceUpdatetimecontrolServiceRequestTimestampVisitControlRule {
+func (s *UpdatetimecontrolServiceRequestTimestampVisitControlRule) SetUrlKey(v string) *UpdatetimecontrolServiceRequestTimestampVisitControlRule {
   s.UrlKey = &v
   return s
 }
@@ -18644,7 +18644,7 @@ type EditAntiHotlinkingConfigRequest struct {
   // 注意：
   // 1. 需要取消防盗链配置设置时，可以传入空节点<cache-time-behaviors></cache-time-behaviors>。
   // 2. 表示需要设置防盗链配置时，此项必填"}
-  VisitControlRules []*EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules `json:"visit-control-rules,omitempty" xml:"visit-control-rules,omitempty" require:"true" type:"Repeated"`
+  VisitControlRules []*EditAntiHotlinkingConfigRequestVisitControlRules `json:"visit-control-rules,omitempty" xml:"visit-control-rules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s EditAntiHotlinkingConfigRequest) String() string {
@@ -18655,12 +18655,12 @@ func (s EditAntiHotlinkingConfigRequest) GoString() string {
   return s.String()
 }
 
-func (s *EditAntiHotlinkingConfigRequest) SetVisitControlRules(v []*EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) *EditAntiHotlinkingConfigRequest {
+func (s *EditAntiHotlinkingConfigRequest) SetVisitControlRules(v []*EditAntiHotlinkingConfigRequestVisitControlRules) *EditAntiHotlinkingConfigRequest {
   s.VisitControlRules = v
   return s
 }
 
-type EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules struct     {
+type EditAntiHotlinkingConfigRequestVisitControlRules struct     {
   // {"en":"When configuring multiple configuration sets, the specific configuration set's ID. The data-id can be obtained through the query interface. Note: a. If data-id is provided, it indicates the modification of a specific Configuration Item in one of the configuration sets. No modification is needed for other configuration sets. b. If multiple configuration sets are provided as input, and some have data-id while others do not, then those with data-id represent modifications to specific configuration sets, whereas those without data-id represent new configurations added on top of existing ones. c. If none of the inputs have data-id, it means the current configuration completely overrides the previous configuration. d. If no configuration parameters are provided and only the domain and secondary tag are transmitted, it indicates clearing all configurations corresponding to the domain's secondary service for this interface. e. If a configuration set has no specific Configuration Item, then data-id is required with an actual existing data-id value, indicating the clearing of the Configuration Item corresponding to this data-id. A configuration set with no specific Configuration Item and no data-id is not allowed.", "zh_CN":"配置多组配置时，具体某组配置的id。data-id可以通过查询接口获取。 注意： a、如果有传data-id，说明指定修改其中一组配置项内容，不需求修改其他组配置内容不需要入参；  b、如果入参多组配置，其中有些组配置有传data-id，有些没有传，则有传data-id的表示修改具体某组配置，没有传data-id的表示在原来基础上新增一组配置；  c、如果入参都没有传data-id,表示用本次的配置全量覆盖原先配置；  d、如果入参没有传任何配置项参数，只传了域名和二级标签，表示清空这个接口对应域名二级服务所有配置；  e、如果一组配置没有具体的配置项，则data-id必填，且值为实际存在的data-id，表示清空这个data-id对应配置项的值；不允许一组配置没有具体的配置项也没有data-id。"}
   DataId *int64 `json:"data-id,omitempty" xml:"data-id,omitempty"`
   // {"en":"The url matching mode supports regularization. If all matches, the input parameters can be configured as: .*", "zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*"}
@@ -18729,7 +18729,7 @@ type EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules st
   // 注意：
   // 1. 表示一组黑白名单防盗链，一个data-id下只能一组
   // 2. 当传空标签表示清楚例外的IP段配置和禁止的IP段配置。"}
-  IpControlRule *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesIpControlRule `json:"ip-control-rule,omitempty" xml:"ip-control-rule,omitempty" type:"Struct"`
+  IpControlRule *EditAntiHotlinkingConfigRequestVisitControlRulesIpControlRule `json:"ip-control-rule,omitempty" xml:"ip-control-rule,omitempty" type:"Struct"`
   // {"en":"Identify referer anti-theft chain
   // Note:
   // 1. Represents a set of referer security chains, and a single data-id can only have one set under one
@@ -18740,7 +18740,7 @@ type EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules st
   // 2. 当传空标签表示清除referer防盗链
   // 3. 合法refer、（合法域名、合法URL）、非法refer、（非法域名、非法URL）这四项，一个data-id下只能配置一个或者都为空
   // 4. 匹配条件一致或者有存在交集的情况下（匹配条件包括URL匹配模式；文件类型；自定义文件类型；目录；指定常用类型；指定url），且控制动作均为禁止时，多条配置不能同时配置<合法refer>或者<合法域名>或者<合法URL>或者（<合法域名>和<合法URL>）"}
-  RefererControlRule *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule `json:"referer-control-rule,omitempty" xml:"referer-control-rule,omitempty" type:"Struct"`
+  RefererControlRule *EditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule `json:"referer-control-rule,omitempty" xml:"referer-control-rule,omitempty" type:"Struct"`
   // {"en":"UA head protection against hotlinking,
   // Note:
   // 1. Represents a group of UA head defense hotlinking, and only one group under a data-id
@@ -18748,136 +18748,136 @@ type EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules st
   // 注意：
   // 1. 表示一组UA头防盗链，一个data-id下只能一组
   // 2. 当传空标签表示清除UA头防盗链"}
-  UaControlRule *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesUaControlRule `json:"ua-control-rule,omitempty" xml:"ua-control-rule,omitempty" type:"Struct"`
+  UaControlRule *EditAntiHotlinkingConfigRequestVisitControlRulesUaControlRule `json:"ua-control-rule,omitempty" xml:"ua-control-rule,omitempty" type:"Struct"`
   // {"en":"Configure other access control rules, such as invalid visitor regions, example:
   // advance-control-rules:{invalid-visitor-region:CN;JP;K}", "zh_CN":"配置其他访问控制策略，比如禁止的访客区域，JSON示例：
   // advance-control-rules:{invalid-visitor-region:CN;JP;KR}"}
-  AdvanceControlRules *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesAdvanceControlRules `json:"advance-control-rules,omitempty" xml:"advance-control-rules,omitempty" type:"Struct"`
+  AdvanceControlRules *EditAntiHotlinkingConfigRequestVisitControlRulesAdvanceControlRules `json:"advance-control-rules,omitempty" xml:"advance-control-rules,omitempty" type:"Struct"`
   // {"en":"Configuration cookie control rules.Allow-cookie and forbidden-cookie are not allowed to be configured together.", "zh_CN":"配置Cookie防盗链策略。【允许的cookie】和【禁止的cookie】只允许配置一个"}
-  CookieControlRules *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules `json:"cookie-control-rules,omitempty" xml:"cookie-control-rules,omitempty" type:"Struct"`
+  CookieControlRules *EditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules `json:"cookie-control-rules,omitempty" xml:"cookie-control-rules,omitempty" type:"Struct"`
   // {"en":"Configuration custom header control rules.Header-whitelist and header-blacklist are not allowed to be configured together.", "zh_CN":"配置自定义头部防盗链。【头域黑名单】和【头域白名单】只允许配置一个"}
-  CustomHeaderControlRules *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules `json:"custom-header-control-rules,omitempty" xml:"custom-header-control-rules,omitempty" type:"Struct"`
+  CustomHeaderControlRules *EditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules `json:"custom-header-control-rules,omitempty" xml:"custom-header-control-rules,omitempty" type:"Struct"`
 }
 
-func (s EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) String() string {
+func (s EditAntiHotlinkingConfigRequestVisitControlRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) GoString() string {
+func (s EditAntiHotlinkingConfigRequestVisitControlRules) GoString() string {
   return s.String()
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetDataId(v int64) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetDataId(v int64) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.DataId = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetPathPattern(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetPathPattern(v string) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.PathPattern = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetExceptPathPattern(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetExceptPathPattern(v string) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetCustomPattern(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetCustomPattern(v string) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.CustomPattern = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetFileType(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetFileType(v string) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.FileType = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetCustomFileType(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetCustomFileType(v string) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.CustomFileType = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetSpecifyUrlPattern(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetSpecifyUrlPattern(v string) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.SpecifyUrlPattern = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetDirectory(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetDirectory(v string) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.Directory = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetExceptFileType(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetExceptFileType(v string) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.ExceptFileType = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetExceptCustomFileType(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetExceptCustomFileType(v string) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.ExceptCustomFileType = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetExceptDirectory(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetExceptDirectory(v string) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.ExceptDirectory = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetControlAction(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetControlAction(v string) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.ControlAction = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetRewriteTo(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetRewriteTo(v string) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.RewriteTo = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetPriority(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetPriority(v string) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.Priority = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetExceptionalRequest(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetExceptionalRequest(v string) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.ExceptionalRequest = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetIgnoredCase(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetIgnoredCase(v string) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.IgnoredCase = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetIpControlRule(v *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesIpControlRule) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetIpControlRule(v *EditAntiHotlinkingConfigRequestVisitControlRulesIpControlRule) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.IpControlRule = v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetRefererControlRule(v *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetRefererControlRule(v *EditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.RefererControlRule = v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetUaControlRule(v *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesUaControlRule) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetUaControlRule(v *EditAntiHotlinkingConfigRequestVisitControlRulesUaControlRule) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.UaControlRule = v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetAdvanceControlRules(v *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesAdvanceControlRules) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetAdvanceControlRules(v *EditAntiHotlinkingConfigRequestVisitControlRulesAdvanceControlRules) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.AdvanceControlRules = v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetCookieControlRules(v *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetCookieControlRules(v *EditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.CookieControlRules = v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules) SetCustomHeaderControlRules(v *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRules) SetCustomHeaderControlRules(v *EditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules) *EditAntiHotlinkingConfigRequestVisitControlRules {
   s.CustomHeaderControlRules = v
   return s
 }
 
-type EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesIpControlRule struct {
+type EditAntiHotlinkingConfigRequestVisitControlRulesIpControlRule struct {
   // {"en":"Prohibited IP segment
   // Input parameter limit reference interface limit
   // Forbidden IP and exceptional IP cannot be configured at the same time", "zh_CN":"禁止的IP段
@@ -18888,25 +18888,25 @@ type EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesIpC
   AllowedIps *string `json:"allowed-ips,omitempty" xml:"allowed-ips,omitempty"`
 }
 
-func (s EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesIpControlRule) String() string {
+func (s EditAntiHotlinkingConfigRequestVisitControlRulesIpControlRule) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesIpControlRule) GoString() string {
+func (s EditAntiHotlinkingConfigRequestVisitControlRulesIpControlRule) GoString() string {
   return s.String()
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesIpControlRule) SetForbiddenIps(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesIpControlRule {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesIpControlRule) SetForbiddenIps(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesIpControlRule {
   s.ForbiddenIps = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesIpControlRule) SetAllowedIps(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesIpControlRule {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesIpControlRule) SetAllowedIps(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesIpControlRule {
   s.AllowedIps = &v
   return s
 }
 
-type EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule struct {
+type EditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule struct {
   // {"en":"If any of the four terms 'nullreferer: legal referer, (legal domain name, legal URL), illegal referer, (illegal domain name, illegal URL)' is allowed, then 'nullreferer' cannot be null.If the four terms 'legal refer', 'legal domain name, legal URL', 'illegal refer', 'illegal domain name, illegal URL' are all null values, then 'whether to allow a null referer' must be null", "zh_CN":"是否允许空referer：合法refer、（合法域名、合法URL）、非法refer、（非法域名、非法URL）这六项任意一项有值，则&ldquo;是否允许空referer&rdquo;不能为空；合法refer、（合法域名、合法URL）、非法refer、（非法域名、非法URL）这四项都为空值，则&ldquo;是否允许空referer&rdquo;必须为空"}
   AllowNullReferer *string `json:"allow-null-referer,omitempty" xml:"allow-null-referer,omitempty"`
   // {"en":"Legal referer.", "zh_CN":"合法referer.可以输入url或域名，支持正则，可以多个，多个以空格隔开"}
@@ -18923,50 +18923,50 @@ type EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesRef
   InvalidDomain *string `json:"invalid-domain,omitempty" xml:"invalid-domain,omitempty"`
 }
 
-func (s EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule) String() string {
+func (s EditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule) GoString() string {
+func (s EditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule) GoString() string {
   return s.String()
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule) SetAllowNullReferer(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule) SetAllowNullReferer(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule {
   s.AllowNullReferer = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule) SetValidReferer(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule) SetValidReferer(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule {
   s.ValidReferer = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule) SetValidUrl(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule) SetValidUrl(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule {
   s.ValidUrl = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule) SetValidDomain(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule) SetValidDomain(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule {
   s.ValidDomain = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule) SetInvalidReferer(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule) SetInvalidReferer(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule {
   s.InvalidReferer = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule) SetInvalidUrl(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule) SetInvalidUrl(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule {
   s.InvalidUrl = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule) SetInvalidDomain(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule) SetInvalidDomain(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesRefererControlRule {
   s.InvalidDomain = &v
   return s
 }
 
-type EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesUaControlRule struct {
+type EditAntiHotlinkingConfigRequestVisitControlRulesUaControlRule struct {
   // {"en":"Allowed clients, regular matching, no spaces allowed, to configure multiple UA such as:
   // <valid-user-agents>Android|iPhone</valid-user-agents>", "zh_CN":"允许的客户端，正则匹配，不允许空格，配置多个UA如：<valid-user-agents>Android|iPhone</valid-user-agents>"}
   ValidUserAgents *string `json:"valid-user-agents,omitempty" xml:"valid-user-agents,omitempty"`
@@ -18975,25 +18975,25 @@ type EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesUaC
   InvalidUserAgents *string `json:"invalid-user-agents,omitempty" xml:"invalid-user-agents,omitempty"`
 }
 
-func (s EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesUaControlRule) String() string {
+func (s EditAntiHotlinkingConfigRequestVisitControlRulesUaControlRule) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesUaControlRule) GoString() string {
+func (s EditAntiHotlinkingConfigRequestVisitControlRulesUaControlRule) GoString() string {
   return s.String()
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesUaControlRule) SetValidUserAgents(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesUaControlRule {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesUaControlRule) SetValidUserAgents(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesUaControlRule {
   s.ValidUserAgents = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesUaControlRule) SetInvalidUserAgents(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesUaControlRule {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesUaControlRule) SetInvalidUserAgents(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesUaControlRule {
   s.InvalidUserAgents = &v
   return s
 }
 
-type EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesAdvanceControlRules struct {
+type EditAntiHotlinkingConfigRequestVisitControlRulesAdvanceControlRules struct {
   // {"en":"Forbidden visitor regions, separate with semicolons. Note:
   // 1. Only support ISO 3166-1-alpha-2 two-letter country codes.
   // 2. If you have special regional configuration requirements, please contact your technical support.
@@ -19012,25 +19012,25 @@ type EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesAdv
   ValidVisitorRegion *string `json:"valid-visitor-region,omitempty" xml:"valid-visitor-region,omitempty"`
 }
 
-func (s EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesAdvanceControlRules) String() string {
+func (s EditAntiHotlinkingConfigRequestVisitControlRulesAdvanceControlRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesAdvanceControlRules) GoString() string {
+func (s EditAntiHotlinkingConfigRequestVisitControlRulesAdvanceControlRules) GoString() string {
   return s.String()
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesAdvanceControlRules) SetInvalidVisitorRegion(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesAdvanceControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesAdvanceControlRules) SetInvalidVisitorRegion(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesAdvanceControlRules {
   s.InvalidVisitorRegion = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesAdvanceControlRules) SetValidVisitorRegion(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesAdvanceControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesAdvanceControlRules) SetValidVisitorRegion(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesAdvanceControlRules {
   s.ValidVisitorRegion = &v
   return s
 }
 
-type EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules struct {
+type EditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules struct {
   // {"en":"Allow Cookie.Fill in regular format, e.g(. *) (range1 | range2) (. *)", "zh_CN":"允许的cookie。填写正则格式，比如(.*)(range1|range2)(.*)。"}
   AllowCookie *string `json:"allow-cookie,omitempty" xml:"allow-cookie,omitempty"`
   // {"en":"Allow Null Cookie.Only true and false are allowed to be filled in allow null cookie", "zh_CN":"是否允许空cookie。只允许填写true或false。"}
@@ -19039,30 +19039,30 @@ type EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCoo
   ForbiddenCookie *string `json:"forbidden-cookie,omitempty" xml:"forbidden-cookie,omitempty"`
 }
 
-func (s EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules) String() string {
+func (s EditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules) GoString() string {
+func (s EditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules) GoString() string {
   return s.String()
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules) SetAllowCookie(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules) SetAllowCookie(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules {
   s.AllowCookie = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules) SetAllowNullCookie(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules) SetAllowNullCookie(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules {
   s.AllowNullCookie = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules) SetForbiddenCookie(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules) SetForbiddenCookie(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesCookieControlRules {
   s.ForbiddenCookie = &v
   return s
 }
 
-type EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules struct {
+type EditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules struct {
   // {"en":"Header Direction.Can choose from the client or the server.Only allowed to fill client or server", "zh_CN":"来源。可选择来源于客户端还是服务端。客户端填写client，服务端填写server"}
   HeaderDirection *string `json:"header-direction,omitempty" xml:"header-direction,omitempty"`
   // {"en":"Header Whitelist", "zh_CN":"头域白名单"}
@@ -19075,35 +19075,35 @@ type EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCus
   HeaderValueBlacklist *string `json:"header-value-blacklist,omitempty" xml:"header-value-blacklist,omitempty"`
 }
 
-func (s EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules) String() string {
+func (s EditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules) GoString() string {
+func (s EditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules) GoString() string {
   return s.String()
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules) SetHeaderDirection(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules) SetHeaderDirection(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules {
   s.HeaderDirection = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules) SetHeaderWhitelist(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules) SetHeaderWhitelist(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules {
   s.HeaderWhitelist = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules) SetHeaderValueWhitelist(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules) SetHeaderValueWhitelist(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules {
   s.HeaderValueWhitelist = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules) SetHeaderBlacklist(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules) SetHeaderBlacklist(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules {
   s.HeaderBlacklist = &v
   return s
 }
 
-func (s *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules) SetHeaderValueBlacklist(v string) *EditAntiHotlinkingConfigEditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules {
+func (s *EditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules) SetHeaderValueBlacklist(v string) *EditAntiHotlinkingConfigRequestVisitControlRulesCustomHeaderControlRules {
   s.HeaderValueBlacklist = &v
   return s
 }
@@ -19225,7 +19225,7 @@ type QueryBack2OriginProtocolRewriteConfigResponse struct {
   // {"en":"Reponse message.", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data", "zh_CN":"响应数据"}
-  Data *QueryBack2OriginProtocolRewriteConfigQueryBack2OriginProtocolRewriteConfigResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryBack2OriginProtocolRewriteConfigResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryBack2OriginProtocolRewriteConfigResponse) String() string {
@@ -19246,64 +19246,64 @@ func (s *QueryBack2OriginProtocolRewriteConfigResponse) SetMessage(v string) *Qu
   return s
 }
 
-func (s *QueryBack2OriginProtocolRewriteConfigResponse) SetData(v *QueryBack2OriginProtocolRewriteConfigQueryBack2OriginProtocolRewriteConfigResponseData) *QueryBack2OriginProtocolRewriteConfigResponse {
+func (s *QueryBack2OriginProtocolRewriteConfigResponse) SetData(v *QueryBack2OriginProtocolRewriteConfigResponseData) *QueryBack2OriginProtocolRewriteConfigResponse {
   s.Data = v
   return s
 }
 
-type QueryBack2OriginProtocolRewriteConfigQueryBack2OriginProtocolRewriteConfigResponseData struct {
+type QueryBack2OriginProtocolRewriteConfigResponseData struct {
   // {"en":"Domain id", "zh_CN":"域名ID"}
   DomainId *int `json:"domainId,omitempty" xml:"domainId,omitempty" require:"true"`
   // {"en":"Domain name", "zh_CN":"域名"}
   DomainName *string `json:"domainName,omitempty" xml:"domainName,omitempty" require:"true"`
   // {"en":"Back To Origin Rewrite Rule Configuration, parent node 1. When you need to configure the Back To Origin Rewrite Rule, this must be filled in. 2. Configuration of clearing for <backToOriginRewriteRule/>.", "zh_CN":"回源协议配置，父标签 1.需要设置回源协议改写配置时，此项必填 2.为<backToOriginRewriteRule/>时清空配置"}
-  BackToOriginRewriteRule *QueryBack2OriginProtocolRewriteConfigQueryBack2OriginProtocolRewriteConfigResponseDataBackToOriginRewriteRule `json:"backToOriginRewriteRule,omitempty" xml:"backToOriginRewriteRule,omitempty" require:"true" type:"Struct"`
+  BackToOriginRewriteRule *QueryBack2OriginProtocolRewriteConfigResponseDataBackToOriginRewriteRule `json:"backToOriginRewriteRule,omitempty" xml:"backToOriginRewriteRule,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryBack2OriginProtocolRewriteConfigQueryBack2OriginProtocolRewriteConfigResponseData) String() string {
+func (s QueryBack2OriginProtocolRewriteConfigResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryBack2OriginProtocolRewriteConfigQueryBack2OriginProtocolRewriteConfigResponseData) GoString() string {
+func (s QueryBack2OriginProtocolRewriteConfigResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryBack2OriginProtocolRewriteConfigQueryBack2OriginProtocolRewriteConfigResponseData) SetDomainId(v int) *QueryBack2OriginProtocolRewriteConfigQueryBack2OriginProtocolRewriteConfigResponseData {
+func (s *QueryBack2OriginProtocolRewriteConfigResponseData) SetDomainId(v int) *QueryBack2OriginProtocolRewriteConfigResponseData {
   s.DomainId = &v
   return s
 }
 
-func (s *QueryBack2OriginProtocolRewriteConfigQueryBack2OriginProtocolRewriteConfigResponseData) SetDomainName(v string) *QueryBack2OriginProtocolRewriteConfigQueryBack2OriginProtocolRewriteConfigResponseData {
+func (s *QueryBack2OriginProtocolRewriteConfigResponseData) SetDomainName(v string) *QueryBack2OriginProtocolRewriteConfigResponseData {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryBack2OriginProtocolRewriteConfigQueryBack2OriginProtocolRewriteConfigResponseData) SetBackToOriginRewriteRule(v *QueryBack2OriginProtocolRewriteConfigQueryBack2OriginProtocolRewriteConfigResponseDataBackToOriginRewriteRule) *QueryBack2OriginProtocolRewriteConfigQueryBack2OriginProtocolRewriteConfigResponseData {
+func (s *QueryBack2OriginProtocolRewriteConfigResponseData) SetBackToOriginRewriteRule(v *QueryBack2OriginProtocolRewriteConfigResponseDataBackToOriginRewriteRule) *QueryBack2OriginProtocolRewriteConfigResponseData {
   s.BackToOriginRewriteRule = v
   return s
 }
 
-type QueryBack2OriginProtocolRewriteConfigQueryBack2OriginProtocolRewriteConfigResponseDataBackToOriginRewriteRule struct {
+type QueryBack2OriginProtocolRewriteConfigResponseDataBackToOriginRewriteRule struct {
   // {"en":"The specified protocol is either http or https.", "zh_CN":"改写后的回源协议，可选值：http、https"}
   Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty" require:"true"`
   // {"en":"If the protocol is http, the default is 80. If the protocol is https, the default is 443", "zh_CN":"改写后的回源端口，若protocol为http时，默认为80，若protocol为https时，默认为443"}
   Port *string `json:"port,omitempty" xml:"port,omitempty" require:"true"`
 }
 
-func (s QueryBack2OriginProtocolRewriteConfigQueryBack2OriginProtocolRewriteConfigResponseDataBackToOriginRewriteRule) String() string {
+func (s QueryBack2OriginProtocolRewriteConfigResponseDataBackToOriginRewriteRule) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryBack2OriginProtocolRewriteConfigQueryBack2OriginProtocolRewriteConfigResponseDataBackToOriginRewriteRule) GoString() string {
+func (s QueryBack2OriginProtocolRewriteConfigResponseDataBackToOriginRewriteRule) GoString() string {
   return s.String()
 }
 
-func (s *QueryBack2OriginProtocolRewriteConfigQueryBack2OriginProtocolRewriteConfigResponseDataBackToOriginRewriteRule) SetProtocol(v string) *QueryBack2OriginProtocolRewriteConfigQueryBack2OriginProtocolRewriteConfigResponseDataBackToOriginRewriteRule {
+func (s *QueryBack2OriginProtocolRewriteConfigResponseDataBackToOriginRewriteRule) SetProtocol(v string) *QueryBack2OriginProtocolRewriteConfigResponseDataBackToOriginRewriteRule {
   s.Protocol = &v
   return s
 }
 
-func (s *QueryBack2OriginProtocolRewriteConfigQueryBack2OriginProtocolRewriteConfigResponseDataBackToOriginRewriteRule) SetPort(v string) *QueryBack2OriginProtocolRewriteConfigQueryBack2OriginProtocolRewriteConfigResponseDataBackToOriginRewriteRule {
+func (s *QueryBack2OriginProtocolRewriteConfigResponseDataBackToOriginRewriteRule) SetPort(v string) *QueryBack2OriginProtocolRewriteConfigResponseDataBackToOriginRewriteRule {
   s.Port = &v
   return s
 }
@@ -19368,7 +19368,7 @@ type UpdateLiveVisitControlConfigRequest struct {
   // 2. Clear the Streaming visit control configuration when <visitControlRules/>", "zh_CN":"流媒体防盗链配置，父标签
   // 1.需要设置流媒体防盗链配置时，此项必填
   // 2.为<visitControlRules/>时清空流媒体防盗链配置"}
-  VisitControlRules []*UpdateLiveVisitControlConfigUpdateLiveVisitControlConfigRequestVisitControlRules `json:"visitControlRules,omitempty" xml:"visitControlRules,omitempty" require:"true" type:"Repeated"`
+  VisitControlRules []*UpdateLiveVisitControlConfigRequestVisitControlRules `json:"visitControlRules,omitempty" xml:"visitControlRules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s UpdateLiveVisitControlConfigRequest) String() string {
@@ -19379,12 +19379,12 @@ func (s UpdateLiveVisitControlConfigRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveVisitControlConfigRequest) SetVisitControlRules(v []*UpdateLiveVisitControlConfigUpdateLiveVisitControlConfigRequestVisitControlRules) *UpdateLiveVisitControlConfigRequest {
+func (s *UpdateLiveVisitControlConfigRequest) SetVisitControlRules(v []*UpdateLiveVisitControlConfigRequestVisitControlRules) *UpdateLiveVisitControlConfigRequest {
   s.VisitControlRules = v
   return s
 }
 
-type UpdateLiveVisitControlConfigUpdateLiveVisitControlConfigRequestVisitControlRules struct     {
+type UpdateLiveVisitControlConfigRequestVisitControlRules struct     {
   // {"en":"Control action, optional values: allow, forbid
   // Note: when add or modify a rule, you must configure both controlaction and IP, referer. At least one of IP and referer must be configured, otherwise the function will not work.", "zh_CN":"控制动作，允许或禁止，可选值：allow，forbid
   // 注意：配置或修改流媒体防盗链时，必须同时配置controlAction和ip、referer，ip和referer至少配置一项，否则此防盗链功能无效。"}
@@ -19427,40 +19427,40 @@ type UpdateLiveVisitControlConfigUpdateLiveVisitControlConfigRequestVisitControl
   DataId *int `json:"dataId,omitempty" xml:"dataId,omitempty"`
 }
 
-func (s UpdateLiveVisitControlConfigUpdateLiveVisitControlConfigRequestVisitControlRules) String() string {
+func (s UpdateLiveVisitControlConfigRequestVisitControlRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveVisitControlConfigUpdateLiveVisitControlConfigRequestVisitControlRules) GoString() string {
+func (s UpdateLiveVisitControlConfigRequestVisitControlRules) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveVisitControlConfigUpdateLiveVisitControlConfigRequestVisitControlRules) SetControlAction(v string) *UpdateLiveVisitControlConfigUpdateLiveVisitControlConfigRequestVisitControlRules {
+func (s *UpdateLiveVisitControlConfigRequestVisitControlRules) SetControlAction(v string) *UpdateLiveVisitControlConfigRequestVisitControlRules {
   s.ControlAction = &v
   return s
 }
 
-func (s *UpdateLiveVisitControlConfigUpdateLiveVisitControlConfigRequestVisitControlRules) SetIps(v []*string) *UpdateLiveVisitControlConfigUpdateLiveVisitControlConfigRequestVisitControlRules {
+func (s *UpdateLiveVisitControlConfigRequestVisitControlRules) SetIps(v []*string) *UpdateLiveVisitControlConfigRequestVisitControlRules {
   s.Ips = v
   return s
 }
 
-func (s *UpdateLiveVisitControlConfigUpdateLiveVisitControlConfigRequestVisitControlRules) SetReferers(v []*string) *UpdateLiveVisitControlConfigUpdateLiveVisitControlConfigRequestVisitControlRules {
+func (s *UpdateLiveVisitControlConfigRequestVisitControlRules) SetReferers(v []*string) *UpdateLiveVisitControlConfigRequestVisitControlRules {
   s.Referers = v
   return s
 }
 
-func (s *UpdateLiveVisitControlConfigUpdateLiveVisitControlConfigRequestVisitControlRules) SetAllowNullReferer(v bool) *UpdateLiveVisitControlConfigUpdateLiveVisitControlConfigRequestVisitControlRules {
+func (s *UpdateLiveVisitControlConfigRequestVisitControlRules) SetAllowNullReferer(v bool) *UpdateLiveVisitControlConfigRequestVisitControlRules {
   s.AllowNullReferer = &v
   return s
 }
 
-func (s *UpdateLiveVisitControlConfigUpdateLiveVisitControlConfigRequestVisitControlRules) SetControlRelation(v string) *UpdateLiveVisitControlConfigUpdateLiveVisitControlConfigRequestVisitControlRules {
+func (s *UpdateLiveVisitControlConfigRequestVisitControlRules) SetControlRelation(v string) *UpdateLiveVisitControlConfigRequestVisitControlRules {
   s.ControlRelation = &v
   return s
 }
 
-func (s *UpdateLiveVisitControlConfigUpdateLiveVisitControlConfigRequestVisitControlRules) SetDataId(v int) *UpdateLiveVisitControlConfigUpdateLiveVisitControlConfigRequestVisitControlRules {
+func (s *UpdateLiveVisitControlConfigRequestVisitControlRules) SetDataId(v int) *UpdateLiveVisitControlConfigRequestVisitControlRules {
   s.DataId = &v
   return s
 }
@@ -19577,7 +19577,7 @@ type UpdateAppaDomainRequest struct {
   //    [{'originIp':'3.3.3.3','weight':10}]
   //   }
   // ]"}
-  OriginConfig []*UpdateAppaDomainUpdateAppaDomainRequestOriginConfig `json:"originConfig,omitempty" xml:"originConfig,omitempty" type:"Repeated"`
+  OriginConfig []*UpdateAppaDomainRequestOriginConfig `json:"originConfig,omitempty" xml:"originConfig,omitempty" type:"Repeated"`
   // {'en':'HTTP port. The value is an integer ranging from 1 to 65535. Multiple ports are supported and can be configured in the following format:httpPorts:["9001"]Note: 1. Ports 2012, 2323, 2443, 4031, 12012, 20121, 57891, 62016, 65383, and 65529 do not support.2. The HTTP port and HTTPS port and TCP port must be unique.3. At least one HTTP port or HTTPS port or TCP port or UDP port must be configured.', 'zh_CN':'HTTP端口，取值范围为1-65535的整数，可配置多个，格式如：httpPorts:["9001"]注意：1、端口2012、2323、2443、4031、12012、20121、57891、62016、65383、65529不支持配置。2、HTTP端口和HTTPS端口和TCP端口不能重复。3、HTTP端口和HTTPS端口和TCP端口和UDP端口必须至少配置一个。'}
   HttpPorts []*string `json:"httpPorts,omitempty" xml:"httpPorts,omitempty" type:"Repeated"`
   // {'en':'HTTPS port. The value is an integer ranging from 1 to 65535. Multiple ports are supported and can be configured in the following format:httpPorts:["9002","9003"]Note: 1. Ports 2012, 2323, 2443, 4031, 12012, 20121, 57891, 62016, 65383, and 65529 do not support.2. The HTTP port and HTTPS port and TCP port must be unique.3. At least one HTTP port or HTTPS port or TCP port or UDP port must be configured.', 'zh_CN':'HTTPS端口，取值范围为1-65535的整数，可配置多个，格式如：httpsPorts:["9002","9003"]注意：1、端口2012、2323、2443、4031、12012、20121、57891、62016、65383、65529不支持配置。2、HTTP端口和HTTPS端口和TCP端口不能重复。3、HTTP端口和HTTPS端口和TCP端口和UDP端口必须至少配置一个。'}
@@ -19596,7 +19596,7 @@ func (s UpdateAppaDomainRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAppaDomainRequest) SetOriginConfig(v []*UpdateAppaDomainUpdateAppaDomainRequestOriginConfig) *UpdateAppaDomainRequest {
+func (s *UpdateAppaDomainRequest) SetOriginConfig(v []*UpdateAppaDomainRequestOriginConfig) *UpdateAppaDomainRequest {
   s.OriginConfig = v
   return s
 }
@@ -19621,59 +19621,59 @@ func (s *UpdateAppaDomainRequest) SetUdpPorts(v []*string) *UpdateAppaDomainRequ
   return s
 }
 
-type UpdateAppaDomainUpdateAppaDomainRequestOriginConfig struct     {
+type UpdateAppaDomainRequestOriginConfig struct     {
   // {"en":"The level of the origin, which value can be an integer ranging from 1 to 5. Note:1. Must be configured level by level start from level 1. The same level cannot be configured repeatedly.2. The lower the value, the higher the priority.", "zh_CN":"层级，可选值为1-5的整数。注意：1、必须从层级1开始逐级配置，相同层级不能重复配置。2、数值越低，优先级越高。"}
   Level *int32 `json:"level,omitempty" xml:"level,omitempty" require:"true"`
   // {"en":"Origin selection strategy supports fast, robin and hash. The value can be:fast: Fast strategy, robin: Robin strategy,hash: Hash strategy", "zh_CN":"选源策略，支持快速、轮询、哈希，可选值为:fast：快速,robin：轮询,hash：哈希"}
   Strategy *string `json:"strategy,omitempty" xml:"strategy,omitempty" require:"true"`
   // {"en":"Origin information of a certain level. A level can be configured with multiple origin IP addresses or domain names.Example:'origin':[{'originIp':'1.1.1.1','weight':10},{'originIp':'2.2.2.2','weight':20}]", "zh_CN":"某个层级的源信息。一个层级可以配置多个回源IP/域名。示例：'origin':[{'originIp':'1.1.1.1','weight':10},{'originIp':'2.2.2.2','weight':20}]"}
-  Origin []*UpdateAppaDomainUpdateAppaDomainRequestOriginConfigOrigin `json:"origin,omitempty" xml:"origin,omitempty" require:"true" type:"Repeated"`
+  Origin []*UpdateAppaDomainRequestOriginConfigOrigin `json:"origin,omitempty" xml:"origin,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s UpdateAppaDomainUpdateAppaDomainRequestOriginConfig) String() string {
+func (s UpdateAppaDomainRequestOriginConfig) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateAppaDomainUpdateAppaDomainRequestOriginConfig) GoString() string {
+func (s UpdateAppaDomainRequestOriginConfig) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAppaDomainUpdateAppaDomainRequestOriginConfig) SetLevel(v int32) *UpdateAppaDomainUpdateAppaDomainRequestOriginConfig {
+func (s *UpdateAppaDomainRequestOriginConfig) SetLevel(v int32) *UpdateAppaDomainRequestOriginConfig {
   s.Level = &v
   return s
 }
 
-func (s *UpdateAppaDomainUpdateAppaDomainRequestOriginConfig) SetStrategy(v string) *UpdateAppaDomainUpdateAppaDomainRequestOriginConfig {
+func (s *UpdateAppaDomainRequestOriginConfig) SetStrategy(v string) *UpdateAppaDomainRequestOriginConfig {
   s.Strategy = &v
   return s
 }
 
-func (s *UpdateAppaDomainUpdateAppaDomainRequestOriginConfig) SetOrigin(v []*UpdateAppaDomainUpdateAppaDomainRequestOriginConfigOrigin) *UpdateAppaDomainUpdateAppaDomainRequestOriginConfig {
+func (s *UpdateAppaDomainRequestOriginConfig) SetOrigin(v []*UpdateAppaDomainRequestOriginConfigOrigin) *UpdateAppaDomainRequestOriginConfig {
   s.Origin = v
   return s
 }
 
-type UpdateAppaDomainUpdateAppaDomainRequestOriginConfigOrigin struct     {
+type UpdateAppaDomainRequestOriginConfigOrigin struct     {
   // {"en":"Origin address, which can be an IP or domain name.", "zh_CN":"回源IP/域名，可配置一个IP或域名。"}
   OriginIp *string `json:"originIp,omitempty" xml:"originIp,omitempty" require:"true"`
   // {"en":"Weight, which is only useful for robin strategy. The value is an integer ranging from 1 to 10000. If this parameter is not specified, the default value is 10.", "zh_CN":"权重，只对轮询策略有用。取值范围为1-10000的整数，不填默认为10。"}
   Weight *int32 `json:"weight,omitempty" xml:"weight,omitempty"`
 }
 
-func (s UpdateAppaDomainUpdateAppaDomainRequestOriginConfigOrigin) String() string {
+func (s UpdateAppaDomainRequestOriginConfigOrigin) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateAppaDomainUpdateAppaDomainRequestOriginConfigOrigin) GoString() string {
+func (s UpdateAppaDomainRequestOriginConfigOrigin) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAppaDomainUpdateAppaDomainRequestOriginConfigOrigin) SetOriginIp(v string) *UpdateAppaDomainUpdateAppaDomainRequestOriginConfigOrigin {
+func (s *UpdateAppaDomainRequestOriginConfigOrigin) SetOriginIp(v string) *UpdateAppaDomainRequestOriginConfigOrigin {
   s.OriginIp = &v
   return s
 }
 
-func (s *UpdateAppaDomainUpdateAppaDomainRequestOriginConfigOrigin) SetWeight(v int32) *UpdateAppaDomainUpdateAppaDomainRequestOriginConfigOrigin {
+func (s *UpdateAppaDomainRequestOriginConfigOrigin) SetWeight(v int32) *UpdateAppaDomainRequestOriginConfigOrigin {
   s.Weight = &v
   return s
 }
@@ -19785,7 +19785,7 @@ type QueryQueryStringUrlConfigResponse struct {
   // 2. Configuration of clearing query string settings for <query-string-settings/>.", "zh_CN":"查询串设置配置，父标签
   // 1.需要设置查询串配置时，此项必填
   // 2.为<query-string-settings/>时清空查询串设置的配置"}
-  QueryStringSettings []*QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings `json:"query-string-settings,omitempty" xml:"query-string-settings,omitempty" require:"true" type:"Repeated"`
+  QueryStringSettings []*QueryQueryStringUrlConfigResponseQueryStringSettings `json:"query-string-settings,omitempty" xml:"query-string-settings,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryQueryStringUrlConfigResponse) String() string {
@@ -19806,12 +19806,12 @@ func (s *QueryQueryStringUrlConfigResponse) SetDomainId(v string) *QueryQueryStr
   return s
 }
 
-func (s *QueryQueryStringUrlConfigResponse) SetQueryStringSettings(v []*QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings) *QueryQueryStringUrlConfigResponse {
+func (s *QueryQueryStringUrlConfigResponse) SetQueryStringSettings(v []*QueryQueryStringUrlConfigResponseQueryStringSettings) *QueryQueryStringUrlConfigResponse {
   s.QueryStringSettings = v
   return s
 }
 
-type QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings struct     {
+type QueryQueryStringUrlConfigResponseQueryStringSettings struct     {
   // {"en":"The url matching mode. If all matches, the input parameters can be configured as: .*
   // Note: URL matching mode, file type (custom file type), commonly used type, specified url, directory, with and only one required", "zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*
   // 注：url匹配模式、文件类型（自定义文件类型）、常用类型、指定url、目录，有且仅有一项必填"}
@@ -19869,85 +19869,85 @@ type QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettin
   DataId *int32 `json:"data-id,omitempty" xml:"data-id,omitempty" require:"true"`
 }
 
-func (s QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings) String() string {
+func (s QueryQueryStringUrlConfigResponseQueryStringSettings) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings) GoString() string {
+func (s QueryQueryStringUrlConfigResponseQueryStringSettings) GoString() string {
   return s.String()
 }
 
-func (s *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings) SetPathPattern(v string) *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings {
+func (s *QueryQueryStringUrlConfigResponseQueryStringSettings) SetPathPattern(v string) *QueryQueryStringUrlConfigResponseQueryStringSettings {
   s.PathPattern = &v
   return s
 }
 
-func (s *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings) SetFileTypes(v string) *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings {
+func (s *QueryQueryStringUrlConfigResponseQueryStringSettings) SetFileTypes(v string) *QueryQueryStringUrlConfigResponseQueryStringSettings {
   s.FileTypes = &v
   return s
 }
 
-func (s *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings) SetCustomFileTypes(v string) *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings {
+func (s *QueryQueryStringUrlConfigResponseQueryStringSettings) SetCustomFileTypes(v string) *QueryQueryStringUrlConfigResponseQueryStringSettings {
   s.CustomFileTypes = &v
   return s
 }
 
-func (s *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings) SetCustomPattern(v string) *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings {
+func (s *QueryQueryStringUrlConfigResponseQueryStringSettings) SetCustomPattern(v string) *QueryQueryStringUrlConfigResponseQueryStringSettings {
   s.CustomPattern = &v
   return s
 }
 
-func (s *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings) SetSpecifyUrlPattern(v string) *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings {
+func (s *QueryQueryStringUrlConfigResponseQueryStringSettings) SetSpecifyUrlPattern(v string) *QueryQueryStringUrlConfigResponseQueryStringSettings {
   s.SpecifyUrlPattern = &v
   return s
 }
 
-func (s *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings) SetDirectories(v string) *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings {
+func (s *QueryQueryStringUrlConfigResponseQueryStringSettings) SetDirectories(v string) *QueryQueryStringUrlConfigResponseQueryStringSettings {
   s.Directories = &v
   return s
 }
 
-func (s *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings) SetPriority(v int) *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings {
+func (s *QueryQueryStringUrlConfigResponseQueryStringSettings) SetPriority(v int) *QueryQueryStringUrlConfigResponseQueryStringSettings {
   s.Priority = &v
   return s
 }
 
-func (s *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings) SetIgnoreLetterCase(v string) *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings {
+func (s *QueryQueryStringUrlConfigResponseQueryStringSettings) SetIgnoreLetterCase(v string) *QueryQueryStringUrlConfigResponseQueryStringSettings {
   s.IgnoreLetterCase = &v
   return s
 }
 
-func (s *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings) SetIgnoreQueryString(v string) *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings {
+func (s *QueryQueryStringUrlConfigResponseQueryStringSettings) SetIgnoreQueryString(v string) *QueryQueryStringUrlConfigResponseQueryStringSettings {
   s.IgnoreQueryString = &v
   return s
 }
 
-func (s *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings) SetQueryStringKept(v string) *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings {
+func (s *QueryQueryStringUrlConfigResponseQueryStringSettings) SetQueryStringKept(v string) *QueryQueryStringUrlConfigResponseQueryStringSettings {
   s.QueryStringKept = &v
   return s
 }
 
-func (s *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings) SetQueryStringRemoved(v string) *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings {
+func (s *QueryQueryStringUrlConfigResponseQueryStringSettings) SetQueryStringRemoved(v string) *QueryQueryStringUrlConfigResponseQueryStringSettings {
   s.QueryStringRemoved = &v
   return s
 }
 
-func (s *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings) SetSourceWithQuery(v string) *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings {
+func (s *QueryQueryStringUrlConfigResponseQueryStringSettings) SetSourceWithQuery(v string) *QueryQueryStringUrlConfigResponseQueryStringSettings {
   s.SourceWithQuery = &v
   return s
 }
 
-func (s *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings) SetSourceKeyKept(v string) *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings {
+func (s *QueryQueryStringUrlConfigResponseQueryStringSettings) SetSourceKeyKept(v string) *QueryQueryStringUrlConfigResponseQueryStringSettings {
   s.SourceKeyKept = &v
   return s
 }
 
-func (s *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings) SetSourceKeyRemoved(v string) *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings {
+func (s *QueryQueryStringUrlConfigResponseQueryStringSettings) SetSourceKeyRemoved(v string) *QueryQueryStringUrlConfigResponseQueryStringSettings {
   s.SourceKeyRemoved = &v
   return s
 }
 
-func (s *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings) SetDataId(v int32) *QueryQueryStringUrlConfigQueryQueryStringUrlConfigResponseQueryStringSettings {
+func (s *QueryQueryStringUrlConfigResponseQueryStringSettings) SetDataId(v int32) *QueryQueryStringUrlConfigResponseQueryStringSettings {
   s.DataId = &v
   return s
 }
@@ -20014,7 +20014,7 @@ type BatchDelIllegalInformationRequest struct {
   // 不填默认是false."}
   IsShared *bool `json:"isShared,omitempty" xml:"isShared,omitempty"`
   // {"en":"A group needs a combination of illegal information masking urls, each url plus a matching pattern into a group.The maximum number of urls is 100", "zh_CN":"一个组需要非法信息屏蔽url的组合，每个url加匹配模式为一组。URL条数上限100个"}
-  BanUrls []*BatchDelIllegalInformationBatchDelIllegalInformationRequestBanUrls `json:"banUrls,omitempty" xml:"banUrls,omitempty" require:"true" type:"Repeated"`
+  BanUrls []*BatchDelIllegalInformationRequestBanUrls `json:"banUrls,omitempty" xml:"banUrls,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s BatchDelIllegalInformationRequest) String() string {
@@ -20030,25 +20030,25 @@ func (s *BatchDelIllegalInformationRequest) SetIsShared(v bool) *BatchDelIllegal
   return s
 }
 
-func (s *BatchDelIllegalInformationRequest) SetBanUrls(v []*BatchDelIllegalInformationBatchDelIllegalInformationRequestBanUrls) *BatchDelIllegalInformationRequest {
+func (s *BatchDelIllegalInformationRequest) SetBanUrls(v []*BatchDelIllegalInformationRequestBanUrls) *BatchDelIllegalInformationRequest {
   s.BanUrls = v
   return s
 }
 
-type BatchDelIllegalInformationBatchDelIllegalInformationRequestBanUrls struct     {
+type BatchDelIllegalInformationRequestBanUrls struct     {
   // {"en":"A url information that must be the url of the non-pending domain name under customer", "zh_CN":"url信息,必须是客户名下的非挂起域名的url。"}
   Url *string `json:"url,omitempty" xml:"url,omitempty" require:"true"`
 }
 
-func (s BatchDelIllegalInformationBatchDelIllegalInformationRequestBanUrls) String() string {
+func (s BatchDelIllegalInformationRequestBanUrls) String() string {
   return tea.Prettify(s)
 }
 
-func (s BatchDelIllegalInformationBatchDelIllegalInformationRequestBanUrls) GoString() string {
+func (s BatchDelIllegalInformationRequestBanUrls) GoString() string {
   return s.String()
 }
 
-func (s *BatchDelIllegalInformationBatchDelIllegalInformationRequestBanUrls) SetUrl(v string) *BatchDelIllegalInformationBatchDelIllegalInformationRequestBanUrls {
+func (s *BatchDelIllegalInformationRequestBanUrls) SetUrl(v string) *BatchDelIllegalInformationRequestBanUrls {
   s.Url = &v
   return s
 }
@@ -20141,7 +20141,7 @@ type UpdateAfterRedirectRequest struct {
   // 5、是否将回源HOST替换成IP
   // 6、是否仅用locaiton的域名做DNS解析
   // 7、清空拉取302后的文件内容，则只传入标签<origin-related-after-redirect></origin-related-after-redirect>"}
-  OriginRelatedAfterRedirect *UpdateAfterRedirectUpdateAfterRedirectRequestOriginRelatedAfterRedirect `json:"origin-related-after-redirect,omitempty" xml:"origin-related-after-redirect,omitempty" require:"true" type:"Struct"`
+  OriginRelatedAfterRedirect *UpdateAfterRedirectRequestOriginRelatedAfterRedirect `json:"origin-related-after-redirect,omitempty" xml:"origin-related-after-redirect,omitempty" require:"true" type:"Struct"`
 }
 
 func (s UpdateAfterRedirectRequest) String() string {
@@ -20152,12 +20152,12 @@ func (s UpdateAfterRedirectRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAfterRedirectRequest) SetOriginRelatedAfterRedirect(v *UpdateAfterRedirectUpdateAfterRedirectRequestOriginRelatedAfterRedirect) *UpdateAfterRedirectRequest {
+func (s *UpdateAfterRedirectRequest) SetOriginRelatedAfterRedirect(v *UpdateAfterRedirectRequestOriginRelatedAfterRedirect) *UpdateAfterRedirectRequest {
   s.OriginRelatedAfterRedirect = v
   return s
 }
 
-type UpdateAfterRedirectUpdateAfterRedirectRequestOriginRelatedAfterRedirect struct {
+type UpdateAfterRedirectRequestOriginRelatedAfterRedirect struct {
   // {"en":"", "zh_CN":"拉取跳转后的文件，可选值：301|302|301;302
   // 301:301跳转
   // 302:302跳转
@@ -20188,40 +20188,40 @@ type UpdateAfterRedirectUpdateAfterRedirectRequestOriginRelatedAfterRedirect str
   LocationDnsResolution *string `json:"location-dns-resolution,omitempty" xml:"location-dns-resolution,omitempty"`
 }
 
-func (s UpdateAfterRedirectUpdateAfterRedirectRequestOriginRelatedAfterRedirect) String() string {
+func (s UpdateAfterRedirectRequestOriginRelatedAfterRedirect) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateAfterRedirectUpdateAfterRedirectRequestOriginRelatedAfterRedirect) GoString() string {
+func (s UpdateAfterRedirectRequestOriginRelatedAfterRedirect) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAfterRedirectUpdateAfterRedirectRequestOriginRelatedAfterRedirect) SetAfterRedirect(v string) *UpdateAfterRedirectUpdateAfterRedirectRequestOriginRelatedAfterRedirect {
+func (s *UpdateAfterRedirectRequestOriginRelatedAfterRedirect) SetAfterRedirect(v string) *UpdateAfterRedirectRequestOriginRelatedAfterRedirect {
   s.AfterRedirect = &v
   return s
 }
 
-func (s *UpdateAfterRedirectUpdateAfterRedirectRequestOriginRelatedAfterRedirect) SetIgnoreDnsCache(v string) *UpdateAfterRedirectUpdateAfterRedirectRequestOriginRelatedAfterRedirect {
+func (s *UpdateAfterRedirectRequestOriginRelatedAfterRedirect) SetIgnoreDnsCache(v string) *UpdateAfterRedirectRequestOriginRelatedAfterRedirect {
   s.IgnoreDnsCache = &v
   return s
 }
 
-func (s *UpdateAfterRedirectUpdateAfterRedirectRequestOriginRelatedAfterRedirect) SetMaxTimes(v int) *UpdateAfterRedirectUpdateAfterRedirectRequestOriginRelatedAfterRedirect {
+func (s *UpdateAfterRedirectRequestOriginRelatedAfterRedirect) SetMaxTimes(v int) *UpdateAfterRedirectRequestOriginRelatedAfterRedirect {
   s.MaxTimes = &v
   return s
 }
 
-func (s *UpdateAfterRedirectUpdateAfterRedirectRequestOriginRelatedAfterRedirect) SetControlFollowJump(v string) *UpdateAfterRedirectUpdateAfterRedirectRequestOriginRelatedAfterRedirect {
+func (s *UpdateAfterRedirectRequestOriginRelatedAfterRedirect) SetControlFollowJump(v string) *UpdateAfterRedirectRequestOriginRelatedAfterRedirect {
   s.ControlFollowJump = &v
   return s
 }
 
-func (s *UpdateAfterRedirectUpdateAfterRedirectRequestOriginRelatedAfterRedirect) SetReplaceSourceMode(v string) *UpdateAfterRedirectUpdateAfterRedirectRequestOriginRelatedAfterRedirect {
+func (s *UpdateAfterRedirectRequestOriginRelatedAfterRedirect) SetReplaceSourceMode(v string) *UpdateAfterRedirectRequestOriginRelatedAfterRedirect {
   s.ReplaceSourceMode = &v
   return s
 }
 
-func (s *UpdateAfterRedirectUpdateAfterRedirectRequestOriginRelatedAfterRedirect) SetLocationDnsResolution(v string) *UpdateAfterRedirectUpdateAfterRedirectRequestOriginRelatedAfterRedirect {
+func (s *UpdateAfterRedirectRequestOriginRelatedAfterRedirect) SetLocationDnsResolution(v string) *UpdateAfterRedirectRequestOriginRelatedAfterRedirect {
   s.LocationDnsResolution = &v
   return s
 }
@@ -20336,7 +20336,7 @@ type QueryLiveDomainPaginationResponse struct {
   // {"en":"Reponse message.", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data", "zh_CN":"响应数据"}
-  Data *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryLiveDomainPaginationResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryLiveDomainPaginationResponse) String() string {
@@ -20357,12 +20357,12 @@ func (s *QueryLiveDomainPaginationResponse) SetMessage(v string) *QueryLiveDomai
   return s
 }
 
-func (s *QueryLiveDomainPaginationResponse) SetData(v *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseData) *QueryLiveDomainPaginationResponse {
+func (s *QueryLiveDomainPaginationResponse) SetData(v *QueryLiveDomainPaginationResponseData) *QueryLiveDomainPaginationResponse {
   s.Data = v
   return s
 }
 
-type QueryLiveDomainPaginationQueryLiveDomainPaginationResponseData struct {
+type QueryLiveDomainPaginationResponseData struct {
   // {"en":"total count", "zh_CN":"总记录数"}
   TotalCount *int `json:"totalCount,omitempty" xml:"totalCount,omitempty" require:"true"`
   // {"en":"offset", "zh_CN":"起始记录"}
@@ -20370,38 +20370,38 @@ type QueryLiveDomainPaginationQueryLiveDomainPaginationResponseData struct {
   // {"en":"limit", "zh_CN":"返回最大记录数"}
   Limit *int `json:"limit,omitempty" xml:"limit,omitempty" require:"true"`
   // {"en":"domain list", "zh_CN":"域名列表对象"}
-  Domains []*QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains `json:"domains,omitempty" xml:"domains,omitempty" require:"true" type:"Repeated"`
+  Domains []*QueryLiveDomainPaginationResponseDataDomains `json:"domains,omitempty" xml:"domains,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryLiveDomainPaginationQueryLiveDomainPaginationResponseData) String() string {
+func (s QueryLiveDomainPaginationResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainPaginationQueryLiveDomainPaginationResponseData) GoString() string {
+func (s QueryLiveDomainPaginationResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseData) SetTotalCount(v int) *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseData {
+func (s *QueryLiveDomainPaginationResponseData) SetTotalCount(v int) *QueryLiveDomainPaginationResponseData {
   s.TotalCount = &v
   return s
 }
 
-func (s *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseData) SetOffset(v int) *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseData {
+func (s *QueryLiveDomainPaginationResponseData) SetOffset(v int) *QueryLiveDomainPaginationResponseData {
   s.Offset = &v
   return s
 }
 
-func (s *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseData) SetLimit(v int) *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseData {
+func (s *QueryLiveDomainPaginationResponseData) SetLimit(v int) *QueryLiveDomainPaginationResponseData {
   s.Limit = &v
   return s
 }
 
-func (s *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseData) SetDomains(v []*QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains) *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseData {
+func (s *QueryLiveDomainPaginationResponseData) SetDomains(v []*QueryLiveDomainPaginationResponseDataDomains) *QueryLiveDomainPaginationResponseData {
   s.Domains = v
   return s
 }
 
-type QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains struct     {
+type QueryLiveDomainPaginationResponseDataDomains struct     {
   // {"en":"domain ID", "zh_CN":"域名ID"}
   DomainId *int64 `json:"domainId,omitempty" xml:"domainId,omitempty" require:"true"`
   // {"en":"domain name", "zh_CN":"域名名称"}
@@ -20432,80 +20432,80 @@ type QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains struc
   Product *string `json:"product,omitempty" xml:"product,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains) String() string {
+func (s QueryLiveDomainPaginationResponseDataDomains) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains) GoString() string {
+func (s QueryLiveDomainPaginationResponseDataDomains) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains) SetDomainId(v int64) *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains {
+func (s *QueryLiveDomainPaginationResponseDataDomains) SetDomainId(v int64) *QueryLiveDomainPaginationResponseDataDomains {
   s.DomainId = &v
   return s
 }
 
-func (s *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains) SetDomain(v string) *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains {
+func (s *QueryLiveDomainPaginationResponseDataDomains) SetDomain(v string) *QueryLiveDomainPaginationResponseDataDomains {
   s.Domain = &v
   return s
 }
 
-func (s *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains) SetDomainType(v string) *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains {
+func (s *QueryLiveDomainPaginationResponseDataDomains) SetDomainType(v string) *QueryLiveDomainPaginationResponseDataDomains {
   s.DomainType = &v
   return s
 }
 
-func (s *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains) SetLiveMode(v string) *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains {
+func (s *QueryLiveDomainPaginationResponseDataDomains) SetLiveMode(v string) *QueryLiveDomainPaginationResponseDataDomains {
   s.LiveMode = &v
   return s
 }
 
-func (s *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains) SetPublishDomain(v string) *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains {
+func (s *QueryLiveDomainPaginationResponseDataDomains) SetPublishDomain(v string) *QueryLiveDomainPaginationResponseDataDomains {
   s.PublishDomain = &v
   return s
 }
 
-func (s *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains) SetCname(v string) *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains {
+func (s *QueryLiveDomainPaginationResponseDataDomains) SetCname(v string) *QueryLiveDomainPaginationResponseDataDomains {
   s.Cname = &v
   return s
 }
 
-func (s *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains) SetOriginAddress(v string) *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains {
+func (s *QueryLiveDomainPaginationResponseDataDomains) SetOriginAddress(v string) *QueryLiveDomainPaginationResponseDataDomains {
   s.OriginAddress = &v
   return s
 }
 
-func (s *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains) SetComment(v string) *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains {
+func (s *QueryLiveDomainPaginationResponseDataDomains) SetComment(v string) *QueryLiveDomainPaginationResponseDataDomains {
   s.Comment = &v
   return s
 }
 
-func (s *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains) SetHlsOrigin(v bool) *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains {
+func (s *QueryLiveDomainPaginationResponseDataDomains) SetHlsOrigin(v bool) *QueryLiveDomainPaginationResponseDataDomains {
   s.HlsOrigin = &v
   return s
 }
 
-func (s *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains) SetSliceArch(v string) *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains {
+func (s *QueryLiveDomainPaginationResponseDataDomains) SetSliceArch(v string) *QueryLiveDomainPaginationResponseDataDomains {
   s.SliceArch = &v
   return s
 }
 
-func (s *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains) SetStatus(v string) *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains {
+func (s *QueryLiveDomainPaginationResponseDataDomains) SetStatus(v string) *QueryLiveDomainPaginationResponseDataDomains {
   s.Status = &v
   return s
 }
 
-func (s *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains) SetCreateTime(v string) *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains {
+func (s *QueryLiveDomainPaginationResponseDataDomains) SetCreateTime(v string) *QueryLiveDomainPaginationResponseDataDomains {
   s.CreateTime = &v
   return s
 }
 
-func (s *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains) SetUpdateTime(v string) *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains {
+func (s *QueryLiveDomainPaginationResponseDataDomains) SetUpdateTime(v string) *QueryLiveDomainPaginationResponseDataDomains {
   s.UpdateTime = &v
   return s
 }
 
-func (s *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains) SetProduct(v string) *QueryLiveDomainPaginationQueryLiveDomainPaginationResponseDataDomains {
+func (s *QueryLiveDomainPaginationResponseDataDomains) SetProduct(v string) *QueryLiveDomainPaginationResponseDataDomains {
   s.Product = &v
   return s
 }
@@ -20647,7 +20647,7 @@ type UpdateSingleTransCodingConfigForWplusRequest struct {
   // 2. Configuration of clearing for <transCodes/>.", "zh_CN":"转码配置，父标签
   // 1.需要设置转码配置时，此项必填
   // 2.为<transCodes/>时清空配置"}
-  TransCodes []*UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes `json:"transCodes,omitempty" xml:"transCodes,omitempty" require:"true" type:"Repeated"`
+  TransCodes []*UpdateSingleTransCodingConfigForWplusRequestTransCodes `json:"transCodes,omitempty" xml:"transCodes,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s UpdateSingleTransCodingConfigForWplusRequest) String() string {
@@ -20658,12 +20658,12 @@ func (s UpdateSingleTransCodingConfigForWplusRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateSingleTransCodingConfigForWplusRequest) SetTransCodes(v []*UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes) *UpdateSingleTransCodingConfigForWplusRequest {
+func (s *UpdateSingleTransCodingConfigForWplusRequest) SetTransCodes(v []*UpdateSingleTransCodingConfigForWplusRequestTransCodes) *UpdateSingleTransCodingConfigForWplusRequest {
   s.TransCodes = v
   return s
 }
 
-type UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes struct     {
+type UpdateSingleTransCodingConfigForWplusRequestTransCodes struct     {
   // {"en":"Transcoding template. Define a template. The optional values are lld, lsd, lhd, lud,  l2k, l4k. The corresponding resolution/rate are as follows.
   // 
   // lld: smooth, which means that the resolution of the original flow is 640 * 360, and the transcoding rate is 500kbps
@@ -20716,7 +20716,7 @@ type UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusR
   // {"en":"Custom audio transcoding, such as:
   // <customAudioTranscode><audioCodec>aac</audioCodec><audioBitrate>128</audioBitrate></customAudioTranscode>", "zh_CN":"自定义音频转码，父标签，格式如：
   // <customAudioTranscode><audioCodec>aac</audioCodec><audioBitrate>129</audioBitrate></customAudioTranscode>"}
-  CustomAudioTranscode *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodesCustomAudioTranscode `json:"customAudioTranscode,omitempty" xml:"customAudioTranscode,omitempty" type:"Struct"`
+  CustomAudioTranscode *UpdateSingleTransCodingConfigForWplusRequestTransCodesCustomAudioTranscode `json:"customAudioTranscode,omitempty" xml:"customAudioTranscode,omitempty" type:"Struct"`
   // {"en":"Frame rate, scope [1,60].", "zh_CN":"帧率，范围【1，60】"}
   FrameRate *int `json:"frameRate,omitempty" xml:"frameRate,omitempty"`
   // {"en":"Gop, scope [1,10].", "zh_CN":"gop，范围【1，10】"}
@@ -20739,80 +20739,80 @@ type UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusR
   PublishPoints []*string `json:"publishPoints,omitempty" xml:"publishPoints,omitempty" type:"Repeated"`
 }
 
-func (s UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes) String() string {
+func (s UpdateSingleTransCodingConfigForWplusRequestTransCodes) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes) GoString() string {
+func (s UpdateSingleTransCodingConfigForWplusRequestTransCodes) GoString() string {
   return s.String()
 }
 
-func (s *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes) SetTemplate(v string) *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes {
+func (s *UpdateSingleTransCodingConfigForWplusRequestTransCodes) SetTemplate(v string) *UpdateSingleTransCodingConfigForWplusRequestTransCodes {
   s.Template = &v
   return s
 }
 
-func (s *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes) SetDataId(v int) *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes {
+func (s *UpdateSingleTransCodingConfigForWplusRequestTransCodes) SetDataId(v int) *UpdateSingleTransCodingConfigForWplusRequestTransCodes {
   s.DataId = &v
   return s
 }
 
-func (s *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes) SetAudioTemplate(v string) *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes {
+func (s *UpdateSingleTransCodingConfigForWplusRequestTransCodes) SetAudioTemplate(v string) *UpdateSingleTransCodingConfigForWplusRequestTransCodes {
   s.AudioTemplate = &v
   return s
 }
 
-func (s *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes) SetCustomAudioTranscode(v *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodesCustomAudioTranscode) *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes {
+func (s *UpdateSingleTransCodingConfigForWplusRequestTransCodes) SetCustomAudioTranscode(v *UpdateSingleTransCodingConfigForWplusRequestTransCodesCustomAudioTranscode) *UpdateSingleTransCodingConfigForWplusRequestTransCodes {
   s.CustomAudioTranscode = v
   return s
 }
 
-func (s *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes) SetFrameRate(v int) *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes {
+func (s *UpdateSingleTransCodingConfigForWplusRequestTransCodes) SetFrameRate(v int) *UpdateSingleTransCodingConfigForWplusRequestTransCodes {
   s.FrameRate = &v
   return s
 }
 
-func (s *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes) SetGop(v int) *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes {
+func (s *UpdateSingleTransCodingConfigForWplusRequestTransCodes) SetGop(v int) *UpdateSingleTransCodingConfigForWplusRequestTransCodes {
   s.Gop = &v
   return s
 }
 
-func (s *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes) SetHeightAdaptive(v bool) *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes {
+func (s *UpdateSingleTransCodingConfigForWplusRequestTransCodes) SetHeightAdaptive(v bool) *UpdateSingleTransCodingConfigForWplusRequestTransCodes {
   s.HeightAdaptive = &v
   return s
 }
 
-func (s *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes) SetLimitLow2High(v bool) *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes {
+func (s *UpdateSingleTransCodingConfigForWplusRequestTransCodes) SetLimitLow2High(v bool) *UpdateSingleTransCodingConfigForWplusRequestTransCodes {
   s.LimitLow2High = &v
   return s
 }
 
-func (s *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes) SetPublishPoints(v []*string) *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodes {
+func (s *UpdateSingleTransCodingConfigForWplusRequestTransCodes) SetPublishPoints(v []*string) *UpdateSingleTransCodingConfigForWplusRequestTransCodes {
   s.PublishPoints = v
   return s
 }
 
-type UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodesCustomAudioTranscode struct {
+type UpdateSingleTransCodingConfigForWplusRequestTransCodesCustomAudioTranscode struct {
   // {"en":"Custom audio format, support: aac and mp3.", "zh_CN":"自定义音频格式，支持入参：aac,mp4"}
   AudioCodec *string `json:"audioCodec,omitempty" xml:"audioCodec,omitempty"`
   // {"en":"Custom audio bitrate, unit kbps, scope [0,256].", "zh_CN":"自定义音频码率，单位kbps，范围【0，256】"}
   AudioBitrate *int `json:"audioBitrate,omitempty" xml:"audioBitrate,omitempty"`
 }
 
-func (s UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodesCustomAudioTranscode) String() string {
+func (s UpdateSingleTransCodingConfigForWplusRequestTransCodesCustomAudioTranscode) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodesCustomAudioTranscode) GoString() string {
+func (s UpdateSingleTransCodingConfigForWplusRequestTransCodesCustomAudioTranscode) GoString() string {
   return s.String()
 }
 
-func (s *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodesCustomAudioTranscode) SetAudioCodec(v string) *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodesCustomAudioTranscode {
+func (s *UpdateSingleTransCodingConfigForWplusRequestTransCodesCustomAudioTranscode) SetAudioCodec(v string) *UpdateSingleTransCodingConfigForWplusRequestTransCodesCustomAudioTranscode {
   s.AudioCodec = &v
   return s
 }
 
-func (s *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodesCustomAudioTranscode) SetAudioBitrate(v int) *UpdateSingleTransCodingConfigForWplusUpdateSingleTransCodingConfigForWplusRequestTransCodesCustomAudioTranscode {
+func (s *UpdateSingleTransCodingConfigForWplusRequestTransCodesCustomAudioTranscode) SetAudioBitrate(v int) *UpdateSingleTransCodingConfigForWplusRequestTransCodesCustomAudioTranscode {
   s.AudioBitrate = &v
   return s
 }
@@ -20938,7 +20938,7 @@ type QueryAfterRedirectResponse struct {
   // 5、是否将回源HOST替换成IP
   // 6、是否仅用locaiton的域名做DNS解析
   // 7、清空拉取302后的文件内容，则只传入标签<origin-related-after-redirect></origin-related-after-redirect>"}
-  OriginRelatedAfterRedirect *QueryAfterRedirectQueryAfterRedirectResponseOriginRelatedAfterRedirect `json:"origin-related-after-redirect,omitempty" xml:"origin-related-after-redirect,omitempty" require:"true" type:"Struct"`
+  OriginRelatedAfterRedirect *QueryAfterRedirectResponseOriginRelatedAfterRedirect `json:"origin-related-after-redirect,omitempty" xml:"origin-related-after-redirect,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryAfterRedirectResponse) String() string {
@@ -20969,12 +20969,12 @@ func (s *QueryAfterRedirectResponse) SetDomainId(v string) *QueryAfterRedirectRe
   return s
 }
 
-func (s *QueryAfterRedirectResponse) SetOriginRelatedAfterRedirect(v *QueryAfterRedirectQueryAfterRedirectResponseOriginRelatedAfterRedirect) *QueryAfterRedirectResponse {
+func (s *QueryAfterRedirectResponse) SetOriginRelatedAfterRedirect(v *QueryAfterRedirectResponseOriginRelatedAfterRedirect) *QueryAfterRedirectResponse {
   s.OriginRelatedAfterRedirect = v
   return s
 }
 
-type QueryAfterRedirectQueryAfterRedirectResponseOriginRelatedAfterRedirect struct {
+type QueryAfterRedirectResponseOriginRelatedAfterRedirect struct {
   // {"en":"", "zh_CN":"拉取跳转后的文件，可选值：301|302|301;302
   // 301:301跳转
   // 302:302跳转
@@ -21001,40 +21001,40 @@ type QueryAfterRedirectQueryAfterRedirectResponseOriginRelatedAfterRedirect stru
   LocationDnsResolution *string `json:"location-dns-resolution,omitempty" xml:"location-dns-resolution,omitempty" require:"true"`
 }
 
-func (s QueryAfterRedirectQueryAfterRedirectResponseOriginRelatedAfterRedirect) String() string {
+func (s QueryAfterRedirectResponseOriginRelatedAfterRedirect) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAfterRedirectQueryAfterRedirectResponseOriginRelatedAfterRedirect) GoString() string {
+func (s QueryAfterRedirectResponseOriginRelatedAfterRedirect) GoString() string {
   return s.String()
 }
 
-func (s *QueryAfterRedirectQueryAfterRedirectResponseOriginRelatedAfterRedirect) SetAfterRedirect(v string) *QueryAfterRedirectQueryAfterRedirectResponseOriginRelatedAfterRedirect {
+func (s *QueryAfterRedirectResponseOriginRelatedAfterRedirect) SetAfterRedirect(v string) *QueryAfterRedirectResponseOriginRelatedAfterRedirect {
   s.AfterRedirect = &v
   return s
 }
 
-func (s *QueryAfterRedirectQueryAfterRedirectResponseOriginRelatedAfterRedirect) SetIgnoreDnsCache(v string) *QueryAfterRedirectQueryAfterRedirectResponseOriginRelatedAfterRedirect {
+func (s *QueryAfterRedirectResponseOriginRelatedAfterRedirect) SetIgnoreDnsCache(v string) *QueryAfterRedirectResponseOriginRelatedAfterRedirect {
   s.IgnoreDnsCache = &v
   return s
 }
 
-func (s *QueryAfterRedirectQueryAfterRedirectResponseOriginRelatedAfterRedirect) SetMaxTimes(v int32) *QueryAfterRedirectQueryAfterRedirectResponseOriginRelatedAfterRedirect {
+func (s *QueryAfterRedirectResponseOriginRelatedAfterRedirect) SetMaxTimes(v int32) *QueryAfterRedirectResponseOriginRelatedAfterRedirect {
   s.MaxTimes = &v
   return s
 }
 
-func (s *QueryAfterRedirectQueryAfterRedirectResponseOriginRelatedAfterRedirect) SetControlFollowJump(v string) *QueryAfterRedirectQueryAfterRedirectResponseOriginRelatedAfterRedirect {
+func (s *QueryAfterRedirectResponseOriginRelatedAfterRedirect) SetControlFollowJump(v string) *QueryAfterRedirectResponseOriginRelatedAfterRedirect {
   s.ControlFollowJump = &v
   return s
 }
 
-func (s *QueryAfterRedirectQueryAfterRedirectResponseOriginRelatedAfterRedirect) SetReplaceSourceMode(v string) *QueryAfterRedirectQueryAfterRedirectResponseOriginRelatedAfterRedirect {
+func (s *QueryAfterRedirectResponseOriginRelatedAfterRedirect) SetReplaceSourceMode(v string) *QueryAfterRedirectResponseOriginRelatedAfterRedirect {
   s.ReplaceSourceMode = &v
   return s
 }
 
-func (s *QueryAfterRedirectQueryAfterRedirectResponseOriginRelatedAfterRedirect) SetLocationDnsResolution(v string) *QueryAfterRedirectQueryAfterRedirectResponseOriginRelatedAfterRedirect {
+func (s *QueryAfterRedirectResponseOriginRelatedAfterRedirect) SetLocationDnsResolution(v string) *QueryAfterRedirectResponseOriginRelatedAfterRedirect {
   s.LocationDnsResolution = &v
   return s
 }
@@ -21110,7 +21110,7 @@ type QueryLiveDomainTlsResponse struct {
   // {"en":"Reponse message.", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data", "zh_CN":"响应数据"}
-  Data *QueryLiveDomainTlsQueryLiveDomainTlsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryLiveDomainTlsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryLiveDomainTlsResponse) String() string {
@@ -21131,12 +21131,12 @@ func (s *QueryLiveDomainTlsResponse) SetMessage(v string) *QueryLiveDomainTlsRes
   return s
 }
 
-func (s *QueryLiveDomainTlsResponse) SetData(v *QueryLiveDomainTlsQueryLiveDomainTlsResponseData) *QueryLiveDomainTlsResponse {
+func (s *QueryLiveDomainTlsResponse) SetData(v *QueryLiveDomainTlsResponseData) *QueryLiveDomainTlsResponse {
   s.Data = v
   return s
 }
 
-type QueryLiveDomainTlsQueryLiveDomainTlsResponseData struct {
+type QueryLiveDomainTlsResponseData struct {
   // {"en":"Certificate ID", "zh_CN":"证书ID"}
   CertificateId *string `json:"certificateId,omitempty" xml:"certificateId,omitempty" require:"true"`
   // {"en":"TLS Versions, Enum Array, [TLSv1.1, TLSv1.2, TLSv1.3]", "zh_CN":"TLS版本，可选值 [TLSv1.1, TLSv1.2, TLSv1.3]"}
@@ -21147,30 +21147,30 @@ type QueryLiveDomainTlsQueryLiveDomainTlsResponseData struct {
   EnableOscpStapling *bool `json:"enableOscpStapling,omitempty" xml:"enableOscpStapling,omitempty" require:"true"`
 }
 
-func (s QueryLiveDomainTlsQueryLiveDomainTlsResponseData) String() string {
+func (s QueryLiveDomainTlsResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveDomainTlsQueryLiveDomainTlsResponseData) GoString() string {
+func (s QueryLiveDomainTlsResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryLiveDomainTlsQueryLiveDomainTlsResponseData) SetCertificateId(v string) *QueryLiveDomainTlsQueryLiveDomainTlsResponseData {
+func (s *QueryLiveDomainTlsResponseData) SetCertificateId(v string) *QueryLiveDomainTlsResponseData {
   s.CertificateId = &v
   return s
 }
 
-func (s *QueryLiveDomainTlsQueryLiveDomainTlsResponseData) SetTlsVersions(v []*string) *QueryLiveDomainTlsQueryLiveDomainTlsResponseData {
+func (s *QueryLiveDomainTlsResponseData) SetTlsVersions(v []*string) *QueryLiveDomainTlsResponseData {
   s.TlsVersions = v
   return s
 }
 
-func (s *QueryLiveDomainTlsQueryLiveDomainTlsResponseData) SetTlsCiphers(v string) *QueryLiveDomainTlsQueryLiveDomainTlsResponseData {
+func (s *QueryLiveDomainTlsResponseData) SetTlsCiphers(v string) *QueryLiveDomainTlsResponseData {
   s.TlsCiphers = &v
   return s
 }
 
-func (s *QueryLiveDomainTlsQueryLiveDomainTlsResponseData) SetEnableOscpStapling(v bool) *QueryLiveDomainTlsQueryLiveDomainTlsResponseData {
+func (s *QueryLiveDomainTlsResponseData) SetEnableOscpStapling(v bool) *QueryLiveDomainTlsResponseData {
   s.EnableOscpStapling = &v
   return s
 }
@@ -21344,7 +21344,7 @@ type BatchAddIllegalInformationRequest struct {
   // 不填默认是false."}
   IsShared *bool `json:"isShared,omitempty" xml:"isShared,omitempty"`
   // {"en":"A group needs a combination of illegal information masking urls, each url plus a matching pattern into a group.The maximum number of urls is 100", "zh_CN":"一个组需要非法信息屏蔽url的组合，每个url加匹配模式为一组。URL条数上限100个"}
-  BanUrls []*BatchAddIllegalInformationBatchAddIllegalInformationRequestBanUrls `json:"banUrls,omitempty" xml:"banUrls,omitempty" require:"true" type:"Repeated"`
+  BanUrls []*BatchAddIllegalInformationRequestBanUrls `json:"banUrls,omitempty" xml:"banUrls,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s BatchAddIllegalInformationRequest) String() string {
@@ -21360,12 +21360,12 @@ func (s *BatchAddIllegalInformationRequest) SetIsShared(v bool) *BatchAddIllegal
   return s
 }
 
-func (s *BatchAddIllegalInformationRequest) SetBanUrls(v []*BatchAddIllegalInformationBatchAddIllegalInformationRequestBanUrls) *BatchAddIllegalInformationRequest {
+func (s *BatchAddIllegalInformationRequest) SetBanUrls(v []*BatchAddIllegalInformationRequestBanUrls) *BatchAddIllegalInformationRequest {
   s.BanUrls = v
   return s
 }
 
-type BatchAddIllegalInformationBatchAddIllegalInformationRequestBanUrls struct     {
+type BatchAddIllegalInformationRequestBanUrls struct     {
   // {"en":"A url information that must be the url of the non-pending domain name under customer", "zh_CN":"url信息,必须是客户名下的非挂起域名的url。"}
   Url *string `json:"url,omitempty" xml:"url,omitempty" require:"true"`
   // {"en":"Matching mode, support fuzzy and accurate;Fuzzy input is as follows: fuzzy;exactly
@@ -21374,20 +21374,20 @@ type BatchAddIllegalInformationBatchAddIllegalInformationRequestBanUrls struct  
   Method *string `json:"method,omitempty" xml:"method,omitempty" require:"true"`
 }
 
-func (s BatchAddIllegalInformationBatchAddIllegalInformationRequestBanUrls) String() string {
+func (s BatchAddIllegalInformationRequestBanUrls) String() string {
   return tea.Prettify(s)
 }
 
-func (s BatchAddIllegalInformationBatchAddIllegalInformationRequestBanUrls) GoString() string {
+func (s BatchAddIllegalInformationRequestBanUrls) GoString() string {
   return s.String()
 }
 
-func (s *BatchAddIllegalInformationBatchAddIllegalInformationRequestBanUrls) SetUrl(v string) *BatchAddIllegalInformationBatchAddIllegalInformationRequestBanUrls {
+func (s *BatchAddIllegalInformationRequestBanUrls) SetUrl(v string) *BatchAddIllegalInformationRequestBanUrls {
   s.Url = &v
   return s
 }
 
-func (s *BatchAddIllegalInformationBatchAddIllegalInformationRequestBanUrls) SetMethod(v string) *BatchAddIllegalInformationBatchAddIllegalInformationRequestBanUrls {
+func (s *BatchAddIllegalInformationRequestBanUrls) SetMethod(v string) *BatchAddIllegalInformationRequestBanUrls {
   s.Method = &v
   return s
 }
@@ -21473,7 +21473,7 @@ func (s BatchAddIllegalInformationResponseHeader) GoString() string {
 
 type UpdateLiveDomainPublishReportsRequest struct {
   // {"en":"Publish Reports", "zh_CN":"推流汇报配置"}
-  PublishReports []*UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports `json:"publishReports,omitempty" xml:"publishReports,omitempty" type:"Repeated"`
+  PublishReports []*UpdateLiveDomainPublishReportsRequestPublishReports `json:"publishReports,omitempty" xml:"publishReports,omitempty" type:"Repeated"`
 }
 
 func (s UpdateLiveDomainPublishReportsRequest) String() string {
@@ -21484,12 +21484,12 @@ func (s UpdateLiveDomainPublishReportsRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainPublishReportsRequest) SetPublishReports(v []*UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports) *UpdateLiveDomainPublishReportsRequest {
+func (s *UpdateLiveDomainPublishReportsRequest) SetPublishReports(v []*UpdateLiveDomainPublishReportsRequestPublishReports) *UpdateLiveDomainPublishReportsRequest {
   s.PublishReports = v
   return s
 }
 
-type UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports struct     {
+type UpdateLiveDomainPublishReportsRequestPublishReports struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置。
   // dataId可以通过查询接口获取。
   // 注意：添加grid类型标识：dataId，每一组配置对应一个dataId：
@@ -21512,77 +21512,77 @@ type UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishR
   // {"en":"Start Uri", "zh_CN":"推流开始汇报URI"}
   StartUri *string `json:"startUri,omitempty" xml:"startUri,omitempty" require:"true"`
   // {"en":"Start Args", "zh_CN":"推流开始汇报参数"}
-  StartArgs *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs `json:"startArgs,omitempty" xml:"startArgs,omitempty" require:"true" type:"Struct"`
+  StartArgs *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs `json:"startArgs,omitempty" xml:"startArgs,omitempty" require:"true" type:"Struct"`
   // {"en":"Stop Uri", "zh_CN":"推流结束汇报URI"}
   StopUri *string `json:"stopUri,omitempty" xml:"stopUri,omitempty" require:"true"`
   // {"en":"Stop Args", "zh_CN":"推流结束汇报参数"}
-  StopArgs *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs `json:"stopArgs,omitempty" xml:"stopArgs,omitempty" require:"true" type:"Struct"`
+  StopArgs *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs `json:"stopArgs,omitempty" xml:"stopArgs,omitempty" require:"true" type:"Struct"`
 }
 
-func (s UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports) String() string {
+func (s UpdateLiveDomainPublishReportsRequestPublishReports) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports) GoString() string {
+func (s UpdateLiveDomainPublishReportsRequestPublishReports) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports) SetDataId(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReports) SetDataId(v string) *UpdateLiveDomainPublishReportsRequestPublishReports {
   s.DataId = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports) SetAppNames(v []*string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReports) SetAppNames(v []*string) *UpdateLiveDomainPublishReportsRequestPublishReports {
   s.AppNames = v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports) SetEnabled(v bool) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReports) SetEnabled(v bool) *UpdateLiveDomainPublishReportsRequestPublishReports {
   s.Enabled = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports) SetReportMethod(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReports) SetReportMethod(v string) *UpdateLiveDomainPublishReportsRequestPublishReports {
   s.ReportMethod = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports) SetReportAddress(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReports) SetReportAddress(v string) *UpdateLiveDomainPublishReportsRequestPublishReports {
   s.ReportAddress = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports) SetEnableHttps(v bool) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReports) SetEnableHttps(v bool) *UpdateLiveDomainPublishReportsRequestPublishReports {
   s.EnableHttps = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports) SetSignKey(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReports) SetSignKey(v string) *UpdateLiveDomainPublishReportsRequestPublishReports {
   s.SignKey = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports) SetStartUri(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReports) SetStartUri(v string) *UpdateLiveDomainPublishReportsRequestPublishReports {
   s.StartUri = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports) SetStartArgs(v *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReports) SetStartArgs(v *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) *UpdateLiveDomainPublishReportsRequestPublishReports {
   s.StartArgs = v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports) SetStopUri(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReports) SetStopUri(v string) *UpdateLiveDomainPublishReportsRequestPublishReports {
   s.StopUri = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports) SetStopArgs(v *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReports {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReports) SetStopArgs(v *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) *UpdateLiveDomainPublishReportsRequestPublishReports {
   s.StopArgs = v
   return s
 }
 
-type UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs struct {
+type UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs struct {
   // {"en":"Client IP", "zh_CN":"客户端IP汇报参数名称"}
   ClientIp *string `json:"clientIp,omitempty" xml:"clientIp,omitempty"`
   // {"en":"Server IP", "zh_CN":"服务器IP汇报参数名称"}
@@ -21605,65 +21605,65 @@ type UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishR
   RequestArgs []*string `json:"requestArgs,omitempty" xml:"requestArgs,omitempty" type:"Repeated"`
 }
 
-func (s UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) String() string {
+func (s UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) GoString() string {
+func (s UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) SetClientIp(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) SetClientIp(v string) *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs {
   s.ClientIp = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) SetServerIp(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) SetServerIp(v string) *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs {
   s.ServerIp = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) SetStreamName(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) SetStreamName(v string) *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs {
   s.StreamName = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) SetHost(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) SetHost(v string) *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs {
   s.Host = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) SetAppName(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) SetAppName(v string) *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs {
   s.AppName = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) SetPort(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) SetPort(v string) *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs {
   s.Port = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) SetTime(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) SetTime(v string) *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs {
   s.Time = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) SetMilltime(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) SetMilltime(v string) *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs {
   s.Milltime = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) SetMd5Sign(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) SetMd5Sign(v string) *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs {
   s.Md5Sign = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) SetRequestArgs(v []*string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStartArgs {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs) SetRequestArgs(v []*string) *UpdateLiveDomainPublishReportsRequestPublishReportsStartArgs {
   s.RequestArgs = v
   return s
 }
 
-type UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs struct {
+type UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs struct {
   // {"en":"Client IP", "zh_CN":"客户端IP汇报参数名称"}
   ClientIp *string `json:"clientIp,omitempty" xml:"clientIp,omitempty"`
   // {"en":"Server IP", "zh_CN":"服务器IP汇报参数名称"}
@@ -21686,60 +21686,60 @@ type UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishR
   RequestArgs []*string `json:"requestArgs,omitempty" xml:"requestArgs,omitempty" type:"Repeated"`
 }
 
-func (s UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) String() string {
+func (s UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) GoString() string {
+func (s UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) SetClientIp(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) SetClientIp(v string) *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs {
   s.ClientIp = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) SetServerIp(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) SetServerIp(v string) *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs {
   s.ServerIp = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) SetStreamName(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) SetStreamName(v string) *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs {
   s.StreamName = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) SetHost(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) SetHost(v string) *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs {
   s.Host = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) SetAppName(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) SetAppName(v string) *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs {
   s.AppName = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) SetPort(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) SetPort(v string) *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs {
   s.Port = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) SetTime(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) SetTime(v string) *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs {
   s.Time = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) SetMilltime(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) SetMilltime(v string) *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs {
   s.Milltime = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) SetMd5Sign(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) SetMd5Sign(v string) *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs {
   s.Md5Sign = &v
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) SetRequestArgs(v []*string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsRequestPublishReportsStopArgs {
+func (s *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs) SetRequestArgs(v []*string) *UpdateLiveDomainPublishReportsRequestPublishReportsStopArgs {
   s.RequestArgs = v
   return s
 }
@@ -21750,7 +21750,7 @@ type UpdateLiveDomainPublishReportsResponse struct {
   // {"en":"Reponse message.", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data", "zh_CN":"响应数据"}
-  Data *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *UpdateLiveDomainPublishReportsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s UpdateLiveDomainPublishReportsResponse) String() string {
@@ -21771,25 +21771,25 @@ func (s *UpdateLiveDomainPublishReportsResponse) SetMessage(v string) *UpdateLiv
   return s
 }
 
-func (s *UpdateLiveDomainPublishReportsResponse) SetData(v *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsResponseData) *UpdateLiveDomainPublishReportsResponse {
+func (s *UpdateLiveDomainPublishReportsResponse) SetData(v *UpdateLiveDomainPublishReportsResponseData) *UpdateLiveDomainPublishReportsResponse {
   s.Data = v
   return s
 }
 
-type UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsResponseData struct {
+type UpdateLiveDomainPublishReportsResponseData struct {
   // {"en":"The preliminary deployment id", "zh_CN":"预部署id"}
   PreDeployId *string `json:"preDeployId,omitempty" xml:"preDeployId,omitempty" require:"true"`
 }
 
-func (s UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsResponseData) String() string {
+func (s UpdateLiveDomainPublishReportsResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsResponseData) GoString() string {
+func (s UpdateLiveDomainPublishReportsResponseData) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsResponseData) SetPreDeployId(v string) *UpdateLiveDomainPublishReportsUpdateLiveDomainPublishReportsResponseData {
+func (s *UpdateLiveDomainPublishReportsResponseData) SetPreDeployId(v string) *UpdateLiveDomainPublishReportsResponseData {
   s.PreDeployId = &v
   return s
 }
@@ -21859,7 +21859,7 @@ type PredeployredirectconfigRequest struct {
   // 1. 定义一组内部重定向内容，，如果有使用内部重定向内容，此项必填
   // 2. 需要清空域名下的内容重定向内容，可以传入空节点<rewrite-rule-settings></rewrite-rule-settings>
   // 3. 如果有开启其他高级配置（如防盗链配置），有些配置可能会有配置冲突，建议先与技术支持人员确认"}
-  RewriteRuleSettings []*PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings `json:"rewrite-rule-settings,omitempty" xml:"rewrite-rule-settings,omitempty" require:"true" type:"Repeated"`
+  RewriteRuleSettings []*PredeployredirectconfigRequestRewriteRuleSettings `json:"rewrite-rule-settings,omitempty" xml:"rewrite-rule-settings,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s PredeployredirectconfigRequest) String() string {
@@ -21870,12 +21870,12 @@ func (s PredeployredirectconfigRequest) GoString() string {
   return s.String()
 }
 
-func (s *PredeployredirectconfigRequest) SetRewriteRuleSettings(v []*PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings) *PredeployredirectconfigRequest {
+func (s *PredeployredirectconfigRequest) SetRewriteRuleSettings(v []*PredeployredirectconfigRequestRewriteRuleSettings) *PredeployredirectconfigRequest {
   s.RewriteRuleSettings = v
   return s
 }
 
-type PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings struct     {
+type PredeployredirectconfigRequestRewriteRuleSettings struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置；data-id重复，已入参同个id最后一组为准生效
   // data-id可以通过查询接口获取。
   // 注意：添加grid类型标识：data-id，每一组配置对应一个data-id：
@@ -21933,128 +21933,128 @@ type PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings st
   RewriteType *string `json:"rewrite-type,omitempty" xml:"rewrite-type,omitempty" require:"true"`
   PredeployredirectconfigRequestHeader *string `json:"request-header,omitempty" xml:"request-header,omitempty"`
   ExceptionPredeployredirectconfigRequestHeader *string `json:"exception-request-header,omitempty" xml:"exception-request-header,omitempty"`
-  SpecifyUrl *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl `json:"specify-url,omitempty" xml:"specify-url,omitempty" type:"Struct"`
+  SpecifyUrl *PredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl `json:"specify-url,omitempty" xml:"specify-url,omitempty" type:"Struct"`
 }
 
-func (s PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings) String() string {
+func (s PredeployredirectconfigRequestRewriteRuleSettings) String() string {
   return tea.Prettify(s)
 }
 
-func (s PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings) GoString() string {
+func (s PredeployredirectconfigRequestRewriteRuleSettings) GoString() string {
   return s.String()
 }
 
-func (s *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings) SetDataId(v int64) *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings {
+func (s *PredeployredirectconfigRequestRewriteRuleSettings) SetDataId(v int64) *PredeployredirectconfigRequestRewriteRuleSettings {
   s.DataId = &v
   return s
 }
 
-func (s *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings) SetPathPattern(v string) *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings {
+func (s *PredeployredirectconfigRequestRewriteRuleSettings) SetPathPattern(v string) *PredeployredirectconfigRequestRewriteRuleSettings {
   s.PathPattern = &v
   return s
 }
 
-func (s *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings) SetExceptPathPattern(v string) *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings {
+func (s *PredeployredirectconfigRequestRewriteRuleSettings) SetExceptPathPattern(v string) *PredeployredirectconfigRequestRewriteRuleSettings {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings) SetCustomPattern(v string) *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings {
+func (s *PredeployredirectconfigRequestRewriteRuleSettings) SetCustomPattern(v string) *PredeployredirectconfigRequestRewriteRuleSettings {
   s.CustomPattern = &v
   return s
 }
 
-func (s *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings) SetDirectory(v string) *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings {
+func (s *PredeployredirectconfigRequestRewriteRuleSettings) SetDirectory(v string) *PredeployredirectconfigRequestRewriteRuleSettings {
   s.Directory = &v
   return s
 }
 
-func (s *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings) SetFileType(v string) *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings {
+func (s *PredeployredirectconfigRequestRewriteRuleSettings) SetFileType(v string) *PredeployredirectconfigRequestRewriteRuleSettings {
   s.FileType = &v
   return s
 }
 
-func (s *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings) SetCustomFileType(v string) *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings {
+func (s *PredeployredirectconfigRequestRewriteRuleSettings) SetCustomFileType(v string) *PredeployredirectconfigRequestRewriteRuleSettings {
   s.CustomFileType = &v
   return s
 }
 
-func (s *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings) SetIgnoreLetterCase(v string) *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings {
+func (s *PredeployredirectconfigRequestRewriteRuleSettings) SetIgnoreLetterCase(v string) *PredeployredirectconfigRequestRewriteRuleSettings {
   s.IgnoreLetterCase = &v
   return s
 }
 
-func (s *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings) SetPublishType(v string) *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings {
+func (s *PredeployredirectconfigRequestRewriteRuleSettings) SetPublishType(v string) *PredeployredirectconfigRequestRewriteRuleSettings {
   s.PublishType = &v
   return s
 }
 
-func (s *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings) SetPriority(v string) *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings {
+func (s *PredeployredirectconfigRequestRewriteRuleSettings) SetPriority(v string) *PredeployredirectconfigRequestRewriteRuleSettings {
   s.Priority = &v
   return s
 }
 
-func (s *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings) SetBeforeValue(v string) *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings {
+func (s *PredeployredirectconfigRequestRewriteRuleSettings) SetBeforeValue(v string) *PredeployredirectconfigRequestRewriteRuleSettings {
   s.BeforeValue = &v
   return s
 }
 
-func (s *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings) SetAfterValue(v string) *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings {
+func (s *PredeployredirectconfigRequestRewriteRuleSettings) SetAfterValue(v string) *PredeployredirectconfigRequestRewriteRuleSettings {
   s.AfterValue = &v
   return s
 }
 
-func (s *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings) SetRewriteType(v string) *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings {
+func (s *PredeployredirectconfigRequestRewriteRuleSettings) SetRewriteType(v string) *PredeployredirectconfigRequestRewriteRuleSettings {
   s.RewriteType = &v
   return s
 }
 
-func (s *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings) SetPredeployredirectconfigRequestHeader(v string) *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings {
+func (s *PredeployredirectconfigRequestRewriteRuleSettings) SetPredeployredirectconfigRequestHeader(v string) *PredeployredirectconfigRequestRewriteRuleSettings {
   s.PredeployredirectconfigRequestHeader = &v
   return s
 }
 
-func (s *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings) SetExceptionPredeployredirectconfigRequestHeader(v string) *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings {
+func (s *PredeployredirectconfigRequestRewriteRuleSettings) SetExceptionPredeployredirectconfigRequestHeader(v string) *PredeployredirectconfigRequestRewriteRuleSettings {
   s.ExceptionPredeployredirectconfigRequestHeader = &v
   return s
 }
 
-func (s *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings) SetSpecifyUrl(v *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl) *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettings {
+func (s *PredeployredirectconfigRequestRewriteRuleSettings) SetSpecifyUrl(v *PredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl) *PredeployredirectconfigRequestRewriteRuleSettings {
   s.SpecifyUrl = v
   return s
 }
 
-type PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl struct {
+type PredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl struct {
   Uri *string `json:"uri,omitempty" xml:"uri,omitempty"`
   MatchQueryString *string `json:"match-query-string,omitempty" xml:"match-query-string,omitempty"`
   QueryStrings *string `json:"query-strings,omitempty" xml:"query-strings,omitempty"`
   Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty"`
 }
 
-func (s PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl) String() string {
+func (s PredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl) String() string {
   return tea.Prettify(s)
 }
 
-func (s PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl) GoString() string {
+func (s PredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl) GoString() string {
   return s.String()
 }
 
-func (s *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl) SetUri(v string) *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl {
+func (s *PredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl) SetUri(v string) *PredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl {
   s.Uri = &v
   return s
 }
 
-func (s *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl) SetMatchQueryString(v string) *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl {
+func (s *PredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl) SetMatchQueryString(v string) *PredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl {
   s.MatchQueryString = &v
   return s
 }
 
-func (s *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl) SetQueryStrings(v string) *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl {
+func (s *PredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl) SetQueryStrings(v string) *PredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl {
   s.QueryStrings = &v
   return s
 }
 
-func (s *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl) SetProtocol(v string) *PredeployredirectconfigPredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl {
+func (s *PredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl) SetProtocol(v string) *PredeployredirectconfigRequestRewriteRuleSettingsSpecifyUrl {
   s.Protocol = &v
   return s
 }
@@ -22245,7 +22245,7 @@ type QueryStreamNotificationConfigResponse struct {
   // {"en":"message", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"data", "zh_CN":"返回结果数据"}
-  Data *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryStreamNotificationConfigResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryStreamNotificationConfigResponse) String() string {
@@ -22266,44 +22266,44 @@ func (s *QueryStreamNotificationConfigResponse) SetMessage(v string) *QueryStrea
   return s
 }
 
-func (s *QueryStreamNotificationConfigResponse) SetData(v *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseData) *QueryStreamNotificationConfigResponse {
+func (s *QueryStreamNotificationConfigResponse) SetData(v *QueryStreamNotificationConfigResponseData) *QueryStreamNotificationConfigResponse {
   s.Data = v
   return s
 }
 
-type QueryStreamNotificationConfigQueryStreamNotificationConfigResponseData struct {
+type QueryStreamNotificationConfigResponseData struct {
   // {"en":"domainId", "zh_CN":"域名ID"}
   DomainId *string `json:"domainId,omitempty" xml:"domainId,omitempty" require:"true"`
   // {"en":"domainName", "zh_CN":"域名名称"}
   DomainName *string `json:"domainName,omitempty" xml:"domainName,omitempty" require:"true"`
   // {"en":"Streaming notify Configuration, parent node", "zh_CN":"推流状态反馈配置，父标签"}
-  StreamNotifications []*QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotifications `json:"streamNotifications,omitempty" xml:"streamNotifications,omitempty" require:"true" type:"Repeated"`
+  StreamNotifications []*QueryStreamNotificationConfigResponseDataStreamNotifications `json:"streamNotifications,omitempty" xml:"streamNotifications,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryStreamNotificationConfigQueryStreamNotificationConfigResponseData) String() string {
+func (s QueryStreamNotificationConfigResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStreamNotificationConfigQueryStreamNotificationConfigResponseData) GoString() string {
+func (s QueryStreamNotificationConfigResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseData) SetDomainId(v string) *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseData {
+func (s *QueryStreamNotificationConfigResponseData) SetDomainId(v string) *QueryStreamNotificationConfigResponseData {
   s.DomainId = &v
   return s
 }
 
-func (s *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseData) SetDomainName(v string) *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseData {
+func (s *QueryStreamNotificationConfigResponseData) SetDomainName(v string) *QueryStreamNotificationConfigResponseData {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseData) SetStreamNotifications(v []*QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotifications) *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseData {
+func (s *QueryStreamNotificationConfigResponseData) SetStreamNotifications(v []*QueryStreamNotificationConfigResponseDataStreamNotifications) *QueryStreamNotificationConfigResponseData {
   s.StreamNotifications = v
   return s
 }
 
-type QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotifications struct     {
+type QueryStreamNotificationConfigResponseDataStreamNotifications struct     {
   // {"en":"Switch for streaming notification feature. The optional values are true and false.", "zh_CN":"推流状态反馈开关配置，可选值为true和false。
   // 为true则开启，且需完整设置配置信息
   // 为false则其他入参无效。"}
@@ -22321,45 +22321,45 @@ type QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStrea
   // {"en":"Request method, support POST and GET.", "zh_CN":"推流汇报请求方式，支持POST和GET"}
   NotifyMethod *string `json:"notifyMethod,omitempty" xml:"notifyMethod,omitempty" require:"true"`
   // {"en":"notifyParams", "zh_CN":"设置推流开始的汇报参数，推流结束的汇报参数。最多只能有一个开始，一个结束。"}
-  NotifyParams []*QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams `json:"notifyParams,omitempty" xml:"notifyParams,omitempty" require:"true" type:"Repeated"`
+  NotifyParams []*QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams `json:"notifyParams,omitempty" xml:"notifyParams,omitempty" require:"true" type:"Repeated"`
   // {"en":"Data-id is to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"配置多组配置时，具体某组配置的id。"}
   DataId *int64 `json:"dataId,omitempty" xml:"dataId,omitempty" require:"true"`
 }
 
-func (s QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotifications) String() string {
+func (s QueryStreamNotificationConfigResponseDataStreamNotifications) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotifications) GoString() string {
+func (s QueryStreamNotificationConfigResponseDataStreamNotifications) GoString() string {
   return s.String()
 }
 
-func (s *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotifications) SetEnableStreamNotification(v bool) *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotifications {
+func (s *QueryStreamNotificationConfigResponseDataStreamNotifications) SetEnableStreamNotification(v bool) *QueryStreamNotificationConfigResponseDataStreamNotifications {
   s.EnableStreamNotification = &v
   return s
 }
 
-func (s *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotifications) SetNotifyAddress(v string) *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotifications {
+func (s *QueryStreamNotificationConfigResponseDataStreamNotifications) SetNotifyAddress(v string) *QueryStreamNotificationConfigResponseDataStreamNotifications {
   s.NotifyAddress = &v
   return s
 }
 
-func (s *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotifications) SetNotifyMethod(v string) *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotifications {
+func (s *QueryStreamNotificationConfigResponseDataStreamNotifications) SetNotifyMethod(v string) *QueryStreamNotificationConfigResponseDataStreamNotifications {
   s.NotifyMethod = &v
   return s
 }
 
-func (s *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotifications) SetNotifyParams(v []*QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotifications {
+func (s *QueryStreamNotificationConfigResponseDataStreamNotifications) SetNotifyParams(v []*QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) *QueryStreamNotificationConfigResponseDataStreamNotifications {
   s.NotifyParams = v
   return s
 }
 
-func (s *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotifications) SetDataId(v int64) *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotifications {
+func (s *QueryStreamNotificationConfigResponseDataStreamNotifications) SetDataId(v int64) *QueryStreamNotificationConfigResponseDataStreamNotifications {
   s.DataId = &v
   return s
 }
 
-type QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams struct     {
+type QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams struct     {
   // {"en":"notifyType", "zh_CN":"可选值：publish_start、publish_end，分别表示推流开始和推流结束(断流)"}
   NotifyType *string `json:"notifyType,omitempty" xml:"notifyType,omitempty" require:"true"`
   // {"en":"Notify path, it should start with a slash", "zh_CN":"推流汇报路径，/ 开头"}
@@ -22382,60 +22382,60 @@ type QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStrea
   CustomParams *string `json:"customParams,omitempty" xml:"customParams,omitempty" require:"true"`
 }
 
-func (s QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) String() string {
+func (s QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) GoString() string {
+func (s QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) GoString() string {
   return s.String()
 }
 
-func (s *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) SetNotifyType(v string) *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams {
+func (s *QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) SetNotifyType(v string) *QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams {
   s.NotifyType = &v
   return s
 }
 
-func (s *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) SetPath(v string) *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams {
+func (s *QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) SetPath(v string) *QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams {
   s.Path = &v
   return s
 }
 
-func (s *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) SetId(v string) *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams {
+func (s *QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) SetId(v string) *QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams {
   s.Id = &v
   return s
 }
 
-func (s *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) SetClientIp(v string) *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams {
+func (s *QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) SetClientIp(v string) *QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams {
   s.ClientIp = &v
   return s
 }
 
-func (s *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) SetNodeIp(v string) *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams {
+func (s *QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) SetNodeIp(v string) *QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams {
   s.NodeIp = &v
   return s
 }
 
-func (s *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) SetApp(v string) *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams {
+func (s *QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) SetApp(v string) *QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams {
   s.App = &v
   return s
 }
 
-func (s *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) SetAppName(v string) *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams {
+func (s *QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) SetAppName(v string) *QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams {
   s.AppName = &v
   return s
 }
 
-func (s *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) SetPort(v string) *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams {
+func (s *QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) SetPort(v string) *QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams {
   s.Port = &v
   return s
 }
 
-func (s *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) SetMillTime(v string) *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams {
+func (s *QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) SetMillTime(v string) *QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams {
   s.MillTime = &v
   return s
 }
 
-func (s *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) SetCustomParams(v string) *QueryStreamNotificationConfigQueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams {
+func (s *QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams) SetCustomParams(v string) *QueryStreamNotificationConfigResponseDataStreamNotificationsNotifyParams {
   s.CustomParams = &v
   return s
 }
@@ -22637,7 +22637,7 @@ type AddAppaDomainRequest struct {
   //    [{'originIp':'3.3.3.3','weight':10}]
   //   }
   // ]"}
-  OriginConfig []*AddAppaDomainAddAppaDomainRequestOriginConfig `json:"originConfig,omitempty" xml:"originConfig,omitempty" require:"true" type:"Repeated"`
+  OriginConfig []*AddAppaDomainRequestOriginConfig `json:"originConfig,omitempty" xml:"originConfig,omitempty" require:"true" type:"Repeated"`
   // {'en':'HTTP port. The value is an integer ranging from 1 to 65535. Multiple ports are supported and can be configured in the following format:httpPorts:["9001"]Note: 1. Ports 2012, 2323, 2443, 4031, 12012, 20121, 57891, 62016, 65383, and 65529 do not support.2. The HTTP port and HTTPS port and TCP port must be unique.3. At least one HTTP port or HTTPS port or TCP port or UDP port must be configured.', 'zh_CN':'HTTP端口，取值范围为1-65535的整数，可配置多个，格式如：httpPorts:["9001"]注意：1、端口2012、2323、2443、4031、12012、20121、57891、62016、65383、65529不支持配置。2、HTTP端口和HTTPS端口和TCP端口不能重复。3、HTTP端口和HTTPS端口和TCP端口和UDP端口必须至少配置一个。'}
   HttpPorts []*string `json:"httpPorts,omitempty" xml:"httpPorts,omitempty" type:"Repeated"`
   // {'en':'HTTPS port. The value is an integer ranging from 1 to 65535. Multiple ports are supported and can be configured in the following format:httpPorts:["9002","9003"]Note: 1. Ports 2012, 2323, 2443, 4031, 12012, 20121, 57891, 62016, 65383, and 65529 do not support.2. The HTTP port and HTTPS port and TCP port must be unique.3. At least one HTTP port or HTTPS port or TCP port or UDP port must be configured.', 'zh_CN':'HTTPS端口，取值范围为1-65535的整数，可配置多个，格式如：httpsPorts:["9002","9003"]注意：1、端口2012、2323、2443、4031、12012、20121、57891、62016、65383、65529不支持配置。2、HTTP端口和HTTPS端口和TCP端口不能重复。3、HTTP端口和HTTPS端口和TCP端口和UDP端口必须至少配置一个。'}
@@ -22666,7 +22666,7 @@ func (s *AddAppaDomainRequest) SetServiceType(v string) *AddAppaDomainRequest {
   return s
 }
 
-func (s *AddAppaDomainRequest) SetOriginConfig(v []*AddAppaDomainAddAppaDomainRequestOriginConfig) *AddAppaDomainRequest {
+func (s *AddAppaDomainRequest) SetOriginConfig(v []*AddAppaDomainRequestOriginConfig) *AddAppaDomainRequest {
   s.OriginConfig = v
   return s
 }
@@ -22691,59 +22691,59 @@ func (s *AddAppaDomainRequest) SetUdpPorts(v []*string) *AddAppaDomainRequest {
   return s
 }
 
-type AddAppaDomainAddAppaDomainRequestOriginConfig struct     {
+type AddAppaDomainRequestOriginConfig struct     {
   // {"en":"The level of the origin, which value can be an integer ranging from 1 to 5. Note:1. Must be configured level by level start from level 1. The same level cannot be configured repeatedly.2. The lower the value, the higher the priority.", "zh_CN":"层级，可选值为1-5的整数。注意：1、必须从层级1开始逐级配置，相同层级不能重复配置。2、数值越低，优先级越高。"}
   Level *int32 `json:"level,omitempty" xml:"level,omitempty" require:"true"`
   // {"en":"Origin selection strategy supports fast, robin and hash. The value can be: fast: Fast strategy, robin: Robin strategy,hash: Hash strategy", "zh_CN":"选源策略，支持快速、轮询、哈希，可选值为:fast：快速,robin：轮询,hash：哈希"}
   Strategy *string `json:"strategy,omitempty" xml:"strategy,omitempty" require:"true"`
   // {"en":"Origin information of a certain level. A level can be configured with multiple origin IP addresses or domain names.Example:'origin':[{'originIp':'1.1.1.1','weight':10},{'originIp':'2.2.2.2','weight':20}]", "zh_CN":"某个层级的源信息。一个层级可以配置多个回源IP/域名。示例：'origin':[{'originIp':'1.1.1.1','weight':10},{'originIp':'2.2.2.2','weight':20}]"}
-  Origin []*AddAppaDomainAddAppaDomainRequestOriginConfigOrigin `json:"origin,omitempty" xml:"origin,omitempty" require:"true" type:"Repeated"`
+  Origin []*AddAppaDomainRequestOriginConfigOrigin `json:"origin,omitempty" xml:"origin,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s AddAppaDomainAddAppaDomainRequestOriginConfig) String() string {
+func (s AddAppaDomainRequestOriginConfig) String() string {
   return tea.Prettify(s)
 }
 
-func (s AddAppaDomainAddAppaDomainRequestOriginConfig) GoString() string {
+func (s AddAppaDomainRequestOriginConfig) GoString() string {
   return s.String()
 }
 
-func (s *AddAppaDomainAddAppaDomainRequestOriginConfig) SetLevel(v int32) *AddAppaDomainAddAppaDomainRequestOriginConfig {
+func (s *AddAppaDomainRequestOriginConfig) SetLevel(v int32) *AddAppaDomainRequestOriginConfig {
   s.Level = &v
   return s
 }
 
-func (s *AddAppaDomainAddAppaDomainRequestOriginConfig) SetStrategy(v string) *AddAppaDomainAddAppaDomainRequestOriginConfig {
+func (s *AddAppaDomainRequestOriginConfig) SetStrategy(v string) *AddAppaDomainRequestOriginConfig {
   s.Strategy = &v
   return s
 }
 
-func (s *AddAppaDomainAddAppaDomainRequestOriginConfig) SetOrigin(v []*AddAppaDomainAddAppaDomainRequestOriginConfigOrigin) *AddAppaDomainAddAppaDomainRequestOriginConfig {
+func (s *AddAppaDomainRequestOriginConfig) SetOrigin(v []*AddAppaDomainRequestOriginConfigOrigin) *AddAppaDomainRequestOriginConfig {
   s.Origin = v
   return s
 }
 
-type AddAppaDomainAddAppaDomainRequestOriginConfigOrigin struct     {
+type AddAppaDomainRequestOriginConfigOrigin struct     {
   // {"en":"Origin address, which can be an IP or domain name.", "zh_CN":"回源IP/域名，可配置一个IP或域名。"}
   OriginIp *string `json:"originIp,omitempty" xml:"originIp,omitempty" require:"true"`
   // {"en":"Weight, which is only useful for robin strategy. The value is an integer ranging from 1 to 10000. If this parameter is not specified, the default value is 10.", "zh_CN":"权重，只对轮询策略有用。取值范围为1-10000的整数，不填默认为10。"}
   Weight *int32 `json:"weight,omitempty" xml:"weight,omitempty"`
 }
 
-func (s AddAppaDomainAddAppaDomainRequestOriginConfigOrigin) String() string {
+func (s AddAppaDomainRequestOriginConfigOrigin) String() string {
   return tea.Prettify(s)
 }
 
-func (s AddAppaDomainAddAppaDomainRequestOriginConfigOrigin) GoString() string {
+func (s AddAppaDomainRequestOriginConfigOrigin) GoString() string {
   return s.String()
 }
 
-func (s *AddAppaDomainAddAppaDomainRequestOriginConfigOrigin) SetOriginIp(v string) *AddAppaDomainAddAppaDomainRequestOriginConfigOrigin {
+func (s *AddAppaDomainRequestOriginConfigOrigin) SetOriginIp(v string) *AddAppaDomainRequestOriginConfigOrigin {
   s.OriginIp = &v
   return s
 }
 
-func (s *AddAppaDomainAddAppaDomainRequestOriginConfigOrigin) SetWeight(v int32) *AddAppaDomainAddAppaDomainRequestOriginConfigOrigin {
+func (s *AddAppaDomainRequestOriginConfigOrigin) SetWeight(v int32) *AddAppaDomainRequestOriginConfigOrigin {
   s.Weight = &v
   return s
 }
@@ -22847,7 +22847,7 @@ type EditLivestreamingTimestampAntihotlinkingConfigRequest struct {
   // 2. Empty the configuration for <timestampVisitControls/>", "zh_CN":"流媒体时间戳防盗链配置，父标签
   // 1.需要设置流媒体时间戳防盗链配置时，此项必填
   // 2.为<timestampVisitControls/>时清空配置"}
-  TimestampVisitControlRules []*EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules `json:"timestampVisitControlRules,omitempty" xml:"timestampVisitControlRules,omitempty" require:"true" type:"Repeated"`
+  TimestampVisitControlRules []*EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules `json:"timestampVisitControlRules,omitempty" xml:"timestampVisitControlRules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s EditLivestreamingTimestampAntihotlinkingConfigRequest) String() string {
@@ -22858,12 +22858,12 @@ func (s EditLivestreamingTimestampAntihotlinkingConfigRequest) GoString() string
   return s.String()
 }
 
-func (s *EditLivestreamingTimestampAntihotlinkingConfigRequest) SetTimestampVisitControlRules(v []*EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) *EditLivestreamingTimestampAntihotlinkingConfigRequest {
+func (s *EditLivestreamingTimestampAntihotlinkingConfigRequest) SetTimestampVisitControlRules(v []*EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) *EditLivestreamingTimestampAntihotlinkingConfigRequest {
   s.TimestampVisitControlRules = v
   return s
 }
 
-type EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules struct     {
+type EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules struct     {
   // {"en":"The name of the time parameter, and the default value is wsTime if no parameters are entered.", "zh_CN":"密文参数名称，未入参则默认值为wsSecret"}
   CipherParam *string `json:"cipherParam,omitempty" xml:"cipherParam,omitempty" require:"true"`
   // {"en":"The name of the time parameter, and the default value is wsTime if no parameters are entered.", "zh_CN":"时间参数名称，未入参则默认值为wsTime"}
@@ -22908,55 +22908,55 @@ type EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAnt
   DataId *int `json:"dataId,omitempty" xml:"dataId,omitempty"`
 }
 
-func (s EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) String() string {
+func (s EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) GoString() string {
+func (s EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) GoString() string {
   return s.String()
 }
 
-func (s *EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) SetCipherParam(v string) *EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules {
+func (s *EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) SetCipherParam(v string) *EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules {
   s.CipherParam = &v
   return s
 }
 
-func (s *EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) SetTimeParam(v string) *EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules {
+func (s *EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) SetTimeParam(v string) *EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules {
   s.TimeParam = &v
   return s
 }
 
-func (s *EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) SetSecretKey(v string) *EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules {
+func (s *EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) SetSecretKey(v string) *EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules {
   s.SecretKey = &v
   return s
 }
 
-func (s *EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) SetTimeFormat(v string) *EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules {
+func (s *EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) SetTimeFormat(v string) *EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules {
   s.TimeFormat = &v
   return s
 }
 
-func (s *EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) SetEffectiveTimeMode(v string) *EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules {
+func (s *EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) SetEffectiveTimeMode(v string) *EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules {
   s.EffectiveTimeMode = &v
   return s
 }
 
-func (s *EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) SetEffectiveTime(v int) *EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules {
+func (s *EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) SetEffectiveTime(v int) *EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules {
   s.EffectiveTime = &v
   return s
 }
 
-func (s *EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) SetTolerantTime(v int) *EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules {
+func (s *EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) SetTolerantTime(v int) *EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules {
   s.TolerantTime = &v
   return s
 }
 
-func (s *EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) SetCipheCombination(v string) *EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules {
+func (s *EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) SetCipheCombination(v string) *EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules {
   s.CipheCombination = &v
   return s
 }
 
-func (s *EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) SetDataId(v int) *EditLivestreamingTimestampAntihotlinkingConfigEditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules {
+func (s *EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules) SetDataId(v int) *EditLivestreamingTimestampAntihotlinkingConfigRequestTimestampVisitControlRules {
   s.DataId = &v
   return s
 }
@@ -23060,7 +23060,7 @@ type PredeployedStreamingTimestampVisitControlRequest struct {
   // 2. Empty the configuration for <timestampVisitControls/>", "zh_CN":"流媒体时间戳防盗链配置，父标签
   // 1. 需要设置流媒体时间戳防盗链配置时，此项必填
   // 2. 为<timestampVisitControls/>时清空配置"}
-  TimestampVisitControlRules []*PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules `json:"timestampVisitControlRules,omitempty" xml:"timestampVisitControlRules,omitempty" require:"true" type:"Repeated"`
+  TimestampVisitControlRules []*PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules `json:"timestampVisitControlRules,omitempty" xml:"timestampVisitControlRules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s PredeployedStreamingTimestampVisitControlRequest) String() string {
@@ -23071,12 +23071,12 @@ func (s PredeployedStreamingTimestampVisitControlRequest) GoString() string {
   return s.String()
 }
 
-func (s *PredeployedStreamingTimestampVisitControlRequest) SetTimestampVisitControlRules(v []*PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) *PredeployedStreamingTimestampVisitControlRequest {
+func (s *PredeployedStreamingTimestampVisitControlRequest) SetTimestampVisitControlRules(v []*PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) *PredeployedStreamingTimestampVisitControlRequest {
   s.TimestampVisitControlRules = v
   return s
 }
 
-type PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules struct     {
+type PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules struct     {
   // {"en":"The name of the time parameter, and the default value is wsTime if no parameters are entered.", "zh_CN":"密文参数名称，未入参则默认值为wsSecret"}
   CipherParam *string `json:"cipherParam,omitempty" xml:"cipherParam,omitempty" require:"true"`
   // {"en":"The name of the time parameter, and the default value is wsTime if no parameters are entered.", "zh_CN":"时间参数名称，未入参则默认值为wsTime"}
@@ -23121,55 +23121,55 @@ type PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisit
   DataId *int `json:"dataId,omitempty" xml:"dataId,omitempty"`
 }
 
-func (s PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) String() string {
+func (s PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) GoString() string {
+func (s PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) GoString() string {
   return s.String()
 }
 
-func (s *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) SetCipherParam(v string) *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules {
+func (s *PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) SetCipherParam(v string) *PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules {
   s.CipherParam = &v
   return s
 }
 
-func (s *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) SetTimeParam(v string) *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules {
+func (s *PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) SetTimeParam(v string) *PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules {
   s.TimeParam = &v
   return s
 }
 
-func (s *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) SetSecretKey(v string) *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules {
+func (s *PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) SetSecretKey(v string) *PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules {
   s.SecretKey = &v
   return s
 }
 
-func (s *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) SetTimeFormat(v string) *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules {
+func (s *PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) SetTimeFormat(v string) *PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules {
   s.TimeFormat = &v
   return s
 }
 
-func (s *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) SetEffectiveTimeMode(v string) *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules {
+func (s *PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) SetEffectiveTimeMode(v string) *PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules {
   s.EffectiveTimeMode = &v
   return s
 }
 
-func (s *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) SetEffectiveTime(v int) *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules {
+func (s *PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) SetEffectiveTime(v int) *PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules {
   s.EffectiveTime = &v
   return s
 }
 
-func (s *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) SetTolerantTime(v int) *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules {
+func (s *PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) SetTolerantTime(v int) *PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules {
   s.TolerantTime = &v
   return s
 }
 
-func (s *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) SetCipheCombination(v string) *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules {
+func (s *PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) SetCipheCombination(v string) *PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules {
   s.CipheCombination = &v
   return s
 }
 
-func (s *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) SetDataId(v int) *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules {
+func (s *PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules) SetDataId(v int) *PredeployedStreamingTimestampVisitControlRequestTimestampVisitControlRules {
   s.DataId = &v
   return s
 }
@@ -23180,7 +23180,7 @@ type PredeployedStreamingTimestampVisitControlResponse struct {
   // {"en":"The message body", "zh_CN":"消息体"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Returns the body of the data.", "zh_CN":"返回数据体"}
-  Data *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *PredeployedStreamingTimestampVisitControlResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
   // {"en":"Uniquely labeled id for querying each requested task (for all interfaces)", "zh_CN":"唯一标示的id，用于查询每次请求的任务 （适用全部接口）"}
   XCncRequestId *string `json:"x-cnc-request-id,omitempty" xml:"x-cnc-request-id,omitempty" require:"true"`
 }
@@ -23203,7 +23203,7 @@ func (s *PredeployedStreamingTimestampVisitControlResponse) SetMessage(v string)
   return s
 }
 
-func (s *PredeployedStreamingTimestampVisitControlResponse) SetData(v *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlResponseData) *PredeployedStreamingTimestampVisitControlResponse {
+func (s *PredeployedStreamingTimestampVisitControlResponse) SetData(v *PredeployedStreamingTimestampVisitControlResponseData) *PredeployedStreamingTimestampVisitControlResponse {
   s.Data = v
   return s
 }
@@ -23213,20 +23213,20 @@ func (s *PredeployedStreamingTimestampVisitControlResponse) SetXCncRequestId(v s
   return s
 }
 
-type PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlResponseData struct {
+type PredeployedStreamingTimestampVisitControlResponseData struct {
   // {"en":"The preliminary deployment id", "zh_CN":"预部署id"}
   PreDeployId *string `json:"preDeployId,omitempty" xml:"preDeployId,omitempty" require:"true"`
 }
 
-func (s PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlResponseData) String() string {
+func (s PredeployedStreamingTimestampVisitControlResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlResponseData) GoString() string {
+func (s PredeployedStreamingTimestampVisitControlResponseData) GoString() string {
   return s.String()
 }
 
-func (s *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlResponseData) SetPreDeployId(v string) *PredeployedStreamingTimestampVisitControlPredeployedStreamingTimestampVisitControlResponseData {
+func (s *PredeployedStreamingTimestampVisitControlResponseData) SetPreDeployId(v string) *PredeployedStreamingTimestampVisitControlResponseData {
   s.PreDeployId = &v
   return s
 }
@@ -23400,7 +23400,7 @@ type AddLiveDomainResponse struct {
   // {"en":"Reponse message.", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data", "zh_CN":"响应数据"}
-  Data *AddLiveDomainAddLiveDomainResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *AddLiveDomainResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s AddLiveDomainResponse) String() string {
@@ -23421,32 +23421,32 @@ func (s *AddLiveDomainResponse) SetMessage(v string) *AddLiveDomainResponse {
   return s
 }
 
-func (s *AddLiveDomainResponse) SetData(v *AddLiveDomainAddLiveDomainResponseData) *AddLiveDomainResponse {
+func (s *AddLiveDomainResponse) SetData(v *AddLiveDomainResponseData) *AddLiveDomainResponse {
   s.Data = v
   return s
 }
 
-type AddLiveDomainAddLiveDomainResponseData struct {
+type AddLiveDomainResponseData struct {
   // {"en":"Domain ID", "zh_CN":"域名ID"}
   DomainId *int64 `json:"domainId,omitempty" xml:"domainId,omitempty" require:"true"`
   // {"en":"Cname", "zh_CN":"域名一级"}
   Cname *string `json:"cname,omitempty" xml:"cname,omitempty" require:"true"`
 }
 
-func (s AddLiveDomainAddLiveDomainResponseData) String() string {
+func (s AddLiveDomainResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s AddLiveDomainAddLiveDomainResponseData) GoString() string {
+func (s AddLiveDomainResponseData) GoString() string {
   return s.String()
 }
 
-func (s *AddLiveDomainAddLiveDomainResponseData) SetDomainId(v int64) *AddLiveDomainAddLiveDomainResponseData {
+func (s *AddLiveDomainResponseData) SetDomainId(v int64) *AddLiveDomainResponseData {
   s.DomainId = &v
   return s
 }
 
-func (s *AddLiveDomainAddLiveDomainResponseData) SetCname(v string) *AddLiveDomainAddLiveDomainResponseData {
+func (s *AddLiveDomainResponseData) SetCname(v string) *AddLiveDomainResponseData {
   s.Cname = &v
   return s
 }
@@ -23521,7 +23521,7 @@ type QueryOriginUriAndHostResponse struct {
   // 2. Rewrite configuration for clearing the return path for <origin-rules-rewrites/>.", "zh_CN":"回源路径改写配置
   // 1.需要设置回源路径改写配置时，此项必填
   // 2.为<origin-rules-rewrites/>时清空回源路径改写配置"}
-  OriginRulesRewrites []*QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites `json:"originRulesRewrites,omitempty" xml:"originRulesRewrites,omitempty" require:"true" type:"Repeated"`
+  OriginRulesRewrites []*QueryOriginUriAndHostResponseOriginRulesRewrites `json:"originRulesRewrites,omitempty" xml:"originRulesRewrites,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryOriginUriAndHostResponse) String() string {
@@ -23542,12 +23542,12 @@ func (s *QueryOriginUriAndHostResponse) SetDomainId(v string) *QueryOriginUriAnd
   return s
 }
 
-func (s *QueryOriginUriAndHostResponse) SetOriginRulesRewrites(v []*QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites) *QueryOriginUriAndHostResponse {
+func (s *QueryOriginUriAndHostResponse) SetOriginRulesRewrites(v []*QueryOriginUriAndHostResponseOriginRulesRewrites) *QueryOriginUriAndHostResponse {
   s.OriginRulesRewrites = v
   return s
 }
 
-type QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites struct     {
+type QueryOriginUriAndHostResponseOriginRulesRewrites struct     {
   // {"en":"Add a grid type identifier to represent a specific group of configurations when a customer has multiple groups of configurations
   // 
   // Note: Add grid type identifier: data-id, each group configuration corresponds to a data-id: a. If the customer has passed data-id, specify that modifying one group of configuration items content does not require modifying other group configuration content does not need to be included; B. If the customer enters multiple groups of configuration, some of them have data-id, some have not. If there is transmission, the expression of data-id is used to modify a specific group of configurations, but no expression of data-id is used to add a new group of configurations on the original basis; C. If no data-id is transmitted to the customer, it means that the original configuration is completely covered by this configuration; D. If no configuration parameters are transmitted to the customer, only the domain name and the second level are transmitted. Label, which indicates that clearing this interface corresponds to all configuration of domain name secondary service. (c, D content is consistent with the current solution); e, a gird tag can not be empty, if there is no specific configuration item, then data-id must be filled in, and the value is the actual data-id, indicating the value of clearing this data-id corresponding configuration item;", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置
@@ -23597,65 +23597,65 @@ type QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites struc
   AfterRewritedUri *string `json:"afterRewritedUri,omitempty" xml:"afterRewritedUri,omitempty" require:"true"`
 }
 
-func (s QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites) String() string {
+func (s QueryOriginUriAndHostResponseOriginRulesRewrites) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites) GoString() string {
+func (s QueryOriginUriAndHostResponseOriginRulesRewrites) GoString() string {
   return s.String()
 }
 
-func (s *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites) SetDataId(v int64) *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites {
+func (s *QueryOriginUriAndHostResponseOriginRulesRewrites) SetDataId(v int64) *QueryOriginUriAndHostResponseOriginRulesRewrites {
   s.DataId = &v
   return s
 }
 
-func (s *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites) SetPathPattern(v string) *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites {
+func (s *QueryOriginUriAndHostResponseOriginRulesRewrites) SetPathPattern(v string) *QueryOriginUriAndHostResponseOriginRulesRewrites {
   s.PathPattern = &v
   return s
 }
 
-func (s *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites) SetPathPatternHttp(v string) *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites {
+func (s *QueryOriginUriAndHostResponseOriginRulesRewrites) SetPathPatternHttp(v string) *QueryOriginUriAndHostResponseOriginRulesRewrites {
   s.PathPatternHttp = &v
   return s
 }
 
-func (s *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites) SetExceptPathPattern(v string) *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites {
+func (s *QueryOriginUriAndHostResponseOriginRulesRewrites) SetExceptPathPattern(v string) *QueryOriginUriAndHostResponseOriginRulesRewrites {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites) SetExceptPathPatternHttp(v string) *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites {
+func (s *QueryOriginUriAndHostResponseOriginRulesRewrites) SetExceptPathPatternHttp(v string) *QueryOriginUriAndHostResponseOriginRulesRewrites {
   s.ExceptPathPatternHttp = &v
   return s
 }
 
-func (s *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites) SetIgnoreLetterCase(v bool) *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites {
+func (s *QueryOriginUriAndHostResponseOriginRulesRewrites) SetIgnoreLetterCase(v bool) *QueryOriginUriAndHostResponseOriginRulesRewrites {
   s.IgnoreLetterCase = &v
   return s
 }
 
-func (s *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites) SetOriginInfo(v string) *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites {
+func (s *QueryOriginUriAndHostResponseOriginRulesRewrites) SetOriginInfo(v string) *QueryOriginUriAndHostResponseOriginRulesRewrites {
   s.OriginInfo = &v
   return s
 }
 
-func (s *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites) SetPriority(v int32) *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites {
+func (s *QueryOriginUriAndHostResponseOriginRulesRewrites) SetPriority(v int32) *QueryOriginUriAndHostResponseOriginRulesRewrites {
   s.Priority = &v
   return s
 }
 
-func (s *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites) SetOriginHost(v string) *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites {
+func (s *QueryOriginUriAndHostResponseOriginRulesRewrites) SetOriginHost(v string) *QueryOriginUriAndHostResponseOriginRulesRewrites {
   s.OriginHost = &v
   return s
 }
 
-func (s *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites) SetBeforeRewritedUri(v string) *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites {
+func (s *QueryOriginUriAndHostResponseOriginRulesRewrites) SetBeforeRewritedUri(v string) *QueryOriginUriAndHostResponseOriginRulesRewrites {
   s.BeforeRewritedUri = &v
   return s
 }
 
-func (s *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites) SetAfterRewritedUri(v string) *QueryOriginUriAndHostQueryOriginUriAndHostResponseOriginRulesRewrites {
+func (s *QueryOriginUriAndHostResponseOriginRulesRewrites) SetAfterRewritedUri(v string) *QueryOriginUriAndHostResponseOriginRulesRewrites {
   s.AfterRewritedUri = &v
   return s
 }
@@ -23759,7 +23759,7 @@ type UpdateLiveDomainTlsResponse struct {
   // {"en":"Reponse message.", "zh_CN":"响应信息，成功时为success"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data", "zh_CN":"响应数据"}
-  Data *UpdateLiveDomainTlsUpdateLiveDomainTlsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *UpdateLiveDomainTlsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s UpdateLiveDomainTlsResponse) String() string {
@@ -23780,25 +23780,25 @@ func (s *UpdateLiveDomainTlsResponse) SetMessage(v string) *UpdateLiveDomainTlsR
   return s
 }
 
-func (s *UpdateLiveDomainTlsResponse) SetData(v *UpdateLiveDomainTlsUpdateLiveDomainTlsResponseData) *UpdateLiveDomainTlsResponse {
+func (s *UpdateLiveDomainTlsResponse) SetData(v *UpdateLiveDomainTlsResponseData) *UpdateLiveDomainTlsResponse {
   s.Data = v
   return s
 }
 
-type UpdateLiveDomainTlsUpdateLiveDomainTlsResponseData struct {
+type UpdateLiveDomainTlsResponseData struct {
   // {"en":"The preliminary deployment id", "zh_CN":"预部署id"}
   PreDeployId *string `json:"preDeployId,omitempty" xml:"preDeployId,omitempty" require:"true"`
 }
 
-func (s UpdateLiveDomainTlsUpdateLiveDomainTlsResponseData) String() string {
+func (s UpdateLiveDomainTlsResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateLiveDomainTlsUpdateLiveDomainTlsResponseData) GoString() string {
+func (s UpdateLiveDomainTlsResponseData) GoString() string {
   return s.String()
 }
 
-func (s *UpdateLiveDomainTlsUpdateLiveDomainTlsResponseData) SetPreDeployId(v string) *UpdateLiveDomainTlsUpdateLiveDomainTlsResponseData {
+func (s *UpdateLiveDomainTlsResponseData) SetPreDeployId(v string) *UpdateLiveDomainTlsResponseData {
   s.PreDeployId = &v
   return s
 }
@@ -23863,7 +23863,7 @@ type UpdateCompressionConfigRequest struct {
   // {"en":"Compress setting config", "zh_CN":"压缩响应功能配置
   // 1.需要设置压缩响应配置时，此项必填
   // 2.为空<compression-settings/>时清空压缩响应配置"}
-  CompressionSettings *UpdateCompressionConfigUpdateCompressionConfigRequestCompressionSettings `json:"compression-settings,omitempty" xml:"compression-settings,omitempty" require:"true" type:"Struct"`
+  CompressionSettings *UpdateCompressionConfigRequestCompressionSettings `json:"compression-settings,omitempty" xml:"compression-settings,omitempty" require:"true" type:"Struct"`
 }
 
 func (s UpdateCompressionConfigRequest) String() string {
@@ -23874,12 +23874,12 @@ func (s UpdateCompressionConfigRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateCompressionConfigRequest) SetCompressionSettings(v *UpdateCompressionConfigUpdateCompressionConfigRequestCompressionSettings) *UpdateCompressionConfigRequest {
+func (s *UpdateCompressionConfigRequest) SetCompressionSettings(v *UpdateCompressionConfigRequestCompressionSettings) *UpdateCompressionConfigRequest {
   s.CompressionSettings = v
   return s
 }
 
-type UpdateCompressionConfigUpdateCompressionConfigRequestCompressionSettings struct {
+type UpdateCompressionConfigRequestCompressionSettings struct {
   // {"en":"To enable compress setting, allowed true or false.", "zh_CN":"开启压缩响应功能：允许值为true和false"}
   CompressionEnabled *string `json:"compression-enabled,omitempty" xml:"compression-enabled,omitempty" require:"true"`
   // {"en":"The url matching mode. If all matches, the input parameters can be configured as: .*", "zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*"}
@@ -23892,35 +23892,35 @@ type UpdateCompressionConfigUpdateCompressionConfigRequestCompressionSettings st
   BrTypes *string `json:"br-types,omitempty" xml:"br-types,omitempty"`
 }
 
-func (s UpdateCompressionConfigUpdateCompressionConfigRequestCompressionSettings) String() string {
+func (s UpdateCompressionConfigRequestCompressionSettings) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateCompressionConfigUpdateCompressionConfigRequestCompressionSettings) GoString() string {
+func (s UpdateCompressionConfigRequestCompressionSettings) GoString() string {
   return s.String()
 }
 
-func (s *UpdateCompressionConfigUpdateCompressionConfigRequestCompressionSettings) SetCompressionEnabled(v string) *UpdateCompressionConfigUpdateCompressionConfigRequestCompressionSettings {
+func (s *UpdateCompressionConfigRequestCompressionSettings) SetCompressionEnabled(v string) *UpdateCompressionConfigRequestCompressionSettings {
   s.CompressionEnabled = &v
   return s
 }
 
-func (s *UpdateCompressionConfigUpdateCompressionConfigRequestCompressionSettings) SetPathPattern(v string) *UpdateCompressionConfigUpdateCompressionConfigRequestCompressionSettings {
+func (s *UpdateCompressionConfigRequestCompressionSettings) SetPathPattern(v string) *UpdateCompressionConfigRequestCompressionSettings {
   s.PathPattern = &v
   return s
 }
 
-func (s *UpdateCompressionConfigUpdateCompressionConfigRequestCompressionSettings) SetIgnoreLetterCase(v string) *UpdateCompressionConfigUpdateCompressionConfigRequestCompressionSettings {
+func (s *UpdateCompressionConfigRequestCompressionSettings) SetIgnoreLetterCase(v string) *UpdateCompressionConfigRequestCompressionSettings {
   s.IgnoreLetterCase = &v
   return s
 }
 
-func (s *UpdateCompressionConfigUpdateCompressionConfigRequestCompressionSettings) SetFileTypes(v []*string) *UpdateCompressionConfigUpdateCompressionConfigRequestCompressionSettings {
+func (s *UpdateCompressionConfigRequestCompressionSettings) SetFileTypes(v []*string) *UpdateCompressionConfigRequestCompressionSettings {
   s.FileTypes = v
   return s
 }
 
-func (s *UpdateCompressionConfigUpdateCompressionConfigRequestCompressionSettings) SetBrTypes(v string) *UpdateCompressionConfigUpdateCompressionConfigRequestCompressionSettings {
+func (s *UpdateCompressionConfigRequestCompressionSettings) SetBrTypes(v string) *UpdateCompressionConfigRequestCompressionSettings {
   s.BrTypes = &v
   return s
 }
@@ -24026,7 +24026,7 @@ type PredeployCachetimeConfigRequest struct {
   // 注意：
   // 1. 需要取消缓存时间配置设置时，可以传入空节点<cache-time-behaviors></cache-time-behaviors>。
   // 2. 表示需要设置缓存时间配置时，此项必填"}
-  CacheTimeBehaviors []*PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors `json:"cache-time-behaviors,omitempty" xml:"cache-time-behaviors,omitempty" require:"true" type:"Repeated"`
+  CacheTimeBehaviors []*PredeployCachetimeConfigRequestCacheTimeBehaviors `json:"cache-time-behaviors,omitempty" xml:"cache-time-behaviors,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s PredeployCachetimeConfigRequest) String() string {
@@ -24037,12 +24037,12 @@ func (s PredeployCachetimeConfigRequest) GoString() string {
   return s.String()
 }
 
-func (s *PredeployCachetimeConfigRequest) SetCacheTimeBehaviors(v []*PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors) *PredeployCachetimeConfigRequest {
+func (s *PredeployCachetimeConfigRequest) SetCacheTimeBehaviors(v []*PredeployCachetimeConfigRequestCacheTimeBehaviors) *PredeployCachetimeConfigRequest {
   s.CacheTimeBehaviors = v
   return s
 }
 
-type PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors struct     {
+type PredeployCachetimeConfigRequestCacheTimeBehaviors struct     {
   // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置
   // 如果是新增一组配置项的值时，不需要传。如果指定修改具体data-id的配置项值时，需要传入对应配置项对应的data-id.可以通过查询接口获取"}
   DataId *int64 `json:"data-id,omitempty" xml:"data-id,omitempty"`
@@ -24119,95 +24119,95 @@ type PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors s
   IgnoreAuthenticationHeader *string `json:"ignore-authentication-header,omitempty" xml:"ignore-authentication-header,omitempty"`
 }
 
-func (s PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors) String() string {
+func (s PredeployCachetimeConfigRequestCacheTimeBehaviors) String() string {
   return tea.Prettify(s)
 }
 
-func (s PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors) GoString() string {
+func (s PredeployCachetimeConfigRequestCacheTimeBehaviors) GoString() string {
   return s.String()
 }
 
-func (s *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors) SetDataId(v int64) *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors {
+func (s *PredeployCachetimeConfigRequestCacheTimeBehaviors) SetDataId(v int64) *PredeployCachetimeConfigRequestCacheTimeBehaviors {
   s.DataId = &v
   return s
 }
 
-func (s *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors) SetPathPattern(v string) *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors {
+func (s *PredeployCachetimeConfigRequestCacheTimeBehaviors) SetPathPattern(v string) *PredeployCachetimeConfigRequestCacheTimeBehaviors {
   s.PathPattern = &v
   return s
 }
 
-func (s *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors) SetExceptPathPattern(v string) *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors {
+func (s *PredeployCachetimeConfigRequestCacheTimeBehaviors) SetExceptPathPattern(v string) *PredeployCachetimeConfigRequestCacheTimeBehaviors {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors) SetCustomPattern(v string) *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors {
+func (s *PredeployCachetimeConfigRequestCacheTimeBehaviors) SetCustomPattern(v string) *PredeployCachetimeConfigRequestCacheTimeBehaviors {
   s.CustomPattern = &v
   return s
 }
 
-func (s *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors) SetFileType(v string) *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors {
+func (s *PredeployCachetimeConfigRequestCacheTimeBehaviors) SetFileType(v string) *PredeployCachetimeConfigRequestCacheTimeBehaviors {
   s.FileType = &v
   return s
 }
 
-func (s *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors) SetCustomFileType(v string) *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors {
+func (s *PredeployCachetimeConfigRequestCacheTimeBehaviors) SetCustomFileType(v string) *PredeployCachetimeConfigRequestCacheTimeBehaviors {
   s.CustomFileType = &v
   return s
 }
 
-func (s *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors) SetSpecifyUrlPattern(v string) *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors {
+func (s *PredeployCachetimeConfigRequestCacheTimeBehaviors) SetSpecifyUrlPattern(v string) *PredeployCachetimeConfigRequestCacheTimeBehaviors {
   s.SpecifyUrlPattern = &v
   return s
 }
 
-func (s *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors) SetDirectory(v string) *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors {
+func (s *PredeployCachetimeConfigRequestCacheTimeBehaviors) SetDirectory(v string) *PredeployCachetimeConfigRequestCacheTimeBehaviors {
   s.Directory = &v
   return s
 }
 
-func (s *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors) SetCacheTtl(v string) *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors {
+func (s *PredeployCachetimeConfigRequestCacheTimeBehaviors) SetCacheTtl(v string) *PredeployCachetimeConfigRequestCacheTimeBehaviors {
   s.CacheTtl = &v
   return s
 }
 
-func (s *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors) SetIgnoreCacheControl(v string) *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors {
+func (s *PredeployCachetimeConfigRequestCacheTimeBehaviors) SetIgnoreCacheControl(v string) *PredeployCachetimeConfigRequestCacheTimeBehaviors {
   s.IgnoreCacheControl = &v
   return s
 }
 
-func (s *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors) SetIsRespectServer(v string) *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors {
+func (s *PredeployCachetimeConfigRequestCacheTimeBehaviors) SetIsRespectServer(v string) *PredeployCachetimeConfigRequestCacheTimeBehaviors {
   s.IsRespectServer = &v
   return s
 }
 
-func (s *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors) SetIgnoreLetterCase(v string) *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors {
+func (s *PredeployCachetimeConfigRequestCacheTimeBehaviors) SetIgnoreLetterCase(v string) *PredeployCachetimeConfigRequestCacheTimeBehaviors {
   s.IgnoreLetterCase = &v
   return s
 }
 
-func (s *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors) SetReloadManage(v string) *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors {
+func (s *PredeployCachetimeConfigRequestCacheTimeBehaviors) SetReloadManage(v string) *PredeployCachetimeConfigRequestCacheTimeBehaviors {
   s.ReloadManage = &v
   return s
 }
 
-func (s *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors) SetPriority(v string) *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors {
+func (s *PredeployCachetimeConfigRequestCacheTimeBehaviors) SetPriority(v string) *PredeployCachetimeConfigRequestCacheTimeBehaviors {
   s.Priority = &v
   return s
 }
 
-func (s *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors) SetPredeployCachetimeConfigRequestHeaderField(v string) *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors {
+func (s *PredeployCachetimeConfigRequestCacheTimeBehaviors) SetPredeployCachetimeConfigRequestHeaderField(v string) *PredeployCachetimeConfigRequestCacheTimeBehaviors {
   s.PredeployCachetimeConfigRequestHeaderField = &v
   return s
 }
 
-func (s *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors) SetValuePredeployCachetimeConfigRequestHeader(v string) *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors {
+func (s *PredeployCachetimeConfigRequestCacheTimeBehaviors) SetValuePredeployCachetimeConfigRequestHeader(v string) *PredeployCachetimeConfigRequestCacheTimeBehaviors {
   s.ValuePredeployCachetimeConfigRequestHeader = &v
   return s
 }
 
-func (s *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors) SetIgnoreAuthenticationHeader(v string) *PredeployCachetimeConfigPredeployCachetimeConfigRequestCacheTimeBehaviors {
+func (s *PredeployCachetimeConfigRequestCacheTimeBehaviors) SetIgnoreAuthenticationHeader(v string) *PredeployCachetimeConfigRequestCacheTimeBehaviors {
   s.IgnoreAuthenticationHeader = &v
   return s
 }
@@ -24337,7 +24337,7 @@ type QueryBanUrlByDomainResponse struct {
   // {"en":"The message body", "zh_CN":"消息体"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Returns the body of the data.", "zh_CN":"返回数据体"}
-  Data *QueryBanUrlByDomainQueryBanUrlByDomainResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryBanUrlByDomainResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryBanUrlByDomainResponse) String() string {
@@ -24358,55 +24358,55 @@ func (s *QueryBanUrlByDomainResponse) SetMessage(v string) *QueryBanUrlByDomainR
   return s
 }
 
-func (s *QueryBanUrlByDomainResponse) SetData(v *QueryBanUrlByDomainQueryBanUrlByDomainResponseData) *QueryBanUrlByDomainResponse {
+func (s *QueryBanUrlByDomainResponse) SetData(v *QueryBanUrlByDomainResponseData) *QueryBanUrlByDomainResponse {
   s.Data = v
   return s
 }
 
-type QueryBanUrlByDomainQueryBanUrlByDomainResponseData struct {
+type QueryBanUrlByDomainResponseData struct {
   // {"en":"domain list", "zh_CN":"域名列表"}
-  Domains []*QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomains `json:"domains,omitempty" xml:"domains,omitempty" require:"true" type:"Repeated"`
+  Domains []*QueryBanUrlByDomainResponseDataDomains `json:"domains,omitempty" xml:"domains,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryBanUrlByDomainQueryBanUrlByDomainResponseData) String() string {
+func (s QueryBanUrlByDomainResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryBanUrlByDomainQueryBanUrlByDomainResponseData) GoString() string {
+func (s QueryBanUrlByDomainResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryBanUrlByDomainQueryBanUrlByDomainResponseData) SetDomains(v []*QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomains) *QueryBanUrlByDomainQueryBanUrlByDomainResponseData {
+func (s *QueryBanUrlByDomainResponseData) SetDomains(v []*QueryBanUrlByDomainResponseDataDomains) *QueryBanUrlByDomainResponseData {
   s.Domains = v
   return s
 }
 
-type QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomains struct     {
+type QueryBanUrlByDomainResponseDataDomains struct     {
   // {"en":"domain name", "zh_CN":"域名名称"}
   DomainName *string `json:"domainName,omitempty" xml:"domainName,omitempty" require:"true"`
   // {"en":"block urls under the domain", "zh_CN":"域名下封禁url列表"}
-  BanUrls []*QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomainsBanUrls `json:"banUrls,omitempty" xml:"banUrls,omitempty" require:"true" type:"Repeated"`
+  BanUrls []*QueryBanUrlByDomainResponseDataDomainsBanUrls `json:"banUrls,omitempty" xml:"banUrls,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomains) String() string {
+func (s QueryBanUrlByDomainResponseDataDomains) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomains) GoString() string {
+func (s QueryBanUrlByDomainResponseDataDomains) GoString() string {
   return s.String()
 }
 
-func (s *QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomains) SetDomainName(v string) *QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomains {
+func (s *QueryBanUrlByDomainResponseDataDomains) SetDomainName(v string) *QueryBanUrlByDomainResponseDataDomains {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomains) SetBanUrls(v []*QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomainsBanUrls) *QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomains {
+func (s *QueryBanUrlByDomainResponseDataDomains) SetBanUrls(v []*QueryBanUrlByDomainResponseDataDomainsBanUrls) *QueryBanUrlByDomainResponseDataDomains {
   s.BanUrls = v
   return s
 }
 
-type QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomainsBanUrls struct     {
+type QueryBanUrlByDomainResponseDataDomainsBanUrls struct     {
   // {"en":"a blocked url", "zh_CN":"封禁url"}
   Url *string `json:"url,omitempty" xml:"url,omitempty" require:"true"`
   // {"en":"matching method, supports exact and fuzzy.", "zh_CN":"值为exact或fuzzy，分别表示精确和模糊"}
@@ -24417,30 +24417,30 @@ type QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomainsBanUrls struct    
   Creator *string `json:"creator,omitempty" xml:"creator,omitempty" require:"true"`
 }
 
-func (s QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomainsBanUrls) String() string {
+func (s QueryBanUrlByDomainResponseDataDomainsBanUrls) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomainsBanUrls) GoString() string {
+func (s QueryBanUrlByDomainResponseDataDomainsBanUrls) GoString() string {
   return s.String()
 }
 
-func (s *QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomainsBanUrls) SetUrl(v string) *QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomainsBanUrls {
+func (s *QueryBanUrlByDomainResponseDataDomainsBanUrls) SetUrl(v string) *QueryBanUrlByDomainResponseDataDomainsBanUrls {
   s.Url = &v
   return s
 }
 
-func (s *QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomainsBanUrls) SetMethod(v string) *QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomainsBanUrls {
+func (s *QueryBanUrlByDomainResponseDataDomainsBanUrls) SetMethod(v string) *QueryBanUrlByDomainResponseDataDomainsBanUrls {
   s.Method = &v
   return s
 }
 
-func (s *QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomainsBanUrls) SetCreateTime(v string) *QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomainsBanUrls {
+func (s *QueryBanUrlByDomainResponseDataDomainsBanUrls) SetCreateTime(v string) *QueryBanUrlByDomainResponseDataDomainsBanUrls {
   s.CreateTime = &v
   return s
 }
 
-func (s *QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomainsBanUrls) SetCreator(v string) *QueryBanUrlByDomainQueryBanUrlByDomainResponseDataDomainsBanUrls {
+func (s *QueryBanUrlByDomainResponseDataDomainsBanUrls) SetCreator(v string) *QueryBanUrlByDomainResponseDataDomainsBanUrls {
   s.Creator = &v
   return s
 }
@@ -24498,7 +24498,7 @@ type UpdateTOSAuthorizationConfigRequest struct {
   // 2. Configuration of clearing for <tos-access-authorization-rules/>.", "zh_CN":"TOS回源鉴权配置，父标签
   // 1.需要设置TOS回源鉴权时，此项必填
   // 2.为<tos-access-authorization-rules/>时清空TOS回源鉴权配置的配置"}
-  TosAccessAuthorizationRules []*UpdateTOSAuthorizationConfigUpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules `json:"tos-access-authorization-rules,omitempty" xml:"tos-access-authorization-rules,omitempty" require:"true" type:"Repeated"`
+  TosAccessAuthorizationRules []*UpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules `json:"tos-access-authorization-rules,omitempty" xml:"tos-access-authorization-rules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s UpdateTOSAuthorizationConfigRequest) String() string {
@@ -24509,12 +24509,12 @@ func (s UpdateTOSAuthorizationConfigRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateTOSAuthorizationConfigRequest) SetTosAccessAuthorizationRules(v []*UpdateTOSAuthorizationConfigUpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules) *UpdateTOSAuthorizationConfigRequest {
+func (s *UpdateTOSAuthorizationConfigRequest) SetTosAccessAuthorizationRules(v []*UpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules) *UpdateTOSAuthorizationConfigRequest {
   s.TosAccessAuthorizationRules = v
   return s
 }
 
-type UpdateTOSAuthorizationConfigUpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules struct     {
+type UpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules struct     {
   // {"en":"The url matching mode. If all matches, the input parameters can be configured as: .*", "zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*"}
   PathPattern *string `json:"path-pattern,omitempty" xml:"path-pattern,omitempty" require:"true"`
   // {"en":"The exception url matching mode.", "zh_CN":"例外的url匹配模式，格式同path-pattern"}
@@ -24541,45 +24541,45 @@ type UpdateTOSAuthorizationConfigUpdateTOSAuthorizationConfigRequestTosAccessAut
   DataId *int64 `json:"data-id,omitempty" xml:"data-id,omitempty"`
 }
 
-func (s UpdateTOSAuthorizationConfigUpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules) String() string {
+func (s UpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateTOSAuthorizationConfigUpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules) GoString() string {
+func (s UpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules) GoString() string {
   return s.String()
 }
 
-func (s *UpdateTOSAuthorizationConfigUpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules) SetPathPattern(v string) *UpdateTOSAuthorizationConfigUpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules {
+func (s *UpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules) SetPathPattern(v string) *UpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules {
   s.PathPattern = &v
   return s
 }
 
-func (s *UpdateTOSAuthorizationConfigUpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules) SetExceptPathPattern(v string) *UpdateTOSAuthorizationConfigUpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules {
+func (s *UpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules) SetExceptPathPattern(v string) *UpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *UpdateTOSAuthorizationConfigUpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules) SetAccessKey(v string) *UpdateTOSAuthorizationConfigUpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules {
+func (s *UpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules) SetAccessKey(v string) *UpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules {
   s.AccessKey = &v
   return s
 }
 
-func (s *UpdateTOSAuthorizationConfigUpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules) SetAccessKeyId(v string) *UpdateTOSAuthorizationConfigUpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules {
+func (s *UpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules) SetAccessKeyId(v string) *UpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules {
   s.AccessKeyId = &v
   return s
 }
 
-func (s *UpdateTOSAuthorizationConfigUpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules) SetHeaderName(v string) *UpdateTOSAuthorizationConfigUpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules {
+func (s *UpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules) SetHeaderName(v string) *UpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules {
   s.HeaderName = &v
   return s
 }
 
-func (s *UpdateTOSAuthorizationConfigUpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules) SetExpireTime(v string) *UpdateTOSAuthorizationConfigUpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules {
+func (s *UpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules) SetExpireTime(v string) *UpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules {
   s.ExpireTime = &v
   return s
 }
 
-func (s *UpdateTOSAuthorizationConfigUpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules) SetDataId(v int64) *UpdateTOSAuthorizationConfigUpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules {
+func (s *UpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules) SetDataId(v int64) *UpdateTOSAuthorizationConfigRequestTosAccessAuthorizationRules {
   s.DataId = &v
   return s
 }
@@ -24690,7 +24690,7 @@ type QuerytimecontrolServiceResponse struct {
   // 3、时间有效性检验：按照年月日时分秒换算的当前时间，与请求url中所带的名文时间相减，判断是否超过设置的上下限（即前后60s内），时间差小于设置上下限的，系统才会给予正常的响应，否则拒绝请求，返回403
   // 4、日志记录没有带加密串的url
   // 6、需要清空时间戳防盗链规则时，可以只传入节点<timestamp-visit-control-rule></timestamp-visit-control-rule>"}
-  TimestampVisitControlRule *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule `json:"timestamp-visit-control-rule,omitempty" xml:"timestamp-visit-control-rule,omitempty" require:"true" type:"Struct"`
+  TimestampVisitControlRule *QuerytimecontrolServiceResponseTimestampVisitControlRule `json:"timestamp-visit-control-rule,omitempty" xml:"timestamp-visit-control-rule,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QuerytimecontrolServiceResponse) String() string {
@@ -24721,12 +24721,12 @@ func (s *QuerytimecontrolServiceResponse) SetDomainName(v string) *Querytimecont
   return s
 }
 
-func (s *QuerytimecontrolServiceResponse) SetTimestampVisitControlRule(v *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule) *QuerytimecontrolServiceResponse {
+func (s *QuerytimecontrolServiceResponse) SetTimestampVisitControlRule(v *QuerytimecontrolServiceResponseTimestampVisitControlRule) *QuerytimecontrolServiceResponse {
   s.TimestampVisitControlRule = v
   return s
 }
 
-type QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule struct {
+type QuerytimecontrolServiceResponseTimestampVisitControlRule struct {
   // {"en":"", "zh_CN":"同缓存规则设置中的&ldquo;path-pattern&rdquo;，用于URL匹配。对于匹配到的URL进行时间戳防盗链验证；未匹配到的URL，则拒绝。
   // 同缓存规则设置中的&ldquo;path-pattern&rdquo;，用于URL匹配。对于匹配到的URL进行时间戳防盗链验证；未匹配到的URL，则拒绝。"}
   PathPattern *string `json:"path-pattern,omitempty" xml:"path-pattern,omitempty" require:"true"`
@@ -24783,93 +24783,93 @@ type QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControl
   // 6、请求url格式
   // 7、通用防盗链取uri对应第几个&ldquo;/&rdquo;
   // 8、清空多条配置只传入节点：<timestamp-control-rules></timestamp-control-rules>"}
-  TimestampControlRules []*QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules `json:"timestamp-control-rules,omitempty" xml:"timestamp-control-rules,omitempty" require:"true" type:"Repeated"`
+  TimestampControlRules []*QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules `json:"timestamp-control-rules,omitempty" xml:"timestamp-control-rules,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule) String() string {
+func (s QuerytimecontrolServiceResponseTimestampVisitControlRule) String() string {
   return tea.Prettify(s)
 }
 
-func (s QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule) GoString() string {
+func (s QuerytimecontrolServiceResponseTimestampVisitControlRule) GoString() string {
   return s.String()
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule) SetPathPattern(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRule) SetPathPattern(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRule {
   s.PathPattern = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule) SetProtocolOfPathPattern(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRule) SetProtocolOfPathPattern(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRule {
   s.ProtocolOfPathPattern = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule) SetDirectory(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRule) SetDirectory(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRule {
   s.Directory = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule) SetIgnoreUriSlash(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRule) SetIgnoreUriSlash(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRule {
   s.IgnoreUriSlash = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule) SetIgnoreKeyAndTimePosition(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRule) SetIgnoreKeyAndTimePosition(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRule {
   s.IgnoreKeyAndTimePosition = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule) SetExceptPathPattern(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRule) SetExceptPathPattern(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRule {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule) SetAllowedIps(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRule) SetAllowedIps(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRule {
   s.AllowedIps = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule) SetEncryptMethod(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRule) SetEncryptMethod(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRule {
   s.EncryptMethod = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule) SetMultipleSecretKeys(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRule) SetMultipleSecretKeys(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRule {
   s.MultipleSecretKeys = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule) SetTimeFormat(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRule) SetTimeFormat(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRule {
   s.TimeFormat = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule) SetDstStyle(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRule) SetDstStyle(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRule {
   s.DstStyle = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule) SetLogFormat(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRule) SetLogFormat(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRule {
   s.LogFormat = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule) SetM3u8(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRule) SetM3u8(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRule {
   s.M3u8 = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule) SetUrlKey(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRule) SetUrlKey(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRule {
   s.UrlKey = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule) SetTimestampControlRules(v []*QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRule {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRule) SetTimestampControlRules(v []*QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) *QuerytimecontrolServiceResponseTimestampVisitControlRule {
   s.TimestampControlRules = v
   return s
 }
 
-type QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules struct     {
+type QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules struct     {
   // {"en":"", "zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置
   // 注意：添加grid类型标识：data-id，每一组配置对应一个data-id：a、如果客户有传data-id，说明指定修改其中一组配置项内容，不需求修改其他组配置内容不需要入参；b、如果客户入参多组配置，其中有些组配置有传data-id，有些没有传，则有传data-id的表示修改具体某组配置，没有传data-id的表示在原来基础上新增一组配置；c、如果客户入参都没有传data-id,表示用本次的配置全量覆盖原先配置；d、如果客户入参没有传任何配置项参数，只传了域名和二级标签，表示清空这个接口对应域名二级服务所有配置。（c、d内容和当前方案实现一致）；e、一个gird标签下的入参不能为空，如果，没有具体的配置项，则data-id必填，且值为实际存在的data-id,表示清空这个data-id对应配置项的值；"}
   DataId *int64 `json:"data-id,omitempty" xml:"data-id,omitempty" require:"true"`
@@ -24993,75 +24993,75 @@ type QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControl
   UriSelect *string `json:"uri-select,omitempty" xml:"uri-select,omitempty" require:"true"`
 }
 
-func (s QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) String() string {
+func (s QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) GoString() string {
+func (s QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) GoString() string {
   return s.String()
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetDataId(v int64) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetDataId(v int64) *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
   s.DataId = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetPathPattern(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetPathPattern(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
   s.PathPattern = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetExceptPathPattern(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetExceptPathPattern(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetPathPatternProtocol(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetPathPatternProtocol(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
   s.PathPatternProtocol = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetExceptPathPatternProtocol(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetExceptPathPatternProtocol(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
   s.ExceptPathPatternProtocol = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetCipherCombination(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetCipherCombination(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
   s.CipherCombination = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetSecretKey(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetSecretKey(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
   s.SecretKey = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetCipherParam(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetCipherParam(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
   s.CipherParam = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetTimeParam(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetTimeParam(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
   s.TimeParam = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetLowerLimitExpiryTime(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetLowerLimitExpiryTime(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
   s.LowerLimitExpiryTime = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetUpperLimitExpiryTime(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetUpperLimitExpiryTime(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
   s.UpperLimitExpiryTime = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetRequestUrlStyle(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetRequestUrlStyle(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
   s.RequestUrlStyle = &v
   return s
 }
 
-func (s *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetUriSelect(v string) *QuerytimecontrolServiceQuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
+func (s *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules) SetUriSelect(v string) *QuerytimecontrolServiceResponseTimestampVisitControlRuleTimestampControlRules {
   s.UriSelect = &v
   return s
 }
@@ -25128,7 +25128,7 @@ type EditCacheTimeConfigRequest struct {
   // 注意：
   // 1. 需要取消缓存时间配置设置时，可以传入空节点<cache-time-behaviors></cache-time-behaviors>。
   // 2. 表示需要设置缓存时间配置时，此项必填"}
-  CacheTimeBehaviors []*EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors `json:"cache-time-behaviors,omitempty" xml:"cache-time-behaviors,omitempty" require:"true" type:"Repeated"`
+  CacheTimeBehaviors []*EditCacheTimeConfigRequestCacheTimeBehaviors `json:"cache-time-behaviors,omitempty" xml:"cache-time-behaviors,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s EditCacheTimeConfigRequest) String() string {
@@ -25139,12 +25139,12 @@ func (s EditCacheTimeConfigRequest) GoString() string {
   return s.String()
 }
 
-func (s *EditCacheTimeConfigRequest) SetCacheTimeBehaviors(v []*EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors) *EditCacheTimeConfigRequest {
+func (s *EditCacheTimeConfigRequest) SetCacheTimeBehaviors(v []*EditCacheTimeConfigRequestCacheTimeBehaviors) *EditCacheTimeConfigRequest {
   s.CacheTimeBehaviors = v
   return s
 }
 
-type EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors struct     {
+type EditCacheTimeConfigRequestCacheTimeBehaviors struct     {
   // {"en":"dataId is to indicate a specific group configuration when the client has multiple groups of configurations. dataId can be retrieved through a query interface.
   // Note:
   // 1. If dataId is passed, it means that one group of configuration items is specified to be modified, and no other group configuration items need to be modified.
@@ -25235,95 +25235,95 @@ type EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors struct     
   IgnoreAuthenticationHeader *string `json:"ignore-authentication-header,omitempty" xml:"ignore-authentication-header,omitempty"`
 }
 
-func (s EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors) String() string {
+func (s EditCacheTimeConfigRequestCacheTimeBehaviors) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors) GoString() string {
+func (s EditCacheTimeConfigRequestCacheTimeBehaviors) GoString() string {
   return s.String()
 }
 
-func (s *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors) SetDataId(v int64) *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors {
+func (s *EditCacheTimeConfigRequestCacheTimeBehaviors) SetDataId(v int64) *EditCacheTimeConfigRequestCacheTimeBehaviors {
   s.DataId = &v
   return s
 }
 
-func (s *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors) SetPathPattern(v string) *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors {
+func (s *EditCacheTimeConfigRequestCacheTimeBehaviors) SetPathPattern(v string) *EditCacheTimeConfigRequestCacheTimeBehaviors {
   s.PathPattern = &v
   return s
 }
 
-func (s *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors) SetExceptPathPattern(v string) *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors {
+func (s *EditCacheTimeConfigRequestCacheTimeBehaviors) SetExceptPathPattern(v string) *EditCacheTimeConfigRequestCacheTimeBehaviors {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors) SetCustomPattern(v string) *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors {
+func (s *EditCacheTimeConfigRequestCacheTimeBehaviors) SetCustomPattern(v string) *EditCacheTimeConfigRequestCacheTimeBehaviors {
   s.CustomPattern = &v
   return s
 }
 
-func (s *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors) SetFileType(v string) *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors {
+func (s *EditCacheTimeConfigRequestCacheTimeBehaviors) SetFileType(v string) *EditCacheTimeConfigRequestCacheTimeBehaviors {
   s.FileType = &v
   return s
 }
 
-func (s *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors) SetCustomFileType(v string) *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors {
+func (s *EditCacheTimeConfigRequestCacheTimeBehaviors) SetCustomFileType(v string) *EditCacheTimeConfigRequestCacheTimeBehaviors {
   s.CustomFileType = &v
   return s
 }
 
-func (s *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors) SetSpecifyUrlPattern(v string) *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors {
+func (s *EditCacheTimeConfigRequestCacheTimeBehaviors) SetSpecifyUrlPattern(v string) *EditCacheTimeConfigRequestCacheTimeBehaviors {
   s.SpecifyUrlPattern = &v
   return s
 }
 
-func (s *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors) SetDirectory(v string) *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors {
+func (s *EditCacheTimeConfigRequestCacheTimeBehaviors) SetDirectory(v string) *EditCacheTimeConfigRequestCacheTimeBehaviors {
   s.Directory = &v
   return s
 }
 
-func (s *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors) SetCacheTtl(v string) *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors {
+func (s *EditCacheTimeConfigRequestCacheTimeBehaviors) SetCacheTtl(v string) *EditCacheTimeConfigRequestCacheTimeBehaviors {
   s.CacheTtl = &v
   return s
 }
 
-func (s *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors) SetIgnoreCacheControl(v string) *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors {
+func (s *EditCacheTimeConfigRequestCacheTimeBehaviors) SetIgnoreCacheControl(v string) *EditCacheTimeConfigRequestCacheTimeBehaviors {
   s.IgnoreCacheControl = &v
   return s
 }
 
-func (s *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors) SetIsRespectServer(v string) *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors {
+func (s *EditCacheTimeConfigRequestCacheTimeBehaviors) SetIsRespectServer(v string) *EditCacheTimeConfigRequestCacheTimeBehaviors {
   s.IsRespectServer = &v
   return s
 }
 
-func (s *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors) SetIgnoreLetterCase(v string) *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors {
+func (s *EditCacheTimeConfigRequestCacheTimeBehaviors) SetIgnoreLetterCase(v string) *EditCacheTimeConfigRequestCacheTimeBehaviors {
   s.IgnoreLetterCase = &v
   return s
 }
 
-func (s *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors) SetReloadManage(v string) *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors {
+func (s *EditCacheTimeConfigRequestCacheTimeBehaviors) SetReloadManage(v string) *EditCacheTimeConfigRequestCacheTimeBehaviors {
   s.ReloadManage = &v
   return s
 }
 
-func (s *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors) SetPriority(v string) *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors {
+func (s *EditCacheTimeConfigRequestCacheTimeBehaviors) SetPriority(v string) *EditCacheTimeConfigRequestCacheTimeBehaviors {
   s.Priority = &v
   return s
 }
 
-func (s *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors) SetEditCacheTimeConfigRequestHeaderField(v string) *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors {
+func (s *EditCacheTimeConfigRequestCacheTimeBehaviors) SetEditCacheTimeConfigRequestHeaderField(v string) *EditCacheTimeConfigRequestCacheTimeBehaviors {
   s.EditCacheTimeConfigRequestHeaderField = &v
   return s
 }
 
-func (s *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors) SetValueEditCacheTimeConfigRequestHeader(v string) *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors {
+func (s *EditCacheTimeConfigRequestCacheTimeBehaviors) SetValueEditCacheTimeConfigRequestHeader(v string) *EditCacheTimeConfigRequestCacheTimeBehaviors {
   s.ValueEditCacheTimeConfigRequestHeader = &v
   return s
 }
 
-func (s *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors) SetIgnoreAuthenticationHeader(v string) *EditCacheTimeConfigEditCacheTimeConfigRequestCacheTimeBehaviors {
+func (s *EditCacheTimeConfigRequestCacheTimeBehaviors) SetIgnoreAuthenticationHeader(v string) *EditCacheTimeConfigRequestCacheTimeBehaviors {
   s.IgnoreAuthenticationHeader = &v
   return s
 }
@@ -25641,7 +25641,7 @@ type UpdateAmazonS3AuthorizationConfigRequest struct {
   // 2.为<amazon-s3-access-authorization-rules/>时清空Amazon S3鉴权配置的配置
   // 3.点播下载支持，网页wsa不支持
   // 4.Amason S3和Aliyun OSS不可同时配置"}
-  AmazonS3AccessAuthorizationRules []*UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules `json:"amazon-s3-access-authorization-rules,omitempty" xml:"amazon-s3-access-authorization-rules,omitempty" require:"true" type:"Repeated"`
+  AmazonS3AccessAuthorizationRules []*UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules `json:"amazon-s3-access-authorization-rules,omitempty" xml:"amazon-s3-access-authorization-rules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s UpdateAmazonS3AuthorizationConfigRequest) String() string {
@@ -25652,12 +25652,12 @@ func (s UpdateAmazonS3AuthorizationConfigRequest) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAmazonS3AuthorizationConfigRequest) SetAmazonS3AccessAuthorizationRules(v []*UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) *UpdateAmazonS3AuthorizationConfigRequest {
+func (s *UpdateAmazonS3AuthorizationConfigRequest) SetAmazonS3AccessAuthorizationRules(v []*UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) *UpdateAmazonS3AuthorizationConfigRequest {
   s.AmazonS3AccessAuthorizationRules = v
   return s
 }
 
-type UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules struct     {
+type UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules struct     {
   // {"en":"The url matching mode. If all matches, the input parameters can be configured as: .*", "zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*"}
   PathPattern *string `json:"path-pattern,omitempty" xml:"path-pattern,omitempty" require:"true"`
   // {"en":"The exception url matching mode.", "zh_CN":"例外的url匹配模式，格式同path-pattern"}
@@ -25687,50 +25687,50 @@ type UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAm
   DataId *int64 `json:"data-id,omitempty" xml:"data-id,omitempty"`
 }
 
-func (s UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) String() string {
+func (s UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) GoString() string {
+func (s UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) SetPathPattern(v string) *UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules {
+func (s *UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) SetPathPattern(v string) *UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules {
   s.PathPattern = &v
   return s
 }
 
-func (s *UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) SetExceptPathPattern(v string) *UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules {
+func (s *UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) SetExceptPathPattern(v string) *UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) SetAddAuthorizationHeader(v string) *UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules {
+func (s *UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) SetAddAuthorizationHeader(v string) *UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules {
   s.AddAuthorizationHeader = &v
   return s
 }
 
-func (s *UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) SetAccessKey(v string) *UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules {
+func (s *UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) SetAccessKey(v string) *UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules {
   s.AccessKey = &v
   return s
 }
 
-func (s *UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) SetAccessKeyId(v string) *UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules {
+func (s *UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) SetAccessKeyId(v string) *UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules {
   s.AccessKeyId = &v
   return s
 }
 
-func (s *UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) SetSignatureVersion(v string) *UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules {
+func (s *UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) SetSignatureVersion(v string) *UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules {
   s.SignatureVersion = &v
   return s
 }
 
-func (s *UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) SetRegion(v string) *UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules {
+func (s *UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) SetRegion(v string) *UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules {
   s.Region = &v
   return s
 }
 
-func (s *UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) SetDataId(v int64) *UpdateAmazonS3AuthorizationConfigUpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules {
+func (s *UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules) SetDataId(v int64) *UpdateAmazonS3AuthorizationConfigRequestAmazonS3AccessAuthorizationRules {
   s.DataId = &v
   return s
 }

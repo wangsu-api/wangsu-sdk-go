@@ -22,7 +22,7 @@ type QueryCsrServiceResponse struct {
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Request result data", "zh_CN":"请求结果数据"}
-  Data *QueryCsrServiceQueryCsrServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryCsrServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
   // {"en":"CSR ID", "zh_CN":"CSR ID"}
   Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
   // {"en":"CSR name, which cannot be repeated", "zh_CN":"csr名称，不能重复"}
@@ -67,7 +67,7 @@ func (s *QueryCsrServiceResponse) SetMessage(v string) *QueryCsrServiceResponse 
   return s
 }
 
-func (s *QueryCsrServiceResponse) SetData(v *QueryCsrServiceQueryCsrServiceResponseData) *QueryCsrServiceResponse {
+func (s *QueryCsrServiceResponse) SetData(v *QueryCsrServiceResponseData) *QueryCsrServiceResponse {
   s.Data = v
   return s
 }
@@ -132,14 +132,14 @@ func (s *QueryCsrServiceResponse) SetDepartment(v string) *QueryCsrServiceRespon
   return s
 }
 
-type QueryCsrServiceQueryCsrServiceResponseData struct {
+type QueryCsrServiceResponseData struct {
 }
 
-func (s QueryCsrServiceQueryCsrServiceResponseData) String() string {
+func (s QueryCsrServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCsrServiceQueryCsrServiceResponseData) GoString() string {
+func (s QueryCsrServiceResponseData) GoString() string {
   return s.String()
 }
 
@@ -289,7 +289,7 @@ type CreateTheCsrResponse struct {
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Request result data", "zh_CN":"请求结果数据"}
-  Data *CreateTheCsrCreateTheCsrResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *CreateTheCsrResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
   // {"en":"Added CSR ID after success, child node of data node", "zh_CN":"新增成功后的csr id ，&ldquo;data&rdquo;节点的子节点"}
   Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
 }
@@ -312,7 +312,7 @@ func (s *CreateTheCsrResponse) SetMessage(v string) *CreateTheCsrResponse {
   return s
 }
 
-func (s *CreateTheCsrResponse) SetData(v *CreateTheCsrCreateTheCsrResponseData) *CreateTheCsrResponse {
+func (s *CreateTheCsrResponse) SetData(v *CreateTheCsrResponseData) *CreateTheCsrResponse {
   s.Data = v
   return s
 }
@@ -322,14 +322,14 @@ func (s *CreateTheCsrResponse) SetId(v string) *CreateTheCsrResponse {
   return s
 }
 
-type CreateTheCsrCreateTheCsrResponseData struct {
+type CreateTheCsrResponseData struct {
 }
 
-func (s CreateTheCsrCreateTheCsrResponseData) String() string {
+func (s CreateTheCsrResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateTheCsrCreateTheCsrResponseData) GoString() string {
+func (s CreateTheCsrResponseData) GoString() string {
   return s.String()
 }
 
@@ -397,7 +397,7 @@ type QueryCsrListResponse struct {
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Request result data", "zh_CN":"请求结果数据"}
-  CsrRecords []*QueryCsrListQueryCsrListResponseCsrRecords `json:"csr-records,omitempty" xml:"csr-records,omitempty" require:"true" type:"Repeated"`
+  CsrRecords []*QueryCsrListResponseCsrRecords `json:"csr-records,omitempty" xml:"csr-records,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryCsrListResponse) String() string {
@@ -418,12 +418,12 @@ func (s *QueryCsrListResponse) SetMessage(v string) *QueryCsrListResponse {
   return s
 }
 
-func (s *QueryCsrListResponse) SetCsrRecords(v []*QueryCsrListQueryCsrListResponseCsrRecords) *QueryCsrListResponse {
+func (s *QueryCsrListResponse) SetCsrRecords(v []*QueryCsrListResponseCsrRecords) *QueryCsrListResponse {
   s.CsrRecords = v
   return s
 }
 
-type QueryCsrListQueryCsrListResponseCsrRecords struct     {
+type QueryCsrListResponseCsrRecords struct     {
   // {"en":"CSR ID", "zh_CN":"CSR ID"}
   Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
   // {"en":"CSR name", "zh_CN":"csr名称"}
@@ -436,35 +436,35 @@ type QueryCsrListQueryCsrListResponseCsrRecords struct     {
   Comment *string `json:"comment,omitempty" xml:"comment,omitempty" require:"true"`
 }
 
-func (s QueryCsrListQueryCsrListResponseCsrRecords) String() string {
+func (s QueryCsrListResponseCsrRecords) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCsrListQueryCsrListResponseCsrRecords) GoString() string {
+func (s QueryCsrListResponseCsrRecords) GoString() string {
   return s.String()
 }
 
-func (s *QueryCsrListQueryCsrListResponseCsrRecords) SetId(v string) *QueryCsrListQueryCsrListResponseCsrRecords {
+func (s *QueryCsrListResponseCsrRecords) SetId(v string) *QueryCsrListResponseCsrRecords {
   s.Id = &v
   return s
 }
 
-func (s *QueryCsrListQueryCsrListResponseCsrRecords) SetName(v string) *QueryCsrListQueryCsrListResponseCsrRecords {
+func (s *QueryCsrListResponseCsrRecords) SetName(v string) *QueryCsrListResponseCsrRecords {
   s.Name = &v
   return s
 }
 
-func (s *QueryCsrListQueryCsrListResponseCsrRecords) SetAlgorithm(v string) *QueryCsrListQueryCsrListResponseCsrRecords {
+func (s *QueryCsrListResponseCsrRecords) SetAlgorithm(v string) *QueryCsrListResponseCsrRecords {
   s.Algorithm = &v
   return s
 }
 
-func (s *QueryCsrListQueryCsrListResponseCsrRecords) SetDomain(v string) *QueryCsrListQueryCsrListResponseCsrRecords {
+func (s *QueryCsrListResponseCsrRecords) SetDomain(v string) *QueryCsrListResponseCsrRecords {
   s.Domain = &v
   return s
 }
 
-func (s *QueryCsrListQueryCsrListResponseCsrRecords) SetComment(v string) *QueryCsrListQueryCsrListResponseCsrRecords {
+func (s *QueryCsrListResponseCsrRecords) SetComment(v string) *QueryCsrListResponseCsrRecords {
   s.Comment = &v
   return s
 }

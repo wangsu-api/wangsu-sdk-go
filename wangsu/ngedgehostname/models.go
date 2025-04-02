@@ -118,7 +118,7 @@ func (s GetAListOfEdgeHostnamesResponseHeader) GoString() string {
 
 type GetAListOfEdgeHostnamesResponse struct {
   // {"en" : "List of edge hostnames.", "zh_CN": "调度域名列表。"}
-  EdgeHostnames []*GetAListOfEdgeHostnamesGetAListOfEdgeHostnamesResponseEdgeHostnames `json:"edgeHostnames,omitempty" xml:"edgeHostnames,omitempty" require:"true" type:"Repeated"`
+  EdgeHostnames []*GetAListOfEdgeHostnamesResponseEdgeHostnames `json:"edgeHostnames,omitempty" xml:"edgeHostnames,omitempty" require:"true" type:"Repeated"`
   // {"en" : "Range: >= 0 
   // Total number of edge hostnames in the account. The actual number of edge hostnames returned in the edgehostnames field may be smaller if query parameters are specified.", "zh_CN": "取值范围: >= 0 
   // 调度域名的总数。"}
@@ -133,7 +133,7 @@ func (s GetAListOfEdgeHostnamesResponse) GoString() string {
   return s.String()
 }
 
-func (s *GetAListOfEdgeHostnamesResponse) SetEdgeHostnames(v []*GetAListOfEdgeHostnamesGetAListOfEdgeHostnamesResponseEdgeHostnames) *GetAListOfEdgeHostnamesResponse {
+func (s *GetAListOfEdgeHostnamesResponse) SetEdgeHostnames(v []*GetAListOfEdgeHostnamesResponseEdgeHostnames) *GetAListOfEdgeHostnamesResponse {
   s.EdgeHostnames = v
   return s
 }
@@ -143,7 +143,7 @@ func (s *GetAListOfEdgeHostnamesResponse) SetCount(v int) *GetAListOfEdgeHostnam
   return s
 }
 
-type GetAListOfEdgeHostnamesGetAListOfEdgeHostnamesResponseEdgeHostnames struct     {
+type GetAListOfEdgeHostnamesResponseEdgeHostnames struct     {
   // {"en" : "An edge hostname.", "zh_CN": "调度域名。"}
   EdgeHostname *string `json:"edgeHostname,omitempty" xml:"edgeHostname,omitempty"`
   // {"en" : "Description of the edge hostname.", "zh_CN": "调度域名的描述。"}
@@ -160,40 +160,40 @@ type GetAListOfEdgeHostnamesGetAListOfEdgeHostnamesResponseEdgeHostnames struct 
   HighestServerGroup *string `json:"highestServerGroup,omitempty" xml:"highestServerGroup,omitempty"`
 }
 
-func (s GetAListOfEdgeHostnamesGetAListOfEdgeHostnamesResponseEdgeHostnames) String() string {
+func (s GetAListOfEdgeHostnamesResponseEdgeHostnames) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAListOfEdgeHostnamesGetAListOfEdgeHostnamesResponseEdgeHostnames) GoString() string {
+func (s GetAListOfEdgeHostnamesResponseEdgeHostnames) GoString() string {
   return s.String()
 }
 
-func (s *GetAListOfEdgeHostnamesGetAListOfEdgeHostnamesResponseEdgeHostnames) SetEdgeHostname(v string) *GetAListOfEdgeHostnamesGetAListOfEdgeHostnamesResponseEdgeHostnames {
+func (s *GetAListOfEdgeHostnamesResponseEdgeHostnames) SetEdgeHostname(v string) *GetAListOfEdgeHostnamesResponseEdgeHostnames {
   s.EdgeHostname = &v
   return s
 }
 
-func (s *GetAListOfEdgeHostnamesGetAListOfEdgeHostnamesResponseEdgeHostnames) SetDescription(v string) *GetAListOfEdgeHostnamesGetAListOfEdgeHostnamesResponseEdgeHostnames {
+func (s *GetAListOfEdgeHostnamesResponseEdgeHostnames) SetDescription(v string) *GetAListOfEdgeHostnamesResponseEdgeHostnames {
   s.Description = &v
   return s
 }
 
-func (s *GetAListOfEdgeHostnamesGetAListOfEdgeHostnamesResponseEdgeHostnames) SetLastUpdateTime(v string) *GetAListOfEdgeHostnamesGetAListOfEdgeHostnamesResponseEdgeHostnames {
+func (s *GetAListOfEdgeHostnamesResponseEdgeHostnames) SetLastUpdateTime(v string) *GetAListOfEdgeHostnamesResponseEdgeHostnames {
   s.LastUpdateTime = &v
   return s
 }
 
-func (s *GetAListOfEdgeHostnamesGetAListOfEdgeHostnamesResponseEdgeHostnames) SetCreationTime(v string) *GetAListOfEdgeHostnamesGetAListOfEdgeHostnamesResponseEdgeHostnames {
+func (s *GetAListOfEdgeHostnamesResponseEdgeHostnames) SetCreationTime(v string) *GetAListOfEdgeHostnamesResponseEdgeHostnames {
   s.CreationTime = &v
   return s
 }
 
-func (s *GetAListOfEdgeHostnamesGetAListOfEdgeHostnamesResponseEdgeHostnames) SetHasBeian(v bool) *GetAListOfEdgeHostnamesGetAListOfEdgeHostnamesResponseEdgeHostnames {
+func (s *GetAListOfEdgeHostnamesResponseEdgeHostnames) SetHasBeian(v bool) *GetAListOfEdgeHostnamesResponseEdgeHostnames {
   s.HasBeian = &v
   return s
 }
 
-func (s *GetAListOfEdgeHostnamesGetAListOfEdgeHostnamesResponseEdgeHostnames) SetHighestServerGroup(v string) *GetAListOfEdgeHostnamesGetAListOfEdgeHostnamesResponseEdgeHostnames {
+func (s *GetAListOfEdgeHostnamesResponseEdgeHostnames) SetHighestServerGroup(v string) *GetAListOfEdgeHostnamesResponseEdgeHostnames {
   s.HighestServerGroup = &v
   return s
 }
@@ -284,7 +284,7 @@ func (s GetClientRegionsResponseHeader) GoString() string {
 
 type GetClientRegionsResponse struct {
   // {"en" : "Regions list.", "zh_CN": "访客区域的代码和名称的集合。"}
-  Data []*GetClientRegionsGetClientRegionsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*GetClientRegionsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetClientRegionsResponse) String() string {
@@ -295,32 +295,32 @@ func (s GetClientRegionsResponse) GoString() string {
   return s.String()
 }
 
-func (s *GetClientRegionsResponse) SetData(v []*GetClientRegionsGetClientRegionsResponseData) *GetClientRegionsResponse {
+func (s *GetClientRegionsResponse) SetData(v []*GetClientRegionsResponseData) *GetClientRegionsResponse {
   s.Data = v
   return s
 }
 
-type GetClientRegionsGetClientRegionsResponseData struct     {
+type GetClientRegionsResponseData struct     {
   // {"en" : "Regions code.", "zh_CN": "访客区域的代码。"}
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en" : "Regions name.", "zh_CN": "访客区域的名称。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
 }
 
-func (s GetClientRegionsGetClientRegionsResponseData) String() string {
+func (s GetClientRegionsResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetClientRegionsGetClientRegionsResponseData) GoString() string {
+func (s GetClientRegionsResponseData) GoString() string {
   return s.String()
 }
 
-func (s *GetClientRegionsGetClientRegionsResponseData) SetCode(v string) *GetClientRegionsGetClientRegionsResponseData {
+func (s *GetClientRegionsResponseData) SetCode(v string) *GetClientRegionsResponseData {
   s.Code = &v
   return s
 }
 
-func (s *GetClientRegionsGetClientRegionsResponseData) SetName(v string) *GetClientRegionsGetClientRegionsResponseData {
+func (s *GetClientRegionsResponseData) SetName(v string) *GetClientRegionsResponseData {
   s.Name = &v
   return s
 }
@@ -410,7 +410,7 @@ func (s GetAListOfIspsResponseHeader) GoString() string {
 
 type GetAListOfIspsResponse struct {
   // {"en" : "ISPs list.", "zh_CN": "运营商的代码和名称的集合。"}
-  Data []*GetAListOfIspsGetAListOfIspsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*GetAListOfIspsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetAListOfIspsResponse) String() string {
@@ -421,32 +421,32 @@ func (s GetAListOfIspsResponse) GoString() string {
   return s.String()
 }
 
-func (s *GetAListOfIspsResponse) SetData(v []*GetAListOfIspsGetAListOfIspsResponseData) *GetAListOfIspsResponse {
+func (s *GetAListOfIspsResponse) SetData(v []*GetAListOfIspsResponseData) *GetAListOfIspsResponse {
   s.Data = v
   return s
 }
 
-type GetAListOfIspsGetAListOfIspsResponseData struct     {
+type GetAListOfIspsResponseData struct     {
   // {"en" : "ISPs code.", "zh_CN": "运营商的代码。"}
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en" : "ISPs name.", "zh_CN": "运营商的名称。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
 }
 
-func (s GetAListOfIspsGetAListOfIspsResponseData) String() string {
+func (s GetAListOfIspsResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAListOfIspsGetAListOfIspsResponseData) GoString() string {
+func (s GetAListOfIspsResponseData) GoString() string {
   return s.String()
 }
 
-func (s *GetAListOfIspsGetAListOfIspsResponseData) SetCode(v string) *GetAListOfIspsGetAListOfIspsResponseData {
+func (s *GetAListOfIspsResponseData) SetCode(v string) *GetAListOfIspsResponseData {
   s.Code = &v
   return s
 }
 
-func (s *GetAListOfIspsGetAListOfIspsResponseData) SetName(v string) *GetAListOfIspsGetAListOfIspsResponseData {
+func (s *GetAListOfIspsResponseData) SetName(v string) *GetAListOfIspsResponseData {
   s.Name = &v
   return s
 }
@@ -502,7 +502,7 @@ type UpdateAnEdgeHostnamePartRequest struct {
   // {"en" : "If set to 'true', clients from European Economic Area (EEA) countries will only be served by IP addresses in EEA countries.", "zh_CN": "表示流量调度是否需要遵循GDPR的规定。当值为'true'时，对于来自欧洲经济区(EEA)国家的请求，将仅使用归属EEA国家的IP地址提供服务。"}
   GrprCompliant *bool `json:"grprCompliant,omitempty" xml:"grprCompliant,omitempty"`
   // {"en" : "Specify rules to control how requests from client zones are handled. There must be a rule that covers all regions and all ISPs.", "zh_CN": "自定义规则来控制如何处理不同访客分区的请求。您必须至少创建一条覆盖所有区域和所有运营商的规则。"}
-  ClientZones []*UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZones `json:"clientZones,omitempty" xml:"clientZones,omitempty" type:"Repeated"`
+  ClientZones []*UpdateAnEdgeHostnamePartRequestClientZones `json:"clientZones,omitempty" xml:"clientZones,omitempty" type:"Repeated"`
   // {"en" : "An estimate of the bandwidth required to serve content using this edge hostname. Units of measurement should be in Tbps, Gbps, Mbps, or kbps. Example: 100Gbps", "zh_CN": "通过该调度域名进行CDN加速预计需要的带宽。单位应为Tbps、Gbps、Mbps或kbps。示例：100 Gbps。"}
   EstimatedBandwidth *string `json:"estimatedBandwidth,omitempty" xml:"estimatedBandwidth,omitempty"`
 }
@@ -530,7 +530,7 @@ func (s *UpdateAnEdgeHostnamePartRequest) SetGrprCompliant(v bool) *UpdateAnEdge
   return s
 }
 
-func (s *UpdateAnEdgeHostnamePartRequest) SetClientZones(v []*UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZones) *UpdateAnEdgeHostnamePartRequest {
+func (s *UpdateAnEdgeHostnamePartRequest) SetClientZones(v []*UpdateAnEdgeHostnamePartRequestClientZones) *UpdateAnEdgeHostnamePartRequest {
   s.ClientZones = v
   return s
 }
@@ -540,7 +540,7 @@ func (s *UpdateAnEdgeHostnamePartRequest) SetEstimatedBandwidth(v string) *Updat
   return s
 }
 
-type UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZones struct     {
+type UpdateAnEdgeHostnamePartRequestClientZones struct     {
   // {"en" : "This field indicates the region in which the rule applies. Refer to our API to get client regions to get valid region codes. For example, if you wish to create a rule that covers all of Europe, simply specify 'eu' as the region. You can indicate specific countries. For example, 'na.us' represents the 'United States of America', and 'eu.fr' represents 'France'.  
   // 
   // A special client region 'all' can be used to specify that the rule applies to the entire world. If overlapping regions are specified, the more specific one takes precedence. For example, if you specify 'as' in one rule and 'as.cn' in another, a request from China will follow the rule for 'as.cn'.", "zh_CN": "该规则适用的区域。可调用'查询支持的区域列表'接口来查看区域信息。例如，如果您希望创建规则覆盖整个欧洲，则指定'eu'为区域。 您可以指定具体的国家。例如，'na.us'代表'美国'，而'eu.fr'代表'法国'。
@@ -564,40 +564,40 @@ type UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZones struct  
   // "}
   Weight *int `json:"weight,omitempty" xml:"weight,omitempty"`
   // {"en" : "This object describes the action to take for requests matching the rule.", "zh_CN": "当规则匹配时执行的动作。"}
-  Action *UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZonesAction `json:"action,omitempty" xml:"action,omitempty" type:"Struct"`
+  Action *UpdateAnEdgeHostnamePartRequestClientZonesAction `json:"action,omitempty" xml:"action,omitempty" type:"Struct"`
   // {"en" : "Specify the code representing an ISP (Internet Service Provider) if the rule only applies to requests from a particular ISP. Call our API to get a list of supported ISPs. Specify 'all' to indicate all ISPs rather than a particular one. Specify a comma-separated list of up to 10 ISP codes if you want your rule to apply to more than one ISP.", "zh_CN": "该规则适用的运营商。可调用我们的'查询支持的ISP运营商列表'接口查看运营商信息。指定'all'表示所有运营商。如果希望该规则应用于多个运营商，则可指定多个运营商，用逗号分隔，但最多只能包含10个运营商。"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty"`
 }
 
-func (s UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZones) String() string {
+func (s UpdateAnEdgeHostnamePartRequestClientZones) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZones) GoString() string {
+func (s UpdateAnEdgeHostnamePartRequestClientZones) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZones) SetRegion(v string) *UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZones {
+func (s *UpdateAnEdgeHostnamePartRequestClientZones) SetRegion(v string) *UpdateAnEdgeHostnamePartRequestClientZones {
   s.Region = &v
   return s
 }
 
-func (s *UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZones) SetWeight(v int) *UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZones {
+func (s *UpdateAnEdgeHostnamePartRequestClientZones) SetWeight(v int) *UpdateAnEdgeHostnamePartRequestClientZones {
   s.Weight = &v
   return s
 }
 
-func (s *UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZones) SetAction(v *UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZonesAction) *UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZones {
+func (s *UpdateAnEdgeHostnamePartRequestClientZones) SetAction(v *UpdateAnEdgeHostnamePartRequestClientZonesAction) *UpdateAnEdgeHostnamePartRequestClientZones {
   s.Action = v
   return s
 }
 
-func (s *UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZones) SetIsp(v string) *UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZones {
+func (s *UpdateAnEdgeHostnamePartRequestClientZones) SetIsp(v string) *UpdateAnEdgeHostnamePartRequestClientZones {
   s.Isp = &v
   return s
 }
 
-type UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZonesAction struct {
+type UpdateAnEdgeHostnamePartRequestClientZonesAction struct {
   // {"en" : "Enum: deliver,redirect,reject 
   // Defines the action to take for requests to the zone. Options are to deliver using one or more server groups, to reject the request altogether, or to redirect to another domain. If 'reject' is specified, the client request will be redirected to a server that always responds with HTTP response code 403 representing 'Forbidden'. Up to one 'reject' action is allowed for each client zone.
   // ", "zh_CN": "取值范围: deliver,redirect,reject 
@@ -614,30 +614,30 @@ type UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZonesAction st
   EnableIPv6 *bool `json:"enableIPv6,omitempty" xml:"enableIPv6,omitempty"`
 }
 
-func (s UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZonesAction) String() string {
+func (s UpdateAnEdgeHostnamePartRequestClientZonesAction) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZonesAction) GoString() string {
+func (s UpdateAnEdgeHostnamePartRequestClientZonesAction) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZonesAction) SetType(v string) *UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZonesAction {
+func (s *UpdateAnEdgeHostnamePartRequestClientZonesAction) SetType(v string) *UpdateAnEdgeHostnamePartRequestClientZonesAction {
   s.Type = &v
   return s
 }
 
-func (s *UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZonesAction) SetBy(v []*string) *UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZonesAction {
+func (s *UpdateAnEdgeHostnamePartRequestClientZonesAction) SetBy(v []*string) *UpdateAnEdgeHostnamePartRequestClientZonesAction {
   s.By = v
   return s
 }
 
-func (s *UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZonesAction) SetTo(v []*string) *UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZonesAction {
+func (s *UpdateAnEdgeHostnamePartRequestClientZonesAction) SetTo(v []*string) *UpdateAnEdgeHostnamePartRequestClientZonesAction {
   s.To = v
   return s
 }
 
-func (s *UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZonesAction) SetEnableIPv6(v bool) *UpdateAnEdgeHostnamePartUpdateAnEdgeHostnamePartRequestClientZonesAction {
+func (s *UpdateAnEdgeHostnamePartRequestClientZonesAction) SetEnableIPv6(v bool) *UpdateAnEdgeHostnamePartRequestClientZonesAction {
   s.EnableIPv6 = &v
   return s
 }
@@ -717,7 +717,7 @@ type UpdateAnEdgeHostnameAllRequest struct {
   // {"en" : "If set to 'true', clients from European Economic Area (EEA) countries will only be served by IP addresses in EEA countries.", "zh_CN": "表示流量调度是否需要遵循GDPR的规定。当值为'true'时，对于来自欧洲经济区(EEA)国家的请求，将仅使用归属EEA国家的IP地址提供服务。"}
   GdprCompliant *bool `json:"gdprCompliant,omitempty" xml:"gdprCompliant,omitempty"`
   // {"en" : "Specify rules to control how requests from client zones are handled. There must be a rule that covers all regions and all ISPs.", "zh_CN": "自定义规则来控制如何处理不同访客分区的请求。您必须至少创建一条覆盖所有区域和所有运营商的规则。"}
-  ClientZones []*UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZones `json:"clientZones,omitempty" xml:"clientZones,omitempty" type:"Repeated"`
+  ClientZones []*UpdateAnEdgeHostnameAllRequestClientZones `json:"clientZones,omitempty" xml:"clientZones,omitempty" type:"Repeated"`
   // {"en" : "An estimate of the bandwidth required to serve content using this edge hostname. Units of measurement should be in Tbps, Gbps, Mbps, or kbps. Example: 100Gbps", "zh_CN": "通过该调度域名进行CDN加速预计需要的带宽。单位应为Tbps、Gbps、Mbps或kbps。示例：100 Gbps。"}
   EstimatedBandwidth *string `json:"estimatedBandwidth,omitempty" xml:"estimatedBandwidth,omitempty"`
 }
@@ -750,7 +750,7 @@ func (s *UpdateAnEdgeHostnameAllRequest) SetGdprCompliant(v bool) *UpdateAnEdgeH
   return s
 }
 
-func (s *UpdateAnEdgeHostnameAllRequest) SetClientZones(v []*UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZones) *UpdateAnEdgeHostnameAllRequest {
+func (s *UpdateAnEdgeHostnameAllRequest) SetClientZones(v []*UpdateAnEdgeHostnameAllRequestClientZones) *UpdateAnEdgeHostnameAllRequest {
   s.ClientZones = v
   return s
 }
@@ -760,7 +760,7 @@ func (s *UpdateAnEdgeHostnameAllRequest) SetEstimatedBandwidth(v string) *Update
   return s
 }
 
-type UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZones struct     {
+type UpdateAnEdgeHostnameAllRequestClientZones struct     {
   // {"en" : "This field indicates the region in which the rule applies. Refer to our API to get client regions to get valid region codes. For example, if you wish to create a rule that covers all of Europe, simply specify 'eu' as the region. You can indicate specific countries. For example, 'na.us' represents the 'United States of America', and 'eu.fr' represents 'France'.  
   // 
   // A special client region 'all' can be used to specify that the rule applies to the entire world. If overlapping regions are specified, the more specific one takes precedence. For example, if you specify 'as' in one rule and 'as.cn' in another, a request from China will follow the rule for 'as.cn'.", "zh_CN": "该规则适用的区域。可调用'查询支持的区域列表'接口来查看区域信息。例如，如果您希望创建规则覆盖整个欧洲，则指定'eu'为区域。 您可以指定具体的国家。例如，'na.us'代表'美国'，而'eu.fr'代表'法国'。
@@ -784,40 +784,40 @@ type UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZones struct    
   // "}
   Weight *int `json:"weight,omitempty" xml:"weight,omitempty"`
   // {"en" : "This object describes the action to take for requests matching the rule.", "zh_CN": "当规则匹配时执行的动作。"}
-  Action *UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZonesAction `json:"action,omitempty" xml:"action,omitempty" type:"Struct"`
+  Action *UpdateAnEdgeHostnameAllRequestClientZonesAction `json:"action,omitempty" xml:"action,omitempty" type:"Struct"`
   // {"en" : "Specify the code representing an ISP (Internet Service Provider) if the rule only applies to requests from a particular ISP. Call our API to get a list of supported ISPs. Specify 'all' to indicate all ISPs rather than a particular one. Specify a comma-separated list of up to 10 ISP codes if you want your rule to apply to more than one ISP.", "zh_CN": "该规则适用的运营商。可调用我们的'查询支持的ISP运营商列表'接口查看运营商信息。指定'all'表示所有运营商。如果希望该规则应用于多个运营商，则可指定多个运营商，用逗号分隔，但最多只能包含10个运营商。"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty"`
 }
 
-func (s UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZones) String() string {
+func (s UpdateAnEdgeHostnameAllRequestClientZones) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZones) GoString() string {
+func (s UpdateAnEdgeHostnameAllRequestClientZones) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZones) SetRegion(v string) *UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZones {
+func (s *UpdateAnEdgeHostnameAllRequestClientZones) SetRegion(v string) *UpdateAnEdgeHostnameAllRequestClientZones {
   s.Region = &v
   return s
 }
 
-func (s *UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZones) SetWeight(v int) *UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZones {
+func (s *UpdateAnEdgeHostnameAllRequestClientZones) SetWeight(v int) *UpdateAnEdgeHostnameAllRequestClientZones {
   s.Weight = &v
   return s
 }
 
-func (s *UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZones) SetAction(v *UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZonesAction) *UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZones {
+func (s *UpdateAnEdgeHostnameAllRequestClientZones) SetAction(v *UpdateAnEdgeHostnameAllRequestClientZonesAction) *UpdateAnEdgeHostnameAllRequestClientZones {
   s.Action = v
   return s
 }
 
-func (s *UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZones) SetIsp(v string) *UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZones {
+func (s *UpdateAnEdgeHostnameAllRequestClientZones) SetIsp(v string) *UpdateAnEdgeHostnameAllRequestClientZones {
   s.Isp = &v
   return s
 }
 
-type UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZonesAction struct {
+type UpdateAnEdgeHostnameAllRequestClientZonesAction struct {
   // {"en" : "Enum: deliver,redirect,reject 
   // Defines the action to take for requests to the zone. Options are to deliver using one or more server groups, to reject the request altogether, or to redirect to another domain. If 'reject' is specified, the client request will be redirected to a server that always responds with HTTP response code 403 representing 'Forbidden'. Up to one 'reject' action is allowed for each client zone.
   // ", "zh_CN": "取值范围: deliver,redirect,reject 
@@ -834,30 +834,30 @@ type UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZonesAction stru
   EnableIPv6 *bool `json:"enableIPv6,omitempty" xml:"enableIPv6,omitempty"`
 }
 
-func (s UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZonesAction) String() string {
+func (s UpdateAnEdgeHostnameAllRequestClientZonesAction) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZonesAction) GoString() string {
+func (s UpdateAnEdgeHostnameAllRequestClientZonesAction) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZonesAction) SetType(v string) *UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZonesAction {
+func (s *UpdateAnEdgeHostnameAllRequestClientZonesAction) SetType(v string) *UpdateAnEdgeHostnameAllRequestClientZonesAction {
   s.Type = &v
   return s
 }
 
-func (s *UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZonesAction) SetBy(v []*string) *UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZonesAction {
+func (s *UpdateAnEdgeHostnameAllRequestClientZonesAction) SetBy(v []*string) *UpdateAnEdgeHostnameAllRequestClientZonesAction {
   s.By = v
   return s
 }
 
-func (s *UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZonesAction) SetTo(v []*string) *UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZonesAction {
+func (s *UpdateAnEdgeHostnameAllRequestClientZonesAction) SetTo(v []*string) *UpdateAnEdgeHostnameAllRequestClientZonesAction {
   s.To = v
   return s
 }
 
-func (s *UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZonesAction) SetEnableIPv6(v bool) *UpdateAnEdgeHostnameAllUpdateAnEdgeHostnameAllRequestClientZonesAction {
+func (s *UpdateAnEdgeHostnameAllRequestClientZonesAction) SetEnableIPv6(v bool) *UpdateAnEdgeHostnameAllRequestClientZonesAction {
   s.EnableIPv6 = &v
   return s
 }
@@ -1017,7 +1017,7 @@ type CreateAnEdgeHostnameRequest struct {
   // 表示流量调度是否需要遵循GDPR的规定。当值为'true'时，对于来自欧洲经济区(EEA)国家的请求，将仅使用归属EEA国家的IP地址提供服务。"}
   GdprCompliant *bool `json:"gdprCompliant,omitempty" xml:"gdprCompliant,omitempty"`
   // {"en" : "Specify rules to control how requests from client zones are handled. There must be a rule that covers all regions and all ISPs.", "zh_CN": "自定义规则来控制如何处理不同访客分区的请求。您必须至少创建一条覆盖所有区域和所有运营商的规则。"}
-  ClientZones []*CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZones `json:"clientZones,omitempty" xml:"clientZones,omitempty" type:"Repeated"`
+  ClientZones []*CreateAnEdgeHostnameRequestClientZones `json:"clientZones,omitempty" xml:"clientZones,omitempty" type:"Repeated"`
   // {"en" : "An estimate of the bandwidth required to serve content using this edge hostname. Units of measurement should be in Tbps, Gbps, Mbps, or kbps. Example: 100Gbps", "zh_CN": "通过该调度域名进行CDN加速预计需要的带宽。单位应为Tbps、Gbps、Mbps或kbps。示例：100 Gbps。"}
   EstimatedBandwidth *string `json:"estimatedBandwidth,omitempty" xml:"estimatedBandwidth,omitempty"`
 }
@@ -1050,7 +1050,7 @@ func (s *CreateAnEdgeHostnameRequest) SetGdprCompliant(v bool) *CreateAnEdgeHost
   return s
 }
 
-func (s *CreateAnEdgeHostnameRequest) SetClientZones(v []*CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZones) *CreateAnEdgeHostnameRequest {
+func (s *CreateAnEdgeHostnameRequest) SetClientZones(v []*CreateAnEdgeHostnameRequestClientZones) *CreateAnEdgeHostnameRequest {
   s.ClientZones = v
   return s
 }
@@ -1060,7 +1060,7 @@ func (s *CreateAnEdgeHostnameRequest) SetEstimatedBandwidth(v string) *CreateAnE
   return s
 }
 
-type CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZones struct     {
+type CreateAnEdgeHostnameRequestClientZones struct     {
   // {"en" : "This field indicates the region in which the rule applies. Refer to our API to get client regions to get valid region codes. For example, if you wish to create a rule that covers all of Europe, simply specify 'eu' as the region. You can indicate specific countries. For example, 'na.us' represents the 'United States of America', and 'eu.fr' represents 'France'.  
   // 
   // A special client region 'all' can be used to specify that the rule applies to the entire world. If overlapping regions are specified, the more specific one takes precedence. For example, if you specify 'as' in one rule and 'as.cn' in another, a request from China will follow the rule for 'as.cn'.", "zh_CN": "该规则适用的区域。可调用'查询支持的区域列表'接口来查看区域信息。例如，如果您希望创建规则覆盖整个欧洲，则指定'eu'为区域。 您可以指定具体的国家。例如，'na.us'代表'美国'，而'eu.fr'代表'法国'。
@@ -1084,40 +1084,40 @@ type CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZones struct     {
   // "}
   Weight *int `json:"weight,omitempty" xml:"weight,omitempty"`
   // {"en" : "This object describes the action to take for requests matching the rule.", "zh_CN": "当规则匹配时执行的动作。"}
-  Action *CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZonesAction `json:"action,omitempty" xml:"action,omitempty" type:"Struct"`
+  Action *CreateAnEdgeHostnameRequestClientZonesAction `json:"action,omitempty" xml:"action,omitempty" type:"Struct"`
   // {"en" : "Specify the code representing an ISP (Internet Service Provider) if the rule only applies to requests from a particular ISP. Call our API to get a list of supported ISPs. Specify 'all' to indicate all ISPs rather than a particular one. Specify a comma-separated list of up to 10 ISP codes if you want your rule to apply to more than one ISP.", "zh_CN": "该规则适用的运营商。可调用我们的'查询支持的ISP运营商列表'接口查看运营商信息。指定'all'表示所有运营商。如果希望该规则应用于多个运营商，则可指定多个运营商，用逗号分隔，但最多只能包含10个运营商。"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty"`
 }
 
-func (s CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZones) String() string {
+func (s CreateAnEdgeHostnameRequestClientZones) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZones) GoString() string {
+func (s CreateAnEdgeHostnameRequestClientZones) GoString() string {
   return s.String()
 }
 
-func (s *CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZones) SetRegion(v string) *CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZones {
+func (s *CreateAnEdgeHostnameRequestClientZones) SetRegion(v string) *CreateAnEdgeHostnameRequestClientZones {
   s.Region = &v
   return s
 }
 
-func (s *CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZones) SetWeight(v int) *CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZones {
+func (s *CreateAnEdgeHostnameRequestClientZones) SetWeight(v int) *CreateAnEdgeHostnameRequestClientZones {
   s.Weight = &v
   return s
 }
 
-func (s *CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZones) SetAction(v *CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZonesAction) *CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZones {
+func (s *CreateAnEdgeHostnameRequestClientZones) SetAction(v *CreateAnEdgeHostnameRequestClientZonesAction) *CreateAnEdgeHostnameRequestClientZones {
   s.Action = v
   return s
 }
 
-func (s *CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZones) SetIsp(v string) *CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZones {
+func (s *CreateAnEdgeHostnameRequestClientZones) SetIsp(v string) *CreateAnEdgeHostnameRequestClientZones {
   s.Isp = &v
   return s
 }
 
-type CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZonesAction struct {
+type CreateAnEdgeHostnameRequestClientZonesAction struct {
   // {"en" : "Enum: deliver,redirect,reject 
   // Defines the action to take for requests to the zone. Options are to deliver using one or more server groups, to reject the request altogether, or to redirect to another domain. If 'reject' is specified, the client request will be redirected to a server that always responds with HTTP response code 403 representing 'Forbidden'. Up to one 'reject' action is allowed for each client zone.
   // ", "zh_CN": "取值范围: deliver,redirect,reject 
@@ -1134,30 +1134,30 @@ type CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZonesAction struct {
   EnableIPv6 *bool `json:"enableIPv6,omitempty" xml:"enableIPv6,omitempty"`
 }
 
-func (s CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZonesAction) String() string {
+func (s CreateAnEdgeHostnameRequestClientZonesAction) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZonesAction) GoString() string {
+func (s CreateAnEdgeHostnameRequestClientZonesAction) GoString() string {
   return s.String()
 }
 
-func (s *CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZonesAction) SetType(v string) *CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZonesAction {
+func (s *CreateAnEdgeHostnameRequestClientZonesAction) SetType(v string) *CreateAnEdgeHostnameRequestClientZonesAction {
   s.Type = &v
   return s
 }
 
-func (s *CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZonesAction) SetBy(v []*string) *CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZonesAction {
+func (s *CreateAnEdgeHostnameRequestClientZonesAction) SetBy(v []*string) *CreateAnEdgeHostnameRequestClientZonesAction {
   s.By = v
   return s
 }
 
-func (s *CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZonesAction) SetTo(v []*string) *CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZonesAction {
+func (s *CreateAnEdgeHostnameRequestClientZonesAction) SetTo(v []*string) *CreateAnEdgeHostnameRequestClientZonesAction {
   s.To = v
   return s
 }
 
-func (s *CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZonesAction) SetEnableIPv6(v bool) *CreateAnEdgeHostnameCreateAnEdgeHostnameRequestClientZonesAction {
+func (s *CreateAnEdgeHostnameRequestClientZonesAction) SetEnableIPv6(v bool) *CreateAnEdgeHostnameRequestClientZonesAction {
   s.EnableIPv6 = &v
   return s
 }
@@ -1258,13 +1258,13 @@ func (s GetAnEdgeHostnameResponseHeader) GoString() string {
 
 type GetAnEdgeHostnameResponse struct {
   // {"en" : "Operation history", "zh_CN": "调度域名的操作记录。"}
-  History []*GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory `json:"history,omitempty" xml:"history,omitempty" require:"true" type:"Repeated"`
+  History []*GetAnEdgeHostnameResponseHistory `json:"history,omitempty" xml:"history,omitempty" require:"true" type:"Repeated"`
   // {"en" : "RFC 3339 format date indicating when the edge hostname was last updated.", "zh_CN": "RFC 3339格式的日期，表示调度域名最后一次更新的时间。"}
   LastUpdateTime *string `json:"lastUpdateTime,omitempty" xml:"lastUpdateTime,omitempty" require:"true"`
   // {"en" : "RFC 3339 format date indicating when the edge hostname was created.", "zh_CN": "RFC 3339格式的日期，表示调度域名的创建时间。"}
   CreationTime *string `json:"creationTime,omitempty" xml:"creationTime,omitempty" require:"true"`
   // {"en" : "Contains settings of the edge hostname.", "zh_CN": "调度域名的具体配置。此处展示的内容是调度域名当前已部署生效的配置。如果您提交了更新调度域名的请求，但配置仍在部署中还未生效，此处不会展示您修改后的配置。如果调度域名暂时还没有部署生效的配置，此处展示的是最近一次提交的配置。"}
-  Configs *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigs `json:"configs,omitempty" xml:"configs,omitempty" require:"true" type:"Struct"`
+  Configs *GetAnEdgeHostnameResponseConfigs `json:"configs,omitempty" xml:"configs,omitempty" require:"true" type:"Struct"`
 }
 
 func (s GetAnEdgeHostnameResponse) String() string {
@@ -1275,7 +1275,7 @@ func (s GetAnEdgeHostnameResponse) GoString() string {
   return s.String()
 }
 
-func (s *GetAnEdgeHostnameResponse) SetHistory(v []*GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory) *GetAnEdgeHostnameResponse {
+func (s *GetAnEdgeHostnameResponse) SetHistory(v []*GetAnEdgeHostnameResponseHistory) *GetAnEdgeHostnameResponse {
   s.History = v
   return s
 }
@@ -1290,12 +1290,12 @@ func (s *GetAnEdgeHostnameResponse) SetCreationTime(v string) *GetAnEdgeHostname
   return s
 }
 
-func (s *GetAnEdgeHostnameResponse) SetConfigs(v *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigs) *GetAnEdgeHostnameResponse {
+func (s *GetAnEdgeHostnameResponse) SetConfigs(v *GetAnEdgeHostnameResponseConfigs) *GetAnEdgeHostnameResponse {
   s.Configs = v
   return s
 }
 
-type GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory struct     {
+type GetAnEdgeHostnameResponseHistory struct     {
   // {"en" : "Enum: creation,update,deletion 
   // Indicates the action taken.", "zh_CN": "取值范围: creation,update,deletion 
   // 操作类型，即创建，更新或删除。"}
@@ -1317,63 +1317,63 @@ type GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory struct     {
   // {"en" : "Details describing the status.", "zh_CN": "部署状态的描述信息。"}
   StatusDetails *string `json:"statusDetails,omitempty" xml:"statusDetails,omitempty"`
   // {"en" : "Contains settings that can be modified.", "zh_CN": "调度域名的相关设置。"}
-  Configuration *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfiguration `json:"configuration,omitempty" xml:"configuration,omitempty" require:"true" type:"Struct"`
+  Configuration *GetAnEdgeHostnameResponseHistoryConfiguration `json:"configuration,omitempty" xml:"configuration,omitempty" require:"true" type:"Struct"`
 }
 
-func (s GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory) String() string {
+func (s GetAnEdgeHostnameResponseHistory) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory) GoString() string {
+func (s GetAnEdgeHostnameResponseHistory) GoString() string {
   return s.String()
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory) SetOperation(v string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory {
+func (s *GetAnEdgeHostnameResponseHistory) SetOperation(v string) *GetAnEdgeHostnameResponseHistory {
   s.Operation = &v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory) SetTime(v string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory {
+func (s *GetAnEdgeHostnameResponseHistory) SetTime(v string) *GetAnEdgeHostnameResponseHistory {
   s.Time = &v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory) SetApiRequestId(v string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory {
+func (s *GetAnEdgeHostnameResponseHistory) SetApiRequestId(v string) *GetAnEdgeHostnameResponseHistory {
   s.ApiRequestId = &v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory) SetApiName(v string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory {
+func (s *GetAnEdgeHostnameResponseHistory) SetApiName(v string) *GetAnEdgeHostnameResponseHistory {
   s.ApiName = &v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory) SetSubmissionTime(v string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory {
+func (s *GetAnEdgeHostnameResponseHistory) SetSubmissionTime(v string) *GetAnEdgeHostnameResponseHistory {
   s.SubmissionTime = &v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory) SetFinishTime(v string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory {
+func (s *GetAnEdgeHostnameResponseHistory) SetFinishTime(v string) *GetAnEdgeHostnameResponseHistory {
   s.FinishTime = &v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory) SetStatus(v string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory {
+func (s *GetAnEdgeHostnameResponseHistory) SetStatus(v string) *GetAnEdgeHostnameResponseHistory {
   s.Status = &v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory) SetStatusDetails(v string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory {
+func (s *GetAnEdgeHostnameResponseHistory) SetStatusDetails(v string) *GetAnEdgeHostnameResponseHistory {
   s.StatusDetails = &v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory) SetConfiguration(v *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfiguration) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistory {
+func (s *GetAnEdgeHostnameResponseHistory) SetConfiguration(v *GetAnEdgeHostnameResponseHistoryConfiguration) *GetAnEdgeHostnameResponseHistory {
   s.Configuration = v
   return s
 }
 
-type GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfiguration struct {
+type GetAnEdgeHostnameResponseHistoryConfiguration struct {
   // {"en" : "An edge hostname.", "zh_CN": "调度域名。"}
   EdgeHostname *string `json:"edgeHostname,omitempty" xml:"edgeHostname,omitempty"`
   // {"en" : "Default: False 
@@ -1382,40 +1382,40 @@ type GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfiguration struct {
   // 是否备案的标记。当值为true时，将使用包括中国大陆的服务器提供内容分发服务。"}
   HasBeian *bool `json:"hasBeian,omitempty" xml:"hasBeian,omitempty"`
   // {"en" : "Rules control how requests from client zones are handled. There must be a rule that covers all regions and all ISPs. ", "zh_CN": "自定义规则来控制如何处理不同访客分区的请求。您必须至少创建一条覆盖所有区域和所有运营商的规则。"}
-  ClientZones []*GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZones `json:"clientZones,omitempty" xml:"clientZones,omitempty" type:"Repeated"`
+  ClientZones []*GetAnEdgeHostnameResponseHistoryConfigurationClientZones `json:"clientZones,omitempty" xml:"clientZones,omitempty" type:"Repeated"`
   // {"en" : "An estimate of the bandwidth required to serve content using this edge hostname. Units of measurement should be in Tbps, Gbps, Mbps, or kbps. Example: 100Gbps", "zh_CN": "通过该调度域名进行CDN加速预计需要的带宽。单位应为Tbps、Gbps、Mbps或kbps。示例：100 Gbps。"}
   EstimatedBandwidth *string `json:"estimatedBandwidth,omitempty" xml:"estimatedBandwidth,omitempty"`
 }
 
-func (s GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfiguration) String() string {
+func (s GetAnEdgeHostnameResponseHistoryConfiguration) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfiguration) GoString() string {
+func (s GetAnEdgeHostnameResponseHistoryConfiguration) GoString() string {
   return s.String()
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfiguration) SetEdgeHostname(v string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfiguration {
+func (s *GetAnEdgeHostnameResponseHistoryConfiguration) SetEdgeHostname(v string) *GetAnEdgeHostnameResponseHistoryConfiguration {
   s.EdgeHostname = &v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfiguration) SetHasBeian(v bool) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfiguration {
+func (s *GetAnEdgeHostnameResponseHistoryConfiguration) SetHasBeian(v bool) *GetAnEdgeHostnameResponseHistoryConfiguration {
   s.HasBeian = &v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfiguration) SetClientZones(v []*GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZones) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfiguration {
+func (s *GetAnEdgeHostnameResponseHistoryConfiguration) SetClientZones(v []*GetAnEdgeHostnameResponseHistoryConfigurationClientZones) *GetAnEdgeHostnameResponseHistoryConfiguration {
   s.ClientZones = v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfiguration) SetEstimatedBandwidth(v string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfiguration {
+func (s *GetAnEdgeHostnameResponseHistoryConfiguration) SetEstimatedBandwidth(v string) *GetAnEdgeHostnameResponseHistoryConfiguration {
   s.EstimatedBandwidth = &v
   return s
 }
 
-type GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZones struct     {
+type GetAnEdgeHostnameResponseHistoryConfigurationClientZones struct     {
   // {"en" : "This field indicates the region in which the rule applies. Refer to our API to get client regions to get valid region codes. For example, if you wish to create a rule that covers all of Europe, simply specify 'eu' as the region. You can indicate specific countries. For example, 'na.us' represents the 'United States of America', and 'eu.fr' represents 'France'.  
   // 
   // A special client region 'all' can be used to specify that the rule applies to the entire world. If overlapping regions are specified, the more specific one takes precedence. For example, if you specify 'as' in one rule and 'as.cn' in another, a request from China will follow the rule for 'as.cn'.", "zh_CN": "该规则适用的区域。可调用'查询支持的区域列表'接口来查看区域信息。例如，如果您希望创建规则覆盖整个欧洲，则指定'eu'为区域。 您可以指定具体的国家。例如，'na.us'代表'美国'，而'eu.fr'代表'法国'。
@@ -1439,40 +1439,40 @@ type GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZones s
   // "}
   Weight *int `json:"weight,omitempty" xml:"weight,omitempty"`
   // {"en" : "This object describes the action to take for requests matching the rule.", "zh_CN": "当规则匹配时执行的动作。"}
-  Action *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction `json:"action,omitempty" xml:"action,omitempty" type:"Struct"`
+  Action *GetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction `json:"action,omitempty" xml:"action,omitempty" type:"Struct"`
   // {"en" : "Specify the code representing an ISP (Internet Service Provider) if the rule only applies to requests from a particular ISP. Call our API to get a list of supported ISPs. Specify 'all' to indicate all ISPs rather than a particular one. Specify a comma-separated list of up to 10 ISP codes if you want your rule to apply to more than one ISP.", "zh_CN": "该规则适用的运营商。可调用我们的'查询支持的ISP运营商列表'接口查看运营商信息。指定'all'表示所有运营商。如果希望该规则应用于多个运营商，则可指定多个运营商，用逗号分隔，但最多只能包含10个运营商。"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty"`
 }
 
-func (s GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZones) String() string {
+func (s GetAnEdgeHostnameResponseHistoryConfigurationClientZones) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZones) GoString() string {
+func (s GetAnEdgeHostnameResponseHistoryConfigurationClientZones) GoString() string {
   return s.String()
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZones) SetRegion(v string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZones {
+func (s *GetAnEdgeHostnameResponseHistoryConfigurationClientZones) SetRegion(v string) *GetAnEdgeHostnameResponseHistoryConfigurationClientZones {
   s.Region = &v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZones) SetWeight(v int) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZones {
+func (s *GetAnEdgeHostnameResponseHistoryConfigurationClientZones) SetWeight(v int) *GetAnEdgeHostnameResponseHistoryConfigurationClientZones {
   s.Weight = &v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZones) SetAction(v *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZones {
+func (s *GetAnEdgeHostnameResponseHistoryConfigurationClientZones) SetAction(v *GetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction) *GetAnEdgeHostnameResponseHistoryConfigurationClientZones {
   s.Action = v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZones) SetIsp(v string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZones {
+func (s *GetAnEdgeHostnameResponseHistoryConfigurationClientZones) SetIsp(v string) *GetAnEdgeHostnameResponseHistoryConfigurationClientZones {
   s.Isp = &v
   return s
 }
 
-type GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction struct {
+type GetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction struct {
   // {"en" : "Enum: deliver,redirect,reject 
   // Defines the action to take for requests to the zone. Options are to deliver using one or more server groups, to reject the request altogether, or to redirect to another domain. If 'reject' is specified, the client request will be redirected to a server that always responds with HTTP response code 403 representing 'Forbidden'. Up to one 'reject' action is allowed for each client zone.
   // ", "zh_CN": "取值范围: deliver,redirect,reject 
@@ -1489,35 +1489,35 @@ type GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZonesAc
   EnableIPv6 *bool `json:"enableIPv6,omitempty" xml:"enableIPv6,omitempty"`
 }
 
-func (s GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction) String() string {
+func (s GetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction) GoString() string {
+func (s GetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction) GoString() string {
   return s.String()
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction) SetType(v string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction {
+func (s *GetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction) SetType(v string) *GetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction {
   s.Type = &v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction) SetBy(v []*string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction {
+func (s *GetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction) SetBy(v []*string) *GetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction {
   s.By = v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction) SetTo(v []*string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction {
+func (s *GetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction) SetTo(v []*string) *GetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction {
   s.To = v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction) SetEnableIPv6(v bool) *GetAnEdgeHostnameGetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction {
+func (s *GetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction) SetEnableIPv6(v bool) *GetAnEdgeHostnameResponseHistoryConfigurationClientZonesAction {
   s.EnableIPv6 = &v
   return s
 }
 
-type GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigs struct {
+type GetAnEdgeHostnameResponseConfigs struct {
   // {"en" : "An edge hostname.", "zh_CN": "调度域名。"}
   EdgeHostname *string `json:"edgeHostname,omitempty" xml:"edgeHostname,omitempty"`
   // {"en" : "Default: False 
@@ -1532,50 +1532,50 @@ type GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigs struct {
   // 是否备案的标记。当值为true时，将使用包括中国大陆的服务器提供内容分发服务。"}
   HasBeian *bool `json:"hasBeian,omitempty" xml:"hasBeian,omitempty"`
   // {"en" : "Rules control how requests from client zones are handled. There must be a rule that covers all regions and all ISPs. ", "zh_CN": "自定义规则来控制如何处理不同访客分区的请求。您必须至少创建一条覆盖所有区域和所有运营商的规则。"}
-  ClientZones []*GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZones `json:"clientZones,omitempty" xml:"clientZones,omitempty" type:"Repeated"`
+  ClientZones []*GetAnEdgeHostnameResponseConfigsClientZones `json:"clientZones,omitempty" xml:"clientZones,omitempty" type:"Repeated"`
   // {"en" : "An estimate of the bandwidth required to serve content using this edge hostname. Units of measurement should be in Tbps, Gbps, Mbps, or kbps. Example: 100Gbps", "zh_CN": "通过该调度域名进行CDN加速预计需要的带宽。单位应为Tbps、Gbps、Mbps或kbps。示例：100 Gbps。"}
   EstimatedBandwidth *string `json:"estimatedBandwidth,omitempty" xml:"estimatedBandwidth,omitempty"`
 }
 
-func (s GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigs) String() string {
+func (s GetAnEdgeHostnameResponseConfigs) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigs) GoString() string {
+func (s GetAnEdgeHostnameResponseConfigs) GoString() string {
   return s.String()
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigs) SetEdgeHostname(v string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigs {
+func (s *GetAnEdgeHostnameResponseConfigs) SetEdgeHostname(v string) *GetAnEdgeHostnameResponseConfigs {
   s.EdgeHostname = &v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigs) SetPciRequired(v bool) *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigs {
+func (s *GetAnEdgeHostnameResponseConfigs) SetPciRequired(v bool) *GetAnEdgeHostnameResponseConfigs {
   s.PciRequired = &v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigs) SetDescription(v string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigs {
+func (s *GetAnEdgeHostnameResponseConfigs) SetDescription(v string) *GetAnEdgeHostnameResponseConfigs {
   s.Description = &v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigs) SetHasBeian(v bool) *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigs {
+func (s *GetAnEdgeHostnameResponseConfigs) SetHasBeian(v bool) *GetAnEdgeHostnameResponseConfigs {
   s.HasBeian = &v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigs) SetClientZones(v []*GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZones) *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigs {
+func (s *GetAnEdgeHostnameResponseConfigs) SetClientZones(v []*GetAnEdgeHostnameResponseConfigsClientZones) *GetAnEdgeHostnameResponseConfigs {
   s.ClientZones = v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigs) SetEstimatedBandwidth(v string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigs {
+func (s *GetAnEdgeHostnameResponseConfigs) SetEstimatedBandwidth(v string) *GetAnEdgeHostnameResponseConfigs {
   s.EstimatedBandwidth = &v
   return s
 }
 
-type GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZones struct     {
+type GetAnEdgeHostnameResponseConfigsClientZones struct     {
   // {"en" : "This field indicates the region in which the rule applies. Refer to our API to get client regions to get valid region codes. For example, if you wish to create a rule that covers all of Europe, simply specify 'eu' as the region. You can indicate specific countries. For example, 'na.us' represents the 'United States of America', and 'eu.fr' represents 'France'.  
   // 
   // A special client region 'all' can be used to specify that the rule applies to the entire world. If overlapping regions are specified, the more specific one takes precedence. For example, if you specify 'as' in one rule and 'as.cn' in another, a request from China will follow the rule for 'as.cn'.", "zh_CN": "该规则适用的区域。可调用'查询支持的区域列表'接口来查看区域信息。例如，如果您希望创建规则覆盖整个欧洲，则指定'eu'为区域。 您可以指定具体的国家。例如，'na.us'代表'美国'，而'eu.fr'代表'法国'。
@@ -1599,40 +1599,40 @@ type GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZones struct     {
   // "}
   Weight *int `json:"weight,omitempty" xml:"weight,omitempty"`
   // {"en" : "This object describes the action to take for requests matching the rule.", "zh_CN": "当规则匹配时执行的动作。"}
-  Action *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZonesAction `json:"action,omitempty" xml:"action,omitempty" type:"Struct"`
+  Action *GetAnEdgeHostnameResponseConfigsClientZonesAction `json:"action,omitempty" xml:"action,omitempty" type:"Struct"`
   // {"en" : "Specify the code representing an ISP (Internet Service Provider) if the rule only applies to requests from a particular ISP. Call our API to get a list of supported ISPs. Specify 'all' to indicate all ISPs rather than a particular one. Specify a comma-separated list of up to 10 ISP codes if you want your rule to apply to more than one ISP.", "zh_CN": "该规则适用的运营商。可调用我们的'查询支持的ISP运营商列表'接口查看运营商信息。指定'all'表示所有运营商。如果希望该规则应用于多个运营商，则可指定多个运营商，用逗号分隔，但最多只能包含10个运营商。"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty"`
 }
 
-func (s GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZones) String() string {
+func (s GetAnEdgeHostnameResponseConfigsClientZones) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZones) GoString() string {
+func (s GetAnEdgeHostnameResponseConfigsClientZones) GoString() string {
   return s.String()
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZones) SetRegion(v string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZones {
+func (s *GetAnEdgeHostnameResponseConfigsClientZones) SetRegion(v string) *GetAnEdgeHostnameResponseConfigsClientZones {
   s.Region = &v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZones) SetWeight(v int) *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZones {
+func (s *GetAnEdgeHostnameResponseConfigsClientZones) SetWeight(v int) *GetAnEdgeHostnameResponseConfigsClientZones {
   s.Weight = &v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZones) SetAction(v *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZonesAction) *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZones {
+func (s *GetAnEdgeHostnameResponseConfigsClientZones) SetAction(v *GetAnEdgeHostnameResponseConfigsClientZonesAction) *GetAnEdgeHostnameResponseConfigsClientZones {
   s.Action = v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZones) SetIsp(v string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZones {
+func (s *GetAnEdgeHostnameResponseConfigsClientZones) SetIsp(v string) *GetAnEdgeHostnameResponseConfigsClientZones {
   s.Isp = &v
   return s
 }
 
-type GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZonesAction struct {
+type GetAnEdgeHostnameResponseConfigsClientZonesAction struct {
   // {"en" : "Enum: deliver,redirect,reject 
   // Defines the action to take for requests to the zone. Options are to deliver using one or more server groups, to reject the request altogether, or to redirect to another domain. If 'reject' is specified, the client request will be redirected to a server that always responds with HTTP response code 403 representing 'Forbidden'. Up to one 'reject' action is allowed for each client zone.
   // ", "zh_CN": "取值范围: deliver,redirect,reject 
@@ -1649,30 +1649,30 @@ type GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZonesAction struct {
   EnableIPv6 *bool `json:"enableIPv6,omitempty" xml:"enableIPv6,omitempty"`
 }
 
-func (s GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZonesAction) String() string {
+func (s GetAnEdgeHostnameResponseConfigsClientZonesAction) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZonesAction) GoString() string {
+func (s GetAnEdgeHostnameResponseConfigsClientZonesAction) GoString() string {
   return s.String()
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZonesAction) SetType(v string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZonesAction {
+func (s *GetAnEdgeHostnameResponseConfigsClientZonesAction) SetType(v string) *GetAnEdgeHostnameResponseConfigsClientZonesAction {
   s.Type = &v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZonesAction) SetBy(v []*string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZonesAction {
+func (s *GetAnEdgeHostnameResponseConfigsClientZonesAction) SetBy(v []*string) *GetAnEdgeHostnameResponseConfigsClientZonesAction {
   s.By = v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZonesAction) SetTo(v []*string) *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZonesAction {
+func (s *GetAnEdgeHostnameResponseConfigsClientZonesAction) SetTo(v []*string) *GetAnEdgeHostnameResponseConfigsClientZonesAction {
   s.To = v
   return s
 }
 
-func (s *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZonesAction) SetEnableIPv6(v bool) *GetAnEdgeHostnameGetAnEdgeHostnameResponseConfigsClientZonesAction {
+func (s *GetAnEdgeHostnameResponseConfigsClientZonesAction) SetEnableIPv6(v bool) *GetAnEdgeHostnameResponseConfigsClientZonesAction {
   s.EnableIPv6 = &v
   return s
 }

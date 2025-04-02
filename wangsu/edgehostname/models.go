@@ -22,7 +22,7 @@ type QueryEdgeHostnamesResponse struct {
   // {"en":"Response error message if failed.", "zh_CN":"接口响应信息，success代表成功，失败则提供失败信息。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data.", "zh_CN":"接口响应数据"}
-  Data *QueryEdgeHostnamesQueryEdgeHostnamesResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryEdgeHostnamesResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryEdgeHostnamesResponse) String() string {
@@ -43,37 +43,37 @@ func (s *QueryEdgeHostnamesResponse) SetMessage(v string) *QueryEdgeHostnamesRes
   return s
 }
 
-func (s *QueryEdgeHostnamesResponse) SetData(v *QueryEdgeHostnamesQueryEdgeHostnamesResponseData) *QueryEdgeHostnamesResponse {
+func (s *QueryEdgeHostnamesResponse) SetData(v *QueryEdgeHostnamesResponseData) *QueryEdgeHostnamesResponse {
   s.Data = v
   return s
 }
 
-type QueryEdgeHostnamesQueryEdgeHostnamesResponseData struct {
+type QueryEdgeHostnamesResponseData struct {
   // {"en":"Number of properties.", "zh_CN":"调度域名数量。"}
   Count *int32 `json:"count,omitempty" xml:"count,omitempty" require:"true"`
   // {"en":"List of properties.", "zh_CN":"项目列表。"}
-  EdgeHostnames []*QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames `json:"edgeHostnames,omitempty" xml:"edgeHostnames,omitempty" require:"true" type:"Repeated"`
+  EdgeHostnames []*QueryEdgeHostnamesResponseDataEdgeHostnames `json:"edgeHostnames,omitempty" xml:"edgeHostnames,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryEdgeHostnamesQueryEdgeHostnamesResponseData) String() string {
+func (s QueryEdgeHostnamesResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryEdgeHostnamesQueryEdgeHostnamesResponseData) GoString() string {
+func (s QueryEdgeHostnamesResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryEdgeHostnamesQueryEdgeHostnamesResponseData) SetCount(v int32) *QueryEdgeHostnamesQueryEdgeHostnamesResponseData {
+func (s *QueryEdgeHostnamesResponseData) SetCount(v int32) *QueryEdgeHostnamesResponseData {
   s.Count = &v
   return s
 }
 
-func (s *QueryEdgeHostnamesQueryEdgeHostnamesResponseData) SetEdgeHostnames(v []*QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames) *QueryEdgeHostnamesQueryEdgeHostnamesResponseData {
+func (s *QueryEdgeHostnamesResponseData) SetEdgeHostnames(v []*QueryEdgeHostnamesResponseDataEdgeHostnames) *QueryEdgeHostnamesResponseData {
   s.EdgeHostnames = v
   return s
 }
 
-type QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames struct     {
+type QueryEdgeHostnamesResponseDataEdgeHostnames struct     {
   // {"en":"Edge-Hostname ID.", "zh_CN":"调度域名标识"}
   EdgeHostnameId *int64 `json:"edgeHostnameId,omitempty" xml:"edgeHostnameId,omitempty" require:"true"`
   // {"en":"Edge-Hostname.", "zh_CN":"调度域名"}
@@ -91,83 +91,83 @@ type QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames struct     {
   // {"en":"RFC3339 date indicating when the Edge-Hostname was last updated.", "zh_CN":"RFC 3339格式的日期，表示调度域名的最近更新时间。"}
   LastUpdateTime *string `json:"lastUpdateTime,omitempty" xml:"lastUpdateTime,omitempty" require:"true"`
   // {"en":"hostnames.", "zh_CN":"域名列表"}
-  Hostnames []*QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnamesHostnames `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
+  Hostnames []*QueryEdgeHostnamesResponseDataEdgeHostnamesHostnames `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
 }
 
-func (s QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames) String() string {
+func (s QueryEdgeHostnamesResponseDataEdgeHostnames) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames) GoString() string {
+func (s QueryEdgeHostnamesResponseDataEdgeHostnames) GoString() string {
   return s.String()
 }
 
-func (s *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames) SetEdgeHostnameId(v int64) *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames {
+func (s *QueryEdgeHostnamesResponseDataEdgeHostnames) SetEdgeHostnameId(v int64) *QueryEdgeHostnamesResponseDataEdgeHostnames {
   s.EdgeHostnameId = &v
   return s
 }
 
-func (s *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames) SetEdgeHostname(v string) *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames {
+func (s *QueryEdgeHostnamesResponseDataEdgeHostnames) SetEdgeHostname(v string) *QueryEdgeHostnamesResponseDataEdgeHostnames {
   s.EdgeHostname = &v
   return s
 }
 
-func (s *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames) SetDnsServiceStatus(v string) *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames {
+func (s *QueryEdgeHostnamesResponseDataEdgeHostnames) SetDnsServiceStatus(v string) *QueryEdgeHostnamesResponseDataEdgeHostnames {
   s.DnsServiceStatus = &v
   return s
 }
 
-func (s *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames) SetDeployStatus(v string) *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames {
+func (s *QueryEdgeHostnamesResponseDataEdgeHostnames) SetDeployStatus(v string) *QueryEdgeHostnamesResponseDataEdgeHostnames {
   s.DeployStatus = &v
   return s
 }
 
-func (s *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames) SetAllowChinaCdn(v string) *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames {
+func (s *QueryEdgeHostnamesResponseDataEdgeHostnames) SetAllowChinaCdn(v string) *QueryEdgeHostnamesResponseDataEdgeHostnames {
   s.AllowChinaCdn = &v
   return s
 }
 
-func (s *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames) SetComment(v string) *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames {
+func (s *QueryEdgeHostnamesResponseDataEdgeHostnames) SetComment(v string) *QueryEdgeHostnamesResponseDataEdgeHostnames {
   s.Comment = &v
   return s
 }
 
-func (s *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames) SetCreationTime(v string) *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames {
+func (s *QueryEdgeHostnamesResponseDataEdgeHostnames) SetCreationTime(v string) *QueryEdgeHostnamesResponseDataEdgeHostnames {
   s.CreationTime = &v
   return s
 }
 
-func (s *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames) SetLastUpdateTime(v string) *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames {
+func (s *QueryEdgeHostnamesResponseDataEdgeHostnames) SetLastUpdateTime(v string) *QueryEdgeHostnamesResponseDataEdgeHostnames {
   s.LastUpdateTime = &v
   return s
 }
 
-func (s *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames) SetHostnames(v []*QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnamesHostnames) *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnames {
+func (s *QueryEdgeHostnamesResponseDataEdgeHostnames) SetHostnames(v []*QueryEdgeHostnamesResponseDataEdgeHostnamesHostnames) *QueryEdgeHostnamesResponseDataEdgeHostnames {
   s.Hostnames = v
   return s
 }
 
-type QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnamesHostnames struct     {
+type QueryEdgeHostnamesResponseDataEdgeHostnamesHostnames struct     {
   // {"en":"name of the domain which use this edge-hostname.", "zh_CN":"域名。"}
   Hostname *string `json:"hostname,omitempty" xml:"hostname,omitempty" require:"true"`
   // {"en":"the deploy target of this hostname.", "zh_CN":"部署环境。"}
   Target *string `json:"target,omitempty" xml:"target,omitempty" require:"true"`
 }
 
-func (s QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnamesHostnames) String() string {
+func (s QueryEdgeHostnamesResponseDataEdgeHostnamesHostnames) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnamesHostnames) GoString() string {
+func (s QueryEdgeHostnamesResponseDataEdgeHostnamesHostnames) GoString() string {
   return s.String()
 }
 
-func (s *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnamesHostnames) SetHostname(v string) *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnamesHostnames {
+func (s *QueryEdgeHostnamesResponseDataEdgeHostnamesHostnames) SetHostname(v string) *QueryEdgeHostnamesResponseDataEdgeHostnamesHostnames {
   s.Hostname = &v
   return s
 }
 
-func (s *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnamesHostnames) SetTarget(v string) *QueryEdgeHostnamesQueryEdgeHostnamesResponseDataEdgeHostnamesHostnames {
+func (s *QueryEdgeHostnamesResponseDataEdgeHostnamesHostnames) SetTarget(v string) *QueryEdgeHostnamesResponseDataEdgeHostnamesHostnames {
   s.Target = &v
   return s
 }
@@ -583,7 +583,7 @@ type QueryEdgeHostnameResponse struct {
   // {"en":"Response error message if failed.", "zh_CN":"接口响应信息，success代表成功，失败则提供失败信息。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data.", "zh_CN":"接口响应数据"}
-  Data *QueryEdgeHostnameQueryEdgeHostnameResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryEdgeHostnameResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryEdgeHostnameResponse) String() string {
@@ -604,12 +604,12 @@ func (s *QueryEdgeHostnameResponse) SetMessage(v string) *QueryEdgeHostnameRespo
   return s
 }
 
-func (s *QueryEdgeHostnameResponse) SetData(v *QueryEdgeHostnameQueryEdgeHostnameResponseData) *QueryEdgeHostnameResponse {
+func (s *QueryEdgeHostnameResponse) SetData(v *QueryEdgeHostnameResponseData) *QueryEdgeHostnameResponse {
   s.Data = v
   return s
 }
 
-type QueryEdgeHostnameQueryEdgeHostnameResponseData struct {
+type QueryEdgeHostnameResponseData struct {
   // {"en":"Edge-Hostname ID", "zh_CN":"调度域名ID"}
   EdgeHostnameId *int64 `json:"edgeHostnameId,omitempty" xml:"edgeHostnameId,omitempty" require:"true"`
   // {"en":"Edge-Hostname Name", "zh_CN":"调度域名。"}
@@ -631,80 +631,80 @@ type QueryEdgeHostnameQueryEdgeHostnameResponseData struct {
   // {"en":"RFC3339 date indicating when the edge-hostname was last updated.", "zh_CN":"RFC 3339格式的日期，表示edge-hostname的最近更新时间。"}
   LastUpdateTime *string `json:"lastUpdateTime,omitempty" xml:"lastUpdateTime,omitempty" require:"true"`
   // {"en":"hostnames", "zh_CN":"关联的加速域名"}
-  Hostnames []*QueryEdgeHostnameQueryEdgeHostnameResponseDataHostnames `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
+  Hostnames []*QueryEdgeHostnameResponseDataHostnames `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
   // {"en":"region configuration", "zh_CN":"区域配置列表 "}
-  RegionConfigs *QueryEdgeHostnameQueryEdgeHostnameResponseDataRegionConfigs `json:"regionConfigs,omitempty" xml:"regionConfigs,omitempty" require:"true" type:"Struct"`
+  RegionConfigs *QueryEdgeHostnameResponseDataRegionConfigs `json:"regionConfigs,omitempty" xml:"regionConfigs,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryEdgeHostnameQueryEdgeHostnameResponseData) String() string {
+func (s QueryEdgeHostnameResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryEdgeHostnameQueryEdgeHostnameResponseData) GoString() string {
+func (s QueryEdgeHostnameResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseData) SetEdgeHostnameId(v int64) *QueryEdgeHostnameQueryEdgeHostnameResponseData {
+func (s *QueryEdgeHostnameResponseData) SetEdgeHostnameId(v int64) *QueryEdgeHostnameResponseData {
   s.EdgeHostnameId = &v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseData) SetEdgeHostname(v string) *QueryEdgeHostnameQueryEdgeHostnameResponseData {
+func (s *QueryEdgeHostnameResponseData) SetEdgeHostname(v string) *QueryEdgeHostnameResponseData {
   s.EdgeHostname = &v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseData) SetComment(v string) *QueryEdgeHostnameQueryEdgeHostnameResponseData {
+func (s *QueryEdgeHostnameResponseData) SetComment(v string) *QueryEdgeHostnameResponseData {
   s.Comment = &v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseData) SetDnsServiceStatus(v string) *QueryEdgeHostnameQueryEdgeHostnameResponseData {
+func (s *QueryEdgeHostnameResponseData) SetDnsServiceStatus(v string) *QueryEdgeHostnameResponseData {
   s.DnsServiceStatus = &v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseData) SetDeployStatus(v string) *QueryEdgeHostnameQueryEdgeHostnameResponseData {
+func (s *QueryEdgeHostnameResponseData) SetDeployStatus(v string) *QueryEdgeHostnameResponseData {
   s.DeployStatus = &v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseData) SetAllowChinaCdn(v string) *QueryEdgeHostnameQueryEdgeHostnameResponseData {
+func (s *QueryEdgeHostnameResponseData) SetAllowChinaCdn(v string) *QueryEdgeHostnameResponseData {
   s.AllowChinaCdn = &v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseData) SetGdprCompliant(v string) *QueryEdgeHostnameQueryEdgeHostnameResponseData {
+func (s *QueryEdgeHostnameResponseData) SetGdprCompliant(v string) *QueryEdgeHostnameResponseData {
   s.GdprCompliant = &v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseData) SetGeoFence(v string) *QueryEdgeHostnameQueryEdgeHostnameResponseData {
+func (s *QueryEdgeHostnameResponseData) SetGeoFence(v string) *QueryEdgeHostnameResponseData {
   s.GeoFence = &v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseData) SetCreationTime(v string) *QueryEdgeHostnameQueryEdgeHostnameResponseData {
+func (s *QueryEdgeHostnameResponseData) SetCreationTime(v string) *QueryEdgeHostnameResponseData {
   s.CreationTime = &v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseData) SetLastUpdateTime(v string) *QueryEdgeHostnameQueryEdgeHostnameResponseData {
+func (s *QueryEdgeHostnameResponseData) SetLastUpdateTime(v string) *QueryEdgeHostnameResponseData {
   s.LastUpdateTime = &v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseData) SetHostnames(v []*QueryEdgeHostnameQueryEdgeHostnameResponseDataHostnames) *QueryEdgeHostnameQueryEdgeHostnameResponseData {
+func (s *QueryEdgeHostnameResponseData) SetHostnames(v []*QueryEdgeHostnameResponseDataHostnames) *QueryEdgeHostnameResponseData {
   s.Hostnames = v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseData) SetRegionConfigs(v *QueryEdgeHostnameQueryEdgeHostnameResponseDataRegionConfigs) *QueryEdgeHostnameQueryEdgeHostnameResponseData {
+func (s *QueryEdgeHostnameResponseData) SetRegionConfigs(v *QueryEdgeHostnameResponseDataRegionConfigs) *QueryEdgeHostnameResponseData {
   s.RegionConfigs = v
   return s
 }
 
-type QueryEdgeHostnameQueryEdgeHostnameResponseDataHostnames struct     {
+type QueryEdgeHostnameResponseDataHostnames struct     {
   // {"en":"hostname", "zh_CN":"域名"}
   Hostname *string `json:"hostname,omitempty" xml:"hostname,omitempty" require:"true"`
   // {"en":"deploy target", "zh_CN":"部署环境"}
@@ -717,40 +717,40 @@ type QueryEdgeHostnameQueryEdgeHostnameResponseDataHostnames struct     {
   PropertyName *string `json:"propertyName,omitempty" xml:"propertyName,omitempty" require:"true"`
 }
 
-func (s QueryEdgeHostnameQueryEdgeHostnameResponseDataHostnames) String() string {
+func (s QueryEdgeHostnameResponseDataHostnames) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryEdgeHostnameQueryEdgeHostnameResponseDataHostnames) GoString() string {
+func (s QueryEdgeHostnameResponseDataHostnames) GoString() string {
   return s.String()
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseDataHostnames) SetHostname(v string) *QueryEdgeHostnameQueryEdgeHostnameResponseDataHostnames {
+func (s *QueryEdgeHostnameResponseDataHostnames) SetHostname(v string) *QueryEdgeHostnameResponseDataHostnames {
   s.Hostname = &v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseDataHostnames) SetTarget(v string) *QueryEdgeHostnameQueryEdgeHostnameResponseDataHostnames {
+func (s *QueryEdgeHostnameResponseDataHostnames) SetTarget(v string) *QueryEdgeHostnameResponseDataHostnames {
   s.Target = &v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseDataHostnames) SetPropertyId(v int64) *QueryEdgeHostnameQueryEdgeHostnameResponseDataHostnames {
+func (s *QueryEdgeHostnameResponseDataHostnames) SetPropertyId(v int64) *QueryEdgeHostnameResponseDataHostnames {
   s.PropertyId = &v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseDataHostnames) SetPropertyVersion(v int) *QueryEdgeHostnameQueryEdgeHostnameResponseDataHostnames {
+func (s *QueryEdgeHostnameResponseDataHostnames) SetPropertyVersion(v int) *QueryEdgeHostnameResponseDataHostnames {
   s.PropertyVersion = &v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseDataHostnames) SetPropertyName(v string) *QueryEdgeHostnameQueryEdgeHostnameResponseDataHostnames {
+func (s *QueryEdgeHostnameResponseDataHostnames) SetPropertyName(v string) *QueryEdgeHostnameResponseDataHostnames {
   s.PropertyName = &v
   return s
 }
 
-type QueryEdgeHostnameQueryEdgeHostnameResponseDataRegionConfigs struct {
+type QueryEdgeHostnameResponseDataRegionConfigs struct {
   // {"en":"region id", "zh_CN":"区域ID"}
   RegionId *string `json:"regionId,omitempty" xml:"regionId,omitempty" require:"true"`
   // {"en":"action type", "zh_CN":"调度方式。"}
@@ -767,45 +767,45 @@ type QueryEdgeHostnameQueryEdgeHostnameResponseDataRegionConfigs struct {
   Weight *int `json:"weight,omitempty" xml:"weight,omitempty" require:"true"`
 }
 
-func (s QueryEdgeHostnameQueryEdgeHostnameResponseDataRegionConfigs) String() string {
+func (s QueryEdgeHostnameResponseDataRegionConfigs) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryEdgeHostnameQueryEdgeHostnameResponseDataRegionConfigs) GoString() string {
+func (s QueryEdgeHostnameResponseDataRegionConfigs) GoString() string {
   return s.String()
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseDataRegionConfigs) SetRegionId(v string) *QueryEdgeHostnameQueryEdgeHostnameResponseDataRegionConfigs {
+func (s *QueryEdgeHostnameResponseDataRegionConfigs) SetRegionId(v string) *QueryEdgeHostnameResponseDataRegionConfigs {
   s.RegionId = &v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseDataRegionConfigs) SetActionType(v string) *QueryEdgeHostnameQueryEdgeHostnameResponseDataRegionConfigs {
+func (s *QueryEdgeHostnameResponseDataRegionConfigs) SetActionType(v string) *QueryEdgeHostnameResponseDataRegionConfigs {
   s.ActionType = &v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseDataRegionConfigs) SetConfigType(v string) *QueryEdgeHostnameQueryEdgeHostnameResponseDataRegionConfigs {
+func (s *QueryEdgeHostnameResponseDataRegionConfigs) SetConfigType(v string) *QueryEdgeHostnameResponseDataRegionConfigs {
   s.ConfigType = &v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseDataRegionConfigs) SetConfigValue(v string) *QueryEdgeHostnameQueryEdgeHostnameResponseDataRegionConfigs {
+func (s *QueryEdgeHostnameResponseDataRegionConfigs) SetConfigValue(v string) *QueryEdgeHostnameResponseDataRegionConfigs {
   s.ConfigValue = &v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseDataRegionConfigs) SetIpProtocol(v string) *QueryEdgeHostnameQueryEdgeHostnameResponseDataRegionConfigs {
+func (s *QueryEdgeHostnameResponseDataRegionConfigs) SetIpProtocol(v string) *QueryEdgeHostnameResponseDataRegionConfigs {
   s.IpProtocol = &v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseDataRegionConfigs) SetTtl(v string) *QueryEdgeHostnameQueryEdgeHostnameResponseDataRegionConfigs {
+func (s *QueryEdgeHostnameResponseDataRegionConfigs) SetTtl(v string) *QueryEdgeHostnameResponseDataRegionConfigs {
   s.Ttl = &v
   return s
 }
 
-func (s *QueryEdgeHostnameQueryEdgeHostnameResponseDataRegionConfigs) SetWeight(v int) *QueryEdgeHostnameQueryEdgeHostnameResponseDataRegionConfigs {
+func (s *QueryEdgeHostnameResponseDataRegionConfigs) SetWeight(v int) *QueryEdgeHostnameResponseDataRegionConfigs {
   s.Weight = &v
   return s
 }
@@ -960,7 +960,7 @@ type UpdateEdgeHostnameRequest struct {
   // {"en":"geoFence, data range: [global,inside_china_mainland,exclude_china_mainland].", "zh_CN":"加速区域限定。取值范围：[global,inside_china_mainland,exclude_china_mainland]。"}
   GeoFence *string `json:"geoFence,omitempty" xml:"geoFence,omitempty"`
   // {"en":"region configuration", "zh_CN":"区域配置列表 "}
-  RegionConfigs []*UpdateEdgeHostnameUpdateEdgeHostnameRequestRegionConfigs `json:"regionConfigs,omitempty" xml:"regionConfigs,omitempty" require:"true" type:"Repeated"`
+  RegionConfigs []*UpdateEdgeHostnameRequestRegionConfigs `json:"regionConfigs,omitempty" xml:"regionConfigs,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s UpdateEdgeHostnameRequest) String() string {
@@ -981,12 +981,12 @@ func (s *UpdateEdgeHostnameRequest) SetGeoFence(v string) *UpdateEdgeHostnameReq
   return s
 }
 
-func (s *UpdateEdgeHostnameRequest) SetRegionConfigs(v []*UpdateEdgeHostnameUpdateEdgeHostnameRequestRegionConfigs) *UpdateEdgeHostnameRequest {
+func (s *UpdateEdgeHostnameRequest) SetRegionConfigs(v []*UpdateEdgeHostnameRequestRegionConfigs) *UpdateEdgeHostnameRequest {
   s.RegionConfigs = v
   return s
 }
 
-type UpdateEdgeHostnameUpdateEdgeHostnameRequestRegionConfigs struct     {
+type UpdateEdgeHostnameRequestRegionConfigs struct     {
   // {"en":"region id", "zh_CN":"区域ID"}
   RegionId *string `json:"regionId,omitempty" xml:"regionId,omitempty" require:"true"`
   // {"en":"action type", "zh_CN":"调度方式。"}
@@ -1001,40 +1001,40 @@ type UpdateEdgeHostnameUpdateEdgeHostnameRequestRegionConfigs struct     {
   Weight *int `json:"weight,omitempty" xml:"weight,omitempty" require:"true"`
 }
 
-func (s UpdateEdgeHostnameUpdateEdgeHostnameRequestRegionConfigs) String() string {
+func (s UpdateEdgeHostnameRequestRegionConfigs) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateEdgeHostnameUpdateEdgeHostnameRequestRegionConfigs) GoString() string {
+func (s UpdateEdgeHostnameRequestRegionConfigs) GoString() string {
   return s.String()
 }
 
-func (s *UpdateEdgeHostnameUpdateEdgeHostnameRequestRegionConfigs) SetRegionId(v string) *UpdateEdgeHostnameUpdateEdgeHostnameRequestRegionConfigs {
+func (s *UpdateEdgeHostnameRequestRegionConfigs) SetRegionId(v string) *UpdateEdgeHostnameRequestRegionConfigs {
   s.RegionId = &v
   return s
 }
 
-func (s *UpdateEdgeHostnameUpdateEdgeHostnameRequestRegionConfigs) SetActionType(v string) *UpdateEdgeHostnameUpdateEdgeHostnameRequestRegionConfigs {
+func (s *UpdateEdgeHostnameRequestRegionConfigs) SetActionType(v string) *UpdateEdgeHostnameRequestRegionConfigs {
   s.ActionType = &v
   return s
 }
 
-func (s *UpdateEdgeHostnameUpdateEdgeHostnameRequestRegionConfigs) SetConfigValue(v string) *UpdateEdgeHostnameUpdateEdgeHostnameRequestRegionConfigs {
+func (s *UpdateEdgeHostnameRequestRegionConfigs) SetConfigValue(v string) *UpdateEdgeHostnameRequestRegionConfigs {
   s.ConfigValue = &v
   return s
 }
 
-func (s *UpdateEdgeHostnameUpdateEdgeHostnameRequestRegionConfigs) SetIpProtocol(v string) *UpdateEdgeHostnameUpdateEdgeHostnameRequestRegionConfigs {
+func (s *UpdateEdgeHostnameRequestRegionConfigs) SetIpProtocol(v string) *UpdateEdgeHostnameRequestRegionConfigs {
   s.IpProtocol = &v
   return s
 }
 
-func (s *UpdateEdgeHostnameUpdateEdgeHostnameRequestRegionConfigs) SetTtl(v string) *UpdateEdgeHostnameUpdateEdgeHostnameRequestRegionConfigs {
+func (s *UpdateEdgeHostnameRequestRegionConfigs) SetTtl(v string) *UpdateEdgeHostnameRequestRegionConfigs {
   s.Ttl = &v
   return s
 }
 
-func (s *UpdateEdgeHostnameUpdateEdgeHostnameRequestRegionConfigs) SetWeight(v int) *UpdateEdgeHostnameUpdateEdgeHostnameRequestRegionConfigs {
+func (s *UpdateEdgeHostnameRequestRegionConfigs) SetWeight(v int) *UpdateEdgeHostnameRequestRegionConfigs {
   s.Weight = &v
   return s
 }

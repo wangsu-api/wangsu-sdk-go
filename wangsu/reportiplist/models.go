@@ -46,7 +46,7 @@ func (s *QueryCdnIpListDomainList) SetDomainName(v []*string) *QueryCdnIpListDom
 
 type QueryCdnIpListResponse struct {
   // {"en":"domainServerList", "zh_CN":"CDN服务IP数据"}
-  Result []*QueryCdnIpListQueryCdnIpListResponseResult `json:"domain-server-list,omitempty" xml:"domain-server-list,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryCdnIpListResponseResult `json:"domain-server-list,omitempty" xml:"domain-server-list,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryCdnIpListResponse) String() string {
@@ -57,50 +57,50 @@ func (s QueryCdnIpListResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryCdnIpListResponse) SetResult(v []*QueryCdnIpListQueryCdnIpListResponseResult) *QueryCdnIpListResponse {
+func (s *QueryCdnIpListResponse) SetResult(v []*QueryCdnIpListResponseResult) *QueryCdnIpListResponse {
   s.Result = v
   return s
 }
 
-type QueryCdnIpListQueryCdnIpListResponseResult struct     {
+type QueryCdnIpListResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   DomainName *string `json:"domain-name,omitempty" xml:"domain-name,omitempty" require:"true"`
   // {"en":"serverList", "zh_CN":"服务数据"}
-  ServerList []*QueryCdnIpListQueryCdnIpListResponseResultServerList `json:"server-list,omitempty" xml:"server-list,omitempty" require:"true" type:"Repeated"`
+  ServerList []*QueryCdnIpListResponseResultServerList `json:"server-list,omitempty" xml:"server-list,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryCdnIpListQueryCdnIpListResponseResult) String() string {
+func (s QueryCdnIpListResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCdnIpListQueryCdnIpListResponseResult) GoString() string {
+func (s QueryCdnIpListResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryCdnIpListQueryCdnIpListResponseResult) SetDomainName(v string) *QueryCdnIpListQueryCdnIpListResponseResult {
+func (s *QueryCdnIpListResponseResult) SetDomainName(v string) *QueryCdnIpListResponseResult {
   s.DomainName = &v
   return s
 }
 
-func (s *QueryCdnIpListQueryCdnIpListResponseResult) SetServerList(v []*QueryCdnIpListQueryCdnIpListResponseResultServerList) *QueryCdnIpListQueryCdnIpListResponseResult {
+func (s *QueryCdnIpListResponseResult) SetServerList(v []*QueryCdnIpListResponseResultServerList) *QueryCdnIpListResponseResult {
   s.ServerList = v
   return s
 }
 
-type QueryCdnIpListQueryCdnIpListResponseResultServerList struct     {
+type QueryCdnIpListResponseResultServerList struct     {
   // {"en":"Server node IP", "zh_CN":"覆盖节点IP"}
   Server *string `json:"server,omitempty" xml:"server,omitempty" require:"true"`
 }
 
-func (s QueryCdnIpListQueryCdnIpListResponseResultServerList) String() string {
+func (s QueryCdnIpListResponseResultServerList) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCdnIpListQueryCdnIpListResponseResultServerList) GoString() string {
+func (s QueryCdnIpListResponseResultServerList) GoString() string {
   return s.String()
 }
 
-func (s *QueryCdnIpListQueryCdnIpListResponseResultServerList) SetServer(v string) *QueryCdnIpListQueryCdnIpListResponseResultServerList {
+func (s *QueryCdnIpListResponseResultServerList) SetServer(v string) *QueryCdnIpListResponseResultServerList {
   s.Server = &v
   return s
 }
@@ -208,7 +208,7 @@ func (s *ReportServerIpIspProvinceServiceRequest) SetGroupBy(v []*string) *Repor
 }
 
 type ReportServerIpIspProvinceServiceResponse struct {
-  Result []*ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportServerIpIspProvinceServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportServerIpIspProvinceServiceResponse) String() string {
@@ -219,80 +219,80 @@ func (s ReportServerIpIspProvinceServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportServerIpIspProvinceServiceResponse) SetResult(v []*ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResult) *ReportServerIpIspProvinceServiceResponse {
+func (s *ReportServerIpIspProvinceServiceResponse) SetResult(v []*ReportServerIpIspProvinceServiceResponseResult) *ReportServerIpIspProvinceServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResult struct     {
+type ReportServerIpIspProvinceServiceResponseResult struct     {
   // {'en':'Domain', 'zh_CN':'域名'}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  IspData []*ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*ReportServerIpIspProvinceServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResult) String() string {
+func (s ReportServerIpIspProvinceServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResult) GoString() string {
+func (s ReportServerIpIspProvinceServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResult) SetDomain(v string) *ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResult {
+func (s *ReportServerIpIspProvinceServiceResponseResult) SetDomain(v string) *ReportServerIpIspProvinceServiceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResult) SetIspData(v []*ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResultIspData) *ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResult {
+func (s *ReportServerIpIspProvinceServiceResponseResult) SetIspData(v []*ReportServerIpIspProvinceServiceResponseResultIspData) *ReportServerIpIspProvinceServiceResponseResult {
   s.IspData = v
   return s
 }
 
-type ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResultIspData struct     {
+type ReportServerIpIspProvinceServiceResponseResultIspData struct     {
   // {'en':'ISP', 'zh_CN':'运营商'}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
-  ProvinceData []*ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*ReportServerIpIspProvinceServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResultIspData) String() string {
+func (s ReportServerIpIspProvinceServiceResponseResultIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResultIspData) GoString() string {
+func (s ReportServerIpIspProvinceServiceResponseResultIspData) GoString() string {
   return s.String()
 }
 
-func (s *ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResultIspData) SetIsp(v string) *ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResultIspData {
+func (s *ReportServerIpIspProvinceServiceResponseResultIspData) SetIsp(v string) *ReportServerIpIspProvinceServiceResponseResultIspData {
   s.Isp = &v
   return s
 }
 
-func (s *ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResultIspData) SetProvinceData(v []*ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResultIspDataProvinceData) *ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResultIspData {
+func (s *ReportServerIpIspProvinceServiceResponseResultIspData) SetProvinceData(v []*ReportServerIpIspProvinceServiceResponseResultIspDataProvinceData) *ReportServerIpIspProvinceServiceResponseResultIspData {
   s.ProvinceData = v
   return s
 }
 
-type ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResultIspDataProvinceData struct     {
+type ReportServerIpIspProvinceServiceResponseResultIspDataProvinceData struct     {
   // {'en':'Province', 'zh_CN':'省份'}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
   // {'en':'IP list of the covered node', 'zh_CN':'覆盖节点IP列表'}
   ServerIpData []*string `json:"serverIpData,omitempty" xml:"serverIpData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResultIspDataProvinceData) String() string {
+func (s ReportServerIpIspProvinceServiceResponseResultIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResultIspDataProvinceData) GoString() string {
+func (s ReportServerIpIspProvinceServiceResponseResultIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResultIspDataProvinceData {
+func (s *ReportServerIpIspProvinceServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportServerIpIspProvinceServiceResponseResultIspDataProvinceData {
   s.Province = &v
   return s
 }
 
-func (s *ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResultIspDataProvinceData) SetServerIpData(v []*string) *ReportServerIpIspProvinceServiceReportServerIpIspProvinceServiceResponseResultIspDataProvinceData {
+func (s *ReportServerIpIspProvinceServiceResponseResultIspDataProvinceData) SetServerIpData(v []*string) *ReportServerIpIspProvinceServiceResponseResultIspDataProvinceData {
   s.ServerIpData = v
   return s
 }
@@ -370,7 +370,7 @@ func (s *ReportServerIpExistFlowServiceRequest) SetDomain(v []*string) *ReportSe
 
 type ReportServerIpExistFlowServiceResponse struct {
   // {'en':'Result', 'zh_CN':'结果'}
-  Result []*ReportServerIpExistFlowServiceReportServerIpExistFlowServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportServerIpExistFlowServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportServerIpExistFlowServiceResponse) String() string {
@@ -381,32 +381,32 @@ func (s ReportServerIpExistFlowServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportServerIpExistFlowServiceResponse) SetResult(v []*ReportServerIpExistFlowServiceReportServerIpExistFlowServiceResponseResult) *ReportServerIpExistFlowServiceResponse {
+func (s *ReportServerIpExistFlowServiceResponse) SetResult(v []*ReportServerIpExistFlowServiceResponseResult) *ReportServerIpExistFlowServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportServerIpExistFlowServiceReportServerIpExistFlowServiceResponseResult struct     {
+type ReportServerIpExistFlowServiceResponseResult struct     {
   // {'en':'Domain', 'zh_CN':'域名'}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {'en':'Service IP List of domains that have traffic', 'zh_CN':'域名对应的有流量的服务IP列表'}
   IpList []*string `json:"ipList,omitempty" xml:"ipList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportServerIpExistFlowServiceReportServerIpExistFlowServiceResponseResult) String() string {
+func (s ReportServerIpExistFlowServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportServerIpExistFlowServiceReportServerIpExistFlowServiceResponseResult) GoString() string {
+func (s ReportServerIpExistFlowServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportServerIpExistFlowServiceReportServerIpExistFlowServiceResponseResult) SetDomain(v string) *ReportServerIpExistFlowServiceReportServerIpExistFlowServiceResponseResult {
+func (s *ReportServerIpExistFlowServiceResponseResult) SetDomain(v string) *ReportServerIpExistFlowServiceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *ReportServerIpExistFlowServiceReportServerIpExistFlowServiceResponseResult) SetIpList(v []*string) *ReportServerIpExistFlowServiceReportServerIpExistFlowServiceResponseResult {
+func (s *ReportServerIpExistFlowServiceResponseResult) SetIpList(v []*string) *ReportServerIpExistFlowServiceResponseResult {
   s.IpList = v
   return s
 }

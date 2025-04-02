@@ -133,7 +133,7 @@ func (s *ReportFlowDomainIspProvinceIaasServiceRequest) SetGroupBy(v []*string) 
 }
 
 type ReportFlowDomainIspProvinceIaasServiceResponse struct {
-  Result []*ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportFlowDomainIspProvinceIaasServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportFlowDomainIspProvinceIaasServiceResponse) String() string {
@@ -144,84 +144,84 @@ func (s ReportFlowDomainIspProvinceIaasServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowDomainIspProvinceIaasServiceResponse) SetResult(v []*ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResult) *ReportFlowDomainIspProvinceIaasServiceResponse {
+func (s *ReportFlowDomainIspProvinceIaasServiceResponse) SetResult(v []*ReportFlowDomainIspProvinceIaasServiceResponseResult) *ReportFlowDomainIspProvinceIaasServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResult struct     {
+type ReportFlowDomainIspProvinceIaasServiceResponseResult struct     {
   // {'en':'domain', 'zh_CN':'域名'}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  IspData []*ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*ReportFlowDomainIspProvinceIaasServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResult) String() string {
+func (s ReportFlowDomainIspProvinceIaasServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResult) GoString() string {
+func (s ReportFlowDomainIspProvinceIaasServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResult) SetDomain(v string) *ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResult {
+func (s *ReportFlowDomainIspProvinceIaasServiceResponseResult) SetDomain(v string) *ReportFlowDomainIspProvinceIaasServiceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResult) SetIspData(v []*ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspData) *ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResult {
+func (s *ReportFlowDomainIspProvinceIaasServiceResponseResult) SetIspData(v []*ReportFlowDomainIspProvinceIaasServiceResponseResultIspData) *ReportFlowDomainIspProvinceIaasServiceResponseResult {
   s.IspData = v
   return s
 }
 
-type ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspData struct     {
+type ReportFlowDomainIspProvinceIaasServiceResponseResultIspData struct     {
   // {'en':'Service provider&rsquo;s Chinese name', 'zh_CN':'运营商中文名称'}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
-  ProvinceData []*ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*ReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspData) String() string {
+func (s ReportFlowDomainIspProvinceIaasServiceResponseResultIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspData) GoString() string {
+func (s ReportFlowDomainIspProvinceIaasServiceResponseResultIspData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspData) SetIsp(v string) *ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspData {
+func (s *ReportFlowDomainIspProvinceIaasServiceResponseResultIspData) SetIsp(v string) *ReportFlowDomainIspProvinceIaasServiceResponseResultIspData {
   s.Isp = &v
   return s
 }
 
-func (s *ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspData) SetProvinceData(v []*ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceData) *ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspData {
+func (s *ReportFlowDomainIspProvinceIaasServiceResponseResultIspData) SetProvinceData(v []*ReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceData) *ReportFlowDomainIspProvinceIaasServiceResponseResultIspData {
   s.ProvinceData = v
   return s
 }
 
-type ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceData struct     {
+type ReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceData struct     {
   // {'en':'Chinese name of the province', 'zh_CN':'省份中文名称'}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
-  FlowData []*ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceDataFlowData `json:"flowData,omitempty" xml:"flowData,omitempty" require:"true" type:"Repeated"`
+  FlowData []*ReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceDataFlowData `json:"flowData,omitempty" xml:"flowData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceData) String() string {
+func (s ReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceData) GoString() string {
+func (s ReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceData {
+func (s *ReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceData {
   s.Province = &v
   return s
 }
 
-func (s *ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceData) SetFlowData(v []*ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceDataFlowData) *ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceData {
+func (s *ReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceData) SetFlowData(v []*ReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceDataFlowData) *ReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceData {
   s.FlowData = v
   return s
 }
 
-type ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceDataFlowData struct     {
+type ReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceDataFlowData struct     {
   // {'en':'time
   // 1. When the data size of the query is 5m, the format is yyyy-MM-dd HH:mm; each time slice data value represents the data value in the previous time granularity range. The time slice starting at the beginning of the day is yyyy-MM-dd 00:05, and the last time slice is (yyyy-MM-dd+1) 00:00.
   // 2. When the data granularity of the query is 1h, the format is yyyy-MM-dd HH; each time slice data value represents the data value within the previous time granularity range. The time slice starting at the beginning of the day is yyyy-MM-dd 01, and the last time slice is (yyyy-MM-dd+1) 00.
@@ -234,20 +234,20 @@ type ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServic
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceDataFlowData) String() string {
+func (s ReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceDataFlowData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceDataFlowData) GoString() string {
+func (s ReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceDataFlowData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceDataFlowData) SetTimestamp(v string) *ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceDataFlowData {
+func (s *ReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceDataFlowData) SetTimestamp(v string) *ReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceDataFlowData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceDataFlowData) SetValue(v string) *ReportFlowDomainIspProvinceIaasServiceReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceDataFlowData {
+func (s *ReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceDataFlowData) SetValue(v string) *ReportFlowDomainIspProvinceIaasServiceResponseResultIspDataProvinceDataFlowData {
   s.Value = &v
   return s
 }

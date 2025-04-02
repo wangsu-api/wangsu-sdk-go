@@ -180,7 +180,7 @@ type RagKnowledgeBaseListServiceResponse struct {
   // {"en":"code","zh_CN":"响应码"}
   Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"array","zh_CN":"数组"}
-  Data []*RagKnowledgeBaseListServiceRagKnowledgeBaseListServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*RagKnowledgeBaseListServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
   // {"en":"message","zh_CN":"响应描述"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
 }
@@ -203,7 +203,7 @@ func (s *RagKnowledgeBaseListServiceResponse) SetCode(v int) *RagKnowledgeBaseLi
   return s
 }
 
-func (s *RagKnowledgeBaseListServiceResponse) SetData(v []*RagKnowledgeBaseListServiceRagKnowledgeBaseListServiceResponseData) *RagKnowledgeBaseListServiceResponse {
+func (s *RagKnowledgeBaseListServiceResponse) SetData(v []*RagKnowledgeBaseListServiceResponseData) *RagKnowledgeBaseListServiceResponse {
   s.Data = v
   return s
 }
@@ -213,7 +213,7 @@ func (s *RagKnowledgeBaseListServiceResponse) SetMessage(v string) *RagKnowledge
   return s
 }
 
-type RagKnowledgeBaseListServiceRagKnowledgeBaseListServiceResponseData struct     {
+type RagKnowledgeBaseListServiceResponseData struct     {
   // {"en":"last update time","zh_CN":"最近更新时间"}
   LastUpdated *string `json:"lastUpdated,omitempty" xml:"lastUpdated,omitempty" require:"true"`
   // {"en":"size","zh_CN":"知识库大小"}
@@ -228,40 +228,40 @@ type RagKnowledgeBaseListServiceRagKnowledgeBaseListServiceResponseData struct  
   Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
 }
 
-func (s RagKnowledgeBaseListServiceRagKnowledgeBaseListServiceResponseData) String() string {
+func (s RagKnowledgeBaseListServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s RagKnowledgeBaseListServiceRagKnowledgeBaseListServiceResponseData) GoString() string {
+func (s RagKnowledgeBaseListServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *RagKnowledgeBaseListServiceRagKnowledgeBaseListServiceResponseData) SetLastUpdated(v string) *RagKnowledgeBaseListServiceRagKnowledgeBaseListServiceResponseData {
+func (s *RagKnowledgeBaseListServiceResponseData) SetLastUpdated(v string) *RagKnowledgeBaseListServiceResponseData {
   s.LastUpdated = &v
   return s
 }
 
-func (s *RagKnowledgeBaseListServiceRagKnowledgeBaseListServiceResponseData) SetSize(v int) *RagKnowledgeBaseListServiceRagKnowledgeBaseListServiceResponseData {
+func (s *RagKnowledgeBaseListServiceResponseData) SetSize(v int) *RagKnowledgeBaseListServiceResponseData {
   s.Size = &v
   return s
 }
 
-func (s *RagKnowledgeBaseListServiceRagKnowledgeBaseListServiceResponseData) SetCreateTime(v string) *RagKnowledgeBaseListServiceRagKnowledgeBaseListServiceResponseData {
+func (s *RagKnowledgeBaseListServiceResponseData) SetCreateTime(v string) *RagKnowledgeBaseListServiceResponseData {
   s.CreateTime = &v
   return s
 }
 
-func (s *RagKnowledgeBaseListServiceRagKnowledgeBaseListServiceResponseData) SetName(v string) *RagKnowledgeBaseListServiceRagKnowledgeBaseListServiceResponseData {
+func (s *RagKnowledgeBaseListServiceResponseData) SetName(v string) *RagKnowledgeBaseListServiceResponseData {
   s.Name = &v
   return s
 }
 
-func (s *RagKnowledgeBaseListServiceRagKnowledgeBaseListServiceResponseData) SetDescription(v string) *RagKnowledgeBaseListServiceRagKnowledgeBaseListServiceResponseData {
+func (s *RagKnowledgeBaseListServiceResponseData) SetDescription(v string) *RagKnowledgeBaseListServiceResponseData {
   s.Description = &v
   return s
 }
 
-func (s *RagKnowledgeBaseListServiceRagKnowledgeBaseListServiceResponseData) SetId(v string) *RagKnowledgeBaseListServiceRagKnowledgeBaseListServiceResponseData {
+func (s *RagKnowledgeBaseListServiceResponseData) SetId(v string) *RagKnowledgeBaseListServiceResponseData {
   s.Id = &v
   return s
 }

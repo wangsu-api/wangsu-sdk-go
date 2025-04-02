@@ -82,7 +82,7 @@ func (s *QueryDomainLogDownloadAddressDomainList) SetDomainName(v []*string) *Qu
 }
 
 type QueryDomainLogDownloadAddressResponse struct {
-  Logs []*QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogs `json:"logs,omitempty" xml:"logs,omitempty" require:"true" type:"Repeated"`
+  Logs []*QueryDomainLogDownloadAddressResponseLogs `json:"logs,omitempty" xml:"logs,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryDomainLogDownloadAddressResponse) String() string {
@@ -93,43 +93,43 @@ func (s QueryDomainLogDownloadAddressResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryDomainLogDownloadAddressResponse) SetLogs(v []*QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogs) *QueryDomainLogDownloadAddressResponse {
+func (s *QueryDomainLogDownloadAddressResponse) SetLogs(v []*QueryDomainLogDownloadAddressResponseLogs) *QueryDomainLogDownloadAddressResponse {
   s.Logs = v
   return s
 }
 
-type QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogs struct     {
+type QueryDomainLogDownloadAddressResponseLogs struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"areaCode", "zh_CN":"加速区域"}
   AreaCode *string `json:"areaCode,omitempty" xml:"areaCode,omitempty" require:"true"`
-  Files []*QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogsFiles `json:"files,omitempty" xml:"files,omitempty" require:"true" type:"Repeated"`
+  Files []*QueryDomainLogDownloadAddressResponseLogsFiles `json:"files,omitempty" xml:"files,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogs) String() string {
+func (s QueryDomainLogDownloadAddressResponseLogs) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogs) GoString() string {
+func (s QueryDomainLogDownloadAddressResponseLogs) GoString() string {
   return s.String()
 }
 
-func (s *QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogs) SetDomain(v string) *QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogs {
+func (s *QueryDomainLogDownloadAddressResponseLogs) SetDomain(v string) *QueryDomainLogDownloadAddressResponseLogs {
   s.Domain = &v
   return s
 }
 
-func (s *QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogs) SetAreaCode(v string) *QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogs {
+func (s *QueryDomainLogDownloadAddressResponseLogs) SetAreaCode(v string) *QueryDomainLogDownloadAddressResponseLogs {
   s.AreaCode = &v
   return s
 }
 
-func (s *QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogs) SetFiles(v []*QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogsFiles) *QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogs {
+func (s *QueryDomainLogDownloadAddressResponseLogs) SetFiles(v []*QueryDomainLogDownloadAddressResponseLogsFiles) *QueryDomainLogDownloadAddressResponseLogs {
   s.Files = v
   return s
 }
 
-type QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogsFiles struct     {
+type QueryDomainLogDownloadAddressResponseLogsFiles struct     {
   // {"en":"The start time of log file, format is yyyy-MM-dd-HHmm", "zh_CN":"日志文件的开始时间,格式为yyyy-MM-dd-HHmm"}
   DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty" require:"true"`
   // {"en":"The end time of log file, format is yyyy-MM-dd-HHmm", "zh_CN":"日志文件的结束时间,格式为yyyy-MM-dd-HHmm"}
@@ -140,30 +140,30 @@ type QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogsFiles
   FileSize *int32 `json:"fileSize,omitempty" xml:"fileSize,omitempty" require:"true"`
 }
 
-func (s QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogsFiles) String() string {
+func (s QueryDomainLogDownloadAddressResponseLogsFiles) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogsFiles) GoString() string {
+func (s QueryDomainLogDownloadAddressResponseLogsFiles) GoString() string {
   return s.String()
 }
 
-func (s *QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogsFiles) SetDateFrom(v string) *QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogsFiles {
+func (s *QueryDomainLogDownloadAddressResponseLogsFiles) SetDateFrom(v string) *QueryDomainLogDownloadAddressResponseLogsFiles {
   s.DateFrom = &v
   return s
 }
 
-func (s *QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogsFiles) SetDateTo(v string) *QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogsFiles {
+func (s *QueryDomainLogDownloadAddressResponseLogsFiles) SetDateTo(v string) *QueryDomainLogDownloadAddressResponseLogsFiles {
   s.DateTo = &v
   return s
 }
 
-func (s *QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogsFiles) SetLogUrl(v string) *QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogsFiles {
+func (s *QueryDomainLogDownloadAddressResponseLogsFiles) SetLogUrl(v string) *QueryDomainLogDownloadAddressResponseLogsFiles {
   s.LogUrl = &v
   return s
 }
 
-func (s *QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogsFiles) SetFileSize(v int32) *QueryDomainLogDownloadAddressQueryDomainLogDownloadAddressResponseLogsFiles {
+func (s *QueryDomainLogDownloadAddressResponseLogsFiles) SetFileSize(v int32) *QueryDomainLogDownloadAddressResponseLogsFiles {
   s.FileSize = &v
   return s
 }
@@ -274,7 +274,7 @@ func (s *QueryTranscodingDurationLogDownloadAddressRequest) SetDomain(v []*strin
 }
 
 type QueryTranscodingDurationLogDownloadAddressResponse struct {
-  Result []*QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryTranscodingDurationLogDownloadAddressResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryTranscodingDurationLogDownloadAddressResponse) String() string {
@@ -285,36 +285,36 @@ func (s QueryTranscodingDurationLogDownloadAddressResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryTranscodingDurationLogDownloadAddressResponse) SetResult(v []*QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResult) *QueryTranscodingDurationLogDownloadAddressResponse {
+func (s *QueryTranscodingDurationLogDownloadAddressResponse) SetResult(v []*QueryTranscodingDurationLogDownloadAddressResponseResult) *QueryTranscodingDurationLogDownloadAddressResponse {
   s.Result = v
   return s
 }
 
-type QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResult struct     {
+type QueryTranscodingDurationLogDownloadAddressResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  FileData []*QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResultFileData `json:"fileData,omitempty" xml:"fileData,omitempty" require:"true" type:"Repeated"`
+  FileData []*QueryTranscodingDurationLogDownloadAddressResponseResultFileData `json:"fileData,omitempty" xml:"fileData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResult) String() string {
+func (s QueryTranscodingDurationLogDownloadAddressResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResult) GoString() string {
+func (s QueryTranscodingDurationLogDownloadAddressResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResult) SetDomain(v string) *QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResult {
+func (s *QueryTranscodingDurationLogDownloadAddressResponseResult) SetDomain(v string) *QueryTranscodingDurationLogDownloadAddressResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResult) SetFileData(v []*QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResultFileData) *QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResult {
+func (s *QueryTranscodingDurationLogDownloadAddressResponseResult) SetFileData(v []*QueryTranscodingDurationLogDownloadAddressResponseResultFileData) *QueryTranscodingDurationLogDownloadAddressResponseResult {
   s.FileData = v
   return s
 }
 
-type QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResultFileData struct     {
+type QueryTranscodingDurationLogDownloadAddressResponseResultFileData struct     {
   // {"en":"The start time of log file, format is yyyy-MM-dd-HHmm", "zh_CN":"日志文件的开始时间,格式为yyyy-MM-dd-HHmm"}
   DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty" require:"true"`
   // {"en":"The end time of log file, format is yyyy-MM-dd-HHmm", "zh_CN":"日志文件的结束时间,格式为yyyy-MM-dd-HHmm"}
@@ -329,40 +329,40 @@ type QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownlo
   FileSize *int64 `json:"fileSize,omitempty" xml:"fileSize,omitempty" require:"true"`
 }
 
-func (s QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResultFileData) String() string {
+func (s QueryTranscodingDurationLogDownloadAddressResponseResultFileData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResultFileData) GoString() string {
+func (s QueryTranscodingDurationLogDownloadAddressResponseResultFileData) GoString() string {
   return s.String()
 }
 
-func (s *QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResultFileData) SetDateFrom(v string) *QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResultFileData {
+func (s *QueryTranscodingDurationLogDownloadAddressResponseResultFileData) SetDateFrom(v string) *QueryTranscodingDurationLogDownloadAddressResponseResultFileData {
   s.DateFrom = &v
   return s
 }
 
-func (s *QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResultFileData) SetDateTo(v string) *QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResultFileData {
+func (s *QueryTranscodingDurationLogDownloadAddressResponseResultFileData) SetDateTo(v string) *QueryTranscodingDurationLogDownloadAddressResponseResultFileData {
   s.DateTo = &v
   return s
 }
 
-func (s *QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResultFileData) SetLogUrl(v string) *QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResultFileData {
+func (s *QueryTranscodingDurationLogDownloadAddressResponseResultFileData) SetLogUrl(v string) *QueryTranscodingDurationLogDownloadAddressResponseResultFileData {
   s.LogUrl = &v
   return s
 }
 
-func (s *QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResultFileData) SetUrlExpireTime(v string) *QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResultFileData {
+func (s *QueryTranscodingDurationLogDownloadAddressResponseResultFileData) SetUrlExpireTime(v string) *QueryTranscodingDurationLogDownloadAddressResponseResultFileData {
   s.UrlExpireTime = &v
   return s
 }
 
-func (s *QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResultFileData) SetFileName(v string) *QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResultFileData {
+func (s *QueryTranscodingDurationLogDownloadAddressResponseResultFileData) SetFileName(v string) *QueryTranscodingDurationLogDownloadAddressResponseResultFileData {
   s.FileName = &v
   return s
 }
 
-func (s *QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResultFileData) SetFileSize(v int64) *QueryTranscodingDurationLogDownloadAddressQueryTranscodingDurationLogDownloadAddressResponseResultFileData {
+func (s *QueryTranscodingDurationLogDownloadAddressResponseResultFileData) SetFileSize(v int64) *QueryTranscodingDurationLogDownloadAddressResponseResultFileData {
   s.FileSize = &v
   return s
 }

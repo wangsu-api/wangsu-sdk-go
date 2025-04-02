@@ -469,7 +469,7 @@ func (s AddSecurityGroupRulesResponseHeader) GoString() string {
 
 
 type VMPBindSecurityGroupRequest struct {
-  BindInfo []*VMPBindSecurityGroupVMPBindSecurityGroupParam `json:"bindInfo,omitempty" xml:"bindInfo,omitempty" require:"true" type:"Repeated"`
+  BindInfo []*VMPBindSecurityGroupParam `json:"bindInfo,omitempty" xml:"bindInfo,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s VMPBindSecurityGroupRequest) String() string {
@@ -480,32 +480,32 @@ func (s VMPBindSecurityGroupRequest) GoString() string {
   return s.String()
 }
 
-func (s *VMPBindSecurityGroupRequest) SetBindInfo(v []*VMPBindSecurityGroupVMPBindSecurityGroupParam) *VMPBindSecurityGroupRequest {
+func (s *VMPBindSecurityGroupRequest) SetBindInfo(v []*VMPBindSecurityGroupParam) *VMPBindSecurityGroupRequest {
   s.BindInfo = v
   return s
 }
 
-type VMPBindSecurityGroupVMPBindSecurityGroupParam struct {
+type VMPBindSecurityGroupParam struct {
   // {"en":"Instance ID", "zh_CN":"实例id"}
   ServerId *string `json:"serverId,omitempty" xml:"serverId,omitempty" require:"true"`
   // {"en":"Security Group ID", "zh_CN":"安全组id"}
   SecurityGroupIds []*string `json:"securityGroupIds,omitempty" xml:"securityGroupIds,omitempty" type:"Repeated"`
 }
 
-func (s VMPBindSecurityGroupVMPBindSecurityGroupParam) String() string {
+func (s VMPBindSecurityGroupParam) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPBindSecurityGroupVMPBindSecurityGroupParam) GoString() string {
+func (s VMPBindSecurityGroupParam) GoString() string {
   return s.String()
 }
 
-func (s *VMPBindSecurityGroupVMPBindSecurityGroupParam) SetServerId(v string) *VMPBindSecurityGroupVMPBindSecurityGroupParam {
+func (s *VMPBindSecurityGroupParam) SetServerId(v string) *VMPBindSecurityGroupParam {
   s.ServerId = &v
   return s
 }
 
-func (s *VMPBindSecurityGroupVMPBindSecurityGroupParam) SetSecurityGroupIds(v []*string) *VMPBindSecurityGroupVMPBindSecurityGroupParam {
+func (s *VMPBindSecurityGroupParam) SetSecurityGroupIds(v []*string) *VMPBindSecurityGroupParam {
   s.SecurityGroupIds = v
   return s
 }

@@ -1057,6 +1057,49 @@ type TransCodeRequest struct {
   WatermarkTemplateId *string `json:"watermarkTemplateId,omitempty" xml:"watermarkTemplateId,omitempty"`
   // {"en":"Transcoding combination template ID, the default template set by the cloud on-demand management platform is used by default", "zh_CN":"转码组合模板ID，默认使用云点播管理平台设置的默认模板"}
   TransCodeTemplateId *string `json:"transCodeTemplateId,omitempty" xml:"transCodeTemplateId,omitempty"`
+  // {"en":"Subtitle ID, corresponding to the material ID of Cloud VOD material management. After successful upload, subtitles will be automatically Transcoding and added; only ass or srt subtitle formats are supported.", "zh_CN":"字幕ID ,对应云点播素材管理的素材ID。上传成功后会自动转码增加字幕；仅支持ass或srt字幕格式。"}
+  SubtitleId *string `json:"subtitleId,omitempty" xml:"subtitleId,omitempty"`
+  // {"en":"Supports multiple subtitles, up to 13 subtitles can be added. Only supports multi- Bitrate adaptive Transcoding. Only supports vtt subtitle format.
+  // The format content is:
+  // lang: subtitle code, which can be defined according to your needs
+  // subtitleId: subtitle ID, corresponding to the material ID of Cloud VOD material management
+  // code[{\"lang\":\"cn\",\"subtitleId\":\"8a36dfe101921000368ac14400000000\"},{\"lang\":\"en-US\",\"subtitleId\":\"8a38e428019210004d56ef8c00000000\"},{\"lang\":\"ko\",\"subtitleId\":\"8a36dfe101921000368ac14400000000\"}] base64 encryption
+  // The subtitle language corresponding code of the console player.
+  // Language code
+  // Chinese: cn
+  // English: en-US
+  // Japanese:ja
+  // Traditional Chinese:zh-tw
+  // French:fr
+  // German: de
+  // Spanish: es
+  // Portuguese:pt
+  // Russian:ru
+  // Korean:ko
+  // Thai:th
+  // Vietnamese:vt
+  // Indonesian:id"
+  //   , "zh_CN":"支持多个字幕，最多可以添加13个字幕。只支持多码率自适应转码。仅支持vtt字幕格式。
+  // 格式内容为：
+  // lang：字幕code，可以根据自己需求定义
+  // subtitleId：字幕ID，对应云点播素材管理的素材ID
+  // code[{\"lang\":\"cn\",\"subtitleId\":\"8a36dfe101921000368ac14400000000\"},{\"lang\":\"en-US\",\"subtitleId\":\"8a38e428019210004d56ef8c00000000\"},{\"lang\":\"ko\",\"subtitleId\":\"8a36dfe101921000368ac14400000000\"}] 的base64加密
+  // 控制台播放器字幕语言对应code。
+  // 语言 code
+  // 中文：cn
+  // 英文：en-US
+  // 日文:ja
+  // 繁体中文:zh-tw
+  // 法语:fr
+  // 德语:de
+  // 西班牙语:es
+  // 葡萄牙语:pt
+  // 俄语:ru
+  // 韩语:ko
+  // 泰语:th
+  // 越南语:vt
+  // 印尼语:id"}
+  Subtitle *string `json:"subtitle,omitempty" xml:"subtitle,omitempty"`
 }
 
 func (s TransCodeRequest) String() string {
@@ -1089,6 +1132,16 @@ func (s *TransCodeRequest) SetWatermarkTemplateId(v string) *TransCodeRequest {
 
 func (s *TransCodeRequest) SetTransCodeTemplateId(v string) *TransCodeRequest {
   s.TransCodeTemplateId = &v
+  return s
+}
+
+func (s *TransCodeRequest) SetSubtitleId(v string) *TransCodeRequest {
+  s.SubtitleId = &v
+  return s
+}
+
+func (s *TransCodeRequest) SetSubtitle(v string) *TransCodeRequest {
+  s.Subtitle = &v
   return s
 }
 

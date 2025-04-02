@@ -301,7 +301,7 @@ type GetListOfPropertyValidationTasksResponse struct {
   // 验证任务的总数。"}
   Count *int `json:"count,omitempty" xml:"count,omitempty" require:"true"`
   // {"en" : "Summarizes validation tasks. Further details about a validation task can be obtained by calling the Query a property validation task API.", "zh_CN": "验证任务摘要信息。通过调用'查询验证任务详情'接口，可获得有关验证任务的详细信息。"}
-  Validations []*GetListOfPropertyValidationTasksGetListOfPropertyValidationTasksResponseValidations `json:"validations,omitempty" xml:"validations,omitempty" require:"true" type:"Repeated"`
+  Validations []*GetListOfPropertyValidationTasksResponseValidations `json:"validations,omitempty" xml:"validations,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetListOfPropertyValidationTasksResponse) String() string {
@@ -317,12 +317,12 @@ func (s *GetListOfPropertyValidationTasksResponse) SetCount(v int) *GetListOfPro
   return s
 }
 
-func (s *GetListOfPropertyValidationTasksResponse) SetValidations(v []*GetListOfPropertyValidationTasksGetListOfPropertyValidationTasksResponseValidations) *GetListOfPropertyValidationTasksResponse {
+func (s *GetListOfPropertyValidationTasksResponse) SetValidations(v []*GetListOfPropertyValidationTasksResponseValidations) *GetListOfPropertyValidationTasksResponse {
   s.Validations = v
   return s
 }
 
-type GetListOfPropertyValidationTasksGetListOfPropertyValidationTasksResponseValidations struct     {
+type GetListOfPropertyValidationTasksResponseValidations struct     {
   // {"en" : "ID of the validation task.", "zh_CN": "验证任务ID。"}
   Id *string `json:"id,omitempty" xml:"id,omitempty"`
   // {"en" : "ID of the property that was validated.", "zh_CN": "提交验证的加速项目的ID。"}
@@ -343,45 +343,45 @@ type GetListOfPropertyValidationTasksGetListOfPropertyValidationTasksResponseVal
   ApiRequestId *string `json:"apiRequestId,omitempty" xml:"apiRequestId,omitempty"`
 }
 
-func (s GetListOfPropertyValidationTasksGetListOfPropertyValidationTasksResponseValidations) String() string {
+func (s GetListOfPropertyValidationTasksResponseValidations) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetListOfPropertyValidationTasksGetListOfPropertyValidationTasksResponseValidations) GoString() string {
+func (s GetListOfPropertyValidationTasksResponseValidations) GoString() string {
   return s.String()
 }
 
-func (s *GetListOfPropertyValidationTasksGetListOfPropertyValidationTasksResponseValidations) SetId(v string) *GetListOfPropertyValidationTasksGetListOfPropertyValidationTasksResponseValidations {
+func (s *GetListOfPropertyValidationTasksResponseValidations) SetId(v string) *GetListOfPropertyValidationTasksResponseValidations {
   s.Id = &v
   return s
 }
 
-func (s *GetListOfPropertyValidationTasksGetListOfPropertyValidationTasksResponseValidations) SetPropertyId(v string) *GetListOfPropertyValidationTasksGetListOfPropertyValidationTasksResponseValidations {
+func (s *GetListOfPropertyValidationTasksResponseValidations) SetPropertyId(v string) *GetListOfPropertyValidationTasksResponseValidations {
   s.PropertyId = &v
   return s
 }
 
-func (s *GetListOfPropertyValidationTasksGetListOfPropertyValidationTasksResponseValidations) SetVersion(v int) *GetListOfPropertyValidationTasksGetListOfPropertyValidationTasksResponseValidations {
+func (s *GetListOfPropertyValidationTasksResponseValidations) SetVersion(v int) *GetListOfPropertyValidationTasksResponseValidations {
   s.Version = &v
   return s
 }
 
-func (s *GetListOfPropertyValidationTasksGetListOfPropertyValidationTasksResponseValidations) SetSubmissionTime(v string) *GetListOfPropertyValidationTasksGetListOfPropertyValidationTasksResponseValidations {
+func (s *GetListOfPropertyValidationTasksResponseValidations) SetSubmissionTime(v string) *GetListOfPropertyValidationTasksResponseValidations {
   s.SubmissionTime = &v
   return s
 }
 
-func (s *GetListOfPropertyValidationTasksGetListOfPropertyValidationTasksResponseValidations) SetStatus(v string) *GetListOfPropertyValidationTasksGetListOfPropertyValidationTasksResponseValidations {
+func (s *GetListOfPropertyValidationTasksResponseValidations) SetStatus(v string) *GetListOfPropertyValidationTasksResponseValidations {
   s.Status = &v
   return s
 }
 
-func (s *GetListOfPropertyValidationTasksGetListOfPropertyValidationTasksResponseValidations) SetCacheVersion(v string) *GetListOfPropertyValidationTasksGetListOfPropertyValidationTasksResponseValidations {
+func (s *GetListOfPropertyValidationTasksResponseValidations) SetCacheVersion(v string) *GetListOfPropertyValidationTasksResponseValidations {
   s.CacheVersion = &v
   return s
 }
 
-func (s *GetListOfPropertyValidationTasksGetListOfPropertyValidationTasksResponseValidations) SetApiRequestId(v string) *GetListOfPropertyValidationTasksGetListOfPropertyValidationTasksResponseValidations {
+func (s *GetListOfPropertyValidationTasksResponseValidations) SetApiRequestId(v string) *GetListOfPropertyValidationTasksResponseValidations {
   s.ApiRequestId = &v
   return s
 }

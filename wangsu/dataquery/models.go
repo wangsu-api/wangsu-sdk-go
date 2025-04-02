@@ -22,7 +22,7 @@ type AllSiteSumFlowResponse struct {
   // {'en':'Interface information', 'zh_CN':'接口信息'}
   ReturnMsg *string `json:"returnMsg,omitempty" xml:"returnMsg,omitempty" require:"true"`
   // {'en':'response content', 'zh_CN':'响应内容'}
-  Content *AllSiteSumFlowAllSiteSumFlowResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
+  Content *AllSiteSumFlowResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
 }
 
 func (s AllSiteSumFlowResponse) String() string {
@@ -43,32 +43,32 @@ func (s *AllSiteSumFlowResponse) SetReturnMsg(v string) *AllSiteSumFlowResponse 
   return s
 }
 
-func (s *AllSiteSumFlowResponse) SetContent(v *AllSiteSumFlowAllSiteSumFlowResponseContent) *AllSiteSumFlowResponse {
+func (s *AllSiteSumFlowResponse) SetContent(v *AllSiteSumFlowResponseContent) *AllSiteSumFlowResponse {
   s.Content = v
   return s
 }
 
-type AllSiteSumFlowAllSiteSumFlowResponseContent struct {
+type AllSiteSumFlowResponseContent struct {
   // {'en':'Total outgoing traffic of the enterprise site', 'zh_CN':'企业站点流出流量总和'}
   SumSiteOutFlow *string `json:"sumSiteOutFlow,omitempty" xml:"sumSiteOutFlow,omitempty" require:"true"`
   // {'en':'The sum of the inbound traffic of the enterprise site', 'zh_CN':'企业站点流入流量总和'}
   SumSiteInFlow *string `json:"sumSiteInFlow,omitempty" xml:"sumSiteInFlow,omitempty" require:"true"`
 }
 
-func (s AllSiteSumFlowAllSiteSumFlowResponseContent) String() string {
+func (s AllSiteSumFlowResponseContent) String() string {
   return tea.Prettify(s)
 }
 
-func (s AllSiteSumFlowAllSiteSumFlowResponseContent) GoString() string {
+func (s AllSiteSumFlowResponseContent) GoString() string {
   return s.String()
 }
 
-func (s *AllSiteSumFlowAllSiteSumFlowResponseContent) SetSumSiteOutFlow(v string) *AllSiteSumFlowAllSiteSumFlowResponseContent {
+func (s *AllSiteSumFlowResponseContent) SetSumSiteOutFlow(v string) *AllSiteSumFlowResponseContent {
   s.SumSiteOutFlow = &v
   return s
 }
 
-func (s *AllSiteSumFlowAllSiteSumFlowResponseContent) SetSumSiteInFlow(v string) *AllSiteSumFlowAllSiteSumFlowResponseContent {
+func (s *AllSiteSumFlowResponseContent) SetSumSiteInFlow(v string) *AllSiteSumFlowResponseContent {
   s.SumSiteInFlow = &v
   return s
 }
@@ -158,7 +158,7 @@ type SiteMsDeviceResponse struct {
   // {'en':'Interface information', 'zh_CN':'接口信息'}
   ReturnMsg *string `json:"returnMsg,omitempty" xml:"returnMsg,omitempty" require:"true"`
   // {'en':'response content', 'zh_CN':'响应内容'}
-  Content []*SiteMsDeviceSiteMsDeviceResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Repeated"`
+  Content []*SiteMsDeviceResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s SiteMsDeviceResponse) String() string {
@@ -179,37 +179,37 @@ func (s *SiteMsDeviceResponse) SetReturnMsg(v string) *SiteMsDeviceResponse {
   return s
 }
 
-func (s *SiteMsDeviceResponse) SetContent(v []*SiteMsDeviceSiteMsDeviceResponseContent) *SiteMsDeviceResponse {
+func (s *SiteMsDeviceResponse) SetContent(v []*SiteMsDeviceResponseContent) *SiteMsDeviceResponse {
   s.Content = v
   return s
 }
 
-type SiteMsDeviceSiteMsDeviceResponseContent struct     {
+type SiteMsDeviceResponseContent struct     {
   // {'en':'query time', 'zh_CN':'查询时间'}
   TimeStamp *string `json:"timeStamp,omitempty" xml:"timeStamp,omitempty" require:"true"`
   // {'en':'Use of site equipment', 'zh_CN':'站点设备的使用情况'}
-  Details *SiteMsDeviceSiteMsDeviceResponseContentDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Struct"`
+  Details *SiteMsDeviceResponseContentDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Struct"`
 }
 
-func (s SiteMsDeviceSiteMsDeviceResponseContent) String() string {
+func (s SiteMsDeviceResponseContent) String() string {
   return tea.Prettify(s)
 }
 
-func (s SiteMsDeviceSiteMsDeviceResponseContent) GoString() string {
+func (s SiteMsDeviceResponseContent) GoString() string {
   return s.String()
 }
 
-func (s *SiteMsDeviceSiteMsDeviceResponseContent) SetTimeStamp(v string) *SiteMsDeviceSiteMsDeviceResponseContent {
+func (s *SiteMsDeviceResponseContent) SetTimeStamp(v string) *SiteMsDeviceResponseContent {
   s.TimeStamp = &v
   return s
 }
 
-func (s *SiteMsDeviceSiteMsDeviceResponseContent) SetDetails(v *SiteMsDeviceSiteMsDeviceResponseContentDetails) *SiteMsDeviceSiteMsDeviceResponseContent {
+func (s *SiteMsDeviceResponseContent) SetDetails(v *SiteMsDeviceResponseContentDetails) *SiteMsDeviceResponseContent {
   s.Details = v
   return s
 }
 
-type SiteMsDeviceSiteMsDeviceResponseContentDetails struct {
+type SiteMsDeviceResponseContentDetails struct {
   // {'en':'site name', 'zh_CN':'站点名称'}
   SiteName *string `json:"siteName,omitempty" xml:"siteName,omitempty" require:"true"`
   // {'en':'site Id', 'zh_CN':'站点 ID'}
@@ -222,35 +222,35 @@ type SiteMsDeviceSiteMsDeviceResponseContentDetails struct {
   Slave *string `json:"slave,omitempty" xml:"slave,omitempty" require:"true"`
 }
 
-func (s SiteMsDeviceSiteMsDeviceResponseContentDetails) String() string {
+func (s SiteMsDeviceResponseContentDetails) String() string {
   return tea.Prettify(s)
 }
 
-func (s SiteMsDeviceSiteMsDeviceResponseContentDetails) GoString() string {
+func (s SiteMsDeviceResponseContentDetails) GoString() string {
   return s.String()
 }
 
-func (s *SiteMsDeviceSiteMsDeviceResponseContentDetails) SetSiteName(v string) *SiteMsDeviceSiteMsDeviceResponseContentDetails {
+func (s *SiteMsDeviceResponseContentDetails) SetSiteName(v string) *SiteMsDeviceResponseContentDetails {
   s.SiteName = &v
   return s
 }
 
-func (s *SiteMsDeviceSiteMsDeviceResponseContentDetails) SetSiteId(v int64) *SiteMsDeviceSiteMsDeviceResponseContentDetails {
+func (s *SiteMsDeviceResponseContentDetails) SetSiteId(v int64) *SiteMsDeviceResponseContentDetails {
   s.SiteId = &v
   return s
 }
 
-func (s *SiteMsDeviceSiteMsDeviceResponseContentDetails) SetDeviceNum(v int) *SiteMsDeviceSiteMsDeviceResponseContentDetails {
+func (s *SiteMsDeviceResponseContentDetails) SetDeviceNum(v int) *SiteMsDeviceResponseContentDetails {
   s.DeviceNum = &v
   return s
 }
 
-func (s *SiteMsDeviceSiteMsDeviceResponseContentDetails) SetMaster(v string) *SiteMsDeviceSiteMsDeviceResponseContentDetails {
+func (s *SiteMsDeviceResponseContentDetails) SetMaster(v string) *SiteMsDeviceResponseContentDetails {
   s.Master = &v
   return s
 }
 
-func (s *SiteMsDeviceSiteMsDeviceResponseContentDetails) SetSlave(v string) *SiteMsDeviceSiteMsDeviceResponseContentDetails {
+func (s *SiteMsDeviceResponseContentDetails) SetSlave(v string) *SiteMsDeviceResponseContentDetails {
   s.Slave = &v
   return s
 }
@@ -328,7 +328,7 @@ type SiteSessionInfoResponse struct {
   // {'en':'Interface information', 'zh_CN':'接口信息'}
   ReturnMsg *string `json:"returnMsg,omitempty" xml:"returnMsg,omitempty" require:"true"`
   // {'en':'response content', 'zh_CN':'响应内容'}
-  Content *SiteSessionInfoSiteSessionInfoResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
+  Content *SiteSessionInfoResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
 }
 
 func (s SiteSessionInfoResponse) String() string {
@@ -349,44 +349,44 @@ func (s *SiteSessionInfoResponse) SetReturnMsg(v string) *SiteSessionInfoRespons
   return s
 }
 
-func (s *SiteSessionInfoResponse) SetContent(v *SiteSessionInfoSiteSessionInfoResponseContent) *SiteSessionInfoResponse {
+func (s *SiteSessionInfoResponse) SetContent(v *SiteSessionInfoResponseContent) *SiteSessionInfoResponse {
   s.Content = v
   return s
 }
 
-type SiteSessionInfoSiteSessionInfoResponseContent struct {
+type SiteSessionInfoResponseContent struct {
   // {'en':'site name', 'zh_CN':'站点名称'}
   SiteName *string `json:"siteName,omitempty" xml:"siteName,omitempty" require:"true"`
   // {'en':'site Id', 'zh_CN':'站点 ID'}
   SiteId *int64 `json:"siteId,omitempty" xml:"siteId,omitempty" require:"true"`
   // {'en':'Session data', 'zh_CN':'会话数据'}
-  Content []*SiteSessionInfoSiteSessionInfoResponseContentContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Repeated"`
+  Content []*SiteSessionInfoResponseContentContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s SiteSessionInfoSiteSessionInfoResponseContent) String() string {
+func (s SiteSessionInfoResponseContent) String() string {
   return tea.Prettify(s)
 }
 
-func (s SiteSessionInfoSiteSessionInfoResponseContent) GoString() string {
+func (s SiteSessionInfoResponseContent) GoString() string {
   return s.String()
 }
 
-func (s *SiteSessionInfoSiteSessionInfoResponseContent) SetSiteName(v string) *SiteSessionInfoSiteSessionInfoResponseContent {
+func (s *SiteSessionInfoResponseContent) SetSiteName(v string) *SiteSessionInfoResponseContent {
   s.SiteName = &v
   return s
 }
 
-func (s *SiteSessionInfoSiteSessionInfoResponseContent) SetSiteId(v int64) *SiteSessionInfoSiteSessionInfoResponseContent {
+func (s *SiteSessionInfoResponseContent) SetSiteId(v int64) *SiteSessionInfoResponseContent {
   s.SiteId = &v
   return s
 }
 
-func (s *SiteSessionInfoSiteSessionInfoResponseContent) SetContent(v []*SiteSessionInfoSiteSessionInfoResponseContentContent) *SiteSessionInfoSiteSessionInfoResponseContent {
+func (s *SiteSessionInfoResponseContent) SetContent(v []*SiteSessionInfoResponseContentContent) *SiteSessionInfoResponseContent {
   s.Content = v
   return s
 }
 
-type SiteSessionInfoSiteSessionInfoResponseContentContent struct     {
+type SiteSessionInfoResponseContentContent struct     {
   // {'en':'Original IP', 'zh_CN':'原始IP'}
   SrcIp *string `json:"srcIp,omitempty" xml:"srcIp,omitempty" require:"true"`
   // {'en':'Original Port', 'zh_CN':'原始端口'}
@@ -401,40 +401,40 @@ type SiteSessionInfoSiteSessionInfoResponseContentContent struct     {
   Flow *int `json:"flow,omitempty" xml:"flow,omitempty" require:"true"`
 }
 
-func (s SiteSessionInfoSiteSessionInfoResponseContentContent) String() string {
+func (s SiteSessionInfoResponseContentContent) String() string {
   return tea.Prettify(s)
 }
 
-func (s SiteSessionInfoSiteSessionInfoResponseContentContent) GoString() string {
+func (s SiteSessionInfoResponseContentContent) GoString() string {
   return s.String()
 }
 
-func (s *SiteSessionInfoSiteSessionInfoResponseContentContent) SetSrcIp(v string) *SiteSessionInfoSiteSessionInfoResponseContentContent {
+func (s *SiteSessionInfoResponseContentContent) SetSrcIp(v string) *SiteSessionInfoResponseContentContent {
   s.SrcIp = &v
   return s
 }
 
-func (s *SiteSessionInfoSiteSessionInfoResponseContentContent) SetSrcPort(v int) *SiteSessionInfoSiteSessionInfoResponseContentContent {
+func (s *SiteSessionInfoResponseContentContent) SetSrcPort(v int) *SiteSessionInfoResponseContentContent {
   s.SrcPort = &v
   return s
 }
 
-func (s *SiteSessionInfoSiteSessionInfoResponseContentContent) SetDestIp(v string) *SiteSessionInfoSiteSessionInfoResponseContentContent {
+func (s *SiteSessionInfoResponseContentContent) SetDestIp(v string) *SiteSessionInfoResponseContentContent {
   s.DestIp = &v
   return s
 }
 
-func (s *SiteSessionInfoSiteSessionInfoResponseContentContent) SetDestPort(v int) *SiteSessionInfoSiteSessionInfoResponseContentContent {
+func (s *SiteSessionInfoResponseContentContent) SetDestPort(v int) *SiteSessionInfoResponseContentContent {
   s.DestPort = &v
   return s
 }
 
-func (s *SiteSessionInfoSiteSessionInfoResponseContentContent) SetProtocol(v string) *SiteSessionInfoSiteSessionInfoResponseContentContent {
+func (s *SiteSessionInfoResponseContentContent) SetProtocol(v string) *SiteSessionInfoResponseContentContent {
   s.Protocol = &v
   return s
 }
 
-func (s *SiteSessionInfoSiteSessionInfoResponseContentContent) SetFlow(v int) *SiteSessionInfoSiteSessionInfoResponseContentContent {
+func (s *SiteSessionInfoResponseContentContent) SetFlow(v int) *SiteSessionInfoResponseContentContent {
   s.Flow = &v
   return s
 }
@@ -538,7 +538,7 @@ type SiteTotalFlowChartResponse struct {
   // {'en':'Interface information', 'zh_CN':'接口信息'}
   ReturnMsg *string `json:"returnMsg,omitempty" xml:"returnMsg,omitempty" require:"true"`
   // {'en':'response content', 'zh_CN':'响应内容'}
-  Content *SiteTotalFlowChartSiteTotalFlowChartResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
+  Content *SiteTotalFlowChartResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
 }
 
 func (s SiteTotalFlowChartResponse) String() string {
@@ -559,12 +559,12 @@ func (s *SiteTotalFlowChartResponse) SetReturnMsg(v string) *SiteTotalFlowChartR
   return s
 }
 
-func (s *SiteTotalFlowChartResponse) SetContent(v *SiteTotalFlowChartSiteTotalFlowChartResponseContent) *SiteTotalFlowChartResponse {
+func (s *SiteTotalFlowChartResponse) SetContent(v *SiteTotalFlowChartResponseContent) *SiteTotalFlowChartResponse {
   s.Content = v
   return s
 }
 
-type SiteTotalFlowChartSiteTotalFlowChartResponseContent struct {
+type SiteTotalFlowChartResponseContent struct {
   // {'en':'site name', 'zh_CN':'站点名称'}
   SiteName *string `json:"siteName,omitempty" xml:"siteName,omitempty" require:"true"`
   // {'en':'site Id', 'zh_CN':'站点 ID'}
@@ -572,38 +572,38 @@ type SiteTotalFlowChartSiteTotalFlowChartResponseContent struct {
   // {'en':'Allocated bandwidth in Mbps', 'zh_CN':'分配带宽，单位：Mbps'}
   AllocateBandwidth *int `json:"allocateBandwidth,omitempty" xml:"allocateBandwidth,omitempty" require:"true"`
   // {'en':'Bandwidth trend data', 'zh_CN':'带宽趋势数据'}
-  Bandwidths *SiteTotalFlowChartSiteTotalFlowChartResponseContentBandwidths `json:"bandwidths,omitempty" xml:"bandwidths,omitempty" require:"true" type:"Struct"`
+  Bandwidths *SiteTotalFlowChartResponseContentBandwidths `json:"bandwidths,omitempty" xml:"bandwidths,omitempty" require:"true" type:"Struct"`
 }
 
-func (s SiteTotalFlowChartSiteTotalFlowChartResponseContent) String() string {
+func (s SiteTotalFlowChartResponseContent) String() string {
   return tea.Prettify(s)
 }
 
-func (s SiteTotalFlowChartSiteTotalFlowChartResponseContent) GoString() string {
+func (s SiteTotalFlowChartResponseContent) GoString() string {
   return s.String()
 }
 
-func (s *SiteTotalFlowChartSiteTotalFlowChartResponseContent) SetSiteName(v string) *SiteTotalFlowChartSiteTotalFlowChartResponseContent {
+func (s *SiteTotalFlowChartResponseContent) SetSiteName(v string) *SiteTotalFlowChartResponseContent {
   s.SiteName = &v
   return s
 }
 
-func (s *SiteTotalFlowChartSiteTotalFlowChartResponseContent) SetSiteId(v int64) *SiteTotalFlowChartSiteTotalFlowChartResponseContent {
+func (s *SiteTotalFlowChartResponseContent) SetSiteId(v int64) *SiteTotalFlowChartResponseContent {
   s.SiteId = &v
   return s
 }
 
-func (s *SiteTotalFlowChartSiteTotalFlowChartResponseContent) SetAllocateBandwidth(v int) *SiteTotalFlowChartSiteTotalFlowChartResponseContent {
+func (s *SiteTotalFlowChartResponseContent) SetAllocateBandwidth(v int) *SiteTotalFlowChartResponseContent {
   s.AllocateBandwidth = &v
   return s
 }
 
-func (s *SiteTotalFlowChartSiteTotalFlowChartResponseContent) SetBandwidths(v *SiteTotalFlowChartSiteTotalFlowChartResponseContentBandwidths) *SiteTotalFlowChartSiteTotalFlowChartResponseContent {
+func (s *SiteTotalFlowChartResponseContent) SetBandwidths(v *SiteTotalFlowChartResponseContentBandwidths) *SiteTotalFlowChartResponseContent {
   s.Bandwidths = v
   return s
 }
 
-type SiteTotalFlowChartSiteTotalFlowChartResponseContentBandwidths struct {
+type SiteTotalFlowChartResponseContentBandwidths struct {
   // {'en':'timeStamp', 'zh_CN':'时间戳'}
   TimeStamp []*int64 `json:"timeStamp,omitempty" xml:"timeStamp,omitempty" require:"true" type:"Repeated"`
   // {'en':'Time slice', 'zh_CN':'时间分片'}
@@ -614,30 +614,30 @@ type SiteTotalFlowChartSiteTotalFlowChartResponseContentBandwidths struct {
   DownStreamBandwidth []*int `json:"downStreamBandwidth,omitempty" xml:"downStreamBandwidth,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s SiteTotalFlowChartSiteTotalFlowChartResponseContentBandwidths) String() string {
+func (s SiteTotalFlowChartResponseContentBandwidths) String() string {
   return tea.Prettify(s)
 }
 
-func (s SiteTotalFlowChartSiteTotalFlowChartResponseContentBandwidths) GoString() string {
+func (s SiteTotalFlowChartResponseContentBandwidths) GoString() string {
   return s.String()
 }
 
-func (s *SiteTotalFlowChartSiteTotalFlowChartResponseContentBandwidths) SetTimeStamp(v []*int64) *SiteTotalFlowChartSiteTotalFlowChartResponseContentBandwidths {
+func (s *SiteTotalFlowChartResponseContentBandwidths) SetTimeStamp(v []*int64) *SiteTotalFlowChartResponseContentBandwidths {
   s.TimeStamp = v
   return s
 }
 
-func (s *SiteTotalFlowChartSiteTotalFlowChartResponseContentBandwidths) SetTimeData(v []*string) *SiteTotalFlowChartSiteTotalFlowChartResponseContentBandwidths {
+func (s *SiteTotalFlowChartResponseContentBandwidths) SetTimeData(v []*string) *SiteTotalFlowChartResponseContentBandwidths {
   s.TimeData = v
   return s
 }
 
-func (s *SiteTotalFlowChartSiteTotalFlowChartResponseContentBandwidths) SetUpStreamBandwidth(v []*int) *SiteTotalFlowChartSiteTotalFlowChartResponseContentBandwidths {
+func (s *SiteTotalFlowChartResponseContentBandwidths) SetUpStreamBandwidth(v []*int) *SiteTotalFlowChartResponseContentBandwidths {
   s.UpStreamBandwidth = v
   return s
 }
 
-func (s *SiteTotalFlowChartSiteTotalFlowChartResponseContentBandwidths) SetDownStreamBandwidth(v []*int) *SiteTotalFlowChartSiteTotalFlowChartResponseContentBandwidths {
+func (s *SiteTotalFlowChartResponseContentBandwidths) SetDownStreamBandwidth(v []*int) *SiteTotalFlowChartResponseContentBandwidths {
   s.DownStreamBandwidth = v
   return s
 }
@@ -754,7 +754,7 @@ type SaasSessionResponse struct {
   // {'en':'Interface information', 'zh_CN':'接口信息'}
   ReturnMsg *string `json:"returnMsg,omitempty" xml:"returnMsg,omitempty" require:"true"`
   // {'en':'response content', 'zh_CN':'响应内容'}
-  Content *SaasSessionSaasSessionResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
+  Content *SaasSessionResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
 }
 
 func (s SaasSessionResponse) String() string {
@@ -775,44 +775,44 @@ func (s *SaasSessionResponse) SetReturnMsg(v string) *SaasSessionResponse {
   return s
 }
 
-func (s *SaasSessionResponse) SetContent(v *SaasSessionSaasSessionResponseContent) *SaasSessionResponse {
+func (s *SaasSessionResponse) SetContent(v *SaasSessionResponseContent) *SaasSessionResponse {
   s.Content = v
   return s
 }
 
-type SaasSessionSaasSessionResponseContent struct {
+type SaasSessionResponseContent struct {
   // {'en':'site name', 'zh_CN':'站点名称'}
   SiteName *string `json:"siteName,omitempty" xml:"siteName,omitempty" require:"true"`
   // {'en':'site Id', 'zh_CN':'站点 ID'}
   SiteId *int64 `json:"siteId,omitempty" xml:"siteId,omitempty" require:"true"`
   // {'en':'Session data', 'zh_CN':'会话数据'}
-  Content []*SaasSessionSaasSessionResponseContentContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Repeated"`
+  Content []*SaasSessionResponseContentContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s SaasSessionSaasSessionResponseContent) String() string {
+func (s SaasSessionResponseContent) String() string {
   return tea.Prettify(s)
 }
 
-func (s SaasSessionSaasSessionResponseContent) GoString() string {
+func (s SaasSessionResponseContent) GoString() string {
   return s.String()
 }
 
-func (s *SaasSessionSaasSessionResponseContent) SetSiteName(v string) *SaasSessionSaasSessionResponseContent {
+func (s *SaasSessionResponseContent) SetSiteName(v string) *SaasSessionResponseContent {
   s.SiteName = &v
   return s
 }
 
-func (s *SaasSessionSaasSessionResponseContent) SetSiteId(v int64) *SaasSessionSaasSessionResponseContent {
+func (s *SaasSessionResponseContent) SetSiteId(v int64) *SaasSessionResponseContent {
   s.SiteId = &v
   return s
 }
 
-func (s *SaasSessionSaasSessionResponseContent) SetContent(v []*SaasSessionSaasSessionResponseContentContent) *SaasSessionSaasSessionResponseContent {
+func (s *SaasSessionResponseContent) SetContent(v []*SaasSessionResponseContentContent) *SaasSessionResponseContent {
   s.Content = v
   return s
 }
 
-type SaasSessionSaasSessionResponseContentContent struct     {
+type SaasSessionResponseContentContent struct     {
   // {'en':'Original IP', 'zh_CN':'原始IP'}
   SrcIp *string `json:"srcIp,omitempty" xml:"srcIp,omitempty" require:"true"`
   // {'en':'Original Port', 'zh_CN':'原始端口'}
@@ -831,50 +831,50 @@ type SaasSessionSaasSessionResponseContentContent struct     {
   Sumflow *int `json:"sumflow,omitempty" xml:"sumflow,omitempty" require:"true"`
 }
 
-func (s SaasSessionSaasSessionResponseContentContent) String() string {
+func (s SaasSessionResponseContentContent) String() string {
   return tea.Prettify(s)
 }
 
-func (s SaasSessionSaasSessionResponseContentContent) GoString() string {
+func (s SaasSessionResponseContentContent) GoString() string {
   return s.String()
 }
 
-func (s *SaasSessionSaasSessionResponseContentContent) SetSrcIp(v string) *SaasSessionSaasSessionResponseContentContent {
+func (s *SaasSessionResponseContentContent) SetSrcIp(v string) *SaasSessionResponseContentContent {
   s.SrcIp = &v
   return s
 }
 
-func (s *SaasSessionSaasSessionResponseContentContent) SetSrcPort(v int) *SaasSessionSaasSessionResponseContentContent {
+func (s *SaasSessionResponseContentContent) SetSrcPort(v int) *SaasSessionResponseContentContent {
   s.SrcPort = &v
   return s
 }
 
-func (s *SaasSessionSaasSessionResponseContentContent) SetDestIp(v string) *SaasSessionSaasSessionResponseContentContent {
+func (s *SaasSessionResponseContentContent) SetDestIp(v string) *SaasSessionResponseContentContent {
   s.DestIp = &v
   return s
 }
 
-func (s *SaasSessionSaasSessionResponseContentContent) SetDestPort(v int) *SaasSessionSaasSessionResponseContentContent {
+func (s *SaasSessionResponseContentContent) SetDestPort(v int) *SaasSessionResponseContentContent {
   s.DestPort = &v
   return s
 }
 
-func (s *SaasSessionSaasSessionResponseContentContent) SetProtocol(v string) *SaasSessionSaasSessionResponseContentContent {
+func (s *SaasSessionResponseContentContent) SetProtocol(v string) *SaasSessionResponseContentContent {
   s.Protocol = &v
   return s
 }
 
-func (s *SaasSessionSaasSessionResponseContentContent) SetRx(v int) *SaasSessionSaasSessionResponseContentContent {
+func (s *SaasSessionResponseContentContent) SetRx(v int) *SaasSessionResponseContentContent {
   s.Rx = &v
   return s
 }
 
-func (s *SaasSessionSaasSessionResponseContentContent) SetTx(v int) *SaasSessionSaasSessionResponseContentContent {
+func (s *SaasSessionResponseContentContent) SetTx(v int) *SaasSessionResponseContentContent {
   s.Tx = &v
   return s
 }
 
-func (s *SaasSessionSaasSessionResponseContentContent) SetSumflow(v int) *SaasSessionSaasSessionResponseContentContent {
+func (s *SaasSessionResponseContentContent) SetSumflow(v int) *SaasSessionResponseContentContent {
   s.Sumflow = &v
   return s
 }
@@ -992,7 +992,7 @@ type SiteLogicChartResponse struct {
   // {'en':'Interface information', 'zh_CN':'接口信息'}
   ReturnMsg *string `json:"returnMsg,omitempty" xml:"returnMsg,omitempty" require:"true"`
   // {'en':'response content', 'zh_CN':'响应内容'}
-  Content *SiteLogicChartSiteLogicChartResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
+  Content *SiteLogicChartResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
 }
 
 func (s SiteLogicChartResponse) String() string {
@@ -1013,12 +1013,12 @@ func (s *SiteLogicChartResponse) SetReturnMsg(v string) *SiteLogicChartResponse 
   return s
 }
 
-func (s *SiteLogicChartResponse) SetContent(v *SiteLogicChartSiteLogicChartResponseContent) *SiteLogicChartResponse {
+func (s *SiteLogicChartResponse) SetContent(v *SiteLogicChartResponseContent) *SiteLogicChartResponse {
   s.Content = v
   return s
 }
 
-type SiteLogicChartSiteLogicChartResponseContent struct {
+type SiteLogicChartResponseContent struct {
   // {'en':'site A name', 'zh_CN':'站点A名称'}
   SiteAName *string `json:"siteAName,omitempty" xml:"siteAName,omitempty" require:"true"`
   // {'en':'site B name', 'zh_CN':'站点B名称'}
@@ -1030,48 +1030,48 @@ type SiteLogicChartSiteLogicChartResponseContent struct {
   // {'en':'tunnel status 0-unknown, 1-online, 2-offline, 3-not reported, 4-suspend', 'zh_CN':'链路状态0–未知，1–在线，2-离线，3-未上报，4-挂起'}
   Status *int `json:"status,omitempty" xml:"status,omitempty" require:"true"`
   // {'en':'Quality trend data', 'zh_CN':'质量趋势数据'}
-  Quality *SiteLogicChartSiteLogicChartResponseContentQuality `json:"quality,omitempty" xml:"quality,omitempty" require:"true" type:"Struct"`
+  Quality *SiteLogicChartResponseContentQuality `json:"quality,omitempty" xml:"quality,omitempty" require:"true" type:"Struct"`
 }
 
-func (s SiteLogicChartSiteLogicChartResponseContent) String() string {
+func (s SiteLogicChartResponseContent) String() string {
   return tea.Prettify(s)
 }
 
-func (s SiteLogicChartSiteLogicChartResponseContent) GoString() string {
+func (s SiteLogicChartResponseContent) GoString() string {
   return s.String()
 }
 
-func (s *SiteLogicChartSiteLogicChartResponseContent) SetSiteAName(v string) *SiteLogicChartSiteLogicChartResponseContent {
+func (s *SiteLogicChartResponseContent) SetSiteAName(v string) *SiteLogicChartResponseContent {
   s.SiteAName = &v
   return s
 }
 
-func (s *SiteLogicChartSiteLogicChartResponseContent) SetSiteBName(v string) *SiteLogicChartSiteLogicChartResponseContent {
+func (s *SiteLogicChartResponseContent) SetSiteBName(v string) *SiteLogicChartResponseContent {
   s.SiteBName = &v
   return s
 }
 
-func (s *SiteLogicChartSiteLogicChartResponseContent) SetSiteAId(v int64) *SiteLogicChartSiteLogicChartResponseContent {
+func (s *SiteLogicChartResponseContent) SetSiteAId(v int64) *SiteLogicChartResponseContent {
   s.SiteAId = &v
   return s
 }
 
-func (s *SiteLogicChartSiteLogicChartResponseContent) SetSiteBId(v int64) *SiteLogicChartSiteLogicChartResponseContent {
+func (s *SiteLogicChartResponseContent) SetSiteBId(v int64) *SiteLogicChartResponseContent {
   s.SiteBId = &v
   return s
 }
 
-func (s *SiteLogicChartSiteLogicChartResponseContent) SetStatus(v int) *SiteLogicChartSiteLogicChartResponseContent {
+func (s *SiteLogicChartResponseContent) SetStatus(v int) *SiteLogicChartResponseContent {
   s.Status = &v
   return s
 }
 
-func (s *SiteLogicChartSiteLogicChartResponseContent) SetQuality(v *SiteLogicChartSiteLogicChartResponseContentQuality) *SiteLogicChartSiteLogicChartResponseContent {
+func (s *SiteLogicChartResponseContent) SetQuality(v *SiteLogicChartResponseContentQuality) *SiteLogicChartResponseContent {
   s.Quality = v
   return s
 }
 
-type SiteLogicChartSiteLogicChartResponseContentQuality struct {
+type SiteLogicChartResponseContentQuality struct {
   // {'en':'timeStamp', 'zh_CN':'时间戳'}
   TimeStamp []*int64 `json:"timeStamp,omitempty" xml:"timeStamp,omitempty" require:"true" type:"Repeated"`
   // {'en':'Time slice', 'zh_CN':'时间分片'}
@@ -1084,35 +1084,35 @@ type SiteLogicChartSiteLogicChartResponseContentQuality struct {
   Mdev []*int `json:"mdev,omitempty" xml:"mdev,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s SiteLogicChartSiteLogicChartResponseContentQuality) String() string {
+func (s SiteLogicChartResponseContentQuality) String() string {
   return tea.Prettify(s)
 }
 
-func (s SiteLogicChartSiteLogicChartResponseContentQuality) GoString() string {
+func (s SiteLogicChartResponseContentQuality) GoString() string {
   return s.String()
 }
 
-func (s *SiteLogicChartSiteLogicChartResponseContentQuality) SetTimeStamp(v []*int64) *SiteLogicChartSiteLogicChartResponseContentQuality {
+func (s *SiteLogicChartResponseContentQuality) SetTimeStamp(v []*int64) *SiteLogicChartResponseContentQuality {
   s.TimeStamp = v
   return s
 }
 
-func (s *SiteLogicChartSiteLogicChartResponseContentQuality) SetTimeData(v []*string) *SiteLogicChartSiteLogicChartResponseContentQuality {
+func (s *SiteLogicChartResponseContentQuality) SetTimeData(v []*string) *SiteLogicChartResponseContentQuality {
   s.TimeData = v
   return s
 }
 
-func (s *SiteLogicChartSiteLogicChartResponseContentQuality) SetRtt(v []*int) *SiteLogicChartSiteLogicChartResponseContentQuality {
+func (s *SiteLogicChartResponseContentQuality) SetRtt(v []*int) *SiteLogicChartResponseContentQuality {
   s.Rtt = v
   return s
 }
 
-func (s *SiteLogicChartSiteLogicChartResponseContentQuality) SetLoss(v []*int) *SiteLogicChartSiteLogicChartResponseContentQuality {
+func (s *SiteLogicChartResponseContentQuality) SetLoss(v []*int) *SiteLogicChartResponseContentQuality {
   s.Loss = v
   return s
 }
 
-func (s *SiteLogicChartSiteLogicChartResponseContentQuality) SetMdev(v []*int) *SiteLogicChartSiteLogicChartResponseContentQuality {
+func (s *SiteLogicChartResponseContentQuality) SetMdev(v []*int) *SiteLogicChartResponseContentQuality {
   s.Mdev = v
   return s
 }
@@ -1225,7 +1225,7 @@ type SiteQualityChartResponse struct {
   // {'en':'Interface information', 'zh_CN':'接口信息'}
   ReturnMsg *string `json:"returnMsg,omitempty" xml:"returnMsg,omitempty" require:"true"`
   // {'en':'response content', 'zh_CN':'响应内容'}
-  Content *SiteQualityChartSiteQualityChartResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
+  Content *SiteQualityChartResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
 }
 
 func (s SiteQualityChartResponse) String() string {
@@ -1246,44 +1246,44 @@ func (s *SiteQualityChartResponse) SetReturnMsg(v string) *SiteQualityChartRespo
   return s
 }
 
-func (s *SiteQualityChartResponse) SetContent(v *SiteQualityChartSiteQualityChartResponseContent) *SiteQualityChartResponse {
+func (s *SiteQualityChartResponse) SetContent(v *SiteQualityChartResponseContent) *SiteQualityChartResponse {
   s.Content = v
   return s
 }
 
-type SiteQualityChartSiteQualityChartResponseContent struct {
+type SiteQualityChartResponseContent struct {
   // {'en':'site name', 'zh_CN':'站点名称'}
   SiteName *string `json:"siteName,omitempty" xml:"siteName,omitempty" require:"true"`
   // {'en':'site Id', 'zh_CN':'站点 ID'}
   SiteId *int64 `json:"siteId,omitempty" xml:"siteId,omitempty" require:"true"`
   // {'en':'Tunnel quality data under site', 'zh_CN':'站点下的隧道质量数据'}
-  Tunnel []*SiteQualityChartSiteQualityChartResponseContentTunnel `json:"tunnel,omitempty" xml:"tunnel,omitempty" require:"true" type:"Repeated"`
+  Tunnel []*SiteQualityChartResponseContentTunnel `json:"tunnel,omitempty" xml:"tunnel,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s SiteQualityChartSiteQualityChartResponseContent) String() string {
+func (s SiteQualityChartResponseContent) String() string {
   return tea.Prettify(s)
 }
 
-func (s SiteQualityChartSiteQualityChartResponseContent) GoString() string {
+func (s SiteQualityChartResponseContent) GoString() string {
   return s.String()
 }
 
-func (s *SiteQualityChartSiteQualityChartResponseContent) SetSiteName(v string) *SiteQualityChartSiteQualityChartResponseContent {
+func (s *SiteQualityChartResponseContent) SetSiteName(v string) *SiteQualityChartResponseContent {
   s.SiteName = &v
   return s
 }
 
-func (s *SiteQualityChartSiteQualityChartResponseContent) SetSiteId(v int64) *SiteQualityChartSiteQualityChartResponseContent {
+func (s *SiteQualityChartResponseContent) SetSiteId(v int64) *SiteQualityChartResponseContent {
   s.SiteId = &v
   return s
 }
 
-func (s *SiteQualityChartSiteQualityChartResponseContent) SetTunnel(v []*SiteQualityChartSiteQualityChartResponseContentTunnel) *SiteQualityChartSiteQualityChartResponseContent {
+func (s *SiteQualityChartResponseContent) SetTunnel(v []*SiteQualityChartResponseContentTunnel) *SiteQualityChartResponseContent {
   s.Tunnel = v
   return s
 }
 
-type SiteQualityChartSiteQualityChartResponseContentTunnel struct     {
+type SiteQualityChartResponseContentTunnel struct     {
   // {'en':'tunnel name', 'zh_CN':'链路名称'}
   TunnelName *string `json:"tunnelName,omitempty" xml:"tunnelName,omitempty" require:"true"`
   // {'en':'tunnel Id', 'zh_CN':'链路 ID'}
@@ -1302,50 +1302,50 @@ type SiteQualityChartSiteQualityChartResponseContentTunnel struct     {
   Mdev []*int `json:"mdev,omitempty" xml:"mdev,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s SiteQualityChartSiteQualityChartResponseContentTunnel) String() string {
+func (s SiteQualityChartResponseContentTunnel) String() string {
   return tea.Prettify(s)
 }
 
-func (s SiteQualityChartSiteQualityChartResponseContentTunnel) GoString() string {
+func (s SiteQualityChartResponseContentTunnel) GoString() string {
   return s.String()
 }
 
-func (s *SiteQualityChartSiteQualityChartResponseContentTunnel) SetTunnelName(v string) *SiteQualityChartSiteQualityChartResponseContentTunnel {
+func (s *SiteQualityChartResponseContentTunnel) SetTunnelName(v string) *SiteQualityChartResponseContentTunnel {
   s.TunnelName = &v
   return s
 }
 
-func (s *SiteQualityChartSiteQualityChartResponseContentTunnel) SetTunnelId(v int64) *SiteQualityChartSiteQualityChartResponseContentTunnel {
+func (s *SiteQualityChartResponseContentTunnel) SetTunnelId(v int64) *SiteQualityChartResponseContentTunnel {
   s.TunnelId = &v
   return s
 }
 
-func (s *SiteQualityChartSiteQualityChartResponseContentTunnel) SetStatus(v int) *SiteQualityChartSiteQualityChartResponseContentTunnel {
+func (s *SiteQualityChartResponseContentTunnel) SetStatus(v int) *SiteQualityChartResponseContentTunnel {
   s.Status = &v
   return s
 }
 
-func (s *SiteQualityChartSiteQualityChartResponseContentTunnel) SetTimeStamp(v []*int64) *SiteQualityChartSiteQualityChartResponseContentTunnel {
+func (s *SiteQualityChartResponseContentTunnel) SetTimeStamp(v []*int64) *SiteQualityChartResponseContentTunnel {
   s.TimeStamp = v
   return s
 }
 
-func (s *SiteQualityChartSiteQualityChartResponseContentTunnel) SetTimeData(v []*string) *SiteQualityChartSiteQualityChartResponseContentTunnel {
+func (s *SiteQualityChartResponseContentTunnel) SetTimeData(v []*string) *SiteQualityChartResponseContentTunnel {
   s.TimeData = v
   return s
 }
 
-func (s *SiteQualityChartSiteQualityChartResponseContentTunnel) SetRtt(v []*int) *SiteQualityChartSiteQualityChartResponseContentTunnel {
+func (s *SiteQualityChartResponseContentTunnel) SetRtt(v []*int) *SiteQualityChartResponseContentTunnel {
   s.Rtt = v
   return s
 }
 
-func (s *SiteQualityChartSiteQualityChartResponseContentTunnel) SetLoss(v []*int) *SiteQualityChartSiteQualityChartResponseContentTunnel {
+func (s *SiteQualityChartResponseContentTunnel) SetLoss(v []*int) *SiteQualityChartResponseContentTunnel {
   s.Loss = v
   return s
 }
 
-func (s *SiteQualityChartSiteQualityChartResponseContentTunnel) SetMdev(v []*int) *SiteQualityChartSiteQualityChartResponseContentTunnel {
+func (s *SiteQualityChartResponseContentTunnel) SetMdev(v []*int) *SiteQualityChartResponseContentTunnel {
   s.Mdev = v
   return s
 }

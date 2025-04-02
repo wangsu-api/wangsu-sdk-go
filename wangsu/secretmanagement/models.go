@@ -190,9 +190,9 @@ type GetASecretResponse struct {
   // {"en" : "An RFC 3339 date indicating when the secret was created. This will be in UTC time, for example, '2021-07-06T00:00:00Z'.", "zh_CN": "RFC 3339格式的日期，表示保密信息的创建时间，使用UTC时区。例如，'2021-07-06T00:00:00Z'。"}
   CreationTime *string `json:"creationTime,omitempty" xml:"creationTime,omitempty" require:"true"`
   // {"en" : "Properties deployed to production that refer to the secret.", "zh_CN": "保密信息在生产环境中的使用情况。"}
-  UsageInProduction []*GetASecretGetASecretResponseUsageInProduction `json:"usageInProduction,omitempty" xml:"usageInProduction,omitempty" require:"true" type:"Repeated"`
+  UsageInProduction []*GetASecretResponseUsageInProduction `json:"usageInProduction,omitempty" xml:"usageInProduction,omitempty" require:"true" type:"Repeated"`
   // {"en" : "Properties deployed to staging that refer to the secret.", "zh_CN": "保密信息在演练环境中的使用情况。"}
-  UsageInStaging []*GetASecretGetASecretResponseUsageInStaging `json:"usageInStaging,omitempty" xml:"usageInStaging,omitempty" require:"true" type:"Repeated"`
+  UsageInStaging []*GetASecretResponseUsageInStaging `json:"usageInStaging,omitempty" xml:"usageInStaging,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetASecretResponse) String() string {
@@ -233,48 +233,48 @@ func (s *GetASecretResponse) SetCreationTime(v string) *GetASecretResponse {
   return s
 }
 
-func (s *GetASecretResponse) SetUsageInProduction(v []*GetASecretGetASecretResponseUsageInProduction) *GetASecretResponse {
+func (s *GetASecretResponse) SetUsageInProduction(v []*GetASecretResponseUsageInProduction) *GetASecretResponse {
   s.UsageInProduction = v
   return s
 }
 
-func (s *GetASecretResponse) SetUsageInStaging(v []*GetASecretGetASecretResponseUsageInStaging) *GetASecretResponse {
+func (s *GetASecretResponse) SetUsageInStaging(v []*GetASecretResponseUsageInStaging) *GetASecretResponse {
   s.UsageInStaging = v
   return s
 }
 
-type GetASecretGetASecretResponseUsageInProduction struct     {
+type GetASecretResponseUsageInProduction struct     {
   // {"en" : "ID of a property using the secret.", "zh_CN": "引用此保密信息的加速项目ID。"}
   PropertyId *string `json:"propertyId,omitempty" xml:"propertyId,omitempty"`
 }
 
-func (s GetASecretGetASecretResponseUsageInProduction) String() string {
+func (s GetASecretResponseUsageInProduction) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetASecretGetASecretResponseUsageInProduction) GoString() string {
+func (s GetASecretResponseUsageInProduction) GoString() string {
   return s.String()
 }
 
-func (s *GetASecretGetASecretResponseUsageInProduction) SetPropertyId(v string) *GetASecretGetASecretResponseUsageInProduction {
+func (s *GetASecretResponseUsageInProduction) SetPropertyId(v string) *GetASecretResponseUsageInProduction {
   s.PropertyId = &v
   return s
 }
 
-type GetASecretGetASecretResponseUsageInStaging struct     {
+type GetASecretResponseUsageInStaging struct     {
   // {"en" : "ID of a property using the secret.", "zh_CN": "引用此保密信息的加速项目ID。"}
   PropertyId *string `json:"propertyId,omitempty" xml:"propertyId,omitempty"`
 }
 
-func (s GetASecretGetASecretResponseUsageInStaging) String() string {
+func (s GetASecretResponseUsageInStaging) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetASecretGetASecretResponseUsageInStaging) GoString() string {
+func (s GetASecretResponseUsageInStaging) GoString() string {
   return s.String()
 }
 
-func (s *GetASecretGetASecretResponseUsageInStaging) SetPropertyId(v string) *GetASecretGetASecretResponseUsageInStaging {
+func (s *GetASecretResponseUsageInStaging) SetPropertyId(v string) *GetASecretResponseUsageInStaging {
   s.PropertyId = &v
   return s
 }
@@ -444,7 +444,7 @@ type GetAListOfSecretsResponse struct {
   // 保密信息的总数。返回的实际数量取决于查询参数。"}
   Count *int `json:"count,omitempty" xml:"count,omitempty" require:"true"`
   // {"en" : "A list of secrets.", "zh_CN": "保密信息列表。"}
-  Secrets []*GetAListOfSecretsGetAListOfSecretsResponseSecrets `json:"secrets,omitempty" xml:"secrets,omitempty" require:"true" type:"Repeated"`
+  Secrets []*GetAListOfSecretsResponseSecrets `json:"secrets,omitempty" xml:"secrets,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetAListOfSecretsResponse) String() string {
@@ -460,12 +460,12 @@ func (s *GetAListOfSecretsResponse) SetCount(v int) *GetAListOfSecretsResponse {
   return s
 }
 
-func (s *GetAListOfSecretsResponse) SetSecrets(v []*GetAListOfSecretsGetAListOfSecretsResponseSecrets) *GetAListOfSecretsResponse {
+func (s *GetAListOfSecretsResponse) SetSecrets(v []*GetAListOfSecretsResponseSecrets) *GetAListOfSecretsResponse {
   s.Secrets = v
   return s
 }
 
-type GetAListOfSecretsGetAListOfSecretsResponseSecrets struct     {
+type GetAListOfSecretsResponseSecrets struct     {
   // {"en" : "ID of a secret.", "zh_CN": "保密信息ID。"}
   Id *string `json:"id,omitempty" xml:"id,omitempty"`
   // {"en" : "Range: [ 1 .. 30 ] characters ^[A-Za-z0-9_.-]+ 
@@ -484,35 +484,35 @@ type GetAListOfSecretsGetAListOfSecretsResponseSecrets struct     {
   LastUpdateTime *string `json:"lastUpdateTime,omitempty" xml:"lastUpdateTime,omitempty"`
 }
 
-func (s GetAListOfSecretsGetAListOfSecretsResponseSecrets) String() string {
+func (s GetAListOfSecretsResponseSecrets) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAListOfSecretsGetAListOfSecretsResponseSecrets) GoString() string {
+func (s GetAListOfSecretsResponseSecrets) GoString() string {
   return s.String()
 }
 
-func (s *GetAListOfSecretsGetAListOfSecretsResponseSecrets) SetId(v string) *GetAListOfSecretsGetAListOfSecretsResponseSecrets {
+func (s *GetAListOfSecretsResponseSecrets) SetId(v string) *GetAListOfSecretsResponseSecrets {
   s.Id = &v
   return s
 }
 
-func (s *GetAListOfSecretsGetAListOfSecretsResponseSecrets) SetName(v string) *GetAListOfSecretsGetAListOfSecretsResponseSecrets {
+func (s *GetAListOfSecretsResponseSecrets) SetName(v string) *GetAListOfSecretsResponseSecrets {
   s.Name = &v
   return s
 }
 
-func (s *GetAListOfSecretsGetAListOfSecretsResponseSecrets) SetDescription(v string) *GetAListOfSecretsGetAListOfSecretsResponseSecrets {
+func (s *GetAListOfSecretsResponseSecrets) SetDescription(v string) *GetAListOfSecretsResponseSecrets {
   s.Description = &v
   return s
 }
 
-func (s *GetAListOfSecretsGetAListOfSecretsResponseSecrets) SetCreationTime(v string) *GetAListOfSecretsGetAListOfSecretsResponseSecrets {
+func (s *GetAListOfSecretsResponseSecrets) SetCreationTime(v string) *GetAListOfSecretsResponseSecrets {
   s.CreationTime = &v
   return s
 }
 
-func (s *GetAListOfSecretsGetAListOfSecretsResponseSecrets) SetLastUpdateTime(v string) *GetAListOfSecretsGetAListOfSecretsResponseSecrets {
+func (s *GetAListOfSecretsResponseSecrets) SetLastUpdateTime(v string) *GetAListOfSecretsResponseSecrets {
   s.LastUpdateTime = &v
   return s
 }

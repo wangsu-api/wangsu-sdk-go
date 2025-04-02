@@ -101,7 +101,7 @@ func (s *QueryAccountTrailLogUserIdentityView) SetClientName(v []*string) *Query
   return s
 }
 
-type QueryAccountTrailLogQueryAccountTrailLogResultView struct {
+type QueryAccountTrailLogResultView struct {
   // {"en":"Event code.", "zh_CN":"事件code"}
   EventCode *string `json:"eventCode,omitempty" xml:"eventCode,omitempty" require:"true"`
   // {"en":"Event Chinese Name.", "zh_CN":"事件中文名称"}
@@ -126,65 +126,65 @@ type QueryAccountTrailLogQueryAccountTrailLogResultView struct {
   UserIdentity *QueryAccountTrailLogUserIdentityView `json:"userIdentity,omitempty" xml:"userIdentity,omitempty" require:"true"`
 }
 
-func (s QueryAccountTrailLogQueryAccountTrailLogResultView) String() string {
+func (s QueryAccountTrailLogResultView) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAccountTrailLogQueryAccountTrailLogResultView) GoString() string {
+func (s QueryAccountTrailLogResultView) GoString() string {
   return s.String()
 }
 
-func (s *QueryAccountTrailLogQueryAccountTrailLogResultView) SetEventCode(v string) *QueryAccountTrailLogQueryAccountTrailLogResultView {
+func (s *QueryAccountTrailLogResultView) SetEventCode(v string) *QueryAccountTrailLogResultView {
   s.EventCode = &v
   return s
 }
 
-func (s *QueryAccountTrailLogQueryAccountTrailLogResultView) SetEventCnName(v string) *QueryAccountTrailLogQueryAccountTrailLogResultView {
+func (s *QueryAccountTrailLogResultView) SetEventCnName(v string) *QueryAccountTrailLogResultView {
   s.EventCnName = &v
   return s
 }
 
-func (s *QueryAccountTrailLogQueryAccountTrailLogResultView) SetEventEnName(v string) *QueryAccountTrailLogQueryAccountTrailLogResultView {
+func (s *QueryAccountTrailLogResultView) SetEventEnName(v string) *QueryAccountTrailLogResultView {
   s.EventEnName = &v
   return s
 }
 
-func (s *QueryAccountTrailLogQueryAccountTrailLogResultView) SetEventSource(v string) *QueryAccountTrailLogQueryAccountTrailLogResultView {
+func (s *QueryAccountTrailLogResultView) SetEventSource(v string) *QueryAccountTrailLogResultView {
   s.EventSource = &v
   return s
 }
 
-func (s *QueryAccountTrailLogQueryAccountTrailLogResultView) SetEventTime(v string) *QueryAccountTrailLogQueryAccountTrailLogResultView {
+func (s *QueryAccountTrailLogResultView) SetEventTime(v string) *QueryAccountTrailLogResultView {
   s.EventTime = &v
   return s
 }
 
-func (s *QueryAccountTrailLogQueryAccountTrailLogResultView) SetRequestId(v string) *QueryAccountTrailLogQueryAccountTrailLogResultView {
+func (s *QueryAccountTrailLogResultView) SetRequestId(v string) *QueryAccountTrailLogResultView {
   s.RequestId = &v
   return s
 }
 
-func (s *QueryAccountTrailLogQueryAccountTrailLogResultView) SetReferencedResources(v []*QueryAccountTrailLogReferencedResourceView) *QueryAccountTrailLogQueryAccountTrailLogResultView {
+func (s *QueryAccountTrailLogResultView) SetReferencedResources(v []*QueryAccountTrailLogReferencedResourceView) *QueryAccountTrailLogResultView {
   s.ReferencedResources = v
   return s
 }
 
-func (s *QueryAccountTrailLogQueryAccountTrailLogResultView) SetProductCode(v string) *QueryAccountTrailLogQueryAccountTrailLogResultView {
+func (s *QueryAccountTrailLogResultView) SetProductCode(v string) *QueryAccountTrailLogResultView {
   s.ProductCode = &v
   return s
 }
 
-func (s *QueryAccountTrailLogQueryAccountTrailLogResultView) SetSourceIpAddress(v string) *QueryAccountTrailLogQueryAccountTrailLogResultView {
+func (s *QueryAccountTrailLogResultView) SetSourceIpAddress(v string) *QueryAccountTrailLogResultView {
   s.SourceIpAddress = &v
   return s
 }
 
-func (s *QueryAccountTrailLogQueryAccountTrailLogResultView) SetUserAgent(v string) *QueryAccountTrailLogQueryAccountTrailLogResultView {
+func (s *QueryAccountTrailLogResultView) SetUserAgent(v string) *QueryAccountTrailLogResultView {
   s.UserAgent = &v
   return s
 }
 
-func (s *QueryAccountTrailLogQueryAccountTrailLogResultView) SetUserIdentity(v *QueryAccountTrailLogUserIdentityView) *QueryAccountTrailLogQueryAccountTrailLogResultView {
+func (s *QueryAccountTrailLogResultView) SetUserIdentity(v *QueryAccountTrailLogUserIdentityView) *QueryAccountTrailLogResultView {
   s.UserIdentity = v
   return s
 }
@@ -195,7 +195,7 @@ type QueryAccountTrailLogResponse struct {
   // {"en":"API response message", "zh_CN":"API响应消息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Audit log query results", "zh_CN":"审计日志查询结果"}
-  Data []*QueryAccountTrailLogQueryAccountTrailLogResultView `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*QueryAccountTrailLogResultView `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryAccountTrailLogResponse) String() string {
@@ -216,7 +216,7 @@ func (s *QueryAccountTrailLogResponse) SetMessage(v string) *QueryAccountTrailLo
   return s
 }
 
-func (s *QueryAccountTrailLogResponse) SetData(v []*QueryAccountTrailLogQueryAccountTrailLogResultView) *QueryAccountTrailLogResponse {
+func (s *QueryAccountTrailLogResponse) SetData(v []*QueryAccountTrailLogResultView) *QueryAccountTrailLogResponse {
   s.Data = v
   return s
 }

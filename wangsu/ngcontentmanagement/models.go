@@ -73,13 +73,13 @@ type GetPurgeRequestStatusResponse struct {
   // {"en" : "The files that were purged.", "zh_CN": "被刷新的文件。"}
   FileUrls []*string `json:"fileUrls,omitempty" xml:"fileUrls,omitempty" require:"true" type:"Repeated"`
   // {"en" : "If a file's cache key depends on request headers, you can specify the header values that are applicable to purge one version of the cached file. The same set of header values will apply to all entries in fileUrls.  ", "zh_CN": "如果文件的缓存键与请求头相关，则可以指定请求头和值来刷新相应的缓存文件。此处指定的请求头和值将应用于fileUrls中的所有条目。"}
-  FileHeaders []*GetPurgeRequestStatusGetPurgeRequestStatusResponseFileHeaders `json:"fileHeaders,omitempty" xml:"fileHeaders,omitempty" require:"true" type:"Repeated"`
+  FileHeaders []*GetPurgeRequestStatusResponseFileHeaders `json:"fileHeaders,omitempty" xml:"fileHeaders,omitempty" require:"true" type:"Repeated"`
   // {"en" : "<= 20 items 
   // The directories that were purged.", "zh_CN": "<= 20 条目 
   // 被刷新的目录。"}
   DirUrls []*string `json:"dirUrls,omitempty" xml:"dirUrls,omitempty" require:"true" type:"Repeated"`
   // {"en" : "If a directory's cache key depends on request headers, you can specify the header values that are applicable to purge one version of the cached directory. The same set of header values will apply to all entries in dirUrls.", "zh_CN": "如果目录的缓存键与请求头相关，则可以指定请求头和值来刷新相应的缓存目录。此处指定的请求头和值将应用于dirUrls中的所有条目。"}
-  DirHeaders []*GetPurgeRequestStatusGetPurgeRequestStatusResponseDirHeaders `json:"dirHeaders,omitempty" xml:"dirHeaders,omitempty" require:"true" type:"Repeated"`
+  DirHeaders []*GetPurgeRequestStatusResponseDirHeaders `json:"dirHeaders,omitempty" xml:"dirHeaders,omitempty" require:"true" type:"Repeated"`
   // {"en" : "<= 2 items 
   // Regular expression patterns used to match the cache key. Each must begin with the following format: 
   //  {scheme}://{hostname}/. {scheme} can be http, https, or any which matches any scheme.
@@ -146,7 +146,7 @@ func (s *GetPurgeRequestStatusResponse) SetFileUrls(v []*string) *GetPurgeReques
   return s
 }
 
-func (s *GetPurgeRequestStatusResponse) SetFileHeaders(v []*GetPurgeRequestStatusGetPurgeRequestStatusResponseFileHeaders) *GetPurgeRequestStatusResponse {
+func (s *GetPurgeRequestStatusResponse) SetFileHeaders(v []*GetPurgeRequestStatusResponseFileHeaders) *GetPurgeRequestStatusResponse {
   s.FileHeaders = v
   return s
 }
@@ -156,7 +156,7 @@ func (s *GetPurgeRequestStatusResponse) SetDirUrls(v []*string) *GetPurgeRequest
   return s
 }
 
-func (s *GetPurgeRequestStatusResponse) SetDirHeaders(v []*GetPurgeRequestStatusGetPurgeRequestStatusResponseDirHeaders) *GetPurgeRequestStatusResponse {
+func (s *GetPurgeRequestStatusResponse) SetDirHeaders(v []*GetPurgeRequestStatusResponseDirHeaders) *GetPurgeRequestStatusResponse {
   s.DirHeaders = v
   return s
 }
@@ -206,52 +206,52 @@ func (s *GetPurgeRequestStatusResponse) SetWebhook(v string) *GetPurgeRequestSta
   return s
 }
 
-type GetPurgeRequestStatusGetPurgeRequestStatusResponseFileHeaders struct     {
+type GetPurgeRequestStatusResponseFileHeaders struct     {
   // {"en" : "HTTP header name.", "zh_CN": "HTTP头部名称。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty"`
   // {"en" : "Value of an HTTP header.", "zh_CN": "HTTP头部值。"}
   Value *string `json:"value,omitempty" xml:"value,omitempty"`
 }
 
-func (s GetPurgeRequestStatusGetPurgeRequestStatusResponseFileHeaders) String() string {
+func (s GetPurgeRequestStatusResponseFileHeaders) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetPurgeRequestStatusGetPurgeRequestStatusResponseFileHeaders) GoString() string {
+func (s GetPurgeRequestStatusResponseFileHeaders) GoString() string {
   return s.String()
 }
 
-func (s *GetPurgeRequestStatusGetPurgeRequestStatusResponseFileHeaders) SetName(v string) *GetPurgeRequestStatusGetPurgeRequestStatusResponseFileHeaders {
+func (s *GetPurgeRequestStatusResponseFileHeaders) SetName(v string) *GetPurgeRequestStatusResponseFileHeaders {
   s.Name = &v
   return s
 }
 
-func (s *GetPurgeRequestStatusGetPurgeRequestStatusResponseFileHeaders) SetValue(v string) *GetPurgeRequestStatusGetPurgeRequestStatusResponseFileHeaders {
+func (s *GetPurgeRequestStatusResponseFileHeaders) SetValue(v string) *GetPurgeRequestStatusResponseFileHeaders {
   s.Value = &v
   return s
 }
 
-type GetPurgeRequestStatusGetPurgeRequestStatusResponseDirHeaders struct     {
+type GetPurgeRequestStatusResponseDirHeaders struct     {
   // {"en" : "HTTP header name.", "zh_CN": "HTTP头部名称。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty"`
   // {"en" : "alue of an HTTP header.", "zh_CN": "HTTP头部值。"}
   Value *string `json:"value,omitempty" xml:"value,omitempty"`
 }
 
-func (s GetPurgeRequestStatusGetPurgeRequestStatusResponseDirHeaders) String() string {
+func (s GetPurgeRequestStatusResponseDirHeaders) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetPurgeRequestStatusGetPurgeRequestStatusResponseDirHeaders) GoString() string {
+func (s GetPurgeRequestStatusResponseDirHeaders) GoString() string {
   return s.String()
 }
 
-func (s *GetPurgeRequestStatusGetPurgeRequestStatusResponseDirHeaders) SetName(v string) *GetPurgeRequestStatusGetPurgeRequestStatusResponseDirHeaders {
+func (s *GetPurgeRequestStatusResponseDirHeaders) SetName(v string) *GetPurgeRequestStatusResponseDirHeaders {
   s.Name = &v
   return s
 }
 
-func (s *GetPurgeRequestStatusGetPurgeRequestStatusResponseDirHeaders) SetValue(v string) *GetPurgeRequestStatusGetPurgeRequestStatusResponseDirHeaders {
+func (s *GetPurgeRequestStatusResponseDirHeaders) SetValue(v string) *GetPurgeRequestStatusResponseDirHeaders {
   s.Value = &v
   return s
 }
@@ -298,7 +298,7 @@ type CreateAPurgeRequestRequest struct {
   // {"en" : "URLs of files to purge.  File URLs should not contain the asterisk character, '*'.   If a directory or filename in a URL includes a percent character, '%', be sure to encode it. A URL can be up to 2048 characters.", "zh_CN": "要刷新的文件的URL。URL不能包含星号字符'*'。如果URL中的目录或文件名包含'%'等特殊符号，需要先进行URL编码。每个URL长度不能超过2048个字符。"}
   FileUrls []*string `json:"fileUrls,omitempty" xml:"fileUrls,omitempty" type:"Repeated"`
   // {"en" : "If a file's cache key depends on request headers, you can specify the header values that are applicable to purge one version of the cached file. The same set of header values will apply to all entries in fileUrls.", "zh_CN": "如果文件的缓存键与请求头相关，则可以指定请求头和值来刷新相应的缓存文件。此处指定的请求头和值将应用于fileUrls中的所有条目。"}
-  FileHeaders []*CreateAPurgeRequestCreateAPurgeRequestRequestFileHeaders `json:"fileHeaders,omitempty" xml:"fileHeaders,omitempty" type:"Repeated"`
+  FileHeaders []*CreateAPurgeRequestRequestFileHeaders `json:"fileHeaders,omitempty" xml:"fileHeaders,omitempty" type:"Repeated"`
   // {"en" : "<= 20 items 
   // URLs to purge. URLs must begin with http:// or https:// and can be up to 2048 characters. Use the '*' character to purge multiple files or directories. If a URL has multiple sets of asterisk characters, only the last '*' or '**' will be treated as a wildcard. Other instances of '*' earlier in the URL will be treated as the literal character '*'.
   // <table><tr><th>Example</th><th>Description</th></tr><tr><td>http://test.domain2.com/mydir</td><td>Purge all variations of a single directory, but not its subdirectories or files. Variations may exist if custom cache keys are used.</td></tr><tr><td>http://test.domain2.com/mydir/**</td><td>Purge all files and subdirectories whose cache key begins with http://test.domain2.com/mydir/.</td></tr><tr><td>http://test.domain2.com/mydir/*</td><td>Purge all files, but not subdirectories, within a directory.</td></tr><tr><td>http://test.domain2.com/mydir/*.jpg</td><td>Purge all cache entries ending with the .jpg file extension. Subdirectories of http://test.domain2.com/mydir/ are not purged. </td></tr><tr><td>http://test.domain2.com/mydir/a*</td><td>Purge all files, but not subdirectories, that start with the letter 'a'.</td></tr><tr><td>http://test.domain2.com/mydir/a**</td><td>Purge all files and subdirectories that start with the letter 'a'.</td></tr><tr><td>http://test.domain2.com/mydir/a.jpg</td><td>Purge all variations of 'a.jpg'. Variations may exist if custom cache keys are used.</td></tr><tr><td>http://test.domain2.com/my**jpg</td><td>Purge all entries whose cache key begins with http://test.domain2.com/my and ends with the suffix jpg. The '**' can match anything in the path including additional subdirectories. For example, http://test.domain2.com/mydirectory/picture.jpg would be purged.</td></tr></table>
@@ -362,7 +362,7 @@ func (s *CreateAPurgeRequestRequest) SetFileUrls(v []*string) *CreateAPurgeReque
   return s
 }
 
-func (s *CreateAPurgeRequestRequest) SetFileHeaders(v []*CreateAPurgeRequestCreateAPurgeRequestRequestFileHeaders) *CreateAPurgeRequestRequest {
+func (s *CreateAPurgeRequestRequest) SetFileHeaders(v []*CreateAPurgeRequestRequestFileHeaders) *CreateAPurgeRequestRequest {
   s.FileHeaders = v
   return s
 }
@@ -392,27 +392,27 @@ func (s *CreateAPurgeRequestRequest) SetWebhook(v string) *CreateAPurgeRequestRe
   return s
 }
 
-type CreateAPurgeRequestCreateAPurgeRequestRequestFileHeaders struct     {
+type CreateAPurgeRequestRequestFileHeaders struct     {
   // {"en" : "HTTP header name.", "zh_CN": "HTTP 头部名称"}
   Name *string `json:"name,omitempty" xml:"name,omitempty"`
   // {"en" : "Value of an HTTP header.", "zh_CN": "HTTP 头部的值"}
   Value *string `json:"value,omitempty" xml:"value,omitempty"`
 }
 
-func (s CreateAPurgeRequestCreateAPurgeRequestRequestFileHeaders) String() string {
+func (s CreateAPurgeRequestRequestFileHeaders) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPurgeRequestCreateAPurgeRequestRequestFileHeaders) GoString() string {
+func (s CreateAPurgeRequestRequestFileHeaders) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPurgeRequestCreateAPurgeRequestRequestFileHeaders) SetName(v string) *CreateAPurgeRequestCreateAPurgeRequestRequestFileHeaders {
+func (s *CreateAPurgeRequestRequestFileHeaders) SetName(v string) *CreateAPurgeRequestRequestFileHeaders {
   s.Name = &v
   return s
 }
 
-func (s *CreateAPurgeRequestCreateAPurgeRequestRequestFileHeaders) SetValue(v string) *CreateAPurgeRequestCreateAPurgeRequestRequestFileHeaders {
+func (s *CreateAPurgeRequestRequestFileHeaders) SetValue(v string) *CreateAPurgeRequestRequestFileHeaders {
   s.Value = &v
   return s
 }
@@ -517,9 +517,9 @@ type GetPrefetchRequestStatusResponse struct {
   // 预取请求的简短描述。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {"en" : "", "zh_CN": ""}
-  FileList []*GetPrefetchRequestStatusGetPrefetchRequestStatusResponseFileList `json:"fileList,omitempty" xml:"fileList,omitempty" require:"true" type:"Repeated"`
+  FileList []*GetPrefetchRequestStatusResponseFileList `json:"fileList,omitempty" xml:"fileList,omitempty" require:"true" type:"Repeated"`
   // {"en" : "Details about the prefetch request's status.", "zh_CN": "预取请求的状态信息。"}
-  Metadata *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseMetadata `json:"metadata,omitempty" xml:"metadata,omitempty" require:"true" type:"Struct"`
+  Metadata *GetPrefetchRequestStatusResponseMetadata `json:"metadata,omitempty" xml:"metadata,omitempty" require:"true" type:"Struct"`
   // {"en" : "A list of continents representing the regions in which to perform the prefetch. Omitting the field means the prefetch will be done by all regions' servers.", "zh_CN": "需要预取内容的大洲，以大洲英文名表示。未指定时表示预取内容到所有大洲的服务器。"}
   Regions []*string `json:"regions,omitempty" xml:"regions,omitempty" require:"true" type:"Repeated"`
   // {"en" : "RFC 3339 date indicating when the prefetch should begin. This must be in UTC time, for example, '2021-03-06T00:00:00Z'.", "zh_CN": "RFC 3339格式的日期，表示开始预取的时间。必须使用UTC时间，例如'2021-03-06T00:00:00Z'。"}
@@ -541,12 +541,12 @@ func (s *GetPrefetchRequestStatusResponse) SetName(v string) *GetPrefetchRequest
   return s
 }
 
-func (s *GetPrefetchRequestStatusResponse) SetFileList(v []*GetPrefetchRequestStatusGetPrefetchRequestStatusResponseFileList) *GetPrefetchRequestStatusResponse {
+func (s *GetPrefetchRequestStatusResponse) SetFileList(v []*GetPrefetchRequestStatusResponseFileList) *GetPrefetchRequestStatusResponse {
   s.FileList = v
   return s
 }
 
-func (s *GetPrefetchRequestStatusResponse) SetMetadata(v *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseMetadata) *GetPrefetchRequestStatusResponse {
+func (s *GetPrefetchRequestStatusResponse) SetMetadata(v *GetPrefetchRequestStatusResponseMetadata) *GetPrefetchRequestStatusResponse {
   s.Metadata = v
   return s
 }
@@ -566,59 +566,59 @@ func (s *GetPrefetchRequestStatusResponse) SetWebhook(v string) *GetPrefetchRequ
   return s
 }
 
-type GetPrefetchRequestStatusGetPrefetchRequestStatusResponseFileList struct     {
+type GetPrefetchRequestStatusResponseFileList struct     {
   // {"en" : "Range: [ 10 .. 2048 ] characters 
   // A URL to prefetch. It must begin with 'http' or 'https' and can be up to 2048 characters.", "zh_CN": "取值范围: [ 10 .. 2048 ] 字符 
   // 预取的URL。必须以'http'或'https'开头，长度不超过2048个字符。"}
   Url *string `json:"url,omitempty" xml:"url,omitempty"`
   // {"en" : "If a URL's cache key depends on request headers, you can specify the header values that are applicable to prefetch one version of the URL.", "zh_CN": "如果需要在缓存键中加入请求头，可用该字段指定请求头。"}
-  Headers []*GetPrefetchRequestStatusGetPrefetchRequestStatusResponseFileListHeaders `json:"headers,omitempty" xml:"headers,omitempty" type:"Repeated"`
+  Headers []*GetPrefetchRequestStatusResponseFileListHeaders `json:"headers,omitempty" xml:"headers,omitempty" type:"Repeated"`
 }
 
-func (s GetPrefetchRequestStatusGetPrefetchRequestStatusResponseFileList) String() string {
+func (s GetPrefetchRequestStatusResponseFileList) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetPrefetchRequestStatusGetPrefetchRequestStatusResponseFileList) GoString() string {
+func (s GetPrefetchRequestStatusResponseFileList) GoString() string {
   return s.String()
 }
 
-func (s *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseFileList) SetUrl(v string) *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseFileList {
+func (s *GetPrefetchRequestStatusResponseFileList) SetUrl(v string) *GetPrefetchRequestStatusResponseFileList {
   s.Url = &v
   return s
 }
 
-func (s *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseFileList) SetHeaders(v []*GetPrefetchRequestStatusGetPrefetchRequestStatusResponseFileListHeaders) *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseFileList {
+func (s *GetPrefetchRequestStatusResponseFileList) SetHeaders(v []*GetPrefetchRequestStatusResponseFileListHeaders) *GetPrefetchRequestStatusResponseFileList {
   s.Headers = v
   return s
 }
 
-type GetPrefetchRequestStatusGetPrefetchRequestStatusResponseFileListHeaders struct     {
+type GetPrefetchRequestStatusResponseFileListHeaders struct     {
   // {"en" : "HTTP header name.", "zh_CN": "HTTP头部名称。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty"`
   // {"en" : "HTTP header value.", "zh_CN": "HTTP头部值。"}
   Value *string `json:"value,omitempty" xml:"value,omitempty"`
 }
 
-func (s GetPrefetchRequestStatusGetPrefetchRequestStatusResponseFileListHeaders) String() string {
+func (s GetPrefetchRequestStatusResponseFileListHeaders) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetPrefetchRequestStatusGetPrefetchRequestStatusResponseFileListHeaders) GoString() string {
+func (s GetPrefetchRequestStatusResponseFileListHeaders) GoString() string {
   return s.String()
 }
 
-func (s *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseFileListHeaders) SetName(v string) *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseFileListHeaders {
+func (s *GetPrefetchRequestStatusResponseFileListHeaders) SetName(v string) *GetPrefetchRequestStatusResponseFileListHeaders {
   s.Name = &v
   return s
 }
 
-func (s *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseFileListHeaders) SetValue(v string) *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseFileListHeaders {
+func (s *GetPrefetchRequestStatusResponseFileListHeaders) SetValue(v string) *GetPrefetchRequestStatusResponseFileListHeaders {
   s.Value = &v
   return s
 }
 
-type GetPrefetchRequestStatusGetPrefetchRequestStatusResponseMetadata struct {
+type GetPrefetchRequestStatusResponseMetadata struct {
   // {"en" : "ID of the prefetch request.", "zh_CN": "预取请求ID。"}
   Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
   // {"en" : "RFC 3339 date indicating when the prefetch request was submitted.", "zh_CN": "RFC 3339格式的日期，表示预取请求的提交时间。"}
@@ -637,40 +637,40 @@ type GetPrefetchRequestStatusGetPrefetchRequestStatusResponseMetadata struct {
   ApiRequestId *string `json:"apiRequestId,omitempty" xml:"apiRequestId,omitempty" require:"true"`
 }
 
-func (s GetPrefetchRequestStatusGetPrefetchRequestStatusResponseMetadata) String() string {
+func (s GetPrefetchRequestStatusResponseMetadata) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetPrefetchRequestStatusGetPrefetchRequestStatusResponseMetadata) GoString() string {
+func (s GetPrefetchRequestStatusResponseMetadata) GoString() string {
   return s.String()
 }
 
-func (s *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseMetadata) SetId(v string) *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseMetadata {
+func (s *GetPrefetchRequestStatusResponseMetadata) SetId(v string) *GetPrefetchRequestStatusResponseMetadata {
   s.Id = &v
   return s
 }
 
-func (s *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseMetadata) SetSubmissionTime(v string) *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseMetadata {
+func (s *GetPrefetchRequestStatusResponseMetadata) SetSubmissionTime(v string) *GetPrefetchRequestStatusResponseMetadata {
   s.SubmissionTime = &v
   return s
 }
 
-func (s *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseMetadata) SetSuccessRate(v int) *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseMetadata {
+func (s *GetPrefetchRequestStatusResponseMetadata) SetSuccessRate(v int) *GetPrefetchRequestStatusResponseMetadata {
   s.SuccessRate = &v
   return s
 }
 
-func (s *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseMetadata) SetStatus(v string) *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseMetadata {
+func (s *GetPrefetchRequestStatusResponseMetadata) SetStatus(v string) *GetPrefetchRequestStatusResponseMetadata {
   s.Status = &v
   return s
 }
 
-func (s *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseMetadata) SetFinishTime(v string) *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseMetadata {
+func (s *GetPrefetchRequestStatusResponseMetadata) SetFinishTime(v string) *GetPrefetchRequestStatusResponseMetadata {
   s.FinishTime = &v
   return s
 }
 
-func (s *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseMetadata) SetApiRequestId(v string) *GetPrefetchRequestStatusGetPrefetchRequestStatusResponseMetadata {
+func (s *GetPrefetchRequestStatusResponseMetadata) SetApiRequestId(v string) *GetPrefetchRequestStatusResponseMetadata {
   s.ApiRequestId = &v
   return s
 }
@@ -954,7 +954,7 @@ type GetListOfPrefetchRequestsResponse struct {
   // 预取请求的总数。该数量取决于查询参数。"}
   Count *int `json:"count,omitempty" xml:"count,omitempty" require:"true"`
   // {"en" : "List of prefetch requests.", "zh_CN": "预取请求列表。"}
-  PrefetchRequests []*GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests `json:"prefetchRequests,omitempty" xml:"prefetchRequests,omitempty" require:"true" type:"Repeated"`
+  PrefetchRequests []*GetListOfPrefetchRequestsResponsePrefetchRequests `json:"prefetchRequests,omitempty" xml:"prefetchRequests,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetListOfPrefetchRequestsResponse) String() string {
@@ -970,12 +970,12 @@ func (s *GetListOfPrefetchRequestsResponse) SetCount(v int) *GetListOfPrefetchRe
   return s
 }
 
-func (s *GetListOfPrefetchRequestsResponse) SetPrefetchRequests(v []*GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests) *GetListOfPrefetchRequestsResponse {
+func (s *GetListOfPrefetchRequestsResponse) SetPrefetchRequests(v []*GetListOfPrefetchRequestsResponsePrefetchRequests) *GetListOfPrefetchRequestsResponse {
   s.PrefetchRequests = v
   return s
 }
 
-type GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests struct     {
+type GetListOfPrefetchRequestsResponsePrefetchRequests struct     {
   // {"en" : "prefetch request task ID.
   // ", "zh_CN": "预取请求的ID。
   // "}
@@ -1004,55 +1004,55 @@ type GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests 
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
 }
 
-func (s GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests) String() string {
+func (s GetListOfPrefetchRequestsResponsePrefetchRequests) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests) GoString() string {
+func (s GetListOfPrefetchRequestsResponsePrefetchRequests) GoString() string {
   return s.String()
 }
 
-func (s *GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests) SetId(v string) *GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests {
+func (s *GetListOfPrefetchRequestsResponsePrefetchRequests) SetId(v string) *GetListOfPrefetchRequestsResponsePrefetchRequests {
   s.Id = &v
   return s
 }
 
-func (s *GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests) SetName(v string) *GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests {
+func (s *GetListOfPrefetchRequestsResponsePrefetchRequests) SetName(v string) *GetListOfPrefetchRequestsResponsePrefetchRequests {
   s.Name = &v
   return s
 }
 
-func (s *GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests) SetStatus(v string) *GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests {
+func (s *GetListOfPrefetchRequestsResponsePrefetchRequests) SetStatus(v string) *GetListOfPrefetchRequestsResponsePrefetchRequests {
   s.Status = &v
   return s
 }
 
-func (s *GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests) SetSubmissionTime(v string) *GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests {
+func (s *GetListOfPrefetchRequestsResponsePrefetchRequests) SetSubmissionTime(v string) *GetListOfPrefetchRequestsResponsePrefetchRequests {
   s.SubmissionTime = &v
   return s
 }
 
-func (s *GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests) SetFinishTime(v string) *GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests {
+func (s *GetListOfPrefetchRequestsResponsePrefetchRequests) SetFinishTime(v string) *GetListOfPrefetchRequestsResponsePrefetchRequests {
   s.FinishTime = &v
   return s
 }
 
-func (s *GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests) SetSuccessRate(v int) *GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests {
+func (s *GetListOfPrefetchRequestsResponsePrefetchRequests) SetSuccessRate(v int) *GetListOfPrefetchRequestsResponsePrefetchRequests {
   s.SuccessRate = &v
   return s
 }
 
-func (s *GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests) SetApiRequestId(v string) *GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests {
+func (s *GetListOfPrefetchRequestsResponsePrefetchRequests) SetApiRequestId(v string) *GetListOfPrefetchRequestsResponsePrefetchRequests {
   s.ApiRequestId = &v
   return s
 }
 
-func (s *GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests) SetFileEntries(v int) *GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests {
+func (s *GetListOfPrefetchRequestsResponsePrefetchRequests) SetFileEntries(v int) *GetListOfPrefetchRequestsResponsePrefetchRequests {
   s.FileEntries = &v
   return s
 }
 
-func (s *GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests) SetHostnames(v []*string) *GetListOfPrefetchRequestsGetListOfPrefetchRequestsResponsePrefetchRequests {
+func (s *GetListOfPrefetchRequestsResponsePrefetchRequests) SetHostnames(v []*string) *GetListOfPrefetchRequestsResponsePrefetchRequests {
   s.Hostnames = v
   return s
 }
@@ -1209,7 +1209,7 @@ type GetListOfPurgeRequestsResponse struct {
   // 刷新请求的总数。该数值取决于查询参数。"}
   Count *int `json:"count,omitempty" xml:"count,omitempty" require:"true"`
   // {"en" : "List of purge requests.", "zh_CN": "刷新请求列表。"}
-  PurgeRequests []*GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests `json:"purgeRequests,omitempty" xml:"purgeRequests,omitempty" require:"true" type:"Repeated"`
+  PurgeRequests []*GetListOfPurgeRequestsResponsePurgeRequests `json:"purgeRequests,omitempty" xml:"purgeRequests,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetListOfPurgeRequestsResponse) String() string {
@@ -1225,12 +1225,12 @@ func (s *GetListOfPurgeRequestsResponse) SetCount(v int) *GetListOfPurgeRequests
   return s
 }
 
-func (s *GetListOfPurgeRequestsResponse) SetPurgeRequests(v []*GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests) *GetListOfPurgeRequestsResponse {
+func (s *GetListOfPurgeRequestsResponse) SetPurgeRequests(v []*GetListOfPurgeRequestsResponsePurgeRequests) *GetListOfPurgeRequestsResponse {
   s.PurgeRequests = v
   return s
 }
 
-type GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests struct     {
+type GetListOfPurgeRequestsResponsePurgeRequests struct     {
   // {"en" : "ID associated with the purge request. You can call the Query purge request status API to get further information about it.", "zh_CN": "刷新请求的ID。您可以调用'查询刷新任务详情'接口来获得更多信息。"}
   Id *string `json:"id,omitempty" xml:"id,omitempty"`
   // {"en" : "An RFC 3339 date indicating when the purge request was created.", "zh_CN": "RFC 3339格式的日期，表示刷新请求的创建时间。"}
@@ -1268,65 +1268,65 @@ type GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests struct   
   RegexEntries *int `json:"regexEntries,omitempty" xml:"regexEntries,omitempty"`
 }
 
-func (s GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests) String() string {
+func (s GetListOfPurgeRequestsResponsePurgeRequests) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests) GoString() string {
+func (s GetListOfPurgeRequestsResponsePurgeRequests) GoString() string {
   return s.String()
 }
 
-func (s *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests) SetId(v string) *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests {
+func (s *GetListOfPurgeRequestsResponsePurgeRequests) SetId(v string) *GetListOfPurgeRequestsResponsePurgeRequests {
   s.Id = &v
   return s
 }
 
-func (s *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests) SetSubmissionTime(v string) *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests {
+func (s *GetListOfPurgeRequestsResponsePurgeRequests) SetSubmissionTime(v string) *GetListOfPurgeRequestsResponsePurgeRequests {
   s.SubmissionTime = &v
   return s
 }
 
-func (s *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests) SetHostnames(v []*string) *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests {
+func (s *GetListOfPurgeRequestsResponsePurgeRequests) SetHostnames(v []*string) *GetListOfPurgeRequestsResponsePurgeRequests {
   s.Hostnames = v
   return s
 }
 
-func (s *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests) SetFileEntries(v int) *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests {
+func (s *GetListOfPurgeRequestsResponsePurgeRequests) SetFileEntries(v int) *GetListOfPurgeRequestsResponsePurgeRequests {
   s.FileEntries = &v
   return s
 }
 
-func (s *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests) SetDirEntries(v int) *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests {
+func (s *GetListOfPurgeRequestsResponsePurgeRequests) SetDirEntries(v int) *GetListOfPurgeRequestsResponsePurgeRequests {
   s.DirEntries = &v
   return s
 }
 
-func (s *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests) SetTarget(v string) *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests {
+func (s *GetListOfPurgeRequestsResponsePurgeRequests) SetTarget(v string) *GetListOfPurgeRequestsResponsePurgeRequests {
   s.Target = &v
   return s
 }
 
-func (s *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests) SetSuccessRate(v int) *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests {
+func (s *GetListOfPurgeRequestsResponsePurgeRequests) SetSuccessRate(v int) *GetListOfPurgeRequestsResponsePurgeRequests {
   s.SuccessRate = &v
   return s
 }
 
-func (s *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests) SetStatus(v string) *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests {
+func (s *GetListOfPurgeRequestsResponsePurgeRequests) SetStatus(v string) *GetListOfPurgeRequestsResponsePurgeRequests {
   s.Status = &v
   return s
 }
 
-func (s *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests) SetFinishTime(v string) *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests {
+func (s *GetListOfPurgeRequestsResponsePurgeRequests) SetFinishTime(v string) *GetListOfPurgeRequestsResponsePurgeRequests {
   s.FinishTime = &v
   return s
 }
 
-func (s *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests) SetApiRequestId(v string) *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests {
+func (s *GetListOfPurgeRequestsResponsePurgeRequests) SetApiRequestId(v string) *GetListOfPurgeRequestsResponsePurgeRequests {
   s.ApiRequestId = &v
   return s
 }
 
-func (s *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests) SetRegexEntries(v int) *GetListOfPurgeRequestsGetListOfPurgeRequestsResponsePurgeRequests {
+func (s *GetListOfPurgeRequestsResponsePurgeRequests) SetRegexEntries(v int) *GetListOfPurgeRequestsResponsePurgeRequests {
   s.RegexEntries = &v
   return s
 }
@@ -1373,7 +1373,7 @@ type CreateAPrefetchRequestRequest struct {
   // 预取请求的简短描述。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty"`
   // {"en" : "", "zh_CN": ""}
-  FileList []*CreateAPrefetchRequestCreateAPrefetchRequestRequestFileList `json:"fileList,omitempty" xml:"fileList,omitempty" require:"true" type:"Repeated"`
+  FileList []*CreateAPrefetchRequestRequestFileList `json:"fileList,omitempty" xml:"fileList,omitempty" require:"true" type:"Repeated"`
   // {"en" : "A list of continents representing the regions in which to perform the prefetch. Specify 'Mainland China' as the region, if prefetch by servers in mainland China only is desired. Omitting the field means the prefetch will be done by all regions' servers.", "zh_CN": "指定需要预取内容的大洲，以大洲英文全名表示，例如Asia, Europe。支持仅预取到中国大陆的服务器，区域名称以Mainland China表示。未指定区域时，表示预取内容到所有大洲的服务器。"}
   Regions []*string `json:"regions,omitempty" xml:"regions,omitempty" type:"Repeated"`
   // {"en" : "RFC 3339 date indicating when the prefetch should begin. This must be in UTC time, for example, '2021-03-06T00:00:00Z'.", "zh_CN": "RFC 3339格式的日期，表示开始预取的时间。必须使用UTC时间，例如'2021-03-06T00:00:00Z'。"}
@@ -1395,7 +1395,7 @@ func (s *CreateAPrefetchRequestRequest) SetName(v string) *CreateAPrefetchReques
   return s
 }
 
-func (s *CreateAPrefetchRequestRequest) SetFileList(v []*CreateAPrefetchRequestCreateAPrefetchRequestRequestFileList) *CreateAPrefetchRequestRequest {
+func (s *CreateAPrefetchRequestRequest) SetFileList(v []*CreateAPrefetchRequestRequestFileList) *CreateAPrefetchRequestRequest {
   s.FileList = v
   return s
 }
@@ -1415,55 +1415,55 @@ func (s *CreateAPrefetchRequestRequest) SetWebhook(v string) *CreateAPrefetchReq
   return s
 }
 
-type CreateAPrefetchRequestCreateAPrefetchRequestRequestFileList struct     {
+type CreateAPrefetchRequestRequestFileList struct     {
   // {"en" : "Range: [ 10 .. 2048 ] characters 
   // A URL to prefetch. It must begin with 'http' or 'https' and can be up to 2048 characters.
   // ", "zh_CN": "取值范围: [ 10 .. 2048 ] 字符 
   // 预取的URL。必须以'http'或'https'开头，长度不超过2048个字符。"}
   Url *string `json:"url,omitempty" xml:"url,omitempty"`
   // {"en" : "If a URL's cache key depends on request headers, you can specify the header values that are applicable to prefetch one version of the URL.", "zh_CN": "如果需要在缓存键中加入请求头，可用该字段指定请求头。"}
-  Headers []*CreateAPrefetchRequestCreateAPrefetchRequestRequestFileListHeaders `json:"headers,omitempty" xml:"headers,omitempty" type:"Repeated"`
+  Headers []*CreateAPrefetchRequestRequestFileListHeaders `json:"headers,omitempty" xml:"headers,omitempty" type:"Repeated"`
 }
 
-func (s CreateAPrefetchRequestCreateAPrefetchRequestRequestFileList) String() string {
+func (s CreateAPrefetchRequestRequestFileList) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPrefetchRequestCreateAPrefetchRequestRequestFileList) GoString() string {
+func (s CreateAPrefetchRequestRequestFileList) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPrefetchRequestCreateAPrefetchRequestRequestFileList) SetUrl(v string) *CreateAPrefetchRequestCreateAPrefetchRequestRequestFileList {
+func (s *CreateAPrefetchRequestRequestFileList) SetUrl(v string) *CreateAPrefetchRequestRequestFileList {
   s.Url = &v
   return s
 }
 
-func (s *CreateAPrefetchRequestCreateAPrefetchRequestRequestFileList) SetHeaders(v []*CreateAPrefetchRequestCreateAPrefetchRequestRequestFileListHeaders) *CreateAPrefetchRequestCreateAPrefetchRequestRequestFileList {
+func (s *CreateAPrefetchRequestRequestFileList) SetHeaders(v []*CreateAPrefetchRequestRequestFileListHeaders) *CreateAPrefetchRequestRequestFileList {
   s.Headers = v
   return s
 }
 
-type CreateAPrefetchRequestCreateAPrefetchRequestRequestFileListHeaders struct     {
+type CreateAPrefetchRequestRequestFileListHeaders struct     {
   // {"en" : "HTTP header name.", "zh_CN": "HTTP 头部名称。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty"`
   // {"en" : "HTTP header value.", "zh_CN": "HTTP 头部值。"}
   Value *string `json:"value,omitempty" xml:"value,omitempty"`
 }
 
-func (s CreateAPrefetchRequestCreateAPrefetchRequestRequestFileListHeaders) String() string {
+func (s CreateAPrefetchRequestRequestFileListHeaders) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAPrefetchRequestCreateAPrefetchRequestRequestFileListHeaders) GoString() string {
+func (s CreateAPrefetchRequestRequestFileListHeaders) GoString() string {
   return s.String()
 }
 
-func (s *CreateAPrefetchRequestCreateAPrefetchRequestRequestFileListHeaders) SetName(v string) *CreateAPrefetchRequestCreateAPrefetchRequestRequestFileListHeaders {
+func (s *CreateAPrefetchRequestRequestFileListHeaders) SetName(v string) *CreateAPrefetchRequestRequestFileListHeaders {
   s.Name = &v
   return s
 }
 
-func (s *CreateAPrefetchRequestCreateAPrefetchRequestRequestFileListHeaders) SetValue(v string) *CreateAPrefetchRequestCreateAPrefetchRequestRequestFileListHeaders {
+func (s *CreateAPrefetchRequestRequestFileListHeaders) SetValue(v string) *CreateAPrefetchRequestRequestFileListHeaders {
   s.Value = &v
   return s
 }

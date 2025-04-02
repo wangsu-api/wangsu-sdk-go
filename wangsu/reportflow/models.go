@@ -103,7 +103,7 @@ func (s *ReportFlowDomainCountryServiceRequest) SetGroupBy(v []*string) *ReportF
 
 type ReportFlowDomainCountryServiceResponse struct {
   // {"en":"result", "zh_CN":"结果"}
-  Result []*ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportFlowDomainCountryServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportFlowDomainCountryServiceResponse) String() string {
@@ -114,36 +114,36 @@ func (s ReportFlowDomainCountryServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowDomainCountryServiceResponse) SetResult(v []*ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResult) *ReportFlowDomainCountryServiceResponse {
+func (s *ReportFlowDomainCountryServiceResponse) SetResult(v []*ReportFlowDomainCountryServiceResponseResult) *ReportFlowDomainCountryServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResult struct     {
+type ReportFlowDomainCountryServiceResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  CountryData []*ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryData `json:"countryData,omitempty" xml:"countryData,omitempty" require:"true" type:"Repeated"`
+  CountryData []*ReportFlowDomainCountryServiceResponseResultCountryData `json:"countryData,omitempty" xml:"countryData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResult) String() string {
+func (s ReportFlowDomainCountryServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResult) GoString() string {
+func (s ReportFlowDomainCountryServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResult) SetDomain(v string) *ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResult {
+func (s *ReportFlowDomainCountryServiceResponseResult) SetDomain(v string) *ReportFlowDomainCountryServiceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResult) SetCountryData(v []*ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryData) *ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResult {
+func (s *ReportFlowDomainCountryServiceResponseResult) SetCountryData(v []*ReportFlowDomainCountryServiceResponseResultCountryData) *ReportFlowDomainCountryServiceResponseResult {
   s.CountryData = v
   return s
 }
 
-type ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryData struct     {
+type ReportFlowDomainCountryServiceResponseResultCountryData struct     {
   // {"en":"Country code", "zh_CN":"国家地区代号"}
   CountryCode *string `json:"countryCode,omitempty" xml:"countryCode,omitempty" require:"true"`
   // {"en":"Country name", "zh_CN":"国家地区名称"}
@@ -152,43 +152,43 @@ type ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultC
   FlowSum *string `json:"flowSum,omitempty" xml:"flowSum,omitempty" require:"true"`
   // {"en":"National regional traffic ratio: the proportion (percentage) of traffic value in a single country region during the query period, retaining 2 decimal places", "zh_CN":"国家地区流量占比:单个国家地区流量在查询时段内的流量值的占比(百分比),保留2位小数"}
   FlowPercentage *string `json:"flowPercentage,omitempty" xml:"flowPercentage,omitempty" require:"true"`
-  FlowData []*ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryDataFlowData `json:"flowData,omitempty" xml:"flowData,omitempty" require:"true" type:"Repeated"`
+  FlowData []*ReportFlowDomainCountryServiceResponseResultCountryDataFlowData `json:"flowData,omitempty" xml:"flowData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryData) String() string {
+func (s ReportFlowDomainCountryServiceResponseResultCountryData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryData) GoString() string {
+func (s ReportFlowDomainCountryServiceResponseResultCountryData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryData) SetCountryCode(v string) *ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryData {
+func (s *ReportFlowDomainCountryServiceResponseResultCountryData) SetCountryCode(v string) *ReportFlowDomainCountryServiceResponseResultCountryData {
   s.CountryCode = &v
   return s
 }
 
-func (s *ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryData) SetCountryName(v string) *ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryData {
+func (s *ReportFlowDomainCountryServiceResponseResultCountryData) SetCountryName(v string) *ReportFlowDomainCountryServiceResponseResultCountryData {
   s.CountryName = &v
   return s
 }
 
-func (s *ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryData) SetFlowSum(v string) *ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryData {
+func (s *ReportFlowDomainCountryServiceResponseResultCountryData) SetFlowSum(v string) *ReportFlowDomainCountryServiceResponseResultCountryData {
   s.FlowSum = &v
   return s
 }
 
-func (s *ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryData) SetFlowPercentage(v string) *ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryData {
+func (s *ReportFlowDomainCountryServiceResponseResultCountryData) SetFlowPercentage(v string) *ReportFlowDomainCountryServiceResponseResultCountryData {
   s.FlowPercentage = &v
   return s
 }
 
-func (s *ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryData) SetFlowData(v []*ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryDataFlowData) *ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryData {
+func (s *ReportFlowDomainCountryServiceResponseResultCountryData) SetFlowData(v []*ReportFlowDomainCountryServiceResponseResultCountryDataFlowData) *ReportFlowDomainCountryServiceResponseResultCountryData {
   s.FlowData = v
   return s
 }
 
-type ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryDataFlowData struct     {
+type ReportFlowDomainCountryServiceResponseResultCountryDataFlowData struct     {
   // {"en":"1. When the data size of the query is 5m, the format is yyyy-MM-dd HH:mm; each time slice data value represents the data value in the previous time granularity range. The time slice starting at the beginning of the day is yyyy-MM-dd 00:05, and the last time slice is (yyyy-MM-dd+1) 00:00.
   // 2. Returns the time slice contained in the start time and end time.", "zh_CN":"1. 查询的数据粒度为5m时,格式为yyyy-MM-dd  HH:mm;每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd  00:05,最后一个时间片是(yyyy-MM-dd+1) 00:00。2. 返回开始时间和结束时间包含的时间片。"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
@@ -198,25 +198,25 @@ type ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultC
   Bandwidth *string `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true"`
 }
 
-func (s ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryDataFlowData) String() string {
+func (s ReportFlowDomainCountryServiceResponseResultCountryDataFlowData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryDataFlowData) GoString() string {
+func (s ReportFlowDomainCountryServiceResponseResultCountryDataFlowData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryDataFlowData) SetTimestamp(v string) *ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryDataFlowData {
+func (s *ReportFlowDomainCountryServiceResponseResultCountryDataFlowData) SetTimestamp(v string) *ReportFlowDomainCountryServiceResponseResultCountryDataFlowData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryDataFlowData) SetValue(v string) *ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryDataFlowData {
+func (s *ReportFlowDomainCountryServiceResponseResultCountryDataFlowData) SetValue(v string) *ReportFlowDomainCountryServiceResponseResultCountryDataFlowData {
   s.Value = &v
   return s
 }
 
-func (s *ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryDataFlowData) SetBandwidth(v string) *ReportFlowDomainCountryServiceReportFlowDomainCountryServiceResponseResultCountryDataFlowData {
+func (s *ReportFlowDomainCountryServiceResponseResultCountryDataFlowData) SetBandwidth(v string) *ReportFlowDomainCountryServiceResponseResultCountryDataFlowData {
   s.Bandwidth = &v
   return s
 }
@@ -283,7 +283,7 @@ type QuerySumUpTrafficUnderAccountResponse struct {
   // {"en":"Total traffic. Keep two digits of decimals. Unit: MB", "zh_CN":"总流量,保留2位小数,单位为MB"}
   FlowSummary *string `json:"flow-summary,omitempty" xml:"flow-summary,omitempty" require:"true"`
   // {"en":"flowData", "zh_CN":"流量数据"}
-  FlowData []*QuerySumUpTrafficUnderAccountQuerySumUpTrafficUnderAccountResponseFlowData `json:"flow-data,omitempty" xml:"flow-data,omitempty" require:"true" type:"Repeated"`
+  FlowData []*QuerySumUpTrafficUnderAccountResponseFlowData `json:"flow-data,omitempty" xml:"flow-data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QuerySumUpTrafficUnderAccountResponse) String() string {
@@ -299,12 +299,12 @@ func (s *QuerySumUpTrafficUnderAccountResponse) SetFlowSummary(v string) *QueryS
   return s
 }
 
-func (s *QuerySumUpTrafficUnderAccountResponse) SetFlowData(v []*QuerySumUpTrafficUnderAccountQuerySumUpTrafficUnderAccountResponseFlowData) *QuerySumUpTrafficUnderAccountResponse {
+func (s *QuerySumUpTrafficUnderAccountResponse) SetFlowData(v []*QuerySumUpTrafficUnderAccountResponseFlowData) *QuerySumUpTrafficUnderAccountResponse {
   s.FlowData = v
   return s
 }
 
-type QuerySumUpTrafficUnderAccountQuerySumUpTrafficUnderAccountResponseFlowData struct     {
+type QuerySumUpTrafficUnderAccountResponseFlowData struct     {
   // {"en":"Date
   // 1.When the data query granularity is fiveminutes, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:05 AM, and the last one is yyyy-MM-dd 24:00.
   // 2.When the data query granularity is hourly, the format is yyyy-MM-dd HH; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is yyyy-MM-dd 24.
@@ -319,20 +319,20 @@ type QuerySumUpTrafficUnderAccountQuerySumUpTrafficUnderAccountResponseFlowData 
   Flow *string `json:"flow,omitempty" xml:"flow,omitempty" require:"true"`
 }
 
-func (s QuerySumUpTrafficUnderAccountQuerySumUpTrafficUnderAccountResponseFlowData) String() string {
+func (s QuerySumUpTrafficUnderAccountResponseFlowData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QuerySumUpTrafficUnderAccountQuerySumUpTrafficUnderAccountResponseFlowData) GoString() string {
+func (s QuerySumUpTrafficUnderAccountResponseFlowData) GoString() string {
   return s.String()
 }
 
-func (s *QuerySumUpTrafficUnderAccountQuerySumUpTrafficUnderAccountResponseFlowData) SetTimestamp(v string) *QuerySumUpTrafficUnderAccountQuerySumUpTrafficUnderAccountResponseFlowData {
+func (s *QuerySumUpTrafficUnderAccountResponseFlowData) SetTimestamp(v string) *QuerySumUpTrafficUnderAccountResponseFlowData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QuerySumUpTrafficUnderAccountQuerySumUpTrafficUnderAccountResponseFlowData) SetFlow(v string) *QuerySumUpTrafficUnderAccountQuerySumUpTrafficUnderAccountResponseFlowData {
+func (s *QuerySumUpTrafficUnderAccountResponseFlowData) SetFlow(v string) *QuerySumUpTrafficUnderAccountResponseFlowData {
   s.Flow = &v
   return s
 }
@@ -443,7 +443,7 @@ type ReportFlowDirInfoServiceRequest struct {
   DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty" require:"true"`
   // {"en":"Directory levels, value range 1-4. Only one vlaue can be submitted", "zh_CN":"目录层级,取值范围1~4,只能提交单个值"}
   DirHierarchy *string `json:"dirHierarchy,omitempty" xml:"dirHierarchy,omitempty" require:"true"`
-  DomainDir []*ReportFlowDirInfoServiceReportFlowDirInfoServiceRequestDomainDir `json:"domainDir,omitempty" xml:"domainDir,omitempty" require:"true" type:"Repeated"`
+  DomainDir []*ReportFlowDirInfoServiceRequestDomainDir `json:"domainDir,omitempty" xml:"domainDir,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportFlowDirInfoServiceRequest) String() string {
@@ -469,12 +469,12 @@ func (s *ReportFlowDirInfoServiceRequest) SetDirHierarchy(v string) *ReportFlowD
   return s
 }
 
-func (s *ReportFlowDirInfoServiceRequest) SetDomainDir(v []*ReportFlowDirInfoServiceReportFlowDirInfoServiceRequestDomainDir) *ReportFlowDirInfoServiceRequest {
+func (s *ReportFlowDirInfoServiceRequest) SetDomainDir(v []*ReportFlowDirInfoServiceRequestDomainDir) *ReportFlowDirInfoServiceRequest {
   s.DomainDir = v
   return s
 }
 
-type ReportFlowDirInfoServiceReportFlowDirInfoServiceRequestDomainDir struct     {
+type ReportFlowDirInfoServiceRequestDomainDir struct     {
   // {"en":"Domain
   // 					1.Need to meet the regular expression rules that are used to validate domains;
   // 					2.Domain number limits can be adjusted depending on different accounts. The default value is 1;", "zh_CN":"域名
@@ -491,27 +491,27 @@ type ReportFlowDirInfoServiceReportFlowDirInfoServiceRequestDomainDir struct    
   Dir []*string `json:"dir,omitempty" xml:"dir,omitempty" type:"Repeated"`
 }
 
-func (s ReportFlowDirInfoServiceReportFlowDirInfoServiceRequestDomainDir) String() string {
+func (s ReportFlowDirInfoServiceRequestDomainDir) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowDirInfoServiceReportFlowDirInfoServiceRequestDomainDir) GoString() string {
+func (s ReportFlowDirInfoServiceRequestDomainDir) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowDirInfoServiceReportFlowDirInfoServiceRequestDomainDir) SetDomain(v string) *ReportFlowDirInfoServiceReportFlowDirInfoServiceRequestDomainDir {
+func (s *ReportFlowDirInfoServiceRequestDomainDir) SetDomain(v string) *ReportFlowDirInfoServiceRequestDomainDir {
   s.Domain = &v
   return s
 }
 
-func (s *ReportFlowDirInfoServiceReportFlowDirInfoServiceRequestDomainDir) SetDir(v []*string) *ReportFlowDirInfoServiceReportFlowDirInfoServiceRequestDomainDir {
+func (s *ReportFlowDirInfoServiceRequestDomainDir) SetDir(v []*string) *ReportFlowDirInfoServiceRequestDomainDir {
   s.Dir = v
   return s
 }
 
 type ReportFlowDirInfoServiceResponse struct {
   // {"en":"result", "zh_CN":"结果"}
-  Result []*ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportFlowDirInfoServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportFlowDirInfoServiceResponse) String() string {
@@ -522,37 +522,37 @@ func (s ReportFlowDirInfoServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowDirInfoServiceResponse) SetResult(v []*ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResult) *ReportFlowDirInfoServiceResponse {
+func (s *ReportFlowDirInfoServiceResponse) SetResult(v []*ReportFlowDirInfoServiceResponseResult) *ReportFlowDirInfoServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResult struct     {
+type ReportFlowDirInfoServiceResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"details", "zh_CN":"详情数据"}
-  Details []*ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResultDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
+  Details []*ReportFlowDirInfoServiceResponseResultDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResult) String() string {
+func (s ReportFlowDirInfoServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResult) GoString() string {
+func (s ReportFlowDirInfoServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResult) SetDomain(v string) *ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResult {
+func (s *ReportFlowDirInfoServiceResponseResult) SetDomain(v string) *ReportFlowDirInfoServiceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResult) SetDetails(v []*ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResultDetails) *ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResult {
+func (s *ReportFlowDirInfoServiceResponseResult) SetDetails(v []*ReportFlowDirInfoServiceResponseResultDetails) *ReportFlowDirInfoServiceResponseResult {
   s.Details = v
   return s
 }
 
-type ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResultDetails struct     {
+type ReportFlowDirInfoServiceResponseResultDetails struct     {
   // {"en":"Directory name of corresponding level", "zh_CN":"对应层级的目录名称"}
   Dir *string `json:"dir,omitempty" xml:"dir,omitempty" require:"true"`
   // {"en":"Total traffic, unit is MB and 2  digits of decimals allowed", "zh_CN":"总流量,单位MB,保留2位小数"}
@@ -561,25 +561,25 @@ type ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResultDetails struc
   BandwidthPeakValue *string `json:"bandwidthPeakValue,omitempty" xml:"bandwidthPeakValue,omitempty" require:"true"`
 }
 
-func (s ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResultDetails) String() string {
+func (s ReportFlowDirInfoServiceResponseResultDetails) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResultDetails) GoString() string {
+func (s ReportFlowDirInfoServiceResponseResultDetails) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResultDetails) SetDir(v string) *ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResultDetails {
+func (s *ReportFlowDirInfoServiceResponseResultDetails) SetDir(v string) *ReportFlowDirInfoServiceResponseResultDetails {
   s.Dir = &v
   return s
 }
 
-func (s *ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResultDetails) SetTotalFlow(v string) *ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResultDetails {
+func (s *ReportFlowDirInfoServiceResponseResultDetails) SetTotalFlow(v string) *ReportFlowDirInfoServiceResponseResultDetails {
   s.TotalFlow = &v
   return s
 }
 
-func (s *ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResultDetails) SetBandwidthPeakValue(v string) *ReportFlowDirInfoServiceReportFlowDirInfoServiceResponseResultDetails {
+func (s *ReportFlowDirInfoServiceResponseResultDetails) SetBandwidthPeakValue(v string) *ReportFlowDirInfoServiceResponseResultDetails {
   s.BandwidthPeakValue = &v
   return s
 }
@@ -731,7 +731,7 @@ func (s *ReportFlowOriginIspProvinceByteServiceRequest) SetGroupBy(v []*string) 
 }
 
 type ReportFlowOriginIspProvinceByteServiceResponse struct {
-  Result []*ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportFlowOriginIspProvinceByteServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportFlowOriginIspProvinceByteServiceResponse) String() string {
@@ -742,84 +742,84 @@ func (s ReportFlowOriginIspProvinceByteServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowOriginIspProvinceByteServiceResponse) SetResult(v []*ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResult) *ReportFlowOriginIspProvinceByteServiceResponse {
+func (s *ReportFlowOriginIspProvinceByteServiceResponse) SetResult(v []*ReportFlowOriginIspProvinceByteServiceResponseResult) *ReportFlowOriginIspProvinceByteServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResult struct     {
+type ReportFlowOriginIspProvinceByteServiceResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  IspData []*ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*ReportFlowOriginIspProvinceByteServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResult) String() string {
+func (s ReportFlowOriginIspProvinceByteServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResult) GoString() string {
+func (s ReportFlowOriginIspProvinceByteServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResult) SetDomain(v string) *ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResult {
+func (s *ReportFlowOriginIspProvinceByteServiceResponseResult) SetDomain(v string) *ReportFlowOriginIspProvinceByteServiceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResult) SetIspData(v []*ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspData) *ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResult {
+func (s *ReportFlowOriginIspProvinceByteServiceResponseResult) SetIspData(v []*ReportFlowOriginIspProvinceByteServiceResponseResultIspData) *ReportFlowOriginIspProvinceByteServiceResponseResult {
   s.IspData = v
   return s
 }
 
-type ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspData struct     {
+type ReportFlowOriginIspProvinceByteServiceResponseResultIspData struct     {
   // {"en":"Internet service providers", "zh_CN":"运营商"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
-  ProvinceData []*ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*ReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspData) String() string {
+func (s ReportFlowOriginIspProvinceByteServiceResponseResultIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspData) GoString() string {
+func (s ReportFlowOriginIspProvinceByteServiceResponseResultIspData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspData) SetIsp(v string) *ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspData {
+func (s *ReportFlowOriginIspProvinceByteServiceResponseResultIspData) SetIsp(v string) *ReportFlowOriginIspProvinceByteServiceResponseResultIspData {
   s.Isp = &v
   return s
 }
 
-func (s *ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspData) SetProvinceData(v []*ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceData) *ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspData {
+func (s *ReportFlowOriginIspProvinceByteServiceResponseResultIspData) SetProvinceData(v []*ReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceData) *ReportFlowOriginIspProvinceByteServiceResponseResultIspData {
   s.ProvinceData = v
   return s
 }
 
-type ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceData struct     {
+type ReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceData struct     {
   // {"en":"Province", "zh_CN":"省份"}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
-  OriginFlowData []*ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceDataOriginFlowData `json:"originFlowData,omitempty" xml:"originFlowData,omitempty" require:"true" type:"Repeated"`
+  OriginFlowData []*ReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceDataOriginFlowData `json:"originFlowData,omitempty" xml:"originFlowData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceData) String() string {
+func (s ReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceData) GoString() string {
+func (s ReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceData {
+func (s *ReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceData {
   s.Province = &v
   return s
 }
 
-func (s *ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceData) SetOriginFlowData(v []*ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceDataOriginFlowData) *ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceData {
+func (s *ReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceData) SetOriginFlowData(v []*ReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceDataOriginFlowData) *ReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceData {
   s.OriginFlowData = v
   return s
 }
 
-type ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceDataOriginFlowData struct     {
+type ReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceDataOriginFlowData struct     {
   // {"en":"time,
   //         1. When the data size of the query is 5m, the format is yyyy-MM-dd HH:mm; each time slice data value represents the data value within the previous time granularity range. The time slice starting at the beginning of the day is yyyy-MM-dd 00:05, and the last time slice is (yyyy-MM-dd+1) 00:00;
   //         2. When the data granularity of the query is 1h, the format is yyyy-MM-dd HH; each time slice data value represents the data value within the previous time granularity range. The time slice starting at the beginning of the day is yyyy-MM-dd 01, and the last time slice is (yyyy-MM-dd+1) 00;
@@ -832,20 +832,20 @@ type ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServic
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceDataOriginFlowData) String() string {
+func (s ReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceDataOriginFlowData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceDataOriginFlowData) GoString() string {
+func (s ReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceDataOriginFlowData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceDataOriginFlowData) SetTimestamp(v string) *ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceDataOriginFlowData {
+func (s *ReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceDataOriginFlowData) SetTimestamp(v string) *ReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceDataOriginFlowData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceDataOriginFlowData) SetValue(v string) *ReportFlowOriginIspProvinceByteServiceReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceDataOriginFlowData {
+func (s *ReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceDataOriginFlowData) SetValue(v string) *ReportFlowOriginIspProvinceByteServiceResponseResultIspDataProvinceDataOriginFlowData {
   s.Value = &v
   return s
 }
@@ -1003,7 +1003,7 @@ func (s *ReportFlowOriginIspProvinceServiceRequest) SetGroupBy(v []*string) *Rep
 
 type ReportFlowOriginIspProvinceServiceResponse struct {
   // {"en":"result", "zh_CN":"结果"}
-  Result []*ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportFlowOriginIspProvinceServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportFlowOriginIspProvinceServiceResponse) String() string {
@@ -1014,87 +1014,87 @@ func (s ReportFlowOriginIspProvinceServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowOriginIspProvinceServiceResponse) SetResult(v []*ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResult) *ReportFlowOriginIspProvinceServiceResponse {
+func (s *ReportFlowOriginIspProvinceServiceResponse) SetResult(v []*ReportFlowOriginIspProvinceServiceResponseResult) *ReportFlowOriginIspProvinceServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResult struct     {
+type ReportFlowOriginIspProvinceServiceResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"ispData", "zh_CN":"ISP数据"}
-  IspData []*ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*ReportFlowOriginIspProvinceServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResult) String() string {
+func (s ReportFlowOriginIspProvinceServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResult) GoString() string {
+func (s ReportFlowOriginIspProvinceServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResult) SetDomain(v string) *ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResult {
+func (s *ReportFlowOriginIspProvinceServiceResponseResult) SetDomain(v string) *ReportFlowOriginIspProvinceServiceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResult) SetIspData(v []*ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspData) *ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResult {
+func (s *ReportFlowOriginIspProvinceServiceResponseResult) SetIspData(v []*ReportFlowOriginIspProvinceServiceResponseResultIspData) *ReportFlowOriginIspProvinceServiceResponseResult {
   s.IspData = v
   return s
 }
 
-type ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspData struct     {
+type ReportFlowOriginIspProvinceServiceResponseResultIspData struct     {
   // {"en":"Internet service providers", "zh_CN":"运营商"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
   // {"en":"provinceData", "zh_CN":"省份数据"}
-  ProvinceData []*ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*ReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspData) String() string {
+func (s ReportFlowOriginIspProvinceServiceResponseResultIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspData) GoString() string {
+func (s ReportFlowOriginIspProvinceServiceResponseResultIspData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspData) SetIsp(v string) *ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspData {
+func (s *ReportFlowOriginIspProvinceServiceResponseResultIspData) SetIsp(v string) *ReportFlowOriginIspProvinceServiceResponseResultIspData {
   s.Isp = &v
   return s
 }
 
-func (s *ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspData) SetProvinceData(v []*ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceData) *ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspData {
+func (s *ReportFlowOriginIspProvinceServiceResponseResultIspData) SetProvinceData(v []*ReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceData) *ReportFlowOriginIspProvinceServiceResponseResultIspData {
   s.ProvinceData = v
   return s
 }
 
-type ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceData struct     {
+type ReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceData struct     {
   // {"en":"Province", "zh_CN":"省份"}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
   // {"en":"originFlowData", "zh_CN":"流量数据"}
-  OriginFlowData []*ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData `json:"originFlowData,omitempty" xml:"originFlowData,omitempty" require:"true" type:"Repeated"`
+  OriginFlowData []*ReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData `json:"originFlowData,omitempty" xml:"originFlowData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceData) String() string {
+func (s ReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceData) GoString() string {
+func (s ReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceData {
+func (s *ReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceData {
   s.Province = &v
   return s
 }
 
-func (s *ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceData) SetOriginFlowData(v []*ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData) *ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceData {
+func (s *ReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceData) SetOriginFlowData(v []*ReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData) *ReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceData {
   s.OriginFlowData = v
   return s
 }
 
-type ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData struct     {
+type ReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData struct     {
   // {"en":"Time,
   // 
   //    1.When the data query granularity is 5m, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 12:05 AM, and the last one is (yyyy-MM-dd+1) 00:00;
@@ -1112,25 +1112,25 @@ type ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceRespons
   OriginBandwidth *string `json:"originBandwidth,omitempty" xml:"originBandwidth,omitempty" require:"true"`
 }
 
-func (s ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData) String() string {
+func (s ReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData) GoString() string {
+func (s ReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData) SetTimestamp(v string) *ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData {
+func (s *ReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData) SetTimestamp(v string) *ReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData) SetValue(v string) *ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData {
+func (s *ReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData) SetValue(v string) *ReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData {
   s.Value = &v
   return s
 }
 
-func (s *ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData) SetOriginBandwidth(v string) *ReportFlowOriginIspProvinceServiceReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData {
+func (s *ReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData) SetOriginBandwidth(v string) *ReportFlowOriginIspProvinceServiceResponseResultIspDataProvinceDataOriginFlowData {
   s.OriginBandwidth = &v
   return s
 }
@@ -1306,7 +1306,7 @@ type ReportFlowIspProvinceHitRateDetailServiceResponse struct {
   // {"en":"Request result infotmation", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Detail data of request result", "zh_CN":"请求结果的详细数据"}
-  Data []*ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportFlowIspProvinceHitRateDetailServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportFlowIspProvinceHitRateDetailServiceResponse) String() string {
@@ -1327,87 +1327,87 @@ func (s *ReportFlowIspProvinceHitRateDetailServiceResponse) SetMessage(v string)
   return s
 }
 
-func (s *ReportFlowIspProvinceHitRateDetailServiceResponse) SetData(v []*ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseData) *ReportFlowIspProvinceHitRateDetailServiceResponse {
+func (s *ReportFlowIspProvinceHitRateDetailServiceResponse) SetData(v []*ReportFlowIspProvinceHitRateDetailServiceResponseData) *ReportFlowIspProvinceHitRateDetailServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseData struct     {
+type ReportFlowIspProvinceHitRateDetailServiceResponseData struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"ISP data", "zh_CN":"运营商数据"}
-  IspData []*ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*ReportFlowIspProvinceHitRateDetailServiceResponseDataIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseData) String() string {
+func (s ReportFlowIspProvinceHitRateDetailServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseData) GoString() string {
+func (s ReportFlowIspProvinceHitRateDetailServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseData) SetDomain(v string) *ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseData {
+func (s *ReportFlowIspProvinceHitRateDetailServiceResponseData) SetDomain(v string) *ReportFlowIspProvinceHitRateDetailServiceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseData) SetIspData(v []*ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspData) *ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseData {
+func (s *ReportFlowIspProvinceHitRateDetailServiceResponseData) SetIspData(v []*ReportFlowIspProvinceHitRateDetailServiceResponseDataIspData) *ReportFlowIspProvinceHitRateDetailServiceResponseData {
   s.IspData = v
   return s
 }
 
-type ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspData struct     {
+type ReportFlowIspProvinceHitRateDetailServiceResponseDataIspData struct     {
   // {"en":"ISP", "zh_CN":"运营商"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
   // {"en":"Province data", "zh_CN":"省份数据"}
-  ProvinceData []*ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*ReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspData) String() string {
+func (s ReportFlowIspProvinceHitRateDetailServiceResponseDataIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspData) GoString() string {
+func (s ReportFlowIspProvinceHitRateDetailServiceResponseDataIspData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspData) SetIsp(v string) *ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspData {
+func (s *ReportFlowIspProvinceHitRateDetailServiceResponseDataIspData) SetIsp(v string) *ReportFlowIspProvinceHitRateDetailServiceResponseDataIspData {
   s.Isp = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspData) SetProvinceData(v []*ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceData) *ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspData {
+func (s *ReportFlowIspProvinceHitRateDetailServiceResponseDataIspData) SetProvinceData(v []*ReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceData) *ReportFlowIspProvinceHitRateDetailServiceResponseDataIspData {
   s.ProvinceData = v
   return s
 }
 
-type ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceData struct     {
+type ReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceData struct     {
   // {"en":"Province", "zh_CN":"省份"}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
   // {"en":"-", "zh_CN":""}
-  Details []*ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
+  Details []*ReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceData) String() string {
+func (s ReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceData) GoString() string {
+func (s ReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceData) SetProvince(v string) *ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceData {
+func (s *ReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceData) SetProvince(v string) *ReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceData {
   s.Province = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceData) SetDetails(v []*ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails) *ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceData {
+func (s *ReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceData) SetDetails(v []*ReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails) *ReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceData {
   s.Details = v
   return s
 }
 
-type ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails struct     {
+type ReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails struct     {
   // {"en":"Time,the format is yyyy-MM-dd HH:mm", "zh_CN":"时间,格式为yyyy-MM-dd HH:mm"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Hit data incording to query by(flow/requests)", "zh_CN":"命中数据 flow:流量,保留两位小数; request:请求数"}
@@ -1416,25 +1416,25 @@ type ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetail
   HitRate *string `json:"hitRate,omitempty" xml:"hitRate,omitempty" require:"true"`
 }
 
-func (s ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails) String() string {
+func (s ReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails) GoString() string {
+func (s ReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails) SetTimestamp(v string) *ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails {
+func (s *ReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails) SetTimestamp(v string) *ReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails) SetHitValue(v string) *ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails {
+func (s *ReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails) SetHitValue(v string) *ReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails {
   s.HitValue = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails) SetHitRate(v string) *ReportFlowIspProvinceHitRateDetailServiceReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails {
+func (s *ReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails) SetHitRate(v string) *ReportFlowIspProvinceHitRateDetailServiceResponseDataIspDataProvinceDataDetails {
   s.HitRate = &v
   return s
 }
@@ -1553,7 +1553,7 @@ func (s *QueryTrafficRequestInTotalAndPeakValueRequest) SetGroupBy(v []*string) 
 
 type QueryTrafficRequestInTotalAndPeakValueResponse struct {
   // {"en":"", "zh_CN":""}
-  Result []*QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryTrafficRequestInTotalAndPeakValueResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryTrafficRequestInTotalAndPeakValueResponse) String() string {
@@ -1564,12 +1564,12 @@ func (s QueryTrafficRequestInTotalAndPeakValueResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryTrafficRequestInTotalAndPeakValueResponse) SetResult(v []*QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult) *QueryTrafficRequestInTotalAndPeakValueResponse {
+func (s *QueryTrafficRequestInTotalAndPeakValueResponse) SetResult(v []*QueryTrafficRequestInTotalAndPeakValueResponseResult) *QueryTrafficRequestInTotalAndPeakValueResponse {
   s.Result = v
   return s
 }
 
-type QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult struct     {
+type QueryTrafficRequestInTotalAndPeakValueResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"totalFlow, unit: MB, 2 decimal places reserved, example (74099.92)", "zh_CN":"总流量，单位:MB ，保留2位小数，示例 ( 74099.92 )"}
@@ -1585,58 +1585,58 @@ type QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValu
   // {"en":"Peak time of request", "zh_CN":"请求数峰值时间"}
   PeakRequestTime *string `json:"peakRequestTime,omitempty" xml:"peakRequestTime,omitempty" require:"true"`
   // {"en":"", "zh_CN":""}
-  FlowRequestData []*QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData `json:"flowRequestData,omitempty" xml:"flowRequestData,omitempty" require:"true" type:"Repeated"`
+  FlowRequestData []*QueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData `json:"flowRequestData,omitempty" xml:"flowRequestData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult) String() string {
+func (s QueryTrafficRequestInTotalAndPeakValueResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult) GoString() string {
+func (s QueryTrafficRequestInTotalAndPeakValueResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult) SetDomain(v string) *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult {
+func (s *QueryTrafficRequestInTotalAndPeakValueResponseResult) SetDomain(v string) *QueryTrafficRequestInTotalAndPeakValueResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult) SetTotalFlow(v string) *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult {
+func (s *QueryTrafficRequestInTotalAndPeakValueResponseResult) SetTotalFlow(v string) *QueryTrafficRequestInTotalAndPeakValueResponseResult {
   s.TotalFlow = &v
   return s
 }
 
-func (s *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult) SetTotalRequest(v string) *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult {
+func (s *QueryTrafficRequestInTotalAndPeakValueResponseResult) SetTotalRequest(v string) *QueryTrafficRequestInTotalAndPeakValueResponseResult {
   s.TotalRequest = &v
   return s
 }
 
-func (s *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult) SetPeakBandwidth(v string) *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult {
+func (s *QueryTrafficRequestInTotalAndPeakValueResponseResult) SetPeakBandwidth(v string) *QueryTrafficRequestInTotalAndPeakValueResponseResult {
   s.PeakBandwidth = &v
   return s
 }
 
-func (s *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult) SetPeakTime(v string) *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult {
+func (s *QueryTrafficRequestInTotalAndPeakValueResponseResult) SetPeakTime(v string) *QueryTrafficRequestInTotalAndPeakValueResponseResult {
   s.PeakTime = &v
   return s
 }
 
-func (s *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult) SetPeakRequest(v string) *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult {
+func (s *QueryTrafficRequestInTotalAndPeakValueResponseResult) SetPeakRequest(v string) *QueryTrafficRequestInTotalAndPeakValueResponseResult {
   s.PeakRequest = &v
   return s
 }
 
-func (s *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult) SetPeakRequestTime(v string) *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult {
+func (s *QueryTrafficRequestInTotalAndPeakValueResponseResult) SetPeakRequestTime(v string) *QueryTrafficRequestInTotalAndPeakValueResponseResult {
   s.PeakRequestTime = &v
   return s
 }
 
-func (s *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult) SetFlowRequestData(v []*QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData) *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResult {
+func (s *QueryTrafficRequestInTotalAndPeakValueResponseResult) SetFlowRequestData(v []*QueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData) *QueryTrafficRequestInTotalAndPeakValueResponseResult {
   s.FlowRequestData = v
   return s
 }
 
-type QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData struct     {
+type QueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData struct     {
   // {"en":"timestamp
   // 1. When the data granularity of query is 5m, the format is yyyy-mm-dd HH: MM;Each time slice data value represents the data value in the previous time granularity range.The time slice at the beginning of the day is yyyy-mm-dd 00:05, and the last time slice is (yyyy-mm-dd +1) 00:00;
   // 2. Return the time slice of start time and end time.", "zh_CN":"时间片
@@ -1651,30 +1651,30 @@ type QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValu
   Request *string `json:"request,omitempty" xml:"request,omitempty" require:"true"`
 }
 
-func (s QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData) String() string {
+func (s QueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData) GoString() string {
+func (s QueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData) GoString() string {
   return s.String()
 }
 
-func (s *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData) SetTimestamp(v string) *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData {
+func (s *QueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData) SetTimestamp(v string) *QueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData) SetFlow(v string) *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData {
+func (s *QueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData) SetFlow(v string) *QueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData {
   s.Flow = &v
   return s
 }
 
-func (s *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData) SetBandwidth(v string) *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData {
+func (s *QueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData) SetBandwidth(v string) *QueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData {
   s.Bandwidth = &v
   return s
 }
 
-func (s *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData) SetRequest(v string) *QueryTrafficRequestInTotalAndPeakValueQueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData {
+func (s *QueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData) SetRequest(v string) *QueryTrafficRequestInTotalAndPeakValueResponseResultFlowRequestData {
   s.Request = &v
   return s
 }
@@ -1829,7 +1829,7 @@ func (s *ReportFlowIspProvinceByteServiceRequest) SetGroupBy(v []*string) *Repor
 }
 
 type ReportFlowIspProvinceByteServiceResponse struct {
-  Result []*ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportFlowIspProvinceByteServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportFlowIspProvinceByteServiceResponse) String() string {
@@ -1840,84 +1840,84 @@ func (s ReportFlowIspProvinceByteServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceByteServiceResponse) SetResult(v []*ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResult) *ReportFlowIspProvinceByteServiceResponse {
+func (s *ReportFlowIspProvinceByteServiceResponse) SetResult(v []*ReportFlowIspProvinceByteServiceResponseResult) *ReportFlowIspProvinceByteServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResult struct     {
+type ReportFlowIspProvinceByteServiceResponseResult struct     {
   // {'en':'Domain', 'zh_CN':'域名'}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  IspData []*ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*ReportFlowIspProvinceByteServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResult) String() string {
+func (s ReportFlowIspProvinceByteServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResult) GoString() string {
+func (s ReportFlowIspProvinceByteServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResult) SetDomain(v string) *ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResult {
+func (s *ReportFlowIspProvinceByteServiceResponseResult) SetDomain(v string) *ReportFlowIspProvinceByteServiceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResult) SetIspData(v []*ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspData) *ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResult {
+func (s *ReportFlowIspProvinceByteServiceResponseResult) SetIspData(v []*ReportFlowIspProvinceByteServiceResponseResultIspData) *ReportFlowIspProvinceByteServiceResponseResult {
   s.IspData = v
   return s
 }
 
-type ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspData struct     {
+type ReportFlowIspProvinceByteServiceResponseResultIspData struct     {
   // {'en':'Internet service providers', 'zh_CN':'运营商'}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
-  ProvinceData []*ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*ReportFlowIspProvinceByteServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspData) String() string {
+func (s ReportFlowIspProvinceByteServiceResponseResultIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspData) GoString() string {
+func (s ReportFlowIspProvinceByteServiceResponseResultIspData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspData) SetIsp(v string) *ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspData {
+func (s *ReportFlowIspProvinceByteServiceResponseResultIspData) SetIsp(v string) *ReportFlowIspProvinceByteServiceResponseResultIspData {
   s.Isp = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspData) SetProvinceData(v []*ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspDataProvinceData) *ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspData {
+func (s *ReportFlowIspProvinceByteServiceResponseResultIspData) SetProvinceData(v []*ReportFlowIspProvinceByteServiceResponseResultIspDataProvinceData) *ReportFlowIspProvinceByteServiceResponseResultIspData {
   s.ProvinceData = v
   return s
 }
 
-type ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspDataProvinceData struct     {
+type ReportFlowIspProvinceByteServiceResponseResultIspDataProvinceData struct     {
   // {'en':'province', 'zh_CN':'省份'}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
-  FlowData []*ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspDataProvinceDataFlowData `json:"flowData,omitempty" xml:"flowData,omitempty" require:"true" type:"Repeated"`
+  FlowData []*ReportFlowIspProvinceByteServiceResponseResultIspDataProvinceDataFlowData `json:"flowData,omitempty" xml:"flowData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspDataProvinceData) String() string {
+func (s ReportFlowIspProvinceByteServiceResponseResultIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspDataProvinceData) GoString() string {
+func (s ReportFlowIspProvinceByteServiceResponseResultIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspDataProvinceData {
+func (s *ReportFlowIspProvinceByteServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportFlowIspProvinceByteServiceResponseResultIspDataProvinceData {
   s.Province = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspDataProvinceData) SetFlowData(v []*ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspDataProvinceDataFlowData) *ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspDataProvinceData {
+func (s *ReportFlowIspProvinceByteServiceResponseResultIspDataProvinceData) SetFlowData(v []*ReportFlowIspProvinceByteServiceResponseResultIspDataProvinceDataFlowData) *ReportFlowIspProvinceByteServiceResponseResultIspDataProvinceData {
   s.FlowData = v
   return s
 }
 
-type ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspDataProvinceDataFlowData struct     {
+type ReportFlowIspProvinceByteServiceResponseResultIspDataProvinceDataFlowData struct     {
   // {'en':'time
   // 1. When the data size of the query is 5m, the format is yyyy-MM-dd HH:mm; each time slice data value represents the data value within the previous time granularity range. The time slice starting at the beginning of the day is yyyy-MM-dd 00:05, and the last time slice is (yyyy-MM-dd+1) 00:00.
   // 2. When the data granularity of the query is 1h, the format is yyyy-MM-dd HH; each time slice data value represents the data value within the previous time granularity range. The time slice starting at the beginning of the day is yyyy-MM-dd 01, and the last time slice is (yyyy-MM-dd+1) 00.
@@ -1930,20 +1930,20 @@ type ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseRes
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspDataProvinceDataFlowData) String() string {
+func (s ReportFlowIspProvinceByteServiceResponseResultIspDataProvinceDataFlowData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspDataProvinceDataFlowData) GoString() string {
+func (s ReportFlowIspProvinceByteServiceResponseResultIspDataProvinceDataFlowData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspDataProvinceDataFlowData) SetTimestamp(v string) *ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspDataProvinceDataFlowData {
+func (s *ReportFlowIspProvinceByteServiceResponseResultIspDataProvinceDataFlowData) SetTimestamp(v string) *ReportFlowIspProvinceByteServiceResponseResultIspDataProvinceDataFlowData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspDataProvinceDataFlowData) SetValue(v string) *ReportFlowIspProvinceByteServiceReportFlowIspProvinceByteServiceResponseResultIspDataProvinceDataFlowData {
+func (s *ReportFlowIspProvinceByteServiceResponseResultIspDataProvinceDataFlowData) SetValue(v string) *ReportFlowIspProvinceByteServiceResponseResultIspDataProvinceDataFlowData {
   s.Value = &v
   return s
 }
@@ -2065,7 +2065,7 @@ func (s *QueryOutputTrafficUnderShieldPoPRequest) SetGroupBy(v []*string) *Query
 
 type QueryOutputTrafficUnderShieldPoPResponse struct {
   // {"en":"result", "zh_CN":"结果"}
-  Result []*QueryOutputTrafficUnderShieldPoPQueryOutputTrafficUnderShieldPoPResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryOutputTrafficUnderShieldPoPResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryOutputTrafficUnderShieldPoPResponse) String() string {
@@ -2076,64 +2076,64 @@ func (s QueryOutputTrafficUnderShieldPoPResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryOutputTrafficUnderShieldPoPResponse) SetResult(v []*QueryOutputTrafficUnderShieldPoPQueryOutputTrafficUnderShieldPoPResponseResult) *QueryOutputTrafficUnderShieldPoPResponse {
+func (s *QueryOutputTrafficUnderShieldPoPResponse) SetResult(v []*QueryOutputTrafficUnderShieldPoPResponseResult) *QueryOutputTrafficUnderShieldPoPResponse {
   s.Result = v
   return s
 }
 
-type QueryOutputTrafficUnderShieldPoPQueryOutputTrafficUnderShieldPoPResponseResult struct     {
+type QueryOutputTrafficUnderShieldPoPResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"Total traffic", "zh_CN":"总流量"}
   TotalFlow *string `json:"totalFlow,omitempty" xml:"totalFlow,omitempty" require:"true"`
   // {"en":"flowData", "zh_CN":"流量值数据"}
-  FlowData []*QueryOutputTrafficUnderShieldPoPQueryOutputTrafficUnderShieldPoPResponseResultFlowData `json:"flowData,omitempty" xml:"flowData,omitempty" require:"true" type:"Repeated"`
+  FlowData []*QueryOutputTrafficUnderShieldPoPResponseResultFlowData `json:"flowData,omitempty" xml:"flowData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryOutputTrafficUnderShieldPoPQueryOutputTrafficUnderShieldPoPResponseResult) String() string {
+func (s QueryOutputTrafficUnderShieldPoPResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryOutputTrafficUnderShieldPoPQueryOutputTrafficUnderShieldPoPResponseResult) GoString() string {
+func (s QueryOutputTrafficUnderShieldPoPResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryOutputTrafficUnderShieldPoPQueryOutputTrafficUnderShieldPoPResponseResult) SetDomain(v string) *QueryOutputTrafficUnderShieldPoPQueryOutputTrafficUnderShieldPoPResponseResult {
+func (s *QueryOutputTrafficUnderShieldPoPResponseResult) SetDomain(v string) *QueryOutputTrafficUnderShieldPoPResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *QueryOutputTrafficUnderShieldPoPQueryOutputTrafficUnderShieldPoPResponseResult) SetTotalFlow(v string) *QueryOutputTrafficUnderShieldPoPQueryOutputTrafficUnderShieldPoPResponseResult {
+func (s *QueryOutputTrafficUnderShieldPoPResponseResult) SetTotalFlow(v string) *QueryOutputTrafficUnderShieldPoPResponseResult {
   s.TotalFlow = &v
   return s
 }
 
-func (s *QueryOutputTrafficUnderShieldPoPQueryOutputTrafficUnderShieldPoPResponseResult) SetFlowData(v []*QueryOutputTrafficUnderShieldPoPQueryOutputTrafficUnderShieldPoPResponseResultFlowData) *QueryOutputTrafficUnderShieldPoPQueryOutputTrafficUnderShieldPoPResponseResult {
+func (s *QueryOutputTrafficUnderShieldPoPResponseResult) SetFlowData(v []*QueryOutputTrafficUnderShieldPoPResponseResultFlowData) *QueryOutputTrafficUnderShieldPoPResponseResult {
   s.FlowData = v
   return s
 }
 
-type QueryOutputTrafficUnderShieldPoPQueryOutputTrafficUnderShieldPoPResponseResultFlowData struct     {
+type QueryOutputTrafficUnderShieldPoPResponseResultFlowData struct     {
   // {"en":"DateTime, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 12:05 AM, and the last one is (yyyy-MM-dd+1) 00:00.", "zh_CN":"时间,格式为yyyy-MM-dd HH:mm;每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd &nbsp; 00:05,最后一个时间片是(yyyy-MM-dd+1)&nbsp;00:00。"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Traffic unit is MB and 2 digits &nbsp; of decimals allowed", "zh_CN":"流量值,单位MB,保留2位小数"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryOutputTrafficUnderShieldPoPQueryOutputTrafficUnderShieldPoPResponseResultFlowData) String() string {
+func (s QueryOutputTrafficUnderShieldPoPResponseResultFlowData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryOutputTrafficUnderShieldPoPQueryOutputTrafficUnderShieldPoPResponseResultFlowData) GoString() string {
+func (s QueryOutputTrafficUnderShieldPoPResponseResultFlowData) GoString() string {
   return s.String()
 }
 
-func (s *QueryOutputTrafficUnderShieldPoPQueryOutputTrafficUnderShieldPoPResponseResultFlowData) SetTimestamp(v string) *QueryOutputTrafficUnderShieldPoPQueryOutputTrafficUnderShieldPoPResponseResultFlowData {
+func (s *QueryOutputTrafficUnderShieldPoPResponseResultFlowData) SetTimestamp(v string) *QueryOutputTrafficUnderShieldPoPResponseResultFlowData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryOutputTrafficUnderShieldPoPQueryOutputTrafficUnderShieldPoPResponseResultFlowData) SetValue(v string) *QueryOutputTrafficUnderShieldPoPQueryOutputTrafficUnderShieldPoPResponseResultFlowData {
+func (s *QueryOutputTrafficUnderShieldPoPResponseResultFlowData) SetValue(v string) *QueryOutputTrafficUnderShieldPoPResponseResultFlowData {
   s.Value = &v
   return s
 }
@@ -2279,7 +2279,7 @@ func (s *ReportFlowHitRateIspProvinceServiceRequest) SetGroupBy(v []*string) *Re
 }
 
 type ReportFlowHitRateIspProvinceServiceResponse struct {
-  Result []*ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportFlowHitRateIspProvinceServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportFlowHitRateIspProvinceServiceResponse) String() string {
@@ -2290,84 +2290,84 @@ func (s ReportFlowHitRateIspProvinceServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowHitRateIspProvinceServiceResponse) SetResult(v []*ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResult) *ReportFlowHitRateIspProvinceServiceResponse {
+func (s *ReportFlowHitRateIspProvinceServiceResponse) SetResult(v []*ReportFlowHitRateIspProvinceServiceResponseResult) *ReportFlowHitRateIspProvinceServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResult struct     {
+type ReportFlowHitRateIspProvinceServiceResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  IspData []*ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*ReportFlowHitRateIspProvinceServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResult) String() string {
+func (s ReportFlowHitRateIspProvinceServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResult) GoString() string {
+func (s ReportFlowHitRateIspProvinceServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResult) SetDomain(v string) *ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResult {
+func (s *ReportFlowHitRateIspProvinceServiceResponseResult) SetDomain(v string) *ReportFlowHitRateIspProvinceServiceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResult) SetIspData(v []*ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspData) *ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResult {
+func (s *ReportFlowHitRateIspProvinceServiceResponseResult) SetIspData(v []*ReportFlowHitRateIspProvinceServiceResponseResultIspData) *ReportFlowHitRateIspProvinceServiceResponseResult {
   s.IspData = v
   return s
 }
 
-type ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspData struct     {
+type ReportFlowHitRateIspProvinceServiceResponseResultIspData struct     {
   // {"en":"ISP", "zh_CN":"运营商"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
-  ProvinceData []*ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*ReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspData) String() string {
+func (s ReportFlowHitRateIspProvinceServiceResponseResultIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspData) GoString() string {
+func (s ReportFlowHitRateIspProvinceServiceResponseResultIspData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspData) SetIsp(v string) *ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspData {
+func (s *ReportFlowHitRateIspProvinceServiceResponseResultIspData) SetIsp(v string) *ReportFlowHitRateIspProvinceServiceResponseResultIspData {
   s.Isp = &v
   return s
 }
 
-func (s *ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspData) SetProvinceData(v []*ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceData) *ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspData {
+func (s *ReportFlowHitRateIspProvinceServiceResponseResultIspData) SetProvinceData(v []*ReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceData) *ReportFlowHitRateIspProvinceServiceResponseResultIspData {
   s.ProvinceData = v
   return s
 }
 
-type ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceData struct     {
+type ReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceData struct     {
   // {"en":"Province", "zh_CN":"省份"}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
-  HitRateData []*ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData `json:"hitRateData,omitempty" xml:"hitRateData,omitempty" require:"true" type:"Repeated"`
+  HitRateData []*ReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData `json:"hitRateData,omitempty" xml:"hitRateData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceData) String() string {
+func (s ReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceData) GoString() string {
+func (s ReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceData {
+func (s *ReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceData {
   s.Province = &v
   return s
 }
 
-func (s *ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceData) SetHitRateData(v []*ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) *ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceData {
+func (s *ReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceData) SetHitRateData(v []*ReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) *ReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceData {
   s.HitRateData = v
   return s
 }
 
-type ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData struct     {
+type ReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData struct     {
   // {"en":"Time,
   // 1.When   the data query granularity is 5m, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 12:05 AM, and the last one is (yyyy-MM-dd+1) 00:00;
   // 2.When the data query granularity is 1h, the format is yyyy-MM-dd HH; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is (yyyy-MM-dd+1) 00;
@@ -2383,25 +2383,25 @@ type ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceRespo
   HitFlow *string `json:"hitFlow,omitempty" xml:"hitFlow,omitempty" require:"true"`
 }
 
-func (s ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) String() string {
+func (s ReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) GoString() string {
+func (s ReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) SetTimestamp(v string) *ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData {
+func (s *ReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) SetTimestamp(v string) *ReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) SetValue(v string) *ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData {
+func (s *ReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) SetValue(v string) *ReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData {
   s.Value = &v
   return s
 }
 
-func (s *ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) SetHitFlow(v string) *ReportFlowHitRateIspProvinceServiceReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData {
+func (s *ReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) SetHitFlow(v string) *ReportFlowHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData {
   s.HitFlow = &v
   return s
 }
@@ -2543,7 +2543,7 @@ func (s *ReportFlowExactDomainServiceRequest) SetExactDomain(v []*string) *Repor
 
 type ReportFlowExactDomainServiceResponse struct {
   // {'en':'result', 'zh_CN':'结果'}
-  Result []*ReportFlowExactDomainServiceReportFlowExactDomainServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportFlowExactDomainServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportFlowExactDomainServiceResponse) String() string {
@@ -2554,36 +2554,36 @@ func (s ReportFlowExactDomainServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowExactDomainServiceResponse) SetResult(v []*ReportFlowExactDomainServiceReportFlowExactDomainServiceResponseResult) *ReportFlowExactDomainServiceResponse {
+func (s *ReportFlowExactDomainServiceResponse) SetResult(v []*ReportFlowExactDomainServiceResponseResult) *ReportFlowExactDomainServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportFlowExactDomainServiceReportFlowExactDomainServiceResponseResult struct     {
+type ReportFlowExactDomainServiceResponseResult struct     {
   // {'en':'Exact domain name', 'zh_CN':'精确域名'}
   ExactDomain *string `json:"exactDomain,omitempty" xml:"exactDomain,omitempty" require:"true"`
-  FlowData []*ReportFlowExactDomainServiceReportFlowExactDomainServiceResponseResultFlowData `json:"flowData,omitempty" xml:"flowData,omitempty" require:"true" type:"Repeated"`
+  FlowData []*ReportFlowExactDomainServiceResponseResultFlowData `json:"flowData,omitempty" xml:"flowData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowExactDomainServiceReportFlowExactDomainServiceResponseResult) String() string {
+func (s ReportFlowExactDomainServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowExactDomainServiceReportFlowExactDomainServiceResponseResult) GoString() string {
+func (s ReportFlowExactDomainServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowExactDomainServiceReportFlowExactDomainServiceResponseResult) SetExactDomain(v string) *ReportFlowExactDomainServiceReportFlowExactDomainServiceResponseResult {
+func (s *ReportFlowExactDomainServiceResponseResult) SetExactDomain(v string) *ReportFlowExactDomainServiceResponseResult {
   s.ExactDomain = &v
   return s
 }
 
-func (s *ReportFlowExactDomainServiceReportFlowExactDomainServiceResponseResult) SetFlowData(v []*ReportFlowExactDomainServiceReportFlowExactDomainServiceResponseResultFlowData) *ReportFlowExactDomainServiceReportFlowExactDomainServiceResponseResult {
+func (s *ReportFlowExactDomainServiceResponseResult) SetFlowData(v []*ReportFlowExactDomainServiceResponseResultFlowData) *ReportFlowExactDomainServiceResponseResult {
   s.FlowData = v
   return s
 }
 
-type ReportFlowExactDomainServiceReportFlowExactDomainServiceResponseResultFlowData struct     {
+type ReportFlowExactDomainServiceResponseResultFlowData struct     {
   // {'en':'time
   // 1. When the data size of the query is 5m, the format is yyyy-MM-dd HH:mm; each time slice data value represents the data value in the previous time granularity range. The time slice starting at the beginning of the day is yyyy-MM-dd 00:05, and the last time slice is (yyyy-MM-dd+1) 00:00.
   // 2. When the data granularity of the query is 1d, the format is yyyy-MM-dd; the data value of the day represented by each time slice data value.
@@ -2596,20 +2596,20 @@ type ReportFlowExactDomainServiceReportFlowExactDomainServiceResponseResultFlowD
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s ReportFlowExactDomainServiceReportFlowExactDomainServiceResponseResultFlowData) String() string {
+func (s ReportFlowExactDomainServiceResponseResultFlowData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowExactDomainServiceReportFlowExactDomainServiceResponseResultFlowData) GoString() string {
+func (s ReportFlowExactDomainServiceResponseResultFlowData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowExactDomainServiceReportFlowExactDomainServiceResponseResultFlowData) SetTimestamp(v string) *ReportFlowExactDomainServiceReportFlowExactDomainServiceResponseResultFlowData {
+func (s *ReportFlowExactDomainServiceResponseResultFlowData) SetTimestamp(v string) *ReportFlowExactDomainServiceResponseResultFlowData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportFlowExactDomainServiceReportFlowExactDomainServiceResponseResultFlowData) SetValue(v string) *ReportFlowExactDomainServiceReportFlowExactDomainServiceResponseResultFlowData {
+func (s *ReportFlowExactDomainServiceResponseResultFlowData) SetValue(v string) *ReportFlowExactDomainServiceResponseResultFlowData {
   s.Value = &v
   return s
 }
@@ -2770,7 +2770,7 @@ func (s *ReportFlowHitRateIspProvinceByteServiceRequest) SetGroupBy(v []*string)
 }
 
 type ReportFlowHitRateIspProvinceByteServiceResponse struct {
-  Result []*ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportFlowHitRateIspProvinceByteServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportFlowHitRateIspProvinceByteServiceResponse) String() string {
@@ -2781,84 +2781,84 @@ func (s ReportFlowHitRateIspProvinceByteServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowHitRateIspProvinceByteServiceResponse) SetResult(v []*ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResult) *ReportFlowHitRateIspProvinceByteServiceResponse {
+func (s *ReportFlowHitRateIspProvinceByteServiceResponse) SetResult(v []*ReportFlowHitRateIspProvinceByteServiceResponseResult) *ReportFlowHitRateIspProvinceByteServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResult struct     {
+type ReportFlowHitRateIspProvinceByteServiceResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  IspData []*ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*ReportFlowHitRateIspProvinceByteServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResult) String() string {
+func (s ReportFlowHitRateIspProvinceByteServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResult) GoString() string {
+func (s ReportFlowHitRateIspProvinceByteServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResult) SetDomain(v string) *ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResult {
+func (s *ReportFlowHitRateIspProvinceByteServiceResponseResult) SetDomain(v string) *ReportFlowHitRateIspProvinceByteServiceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResult) SetIspData(v []*ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspData) *ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResult {
+func (s *ReportFlowHitRateIspProvinceByteServiceResponseResult) SetIspData(v []*ReportFlowHitRateIspProvinceByteServiceResponseResultIspData) *ReportFlowHitRateIspProvinceByteServiceResponseResult {
   s.IspData = v
   return s
 }
 
-type ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspData struct     {
+type ReportFlowHitRateIspProvinceByteServiceResponseResultIspData struct     {
   // {"en":"Internet service providers", "zh_CN":"运营商"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
-  ProvinceData []*ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*ReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspData) String() string {
+func (s ReportFlowHitRateIspProvinceByteServiceResponseResultIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspData) GoString() string {
+func (s ReportFlowHitRateIspProvinceByteServiceResponseResultIspData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspData) SetIsp(v string) *ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspData {
+func (s *ReportFlowHitRateIspProvinceByteServiceResponseResultIspData) SetIsp(v string) *ReportFlowHitRateIspProvinceByteServiceResponseResultIspData {
   s.Isp = &v
   return s
 }
 
-func (s *ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspData) SetProvinceData(v []*ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceData) *ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspData {
+func (s *ReportFlowHitRateIspProvinceByteServiceResponseResultIspData) SetProvinceData(v []*ReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceData) *ReportFlowHitRateIspProvinceByteServiceResponseResultIspData {
   s.ProvinceData = v
   return s
 }
 
-type ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceData struct     {
+type ReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceData struct     {
   // {"en":"Province", "zh_CN":"省份"}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
-  HitRateData []*ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData `json:"hitRateData,omitempty" xml:"hitRateData,omitempty" require:"true" type:"Repeated"`
+  HitRateData []*ReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData `json:"hitRateData,omitempty" xml:"hitRateData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceData) String() string {
+func (s ReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceData) GoString() string {
+func (s ReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceData {
+func (s *ReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceData {
   s.Province = &v
   return s
 }
 
-func (s *ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceData) SetHitRateData(v []*ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData) *ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceData {
+func (s *ReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceData) SetHitRateData(v []*ReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData) *ReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceData {
   s.HitRateData = v
   return s
 }
 
-type ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData struct     {
+type ReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData struct     {
   // {"en":"time,
   // 
   // 1. When the data size of the query is 5m, the format is yyyy-MM-dd HH:mm; each time slice data value represents the data value within the previous time granularity range. The time slice starting at the beginning of the day is yyyy-MM-dd 00:05, and the last time slice is (yyyy-MM-dd+1) 00:00;
@@ -2876,25 +2876,25 @@ type ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServ
   HitFlow *string `json:"hitFlow,omitempty" xml:"hitFlow,omitempty" require:"true"`
 }
 
-func (s ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData) String() string {
+func (s ReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData) GoString() string {
+func (s ReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData) SetTimestamp(v string) *ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData {
+func (s *ReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData) SetTimestamp(v string) *ReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData) SetValue(v string) *ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData {
+func (s *ReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData) SetValue(v string) *ReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData {
   s.Value = &v
   return s
 }
 
-func (s *ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData) SetHitFlow(v string) *ReportFlowHitRateIspProvinceByteServiceReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData {
+func (s *ReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData) SetHitFlow(v string) *ReportFlowHitRateIspProvinceByteServiceResponseResultIspDataProvinceDataHitRateData {
   s.HitFlow = &v
   return s
 }
@@ -2988,7 +2988,7 @@ type QueryDomainTotalTrafficResponse struct {
   // {"en":"Total traffic. Keep two digits of decimals. Unit: MB", "zh_CN":"总流量,保留2位小数,单位为MB"}
   FlowSummary *int `json:"flow-summary,omitempty" xml:"flow-summary,omitempty" require:"true"`
   // {"en":"flowData", "zh_CN":"流量数据"}
-  FlowData []*QueryDomainTotalTrafficQueryDomainTotalTrafficResponseFlowData `json:"flow-data,omitempty" xml:"flow-data,omitempty" require:"true" type:"Repeated"`
+  FlowData []*QueryDomainTotalTrafficResponseFlowData `json:"flow-data,omitempty" xml:"flow-data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryDomainTotalTrafficResponse) String() string {
@@ -3004,12 +3004,12 @@ func (s *QueryDomainTotalTrafficResponse) SetFlowSummary(v int) *QueryDomainTota
   return s
 }
 
-func (s *QueryDomainTotalTrafficResponse) SetFlowData(v []*QueryDomainTotalTrafficQueryDomainTotalTrafficResponseFlowData) *QueryDomainTotalTrafficResponse {
+func (s *QueryDomainTotalTrafficResponse) SetFlowData(v []*QueryDomainTotalTrafficResponseFlowData) *QueryDomainTotalTrafficResponse {
   s.FlowData = v
   return s
 }
 
-type QueryDomainTotalTrafficQueryDomainTotalTrafficResponseFlowData struct     {
+type QueryDomainTotalTrafficResponseFlowData struct     {
   // {"en":"Date
   //   1.When the data query granularity is fiveminutes, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:05 AM, and the last one is yyyy-MM-dd 24:00.
   //   2.When the data query granularity is hourly, the format is yyyy-MM-dd HH; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is yyyy-MM-dd 24.
@@ -3023,20 +3023,20 @@ type QueryDomainTotalTrafficQueryDomainTotalTrafficResponseFlowData struct     {
   Flow *int `json:"flow,omitempty" xml:"flow,omitempty" require:"true"`
 }
 
-func (s QueryDomainTotalTrafficQueryDomainTotalTrafficResponseFlowData) String() string {
+func (s QueryDomainTotalTrafficResponseFlowData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDomainTotalTrafficQueryDomainTotalTrafficResponseFlowData) GoString() string {
+func (s QueryDomainTotalTrafficResponseFlowData) GoString() string {
   return s.String()
 }
 
-func (s *QueryDomainTotalTrafficQueryDomainTotalTrafficResponseFlowData) SetTimestamp(v string) *QueryDomainTotalTrafficQueryDomainTotalTrafficResponseFlowData {
+func (s *QueryDomainTotalTrafficResponseFlowData) SetTimestamp(v string) *QueryDomainTotalTrafficResponseFlowData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryDomainTotalTrafficQueryDomainTotalTrafficResponseFlowData) SetFlow(v int) *QueryDomainTotalTrafficQueryDomainTotalTrafficResponseFlowData {
+func (s *QueryDomainTotalTrafficResponseFlowData) SetFlow(v int) *QueryDomainTotalTrafficResponseFlowData {
   s.Flow = &v
   return s
 }
@@ -3245,7 +3245,7 @@ func (s *FlowChannelRequest) SetOptionalFields(v string) *FlowChannelRequest {
 
 type FlowChannelResponse struct {
   // {'en':'provider', 'zh_CN':'结果'}
-  Provider *FlowChannelFlowChannelResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+  Provider *FlowChannelResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
 func (s FlowChannelResponse) String() string {
@@ -3256,12 +3256,12 @@ func (s FlowChannelResponse) GoString() string {
   return s.String()
 }
 
-func (s *FlowChannelResponse) SetProvider(v *FlowChannelFlowChannelResponseProvider) *FlowChannelResponse {
+func (s *FlowChannelResponse) SetProvider(v *FlowChannelResponseProvider) *FlowChannelResponse {
   s.Provider = v
   return s
 }
 
-type FlowChannelFlowChannelResponseProvider struct {
+type FlowChannelResponseProvider struct {
   // {'en':'tenant', 'zh_CN':'租户'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'type', 'zh_CN':'接口类型'}
@@ -3269,108 +3269,108 @@ type FlowChannelFlowChannelResponseProvider struct {
   // {'en':'resultType', 'zh_CN':'统计类型'}
   ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'频道流量数据'}
-  Date *FlowChannelFlowChannelResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+  Date *FlowChannelResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
-func (s FlowChannelFlowChannelResponseProvider) String() string {
+func (s FlowChannelResponseProvider) String() string {
   return tea.Prettify(s)
 }
 
-func (s FlowChannelFlowChannelResponseProvider) GoString() string {
+func (s FlowChannelResponseProvider) GoString() string {
   return s.String()
 }
 
-func (s *FlowChannelFlowChannelResponseProvider) SetName(v string) *FlowChannelFlowChannelResponseProvider {
+func (s *FlowChannelResponseProvider) SetName(v string) *FlowChannelResponseProvider {
   s.Name = &v
   return s
 }
 
-func (s *FlowChannelFlowChannelResponseProvider) SetType(v string) *FlowChannelFlowChannelResponseProvider {
+func (s *FlowChannelResponseProvider) SetType(v string) *FlowChannelResponseProvider {
   s.Type = &v
   return s
 }
 
-func (s *FlowChannelFlowChannelResponseProvider) SetResultType(v string) *FlowChannelFlowChannelResponseProvider {
+func (s *FlowChannelResponseProvider) SetResultType(v string) *FlowChannelResponseProvider {
   s.ResultType = &v
   return s
 }
 
-func (s *FlowChannelFlowChannelResponseProvider) SetDate(v *FlowChannelFlowChannelResponseProviderDate) *FlowChannelFlowChannelResponseProvider {
+func (s *FlowChannelResponseProvider) SetDate(v *FlowChannelResponseProviderDate) *FlowChannelResponseProvider {
   s.Date = v
   return s
 }
 
-type FlowChannelFlowChannelResponseProviderDate struct {
+type FlowChannelResponseProviderDate struct {
   // {'en':'name', 'zh_CN':'日期'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'channel', 'zh_CN':'频道'}
-  Channel *FlowChannelFlowChannelResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+  Channel *FlowChannelResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
 }
 
-func (s FlowChannelFlowChannelResponseProviderDate) String() string {
+func (s FlowChannelResponseProviderDate) String() string {
   return tea.Prettify(s)
 }
 
-func (s FlowChannelFlowChannelResponseProviderDate) GoString() string {
+func (s FlowChannelResponseProviderDate) GoString() string {
   return s.String()
 }
 
-func (s *FlowChannelFlowChannelResponseProviderDate) SetName(v string) *FlowChannelFlowChannelResponseProviderDate {
+func (s *FlowChannelResponseProviderDate) SetName(v string) *FlowChannelResponseProviderDate {
   s.Name = &v
   return s
 }
 
-func (s *FlowChannelFlowChannelResponseProviderDate) SetChannel(v *FlowChannelFlowChannelResponseProviderDateChannel) *FlowChannelFlowChannelResponseProviderDate {
+func (s *FlowChannelResponseProviderDate) SetChannel(v *FlowChannelResponseProviderDateChannel) *FlowChannelResponseProviderDate {
   s.Channel = v
   return s
 }
 
-type FlowChannelFlowChannelResponseProviderDateChannel struct {
+type FlowChannelResponseProviderDateChannel struct {
   // {'en':'channel', 'zh_CN':'频道'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'流量数据'}
-  Flow []*FlowChannelFlowChannelResponseProviderDateChannelFlow `json:"flow,omitempty" xml:"flow,omitempty" require:"true" type:"Repeated"`
+  Flow []*FlowChannelResponseProviderDateChannelFlow `json:"flow,omitempty" xml:"flow,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s FlowChannelFlowChannelResponseProviderDateChannel) String() string {
+func (s FlowChannelResponseProviderDateChannel) String() string {
   return tea.Prettify(s)
 }
 
-func (s FlowChannelFlowChannelResponseProviderDateChannel) GoString() string {
+func (s FlowChannelResponseProviderDateChannel) GoString() string {
   return s.String()
 }
 
-func (s *FlowChannelFlowChannelResponseProviderDateChannel) SetName(v string) *FlowChannelFlowChannelResponseProviderDateChannel {
+func (s *FlowChannelResponseProviderDateChannel) SetName(v string) *FlowChannelResponseProviderDateChannel {
   s.Name = &v
   return s
 }
 
-func (s *FlowChannelFlowChannelResponseProviderDateChannel) SetFlow(v []*FlowChannelFlowChannelResponseProviderDateChannelFlow) *FlowChannelFlowChannelResponseProviderDateChannel {
+func (s *FlowChannelResponseProviderDateChannel) SetFlow(v []*FlowChannelResponseProviderDateChannelFlow) *FlowChannelResponseProviderDateChannel {
   s.Flow = v
   return s
 }
 
-type FlowChannelFlowChannelResponseProviderDateChannelFlow struct     {
+type FlowChannelResponseProviderDateChannelFlow struct     {
   // {'en':'timestamp', 'zh_CN':'时间点'}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'流量'}
   Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
 }
 
-func (s FlowChannelFlowChannelResponseProviderDateChannelFlow) String() string {
+func (s FlowChannelResponseProviderDateChannelFlow) String() string {
   return tea.Prettify(s)
 }
 
-func (s FlowChannelFlowChannelResponseProviderDateChannelFlow) GoString() string {
+func (s FlowChannelResponseProviderDateChannelFlow) GoString() string {
   return s.String()
 }
 
-func (s *FlowChannelFlowChannelResponseProviderDateChannelFlow) SetTime(v string) *FlowChannelFlowChannelResponseProviderDateChannelFlow {
+func (s *FlowChannelResponseProviderDateChannelFlow) SetTime(v string) *FlowChannelResponseProviderDateChannelFlow {
   s.Time = &v
   return s
 }
 
-func (s *FlowChannelFlowChannelResponseProviderDateChannelFlow) SetText(v string) *FlowChannelFlowChannelResponseProviderDateChannelFlow {
+func (s *FlowChannelResponseProviderDateChannelFlow) SetText(v string) *FlowChannelResponseProviderDateChannelFlow {
   s.Text = &v
   return s
 }
@@ -3546,7 +3546,7 @@ type ReportFlowIspProvinceTotalServiceResponse struct {
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"data", "zh_CN":"数据结果"}
-  Data []*ReportFlowIspProvinceTotalServiceReportFlowIspProvinceTotalServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportFlowIspProvinceTotalServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportFlowIspProvinceTotalServiceResponse) String() string {
@@ -3567,37 +3567,37 @@ func (s *ReportFlowIspProvinceTotalServiceResponse) SetMessage(v string) *Report
   return s
 }
 
-func (s *ReportFlowIspProvinceTotalServiceResponse) SetData(v []*ReportFlowIspProvinceTotalServiceReportFlowIspProvinceTotalServiceResponseData) *ReportFlowIspProvinceTotalServiceResponse {
+func (s *ReportFlowIspProvinceTotalServiceResponse) SetData(v []*ReportFlowIspProvinceTotalServiceResponseData) *ReportFlowIspProvinceTotalServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportFlowIspProvinceTotalServiceReportFlowIspProvinceTotalServiceResponseData struct     {
+type ReportFlowIspProvinceTotalServiceResponseData struct     {
   // {"en":"domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"detailList", "zh_CN":"数据明细"}
-  DetailList []*ReportFlowIspProvinceTotalServiceReportFlowIspProvinceTotalServiceResponseDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+  DetailList []*ReportFlowIspProvinceTotalServiceResponseDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowIspProvinceTotalServiceReportFlowIspProvinceTotalServiceResponseData) String() string {
+func (s ReportFlowIspProvinceTotalServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIspProvinceTotalServiceReportFlowIspProvinceTotalServiceResponseData) GoString() string {
+func (s ReportFlowIspProvinceTotalServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceTotalServiceReportFlowIspProvinceTotalServiceResponseData) SetDomain(v string) *ReportFlowIspProvinceTotalServiceReportFlowIspProvinceTotalServiceResponseData {
+func (s *ReportFlowIspProvinceTotalServiceResponseData) SetDomain(v string) *ReportFlowIspProvinceTotalServiceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceTotalServiceReportFlowIspProvinceTotalServiceResponseData) SetDetailList(v []*ReportFlowIspProvinceTotalServiceReportFlowIspProvinceTotalServiceResponseDataDetailList) *ReportFlowIspProvinceTotalServiceReportFlowIspProvinceTotalServiceResponseData {
+func (s *ReportFlowIspProvinceTotalServiceResponseData) SetDetailList(v []*ReportFlowIspProvinceTotalServiceResponseDataDetailList) *ReportFlowIspProvinceTotalServiceResponseData {
   s.DetailList = v
   return s
 }
 
-type ReportFlowIspProvinceTotalServiceReportFlowIspProvinceTotalServiceResponseDataDetailList struct     {
+type ReportFlowIspProvinceTotalServiceResponseDataDetailList struct     {
   // {"en":"time, in yyyy-MM-dd HH:MM", "zh_CN":"时间，格式为yyyy-MM-dd HH:mm"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"1. Flow: Flow, keep two decimal places;
@@ -3608,20 +3608,20 @@ type ReportFlowIspProvinceTotalServiceReportFlowIspProvinceTotalServiceResponseD
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s ReportFlowIspProvinceTotalServiceReportFlowIspProvinceTotalServiceResponseDataDetailList) String() string {
+func (s ReportFlowIspProvinceTotalServiceResponseDataDetailList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIspProvinceTotalServiceReportFlowIspProvinceTotalServiceResponseDataDetailList) GoString() string {
+func (s ReportFlowIspProvinceTotalServiceResponseDataDetailList) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceTotalServiceReportFlowIspProvinceTotalServiceResponseDataDetailList) SetTimestamp(v string) *ReportFlowIspProvinceTotalServiceReportFlowIspProvinceTotalServiceResponseDataDetailList {
+func (s *ReportFlowIspProvinceTotalServiceResponseDataDetailList) SetTimestamp(v string) *ReportFlowIspProvinceTotalServiceResponseDataDetailList {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceTotalServiceReportFlowIspProvinceTotalServiceResponseDataDetailList) SetValue(v string) *ReportFlowIspProvinceTotalServiceReportFlowIspProvinceTotalServiceResponseDataDetailList {
+func (s *ReportFlowIspProvinceTotalServiceResponseDataDetailList) SetValue(v string) *ReportFlowIspProvinceTotalServiceResponseDataDetailList {
   s.Value = &v
   return s
 }
@@ -3773,7 +3773,7 @@ func (s *WctQueryRequest) SetDataformat(v string) *WctQueryRequest {
 
 type WctQueryResponse struct {
   // {'en':'provider', 'zh_CN':'结果'}
-  Provider *WctQueryWctQueryResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+  Provider *WctQueryResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
 func (s WctQueryResponse) String() string {
@@ -3784,44 +3784,44 @@ func (s WctQueryResponse) GoString() string {
   return s.String()
 }
 
-func (s *WctQueryResponse) SetProvider(v *WctQueryWctQueryResponseProvider) *WctQueryResponse {
+func (s *WctQueryResponse) SetProvider(v *WctQueryResponseProvider) *WctQueryResponse {
   s.Provider = v
   return s
 }
 
-type WctQueryWctQueryResponseProvider struct {
+type WctQueryResponseProvider struct {
   // {'en':'tenant', 'zh_CN':'租户'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'type', 'zh_CN':'接口类型'}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'转码数据'}
-  Date *WctQueryWctQueryResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+  Date *WctQueryResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
-func (s WctQueryWctQueryResponseProvider) String() string {
+func (s WctQueryResponseProvider) String() string {
   return tea.Prettify(s)
 }
 
-func (s WctQueryWctQueryResponseProvider) GoString() string {
+func (s WctQueryResponseProvider) GoString() string {
   return s.String()
 }
 
-func (s *WctQueryWctQueryResponseProvider) SetName(v string) *WctQueryWctQueryResponseProvider {
+func (s *WctQueryResponseProvider) SetName(v string) *WctQueryResponseProvider {
   s.Name = &v
   return s
 }
 
-func (s *WctQueryWctQueryResponseProvider) SetType(v string) *WctQueryWctQueryResponseProvider {
+func (s *WctQueryResponseProvider) SetType(v string) *WctQueryResponseProvider {
   s.Type = &v
   return s
 }
 
-func (s *WctQueryWctQueryResponseProvider) SetDate(v *WctQueryWctQueryResponseProviderDate) *WctQueryWctQueryResponseProvider {
+func (s *WctQueryResponseProvider) SetDate(v *WctQueryResponseProviderDate) *WctQueryResponseProvider {
   s.Date = v
   return s
 }
 
-type WctQueryWctQueryResponseProviderDate struct {
+type WctQueryResponseProviderDate struct {
   // {'en':'startdate', 'zh_CN':'开始时间'}
   Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
   // {'en':'enddate', 'zh_CN':'结束时间'}
@@ -3837,110 +3837,110 @@ type WctQueryWctQueryResponseProviderDate struct {
   // {'en':'total', 'zh_CN':'总数'}
   Total *string `json:"total,omitempty" xml:"total,omitempty" require:"true"`
   // {'en':'wct', 'zh_CN':'转码数据'}
-  Wct *WctQueryWctQueryResponseProviderDateWct `json:"wct,omitempty" xml:"wct,omitempty" require:"true" type:"Struct"`
+  Wct *WctQueryResponseProviderDateWct `json:"wct,omitempty" xml:"wct,omitempty" require:"true" type:"Struct"`
 }
 
-func (s WctQueryWctQueryResponseProviderDate) String() string {
+func (s WctQueryResponseProviderDate) String() string {
   return tea.Prettify(s)
 }
 
-func (s WctQueryWctQueryResponseProviderDate) GoString() string {
+func (s WctQueryResponseProviderDate) GoString() string {
   return s.String()
 }
 
-func (s *WctQueryWctQueryResponseProviderDate) SetStartdate(v string) *WctQueryWctQueryResponseProviderDate {
+func (s *WctQueryResponseProviderDate) SetStartdate(v string) *WctQueryResponseProviderDate {
   s.Startdate = &v
   return s
 }
 
-func (s *WctQueryWctQueryResponseProviderDate) SetEnddate(v string) *WctQueryWctQueryResponseProviderDate {
+func (s *WctQueryResponseProviderDate) SetEnddate(v string) *WctQueryResponseProviderDate {
   s.Enddate = &v
   return s
 }
 
-func (s *WctQueryWctQueryResponseProviderDate) SetCustomerId(v string) *WctQueryWctQueryResponseProviderDate {
+func (s *WctQueryResponseProviderDate) SetCustomerId(v string) *WctQueryResponseProviderDate {
   s.CustomerId = &v
   return s
 }
 
-func (s *WctQueryWctQueryResponseProviderDate) SetTranscoding(v string) *WctQueryWctQueryResponseProviderDate {
+func (s *WctQueryResponseProviderDate) SetTranscoding(v string) *WctQueryResponseProviderDate {
   s.Transcoding = &v
   return s
 }
 
-func (s *WctQueryWctQueryResponseProviderDate) SetTranscodingType(v string) *WctQueryWctQueryResponseProviderDate {
+func (s *WctQueryResponseProviderDate) SetTranscodingType(v string) *WctQueryResponseProviderDate {
   s.TranscodingType = &v
   return s
 }
 
-func (s *WctQueryWctQueryResponseProviderDate) SetUnit(v string) *WctQueryWctQueryResponseProviderDate {
+func (s *WctQueryResponseProviderDate) SetUnit(v string) *WctQueryResponseProviderDate {
   s.Unit = &v
   return s
 }
 
-func (s *WctQueryWctQueryResponseProviderDate) SetTotal(v string) *WctQueryWctQueryResponseProviderDate {
+func (s *WctQueryResponseProviderDate) SetTotal(v string) *WctQueryResponseProviderDate {
   s.Total = &v
   return s
 }
 
-func (s *WctQueryWctQueryResponseProviderDate) SetWct(v *WctQueryWctQueryResponseProviderDateWct) *WctQueryWctQueryResponseProviderDate {
+func (s *WctQueryResponseProviderDate) SetWct(v *WctQueryResponseProviderDateWct) *WctQueryResponseProviderDate {
   s.Wct = v
   return s
 }
 
-type WctQueryWctQueryResponseProviderDateWct struct {
+type WctQueryResponseProviderDateWct struct {
   // {'en':'type', 'zh_CN':'类型'}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
   // {'en':'total', 'zh_CN':'总数'}
   Total *string `json:"total,omitempty" xml:"total,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'明细数据'}
-  Data []*WctQueryWctQueryResponseProviderDateWctData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*WctQueryResponseProviderDateWctData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s WctQueryWctQueryResponseProviderDateWct) String() string {
+func (s WctQueryResponseProviderDateWct) String() string {
   return tea.Prettify(s)
 }
 
-func (s WctQueryWctQueryResponseProviderDateWct) GoString() string {
+func (s WctQueryResponseProviderDateWct) GoString() string {
   return s.String()
 }
 
-func (s *WctQueryWctQueryResponseProviderDateWct) SetType(v string) *WctQueryWctQueryResponseProviderDateWct {
+func (s *WctQueryResponseProviderDateWct) SetType(v string) *WctQueryResponseProviderDateWct {
   s.Type = &v
   return s
 }
 
-func (s *WctQueryWctQueryResponseProviderDateWct) SetTotal(v string) *WctQueryWctQueryResponseProviderDateWct {
+func (s *WctQueryResponseProviderDateWct) SetTotal(v string) *WctQueryResponseProviderDateWct {
   s.Total = &v
   return s
 }
 
-func (s *WctQueryWctQueryResponseProviderDateWct) SetData(v []*WctQueryWctQueryResponseProviderDateWctData) *WctQueryWctQueryResponseProviderDateWct {
+func (s *WctQueryResponseProviderDateWct) SetData(v []*WctQueryResponseProviderDateWctData) *WctQueryResponseProviderDateWct {
   s.Data = v
   return s
 }
 
-type WctQueryWctQueryResponseProviderDateWctData struct     {
+type WctQueryResponseProviderDateWctData struct     {
   // {'en':'timestamp', 'zh_CN':'时间点'}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
   // {'en':'hit count', 'zh_CN':'明细数'}
   Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
 }
 
-func (s WctQueryWctQueryResponseProviderDateWctData) String() string {
+func (s WctQueryResponseProviderDateWctData) String() string {
   return tea.Prettify(s)
 }
 
-func (s WctQueryWctQueryResponseProviderDateWctData) GoString() string {
+func (s WctQueryResponseProviderDateWctData) GoString() string {
   return s.String()
 }
 
-func (s *WctQueryWctQueryResponseProviderDateWctData) SetTime(v string) *WctQueryWctQueryResponseProviderDateWctData {
+func (s *WctQueryResponseProviderDateWctData) SetTime(v string) *WctQueryResponseProviderDateWctData {
   s.Time = &v
   return s
 }
 
-func (s *WctQueryWctQueryResponseProviderDateWctData) SetText(v string) *WctQueryWctQueryResponseProviderDateWctData {
+func (s *WctQueryResponseProviderDateWctData) SetText(v string) *WctQueryResponseProviderDateWctData {
   s.Text = &v
   return s
 }
@@ -4067,7 +4067,7 @@ func (s *QueryDomainTrafficUnderSpecificSettlementAreaRequest) SetAreaCode(v str
 type QueryDomainTrafficUnderSpecificSettlementAreaResponse struct {
   // {"en":"Total traffic, 2 decimal places, in MB", "zh_CN":"总流量,保留2位小数,单位为MB"}
   FlowSummary *string `json:"flow-summary,omitempty" xml:"flow-summary,omitempty" require:"true"`
-  FlowData []*QueryDomainTrafficUnderSpecificSettlementAreaQueryDomainTrafficUnderSpecificSettlementAreaResponseFlowData `json:"flow-data,omitempty" xml:"flow-data,omitempty" require:"true" type:"Repeated"`
+  FlowData []*QueryDomainTrafficUnderSpecificSettlementAreaResponseFlowData `json:"flow-data,omitempty" xml:"flow-data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryDomainTrafficUnderSpecificSettlementAreaResponse) String() string {
@@ -4083,12 +4083,12 @@ func (s *QueryDomainTrafficUnderSpecificSettlementAreaResponse) SetFlowSummary(v
   return s
 }
 
-func (s *QueryDomainTrafficUnderSpecificSettlementAreaResponse) SetFlowData(v []*QueryDomainTrafficUnderSpecificSettlementAreaQueryDomainTrafficUnderSpecificSettlementAreaResponseFlowData) *QueryDomainTrafficUnderSpecificSettlementAreaResponse {
+func (s *QueryDomainTrafficUnderSpecificSettlementAreaResponse) SetFlowData(v []*QueryDomainTrafficUnderSpecificSettlementAreaResponseFlowData) *QueryDomainTrafficUnderSpecificSettlementAreaResponse {
   s.FlowData = v
   return s
 }
 
-type QueryDomainTrafficUnderSpecificSettlementAreaQueryDomainTrafficUnderSpecificSettlementAreaResponseFlowData struct     {
+type QueryDomainTrafficUnderSpecificSettlementAreaResponseFlowData struct     {
   // {"en":"time
   // 1. When the data granularity of the query is fiveminutes, the format is yyyy-MM-dd HH: MM; Each time slice data value represents the data value in the previous time granularity range. The time slice at the beginning of the day is yyyy-MM-dd 00:05, and the last time slice is yyyy-MM-dd 24:00.
   // 2. When the data granularity of query is hourly, the format is yyyy-MM-dd HH. Each time slice data value represents the data value in the previous time granularity range. The time slice at the beginning of the day is yyyy-MM-dd 01, and the last time slice is yyyy-MM-dd 24.
@@ -4103,20 +4103,20 @@ type QueryDomainTrafficUnderSpecificSettlementAreaQueryDomainTrafficUnderSpecifi
   Flow *string `json:"flow,omitempty" xml:"flow,omitempty" require:"true"`
 }
 
-func (s QueryDomainTrafficUnderSpecificSettlementAreaQueryDomainTrafficUnderSpecificSettlementAreaResponseFlowData) String() string {
+func (s QueryDomainTrafficUnderSpecificSettlementAreaResponseFlowData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDomainTrafficUnderSpecificSettlementAreaQueryDomainTrafficUnderSpecificSettlementAreaResponseFlowData) GoString() string {
+func (s QueryDomainTrafficUnderSpecificSettlementAreaResponseFlowData) GoString() string {
   return s.String()
 }
 
-func (s *QueryDomainTrafficUnderSpecificSettlementAreaQueryDomainTrafficUnderSpecificSettlementAreaResponseFlowData) SetTimestamp(v string) *QueryDomainTrafficUnderSpecificSettlementAreaQueryDomainTrafficUnderSpecificSettlementAreaResponseFlowData {
+func (s *QueryDomainTrafficUnderSpecificSettlementAreaResponseFlowData) SetTimestamp(v string) *QueryDomainTrafficUnderSpecificSettlementAreaResponseFlowData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryDomainTrafficUnderSpecificSettlementAreaQueryDomainTrafficUnderSpecificSettlementAreaResponseFlowData) SetFlow(v string) *QueryDomainTrafficUnderSpecificSettlementAreaQueryDomainTrafficUnderSpecificSettlementAreaResponseFlowData {
+func (s *QueryDomainTrafficUnderSpecificSettlementAreaResponseFlowData) SetFlow(v string) *QueryDomainTrafficUnderSpecificSettlementAreaResponseFlowData {
   s.Flow = &v
   return s
 }
@@ -4266,7 +4266,7 @@ func (s *ReportFlowIspProvinceShortTimeServiceRequest) SetGroupBy(v []*string) *
 
 type ReportFlowIspProvinceShortTimeServiceResponse struct {
   // {"en":"result", "zh_CN":"结果"}
-  Result []*ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportFlowIspProvinceShortTimeServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportFlowIspProvinceShortTimeServiceResponse) String() string {
@@ -4277,87 +4277,87 @@ func (s ReportFlowIspProvinceShortTimeServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceShortTimeServiceResponse) SetResult(v []*ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResult) *ReportFlowIspProvinceShortTimeServiceResponse {
+func (s *ReportFlowIspProvinceShortTimeServiceResponse) SetResult(v []*ReportFlowIspProvinceShortTimeServiceResponseResult) *ReportFlowIspProvinceShortTimeServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResult struct     {
+type ReportFlowIspProvinceShortTimeServiceResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"isp", "zh_CN":"ISP数据"}
-  IspData []*ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*ReportFlowIspProvinceShortTimeServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResult) String() string {
+func (s ReportFlowIspProvinceShortTimeServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResult) GoString() string {
+func (s ReportFlowIspProvinceShortTimeServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResult) SetDomain(v string) *ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResult {
+func (s *ReportFlowIspProvinceShortTimeServiceResponseResult) SetDomain(v string) *ReportFlowIspProvinceShortTimeServiceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResult) SetIspData(v []*ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspData) *ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResult {
+func (s *ReportFlowIspProvinceShortTimeServiceResponseResult) SetIspData(v []*ReportFlowIspProvinceShortTimeServiceResponseResultIspData) *ReportFlowIspProvinceShortTimeServiceResponseResult {
   s.IspData = v
   return s
 }
 
-type ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspData struct     {
+type ReportFlowIspProvinceShortTimeServiceResponseResultIspData struct     {
   // {"en":"ISP", "zh_CN":"运营商"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
   // {"en":"province", "zh_CN":"省份数据"}
-  ProvinceData []*ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*ReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspData) String() string {
+func (s ReportFlowIspProvinceShortTimeServiceResponseResultIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspData) GoString() string {
+func (s ReportFlowIspProvinceShortTimeServiceResponseResultIspData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspData) SetIsp(v string) *ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspData {
+func (s *ReportFlowIspProvinceShortTimeServiceResponseResultIspData) SetIsp(v string) *ReportFlowIspProvinceShortTimeServiceResponseResultIspData {
   s.Isp = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspData) SetProvinceData(v []*ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceData) *ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspData {
+func (s *ReportFlowIspProvinceShortTimeServiceResponseResultIspData) SetProvinceData(v []*ReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceData) *ReportFlowIspProvinceShortTimeServiceResponseResultIspData {
   s.ProvinceData = v
   return s
 }
 
-type ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceData struct     {
+type ReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceData struct     {
   // {"en":"Province", "zh_CN":"省份"}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
   // {"en":"flowdata", "zh_CN":"流量数据"}
-  FlowData []*ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData `json:"flowData,omitempty" xml:"flowData,omitempty" require:"true" type:"Repeated"`
+  FlowData []*ReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData `json:"flowData,omitempty" xml:"flowData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceData) String() string {
+func (s ReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceData) GoString() string {
+func (s ReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceData {
+func (s *ReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceData {
   s.Province = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceData) SetFlowData(v []*ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData) *ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceData {
+func (s *ReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceData) SetFlowData(v []*ReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData) *ReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceData {
   s.FlowData = v
   return s
 }
 
-type ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData struct     {
+type ReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData struct     {
   // {"en":"timestamp", "zh_CN":"时间"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Traffic unit is MB and 2 digits   of decimals allowed", "zh_CN":"流量值,单位为MB,保留两位小数"}
@@ -4366,25 +4366,25 @@ type ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceR
   Bandwidth *string `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true"`
 }
 
-func (s ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData) String() string {
+func (s ReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData) GoString() string {
+func (s ReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData) SetTimestamp(v string) *ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData {
+func (s *ReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData) SetTimestamp(v string) *ReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData) SetValue(v string) *ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData {
+func (s *ReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData) SetValue(v string) *ReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData {
   s.Value = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData) SetBandwidth(v string) *ReportFlowIspProvinceShortTimeServiceReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData {
+func (s *ReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData) SetBandwidth(v string) *ReportFlowIspProvinceShortTimeServiceResponseResultIspDataProvinceDataFlowData {
   s.Bandwidth = &v
   return s
 }
@@ -4489,7 +4489,7 @@ func (s *QueryEdgeByteHitRatioServiceRequest) SetDomain(v []*string) *QueryEdgeB
 }
 
 type QueryEdgeByteHitRatioServiceResponse struct {
-  Result []*QueryEdgeByteHitRatioServiceQueryEdgeByteHitRatioServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryEdgeByteHitRatioServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryEdgeByteHitRatioServiceResponse) String() string {
@@ -4500,64 +4500,64 @@ func (s QueryEdgeByteHitRatioServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryEdgeByteHitRatioServiceResponse) SetResult(v []*QueryEdgeByteHitRatioServiceQueryEdgeByteHitRatioServiceResponseResult) *QueryEdgeByteHitRatioServiceResponse {
+func (s *QueryEdgeByteHitRatioServiceResponse) SetResult(v []*QueryEdgeByteHitRatioServiceResponseResult) *QueryEdgeByteHitRatioServiceResponse {
   s.Result = v
   return s
 }
 
-type QueryEdgeByteHitRatioServiceQueryEdgeByteHitRatioServiceResponseResult struct     {
+type QueryEdgeByteHitRatioServiceResponseResult struct     {
   // {"en":"Actually processed time.  yyyy-MM-dd HH:mm format", "zh_CN":"实际查询时间，格式 yyyy-MM-dd HH:mm"}
   RealDate *string `json:"realDate,omitempty" xml:"realDate,omitempty" require:"true"`
   // {"en":"Average of total edge node hit ratio", "zh_CN":"总边缘节点命中率的平均值,2位小数"}
   TotalAvg *string `json:"totalAvg,omitempty" xml:"totalAvg,omitempty" require:"true"`
   // {"en":"Detailed data on the results of the request", "zh_CN":"请求结果的详细数据"}
-  HitRatioDatas []*QueryEdgeByteHitRatioServiceQueryEdgeByteHitRatioServiceResponseResultHitRatioDatas `json:"hitRatioDatas,omitempty" xml:"hitRatioDatas,omitempty" require:"true" type:"Repeated"`
+  HitRatioDatas []*QueryEdgeByteHitRatioServiceResponseResultHitRatioDatas `json:"hitRatioDatas,omitempty" xml:"hitRatioDatas,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryEdgeByteHitRatioServiceQueryEdgeByteHitRatioServiceResponseResult) String() string {
+func (s QueryEdgeByteHitRatioServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryEdgeByteHitRatioServiceQueryEdgeByteHitRatioServiceResponseResult) GoString() string {
+func (s QueryEdgeByteHitRatioServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryEdgeByteHitRatioServiceQueryEdgeByteHitRatioServiceResponseResult) SetRealDate(v string) *QueryEdgeByteHitRatioServiceQueryEdgeByteHitRatioServiceResponseResult {
+func (s *QueryEdgeByteHitRatioServiceResponseResult) SetRealDate(v string) *QueryEdgeByteHitRatioServiceResponseResult {
   s.RealDate = &v
   return s
 }
 
-func (s *QueryEdgeByteHitRatioServiceQueryEdgeByteHitRatioServiceResponseResult) SetTotalAvg(v string) *QueryEdgeByteHitRatioServiceQueryEdgeByteHitRatioServiceResponseResult {
+func (s *QueryEdgeByteHitRatioServiceResponseResult) SetTotalAvg(v string) *QueryEdgeByteHitRatioServiceResponseResult {
   s.TotalAvg = &v
   return s
 }
 
-func (s *QueryEdgeByteHitRatioServiceQueryEdgeByteHitRatioServiceResponseResult) SetHitRatioDatas(v []*QueryEdgeByteHitRatioServiceQueryEdgeByteHitRatioServiceResponseResultHitRatioDatas) *QueryEdgeByteHitRatioServiceQueryEdgeByteHitRatioServiceResponseResult {
+func (s *QueryEdgeByteHitRatioServiceResponseResult) SetHitRatioDatas(v []*QueryEdgeByteHitRatioServiceResponseResultHitRatioDatas) *QueryEdgeByteHitRatioServiceResponseResult {
   s.HitRatioDatas = v
   return s
 }
 
-type QueryEdgeByteHitRatioServiceQueryEdgeByteHitRatioServiceResponseResultHitRatioDatas struct     {
+type QueryEdgeByteHitRatioServiceResponseResultHitRatioDatas struct     {
   // {"en":"timestamp", "zh_CN":"时间，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:01，最后一个时间片是（yyyy-MM-dd+1） 00:00；"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"edge node hit ratio,keep 4 decimal places", "zh_CN":"边缘节点缓存字节命中率，保留4位小数"}
   EdgeHitRatio *string `json:"edgeHitRatio,omitempty" xml:"edgeHitRatio,omitempty" require:"true"`
 }
 
-func (s QueryEdgeByteHitRatioServiceQueryEdgeByteHitRatioServiceResponseResultHitRatioDatas) String() string {
+func (s QueryEdgeByteHitRatioServiceResponseResultHitRatioDatas) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryEdgeByteHitRatioServiceQueryEdgeByteHitRatioServiceResponseResultHitRatioDatas) GoString() string {
+func (s QueryEdgeByteHitRatioServiceResponseResultHitRatioDatas) GoString() string {
   return s.String()
 }
 
-func (s *QueryEdgeByteHitRatioServiceQueryEdgeByteHitRatioServiceResponseResultHitRatioDatas) SetTimestamp(v string) *QueryEdgeByteHitRatioServiceQueryEdgeByteHitRatioServiceResponseResultHitRatioDatas {
+func (s *QueryEdgeByteHitRatioServiceResponseResultHitRatioDatas) SetTimestamp(v string) *QueryEdgeByteHitRatioServiceResponseResultHitRatioDatas {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryEdgeByteHitRatioServiceQueryEdgeByteHitRatioServiceResponseResultHitRatioDatas) SetEdgeHitRatio(v string) *QueryEdgeByteHitRatioServiceQueryEdgeByteHitRatioServiceResponseResultHitRatioDatas {
+func (s *QueryEdgeByteHitRatioServiceResponseResultHitRatioDatas) SetEdgeHitRatio(v string) *QueryEdgeByteHitRatioServiceResponseResultHitRatioDatas {
   s.EdgeHitRatio = &v
   return s
 }
@@ -4693,7 +4693,7 @@ func (s *QueryBacktoOriginTrafficAndRequestRequest) SetBacksrcOnly(v int) *Query
 }
 
 type QueryBacktoOriginTrafficAndRequestResponse struct {
-  Result []*QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryBacktoOriginTrafficAndRequestResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryBacktoOriginTrafficAndRequestResponse) String() string {
@@ -4704,12 +4704,12 @@ func (s QueryBacktoOriginTrafficAndRequestResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryBacktoOriginTrafficAndRequestResponse) SetResult(v []*QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult) *QueryBacktoOriginTrafficAndRequestResponse {
+func (s *QueryBacktoOriginTrafficAndRequestResponse) SetResult(v []*QueryBacktoOriginTrafficAndRequestResponseResult) *QueryBacktoOriginTrafficAndRequestResponse {
   s.Result = v
   return s
 }
 
-type QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult struct     {
+type QueryBacktoOriginTrafficAndRequestResponseResult struct     {
   // {'en':'Domain', 'zh_CN':'域名'}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {'en':'totalFlow, unit :MB, 2 decimal places reserved, example (74099.92)', 'zh_CN':'总流量，单位MB，保留两位小时'}
@@ -4724,58 +4724,58 @@ type QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestRespons
   PeakBandwidth *string `json:"peakBandwidth,omitempty" xml:"peakBandwidth,omitempty" require:"true"`
   // {'en':'Peak time of Bandwidth', 'zh_CN':'带宽峰值时间'}
   PeakBandwidthTime *string `json:"peakBandwidthTime,omitempty" xml:"peakBandwidthTime,omitempty" require:"true"`
-  FlowRequestOriginData []*QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData `json:"flowRequestOriginData,omitempty" xml:"flowRequestOriginData,omitempty" require:"true" type:"Repeated"`
+  FlowRequestOriginData []*QueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData `json:"flowRequestOriginData,omitempty" xml:"flowRequestOriginData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult) String() string {
+func (s QueryBacktoOriginTrafficAndRequestResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult) GoString() string {
+func (s QueryBacktoOriginTrafficAndRequestResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult) SetDomain(v string) *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult {
+func (s *QueryBacktoOriginTrafficAndRequestResponseResult) SetDomain(v string) *QueryBacktoOriginTrafficAndRequestResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult) SetTotalFlow(v string) *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult {
+func (s *QueryBacktoOriginTrafficAndRequestResponseResult) SetTotalFlow(v string) *QueryBacktoOriginTrafficAndRequestResponseResult {
   s.TotalFlow = &v
   return s
 }
 
-func (s *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult) SetTotalRequest(v string) *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult {
+func (s *QueryBacktoOriginTrafficAndRequestResponseResult) SetTotalRequest(v string) *QueryBacktoOriginTrafficAndRequestResponseResult {
   s.TotalRequest = &v
   return s
 }
 
-func (s *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult) SetPeakRequest(v string) *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult {
+func (s *QueryBacktoOriginTrafficAndRequestResponseResult) SetPeakRequest(v string) *QueryBacktoOriginTrafficAndRequestResponseResult {
   s.PeakRequest = &v
   return s
 }
 
-func (s *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult) SetPeakRequestTime(v string) *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult {
+func (s *QueryBacktoOriginTrafficAndRequestResponseResult) SetPeakRequestTime(v string) *QueryBacktoOriginTrafficAndRequestResponseResult {
   s.PeakRequestTime = &v
   return s
 }
 
-func (s *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult) SetPeakBandwidth(v string) *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult {
+func (s *QueryBacktoOriginTrafficAndRequestResponseResult) SetPeakBandwidth(v string) *QueryBacktoOriginTrafficAndRequestResponseResult {
   s.PeakBandwidth = &v
   return s
 }
 
-func (s *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult) SetPeakBandwidthTime(v string) *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult {
+func (s *QueryBacktoOriginTrafficAndRequestResponseResult) SetPeakBandwidthTime(v string) *QueryBacktoOriginTrafficAndRequestResponseResult {
   s.PeakBandwidthTime = &v
   return s
 }
 
-func (s *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult) SetFlowRequestOriginData(v []*QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData) *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResult {
+func (s *QueryBacktoOriginTrafficAndRequestResponseResult) SetFlowRequestOriginData(v []*QueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData) *QueryBacktoOriginTrafficAndRequestResponseResult {
   s.FlowRequestOriginData = v
   return s
 }
 
-type QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData struct     {
+type QueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData struct     {
   // {'en':'1. When the querying data granularity is 5m, then the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 12:05 AM, and the last one is (yyyy-MM-dd+1) 00:00. 
   //         2. Return the time slices that contained in start time and in end time.', 'zh_CN':'1.查询的数据粒度为5m时，格式为yyyy-MM-dd &nbsp; HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05，最后一个时间片是（yyyy-MM-dd+1） &nbsp; 00:00。
   //         2.返回开始时间和结束时间包含的时间片。'}
@@ -4788,30 +4788,30 @@ type QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestRespons
   Request *string `json:"request,omitempty" xml:"request,omitempty" require:"true"`
 }
 
-func (s QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData) String() string {
+func (s QueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData) GoString() string {
+func (s QueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData) GoString() string {
   return s.String()
 }
 
-func (s *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData) SetTimestamp(v string) *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData {
+func (s *QueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData) SetTimestamp(v string) *QueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData) SetFlow(v string) *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData {
+func (s *QueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData) SetFlow(v string) *QueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData {
   s.Flow = &v
   return s
 }
 
-func (s *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData) SetBandwidth(v string) *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData {
+func (s *QueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData) SetBandwidth(v string) *QueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData {
   s.Bandwidth = &v
   return s
 }
 
-func (s *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData) SetRequest(v string) *QueryBacktoOriginTrafficAndRequestQueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData {
+func (s *QueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData) SetRequest(v string) *QueryBacktoOriginTrafficAndRequestResponseResultFlowRequestOriginData {
   s.Request = &v
   return s
 }
@@ -4946,7 +4946,7 @@ type ReportFlowRequestMultiIPVersionServiceResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportFlowRequestMultiIPVersionServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportFlowRequestMultiIPVersionServiceResponse) String() string {
@@ -4967,36 +4967,36 @@ func (s *ReportFlowRequestMultiIPVersionServiceResponse) SetMessage(v string) *R
   return s
 }
 
-func (s *ReportFlowRequestMultiIPVersionServiceResponse) SetData(v []*ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServiceResponseData) *ReportFlowRequestMultiIPVersionServiceResponse {
+func (s *ReportFlowRequestMultiIPVersionServiceResponse) SetData(v []*ReportFlowRequestMultiIPVersionServiceResponseData) *ReportFlowRequestMultiIPVersionServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServiceResponseData struct     {
+type ReportFlowRequestMultiIPVersionServiceResponseData struct     {
   // {"en":"Domain. If merge date of all domains will not return domain", "zh_CN":"域名,聚合全部域名数据不返回该字段"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  DetailList []*ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServiceResponseDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+  DetailList []*ReportFlowRequestMultiIPVersionServiceResponseDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServiceResponseData) String() string {
+func (s ReportFlowRequestMultiIPVersionServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServiceResponseData) GoString() string {
+func (s ReportFlowRequestMultiIPVersionServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServiceResponseData) SetDomain(v string) *ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServiceResponseData {
+func (s *ReportFlowRequestMultiIPVersionServiceResponseData) SetDomain(v string) *ReportFlowRequestMultiIPVersionServiceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServiceResponseData) SetDetailList(v []*ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServiceResponseDataDetailList) *ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServiceResponseData {
+func (s *ReportFlowRequestMultiIPVersionServiceResponseData) SetDetailList(v []*ReportFlowRequestMultiIPVersionServiceResponseDataDetailList) *ReportFlowRequestMultiIPVersionServiceResponseData {
   s.DetailList = v
   return s
 }
 
-type ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServiceResponseDataDetailList struct     {
+type ReportFlowRequestMultiIPVersionServiceResponseDataDetailList struct     {
   // {"en":"timestamp,Returns the timestamp between the start time and end time. 
   // 				 Time format: 
   // 				 Minutes: yyyy-MM-dd HH:mm 
@@ -5011,25 +5011,25 @@ type ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServic
   V6Value *string `json:"v6Value,omitempty" xml:"v6Value,omitempty" require:"true"`
 }
 
-func (s ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServiceResponseDataDetailList) String() string {
+func (s ReportFlowRequestMultiIPVersionServiceResponseDataDetailList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServiceResponseDataDetailList) GoString() string {
+func (s ReportFlowRequestMultiIPVersionServiceResponseDataDetailList) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServiceResponseDataDetailList) SetTimestamp(v string) *ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServiceResponseDataDetailList {
+func (s *ReportFlowRequestMultiIPVersionServiceResponseDataDetailList) SetTimestamp(v string) *ReportFlowRequestMultiIPVersionServiceResponseDataDetailList {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServiceResponseDataDetailList) SetV4Value(v string) *ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServiceResponseDataDetailList {
+func (s *ReportFlowRequestMultiIPVersionServiceResponseDataDetailList) SetV4Value(v string) *ReportFlowRequestMultiIPVersionServiceResponseDataDetailList {
   s.V4Value = &v
   return s
 }
 
-func (s *ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServiceResponseDataDetailList) SetV6Value(v string) *ReportFlowRequestMultiIPVersionServiceReportFlowRequestMultiIPVersionServiceResponseDataDetailList {
+func (s *ReportFlowRequestMultiIPVersionServiceResponseDataDetailList) SetV6Value(v string) *ReportFlowRequestMultiIPVersionServiceResponseDataDetailList {
   s.V6Value = &v
   return s
 }
@@ -5179,7 +5179,7 @@ func (s *ReportFlowIspProvinceServiceRequest) SetGroupBy(v []*string) *ReportFlo
 
 type ReportFlowIspProvinceServiceResponse struct {
   // {"en":"result", "zh_CN":"结果"}
-  Result []*ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportFlowIspProvinceServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportFlowIspProvinceServiceResponse) String() string {
@@ -5190,87 +5190,87 @@ func (s ReportFlowIspProvinceServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceServiceResponse) SetResult(v []*ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResult) *ReportFlowIspProvinceServiceResponse {
+func (s *ReportFlowIspProvinceServiceResponse) SetResult(v []*ReportFlowIspProvinceServiceResponseResult) *ReportFlowIspProvinceServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResult struct     {
+type ReportFlowIspProvinceServiceResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"isp", "zh_CN":"ISP数据"}
-  IspData []*ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*ReportFlowIspProvinceServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResult) String() string {
+func (s ReportFlowIspProvinceServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResult) GoString() string {
+func (s ReportFlowIspProvinceServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResult) SetDomain(v string) *ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResult {
+func (s *ReportFlowIspProvinceServiceResponseResult) SetDomain(v string) *ReportFlowIspProvinceServiceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResult) SetIspData(v []*ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspData) *ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResult {
+func (s *ReportFlowIspProvinceServiceResponseResult) SetIspData(v []*ReportFlowIspProvinceServiceResponseResultIspData) *ReportFlowIspProvinceServiceResponseResult {
   s.IspData = v
   return s
 }
 
-type ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspData struct     {
+type ReportFlowIspProvinceServiceResponseResultIspData struct     {
   // {"en":"ISP", "zh_CN":"运营商"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
   // {"en":"province", "zh_CN":"省份数据"}
-  ProvinceData []*ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*ReportFlowIspProvinceServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspData) String() string {
+func (s ReportFlowIspProvinceServiceResponseResultIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspData) GoString() string {
+func (s ReportFlowIspProvinceServiceResponseResultIspData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspData) SetIsp(v string) *ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspData {
+func (s *ReportFlowIspProvinceServiceResponseResultIspData) SetIsp(v string) *ReportFlowIspProvinceServiceResponseResultIspData {
   s.Isp = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspData) SetProvinceData(v []*ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDataProvinceData) *ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspData {
+func (s *ReportFlowIspProvinceServiceResponseResultIspData) SetProvinceData(v []*ReportFlowIspProvinceServiceResponseResultIspDataProvinceData) *ReportFlowIspProvinceServiceResponseResultIspData {
   s.ProvinceData = v
   return s
 }
 
-type ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDataProvinceData struct     {
+type ReportFlowIspProvinceServiceResponseResultIspDataProvinceData struct     {
   // {"en":"Province", "zh_CN":"省份"}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
   // {"en":"flowdata", "zh_CN":"流量数据"}
-  FlowData []*ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData `json:"flowData,omitempty" xml:"flowData,omitempty" require:"true" type:"Repeated"`
+  FlowData []*ReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData `json:"flowData,omitempty" xml:"flowData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDataProvinceData) String() string {
+func (s ReportFlowIspProvinceServiceResponseResultIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDataProvinceData) GoString() string {
+func (s ReportFlowIspProvinceServiceResponseResultIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDataProvinceData {
+func (s *ReportFlowIspProvinceServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportFlowIspProvinceServiceResponseResultIspDataProvinceData {
   s.Province = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDataProvinceData) SetFlowData(v []*ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData) *ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDataProvinceData {
+func (s *ReportFlowIspProvinceServiceResponseResultIspDataProvinceData) SetFlowData(v []*ReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData) *ReportFlowIspProvinceServiceResponseResultIspDataProvinceData {
   s.FlowData = v
   return s
 }
 
-type ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData struct     {
+type ReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData struct     {
   // {"en":"timestamp", "zh_CN":"时间"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Traffic unit is MB and 2 digits   of decimals allowed", "zh_CN":"流量值,单位为MB,保留两位小数"}
@@ -5279,25 +5279,25 @@ type ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDa
   Bandwidth *string `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true"`
 }
 
-func (s ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData) String() string {
+func (s ReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData) GoString() string {
+func (s ReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData) SetTimestamp(v string) *ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData {
+func (s *ReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData) SetTimestamp(v string) *ReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData) SetValue(v string) *ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData {
+func (s *ReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData) SetValue(v string) *ReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData {
   s.Value = &v
   return s
 }
 
-func (s *ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData) SetBandwidth(v string) *ReportFlowIspProvinceServiceReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData {
+func (s *ReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData) SetBandwidth(v string) *ReportFlowIspProvinceServiceResponseResultIspDataProvinceDataFlowData {
   s.Bandwidth = &v
   return s
 }
@@ -5366,7 +5366,7 @@ type QueryDirectoryBandwidthTrafficUnderLivestreamDomainRequest struct {
   // 2.必须大于dateFrom;
   // 3.如果大于当前时间,则重新赋值为当前时间;"}
   DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty" require:"true"`
-  DomainDir []*QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainRequestDomainDir `json:"domainDir,omitempty" xml:"domainDir,omitempty" require:"true" type:"Repeated"`
+  DomainDir []*QueryDirectoryBandwidthTrafficUnderLivestreamDomainRequestDomainDir `json:"domainDir,omitempty" xml:"domainDir,omitempty" require:"true" type:"Repeated"`
   // {"en":"Query protocol:
   // 1.Means query statistics with http protocol or with https protocol;
   // 2.Values can be selected: http or https;
@@ -5411,7 +5411,7 @@ func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainRequest) SetDateTo(v
   return s
 }
 
-func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainRequest) SetDomainDir(v []*QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainRequestDomainDir) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainRequest {
+func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainRequest) SetDomainDir(v []*QueryDirectoryBandwidthTrafficUnderLivestreamDomainRequestDomainDir) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainRequest {
   s.DomainDir = v
   return s
 }
@@ -5431,7 +5431,7 @@ func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainRequest) SetDataType
   return s
 }
 
-type QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainRequestDomainDir struct     {
+type QueryDirectoryBandwidthTrafficUnderLivestreamDomainRequestDomainDir struct     {
   // {"en":"Domain:
   // 1.Need to meet the regular expression rules that are used to validate domains;
   // 2.Domain number limits can be adjusted depending on different accounts. The default value is 20;", "zh_CN":"域名:
@@ -5448,27 +5448,27 @@ type QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthT
   Dir []*string `json:"dir,omitempty" xml:"dir,omitempty" type:"Repeated"`
 }
 
-func (s QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainRequestDomainDir) String() string {
+func (s QueryDirectoryBandwidthTrafficUnderLivestreamDomainRequestDomainDir) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainRequestDomainDir) GoString() string {
+func (s QueryDirectoryBandwidthTrafficUnderLivestreamDomainRequestDomainDir) GoString() string {
   return s.String()
 }
 
-func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainRequestDomainDir) SetDomain(v string) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainRequestDomainDir {
+func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainRequestDomainDir) SetDomain(v string) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainRequestDomainDir {
   s.Domain = &v
   return s
 }
 
-func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainRequestDomainDir) SetDir(v []*string) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainRequestDomainDir {
+func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainRequestDomainDir) SetDir(v []*string) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainRequestDomainDir {
   s.Dir = v
   return s
 }
 
 type QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponse struct {
   // {"en":"result", "zh_CN":"结果"}
-  Result []*QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponse) String() string {
@@ -5479,36 +5479,36 @@ func (s QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponse) GoString() 
   return s.String()
 }
 
-func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponse) SetResult(v []*QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResult) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponse {
+func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponse) SetResult(v []*QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResult) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponse {
   s.Result = v
   return s
 }
 
-type QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResult struct     {
+type QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  Details []*QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
+  Details []*QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResult) String() string {
+func (s QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResult) GoString() string {
+func (s QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResult) SetDomain(v string) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResult {
+func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResult) SetDomain(v string) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResult) SetDetails(v []*QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResult {
+func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResult) SetDetails(v []*QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResult {
   s.Details = v
   return s
 }
 
-type QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails struct     {
+type QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails struct     {
   // {"en":"Directory", "zh_CN":"目录"}
   Dir *string `json:"dir,omitempty" xml:"dir,omitempty" require:"true"`
   // {"en":"Return when the dataType is flow; Total flow of every stream. Unit is MB and 2 digits of decimals allowed;", "zh_CN":"当dataType为flow时返回;每路流的总流量单位MB,保留2位小数;"}
@@ -5518,38 +5518,38 @@ type QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthT
   // Bandwidth peak value of every stream within specified time. Unit is Mbps, two decimals digits;", "zh_CN":"当dataType为bandwidth时返回;
   // 每路流在该时间段内的带宽峰值单位Mbps,保留2位小数;"}
   BandwidthPeakValue *string `json:"bandwidthPeakValue,omitempty" xml:"bandwidthPeakValue,omitempty" require:"true"`
-  Details []*QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetailsDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
+  Details []*QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetailsDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails) String() string {
+func (s QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails) GoString() string {
+func (s QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails) GoString() string {
   return s.String()
 }
 
-func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails) SetDir(v string) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails {
+func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails) SetDir(v string) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails {
   s.Dir = &v
   return s
 }
 
-func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails) SetTotalFlow(v string) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails {
+func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails) SetTotalFlow(v string) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails {
   s.TotalFlow = &v
   return s
 }
 
-func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails) SetBandwidthPeakValue(v string) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails {
+func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails) SetBandwidthPeakValue(v string) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails {
   s.BandwidthPeakValue = &v
   return s
 }
 
-func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails) SetDetails(v []*QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetailsDetails) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails {
+func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails) SetDetails(v []*QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetailsDetails) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetails {
   s.Details = v
   return s
 }
 
-type QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetailsDetails struct     {
+type QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetailsDetails struct     {
   // {"en":"Date
   // 1.When the data query granularity is 1m, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is (yyyy-MM-dd+1) 00:00;
   // 2.When the data query granularity is 5m, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 12:05 AM, and the last one is (yyyy-MM-dd+1) 00:00;
@@ -5562,20 +5562,20 @@ type QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthT
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetailsDetails) String() string {
+func (s QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetailsDetails) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetailsDetails) GoString() string {
+func (s QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetailsDetails) GoString() string {
   return s.String()
 }
 
-func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetailsDetails) SetTimestamp(v string) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetailsDetails {
+func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetailsDetails) SetTimestamp(v string) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetailsDetails {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetailsDetails) SetValue(v string) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainQueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetailsDetails {
+func (s *QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetailsDetails) SetValue(v string) *QueryDirectoryBandwidthTrafficUnderLivestreamDomainResponseResultDetailsDetails {
   s.Value = &v
   return s
 }
@@ -5694,7 +5694,7 @@ type QueryRequesBandwidthtSavingRatioResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*QueryRequesBandwidthtSavingRatioResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryRequesBandwidthtSavingRatioResponse) String() string {
@@ -5715,43 +5715,43 @@ func (s *QueryRequesBandwidthtSavingRatioResponse) SetMessage(v string) *QueryRe
   return s
 }
 
-func (s *QueryRequesBandwidthtSavingRatioResponse) SetData(v []*QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseData) *QueryRequesBandwidthtSavingRatioResponse {
+func (s *QueryRequesBandwidthtSavingRatioResponse) SetData(v []*QueryRequesBandwidthtSavingRatioResponseData) *QueryRequesBandwidthtSavingRatioResponse {
   s.Data = v
   return s
 }
 
-type QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseData struct     {
+type QueryRequesBandwidthtSavingRatioResponseData struct     {
   // {"en":"Actually processed time.  yyyy-MM-dd HH:mm format", "zh_CN":"实际查询时间,格式 yyyy-MM-dd HH:mm"}
   RealDate *string `json:"realDate,omitempty" xml:"realDate,omitempty" require:"true"`
   // {"en":"Average of total saving of bandwidth.", "zh_CN":"总节省带宽的平均值"}
   TotalAvg *int `json:"totalAvg,omitempty" xml:"totalAvg,omitempty" require:"true"`
-  SavingBandwidthDatas []*QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseDataSavingBandwidthDatas `json:"savingBandwidthDatas,omitempty" xml:"savingBandwidthDatas,omitempty" require:"true" type:"Repeated"`
+  SavingBandwidthDatas []*QueryRequesBandwidthtSavingRatioResponseDataSavingBandwidthDatas `json:"savingBandwidthDatas,omitempty" xml:"savingBandwidthDatas,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseData) String() string {
+func (s QueryRequesBandwidthtSavingRatioResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseData) GoString() string {
+func (s QueryRequesBandwidthtSavingRatioResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseData) SetRealDate(v string) *QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseData {
+func (s *QueryRequesBandwidthtSavingRatioResponseData) SetRealDate(v string) *QueryRequesBandwidthtSavingRatioResponseData {
   s.RealDate = &v
   return s
 }
 
-func (s *QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseData) SetTotalAvg(v int) *QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseData {
+func (s *QueryRequesBandwidthtSavingRatioResponseData) SetTotalAvg(v int) *QueryRequesBandwidthtSavingRatioResponseData {
   s.TotalAvg = &v
   return s
 }
 
-func (s *QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseData) SetSavingBandwidthDatas(v []*QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseDataSavingBandwidthDatas) *QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseData {
+func (s *QueryRequesBandwidthtSavingRatioResponseData) SetSavingBandwidthDatas(v []*QueryRequesBandwidthtSavingRatioResponseDataSavingBandwidthDatas) *QueryRequesBandwidthtSavingRatioResponseData {
   s.SavingBandwidthDatas = v
   return s
 }
 
-type QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseDataSavingBandwidthDatas struct     {
+type QueryRequesBandwidthtSavingRatioResponseDataSavingBandwidthDatas struct     {
   // {"en":"timetamp
   // 1. When the data granularity of the query is fiveminutes, the format is yyyy-MM-dd HH:MM; Each time slice data value represents the data value in the previous time granularity range, For example yyyy-MM-dd 00:05 represents data in the range from 00:00 to 00:05.
   // 2.The data granularity of query is hourly, the format is yyyy-MM-dd HH. Each time slice data value represents data values in the previous time granularity range such as yyyy-MM-dd 01 that represent data from 00 to 01.
@@ -5766,20 +5766,20 @@ type QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseDat
   SavingBandwidth *string `json:"savingBandwidth,omitempty" xml:"savingBandwidth,omitempty" require:"true"`
 }
 
-func (s QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseDataSavingBandwidthDatas) String() string {
+func (s QueryRequesBandwidthtSavingRatioResponseDataSavingBandwidthDatas) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseDataSavingBandwidthDatas) GoString() string {
+func (s QueryRequesBandwidthtSavingRatioResponseDataSavingBandwidthDatas) GoString() string {
   return s.String()
 }
 
-func (s *QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseDataSavingBandwidthDatas) SetTimestamp(v string) *QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseDataSavingBandwidthDatas {
+func (s *QueryRequesBandwidthtSavingRatioResponseDataSavingBandwidthDatas) SetTimestamp(v string) *QueryRequesBandwidthtSavingRatioResponseDataSavingBandwidthDatas {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseDataSavingBandwidthDatas) SetSavingBandwidth(v string) *QueryRequesBandwidthtSavingRatioQueryRequesBandwidthtSavingRatioResponseDataSavingBandwidthDatas {
+func (s *QueryRequesBandwidthtSavingRatioResponseDataSavingBandwidthDatas) SetSavingBandwidth(v string) *QueryRequesBandwidthtSavingRatioResponseDataSavingBandwidthDatas {
   s.SavingBandwidth = &v
   return s
 }
@@ -5854,7 +5854,7 @@ type QueryStreamTrafficUnderMALBDomainRequest struct {
   // 						1.可传递的域名和流名组数量上限默认为20组(可联系技术支持调整)；
   // 						2.域名domain：一组域名和流名组中只能传递单个域名，且域名必须传递；
   // 						3.流名stream：一组域名和流名组下(即单个域名下)可传递的流名数量上限默认为2000个(可联系技术支持调整)，流名未传递时默认查询域名下所有流名，但当域名下流名数量超过限制时不可查询(报错)。"}
-  DomainStream []*QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainRequestDomainStream `json:"domainStream,omitempty" xml:"domainStream,omitempty" require:"true" type:"Repeated"`
+  DomainStream []*QueryStreamTrafficUnderMALBDomainRequestDomainStream `json:"domainStream,omitempty" xml:"domainStream,omitempty" require:"true" type:"Repeated"`
   // {"en":"Data granularity:
   // 				1. 1m: 1-minute granularity, 5m: 5-minute granularity;
   // 				2. Data with granularity of 5 minutes is queried by default, if you need to query the granularity of 1 minute, please contact technical support for configuration", "zh_CN":"数据粒度
@@ -5891,7 +5891,7 @@ func (s *QueryStreamTrafficUnderMALBDomainRequest) SetDateTo(v string) *QueryStr
   return s
 }
 
-func (s *QueryStreamTrafficUnderMALBDomainRequest) SetDomainStream(v []*QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainRequestDomainStream) *QueryStreamTrafficUnderMALBDomainRequest {
+func (s *QueryStreamTrafficUnderMALBDomainRequest) SetDomainStream(v []*QueryStreamTrafficUnderMALBDomainRequestDomainStream) *QueryStreamTrafficUnderMALBDomainRequest {
   s.DomainStream = v
   return s
 }
@@ -5911,7 +5911,7 @@ func (s *QueryStreamTrafficUnderMALBDomainRequest) SetFilterEmptyStream(v int) *
   return s
 }
 
-type QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainRequestDomainStream struct     {
+type QueryStreamTrafficUnderMALBDomainRequestDomainStream struct     {
   // {"en":"Domain names, domain number limits can be adjusted depending on different accounts. The default value is 20", "zh_CN":"可传递域名数量上限默认为20个(可联系技术支持调整)"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"Stream name:
@@ -5920,26 +5920,26 @@ type QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainRequestDo
   Stream []*string `json:"stream,omitempty" xml:"stream,omitempty" type:"Repeated"`
 }
 
-func (s QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainRequestDomainStream) String() string {
+func (s QueryStreamTrafficUnderMALBDomainRequestDomainStream) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainRequestDomainStream) GoString() string {
+func (s QueryStreamTrafficUnderMALBDomainRequestDomainStream) GoString() string {
   return s.String()
 }
 
-func (s *QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainRequestDomainStream) SetDomain(v string) *QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainRequestDomainStream {
+func (s *QueryStreamTrafficUnderMALBDomainRequestDomainStream) SetDomain(v string) *QueryStreamTrafficUnderMALBDomainRequestDomainStream {
   s.Domain = &v
   return s
 }
 
-func (s *QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainRequestDomainStream) SetStream(v []*string) *QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainRequestDomainStream {
+func (s *QueryStreamTrafficUnderMALBDomainRequestDomainStream) SetStream(v []*string) *QueryStreamTrafficUnderMALBDomainRequestDomainStream {
   s.Stream = v
   return s
 }
 
 type QueryStreamTrafficUnderMALBDomainResponse struct {
-  Result []*QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryStreamTrafficUnderMALBDomainResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryStreamTrafficUnderMALBDomainResponse) String() string {
@@ -5950,36 +5950,36 @@ func (s QueryStreamTrafficUnderMALBDomainResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryStreamTrafficUnderMALBDomainResponse) SetResult(v []*QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResult) *QueryStreamTrafficUnderMALBDomainResponse {
+func (s *QueryStreamTrafficUnderMALBDomainResponse) SetResult(v []*QueryStreamTrafficUnderMALBDomainResponseResult) *QueryStreamTrafficUnderMALBDomainResponse {
   s.Result = v
   return s
 }
 
-type QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResult struct     {
+type QueryStreamTrafficUnderMALBDomainResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  Details []*QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
+  Details []*QueryStreamTrafficUnderMALBDomainResponseResultDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResult) String() string {
+func (s QueryStreamTrafficUnderMALBDomainResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResult) GoString() string {
+func (s QueryStreamTrafficUnderMALBDomainResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResult) SetDomain(v string) *QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResult {
+func (s *QueryStreamTrafficUnderMALBDomainResponseResult) SetDomain(v string) *QueryStreamTrafficUnderMALBDomainResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResult) SetDetails(v []*QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetails) *QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResult {
+func (s *QueryStreamTrafficUnderMALBDomainResponseResult) SetDetails(v []*QueryStreamTrafficUnderMALBDomainResponseResultDetails) *QueryStreamTrafficUnderMALBDomainResponseResult {
   s.Details = v
   return s
 }
 
-type QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetails struct     {
+type QueryStreamTrafficUnderMALBDomainResponseResultDetails struct     {
   // {"en":"Stream name", "zh_CN":"流名"}
   Stream *string `json:"stream,omitempty" xml:"stream,omitempty" require:"true"`
   // {"en":"Total traffic:
@@ -5994,38 +5994,38 @@ type QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseR
   // 					1.保留2位小数，单位Mbps
   // 					2.当入参dataType为bandwidth时，返回。"}
   BandwidthPeakValue *string `json:"bandwidthPeakValue,omitempty" xml:"bandwidthPeakValue,omitempty"`
-  Details []*QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetailsDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
+  Details []*QueryStreamTrafficUnderMALBDomainResponseResultDetailsDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetails) String() string {
+func (s QueryStreamTrafficUnderMALBDomainResponseResultDetails) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetails) GoString() string {
+func (s QueryStreamTrafficUnderMALBDomainResponseResultDetails) GoString() string {
   return s.String()
 }
 
-func (s *QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetails) SetStream(v string) *QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetails {
+func (s *QueryStreamTrafficUnderMALBDomainResponseResultDetails) SetStream(v string) *QueryStreamTrafficUnderMALBDomainResponseResultDetails {
   s.Stream = &v
   return s
 }
 
-func (s *QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetails) SetTotalFlow(v string) *QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetails {
+func (s *QueryStreamTrafficUnderMALBDomainResponseResultDetails) SetTotalFlow(v string) *QueryStreamTrafficUnderMALBDomainResponseResultDetails {
   s.TotalFlow = &v
   return s
 }
 
-func (s *QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetails) SetBandwidthPeakValue(v string) *QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetails {
+func (s *QueryStreamTrafficUnderMALBDomainResponseResultDetails) SetBandwidthPeakValue(v string) *QueryStreamTrafficUnderMALBDomainResponseResultDetails {
   s.BandwidthPeakValue = &v
   return s
 }
 
-func (s *QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetails) SetDetails(v []*QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetailsDetails) *QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetails {
+func (s *QueryStreamTrafficUnderMALBDomainResponseResultDetails) SetDetails(v []*QueryStreamTrafficUnderMALBDomainResponseResultDetailsDetails) *QueryStreamTrafficUnderMALBDomainResponseResultDetails {
   s.Details = v
   return s
 }
 
-type QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetailsDetails struct     {
+type QueryStreamTrafficUnderMALBDomainResponseResultDetailsDetails struct     {
   // {"en":"Date:
   // 						1. When the data query granularity is 1m, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is (yyyy-MM-dd+1) 00:00.
   // 						2. When the data query granularity is 5m, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 12:05 AM, and the last one is (yyyy-MM-dd+1) 00:00.", "zh_CN":"时间
@@ -6042,20 +6042,20 @@ type QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseR
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetailsDetails) String() string {
+func (s QueryStreamTrafficUnderMALBDomainResponseResultDetailsDetails) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetailsDetails) GoString() string {
+func (s QueryStreamTrafficUnderMALBDomainResponseResultDetailsDetails) GoString() string {
   return s.String()
 }
 
-func (s *QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetailsDetails) SetTimestamp(v string) *QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetailsDetails {
+func (s *QueryStreamTrafficUnderMALBDomainResponseResultDetailsDetails) SetTimestamp(v string) *QueryStreamTrafficUnderMALBDomainResponseResultDetailsDetails {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetailsDetails) SetValue(v string) *QueryStreamTrafficUnderMALBDomainQueryStreamTrafficUnderMALBDomainResponseResultDetailsDetails {
+func (s *QueryStreamTrafficUnderMALBDomainResponseResultDetailsDetails) SetValue(v string) *QueryStreamTrafficUnderMALBDomainResponseResultDetailsDetails {
   s.Value = &v
   return s
 }
@@ -6215,7 +6215,7 @@ func (s *FlowDayRequest) SetTimezone(v string) *FlowDayRequest {
 
 type FlowDayResponse struct {
   // {'en':'provider', 'zh_CN':'结果'}
-  Provider *FlowDayFlowDayResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+  Provider *FlowDayResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
 func (s FlowDayResponse) String() string {
@@ -6226,101 +6226,101 @@ func (s FlowDayResponse) GoString() string {
   return s.String()
 }
 
-func (s *FlowDayResponse) SetProvider(v *FlowDayFlowDayResponseProvider) *FlowDayResponse {
+func (s *FlowDayResponse) SetProvider(v *FlowDayResponseProvider) *FlowDayResponse {
   s.Provider = v
   return s
 }
 
-type FlowDayFlowDayResponseProvider struct {
+type FlowDayResponseProvider struct {
   // {'en':'tenant', 'zh_CN':'租户'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'type', 'zh_CN':'接口类型'}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'数据'}
-  Date *FlowDayFlowDayResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+  Date *FlowDayResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
-func (s FlowDayFlowDayResponseProvider) String() string {
+func (s FlowDayResponseProvider) String() string {
   return tea.Prettify(s)
 }
 
-func (s FlowDayFlowDayResponseProvider) GoString() string {
+func (s FlowDayResponseProvider) GoString() string {
   return s.String()
 }
 
-func (s *FlowDayFlowDayResponseProvider) SetName(v string) *FlowDayFlowDayResponseProvider {
+func (s *FlowDayResponseProvider) SetName(v string) *FlowDayResponseProvider {
   s.Name = &v
   return s
 }
 
-func (s *FlowDayFlowDayResponseProvider) SetType(v string) *FlowDayFlowDayResponseProvider {
+func (s *FlowDayResponseProvider) SetType(v string) *FlowDayResponseProvider {
   s.Type = &v
   return s
 }
 
-func (s *FlowDayFlowDayResponseProvider) SetDate(v *FlowDayFlowDayResponseProviderDate) *FlowDayFlowDayResponseProvider {
+func (s *FlowDayResponseProvider) SetDate(v *FlowDayResponseProviderDate) *FlowDayResponseProvider {
   s.Date = v
   return s
 }
 
-type FlowDayFlowDayResponseProviderDate struct {
+type FlowDayResponseProviderDate struct {
   // {'en':'startdate', 'zh_CN':'开始日期'}
   Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
   // {'en':'enddate', 'zh_CN':'结束日期'}
   Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
   // {'en':'channel', 'zh_CN':'频道'}
-  Channel *FlowDayFlowDayResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+  Channel *FlowDayResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
 }
 
-func (s FlowDayFlowDayResponseProviderDate) String() string {
+func (s FlowDayResponseProviderDate) String() string {
   return tea.Prettify(s)
 }
 
-func (s FlowDayFlowDayResponseProviderDate) GoString() string {
+func (s FlowDayResponseProviderDate) GoString() string {
   return s.String()
 }
 
-func (s *FlowDayFlowDayResponseProviderDate) SetStartdate(v string) *FlowDayFlowDayResponseProviderDate {
+func (s *FlowDayResponseProviderDate) SetStartdate(v string) *FlowDayResponseProviderDate {
   s.Startdate = &v
   return s
 }
 
-func (s *FlowDayFlowDayResponseProviderDate) SetEnddate(v string) *FlowDayFlowDayResponseProviderDate {
+func (s *FlowDayResponseProviderDate) SetEnddate(v string) *FlowDayResponseProviderDate {
   s.Enddate = &v
   return s
 }
 
-func (s *FlowDayFlowDayResponseProviderDate) SetChannel(v *FlowDayFlowDayResponseProviderDateChannel) *FlowDayFlowDayResponseProviderDate {
+func (s *FlowDayResponseProviderDate) SetChannel(v *FlowDayResponseProviderDateChannel) *FlowDayResponseProviderDate {
   s.Channel = v
   return s
 }
 
-type FlowDayFlowDayResponseProviderDateChannel struct {
+type FlowDayResponseProviderDateChannel struct {
   // {'en':'channel', 'zh_CN':'频道'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'channel-peak', 'zh_CN':'频道峰值数据'}
-  ChannelPeak []*FlowDayFlowDayResponseProviderDateChannelChannelPeak `json:"channel-peak,omitempty" xml:"channel-peak,omitempty" require:"true" type:"Repeated"`
+  ChannelPeak []*FlowDayResponseProviderDateChannelChannelPeak `json:"channel-peak,omitempty" xml:"channel-peak,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s FlowDayFlowDayResponseProviderDateChannel) String() string {
+func (s FlowDayResponseProviderDateChannel) String() string {
   return tea.Prettify(s)
 }
 
-func (s FlowDayFlowDayResponseProviderDateChannel) GoString() string {
+func (s FlowDayResponseProviderDateChannel) GoString() string {
   return s.String()
 }
 
-func (s *FlowDayFlowDayResponseProviderDateChannel) SetName(v string) *FlowDayFlowDayResponseProviderDateChannel {
+func (s *FlowDayResponseProviderDateChannel) SetName(v string) *FlowDayResponseProviderDateChannel {
   s.Name = &v
   return s
 }
 
-func (s *FlowDayFlowDayResponseProviderDateChannel) SetChannelPeak(v []*FlowDayFlowDayResponseProviderDateChannelChannelPeak) *FlowDayFlowDayResponseProviderDateChannel {
+func (s *FlowDayResponseProviderDateChannel) SetChannelPeak(v []*FlowDayResponseProviderDateChannelChannelPeak) *FlowDayResponseProviderDateChannel {
   s.ChannelPeak = v
   return s
 }
 
-type FlowDayFlowDayResponseProviderDateChannelChannelPeak struct     {
+type FlowDayResponseProviderDateChannelChannelPeak struct     {
   // {'en':'date', 'zh_CN':'日期'}
   Date *string `json:"date,omitempty" xml:"date,omitempty" require:"true"`
   // {'en':'peakTime', 'zh_CN':'峰值时间'}
@@ -6331,30 +6331,30 @@ type FlowDayFlowDayResponseProviderDateChannelChannelPeak struct     {
   TotalFlow *string `json:"totalFlow,omitempty" xml:"totalFlow,omitempty" require:"true"`
 }
 
-func (s FlowDayFlowDayResponseProviderDateChannelChannelPeak) String() string {
+func (s FlowDayResponseProviderDateChannelChannelPeak) String() string {
   return tea.Prettify(s)
 }
 
-func (s FlowDayFlowDayResponseProviderDateChannelChannelPeak) GoString() string {
+func (s FlowDayResponseProviderDateChannelChannelPeak) GoString() string {
   return s.String()
 }
 
-func (s *FlowDayFlowDayResponseProviderDateChannelChannelPeak) SetDate(v string) *FlowDayFlowDayResponseProviderDateChannelChannelPeak {
+func (s *FlowDayResponseProviderDateChannelChannelPeak) SetDate(v string) *FlowDayResponseProviderDateChannelChannelPeak {
   s.Date = &v
   return s
 }
 
-func (s *FlowDayFlowDayResponseProviderDateChannelChannelPeak) SetPeakTime(v string) *FlowDayFlowDayResponseProviderDateChannelChannelPeak {
+func (s *FlowDayResponseProviderDateChannelChannelPeak) SetPeakTime(v string) *FlowDayResponseProviderDateChannelChannelPeak {
   s.PeakTime = &v
   return s
 }
 
-func (s *FlowDayFlowDayResponseProviderDateChannelChannelPeak) SetPeakValue(v string) *FlowDayFlowDayResponseProviderDateChannelChannelPeak {
+func (s *FlowDayResponseProviderDateChannelChannelPeak) SetPeakValue(v string) *FlowDayResponseProviderDateChannelChannelPeak {
   s.PeakValue = &v
   return s
 }
 
-func (s *FlowDayFlowDayResponseProviderDateChannelChannelPeak) SetTotalFlow(v string) *FlowDayFlowDayResponseProviderDateChannelChannelPeak {
+func (s *FlowDayResponseProviderDateChannelChannelPeak) SetTotalFlow(v string) *FlowDayResponseProviderDateChannelChannelPeak {
   s.TotalFlow = &v
   return s
 }
@@ -6489,7 +6489,7 @@ type ReportFlowP2pShareRatioServiceResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*ReportFlowP2pShareRatioServiceReportFlowP2pShareRatioServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportFlowP2pShareRatioServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportFlowP2pShareRatioServiceResponse) String() string {
@@ -6510,36 +6510,36 @@ func (s *ReportFlowP2pShareRatioServiceResponse) SetMessage(v string) *ReportFlo
   return s
 }
 
-func (s *ReportFlowP2pShareRatioServiceResponse) SetData(v []*ReportFlowP2pShareRatioServiceReportFlowP2pShareRatioServiceResponseData) *ReportFlowP2pShareRatioServiceResponse {
+func (s *ReportFlowP2pShareRatioServiceResponse) SetData(v []*ReportFlowP2pShareRatioServiceResponseData) *ReportFlowP2pShareRatioServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportFlowP2pShareRatioServiceReportFlowP2pShareRatioServiceResponseData struct     {
+type ReportFlowP2pShareRatioServiceResponseData struct     {
   // {"en":"Domain. If merge date of all domains will not return domain", "zh_CN":"域名,聚合全部域名数据不返回该字段"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  DetailList []*ReportFlowP2pShareRatioServiceReportFlowP2pShareRatioServiceResponseDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+  DetailList []*ReportFlowP2pShareRatioServiceResponseDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportFlowP2pShareRatioServiceReportFlowP2pShareRatioServiceResponseData) String() string {
+func (s ReportFlowP2pShareRatioServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowP2pShareRatioServiceReportFlowP2pShareRatioServiceResponseData) GoString() string {
+func (s ReportFlowP2pShareRatioServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowP2pShareRatioServiceReportFlowP2pShareRatioServiceResponseData) SetDomain(v string) *ReportFlowP2pShareRatioServiceReportFlowP2pShareRatioServiceResponseData {
+func (s *ReportFlowP2pShareRatioServiceResponseData) SetDomain(v string) *ReportFlowP2pShareRatioServiceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *ReportFlowP2pShareRatioServiceReportFlowP2pShareRatioServiceResponseData) SetDetailList(v []*ReportFlowP2pShareRatioServiceReportFlowP2pShareRatioServiceResponseDataDetailList) *ReportFlowP2pShareRatioServiceReportFlowP2pShareRatioServiceResponseData {
+func (s *ReportFlowP2pShareRatioServiceResponseData) SetDetailList(v []*ReportFlowP2pShareRatioServiceResponseDataDetailList) *ReportFlowP2pShareRatioServiceResponseData {
   s.DetailList = v
   return s
 }
 
-type ReportFlowP2pShareRatioServiceReportFlowP2pShareRatioServiceResponseDataDetailList struct     {
+type ReportFlowP2pShareRatioServiceResponseDataDetailList struct     {
   // {"en":"timestamp,Returns the timestamp between the start time and end time. Time format:  yyyy-MM-dd HH:mm", "zh_CN":"时间片,返回开始时间和结束时间包含的时间片。
   // 时间格式:yyyy-MM-dd HH:mm"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
@@ -6547,20 +6547,20 @@ type ReportFlowP2pShareRatioServiceReportFlowP2pShareRatioServiceResponseDataDet
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s ReportFlowP2pShareRatioServiceReportFlowP2pShareRatioServiceResponseDataDetailList) String() string {
+func (s ReportFlowP2pShareRatioServiceResponseDataDetailList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportFlowP2pShareRatioServiceReportFlowP2pShareRatioServiceResponseDataDetailList) GoString() string {
+func (s ReportFlowP2pShareRatioServiceResponseDataDetailList) GoString() string {
   return s.String()
 }
 
-func (s *ReportFlowP2pShareRatioServiceReportFlowP2pShareRatioServiceResponseDataDetailList) SetTimestamp(v string) *ReportFlowP2pShareRatioServiceReportFlowP2pShareRatioServiceResponseDataDetailList {
+func (s *ReportFlowP2pShareRatioServiceResponseDataDetailList) SetTimestamp(v string) *ReportFlowP2pShareRatioServiceResponseDataDetailList {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportFlowP2pShareRatioServiceReportFlowP2pShareRatioServiceResponseDataDetailList) SetValue(v string) *ReportFlowP2pShareRatioServiceReportFlowP2pShareRatioServiceResponseDataDetailList {
+func (s *ReportFlowP2pShareRatioServiceResponseDataDetailList) SetValue(v string) *ReportFlowP2pShareRatioServiceResponseDataDetailList {
   s.Value = &v
   return s
 }
@@ -6663,7 +6663,7 @@ type QueryDataTransferForAllDomainByteResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*QueryDataTransferForAllDomainByteQueryDataTransferForAllDomainByteResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*QueryDataTransferForAllDomainByteResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryDataTransferForAllDomainByteResponse) String() string {
@@ -6684,56 +6684,56 @@ func (s *QueryDataTransferForAllDomainByteResponse) SetMessage(v string) *QueryD
   return s
 }
 
-func (s *QueryDataTransferForAllDomainByteResponse) SetData(v []*QueryDataTransferForAllDomainByteQueryDataTransferForAllDomainByteResponseData) *QueryDataTransferForAllDomainByteResponse {
+func (s *QueryDataTransferForAllDomainByteResponse) SetData(v []*QueryDataTransferForAllDomainByteResponseData) *QueryDataTransferForAllDomainByteResponse {
   s.Data = v
   return s
 }
 
-type QueryDataTransferForAllDomainByteQueryDataTransferForAllDomainByteResponseData struct     {
+type QueryDataTransferForAllDomainByteResponseData struct     {
   // {"en":"flowSummary", "zh_CN":"总流量"}
   FlowSummary *string `json:"flowSummary,omitempty" xml:"flowSummary,omitempty" require:"true"`
-  FlowData []*QueryDataTransferForAllDomainByteQueryDataTransferForAllDomainByteResponseDataFlowData `json:"flowData,omitempty" xml:"flowData,omitempty" require:"true" type:"Repeated"`
+  FlowData []*QueryDataTransferForAllDomainByteResponseDataFlowData `json:"flowData,omitempty" xml:"flowData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryDataTransferForAllDomainByteQueryDataTransferForAllDomainByteResponseData) String() string {
+func (s QueryDataTransferForAllDomainByteResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDataTransferForAllDomainByteQueryDataTransferForAllDomainByteResponseData) GoString() string {
+func (s QueryDataTransferForAllDomainByteResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryDataTransferForAllDomainByteQueryDataTransferForAllDomainByteResponseData) SetFlowSummary(v string) *QueryDataTransferForAllDomainByteQueryDataTransferForAllDomainByteResponseData {
+func (s *QueryDataTransferForAllDomainByteResponseData) SetFlowSummary(v string) *QueryDataTransferForAllDomainByteResponseData {
   s.FlowSummary = &v
   return s
 }
 
-func (s *QueryDataTransferForAllDomainByteQueryDataTransferForAllDomainByteResponseData) SetFlowData(v []*QueryDataTransferForAllDomainByteQueryDataTransferForAllDomainByteResponseDataFlowData) *QueryDataTransferForAllDomainByteQueryDataTransferForAllDomainByteResponseData {
+func (s *QueryDataTransferForAllDomainByteResponseData) SetFlowData(v []*QueryDataTransferForAllDomainByteResponseDataFlowData) *QueryDataTransferForAllDomainByteResponseData {
   s.FlowData = v
   return s
 }
 
-type QueryDataTransferForAllDomainByteQueryDataTransferForAllDomainByteResponseDataFlowData struct     {
+type QueryDataTransferForAllDomainByteResponseDataFlowData struct     {
   // {"en":"timestamp", "zh_CN":"时间"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"flow", "zh_CN":"流量"}
   Flow *string `json:"flow,omitempty" xml:"flow,omitempty" require:"true"`
 }
 
-func (s QueryDataTransferForAllDomainByteQueryDataTransferForAllDomainByteResponseDataFlowData) String() string {
+func (s QueryDataTransferForAllDomainByteResponseDataFlowData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDataTransferForAllDomainByteQueryDataTransferForAllDomainByteResponseDataFlowData) GoString() string {
+func (s QueryDataTransferForAllDomainByteResponseDataFlowData) GoString() string {
   return s.String()
 }
 
-func (s *QueryDataTransferForAllDomainByteQueryDataTransferForAllDomainByteResponseDataFlowData) SetTimestamp(v string) *QueryDataTransferForAllDomainByteQueryDataTransferForAllDomainByteResponseDataFlowData {
+func (s *QueryDataTransferForAllDomainByteResponseDataFlowData) SetTimestamp(v string) *QueryDataTransferForAllDomainByteResponseDataFlowData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryDataTransferForAllDomainByteQueryDataTransferForAllDomainByteResponseDataFlowData) SetFlow(v string) *QueryDataTransferForAllDomainByteQueryDataTransferForAllDomainByteResponseDataFlowData {
+func (s *QueryDataTransferForAllDomainByteResponseDataFlowData) SetFlow(v string) *QueryDataTransferForAllDomainByteResponseDataFlowData {
   s.Flow = &v
   return s
 }
@@ -6868,7 +6868,7 @@ func (s *QueryTrafficBySpecificProtocolRequest) SetGroupBy(v []*string) *QueryTr
 
 type QueryTrafficBySpecificProtocolResponse struct {
   // {"en":"result", "zh_CN":"结果"}
-  Result []*QueryTrafficBySpecificProtocolQueryTrafficBySpecificProtocolResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryTrafficBySpecificProtocolResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryTrafficBySpecificProtocolResponse) String() string {
@@ -6879,56 +6879,56 @@ func (s QueryTrafficBySpecificProtocolResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryTrafficBySpecificProtocolResponse) SetResult(v []*QueryTrafficBySpecificProtocolQueryTrafficBySpecificProtocolResponseResult) *QueryTrafficBySpecificProtocolResponse {
+func (s *QueryTrafficBySpecificProtocolResponse) SetResult(v []*QueryTrafficBySpecificProtocolResponseResult) *QueryTrafficBySpecificProtocolResponse {
   s.Result = v
   return s
 }
 
-type QueryTrafficBySpecificProtocolQueryTrafficBySpecificProtocolResponseResult struct     {
+type QueryTrafficBySpecificProtocolResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  HttpsFlowData []*QueryTrafficBySpecificProtocolQueryTrafficBySpecificProtocolResponseResultHttpsFlowData `json:"httpsFlowData,omitempty" xml:"httpsFlowData,omitempty" require:"true" type:"Repeated"`
+  HttpsFlowData []*QueryTrafficBySpecificProtocolResponseResultHttpsFlowData `json:"httpsFlowData,omitempty" xml:"httpsFlowData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryTrafficBySpecificProtocolQueryTrafficBySpecificProtocolResponseResult) String() string {
+func (s QueryTrafficBySpecificProtocolResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryTrafficBySpecificProtocolQueryTrafficBySpecificProtocolResponseResult) GoString() string {
+func (s QueryTrafficBySpecificProtocolResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryTrafficBySpecificProtocolQueryTrafficBySpecificProtocolResponseResult) SetDomain(v string) *QueryTrafficBySpecificProtocolQueryTrafficBySpecificProtocolResponseResult {
+func (s *QueryTrafficBySpecificProtocolResponseResult) SetDomain(v string) *QueryTrafficBySpecificProtocolResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *QueryTrafficBySpecificProtocolQueryTrafficBySpecificProtocolResponseResult) SetHttpsFlowData(v []*QueryTrafficBySpecificProtocolQueryTrafficBySpecificProtocolResponseResultHttpsFlowData) *QueryTrafficBySpecificProtocolQueryTrafficBySpecificProtocolResponseResult {
+func (s *QueryTrafficBySpecificProtocolResponseResult) SetHttpsFlowData(v []*QueryTrafficBySpecificProtocolResponseResultHttpsFlowData) *QueryTrafficBySpecificProtocolResponseResult {
   s.HttpsFlowData = v
   return s
 }
 
-type QueryTrafficBySpecificProtocolQueryTrafficBySpecificProtocolResponseResultHttpsFlowData struct     {
+type QueryTrafficBySpecificProtocolResponseResultHttpsFlowData struct     {
   // {"en":"DateTime: the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 12:05 AM, and the last one is (yyyy-MM-dd+1) 00:00.", "zh_CN":"时间,格式为yyyy-MM-dd HH:mm;每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05,最后一个时间片是(yyyy-MM-dd+1)00:00。"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Traffic unit is MB and 2 digits  of decimals allowed", "zh_CN":"流量值,单位MB,保留2位小数"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryTrafficBySpecificProtocolQueryTrafficBySpecificProtocolResponseResultHttpsFlowData) String() string {
+func (s QueryTrafficBySpecificProtocolResponseResultHttpsFlowData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryTrafficBySpecificProtocolQueryTrafficBySpecificProtocolResponseResultHttpsFlowData) GoString() string {
+func (s QueryTrafficBySpecificProtocolResponseResultHttpsFlowData) GoString() string {
   return s.String()
 }
 
-func (s *QueryTrafficBySpecificProtocolQueryTrafficBySpecificProtocolResponseResultHttpsFlowData) SetTimestamp(v string) *QueryTrafficBySpecificProtocolQueryTrafficBySpecificProtocolResponseResultHttpsFlowData {
+func (s *QueryTrafficBySpecificProtocolResponseResultHttpsFlowData) SetTimestamp(v string) *QueryTrafficBySpecificProtocolResponseResultHttpsFlowData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryTrafficBySpecificProtocolQueryTrafficBySpecificProtocolResponseResultHttpsFlowData) SetValue(v string) *QueryTrafficBySpecificProtocolQueryTrafficBySpecificProtocolResponseResultHttpsFlowData {
+func (s *QueryTrafficBySpecificProtocolResponseResultHttpsFlowData) SetValue(v string) *QueryTrafficBySpecificProtocolResponseResultHttpsFlowData {
   s.Value = &v
   return s
 }
@@ -7006,7 +7006,7 @@ type QueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequest struct {
   // 1.可传递的域名和流名组数量上限默认为20组(可联系技术支持调整)；
   // 2.域名domain:一组域名和流名组中只能传递单个域名，且域名必须传递；
   // 3.流名stream:一组域名和流名组下(即单个域名下)可传递的流名数量上限默认为2000个(可联系技术支持调整)，流名未传递时默认查询域名下所有流名，但当域名下流名数量超过限制时不可查询(报错)。"}
-  DomainStream []*QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequestDomainStream `json:"domainStream,omitempty" xml:"domainStream,omitempty" require:"true" type:"Repeated"`
+  DomainStream []*QueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequestDomainStream `json:"domainStream,omitempty" xml:"domainStream,omitempty" require:"true" type:"Repeated"`
   // {"en":"data granularity
   // 1m: 1 min granularity, 5m: 5 min granularity
   // Default 5-minute granularity data query", "zh_CN":"数据粒度
@@ -7051,7 +7051,7 @@ func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequest) SetDateTo(
   return s
 }
 
-func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequest) SetDomainStream(v []*QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequestDomainStream) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequest {
+func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequest) SetDomainStream(v []*QueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequestDomainStream) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequest {
   s.DomainStream = v
   return s
 }
@@ -7081,7 +7081,7 @@ func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequest) SetIsRetur
   return s
 }
 
-type QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequestDomainStream struct     {
+type QueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequestDomainStream struct     {
   // {"en":"Domain:
   // 1. The maximum number of deliverable domain names is 200 by default
   // 2. Automatically filter out illegal domain names (pass illegal domain names, will be filtered out, the query results only return the data of legitimate domain names)", "zh_CN":"域名:
@@ -7095,20 +7095,20 @@ type QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTraf
   Stream []*string `json:"stream,omitempty" xml:"stream,omitempty" type:"Repeated"`
 }
 
-func (s QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequestDomainStream) String() string {
+func (s QueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequestDomainStream) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequestDomainStream) GoString() string {
+func (s QueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequestDomainStream) GoString() string {
   return s.String()
 }
 
-func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequestDomainStream) SetDomain(v string) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequestDomainStream {
+func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequestDomainStream) SetDomain(v string) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequestDomainStream {
   s.Domain = &v
   return s
 }
 
-func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequestDomainStream) SetStream(v []*string) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequestDomainStream {
+func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequestDomainStream) SetStream(v []*string) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainRequestDomainStream {
   s.Stream = v
   return s
 }
@@ -7119,7 +7119,7 @@ type QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponse struct {
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Detailed data on the results of the request", "zh_CN":"请求结果的详细数据"}
-  Data []*QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponse) String() string {
@@ -7140,36 +7140,36 @@ func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponse) SetMessag
   return s
 }
 
-func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponse) SetData(v []*QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseData) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponse {
+func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponse) SetData(v []*QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseData) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponse {
   s.Data = v
   return s
 }
 
-type QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseData struct     {
+type QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseData struct     {
   // {"en":"domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  DomainOfStreamList []*QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList `json:"domainOfStreamList,omitempty" xml:"domainOfStreamList,omitempty" require:"true" type:"Repeated"`
+  DomainOfStreamList []*QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList `json:"domainOfStreamList,omitempty" xml:"domainOfStreamList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseData) String() string {
+func (s QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseData) GoString() string {
+func (s QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseData) SetDomain(v string) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseData {
+func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseData) SetDomain(v string) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseData) SetDomainOfStreamList(v []*QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseData {
+func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseData) SetDomainOfStreamList(v []*QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseData {
   s.DomainOfStreamList = v
   return s
 }
 
-type QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList struct     {
+type QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList struct     {
   // {"en":"stream name", "zh_CN":"流名"}
   Stream *string `json:"stream,omitempty" xml:"stream,omitempty" require:"true"`
   // {"en":"aggregate flow
@@ -7188,38 +7188,38 @@ type QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTraf
   // 2.当入参dataType为bandwidth时，返回。
   // 3.仅返回带宽大于 0 的数据。"}
   BandwidthPeakValue *string `json:"bandwidthPeakValue,omitempty" xml:"bandwidthPeakValue,omitempty" require:"true"`
-  DetailList []*QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+  DetailList []*QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList) String() string {
+func (s QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList) GoString() string {
+func (s QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList) GoString() string {
   return s.String()
 }
 
-func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList) SetStream(v string) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList {
+func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList) SetStream(v string) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList {
   s.Stream = &v
   return s
 }
 
-func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList) SetTotalFlow(v string) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList {
+func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList) SetTotalFlow(v string) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList {
   s.TotalFlow = &v
   return s
 }
 
-func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList) SetBandwidthPeakValue(v string) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList {
+func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList) SetBandwidthPeakValue(v string) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList {
   s.BandwidthPeakValue = &v
   return s
 }
 
-func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList) SetDetailList(v []*QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList {
+func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList) SetDetailList(v []*QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamList {
   s.DetailList = v
   return s
 }
 
-type QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList struct     {
+type QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList struct     {
   // {"en":"time
   // 1. Each time slice data value represents the data value in the previous time granularity range. 
   // 2. The data granularity of the query is 5m, the format is yyyy-MM-dd HH:MM; Each time slice data value represents the data value in the previous time granularity range.", "zh_CN":"时间
@@ -7238,25 +7238,25 @@ type QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTraf
   OnlineUser *int `json:"onlineUser,omitempty" xml:"onlineUser,omitempty" require:"true"`
 }
 
-func (s QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList) String() string {
+func (s QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList) GoString() string {
+func (s QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList) GoString() string {
   return s.String()
 }
 
-func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList) SetTimestamp(v string) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList {
+func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList) SetTimestamp(v string) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList) SetValue(v string) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList {
+func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList) SetValue(v string) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList {
   s.Value = &v
   return s
 }
 
-func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList) SetOnlineUser(v int) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainQueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList {
+func (s *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList) SetOnlineUser(v int) *QueryMultipleStreamTrafficAndBandwidthUnderTheDomainResponseDataDomainOfStreamListDetailList {
   s.OnlineUser = &v
   return s
 }
@@ -7430,7 +7430,7 @@ type QueryISPProvinceHitRateResponse struct {
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Detailed data on the results of the request", "zh_CN":"请求结果的详细数据"}
-  Data []*QueryISPProvinceHitRateQueryISPProvinceHitRateResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*QueryISPProvinceHitRateResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryISPProvinceHitRateResponse) String() string {
@@ -7451,36 +7451,36 @@ func (s *QueryISPProvinceHitRateResponse) SetMessage(v string) *QueryISPProvince
   return s
 }
 
-func (s *QueryISPProvinceHitRateResponse) SetData(v []*QueryISPProvinceHitRateQueryISPProvinceHitRateResponseData) *QueryISPProvinceHitRateResponse {
+func (s *QueryISPProvinceHitRateResponse) SetData(v []*QueryISPProvinceHitRateResponseData) *QueryISPProvinceHitRateResponse {
   s.Data = v
   return s
 }
 
-type QueryISPProvinceHitRateQueryISPProvinceHitRateResponseData struct     {
+type QueryISPProvinceHitRateResponseData struct     {
   // {"en":"domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  DetailList []*QueryISPProvinceHitRateQueryISPProvinceHitRateResponseDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+  DetailList []*QueryISPProvinceHitRateResponseDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryISPProvinceHitRateQueryISPProvinceHitRateResponseData) String() string {
+func (s QueryISPProvinceHitRateResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryISPProvinceHitRateQueryISPProvinceHitRateResponseData) GoString() string {
+func (s QueryISPProvinceHitRateResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryISPProvinceHitRateQueryISPProvinceHitRateResponseData) SetDomain(v string) *QueryISPProvinceHitRateQueryISPProvinceHitRateResponseData {
+func (s *QueryISPProvinceHitRateResponseData) SetDomain(v string) *QueryISPProvinceHitRateResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *QueryISPProvinceHitRateQueryISPProvinceHitRateResponseData) SetDetailList(v []*QueryISPProvinceHitRateQueryISPProvinceHitRateResponseDataDetailList) *QueryISPProvinceHitRateQueryISPProvinceHitRateResponseData {
+func (s *QueryISPProvinceHitRateResponseData) SetDetailList(v []*QueryISPProvinceHitRateResponseDataDetailList) *QueryISPProvinceHitRateResponseData {
   s.DetailList = v
   return s
 }
 
-type QueryISPProvinceHitRateQueryISPProvinceHitRateResponseDataDetailList struct     {
+type QueryISPProvinceHitRateResponseDataDetailList struct     {
   // {"en":"time, in yyyy-MM-dd HH:MM", "zh_CN":"时间，格式为yyyy-MM-dd HH:mm"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Hit data:
@@ -7493,25 +7493,25 @@ type QueryISPProvinceHitRateQueryISPProvinceHitRateResponseDataDetailList struct
   HitRate *string `json:"hitRate,omitempty" xml:"hitRate,omitempty" require:"true"`
 }
 
-func (s QueryISPProvinceHitRateQueryISPProvinceHitRateResponseDataDetailList) String() string {
+func (s QueryISPProvinceHitRateResponseDataDetailList) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryISPProvinceHitRateQueryISPProvinceHitRateResponseDataDetailList) GoString() string {
+func (s QueryISPProvinceHitRateResponseDataDetailList) GoString() string {
   return s.String()
 }
 
-func (s *QueryISPProvinceHitRateQueryISPProvinceHitRateResponseDataDetailList) SetTimestamp(v string) *QueryISPProvinceHitRateQueryISPProvinceHitRateResponseDataDetailList {
+func (s *QueryISPProvinceHitRateResponseDataDetailList) SetTimestamp(v string) *QueryISPProvinceHitRateResponseDataDetailList {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryISPProvinceHitRateQueryISPProvinceHitRateResponseDataDetailList) SetHitValue(v string) *QueryISPProvinceHitRateQueryISPProvinceHitRateResponseDataDetailList {
+func (s *QueryISPProvinceHitRateResponseDataDetailList) SetHitValue(v string) *QueryISPProvinceHitRateResponseDataDetailList {
   s.HitValue = &v
   return s
 }
 
-func (s *QueryISPProvinceHitRateQueryISPProvinceHitRateResponseDataDetailList) SetHitRate(v string) *QueryISPProvinceHitRateQueryISPProvinceHitRateResponseDataDetailList {
+func (s *QueryISPProvinceHitRateResponseDataDetailList) SetHitRate(v string) *QueryISPProvinceHitRateResponseDataDetailList {
   s.HitRate = &v
   return s
 }

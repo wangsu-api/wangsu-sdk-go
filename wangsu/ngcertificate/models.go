@@ -75,19 +75,19 @@ type GetACertificateResponse struct {
   // {"en" : "A description of the certificate.", "zh_CN": "证书描述。"}
   Description *string `json:"description,omitempty" xml:"description,omitempty" require:"true"`
   // {"en" : "Describes the versions of the certificate that have been created. You can obtain further details about each version by calling the Query a certificate version's details API.", "zh_CN": "证书版本列表。您可以通过调用'查询证书版本信息'接口来获取每个版本的更多信息。"}
-  Versions []*GetACertificateGetACertificateResponseVersions `json:"versions,omitempty" xml:"versions,omitempty" require:"true" type:"Repeated"`
+  Versions []*GetACertificateResponseVersions `json:"versions,omitempty" xml:"versions,omitempty" require:"true" type:"Repeated"`
   // {"en" : "Enum: Off,LE 
   // A value of 'LE' indicates that auto renewal via Let's Encrypt (https://letsencrypt.org/docs/challenge-types/) is enabled.", "zh_CN": "取值范围: Off,LE 
   // 是否自动更新。'LE'值表示开启 Let's Encrypt 自动更新。"}
   AutoRenew *string `json:"autoRenew,omitempty" xml:"autoRenew,omitempty" require:"true"`
   // {"en" : "Indicates who is using the certificate in production.", "zh_CN": "证书在生产环境中的使用情况。"}
-  UsageInProduction []*GetACertificateGetACertificateResponseUsageInProduction `json:"usageInProduction,omitempty" xml:"usageInProduction,omitempty" require:"true" type:"Repeated"`
+  UsageInProduction []*GetACertificateResponseUsageInProduction `json:"usageInProduction,omitempty" xml:"usageInProduction,omitempty" require:"true" type:"Repeated"`
   // {"en" : "Range: >= 1 
   // Indicates the version of the certificate deployed to staging.", "zh_CN": "取值范围: >= 1 
   // 表示部署到演练环境的证书版本。"}
   VersionInStaging *int `json:"versionInStaging,omitempty" xml:"versionInStaging,omitempty" require:"true"`
   // {"en" : "Indicates the customers using the certificate in staging.", "zh_CN": "证书在演练环境中的使用情况。"}
-  UsageInStaging []*GetACertificateGetACertificateResponseUsageInStaging `json:"usageInStaging,omitempty" xml:"usageInStaging,omitempty" require:"true" type:"Repeated"`
+  UsageInStaging []*GetACertificateResponseUsageInStaging `json:"usageInStaging,omitempty" xml:"usageInStaging,omitempty" require:"true" type:"Repeated"`
   // {"en" : "Range: >= 1 
   // Indicates the version of the certificate deployed to production.", "zh_CN": "取值范围: >= 1 
   // 表示部署到生产环境的证书版本。"}
@@ -119,7 +119,7 @@ func (s *GetACertificateResponse) SetDescription(v string) *GetACertificateRespo
   return s
 }
 
-func (s *GetACertificateResponse) SetVersions(v []*GetACertificateGetACertificateResponseVersions) *GetACertificateResponse {
+func (s *GetACertificateResponse) SetVersions(v []*GetACertificateResponseVersions) *GetACertificateResponse {
   s.Versions = v
   return s
 }
@@ -129,7 +129,7 @@ func (s *GetACertificateResponse) SetAutoRenew(v string) *GetACertificateRespons
   return s
 }
 
-func (s *GetACertificateResponse) SetUsageInProduction(v []*GetACertificateGetACertificateResponseUsageInProduction) *GetACertificateResponse {
+func (s *GetACertificateResponse) SetUsageInProduction(v []*GetACertificateResponseUsageInProduction) *GetACertificateResponse {
   s.UsageInProduction = v
   return s
 }
@@ -139,7 +139,7 @@ func (s *GetACertificateResponse) SetVersionInStaging(v int) *GetACertificateRes
   return s
 }
 
-func (s *GetACertificateResponse) SetUsageInStaging(v []*GetACertificateGetACertificateResponseUsageInStaging) *GetACertificateResponse {
+func (s *GetACertificateResponse) SetUsageInStaging(v []*GetACertificateResponseUsageInStaging) *GetACertificateResponse {
   s.UsageInStaging = v
   return s
 }
@@ -154,7 +154,7 @@ func (s *GetACertificateResponse) SetForceRenew(v bool) *GetACertificateResponse
   return s
 }
 
-type GetACertificateGetACertificateResponseVersions struct     {
+type GetACertificateResponseVersions struct     {
   // {"en" : "Range: >= 1 
   // Indicates the version number.", "zh_CN": "取值范围: >= 1 
   // 证书的版本号。"}
@@ -174,45 +174,45 @@ type GetACertificateGetACertificateResponseVersions struct     {
   Comments *string `json:"comments,omitempty" xml:"comments,omitempty"`
 }
 
-func (s GetACertificateGetACertificateResponseVersions) String() string {
+func (s GetACertificateResponseVersions) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetACertificateGetACertificateResponseVersions) GoString() string {
+func (s GetACertificateResponseVersions) GoString() string {
   return s.String()
 }
 
-func (s *GetACertificateGetACertificateResponseVersions) SetVersion(v int) *GetACertificateGetACertificateResponseVersions {
+func (s *GetACertificateResponseVersions) SetVersion(v int) *GetACertificateResponseVersions {
   s.Version = &v
   return s
 }
 
-func (s *GetACertificateGetACertificateResponseVersions) SetType(v string) *GetACertificateGetACertificateResponseVersions {
+func (s *GetACertificateResponseVersions) SetType(v string) *GetACertificateResponseVersions {
   s.Type = &v
   return s
 }
 
-func (s *GetACertificateGetACertificateResponseVersions) SetExpirationTime(v string) *GetACertificateGetACertificateResponseVersions {
+func (s *GetACertificateResponseVersions) SetExpirationTime(v string) *GetACertificateResponseVersions {
   s.ExpirationTime = &v
   return s
 }
 
-func (s *GetACertificateGetACertificateResponseVersions) SetCreationTime(v string) *GetACertificateGetACertificateResponseVersions {
+func (s *GetACertificateResponseVersions) SetCreationTime(v string) *GetACertificateResponseVersions {
   s.CreationTime = &v
   return s
 }
 
-func (s *GetACertificateGetACertificateResponseVersions) SetFingerprint(v string) *GetACertificateGetACertificateResponseVersions {
+func (s *GetACertificateResponseVersions) SetFingerprint(v string) *GetACertificateResponseVersions {
   s.Fingerprint = &v
   return s
 }
 
-func (s *GetACertificateGetACertificateResponseVersions) SetComments(v string) *GetACertificateGetACertificateResponseVersions {
+func (s *GetACertificateResponseVersions) SetComments(v string) *GetACertificateResponseVersions {
   s.Comments = &v
   return s
 }
 
-type GetACertificateGetACertificateResponseUsageInProduction struct     {
+type GetACertificateResponseUsageInProduction struct     {
   // {"en" : "ID of the property using the certificate", "zh_CN": "使用该证书的加速项目ID。"}
   PropertyId *string `json:"propertyId,omitempty" xml:"propertyId,omitempty"`
   // {"en" : "List of hostnames using the certificate.", "zh_CN": "使用该证书的加速域名列表。"}
@@ -221,30 +221,30 @@ type GetACertificateGetACertificateResponseUsageInProduction struct     {
   Origins []*string `json:"origins,omitempty" xml:"origins,omitempty" type:"Repeated"`
 }
 
-func (s GetACertificateGetACertificateResponseUsageInProduction) String() string {
+func (s GetACertificateResponseUsageInProduction) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetACertificateGetACertificateResponseUsageInProduction) GoString() string {
+func (s GetACertificateResponseUsageInProduction) GoString() string {
   return s.String()
 }
 
-func (s *GetACertificateGetACertificateResponseUsageInProduction) SetPropertyId(v string) *GetACertificateGetACertificateResponseUsageInProduction {
+func (s *GetACertificateResponseUsageInProduction) SetPropertyId(v string) *GetACertificateResponseUsageInProduction {
   s.PropertyId = &v
   return s
 }
 
-func (s *GetACertificateGetACertificateResponseUsageInProduction) SetHostnames(v []*string) *GetACertificateGetACertificateResponseUsageInProduction {
+func (s *GetACertificateResponseUsageInProduction) SetHostnames(v []*string) *GetACertificateResponseUsageInProduction {
   s.Hostnames = v
   return s
 }
 
-func (s *GetACertificateGetACertificateResponseUsageInProduction) SetOrigins(v []*string) *GetACertificateGetACertificateResponseUsageInProduction {
+func (s *GetACertificateResponseUsageInProduction) SetOrigins(v []*string) *GetACertificateResponseUsageInProduction {
   s.Origins = v
   return s
 }
 
-type GetACertificateGetACertificateResponseUsageInStaging struct     {
+type GetACertificateResponseUsageInStaging struct     {
   // {"en" : "ID of the property using the certificate.", "zh_CN": "使用该证书的加速项目的ID。"}
   PropertyId *string `json:"propertyId,omitempty" xml:"propertyId,omitempty"`
   // {"en" : "List of hostnames using the certificate.", "zh_CN": "使用该证书的加速域名列表。"}
@@ -253,25 +253,25 @@ type GetACertificateGetACertificateResponseUsageInStaging struct     {
   Origins []*string `json:"origins,omitempty" xml:"origins,omitempty" type:"Repeated"`
 }
 
-func (s GetACertificateGetACertificateResponseUsageInStaging) String() string {
+func (s GetACertificateResponseUsageInStaging) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetACertificateGetACertificateResponseUsageInStaging) GoString() string {
+func (s GetACertificateResponseUsageInStaging) GoString() string {
   return s.String()
 }
 
-func (s *GetACertificateGetACertificateResponseUsageInStaging) SetPropertyId(v string) *GetACertificateGetACertificateResponseUsageInStaging {
+func (s *GetACertificateResponseUsageInStaging) SetPropertyId(v string) *GetACertificateResponseUsageInStaging {
   s.PropertyId = &v
   return s
 }
 
-func (s *GetACertificateGetACertificateResponseUsageInStaging) SetHostnames(v []*string) *GetACertificateGetACertificateResponseUsageInStaging {
+func (s *GetACertificateResponseUsageInStaging) SetHostnames(v []*string) *GetACertificateResponseUsageInStaging {
   s.Hostnames = v
   return s
 }
 
-func (s *GetACertificateGetACertificateResponseUsageInStaging) SetOrigins(v []*string) *GetACertificateGetACertificateResponseUsageInStaging {
+func (s *GetACertificateResponseUsageInStaging) SetOrigins(v []*string) *GetACertificateResponseUsageInStaging {
   s.Origins = v
   return s
 }
@@ -360,7 +360,7 @@ type DownloadTheCsrResponse struct {
   // 证书的最新版本。"}
   LatestVersion *int `json:"latestVersion,omitempty" xml:"latestVersion,omitempty" require:"true"`
   // {"en" : "This field is only returned if the dcv query parameter is specified.", "zh_CN": "仅当指定了dcv 查询参数时才会返回此字段。"}
-  DcvFile *DownloadTheCsrDownloadTheCsrResponseDcvFile `json:"dcvFile,omitempty" xml:"dcvFile,omitempty" require:"true" type:"Struct"`
+  DcvFile *DownloadTheCsrResponseDcvFile `json:"dcvFile,omitempty" xml:"dcvFile,omitempty" require:"true" type:"Struct"`
 }
 
 func (s DownloadTheCsrResponse) String() string {
@@ -386,12 +386,12 @@ func (s *DownloadTheCsrResponse) SetLatestVersion(v int) *DownloadTheCsrResponse
   return s
 }
 
-func (s *DownloadTheCsrResponse) SetDcvFile(v *DownloadTheCsrDownloadTheCsrResponseDcvFile) *DownloadTheCsrResponse {
+func (s *DownloadTheCsrResponse) SetDcvFile(v *DownloadTheCsrResponseDcvFile) *DownloadTheCsrResponse {
   s.DcvFile = v
   return s
 }
 
-type DownloadTheCsrDownloadTheCsrResponseDcvFile struct {
+type DownloadTheCsrResponseDcvFile struct {
   // {"en" : "A URI that is accessible on your hostnames using the certificate. The file's content will consist of a SHA-256 hash and the domain sectigo.com. Example:
   // 
   // <pre>
@@ -408,20 +408,20 @@ type DownloadTheCsrDownloadTheCsrResponseDcvFile struct {
   ExpirationTime *string `json:"expirationTime,omitempty" xml:"expirationTime,omitempty" require:"true"`
 }
 
-func (s DownloadTheCsrDownloadTheCsrResponseDcvFile) String() string {
+func (s DownloadTheCsrResponseDcvFile) String() string {
   return tea.Prettify(s)
 }
 
-func (s DownloadTheCsrDownloadTheCsrResponseDcvFile) GoString() string {
+func (s DownloadTheCsrResponseDcvFile) GoString() string {
   return s.String()
 }
 
-func (s *DownloadTheCsrDownloadTheCsrResponseDcvFile) SetUri(v string) *DownloadTheCsrDownloadTheCsrResponseDcvFile {
+func (s *DownloadTheCsrResponseDcvFile) SetUri(v string) *DownloadTheCsrResponseDcvFile {
   s.Uri = &v
   return s
 }
 
-func (s *DownloadTheCsrDownloadTheCsrResponseDcvFile) SetExpirationTime(v string) *DownloadTheCsrDownloadTheCsrResponseDcvFile {
+func (s *DownloadTheCsrResponseDcvFile) SetExpirationTime(v string) *DownloadTheCsrResponseDcvFile {
   s.ExpirationTime = &v
   return s
 }
@@ -536,7 +536,7 @@ type GetACertificateVersionsDetailsResponse struct {
   // "}
   SubjectAlternativeNames []*string `json:"subjectAlternativeNames,omitempty" xml:"subjectAlternativeNames,omitempty" require:"true" type:"Repeated"`
   // {"en" : "Describes the certificate chain.", "zh_CN": "链证书。"}
-  ChainCertificates []*GetACertificateVersionsDetailsGetACertificateVersionsDetailsResponseChainCertificates `json:"chainCertificates,omitempty" xml:"chainCertificates,omitempty" require:"true" type:"Repeated"`
+  ChainCertificates []*GetACertificateVersionsDetailsResponseChainCertificates `json:"chainCertificates,omitempty" xml:"chainCertificates,omitempty" require:"true" type:"Repeated"`
   // {"en" : "Issuer of the certificate.", "zh_CN": "证书的颁发者。"}
   Issuer *string `json:"issuer,omitempty" xml:"issuer,omitempty" require:"true"`
 }
@@ -614,7 +614,7 @@ func (s *GetACertificateVersionsDetailsResponse) SetSubjectAlternativeNames(v []
   return s
 }
 
-func (s *GetACertificateVersionsDetailsResponse) SetChainCertificates(v []*GetACertificateVersionsDetailsGetACertificateVersionsDetailsResponseChainCertificates) *GetACertificateVersionsDetailsResponse {
+func (s *GetACertificateVersionsDetailsResponse) SetChainCertificates(v []*GetACertificateVersionsDetailsResponseChainCertificates) *GetACertificateVersionsDetailsResponse {
   s.ChainCertificates = v
   return s
 }
@@ -624,7 +624,7 @@ func (s *GetACertificateVersionsDetailsResponse) SetIssuer(v string) *GetACertif
   return s
 }
 
-type GetACertificateVersionsDetailsGetACertificateVersionsDetailsResponseChainCertificates struct     {
+type GetACertificateVersionsDetailsResponseChainCertificates struct     {
   // {"en" : "Subject of the certificate.", "zh_CN": "证书主体。"}
   Subject *string `json:"subject,omitempty" xml:"subject,omitempty"`
   // {"en" : "RFC 3339 format date indicating when the certificate expires.", "zh_CN": "RFC3339格式的日期，表示证书的过期时间。"}
@@ -635,30 +635,30 @@ type GetACertificateVersionsDetailsGetACertificateVersionsDetailsResponseChainCe
   Issuer *string `json:"issuer,omitempty" xml:"issuer,omitempty"`
 }
 
-func (s GetACertificateVersionsDetailsGetACertificateVersionsDetailsResponseChainCertificates) String() string {
+func (s GetACertificateVersionsDetailsResponseChainCertificates) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetACertificateVersionsDetailsGetACertificateVersionsDetailsResponseChainCertificates) GoString() string {
+func (s GetACertificateVersionsDetailsResponseChainCertificates) GoString() string {
   return s.String()
 }
 
-func (s *GetACertificateVersionsDetailsGetACertificateVersionsDetailsResponseChainCertificates) SetSubject(v string) *GetACertificateVersionsDetailsGetACertificateVersionsDetailsResponseChainCertificates {
+func (s *GetACertificateVersionsDetailsResponseChainCertificates) SetSubject(v string) *GetACertificateVersionsDetailsResponseChainCertificates {
   s.Subject = &v
   return s
 }
 
-func (s *GetACertificateVersionsDetailsGetACertificateVersionsDetailsResponseChainCertificates) SetExpirationTime(v string) *GetACertificateVersionsDetailsGetACertificateVersionsDetailsResponseChainCertificates {
+func (s *GetACertificateVersionsDetailsResponseChainCertificates) SetExpirationTime(v string) *GetACertificateVersionsDetailsResponseChainCertificates {
   s.ExpirationTime = &v
   return s
 }
 
-func (s *GetACertificateVersionsDetailsGetACertificateVersionsDetailsResponseChainCertificates) SetSignatureAlgo(v string) *GetACertificateVersionsDetailsGetACertificateVersionsDetailsResponseChainCertificates {
+func (s *GetACertificateVersionsDetailsResponseChainCertificates) SetSignatureAlgo(v string) *GetACertificateVersionsDetailsResponseChainCertificates {
   s.SignatureAlgo = &v
   return s
 }
 
-func (s *GetACertificateVersionsDetailsGetACertificateVersionsDetailsResponseChainCertificates) SetIssuer(v string) *GetACertificateVersionsDetailsGetACertificateVersionsDetailsResponseChainCertificates {
+func (s *GetACertificateVersionsDetailsResponseChainCertificates) SetIssuer(v string) *GetACertificateVersionsDetailsResponseChainCertificates {
   s.Issuer = &v
   return s
 }
@@ -786,7 +786,7 @@ type CreateACertificateRequest struct {
   // 是否开启证书自动更新。当值为'LE'时，我们将会在证书即将到期时通过Let's Encrypt自动更新您的证书。"}
   AutoRenew *string `json:"autoRenew,omitempty" xml:"autoRenew,omitempty"`
   // {"en" : "This object is used to specify the initial version of the certificate.", "zh_CN": "证书的第一个版本。"}
-  NewVersion *CreateACertificateCreateACertificateRequestNewVersion `json:"newVersion,omitempty" xml:"newVersion,omitempty" type:"Struct"`
+  NewVersion *CreateACertificateRequestNewVersion `json:"newVersion,omitempty" xml:"newVersion,omitempty" type:"Struct"`
   // {"en" : "Default: False 
   // A value of true requests the certificate to be auto-renewed as soon as possible instead of waiting for the certificate to expire in 15 days. The value will be set to false after a successful renewal.", "zh_CN": "默认值: False 
   // 是否强制更新。当值为true时表示要求尽快自动更新证书，而不是等待证书在 15 天后过期。 
@@ -817,7 +817,7 @@ func (s *CreateACertificateRequest) SetAutoRenew(v string) *CreateACertificateRe
   return s
 }
 
-func (s *CreateACertificateRequest) SetNewVersion(v *CreateACertificateCreateACertificateRequestNewVersion) *CreateACertificateRequest {
+func (s *CreateACertificateRequest) SetNewVersion(v *CreateACertificateRequestNewVersion) *CreateACertificateRequest {
   s.NewVersion = v
   return s
 }
@@ -827,7 +827,7 @@ func (s *CreateACertificateRequest) SetForceRenew(v bool) *CreateACertificateReq
   return s
 }
 
-type CreateACertificateCreateACertificateRequestNewVersion struct {
+type CreateACertificateRequestNewVersion struct {
   // {"en" : "Comments about the certificate version.", "zh_CN": "证书版本的描述。"}
   Comments *string `json:"comments,omitempty" xml:"comments,omitempty"`
   // {"en" : "The value must be either the private key in PEM format and encrypted with the API key and timestamp OR the literal string 'RSA2048' or 'ECC256' if you opt to generate a self-signed certificate. The key must be encrypted with AES-128-CBC and base64-encoded. This helps protect your key when you upload it to CDN Pro.", "zh_CN": "用于指定证书私钥，必须是PEM格式的私钥。如果您选择生成自签名证书，则此处的值应为'RSA2048'或'ECC256'。请使用您API账号的密钥和时间戳对私钥进行加密再上传。请使用AES-128-CBC加密算法，并用base64编码。当您将私钥上传到CDN Pro时，这种加密方式可以保护您的私钥。"}
@@ -837,43 +837,43 @@ type CreateACertificateCreateACertificateRequestNewVersion struct {
   // {"en" : "The chain certificate in PEM format.", "zh_CN": "用于指定链证书。必须是PEM格式"}
   ChainCert *string `json:"chainCert,omitempty" xml:"chainCert,omitempty"`
   // {"en" : "Information submitted when generating a self-signed certificate.", "zh_CN": "当您选择生成自签名证书时，需提交以下信息。"}
-  IdentificationInfo *CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo `json:"identificationInfo,omitempty" xml:"identificationInfo,omitempty" type:"Struct"`
+  IdentificationInfo *CreateACertificateRequestNewVersionIdentificationInfo `json:"identificationInfo,omitempty" xml:"identificationInfo,omitempty" type:"Struct"`
 }
 
-func (s CreateACertificateCreateACertificateRequestNewVersion) String() string {
+func (s CreateACertificateRequestNewVersion) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateACertificateCreateACertificateRequestNewVersion) GoString() string {
+func (s CreateACertificateRequestNewVersion) GoString() string {
   return s.String()
 }
 
-func (s *CreateACertificateCreateACertificateRequestNewVersion) SetComments(v string) *CreateACertificateCreateACertificateRequestNewVersion {
+func (s *CreateACertificateRequestNewVersion) SetComments(v string) *CreateACertificateRequestNewVersion {
   s.Comments = &v
   return s
 }
 
-func (s *CreateACertificateCreateACertificateRequestNewVersion) SetPrivateKey(v string) *CreateACertificateCreateACertificateRequestNewVersion {
+func (s *CreateACertificateRequestNewVersion) SetPrivateKey(v string) *CreateACertificateRequestNewVersion {
   s.PrivateKey = &v
   return s
 }
 
-func (s *CreateACertificateCreateACertificateRequestNewVersion) SetCertificate(v string) *CreateACertificateCreateACertificateRequestNewVersion {
+func (s *CreateACertificateRequestNewVersion) SetCertificate(v string) *CreateACertificateRequestNewVersion {
   s.Certificate = &v
   return s
 }
 
-func (s *CreateACertificateCreateACertificateRequestNewVersion) SetChainCert(v string) *CreateACertificateCreateACertificateRequestNewVersion {
+func (s *CreateACertificateRequestNewVersion) SetChainCert(v string) *CreateACertificateRequestNewVersion {
   s.ChainCert = &v
   return s
 }
 
-func (s *CreateACertificateCreateACertificateRequestNewVersion) SetIdentificationInfo(v *CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo) *CreateACertificateCreateACertificateRequestNewVersion {
+func (s *CreateACertificateRequestNewVersion) SetIdentificationInfo(v *CreateACertificateRequestNewVersionIdentificationInfo) *CreateACertificateRequestNewVersion {
   s.IdentificationInfo = v
   return s
 }
 
-type CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo struct {
+type CreateACertificateRequestNewVersionIdentificationInfo struct {
   // {"en" : "Range: [ 2 .. 2 ] characters 
   // An ISO-3166 country code.", "zh_CN": "取值范围: [ 2 .. 2 ] 字符 
   // ISO-3166国家代码。"}
@@ -895,50 +895,50 @@ type CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo str
   SubjectAlternativeNames []*string `json:"subjectAlternativeNames,omitempty" xml:"subjectAlternativeNames,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo) String() string {
+func (s CreateACertificateRequestNewVersionIdentificationInfo) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo) GoString() string {
+func (s CreateACertificateRequestNewVersionIdentificationInfo) GoString() string {
   return s.String()
 }
 
-func (s *CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo) SetCountry(v string) *CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo {
+func (s *CreateACertificateRequestNewVersionIdentificationInfo) SetCountry(v string) *CreateACertificateRequestNewVersionIdentificationInfo {
   s.Country = &v
   return s
 }
 
-func (s *CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo) SetState(v string) *CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo {
+func (s *CreateACertificateRequestNewVersionIdentificationInfo) SetState(v string) *CreateACertificateRequestNewVersionIdentificationInfo {
   s.State = &v
   return s
 }
 
-func (s *CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo) SetCity(v string) *CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo {
+func (s *CreateACertificateRequestNewVersionIdentificationInfo) SetCity(v string) *CreateACertificateRequestNewVersionIdentificationInfo {
   s.City = &v
   return s
 }
 
-func (s *CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo) SetCompany(v string) *CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo {
+func (s *CreateACertificateRequestNewVersionIdentificationInfo) SetCompany(v string) *CreateACertificateRequestNewVersionIdentificationInfo {
   s.Company = &v
   return s
 }
 
-func (s *CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo) SetDepartment(v string) *CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo {
+func (s *CreateACertificateRequestNewVersionIdentificationInfo) SetDepartment(v string) *CreateACertificateRequestNewVersionIdentificationInfo {
   s.Department = &v
   return s
 }
 
-func (s *CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo) SetCommonName(v string) *CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo {
+func (s *CreateACertificateRequestNewVersionIdentificationInfo) SetCommonName(v string) *CreateACertificateRequestNewVersionIdentificationInfo {
   s.CommonName = &v
   return s
 }
 
-func (s *CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo) SetEmail(v string) *CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo {
+func (s *CreateACertificateRequestNewVersionIdentificationInfo) SetEmail(v string) *CreateACertificateRequestNewVersionIdentificationInfo {
   s.Email = &v
   return s
 }
 
-func (s *CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo) SetSubjectAlternativeNames(v []*string) *CreateACertificateCreateACertificateRequestNewVersionIdentificationInfo {
+func (s *CreateACertificateRequestNewVersionIdentificationInfo) SetSubjectAlternativeNames(v []*string) *CreateACertificateRequestNewVersionIdentificationInfo {
   s.SubjectAlternativeNames = v
   return s
 }
@@ -1025,7 +1025,7 @@ type UpdateACertificateRequest struct {
   // 是否开启证书自动更新。当值为'LE'时，我们将会在证书即将到期时通过Let's Encrypt自动更新您的证书。"}
   AutoRenew *string `json:"autoRenew,omitempty" xml:"autoRenew,omitempty"`
   // {"en" : "If this field is present, a new version of the certificate will be created. If the identificationInfo field is not provided, then the information will be copied from the latest version of the certificate.", "zh_CN": "如果该字段存在，则将创建一个新的证书版本。如果没有提供identiationinfo字段，则相关信息将从证书的最新版本中复制。"}
-  NewVersion *UpdateACertificateUpdateACertificateRequestNewVersion `json:"newVersion,omitempty" xml:"newVersion,omitempty" type:"Struct"`
+  NewVersion *UpdateACertificateRequestNewVersion `json:"newVersion,omitempty" xml:"newVersion,omitempty" type:"Struct"`
   // {"en" : "Default: False 
   // A value of true requests the certificate to be auto-renewed as soon as possible instead of waiting for the certificate to expire in 15 days. The value will be set to false after a successful renewal.", "zh_CN": "默认值: False 
   // 是否强制更新。当值为true时表示要求尽快自动更新证书，而不是等待证书在 15 天后过期。 证书成功更新后，该值将设置为false。"}
@@ -1055,7 +1055,7 @@ func (s *UpdateACertificateRequest) SetAutoRenew(v string) *UpdateACertificateRe
   return s
 }
 
-func (s *UpdateACertificateRequest) SetNewVersion(v *UpdateACertificateUpdateACertificateRequestNewVersion) *UpdateACertificateRequest {
+func (s *UpdateACertificateRequest) SetNewVersion(v *UpdateACertificateRequestNewVersion) *UpdateACertificateRequest {
   s.NewVersion = v
   return s
 }
@@ -1065,7 +1065,7 @@ func (s *UpdateACertificateRequest) SetForceRenew(v bool) *UpdateACertificateReq
   return s
 }
 
-type UpdateACertificateUpdateACertificateRequestNewVersion struct {
+type UpdateACertificateRequestNewVersion struct {
   // {"en" : "If not present, the value will be copied from the latest version of the certificate. Please refer to the description of the privateKey field in the Create a certificate API for details about the format.", "zh_CN": "如果未指定该字段，则将从证书的最新版本中复制。 具体格式请参考'创建证书'接口中privateKey字段的说明。"}
   PrivateKey *string `json:"privateKey,omitempty" xml:"privateKey,omitempty"`
   // {"en" : "If not present, the value will be copied from the latest version of the certificate. Please refer to the description of the certificate field in the Create a certificate API for details about the format.", "zh_CN": "如果未指定该字段，则将从证书的最新版本中复制。 具体格式请参考'创建证书'接口中certificate字段的说明。"}
@@ -1073,38 +1073,38 @@ type UpdateACertificateUpdateACertificateRequestNewVersion struct {
   // {"en" : "This field must be filled in if the privateKey and certificate fields are both omitted. In this case, only the chain certificate will be updated. The chain certificate must be in PEM format.", "zh_CN": "当privateKey和certificate字段都未指定时，该字段必须填写。在这种情况下，只有链证书将被更新。链证书的格式必须为PEM。"}
   ChainCert *string `json:"chainCert,omitempty" xml:"chainCert,omitempty"`
   // {"en" : "Information submitted when generating a self-signed certificate.", "zh_CN": "生成自签名证书时提交的信息。"}
-  IdentificationInfo *UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo `json:"identificationInfo,omitempty" xml:"identificationInfo,omitempty" type:"Struct"`
+  IdentificationInfo *UpdateACertificateRequestNewVersionIdentificationInfo `json:"identificationInfo,omitempty" xml:"identificationInfo,omitempty" type:"Struct"`
 }
 
-func (s UpdateACertificateUpdateACertificateRequestNewVersion) String() string {
+func (s UpdateACertificateRequestNewVersion) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateACertificateUpdateACertificateRequestNewVersion) GoString() string {
+func (s UpdateACertificateRequestNewVersion) GoString() string {
   return s.String()
 }
 
-func (s *UpdateACertificateUpdateACertificateRequestNewVersion) SetPrivateKey(v string) *UpdateACertificateUpdateACertificateRequestNewVersion {
+func (s *UpdateACertificateRequestNewVersion) SetPrivateKey(v string) *UpdateACertificateRequestNewVersion {
   s.PrivateKey = &v
   return s
 }
 
-func (s *UpdateACertificateUpdateACertificateRequestNewVersion) SetCertificate(v string) *UpdateACertificateUpdateACertificateRequestNewVersion {
+func (s *UpdateACertificateRequestNewVersion) SetCertificate(v string) *UpdateACertificateRequestNewVersion {
   s.Certificate = &v
   return s
 }
 
-func (s *UpdateACertificateUpdateACertificateRequestNewVersion) SetChainCert(v string) *UpdateACertificateUpdateACertificateRequestNewVersion {
+func (s *UpdateACertificateRequestNewVersion) SetChainCert(v string) *UpdateACertificateRequestNewVersion {
   s.ChainCert = &v
   return s
 }
 
-func (s *UpdateACertificateUpdateACertificateRequestNewVersion) SetIdentificationInfo(v *UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo) *UpdateACertificateUpdateACertificateRequestNewVersion {
+func (s *UpdateACertificateRequestNewVersion) SetIdentificationInfo(v *UpdateACertificateRequestNewVersionIdentificationInfo) *UpdateACertificateRequestNewVersion {
   s.IdentificationInfo = v
   return s
 }
 
-type UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo struct {
+type UpdateACertificateRequestNewVersionIdentificationInfo struct {
   // {"en" : "Range: [ 2 .. 2 ] characters 
   // An ISO-3166 country code.", "zh_CN": "取值范围: [ 2 .. 2 ] 字符 
   // ISO-3166国家代码。"}
@@ -1126,50 +1126,50 @@ type UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo str
   SubjectAlternativeNames []*string `json:"subjectAlternativeNames,omitempty" xml:"subjectAlternativeNames,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo) String() string {
+func (s UpdateACertificateRequestNewVersionIdentificationInfo) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo) GoString() string {
+func (s UpdateACertificateRequestNewVersionIdentificationInfo) GoString() string {
   return s.String()
 }
 
-func (s *UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo) SetCountry(v string) *UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo {
+func (s *UpdateACertificateRequestNewVersionIdentificationInfo) SetCountry(v string) *UpdateACertificateRequestNewVersionIdentificationInfo {
   s.Country = &v
   return s
 }
 
-func (s *UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo) SetState(v string) *UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo {
+func (s *UpdateACertificateRequestNewVersionIdentificationInfo) SetState(v string) *UpdateACertificateRequestNewVersionIdentificationInfo {
   s.State = &v
   return s
 }
 
-func (s *UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo) SetCity(v string) *UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo {
+func (s *UpdateACertificateRequestNewVersionIdentificationInfo) SetCity(v string) *UpdateACertificateRequestNewVersionIdentificationInfo {
   s.City = &v
   return s
 }
 
-func (s *UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo) SetCompany(v string) *UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo {
+func (s *UpdateACertificateRequestNewVersionIdentificationInfo) SetCompany(v string) *UpdateACertificateRequestNewVersionIdentificationInfo {
   s.Company = &v
   return s
 }
 
-func (s *UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo) SetDepartment(v string) *UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo {
+func (s *UpdateACertificateRequestNewVersionIdentificationInfo) SetDepartment(v string) *UpdateACertificateRequestNewVersionIdentificationInfo {
   s.Department = &v
   return s
 }
 
-func (s *UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo) SetCommonName(v string) *UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo {
+func (s *UpdateACertificateRequestNewVersionIdentificationInfo) SetCommonName(v string) *UpdateACertificateRequestNewVersionIdentificationInfo {
   s.CommonName = &v
   return s
 }
 
-func (s *UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo) SetEmail(v string) *UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo {
+func (s *UpdateACertificateRequestNewVersionIdentificationInfo) SetEmail(v string) *UpdateACertificateRequestNewVersionIdentificationInfo {
   s.Email = &v
   return s
 }
 
-func (s *UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo) SetSubjectAlternativeNames(v []*string) *UpdateACertificateUpdateACertificateRequestNewVersionIdentificationInfo {
+func (s *UpdateACertificateRequestNewVersionIdentificationInfo) SetSubjectAlternativeNames(v []*string) *UpdateACertificateRequestNewVersionIdentificationInfo {
   s.SubjectAlternativeNames = v
   return s
 }
@@ -1334,7 +1334,7 @@ type GetListOfCertificatesResponse struct {
   // 证书的总数。返回的实际数量取决于查询参数。"}
   Count *int `json:"count,omitempty" xml:"count,omitempty" require:"true"`
   // {"en" : "List of certificates.", "zh_CN": "证书列表。"}
-  Certificates []*GetListOfCertificatesGetListOfCertificatesResponseCertificates `json:"certificates,omitempty" xml:"certificates,omitempty" require:"true" type:"Repeated"`
+  Certificates []*GetListOfCertificatesResponseCertificates `json:"certificates,omitempty" xml:"certificates,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetListOfCertificatesResponse) String() string {
@@ -1350,12 +1350,12 @@ func (s *GetListOfCertificatesResponse) SetCount(v int) *GetListOfCertificatesRe
   return s
 }
 
-func (s *GetListOfCertificatesResponse) SetCertificates(v []*GetListOfCertificatesGetListOfCertificatesResponseCertificates) *GetListOfCertificatesResponse {
+func (s *GetListOfCertificatesResponse) SetCertificates(v []*GetListOfCertificatesResponseCertificates) *GetListOfCertificatesResponse {
   s.Certificates = v
   return s
 }
 
-type GetListOfCertificatesGetListOfCertificatesResponseCertificates struct     {
+type GetListOfCertificatesResponseCertificates struct     {
   // {"en" : "An ID representing the certificate. You can call GET /cdn/certificates/{certificate ID} to get details about a certificate.", "zh_CN": "证书的ID。您可以通过调用'查询证书详情'接口来获取证书的详细信息。"}
   CertificateId *string `json:"certificateId,omitempty" xml:"certificateId,omitempty"`
   // {"en" : "Name of the certificate.", "zh_CN": "证书名称。"}
@@ -1394,70 +1394,70 @@ type GetListOfCertificatesGetListOfCertificatesResponseCertificates struct     {
   ForceRenew *bool `json:"forceRenew,omitempty" xml:"forceRenew,omitempty"`
 }
 
-func (s GetListOfCertificatesGetListOfCertificatesResponseCertificates) String() string {
+func (s GetListOfCertificatesResponseCertificates) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetListOfCertificatesGetListOfCertificatesResponseCertificates) GoString() string {
+func (s GetListOfCertificatesResponseCertificates) GoString() string {
   return s.String()
 }
 
-func (s *GetListOfCertificatesGetListOfCertificatesResponseCertificates) SetCertificateId(v string) *GetListOfCertificatesGetListOfCertificatesResponseCertificates {
+func (s *GetListOfCertificatesResponseCertificates) SetCertificateId(v string) *GetListOfCertificatesResponseCertificates {
   s.CertificateId = &v
   return s
 }
 
-func (s *GetListOfCertificatesGetListOfCertificatesResponseCertificates) SetName(v string) *GetListOfCertificatesGetListOfCertificatesResponseCertificates {
+func (s *GetListOfCertificatesResponseCertificates) SetName(v string) *GetListOfCertificatesResponseCertificates {
   s.Name = &v
   return s
 }
 
-func (s *GetListOfCertificatesGetListOfCertificatesResponseCertificates) SetLatestVersion(v int) *GetListOfCertificatesGetListOfCertificatesResponseCertificates {
+func (s *GetListOfCertificatesResponseCertificates) SetLatestVersion(v int) *GetListOfCertificatesResponseCertificates {
   s.LatestVersion = &v
   return s
 }
 
-func (s *GetListOfCertificatesGetListOfCertificatesResponseCertificates) SetAutoRenew(v string) *GetListOfCertificatesGetListOfCertificatesResponseCertificates {
+func (s *GetListOfCertificatesResponseCertificates) SetAutoRenew(v string) *GetListOfCertificatesResponseCertificates {
   s.AutoRenew = &v
   return s
 }
 
-func (s *GetListOfCertificatesGetListOfCertificatesResponseCertificates) SetCreationTime(v string) *GetListOfCertificatesGetListOfCertificatesResponseCertificates {
+func (s *GetListOfCertificatesResponseCertificates) SetCreationTime(v string) *GetListOfCertificatesResponseCertificates {
   s.CreationTime = &v
   return s
 }
 
-func (s *GetListOfCertificatesGetListOfCertificatesResponseCertificates) SetExpirationTime(v string) *GetListOfCertificatesGetListOfCertificatesResponseCertificates {
+func (s *GetListOfCertificatesResponseCertificates) SetExpirationTime(v string) *GetListOfCertificatesResponseCertificates {
   s.ExpirationTime = &v
   return s
 }
 
-func (s *GetListOfCertificatesGetListOfCertificatesResponseCertificates) SetLastUpdateTime(v string) *GetListOfCertificatesGetListOfCertificatesResponseCertificates {
+func (s *GetListOfCertificatesResponseCertificates) SetLastUpdateTime(v string) *GetListOfCertificatesResponseCertificates {
   s.LastUpdateTime = &v
   return s
 }
 
-func (s *GetListOfCertificatesGetListOfCertificatesResponseCertificates) SetVersionInProduction(v int) *GetListOfCertificatesGetListOfCertificatesResponseCertificates {
+func (s *GetListOfCertificatesResponseCertificates) SetVersionInProduction(v int) *GetListOfCertificatesResponseCertificates {
   s.VersionInProduction = &v
   return s
 }
 
-func (s *GetListOfCertificatesGetListOfCertificatesResponseCertificates) SetVersionInStaging(v int) *GetListOfCertificatesGetListOfCertificatesResponseCertificates {
+func (s *GetListOfCertificatesResponseCertificates) SetVersionInStaging(v int) *GetListOfCertificatesResponseCertificates {
   s.VersionInStaging = &v
   return s
 }
 
-func (s *GetListOfCertificatesGetListOfCertificatesResponseCertificates) SetProductionExpirationTime(v string) *GetListOfCertificatesGetListOfCertificatesResponseCertificates {
+func (s *GetListOfCertificatesResponseCertificates) SetProductionExpirationTime(v string) *GetListOfCertificatesResponseCertificates {
   s.ProductionExpirationTime = &v
   return s
 }
 
-func (s *GetListOfCertificatesGetListOfCertificatesResponseCertificates) SetStagingExpirationTime(v string) *GetListOfCertificatesGetListOfCertificatesResponseCertificates {
+func (s *GetListOfCertificatesResponseCertificates) SetStagingExpirationTime(v string) *GetListOfCertificatesResponseCertificates {
   s.StagingExpirationTime = &v
   return s
 }
 
-func (s *GetListOfCertificatesGetListOfCertificatesResponseCertificates) SetForceRenew(v bool) *GetListOfCertificatesGetListOfCertificatesResponseCertificates {
+func (s *GetListOfCertificatesResponseCertificates) SetForceRenew(v bool) *GetListOfCertificatesResponseCertificates {
   s.ForceRenew = &v
   return s
 }

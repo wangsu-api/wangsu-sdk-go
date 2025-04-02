@@ -446,7 +446,7 @@ func (s *SharkletVisitRequest) SetDatasource(v string) *SharkletVisitRequest {
 
 type SharkletVisitResponse struct {
   // {'en':'provider', 'zh_CN':'结果'}
-  Provider *SharkletVisitSharkletVisitResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+  Provider *SharkletVisitResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
 func (s SharkletVisitResponse) String() string {
@@ -457,44 +457,44 @@ func (s SharkletVisitResponse) GoString() string {
   return s.String()
 }
 
-func (s *SharkletVisitResponse) SetProvider(v *SharkletVisitSharkletVisitResponseProvider) *SharkletVisitResponse {
+func (s *SharkletVisitResponse) SetProvider(v *SharkletVisitResponseProvider) *SharkletVisitResponse {
   s.Provider = v
   return s
 }
 
-type SharkletVisitSharkletVisitResponseProvider struct {
+type SharkletVisitResponseProvider struct {
   // {'en':'tenant', 'zh_CN':'租户'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'type', 'zh_CN':'接口类型'}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
   // {'en':'date', 'zh_CN':'边缘应用请求数'}
-  Date *SharkletVisitSharkletVisitResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+  Date *SharkletVisitResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
-func (s SharkletVisitSharkletVisitResponseProvider) String() string {
+func (s SharkletVisitResponseProvider) String() string {
   return tea.Prettify(s)
 }
 
-func (s SharkletVisitSharkletVisitResponseProvider) GoString() string {
+func (s SharkletVisitResponseProvider) GoString() string {
   return s.String()
 }
 
-func (s *SharkletVisitSharkletVisitResponseProvider) SetName(v string) *SharkletVisitSharkletVisitResponseProvider {
+func (s *SharkletVisitResponseProvider) SetName(v string) *SharkletVisitResponseProvider {
   s.Name = &v
   return s
 }
 
-func (s *SharkletVisitSharkletVisitResponseProvider) SetType(v string) *SharkletVisitSharkletVisitResponseProvider {
+func (s *SharkletVisitResponseProvider) SetType(v string) *SharkletVisitResponseProvider {
   s.Type = &v
   return s
 }
 
-func (s *SharkletVisitSharkletVisitResponseProvider) SetDate(v *SharkletVisitSharkletVisitResponseProviderDate) *SharkletVisitSharkletVisitResponseProvider {
+func (s *SharkletVisitResponseProvider) SetDate(v *SharkletVisitResponseProviderDate) *SharkletVisitResponseProvider {
   s.Date = v
   return s
 }
 
-type SharkletVisitSharkletVisitResponseProviderDate struct {
+type SharkletVisitResponseProviderDate struct {
   // {'en':'startdate', 'zh_CN':'开始时间'}
   Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
   // {'en':'enddate', 'zh_CN':'结束时间'}
@@ -508,98 +508,98 @@ type SharkletVisitSharkletVisitResponseProviderDate struct {
   // {'en':'specialAppHitTotal', 'zh_CN':'特殊应用请求数	'}
   SpecialAppHitTotal *string `json:"specialAppHitTotal,omitempty" xml:"specialAppHitTotal,omitempty" require:"true"`
   // {'en':'chartDataList', 'zh_CN':'请求数分类'}
-  ChartDataList []*SharkletVisitSharkletVisitResponseProviderDateChartDataList `json:"chartDataList,omitempty" xml:"chartDataList,omitempty" require:"true" type:"Repeated"`
+  ChartDataList []*SharkletVisitResponseProviderDateChartDataList `json:"chartDataList,omitempty" xml:"chartDataList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s SharkletVisitSharkletVisitResponseProviderDate) String() string {
+func (s SharkletVisitResponseProviderDate) String() string {
   return tea.Prettify(s)
 }
 
-func (s SharkletVisitSharkletVisitResponseProviderDate) GoString() string {
+func (s SharkletVisitResponseProviderDate) GoString() string {
   return s.String()
 }
 
-func (s *SharkletVisitSharkletVisitResponseProviderDate) SetStartdate(v string) *SharkletVisitSharkletVisitResponseProviderDate {
+func (s *SharkletVisitResponseProviderDate) SetStartdate(v string) *SharkletVisitResponseProviderDate {
   s.Startdate = &v
   return s
 }
 
-func (s *SharkletVisitSharkletVisitResponseProviderDate) SetEnddate(v string) *SharkletVisitSharkletVisitResponseProviderDate {
+func (s *SharkletVisitResponseProviderDate) SetEnddate(v string) *SharkletVisitResponseProviderDate {
   s.Enddate = &v
   return s
 }
 
-func (s *SharkletVisitSharkletVisitResponseProviderDate) SetTotalHitTotal(v string) *SharkletVisitSharkletVisitResponseProviderDate {
+func (s *SharkletVisitResponseProviderDate) SetTotalHitTotal(v string) *SharkletVisitResponseProviderDate {
   s.TotalHitTotal = &v
   return s
 }
 
-func (s *SharkletVisitSharkletVisitResponseProviderDate) SetBaseAppHitTotal(v string) *SharkletVisitSharkletVisitResponseProviderDate {
+func (s *SharkletVisitResponseProviderDate) SetBaseAppHitTotal(v string) *SharkletVisitResponseProviderDate {
   s.BaseAppHitTotal = &v
   return s
 }
 
-func (s *SharkletVisitSharkletVisitResponseProviderDate) SetNormalAppHitTotal(v string) *SharkletVisitSharkletVisitResponseProviderDate {
+func (s *SharkletVisitResponseProviderDate) SetNormalAppHitTotal(v string) *SharkletVisitResponseProviderDate {
   s.NormalAppHitTotal = &v
   return s
 }
 
-func (s *SharkletVisitSharkletVisitResponseProviderDate) SetSpecialAppHitTotal(v string) *SharkletVisitSharkletVisitResponseProviderDate {
+func (s *SharkletVisitResponseProviderDate) SetSpecialAppHitTotal(v string) *SharkletVisitResponseProviderDate {
   s.SpecialAppHitTotal = &v
   return s
 }
 
-func (s *SharkletVisitSharkletVisitResponseProviderDate) SetChartDataList(v []*SharkletVisitSharkletVisitResponseProviderDateChartDataList) *SharkletVisitSharkletVisitResponseProviderDate {
+func (s *SharkletVisitResponseProviderDate) SetChartDataList(v []*SharkletVisitResponseProviderDateChartDataList) *SharkletVisitResponseProviderDate {
   s.ChartDataList = v
   return s
 }
 
-type SharkletVisitSharkletVisitResponseProviderDateChartDataList struct     {
+type SharkletVisitResponseProviderDateChartDataList struct     {
   // {'en':'channel', 'zh_CN':'请求数'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'请求数明细'}
-  Data []*SharkletVisitSharkletVisitResponseProviderDateChartDataListData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*SharkletVisitResponseProviderDateChartDataListData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s SharkletVisitSharkletVisitResponseProviderDateChartDataList) String() string {
+func (s SharkletVisitResponseProviderDateChartDataList) String() string {
   return tea.Prettify(s)
 }
 
-func (s SharkletVisitSharkletVisitResponseProviderDateChartDataList) GoString() string {
+func (s SharkletVisitResponseProviderDateChartDataList) GoString() string {
   return s.String()
 }
 
-func (s *SharkletVisitSharkletVisitResponseProviderDateChartDataList) SetName(v string) *SharkletVisitSharkletVisitResponseProviderDateChartDataList {
+func (s *SharkletVisitResponseProviderDateChartDataList) SetName(v string) *SharkletVisitResponseProviderDateChartDataList {
   s.Name = &v
   return s
 }
 
-func (s *SharkletVisitSharkletVisitResponseProviderDateChartDataList) SetData(v []*SharkletVisitSharkletVisitResponseProviderDateChartDataListData) *SharkletVisitSharkletVisitResponseProviderDateChartDataList {
+func (s *SharkletVisitResponseProviderDateChartDataList) SetData(v []*SharkletVisitResponseProviderDateChartDataListData) *SharkletVisitResponseProviderDateChartDataList {
   s.Data = v
   return s
 }
 
-type SharkletVisitSharkletVisitResponseProviderDateChartDataListData struct     {
+type SharkletVisitResponseProviderDateChartDataListData struct     {
   // {'en':'timestamp', 'zh_CN':'时间点'}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'请求数'}
   Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
 }
 
-func (s SharkletVisitSharkletVisitResponseProviderDateChartDataListData) String() string {
+func (s SharkletVisitResponseProviderDateChartDataListData) String() string {
   return tea.Prettify(s)
 }
 
-func (s SharkletVisitSharkletVisitResponseProviderDateChartDataListData) GoString() string {
+func (s SharkletVisitResponseProviderDateChartDataListData) GoString() string {
   return s.String()
 }
 
-func (s *SharkletVisitSharkletVisitResponseProviderDateChartDataListData) SetTime(v string) *SharkletVisitSharkletVisitResponseProviderDateChartDataListData {
+func (s *SharkletVisitResponseProviderDateChartDataListData) SetTime(v string) *SharkletVisitResponseProviderDateChartDataListData {
   s.Time = &v
   return s
 }
 
-func (s *SharkletVisitSharkletVisitResponseProviderDateChartDataListData) SetText(v string) *SharkletVisitSharkletVisitResponseProviderDateChartDataListData {
+func (s *SharkletVisitResponseProviderDateChartDataListData) SetText(v string) *SharkletVisitResponseProviderDateChartDataListData {
   s.Text = &v
   return s
 }

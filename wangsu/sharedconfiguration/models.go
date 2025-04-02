@@ -2307,7 +2307,7 @@ type ListSharedCustomRulesResponse struct {
   // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_retCodeEnum","en":"Please refer to the error code for exceptions.","zh_CN":"请参照错误码。"}
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"Data.","zh_CN":"出参数据。"}
-  Data []*ListSharedCustomRulesListSharedCustomRulesResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ListSharedCustomRulesResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ListSharedCustomRulesResponse) String() string {
@@ -2328,14 +2328,14 @@ func (s *ListSharedCustomRulesResponse) SetCode(v string) *ListSharedCustomRules
   return s
 }
 
-func (s *ListSharedCustomRulesResponse) SetData(v []*ListSharedCustomRulesListSharedCustomRulesResponseData) *ListSharedCustomRulesResponse {
+func (s *ListSharedCustomRulesResponse) SetData(v []*ListSharedCustomRulesResponseData) *ListSharedCustomRulesResponse {
   s.Data = v
   return s
 }
 
-type ListSharedCustomRulesListSharedCustomRulesResponseData struct     {
+type ListSharedCustomRulesResponseData struct     {
   // {"en":"Matching conditions.","zh_CN":"匹配条件。"}
-  Condition *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition `json:"condition,omitempty" xml:"condition,omitempty" require:"true" type:"Struct"`
+  Condition *ListSharedCustomRulesResponseDataCondition `json:"condition,omitempty" xml:"condition,omitempty" require:"true" type:"Struct"`
   // {"en":"Creator.","zh_CN":"创建者。"}
   Creator *string `json:"creator,omitempty" xml:"creator,omitempty" require:"true"`
   // {"en":"Action.
@@ -2364,141 +2364,141 @@ type ListSharedCustomRulesListSharedCustomRulesResponseData struct     {
   Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseData) String() string {
+func (s ListSharedCustomRulesResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseData) GoString() string {
+func (s ListSharedCustomRulesResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseData) SetCondition(v *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition) *ListSharedCustomRulesListSharedCustomRulesResponseData {
+func (s *ListSharedCustomRulesResponseData) SetCondition(v *ListSharedCustomRulesResponseDataCondition) *ListSharedCustomRulesResponseData {
   s.Condition = v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseData) SetCreator(v string) *ListSharedCustomRulesListSharedCustomRulesResponseData {
+func (s *ListSharedCustomRulesResponseData) SetCreator(v string) *ListSharedCustomRulesResponseData {
   s.Creator = &v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseData) SetAct(v string) *ListSharedCustomRulesListSharedCustomRulesResponseData {
+func (s *ListSharedCustomRulesResponseData) SetAct(v string) *ListSharedCustomRulesResponseData {
   s.Act = &v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseData) SetCreateTime(v string) *ListSharedCustomRulesListSharedCustomRulesResponseData {
+func (s *ListSharedCustomRulesResponseData) SetCreateTime(v string) *ListSharedCustomRulesResponseData {
   s.CreateTime = &v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseData) SetRelationDomainCount(v int) *ListSharedCustomRulesListSharedCustomRulesResponseData {
+func (s *ListSharedCustomRulesResponseData) SetRelationDomainCount(v int) *ListSharedCustomRulesResponseData {
   s.RelationDomainCount = &v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseData) SetRuleName(v string) *ListSharedCustomRulesListSharedCustomRulesResponseData {
+func (s *ListSharedCustomRulesResponseData) SetRuleName(v string) *ListSharedCustomRulesResponseData {
   s.RuleName = &v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseData) SetDescription(v string) *ListSharedCustomRulesListSharedCustomRulesResponseData {
+func (s *ListSharedCustomRulesResponseData) SetDescription(v string) *ListSharedCustomRulesResponseData {
   s.Description = &v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseData) SetUpdateTime(v string) *ListSharedCustomRulesListSharedCustomRulesResponseData {
+func (s *ListSharedCustomRulesResponseData) SetUpdateTime(v string) *ListSharedCustomRulesResponseData {
   s.UpdateTime = &v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseData) SetId(v string) *ListSharedCustomRulesListSharedCustomRulesResponseData {
+func (s *ListSharedCustomRulesResponseData) SetId(v string) *ListSharedCustomRulesResponseData {
   s.Id = &v
   return s
 }
 
-type ListSharedCustomRulesListSharedCustomRulesResponseDataCondition struct {
+type ListSharedCustomRulesResponseDataCondition struct {
   // {"en":"Request Method.","zh_CN":"请求方法。"}
-  MethodConditions []*ListSharedCustomRulesListSharedCustomRulesResponseDataConditionMethodConditions `json:"methodConditions,omitempty" xml:"methodConditions,omitempty" require:"true" type:"Repeated"`
+  MethodConditions []*ListSharedCustomRulesResponseDataConditionMethodConditions `json:"methodConditions,omitempty" xml:"methodConditions,omitempty" require:"true" type:"Repeated"`
   // {"en":"JA3 Fingerprint, match type cannot be repeated.","zh_CN":"JA3指纹，匹配类型不可重复。"}
-  Ja3Conditions []*ListSharedCustomRulesListSharedCustomRulesResponseDataConditionJa3Conditions `json:"ja3Conditions,omitempty" xml:"ja3Conditions,omitempty" require:"true" type:"Repeated"`
+  Ja3Conditions []*ListSharedCustomRulesResponseDataConditionJa3Conditions `json:"ja3Conditions,omitempty" xml:"ja3Conditions,omitempty" require:"true" type:"Repeated"`
   // {"en":"Geo.","zh_CN":"区域。"}
-  AreaConditions []*ListSharedCustomRulesListSharedCustomRulesResponseDataConditionAreaConditions `json:"areaConditions,omitempty" xml:"areaConditions,omitempty" require:"true" type:"Repeated"`
+  AreaConditions []*ListSharedCustomRulesResponseDataConditionAreaConditions `json:"areaConditions,omitempty" xml:"areaConditions,omitempty" require:"true" type:"Repeated"`
   // {"en":"IP/CIDR.","zh_CN":"IP/IP段。"}
-  IpOrIpsConditions []*ListSharedCustomRulesListSharedCustomRulesResponseDataConditionIpOrIpsConditions `json:"ipOrIpsConditions,omitempty" xml:"ipOrIpsConditions,omitempty" require:"true" type:"Repeated"`
+  IpOrIpsConditions []*ListSharedCustomRulesResponseDataConditionIpOrIpsConditions `json:"ipOrIpsConditions,omitempty" xml:"ipOrIpsConditions,omitempty" require:"true" type:"Repeated"`
   // {"en":"URI.","zh_CN":"URI。"}
-  UriConditions []*ListSharedCustomRulesListSharedCustomRulesResponseDataConditionUriConditions `json:"uriConditions,omitempty" xml:"uriConditions,omitempty" require:"true" type:"Repeated"`
+  UriConditions []*ListSharedCustomRulesResponseDataConditionUriConditions `json:"uriConditions,omitempty" xml:"uriConditions,omitempty" require:"true" type:"Repeated"`
   // {"en":"Path.","zh_CN":"路径。"}
-  PathConditions []*ListSharedCustomRulesListSharedCustomRulesResponseDataConditionPathConditions `json:"pathConditions,omitempty" xml:"pathConditions,omitempty" require:"true" type:"Repeated"`
+  PathConditions []*ListSharedCustomRulesResponseDataConditionPathConditions `json:"pathConditions,omitempty" xml:"pathConditions,omitempty" require:"true" type:"Repeated"`
   // {"en":"User Agent.","zh_CN":"User-Agent。"}
-  UaConditions []*ListSharedCustomRulesListSharedCustomRulesResponseDataConditionUaConditions `json:"uaConditions,omitempty" xml:"uaConditions,omitempty" require:"true" type:"Repeated"`
+  UaConditions []*ListSharedCustomRulesResponseDataConditionUaConditions `json:"uaConditions,omitempty" xml:"uaConditions,omitempty" require:"true" type:"Repeated"`
   // {"en":"Request Header.","zh_CN":"请求头。"}
-  HeaderConditions []*ListSharedCustomRulesListSharedCustomRulesResponseDataConditionHeaderConditions `json:"headerConditions,omitempty" xml:"headerConditions,omitempty" require:"true" type:"Repeated"`
+  HeaderConditions []*ListSharedCustomRulesResponseDataConditionHeaderConditions `json:"headerConditions,omitempty" xml:"headerConditions,omitempty" require:"true" type:"Repeated"`
   // {"en":"Referer.","zh_CN":"Referer。"}
-  RefererConditions []*ListSharedCustomRulesListSharedCustomRulesResponseDataConditionRefererConditions `json:"refererConditions,omitempty" xml:"refererConditions,omitempty" require:"true" type:"Repeated"`
+  RefererConditions []*ListSharedCustomRulesResponseDataConditionRefererConditions `json:"refererConditions,omitempty" xml:"refererConditions,omitempty" require:"true" type:"Repeated"`
   // {"en":"JA4 Fingerprint, match type cannot be repeated.","zh_CN":"JA4指纹，匹配类型不可重复。"}
-  Ja4Conditions []*ListSharedCustomRulesListSharedCustomRulesResponseDataConditionJa4Conditions `json:"ja4Conditions,omitempty" xml:"ja4Conditions,omitempty" require:"true" type:"Repeated"`
+  Ja4Conditions []*ListSharedCustomRulesResponseDataConditionJa4Conditions `json:"ja4Conditions,omitempty" xml:"ja4Conditions,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataCondition) String() string {
+func (s ListSharedCustomRulesResponseDataCondition) String() string {
   return tea.Prettify(s)
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataCondition) GoString() string {
+func (s ListSharedCustomRulesResponseDataCondition) GoString() string {
   return s.String()
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition) SetMethodConditions(v []*ListSharedCustomRulesListSharedCustomRulesResponseDataConditionMethodConditions) *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition {
+func (s *ListSharedCustomRulesResponseDataCondition) SetMethodConditions(v []*ListSharedCustomRulesResponseDataConditionMethodConditions) *ListSharedCustomRulesResponseDataCondition {
   s.MethodConditions = v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition) SetJa3Conditions(v []*ListSharedCustomRulesListSharedCustomRulesResponseDataConditionJa3Conditions) *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition {
+func (s *ListSharedCustomRulesResponseDataCondition) SetJa3Conditions(v []*ListSharedCustomRulesResponseDataConditionJa3Conditions) *ListSharedCustomRulesResponseDataCondition {
   s.Ja3Conditions = v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition) SetAreaConditions(v []*ListSharedCustomRulesListSharedCustomRulesResponseDataConditionAreaConditions) *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition {
+func (s *ListSharedCustomRulesResponseDataCondition) SetAreaConditions(v []*ListSharedCustomRulesResponseDataConditionAreaConditions) *ListSharedCustomRulesResponseDataCondition {
   s.AreaConditions = v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition) SetIpOrIpsConditions(v []*ListSharedCustomRulesListSharedCustomRulesResponseDataConditionIpOrIpsConditions) *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition {
+func (s *ListSharedCustomRulesResponseDataCondition) SetIpOrIpsConditions(v []*ListSharedCustomRulesResponseDataConditionIpOrIpsConditions) *ListSharedCustomRulesResponseDataCondition {
   s.IpOrIpsConditions = v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition) SetUriConditions(v []*ListSharedCustomRulesListSharedCustomRulesResponseDataConditionUriConditions) *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition {
+func (s *ListSharedCustomRulesResponseDataCondition) SetUriConditions(v []*ListSharedCustomRulesResponseDataConditionUriConditions) *ListSharedCustomRulesResponseDataCondition {
   s.UriConditions = v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition) SetPathConditions(v []*ListSharedCustomRulesListSharedCustomRulesResponseDataConditionPathConditions) *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition {
+func (s *ListSharedCustomRulesResponseDataCondition) SetPathConditions(v []*ListSharedCustomRulesResponseDataConditionPathConditions) *ListSharedCustomRulesResponseDataCondition {
   s.PathConditions = v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition) SetUaConditions(v []*ListSharedCustomRulesListSharedCustomRulesResponseDataConditionUaConditions) *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition {
+func (s *ListSharedCustomRulesResponseDataCondition) SetUaConditions(v []*ListSharedCustomRulesResponseDataConditionUaConditions) *ListSharedCustomRulesResponseDataCondition {
   s.UaConditions = v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition) SetHeaderConditions(v []*ListSharedCustomRulesListSharedCustomRulesResponseDataConditionHeaderConditions) *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition {
+func (s *ListSharedCustomRulesResponseDataCondition) SetHeaderConditions(v []*ListSharedCustomRulesResponseDataConditionHeaderConditions) *ListSharedCustomRulesResponseDataCondition {
   s.HeaderConditions = v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition) SetRefererConditions(v []*ListSharedCustomRulesListSharedCustomRulesResponseDataConditionRefererConditions) *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition {
+func (s *ListSharedCustomRulesResponseDataCondition) SetRefererConditions(v []*ListSharedCustomRulesResponseDataConditionRefererConditions) *ListSharedCustomRulesResponseDataCondition {
   s.RefererConditions = v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition) SetJa4Conditions(v []*ListSharedCustomRulesListSharedCustomRulesResponseDataConditionJa4Conditions) *ListSharedCustomRulesListSharedCustomRulesResponseDataCondition {
+func (s *ListSharedCustomRulesResponseDataCondition) SetJa4Conditions(v []*ListSharedCustomRulesResponseDataConditionJa4Conditions) *ListSharedCustomRulesResponseDataCondition {
   s.Ja4Conditions = v
   return s
 }
 
-type ListSharedCustomRulesListSharedCustomRulesResponseDataConditionMethodConditions struct     {
+type ListSharedCustomRulesResponseDataConditionMethodConditions struct     {
   // {"en":"Match type.
   // EQUAL:Equal
   // NOT_EQUAL:Does not equal","zh_CN":"匹配类型。
@@ -2511,25 +2511,25 @@ type ListSharedCustomRulesListSharedCustomRulesResponseDataConditionMethodCondit
   RequestMethod []*string `json:"requestMethod,omitempty" xml:"requestMethod,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataConditionMethodConditions) String() string {
+func (s ListSharedCustomRulesResponseDataConditionMethodConditions) String() string {
   return tea.Prettify(s)
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataConditionMethodConditions) GoString() string {
+func (s ListSharedCustomRulesResponseDataConditionMethodConditions) GoString() string {
   return s.String()
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionMethodConditions) SetMatchType(v string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionMethodConditions {
+func (s *ListSharedCustomRulesResponseDataConditionMethodConditions) SetMatchType(v string) *ListSharedCustomRulesResponseDataConditionMethodConditions {
   s.MatchType = &v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionMethodConditions) SetRequestMethod(v []*string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionMethodConditions {
+func (s *ListSharedCustomRulesResponseDataConditionMethodConditions) SetRequestMethod(v []*string) *ListSharedCustomRulesResponseDataConditionMethodConditions {
   s.RequestMethod = v
   return s
 }
 
-type ListSharedCustomRulesListSharedCustomRulesResponseDataConditionJa3Conditions struct     {
+type ListSharedCustomRulesResponseDataConditionJa3Conditions struct     {
   // {"en":"Match type.
   // EQUAL: Equals
   // NOT_EQUAL: Does not equal","zh_CN":"匹配类型。
@@ -2540,25 +2540,25 @@ type ListSharedCustomRulesListSharedCustomRulesResponseDataConditionJa3Condition
   Ja3List []*string `json:"ja3List,omitempty" xml:"ja3List,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataConditionJa3Conditions) String() string {
+func (s ListSharedCustomRulesResponseDataConditionJa3Conditions) String() string {
   return tea.Prettify(s)
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataConditionJa3Conditions) GoString() string {
+func (s ListSharedCustomRulesResponseDataConditionJa3Conditions) GoString() string {
   return s.String()
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionJa3Conditions) SetMatchType(v string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionJa3Conditions {
+func (s *ListSharedCustomRulesResponseDataConditionJa3Conditions) SetMatchType(v string) *ListSharedCustomRulesResponseDataConditionJa3Conditions {
   s.MatchType = &v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionJa3Conditions) SetJa3List(v []*string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionJa3Conditions {
+func (s *ListSharedCustomRulesResponseDataConditionJa3Conditions) SetJa3List(v []*string) *ListSharedCustomRulesResponseDataConditionJa3Conditions {
   s.Ja3List = v
   return s
 }
 
-type ListSharedCustomRulesListSharedCustomRulesResponseDataConditionAreaConditions struct     {
+type ListSharedCustomRulesResponseDataConditionAreaConditions struct     {
   // {"en":"Match type.
   // EQUAL:Equal
   // NOT_EQUAL:Does not equal","zh_CN":"匹配类型。
@@ -2569,25 +2569,25 @@ type ListSharedCustomRulesListSharedCustomRulesResponseDataConditionAreaConditio
   Areas []*string `json:"areas,omitempty" xml:"areas,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataConditionAreaConditions) String() string {
+func (s ListSharedCustomRulesResponseDataConditionAreaConditions) String() string {
   return tea.Prettify(s)
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataConditionAreaConditions) GoString() string {
+func (s ListSharedCustomRulesResponseDataConditionAreaConditions) GoString() string {
   return s.String()
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionAreaConditions) SetMatchType(v string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionAreaConditions {
+func (s *ListSharedCustomRulesResponseDataConditionAreaConditions) SetMatchType(v string) *ListSharedCustomRulesResponseDataConditionAreaConditions {
   s.MatchType = &v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionAreaConditions) SetAreas(v []*string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionAreaConditions {
+func (s *ListSharedCustomRulesResponseDataConditionAreaConditions) SetAreas(v []*string) *ListSharedCustomRulesResponseDataConditionAreaConditions {
   s.Areas = v
   return s
 }
 
-type ListSharedCustomRulesListSharedCustomRulesResponseDataConditionIpOrIpsConditions struct     {
+type ListSharedCustomRulesResponseDataConditionIpOrIpsConditions struct     {
   // {"en":"Match type.
   // EQUAL:Equal
   // NOT_EQUAL:Does not equal","zh_CN":"匹配类型。
@@ -2598,25 +2598,25 @@ type ListSharedCustomRulesListSharedCustomRulesResponseDataConditionIpOrIpsCondi
   IpOrIps []*string `json:"ipOrIps,omitempty" xml:"ipOrIps,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataConditionIpOrIpsConditions) String() string {
+func (s ListSharedCustomRulesResponseDataConditionIpOrIpsConditions) String() string {
   return tea.Prettify(s)
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataConditionIpOrIpsConditions) GoString() string {
+func (s ListSharedCustomRulesResponseDataConditionIpOrIpsConditions) GoString() string {
   return s.String()
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionIpOrIpsConditions) SetMatchType(v string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionIpOrIpsConditions {
+func (s *ListSharedCustomRulesResponseDataConditionIpOrIpsConditions) SetMatchType(v string) *ListSharedCustomRulesResponseDataConditionIpOrIpsConditions {
   s.MatchType = &v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionIpOrIpsConditions) SetIpOrIps(v []*string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionIpOrIpsConditions {
+func (s *ListSharedCustomRulesResponseDataConditionIpOrIpsConditions) SetIpOrIps(v []*string) *ListSharedCustomRulesResponseDataConditionIpOrIpsConditions {
   s.IpOrIps = v
   return s
 }
 
-type ListSharedCustomRulesListSharedCustomRulesResponseDataConditionUriConditions struct     {
+type ListSharedCustomRulesResponseDataConditionUriConditions struct     {
   // {"en":"Match type.
   // EQUAL: equal to
   // NOT_EQUAL: not equal to
@@ -2643,25 +2643,25 @@ type ListSharedCustomRulesListSharedCustomRulesResponseDataConditionUriCondition
   Uri []*string `json:"uri,omitempty" xml:"uri,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataConditionUriConditions) String() string {
+func (s ListSharedCustomRulesResponseDataConditionUriConditions) String() string {
   return tea.Prettify(s)
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataConditionUriConditions) GoString() string {
+func (s ListSharedCustomRulesResponseDataConditionUriConditions) GoString() string {
   return s.String()
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionUriConditions) SetMatchType(v string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionUriConditions {
+func (s *ListSharedCustomRulesResponseDataConditionUriConditions) SetMatchType(v string) *ListSharedCustomRulesResponseDataConditionUriConditions {
   s.MatchType = &v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionUriConditions) SetUri(v []*string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionUriConditions {
+func (s *ListSharedCustomRulesResponseDataConditionUriConditions) SetUri(v []*string) *ListSharedCustomRulesResponseDataConditionUriConditions {
   s.Uri = v
   return s
 }
 
-type ListSharedCustomRulesListSharedCustomRulesResponseDataConditionPathConditions struct     {
+type ListSharedCustomRulesResponseDataConditionPathConditions struct     {
   // {"en":"Match type.
   // EQUAL: equal to
   // NOT_EQUAL: not equal to
@@ -2688,25 +2688,25 @@ type ListSharedCustomRulesListSharedCustomRulesResponseDataConditionPathConditio
   ListSharedCustomRulesPaths []*string `json:"paths,omitempty" xml:"paths,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataConditionPathConditions) String() string {
+func (s ListSharedCustomRulesResponseDataConditionPathConditions) String() string {
   return tea.Prettify(s)
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataConditionPathConditions) GoString() string {
+func (s ListSharedCustomRulesResponseDataConditionPathConditions) GoString() string {
   return s.String()
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionPathConditions) SetMatchType(v string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionPathConditions {
+func (s *ListSharedCustomRulesResponseDataConditionPathConditions) SetMatchType(v string) *ListSharedCustomRulesResponseDataConditionPathConditions {
   s.MatchType = &v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionPathConditions) SetListSharedCustomRulesPaths(v []*string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionPathConditions {
+func (s *ListSharedCustomRulesResponseDataConditionPathConditions) SetListSharedCustomRulesPaths(v []*string) *ListSharedCustomRulesResponseDataConditionPathConditions {
   s.ListSharedCustomRulesPaths = v
   return s
 }
 
-type ListSharedCustomRulesListSharedCustomRulesResponseDataConditionUaConditions struct     {
+type ListSharedCustomRulesResponseDataConditionUaConditions struct     {
   // {"en":"Match type.
   // EQUAL: equal to
   // NOT_EQUAL: not equal to
@@ -2735,25 +2735,25 @@ type ListSharedCustomRulesListSharedCustomRulesResponseDataConditionUaConditions
   Ua []*string `json:"ua,omitempty" xml:"ua,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataConditionUaConditions) String() string {
+func (s ListSharedCustomRulesResponseDataConditionUaConditions) String() string {
   return tea.Prettify(s)
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataConditionUaConditions) GoString() string {
+func (s ListSharedCustomRulesResponseDataConditionUaConditions) GoString() string {
   return s.String()
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionUaConditions) SetMatchType(v string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionUaConditions {
+func (s *ListSharedCustomRulesResponseDataConditionUaConditions) SetMatchType(v string) *ListSharedCustomRulesResponseDataConditionUaConditions {
   s.MatchType = &v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionUaConditions) SetUa(v []*string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionUaConditions {
+func (s *ListSharedCustomRulesResponseDataConditionUaConditions) SetUa(v []*string) *ListSharedCustomRulesResponseDataConditionUaConditions {
   s.Ua = v
   return s
 }
 
-type ListSharedCustomRulesListSharedCustomRulesResponseDataConditionHeaderConditions struct     {
+type ListSharedCustomRulesResponseDataConditionHeaderConditions struct     {
   // {"en":"Match type.
   // EQUAL: equal to
   // NOT_EQUAL: not equal to
@@ -2784,30 +2784,30 @@ type ListSharedCustomRulesListSharedCustomRulesResponseDataConditionHeaderCondit
   Key *string `json:"key,omitempty" xml:"key,omitempty" require:"true"`
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataConditionHeaderConditions) String() string {
+func (s ListSharedCustomRulesResponseDataConditionHeaderConditions) String() string {
   return tea.Prettify(s)
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataConditionHeaderConditions) GoString() string {
+func (s ListSharedCustomRulesResponseDataConditionHeaderConditions) GoString() string {
   return s.String()
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionHeaderConditions) SetMatchType(v string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionHeaderConditions {
+func (s *ListSharedCustomRulesResponseDataConditionHeaderConditions) SetMatchType(v string) *ListSharedCustomRulesResponseDataConditionHeaderConditions {
   s.MatchType = &v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionHeaderConditions) SetValueList(v []*string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionHeaderConditions {
+func (s *ListSharedCustomRulesResponseDataConditionHeaderConditions) SetValueList(v []*string) *ListSharedCustomRulesResponseDataConditionHeaderConditions {
   s.ValueList = v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionHeaderConditions) SetKey(v string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionHeaderConditions {
+func (s *ListSharedCustomRulesResponseDataConditionHeaderConditions) SetKey(v string) *ListSharedCustomRulesResponseDataConditionHeaderConditions {
   s.Key = &v
   return s
 }
 
-type ListSharedCustomRulesListSharedCustomRulesResponseDataConditionRefererConditions struct     {
+type ListSharedCustomRulesResponseDataConditionRefererConditions struct     {
   // {"en":"Referer.","zh_CN":"Referer。"}
   Referer []*string `json:"referer,omitempty" xml:"referer,omitempty" require:"true" type:"Repeated"`
   // {"en":"Match type.
@@ -2836,25 +2836,25 @@ type ListSharedCustomRulesListSharedCustomRulesResponseDataConditionRefererCondi
   MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataConditionRefererConditions) String() string {
+func (s ListSharedCustomRulesResponseDataConditionRefererConditions) String() string {
   return tea.Prettify(s)
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataConditionRefererConditions) GoString() string {
+func (s ListSharedCustomRulesResponseDataConditionRefererConditions) GoString() string {
   return s.String()
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionRefererConditions) SetReferer(v []*string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionRefererConditions {
+func (s *ListSharedCustomRulesResponseDataConditionRefererConditions) SetReferer(v []*string) *ListSharedCustomRulesResponseDataConditionRefererConditions {
   s.Referer = v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionRefererConditions) SetMatchType(v string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionRefererConditions {
+func (s *ListSharedCustomRulesResponseDataConditionRefererConditions) SetMatchType(v string) *ListSharedCustomRulesResponseDataConditionRefererConditions {
   s.MatchType = &v
   return s
 }
 
-type ListSharedCustomRulesListSharedCustomRulesResponseDataConditionJa4Conditions struct     {
+type ListSharedCustomRulesResponseDataConditionJa4Conditions struct     {
   // {"en":"JA4 Fingerprint List.","zh_CN":"JA4指纹列表。"}
   Ja4List []*string `json:"ja4List,omitempty" xml:"ja4List,omitempty" require:"true" type:"Repeated"`
   // {"en":"Match type. 
@@ -2877,20 +2877,20 @@ type ListSharedCustomRulesListSharedCustomRulesResponseDataConditionJa4Condition
   MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataConditionJa4Conditions) String() string {
+func (s ListSharedCustomRulesResponseDataConditionJa4Conditions) String() string {
   return tea.Prettify(s)
 }
 
-func (s ListSharedCustomRulesListSharedCustomRulesResponseDataConditionJa4Conditions) GoString() string {
+func (s ListSharedCustomRulesResponseDataConditionJa4Conditions) GoString() string {
   return s.String()
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionJa4Conditions) SetJa4List(v []*string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionJa4Conditions {
+func (s *ListSharedCustomRulesResponseDataConditionJa4Conditions) SetJa4List(v []*string) *ListSharedCustomRulesResponseDataConditionJa4Conditions {
   s.Ja4List = v
   return s
 }
 
-func (s *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionJa4Conditions) SetMatchType(v string) *ListSharedCustomRulesListSharedCustomRulesResponseDataConditionJa4Conditions {
+func (s *ListSharedCustomRulesResponseDataConditionJa4Conditions) SetMatchType(v string) *ListSharedCustomRulesResponseDataConditionJa4Conditions {
   s.MatchType = &v
   return s
 }

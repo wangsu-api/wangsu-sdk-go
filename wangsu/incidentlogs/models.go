@@ -444,7 +444,7 @@ type QueryAttackLogDetailsResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"response message", "zh_CN":"响应信息，响应成功为success"}
   Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
-  Data *QueryAttackLogDetailsQueryAttackLogDetailsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryAttackLogDetailsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryAttackLogDetailsResponse) String() string {
@@ -465,12 +465,12 @@ func (s *QueryAttackLogDetailsResponse) SetMsg(v string) *QueryAttackLogDetailsR
   return s
 }
 
-func (s *QueryAttackLogDetailsResponse) SetData(v *QueryAttackLogDetailsQueryAttackLogDetailsResponseData) *QueryAttackLogDetailsResponse {
+func (s *QueryAttackLogDetailsResponse) SetData(v *QueryAttackLogDetailsResponseData) *QueryAttackLogDetailsResponse {
   s.Data = v
   return s
 }
 
-type QueryAttackLogDetailsQueryAttackLogDetailsResponseData struct {
+type QueryAttackLogDetailsResponseData struct {
   // {'en':'accessTime','zh_CN':'访问时间'}
   AccessTime *string `json:"accessTime,omitempty" xml:"accessTime,omitempty" require:"true"`
   // {'en':'clientIp','zh_CN':'客户端IP'}
@@ -485,64 +485,64 @@ type QueryAttackLogDetailsQueryAttackLogDetailsResponseData struct {
   ProStrategy *string `json:"proStrategy,omitempty" xml:"proStrategy,omitempty" require:"true"`
   // {'en':'stateCode','zh_CN':'状态码'}
   StateCode *string `json:"stateCode,omitempty" xml:"stateCode,omitempty" require:"true"`
-  HttpRequestInfo *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataHttpRequestInfo `json:"httpRequestInfo,omitempty" xml:"httpRequestInfo,omitempty" require:"true" type:"Struct"`
-  TcpRequestInfo *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataTcpRequestInfo `json:"tcpRequestInfo,omitempty" xml:"tcpRequestInfo,omitempty" require:"true" type:"Struct"`
+  HttpRequestInfo *QueryAttackLogDetailsResponseDataHttpRequestInfo `json:"httpRequestInfo,omitempty" xml:"httpRequestInfo,omitempty" require:"true" type:"Struct"`
+  TcpRequestInfo *QueryAttackLogDetailsResponseDataTcpRequestInfo `json:"tcpRequestInfo,omitempty" xml:"tcpRequestInfo,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryAttackLogDetailsQueryAttackLogDetailsResponseData) String() string {
+func (s QueryAttackLogDetailsResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAttackLogDetailsQueryAttackLogDetailsResponseData) GoString() string {
+func (s QueryAttackLogDetailsResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryAttackLogDetailsQueryAttackLogDetailsResponseData) SetAccessTime(v string) *QueryAttackLogDetailsQueryAttackLogDetailsResponseData {
+func (s *QueryAttackLogDetailsResponseData) SetAccessTime(v string) *QueryAttackLogDetailsResponseData {
   s.AccessTime = &v
   return s
 }
 
-func (s *QueryAttackLogDetailsQueryAttackLogDetailsResponseData) SetClientIp(v string) *QueryAttackLogDetailsQueryAttackLogDetailsResponseData {
+func (s *QueryAttackLogDetailsResponseData) SetClientIp(v string) *QueryAttackLogDetailsResponseData {
   s.ClientIp = &v
   return s
 }
 
-func (s *QueryAttackLogDetailsQueryAttackLogDetailsResponseData) SetDomain(v string) *QueryAttackLogDetailsQueryAttackLogDetailsResponseData {
+func (s *QueryAttackLogDetailsResponseData) SetDomain(v string) *QueryAttackLogDetailsResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *QueryAttackLogDetailsQueryAttackLogDetailsResponseData) SetAttackType(v string) *QueryAttackLogDetailsQueryAttackLogDetailsResponseData {
+func (s *QueryAttackLogDetailsResponseData) SetAttackType(v string) *QueryAttackLogDetailsResponseData {
   s.AttackType = &v
   return s
 }
 
-func (s *QueryAttackLogDetailsQueryAttackLogDetailsResponseData) SetProcessAction(v string) *QueryAttackLogDetailsQueryAttackLogDetailsResponseData {
+func (s *QueryAttackLogDetailsResponseData) SetProcessAction(v string) *QueryAttackLogDetailsResponseData {
   s.ProcessAction = &v
   return s
 }
 
-func (s *QueryAttackLogDetailsQueryAttackLogDetailsResponseData) SetProStrategy(v string) *QueryAttackLogDetailsQueryAttackLogDetailsResponseData {
+func (s *QueryAttackLogDetailsResponseData) SetProStrategy(v string) *QueryAttackLogDetailsResponseData {
   s.ProStrategy = &v
   return s
 }
 
-func (s *QueryAttackLogDetailsQueryAttackLogDetailsResponseData) SetStateCode(v string) *QueryAttackLogDetailsQueryAttackLogDetailsResponseData {
+func (s *QueryAttackLogDetailsResponseData) SetStateCode(v string) *QueryAttackLogDetailsResponseData {
   s.StateCode = &v
   return s
 }
 
-func (s *QueryAttackLogDetailsQueryAttackLogDetailsResponseData) SetHttpRequestInfo(v *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataHttpRequestInfo) *QueryAttackLogDetailsQueryAttackLogDetailsResponseData {
+func (s *QueryAttackLogDetailsResponseData) SetHttpRequestInfo(v *QueryAttackLogDetailsResponseDataHttpRequestInfo) *QueryAttackLogDetailsResponseData {
   s.HttpRequestInfo = v
   return s
 }
 
-func (s *QueryAttackLogDetailsQueryAttackLogDetailsResponseData) SetTcpRequestInfo(v *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataTcpRequestInfo) *QueryAttackLogDetailsQueryAttackLogDetailsResponseData {
+func (s *QueryAttackLogDetailsResponseData) SetTcpRequestInfo(v *QueryAttackLogDetailsResponseDataTcpRequestInfo) *QueryAttackLogDetailsResponseData {
   s.TcpRequestInfo = v
   return s
 }
 
-type QueryAttackLogDetailsQueryAttackLogDetailsResponseDataHttpRequestInfo struct {
+type QueryAttackLogDetailsResponseDataHttpRequestInfo struct {
   // {'en':'locationIp','zh_CN':'ip地址'}
   LocationIp *string `json:"locationIp,omitempty" xml:"locationIp,omitempty" require:"true"`
   // {'en':'httpVersion','zh_CN':'HTTP版本'}
@@ -557,45 +557,45 @@ type QueryAttackLogDetailsQueryAttackLogDetailsResponseDataHttpRequestInfo struc
   UserAgent *string `json:"userAgent,omitempty" xml:"userAgent,omitempty" require:"true"`
 }
 
-func (s QueryAttackLogDetailsQueryAttackLogDetailsResponseDataHttpRequestInfo) String() string {
+func (s QueryAttackLogDetailsResponseDataHttpRequestInfo) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAttackLogDetailsQueryAttackLogDetailsResponseDataHttpRequestInfo) GoString() string {
+func (s QueryAttackLogDetailsResponseDataHttpRequestInfo) GoString() string {
   return s.String()
 }
 
-func (s *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataHttpRequestInfo) SetLocationIp(v string) *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataHttpRequestInfo {
+func (s *QueryAttackLogDetailsResponseDataHttpRequestInfo) SetLocationIp(v string) *QueryAttackLogDetailsResponseDataHttpRequestInfo {
   s.LocationIp = &v
   return s
 }
 
-func (s *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataHttpRequestInfo) SetHttpVersion(v string) *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataHttpRequestInfo {
+func (s *QueryAttackLogDetailsResponseDataHttpRequestInfo) SetHttpVersion(v string) *QueryAttackLogDetailsResponseDataHttpRequestInfo {
   s.HttpVersion = &v
   return s
 }
 
-func (s *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataHttpRequestInfo) SetRequestMethod(v string) *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataHttpRequestInfo {
+func (s *QueryAttackLogDetailsResponseDataHttpRequestInfo) SetRequestMethod(v string) *QueryAttackLogDetailsResponseDataHttpRequestInfo {
   s.RequestMethod = &v
   return s
 }
 
-func (s *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataHttpRequestInfo) SetUri(v string) *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataHttpRequestInfo {
+func (s *QueryAttackLogDetailsResponseDataHttpRequestInfo) SetUri(v string) *QueryAttackLogDetailsResponseDataHttpRequestInfo {
   s.Uri = &v
   return s
 }
 
-func (s *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataHttpRequestInfo) SetReferer(v string) *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataHttpRequestInfo {
+func (s *QueryAttackLogDetailsResponseDataHttpRequestInfo) SetReferer(v string) *QueryAttackLogDetailsResponseDataHttpRequestInfo {
   s.Referer = &v
   return s
 }
 
-func (s *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataHttpRequestInfo) SetUserAgent(v string) *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataHttpRequestInfo {
+func (s *QueryAttackLogDetailsResponseDataHttpRequestInfo) SetUserAgent(v string) *QueryAttackLogDetailsResponseDataHttpRequestInfo {
   s.UserAgent = &v
   return s
 }
 
-type QueryAttackLogDetailsQueryAttackLogDetailsResponseDataTcpRequestInfo struct {
+type QueryAttackLogDetailsResponseDataTcpRequestInfo struct {
   // {'en':'locationIp','zh_CN':'IP地理位置'}
   LocationIp *string `json:"locationIp,omitempty" xml:"locationIp,omitempty" require:"true"`
   // {'en':'locationIpEn','zh_CN':'IP地理位置英文名称'}
@@ -606,30 +606,30 @@ type QueryAttackLogDetailsQueryAttackLogDetailsResponseDataTcpRequestInfo struct
   Agreement *string `json:"agreement,omitempty" xml:"agreement,omitempty" require:"true"`
 }
 
-func (s QueryAttackLogDetailsQueryAttackLogDetailsResponseDataTcpRequestInfo) String() string {
+func (s QueryAttackLogDetailsResponseDataTcpRequestInfo) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryAttackLogDetailsQueryAttackLogDetailsResponseDataTcpRequestInfo) GoString() string {
+func (s QueryAttackLogDetailsResponseDataTcpRequestInfo) GoString() string {
   return s.String()
 }
 
-func (s *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataTcpRequestInfo) SetLocationIp(v string) *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataTcpRequestInfo {
+func (s *QueryAttackLogDetailsResponseDataTcpRequestInfo) SetLocationIp(v string) *QueryAttackLogDetailsResponseDataTcpRequestInfo {
   s.LocationIp = &v
   return s
 }
 
-func (s *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataTcpRequestInfo) SetLocationIpEn(v string) *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataTcpRequestInfo {
+func (s *QueryAttackLogDetailsResponseDataTcpRequestInfo) SetLocationIpEn(v string) *QueryAttackLogDetailsResponseDataTcpRequestInfo {
   s.LocationIpEn = &v
   return s
 }
 
-func (s *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataTcpRequestInfo) SetDsPort(v string) *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataTcpRequestInfo {
+func (s *QueryAttackLogDetailsResponseDataTcpRequestInfo) SetDsPort(v string) *QueryAttackLogDetailsResponseDataTcpRequestInfo {
   s.DsPort = &v
   return s
 }
 
-func (s *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataTcpRequestInfo) SetAgreement(v string) *QueryAttackLogDetailsQueryAttackLogDetailsResponseDataTcpRequestInfo {
+func (s *QueryAttackLogDetailsResponseDataTcpRequestInfo) SetAgreement(v string) *QueryAttackLogDetailsResponseDataTcpRequestInfo {
   s.Agreement = &v
   return s
 }

@@ -372,7 +372,7 @@ type GetBotAttackIncidentLogDataResponse struct {
   // {"en":"Return message, success is 'Success'.", "zh_CN":"返回信息，成功为“Success”。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Data returned.", "zh_CN":"返回数据"}
-  Data *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *GetBotAttackIncidentLogDataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s GetBotAttackIncidentLogDataResponse) String() string {
@@ -393,12 +393,12 @@ func (s *GetBotAttackIncidentLogDataResponse) SetMessage(v string) *GetBotAttack
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataResponse) SetData(v *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseData) *GetBotAttackIncidentLogDataResponse {
+func (s *GetBotAttackIncidentLogDataResponse) SetData(v *GetBotAttackIncidentLogDataResponseData) *GetBotAttackIncidentLogDataResponse {
   s.Data = v
   return s
 }
 
-type GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseData struct {
+type GetBotAttackIncidentLogDataResponseData struct {
   // {"en":"Rule name.", "zh_CN":"当前页码。"}
   CurrentPage *int `json:"currentPage,omitempty" xml:"currentPage,omitempty" require:"true"`
   // {"en":"Current page number.", "zh_CN":"首页页码。"}
@@ -412,53 +412,53 @@ type GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseData struct {
   // {"en":"Total page count.", "zh_CN":"总页数。"}
   TotalPageCount *int `json:"totalPageCount,omitempty" xml:"totalPageCount,omitempty" require:"true"`
   // {"en":"Data List", "zh_CN":"数据列表"}
-  List []*GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList `json:"list,omitempty" xml:"list,omitempty" require:"true" type:"Repeated"`
+  List []*GetBotAttackIncidentLogDataResponseDataList `json:"list,omitempty" xml:"list,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseData) String() string {
+func (s GetBotAttackIncidentLogDataResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseData) GoString() string {
+func (s GetBotAttackIncidentLogDataResponseData) GoString() string {
   return s.String()
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseData) SetCurrentPage(v int) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseData {
+func (s *GetBotAttackIncidentLogDataResponseData) SetCurrentPage(v int) *GetBotAttackIncidentLogDataResponseData {
   s.CurrentPage = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseData) SetFirstPage(v int) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseData {
+func (s *GetBotAttackIncidentLogDataResponseData) SetFirstPage(v int) *GetBotAttackIncidentLogDataResponseData {
   s.FirstPage = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseData) SetLastPage(v int) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseData {
+func (s *GetBotAttackIncidentLogDataResponseData) SetLastPage(v int) *GetBotAttackIncidentLogDataResponseData {
   s.LastPage = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseData) SetPageSize(v int) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseData {
+func (s *GetBotAttackIncidentLogDataResponseData) SetPageSize(v int) *GetBotAttackIncidentLogDataResponseData {
   s.PageSize = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseData) SetTotalCount(v int64) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseData {
+func (s *GetBotAttackIncidentLogDataResponseData) SetTotalCount(v int64) *GetBotAttackIncidentLogDataResponseData {
   s.TotalCount = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseData) SetTotalPageCount(v int) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseData {
+func (s *GetBotAttackIncidentLogDataResponseData) SetTotalPageCount(v int) *GetBotAttackIncidentLogDataResponseData {
   s.TotalPageCount = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseData) SetList(v []*GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseData {
+func (s *GetBotAttackIncidentLogDataResponseData) SetList(v []*GetBotAttackIncidentLogDataResponseDataList) *GetBotAttackIncidentLogDataResponseData {
   s.List = v
   return s
 }
 
-type GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList struct     {
+type GetBotAttackIncidentLogDataResponseDataList struct     {
   // {"en":"Referer.", "zh_CN":"Referer。"}
   Referer *string `json:"referer,omitempty" xml:"referer,omitempty" require:"true"`
   // {"en":"Browser Fingerprint.", "zh_CN":"浏览器指纹。"}
@@ -509,130 +509,130 @@ type GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList stru
   StatusCode *int `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
 }
 
-func (s GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) String() string {
+func (s GetBotAttackIncidentLogDataResponseDataList) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) GoString() string {
+func (s GetBotAttackIncidentLogDataResponseDataList) GoString() string {
   return s.String()
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetReferer(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetReferer(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Referer = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetBrowser_fp(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetBrowser_fp(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Browser_fp = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetAttack_type(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetAttack_type(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Attack_type = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetRule_name(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetRule_name(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Rule_name = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetIp(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetIp(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Ip = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetUuid(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetUuid(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Uuid = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetVersion(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetVersion(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Version = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetClient_id(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetClient_id(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Client_id = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetUrl(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetUrl(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Url = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetBlock_id(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetBlock_id(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Block_id = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetContent(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetContent(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Content = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetMode(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetMode(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Mode = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetFinal_rule_id(v int) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetFinal_rule_id(v int) *GetBotAttackIncidentLogDataResponseDataList {
   s.Final_rule_id = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetEvent_type(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetEvent_type(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Event_type = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetAct(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetAct(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Act = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetZone(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetZone(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Zone = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetAttack_time(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetAttack_time(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Attack_time = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetStrategy_desc(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetStrategy_desc(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Strategy_desc = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetHost(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetHost(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Host = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetLocation(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetLocation(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Location = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetStrategy_name(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetStrategy_name(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Strategy_name = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetUser_agent(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetUser_agent(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.User_agent = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetDetail_host(v string) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetDetail_host(v string) *GetBotAttackIncidentLogDataResponseDataList {
   s.Detail_host = &v
   return s
 }
 
-func (s *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList) SetStatusCode(v int) *GetBotAttackIncidentLogDataGetBotAttackIncidentLogDataResponseDataList {
+func (s *GetBotAttackIncidentLogDataResponseDataList) SetStatusCode(v int) *GetBotAttackIncidentLogDataResponseDataList {
   s.StatusCode = &v
   return s
 }

@@ -5,122 +5,108 @@ import (
   "github.com/alibabacloud-go/tea/tea"
 )
 
-type QueryPropertyConfigSchemaRequest struct {
+type GetASchemaForARuleFormatRequest struct {
 }
 
-func (s QueryPropertyConfigSchemaRequest) String() string {
+func (s GetASchemaForARuleFormatRequest) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryPropertyConfigSchemaRequest) GoString() string {
+func (s GetASchemaForARuleFormatRequest) GoString() string {
   return s.String()
 }
 
-type QueryPropertyConfigSchemaResponse struct {
-  // {"en":"Response code, 0 means successful.", "zh_CN":"接口响应code，0代表成功。"}
+type GetASchemaForARuleFormatRequestHeader struct {
+}
+
+func (s GetASchemaForARuleFormatRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetASchemaForARuleFormatRequestHeader) GoString() string {
+  return s.String()
+}
+
+type GetASchemaForARuleFormatPaths struct {
+}
+
+func (s GetASchemaForARuleFormatPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetASchemaForARuleFormatPaths) GoString() string {
+  return s.String()
+}
+
+type GetASchemaForARuleFormatParameters struct {
+}
+
+func (s GetASchemaForARuleFormatParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetASchemaForARuleFormatParameters) GoString() string {
+  return s.String()
+}
+
+type GetASchemaForARuleFormatResponse struct {
+  // {"en":"Response code, 0 means successful.","zh_CN":"接口响应code，0代表成功。"}
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
-  // {"en":"Response error message if failed.", "zh_CN":"接口响应信息，success代表成功，失败则提供失败信息。"}
+  // {"en":"Response data.","zh_CN":"接口响应数据"}
+  Data *GetASchemaForARuleFormatResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  // {"en":"Response error message if failed.","zh_CN":"接口响应信息，success代表成功，失败则提供失败信息。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  // {"en":"Response data.", "zh_CN":"接口响应数据"}
-  Data *QueryPropertyConfigSchemaQueryPropertyConfigSchemaResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryPropertyConfigSchemaResponse) String() string {
+func (s GetASchemaForARuleFormatResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryPropertyConfigSchemaResponse) GoString() string {
+func (s GetASchemaForARuleFormatResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryPropertyConfigSchemaResponse) SetCode(v string) *QueryPropertyConfigSchemaResponse {
+func (s *GetASchemaForARuleFormatResponse) SetCode(v string) *GetASchemaForARuleFormatResponse {
   s.Code = &v
   return s
 }
 
-func (s *QueryPropertyConfigSchemaResponse) SetMessage(v string) *QueryPropertyConfigSchemaResponse {
-  s.Message = &v
-  return s
-}
-
-func (s *QueryPropertyConfigSchemaResponse) SetData(v *QueryPropertyConfigSchemaQueryPropertyConfigSchemaResponseData) *QueryPropertyConfigSchemaResponse {
+func (s *GetASchemaForARuleFormatResponse) SetData(v *GetASchemaForARuleFormatResponseData) *GetASchemaForARuleFormatResponse {
   s.Data = v
   return s
 }
 
-type QueryPropertyConfigSchemaQueryPropertyConfigSchemaResponseData struct {
-  // {"en":"origin configuration schema. Content require a string in json format.", "zh_CN":"回源配置结构，json格式字符串"}
-  OriginsSchema *string `json:"originsSchema,omitempty" xml:"originsSchema,omitempty"`
-  // {"en":"variable configuration schema. Content require a string in json format.", "zh_CN":"变量配置结构，json格式字符串"}
-  VariablesSchema *string `json:"variablesSchema,omitempty" xml:"variablesSchema,omitempty"`
-  // {"en":"rule configuration schema. Content require a string in json format.", "zh_CN":"规则配置结构，json格式字符串"}
-  RulesSchema *string `json:"rulesSchema,omitempty" xml:"rulesSchema,omitempty" require:"true"`
-}
-
-func (s QueryPropertyConfigSchemaQueryPropertyConfigSchemaResponseData) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryPropertyConfigSchemaQueryPropertyConfigSchemaResponseData) GoString() string {
-  return s.String()
-}
-
-func (s *QueryPropertyConfigSchemaQueryPropertyConfigSchemaResponseData) SetOriginsSchema(v string) *QueryPropertyConfigSchemaQueryPropertyConfigSchemaResponseData {
-  s.OriginsSchema = &v
+func (s *GetASchemaForARuleFormatResponse) SetMessage(v string) *GetASchemaForARuleFormatResponse {
+  s.Message = &v
   return s
 }
 
-func (s *QueryPropertyConfigSchemaQueryPropertyConfigSchemaResponseData) SetVariablesSchema(v string) *QueryPropertyConfigSchemaQueryPropertyConfigSchemaResponseData {
-  s.VariablesSchema = &v
+type GetASchemaForARuleFormatResponseData struct {
+  // {"en":"property configuration json schema.","zh_CN":"property配置的json schema"}
+  Schema *string `json:"schema,omitempty" xml:"schema,omitempty" require:"true"`
+}
+
+func (s GetASchemaForARuleFormatResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetASchemaForARuleFormatResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *GetASchemaForARuleFormatResponseData) SetSchema(v string) *GetASchemaForARuleFormatResponseData {
+  s.Schema = &v
   return s
 }
 
-func (s *QueryPropertyConfigSchemaQueryPropertyConfigSchemaResponseData) SetRulesSchema(v string) *QueryPropertyConfigSchemaQueryPropertyConfigSchemaResponseData {
-  s.RulesSchema = &v
-  return s
+type GetASchemaForARuleFormatResponseHeader struct {
 }
 
-type QueryPropertyConfigSchemaPaths struct {
-}
-
-func (s QueryPropertyConfigSchemaPaths) String() string {
+func (s GetASchemaForARuleFormatResponseHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryPropertyConfigSchemaPaths) GoString() string {
-  return s.String()
-}
-
-type QueryPropertyConfigSchemaParameters struct {
-}
-
-func (s QueryPropertyConfigSchemaParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryPropertyConfigSchemaParameters) GoString() string {
-  return s.String()
-}
-
-type QueryPropertyConfigSchemaRequestHeader struct {
-}
-
-func (s QueryPropertyConfigSchemaRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryPropertyConfigSchemaRequestHeader) GoString() string {
-  return s.String()
-}
-
-type QueryPropertyConfigSchemaResponseHeader struct {
-}
-
-func (s QueryPropertyConfigSchemaResponseHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryPropertyConfigSchemaResponseHeader) GoString() string {
+func (s GetASchemaForARuleFormatResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -146,7 +132,7 @@ type QueryHWAntiHotlinkingConfigResponse struct {
   // 注意：
   // 1. 需要取消防盗链配置设置时，可以传入空节点<cache-time-behaviors></cache-time-behaviors>。
   // 2. 表示需要设置防盗链配置时，此项必填"}
-  HuaweiVisitControlRules []*QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules `json:"huawei-visit-control-rules,omitempty" xml:"huawei-visit-control-rules,omitempty" require:"true" type:"Repeated"`
+  HuaweiVisitControlRules []*QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules `json:"huawei-visit-control-rules,omitempty" xml:"huawei-visit-control-rules,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryHWAntiHotlinkingConfigResponse) String() string {
@@ -157,12 +143,12 @@ func (s QueryHWAntiHotlinkingConfigResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryHWAntiHotlinkingConfigResponse) SetHuaweiVisitControlRules(v []*QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) *QueryHWAntiHotlinkingConfigResponse {
+func (s *QueryHWAntiHotlinkingConfigResponse) SetHuaweiVisitControlRules(v []*QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) *QueryHWAntiHotlinkingConfigResponse {
   s.HuaweiVisitControlRules = v
   return s
 }
 
-type QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules struct     {
+type QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules struct     {
   // {"en":"When configuring multiple configuration sets, the specific configuration set's ID. The data-id can be obtained through the query interface. Note: a. If data-id is provided, it indicates the modification of a specific Configuration Item in one of the configuration sets. No modification is needed for other configuration sets. b. If multiple configuration sets are provided as input, and some have data-id while others do not, then those with data-id represent modifications to specific configuration sets, whereas those without data-id represent new configurations added on top of existing ones. c. If none of the inputs have data-id, it means the current configuration completely overrides the previous configuration. d. If no configuration parameters are provided and only the domain and secondary tag are transmitted, it indicates clearing all configurations corresponding to the domain's secondary service for this interface. e. If a configuration set has no specific Configuration Item, then data-id is required with an actual existing data-id value, indicating the clearing of the Configuration Item corresponding to this data-id. A configuration set with no specific Configuration Item and no data-id is not allowed.", "zh_CN":"配置多组配置时，具体某组配置的id。data-id可以通过查询接口获取。 注意： a、如果有传data-id，说明指定修改其中一组配置项内容，不需求修改其他组配置内容不需要入参；  b、如果入参多组配置，其中有些组配置有传data-id，有些没有传，则有传data-id的表示修改具体某组配置，没有传data-id的表示在原来基础上新增一组配置；  c、如果入参都没有传data-id,表示用本次的配置全量覆盖原先配置；  d、如果入参没有传任何配置项参数，只传了域名和二级标签，表示清空这个接口对应域名二级服务所有配置；  e、如果一组配置没有具体的配置项，则data-id必填，且值为实际存在的data-id，表示清空这个data-id对应配置项的值；不允许一组配置没有具体的配置项也没有data-id。"}
   DataId *int64 `json:"data-id,omitempty" xml:"data-id,omitempty"`
   // {"en":"The url matching mode supports regularization. If all matches, the input parameters can be configured as: .*", "zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*"}
@@ -186,7 +172,7 @@ type QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitCo
   // {"en":"Decrypt Algorithm", "zh_CN":"解密算法，入参支持：空|aes-base64|aes-base64-level。 入参只能选择一种算法， 支持不传：不传就默认客户不用这个防盗链算法 如果传：aes-base64，表示点播算法； 如果传aes-base64-level，表示直播算法"}
   DecryptAlgorithm *string `json:"decrypt-algorithm,omitempty" xml:"decrypt-algorithm,omitempty"`
   // {"en":"Decrypt Key", "zh_CN":"秘钥集合，如果解密算法的入参不为空，则组内容不能为空。如果有多组秘钥信息，需要输入多组。一组内容包括：解密秘钥和秘钥过期时间 示例： <decrypt-key>-----一组秘钥信息    <secret-key>D915581AA2EF37B4</secret-key>    <expiry-time>-1</expiry-time> </decrypt-key> <decrypt-key>---一组秘钥信息    <secret-key>D915581AA2EF37B4</secret-key>    <expiry-time>20180731100000</expiry-time> </decrypt-key>"}
-  DecryptKey []*QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRulesDecryptKey `json:"decrypt-key,omitempty" xml:"decrypt-key,omitempty" type:"Repeated"`
+  DecryptKey []*QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRulesDecryptKey `json:"decrypt-key,omitempty" xml:"decrypt-key,omitempty" type:"Repeated"`
   // {"en":"Cipher Expiry Time", "zh_CN":"防盗链过期时间：精确到秒，例如：5分钟过期，则入参为300。如果不传则是0，表示马上过期，"}
   CipherExpiryTime *string `json:"cipher-expiry-time,omitempty" xml:"cipher-expiry-time,omitempty"`
   // {"en":"Authorize To Origin Rules", "zh_CN":"是否回源鉴权，支持不传，不传为空，如果传： true：表示要回源鉴权 false:不需要回源鉴权"}
@@ -203,115 +189,115 @@ type QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitCo
   AuthorizeCdn *string `json:"authorize-cdn,omitempty" xml:"authorize-cdn,omitempty"`
 }
 
-func (s QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) String() string {
+func (s QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) GoString() string {
+func (s QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) GoString() string {
   return s.String()
 }
 
-func (s *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetDataId(v int64) *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
+func (s *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetDataId(v int64) *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
   s.DataId = &v
   return s
 }
 
-func (s *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetPathPattern(v string) *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
+func (s *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetPathPattern(v string) *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
   s.PathPattern = &v
   return s
 }
 
-func (s *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetExceptPathPattern(v string) *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
+func (s *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetExceptPathPattern(v string) *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
   s.ExceptPathPattern = &v
   return s
 }
 
-func (s *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetForbiddenIps(v string) *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
+func (s *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetForbiddenIps(v string) *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
   s.ForbiddenIps = &v
   return s
 }
 
-func (s *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetAllowedIps(v string) *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
+func (s *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetAllowedIps(v string) *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
   s.AllowedIps = &v
   return s
 }
 
-func (s *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetForbiddenMethod(v string) *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
+func (s *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetForbiddenMethod(v string) *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
   s.ForbiddenMethod = &v
   return s
 }
 
-func (s *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetAllowedMethod(v string) *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
+func (s *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetAllowedMethod(v string) *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
   s.AllowedMethod = &v
   return s
 }
 
-func (s *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetDecryptAlgorithm(v string) *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
+func (s *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetDecryptAlgorithm(v string) *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
   s.DecryptAlgorithm = &v
   return s
 }
 
-func (s *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetDecryptKey(v []*QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRulesDecryptKey) *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
+func (s *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetDecryptKey(v []*QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRulesDecryptKey) *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
   s.DecryptKey = v
   return s
 }
 
-func (s *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetCipherExpiryTime(v string) *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
+func (s *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetCipherExpiryTime(v string) *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
   s.CipherExpiryTime = &v
   return s
 }
 
-func (s *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetAuthorizeToOriginRules(v string) *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
+func (s *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetAuthorizeToOriginRules(v string) *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
   s.AuthorizeToOriginRules = &v
   return s
 }
 
-func (s *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetAuthorizeMethod(v string) *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
+func (s *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetAuthorizeMethod(v string) *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
   s.AuthorizeMethod = &v
   return s
 }
 
-func (s *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetAuthorizeUrl(v string) *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
+func (s *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetAuthorizeUrl(v string) *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
   s.AuthorizeUrl = &v
   return s
 }
 
-func (s *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetAuthorizePattern(v string) *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
+func (s *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetAuthorizePattern(v string) *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
   s.AuthorizePattern = &v
   return s
 }
 
-func (s *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetAuthorizeKey(v string) *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
+func (s *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetAuthorizeKey(v string) *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
   s.AuthorizeKey = &v
   return s
 }
 
-func (s *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetAuthorizeCdn(v string) *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
+func (s *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules) SetAuthorizeCdn(v string) *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRules {
   s.AuthorizeCdn = &v
   return s
 }
 
-type QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRulesDecryptKey struct     {
+type QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRulesDecryptKey struct     {
   // {"en":"Secret Key", "zh_CN":"解密秘钥内容"}
   SecretKey *string `json:"Secret Key,omitempty" xml:"Secret Key,omitempty"`
   // {"en":"Secret Key", "zh_CN":"解密秘钥对应的过期时间，-1表示永不过期，入参格式精确到秒，例如：20180731100000"}
   ExpiryTime *string `json:"Expiry Time,omitempty" xml:"Expiry Time,omitempty"`
 }
 
-func (s QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRulesDecryptKey) String() string {
+func (s QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRulesDecryptKey) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRulesDecryptKey) GoString() string {
+func (s QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRulesDecryptKey) GoString() string {
   return s.String()
 }
 
-func (s *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRulesDecryptKey) SetSecretKey(v string) *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRulesDecryptKey {
+func (s *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRulesDecryptKey) SetSecretKey(v string) *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRulesDecryptKey {
   s.SecretKey = &v
   return s
 }
 
-func (s *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRulesDecryptKey) SetExpiryTime(v string) *QueryHWAntiHotlinkingConfigQueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRulesDecryptKey {
+func (s *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRulesDecryptKey) SetExpiryTime(v string) *QueryHWAntiHotlinkingConfigResponseHuaweiVisitControlRulesDecryptKey {
   s.ExpiryTime = &v
   return s
 }

@@ -18,7 +18,7 @@ func (s QueryCDNServiceRealIPRequest) GoString() string {
 
 type QueryCDNServiceRealIPResponse struct {
   // {'en':'result', 'zh_CN':'结果'}
-  Result *QueryCDNServiceRealIPQueryCDNServiceRealIPResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Struct"`
+  Result *QueryCDNServiceRealIPResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryCDNServiceRealIPResponse) String() string {
@@ -29,56 +29,56 @@ func (s QueryCDNServiceRealIPResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryCDNServiceRealIPResponse) SetResult(v *QueryCDNServiceRealIPQueryCDNServiceRealIPResponseResult) *QueryCDNServiceRealIPResponse {
+func (s *QueryCDNServiceRealIPResponse) SetResult(v *QueryCDNServiceRealIPResponseResult) *QueryCDNServiceRealIPResponse {
   s.Result = v
   return s
 }
 
-type QueryCDNServiceRealIPQueryCDNServiceRealIPResponseResult struct {
+type QueryCDNServiceRealIPResponseResult struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {'en':'Real service IP list of domains', 'zh_CN':'域名对应的真实服务IP列表'}
-  WhiteipList *QueryCDNServiceRealIPQueryCDNServiceRealIPResponseResultWhiteipList `json:"whiteipList,omitempty" xml:"whiteipList,omitempty" require:"true" type:"Struct"`
+  WhiteipList *QueryCDNServiceRealIPResponseResultWhiteipList `json:"whiteipList,omitempty" xml:"whiteipList,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryCDNServiceRealIPQueryCDNServiceRealIPResponseResult) String() string {
+func (s QueryCDNServiceRealIPResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCDNServiceRealIPQueryCDNServiceRealIPResponseResult) GoString() string {
+func (s QueryCDNServiceRealIPResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryCDNServiceRealIPQueryCDNServiceRealIPResponseResult) SetCode(v string) *QueryCDNServiceRealIPQueryCDNServiceRealIPResponseResult {
+func (s *QueryCDNServiceRealIPResponseResult) SetCode(v string) *QueryCDNServiceRealIPResponseResult {
   s.Code = &v
   return s
 }
 
-func (s *QueryCDNServiceRealIPQueryCDNServiceRealIPResponseResult) SetWhiteipList(v *QueryCDNServiceRealIPQueryCDNServiceRealIPResponseResultWhiteipList) *QueryCDNServiceRealIPQueryCDNServiceRealIPResponseResult {
+func (s *QueryCDNServiceRealIPResponseResult) SetWhiteipList(v *QueryCDNServiceRealIPResponseResultWhiteipList) *QueryCDNServiceRealIPResponseResult {
   s.WhiteipList = v
   return s
 }
 
-type QueryCDNServiceRealIPQueryCDNServiceRealIPResponseResultWhiteipList struct {
+type QueryCDNServiceRealIPResponseResultWhiteipList struct {
   // {'en':'Ip List', 'zh_CN':'真实服务IP列表'}
   Whiteiplist []*string `json:"whiteiplist,omitempty" xml:"whiteiplist,omitempty" require:"true" type:"Repeated"`
   // {'en':'Domain List', 'zh_CN':'域名列表'}
   DomainName []*string `json:"domainName,omitempty" xml:"domainName,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryCDNServiceRealIPQueryCDNServiceRealIPResponseResultWhiteipList) String() string {
+func (s QueryCDNServiceRealIPResponseResultWhiteipList) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCDNServiceRealIPQueryCDNServiceRealIPResponseResultWhiteipList) GoString() string {
+func (s QueryCDNServiceRealIPResponseResultWhiteipList) GoString() string {
   return s.String()
 }
 
-func (s *QueryCDNServiceRealIPQueryCDNServiceRealIPResponseResultWhiteipList) SetWhiteiplist(v []*string) *QueryCDNServiceRealIPQueryCDNServiceRealIPResponseResultWhiteipList {
+func (s *QueryCDNServiceRealIPResponseResultWhiteipList) SetWhiteiplist(v []*string) *QueryCDNServiceRealIPResponseResultWhiteipList {
   s.Whiteiplist = v
   return s
 }
 
-func (s *QueryCDNServiceRealIPQueryCDNServiceRealIPResponseResultWhiteipList) SetDomainName(v []*string) *QueryCDNServiceRealIPQueryCDNServiceRealIPResponseResultWhiteipList {
+func (s *QueryCDNServiceRealIPResponseResultWhiteipList) SetDomainName(v []*string) *QueryCDNServiceRealIPResponseResultWhiteipList {
   s.DomainName = v
   return s
 }
@@ -299,7 +299,7 @@ func (s *QuerySpecificIPBelongRequest) SetIp(v []*string) *QuerySpecificIPBelong
 
 type QuerySpecificIPBelongResponse struct {
   // {'en':'checkList', 'zh_CN':'结果数据'}
-  CheckList []*QuerySpecificIPBelongQuerySpecificIPBelongResponseCheckList `json:"checkList,omitempty" xml:"checkList,omitempty" require:"true" type:"Repeated"`
+  CheckList []*QuerySpecificIPBelongResponseCheckList `json:"checkList,omitempty" xml:"checkList,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QuerySpecificIPBelongResponse) String() string {
@@ -310,12 +310,12 @@ func (s QuerySpecificIPBelongResponse) GoString() string {
   return s.String()
 }
 
-func (s *QuerySpecificIPBelongResponse) SetCheckList(v []*QuerySpecificIPBelongQuerySpecificIPBelongResponseCheckList) *QuerySpecificIPBelongResponse {
+func (s *QuerySpecificIPBelongResponse) SetCheckList(v []*QuerySpecificIPBelongResponseCheckList) *QuerySpecificIPBelongResponse {
   s.CheckList = v
   return s
 }
 
-type QuerySpecificIPBelongQuerySpecificIPBelongResponseCheckList struct     {
+type QuerySpecificIPBelongResponseCheckList struct     {
   // {'en':'yes: the IP belongs to Our system,
   //         no: the IP does not belong to Our system', 'zh_CN':'yes：ip属于我司，no：ip不属于我司'}
   Response *string `json:"response,omitempty" xml:"response,omitempty" require:"true"`
@@ -323,20 +323,20 @@ type QuerySpecificIPBelongQuerySpecificIPBelongResponseCheckList struct     {
   Ip *string `json:"ip,omitempty" xml:"ip,omitempty" require:"true"`
 }
 
-func (s QuerySpecificIPBelongQuerySpecificIPBelongResponseCheckList) String() string {
+func (s QuerySpecificIPBelongResponseCheckList) String() string {
   return tea.Prettify(s)
 }
 
-func (s QuerySpecificIPBelongQuerySpecificIPBelongResponseCheckList) GoString() string {
+func (s QuerySpecificIPBelongResponseCheckList) GoString() string {
   return s.String()
 }
 
-func (s *QuerySpecificIPBelongQuerySpecificIPBelongResponseCheckList) SetResponse(v string) *QuerySpecificIPBelongQuerySpecificIPBelongResponseCheckList {
+func (s *QuerySpecificIPBelongResponseCheckList) SetResponse(v string) *QuerySpecificIPBelongResponseCheckList {
   s.Response = &v
   return s
 }
 
-func (s *QuerySpecificIPBelongQuerySpecificIPBelongResponseCheckList) SetIp(v string) *QuerySpecificIPBelongQuerySpecificIPBelongResponseCheckList {
+func (s *QuerySpecificIPBelongResponseCheckList) SetIp(v string) *QuerySpecificIPBelongResponseCheckList {
   s.Ip = &v
   return s
 }
@@ -408,7 +408,7 @@ func (s *IpInfoServiceRequest) SetIp(v []*string) *IpInfoServiceRequest {
 
 type IpInfoServiceResponse struct {
   // {'en':'result', 'zh_CN':'结果'}
-  Result []*IpInfoServiceIpInfoServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*IpInfoServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s IpInfoServiceResponse) String() string {
@@ -419,12 +419,12 @@ func (s IpInfoServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *IpInfoServiceResponse) SetResult(v []*IpInfoServiceIpInfoServiceResponseResult) *IpInfoServiceResponse {
+func (s *IpInfoServiceResponse) SetResult(v []*IpInfoServiceResponseResult) *IpInfoServiceResponse {
   s.Result = v
   return s
 }
 
-type IpInfoServiceIpInfoServiceResponseResult struct     {
+type IpInfoServiceResponseResult struct     {
   // {'en':'IP addresses', 'zh_CN':'IP地址'}
   Ip *string `json:"ip,omitempty" xml:"ip,omitempty" require:"true"`
   // {'en':'Whether to network the our IP
@@ -445,40 +445,40 @@ type IpInfoServiceIpInfoServiceResponseResult struct     {
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
 }
 
-func (s IpInfoServiceIpInfoServiceResponseResult) String() string {
+func (s IpInfoServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s IpInfoServiceIpInfoServiceResponseResult) GoString() string {
+func (s IpInfoServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *IpInfoServiceIpInfoServiceResponseResult) SetIp(v string) *IpInfoServiceIpInfoServiceResponseResult {
+func (s *IpInfoServiceResponseResult) SetIp(v string) *IpInfoServiceResponseResult {
   s.Ip = &v
   return s
 }
 
-func (s *IpInfoServiceIpInfoServiceResponseResult) SetIsCdnIp(v bool) *IpInfoServiceIpInfoServiceResponseResult {
+func (s *IpInfoServiceResponseResult) SetIsCdnIp(v bool) *IpInfoServiceResponseResult {
   s.IsCdnIp = &v
   return s
 }
 
-func (s *IpInfoServiceIpInfoServiceResponseResult) SetCountry(v string) *IpInfoServiceIpInfoServiceResponseResult {
+func (s *IpInfoServiceResponseResult) SetCountry(v string) *IpInfoServiceResponseResult {
   s.Country = &v
   return s
 }
 
-func (s *IpInfoServiceIpInfoServiceResponseResult) SetProvince(v string) *IpInfoServiceIpInfoServiceResponseResult {
+func (s *IpInfoServiceResponseResult) SetProvince(v string) *IpInfoServiceResponseResult {
   s.Province = &v
   return s
 }
 
-func (s *IpInfoServiceIpInfoServiceResponseResult) SetCity(v string) *IpInfoServiceIpInfoServiceResponseResult {
+func (s *IpInfoServiceResponseResult) SetCity(v string) *IpInfoServiceResponseResult {
   s.City = &v
   return s
 }
 
-func (s *IpInfoServiceIpInfoServiceResponseResult) SetIsp(v string) *IpInfoServiceIpInfoServiceResponseResult {
+func (s *IpInfoServiceResponseResult) SetIsp(v string) *IpInfoServiceResponseResult {
   s.Isp = &v
   return s
 }

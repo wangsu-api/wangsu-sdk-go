@@ -100,7 +100,7 @@ func (s GetAListOfOriginShieldsResponseHeader) GoString() string {
 
 type GetAListOfOriginShieldsResponse struct {
   // {"en" : "A list of shields that can be used in a property.", "zh_CN": "shield列表。"}
-  Shields []*GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields `json:"shields,omitempty" xml:"shields,omitempty" require:"true" type:"Repeated"`
+  Shields []*GetAListOfOriginShieldsResponseShields `json:"shields,omitempty" xml:"shields,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetAListOfOriginShieldsResponse) String() string {
@@ -111,12 +111,12 @@ func (s GetAListOfOriginShieldsResponse) GoString() string {
   return s.String()
 }
 
-func (s *GetAListOfOriginShieldsResponse) SetShields(v []*GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields) *GetAListOfOriginShieldsResponse {
+func (s *GetAListOfOriginShieldsResponse) SetShields(v []*GetAListOfOriginShieldsResponseShields) *GetAListOfOriginShieldsResponse {
   s.Shields = v
   return s
 }
 
-type GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields struct     {
+type GetAListOfOriginShieldsResponseShields struct     {
   // {"en" : "Name of the shield.", "zh_CN": "shield名称。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty"`
   // {"en" : "A unique identifier representing the shield. This ID is referenced in properties using the shield.", "zh_CN": "shield唯一标识的ID。在加速项目中以该ID引用shield。"}
@@ -136,50 +136,50 @@ type GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields struct     {
   UsedInProperties *bool `json:"usedInProperties,omitempty" xml:"usedInProperties,omitempty"`
 }
 
-func (s GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields) String() string {
+func (s GetAListOfOriginShieldsResponseShields) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields) GoString() string {
+func (s GetAListOfOriginShieldsResponseShields) GoString() string {
   return s.String()
 }
 
-func (s *GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields) SetName(v string) *GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields {
+func (s *GetAListOfOriginShieldsResponseShields) SetName(v string) *GetAListOfOriginShieldsResponseShields {
   s.Name = &v
   return s
 }
 
-func (s *GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields) SetId(v string) *GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields {
+func (s *GetAListOfOriginShieldsResponseShields) SetId(v string) *GetAListOfOriginShieldsResponseShields {
   s.Id = &v
   return s
 }
 
-func (s *GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields) SetRegion(v string) *GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields {
+func (s *GetAListOfOriginShieldsResponseShields) SetRegion(v string) *GetAListOfOriginShieldsResponseShields {
   s.Region = &v
   return s
 }
 
-func (s *GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields) SetIpV4(v []*string) *GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields {
+func (s *GetAListOfOriginShieldsResponseShields) SetIpV4(v []*string) *GetAListOfOriginShieldsResponseShields {
   s.IpV4 = v
   return s
 }
 
-func (s *GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields) SetIpV6(v []*string) *GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields {
+func (s *GetAListOfOriginShieldsResponseShields) SetIpV6(v []*string) *GetAListOfOriginShieldsResponseShields {
   s.IpV6 = v
   return s
 }
 
-func (s *GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields) SetLastUpdated(v string) *GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields {
+func (s *GetAListOfOriginShieldsResponseShields) SetLastUpdated(v string) *GetAListOfOriginShieldsResponseShields {
   s.LastUpdated = &v
   return s
 }
 
-func (s *GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields) SetEffectiveDate(v string) *GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields {
+func (s *GetAListOfOriginShieldsResponseShields) SetEffectiveDate(v string) *GetAListOfOriginShieldsResponseShields {
   s.EffectiveDate = &v
   return s
 }
 
-func (s *GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields) SetUsedInProperties(v bool) *GetAListOfOriginShieldsGetAListOfOriginShieldsResponseShields {
+func (s *GetAListOfOriginShieldsResponseShields) SetUsedInProperties(v bool) *GetAListOfOriginShieldsResponseShields {
   s.UsedInProperties = &v
   return s
 }
@@ -250,7 +250,7 @@ type GetSystemConfigurationResponse struct {
   // {"en" : "A list of advanced Edge Logic directives that can be enabled by contacting our support team.", "zh_CN": "边缘逻辑高级指令列表。这些指令需联系我们的技术支持团队开通。"}
   AdvancedDirectives []*string `json:"advancedDirectives,omitempty" xml:"advancedDirectives,omitempty" require:"true" type:"Repeated"`
   // {"en" : "This field lists nonstandard ports that can be used to handle HTTP and HTTPS requests. If your website uses a nonstandard port which is not listed, please contact our support team. You can specify one of these port numbers in the extraServicePorts field of your property configuration.", "zh_CN": "该字段返回CDN Pro支持的HTTP, HTTPS非标准服务端口。这些端口可以用在加速项目的extraServicePorts配置项中。如果你所使用的非标准端口不在该列表中，可联系我们的技术支持团队开通。"}
-  ExtraServicePorts *GetSystemConfigurationGetSystemConfigurationResponseExtraServicePorts `json:"extraServicePorts,omitempty" xml:"extraServicePorts,omitempty" require:"true" type:"Struct"`
+  ExtraServicePorts *GetSystemConfigurationResponseExtraServicePorts `json:"extraServicePorts,omitempty" xml:"extraServicePorts,omitempty" require:"true" type:"Struct"`
   // {"en" : "List of advanced features that can be enabled for customers via the service quota API. 'realTimeLog' is an advanced feature allowing a customer to monitor requests from visitors to the content as they are received. 'nearChina' is an advanced feature allowing use of a special server group to provide better performance to visitors in China for domains without ICP Beian. 'originShield' allows use of an extra layer of servers in front of a property's origin servers. Please contact our support team if you require an advanced feature.", "zh_CN": "CDN Pro支持的高级功能列表。例如，'realTimeLog'日志可用于实时回传日志。如果需要使用这些高级功能，请联系我们的技术支持团队开通。"}
   AdvancedFeaures []*string `json:"advancedFeaures,omitempty" xml:"advancedFeaures,omitempty" require:"true" type:"Repeated"`
   // {"en" : "RFC 3339 date indicating the oldest validated property that can be deployed. Properties validated before this date must be re-validated before you can deploy them. Example: '2021-02-05T00:00:00Z'", "zh_CN": "加速项目验证通过的有效起始时间。如果加速项目的验证早于该时间，则必须重新验证通过后才能部署。采用RFC 3339日期格式，例如'2021-02-05T00:00:00Z'。"}
@@ -284,7 +284,7 @@ func (s *GetSystemConfigurationResponse) SetAdvancedDirectives(v []*string) *Get
   return s
 }
 
-func (s *GetSystemConfigurationResponse) SetExtraServicePorts(v *GetSystemConfigurationGetSystemConfigurationResponseExtraServicePorts) *GetSystemConfigurationResponse {
+func (s *GetSystemConfigurationResponse) SetExtraServicePorts(v *GetSystemConfigurationResponseExtraServicePorts) *GetSystemConfigurationResponse {
   s.ExtraServicePorts = v
   return s
 }
@@ -309,27 +309,27 @@ func (s *GetSystemConfigurationResponse) SetAdvancedLbDirectives(v []*string) *G
   return s
 }
 
-type GetSystemConfigurationGetSystemConfigurationResponseExtraServicePorts struct {
+type GetSystemConfigurationResponseExtraServicePorts struct {
   // {"en" : "Specifies ports other than the default 80 which can be used to handle HTTP requests.", "zh_CN": "可用于监听HTTP请求的非标准端口。80端口默认支持。"}
   Http []*string `json:"http,omitempty" xml:"http,omitempty" type:"Repeated"`
   // {"en" : "Specify ports other than the default 443 which can be used to handle HTTPS requests.", "zh_CN": "可用于监听HTTPS请求的非标准端口。443端口默认支持。"}
   Https []*string `json:"https,omitempty" xml:"https,omitempty" type:"Repeated"`
 }
 
-func (s GetSystemConfigurationGetSystemConfigurationResponseExtraServicePorts) String() string {
+func (s GetSystemConfigurationResponseExtraServicePorts) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetSystemConfigurationGetSystemConfigurationResponseExtraServicePorts) GoString() string {
+func (s GetSystemConfigurationResponseExtraServicePorts) GoString() string {
   return s.String()
 }
 
-func (s *GetSystemConfigurationGetSystemConfigurationResponseExtraServicePorts) SetHttp(v []*string) *GetSystemConfigurationGetSystemConfigurationResponseExtraServicePorts {
+func (s *GetSystemConfigurationResponseExtraServicePorts) SetHttp(v []*string) *GetSystemConfigurationResponseExtraServicePorts {
   s.Http = v
   return s
 }
 
-func (s *GetSystemConfigurationGetSystemConfigurationResponseExtraServicePorts) SetHttps(v []*string) *GetSystemConfigurationGetSystemConfigurationResponseExtraServicePorts {
+func (s *GetSystemConfigurationResponseExtraServicePorts) SetHttps(v []*string) *GetSystemConfigurationResponseExtraServicePorts {
   s.Https = v
   return s
 }
@@ -491,7 +491,7 @@ func (s GetStagingServersListResponseHeader) GoString() string {
 
 type GetStagingServersListResponse struct {
   // {"en" : "Each entry describe a staging server.", "zh_CN": "每个对象代表一台服务器。"}
-  StagingServers []*GetStagingServersListGetStagingServersListResponseStagingServers `json:"stagingServers,omitempty" xml:"stagingServers,omitempty" require:"true" type:"Repeated"`
+  StagingServers []*GetStagingServersListResponseStagingServers `json:"stagingServers,omitempty" xml:"stagingServers,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetStagingServersListResponse) String() string {
@@ -502,12 +502,12 @@ func (s GetStagingServersListResponse) GoString() string {
   return s.String()
 }
 
-func (s *GetStagingServersListResponse) SetStagingServers(v []*GetStagingServersListGetStagingServersListResponseStagingServers) *GetStagingServersListResponse {
+func (s *GetStagingServersListResponse) SetStagingServers(v []*GetStagingServersListResponseStagingServers) *GetStagingServersListResponse {
   s.StagingServers = v
   return s
 }
 
-type GetStagingServersListGetStagingServersListResponseStagingServers struct     {
+type GetStagingServersListResponseStagingServers struct     {
   // {"en" : "IP address. It can be IPv4 or IPv6 format.", "zh_CN": "服务器的IP地址，IPv4或IPv6格式。"}
   Ip *string `json:"ip,omitempty" xml:"ip,omitempty"`
   // {"en" : "A code representing the staging server.", "zh_CN": "服务器所在的区域的代码。"}
@@ -520,30 +520,30 @@ type GetStagingServersListGetStagingServersListResponseStagingServers struct    
   IpVersion *int `json:"ipVersion,omitempty" xml:"ipVersion,omitempty"`
 }
 
-func (s GetStagingServersListGetStagingServersListResponseStagingServers) String() string {
+func (s GetStagingServersListResponseStagingServers) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetStagingServersListGetStagingServersListResponseStagingServers) GoString() string {
+func (s GetStagingServersListResponseStagingServers) GoString() string {
   return s.String()
 }
 
-func (s *GetStagingServersListGetStagingServersListResponseStagingServers) SetIp(v string) *GetStagingServersListGetStagingServersListResponseStagingServers {
+func (s *GetStagingServersListResponseStagingServers) SetIp(v string) *GetStagingServersListResponseStagingServers {
   s.Ip = &v
   return s
 }
 
-func (s *GetStagingServersListGetStagingServersListResponseStagingServers) SetCode(v string) *GetStagingServersListGetStagingServersListResponseStagingServers {
+func (s *GetStagingServersListResponseStagingServers) SetCode(v string) *GetStagingServersListResponseStagingServers {
   s.Code = &v
   return s
 }
 
-func (s *GetStagingServersListGetStagingServersListResponseStagingServers) SetLocation(v string) *GetStagingServersListGetStagingServersListResponseStagingServers {
+func (s *GetStagingServersListResponseStagingServers) SetLocation(v string) *GetStagingServersListResponseStagingServers {
   s.Location = &v
   return s
 }
 
-func (s *GetStagingServersListGetStagingServersListResponseStagingServers) SetIpVersion(v int) *GetStagingServersListGetStagingServersListResponseStagingServers {
+func (s *GetStagingServersListResponseStagingServers) SetIpVersion(v int) *GetStagingServersListResponseStagingServers {
   s.IpVersion = &v
   return s
 }
@@ -847,7 +847,7 @@ func (s CheckIfIpAddressesBelongToTheCdnProPlatformResponseHeader) GoString() st
 
 type CheckIfIpAddressesBelongToTheCdnProPlatformResponse struct {
   // {"en" : "Describes an IP address.", "zh_CN": "IP地址列表。"}
-  IpDetails []*CheckIfIpAddressesBelongToTheCdnProPlatformCheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails `json:"ipDetails,omitempty" xml:"ipDetails,omitempty" require:"true" type:"Repeated"`
+  IpDetails []*CheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails `json:"ipDetails,omitempty" xml:"ipDetails,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s CheckIfIpAddressesBelongToTheCdnProPlatformResponse) String() string {
@@ -858,12 +858,12 @@ func (s CheckIfIpAddressesBelongToTheCdnProPlatformResponse) GoString() string {
   return s.String()
 }
 
-func (s *CheckIfIpAddressesBelongToTheCdnProPlatformResponse) SetIpDetails(v []*CheckIfIpAddressesBelongToTheCdnProPlatformCheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails) *CheckIfIpAddressesBelongToTheCdnProPlatformResponse {
+func (s *CheckIfIpAddressesBelongToTheCdnProPlatformResponse) SetIpDetails(v []*CheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails) *CheckIfIpAddressesBelongToTheCdnProPlatformResponse {
   s.IpDetails = v
   return s
 }
 
-type CheckIfIpAddressesBelongToTheCdnProPlatformCheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails struct     {
+type CheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails struct     {
   // {"en" : "An IPv4 or IPv6 address.", "zh_CN": "IPv4或IPv6地址。"}
   Ip *string `json:"ip,omitempty" xml:"ip,omitempty"`
   // {"en" : "True if the IP address belongs to the CDN Pro platform.", "zh_CN": "IP地址是否来自CDN Pro。"}
@@ -874,25 +874,25 @@ type CheckIfIpAddressesBelongToTheCdnProPlatformCheckIfIpAddressesBelongToTheCdn
   Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty"`
 }
 
-func (s CheckIfIpAddressesBelongToTheCdnProPlatformCheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails) String() string {
+func (s CheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails) String() string {
   return tea.Prettify(s)
 }
 
-func (s CheckIfIpAddressesBelongToTheCdnProPlatformCheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails) GoString() string {
+func (s CheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails) GoString() string {
   return s.String()
 }
 
-func (s *CheckIfIpAddressesBelongToTheCdnProPlatformCheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails) SetIp(v string) *CheckIfIpAddressesBelongToTheCdnProPlatformCheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails {
+func (s *CheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails) SetIp(v string) *CheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails {
   s.Ip = &v
   return s
 }
 
-func (s *CheckIfIpAddressesBelongToTheCdnProPlatformCheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails) SetIsCdnProIp(v bool) *CheckIfIpAddressesBelongToTheCdnProPlatformCheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails {
+func (s *CheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails) SetIsCdnProIp(v bool) *CheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails {
   s.IsCdnProIp = &v
   return s
 }
 
-func (s *CheckIfIpAddressesBelongToTheCdnProPlatformCheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails) SetProtocol(v string) *CheckIfIpAddressesBelongToTheCdnProPlatformCheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails {
+func (s *CheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails) SetProtocol(v string) *CheckIfIpAddressesBelongToTheCdnProPlatformResponseIpDetails {
   s.Protocol = &v
   return s
 }

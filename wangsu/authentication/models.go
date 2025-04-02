@@ -164,7 +164,7 @@ type CreateUserResponse struct {
   // {'en':'Error message', 'zh_CN':'错误信息'}
   ReturnMsg *string `json:"returnMsg,omitempty" xml:"returnMsg,omitempty" require:"true"`
   // {'en':'content', 'zh_CN':'数据，下面全是数据的内容'}
-  Content *CreateUserCreateUserResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
+  Content *CreateUserResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
 }
 
 func (s CreateUserResponse) String() string {
@@ -185,12 +185,12 @@ func (s *CreateUserResponse) SetReturnMsg(v string) *CreateUserResponse {
   return s
 }
 
-func (s *CreateUserResponse) SetContent(v *CreateUserCreateUserResponseContent) *CreateUserResponse {
+func (s *CreateUserResponse) SetContent(v *CreateUserResponseContent) *CreateUserResponse {
   s.Content = v
   return s
 }
 
-type CreateUserCreateUserResponseContent struct {
+type CreateUserResponseContent struct {
   // {'en':'username', 'zh_CN':'用户名称'}
   Username *string `json:"username,omitempty" xml:"username,omitempty" require:"true"`
   // {'en':'id', 'zh_CN':'用户id'}
@@ -221,80 +221,80 @@ type CreateUserCreateUserResponseContent struct {
   CreateTime *int64 `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
 }
 
-func (s CreateUserCreateUserResponseContent) String() string {
+func (s CreateUserResponseContent) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateUserCreateUserResponseContent) GoString() string {
+func (s CreateUserResponseContent) GoString() string {
   return s.String()
 }
 
-func (s *CreateUserCreateUserResponseContent) SetUsername(v string) *CreateUserCreateUserResponseContent {
+func (s *CreateUserResponseContent) SetUsername(v string) *CreateUserResponseContent {
   s.Username = &v
   return s
 }
 
-func (s *CreateUserCreateUserResponseContent) SetId(v int64) *CreateUserCreateUserResponseContent {
+func (s *CreateUserResponseContent) SetId(v int64) *CreateUserResponseContent {
   s.Id = &v
   return s
 }
 
-func (s *CreateUserCreateUserResponseContent) SetEmail(v string) *CreateUserCreateUserResponseContent {
+func (s *CreateUserResponseContent) SetEmail(v string) *CreateUserResponseContent {
   s.Email = &v
   return s
 }
 
-func (s *CreateUserCreateUserResponseContent) SetAreaCode(v string) *CreateUserCreateUserResponseContent {
+func (s *CreateUserResponseContent) SetAreaCode(v string) *CreateUserResponseContent {
   s.AreaCode = &v
   return s
 }
 
-func (s *CreateUserCreateUserResponseContent) SetCellPhone(v string) *CreateUserCreateUserResponseContent {
+func (s *CreateUserResponseContent) SetCellPhone(v string) *CreateUserResponseContent {
   s.CellPhone = &v
   return s
 }
 
-func (s *CreateUserCreateUserResponseContent) SetGroupId(v int64) *CreateUserCreateUserResponseContent {
+func (s *CreateUserResponseContent) SetGroupId(v int64) *CreateUserResponseContent {
   s.GroupId = &v
   return s
 }
 
-func (s *CreateUserCreateUserResponseContent) SetGroupName(v string) *CreateUserCreateUserResponseContent {
+func (s *CreateUserResponseContent) SetGroupName(v string) *CreateUserResponseContent {
   s.GroupName = &v
   return s
 }
 
-func (s *CreateUserCreateUserResponseContent) SetBandwidth(v string) *CreateUserCreateUserResponseContent {
+func (s *CreateUserResponseContent) SetBandwidth(v string) *CreateUserResponseContent {
   s.Bandwidth = &v
   return s
 }
 
-func (s *CreateUserCreateUserResponseContent) SetRemark(v string) *CreateUserCreateUserResponseContent {
+func (s *CreateUserResponseContent) SetRemark(v string) *CreateUserResponseContent {
   s.Remark = &v
   return s
 }
 
-func (s *CreateUserCreateUserResponseContent) SetExpirationTime(v int64) *CreateUserCreateUserResponseContent {
+func (s *CreateUserResponseContent) SetExpirationTime(v int64) *CreateUserResponseContent {
   s.ExpirationTime = &v
   return s
 }
 
-func (s *CreateUserCreateUserResponseContent) SetEnableUser(v int) *CreateUserCreateUserResponseContent {
+func (s *CreateUserResponseContent) SetEnableUser(v int) *CreateUserResponseContent {
   s.EnableUser = &v
   return s
 }
 
-func (s *CreateUserCreateUserResponseContent) SetSmsAuth(v int) *CreateUserCreateUserResponseContent {
+func (s *CreateUserResponseContent) SetSmsAuth(v int) *CreateUserResponseContent {
   s.SmsAuth = &v
   return s
 }
 
-func (s *CreateUserCreateUserResponseContent) SetTotpAuth(v int) *CreateUserCreateUserResponseContent {
+func (s *CreateUserResponseContent) SetTotpAuth(v int) *CreateUserResponseContent {
   s.TotpAuth = &v
   return s
 }
 
-func (s *CreateUserCreateUserResponseContent) SetCreateTime(v int64) *CreateUserCreateUserResponseContent {
+func (s *CreateUserResponseContent) SetCreateTime(v int64) *CreateUserResponseContent {
   s.CreateTime = &v
   return s
 }
@@ -399,7 +399,7 @@ type ModifyGroupResponse struct {
   // {'en':'Error message', 'zh_CN':'错误信息'}
   ReturnMsg *string `json:"returnMsg,omitempty" xml:"returnMsg,omitempty" require:"true"`
   // {'en':'content', 'zh_CN':'数据，下面全是数据的内容'}
-  Content *ModifyGroupModifyGroupResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
+  Content *ModifyGroupResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
 }
 
 func (s ModifyGroupResponse) String() string {
@@ -420,12 +420,12 @@ func (s *ModifyGroupResponse) SetReturnMsg(v string) *ModifyGroupResponse {
   return s
 }
 
-func (s *ModifyGroupResponse) SetContent(v *ModifyGroupModifyGroupResponseContent) *ModifyGroupResponse {
+func (s *ModifyGroupResponse) SetContent(v *ModifyGroupResponseContent) *ModifyGroupResponse {
   s.Content = v
   return s
 }
 
-type ModifyGroupModifyGroupResponseContent struct {
+type ModifyGroupResponseContent struct {
   // {'en':'groupName', 'zh_CN':'用户组名称'}
   GroupName *string `json:"groupName,omitempty" xml:"groupName,omitempty" require:"true"`
   // {'en':'groupId', 'zh_CN':'用户组ID'}
@@ -442,45 +442,45 @@ type ModifyGroupModifyGroupResponseContent struct {
   UpdateTime *int64 `json:"updateTime,omitempty" xml:"updateTime,omitempty" require:"true"`
 }
 
-func (s ModifyGroupModifyGroupResponseContent) String() string {
+func (s ModifyGroupResponseContent) String() string {
   return tea.Prettify(s)
 }
 
-func (s ModifyGroupModifyGroupResponseContent) GoString() string {
+func (s ModifyGroupResponseContent) GoString() string {
   return s.String()
 }
 
-func (s *ModifyGroupModifyGroupResponseContent) SetGroupName(v string) *ModifyGroupModifyGroupResponseContent {
+func (s *ModifyGroupResponseContent) SetGroupName(v string) *ModifyGroupResponseContent {
   s.GroupName = &v
   return s
 }
 
-func (s *ModifyGroupModifyGroupResponseContent) SetGroupId(v int64) *ModifyGroupModifyGroupResponseContent {
+func (s *ModifyGroupResponseContent) SetGroupId(v int64) *ModifyGroupResponseContent {
   s.GroupId = &v
   return s
 }
 
-func (s *ModifyGroupModifyGroupResponseContent) SetParentGroupName(v string) *ModifyGroupModifyGroupResponseContent {
+func (s *ModifyGroupResponseContent) SetParentGroupName(v string) *ModifyGroupResponseContent {
   s.ParentGroupName = &v
   return s
 }
 
-func (s *ModifyGroupModifyGroupResponseContent) SetParentGroupId(v string) *ModifyGroupModifyGroupResponseContent {
+func (s *ModifyGroupResponseContent) SetParentGroupId(v string) *ModifyGroupResponseContent {
   s.ParentGroupId = &v
   return s
 }
 
-func (s *ModifyGroupModifyGroupResponseContent) SetRemark(v string) *ModifyGroupModifyGroupResponseContent {
+func (s *ModifyGroupResponseContent) SetRemark(v string) *ModifyGroupResponseContent {
   s.Remark = &v
   return s
 }
 
-func (s *ModifyGroupModifyGroupResponseContent) SetCreateTime(v int64) *ModifyGroupModifyGroupResponseContent {
+func (s *ModifyGroupResponseContent) SetCreateTime(v int64) *ModifyGroupResponseContent {
   s.CreateTime = &v
   return s
 }
 
-func (s *ModifyGroupModifyGroupResponseContent) SetUpdateTime(v int64) *ModifyGroupModifyGroupResponseContent {
+func (s *ModifyGroupResponseContent) SetUpdateTime(v int64) *ModifyGroupResponseContent {
   s.UpdateTime = &v
   return s
 }
@@ -577,7 +577,7 @@ type CreateGroupResponse struct {
   // {'en':'Error message', 'zh_CN':'错误信息'}
   ReturnMsg *string `json:"returnMsg,omitempty" xml:"returnMsg,omitempty" require:"true"`
   // {'en':'content', 'zh_CN':'数据，下面全是数据的内容'}
-  Content *CreateGroupCreateGroupResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
+  Content *CreateGroupResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
 }
 
 func (s CreateGroupResponse) String() string {
@@ -598,12 +598,12 @@ func (s *CreateGroupResponse) SetReturnMsg(v string) *CreateGroupResponse {
   return s
 }
 
-func (s *CreateGroupResponse) SetContent(v *CreateGroupCreateGroupResponseContent) *CreateGroupResponse {
+func (s *CreateGroupResponse) SetContent(v *CreateGroupResponseContent) *CreateGroupResponse {
   s.Content = v
   return s
 }
 
-type CreateGroupCreateGroupResponseContent struct {
+type CreateGroupResponseContent struct {
   // {'en':'groupName', 'zh_CN':'用户组名称'}
   GroupName *string `json:"groupName,omitempty" xml:"groupName,omitempty" require:"true"`
   // {'en':'groupId', 'zh_CN':'用户组ID'}
@@ -620,45 +620,45 @@ type CreateGroupCreateGroupResponseContent struct {
   UpdateTime *int64 `json:"updateTime,omitempty" xml:"updateTime,omitempty" require:"true"`
 }
 
-func (s CreateGroupCreateGroupResponseContent) String() string {
+func (s CreateGroupResponseContent) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateGroupCreateGroupResponseContent) GoString() string {
+func (s CreateGroupResponseContent) GoString() string {
   return s.String()
 }
 
-func (s *CreateGroupCreateGroupResponseContent) SetGroupName(v string) *CreateGroupCreateGroupResponseContent {
+func (s *CreateGroupResponseContent) SetGroupName(v string) *CreateGroupResponseContent {
   s.GroupName = &v
   return s
 }
 
-func (s *CreateGroupCreateGroupResponseContent) SetGroupId(v int64) *CreateGroupCreateGroupResponseContent {
+func (s *CreateGroupResponseContent) SetGroupId(v int64) *CreateGroupResponseContent {
   s.GroupId = &v
   return s
 }
 
-func (s *CreateGroupCreateGroupResponseContent) SetParentGroupName(v string) *CreateGroupCreateGroupResponseContent {
+func (s *CreateGroupResponseContent) SetParentGroupName(v string) *CreateGroupResponseContent {
   s.ParentGroupName = &v
   return s
 }
 
-func (s *CreateGroupCreateGroupResponseContent) SetParentGroupId(v string) *CreateGroupCreateGroupResponseContent {
+func (s *CreateGroupResponseContent) SetParentGroupId(v string) *CreateGroupResponseContent {
   s.ParentGroupId = &v
   return s
 }
 
-func (s *CreateGroupCreateGroupResponseContent) SetRemark(v string) *CreateGroupCreateGroupResponseContent {
+func (s *CreateGroupResponseContent) SetRemark(v string) *CreateGroupResponseContent {
   s.Remark = &v
   return s
 }
 
-func (s *CreateGroupCreateGroupResponseContent) SetCreateTime(v int64) *CreateGroupCreateGroupResponseContent {
+func (s *CreateGroupResponseContent) SetCreateTime(v int64) *CreateGroupResponseContent {
   s.CreateTime = &v
   return s
 }
 
-func (s *CreateGroupCreateGroupResponseContent) SetUpdateTime(v int64) *CreateGroupCreateGroupResponseContent {
+func (s *CreateGroupResponseContent) SetUpdateTime(v int64) *CreateGroupResponseContent {
   s.UpdateTime = &v
   return s
 }
@@ -727,7 +727,7 @@ type DescribeUserInfoResponse struct {
   // {'en':'Error message', 'zh_CN':'错误信息'}
   ReturnMsg *string `json:"returnMsg,omitempty" xml:"returnMsg,omitempty" require:"true"`
   // {'en':'content', 'zh_CN':'数据，下面全是数据的内容'}
-  Content *DescribeUserInfoDescribeUserInfoResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
+  Content *DescribeUserInfoResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
 }
 
 func (s DescribeUserInfoResponse) String() string {
@@ -748,12 +748,12 @@ func (s *DescribeUserInfoResponse) SetReturnMsg(v string) *DescribeUserInfoRespo
   return s
 }
 
-func (s *DescribeUserInfoResponse) SetContent(v *DescribeUserInfoDescribeUserInfoResponseContent) *DescribeUserInfoResponse {
+func (s *DescribeUserInfoResponse) SetContent(v *DescribeUserInfoResponseContent) *DescribeUserInfoResponse {
   s.Content = v
   return s
 }
 
-type DescribeUserInfoDescribeUserInfoResponseContent struct {
+type DescribeUserInfoResponseContent struct {
   // {'en':'username', 'zh_CN':'用户名称'}
   Username *string `json:"username,omitempty" xml:"username,omitempty" require:"true"`
   // {'en':'id', 'zh_CN':'用户id'}
@@ -786,85 +786,85 @@ type DescribeUserInfoDescribeUserInfoResponseContent struct {
   CreateTime *int64 `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
 }
 
-func (s DescribeUserInfoDescribeUserInfoResponseContent) String() string {
+func (s DescribeUserInfoResponseContent) String() string {
   return tea.Prettify(s)
 }
 
-func (s DescribeUserInfoDescribeUserInfoResponseContent) GoString() string {
+func (s DescribeUserInfoResponseContent) GoString() string {
   return s.String()
 }
 
-func (s *DescribeUserInfoDescribeUserInfoResponseContent) SetUsername(v string) *DescribeUserInfoDescribeUserInfoResponseContent {
+func (s *DescribeUserInfoResponseContent) SetUsername(v string) *DescribeUserInfoResponseContent {
   s.Username = &v
   return s
 }
 
-func (s *DescribeUserInfoDescribeUserInfoResponseContent) SetId(v int64) *DescribeUserInfoDescribeUserInfoResponseContent {
+func (s *DescribeUserInfoResponseContent) SetId(v int64) *DescribeUserInfoResponseContent {
   s.Id = &v
   return s
 }
 
-func (s *DescribeUserInfoDescribeUserInfoResponseContent) SetEmail(v string) *DescribeUserInfoDescribeUserInfoResponseContent {
+func (s *DescribeUserInfoResponseContent) SetEmail(v string) *DescribeUserInfoResponseContent {
   s.Email = &v
   return s
 }
 
-func (s *DescribeUserInfoDescribeUserInfoResponseContent) SetAreaCode(v string) *DescribeUserInfoDescribeUserInfoResponseContent {
+func (s *DescribeUserInfoResponseContent) SetAreaCode(v string) *DescribeUserInfoResponseContent {
   s.AreaCode = &v
   return s
 }
 
-func (s *DescribeUserInfoDescribeUserInfoResponseContent) SetCellPhone(v string) *DescribeUserInfoDescribeUserInfoResponseContent {
+func (s *DescribeUserInfoResponseContent) SetCellPhone(v string) *DescribeUserInfoResponseContent {
   s.CellPhone = &v
   return s
 }
 
-func (s *DescribeUserInfoDescribeUserInfoResponseContent) SetGroupId(v int64) *DescribeUserInfoDescribeUserInfoResponseContent {
+func (s *DescribeUserInfoResponseContent) SetGroupId(v int64) *DescribeUserInfoResponseContent {
   s.GroupId = &v
   return s
 }
 
-func (s *DescribeUserInfoDescribeUserInfoResponseContent) SetGroupName(v string) *DescribeUserInfoDescribeUserInfoResponseContent {
+func (s *DescribeUserInfoResponseContent) SetGroupName(v string) *DescribeUserInfoResponseContent {
   s.GroupName = &v
   return s
 }
 
-func (s *DescribeUserInfoDescribeUserInfoResponseContent) SetBandwidth(v string) *DescribeUserInfoDescribeUserInfoResponseContent {
+func (s *DescribeUserInfoResponseContent) SetBandwidth(v string) *DescribeUserInfoResponseContent {
   s.Bandwidth = &v
   return s
 }
 
-func (s *DescribeUserInfoDescribeUserInfoResponseContent) SetRemark(v string) *DescribeUserInfoDescribeUserInfoResponseContent {
+func (s *DescribeUserInfoResponseContent) SetRemark(v string) *DescribeUserInfoResponseContent {
   s.Remark = &v
   return s
 }
 
-func (s *DescribeUserInfoDescribeUserInfoResponseContent) SetExpirationTime(v int64) *DescribeUserInfoDescribeUserInfoResponseContent {
+func (s *DescribeUserInfoResponseContent) SetExpirationTime(v int64) *DescribeUserInfoResponseContent {
   s.ExpirationTime = &v
   return s
 }
 
-func (s *DescribeUserInfoDescribeUserInfoResponseContent) SetEnableUser(v int) *DescribeUserInfoDescribeUserInfoResponseContent {
+func (s *DescribeUserInfoResponseContent) SetEnableUser(v int) *DescribeUserInfoResponseContent {
   s.EnableUser = &v
   return s
 }
 
-func (s *DescribeUserInfoDescribeUserInfoResponseContent) SetSmsAuth(v int) *DescribeUserInfoDescribeUserInfoResponseContent {
+func (s *DescribeUserInfoResponseContent) SetSmsAuth(v int) *DescribeUserInfoResponseContent {
   s.SmsAuth = &v
   return s
 }
 
-func (s *DescribeUserInfoDescribeUserInfoResponseContent) SetTotpAuth(v int) *DescribeUserInfoDescribeUserInfoResponseContent {
+func (s *DescribeUserInfoResponseContent) SetTotpAuth(v int) *DescribeUserInfoResponseContent {
   s.TotpAuth = &v
   return s
 }
 
-func (s *DescribeUserInfoDescribeUserInfoResponseContent) SetVip(v string) *DescribeUserInfoDescribeUserInfoResponseContent {
+func (s *DescribeUserInfoResponseContent) SetVip(v string) *DescribeUserInfoResponseContent {
   s.Vip = &v
   return s
 }
 
-func (s *DescribeUserInfoDescribeUserInfoResponseContent) SetCreateTime(v int64) *DescribeUserInfoDescribeUserInfoResponseContent {
+func (s *DescribeUserInfoResponseContent) SetCreateTime(v int64) *DescribeUserInfoResponseContent {
   s.CreateTime = &v
   return s
 }
@@ -1128,7 +1128,7 @@ type ModifyuserResponse struct {
   // {'en':'Error message', 'zh_CN':'错误信息'}
   ReturnMsg *string `json:"returnMsg,omitempty" xml:"returnMsg,omitempty" require:"true"`
   // {'en':'content', 'zh_CN':'数据，下面全是数据的内容'}
-  Content *ModifyuserModifyuserResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
+  Content *ModifyuserResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
 }
 
 func (s ModifyuserResponse) String() string {
@@ -1149,12 +1149,12 @@ func (s *ModifyuserResponse) SetReturnMsg(v string) *ModifyuserResponse {
   return s
 }
 
-func (s *ModifyuserResponse) SetContent(v *ModifyuserModifyuserResponseContent) *ModifyuserResponse {
+func (s *ModifyuserResponse) SetContent(v *ModifyuserResponseContent) *ModifyuserResponse {
   s.Content = v
   return s
 }
 
-type ModifyuserModifyuserResponseContent struct {
+type ModifyuserResponseContent struct {
   // {'en':'username', 'zh_CN':'用户名称'}
   Username *string `json:"username,omitempty" xml:"username,omitempty" require:"true"`
   // {'en':'id', 'zh_CN':'用户id'}
@@ -1185,80 +1185,80 @@ type ModifyuserModifyuserResponseContent struct {
   CreateTime *int64 `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
 }
 
-func (s ModifyuserModifyuserResponseContent) String() string {
+func (s ModifyuserResponseContent) String() string {
   return tea.Prettify(s)
 }
 
-func (s ModifyuserModifyuserResponseContent) GoString() string {
+func (s ModifyuserResponseContent) GoString() string {
   return s.String()
 }
 
-func (s *ModifyuserModifyuserResponseContent) SetUsername(v string) *ModifyuserModifyuserResponseContent {
+func (s *ModifyuserResponseContent) SetUsername(v string) *ModifyuserResponseContent {
   s.Username = &v
   return s
 }
 
-func (s *ModifyuserModifyuserResponseContent) SetId(v int64) *ModifyuserModifyuserResponseContent {
+func (s *ModifyuserResponseContent) SetId(v int64) *ModifyuserResponseContent {
   s.Id = &v
   return s
 }
 
-func (s *ModifyuserModifyuserResponseContent) SetEmail(v string) *ModifyuserModifyuserResponseContent {
+func (s *ModifyuserResponseContent) SetEmail(v string) *ModifyuserResponseContent {
   s.Email = &v
   return s
 }
 
-func (s *ModifyuserModifyuserResponseContent) SetAreaCode(v string) *ModifyuserModifyuserResponseContent {
+func (s *ModifyuserResponseContent) SetAreaCode(v string) *ModifyuserResponseContent {
   s.AreaCode = &v
   return s
 }
 
-func (s *ModifyuserModifyuserResponseContent) SetCellPhone(v string) *ModifyuserModifyuserResponseContent {
+func (s *ModifyuserResponseContent) SetCellPhone(v string) *ModifyuserResponseContent {
   s.CellPhone = &v
   return s
 }
 
-func (s *ModifyuserModifyuserResponseContent) SetGroupId(v int64) *ModifyuserModifyuserResponseContent {
+func (s *ModifyuserResponseContent) SetGroupId(v int64) *ModifyuserResponseContent {
   s.GroupId = &v
   return s
 }
 
-func (s *ModifyuserModifyuserResponseContent) SetGroupName(v string) *ModifyuserModifyuserResponseContent {
+func (s *ModifyuserResponseContent) SetGroupName(v string) *ModifyuserResponseContent {
   s.GroupName = &v
   return s
 }
 
-func (s *ModifyuserModifyuserResponseContent) SetBandwidth(v string) *ModifyuserModifyuserResponseContent {
+func (s *ModifyuserResponseContent) SetBandwidth(v string) *ModifyuserResponseContent {
   s.Bandwidth = &v
   return s
 }
 
-func (s *ModifyuserModifyuserResponseContent) SetRemark(v string) *ModifyuserModifyuserResponseContent {
+func (s *ModifyuserResponseContent) SetRemark(v string) *ModifyuserResponseContent {
   s.Remark = &v
   return s
 }
 
-func (s *ModifyuserModifyuserResponseContent) SetExpirationTime(v int64) *ModifyuserModifyuserResponseContent {
+func (s *ModifyuserResponseContent) SetExpirationTime(v int64) *ModifyuserResponseContent {
   s.ExpirationTime = &v
   return s
 }
 
-func (s *ModifyuserModifyuserResponseContent) SetEnableUser(v int) *ModifyuserModifyuserResponseContent {
+func (s *ModifyuserResponseContent) SetEnableUser(v int) *ModifyuserResponseContent {
   s.EnableUser = &v
   return s
 }
 
-func (s *ModifyuserModifyuserResponseContent) SetSmsAuth(v int) *ModifyuserModifyuserResponseContent {
+func (s *ModifyuserResponseContent) SetSmsAuth(v int) *ModifyuserResponseContent {
   s.SmsAuth = &v
   return s
 }
 
-func (s *ModifyuserModifyuserResponseContent) SetTotpAuth(v int) *ModifyuserModifyuserResponseContent {
+func (s *ModifyuserResponseContent) SetTotpAuth(v int) *ModifyuserResponseContent {
   s.TotpAuth = &v
   return s
 }
 
-func (s *ModifyuserModifyuserResponseContent) SetCreateTime(v int64) *ModifyuserModifyuserResponseContent {
+func (s *ModifyuserResponseContent) SetCreateTime(v int64) *ModifyuserResponseContent {
   s.CreateTime = &v
   return s
 }
@@ -1516,7 +1516,7 @@ type ListGroupsResponse struct {
   // {'en':'Error message', 'zh_CN':'错误信息'}
   ReturnMsg *string `json:"returnMsg,omitempty" xml:"returnMsg,omitempty" require:"true"`
   // {'en':'content', 'zh_CN':'数据，下面全是数据的内容'}
-  Content *ListGroupsListGroupsResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
+  Content *ListGroupsResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
 }
 
 func (s ListGroupsResponse) String() string {
@@ -1537,30 +1537,30 @@ func (s *ListGroupsResponse) SetReturnMsg(v string) *ListGroupsResponse {
   return s
 }
 
-func (s *ListGroupsResponse) SetContent(v *ListGroupsListGroupsResponseContent) *ListGroupsResponse {
+func (s *ListGroupsResponse) SetContent(v *ListGroupsResponseContent) *ListGroupsResponse {
   s.Content = v
   return s
 }
 
-type ListGroupsListGroupsResponseContent struct {
+type ListGroupsResponseContent struct {
   // {'en':'groupList', 'zh_CN':'group集合，下面为字段'}
-  GroupList []*ListGroupsListGroupsResponseContentGroupList `json:"groupList,omitempty" xml:"groupList,omitempty" require:"true" type:"Repeated"`
+  GroupList []*ListGroupsResponseContentGroupList `json:"groupList,omitempty" xml:"groupList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ListGroupsListGroupsResponseContent) String() string {
+func (s ListGroupsResponseContent) String() string {
   return tea.Prettify(s)
 }
 
-func (s ListGroupsListGroupsResponseContent) GoString() string {
+func (s ListGroupsResponseContent) GoString() string {
   return s.String()
 }
 
-func (s *ListGroupsListGroupsResponseContent) SetGroupList(v []*ListGroupsListGroupsResponseContentGroupList) *ListGroupsListGroupsResponseContent {
+func (s *ListGroupsResponseContent) SetGroupList(v []*ListGroupsResponseContentGroupList) *ListGroupsResponseContent {
   s.GroupList = v
   return s
 }
 
-type ListGroupsListGroupsResponseContentGroupList struct     {
+type ListGroupsResponseContentGroupList struct     {
   // {'en':'groupName', 'zh_CN':'用户组名称'}
   GroupName *string `json:"groupName,omitempty" xml:"groupName,omitempty" require:"true"`
   // {'en':'groupId', 'zh_CN':'用户组ID'}
@@ -1579,50 +1579,50 @@ type ListGroupsListGroupsResponseContentGroupList struct     {
   UpdateTime *int64 `json:"updateTime,omitempty" xml:"updateTime,omitempty" require:"true"`
 }
 
-func (s ListGroupsListGroupsResponseContentGroupList) String() string {
+func (s ListGroupsResponseContentGroupList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ListGroupsListGroupsResponseContentGroupList) GoString() string {
+func (s ListGroupsResponseContentGroupList) GoString() string {
   return s.String()
 }
 
-func (s *ListGroupsListGroupsResponseContentGroupList) SetGroupName(v string) *ListGroupsListGroupsResponseContentGroupList {
+func (s *ListGroupsResponseContentGroupList) SetGroupName(v string) *ListGroupsResponseContentGroupList {
   s.GroupName = &v
   return s
 }
 
-func (s *ListGroupsListGroupsResponseContentGroupList) SetGroupId(v int64) *ListGroupsListGroupsResponseContentGroupList {
+func (s *ListGroupsResponseContentGroupList) SetGroupId(v int64) *ListGroupsResponseContentGroupList {
   s.GroupId = &v
   return s
 }
 
-func (s *ListGroupsListGroupsResponseContentGroupList) SetParentGroupName(v string) *ListGroupsListGroupsResponseContentGroupList {
+func (s *ListGroupsResponseContentGroupList) SetParentGroupName(v string) *ListGroupsResponseContentGroupList {
   s.ParentGroupName = &v
   return s
 }
 
-func (s *ListGroupsListGroupsResponseContentGroupList) SetParentGroupId(v string) *ListGroupsListGroupsResponseContentGroupList {
+func (s *ListGroupsResponseContentGroupList) SetParentGroupId(v string) *ListGroupsResponseContentGroupList {
   s.ParentGroupId = &v
   return s
 }
 
-func (s *ListGroupsListGroupsResponseContentGroupList) SetAuthConfigName(v string) *ListGroupsListGroupsResponseContentGroupList {
+func (s *ListGroupsResponseContentGroupList) SetAuthConfigName(v string) *ListGroupsResponseContentGroupList {
   s.AuthConfigName = &v
   return s
 }
 
-func (s *ListGroupsListGroupsResponseContentGroupList) SetRemark(v string) *ListGroupsListGroupsResponseContentGroupList {
+func (s *ListGroupsResponseContentGroupList) SetRemark(v string) *ListGroupsResponseContentGroupList {
   s.Remark = &v
   return s
 }
 
-func (s *ListGroupsListGroupsResponseContentGroupList) SetCreateTime(v int64) *ListGroupsListGroupsResponseContentGroupList {
+func (s *ListGroupsResponseContentGroupList) SetCreateTime(v int64) *ListGroupsResponseContentGroupList {
   s.CreateTime = &v
   return s
 }
 
-func (s *ListGroupsListGroupsResponseContentGroupList) SetUpdateTime(v int64) *ListGroupsListGroupsResponseContentGroupList {
+func (s *ListGroupsResponseContentGroupList) SetUpdateTime(v int64) *ListGroupsResponseContentGroupList {
   s.UpdateTime = &v
   return s
 }
@@ -1700,7 +1700,7 @@ type ListUsersResponse struct {
   // {'en':'Error message', 'zh_CN':'错误信息'}
   ReturnMsg *string `json:"returnMsg,omitempty" xml:"returnMsg,omitempty" require:"true"`
   // {'en':'content', 'zh_CN':'数据，下面全是数据的内容'}
-  Content *ListUsersListUsersResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
+  Content *ListUsersResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
 }
 
 func (s ListUsersResponse) String() string {
@@ -1721,12 +1721,12 @@ func (s *ListUsersResponse) SetReturnMsg(v string) *ListUsersResponse {
   return s
 }
 
-func (s *ListUsersResponse) SetContent(v *ListUsersListUsersResponseContent) *ListUsersResponse {
+func (s *ListUsersResponse) SetContent(v *ListUsersResponseContent) *ListUsersResponse {
   s.Content = v
   return s
 }
 
-type ListUsersListUsersResponseContent struct {
+type ListUsersResponseContent struct {
   // {'en':'pageSize', 'zh_CN':'输入时设置的每页行数'}
   PageSize *int `json:"pageSize,omitempty" xml:"pageSize,omitempty" require:"true"`
   // {'en':'pageNo', 'zh_CN':'用户列表的页码'}
@@ -1734,38 +1734,38 @@ type ListUsersListUsersResponseContent struct {
   // {'en':'totalCount', 'zh_CN':'实例总数'}
   TotalCount *int `json:"totalCount,omitempty" xml:"totalCount,omitempty" require:"true"`
   // {'en':'result', 'zh_CN':'分页结果数据，下面为数据格式'}
-  Result *ListUsersListUsersResponseContentResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Struct"`
+  Result *ListUsersResponseContentResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Struct"`
 }
 
-func (s ListUsersListUsersResponseContent) String() string {
+func (s ListUsersResponseContent) String() string {
   return tea.Prettify(s)
 }
 
-func (s ListUsersListUsersResponseContent) GoString() string {
+func (s ListUsersResponseContent) GoString() string {
   return s.String()
 }
 
-func (s *ListUsersListUsersResponseContent) SetPageSize(v int) *ListUsersListUsersResponseContent {
+func (s *ListUsersResponseContent) SetPageSize(v int) *ListUsersResponseContent {
   s.PageSize = &v
   return s
 }
 
-func (s *ListUsersListUsersResponseContent) SetPageNo(v int) *ListUsersListUsersResponseContent {
+func (s *ListUsersResponseContent) SetPageNo(v int) *ListUsersResponseContent {
   s.PageNo = &v
   return s
 }
 
-func (s *ListUsersListUsersResponseContent) SetTotalCount(v int) *ListUsersListUsersResponseContent {
+func (s *ListUsersResponseContent) SetTotalCount(v int) *ListUsersResponseContent {
   s.TotalCount = &v
   return s
 }
 
-func (s *ListUsersListUsersResponseContent) SetResult(v *ListUsersListUsersResponseContentResult) *ListUsersListUsersResponseContent {
+func (s *ListUsersResponseContent) SetResult(v *ListUsersResponseContentResult) *ListUsersResponseContent {
   s.Result = v
   return s
 }
 
-type ListUsersListUsersResponseContentResult struct {
+type ListUsersResponseContentResult struct {
   // {'en':'username', 'zh_CN':'用户名称'}
   Username *string `json:"username,omitempty" xml:"username,omitempty" require:"true"`
   // {'en':'id', 'zh_CN':'用户id'}
@@ -1798,85 +1798,85 @@ type ListUsersListUsersResponseContentResult struct {
   CreateTime *int64 `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
 }
 
-func (s ListUsersListUsersResponseContentResult) String() string {
+func (s ListUsersResponseContentResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ListUsersListUsersResponseContentResult) GoString() string {
+func (s ListUsersResponseContentResult) GoString() string {
   return s.String()
 }
 
-func (s *ListUsersListUsersResponseContentResult) SetUsername(v string) *ListUsersListUsersResponseContentResult {
+func (s *ListUsersResponseContentResult) SetUsername(v string) *ListUsersResponseContentResult {
   s.Username = &v
   return s
 }
 
-func (s *ListUsersListUsersResponseContentResult) SetId(v int64) *ListUsersListUsersResponseContentResult {
+func (s *ListUsersResponseContentResult) SetId(v int64) *ListUsersResponseContentResult {
   s.Id = &v
   return s
 }
 
-func (s *ListUsersListUsersResponseContentResult) SetEmail(v string) *ListUsersListUsersResponseContentResult {
+func (s *ListUsersResponseContentResult) SetEmail(v string) *ListUsersResponseContentResult {
   s.Email = &v
   return s
 }
 
-func (s *ListUsersListUsersResponseContentResult) SetAreaCode(v string) *ListUsersListUsersResponseContentResult {
+func (s *ListUsersResponseContentResult) SetAreaCode(v string) *ListUsersResponseContentResult {
   s.AreaCode = &v
   return s
 }
 
-func (s *ListUsersListUsersResponseContentResult) SetCellphone(v string) *ListUsersListUsersResponseContentResult {
+func (s *ListUsersResponseContentResult) SetCellphone(v string) *ListUsersResponseContentResult {
   s.Cellphone = &v
   return s
 }
 
-func (s *ListUsersListUsersResponseContentResult) SetGroupId(v int64) *ListUsersListUsersResponseContentResult {
+func (s *ListUsersResponseContentResult) SetGroupId(v int64) *ListUsersResponseContentResult {
   s.GroupId = &v
   return s
 }
 
-func (s *ListUsersListUsersResponseContentResult) SetGroupName(v string) *ListUsersListUsersResponseContentResult {
+func (s *ListUsersResponseContentResult) SetGroupName(v string) *ListUsersResponseContentResult {
   s.GroupName = &v
   return s
 }
 
-func (s *ListUsersListUsersResponseContentResult) SetBandwidth(v string) *ListUsersListUsersResponseContentResult {
+func (s *ListUsersResponseContentResult) SetBandwidth(v string) *ListUsersResponseContentResult {
   s.Bandwidth = &v
   return s
 }
 
-func (s *ListUsersListUsersResponseContentResult) SetRemark(v string) *ListUsersListUsersResponseContentResult {
+func (s *ListUsersResponseContentResult) SetRemark(v string) *ListUsersResponseContentResult {
   s.Remark = &v
   return s
 }
 
-func (s *ListUsersListUsersResponseContentResult) SetExpireTime(v int64) *ListUsersListUsersResponseContentResult {
+func (s *ListUsersResponseContentResult) SetExpireTime(v int64) *ListUsersResponseContentResult {
   s.ExpireTime = &v
   return s
 }
 
-func (s *ListUsersListUsersResponseContentResult) SetEnableStatus(v int) *ListUsersListUsersResponseContentResult {
+func (s *ListUsersResponseContentResult) SetEnableStatus(v int) *ListUsersResponseContentResult {
   s.EnableStatus = &v
   return s
 }
 
-func (s *ListUsersListUsersResponseContentResult) SetSmsAuth(v int) *ListUsersListUsersResponseContentResult {
+func (s *ListUsersResponseContentResult) SetSmsAuth(v int) *ListUsersResponseContentResult {
   s.SmsAuth = &v
   return s
 }
 
-func (s *ListUsersListUsersResponseContentResult) SetTotpAuth(v int) *ListUsersListUsersResponseContentResult {
+func (s *ListUsersResponseContentResult) SetTotpAuth(v int) *ListUsersResponseContentResult {
   s.TotpAuth = &v
   return s
 }
 
-func (s *ListUsersListUsersResponseContentResult) SetVip(v string) *ListUsersListUsersResponseContentResult {
+func (s *ListUsersResponseContentResult) SetVip(v string) *ListUsersResponseContentResult {
   s.Vip = &v
   return s
 }
 
-func (s *ListUsersListUsersResponseContentResult) SetCreateTime(v int64) *ListUsersListUsersResponseContentResult {
+func (s *ListUsersResponseContentResult) SetCreateTime(v int64) *ListUsersResponseContentResult {
   s.CreateTime = &v
   return s
 }

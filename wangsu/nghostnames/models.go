@@ -91,7 +91,7 @@ func (s GetListOfHostnamesThatHaveBeenDeployedResponseHeader) GoString() string 
 
 type GetListOfHostnamesThatHaveBeenDeployedResponse struct {
   // {"en" : "List of hostnames.", "zh_CN": "加速域名列表。"}
-  Hostnames []*GetListOfHostnamesThatHaveBeenDeployedGetListOfHostnamesThatHaveBeenDeployedResponseHostnames `json:"hostnames,omitempty" xml:"hostnames,omitempty" require:"true" type:"Repeated"`
+  Hostnames []*GetListOfHostnamesThatHaveBeenDeployedResponseHostnames `json:"hostnames,omitempty" xml:"hostnames,omitempty" require:"true" type:"Repeated"`
   // {"en" : ">= 0 
   // Number of hostnames.", "zh_CN": "取值范围: >= 0 
   // 加速域名总数。"}
@@ -106,7 +106,7 @@ func (s GetListOfHostnamesThatHaveBeenDeployedResponse) GoString() string {
   return s.String()
 }
 
-func (s *GetListOfHostnamesThatHaveBeenDeployedResponse) SetHostnames(v []*GetListOfHostnamesThatHaveBeenDeployedGetListOfHostnamesThatHaveBeenDeployedResponseHostnames) *GetListOfHostnamesThatHaveBeenDeployedResponse {
+func (s *GetListOfHostnamesThatHaveBeenDeployedResponse) SetHostnames(v []*GetListOfHostnamesThatHaveBeenDeployedResponseHostnames) *GetListOfHostnamesThatHaveBeenDeployedResponse {
   s.Hostnames = v
   return s
 }
@@ -116,7 +116,7 @@ func (s *GetListOfHostnamesThatHaveBeenDeployedResponse) SetCount(v int) *GetLis
   return s
 }
 
-type GetListOfHostnamesThatHaveBeenDeployedGetListOfHostnamesThatHaveBeenDeployedResponseHostnames struct     {
+type GetListOfHostnamesThatHaveBeenDeployedResponseHostnames struct     {
   // {"en" : "A hostname whose property has been deployed to production or staging.", "zh_CN": "加速域名。"}
   Hostname *string `json:"hostname,omitempty" xml:"hostname,omitempty"`
   // {"en" : "Describes the property deployed to production. It can be 'null' if the property is not deployed to production.", "zh_CN": "如果加速域名对应的加速项目已部署到生产环境，则该字段返回该加速项目的相关信息。如果加速项目未部署到生产环境，则该字段返回'null'。"}
@@ -125,25 +125,25 @@ type GetListOfHostnamesThatHaveBeenDeployedGetListOfHostnamesThatHaveBeenDeploye
   PropertyInStaging *string `json:"propertyInStaging,omitempty" xml:"propertyInStaging,omitempty"`
 }
 
-func (s GetListOfHostnamesThatHaveBeenDeployedGetListOfHostnamesThatHaveBeenDeployedResponseHostnames) String() string {
+func (s GetListOfHostnamesThatHaveBeenDeployedResponseHostnames) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetListOfHostnamesThatHaveBeenDeployedGetListOfHostnamesThatHaveBeenDeployedResponseHostnames) GoString() string {
+func (s GetListOfHostnamesThatHaveBeenDeployedResponseHostnames) GoString() string {
   return s.String()
 }
 
-func (s *GetListOfHostnamesThatHaveBeenDeployedGetListOfHostnamesThatHaveBeenDeployedResponseHostnames) SetHostname(v string) *GetListOfHostnamesThatHaveBeenDeployedGetListOfHostnamesThatHaveBeenDeployedResponseHostnames {
+func (s *GetListOfHostnamesThatHaveBeenDeployedResponseHostnames) SetHostname(v string) *GetListOfHostnamesThatHaveBeenDeployedResponseHostnames {
   s.Hostname = &v
   return s
 }
 
-func (s *GetListOfHostnamesThatHaveBeenDeployedGetListOfHostnamesThatHaveBeenDeployedResponseHostnames) SetPropertyInProduction(v string) *GetListOfHostnamesThatHaveBeenDeployedGetListOfHostnamesThatHaveBeenDeployedResponseHostnames {
+func (s *GetListOfHostnamesThatHaveBeenDeployedResponseHostnames) SetPropertyInProduction(v string) *GetListOfHostnamesThatHaveBeenDeployedResponseHostnames {
   s.PropertyInProduction = &v
   return s
 }
 
-func (s *GetListOfHostnamesThatHaveBeenDeployedGetListOfHostnamesThatHaveBeenDeployedResponseHostnames) SetPropertyInStaging(v string) *GetListOfHostnamesThatHaveBeenDeployedGetListOfHostnamesThatHaveBeenDeployedResponseHostnames {
+func (s *GetListOfHostnamesThatHaveBeenDeployedResponseHostnames) SetPropertyInStaging(v string) *GetListOfHostnamesThatHaveBeenDeployedResponseHostnames {
   s.PropertyInStaging = &v
   return s
 }
@@ -243,7 +243,7 @@ type GetHistoricalInformationAboutOneHostnameResponse struct {
   // {"en" : "A hostname that was defined in a property.", "zh_CN": "加速域名。"}
   Hostname *string `json:"hostname,omitempty" xml:"hostname,omitempty" require:"true"`
   // {"en" : "The history contains deployment and undeployment dates. It is empty if the hostname has never been deployed to production.", "zh_CN": "加速域名部署到生产环境或从生产环境卸载的历史信息。如果加速域名从未部署到生产环境，则返回空对象。"}
-  History []*GetHistoricalInformationAboutOneHostnameGetHistoricalInformationAboutOneHostnameResponseHistory `json:"history,omitempty" xml:"history,omitempty" require:"true" type:"Repeated"`
+  History []*GetHistoricalInformationAboutOneHostnameResponseHistory `json:"history,omitempty" xml:"history,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetHistoricalInformationAboutOneHostnameResponse) String() string {
@@ -259,12 +259,12 @@ func (s *GetHistoricalInformationAboutOneHostnameResponse) SetHostname(v string)
   return s
 }
 
-func (s *GetHistoricalInformationAboutOneHostnameResponse) SetHistory(v []*GetHistoricalInformationAboutOneHostnameGetHistoricalInformationAboutOneHostnameResponseHistory) *GetHistoricalInformationAboutOneHostnameResponse {
+func (s *GetHistoricalInformationAboutOneHostnameResponse) SetHistory(v []*GetHistoricalInformationAboutOneHostnameResponseHistory) *GetHistoricalInformationAboutOneHostnameResponse {
   s.History = v
   return s
 }
 
-type GetHistoricalInformationAboutOneHostnameGetHistoricalInformationAboutOneHostnameResponseHistory struct     {
+type GetHistoricalInformationAboutOneHostnameResponseHistory struct     {
   // {"en" : "The environment where the hostname is deployed.", "zh_CN": "加速域名所部署的环境。"}
   Target *string `json:"target,omitempty" xml:"target,omitempty"`
   // {"en" : "ID of the property that included the hostname.", "zh_CN": "加速域名对应的加速项目的ID。"}
@@ -275,30 +275,30 @@ type GetHistoricalInformationAboutOneHostnameGetHistoricalInformationAboutOneHos
   UndeploymentDate *string `json:"undeploymentDate,omitempty" xml:"undeploymentDate,omitempty"`
 }
 
-func (s GetHistoricalInformationAboutOneHostnameGetHistoricalInformationAboutOneHostnameResponseHistory) String() string {
+func (s GetHistoricalInformationAboutOneHostnameResponseHistory) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetHistoricalInformationAboutOneHostnameGetHistoricalInformationAboutOneHostnameResponseHistory) GoString() string {
+func (s GetHistoricalInformationAboutOneHostnameResponseHistory) GoString() string {
   return s.String()
 }
 
-func (s *GetHistoricalInformationAboutOneHostnameGetHistoricalInformationAboutOneHostnameResponseHistory) SetTarget(v string) *GetHistoricalInformationAboutOneHostnameGetHistoricalInformationAboutOneHostnameResponseHistory {
+func (s *GetHistoricalInformationAboutOneHostnameResponseHistory) SetTarget(v string) *GetHistoricalInformationAboutOneHostnameResponseHistory {
   s.Target = &v
   return s
 }
 
-func (s *GetHistoricalInformationAboutOneHostnameGetHistoricalInformationAboutOneHostnameResponseHistory) SetPropertyId(v string) *GetHistoricalInformationAboutOneHostnameGetHistoricalInformationAboutOneHostnameResponseHistory {
+func (s *GetHistoricalInformationAboutOneHostnameResponseHistory) SetPropertyId(v string) *GetHistoricalInformationAboutOneHostnameResponseHistory {
   s.PropertyId = &v
   return s
 }
 
-func (s *GetHistoricalInformationAboutOneHostnameGetHistoricalInformationAboutOneHostnameResponseHistory) SetDeploymentDate(v string) *GetHistoricalInformationAboutOneHostnameGetHistoricalInformationAboutOneHostnameResponseHistory {
+func (s *GetHistoricalInformationAboutOneHostnameResponseHistory) SetDeploymentDate(v string) *GetHistoricalInformationAboutOneHostnameResponseHistory {
   s.DeploymentDate = &v
   return s
 }
 
-func (s *GetHistoricalInformationAboutOneHostnameGetHistoricalInformationAboutOneHostnameResponseHistory) SetUndeploymentDate(v string) *GetHistoricalInformationAboutOneHostnameGetHistoricalInformationAboutOneHostnameResponseHistory {
+func (s *GetHistoricalInformationAboutOneHostnameResponseHistory) SetUndeploymentDate(v string) *GetHistoricalInformationAboutOneHostnameResponseHistory {
   s.UndeploymentDate = &v
   return s
 }
@@ -570,7 +570,7 @@ type QueryNgHostNameAndEdgeHostNameForWplusResponse struct {
   // {"en":"Response error message if failed.", "zh_CN":"接口响应信息，success代表成功，失败则提供失败信息。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Response data.", "zh_CN":"接口响应数据"}
-  Data []*QueryNgHostNameAndEdgeHostNameForWplusQueryNgHostNameAndEdgeHostNameForWplusResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*QueryNgHostNameAndEdgeHostNameForWplusResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryNgHostNameAndEdgeHostNameForWplusResponse) String() string {
@@ -591,32 +591,32 @@ func (s *QueryNgHostNameAndEdgeHostNameForWplusResponse) SetMessage(v string) *Q
   return s
 }
 
-func (s *QueryNgHostNameAndEdgeHostNameForWplusResponse) SetData(v []*QueryNgHostNameAndEdgeHostNameForWplusQueryNgHostNameAndEdgeHostNameForWplusResponseData) *QueryNgHostNameAndEdgeHostNameForWplusResponse {
+func (s *QueryNgHostNameAndEdgeHostNameForWplusResponse) SetData(v []*QueryNgHostNameAndEdgeHostNameForWplusResponseData) *QueryNgHostNameAndEdgeHostNameForWplusResponse {
   s.Data = v
   return s
 }
 
-type QueryNgHostNameAndEdgeHostNameForWplusQueryNgHostNameAndEdgeHostNameForWplusResponseData struct     {
+type QueryNgHostNameAndEdgeHostNameForWplusResponseData struct     {
   // {"en":"Host Name", "zh_CN":"cdnpro加速域名"}
   HostName *string `json:"hostName,omitempty" xml:"hostName,omitempty" require:"true"`
   // {"en":"Edge Host Names", "zh_CN":"真实服务域名"}
   EdgeHostName *string `json:"edgeHostName,omitempty" xml:"edgeHostName,omitempty" require:"true"`
 }
 
-func (s QueryNgHostNameAndEdgeHostNameForWplusQueryNgHostNameAndEdgeHostNameForWplusResponseData) String() string {
+func (s QueryNgHostNameAndEdgeHostNameForWplusResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryNgHostNameAndEdgeHostNameForWplusQueryNgHostNameAndEdgeHostNameForWplusResponseData) GoString() string {
+func (s QueryNgHostNameAndEdgeHostNameForWplusResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryNgHostNameAndEdgeHostNameForWplusQueryNgHostNameAndEdgeHostNameForWplusResponseData) SetHostName(v string) *QueryNgHostNameAndEdgeHostNameForWplusQueryNgHostNameAndEdgeHostNameForWplusResponseData {
+func (s *QueryNgHostNameAndEdgeHostNameForWplusResponseData) SetHostName(v string) *QueryNgHostNameAndEdgeHostNameForWplusResponseData {
   s.HostName = &v
   return s
 }
 
-func (s *QueryNgHostNameAndEdgeHostNameForWplusQueryNgHostNameAndEdgeHostNameForWplusResponseData) SetEdgeHostName(v string) *QueryNgHostNameAndEdgeHostNameForWplusQueryNgHostNameAndEdgeHostNameForWplusResponseData {
+func (s *QueryNgHostNameAndEdgeHostNameForWplusResponseData) SetEdgeHostName(v string) *QueryNgHostNameAndEdgeHostNameForWplusResponseData {
   s.EdgeHostName = &v
   return s
 }

@@ -161,7 +161,7 @@ type UpdateAWebhookRequest struct {
   // "}
   Url *string `json:"url,omitempty" xml:"url,omitempty"`
   // {"en" : "Optional credentials passed to the URL. If requiring credentials your server should support HTTP Basic authentication the same way we do. Refer to Authentication summary. In particular, the password will be the secretKey encoded with the current date.", "zh_CN": "用于鉴权的账号信息。当您的服务器有鉴权要求时，需支持HTTP Basic鉴权方式。CDN Pro将用当前日期对secretKey进行加密，生成密码(password)。"}
-  Credentials *UpdateAWebhookUpdateAWebhookRequestCredentials `json:"credentials,omitempty" xml:"credentials,omitempty" type:"Struct"`
+  Credentials *UpdateAWebhookRequestCredentials `json:"credentials,omitempty" xml:"credentials,omitempty" type:"Struct"`
 }
 
 func (s UpdateAWebhookRequest) String() string {
@@ -187,32 +187,32 @@ func (s *UpdateAWebhookRequest) SetUrl(v string) *UpdateAWebhookRequest {
   return s
 }
 
-func (s *UpdateAWebhookRequest) SetCredentials(v *UpdateAWebhookUpdateAWebhookRequestCredentials) *UpdateAWebhookRequest {
+func (s *UpdateAWebhookRequest) SetCredentials(v *UpdateAWebhookRequestCredentials) *UpdateAWebhookRequest {
   s.Credentials = v
   return s
 }
 
-type UpdateAWebhookUpdateAWebhookRequestCredentials struct {
+type UpdateAWebhookRequestCredentials struct {
   // {"en" : "The username passed to the URL on your server.", "zh_CN": "用于鉴权的用户名。"}
   User *string `json:"user,omitempty" xml:"user,omitempty"`
   // {"en" : "A string that is encoded with the date and passed in the Authorization header to your server.", "zh_CN": "用于鉴权的密钥。CDN Pro将用当期日期对密钥进行加密生成密码(password)，然后通过Authorization请求头传给你方服务器。"}
   SecretKey *string `json:"secretKey,omitempty" xml:"secretKey,omitempty"`
 }
 
-func (s UpdateAWebhookUpdateAWebhookRequestCredentials) String() string {
+func (s UpdateAWebhookRequestCredentials) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateAWebhookUpdateAWebhookRequestCredentials) GoString() string {
+func (s UpdateAWebhookRequestCredentials) GoString() string {
   return s.String()
 }
 
-func (s *UpdateAWebhookUpdateAWebhookRequestCredentials) SetUser(v string) *UpdateAWebhookUpdateAWebhookRequestCredentials {
+func (s *UpdateAWebhookRequestCredentials) SetUser(v string) *UpdateAWebhookRequestCredentials {
   s.User = &v
   return s
 }
 
-func (s *UpdateAWebhookUpdateAWebhookRequestCredentials) SetSecretKey(v string) *UpdateAWebhookUpdateAWebhookRequestCredentials {
+func (s *UpdateAWebhookRequestCredentials) SetSecretKey(v string) *UpdateAWebhookRequestCredentials {
   s.SecretKey = &v
   return s
 }
@@ -338,7 +338,7 @@ type CreateAWebhookRequest struct {
   //             }' \n        '
   // eval $apiCall
   // </pre>"}
-  Credentials *CreateAWebhookCreateAWebhookRequestCredentials `json:"credentials,omitempty" xml:"credentials,omitempty" type:"Struct"`
+  Credentials *CreateAWebhookRequestCredentials `json:"credentials,omitempty" xml:"credentials,omitempty" type:"Struct"`
 }
 
 func (s CreateAWebhookRequest) String() string {
@@ -364,32 +364,32 @@ func (s *CreateAWebhookRequest) SetUrl(v string) *CreateAWebhookRequest {
   return s
 }
 
-func (s *CreateAWebhookRequest) SetCredentials(v *CreateAWebhookCreateAWebhookRequestCredentials) *CreateAWebhookRequest {
+func (s *CreateAWebhookRequest) SetCredentials(v *CreateAWebhookRequestCredentials) *CreateAWebhookRequest {
   s.Credentials = v
   return s
 }
 
-type CreateAWebhookCreateAWebhookRequestCredentials struct {
+type CreateAWebhookRequestCredentials struct {
   // {"en" : "The username passed to the URL on your server.", "zh_CN": "用于鉴权的用户名。"}
   User *string `json:"user,omitempty" xml:"user,omitempty" require:"true"`
   // {"en" : "A string that is encoded with the date and passed in the Authorization header to your server.", "zh_CN": "用于鉴权的密钥。CDN Pro将用当期日期对密钥进行加密生成密码(password)，然后通过Authorization请求头传给你方服务器。"}
   SecretKey *string `json:"secretKey,omitempty" xml:"secretKey,omitempty" require:"true"`
 }
 
-func (s CreateAWebhookCreateAWebhookRequestCredentials) String() string {
+func (s CreateAWebhookRequestCredentials) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateAWebhookCreateAWebhookRequestCredentials) GoString() string {
+func (s CreateAWebhookRequestCredentials) GoString() string {
   return s.String()
 }
 
-func (s *CreateAWebhookCreateAWebhookRequestCredentials) SetUser(v string) *CreateAWebhookCreateAWebhookRequestCredentials {
+func (s *CreateAWebhookRequestCredentials) SetUser(v string) *CreateAWebhookRequestCredentials {
   s.User = &v
   return s
 }
 
-func (s *CreateAWebhookCreateAWebhookRequestCredentials) SetSecretKey(v string) *CreateAWebhookCreateAWebhookRequestCredentials {
+func (s *CreateAWebhookRequestCredentials) SetSecretKey(v string) *CreateAWebhookRequestCredentials {
   s.SecretKey = &v
   return s
 }
@@ -531,9 +531,9 @@ type GetAWebhookResponse struct {
   // "}
   Url *string `json:"url,omitempty" xml:"url,omitempty" require:"true"`
   // {"en" : "Optional credentials passed to the URL. If requiring credentials your server should support HTTP Basic authentication the same way we do. Refer to Authentication summary. In particular, the password will be the secretKey encoded with the current date.", "zh_CN": "用于鉴权的账号信息。当您的服务器有鉴权要求时，需支持HTTP Basic鉴权方式。CDN Pro将用当前日期对secretKey进行加密，生成密码(password)。"}
-  Credentials *GetAWebhookGetAWebhookResponseCredentials `json:"credentials,omitempty" xml:"credentials,omitempty" require:"true" type:"Struct"`
+  Credentials *GetAWebhookResponseCredentials `json:"credentials,omitempty" xml:"credentials,omitempty" require:"true" type:"Struct"`
   // {"en" : "", "zh_CN": ""}
-  MetaData *GetAWebhookGetAWebhookResponseMetaData `json:"metaData,omitempty" xml:"metaData,omitempty" require:"true" type:"Struct"`
+  MetaData *GetAWebhookResponseMetaData `json:"metaData,omitempty" xml:"metaData,omitempty" require:"true" type:"Struct"`
 }
 
 func (s GetAWebhookResponse) String() string {
@@ -559,42 +559,42 @@ func (s *GetAWebhookResponse) SetUrl(v string) *GetAWebhookResponse {
   return s
 }
 
-func (s *GetAWebhookResponse) SetCredentials(v *GetAWebhookGetAWebhookResponseCredentials) *GetAWebhookResponse {
+func (s *GetAWebhookResponse) SetCredentials(v *GetAWebhookResponseCredentials) *GetAWebhookResponse {
   s.Credentials = v
   return s
 }
 
-func (s *GetAWebhookResponse) SetMetaData(v *GetAWebhookGetAWebhookResponseMetaData) *GetAWebhookResponse {
+func (s *GetAWebhookResponse) SetMetaData(v *GetAWebhookResponseMetaData) *GetAWebhookResponse {
   s.MetaData = v
   return s
 }
 
-type GetAWebhookGetAWebhookResponseCredentials struct {
+type GetAWebhookResponseCredentials struct {
   // {"en" : "The username passed to the URL on your server.", "zh_CN": "用于鉴权的用户名。"}
   User *string `json:"user,omitempty" xml:"user,omitempty" require:"true"`
   // {"en" : "A string that is encoded with the date and passed in the Authorization header to your server.", "zh_CN": "用于鉴权的密钥。CDN Pro将用当期日期对密钥进行加密生成密码(password)，然后通过Authorization请求头传给你方服务器。"}
   SecretKey *string `json:"secretKey,omitempty" xml:"secretKey,omitempty" require:"true"`
 }
 
-func (s GetAWebhookGetAWebhookResponseCredentials) String() string {
+func (s GetAWebhookResponseCredentials) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAWebhookGetAWebhookResponseCredentials) GoString() string {
+func (s GetAWebhookResponseCredentials) GoString() string {
   return s.String()
 }
 
-func (s *GetAWebhookGetAWebhookResponseCredentials) SetUser(v string) *GetAWebhookGetAWebhookResponseCredentials {
+func (s *GetAWebhookResponseCredentials) SetUser(v string) *GetAWebhookResponseCredentials {
   s.User = &v
   return s
 }
 
-func (s *GetAWebhookGetAWebhookResponseCredentials) SetSecretKey(v string) *GetAWebhookGetAWebhookResponseCredentials {
+func (s *GetAWebhookResponseCredentials) SetSecretKey(v string) *GetAWebhookResponseCredentials {
   s.SecretKey = &v
   return s
 }
 
-type GetAWebhookGetAWebhookResponseMetaData struct {
+type GetAWebhookResponseMetaData struct {
   // {"en" : "RFC 3339 date indicating when the webhook was created.", "zh_CN": "webhook接口创建时间，以RFC 3339日期格式展示。"}
   CreationTime *string `json:"creationTime,omitempty" xml:"creationTime,omitempty" require:"true"`
   // {"en" : "RFC 3339 date indicating when the webhook was last updated.", "zh_CN": "webhook接口最近一次更新的时间，以RFC 3339日期格式展示。"}
@@ -607,30 +607,30 @@ type GetAWebhookGetAWebhookResponseMetaData struct {
   TotalCalls *int `json:"totalCalls,omitempty" xml:"totalCalls,omitempty"`
 }
 
-func (s GetAWebhookGetAWebhookResponseMetaData) String() string {
+func (s GetAWebhookResponseMetaData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAWebhookGetAWebhookResponseMetaData) GoString() string {
+func (s GetAWebhookResponseMetaData) GoString() string {
   return s.String()
 }
 
-func (s *GetAWebhookGetAWebhookResponseMetaData) SetCreationTime(v string) *GetAWebhookGetAWebhookResponseMetaData {
+func (s *GetAWebhookResponseMetaData) SetCreationTime(v string) *GetAWebhookResponseMetaData {
   s.CreationTime = &v
   return s
 }
 
-func (s *GetAWebhookGetAWebhookResponseMetaData) SetLastUpdatetime(v string) *GetAWebhookGetAWebhookResponseMetaData {
+func (s *GetAWebhookResponseMetaData) SetLastUpdatetime(v string) *GetAWebhookResponseMetaData {
   s.LastUpdatetime = &v
   return s
 }
 
-func (s *GetAWebhookGetAWebhookResponseMetaData) SetLastCallTime(v string) *GetAWebhookGetAWebhookResponseMetaData {
+func (s *GetAWebhookResponseMetaData) SetLastCallTime(v string) *GetAWebhookResponseMetaData {
   s.LastCallTime = &v
   return s
 }
 
-func (s *GetAWebhookGetAWebhookResponseMetaData) SetTotalCalls(v int) *GetAWebhookGetAWebhookResponseMetaData {
+func (s *GetAWebhookResponseMetaData) SetTotalCalls(v int) *GetAWebhookResponseMetaData {
   s.TotalCalls = &v
   return s
 }
@@ -717,7 +717,7 @@ type GetAListOfWebhooksResponse struct {
   // webhook接口数量，该数量与查询参数直接相关。"}
   Count *int `json:"count,omitempty" xml:"count,omitempty" require:"true"`
   // {"en" : "", "zh_CN": ""}
-  Webooks []*GetAListOfWebhooksGetAListOfWebhooksResponseWebooks `json:"webooks,omitempty" xml:"webooks,omitempty" require:"true" type:"Repeated"`
+  Webooks []*GetAListOfWebhooksResponseWebooks `json:"webooks,omitempty" xml:"webooks,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetAListOfWebhooksResponse) String() string {
@@ -733,12 +733,12 @@ func (s *GetAListOfWebhooksResponse) SetCount(v int) *GetAListOfWebhooksResponse
   return s
 }
 
-func (s *GetAListOfWebhooksResponse) SetWebooks(v []*GetAListOfWebhooksGetAListOfWebhooksResponseWebooks) *GetAListOfWebhooksResponse {
+func (s *GetAListOfWebhooksResponse) SetWebooks(v []*GetAListOfWebhooksResponseWebooks) *GetAListOfWebhooksResponse {
   s.Webooks = v
   return s
 }
 
-type GetAListOfWebhooksGetAListOfWebhooksResponseWebooks struct     {
+type GetAListOfWebhooksResponseWebooks struct     {
   // {"en" : "ID of the webhook.", "zh_CN": "webhook接口ID。"}
   Id *string `json:"id,omitempty" xml:"id,omitempty"`
   // {"en" : "Range: <= 250 characters 
@@ -763,50 +763,50 @@ type GetAListOfWebhooksGetAListOfWebhooksResponseWebooks struct     {
   HasCredentials *bool `json:"hasCredentials,omitempty" xml:"hasCredentials,omitempty"`
 }
 
-func (s GetAListOfWebhooksGetAListOfWebhooksResponseWebooks) String() string {
+func (s GetAListOfWebhooksResponseWebooks) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetAListOfWebhooksGetAListOfWebhooksResponseWebooks) GoString() string {
+func (s GetAListOfWebhooksResponseWebooks) GoString() string {
   return s.String()
 }
 
-func (s *GetAListOfWebhooksGetAListOfWebhooksResponseWebooks) SetId(v string) *GetAListOfWebhooksGetAListOfWebhooksResponseWebooks {
+func (s *GetAListOfWebhooksResponseWebooks) SetId(v string) *GetAListOfWebhooksResponseWebooks {
   s.Id = &v
   return s
 }
 
-func (s *GetAListOfWebhooksGetAListOfWebhooksResponseWebooks) SetName(v string) *GetAListOfWebhooksGetAListOfWebhooksResponseWebooks {
+func (s *GetAListOfWebhooksResponseWebooks) SetName(v string) *GetAListOfWebhooksResponseWebooks {
   s.Name = &v
   return s
 }
 
-func (s *GetAListOfWebhooksGetAListOfWebhooksResponseWebooks) SetDescription(v string) *GetAListOfWebhooksGetAListOfWebhooksResponseWebooks {
+func (s *GetAListOfWebhooksResponseWebooks) SetDescription(v string) *GetAListOfWebhooksResponseWebooks {
   s.Description = &v
   return s
 }
 
-func (s *GetAListOfWebhooksGetAListOfWebhooksResponseWebooks) SetCreationTime(v string) *GetAListOfWebhooksGetAListOfWebhooksResponseWebooks {
+func (s *GetAListOfWebhooksResponseWebooks) SetCreationTime(v string) *GetAListOfWebhooksResponseWebooks {
   s.CreationTime = &v
   return s
 }
 
-func (s *GetAListOfWebhooksGetAListOfWebhooksResponseWebooks) SetLastUpdateTime(v string) *GetAListOfWebhooksGetAListOfWebhooksResponseWebooks {
+func (s *GetAListOfWebhooksResponseWebooks) SetLastUpdateTime(v string) *GetAListOfWebhooksResponseWebooks {
   s.LastUpdateTime = &v
   return s
 }
 
-func (s *GetAListOfWebhooksGetAListOfWebhooksResponseWebooks) SetLastCallTime(v string) *GetAListOfWebhooksGetAListOfWebhooksResponseWebooks {
+func (s *GetAListOfWebhooksResponseWebooks) SetLastCallTime(v string) *GetAListOfWebhooksResponseWebooks {
   s.LastCallTime = &v
   return s
 }
 
-func (s *GetAListOfWebhooksGetAListOfWebhooksResponseWebooks) SetTotalCalls(v int) *GetAListOfWebhooksGetAListOfWebhooksResponseWebooks {
+func (s *GetAListOfWebhooksResponseWebooks) SetTotalCalls(v int) *GetAListOfWebhooksResponseWebooks {
   s.TotalCalls = &v
   return s
 }
 
-func (s *GetAListOfWebhooksGetAListOfWebhooksResponseWebooks) SetHasCredentials(v bool) *GetAListOfWebhooksGetAListOfWebhooksResponseWebooks {
+func (s *GetAListOfWebhooksResponseWebooks) SetHasCredentials(v bool) *GetAListOfWebhooksResponseWebooks {
   s.HasCredentials = &v
   return s
 }

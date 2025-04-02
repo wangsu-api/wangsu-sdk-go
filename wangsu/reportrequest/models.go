@@ -62,7 +62,7 @@ type ReportRequestQuicServiceResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"message", "zh_CN":"message"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*ReportRequestQuicServiceReportRequestQuicServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportRequestQuicServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportRequestQuicServiceResponse) String() string {
@@ -83,12 +83,12 @@ func (s *ReportRequestQuicServiceResponse) SetMessage(v string) *ReportRequestQu
   return s
 }
 
-func (s *ReportRequestQuicServiceResponse) SetData(v []*ReportRequestQuicServiceReportRequestQuicServiceResponseData) *ReportRequestQuicServiceResponse {
+func (s *ReportRequestQuicServiceResponse) SetData(v []*ReportRequestQuicServiceResponseData) *ReportRequestQuicServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportRequestQuicServiceReportRequestQuicServiceResponseData struct     {
+type ReportRequestQuicServiceResponseData struct     {
   // {"en":"Time, in the format of yyyy-MM-dd HH:mm:ss", "zh_CN":"时间，格式为yyyy-MM-dd HH:mm:ss"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Number of requests, in units", "zh_CN":"请求个数，单位 个"}
@@ -97,25 +97,25 @@ type ReportRequestQuicServiceReportRequestQuicServiceResponseData struct     {
   QuicRequest *string `json:"quicRequest,omitempty" xml:"quicRequest,omitempty" require:"true"`
 }
 
-func (s ReportRequestQuicServiceReportRequestQuicServiceResponseData) String() string {
+func (s ReportRequestQuicServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportRequestQuicServiceReportRequestQuicServiceResponseData) GoString() string {
+func (s ReportRequestQuicServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportRequestQuicServiceReportRequestQuicServiceResponseData) SetTimestamp(v string) *ReportRequestQuicServiceReportRequestQuicServiceResponseData {
+func (s *ReportRequestQuicServiceResponseData) SetTimestamp(v string) *ReportRequestQuicServiceResponseData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportRequestQuicServiceReportRequestQuicServiceResponseData) SetTotalRequest(v string) *ReportRequestQuicServiceReportRequestQuicServiceResponseData {
+func (s *ReportRequestQuicServiceResponseData) SetTotalRequest(v string) *ReportRequestQuicServiceResponseData {
   s.TotalRequest = &v
   return s
 }
 
-func (s *ReportRequestQuicServiceReportRequestQuicServiceResponseData) SetQuicRequest(v string) *ReportRequestQuicServiceReportRequestQuicServiceResponseData {
+func (s *ReportRequestQuicServiceResponseData) SetQuicRequest(v string) *ReportRequestQuicServiceResponseData {
   s.QuicRequest = &v
   return s
 }
@@ -182,7 +182,7 @@ type ReportHitServiceResponse struct {
   // {"en":"Total requests", "zh_CN":"总请求数"}
   HitSummary *string `json:"hit-summary,omitempty" xml:"hit-summary,omitempty" require:"true"`
   // {'en':'hitData', 'zh_CN':'请求数数据'}
-  HitData []*ReportHitServiceReportHitServiceResponseHitData `json:"hit-data,omitempty" xml:"hit-data,omitempty" require:"true" type:"Repeated"`
+  HitData []*ReportHitServiceResponseHitData `json:"hit-data,omitempty" xml:"hit-data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportHitServiceResponse) String() string {
@@ -198,12 +198,12 @@ func (s *ReportHitServiceResponse) SetHitSummary(v string) *ReportHitServiceResp
   return s
 }
 
-func (s *ReportHitServiceResponse) SetHitData(v []*ReportHitServiceReportHitServiceResponseHitData) *ReportHitServiceResponse {
+func (s *ReportHitServiceResponse) SetHitData(v []*ReportHitServiceResponseHitData) *ReportHitServiceResponse {
   s.HitData = v
   return s
 }
 
-type ReportHitServiceReportHitServiceResponseHitData struct     {
+type ReportHitServiceResponseHitData struct     {
   // {"en":"Date
   // When the data query granularity is fiveminutes, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:05 AM, and the last one is yyyy-MM-dd 24:00;When the data query granularity is hourly, the format is yyyy-MM-dd HH; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is yyyy-MM-dd 24;When the data query granularity is daily, the format is yyyy-MM-dd; the data value of every time slice represents the value of the daily data;Return the time slice contained in start time and the time slice contained in end time.", "zh_CN":"时间
   // 1.查询的数据粒度为fiveminutes时，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05，最后一个时间片是yyyy-MM-dd 24:00。
@@ -215,20 +215,20 @@ type ReportHitServiceReportHitServiceResponseHitData struct     {
   Hit *string `json:"hit,omitempty" xml:"hit,omitempty" require:"true"`
 }
 
-func (s ReportHitServiceReportHitServiceResponseHitData) String() string {
+func (s ReportHitServiceResponseHitData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportHitServiceReportHitServiceResponseHitData) GoString() string {
+func (s ReportHitServiceResponseHitData) GoString() string {
   return s.String()
 }
 
-func (s *ReportHitServiceReportHitServiceResponseHitData) SetTimestamp(v string) *ReportHitServiceReportHitServiceResponseHitData {
+func (s *ReportHitServiceResponseHitData) SetTimestamp(v string) *ReportHitServiceResponseHitData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportHitServiceReportHitServiceResponseHitData) SetHit(v string) *ReportHitServiceReportHitServiceResponseHitData {
+func (s *ReportHitServiceResponseHitData) SetHit(v string) *ReportHitServiceResponseHitData {
   s.Hit = &v
   return s
 }
@@ -418,7 +418,7 @@ func (s *ReportUserRequestCountryServiceRequest) SetGroupBy(v []*string) *Report
 }
 
 type ReportUserRequestCountryServiceResponse struct {
-  Result []*ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportUserRequestCountryServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportUserRequestCountryServiceResponse) String() string {
@@ -429,67 +429,67 @@ func (s ReportUserRequestCountryServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportUserRequestCountryServiceResponse) SetResult(v []*ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResult) *ReportUserRequestCountryServiceResponse {
+func (s *ReportUserRequestCountryServiceResponse) SetResult(v []*ReportUserRequestCountryServiceResponseResult) *ReportUserRequestCountryServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResult struct     {
+type ReportUserRequestCountryServiceResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  CountryData []*ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResultCountryData `json:"countryData,omitempty" xml:"countryData,omitempty" require:"true" type:"Repeated"`
+  CountryData []*ReportUserRequestCountryServiceResponseResultCountryData `json:"countryData,omitempty" xml:"countryData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResult) String() string {
+func (s ReportUserRequestCountryServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResult) GoString() string {
+func (s ReportUserRequestCountryServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResult) SetDomain(v string) *ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResult {
+func (s *ReportUserRequestCountryServiceResponseResult) SetDomain(v string) *ReportUserRequestCountryServiceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResult) SetCountryData(v []*ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResultCountryData) *ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResult {
+func (s *ReportUserRequestCountryServiceResponseResult) SetCountryData(v []*ReportUserRequestCountryServiceResponseResultCountryData) *ReportUserRequestCountryServiceResponseResult {
   s.CountryData = v
   return s
 }
 
-type ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResultCountryData struct     {
+type ReportUserRequestCountryServiceResponseResultCountryData struct     {
   // {"en":"Country area", "zh_CN":"国家区域"}
   CountryCode *string `json:"countryCode,omitempty" xml:"countryCode,omitempty" require:"true"`
   // {"en":"Total number of requests.", "zh_CN":"国家的请求总数"}
   TotalRequest *string `json:"totalRequest,omitempty" xml:"totalRequest,omitempty" require:"true"`
-  RequestData []*ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResultCountryDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
+  RequestData []*ReportUserRequestCountryServiceResponseResultCountryDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResultCountryData) String() string {
+func (s ReportUserRequestCountryServiceResponseResultCountryData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResultCountryData) GoString() string {
+func (s ReportUserRequestCountryServiceResponseResultCountryData) GoString() string {
   return s.String()
 }
 
-func (s *ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResultCountryData) SetCountryCode(v string) *ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResultCountryData {
+func (s *ReportUserRequestCountryServiceResponseResultCountryData) SetCountryCode(v string) *ReportUserRequestCountryServiceResponseResultCountryData {
   s.CountryCode = &v
   return s
 }
 
-func (s *ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResultCountryData) SetTotalRequest(v string) *ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResultCountryData {
+func (s *ReportUserRequestCountryServiceResponseResultCountryData) SetTotalRequest(v string) *ReportUserRequestCountryServiceResponseResultCountryData {
   s.TotalRequest = &v
   return s
 }
 
-func (s *ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResultCountryData) SetRequestData(v []*ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResultCountryDataRequestData) *ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResultCountryData {
+func (s *ReportUserRequestCountryServiceResponseResultCountryData) SetRequestData(v []*ReportUserRequestCountryServiceResponseResultCountryDataRequestData) *ReportUserRequestCountryServiceResponseResultCountryData {
   s.RequestData = v
   return s
 }
 
-type ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResultCountryDataRequestData struct     {
+type ReportUserRequestCountryServiceResponseResultCountryDataRequestData struct     {
   // {"en":"Time:
   // 
   // 1. When the data query granularity is 5m, then the format is yyyy-MM-dd HH:mm; ach time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:05, and the last one is (yyyy-MM-dd+1) 00:00;
@@ -505,20 +505,20 @@ type ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResul
   Request *string `json:"request,omitempty" xml:"request,omitempty" require:"true"`
 }
 
-func (s ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResultCountryDataRequestData) String() string {
+func (s ReportUserRequestCountryServiceResponseResultCountryDataRequestData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResultCountryDataRequestData) GoString() string {
+func (s ReportUserRequestCountryServiceResponseResultCountryDataRequestData) GoString() string {
   return s.String()
 }
 
-func (s *ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResultCountryDataRequestData) SetTimestamp(v string) *ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResultCountryDataRequestData {
+func (s *ReportUserRequestCountryServiceResponseResultCountryDataRequestData) SetTimestamp(v string) *ReportUserRequestCountryServiceResponseResultCountryDataRequestData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResultCountryDataRequestData) SetRequest(v string) *ReportUserRequestCountryServiceReportUserRequestCountryServiceResponseResultCountryDataRequestData {
+func (s *ReportUserRequestCountryServiceResponseResultCountryDataRequestData) SetRequest(v string) *ReportUserRequestCountryServiceResponseResultCountryDataRequestData {
   s.Request = &v
   return s
 }
@@ -634,7 +634,7 @@ type ReportRequestHttpHttpsServiceResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportRequestHttpHttpsServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportRequestHttpHttpsServiceResponse) String() string {
@@ -655,36 +655,36 @@ func (s *ReportRequestHttpHttpsServiceResponse) SetMessage(v string) *ReportRequ
   return s
 }
 
-func (s *ReportRequestHttpHttpsServiceResponse) SetData(v []*ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseData) *ReportRequestHttpHttpsServiceResponse {
+func (s *ReportRequestHttpHttpsServiceResponse) SetData(v []*ReportRequestHttpHttpsServiceResponseData) *ReportRequestHttpHttpsServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseData struct     {
+type ReportRequestHttpHttpsServiceResponseData struct     {
   // {"en":"Domain name, this field is not returned when summarizing all domain name data", "zh_CN":"域名,聚合全部域名数据不返回该字段"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  DetailList []*ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+  DetailList []*ReportRequestHttpHttpsServiceResponseDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseData) String() string {
+func (s ReportRequestHttpHttpsServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseData) GoString() string {
+func (s ReportRequestHttpHttpsServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseData) SetDomain(v string) *ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseData {
+func (s *ReportRequestHttpHttpsServiceResponseData) SetDomain(v string) *ReportRequestHttpHttpsServiceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseData) SetDetailList(v []*ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseDataDetailList) *ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseData {
+func (s *ReportRequestHttpHttpsServiceResponseData) SetDetailList(v []*ReportRequestHttpHttpsServiceResponseDataDetailList) *ReportRequestHttpHttpsServiceResponseData {
   s.DetailList = v
   return s
 }
 
-type ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseDataDetailList struct     {
+type ReportRequestHttpHttpsServiceResponseDataDetailList struct     {
   // {"en":"TimeStamp, returns the time slice containing the start time and end time. Time format: 1 minute: yyyy-MM-dd HH: mm", "zh_CN":"时间片,返回开始时间和结束时间包含的时间片。时间格式:1分钟:yyyy-MM-dd HH:mm"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"HTTPS requests", "zh_CN":"https请求数"}
@@ -693,25 +693,25 @@ type ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseDataDetai
   HttpValue *string `json:"httpValue,omitempty" xml:"httpValue,omitempty" require:"true"`
 }
 
-func (s ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseDataDetailList) String() string {
+func (s ReportRequestHttpHttpsServiceResponseDataDetailList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseDataDetailList) GoString() string {
+func (s ReportRequestHttpHttpsServiceResponseDataDetailList) GoString() string {
   return s.String()
 }
 
-func (s *ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseDataDetailList) SetTimestamp(v string) *ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseDataDetailList {
+func (s *ReportRequestHttpHttpsServiceResponseDataDetailList) SetTimestamp(v string) *ReportRequestHttpHttpsServiceResponseDataDetailList {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseDataDetailList) SetHttpsValue(v string) *ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseDataDetailList {
+func (s *ReportRequestHttpHttpsServiceResponseDataDetailList) SetHttpsValue(v string) *ReportRequestHttpHttpsServiceResponseDataDetailList {
   s.HttpsValue = &v
   return s
 }
 
-func (s *ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseDataDetailList) SetHttpValue(v string) *ReportRequestHttpHttpsServiceReportRequestHttpHttpsServiceResponseDataDetailList {
+func (s *ReportRequestHttpHttpsServiceResponseDataDetailList) SetHttpValue(v string) *ReportRequestHttpHttpsServiceResponseDataDetailList {
   s.HttpValue = &v
   return s
 }
@@ -850,7 +850,7 @@ func (s *ReportUserRequestIspProvinceServiceRequest) SetGroupBy(v []*string) *Re
 }
 
 type ReportUserRequestIspProvinceServiceResponse struct {
-  Result []*ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportUserRequestIspProvinceServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportUserRequestIspProvinceServiceResponse) String() string {
@@ -861,91 +861,91 @@ func (s ReportUserRequestIspProvinceServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportUserRequestIspProvinceServiceResponse) SetResult(v []*ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResult) *ReportUserRequestIspProvinceServiceResponse {
+func (s *ReportUserRequestIspProvinceServiceResponse) SetResult(v []*ReportUserRequestIspProvinceServiceResponseResult) *ReportUserRequestIspProvinceServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResult struct     {
+type ReportUserRequestIspProvinceServiceResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  IspData []*ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*ReportUserRequestIspProvinceServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResult) String() string {
+func (s ReportUserRequestIspProvinceServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResult) GoString() string {
+func (s ReportUserRequestIspProvinceServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResult) SetDomain(v string) *ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResult {
+func (s *ReportUserRequestIspProvinceServiceResponseResult) SetDomain(v string) *ReportUserRequestIspProvinceServiceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResult) SetIspData(v []*ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspData) *ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResult {
+func (s *ReportUserRequestIspProvinceServiceResponseResult) SetIspData(v []*ReportUserRequestIspProvinceServiceResponseResultIspData) *ReportUserRequestIspProvinceServiceResponseResult {
   s.IspData = v
   return s
 }
 
-type ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspData struct     {
+type ReportUserRequestIspProvinceServiceResponseResultIspData struct     {
   // {"en":"ISP", "zh_CN":"运营商"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
-  ProvinceData []*ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*ReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspData) String() string {
+func (s ReportUserRequestIspProvinceServiceResponseResultIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspData) GoString() string {
+func (s ReportUserRequestIspProvinceServiceResponseResultIspData) GoString() string {
   return s.String()
 }
 
-func (s *ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspData) SetIsp(v string) *ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspData {
+func (s *ReportUserRequestIspProvinceServiceResponseResultIspData) SetIsp(v string) *ReportUserRequestIspProvinceServiceResponseResultIspData {
   s.Isp = &v
   return s
 }
 
-func (s *ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspData) SetProvinceData(v []*ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData) *ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspData {
+func (s *ReportUserRequestIspProvinceServiceResponseResultIspData) SetProvinceData(v []*ReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData) *ReportUserRequestIspProvinceServiceResponseResultIspData {
   s.ProvinceData = v
   return s
 }
 
-type ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData struct     {
+type ReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData struct     {
   // {"en":"Province", "zh_CN":"省份"}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
   // {"en":"Total number of requests.", "zh_CN":"省份运营商的请求总数"}
   TotalRequest *string `json:"totalRequest,omitempty" xml:"totalRequest,omitempty" require:"true"`
-  RequestData []*ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
+  RequestData []*ReportUserRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData) String() string {
+func (s ReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData) GoString() string {
+func (s ReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData {
+func (s *ReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData {
   s.Province = &v
   return s
 }
 
-func (s *ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData) SetTotalRequest(v string) *ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData {
+func (s *ReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData) SetTotalRequest(v string) *ReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData {
   s.TotalRequest = &v
   return s
 }
 
-func (s *ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData) SetRequestData(v []*ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) *ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData {
+func (s *ReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData) SetRequestData(v []*ReportUserRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) *ReportUserRequestIspProvinceServiceResponseResultIspDataProvinceData {
   s.RequestData = v
   return s
 }
 
-type ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData struct     {
+type ReportUserRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData struct     {
   // {"en":"Time:
   // 1. When the data query granularity is 5m, then the format is yyyy-MM-dd HH:mm; ach time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:05, and the last one is (yyyy-MM-dd+1) 00:00;
   // 2. When the data query granularity is 1h, the format is yyyy-MM-dd HH; Each time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 01, and the last one is (yyyy-MM-dd+1) 00;
@@ -960,20 +960,20 @@ type ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceRespo
   Request *string `json:"request,omitempty" xml:"request,omitempty" require:"true"`
 }
 
-func (s ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) String() string {
+func (s ReportUserRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) GoString() string {
+func (s ReportUserRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) GoString() string {
   return s.String()
 }
 
-func (s *ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) SetTimestamp(v string) *ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData {
+func (s *ReportUserRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) SetTimestamp(v string) *ReportUserRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) SetRequest(v string) *ReportUserRequestIspProvinceServiceReportUserRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData {
+func (s *ReportUserRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) SetRequest(v string) *ReportUserRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData {
   s.Request = &v
   return s
 }
@@ -1109,7 +1109,7 @@ func (s *ReportProtocolOriginRequestServiceRequest) SetGroupBy(v string) *Report
 
 type ReportProtocolOriginRequestServiceResponse struct {
   // {'en':'data', 'zh_CN':'请求结果'}
-  Data []*ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportProtocolOriginRequestServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportProtocolOriginRequestServiceResponse) String() string {
@@ -1120,37 +1120,37 @@ func (s ReportProtocolOriginRequestServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportProtocolOriginRequestServiceResponse) SetData(v []*ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseData) *ReportProtocolOriginRequestServiceResponse {
+func (s *ReportProtocolOriginRequestServiceResponse) SetData(v []*ReportProtocolOriginRequestServiceResponseData) *ReportProtocolOriginRequestServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseData struct     {
+type ReportProtocolOriginRequestServiceResponseData struct     {
   // {'en':'Domain', 'zh_CN':'域名'}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {'en':'details', 'zh_CN':'请求结果的详细数据'}
-  Details []*ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseDataDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
+  Details []*ReportProtocolOriginRequestServiceResponseDataDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseData) String() string {
+func (s ReportProtocolOriginRequestServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseData) GoString() string {
+func (s ReportProtocolOriginRequestServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseData) SetDomain(v string) *ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseData {
+func (s *ReportProtocolOriginRequestServiceResponseData) SetDomain(v string) *ReportProtocolOriginRequestServiceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseData) SetDetails(v []*ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseDataDetails) *ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseData {
+func (s *ReportProtocolOriginRequestServiceResponseData) SetDetails(v []*ReportProtocolOriginRequestServiceResponseDataDetails) *ReportProtocolOriginRequestServiceResponseData {
   s.Details = v
   return s
 }
 
-type ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseDataDetails struct     {
+type ReportProtocolOriginRequestServiceResponseDataDetails struct     {
   // {'en':'Time:
   // 
   // 1.When the data query granularity is 1m, then the format is yyyy-MM-dd HH:mm; Each time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is (yyyy-MM-dd+1) 00:00.
@@ -1172,30 +1172,30 @@ type ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceRespons
   HttpsRequests *string `json:"httpsRequests,omitempty" xml:"httpsRequests,omitempty" require:"true"`
 }
 
-func (s ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseDataDetails) String() string {
+func (s ReportProtocolOriginRequestServiceResponseDataDetails) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseDataDetails) GoString() string {
+func (s ReportProtocolOriginRequestServiceResponseDataDetails) GoString() string {
   return s.String()
 }
 
-func (s *ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseDataDetails) SetTimestamp(v string) *ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseDataDetails {
+func (s *ReportProtocolOriginRequestServiceResponseDataDetails) SetTimestamp(v string) *ReportProtocolOriginRequestServiceResponseDataDetails {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseDataDetails) SetAllRequests(v string) *ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseDataDetails {
+func (s *ReportProtocolOriginRequestServiceResponseDataDetails) SetAllRequests(v string) *ReportProtocolOriginRequestServiceResponseDataDetails {
   s.AllRequests = &v
   return s
 }
 
-func (s *ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseDataDetails) SetHttpRequests(v string) *ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseDataDetails {
+func (s *ReportProtocolOriginRequestServiceResponseDataDetails) SetHttpRequests(v string) *ReportProtocolOriginRequestServiceResponseDataDetails {
   s.HttpRequests = &v
   return s
 }
 
-func (s *ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseDataDetails) SetHttpsRequests(v string) *ReportProtocolOriginRequestServiceReportProtocolOriginRequestServiceResponseDataDetails {
+func (s *ReportProtocolOriginRequestServiceResponseDataDetails) SetHttpsRequests(v string) *ReportProtocolOriginRequestServiceResponseDataDetails {
   s.HttpsRequests = &v
   return s
 }
@@ -1334,7 +1334,7 @@ func (s *ReportProtocolRequestServiceRequest) SetGroupBy(v string) *ReportProtoc
 
 type ReportProtocolRequestServiceResponse struct {
   // {'en':'data', 'zh_CN':'请求结果'}
-  Data []*ReportProtocolRequestServiceReportProtocolRequestServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportProtocolRequestServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportProtocolRequestServiceResponse) String() string {
@@ -1345,37 +1345,37 @@ func (s ReportProtocolRequestServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportProtocolRequestServiceResponse) SetData(v []*ReportProtocolRequestServiceReportProtocolRequestServiceResponseData) *ReportProtocolRequestServiceResponse {
+func (s *ReportProtocolRequestServiceResponse) SetData(v []*ReportProtocolRequestServiceResponseData) *ReportProtocolRequestServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportProtocolRequestServiceReportProtocolRequestServiceResponseData struct     {
+type ReportProtocolRequestServiceResponseData struct     {
   // {'en':'Domain', 'zh_CN':'域名'}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {'en':'details', 'zh_CN':'请求结果的详细数据'}
-  Details []*ReportProtocolRequestServiceReportProtocolRequestServiceResponseDataDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
+  Details []*ReportProtocolRequestServiceResponseDataDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportProtocolRequestServiceReportProtocolRequestServiceResponseData) String() string {
+func (s ReportProtocolRequestServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportProtocolRequestServiceReportProtocolRequestServiceResponseData) GoString() string {
+func (s ReportProtocolRequestServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportProtocolRequestServiceReportProtocolRequestServiceResponseData) SetDomain(v string) *ReportProtocolRequestServiceReportProtocolRequestServiceResponseData {
+func (s *ReportProtocolRequestServiceResponseData) SetDomain(v string) *ReportProtocolRequestServiceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *ReportProtocolRequestServiceReportProtocolRequestServiceResponseData) SetDetails(v []*ReportProtocolRequestServiceReportProtocolRequestServiceResponseDataDetails) *ReportProtocolRequestServiceReportProtocolRequestServiceResponseData {
+func (s *ReportProtocolRequestServiceResponseData) SetDetails(v []*ReportProtocolRequestServiceResponseDataDetails) *ReportProtocolRequestServiceResponseData {
   s.Details = v
   return s
 }
 
-type ReportProtocolRequestServiceReportProtocolRequestServiceResponseDataDetails struct     {
+type ReportProtocolRequestServiceResponseDataDetails struct     {
   // {'en':'Time:
   // 
   // 1.When the data query granularity is 1m, then the format is yyyy-MM-dd HH:mm; Each time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is (yyyy-MM-dd+1) 00:00.
@@ -1397,30 +1397,30 @@ type ReportProtocolRequestServiceReportProtocolRequestServiceResponseDataDetails
   HttpsRequests *string `json:"httpsRequests,omitempty" xml:"httpsRequests,omitempty" require:"true"`
 }
 
-func (s ReportProtocolRequestServiceReportProtocolRequestServiceResponseDataDetails) String() string {
+func (s ReportProtocolRequestServiceResponseDataDetails) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportProtocolRequestServiceReportProtocolRequestServiceResponseDataDetails) GoString() string {
+func (s ReportProtocolRequestServiceResponseDataDetails) GoString() string {
   return s.String()
 }
 
-func (s *ReportProtocolRequestServiceReportProtocolRequestServiceResponseDataDetails) SetTimestamp(v string) *ReportProtocolRequestServiceReportProtocolRequestServiceResponseDataDetails {
+func (s *ReportProtocolRequestServiceResponseDataDetails) SetTimestamp(v string) *ReportProtocolRequestServiceResponseDataDetails {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportProtocolRequestServiceReportProtocolRequestServiceResponseDataDetails) SetAllRequests(v string) *ReportProtocolRequestServiceReportProtocolRequestServiceResponseDataDetails {
+func (s *ReportProtocolRequestServiceResponseDataDetails) SetAllRequests(v string) *ReportProtocolRequestServiceResponseDataDetails {
   s.AllRequests = &v
   return s
 }
 
-func (s *ReportProtocolRequestServiceReportProtocolRequestServiceResponseDataDetails) SetHttpRequests(v string) *ReportProtocolRequestServiceReportProtocolRequestServiceResponseDataDetails {
+func (s *ReportProtocolRequestServiceResponseDataDetails) SetHttpRequests(v string) *ReportProtocolRequestServiceResponseDataDetails {
   s.HttpRequests = &v
   return s
 }
 
-func (s *ReportProtocolRequestServiceReportProtocolRequestServiceResponseDataDetails) SetHttpsRequests(v string) *ReportProtocolRequestServiceReportProtocolRequestServiceResponseDataDetails {
+func (s *ReportProtocolRequestServiceResponseDataDetails) SetHttpsRequests(v string) *ReportProtocolRequestServiceResponseDataDetails {
   s.HttpsRequests = &v
   return s
 }
@@ -1528,7 +1528,7 @@ type ReportStreamTaskNumberServiceResponse struct {
   // {'en':'message', 'zh_CN':'请求结果信息'}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'请求结果的详细数据'}
-  Data []*ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportStreamTaskNumberServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportStreamTaskNumberServiceResponse) String() string {
@@ -1549,38 +1549,38 @@ func (s *ReportStreamTaskNumberServiceResponse) SetMessage(v string) *ReportStre
   return s
 }
 
-func (s *ReportStreamTaskNumberServiceResponse) SetData(v []*ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseData) *ReportStreamTaskNumberServiceResponse {
+func (s *ReportStreamTaskNumberServiceResponse) SetData(v []*ReportStreamTaskNumberServiceResponseData) *ReportStreamTaskNumberServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseData struct     {
+type ReportStreamTaskNumberServiceResponseData struct     {
   // {'en':'timestamp', 'zh_CN':'时间片
   // 每一个时间片数据值代表的是前一个时间粒度范围内的数据值，比如yyyy-MM-dd 00:01，代表00:00到00:51范围内的数据。
   // 返回开始时间和结束时间包含的时间片。'}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
-  DataDetail []*ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseDataDataDetail `json:"dataDetail,omitempty" xml:"dataDetail,omitempty" require:"true" type:"Repeated"`
+  DataDetail []*ReportStreamTaskNumberServiceResponseDataDataDetail `json:"dataDetail,omitempty" xml:"dataDetail,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseData) String() string {
+func (s ReportStreamTaskNumberServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseData) GoString() string {
+func (s ReportStreamTaskNumberServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseData) SetTimestamp(v string) *ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseData {
+func (s *ReportStreamTaskNumberServiceResponseData) SetTimestamp(v string) *ReportStreamTaskNumberServiceResponseData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseData) SetDataDetail(v []*ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseDataDataDetail) *ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseData {
+func (s *ReportStreamTaskNumberServiceResponseData) SetDataDetail(v []*ReportStreamTaskNumberServiceResponseDataDataDetail) *ReportStreamTaskNumberServiceResponseData {
   s.DataDetail = v
   return s
 }
 
-type ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseDataDataDetail struct     {
+type ReportStreamTaskNumberServiceResponseDataDataDetail struct     {
   // {'en':'domain', 'zh_CN':'域名'}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {'en':'h265', 'zh_CN':'1 or 0 , 1 代表 H265 转码，0 代表 H264 转码。'}
@@ -1591,30 +1591,30 @@ type ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseDataDataD
   Duration *string `json:"duration,omitempty" xml:"duration,omitempty" require:"true"`
 }
 
-func (s ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseDataDataDetail) String() string {
+func (s ReportStreamTaskNumberServiceResponseDataDataDetail) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseDataDataDetail) GoString() string {
+func (s ReportStreamTaskNumberServiceResponseDataDataDetail) GoString() string {
   return s.String()
 }
 
-func (s *ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseDataDataDetail) SetDomain(v string) *ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseDataDataDetail {
+func (s *ReportStreamTaskNumberServiceResponseDataDataDetail) SetDomain(v string) *ReportStreamTaskNumberServiceResponseDataDataDetail {
   s.Domain = &v
   return s
 }
 
-func (s *ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseDataDataDetail) SetH265(v string) *ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseDataDataDetail {
+func (s *ReportStreamTaskNumberServiceResponseDataDataDetail) SetH265(v string) *ReportStreamTaskNumberServiceResponseDataDataDetail {
   s.H265 = &v
   return s
 }
 
-func (s *ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseDataDataDetail) SetTranscodeNum(v string) *ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseDataDataDetail {
+func (s *ReportStreamTaskNumberServiceResponseDataDataDetail) SetTranscodeNum(v string) *ReportStreamTaskNumberServiceResponseDataDataDetail {
   s.TranscodeNum = &v
   return s
 }
 
-func (s *ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseDataDataDetail) SetDuration(v string) *ReportStreamTaskNumberServiceReportStreamTaskNumberServiceResponseDataDataDetail {
+func (s *ReportStreamTaskNumberServiceResponseDataDataDetail) SetDuration(v string) *ReportStreamTaskNumberServiceResponseDataDataDetail {
   s.Duration = &v
   return s
 }
@@ -1708,7 +1708,7 @@ type QueryDomainTotalRequestResponse struct {
   // {"en":"Total requests", "zh_CN":"总请求数"}
   HitSummary *int `json:"hit-summary,omitempty" xml:"hit-summary,omitempty" require:"true"`
   // {'en':'hitData', 'zh_CN':'请求数据'}
-  HitData []*QueryDomainTotalRequestQueryDomainTotalRequestResponseHitData `json:"hit-data,omitempty" xml:"hit-data,omitempty" require:"true" type:"Repeated"`
+  HitData []*QueryDomainTotalRequestResponseHitData `json:"hit-data,omitempty" xml:"hit-data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryDomainTotalRequestResponse) String() string {
@@ -1724,12 +1724,12 @@ func (s *QueryDomainTotalRequestResponse) SetHitSummary(v int) *QueryDomainTotal
   return s
 }
 
-func (s *QueryDomainTotalRequestResponse) SetHitData(v []*QueryDomainTotalRequestQueryDomainTotalRequestResponseHitData) *QueryDomainTotalRequestResponse {
+func (s *QueryDomainTotalRequestResponse) SetHitData(v []*QueryDomainTotalRequestResponseHitData) *QueryDomainTotalRequestResponse {
   s.HitData = v
   return s
 }
 
-type QueryDomainTotalRequestQueryDomainTotalRequestResponseHitData struct     {
+type QueryDomainTotalRequestResponseHitData struct     {
   // {"en":"Date
   // When the querying data granularity is fiveminutes, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:05 AM, and the last one is yyyy-MM-dd 24:00;When the data query granularity is hourly, the format is yyyy-MM-dd HH; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is yyyy-MM-dd 24;When the querying data granularity is daily, the format is yyyy-MM-dd; the data value of every time slice represents the value of the data;Return the time slices contained in start time and in end time", "zh_CN":"时间
   // 1.查询的数据粒度为fiveminutes时，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05，最后一个时间片是yyyy-MM-dd 24:00。
@@ -1741,20 +1741,20 @@ type QueryDomainTotalRequestQueryDomainTotalRequestResponseHitData struct     {
   Hit *int `json:"hit,omitempty" xml:"hit,omitempty" require:"true"`
 }
 
-func (s QueryDomainTotalRequestQueryDomainTotalRequestResponseHitData) String() string {
+func (s QueryDomainTotalRequestResponseHitData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDomainTotalRequestQueryDomainTotalRequestResponseHitData) GoString() string {
+func (s QueryDomainTotalRequestResponseHitData) GoString() string {
   return s.String()
 }
 
-func (s *QueryDomainTotalRequestQueryDomainTotalRequestResponseHitData) SetTimestamp(v string) *QueryDomainTotalRequestQueryDomainTotalRequestResponseHitData {
+func (s *QueryDomainTotalRequestResponseHitData) SetTimestamp(v string) *QueryDomainTotalRequestResponseHitData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryDomainTotalRequestQueryDomainTotalRequestResponseHitData) SetHit(v int) *QueryDomainTotalRequestQueryDomainTotalRequestResponseHitData {
+func (s *QueryDomainTotalRequestResponseHitData) SetHit(v int) *QueryDomainTotalRequestResponseHitData {
   s.Hit = &v
   return s
 }
@@ -1956,7 +1956,7 @@ func (s *HitRequest) SetResultType(v string) *HitRequest {
 
 type HitResponse struct {
   // {'en':'provider', 'zh_CN':'结果'}
-  Provider *HitHitResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+  Provider *HitResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
 func (s HitResponse) String() string {
@@ -1967,12 +1967,12 @@ func (s HitResponse) GoString() string {
   return s.String()
 }
 
-func (s *HitResponse) SetProvider(v *HitHitResponseProvider) *HitResponse {
+func (s *HitResponse) SetProvider(v *HitResponseProvider) *HitResponse {
   s.Provider = v
   return s
 }
 
-type HitHitResponseProvider struct {
+type HitResponseProvider struct {
   // {'en':'tenant', 'zh_CN':'租户'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'type', 'zh_CN':'接口类型'}
@@ -1980,115 +1980,115 @@ type HitHitResponseProvider struct {
   // {'en':'resultType', 'zh_CN':'统计类型'}
   ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'请求数数据'}
-  Date *HitHitResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+  Date *HitResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
-func (s HitHitResponseProvider) String() string {
+func (s HitResponseProvider) String() string {
   return tea.Prettify(s)
 }
 
-func (s HitHitResponseProvider) GoString() string {
+func (s HitResponseProvider) GoString() string {
   return s.String()
 }
 
-func (s *HitHitResponseProvider) SetName(v string) *HitHitResponseProvider {
+func (s *HitResponseProvider) SetName(v string) *HitResponseProvider {
   s.Name = &v
   return s
 }
 
-func (s *HitHitResponseProvider) SetType(v string) *HitHitResponseProvider {
+func (s *HitResponseProvider) SetType(v string) *HitResponseProvider {
   s.Type = &v
   return s
 }
 
-func (s *HitHitResponseProvider) SetResultType(v string) *HitHitResponseProvider {
+func (s *HitResponseProvider) SetResultType(v string) *HitResponseProvider {
   s.ResultType = &v
   return s
 }
 
-func (s *HitHitResponseProvider) SetDate(v *HitHitResponseProviderDate) *HitHitResponseProvider {
+func (s *HitResponseProvider) SetDate(v *HitResponseProviderDate) *HitResponseProvider {
   s.Date = v
   return s
 }
 
-type HitHitResponseProviderDate struct {
+type HitResponseProviderDate struct {
   // {'en':'startdate', 'zh_CN':'开始时间'}
   Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
   // {'en':'enddate', 'zh_CN':'结束时间'}
   Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
   // {'en':'channel', 'zh_CN':'频道'}
-  Channel *HitHitResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+  Channel *HitResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
 }
 
-func (s HitHitResponseProviderDate) String() string {
+func (s HitResponseProviderDate) String() string {
   return tea.Prettify(s)
 }
 
-func (s HitHitResponseProviderDate) GoString() string {
+func (s HitResponseProviderDate) GoString() string {
   return s.String()
 }
 
-func (s *HitHitResponseProviderDate) SetStartdate(v string) *HitHitResponseProviderDate {
+func (s *HitResponseProviderDate) SetStartdate(v string) *HitResponseProviderDate {
   s.Startdate = &v
   return s
 }
 
-func (s *HitHitResponseProviderDate) SetEnddate(v string) *HitHitResponseProviderDate {
+func (s *HitResponseProviderDate) SetEnddate(v string) *HitResponseProviderDate {
   s.Enddate = &v
   return s
 }
 
-func (s *HitHitResponseProviderDate) SetChannel(v *HitHitResponseProviderDateChannel) *HitHitResponseProviderDate {
+func (s *HitResponseProviderDate) SetChannel(v *HitResponseProviderDateChannel) *HitResponseProviderDate {
   s.Channel = v
   return s
 }
 
-type HitHitResponseProviderDateChannel struct {
+type HitResponseProviderDateChannel struct {
   // {'en':'channel', 'zh_CN':'频道'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'请求数数据'}
-  Bandwidth []*HitHitResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
+  Bandwidth []*HitResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s HitHitResponseProviderDateChannel) String() string {
+func (s HitResponseProviderDateChannel) String() string {
   return tea.Prettify(s)
 }
 
-func (s HitHitResponseProviderDateChannel) GoString() string {
+func (s HitResponseProviderDateChannel) GoString() string {
   return s.String()
 }
 
-func (s *HitHitResponseProviderDateChannel) SetName(v string) *HitHitResponseProviderDateChannel {
+func (s *HitResponseProviderDateChannel) SetName(v string) *HitResponseProviderDateChannel {
   s.Name = &v
   return s
 }
 
-func (s *HitHitResponseProviderDateChannel) SetBandwidth(v []*HitHitResponseProviderDateChannelBandwidth) *HitHitResponseProviderDateChannel {
+func (s *HitResponseProviderDateChannel) SetBandwidth(v []*HitResponseProviderDateChannelBandwidth) *HitResponseProviderDateChannel {
   s.Bandwidth = v
   return s
 }
 
-type HitHitResponseProviderDateChannelBandwidth struct     {
+type HitResponseProviderDateChannelBandwidth struct     {
   // {'en':'timestamp', 'zh_CN':'时间点'}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
   // {'en':'hit count', 'zh_CN':'请求数'}
   Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
 }
 
-func (s HitHitResponseProviderDateChannelBandwidth) String() string {
+func (s HitResponseProviderDateChannelBandwidth) String() string {
   return tea.Prettify(s)
 }
 
-func (s HitHitResponseProviderDateChannelBandwidth) GoString() string {
+func (s HitResponseProviderDateChannelBandwidth) GoString() string {
   return s.String()
 }
 
-func (s *HitHitResponseProviderDateChannelBandwidth) SetTime(v string) *HitHitResponseProviderDateChannelBandwidth {
+func (s *HitResponseProviderDateChannelBandwidth) SetTime(v string) *HitResponseProviderDateChannelBandwidth {
   s.Time = &v
   return s
 }
 
-func (s *HitHitResponseProviderDateChannelBandwidth) SetText(v string) *HitHitResponseProviderDateChannelBandwidth {
+func (s *HitResponseProviderDateChannelBandwidth) SetText(v string) *HitResponseProviderDateChannelBandwidth {
   s.Text = &v
   return s
 }
@@ -2268,7 +2268,7 @@ func (s *ReportMinuteUserRequestIspProvinceServiceRequest) SetGroupBy(v []*strin
 }
 
 type ReportMinuteUserRequestIspProvinceServiceResponse struct {
-  Data []*ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportMinuteUserRequestIspProvinceServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportMinuteUserRequestIspProvinceServiceResponse) String() string {
@@ -2279,91 +2279,91 @@ func (s ReportMinuteUserRequestIspProvinceServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportMinuteUserRequestIspProvinceServiceResponse) SetData(v []*ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseData) *ReportMinuteUserRequestIspProvinceServiceResponse {
+func (s *ReportMinuteUserRequestIspProvinceServiceResponse) SetData(v []*ReportMinuteUserRequestIspProvinceServiceResponseData) *ReportMinuteUserRequestIspProvinceServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseData struct     {
+type ReportMinuteUserRequestIspProvinceServiceResponseData struct     {
   // {"en":"domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  IspData []*ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*ReportMinuteUserRequestIspProvinceServiceResponseDataIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseData) String() string {
+func (s ReportMinuteUserRequestIspProvinceServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseData) GoString() string {
+func (s ReportMinuteUserRequestIspProvinceServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseData) SetDomain(v string) *ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseData {
+func (s *ReportMinuteUserRequestIspProvinceServiceResponseData) SetDomain(v string) *ReportMinuteUserRequestIspProvinceServiceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseData) SetIspData(v []*ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspData) *ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseData {
+func (s *ReportMinuteUserRequestIspProvinceServiceResponseData) SetIspData(v []*ReportMinuteUserRequestIspProvinceServiceResponseDataIspData) *ReportMinuteUserRequestIspProvinceServiceResponseData {
   s.IspData = v
   return s
 }
 
-type ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspData struct     {
+type ReportMinuteUserRequestIspProvinceServiceResponseDataIspData struct     {
   // {"en":"ISP", "zh_CN":"运营商"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
-  ProvinceData []*ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspData) String() string {
+func (s ReportMinuteUserRequestIspProvinceServiceResponseDataIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspData) GoString() string {
+func (s ReportMinuteUserRequestIspProvinceServiceResponseDataIspData) GoString() string {
   return s.String()
 }
 
-func (s *ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspData) SetIsp(v string) *ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspData {
+func (s *ReportMinuteUserRequestIspProvinceServiceResponseDataIspData) SetIsp(v string) *ReportMinuteUserRequestIspProvinceServiceResponseDataIspData {
   s.Isp = &v
   return s
 }
 
-func (s *ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspData) SetProvinceData(v []*ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData) *ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspData {
+func (s *ReportMinuteUserRequestIspProvinceServiceResponseDataIspData) SetProvinceData(v []*ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData) *ReportMinuteUserRequestIspProvinceServiceResponseDataIspData {
   s.ProvinceData = v
   return s
 }
 
-type ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData struct     {
+type ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData struct     {
   // {"en":"Province", "zh_CN":"省份"}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
   // {"en":"Total number of requests.", "zh_CN":"省份运营商的请求总数"}
   TotalRequest *string `json:"totalRequest,omitempty" xml:"totalRequest,omitempty" require:"true"`
-  Details []*ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDataDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
+  Details []*ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDataDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData) String() string {
+func (s ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData) GoString() string {
+func (s ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData) SetProvince(v string) *ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData {
+func (s *ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData) SetProvince(v string) *ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData {
   s.Province = &v
   return s
 }
 
-func (s *ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData) SetTotalRequest(v string) *ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData {
+func (s *ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData) SetTotalRequest(v string) *ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData {
   s.TotalRequest = &v
   return s
 }
 
-func (s *ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData) SetDetails(v []*ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDataDetails) *ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData {
+func (s *ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData) SetDetails(v []*ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDataDetails) *ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData {
   s.Details = v
   return s
 }
 
-type ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDataDetails struct     {
+type ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDataDetails struct     {
   // {"en":"ime:
   // 
   // 1. When the data query granularity is 1m, then the format is yyyy-MM-dd HH:mm; Each time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is (yyyy-MM-dd+1) 00:00;
@@ -2382,20 +2382,20 @@ type ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvince
   Request *string `json:"request,omitempty" xml:"request,omitempty" require:"true"`
 }
 
-func (s ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDataDetails) String() string {
+func (s ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDataDetails) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDataDetails) GoString() string {
+func (s ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDataDetails) GoString() string {
   return s.String()
 }
 
-func (s *ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDataDetails) SetTimestamp(v string) *ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDataDetails {
+func (s *ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDataDetails) SetTimestamp(v string) *ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDataDetails {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDataDetails) SetRequest(v string) *ReportMinuteUserRequestIspProvinceServiceReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDataDetails {
+func (s *ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDataDetails) SetRequest(v string) *ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDataDetails {
   s.Request = &v
   return s
 }
@@ -2523,7 +2523,7 @@ type QueryRequestHitRatioResponse struct {
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Detailed data on the results of the request", "zh_CN":"请求结果的详细数据"}
-  Data []*QueryRequestHitRatioQueryRequestHitRatioResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*QueryRequestHitRatioResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryRequestHitRatioResponse) String() string {
@@ -2544,44 +2544,44 @@ func (s *QueryRequestHitRatioResponse) SetMessage(v string) *QueryRequestHitRati
   return s
 }
 
-func (s *QueryRequestHitRatioResponse) SetData(v []*QueryRequestHitRatioQueryRequestHitRatioResponseData) *QueryRequestHitRatioResponse {
+func (s *QueryRequestHitRatioResponse) SetData(v []*QueryRequestHitRatioResponseData) *QueryRequestHitRatioResponse {
   s.Data = v
   return s
 }
 
-type QueryRequestHitRatioQueryRequestHitRatioResponseData struct     {
+type QueryRequestHitRatioResponseData struct     {
   // {"en":"Actually processed time. yyyy-MM-dd HH:mm format", "zh_CN":"实际查询时间,格式 yyyy-MM-dd HH:mm"}
   RealDate *string `json:"realDate,omitempty" xml:"realDate,omitempty" require:"true"`
   // {"en":"Average of total hit ratio.", "zh_CN":"总命中率的平均值"}
   TotalAvg *float64 `json:"totalAvg,omitempty" xml:"totalAvg,omitempty" require:"true"`
   // {"en":"hitRatioDatas", "zh_CN":"缓存命中率数据"}
-  HitRatioDatas []*QueryRequestHitRatioQueryRequestHitRatioResponseDataHitRatioDatas `json:"hitRatioDatas,omitempty" xml:"hitRatioDatas,omitempty" require:"true" type:"Repeated"`
+  HitRatioDatas []*QueryRequestHitRatioResponseDataHitRatioDatas `json:"hitRatioDatas,omitempty" xml:"hitRatioDatas,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryRequestHitRatioQueryRequestHitRatioResponseData) String() string {
+func (s QueryRequestHitRatioResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryRequestHitRatioQueryRequestHitRatioResponseData) GoString() string {
+func (s QueryRequestHitRatioResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryRequestHitRatioQueryRequestHitRatioResponseData) SetRealDate(v string) *QueryRequestHitRatioQueryRequestHitRatioResponseData {
+func (s *QueryRequestHitRatioResponseData) SetRealDate(v string) *QueryRequestHitRatioResponseData {
   s.RealDate = &v
   return s
 }
 
-func (s *QueryRequestHitRatioQueryRequestHitRatioResponseData) SetTotalAvg(v float64) *QueryRequestHitRatioQueryRequestHitRatioResponseData {
+func (s *QueryRequestHitRatioResponseData) SetTotalAvg(v float64) *QueryRequestHitRatioResponseData {
   s.TotalAvg = &v
   return s
 }
 
-func (s *QueryRequestHitRatioQueryRequestHitRatioResponseData) SetHitRatioDatas(v []*QueryRequestHitRatioQueryRequestHitRatioResponseDataHitRatioDatas) *QueryRequestHitRatioQueryRequestHitRatioResponseData {
+func (s *QueryRequestHitRatioResponseData) SetHitRatioDatas(v []*QueryRequestHitRatioResponseDataHitRatioDatas) *QueryRequestHitRatioResponseData {
   s.HitRatioDatas = v
   return s
 }
 
-type QueryRequestHitRatioQueryRequestHitRatioResponseDataHitRatioDatas struct     {
+type QueryRequestHitRatioResponseDataHitRatioDatas struct     {
   // {"en":"timetamp
   // 1. When the data granularity of the query is fiveminutes, the format is yyyy-MM-dd HH:MM; Each time slice data value represents the data value in the previous time granularity range, For example yyyy-MM-dd 00:05 represents data in the range from 00:00 to 00:05.
   // 2.The data granularity of query is hourly, the format is yyyy-MM-dd HH. Each time slice data value represents data values in the previous time granularity range such as yyyy-MM-dd 01 that represent data from 00 to 01.
@@ -2597,20 +2597,20 @@ type QueryRequestHitRatioQueryRequestHitRatioResponseDataHitRatioDatas struct   
   HitRatio *string `json:"hitRatio,omitempty" xml:"hitRatio,omitempty" require:"true"`
 }
 
-func (s QueryRequestHitRatioQueryRequestHitRatioResponseDataHitRatioDatas) String() string {
+func (s QueryRequestHitRatioResponseDataHitRatioDatas) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryRequestHitRatioQueryRequestHitRatioResponseDataHitRatioDatas) GoString() string {
+func (s QueryRequestHitRatioResponseDataHitRatioDatas) GoString() string {
   return s.String()
 }
 
-func (s *QueryRequestHitRatioQueryRequestHitRatioResponseDataHitRatioDatas) SetTimestamp(v string) *QueryRequestHitRatioQueryRequestHitRatioResponseDataHitRatioDatas {
+func (s *QueryRequestHitRatioResponseDataHitRatioDatas) SetTimestamp(v string) *QueryRequestHitRatioResponseDataHitRatioDatas {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryRequestHitRatioQueryRequestHitRatioResponseDataHitRatioDatas) SetHitRatio(v string) *QueryRequestHitRatioQueryRequestHitRatioResponseDataHitRatioDatas {
+func (s *QueryRequestHitRatioResponseDataHitRatioDatas) SetHitRatio(v string) *QueryRequestHitRatioResponseDataHitRatioDatas {
   s.HitRatio = &v
   return s
 }
@@ -2746,7 +2746,7 @@ func (s *QueryRequestBySpecificProtocolRequest) SetGroupBy(v []*string) *QueryRe
 }
 
 type QueryRequestBySpecificProtocolResponse struct {
-  Result []*QueryRequestBySpecificProtocolQueryRequestBySpecificProtocolResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryRequestBySpecificProtocolResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryRequestBySpecificProtocolResponse) String() string {
@@ -2757,56 +2757,56 @@ func (s QueryRequestBySpecificProtocolResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryRequestBySpecificProtocolResponse) SetResult(v []*QueryRequestBySpecificProtocolQueryRequestBySpecificProtocolResponseResult) *QueryRequestBySpecificProtocolResponse {
+func (s *QueryRequestBySpecificProtocolResponse) SetResult(v []*QueryRequestBySpecificProtocolResponseResult) *QueryRequestBySpecificProtocolResponse {
   s.Result = v
   return s
 }
 
-type QueryRequestBySpecificProtocolQueryRequestBySpecificProtocolResponseResult struct     {
+type QueryRequestBySpecificProtocolResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  HttpsRequestData []*QueryRequestBySpecificProtocolQueryRequestBySpecificProtocolResponseResultHttpsRequestData `json:"httpsRequestData,omitempty" xml:"httpsRequestData,omitempty" require:"true" type:"Repeated"`
+  HttpsRequestData []*QueryRequestBySpecificProtocolResponseResultHttpsRequestData `json:"httpsRequestData,omitempty" xml:"httpsRequestData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryRequestBySpecificProtocolQueryRequestBySpecificProtocolResponseResult) String() string {
+func (s QueryRequestBySpecificProtocolResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryRequestBySpecificProtocolQueryRequestBySpecificProtocolResponseResult) GoString() string {
+func (s QueryRequestBySpecificProtocolResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryRequestBySpecificProtocolQueryRequestBySpecificProtocolResponseResult) SetDomain(v string) *QueryRequestBySpecificProtocolQueryRequestBySpecificProtocolResponseResult {
+func (s *QueryRequestBySpecificProtocolResponseResult) SetDomain(v string) *QueryRequestBySpecificProtocolResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *QueryRequestBySpecificProtocolQueryRequestBySpecificProtocolResponseResult) SetHttpsRequestData(v []*QueryRequestBySpecificProtocolQueryRequestBySpecificProtocolResponseResultHttpsRequestData) *QueryRequestBySpecificProtocolQueryRequestBySpecificProtocolResponseResult {
+func (s *QueryRequestBySpecificProtocolResponseResult) SetHttpsRequestData(v []*QueryRequestBySpecificProtocolResponseResultHttpsRequestData) *QueryRequestBySpecificProtocolResponseResult {
   s.HttpsRequestData = v
   return s
 }
 
-type QueryRequestBySpecificProtocolQueryRequestBySpecificProtocolResponseResultHttpsRequestData struct     {
+type QueryRequestBySpecificProtocolResponseResultHttpsRequestData struct     {
   // {"en":"DateTime, the format is  yyyy-MM-dd HH:mm; the data value of every time slice represents the data  value within the previous time granularity range.", "zh_CN":"时间，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。比如yyyy-MM-dd 00:05，代表00:00到00:05范围内的数据。"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Total number of requests", "zh_CN":"请求数"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryRequestBySpecificProtocolQueryRequestBySpecificProtocolResponseResultHttpsRequestData) String() string {
+func (s QueryRequestBySpecificProtocolResponseResultHttpsRequestData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryRequestBySpecificProtocolQueryRequestBySpecificProtocolResponseResultHttpsRequestData) GoString() string {
+func (s QueryRequestBySpecificProtocolResponseResultHttpsRequestData) GoString() string {
   return s.String()
 }
 
-func (s *QueryRequestBySpecificProtocolQueryRequestBySpecificProtocolResponseResultHttpsRequestData) SetTimestamp(v string) *QueryRequestBySpecificProtocolQueryRequestBySpecificProtocolResponseResultHttpsRequestData {
+func (s *QueryRequestBySpecificProtocolResponseResultHttpsRequestData) SetTimestamp(v string) *QueryRequestBySpecificProtocolResponseResultHttpsRequestData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryRequestBySpecificProtocolQueryRequestBySpecificProtocolResponseResultHttpsRequestData) SetValue(v string) *QueryRequestBySpecificProtocolQueryRequestBySpecificProtocolResponseResultHttpsRequestData {
+func (s *QueryRequestBySpecificProtocolResponseResultHttpsRequestData) SetValue(v string) *QueryRequestBySpecificProtocolResponseResultHttpsRequestData {
   s.Value = &v
   return s
 }
@@ -2971,7 +2971,7 @@ func (s *QueryIPV6RequestOfeachISPandProvinceRequest) SetGroupBy(v []*string) *Q
 
 type QueryIPV6RequestOfeachISPandProvinceResponse struct {
   // {"en":"", "zh_CN":""}
-  Result []*QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryIPV6RequestOfeachISPandProvinceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryIPV6RequestOfeachISPandProvinceResponse) String() string {
@@ -2982,84 +2982,84 @@ func (s QueryIPV6RequestOfeachISPandProvinceResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryIPV6RequestOfeachISPandProvinceResponse) SetResult(v []*QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResult) *QueryIPV6RequestOfeachISPandProvinceResponse {
+func (s *QueryIPV6RequestOfeachISPandProvinceResponse) SetResult(v []*QueryIPV6RequestOfeachISPandProvinceResponseResult) *QueryIPV6RequestOfeachISPandProvinceResponse {
   s.Result = v
   return s
 }
 
-type QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResult struct     {
+type QueryIPV6RequestOfeachISPandProvinceResponseResult struct     {
   // {"en":"domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  IspData []*QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*QueryIPV6RequestOfeachISPandProvinceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResult) String() string {
+func (s QueryIPV6RequestOfeachISPandProvinceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResult) GoString() string {
+func (s QueryIPV6RequestOfeachISPandProvinceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResult) SetDomain(v string) *QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResult {
+func (s *QueryIPV6RequestOfeachISPandProvinceResponseResult) SetDomain(v string) *QueryIPV6RequestOfeachISPandProvinceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResult) SetIspData(v []*QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspData) *QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResult {
+func (s *QueryIPV6RequestOfeachISPandProvinceResponseResult) SetIspData(v []*QueryIPV6RequestOfeachISPandProvinceResponseResultIspData) *QueryIPV6RequestOfeachISPandProvinceResponseResult {
   s.IspData = v
   return s
 }
 
-type QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspData struct     {
+type QueryIPV6RequestOfeachISPandProvinceResponseResultIspData struct     {
   // {"en":"isp", "zh_CN":"运营商"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
-  ProvinceData []*QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspData) String() string {
+func (s QueryIPV6RequestOfeachISPandProvinceResponseResultIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspData) GoString() string {
+func (s QueryIPV6RequestOfeachISPandProvinceResponseResultIspData) GoString() string {
   return s.String()
 }
 
-func (s *QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspData) SetIsp(v string) *QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspData {
+func (s *QueryIPV6RequestOfeachISPandProvinceResponseResultIspData) SetIsp(v string) *QueryIPV6RequestOfeachISPandProvinceResponseResultIspData {
   s.Isp = &v
   return s
 }
 
-func (s *QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspData) SetProvinceData(v []*QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData) *QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspData {
+func (s *QueryIPV6RequestOfeachISPandProvinceResponseResultIspData) SetProvinceData(v []*QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData) *QueryIPV6RequestOfeachISPandProvinceResponseResultIspData {
   s.ProvinceData = v
   return s
 }
 
-type QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData struct     {
+type QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData struct     {
   // {"en":"province", "zh_CN":"省份"}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
-  RequestData []*QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
+  RequestData []*QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData) String() string {
+func (s QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData) GoString() string {
+func (s QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData) SetProvince(v string) *QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData {
+func (s *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData) SetProvince(v string) *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData {
   s.Province = &v
   return s
 }
 
-func (s *QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData) SetRequestData(v []*QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData) *QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData {
+func (s *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData) SetRequestData(v []*QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData) *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData {
   s.RequestData = v
   return s
 }
 
-type QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData struct     {
+type QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData struct     {
   // {"en":"1.When the data query granularity is 5m, then the format is yyyy-MM-dd HH:mm (the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 12:05 AM, and the last one is (yyyy-MM-dd+1) 00:00 ); 
   //                     2.When the data query granularity is hourly, the format is yyyy-MM-dd HH; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is yyyy-MM-dd 24;
   //                     3.Return the time slices that contained in start time and in end time.", "zh_CN":"时间，
@@ -3071,20 +3071,20 @@ type QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceRes
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData) String() string {
+func (s QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData) GoString() string {
+func (s QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData) GoString() string {
   return s.String()
 }
 
-func (s *QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData) SetTimestamp(v string) *QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData {
+func (s *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData) SetTimestamp(v string) *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData) SetValue(v string) *QueryIPV6RequestOfeachISPandProvinceQueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData {
+func (s *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData) SetValue(v string) *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData {
   s.Value = &v
   return s
 }
@@ -3207,7 +3207,7 @@ func (s *QueryRequestNumbersUnderShieldPoPRequest) SetGroupBy(v []*string) *Quer
 
 type QueryRequestNumbersUnderShieldPoPResponse struct {
   // {"en":"result", "zh_CN":"结果"}
-  Result []*QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryRequestNumbersUnderShieldPoPResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryRequestNumbersUnderShieldPoPResponse) String() string {
@@ -3218,12 +3218,12 @@ func (s QueryRequestNumbersUnderShieldPoPResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryRequestNumbersUnderShieldPoPResponse) SetResult(v []*QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResult) *QueryRequestNumbersUnderShieldPoPResponse {
+func (s *QueryRequestNumbersUnderShieldPoPResponse) SetResult(v []*QueryRequestNumbersUnderShieldPoPResponseResult) *QueryRequestNumbersUnderShieldPoPResponse {
   s.Result = v
   return s
 }
 
-type QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResult struct     {
+type QueryRequestNumbersUnderShieldPoPResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"Peak Time", "zh_CN":"峰值时间"}
@@ -3232,63 +3232,63 @@ type QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseR
   PeakValue *string `json:"peakValue,omitempty" xml:"peakValue,omitempty" require:"true"`
   // {"en":"Total Request", "zh_CN":"总请求数"}
   TotalRequest *string `json:"totalRequest,omitempty" xml:"totalRequest,omitempty" require:"true"`
-  RequestData []*QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResultRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
+  RequestData []*QueryRequestNumbersUnderShieldPoPResponseResultRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResult) String() string {
+func (s QueryRequestNumbersUnderShieldPoPResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResult) GoString() string {
+func (s QueryRequestNumbersUnderShieldPoPResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResult) SetDomain(v string) *QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResult {
+func (s *QueryRequestNumbersUnderShieldPoPResponseResult) SetDomain(v string) *QueryRequestNumbersUnderShieldPoPResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResult) SetPeakTime(v string) *QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResult {
+func (s *QueryRequestNumbersUnderShieldPoPResponseResult) SetPeakTime(v string) *QueryRequestNumbersUnderShieldPoPResponseResult {
   s.PeakTime = &v
   return s
 }
 
-func (s *QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResult) SetPeakValue(v string) *QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResult {
+func (s *QueryRequestNumbersUnderShieldPoPResponseResult) SetPeakValue(v string) *QueryRequestNumbersUnderShieldPoPResponseResult {
   s.PeakValue = &v
   return s
 }
 
-func (s *QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResult) SetTotalRequest(v string) *QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResult {
+func (s *QueryRequestNumbersUnderShieldPoPResponseResult) SetTotalRequest(v string) *QueryRequestNumbersUnderShieldPoPResponseResult {
   s.TotalRequest = &v
   return s
 }
 
-func (s *QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResult) SetRequestData(v []*QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResultRequestData) *QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResult {
+func (s *QueryRequestNumbersUnderShieldPoPResponseResult) SetRequestData(v []*QueryRequestNumbersUnderShieldPoPResponseResultRequestData) *QueryRequestNumbersUnderShieldPoPResponseResult {
   s.RequestData = v
   return s
 }
 
-type QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResultRequestData struct     {
+type QueryRequestNumbersUnderShieldPoPResponseResultRequestData struct     {
   // {"en":"DateTime, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data  value within the previous time granularity range.", "zh_CN":"时间,格式为yyyy-MM-dd HH:mm;每一个时间片数据值代表的是前一个时间粒度范围内的数据值。比如yyyy-MM-dd 00:05,代表00:00到00:05范围内的数据。"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Total number of requests", "zh_CN":"请求数"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResultRequestData) String() string {
+func (s QueryRequestNumbersUnderShieldPoPResponseResultRequestData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResultRequestData) GoString() string {
+func (s QueryRequestNumbersUnderShieldPoPResponseResultRequestData) GoString() string {
   return s.String()
 }
 
-func (s *QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResultRequestData) SetTimestamp(v string) *QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResultRequestData {
+func (s *QueryRequestNumbersUnderShieldPoPResponseResultRequestData) SetTimestamp(v string) *QueryRequestNumbersUnderShieldPoPResponseResultRequestData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResultRequestData) SetValue(v string) *QueryRequestNumbersUnderShieldPoPQueryRequestNumbersUnderShieldPoPResponseResultRequestData {
+func (s *QueryRequestNumbersUnderShieldPoPResponseResultRequestData) SetValue(v string) *QueryRequestNumbersUnderShieldPoPResponseResultRequestData {
   s.Value = &v
   return s
 }
@@ -3435,7 +3435,7 @@ func (s *ReportRequestIspProvinceServiceRequest) SetGroupBy(v []*string) *Report
 
 type ReportRequestIspProvinceServiceResponse struct {
   // {"en":"result", "zh_CN":"结果"}
-  Result []*ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportRequestIspProvinceServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportRequestIspProvinceServiceResponse) String() string {
@@ -3446,87 +3446,87 @@ func (s ReportRequestIspProvinceServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportRequestIspProvinceServiceResponse) SetResult(v []*ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResult) *ReportRequestIspProvinceServiceResponse {
+func (s *ReportRequestIspProvinceServiceResponse) SetResult(v []*ReportRequestIspProvinceServiceResponseResult) *ReportRequestIspProvinceServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResult struct     {
+type ReportRequestIspProvinceServiceResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"ispData", "zh_CN":"isp数据"}
-  IspData []*ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*ReportRequestIspProvinceServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResult) String() string {
+func (s ReportRequestIspProvinceServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResult) GoString() string {
+func (s ReportRequestIspProvinceServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResult) SetDomain(v string) *ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResult {
+func (s *ReportRequestIspProvinceServiceResponseResult) SetDomain(v string) *ReportRequestIspProvinceServiceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResult) SetIspData(v []*ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspData) *ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResult {
+func (s *ReportRequestIspProvinceServiceResponseResult) SetIspData(v []*ReportRequestIspProvinceServiceResponseResultIspData) *ReportRequestIspProvinceServiceResponseResult {
   s.IspData = v
   return s
 }
 
-type ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspData struct     {
+type ReportRequestIspProvinceServiceResponseResultIspData struct     {
   // {"en":"ISP", "zh_CN":"运营商"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
   // {"en":"provinceData", "zh_CN":"省份数据"}
-  ProvinceData []*ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*ReportRequestIspProvinceServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspData) String() string {
+func (s ReportRequestIspProvinceServiceResponseResultIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspData) GoString() string {
+func (s ReportRequestIspProvinceServiceResponseResultIspData) GoString() string {
   return s.String()
 }
 
-func (s *ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspData) SetIsp(v string) *ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspData {
+func (s *ReportRequestIspProvinceServiceResponseResultIspData) SetIsp(v string) *ReportRequestIspProvinceServiceResponseResultIspData {
   s.Isp = &v
   return s
 }
 
-func (s *ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspData) SetProvinceData(v []*ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspDataProvinceData) *ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspData {
+func (s *ReportRequestIspProvinceServiceResponseResultIspData) SetProvinceData(v []*ReportRequestIspProvinceServiceResponseResultIspDataProvinceData) *ReportRequestIspProvinceServiceResponseResultIspData {
   s.ProvinceData = v
   return s
 }
 
-type ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspDataProvinceData struct     {
+type ReportRequestIspProvinceServiceResponseResultIspDataProvinceData struct     {
   // {"en":"Province", "zh_CN":"省份"}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
   // {"en":"qps", "zh_CN":"qps数据"}
-  RequestData []*ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
+  RequestData []*ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspDataProvinceData) String() string {
+func (s ReportRequestIspProvinceServiceResponseResultIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspDataProvinceData) GoString() string {
+func (s ReportRequestIspProvinceServiceResponseResultIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspDataProvinceData {
+func (s *ReportRequestIspProvinceServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportRequestIspProvinceServiceResponseResultIspDataProvinceData {
   s.Province = &v
   return s
 }
 
-func (s *ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspDataProvinceData) SetRequestData(v []*ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) *ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspDataProvinceData {
+func (s *ReportRequestIspProvinceServiceResponseResultIspDataProvinceData) SetRequestData(v []*ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) *ReportRequestIspProvinceServiceResponseResultIspDataProvinceData {
   s.RequestData = v
   return s
 }
 
-type ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData struct     {
+type ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData struct     {
   // {"en":"Time,", "zh_CN":"时间,
   //                1.查询的数据粒度为5m时,格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05,最后一个时间片是(yyyy-MM-dd+1)00:00；
   //                2.查询的数据粒度为1h时,格式为yyyy-MM-dd HH；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 01,最后一个时间片是(yyyy-MM-dd+1);00；
@@ -3538,25 +3538,25 @@ type ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResul
   Qps *string `json:"qps,omitempty" xml:"qps,omitempty" require:"true"`
 }
 
-func (s ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) String() string {
+func (s ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) GoString() string {
+func (s ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) GoString() string {
   return s.String()
 }
 
-func (s *ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) SetTimestamp(v string) *ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData {
+func (s *ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) SetTimestamp(v string) *ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) SetValue(v string) *ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData {
+func (s *ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) SetValue(v string) *ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData {
   s.Value = &v
   return s
 }
 
-func (s *ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) SetQps(v string) *ReportRequestIspProvinceServiceReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData {
+func (s *ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) SetQps(v string) *ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData {
   s.Qps = &v
   return s
 }
@@ -3835,7 +3835,7 @@ func (s *ReportRequestHitRateIspProvinceServiceRequest) SetGroupBy(v []*string) 
 
 type ReportRequestHitRateIspProvinceServiceResponse struct {
   // {"en":"result", "zh_CN":"结果"}
-  Result []*ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportRequestHitRateIspProvinceServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportRequestHitRateIspProvinceServiceResponse) String() string {
@@ -3846,87 +3846,87 @@ func (s ReportRequestHitRateIspProvinceServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportRequestHitRateIspProvinceServiceResponse) SetResult(v []*ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResult) *ReportRequestHitRateIspProvinceServiceResponse {
+func (s *ReportRequestHitRateIspProvinceServiceResponse) SetResult(v []*ReportRequestHitRateIspProvinceServiceResponseResult) *ReportRequestHitRateIspProvinceServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResult struct     {
+type ReportRequestHitRateIspProvinceServiceResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"isp", "zh_CN":"ISP数据"}
-  IspData []*ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*ReportRequestHitRateIspProvinceServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResult) String() string {
+func (s ReportRequestHitRateIspProvinceServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResult) GoString() string {
+func (s ReportRequestHitRateIspProvinceServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResult) SetDomain(v string) *ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResult {
+func (s *ReportRequestHitRateIspProvinceServiceResponseResult) SetDomain(v string) *ReportRequestHitRateIspProvinceServiceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResult) SetIspData(v []*ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspData) *ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResult {
+func (s *ReportRequestHitRateIspProvinceServiceResponseResult) SetIspData(v []*ReportRequestHitRateIspProvinceServiceResponseResultIspData) *ReportRequestHitRateIspProvinceServiceResponseResult {
   s.IspData = v
   return s
 }
 
-type ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspData struct     {
+type ReportRequestHitRateIspProvinceServiceResponseResultIspData struct     {
   // {"en":"Internet service providers", "zh_CN":"运营商"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
   // {"en":"province", "zh_CN":"省份数据"}
-  ProvinceData []*ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspData) String() string {
+func (s ReportRequestHitRateIspProvinceServiceResponseResultIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspData) GoString() string {
+func (s ReportRequestHitRateIspProvinceServiceResponseResultIspData) GoString() string {
   return s.String()
 }
 
-func (s *ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspData) SetIsp(v string) *ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspData {
+func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspData) SetIsp(v string) *ReportRequestHitRateIspProvinceServiceResponseResultIspData {
   s.Isp = &v
   return s
 }
 
-func (s *ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspData) SetProvinceData(v []*ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData) *ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspData {
+func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspData) SetProvinceData(v []*ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData) *ReportRequestHitRateIspProvinceServiceResponseResultIspData {
   s.ProvinceData = v
   return s
 }
 
-type ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData struct     {
+type ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData struct     {
   // {"en":"Province", "zh_CN":"省份"}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
   // {"en":"Request number hit rate, retain 4 decimal places", "zh_CN":"求数命中率数据"}
-  HitRateData []*ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData `json:"hitRateData,omitempty" xml:"hitRateData,omitempty" require:"true" type:"Repeated"`
+  HitRateData []*ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData `json:"hitRateData,omitempty" xml:"hitRateData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData) String() string {
+func (s ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData) GoString() string {
+func (s ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData {
+func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData {
   s.Province = &v
   return s
 }
 
-func (s *ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData) SetHitRateData(v []*ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) *ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData {
+func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData) SetHitRateData(v []*ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData {
   s.HitRateData = v
   return s
 }
 
-type ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData struct     {
+type ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData struct     {
   // {"en":"time,
   //         1. When the data size of the query is 5m, the format is yyyy-MM-dd HH:mm; each time slice data value represents the data value within the previous time granularity range. The time slice starting at the beginning of the day is yyyy-MM-dd 00:05, and the last time slice is (yyyy-MM-dd+1) 00:00;
   //         2. When the data granularity of the query is 1h, the format is yyyy-MM-dd HH; each time slice data value represents the data value within the previous time granularity range. The time slice starting at the beginning of the day is yyyy-MM-dd 01, and the last time slice is (yyyy-MM-dd+1) 00;
@@ -3942,25 +3942,25 @@ type ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServic
   HitRequest *string `json:"hitRequest,omitempty" xml:"hitRequest,omitempty" require:"true"`
 }
 
-func (s ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) String() string {
+func (s ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) GoString() string {
+func (s ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) GoString() string {
   return s.String()
 }
 
-func (s *ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) SetTimestamp(v string) *ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData {
+func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) SetTimestamp(v string) *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) SetValue(v string) *ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData {
+func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) SetValue(v string) *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData {
   s.Value = &v
   return s
 }
 
-func (s *ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) SetHitRequest(v string) *ReportRequestHitRateIspProvinceServiceReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData {
+func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) SetHitRequest(v string) *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData {
   s.HitRequest = &v
   return s
 }
@@ -4176,7 +4176,7 @@ func (s *QueryEdgeRequestHitRatioServiceRequest) SetDomain(v []*string) *QueryEd
 }
 
 type QueryEdgeRequestHitRatioServiceResponse struct {
-  Result []*QueryEdgeRequestHitRatioServiceQueryEdgeRequestHitRatioServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryEdgeRequestHitRatioServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryEdgeRequestHitRatioServiceResponse) String() string {
@@ -4187,64 +4187,64 @@ func (s QueryEdgeRequestHitRatioServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryEdgeRequestHitRatioServiceResponse) SetResult(v []*QueryEdgeRequestHitRatioServiceQueryEdgeRequestHitRatioServiceResponseResult) *QueryEdgeRequestHitRatioServiceResponse {
+func (s *QueryEdgeRequestHitRatioServiceResponse) SetResult(v []*QueryEdgeRequestHitRatioServiceResponseResult) *QueryEdgeRequestHitRatioServiceResponse {
   s.Result = v
   return s
 }
 
-type QueryEdgeRequestHitRatioServiceQueryEdgeRequestHitRatioServiceResponseResult struct     {
+type QueryEdgeRequestHitRatioServiceResponseResult struct     {
   // {"en":"Actually processed time.  yyyy-MM-dd HH:mm format", "zh_CN":"实际查询时间，格式 yyyy-MM-dd HH:mm"}
   RealDate *string `json:"realDate,omitempty" xml:"realDate,omitempty" require:"true"`
   // {"en":"Average of total edge node hit ratio", "zh_CN":"总边缘节点命中率的平均值,2位小数"}
   TotalAvg *string `json:"totalAvg,omitempty" xml:"totalAvg,omitempty" require:"true"`
   // {"en":"Detailed data on the results of the request", "zh_CN":"请求结果的详细数据"}
-  HitRatioDatas []*QueryEdgeRequestHitRatioServiceQueryEdgeRequestHitRatioServiceResponseResultHitRatioDatas `json:"hitRatioDatas,omitempty" xml:"hitRatioDatas,omitempty" require:"true" type:"Repeated"`
+  HitRatioDatas []*QueryEdgeRequestHitRatioServiceResponseResultHitRatioDatas `json:"hitRatioDatas,omitempty" xml:"hitRatioDatas,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryEdgeRequestHitRatioServiceQueryEdgeRequestHitRatioServiceResponseResult) String() string {
+func (s QueryEdgeRequestHitRatioServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryEdgeRequestHitRatioServiceQueryEdgeRequestHitRatioServiceResponseResult) GoString() string {
+func (s QueryEdgeRequestHitRatioServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryEdgeRequestHitRatioServiceQueryEdgeRequestHitRatioServiceResponseResult) SetRealDate(v string) *QueryEdgeRequestHitRatioServiceQueryEdgeRequestHitRatioServiceResponseResult {
+func (s *QueryEdgeRequestHitRatioServiceResponseResult) SetRealDate(v string) *QueryEdgeRequestHitRatioServiceResponseResult {
   s.RealDate = &v
   return s
 }
 
-func (s *QueryEdgeRequestHitRatioServiceQueryEdgeRequestHitRatioServiceResponseResult) SetTotalAvg(v string) *QueryEdgeRequestHitRatioServiceQueryEdgeRequestHitRatioServiceResponseResult {
+func (s *QueryEdgeRequestHitRatioServiceResponseResult) SetTotalAvg(v string) *QueryEdgeRequestHitRatioServiceResponseResult {
   s.TotalAvg = &v
   return s
 }
 
-func (s *QueryEdgeRequestHitRatioServiceQueryEdgeRequestHitRatioServiceResponseResult) SetHitRatioDatas(v []*QueryEdgeRequestHitRatioServiceQueryEdgeRequestHitRatioServiceResponseResultHitRatioDatas) *QueryEdgeRequestHitRatioServiceQueryEdgeRequestHitRatioServiceResponseResult {
+func (s *QueryEdgeRequestHitRatioServiceResponseResult) SetHitRatioDatas(v []*QueryEdgeRequestHitRatioServiceResponseResultHitRatioDatas) *QueryEdgeRequestHitRatioServiceResponseResult {
   s.HitRatioDatas = v
   return s
 }
 
-type QueryEdgeRequestHitRatioServiceQueryEdgeRequestHitRatioServiceResponseResultHitRatioDatas struct     {
+type QueryEdgeRequestHitRatioServiceResponseResultHitRatioDatas struct     {
   // {"en":"timestamp", "zh_CN":"时间，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:01，最后一个时间片是（yyyy-MM-dd+1） 00:00；"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"edge node hit ratio,keep 4 decimal places", "zh_CN":"边缘节点请求数命中率，保留4位小数"}
   EdgeHitRatio *string `json:"edgeHitRatio,omitempty" xml:"edgeHitRatio,omitempty" require:"true"`
 }
 
-func (s QueryEdgeRequestHitRatioServiceQueryEdgeRequestHitRatioServiceResponseResultHitRatioDatas) String() string {
+func (s QueryEdgeRequestHitRatioServiceResponseResultHitRatioDatas) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryEdgeRequestHitRatioServiceQueryEdgeRequestHitRatioServiceResponseResultHitRatioDatas) GoString() string {
+func (s QueryEdgeRequestHitRatioServiceResponseResultHitRatioDatas) GoString() string {
   return s.String()
 }
 
-func (s *QueryEdgeRequestHitRatioServiceQueryEdgeRequestHitRatioServiceResponseResultHitRatioDatas) SetTimestamp(v string) *QueryEdgeRequestHitRatioServiceQueryEdgeRequestHitRatioServiceResponseResultHitRatioDatas {
+func (s *QueryEdgeRequestHitRatioServiceResponseResultHitRatioDatas) SetTimestamp(v string) *QueryEdgeRequestHitRatioServiceResponseResultHitRatioDatas {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryEdgeRequestHitRatioServiceQueryEdgeRequestHitRatioServiceResponseResultHitRatioDatas) SetEdgeHitRatio(v string) *QueryEdgeRequestHitRatioServiceQueryEdgeRequestHitRatioServiceResponseResultHitRatioDatas {
+func (s *QueryEdgeRequestHitRatioServiceResponseResultHitRatioDatas) SetEdgeHitRatio(v string) *QueryEdgeRequestHitRatioServiceResponseResultHitRatioDatas {
   s.EdgeHitRatio = &v
   return s
 }

@@ -26383,7 +26383,7 @@ type UpdateDeploymentDeploymentStrategy struct {
   // {"en":"Type of deployment. Can be \"Recreate\" or \"RollingUpdate\". Default is RollingUpdate.", "zh_CN":"部署的类型。取值可以是 “Recreate” 或 “RollingUpdate”。默认为 RollingUpdate。"}
   Type *string `json:"type,omitempty" xml:"type,omitempty"`
   // {"en":"Rolling update config params. Present only if DeploymentStrategyType = RollingUpdate.", "zh_CN":"滚动更新这些配置参数。仅当 type = RollingUpdate 时才出现。"}
-  RollingUpdate *UpdateDeploymentRollingUpdateDeployment `json:"rollingUpdate,omitempty" xml:"rollingUpdate,omitempty"`
+  RollingUpdate *RollingUpdateDeployment `json:"rollingUpdate,omitempty" xml:"rollingUpdate,omitempty"`
 }
 
 func (s UpdateDeploymentDeploymentStrategy) String() string {
@@ -26399,32 +26399,32 @@ func (s *UpdateDeploymentDeploymentStrategy) SetType(v string) *UpdateDeployment
   return s
 }
 
-func (s *UpdateDeploymentDeploymentStrategy) SetRollingUpdate(v *UpdateDeploymentRollingUpdateDeployment) *UpdateDeploymentDeploymentStrategy {
+func (s *UpdateDeploymentDeploymentStrategy) SetRollingUpdate(v *RollingUpdateDeployment) *UpdateDeploymentDeploymentStrategy {
   s.RollingUpdate = v
   return s
 }
 
-type UpdateDeploymentRollingUpdateDeployment struct {
+type RollingUpdateDeployment struct {
   // {"en":"The maximum number of pods that can be unavailable during the update. Value can be an absolute number (ex: 5) or a percentage of desired pods (ex: 10%). Absolute number is calculated from percentage by rounding down. This can not be 0 if MaxSurge is 0. Defaults to 25%.", "zh_CN":"更新期间可能不可用的最大 Pod 数量。该值可以是一个绝对数（例如： 5）或一个预期 Pod 的百分比（例如：10%）。通过向下取整计算得出一个百分比绝对数。 如果 MaxSurge 为 0，则此字段不能为 0。默认为 25%。"}
   MaxUnavailable *UpdateDeploymentIntOrString `json:"maxUnavailable,omitempty" xml:"maxUnavailable,omitempty"`
   // {"en":"The maximum number of pods that can be scheduled above the desired number of pods. Value can be an absolute number (ex: 5) or a percentage of desired pods (ex: 10%). This can not be 0 if MaxUnavailable is 0. Absolute number is calculated from percentage by rounding up. Defaults to 25%.", "zh_CN":"超出预期的 Pod 数量之后可以调度的最大 Pod 数量。该值可以是一个绝对数（例如： 5）或一个预期 Pod 的百分比（例如：10%）。如果 MaxUnavailable 为 0，则此字段不能为 0。 通过向上取整计算得出一个百分比绝对数。默认为 25%。"}
   MaxSurge *UpdateDeploymentIntOrString `json:"maxSurge,omitempty" xml:"maxSurge,omitempty"`
 }
 
-func (s UpdateDeploymentRollingUpdateDeployment) String() string {
+func (s RollingUpdateDeployment) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateDeploymentRollingUpdateDeployment) GoString() string {
+func (s RollingUpdateDeployment) GoString() string {
   return s.String()
 }
 
-func (s *UpdateDeploymentRollingUpdateDeployment) SetMaxUnavailable(v *UpdateDeploymentIntOrString) *UpdateDeploymentRollingUpdateDeployment {
+func (s *RollingUpdateDeployment) SetMaxUnavailable(v *UpdateDeploymentIntOrString) *RollingUpdateDeployment {
   s.MaxUnavailable = v
   return s
 }
 
-func (s *UpdateDeploymentRollingUpdateDeployment) SetMaxSurge(v *UpdateDeploymentIntOrString) *UpdateDeploymentRollingUpdateDeployment {
+func (s *RollingUpdateDeployment) SetMaxSurge(v *UpdateDeploymentIntOrString) *RollingUpdateDeployment {
   s.MaxSurge = v
   return s
 }
@@ -55453,7 +55453,7 @@ type UpdateStatefulsetStatefulSetUpdateStrategy struct {
   // {"en":"indicates the type of the UpdateStatefulsetStatefulSetUpdateStrategy. Default is RollingUpdate", "zh_CN":"表示 UpdateStatefulsetStatefulSetUpdateStrategy 的类型，默认为 RollingUpdate"}
   Type *string `json:"type,omitempty" xml:"type,omitempty"`
   // {"en":"used to communicate parameters when Type is RollingUpdateStatefulSetStrategyType", "zh_CN":"当 type 为 RollingUpdate 时，使用 rollingUpdate 来传递参数"}
-  RollingUpdate *UpdateStatefulsetRollingUpdateStatefulSetStrategy `json:"rollingUpdate,omitempty" xml:"rollingUpdate,omitempty"`
+  RollingUpdate *RollingUpdateStatefulSetStrategy `json:"rollingUpdate,omitempty" xml:"rollingUpdate,omitempty"`
 }
 
 func (s UpdateStatefulsetStatefulSetUpdateStrategy) String() string {
@@ -55469,25 +55469,25 @@ func (s *UpdateStatefulsetStatefulSetUpdateStrategy) SetType(v string) *UpdateSt
   return s
 }
 
-func (s *UpdateStatefulsetStatefulSetUpdateStrategy) SetRollingUpdate(v *UpdateStatefulsetRollingUpdateStatefulSetStrategy) *UpdateStatefulsetStatefulSetUpdateStrategy {
+func (s *UpdateStatefulsetStatefulSetUpdateStrategy) SetRollingUpdate(v *RollingUpdateStatefulSetStrategy) *UpdateStatefulsetStatefulSetUpdateStrategy {
   s.RollingUpdate = v
   return s
 }
 
-type UpdateStatefulsetRollingUpdateStatefulSetStrategy struct {
+type RollingUpdateStatefulSetStrategy struct {
   // {"en":"indicates the ordinal at which the UpdateStatefulsetStatefulSet should be partitioned for updates. During a rolling update, all pods from ordinal Replicas-1 to Partition are updated. All pods from ordinal Partition-1 to 0 remain untouched. This is helpful in being able to do a canary based deployment. The default value is 0", "zh_CN":"表示 UpdateStatefulsetStatefulSet 应该被分区进行更新时的序数。 在滚动更新期间，序数在 replicas-1 和 partition 之间的所有 Pod 都会被更新。 序数在 partition-1 和 0 之间的所有 Pod 保持不变。 这一属性有助于进行金丝雀部署。默认值为 0"}
   Partition *int32 `json:"partition,omitempty" xml:"partition,omitempty"`
 }
 
-func (s UpdateStatefulsetRollingUpdateStatefulSetStrategy) String() string {
+func (s RollingUpdateStatefulSetStrategy) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateStatefulsetRollingUpdateStatefulSetStrategy) GoString() string {
+func (s RollingUpdateStatefulSetStrategy) GoString() string {
   return s.String()
 }
 
-func (s *UpdateStatefulsetRollingUpdateStatefulSetStrategy) SetPartition(v int32) *UpdateStatefulsetRollingUpdateStatefulSetStrategy {
+func (s *RollingUpdateStatefulSetStrategy) SetPartition(v int32) *RollingUpdateStatefulSetStrategy {
   s.Partition = &v
   return s
 }

@@ -62,7 +62,7 @@ type ReportDomainPvServiceResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Date []*ReportDomainPvServiceReportDomainPvServiceResponseDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Repeated"`
+  Date []*ReportDomainPvServiceResponseDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportDomainPvServiceResponse) String() string {
@@ -83,56 +83,56 @@ func (s *ReportDomainPvServiceResponse) SetMessage(v string) *ReportDomainPvServ
   return s
 }
 
-func (s *ReportDomainPvServiceResponse) SetDate(v []*ReportDomainPvServiceReportDomainPvServiceResponseDate) *ReportDomainPvServiceResponse {
+func (s *ReportDomainPvServiceResponse) SetDate(v []*ReportDomainPvServiceResponseDate) *ReportDomainPvServiceResponse {
   s.Date = v
   return s
 }
 
-type ReportDomainPvServiceReportDomainPvServiceResponseDate struct     {
+type ReportDomainPvServiceResponseDate struct     {
   // {"en":"domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  DetailList []*ReportDomainPvServiceReportDomainPvServiceResponseDateDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+  DetailList []*ReportDomainPvServiceResponseDateDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportDomainPvServiceReportDomainPvServiceResponseDate) String() string {
+func (s ReportDomainPvServiceResponseDate) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportDomainPvServiceReportDomainPvServiceResponseDate) GoString() string {
+func (s ReportDomainPvServiceResponseDate) GoString() string {
   return s.String()
 }
 
-func (s *ReportDomainPvServiceReportDomainPvServiceResponseDate) SetDomain(v string) *ReportDomainPvServiceReportDomainPvServiceResponseDate {
+func (s *ReportDomainPvServiceResponseDate) SetDomain(v string) *ReportDomainPvServiceResponseDate {
   s.Domain = &v
   return s
 }
 
-func (s *ReportDomainPvServiceReportDomainPvServiceResponseDate) SetDetailList(v []*ReportDomainPvServiceReportDomainPvServiceResponseDateDetailList) *ReportDomainPvServiceReportDomainPvServiceResponseDate {
+func (s *ReportDomainPvServiceResponseDate) SetDetailList(v []*ReportDomainPvServiceResponseDateDetailList) *ReportDomainPvServiceResponseDate {
   s.DetailList = v
   return s
 }
 
-type ReportDomainPvServiceReportDomainPvServiceResponseDateDetailList struct     {
+type ReportDomainPvServiceResponseDateDetailList struct     {
   // {"en":"timestamp, format is  yyyy-MM-dd HH:mm:ss, the first point of one day is yyyy-MM-dd 01:00:00, the last point of one day is yyyy-MM-dd 24:00:00,", "zh_CN":"时间,格式为yyyy-MM-dd HH:mm:ss,每一个时间片数据值代表的是前一个时间粒度范围内的数据值,一天开始的时间片是yyyy-MM-dd 01:00:00,最后一个时间片是yyyy-MM-dd 24:00:00。"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"PV count", "zh_CN":"PV数"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s ReportDomainPvServiceReportDomainPvServiceResponseDateDetailList) String() string {
+func (s ReportDomainPvServiceResponseDateDetailList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportDomainPvServiceReportDomainPvServiceResponseDateDetailList) GoString() string {
+func (s ReportDomainPvServiceResponseDateDetailList) GoString() string {
   return s.String()
 }
 
-func (s *ReportDomainPvServiceReportDomainPvServiceResponseDateDetailList) SetTimestamp(v string) *ReportDomainPvServiceReportDomainPvServiceResponseDateDetailList {
+func (s *ReportDomainPvServiceResponseDateDetailList) SetTimestamp(v string) *ReportDomainPvServiceResponseDateDetailList {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportDomainPvServiceReportDomainPvServiceResponseDateDetailList) SetValue(v string) *ReportDomainPvServiceReportDomainPvServiceResponseDateDetailList {
+func (s *ReportDomainPvServiceResponseDateDetailList) SetValue(v string) *ReportDomainPvServiceResponseDateDetailList {
   s.Value = &v
   return s
 }
@@ -249,7 +249,7 @@ func (s *QueryDomainUVRequest) SetDomain(v []*string) *QueryDomainUVRequest {
 
 type QueryDomainUVResponse struct {
   // {"en":"result", "zh_CN":"结果"}
-  Result []*QueryDomainUVQueryDomainUVResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryDomainUVResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryDomainUVResponse) String() string {
@@ -260,12 +260,12 @@ func (s QueryDomainUVResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryDomainUVResponse) SetResult(v []*QueryDomainUVQueryDomainUVResponseResult) *QueryDomainUVResponse {
+func (s *QueryDomainUVResponse) SetResult(v []*QueryDomainUVResponseResult) *QueryDomainUVResponse {
   s.Result = v
   return s
 }
 
-type QueryDomainUVQueryDomainUVResponseResult struct     {
+type QueryDomainUVResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"Peak Time", "zh_CN":"峰值时间"}
@@ -275,43 +275,43 @@ type QueryDomainUVQueryDomainUVResponseResult struct     {
   // {"en":"Total UV", "zh_CN":"UV总数"}
   TotalUV *string `json:"totalUV,omitempty" xml:"totalUV,omitempty" require:"true"`
   // {"en":"uvData", "zh_CN":"UV数"}
-  UvData []*QueryDomainUVQueryDomainUVResponseResultUvData `json:"uvData,omitempty" xml:"uvData,omitempty" require:"true" type:"Repeated"`
+  UvData []*QueryDomainUVResponseResultUvData `json:"uvData,omitempty" xml:"uvData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryDomainUVQueryDomainUVResponseResult) String() string {
+func (s QueryDomainUVResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDomainUVQueryDomainUVResponseResult) GoString() string {
+func (s QueryDomainUVResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryDomainUVQueryDomainUVResponseResult) SetDomain(v string) *QueryDomainUVQueryDomainUVResponseResult {
+func (s *QueryDomainUVResponseResult) SetDomain(v string) *QueryDomainUVResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *QueryDomainUVQueryDomainUVResponseResult) SetPeakTime(v string) *QueryDomainUVQueryDomainUVResponseResult {
+func (s *QueryDomainUVResponseResult) SetPeakTime(v string) *QueryDomainUVResponseResult {
   s.PeakTime = &v
   return s
 }
 
-func (s *QueryDomainUVQueryDomainUVResponseResult) SetPeakUV(v string) *QueryDomainUVQueryDomainUVResponseResult {
+func (s *QueryDomainUVResponseResult) SetPeakUV(v string) *QueryDomainUVResponseResult {
   s.PeakUV = &v
   return s
 }
 
-func (s *QueryDomainUVQueryDomainUVResponseResult) SetTotalUV(v string) *QueryDomainUVQueryDomainUVResponseResult {
+func (s *QueryDomainUVResponseResult) SetTotalUV(v string) *QueryDomainUVResponseResult {
   s.TotalUV = &v
   return s
 }
 
-func (s *QueryDomainUVQueryDomainUVResponseResult) SetUvData(v []*QueryDomainUVQueryDomainUVResponseResultUvData) *QueryDomainUVQueryDomainUVResponseResult {
+func (s *QueryDomainUVResponseResult) SetUvData(v []*QueryDomainUVResponseResultUvData) *QueryDomainUVResponseResult {
   s.UvData = v
   return s
 }
 
-type QueryDomainUVQueryDomainUVResponseResultUvData struct     {
+type QueryDomainUVResponseResultUvData struct     {
   // {"en":"time
   //         1. When the data granularity of the query is 1h, the format is yyyy-MM-dd HH; Each time slice data value represents the data value in the previous time granularity range. The time slice at the beginning of the day is yyyy-MM-dd 01, and the last time slice is (yyyy-MM-dd+1) 00;
   //         2. When the data granularity of the query is 1d, the format is yyyy-MM-dd; Each time slice data value represents the value of the data for that date.
@@ -324,20 +324,20 @@ type QueryDomainUVQueryDomainUVResponseResultUvData struct     {
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryDomainUVQueryDomainUVResponseResultUvData) String() string {
+func (s QueryDomainUVResponseResultUvData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDomainUVQueryDomainUVResponseResultUvData) GoString() string {
+func (s QueryDomainUVResponseResultUvData) GoString() string {
   return s.String()
 }
 
-func (s *QueryDomainUVQueryDomainUVResponseResultUvData) SetTimestamp(v string) *QueryDomainUVQueryDomainUVResponseResultUvData {
+func (s *QueryDomainUVResponseResultUvData) SetTimestamp(v string) *QueryDomainUVResponseResultUvData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryDomainUVQueryDomainUVResponseResultUvData) SetValue(v string) *QueryDomainUVQueryDomainUVResponseResultUvData {
+func (s *QueryDomainUVResponseResultUvData) SetValue(v string) *QueryDomainUVResponseResultUvData {
   s.Value = &v
   return s
 }

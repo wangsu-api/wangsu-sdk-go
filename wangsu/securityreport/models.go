@@ -285,7 +285,7 @@ type GetbotrequestuseragentTopdataResponse struct {
   // {"en":"Return message, success is 'Success'.", "zh_CN":"返回信息，成功为“Success”。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Data returned.", "zh_CN":"返回数据。"}
-  Data []*GetbotrequestuseragentTopdataGetbotrequestuseragentTopdataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*GetbotrequestuseragentTopdataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetbotrequestuseragentTopdataResponse) String() string {
@@ -306,32 +306,32 @@ func (s *GetbotrequestuseragentTopdataResponse) SetMessage(v string) *Getbotrequ
   return s
 }
 
-func (s *GetbotrequestuseragentTopdataResponse) SetData(v []*GetbotrequestuseragentTopdataGetbotrequestuseragentTopdataResponseData) *GetbotrequestuseragentTopdataResponse {
+func (s *GetbotrequestuseragentTopdataResponse) SetData(v []*GetbotrequestuseragentTopdataResponseData) *GetbotrequestuseragentTopdataResponse {
   s.Data = v
   return s
 }
 
-type GetbotrequestuseragentTopdataGetbotrequestuseragentTopdataResponseData struct     {
+type GetbotrequestuseragentTopdataResponseData struct     {
   // {"en":"Statistical type.", "zh_CN":"统计类型。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {"en":"Bot request count.", "zh_CN":"bot请求数。"}
   Count *int64 `json:"count,omitempty" xml:"count,omitempty" require:"true"`
 }
 
-func (s GetbotrequestuseragentTopdataGetbotrequestuseragentTopdataResponseData) String() string {
+func (s GetbotrequestuseragentTopdataResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetbotrequestuseragentTopdataGetbotrequestuseragentTopdataResponseData) GoString() string {
+func (s GetbotrequestuseragentTopdataResponseData) GoString() string {
   return s.String()
 }
 
-func (s *GetbotrequestuseragentTopdataGetbotrequestuseragentTopdataResponseData) SetName(v string) *GetbotrequestuseragentTopdataGetbotrequestuseragentTopdataResponseData {
+func (s *GetbotrequestuseragentTopdataResponseData) SetName(v string) *GetbotrequestuseragentTopdataResponseData {
   s.Name = &v
   return s
 }
 
-func (s *GetbotrequestuseragentTopdataGetbotrequestuseragentTopdataResponseData) SetCount(v int64) *GetbotrequestuseragentTopdataGetbotrequestuseragentTopdataResponseData {
+func (s *GetbotrequestuseragentTopdataResponseData) SetCount(v int64) *GetbotrequestuseragentTopdataResponseData {
   s.Count = &v
   return s
 }
@@ -3804,7 +3804,7 @@ type GetBotRequestRefererTopDataResponse struct {
   // {"en":"Return message, success is 'Success'.", "zh_CN":"返回信息，成功为“Success”。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Data rturned", "zh_CN":"返回数据"}
-  Data []*GetBotRequestRefererTopDataGetBotRequestRefererTopDataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*GetBotRequestRefererTopDataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetBotRequestRefererTopDataResponse) String() string {
@@ -3825,32 +3825,32 @@ func (s *GetBotRequestRefererTopDataResponse) SetMessage(v string) *GetBotReques
   return s
 }
 
-func (s *GetBotRequestRefererTopDataResponse) SetData(v []*GetBotRequestRefererTopDataGetBotRequestRefererTopDataResponseData) *GetBotRequestRefererTopDataResponse {
+func (s *GetBotRequestRefererTopDataResponse) SetData(v []*GetBotRequestRefererTopDataResponseData) *GetBotRequestRefererTopDataResponse {
   s.Data = v
   return s
 }
 
-type GetBotRequestRefererTopDataGetBotRequestRefererTopDataResponseData struct     {
+type GetBotRequestRefererTopDataResponseData struct     {
   // {"en":"Statistical type.", "zh_CN":"统计类型。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {"en":"Bot request count", "zh_CN":"Bot请求数。"}
   Count *int64 `json:"count,omitempty" xml:"count,omitempty" require:"true"`
 }
 
-func (s GetBotRequestRefererTopDataGetBotRequestRefererTopDataResponseData) String() string {
+func (s GetBotRequestRefererTopDataResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBotRequestRefererTopDataGetBotRequestRefererTopDataResponseData) GoString() string {
+func (s GetBotRequestRefererTopDataResponseData) GoString() string {
   return s.String()
 }
 
-func (s *GetBotRequestRefererTopDataGetBotRequestRefererTopDataResponseData) SetName(v string) *GetBotRequestRefererTopDataGetBotRequestRefererTopDataResponseData {
+func (s *GetBotRequestRefererTopDataResponseData) SetName(v string) *GetBotRequestRefererTopDataResponseData {
   s.Name = &v
   return s
 }
 
-func (s *GetBotRequestRefererTopDataGetBotRequestRefererTopDataResponseData) SetCount(v int64) *GetBotRequestRefererTopDataGetBotRequestRefererTopDataResponseData {
+func (s *GetBotRequestRefererTopDataResponseData) SetCount(v int64) *GetBotRequestRefererTopDataResponseData {
   s.Count = &v
   return s
 }
@@ -5306,7 +5306,7 @@ type GetBotRequestOverviewDataResponse struct {
   // {"en":"Return message, success is 'Success'.", "zh_CN":"返回信息，成功为“Success”。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Data returned.", "zh_CN":"返回数据。"}
-  Data *GetBotRequestOverviewDataGetBotRequestOverviewDataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *GetBotRequestOverviewDataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s GetBotRequestOverviewDataResponse) String() string {
@@ -5327,12 +5327,12 @@ func (s *GetBotRequestOverviewDataResponse) SetMessage(v string) *GetBotRequestO
   return s
 }
 
-func (s *GetBotRequestOverviewDataResponse) SetData(v *GetBotRequestOverviewDataGetBotRequestOverviewDataResponseData) *GetBotRequestOverviewDataResponse {
+func (s *GetBotRequestOverviewDataResponse) SetData(v *GetBotRequestOverviewDataResponseData) *GetBotRequestOverviewDataResponse {
   s.Data = v
   return s
 }
 
-type GetBotRequestOverviewDataGetBotRequestOverviewDataResponseData struct {
+type GetBotRequestOverviewDataResponseData struct {
   // {"en":"Known bot type request count.", "zh_CN":"已知Bot类型请求数。"}
   GoodBotRequest *int64 `json:"goodBotRequest,omitempty" xml:"goodBotRequest,omitempty" require:"true"`
   // {"en":"Relief bot attack count.", "zh_CN":"缓解Bot攻击数。"}
@@ -5343,30 +5343,30 @@ type GetBotRequestOverviewDataGetBotRequestOverviewDataResponseData struct {
   UnknowBotRequest *int64 `json:"unknowBotRequest,omitempty" xml:"unknowBotRequest,omitempty" require:"true"`
 }
 
-func (s GetBotRequestOverviewDataGetBotRequestOverviewDataResponseData) String() string {
+func (s GetBotRequestOverviewDataResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBotRequestOverviewDataGetBotRequestOverviewDataResponseData) GoString() string {
+func (s GetBotRequestOverviewDataResponseData) GoString() string {
   return s.String()
 }
 
-func (s *GetBotRequestOverviewDataGetBotRequestOverviewDataResponseData) SetGoodBotRequest(v int64) *GetBotRequestOverviewDataGetBotRequestOverviewDataResponseData {
+func (s *GetBotRequestOverviewDataResponseData) SetGoodBotRequest(v int64) *GetBotRequestOverviewDataResponseData {
   s.GoodBotRequest = &v
   return s
 }
 
-func (s *GetBotRequestOverviewDataGetBotRequestOverviewDataResponseData) SetReliefRequest(v int64) *GetBotRequestOverviewDataGetBotRequestOverviewDataResponseData {
+func (s *GetBotRequestOverviewDataResponseData) SetReliefRequest(v int64) *GetBotRequestOverviewDataResponseData {
   s.ReliefRequest = &v
   return s
 }
 
-func (s *GetBotRequestOverviewDataGetBotRequestOverviewDataResponseData) SetTotalRequest(v int64) *GetBotRequestOverviewDataGetBotRequestOverviewDataResponseData {
+func (s *GetBotRequestOverviewDataResponseData) SetTotalRequest(v int64) *GetBotRequestOverviewDataResponseData {
   s.TotalRequest = &v
   return s
 }
 
-func (s *GetBotRequestOverviewDataGetBotRequestOverviewDataResponseData) SetUnknowBotRequest(v int64) *GetBotRequestOverviewDataGetBotRequestOverviewDataResponseData {
+func (s *GetBotRequestOverviewDataResponseData) SetUnknowBotRequest(v int64) *GetBotRequestOverviewDataResponseData {
   s.UnknowBotRequest = &v
   return s
 }
@@ -5810,7 +5810,7 @@ type GetBotRequestSourceIPTopDataResponse struct {
   // {"en":"Return message, success is 'Success'.", "zh_CN":"返回信息，成功为“Success”。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Data returned.", "zh_CN":"返回数据。"}
-  Data []*GetBotRequestSourceIPTopDataGetBotRequestSourceIPTopDataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*GetBotRequestSourceIPTopDataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetBotRequestSourceIPTopDataResponse) String() string {
@@ -5831,12 +5831,12 @@ func (s *GetBotRequestSourceIPTopDataResponse) SetMessage(v string) *GetBotReque
   return s
 }
 
-func (s *GetBotRequestSourceIPTopDataResponse) SetData(v []*GetBotRequestSourceIPTopDataGetBotRequestSourceIPTopDataResponseData) *GetBotRequestSourceIPTopDataResponse {
+func (s *GetBotRequestSourceIPTopDataResponse) SetData(v []*GetBotRequestSourceIPTopDataResponseData) *GetBotRequestSourceIPTopDataResponse {
   s.Data = v
   return s
 }
 
-type GetBotRequestSourceIPTopDataGetBotRequestSourceIPTopDataResponseData struct     {
+type GetBotRequestSourceIPTopDataResponseData struct     {
   // {"en":"Statistical type.", "zh_CN":"统计类型。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {"en":"Area.", "zh_CN":"地区。"}
@@ -5845,25 +5845,25 @@ type GetBotRequestSourceIPTopDataGetBotRequestSourceIPTopDataResponseData struct
   Count *int64 `json:"count,omitempty" xml:"count,omitempty" require:"true"`
 }
 
-func (s GetBotRequestSourceIPTopDataGetBotRequestSourceIPTopDataResponseData) String() string {
+func (s GetBotRequestSourceIPTopDataResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBotRequestSourceIPTopDataGetBotRequestSourceIPTopDataResponseData) GoString() string {
+func (s GetBotRequestSourceIPTopDataResponseData) GoString() string {
   return s.String()
 }
 
-func (s *GetBotRequestSourceIPTopDataGetBotRequestSourceIPTopDataResponseData) SetName(v string) *GetBotRequestSourceIPTopDataGetBotRequestSourceIPTopDataResponseData {
+func (s *GetBotRequestSourceIPTopDataResponseData) SetName(v string) *GetBotRequestSourceIPTopDataResponseData {
   s.Name = &v
   return s
 }
 
-func (s *GetBotRequestSourceIPTopDataGetBotRequestSourceIPTopDataResponseData) SetProvince(v string) *GetBotRequestSourceIPTopDataGetBotRequestSourceIPTopDataResponseData {
+func (s *GetBotRequestSourceIPTopDataResponseData) SetProvince(v string) *GetBotRequestSourceIPTopDataResponseData {
   s.Province = &v
   return s
 }
 
-func (s *GetBotRequestSourceIPTopDataGetBotRequestSourceIPTopDataResponseData) SetCount(v int64) *GetBotRequestSourceIPTopDataGetBotRequestSourceIPTopDataResponseData {
+func (s *GetBotRequestSourceIPTopDataResponseData) SetCount(v int64) *GetBotRequestSourceIPTopDataResponseData {
   s.Count = &v
   return s
 }
@@ -6782,7 +6782,7 @@ type GetActTypeDistributionDataResponse struct {
   // {"en":"Return message, success is 'Success'.", "zh_CN":"返回信息，成功为“Success”。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Data returned", "zh_CN":"返回数据"}
-  Data []*GetActTypeDistributionDataGetActTypeDistributionDataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*GetActTypeDistributionDataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetActTypeDistributionDataResponse) String() string {
@@ -6803,32 +6803,32 @@ func (s *GetActTypeDistributionDataResponse) SetMessage(v string) *GetActTypeDis
   return s
 }
 
-func (s *GetActTypeDistributionDataResponse) SetData(v []*GetActTypeDistributionDataGetActTypeDistributionDataResponseData) *GetActTypeDistributionDataResponse {
+func (s *GetActTypeDistributionDataResponse) SetData(v []*GetActTypeDistributionDataResponseData) *GetActTypeDistributionDataResponse {
   s.Data = v
   return s
 }
 
-type GetActTypeDistributionDataGetActTypeDistributionDataResponseData struct     {
+type GetActTypeDistributionDataResponseData struct     {
   // {"en":"Action status.", "zh_CN":"处置状态。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {"en":"Action times.", "zh_CN":"处置次数。"}
   Value *int64 `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s GetActTypeDistributionDataGetActTypeDistributionDataResponseData) String() string {
+func (s GetActTypeDistributionDataResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetActTypeDistributionDataGetActTypeDistributionDataResponseData) GoString() string {
+func (s GetActTypeDistributionDataResponseData) GoString() string {
   return s.String()
 }
 
-func (s *GetActTypeDistributionDataGetActTypeDistributionDataResponseData) SetName(v string) *GetActTypeDistributionDataGetActTypeDistributionDataResponseData {
+func (s *GetActTypeDistributionDataResponseData) SetName(v string) *GetActTypeDistributionDataResponseData {
   s.Name = &v
   return s
 }
 
-func (s *GetActTypeDistributionDataGetActTypeDistributionDataResponseData) SetValue(v int64) *GetActTypeDistributionDataGetActTypeDistributionDataResponseData {
+func (s *GetActTypeDistributionDataResponseData) SetValue(v int64) *GetActTypeDistributionDataResponseData {
   s.Value = &v
   return s
 }
@@ -6936,7 +6936,7 @@ type GetBotRuleTypeTopDataResponse struct {
   // {"en":"Return message, success is 'Success'.", "zh_CN":"返回信息，成功为“Success”。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Data returned.", "zh_CN":"返回数据"}
-  Data []*GetBotRuleTypeTopDataGetBotRuleTypeTopDataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*GetBotRuleTypeTopDataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetBotRuleTypeTopDataResponse) String() string {
@@ -6957,32 +6957,32 @@ func (s *GetBotRuleTypeTopDataResponse) SetMessage(v string) *GetBotRuleTypeTopD
   return s
 }
 
-func (s *GetBotRuleTypeTopDataResponse) SetData(v []*GetBotRuleTypeTopDataGetBotRuleTypeTopDataResponseData) *GetBotRuleTypeTopDataResponse {
+func (s *GetBotRuleTypeTopDataResponse) SetData(v []*GetBotRuleTypeTopDataResponseData) *GetBotRuleTypeTopDataResponse {
   s.Data = v
   return s
 }
 
-type GetBotRuleTypeTopDataGetBotRuleTypeTopDataResponseData struct     {
+type GetBotRuleTypeTopDataResponseData struct     {
   // {"en":"Rule name.", "zh_CN":"规则名。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {"en":"Trigger Times.", "zh_CN":"触发次数。"}
   Value *int64 `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s GetBotRuleTypeTopDataGetBotRuleTypeTopDataResponseData) String() string {
+func (s GetBotRuleTypeTopDataResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBotRuleTypeTopDataGetBotRuleTypeTopDataResponseData) GoString() string {
+func (s GetBotRuleTypeTopDataResponseData) GoString() string {
   return s.String()
 }
 
-func (s *GetBotRuleTypeTopDataGetBotRuleTypeTopDataResponseData) SetName(v string) *GetBotRuleTypeTopDataGetBotRuleTypeTopDataResponseData {
+func (s *GetBotRuleTypeTopDataResponseData) SetName(v string) *GetBotRuleTypeTopDataResponseData {
   s.Name = &v
   return s
 }
 
-func (s *GetBotRuleTypeTopDataGetBotRuleTypeTopDataResponseData) SetValue(v int64) *GetBotRuleTypeTopDataGetBotRuleTypeTopDataResponseData {
+func (s *GetBotRuleTypeTopDataResponseData) SetValue(v int64) *GetBotRuleTypeTopDataResponseData {
   s.Value = &v
   return s
 }
@@ -7443,7 +7443,7 @@ type QueryDDoSAttackDetailsResponse struct {
   // {"en":"error response message", "zh_CN":"错误响应信息"}
   ErrorMessage *string `json:"errorMessage,omitempty" xml:"errorMessage,omitempty" require:"true"`
   // {'en':'result', 'zh_CN':'结果'}
-  Data []*QueryDDoSAttackDetailsQueryDDoSAttackDetailsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*QueryDDoSAttackDetailsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
   // {"en":"error response code", "zh_CN":"错误响应码"}
   ErrorCode *string `json:"errorCode,omitempty" xml:"errorCode,omitempty" require:"true"`
   // {"en":"response code", "zh_CN":"响应码"}
@@ -7463,7 +7463,7 @@ func (s *QueryDDoSAttackDetailsResponse) SetErrorMessage(v string) *QueryDDoSAtt
   return s
 }
 
-func (s *QueryDDoSAttackDetailsResponse) SetData(v []*QueryDDoSAttackDetailsQueryDDoSAttackDetailsResponseData) *QueryDDoSAttackDetailsResponse {
+func (s *QueryDDoSAttackDetailsResponse) SetData(v []*QueryDDoSAttackDetailsResponseData) *QueryDDoSAttackDetailsResponse {
   s.Data = v
   return s
 }
@@ -7478,7 +7478,7 @@ func (s *QueryDDoSAttackDetailsResponse) SetCode(v string) *QueryDDoSAttackDetai
   return s
 }
 
-type QueryDDoSAttackDetailsQueryDDoSAttackDetailsResponseData struct     {
+type QueryDDoSAttackDetailsResponseData struct     {
   // {'en':'attack peak value', 'zh_CN':'攻击峰值'}
   TotalFlow *string `json:"totalFlow,omitempty" xml:"totalFlow,omitempty" require:"true"`
   // {'en':'IP', 'zh_CN':'IP'}
@@ -7489,30 +7489,30 @@ type QueryDDoSAttackDetailsQueryDDoSAttackDetailsResponseData struct     {
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
 }
 
-func (s QueryDDoSAttackDetailsQueryDDoSAttackDetailsResponseData) String() string {
+func (s QueryDDoSAttackDetailsResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDDoSAttackDetailsQueryDDoSAttackDetailsResponseData) GoString() string {
+func (s QueryDDoSAttackDetailsResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryDDoSAttackDetailsQueryDDoSAttackDetailsResponseData) SetTotalFlow(v string) *QueryDDoSAttackDetailsQueryDDoSAttackDetailsResponseData {
+func (s *QueryDDoSAttackDetailsResponseData) SetTotalFlow(v string) *QueryDDoSAttackDetailsResponseData {
   s.TotalFlow = &v
   return s
 }
 
-func (s *QueryDDoSAttackDetailsQueryDDoSAttackDetailsResponseData) SetIp(v string) *QueryDDoSAttackDetailsQueryDDoSAttackDetailsResponseData {
+func (s *QueryDDoSAttackDetailsResponseData) SetIp(v string) *QueryDDoSAttackDetailsResponseData {
   s.Ip = &v
   return s
 }
 
-func (s *QueryDDoSAttackDetailsQueryDDoSAttackDetailsResponseData) SetTime(v string) *QueryDDoSAttackDetailsQueryDDoSAttackDetailsResponseData {
+func (s *QueryDDoSAttackDetailsResponseData) SetTime(v string) *QueryDDoSAttackDetailsResponseData {
   s.Time = &v
   return s
 }
 
-func (s *QueryDDoSAttackDetailsQueryDDoSAttackDetailsResponseData) SetType(v string) *QueryDDoSAttackDetailsQueryDDoSAttackDetailsResponseData {
+func (s *QueryDDoSAttackDetailsResponseData) SetType(v string) *QueryDDoSAttackDetailsResponseData {
   s.Type = &v
   return s
 }
@@ -7938,7 +7938,7 @@ type GetDomainBotVisitDetailsResponse struct {
   // {"en":"Return message, success is 'Success'.", "zh_CN":"返回信息，成功为“Success”。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Data returned.", "zh_CN":"返回数据。"}
-  Data []*GetDomainBotVisitDetailsGetDomainBotVisitDetailsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*GetDomainBotVisitDetailsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetDomainBotVisitDetailsResponse) String() string {
@@ -7959,12 +7959,12 @@ func (s *GetDomainBotVisitDetailsResponse) SetMessage(v string) *GetDomainBotVis
   return s
 }
 
-func (s *GetDomainBotVisitDetailsResponse) SetData(v []*GetDomainBotVisitDetailsGetDomainBotVisitDetailsResponseData) *GetDomainBotVisitDetailsResponse {
+func (s *GetDomainBotVisitDetailsResponse) SetData(v []*GetDomainBotVisitDetailsResponseData) *GetDomainBotVisitDetailsResponse {
   s.Data = v
   return s
 }
 
-type GetDomainBotVisitDetailsGetDomainBotVisitDetailsResponseData struct     {
+type GetDomainBotVisitDetailsResponseData struct     {
   // {"en":"Domain.", "zh_CN":"域名。"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"Total request count.", "zh_CN":"总请求数。"}
@@ -7979,40 +7979,40 @@ type GetDomainBotVisitDetailsGetDomainBotVisitDetailsResponseData struct     {
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
 }
 
-func (s GetDomainBotVisitDetailsGetDomainBotVisitDetailsResponseData) String() string {
+func (s GetDomainBotVisitDetailsResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetDomainBotVisitDetailsGetDomainBotVisitDetailsResponseData) GoString() string {
+func (s GetDomainBotVisitDetailsResponseData) GoString() string {
   return s.String()
 }
 
-func (s *GetDomainBotVisitDetailsGetDomainBotVisitDetailsResponseData) SetDomain(v string) *GetDomainBotVisitDetailsGetDomainBotVisitDetailsResponseData {
+func (s *GetDomainBotVisitDetailsResponseData) SetDomain(v string) *GetDomainBotVisitDetailsResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *GetDomainBotVisitDetailsGetDomainBotVisitDetailsResponseData) SetTotalRequest(v int64) *GetDomainBotVisitDetailsGetDomainBotVisitDetailsResponseData {
+func (s *GetDomainBotVisitDetailsResponseData) SetTotalRequest(v int64) *GetDomainBotVisitDetailsResponseData {
   s.TotalRequest = &v
   return s
 }
 
-func (s *GetDomainBotVisitDetailsGetDomainBotVisitDetailsResponseData) SetBotRequest(v int64) *GetDomainBotVisitDetailsGetDomainBotVisitDetailsResponseData {
+func (s *GetDomainBotVisitDetailsResponseData) SetBotRequest(v int64) *GetDomainBotVisitDetailsResponseData {
   s.BotRequest = &v
   return s
 }
 
-func (s *GetDomainBotVisitDetailsGetDomainBotVisitDetailsResponseData) SetReliefAttack(v int64) *GetDomainBotVisitDetailsGetDomainBotVisitDetailsResponseData {
+func (s *GetDomainBotVisitDetailsResponseData) SetReliefAttack(v int64) *GetDomainBotVisitDetailsResponseData {
   s.ReliefAttack = &v
   return s
 }
 
-func (s *GetDomainBotVisitDetailsGetDomainBotVisitDetailsResponseData) SetTypeTotal(v int64) *GetDomainBotVisitDetailsGetDomainBotVisitDetailsResponseData {
+func (s *GetDomainBotVisitDetailsResponseData) SetTypeTotal(v int64) *GetDomainBotVisitDetailsResponseData {
   s.TypeTotal = &v
   return s
 }
 
-func (s *GetDomainBotVisitDetailsGetDomainBotVisitDetailsResponseData) SetType(v string) *GetDomainBotVisitDetailsGetDomainBotVisitDetailsResponseData {
+func (s *GetDomainBotVisitDetailsResponseData) SetType(v string) *GetDomainBotVisitDetailsResponseData {
   s.Type = &v
   return s
 }
@@ -8497,7 +8497,7 @@ type GetBotAccessURLTopDataResponse struct {
   // {"en":"Return message, success is 'Success'.", "zh_CN":"返回信息，成功为“Success”。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Data returned.", "zh_CN":"返回数据。"}
-  Data []*GetBotAccessURLTopDataGetBotAccessURLTopDataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*GetBotAccessURLTopDataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetBotAccessURLTopDataResponse) String() string {
@@ -8518,32 +8518,32 @@ func (s *GetBotAccessURLTopDataResponse) SetMessage(v string) *GetBotAccessURLTo
   return s
 }
 
-func (s *GetBotAccessURLTopDataResponse) SetData(v []*GetBotAccessURLTopDataGetBotAccessURLTopDataResponseData) *GetBotAccessURLTopDataResponse {
+func (s *GetBotAccessURLTopDataResponse) SetData(v []*GetBotAccessURLTopDataResponseData) *GetBotAccessURLTopDataResponse {
   s.Data = v
   return s
 }
 
-type GetBotAccessURLTopDataGetBotAccessURLTopDataResponseData struct     {
+type GetBotAccessURLTopDataResponseData struct     {
   // {"en":"URL.", "zh_CN":"统计类型"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {"en":"Bot request count.", "zh_CN":"Bot请求数。"}
   Count *int64 `json:"count,omitempty" xml:"count,omitempty" require:"true"`
 }
 
-func (s GetBotAccessURLTopDataGetBotAccessURLTopDataResponseData) String() string {
+func (s GetBotAccessURLTopDataResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBotAccessURLTopDataGetBotAccessURLTopDataResponseData) GoString() string {
+func (s GetBotAccessURLTopDataResponseData) GoString() string {
   return s.String()
 }
 
-func (s *GetBotAccessURLTopDataGetBotAccessURLTopDataResponseData) SetName(v string) *GetBotAccessURLTopDataGetBotAccessURLTopDataResponseData {
+func (s *GetBotAccessURLTopDataResponseData) SetName(v string) *GetBotAccessURLTopDataResponseData {
   s.Name = &v
   return s
 }
 
-func (s *GetBotAccessURLTopDataGetBotAccessURLTopDataResponseData) SetCount(v int64) *GetBotAccessURLTopDataGetBotAccessURLTopDataResponseData {
+func (s *GetBotAccessURLTopDataResponseData) SetCount(v int64) *GetBotAccessURLTopDataResponseData {
   s.Count = &v
   return s
 }
@@ -8671,7 +8671,7 @@ type GetBotRequestTypeDistributeDataResponse struct {
   // {"en":"Return message, success is 'Success'.", "zh_CN":"返回信息，成功为“Success”。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Data returned.", "zh_CN":"返回数据。"}
-  Data []*GetBotRequestTypeDistributeDataGetBotRequestTypeDistributeDataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*GetBotRequestTypeDistributeDataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetBotRequestTypeDistributeDataResponse) String() string {
@@ -8692,12 +8692,12 @@ func (s *GetBotRequestTypeDistributeDataResponse) SetMessage(v string) *GetBotRe
   return s
 }
 
-func (s *GetBotRequestTypeDistributeDataResponse) SetData(v []*GetBotRequestTypeDistributeDataGetBotRequestTypeDistributeDataResponseData) *GetBotRequestTypeDistributeDataResponse {
+func (s *GetBotRequestTypeDistributeDataResponse) SetData(v []*GetBotRequestTypeDistributeDataResponseData) *GetBotRequestTypeDistributeDataResponse {
   s.Data = v
   return s
 }
 
-type GetBotRequestTypeDistributeDataGetBotRequestTypeDistributeDataResponseData struct     {
+type GetBotRequestTypeDistributeDataResponseData struct     {
   // {"en":"Policies Triggered.", "zh_CN":"触发规则。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {"en":"Bot Type. 
@@ -8710,25 +8710,25 @@ type GetBotRequestTypeDistributeDataGetBotRequestTypeDistributeDataResponseData 
   Value *int64 `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s GetBotRequestTypeDistributeDataGetBotRequestTypeDistributeDataResponseData) String() string {
+func (s GetBotRequestTypeDistributeDataResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBotRequestTypeDistributeDataGetBotRequestTypeDistributeDataResponseData) GoString() string {
+func (s GetBotRequestTypeDistributeDataResponseData) GoString() string {
   return s.String()
 }
 
-func (s *GetBotRequestTypeDistributeDataGetBotRequestTypeDistributeDataResponseData) SetName(v string) *GetBotRequestTypeDistributeDataGetBotRequestTypeDistributeDataResponseData {
+func (s *GetBotRequestTypeDistributeDataResponseData) SetName(v string) *GetBotRequestTypeDistributeDataResponseData {
   s.Name = &v
   return s
 }
 
-func (s *GetBotRequestTypeDistributeDataGetBotRequestTypeDistributeDataResponseData) SetType(v string) *GetBotRequestTypeDistributeDataGetBotRequestTypeDistributeDataResponseData {
+func (s *GetBotRequestTypeDistributeDataResponseData) SetType(v string) *GetBotRequestTypeDistributeDataResponseData {
   s.Type = &v
   return s
 }
 
-func (s *GetBotRequestTypeDistributeDataGetBotRequestTypeDistributeDataResponseData) SetValue(v int64) *GetBotRequestTypeDistributeDataGetBotRequestTypeDistributeDataResponseData {
+func (s *GetBotRequestTypeDistributeDataResponseData) SetValue(v int64) *GetBotRequestTypeDistributeDataResponseData {
   s.Value = &v
   return s
 }
@@ -10615,7 +10615,7 @@ type GetBotRequestStatisticPerDomainResponse struct {
   // {"en":"Return message, success is 'Success'.", "zh_CN":"返回信息，成功为“Success”。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Data returned.", "zh_CN":"返回数据。"}
-  Data []*GetBotRequestStatisticPerDomainGetBotRequestStatisticPerDomainResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*GetBotRequestStatisticPerDomainResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetBotRequestStatisticPerDomainResponse) String() string {
@@ -10636,32 +10636,32 @@ func (s *GetBotRequestStatisticPerDomainResponse) SetMessage(v string) *GetBotRe
   return s
 }
 
-func (s *GetBotRequestStatisticPerDomainResponse) SetData(v []*GetBotRequestStatisticPerDomainGetBotRequestStatisticPerDomainResponseData) *GetBotRequestStatisticPerDomainResponse {
+func (s *GetBotRequestStatisticPerDomainResponse) SetData(v []*GetBotRequestStatisticPerDomainResponseData) *GetBotRequestStatisticPerDomainResponse {
   s.Data = v
   return s
 }
 
-type GetBotRequestStatisticPerDomainGetBotRequestStatisticPerDomainResponseData struct     {
+type GetBotRequestStatisticPerDomainResponseData struct     {
   // {"en":"Statistical type.", "zh_CN":"统计类型。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {"en":"Bot request count.", "zh_CN":"Bot请求数。"}
   Value *int64 `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s GetBotRequestStatisticPerDomainGetBotRequestStatisticPerDomainResponseData) String() string {
+func (s GetBotRequestStatisticPerDomainResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBotRequestStatisticPerDomainGetBotRequestStatisticPerDomainResponseData) GoString() string {
+func (s GetBotRequestStatisticPerDomainResponseData) GoString() string {
   return s.String()
 }
 
-func (s *GetBotRequestStatisticPerDomainGetBotRequestStatisticPerDomainResponseData) SetName(v string) *GetBotRequestStatisticPerDomainGetBotRequestStatisticPerDomainResponseData {
+func (s *GetBotRequestStatisticPerDomainResponseData) SetName(v string) *GetBotRequestStatisticPerDomainResponseData {
   s.Name = &v
   return s
 }
 
-func (s *GetBotRequestStatisticPerDomainGetBotRequestStatisticPerDomainResponseData) SetValue(v int64) *GetBotRequestStatisticPerDomainGetBotRequestStatisticPerDomainResponseData {
+func (s *GetBotRequestStatisticPerDomainResponseData) SetValue(v int64) *GetBotRequestStatisticPerDomainResponseData {
   s.Value = &v
   return s
 }
@@ -10769,7 +10769,7 @@ type GetBotRequestTrendsAndTriggerRulesDataResponse struct {
   // {"en":"Return message, success is 'Success'.", "zh_CN":"返回信息，成功为“Success”。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Data returned.", "zh_CN":"返回数据。"}
-  Data *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *GetBotRequestTrendsAndTriggerRulesDataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s GetBotRequestTrendsAndTriggerRulesDataResponse) String() string {
@@ -10790,132 +10790,132 @@ func (s *GetBotRequestTrendsAndTriggerRulesDataResponse) SetMessage(v string) *G
   return s
 }
 
-func (s *GetBotRequestTrendsAndTriggerRulesDataResponse) SetData(v *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseData) *GetBotRequestTrendsAndTriggerRulesDataResponse {
+func (s *GetBotRequestTrendsAndTriggerRulesDataResponse) SetData(v *GetBotRequestTrendsAndTriggerRulesDataResponseData) *GetBotRequestTrendsAndTriggerRulesDataResponse {
   s.Data = v
   return s
 }
 
-type GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseData struct {
+type GetBotRequestTrendsAndTriggerRulesDataResponseData struct {
   // {"en":"Request Trend.", "zh_CN":"请求趋势。"}
-  RequestTrend []*GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrend `json:"requestTrend,omitempty" xml:"requestTrend,omitempty" require:"true" type:"Repeated"`
+  RequestTrend []*GetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrend `json:"requestTrend,omitempty" xml:"requestTrend,omitempty" require:"true" type:"Repeated"`
   // {"en":"Trigger Rule.", "zh_CN":"触发规则。"}
-  TriggerRule []*GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRule `json:"triggerRule,omitempty" xml:"triggerRule,omitempty" require:"true" type:"Repeated"`
+  TriggerRule []*GetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRule `json:"triggerRule,omitempty" xml:"triggerRule,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseData) String() string {
+func (s GetBotRequestTrendsAndTriggerRulesDataResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseData) GoString() string {
+func (s GetBotRequestTrendsAndTriggerRulesDataResponseData) GoString() string {
   return s.String()
 }
 
-func (s *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseData) SetRequestTrend(v []*GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrend) *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseData {
+func (s *GetBotRequestTrendsAndTriggerRulesDataResponseData) SetRequestTrend(v []*GetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrend) *GetBotRequestTrendsAndTriggerRulesDataResponseData {
   s.RequestTrend = v
   return s
 }
 
-func (s *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseData) SetTriggerRule(v []*GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRule) *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseData {
+func (s *GetBotRequestTrendsAndTriggerRulesDataResponseData) SetTriggerRule(v []*GetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRule) *GetBotRequestTrendsAndTriggerRulesDataResponseData {
   s.TriggerRule = v
   return s
 }
 
-type GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrend struct     {
+type GetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrend struct     {
   // {"en":"Request time.", "zh_CN":"请求时间。"}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
   // {"en":"Trend detail.", "zh_CN":"趋势详情。"}
-  Detail []*GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrendDetail `json:"detail,omitempty" xml:"detail,omitempty" require:"true" type:"Repeated"`
+  Detail []*GetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrendDetail `json:"detail,omitempty" xml:"detail,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrend) String() string {
+func (s GetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrend) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrend) GoString() string {
+func (s GetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrend) GoString() string {
   return s.String()
 }
 
-func (s *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrend) SetTime(v string) *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrend {
+func (s *GetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrend) SetTime(v string) *GetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrend {
   s.Time = &v
   return s
 }
 
-func (s *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrend) SetDetail(v []*GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrendDetail) *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrend {
+func (s *GetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrend) SetDetail(v []*GetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrendDetail) *GetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrend {
   s.Detail = v
   return s
 }
 
-type GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrendDetail struct     {
+type GetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrendDetail struct     {
   // {"en":"Statistical type.", "zh_CN":"统计类型。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {"en":"Request times.", "zh_CN":"请求数。"}
   Value *int64 `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrendDetail) String() string {
+func (s GetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrendDetail) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrendDetail) GoString() string {
+func (s GetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrendDetail) GoString() string {
   return s.String()
 }
 
-func (s *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrendDetail) SetName(v string) *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrendDetail {
+func (s *GetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrendDetail) SetName(v string) *GetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrendDetail {
   s.Name = &v
   return s
 }
 
-func (s *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrendDetail) SetValue(v int64) *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrendDetail {
+func (s *GetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrendDetail) SetValue(v int64) *GetBotRequestTrendsAndTriggerRulesDataResponseDataRequestTrendDetail {
   s.Value = &v
   return s
 }
 
-type GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRule struct     {
+type GetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRule struct     {
   // {"en":"Request time", "zh_CN":"请求时间。"}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
   // {"en":"Trigger rules detail.", "zh_CN":"触发规则详情。"}
-  Detail []*GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRuleDetail `json:"detail,omitempty" xml:"detail,omitempty" require:"true" type:"Repeated"`
+  Detail []*GetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRuleDetail `json:"detail,omitempty" xml:"detail,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRule) String() string {
+func (s GetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRule) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRule) GoString() string {
+func (s GetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRule) GoString() string {
   return s.String()
 }
 
-func (s *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRule) SetTime(v string) *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRule {
+func (s *GetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRule) SetTime(v string) *GetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRule {
   s.Time = &v
   return s
 }
 
-func (s *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRule) SetDetail(v []*GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRuleDetail) *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRule {
+func (s *GetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRule) SetDetail(v []*GetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRuleDetail) *GetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRule {
   s.Detail = v
   return s
 }
 
-type GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRuleDetail struct     {
+type GetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRuleDetail struct     {
   // {"en":"Statistical type.", "zh_CN":"统计类型。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {"en":"Request times.", "zh_CN":"请求数。"}
   Value *int64 `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRuleDetail) String() string {
+func (s GetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRuleDetail) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRuleDetail) GoString() string {
+func (s GetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRuleDetail) GoString() string {
   return s.String()
 }
 
-func (s *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRuleDetail) SetName(v string) *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRuleDetail {
+func (s *GetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRuleDetail) SetName(v string) *GetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRuleDetail {
   s.Name = &v
   return s
 }
 
-func (s *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRuleDetail) SetValue(v int64) *GetBotRequestTrendsAndTriggerRulesDataGetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRuleDetail {
+func (s *GetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRuleDetail) SetValue(v int64) *GetBotRequestTrendsAndTriggerRulesDataResponseDataTriggerRuleDetail {
   s.Value = &v
   return s
 }
@@ -11745,7 +11745,7 @@ type GetBotRequestSourceDistributionDataResponse struct {
   // {"en":"Return message, success is 'Success'.", "zh_CN":"返回信息，成功为“Success”。"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Data returned.", "zh_CN":"返回数据。"}
-  Data []*GetBotRequestSourceDistributionDataGetBotRequestSourceDistributionDataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*GetBotRequestSourceDistributionDataResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetBotRequestSourceDistributionDataResponse) String() string {
@@ -11766,32 +11766,32 @@ func (s *GetBotRequestSourceDistributionDataResponse) SetMessage(v string) *GetB
   return s
 }
 
-func (s *GetBotRequestSourceDistributionDataResponse) SetData(v []*GetBotRequestSourceDistributionDataGetBotRequestSourceDistributionDataResponseData) *GetBotRequestSourceDistributionDataResponse {
+func (s *GetBotRequestSourceDistributionDataResponse) SetData(v []*GetBotRequestSourceDistributionDataResponseData) *GetBotRequestSourceDistributionDataResponse {
   s.Data = v
   return s
 }
 
-type GetBotRequestSourceDistributionDataGetBotRequestSourceDistributionDataResponseData struct     {
+type GetBotRequestSourceDistributionDataResponseData struct     {
   // {"en":"Statistical type.", "zh_CN":"统计类型。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {"en":"Bot request count", "zh_CN":"Bot请求数。"}
   Count *int64 `json:"count,omitempty" xml:"count,omitempty" require:"true"`
 }
 
-func (s GetBotRequestSourceDistributionDataGetBotRequestSourceDistributionDataResponseData) String() string {
+func (s GetBotRequestSourceDistributionDataResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBotRequestSourceDistributionDataGetBotRequestSourceDistributionDataResponseData) GoString() string {
+func (s GetBotRequestSourceDistributionDataResponseData) GoString() string {
   return s.String()
 }
 
-func (s *GetBotRequestSourceDistributionDataGetBotRequestSourceDistributionDataResponseData) SetName(v string) *GetBotRequestSourceDistributionDataGetBotRequestSourceDistributionDataResponseData {
+func (s *GetBotRequestSourceDistributionDataResponseData) SetName(v string) *GetBotRequestSourceDistributionDataResponseData {
   s.Name = &v
   return s
 }
 
-func (s *GetBotRequestSourceDistributionDataGetBotRequestSourceDistributionDataResponseData) SetCount(v int64) *GetBotRequestSourceDistributionDataGetBotRequestSourceDistributionDataResponseData {
+func (s *GetBotRequestSourceDistributionDataResponseData) SetCount(v int64) *GetBotRequestSourceDistributionDataResponseData {
   s.Count = &v
   return s
 }

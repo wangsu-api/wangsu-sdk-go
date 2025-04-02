@@ -88,7 +88,7 @@ func (s *PerzoneBillingRequest) SetType(v string) *PerzoneBillingRequest {
 
 type PerzoneBillingResponse struct {
   // {'en':'provider', 'zh_CN':'结果'}
-  Provider *PerzoneBillingPerzoneBillingResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+  Provider *PerzoneBillingResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
 func (s PerzoneBillingResponse) String() string {
@@ -99,12 +99,12 @@ func (s PerzoneBillingResponse) GoString() string {
   return s.String()
 }
 
-func (s *PerzoneBillingResponse) SetProvider(v *PerzoneBillingPerzoneBillingResponseProvider) *PerzoneBillingResponse {
+func (s *PerzoneBillingResponse) SetProvider(v *PerzoneBillingResponseProvider) *PerzoneBillingResponse {
   s.Provider = v
   return s
 }
 
-type PerzoneBillingPerzoneBillingResponseProvider struct {
+type PerzoneBillingResponseProvider struct {
   // {'en':'tenant', 'zh_CN':'租户'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'type', 'zh_CN':'接口类型'}
@@ -112,38 +112,38 @@ type PerzoneBillingPerzoneBillingResponseProvider struct {
   // {'en':'resultType', 'zh_CN':'统计类型'}
   ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'perzone带宽数据'}
-  Date *PerzoneBillingPerzoneBillingResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+  Date *PerzoneBillingResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
-func (s PerzoneBillingPerzoneBillingResponseProvider) String() string {
+func (s PerzoneBillingResponseProvider) String() string {
   return tea.Prettify(s)
 }
 
-func (s PerzoneBillingPerzoneBillingResponseProvider) GoString() string {
+func (s PerzoneBillingResponseProvider) GoString() string {
   return s.String()
 }
 
-func (s *PerzoneBillingPerzoneBillingResponseProvider) SetName(v string) *PerzoneBillingPerzoneBillingResponseProvider {
+func (s *PerzoneBillingResponseProvider) SetName(v string) *PerzoneBillingResponseProvider {
   s.Name = &v
   return s
 }
 
-func (s *PerzoneBillingPerzoneBillingResponseProvider) SetType(v string) *PerzoneBillingPerzoneBillingResponseProvider {
+func (s *PerzoneBillingResponseProvider) SetType(v string) *PerzoneBillingResponseProvider {
   s.Type = &v
   return s
 }
 
-func (s *PerzoneBillingPerzoneBillingResponseProvider) SetResultType(v string) *PerzoneBillingPerzoneBillingResponseProvider {
+func (s *PerzoneBillingResponseProvider) SetResultType(v string) *PerzoneBillingResponseProvider {
   s.ResultType = &v
   return s
 }
 
-func (s *PerzoneBillingPerzoneBillingResponseProvider) SetDate(v *PerzoneBillingPerzoneBillingResponseProviderDate) *PerzoneBillingPerzoneBillingResponseProvider {
+func (s *PerzoneBillingResponseProvider) SetDate(v *PerzoneBillingResponseProviderDate) *PerzoneBillingResponseProvider {
   s.Date = v
   return s
 }
 
-type PerzoneBillingPerzoneBillingResponseProviderDate struct {
+type PerzoneBillingResponseProviderDate struct {
   // {'en':'startdate', 'zh_CN':'开始时间'}
   StartDate *string `json:"startDate,omitempty" xml:"startDate,omitempty" require:"true"`
   // {'en':'enddate', 'zh_CN':'结束时间'}
@@ -151,56 +151,56 @@ type PerzoneBillingPerzoneBillingResponseProviderDate struct {
   // {'en':'type', 'zh_CN':'数据类型1:带宽|2:流量'}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
   // {'en':'channel', 'zh_CN':'频道'}
-  AreaMap *PerzoneBillingPerzoneBillingResponseProviderDateAreaMap `json:"areaMap,omitempty" xml:"areaMap,omitempty" require:"true" type:"Struct"`
+  AreaMap *PerzoneBillingResponseProviderDateAreaMap `json:"areaMap,omitempty" xml:"areaMap,omitempty" require:"true" type:"Struct"`
 }
 
-func (s PerzoneBillingPerzoneBillingResponseProviderDate) String() string {
+func (s PerzoneBillingResponseProviderDate) String() string {
   return tea.Prettify(s)
 }
 
-func (s PerzoneBillingPerzoneBillingResponseProviderDate) GoString() string {
+func (s PerzoneBillingResponseProviderDate) GoString() string {
   return s.String()
 }
 
-func (s *PerzoneBillingPerzoneBillingResponseProviderDate) SetStartDate(v string) *PerzoneBillingPerzoneBillingResponseProviderDate {
+func (s *PerzoneBillingResponseProviderDate) SetStartDate(v string) *PerzoneBillingResponseProviderDate {
   s.StartDate = &v
   return s
 }
 
-func (s *PerzoneBillingPerzoneBillingResponseProviderDate) SetEndDate(v string) *PerzoneBillingPerzoneBillingResponseProviderDate {
+func (s *PerzoneBillingResponseProviderDate) SetEndDate(v string) *PerzoneBillingResponseProviderDate {
   s.EndDate = &v
   return s
 }
 
-func (s *PerzoneBillingPerzoneBillingResponseProviderDate) SetType(v string) *PerzoneBillingPerzoneBillingResponseProviderDate {
+func (s *PerzoneBillingResponseProviderDate) SetType(v string) *PerzoneBillingResponseProviderDate {
   s.Type = &v
   return s
 }
 
-func (s *PerzoneBillingPerzoneBillingResponseProviderDate) SetAreaMap(v *PerzoneBillingPerzoneBillingResponseProviderDateAreaMap) *PerzoneBillingPerzoneBillingResponseProviderDate {
+func (s *PerzoneBillingResponseProviderDate) SetAreaMap(v *PerzoneBillingResponseProviderDateAreaMap) *PerzoneBillingResponseProviderDate {
   s.AreaMap = v
   return s
 }
 
-type PerzoneBillingPerzoneBillingResponseProviderDateAreaMap struct {
+type PerzoneBillingResponseProviderDateAreaMap struct {
   // {'en':'perzone', 'zh_CN':'perzone数据'}
-  Perzone *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone `json:"perzone,omitempty" xml:"perzone,omitempty" require:"true" type:"Struct"`
+  Perzone *PerzoneBillingResponseProviderDateAreaMapPerzone `json:"perzone,omitempty" xml:"perzone,omitempty" require:"true" type:"Struct"`
 }
 
-func (s PerzoneBillingPerzoneBillingResponseProviderDateAreaMap) String() string {
+func (s PerzoneBillingResponseProviderDateAreaMap) String() string {
   return tea.Prettify(s)
 }
 
-func (s PerzoneBillingPerzoneBillingResponseProviderDateAreaMap) GoString() string {
+func (s PerzoneBillingResponseProviderDateAreaMap) GoString() string {
   return s.String()
 }
 
-func (s *PerzoneBillingPerzoneBillingResponseProviderDateAreaMap) SetPerzone(v *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone) *PerzoneBillingPerzoneBillingResponseProviderDateAreaMap {
+func (s *PerzoneBillingResponseProviderDateAreaMap) SetPerzone(v *PerzoneBillingResponseProviderDateAreaMapPerzone) *PerzoneBillingResponseProviderDateAreaMap {
   s.Perzone = v
   return s
 }
 
-type PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone struct {
+type PerzoneBillingResponseProviderDateAreaMapPerzone struct {
   // {'en':'name', 'zh_CN':'perzone区域'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'peakValue', 'zh_CN':'峰值'}
@@ -210,63 +210,63 @@ type PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone struct {
   // {'en':'totalFlow', 'zh_CN':'总流量'}
   TotalFlow *string `json:"totalFlow,omitempty" xml:"totalFlow,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'带宽数据'}
-  Detail []*PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzoneDetail `json:"detail,omitempty" xml:"detail,omitempty" require:"true" type:"Repeated"`
+  Detail []*PerzoneBillingResponseProviderDateAreaMapPerzoneDetail `json:"detail,omitempty" xml:"detail,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone) String() string {
+func (s PerzoneBillingResponseProviderDateAreaMapPerzone) String() string {
   return tea.Prettify(s)
 }
 
-func (s PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone) GoString() string {
+func (s PerzoneBillingResponseProviderDateAreaMapPerzone) GoString() string {
   return s.String()
 }
 
-func (s *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone) SetName(v string) *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone {
+func (s *PerzoneBillingResponseProviderDateAreaMapPerzone) SetName(v string) *PerzoneBillingResponseProviderDateAreaMapPerzone {
   s.Name = &v
   return s
 }
 
-func (s *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone) SetPeakValue(v string) *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone {
+func (s *PerzoneBillingResponseProviderDateAreaMapPerzone) SetPeakValue(v string) *PerzoneBillingResponseProviderDateAreaMapPerzone {
   s.PeakValue = &v
   return s
 }
 
-func (s *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone) SetPeakTime(v string) *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone {
+func (s *PerzoneBillingResponseProviderDateAreaMapPerzone) SetPeakTime(v string) *PerzoneBillingResponseProviderDateAreaMapPerzone {
   s.PeakTime = &v
   return s
 }
 
-func (s *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone) SetTotalFlow(v string) *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone {
+func (s *PerzoneBillingResponseProviderDateAreaMapPerzone) SetTotalFlow(v string) *PerzoneBillingResponseProviderDateAreaMapPerzone {
   s.TotalFlow = &v
   return s
 }
 
-func (s *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone) SetDetail(v []*PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzoneDetail) *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzone {
+func (s *PerzoneBillingResponseProviderDateAreaMapPerzone) SetDetail(v []*PerzoneBillingResponseProviderDateAreaMapPerzoneDetail) *PerzoneBillingResponseProviderDateAreaMapPerzone {
   s.Detail = v
   return s
 }
 
-type PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzoneDetail struct     {
+type PerzoneBillingResponseProviderDateAreaMapPerzoneDetail struct     {
   // {'en':'timestamp', 'zh_CN':'时间点'}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'带宽'}
   Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
 }
 
-func (s PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzoneDetail) String() string {
+func (s PerzoneBillingResponseProviderDateAreaMapPerzoneDetail) String() string {
   return tea.Prettify(s)
 }
 
-func (s PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzoneDetail) GoString() string {
+func (s PerzoneBillingResponseProviderDateAreaMapPerzoneDetail) GoString() string {
   return s.String()
 }
 
-func (s *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzoneDetail) SetTime(v string) *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzoneDetail {
+func (s *PerzoneBillingResponseProviderDateAreaMapPerzoneDetail) SetTime(v string) *PerzoneBillingResponseProviderDateAreaMapPerzoneDetail {
   s.Time = &v
   return s
 }
 
-func (s *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzoneDetail) SetText(v string) *PerzoneBillingPerzoneBillingResponseProviderDateAreaMapPerzoneDetail {
+func (s *PerzoneBillingResponseProviderDateAreaMapPerzoneDetail) SetText(v string) *PerzoneBillingResponseProviderDateAreaMapPerzoneDetail {
   s.Text = &v
   return s
 }
@@ -359,7 +359,7 @@ type ReportDirBandwidthInfoServiceRequest struct {
   AreaCode []*string `json:"areaCode,omitempty" xml:"areaCode,omitempty" type:"Repeated"`
   // {'en':'Directory levels, value range 1-4. Only one vlaue can be submitted', 'zh_CN':'目录层级,取值范围1~4,只能提交单个值'}
   DirHierarchy *string `json:"dirHierarchy,omitempty" xml:"dirHierarchy,omitempty" require:"true"`
-  DomainDir []*ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceRequestDomainDir `json:"domainDir,omitempty" xml:"domainDir,omitempty" require:"true" type:"Repeated"`
+  DomainDir []*ReportDirBandwidthInfoServiceRequestDomainDir `json:"domainDir,omitempty" xml:"domainDir,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportDirBandwidthInfoServiceRequest) String() string {
@@ -390,12 +390,12 @@ func (s *ReportDirBandwidthInfoServiceRequest) SetDirHierarchy(v string) *Report
   return s
 }
 
-func (s *ReportDirBandwidthInfoServiceRequest) SetDomainDir(v []*ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceRequestDomainDir) *ReportDirBandwidthInfoServiceRequest {
+func (s *ReportDirBandwidthInfoServiceRequest) SetDomainDir(v []*ReportDirBandwidthInfoServiceRequestDomainDir) *ReportDirBandwidthInfoServiceRequest {
   s.DomainDir = v
   return s
 }
 
-type ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceRequestDomainDir struct     {
+type ReportDirBandwidthInfoServiceRequestDomainDir struct     {
   // {'en':'Domains.', 'zh_CN':'域名：
   // 
   // 1.域名个数限制根据账号可调,默认为1个'}
@@ -416,27 +416,27 @@ type ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceRequestDomainDir 
   Dir []*string `json:"dir,omitempty" xml:"dir,omitempty" type:"Repeated"`
 }
 
-func (s ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceRequestDomainDir) String() string {
+func (s ReportDirBandwidthInfoServiceRequestDomainDir) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceRequestDomainDir) GoString() string {
+func (s ReportDirBandwidthInfoServiceRequestDomainDir) GoString() string {
   return s.String()
 }
 
-func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceRequestDomainDir) SetDomain(v string) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceRequestDomainDir {
+func (s *ReportDirBandwidthInfoServiceRequestDomainDir) SetDomain(v string) *ReportDirBandwidthInfoServiceRequestDomainDir {
   s.Domain = &v
   return s
 }
 
-func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceRequestDomainDir) SetDir(v []*string) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceRequestDomainDir {
+func (s *ReportDirBandwidthInfoServiceRequestDomainDir) SetDir(v []*string) *ReportDirBandwidthInfoServiceRequestDomainDir {
   s.Dir = v
   return s
 }
 
 type ReportDirBandwidthInfoServiceResponse struct {
   // {'en':'result', 'zh_CN':'结果'}
-  Result []*ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportDirBandwidthInfoServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportDirBandwidthInfoServiceResponse) String() string {
@@ -447,76 +447,76 @@ func (s ReportDirBandwidthInfoServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportDirBandwidthInfoServiceResponse) SetResult(v []*ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult) *ReportDirBandwidthInfoServiceResponse {
+func (s *ReportDirBandwidthInfoServiceResponse) SetResult(v []*ReportDirBandwidthInfoServiceResponseResult) *ReportDirBandwidthInfoServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult struct     {
+type ReportDirBandwidthInfoServiceResponseResult struct     {
   // {'en':'Domain', 'zh_CN':'域名'}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {'en':'The total flow under the domain name, in MB, with 2 decimal places retained.', 'zh_CN':'域名下的总流量,单位MB,保留2位小数'}
   DomainTotalFlow *string `json:"domainTotalFlow,omitempty" xml:"domainTotalFlow,omitempty" require:"true"`
   // {'en':'Directory details under the domain.', 'zh_CN':'域名下的目录详情'}
-  Details []*ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
+  Details []*ReportDirBandwidthInfoServiceResponseResultDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult) String() string {
+func (s ReportDirBandwidthInfoServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult) GoString() string {
+func (s ReportDirBandwidthInfoServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult) SetDomain(v string) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult {
+func (s *ReportDirBandwidthInfoServiceResponseResult) SetDomain(v string) *ReportDirBandwidthInfoServiceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult) SetDomainTotalFlow(v string) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult {
+func (s *ReportDirBandwidthInfoServiceResponseResult) SetDomainTotalFlow(v string) *ReportDirBandwidthInfoServiceResponseResult {
   s.DomainTotalFlow = &v
   return s
 }
 
-func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult) SetDetails(v []*ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResult {
+func (s *ReportDirBandwidthInfoServiceResponseResult) SetDetails(v []*ReportDirBandwidthInfoServiceResponseResultDetails) *ReportDirBandwidthInfoServiceResponseResult {
   s.Details = v
   return s
 }
 
-type ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails struct     {
+type ReportDirBandwidthInfoServiceResponseResultDetails struct     {
   // {'en':'The directory.l', 'zh_CN':'具体目录'}
   Dir *string `json:"dir,omitempty" xml:"dir,omitempty" require:"true"`
   // {'en':'Total flow under the directory.', 'zh_CN':'目录下的总流量'}
   DirTotalFlow *string `json:"dirTotalFlow,omitempty" xml:"dirTotalFlow,omitempty" require:"true"`
   // {'en':'Time segment details under specific directory.', 'zh_CN':'具体目录下的时间片段明细'}
-  Details []*ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
+  Details []*ReportDirBandwidthInfoServiceResponseResultDetailsDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails) String() string {
+func (s ReportDirBandwidthInfoServiceResponseResultDetails) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails) GoString() string {
+func (s ReportDirBandwidthInfoServiceResponseResultDetails) GoString() string {
   return s.String()
 }
 
-func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails) SetDir(v string) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails {
+func (s *ReportDirBandwidthInfoServiceResponseResultDetails) SetDir(v string) *ReportDirBandwidthInfoServiceResponseResultDetails {
   s.Dir = &v
   return s
 }
 
-func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails) SetDirTotalFlow(v string) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails {
+func (s *ReportDirBandwidthInfoServiceResponseResultDetails) SetDirTotalFlow(v string) *ReportDirBandwidthInfoServiceResponseResultDetails {
   s.DirTotalFlow = &v
   return s
 }
 
-func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails) SetDetails(v []*ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetails {
+func (s *ReportDirBandwidthInfoServiceResponseResultDetails) SetDetails(v []*ReportDirBandwidthInfoServiceResponseResultDetailsDetails) *ReportDirBandwidthInfoServiceResponseResultDetails {
   s.Details = v
   return s
 }
 
-type ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails struct     {
+type ReportDirBandwidthInfoServiceResponseResultDetailsDetails struct     {
   // {'en':'Time:
   // 
   // 1. When the data query granularity is 5m, then the format is yyyy-MM-dd HH:mm; Each time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:05, and the last one is (yyyy-MM-dd+1) 00:00;
@@ -531,25 +531,25 @@ type ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDet
   Flow *string `json:"flow,omitempty" xml:"flow,omitempty" require:"true"`
 }
 
-func (s ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails) String() string {
+func (s ReportDirBandwidthInfoServiceResponseResultDetailsDetails) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails) GoString() string {
+func (s ReportDirBandwidthInfoServiceResponseResultDetailsDetails) GoString() string {
   return s.String()
 }
 
-func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails) SetTimestamp(v string) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails {
+func (s *ReportDirBandwidthInfoServiceResponseResultDetailsDetails) SetTimestamp(v string) *ReportDirBandwidthInfoServiceResponseResultDetailsDetails {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails) SetBandwidth(v string) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails {
+func (s *ReportDirBandwidthInfoServiceResponseResultDetailsDetails) SetBandwidth(v string) *ReportDirBandwidthInfoServiceResponseResultDetailsDetails {
   s.Bandwidth = &v
   return s
 }
 
-func (s *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails) SetFlow(v string) *ReportDirBandwidthInfoServiceReportDirBandwidthInfoServiceResponseResultDetailsDetails {
+func (s *ReportDirBandwidthInfoServiceResponseResultDetailsDetails) SetFlow(v string) *ReportDirBandwidthInfoServiceResponseResultDetailsDetails {
   s.Flow = &v
   return s
 }
@@ -714,7 +714,7 @@ func (s *BandwidthChannelProtocolRequest) SetDatatype(v string) *BandwidthChanne
 
 type BandwidthChannelProtocolResponse struct {
   // {'en':'provider', 'zh_CN':'结果'}
-  Provider *BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+  Provider *BandwidthChannelProtocolResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
 func (s BandwidthChannelProtocolResponse) String() string {
@@ -725,12 +725,12 @@ func (s BandwidthChannelProtocolResponse) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthChannelProtocolResponse) SetProvider(v *BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider) *BandwidthChannelProtocolResponse {
+func (s *BandwidthChannelProtocolResponse) SetProvider(v *BandwidthChannelProtocolResponseProvider) *BandwidthChannelProtocolResponse {
   s.Provider = v
   return s
 }
 
-type BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider struct {
+type BandwidthChannelProtocolResponseProvider struct {
   // {'en':'tenant', 'zh_CN':'租户'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'type', 'zh_CN':'接口类型'}
@@ -738,95 +738,95 @@ type BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider struct {
   // {'en':'resultType', 'zh_CN':'统计类型'}
   ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'频道带宽区分协议带宽数据'}
-  Date *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+  Date *BandwidthChannelProtocolResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
-func (s BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider) String() string {
+func (s BandwidthChannelProtocolResponseProvider) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider) GoString() string {
+func (s BandwidthChannelProtocolResponseProvider) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider) SetName(v string) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider {
+func (s *BandwidthChannelProtocolResponseProvider) SetName(v string) *BandwidthChannelProtocolResponseProvider {
   s.Name = &v
   return s
 }
 
-func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider) SetType(v string) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider {
+func (s *BandwidthChannelProtocolResponseProvider) SetType(v string) *BandwidthChannelProtocolResponseProvider {
   s.Type = &v
   return s
 }
 
-func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider) SetResultType(v string) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider {
+func (s *BandwidthChannelProtocolResponseProvider) SetResultType(v string) *BandwidthChannelProtocolResponseProvider {
   s.ResultType = &v
   return s
 }
 
-func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider) SetDate(v *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProvider {
+func (s *BandwidthChannelProtocolResponseProvider) SetDate(v *BandwidthChannelProtocolResponseProviderDate) *BandwidthChannelProtocolResponseProvider {
   s.Date = v
   return s
 }
 
-type BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate struct {
+type BandwidthChannelProtocolResponseProviderDate struct {
   // {'en':'startdate', 'zh_CN':'开始时间'}
   Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
   // {'en':'enddate', 'zh_CN':'结束时间'}
   Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
   // {'en':'channel', 'zh_CN':'频道'}
-  Channel *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+  Channel *BandwidthChannelProtocolResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
 }
 
-func (s BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate) String() string {
+func (s BandwidthChannelProtocolResponseProviderDate) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate) GoString() string {
+func (s BandwidthChannelProtocolResponseProviderDate) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate) SetStartdate(v string) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate {
+func (s *BandwidthChannelProtocolResponseProviderDate) SetStartdate(v string) *BandwidthChannelProtocolResponseProviderDate {
   s.Startdate = &v
   return s
 }
 
-func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate) SetEnddate(v string) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate {
+func (s *BandwidthChannelProtocolResponseProviderDate) SetEnddate(v string) *BandwidthChannelProtocolResponseProviderDate {
   s.Enddate = &v
   return s
 }
 
-func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate) SetChannel(v *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannel) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDate {
+func (s *BandwidthChannelProtocolResponseProviderDate) SetChannel(v *BandwidthChannelProtocolResponseProviderDateChannel) *BandwidthChannelProtocolResponseProviderDate {
   s.Channel = v
   return s
 }
 
-type BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannel struct {
+type BandwidthChannelProtocolResponseProviderDateChannel struct {
   // {'en':'channel', 'zh_CN':'频道'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'频道带宽区分协议带宽数据'}
-  Bandwidth []*BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
+  Bandwidth []*BandwidthChannelProtocolResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannel) String() string {
+func (s BandwidthChannelProtocolResponseProviderDateChannel) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannel) GoString() string {
+func (s BandwidthChannelProtocolResponseProviderDateChannel) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannel) SetName(v string) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannel {
+func (s *BandwidthChannelProtocolResponseProviderDateChannel) SetName(v string) *BandwidthChannelProtocolResponseProviderDateChannel {
   s.Name = &v
   return s
 }
 
-func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannel) SetBandwidth(v []*BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannel {
+func (s *BandwidthChannelProtocolResponseProviderDateChannel) SetBandwidth(v []*BandwidthChannelProtocolResponseProviderDateChannelBandwidth) *BandwidthChannelProtocolResponseProviderDateChannel {
   s.Bandwidth = v
   return s
 }
 
-type BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth struct     {
+type BandwidthChannelProtocolResponseProviderDateChannelBandwidth struct     {
   // {'en':'timestamp', 'zh_CN':'时间点'}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
   // {'en':'total bandwidth of http and https,unit Mbps.This value only displays When parameter 'datatype' is not specified or includes '1'.', 'zh_CN':'带宽'}
@@ -837,30 +837,30 @@ type BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannel
   Https *string `json:"https,omitempty" xml:"https,omitempty" require:"true"`
 }
 
-func (s BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth) String() string {
+func (s BandwidthChannelProtocolResponseProviderDateChannelBandwidth) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth) GoString() string {
+func (s BandwidthChannelProtocolResponseProviderDateChannelBandwidth) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth) SetTime(v string) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth {
+func (s *BandwidthChannelProtocolResponseProviderDateChannelBandwidth) SetTime(v string) *BandwidthChannelProtocolResponseProviderDateChannelBandwidth {
   s.Time = &v
   return s
 }
 
-func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth) SetTotal(v string) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth {
+func (s *BandwidthChannelProtocolResponseProviderDateChannelBandwidth) SetTotal(v string) *BandwidthChannelProtocolResponseProviderDateChannelBandwidth {
   s.Total = &v
   return s
 }
 
-func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth) SetHttp(v string) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth {
+func (s *BandwidthChannelProtocolResponseProviderDateChannelBandwidth) SetHttp(v string) *BandwidthChannelProtocolResponseProviderDateChannelBandwidth {
   s.Http = &v
   return s
 }
 
-func (s *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth) SetHttps(v string) *BandwidthChannelProtocolBandwidthChannelProtocolResponseProviderDateChannelBandwidth {
+func (s *BandwidthChannelProtocolResponseProviderDateChannelBandwidth) SetHttps(v string) *BandwidthChannelProtocolResponseProviderDateChannelBandwidth {
   s.Https = &v
   return s
 }
@@ -966,7 +966,7 @@ type ReportP2pBandwidthDomainServiceResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportP2pBandwidthDomainServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportP2pBandwidthDomainServiceResponse) String() string {
@@ -987,55 +987,55 @@ func (s *ReportP2pBandwidthDomainServiceResponse) SetMessage(v string) *ReportP2
   return s
 }
 
-func (s *ReportP2pBandwidthDomainServiceResponse) SetData(v []*ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseData) *ReportP2pBandwidthDomainServiceResponse {
+func (s *ReportP2pBandwidthDomainServiceResponse) SetData(v []*ReportP2pBandwidthDomainServiceResponseData) *ReportP2pBandwidthDomainServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseData struct     {
-  DomainList []*ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainList `json:"domainList,omitempty" xml:"domainList,omitempty" require:"true" type:"Repeated"`
+type ReportP2pBandwidthDomainServiceResponseData struct     {
+  DomainList []*ReportP2pBandwidthDomainServiceResponseDataDomainList `json:"domainList,omitempty" xml:"domainList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseData) String() string {
+func (s ReportP2pBandwidthDomainServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseData) GoString() string {
+func (s ReportP2pBandwidthDomainServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseData) SetDomainList(v []*ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainList) *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseData {
+func (s *ReportP2pBandwidthDomainServiceResponseData) SetDomainList(v []*ReportP2pBandwidthDomainServiceResponseDataDomainList) *ReportP2pBandwidthDomainServiceResponseData {
   s.DomainList = v
   return s
 }
 
-type ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainList struct     {
+type ReportP2pBandwidthDomainServiceResponseDataDomainList struct     {
   // {"en":"1. If the accelerated domain name is a generic domain name, this field is the detailed domain name of the generic domain name (a generic domain name may have many detailed domain names, and detailed data of each detailed domain name will be returned).
   // 						  2. If the accelerated domain name queried is not a generic domain name but a precise domain name, then this field displays the same domain name as the accelerated domain name.", "zh_CN":"1.如果加速域名是泛域名,则此字段为泛域名的明细域名(一个泛域名可能会有很多个明细域名,则会返回每个明细域名的详细数据)。
   // 						  2.如果查询的加速域名非泛域名,而是精确域名,则此字段展示同加速域名。"}
   VDomain *string `json:"vDomain,omitempty" xml:"vDomain,omitempty" require:"true"`
-  BandwidthList []*ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList `json:"bandwidthList,omitempty" xml:"bandwidthList,omitempty" require:"true" type:"Repeated"`
+  BandwidthList []*ReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList `json:"bandwidthList,omitempty" xml:"bandwidthList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainList) String() string {
+func (s ReportP2pBandwidthDomainServiceResponseDataDomainList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainList) GoString() string {
+func (s ReportP2pBandwidthDomainServiceResponseDataDomainList) GoString() string {
   return s.String()
 }
 
-func (s *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainList) SetVDomain(v string) *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainList {
+func (s *ReportP2pBandwidthDomainServiceResponseDataDomainList) SetVDomain(v string) *ReportP2pBandwidthDomainServiceResponseDataDomainList {
   s.VDomain = &v
   return s
 }
 
-func (s *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainList) SetBandwidthList(v []*ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainList {
+func (s *ReportP2pBandwidthDomainServiceResponseDataDomainList) SetBandwidthList(v []*ReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) *ReportP2pBandwidthDomainServiceResponseDataDomainList {
   s.BandwidthList = v
   return s
 }
 
-type ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList struct     {
+type ReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList struct     {
   // {"en":"Timestamp, returns the time slice containing the start time and end time. Time format: yyyy-MM-dd HH:mm", "zh_CN":"时间片,返回开始时间和结束时间包含的时间片。时间格式:yyyy-MM-dd HH:mm"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"The bandwidth value of the CDN requested by the SDK, in Mbps, with 2 decimal places", "zh_CN":"SDK请求CDN的带宽值,单位Mbps,保留2位小数。"}
@@ -1046,30 +1046,30 @@ type ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataD
   P2pIpv6Value *string `json:"p2pIpv6Value,omitempty" xml:"p2pIpv6Value,omitempty" require:"true"`
 }
 
-func (s ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) String() string {
+func (s ReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) GoString() string {
+func (s ReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) GoString() string {
   return s.String()
 }
 
-func (s *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) SetTimestamp(v string) *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList {
+func (s *ReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) SetTimestamp(v string) *ReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) SetCdnValue(v string) *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList {
+func (s *ReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) SetCdnValue(v string) *ReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList {
   s.CdnValue = &v
   return s
 }
 
-func (s *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) SetP2pValue(v string) *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList {
+func (s *ReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) SetP2pValue(v string) *ReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList {
   s.P2pValue = &v
   return s
 }
 
-func (s *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) SetP2pIpv6Value(v string) *ReportP2pBandwidthDomainServiceReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList {
+func (s *ReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList) SetP2pIpv6Value(v string) *ReportP2pBandwidthDomainServiceResponseDataDomainListBandwidthList {
   s.P2pIpv6Value = &v
   return s
 }
@@ -1217,7 +1217,7 @@ type QueryBandwidthofOriginminutelyResponse struct {
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"Detailed data on request results", "zh_CN":"请求结果的详细数据"}
-  Data []*QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*QueryBandwidthofOriginminutelyResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryBandwidthofOriginminutelyResponse) String() string {
@@ -1238,12 +1238,12 @@ func (s *QueryBandwidthofOriginminutelyResponse) SetMessage(v string) *QueryBand
   return s
 }
 
-func (s *QueryBandwidthofOriginminutelyResponse) SetData(v []*QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData) *QueryBandwidthofOriginminutelyResponse {
+func (s *QueryBandwidthofOriginminutelyResponse) SetData(v []*QueryBandwidthofOriginminutelyResponseData) *QueryBandwidthofOriginminutelyResponse {
   s.Data = v
   return s
 }
 
-type QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData struct     {
+type QueryBandwidthofOriginminutelyResponseData struct     {
   // {"en":"Domain", "zh_CN":"域名信息"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"Peak bandwidth Mbps, example (931556.21 Mbps)", "zh_CN":"峰值带宽 Mbps，示例 （931556.21 Mbps）"}
@@ -1252,63 +1252,63 @@ type QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData st
   PeakTime *string `json:"peakTime,omitempty" xml:"peakTime,omitempty" require:"true"`
   // {"en":"Total return flow, example ( 74099.92 MB )", "zh_CN":"回源总流量，示例 ( 74099.92 MB )"}
   Total *string `json:"total,omitempty" xml:"total,omitempty" require:"true"`
-  OriginBandwidthData []*QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseDataOriginBandwidthData `json:"originBandwidthData,omitempty" xml:"originBandwidthData,omitempty" require:"true" type:"Repeated"`
+  OriginBandwidthData []*QueryBandwidthofOriginminutelyResponseDataOriginBandwidthData `json:"originBandwidthData,omitempty" xml:"originBandwidthData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData) String() string {
+func (s QueryBandwidthofOriginminutelyResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData) GoString() string {
+func (s QueryBandwidthofOriginminutelyResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData) SetDomain(v string) *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData {
+func (s *QueryBandwidthofOriginminutelyResponseData) SetDomain(v string) *QueryBandwidthofOriginminutelyResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData) SetPeakValue(v string) *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData {
+func (s *QueryBandwidthofOriginminutelyResponseData) SetPeakValue(v string) *QueryBandwidthofOriginminutelyResponseData {
   s.PeakValue = &v
   return s
 }
 
-func (s *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData) SetPeakTime(v string) *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData {
+func (s *QueryBandwidthofOriginminutelyResponseData) SetPeakTime(v string) *QueryBandwidthofOriginminutelyResponseData {
   s.PeakTime = &v
   return s
 }
 
-func (s *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData) SetTotal(v string) *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData {
+func (s *QueryBandwidthofOriginminutelyResponseData) SetTotal(v string) *QueryBandwidthofOriginminutelyResponseData {
   s.Total = &v
   return s
 }
 
-func (s *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData) SetOriginBandwidthData(v []*QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseDataOriginBandwidthData) *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseData {
+func (s *QueryBandwidthofOriginminutelyResponseData) SetOriginBandwidthData(v []*QueryBandwidthofOriginminutelyResponseDataOriginBandwidthData) *QueryBandwidthofOriginminutelyResponseData {
   s.OriginBandwidthData = v
   return s
 }
 
-type QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseDataOriginBandwidthData struct     {
+type QueryBandwidthofOriginminutelyResponseDataOriginBandwidthData struct     {
   // {"en":"The granularity of data is 1 minute, and the format is yyyy-MM-dd HH:MM.", "zh_CN":"数据粒度为1分钟，格式为yyyy-MM-dd HH:mm。"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Return the source bandwidth value, in Mbps, 2 decimal places reserved.", "zh_CN":"回源带宽值，单位Mbps，保留2位小数。"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseDataOriginBandwidthData) String() string {
+func (s QueryBandwidthofOriginminutelyResponseDataOriginBandwidthData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseDataOriginBandwidthData) GoString() string {
+func (s QueryBandwidthofOriginminutelyResponseDataOriginBandwidthData) GoString() string {
   return s.String()
 }
 
-func (s *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseDataOriginBandwidthData) SetTimestamp(v string) *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseDataOriginBandwidthData {
+func (s *QueryBandwidthofOriginminutelyResponseDataOriginBandwidthData) SetTimestamp(v string) *QueryBandwidthofOriginminutelyResponseDataOriginBandwidthData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseDataOriginBandwidthData) SetValue(v string) *QueryBandwidthofOriginminutelyQueryBandwidthofOriginminutelyResponseDataOriginBandwidthData {
+func (s *QueryBandwidthofOriginminutelyResponseDataOriginBandwidthData) SetValue(v string) *QueryBandwidthofOriginminutelyResponseDataOriginBandwidthData {
   s.Value = &v
   return s
 }
@@ -1489,7 +1489,7 @@ func (s *BandwidthChannelRequest) SetOptionalFields(v string) *BandwidthChannelR
 
 type BandwidthChannelResponse struct {
   // {'en':'provider', 'zh_CN':'结果'}
-  Provider *BandwidthChannelBandwidthChannelResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+  Provider *BandwidthChannelResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
 func (s BandwidthChannelResponse) String() string {
@@ -1500,12 +1500,12 @@ func (s BandwidthChannelResponse) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthChannelResponse) SetProvider(v *BandwidthChannelBandwidthChannelResponseProvider) *BandwidthChannelResponse {
+func (s *BandwidthChannelResponse) SetProvider(v *BandwidthChannelResponseProvider) *BandwidthChannelResponse {
   s.Provider = v
   return s
 }
 
-type BandwidthChannelBandwidthChannelResponseProvider struct {
+type BandwidthChannelResponseProvider struct {
   // {'en':'tenant', 'zh_CN':'租户'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'type', 'zh_CN':'接口类型'}
@@ -1513,115 +1513,115 @@ type BandwidthChannelBandwidthChannelResponseProvider struct {
   // {'en':'resultType', 'zh_CN':'统计类型'}
   ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'频道带宽数据'}
-  Date *BandwidthChannelBandwidthChannelResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+  Date *BandwidthChannelResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
-func (s BandwidthChannelBandwidthChannelResponseProvider) String() string {
+func (s BandwidthChannelResponseProvider) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthChannelBandwidthChannelResponseProvider) GoString() string {
+func (s BandwidthChannelResponseProvider) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthChannelBandwidthChannelResponseProvider) SetName(v string) *BandwidthChannelBandwidthChannelResponseProvider {
+func (s *BandwidthChannelResponseProvider) SetName(v string) *BandwidthChannelResponseProvider {
   s.Name = &v
   return s
 }
 
-func (s *BandwidthChannelBandwidthChannelResponseProvider) SetType(v string) *BandwidthChannelBandwidthChannelResponseProvider {
+func (s *BandwidthChannelResponseProvider) SetType(v string) *BandwidthChannelResponseProvider {
   s.Type = &v
   return s
 }
 
-func (s *BandwidthChannelBandwidthChannelResponseProvider) SetResultType(v string) *BandwidthChannelBandwidthChannelResponseProvider {
+func (s *BandwidthChannelResponseProvider) SetResultType(v string) *BandwidthChannelResponseProvider {
   s.ResultType = &v
   return s
 }
 
-func (s *BandwidthChannelBandwidthChannelResponseProvider) SetDate(v *BandwidthChannelBandwidthChannelResponseProviderDate) *BandwidthChannelBandwidthChannelResponseProvider {
+func (s *BandwidthChannelResponseProvider) SetDate(v *BandwidthChannelResponseProviderDate) *BandwidthChannelResponseProvider {
   s.Date = v
   return s
 }
 
-type BandwidthChannelBandwidthChannelResponseProviderDate struct {
+type BandwidthChannelResponseProviderDate struct {
   // {'en':'startdate', 'zh_CN':'开始时间'}
   Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
   // {'en':'enddate', 'zh_CN':'结束时间'}
   Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
   // {'en':'channel', 'zh_CN':'频道'}
-  Channel *BandwidthChannelBandwidthChannelResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+  Channel *BandwidthChannelResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
 }
 
-func (s BandwidthChannelBandwidthChannelResponseProviderDate) String() string {
+func (s BandwidthChannelResponseProviderDate) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthChannelBandwidthChannelResponseProviderDate) GoString() string {
+func (s BandwidthChannelResponseProviderDate) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthChannelBandwidthChannelResponseProviderDate) SetStartdate(v string) *BandwidthChannelBandwidthChannelResponseProviderDate {
+func (s *BandwidthChannelResponseProviderDate) SetStartdate(v string) *BandwidthChannelResponseProviderDate {
   s.Startdate = &v
   return s
 }
 
-func (s *BandwidthChannelBandwidthChannelResponseProviderDate) SetEnddate(v string) *BandwidthChannelBandwidthChannelResponseProviderDate {
+func (s *BandwidthChannelResponseProviderDate) SetEnddate(v string) *BandwidthChannelResponseProviderDate {
   s.Enddate = &v
   return s
 }
 
-func (s *BandwidthChannelBandwidthChannelResponseProviderDate) SetChannel(v *BandwidthChannelBandwidthChannelResponseProviderDateChannel) *BandwidthChannelBandwidthChannelResponseProviderDate {
+func (s *BandwidthChannelResponseProviderDate) SetChannel(v *BandwidthChannelResponseProviderDateChannel) *BandwidthChannelResponseProviderDate {
   s.Channel = v
   return s
 }
 
-type BandwidthChannelBandwidthChannelResponseProviderDateChannel struct {
+type BandwidthChannelResponseProviderDateChannel struct {
   // {'en':'channel', 'zh_CN':'频道'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'带宽数据'}
-  Bandwidth []*BandwidthChannelBandwidthChannelResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
+  Bandwidth []*BandwidthChannelResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s BandwidthChannelBandwidthChannelResponseProviderDateChannel) String() string {
+func (s BandwidthChannelResponseProviderDateChannel) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthChannelBandwidthChannelResponseProviderDateChannel) GoString() string {
+func (s BandwidthChannelResponseProviderDateChannel) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthChannelBandwidthChannelResponseProviderDateChannel) SetName(v string) *BandwidthChannelBandwidthChannelResponseProviderDateChannel {
+func (s *BandwidthChannelResponseProviderDateChannel) SetName(v string) *BandwidthChannelResponseProviderDateChannel {
   s.Name = &v
   return s
 }
 
-func (s *BandwidthChannelBandwidthChannelResponseProviderDateChannel) SetBandwidth(v []*BandwidthChannelBandwidthChannelResponseProviderDateChannelBandwidth) *BandwidthChannelBandwidthChannelResponseProviderDateChannel {
+func (s *BandwidthChannelResponseProviderDateChannel) SetBandwidth(v []*BandwidthChannelResponseProviderDateChannelBandwidth) *BandwidthChannelResponseProviderDateChannel {
   s.Bandwidth = v
   return s
 }
 
-type BandwidthChannelBandwidthChannelResponseProviderDateChannelBandwidth struct     {
+type BandwidthChannelResponseProviderDateChannelBandwidth struct     {
   // {'en':'timestamp', 'zh_CN':'时间点'}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'带宽，单位Mbps'}
   Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
 }
 
-func (s BandwidthChannelBandwidthChannelResponseProviderDateChannelBandwidth) String() string {
+func (s BandwidthChannelResponseProviderDateChannelBandwidth) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthChannelBandwidthChannelResponseProviderDateChannelBandwidth) GoString() string {
+func (s BandwidthChannelResponseProviderDateChannelBandwidth) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthChannelBandwidthChannelResponseProviderDateChannelBandwidth) SetTime(v string) *BandwidthChannelBandwidthChannelResponseProviderDateChannelBandwidth {
+func (s *BandwidthChannelResponseProviderDateChannelBandwidth) SetTime(v string) *BandwidthChannelResponseProviderDateChannelBandwidth {
   s.Time = &v
   return s
 }
 
-func (s *BandwidthChannelBandwidthChannelResponseProviderDateChannelBandwidth) SetText(v string) *BandwidthChannelBandwidthChannelResponseProviderDateChannelBandwidth {
+func (s *BandwidthChannelResponseProviderDateChannelBandwidth) SetText(v string) *BandwidthChannelResponseProviderDateChannelBandwidth {
   s.Text = &v
   return s
 }
@@ -1769,7 +1769,7 @@ func (s *BillingOrderRequest) SetPayDateFilter(v string) *BillingOrderRequest {
 
 type BillingOrderResponse struct {
   // {'en':'provider', 'zh_CN':'结果'}
-  Provider *BillingOrderBillingOrderResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+  Provider *BillingOrderResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
 func (s BillingOrderResponse) String() string {
@@ -1780,76 +1780,76 @@ func (s BillingOrderResponse) GoString() string {
   return s.String()
 }
 
-func (s *BillingOrderResponse) SetProvider(v *BillingOrderBillingOrderResponseProvider) *BillingOrderResponse {
+func (s *BillingOrderResponse) SetProvider(v *BillingOrderResponseProvider) *BillingOrderResponse {
   s.Provider = v
   return s
 }
 
-type BillingOrderBillingOrderResponseProvider struct {
+type BillingOrderResponseProvider struct {
   // {'en':'tenant', 'zh_CN':'租户'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'type', 'zh_CN':'接口类型'}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'订单计费值'}
-  Date *BillingOrderBillingOrderResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+  Date *BillingOrderResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
-func (s BillingOrderBillingOrderResponseProvider) String() string {
+func (s BillingOrderResponseProvider) String() string {
   return tea.Prettify(s)
 }
 
-func (s BillingOrderBillingOrderResponseProvider) GoString() string {
+func (s BillingOrderResponseProvider) GoString() string {
   return s.String()
 }
 
-func (s *BillingOrderBillingOrderResponseProvider) SetName(v string) *BillingOrderBillingOrderResponseProvider {
+func (s *BillingOrderResponseProvider) SetName(v string) *BillingOrderResponseProvider {
   s.Name = &v
   return s
 }
 
-func (s *BillingOrderBillingOrderResponseProvider) SetType(v string) *BillingOrderBillingOrderResponseProvider {
+func (s *BillingOrderResponseProvider) SetType(v string) *BillingOrderResponseProvider {
   s.Type = &v
   return s
 }
 
-func (s *BillingOrderBillingOrderResponseProvider) SetDate(v *BillingOrderBillingOrderResponseProviderDate) *BillingOrderBillingOrderResponseProvider {
+func (s *BillingOrderResponseProvider) SetDate(v *BillingOrderResponseProviderDate) *BillingOrderResponseProvider {
   s.Date = v
   return s
 }
 
-type BillingOrderBillingOrderResponseProviderDate struct {
+type BillingOrderResponseProviderDate struct {
   // {'en':'startdate', 'zh_CN':'开始时间'}
   Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
   // {'en':'enddate', 'zh_CN':'结束时间'}
   Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
   // {'en':'channel', 'zh_CN':'订单计费值'}
-  Order []*BillingOrderBillingOrderResponseProviderDateOrder `json:"order,omitempty" xml:"order,omitempty" require:"true" type:"Repeated"`
+  Order []*BillingOrderResponseProviderDateOrder `json:"order,omitempty" xml:"order,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s BillingOrderBillingOrderResponseProviderDate) String() string {
+func (s BillingOrderResponseProviderDate) String() string {
   return tea.Prettify(s)
 }
 
-func (s BillingOrderBillingOrderResponseProviderDate) GoString() string {
+func (s BillingOrderResponseProviderDate) GoString() string {
   return s.String()
 }
 
-func (s *BillingOrderBillingOrderResponseProviderDate) SetStartdate(v string) *BillingOrderBillingOrderResponseProviderDate {
+func (s *BillingOrderResponseProviderDate) SetStartdate(v string) *BillingOrderResponseProviderDate {
   s.Startdate = &v
   return s
 }
 
-func (s *BillingOrderBillingOrderResponseProviderDate) SetEnddate(v string) *BillingOrderBillingOrderResponseProviderDate {
+func (s *BillingOrderResponseProviderDate) SetEnddate(v string) *BillingOrderResponseProviderDate {
   s.Enddate = &v
   return s
 }
 
-func (s *BillingOrderBillingOrderResponseProviderDate) SetOrder(v []*BillingOrderBillingOrderResponseProviderDateOrder) *BillingOrderBillingOrderResponseProviderDate {
+func (s *BillingOrderResponseProviderDate) SetOrder(v []*BillingOrderResponseProviderDateOrder) *BillingOrderResponseProviderDate {
   s.Order = v
   return s
 }
 
-type BillingOrderBillingOrderResponseProviderDateOrder struct     {
+type BillingOrderResponseProviderDateOrder struct     {
   // {'en':'id', 'zh_CN':'订单ID'}
   Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
   // {'en':'orderInfo', 'zh_CN':'订单信息'}
@@ -1871,118 +1871,118 @@ type BillingOrderBillingOrderResponseProviderDateOrder struct     {
   // {'en':'channel', 'zh_CN':'频道'}
   Channel *string `json:"channel,omitempty" xml:"channel,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'带宽数据'}
-  Type *BillingOrderBillingOrderResponseProviderDateOrderType `json:"type,omitempty" xml:"type,omitempty" require:"true" type:"Struct"`
+  Type *BillingOrderResponseProviderDateOrderType `json:"type,omitempty" xml:"type,omitempty" require:"true" type:"Struct"`
 }
 
-func (s BillingOrderBillingOrderResponseProviderDateOrder) String() string {
+func (s BillingOrderResponseProviderDateOrder) String() string {
   return tea.Prettify(s)
 }
 
-func (s BillingOrderBillingOrderResponseProviderDateOrder) GoString() string {
+func (s BillingOrderResponseProviderDateOrder) GoString() string {
   return s.String()
 }
 
-func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetId(v string) *BillingOrderBillingOrderResponseProviderDateOrder {
+func (s *BillingOrderResponseProviderDateOrder) SetId(v string) *BillingOrderResponseProviderDateOrder {
   s.Id = &v
   return s
 }
 
-func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetOrderInfo(v string) *BillingOrderBillingOrderResponseProviderDateOrder {
+func (s *BillingOrderResponseProviderDateOrder) SetOrderInfo(v string) *BillingOrderResponseProviderDateOrder {
   s.OrderInfo = &v
   return s
 }
 
-func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetChargeMethod(v string) *BillingOrderBillingOrderResponseProviderDateOrder {
+func (s *BillingOrderResponseProviderDateOrder) SetChargeMethod(v string) *BillingOrderResponseProviderDateOrder {
   s.ChargeMethod = &v
   return s
 }
 
-func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetChargeExplanation(v string) *BillingOrderBillingOrderResponseProviderDateOrder {
+func (s *BillingOrderResponseProviderDateOrder) SetChargeExplanation(v string) *BillingOrderResponseProviderDateOrder {
   s.ChargeExplanation = &v
   return s
 }
 
-func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetRegionAndIsp(v string) *BillingOrderBillingOrderResponseProviderDateOrder {
+func (s *BillingOrderResponseProviderDateOrder) SetRegionAndIsp(v string) *BillingOrderResponseProviderDateOrder {
   s.RegionAndIsp = &v
   return s
 }
 
-func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetAcceType(v string) *BillingOrderBillingOrderResponseProviderDateOrder {
+func (s *BillingOrderResponseProviderDateOrder) SetAcceType(v string) *BillingOrderResponseProviderDateOrder {
   s.AcceType = &v
   return s
 }
 
-func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetChargeValue(v string) *BillingOrderBillingOrderResponseProviderDateOrder {
+func (s *BillingOrderResponseProviderDateOrder) SetChargeValue(v string) *BillingOrderResponseProviderDateOrder {
   s.ChargeValue = &v
   return s
 }
 
-func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetChargeCategory(v string) *BillingOrderBillingOrderResponseProviderDateOrder {
+func (s *BillingOrderResponseProviderDateOrder) SetChargeCategory(v string) *BillingOrderResponseProviderDateOrder {
   s.ChargeCategory = &v
   return s
 }
 
-func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetDetailInfo(v string) *BillingOrderBillingOrderResponseProviderDateOrder {
+func (s *BillingOrderResponseProviderDateOrder) SetDetailInfo(v string) *BillingOrderResponseProviderDateOrder {
   s.DetailInfo = &v
   return s
 }
 
-func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetChannel(v string) *BillingOrderBillingOrderResponseProviderDateOrder {
+func (s *BillingOrderResponseProviderDateOrder) SetChannel(v string) *BillingOrderResponseProviderDateOrder {
   s.Channel = &v
   return s
 }
 
-func (s *BillingOrderBillingOrderResponseProviderDateOrder) SetType(v *BillingOrderBillingOrderResponseProviderDateOrderType) *BillingOrderBillingOrderResponseProviderDateOrder {
+func (s *BillingOrderResponseProviderDateOrder) SetType(v *BillingOrderResponseProviderDateOrderType) *BillingOrderResponseProviderDateOrder {
   s.Type = v
   return s
 }
 
-type BillingOrderBillingOrderResponseProviderDateOrderType struct {
+type BillingOrderResponseProviderDateOrderType struct {
   // {'en':'name', 'zh_CN':'流量'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'带宽数据'}
-  Detail []*BillingOrderBillingOrderResponseProviderDateOrderTypeDetail `json:"detail,omitempty" xml:"detail,omitempty" require:"true" type:"Repeated"`
+  Detail []*BillingOrderResponseProviderDateOrderTypeDetail `json:"detail,omitempty" xml:"detail,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s BillingOrderBillingOrderResponseProviderDateOrderType) String() string {
+func (s BillingOrderResponseProviderDateOrderType) String() string {
   return tea.Prettify(s)
 }
 
-func (s BillingOrderBillingOrderResponseProviderDateOrderType) GoString() string {
+func (s BillingOrderResponseProviderDateOrderType) GoString() string {
   return s.String()
 }
 
-func (s *BillingOrderBillingOrderResponseProviderDateOrderType) SetName(v string) *BillingOrderBillingOrderResponseProviderDateOrderType {
+func (s *BillingOrderResponseProviderDateOrderType) SetName(v string) *BillingOrderResponseProviderDateOrderType {
   s.Name = &v
   return s
 }
 
-func (s *BillingOrderBillingOrderResponseProviderDateOrderType) SetDetail(v []*BillingOrderBillingOrderResponseProviderDateOrderTypeDetail) *BillingOrderBillingOrderResponseProviderDateOrderType {
+func (s *BillingOrderResponseProviderDateOrderType) SetDetail(v []*BillingOrderResponseProviderDateOrderTypeDetail) *BillingOrderResponseProviderDateOrderType {
   s.Detail = v
   return s
 }
 
-type BillingOrderBillingOrderResponseProviderDateOrderTypeDetail struct     {
+type BillingOrderResponseProviderDateOrderTypeDetail struct     {
   // {'en':'timestamp', 'zh_CN':'时间点'}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'带宽'}
   Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
 }
 
-func (s BillingOrderBillingOrderResponseProviderDateOrderTypeDetail) String() string {
+func (s BillingOrderResponseProviderDateOrderTypeDetail) String() string {
   return tea.Prettify(s)
 }
 
-func (s BillingOrderBillingOrderResponseProviderDateOrderTypeDetail) GoString() string {
+func (s BillingOrderResponseProviderDateOrderTypeDetail) GoString() string {
   return s.String()
 }
 
-func (s *BillingOrderBillingOrderResponseProviderDateOrderTypeDetail) SetTime(v string) *BillingOrderBillingOrderResponseProviderDateOrderTypeDetail {
+func (s *BillingOrderResponseProviderDateOrderTypeDetail) SetTime(v string) *BillingOrderResponseProviderDateOrderTypeDetail {
   s.Time = &v
   return s
 }
 
-func (s *BillingOrderBillingOrderResponseProviderDateOrderTypeDetail) SetText(v string) *BillingOrderBillingOrderResponseProviderDateOrderTypeDetail {
+func (s *BillingOrderResponseProviderDateOrderTypeDetail) SetText(v string) *BillingOrderResponseProviderDateOrderTypeDetail {
   s.Text = &v
   return s
 }
@@ -2149,7 +2149,7 @@ func (s *GetBandwidthLogRequest) SetTimeFromZero(v string) *GetBandwidthLogReque
 
 type GetBandwidthLogResponse struct {
   // {'en':'provider', 'zh_CN':'结果'}
-  Provider *GetBandwidthLogGetBandwidthLogResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+  Provider *GetBandwidthLogResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
 func (s GetBandwidthLogResponse) String() string {
@@ -2160,12 +2160,12 @@ func (s GetBandwidthLogResponse) GoString() string {
   return s.String()
 }
 
-func (s *GetBandwidthLogResponse) SetProvider(v *GetBandwidthLogGetBandwidthLogResponseProvider) *GetBandwidthLogResponse {
+func (s *GetBandwidthLogResponse) SetProvider(v *GetBandwidthLogResponseProvider) *GetBandwidthLogResponse {
   s.Provider = v
   return s
 }
 
-type GetBandwidthLogGetBandwidthLogResponseProvider struct {
+type GetBandwidthLogResponseProvider struct {
   // {'en':'tenant', 'zh_CN':'租户'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'type', 'zh_CN':'接口类型'}
@@ -2173,115 +2173,115 @@ type GetBandwidthLogGetBandwidthLogResponseProvider struct {
   // {'en':'resultType', 'zh_CN':'统计类型'}
   ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'频道带宽数据'}
-  Date *GetBandwidthLogGetBandwidthLogResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+  Date *GetBandwidthLogResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
-func (s GetBandwidthLogGetBandwidthLogResponseProvider) String() string {
+func (s GetBandwidthLogResponseProvider) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBandwidthLogGetBandwidthLogResponseProvider) GoString() string {
+func (s GetBandwidthLogResponseProvider) GoString() string {
   return s.String()
 }
 
-func (s *GetBandwidthLogGetBandwidthLogResponseProvider) SetName(v string) *GetBandwidthLogGetBandwidthLogResponseProvider {
+func (s *GetBandwidthLogResponseProvider) SetName(v string) *GetBandwidthLogResponseProvider {
   s.Name = &v
   return s
 }
 
-func (s *GetBandwidthLogGetBandwidthLogResponseProvider) SetType(v string) *GetBandwidthLogGetBandwidthLogResponseProvider {
+func (s *GetBandwidthLogResponseProvider) SetType(v string) *GetBandwidthLogResponseProvider {
   s.Type = &v
   return s
 }
 
-func (s *GetBandwidthLogGetBandwidthLogResponseProvider) SetResultType(v string) *GetBandwidthLogGetBandwidthLogResponseProvider {
+func (s *GetBandwidthLogResponseProvider) SetResultType(v string) *GetBandwidthLogResponseProvider {
   s.ResultType = &v
   return s
 }
 
-func (s *GetBandwidthLogGetBandwidthLogResponseProvider) SetDate(v *GetBandwidthLogGetBandwidthLogResponseProviderDate) *GetBandwidthLogGetBandwidthLogResponseProvider {
+func (s *GetBandwidthLogResponseProvider) SetDate(v *GetBandwidthLogResponseProviderDate) *GetBandwidthLogResponseProvider {
   s.Date = v
   return s
 }
 
-type GetBandwidthLogGetBandwidthLogResponseProviderDate struct {
+type GetBandwidthLogResponseProviderDate struct {
   // {'en':'startdate', 'zh_CN':'开始时间'}
   Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
   // {'en':'enddate', 'zh_CN':'结束时间'}
   Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
   // {'en':'channel', 'zh_CN':'频道'}
-  Channel *GetBandwidthLogGetBandwidthLogResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+  Channel *GetBandwidthLogResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
 }
 
-func (s GetBandwidthLogGetBandwidthLogResponseProviderDate) String() string {
+func (s GetBandwidthLogResponseProviderDate) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBandwidthLogGetBandwidthLogResponseProviderDate) GoString() string {
+func (s GetBandwidthLogResponseProviderDate) GoString() string {
   return s.String()
 }
 
-func (s *GetBandwidthLogGetBandwidthLogResponseProviderDate) SetStartdate(v string) *GetBandwidthLogGetBandwidthLogResponseProviderDate {
+func (s *GetBandwidthLogResponseProviderDate) SetStartdate(v string) *GetBandwidthLogResponseProviderDate {
   s.Startdate = &v
   return s
 }
 
-func (s *GetBandwidthLogGetBandwidthLogResponseProviderDate) SetEnddate(v string) *GetBandwidthLogGetBandwidthLogResponseProviderDate {
+func (s *GetBandwidthLogResponseProviderDate) SetEnddate(v string) *GetBandwidthLogResponseProviderDate {
   s.Enddate = &v
   return s
 }
 
-func (s *GetBandwidthLogGetBandwidthLogResponseProviderDate) SetChannel(v *GetBandwidthLogGetBandwidthLogResponseProviderDateChannel) *GetBandwidthLogGetBandwidthLogResponseProviderDate {
+func (s *GetBandwidthLogResponseProviderDate) SetChannel(v *GetBandwidthLogResponseProviderDateChannel) *GetBandwidthLogResponseProviderDate {
   s.Channel = v
   return s
 }
 
-type GetBandwidthLogGetBandwidthLogResponseProviderDateChannel struct {
+type GetBandwidthLogResponseProviderDateChannel struct {
   // {'en':'channel', 'zh_CN':'频道'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'带宽数据'}
-  Bandwidth []*GetBandwidthLogGetBandwidthLogResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
+  Bandwidth []*GetBandwidthLogResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s GetBandwidthLogGetBandwidthLogResponseProviderDateChannel) String() string {
+func (s GetBandwidthLogResponseProviderDateChannel) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBandwidthLogGetBandwidthLogResponseProviderDateChannel) GoString() string {
+func (s GetBandwidthLogResponseProviderDateChannel) GoString() string {
   return s.String()
 }
 
-func (s *GetBandwidthLogGetBandwidthLogResponseProviderDateChannel) SetName(v string) *GetBandwidthLogGetBandwidthLogResponseProviderDateChannel {
+func (s *GetBandwidthLogResponseProviderDateChannel) SetName(v string) *GetBandwidthLogResponseProviderDateChannel {
   s.Name = &v
   return s
 }
 
-func (s *GetBandwidthLogGetBandwidthLogResponseProviderDateChannel) SetBandwidth(v []*GetBandwidthLogGetBandwidthLogResponseProviderDateChannelBandwidth) *GetBandwidthLogGetBandwidthLogResponseProviderDateChannel {
+func (s *GetBandwidthLogResponseProviderDateChannel) SetBandwidth(v []*GetBandwidthLogResponseProviderDateChannelBandwidth) *GetBandwidthLogResponseProviderDateChannel {
   s.Bandwidth = v
   return s
 }
 
-type GetBandwidthLogGetBandwidthLogResponseProviderDateChannelBandwidth struct     {
+type GetBandwidthLogResponseProviderDateChannelBandwidth struct     {
   // {'en':'timestamp', 'zh_CN':'时间点'}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'带宽'}
   Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
 }
 
-func (s GetBandwidthLogGetBandwidthLogResponseProviderDateChannelBandwidth) String() string {
+func (s GetBandwidthLogResponseProviderDateChannelBandwidth) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetBandwidthLogGetBandwidthLogResponseProviderDateChannelBandwidth) GoString() string {
+func (s GetBandwidthLogResponseProviderDateChannelBandwidth) GoString() string {
   return s.String()
 }
 
-func (s *GetBandwidthLogGetBandwidthLogResponseProviderDateChannelBandwidth) SetTime(v string) *GetBandwidthLogGetBandwidthLogResponseProviderDateChannelBandwidth {
+func (s *GetBandwidthLogResponseProviderDateChannelBandwidth) SetTime(v string) *GetBandwidthLogResponseProviderDateChannelBandwidth {
   s.Time = &v
   return s
 }
 
-func (s *GetBandwidthLogGetBandwidthLogResponseProviderDateChannelBandwidth) SetText(v string) *GetBandwidthLogGetBandwidthLogResponseProviderDateChannelBandwidth {
+func (s *GetBandwidthLogResponseProviderDateChannelBandwidth) SetText(v string) *GetBandwidthLogResponseProviderDateChannelBandwidth {
   s.Text = &v
   return s
 }
@@ -2416,7 +2416,7 @@ type QueryRealTimeBandwidthForMultiDomainResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {'en':'request result information', 'zh_CN':'请求结果信息'}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*QueryRealTimeBandwidthForMultiDomainResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryRealTimeBandwidthForMultiDomainResponse) String() string {
@@ -2437,12 +2437,12 @@ func (s *QueryRealTimeBandwidthForMultiDomainResponse) SetMessage(v string) *Que
   return s
 }
 
-func (s *QueryRealTimeBandwidthForMultiDomainResponse) SetData(v []*QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData) *QueryRealTimeBandwidthForMultiDomainResponse {
+func (s *QueryRealTimeBandwidthForMultiDomainResponse) SetData(v []*QueryRealTimeBandwidthForMultiDomainResponseData) *QueryRealTimeBandwidthForMultiDomainResponse {
   s.Data = v
   return s
 }
 
-type QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData struct     {
+type QueryRealTimeBandwidthForMultiDomainResponseData struct     {
   // {'en':' Domain name. If you do not select domain name group Dimension, this field is a semicolon-separated string of all domain names.', 'zh_CN':'域名，如果不选择域名分组维度，该字段为所有域名以分号分隔的字符串'}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {'en':'Peak Bandwidth,unit is Mbps,example(9811.21Mbps)', 'zh_CN':'峰值带宽，单位Mbps，示例 （9811.21Mbps)'}
@@ -2451,43 +2451,43 @@ type QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainRes
   PeakTime *string `json:"peakTime,omitempty" xml:"peakTime,omitempty" require:"true"`
   // {'en':'Edge total traffic,example(74099.91MB)', 'zh_CN':'边缘总流量，单位MB，示例 ( 74099.91MB)'}
   Total *string `json:"total,omitempty" xml:"total,omitempty" require:"true"`
-  BandwidthData []*QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData `json:"bandwidthData,omitempty" xml:"bandwidthData,omitempty" require:"true" type:"Repeated"`
+  BandwidthData []*QueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData `json:"bandwidthData,omitempty" xml:"bandwidthData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData) String() string {
+func (s QueryRealTimeBandwidthForMultiDomainResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData) GoString() string {
+func (s QueryRealTimeBandwidthForMultiDomainResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData) SetDomain(v string) *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData {
+func (s *QueryRealTimeBandwidthForMultiDomainResponseData) SetDomain(v string) *QueryRealTimeBandwidthForMultiDomainResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData) SetPeakValue(v string) *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData {
+func (s *QueryRealTimeBandwidthForMultiDomainResponseData) SetPeakValue(v string) *QueryRealTimeBandwidthForMultiDomainResponseData {
   s.PeakValue = &v
   return s
 }
 
-func (s *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData) SetPeakTime(v string) *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData {
+func (s *QueryRealTimeBandwidthForMultiDomainResponseData) SetPeakTime(v string) *QueryRealTimeBandwidthForMultiDomainResponseData {
   s.PeakTime = &v
   return s
 }
 
-func (s *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData) SetTotal(v string) *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData {
+func (s *QueryRealTimeBandwidthForMultiDomainResponseData) SetTotal(v string) *QueryRealTimeBandwidthForMultiDomainResponseData {
   s.Total = &v
   return s
 }
 
-func (s *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData) SetBandwidthData(v []*QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData) *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseData {
+func (s *QueryRealTimeBandwidthForMultiDomainResponseData) SetBandwidthData(v []*QueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData) *QueryRealTimeBandwidthForMultiDomainResponseData {
   s.BandwidthData = v
   return s
 }
 
-type QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData struct     {
+type QueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData struct     {
   // {'en':'Time: 1. When the data query granularity is 1m, then the format is yyyy-MM-dd HH:mm; 
   //     Each time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is (yyyy-MM-dd+1) 00:00; 
   //     2. Return the time slices that contained in start time and in end time.
@@ -2501,20 +2501,20 @@ type QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainRes
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData) String() string {
+func (s QueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData) GoString() string {
+func (s QueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData) GoString() string {
   return s.String()
 }
 
-func (s *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData) SetTimestamp(v string) *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData {
+func (s *QueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData) SetTimestamp(v string) *QueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData) SetValue(v string) *QueryRealTimeBandwidthForMultiDomainQueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData {
+func (s *QueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData) SetValue(v string) *QueryRealTimeBandwidthForMultiDomainResponseDataBandwidthData {
   s.Value = &v
   return s
 }
@@ -2646,7 +2646,7 @@ type QueryCPSBandwidthResponse struct {
   // {'en':'message', 'zh_CN':'返回消息'}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'频道带宽数据'}
-  Data *QueryCPSBandwidthQueryCPSBandwidthResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  Data *QueryCPSBandwidthResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryCPSBandwidthResponse) String() string {
@@ -2667,12 +2667,12 @@ func (s *QueryCPSBandwidthResponse) SetMessage(v string) *QueryCPSBandwidthRespo
   return s
 }
 
-func (s *QueryCPSBandwidthResponse) SetData(v *QueryCPSBandwidthQueryCPSBandwidthResponseData) *QueryCPSBandwidthResponse {
+func (s *QueryCPSBandwidthResponse) SetData(v *QueryCPSBandwidthResponseData) *QueryCPSBandwidthResponse {
   s.Data = v
   return s
 }
 
-type QueryCPSBandwidthQueryCPSBandwidthResponseData struct {
+type QueryCPSBandwidthResponseData struct {
   // {'en':'totalFlow', 'zh_CN':'总流量，单位GB'}
   TotalFlow *string `json:"totalFlow,omitempty" xml:"totalFlow,omitempty" require:"true"`
   // {'en':'peakTime', 'zh_CN':'峰值时间'}
@@ -2680,58 +2680,58 @@ type QueryCPSBandwidthQueryCPSBandwidthResponseData struct {
   // {'en':'peakvalue', 'zh_CN':'带宽峰值，单位Mbps'}
   PeakValue *string `json:"peakValue,omitempty" xml:"peakValue,omitempty" require:"true"`
   // {'en':'detail', 'zh_CN':'时点带宽数据'}
-  Detail *QueryCPSBandwidthQueryCPSBandwidthResponseDataDetail `json:"detail,omitempty" xml:"detail,omitempty" require:"true" type:"Struct"`
+  Detail *QueryCPSBandwidthResponseDataDetail `json:"detail,omitempty" xml:"detail,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryCPSBandwidthQueryCPSBandwidthResponseData) String() string {
+func (s QueryCPSBandwidthResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCPSBandwidthQueryCPSBandwidthResponseData) GoString() string {
+func (s QueryCPSBandwidthResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryCPSBandwidthQueryCPSBandwidthResponseData) SetTotalFlow(v string) *QueryCPSBandwidthQueryCPSBandwidthResponseData {
+func (s *QueryCPSBandwidthResponseData) SetTotalFlow(v string) *QueryCPSBandwidthResponseData {
   s.TotalFlow = &v
   return s
 }
 
-func (s *QueryCPSBandwidthQueryCPSBandwidthResponseData) SetPeakTime(v string) *QueryCPSBandwidthQueryCPSBandwidthResponseData {
+func (s *QueryCPSBandwidthResponseData) SetPeakTime(v string) *QueryCPSBandwidthResponseData {
   s.PeakTime = &v
   return s
 }
 
-func (s *QueryCPSBandwidthQueryCPSBandwidthResponseData) SetPeakValue(v string) *QueryCPSBandwidthQueryCPSBandwidthResponseData {
+func (s *QueryCPSBandwidthResponseData) SetPeakValue(v string) *QueryCPSBandwidthResponseData {
   s.PeakValue = &v
   return s
 }
 
-func (s *QueryCPSBandwidthQueryCPSBandwidthResponseData) SetDetail(v *QueryCPSBandwidthQueryCPSBandwidthResponseDataDetail) *QueryCPSBandwidthQueryCPSBandwidthResponseData {
+func (s *QueryCPSBandwidthResponseData) SetDetail(v *QueryCPSBandwidthResponseDataDetail) *QueryCPSBandwidthResponseData {
   s.Detail = v
   return s
 }
 
-type QueryCPSBandwidthQueryCPSBandwidthResponseDataDetail struct {
+type QueryCPSBandwidthResponseDataDetail struct {
   // {'en':'timestamp', 'zh_CN':'时间点'}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'带宽'}
   Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
 }
 
-func (s QueryCPSBandwidthQueryCPSBandwidthResponseDataDetail) String() string {
+func (s QueryCPSBandwidthResponseDataDetail) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCPSBandwidthQueryCPSBandwidthResponseDataDetail) GoString() string {
+func (s QueryCPSBandwidthResponseDataDetail) GoString() string {
   return s.String()
 }
 
-func (s *QueryCPSBandwidthQueryCPSBandwidthResponseDataDetail) SetTime(v string) *QueryCPSBandwidthQueryCPSBandwidthResponseDataDetail {
+func (s *QueryCPSBandwidthResponseDataDetail) SetTime(v string) *QueryCPSBandwidthResponseDataDetail {
   s.Time = &v
   return s
 }
 
-func (s *QueryCPSBandwidthQueryCPSBandwidthResponseDataDetail) SetText(v string) *QueryCPSBandwidthQueryCPSBandwidthResponseDataDetail {
+func (s *QueryCPSBandwidthResponseDataDetail) SetText(v string) *QueryCPSBandwidthResponseDataDetail {
   s.Text = &v
   return s
 }
@@ -2890,7 +2890,7 @@ func (s *QueryP2PBandwidthRequest) SetRegion(v string) *QueryP2PBandwidthRequest
 
 type QueryP2PBandwidthResponse struct {
   // {'en':'provider', 'zh_CN':'结果'}
-  Provider *QueryP2PBandwidthQueryP2PBandwidthResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+  Provider *QueryP2PBandwidthResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryP2PBandwidthResponse) String() string {
@@ -2901,101 +2901,101 @@ func (s QueryP2PBandwidthResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryP2PBandwidthResponse) SetProvider(v *QueryP2PBandwidthQueryP2PBandwidthResponseProvider) *QueryP2PBandwidthResponse {
+func (s *QueryP2PBandwidthResponse) SetProvider(v *QueryP2PBandwidthResponseProvider) *QueryP2PBandwidthResponse {
   s.Provider = v
   return s
 }
 
-type QueryP2PBandwidthQueryP2PBandwidthResponseProvider struct {
+type QueryP2PBandwidthResponseProvider struct {
   // {'en':'tenant', 'zh_CN':'租户'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'type', 'zh_CN':'接口类型'}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'p2p带宽数据'}
-  Date *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+  Date *QueryP2PBandwidthResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryP2PBandwidthQueryP2PBandwidthResponseProvider) String() string {
+func (s QueryP2PBandwidthResponseProvider) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryP2PBandwidthQueryP2PBandwidthResponseProvider) GoString() string {
+func (s QueryP2PBandwidthResponseProvider) GoString() string {
   return s.String()
 }
 
-func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProvider) SetName(v string) *QueryP2PBandwidthQueryP2PBandwidthResponseProvider {
+func (s *QueryP2PBandwidthResponseProvider) SetName(v string) *QueryP2PBandwidthResponseProvider {
   s.Name = &v
   return s
 }
 
-func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProvider) SetType(v string) *QueryP2PBandwidthQueryP2PBandwidthResponseProvider {
+func (s *QueryP2PBandwidthResponseProvider) SetType(v string) *QueryP2PBandwidthResponseProvider {
   s.Type = &v
   return s
 }
 
-func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProvider) SetDate(v *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate) *QueryP2PBandwidthQueryP2PBandwidthResponseProvider {
+func (s *QueryP2PBandwidthResponseProvider) SetDate(v *QueryP2PBandwidthResponseProviderDate) *QueryP2PBandwidthResponseProvider {
   s.Date = v
   return s
 }
 
-type QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate struct {
+type QueryP2PBandwidthResponseProviderDate struct {
   // {'en':'startdate', 'zh_CN':'开始时间'}
   Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
   // {'en':'enddate', 'zh_CN':'结束时间'}
   Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
   // {'en':'channel', 'zh_CN':'频道'}
-  Channel *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+  Channel *QueryP2PBandwidthResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate) String() string {
+func (s QueryP2PBandwidthResponseProviderDate) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate) GoString() string {
+func (s QueryP2PBandwidthResponseProviderDate) GoString() string {
   return s.String()
 }
 
-func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate) SetStartdate(v string) *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate {
+func (s *QueryP2PBandwidthResponseProviderDate) SetStartdate(v string) *QueryP2PBandwidthResponseProviderDate {
   s.Startdate = &v
   return s
 }
 
-func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate) SetEnddate(v string) *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate {
+func (s *QueryP2PBandwidthResponseProviderDate) SetEnddate(v string) *QueryP2PBandwidthResponseProviderDate {
   s.Enddate = &v
   return s
 }
 
-func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate) SetChannel(v *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannel) *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDate {
+func (s *QueryP2PBandwidthResponseProviderDate) SetChannel(v *QueryP2PBandwidthResponseProviderDateChannel) *QueryP2PBandwidthResponseProviderDate {
   s.Channel = v
   return s
 }
 
-type QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannel struct {
+type QueryP2PBandwidthResponseProviderDateChannel struct {
   // {'en':'channel', 'zh_CN':'频道'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'p2p带宽数据'}
-  Bandwidth []*QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
+  Bandwidth []*QueryP2PBandwidthResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannel) String() string {
+func (s QueryP2PBandwidthResponseProviderDateChannel) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannel) GoString() string {
+func (s QueryP2PBandwidthResponseProviderDateChannel) GoString() string {
   return s.String()
 }
 
-func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannel) SetName(v string) *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannel {
+func (s *QueryP2PBandwidthResponseProviderDateChannel) SetName(v string) *QueryP2PBandwidthResponseProviderDateChannel {
   s.Name = &v
   return s
 }
 
-func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannel) SetBandwidth(v []*QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth) *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannel {
+func (s *QueryP2PBandwidthResponseProviderDateChannel) SetBandwidth(v []*QueryP2PBandwidthResponseProviderDateChannelBandwidth) *QueryP2PBandwidthResponseProviderDateChannel {
   s.Bandwidth = v
   return s
 }
 
-type QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth struct     {
+type QueryP2PBandwidthResponseProviderDateChannelBandwidth struct     {
   // {'en':'time', 'zh_CN':'时间点，格式 yyyy-MM-dd hh:mm:ss'}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
   // {'en':'p2pBandWidth', 'zh_CN':'cdn带宽，单位 Mbps'}
@@ -3008,35 +3008,35 @@ type QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth stru
   Total *string `json:"total,omitempty" xml:"total,omitempty" require:"true"`
 }
 
-func (s QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth) String() string {
+func (s QueryP2PBandwidthResponseProviderDateChannelBandwidth) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth) GoString() string {
+func (s QueryP2PBandwidthResponseProviderDateChannelBandwidth) GoString() string {
   return s.String()
 }
 
-func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth) SetTime(v string) *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth {
+func (s *QueryP2PBandwidthResponseProviderDateChannelBandwidth) SetTime(v string) *QueryP2PBandwidthResponseProviderDateChannelBandwidth {
   s.Time = &v
   return s
 }
 
-func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth) SetP2p(v string) *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth {
+func (s *QueryP2PBandwidthResponseProviderDateChannelBandwidth) SetP2p(v string) *QueryP2PBandwidthResponseProviderDateChannelBandwidth {
   s.P2p = &v
   return s
 }
 
-func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth) SetCdn(v string) *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth {
+func (s *QueryP2PBandwidthResponseProviderDateChannelBandwidth) SetCdn(v string) *QueryP2PBandwidthResponseProviderDateChannelBandwidth {
   s.Cdn = &v
   return s
 }
 
-func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth) SetBox(v string) *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth {
+func (s *QueryP2PBandwidthResponseProviderDateChannelBandwidth) SetBox(v string) *QueryP2PBandwidthResponseProviderDateChannelBandwidth {
   s.Box = &v
   return s
 }
 
-func (s *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth) SetTotal(v string) *QueryP2PBandwidthQueryP2PBandwidthResponseProviderDateChannelBandwidth {
+func (s *QueryP2PBandwidthResponseProviderDateChannelBandwidth) SetTotal(v string) *QueryP2PBandwidthResponseProviderDateChannelBandwidth {
   s.Total = &v
   return s
 }
@@ -3189,7 +3189,7 @@ func (s *BandwidthTotalRequest) SetIsp(v string) *BandwidthTotalRequest {
 
 type BandwidthTotalResponse struct {
   // {'en':'provider', 'zh_CN':'结果'}
-  Provider *BandwidthTotalBandwidthTotalResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+  Provider *BandwidthTotalResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
 func (s BandwidthTotalResponse) String() string {
@@ -3200,12 +3200,12 @@ func (s BandwidthTotalResponse) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthTotalResponse) SetProvider(v *BandwidthTotalBandwidthTotalResponseProvider) *BandwidthTotalResponse {
+func (s *BandwidthTotalResponse) SetProvider(v *BandwidthTotalResponseProvider) *BandwidthTotalResponse {
   s.Provider = v
   return s
 }
 
-type BandwidthTotalBandwidthTotalResponseProvider struct {
+type BandwidthTotalResponseProvider struct {
   // {'en':'tenant', 'zh_CN':'租户'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'type', 'zh_CN':'接口类型'}
@@ -3213,108 +3213,108 @@ type BandwidthTotalBandwidthTotalResponseProvider struct {
   // {'en':'resultType', 'zh_CN':'统计类型'}
   ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'时点数据'}
-  Date *BandwidthTotalBandwidthTotalResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+  Date *BandwidthTotalResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
-func (s BandwidthTotalBandwidthTotalResponseProvider) String() string {
+func (s BandwidthTotalResponseProvider) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthTotalBandwidthTotalResponseProvider) GoString() string {
+func (s BandwidthTotalResponseProvider) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthTotalBandwidthTotalResponseProvider) SetName(v string) *BandwidthTotalBandwidthTotalResponseProvider {
+func (s *BandwidthTotalResponseProvider) SetName(v string) *BandwidthTotalResponseProvider {
   s.Name = &v
   return s
 }
 
-func (s *BandwidthTotalBandwidthTotalResponseProvider) SetType(v string) *BandwidthTotalBandwidthTotalResponseProvider {
+func (s *BandwidthTotalResponseProvider) SetType(v string) *BandwidthTotalResponseProvider {
   s.Type = &v
   return s
 }
 
-func (s *BandwidthTotalBandwidthTotalResponseProvider) SetResultType(v string) *BandwidthTotalBandwidthTotalResponseProvider {
+func (s *BandwidthTotalResponseProvider) SetResultType(v string) *BandwidthTotalResponseProvider {
   s.ResultType = &v
   return s
 }
 
-func (s *BandwidthTotalBandwidthTotalResponseProvider) SetDate(v *BandwidthTotalBandwidthTotalResponseProviderDate) *BandwidthTotalBandwidthTotalResponseProvider {
+func (s *BandwidthTotalResponseProvider) SetDate(v *BandwidthTotalResponseProviderDate) *BandwidthTotalResponseProvider {
   s.Date = v
   return s
 }
 
-type BandwidthTotalBandwidthTotalResponseProviderDate struct {
+type BandwidthTotalResponseProviderDate struct {
   // {'en':'startdate', 'zh_CN':'开始时间'}
   Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
   // {'en':'enddate', 'zh_CN':'结束时间'}
   Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
   // {'en':'channel', 'zh_CN':'频道'}
-  Channel *BandwidthTotalBandwidthTotalResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+  Channel *BandwidthTotalResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
 }
 
-func (s BandwidthTotalBandwidthTotalResponseProviderDate) String() string {
+func (s BandwidthTotalResponseProviderDate) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthTotalBandwidthTotalResponseProviderDate) GoString() string {
+func (s BandwidthTotalResponseProviderDate) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthTotalBandwidthTotalResponseProviderDate) SetStartdate(v string) *BandwidthTotalBandwidthTotalResponseProviderDate {
+func (s *BandwidthTotalResponseProviderDate) SetStartdate(v string) *BandwidthTotalResponseProviderDate {
   s.Startdate = &v
   return s
 }
 
-func (s *BandwidthTotalBandwidthTotalResponseProviderDate) SetEnddate(v string) *BandwidthTotalBandwidthTotalResponseProviderDate {
+func (s *BandwidthTotalResponseProviderDate) SetEnddate(v string) *BandwidthTotalResponseProviderDate {
   s.Enddate = &v
   return s
 }
 
-func (s *BandwidthTotalBandwidthTotalResponseProviderDate) SetChannel(v *BandwidthTotalBandwidthTotalResponseProviderDateChannel) *BandwidthTotalBandwidthTotalResponseProviderDate {
+func (s *BandwidthTotalResponseProviderDate) SetChannel(v *BandwidthTotalResponseProviderDateChannel) *BandwidthTotalResponseProviderDate {
   s.Channel = v
   return s
 }
 
-type BandwidthTotalBandwidthTotalResponseProviderDateChannel struct {
+type BandwidthTotalResponseProviderDateChannel struct {
   // {'en':'channel', 'zh_CN':'频道'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'totalFlow', 'zh_CN':'总流量'}
-  TotalFlow []*BandwidthTotalBandwidthTotalResponseProviderDateChannelTotalFlow `json:"totalFlow,omitempty" xml:"totalFlow,omitempty" require:"true" type:"Repeated"`
+  TotalFlow []*BandwidthTotalResponseProviderDateChannelTotalFlow `json:"totalFlow,omitempty" xml:"totalFlow,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s BandwidthTotalBandwidthTotalResponseProviderDateChannel) String() string {
+func (s BandwidthTotalResponseProviderDateChannel) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthTotalBandwidthTotalResponseProviderDateChannel) GoString() string {
+func (s BandwidthTotalResponseProviderDateChannel) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthTotalBandwidthTotalResponseProviderDateChannel) SetName(v string) *BandwidthTotalBandwidthTotalResponseProviderDateChannel {
+func (s *BandwidthTotalResponseProviderDateChannel) SetName(v string) *BandwidthTotalResponseProviderDateChannel {
   s.Name = &v
   return s
 }
 
-func (s *BandwidthTotalBandwidthTotalResponseProviderDateChannel) SetTotalFlow(v []*BandwidthTotalBandwidthTotalResponseProviderDateChannelTotalFlow) *BandwidthTotalBandwidthTotalResponseProviderDateChannel {
+func (s *BandwidthTotalResponseProviderDateChannel) SetTotalFlow(v []*BandwidthTotalResponseProviderDateChannelTotalFlow) *BandwidthTotalResponseProviderDateChannel {
   s.TotalFlow = v
   return s
 }
 
-type BandwidthTotalBandwidthTotalResponseProviderDateChannelTotalFlow struct     {
+type BandwidthTotalResponseProviderDateChannelTotalFlow struct     {
   // {'en':'the total flow(GB)', 'zh_CN':'总流量（单位GB）'}
   Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
 }
 
-func (s BandwidthTotalBandwidthTotalResponseProviderDateChannelTotalFlow) String() string {
+func (s BandwidthTotalResponseProviderDateChannelTotalFlow) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthTotalBandwidthTotalResponseProviderDateChannelTotalFlow) GoString() string {
+func (s BandwidthTotalResponseProviderDateChannelTotalFlow) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthTotalBandwidthTotalResponseProviderDateChannelTotalFlow) SetText(v string) *BandwidthTotalBandwidthTotalResponseProviderDateChannelTotalFlow {
+func (s *BandwidthTotalResponseProviderDateChannelTotalFlow) SetText(v string) *BandwidthTotalResponseProviderDateChannelTotalFlow {
   s.Text = &v
   return s
 }
@@ -3432,7 +3432,7 @@ func (s *ReportDomainOriginResponseTimeServiceRequest) SetDomain(v []*string) *R
 
 type ReportDomainOriginResponseTimeServiceResponse struct {
   // {'en':'data', 'zh_CN':'请求结果'}
-  Data []*ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportDomainOriginResponseTimeServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportDomainOriginResponseTimeServiceResponse) String() string {
@@ -3443,37 +3443,37 @@ func (s ReportDomainOriginResponseTimeServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportDomainOriginResponseTimeServiceResponse) SetData(v []*ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseData) *ReportDomainOriginResponseTimeServiceResponse {
+func (s *ReportDomainOriginResponseTimeServiceResponse) SetData(v []*ReportDomainOriginResponseTimeServiceResponseData) *ReportDomainOriginResponseTimeServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseData struct     {
+type ReportDomainOriginResponseTimeServiceResponseData struct     {
   // {'en':'Domain', 'zh_CN':'域名'}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {'en':'details', 'zh_CN':'请求结果的详细数据'}
-  DetailList []*ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+  DetailList []*ReportDomainOriginResponseTimeServiceResponseDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseData) String() string {
+func (s ReportDomainOriginResponseTimeServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseData) GoString() string {
+func (s ReportDomainOriginResponseTimeServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseData) SetDomain(v string) *ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseData {
+func (s *ReportDomainOriginResponseTimeServiceResponseData) SetDomain(v string) *ReportDomainOriginResponseTimeServiceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseData) SetDetailList(v []*ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseDataDetailList) *ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseData {
+func (s *ReportDomainOriginResponseTimeServiceResponseData) SetDetailList(v []*ReportDomainOriginResponseTimeServiceResponseDataDetailList) *ReportDomainOriginResponseTimeServiceResponseData {
   s.DetailList = v
   return s
 }
 
-type ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseDataDetailList struct     {
+type ReportDomainOriginResponseTimeServiceResponseDataDetailList struct     {
   // {'en':'Time:
   // 
   // 1. When the data query granularity is 1m, then the format is yyyy-MM-dd HH:mm; Each time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is (yyyy-MM-dd+1) 00:00;
@@ -3487,20 +3487,20 @@ type ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceR
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseDataDetailList) String() string {
+func (s ReportDomainOriginResponseTimeServiceResponseDataDetailList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseDataDetailList) GoString() string {
+func (s ReportDomainOriginResponseTimeServiceResponseDataDetailList) GoString() string {
   return s.String()
 }
 
-func (s *ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseDataDetailList) SetTimestamp(v string) *ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseDataDetailList {
+func (s *ReportDomainOriginResponseTimeServiceResponseDataDetailList) SetTimestamp(v string) *ReportDomainOriginResponseTimeServiceResponseDataDetailList {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseDataDetailList) SetValue(v string) *ReportDomainOriginResponseTimeServiceReportDomainOriginResponseTimeServiceResponseDataDetailList {
+func (s *ReportDomainOriginResponseTimeServiceResponseDataDetailList) SetValue(v string) *ReportDomainOriginResponseTimeServiceResponseDataDetailList {
   s.Value = &v
   return s
 }
@@ -3649,7 +3649,7 @@ func (s *ReportCountryServerBandwidthServiceRequest) SetDataInterval(v string) *
 type ReportCountryServerBandwidthServiceResponse struct {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  CountryData []*ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryData `json:"countryData,omitempty" xml:"countryData,omitempty" require:"true" type:"Repeated"`
+  CountryData []*ReportCountryServerBandwidthServiceResponseCountryData `json:"countryData,omitempty" xml:"countryData,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportCountryServerBandwidthServiceResponse) String() string {
@@ -3665,36 +3665,36 @@ func (s *ReportCountryServerBandwidthServiceResponse) SetDomain(v string) *Repor
   return s
 }
 
-func (s *ReportCountryServerBandwidthServiceResponse) SetCountryData(v []*ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryData) *ReportCountryServerBandwidthServiceResponse {
+func (s *ReportCountryServerBandwidthServiceResponse) SetCountryData(v []*ReportCountryServerBandwidthServiceResponseCountryData) *ReportCountryServerBandwidthServiceResponse {
   s.CountryData = v
   return s
 }
 
-type ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryData struct     {
+type ReportCountryServerBandwidthServiceResponseCountryData struct     {
   // {"en":"Country area", "zh_CN":"国家地区"}
   CountryCode *string `json:"countryCode,omitempty" xml:"countryCode,omitempty" require:"true"`
-  DetailList []*ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+  DetailList []*ReportCountryServerBandwidthServiceResponseCountryDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryData) String() string {
+func (s ReportCountryServerBandwidthServiceResponseCountryData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryData) GoString() string {
+func (s ReportCountryServerBandwidthServiceResponseCountryData) GoString() string {
   return s.String()
 }
 
-func (s *ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryData) SetCountryCode(v string) *ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryData {
+func (s *ReportCountryServerBandwidthServiceResponseCountryData) SetCountryCode(v string) *ReportCountryServerBandwidthServiceResponseCountryData {
   s.CountryCode = &v
   return s
 }
 
-func (s *ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryData) SetDetailList(v []*ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList) *ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryData {
+func (s *ReportCountryServerBandwidthServiceResponseCountryData) SetDetailList(v []*ReportCountryServerBandwidthServiceResponseCountryDataDetailList) *ReportCountryServerBandwidthServiceResponseCountryData {
   s.DetailList = v
   return s
 }
 
-type ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList struct     {
+type ReportCountryServerBandwidthServiceResponseCountryDataDetailList struct     {
   // {"en":"Time:
   // 
   // 1. When the data query granularity is 5m, then the format is yyyy-MM-dd HH:mm; ach time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:05, and the last one is (yyyy-MM-dd+1) 00:00;
@@ -3712,25 +3712,25 @@ type ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceRespo
   Flow *string `json:"flow,omitempty" xml:"flow,omitempty" require:"true"`
 }
 
-func (s ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList) String() string {
+func (s ReportCountryServerBandwidthServiceResponseCountryDataDetailList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList) GoString() string {
+func (s ReportCountryServerBandwidthServiceResponseCountryDataDetailList) GoString() string {
   return s.String()
 }
 
-func (s *ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList) SetTimestamp(v string) *ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList {
+func (s *ReportCountryServerBandwidthServiceResponseCountryDataDetailList) SetTimestamp(v string) *ReportCountryServerBandwidthServiceResponseCountryDataDetailList {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList) SetValue(v string) *ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList {
+func (s *ReportCountryServerBandwidthServiceResponseCountryDataDetailList) SetValue(v string) *ReportCountryServerBandwidthServiceResponseCountryDataDetailList {
   s.Value = &v
   return s
 }
 
-func (s *ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList) SetFlow(v string) *ReportCountryServerBandwidthServiceReportCountryServerBandwidthServiceResponseCountryDataDetailList {
+func (s *ReportCountryServerBandwidthServiceResponseCountryDataDetailList) SetFlow(v string) *ReportCountryServerBandwidthServiceResponseCountryDataDetailList {
   s.Flow = &v
   return s
 }
@@ -3872,7 +3872,7 @@ type ReportBandwidthRequestByIPIspProvinceResponse struct {
   // {"en":"request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"result", "zh_CN":"结果"}
-  Data []*ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportBandwidthRequestByIPIspProvinceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportBandwidthRequestByIPIspProvinceResponse) String() string {
@@ -3893,73 +3893,73 @@ func (s *ReportBandwidthRequestByIPIspProvinceResponse) SetMessage(v string) *Re
   return s
 }
 
-func (s *ReportBandwidthRequestByIPIspProvinceResponse) SetData(v []*ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseData) *ReportBandwidthRequestByIPIspProvinceResponse {
+func (s *ReportBandwidthRequestByIPIspProvinceResponse) SetData(v []*ReportBandwidthRequestByIPIspProvinceResponseData) *ReportBandwidthRequestByIPIspProvinceResponse {
   s.Data = v
   return s
 }
 
-type ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseData struct     {
+type ReportBandwidthRequestByIPIspProvinceResponseData struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"ISP code", "zh_CN":"运营商code"}
-  IspData []*ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*ReportBandwidthRequestByIPIspProvinceResponseDataIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseData) String() string {
+func (s ReportBandwidthRequestByIPIspProvinceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseData) GoString() string {
+func (s ReportBandwidthRequestByIPIspProvinceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseData) SetDomain(v string) *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseData {
+func (s *ReportBandwidthRequestByIPIspProvinceResponseData) SetDomain(v string) *ReportBandwidthRequestByIPIspProvinceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseData) SetIspData(v []*ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspData) *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseData {
+func (s *ReportBandwidthRequestByIPIspProvinceResponseData) SetIspData(v []*ReportBandwidthRequestByIPIspProvinceResponseDataIspData) *ReportBandwidthRequestByIPIspProvinceResponseData {
   s.IspData = v
   return s
 }
 
-type ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspData struct     {
+type ReportBandwidthRequestByIPIspProvinceResponseDataIspData struct     {
   // {"en":"Province code", "zh_CN":"省份code"}
-  ProvinceData []*ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspData) String() string {
+func (s ReportBandwidthRequestByIPIspProvinceResponseDataIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspData) GoString() string {
+func (s ReportBandwidthRequestByIPIspProvinceResponseDataIspData) GoString() string {
   return s.String()
 }
 
-func (s *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspData) SetProvinceData(v []*ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData) *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspData {
+func (s *ReportBandwidthRequestByIPIspProvinceResponseDataIspData) SetProvinceData(v []*ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData) *ReportBandwidthRequestByIPIspProvinceResponseDataIspData {
   s.ProvinceData = v
   return s
 }
 
-type ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData struct     {
+type ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData struct     {
   // {"en":"", "zh_CN":""}
-  DetailList []*ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+  DetailList []*ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData) String() string {
+func (s ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData) GoString() string {
+func (s ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData) SetDetailList(v []*ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData {
+func (s *ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData) SetDetailList(v []*ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) *ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceData {
   s.DetailList = v
   return s
 }
 
-type ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList struct     {
+type ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList struct     {
   // {"en":"Time: 1.the format is yyyy-MM-dd HH:mm;   ach time slice value represents the value within the previous time granularity range. When the data query granularity is 5m,The first time slice of the day is yyyy-MM-dd 00:05, and the last one is (yyyy-MM-dd+1) 00:00; 2. When the data query granularity is 1m, The first time slice of the day is yyyy-MM-dd 00:05, and the last one is (yyyy-MM-dd+1) 00:00.", "zh_CN":"时间， 格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。查询的数据粒度为5m时，一天开始的时间片是yyyy-MM-dd 00:05，最后一个时间片是（yyyy-MM-dd+1） 00:00； 查询的数据粒度为1m时，一天开始的时间片是yyyy-MM-dd 00:01，最后一个时间片是（yyyy-MM-dd+1） 00:00；"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Number of IPv4 requests.", "zh_CN":"IPv4请求数"}
@@ -3972,35 +3972,35 @@ type ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceR
   V6Bandwidth *string `json:"v6Bandwidth,omitempty" xml:"v6Bandwidth,omitempty" require:"true"`
 }
 
-func (s ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) String() string {
+func (s ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) GoString() string {
+func (s ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) GoString() string {
   return s.String()
 }
 
-func (s *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) SetTimestamp(v string) *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList {
+func (s *ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) SetTimestamp(v string) *ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) SetV4Request(v string) *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList {
+func (s *ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) SetV4Request(v string) *ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList {
   s.V4Request = &v
   return s
 }
 
-func (s *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) SetV4Bandwidth(v string) *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList {
+func (s *ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) SetV4Bandwidth(v string) *ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList {
   s.V4Bandwidth = &v
   return s
 }
 
-func (s *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) SetV6Request(v string) *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList {
+func (s *ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) SetV6Request(v string) *ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList {
   s.V6Request = &v
   return s
 }
 
-func (s *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) SetV6Bandwidth(v string) *ReportBandwidthRequestByIPIspProvinceReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList {
+func (s *ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList) SetV6Bandwidth(v string) *ReportBandwidthRequestByIPIspProvinceResponseDataIspDataProvinceDataDetailList {
   s.V6Bandwidth = &v
   return s
 }
@@ -4132,7 +4132,7 @@ type QueryBandwidthMinutelyResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*QueryBandwidthMinutelyResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryBandwidthMinutelyResponse) String() string {
@@ -4153,12 +4153,12 @@ func (s *QueryBandwidthMinutelyResponse) SetMessage(v string) *QueryBandwidthMin
   return s
 }
 
-func (s *QueryBandwidthMinutelyResponse) SetData(v []*QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData) *QueryBandwidthMinutelyResponse {
+func (s *QueryBandwidthMinutelyResponse) SetData(v []*QueryBandwidthMinutelyResponseData) *QueryBandwidthMinutelyResponse {
   s.Data = v
   return s
 }
 
-type QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData struct     {
+type QueryBandwidthMinutelyResponseData struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"Peak Time", "zh_CN":"峰值时间"}
@@ -4173,35 +4173,35 @@ type QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData struct     {
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData) String() string {
+func (s QueryBandwidthMinutelyResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData) GoString() string {
+func (s QueryBandwidthMinutelyResponseData) GoString() string {
   return s.String()
 }
 
-func (s *QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData) SetDomain(v string) *QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData {
+func (s *QueryBandwidthMinutelyResponseData) SetDomain(v string) *QueryBandwidthMinutelyResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData) SetPeakTime(v string) *QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData {
+func (s *QueryBandwidthMinutelyResponseData) SetPeakTime(v string) *QueryBandwidthMinutelyResponseData {
   s.PeakTime = &v
   return s
 }
 
-func (s *QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData) SetPeakValue(v string) *QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData {
+func (s *QueryBandwidthMinutelyResponseData) SetPeakValue(v string) *QueryBandwidthMinutelyResponseData {
   s.PeakValue = &v
   return s
 }
 
-func (s *QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData) SetTimestamp(v string) *QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData {
+func (s *QueryBandwidthMinutelyResponseData) SetTimestamp(v string) *QueryBandwidthMinutelyResponseData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData) SetValue(v string) *QueryBandwidthMinutelyQueryBandwidthMinutelyResponseData {
+func (s *QueryBandwidthMinutelyResponseData) SetValue(v string) *QueryBandwidthMinutelyResponseData {
   s.Value = &v
   return s
 }
@@ -4333,7 +4333,7 @@ type ReportLogBandwidthMultiDomainEcdnEdgeServiceResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceResponse) String() string {
@@ -4354,12 +4354,12 @@ func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponse) SetMessage(v stri
   return s
 }
 
-func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponse) SetData(v []*ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponse {
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponse) SetData(v []*ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData struct     {
+type ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData struct     {
   // {"en":"Domain name. If you do not select domain name group Dimension, this field is a semicolon-separated string of all domain names.", "zh_CN":"域名，如果不选择域名分组维度，该字段为所有域名以分号分隔的字符串。"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"Peak Bandwidth,unit is Mbps,example(9811.21Mbps)", "zh_CN":"峰值带宽 Mbps，示例 （931556.21 Mbps）"}
@@ -4368,63 +4368,63 @@ type ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEc
   PeakTime *string `json:"peakTime,omitempty" xml:"peakTime,omitempty" require:"true"`
   // {"en":"Edge total traffic,example(74099.91MB)", "zh_CN":"边缘总流量，示例 ( 74099.92 MB )"}
   Total *string `json:"total,omitempty" xml:"total,omitempty" require:"true"`
-  BandwidthData []*ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData `json:"bandwidthData,omitempty" xml:"bandwidthData,omitempty" require:"true" type:"Repeated"`
+  BandwidthData []*ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData `json:"bandwidthData,omitempty" xml:"bandwidthData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) String() string {
+func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) GoString() string {
+func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) SetDomain(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData {
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) SetDomain(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) SetPeakValue(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData {
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) SetPeakValue(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData {
   s.PeakValue = &v
   return s
 }
 
-func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) SetPeakTime(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData {
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) SetPeakTime(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData {
   s.PeakTime = &v
   return s
 }
 
-func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) SetTotal(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData {
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) SetTotal(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData {
   s.Total = &v
   return s
 }
 
-func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) SetBandwidthData(v []*ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData) *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData {
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData) SetBandwidthData(v []*ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData) *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseData {
   s.BandwidthData = v
   return s
 }
 
-type ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData struct     {
+type ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData struct     {
   // {"en":"The data granularity is 1 minute,the format is yyyy-MM-dd HH:mm", "zh_CN":"数据粒度为5分钟，格式为yyyy-MM-dd HH:mm；"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Edge bandwidth,the unit is Mbps,keep 2 decimal places", "zh_CN":"边缘带宽值，单位Mbps，保留2位小数。"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData) String() string {
+func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData) GoString() string {
+func (s ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData) GoString() string {
   return s.String()
 }
 
-func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData) SetTimestamp(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData {
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData) SetTimestamp(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData) SetValue(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData {
+func (s *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData) SetValue(v string) *ReportLogBandwidthMultiDomainEcdnEdgeServiceResponseDataBandwidthData {
   s.Value = &v
   return s
 }
@@ -4546,7 +4546,7 @@ type ReportP2SPOriginBandwidthWildcardDomainServiceResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {'en':'Request result information', 'zh_CN':'请求结果信息'}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportP2SPOriginBandwidthWildcardDomainServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportP2SPOriginBandwidthWildcardDomainServiceResponse) String() string {
@@ -4567,60 +4567,60 @@ func (s *ReportP2SPOriginBandwidthWildcardDomainServiceResponse) SetMessage(v st
   return s
 }
 
-func (s *ReportP2SPOriginBandwidthWildcardDomainServiceResponse) SetData(v []*ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseData) *ReportP2SPOriginBandwidthWildcardDomainServiceResponse {
+func (s *ReportP2SPOriginBandwidthWildcardDomainServiceResponse) SetData(v []*ReportP2SPOriginBandwidthWildcardDomainServiceResponseData) *ReportP2SPOriginBandwidthWildcardDomainServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseData struct     {
+type ReportP2SPOriginBandwidthWildcardDomainServiceResponseData struct     {
   // {'en':'Wildcard domain', 'zh_CN':'泛域名'}
   WildcardDomain *string `json:"wildcardDomain,omitempty" xml:"wildcardDomain,omitempty" require:"true"`
-  DomainList []*ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList `json:"domainList,omitempty" xml:"domainList,omitempty" require:"true" type:"Repeated"`
+  DomainList []*ReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList `json:"domainList,omitempty" xml:"domainList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseData) String() string {
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseData) GoString() string {
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseData) SetWildcardDomain(v string) *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseData {
+func (s *ReportP2SPOriginBandwidthWildcardDomainServiceResponseData) SetWildcardDomain(v string) *ReportP2SPOriginBandwidthWildcardDomainServiceResponseData {
   s.WildcardDomain = &v
   return s
 }
 
-func (s *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseData) SetDomainList(v []*ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList) *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseData {
+func (s *ReportP2SPOriginBandwidthWildcardDomainServiceResponseData) SetDomainList(v []*ReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList) *ReportP2SPOriginBandwidthWildcardDomainServiceResponseData {
   s.DomainList = v
   return s
 }
 
-type ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList struct     {
+type ReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList struct     {
   // {'en':'Domain', 'zh_CN':'明细域名'}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  OriginBandwidthList []*ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList `json:"originBandwidthList,omitempty" xml:"originBandwidthList,omitempty" require:"true" type:"Repeated"`
+  OriginBandwidthList []*ReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList `json:"originBandwidthList,omitempty" xml:"originBandwidthList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList) String() string {
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList) GoString() string {
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList) GoString() string {
   return s.String()
 }
 
-func (s *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList) SetDomain(v string) *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList {
+func (s *ReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList) SetDomain(v string) *ReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList {
   s.Domain = &v
   return s
 }
 
-func (s *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList) SetOriginBandwidthList(v []*ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList) *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList {
+func (s *ReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList) SetOriginBandwidthList(v []*ReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList) *ReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainList {
   s.OriginBandwidthList = v
   return s
 }
 
-type ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList struct     {
+type ReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList struct     {
   // {'en':'Time:
   // 1. When the data query granularity is 5m, then the format is yyyy-MM-dd HH:mm; Each time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:05, and the last one is (yyyy-MM-dd+1) 00:00;
   // 2. Return the time slices that contained in start time and in end time.', 'zh_CN':'时间,
@@ -4631,20 +4631,20 @@ type ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWild
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList) String() string {
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList) GoString() string {
+func (s ReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList) GoString() string {
   return s.String()
 }
 
-func (s *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList) SetTimestamp(v string) *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList {
+func (s *ReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList) SetTimestamp(v string) *ReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList) SetValue(v string) *ReportP2SPOriginBandwidthWildcardDomainServiceReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList {
+func (s *ReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList) SetValue(v string) *ReportP2SPOriginBandwidthWildcardDomainServiceResponseDataDomainListOriginBandwidthList {
   s.Value = &v
   return s
 }
@@ -4776,7 +4776,7 @@ func (s *ReportIPV6BandwidthServiceRequest) SetDataInterval(v string) *ReportIPV
 }
 
 type ReportIPV6BandwidthServiceResponse struct {
-  Data []*ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportIPV6BandwidthServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportIPV6BandwidthServiceResponse) String() string {
@@ -4787,36 +4787,36 @@ func (s ReportIPV6BandwidthServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportIPV6BandwidthServiceResponse) SetData(v []*ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseData) *ReportIPV6BandwidthServiceResponse {
+func (s *ReportIPV6BandwidthServiceResponse) SetData(v []*ReportIPV6BandwidthServiceResponseData) *ReportIPV6BandwidthServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseData struct     {
+type ReportIPV6BandwidthServiceResponseData struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  DetailList []*ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
+  DetailList []*ReportIPV6BandwidthServiceResponseDataDetailList `json:"detailList,omitempty" xml:"detailList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseData) String() string {
+func (s ReportIPV6BandwidthServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseData) GoString() string {
+func (s ReportIPV6BandwidthServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseData) SetDomain(v string) *ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseData {
+func (s *ReportIPV6BandwidthServiceResponseData) SetDomain(v string) *ReportIPV6BandwidthServiceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseData) SetDetailList(v []*ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList) *ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseData {
+func (s *ReportIPV6BandwidthServiceResponseData) SetDetailList(v []*ReportIPV6BandwidthServiceResponseDataDetailList) *ReportIPV6BandwidthServiceResponseData {
   s.DetailList = v
   return s
 }
 
-type ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList struct     {
+type ReportIPV6BandwidthServiceResponseDataDetailList struct     {
   // {"en":"Time:
   // 1. When the data query granularity is 5m, then the format is yyyy-MM-dd HH:mm; ach time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:05, and the last one is (yyyy-MM-dd+1) 00:00;", "zh_CN":"时间,
   // 查询的数据粒度为5m时,格式为yyyy-MM-dd HH:mm;每一个时间片数据值代表的是前一个时间粒度范围内的数据值.一天开始的时间片是yyyy-MM-dd 00:05,最后一个时间片是(yyyy-MM-dd+1) 00:00;
@@ -4829,25 +4829,25 @@ type ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList 
   Flow *string `json:"flow,omitempty" xml:"flow,omitempty" require:"true"`
 }
 
-func (s ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList) String() string {
+func (s ReportIPV6BandwidthServiceResponseDataDetailList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList) GoString() string {
+func (s ReportIPV6BandwidthServiceResponseDataDetailList) GoString() string {
   return s.String()
 }
 
-func (s *ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList) SetTimestamp(v string) *ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList {
+func (s *ReportIPV6BandwidthServiceResponseDataDetailList) SetTimestamp(v string) *ReportIPV6BandwidthServiceResponseDataDetailList {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList) SetValue(v string) *ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList {
+func (s *ReportIPV6BandwidthServiceResponseDataDetailList) SetValue(v string) *ReportIPV6BandwidthServiceResponseDataDetailList {
   s.Value = &v
   return s
 }
 
-func (s *ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList) SetFlow(v string) *ReportIPV6BandwidthServiceReportIPV6BandwidthServiceResponseDataDetailList {
+func (s *ReportIPV6BandwidthServiceResponseDataDetailList) SetFlow(v string) *ReportIPV6BandwidthServiceResponseDataDetailList {
   s.Flow = &v
   return s
 }
@@ -4991,7 +4991,7 @@ func (s *ChannelValueSumRequest) SetDataformat(v string) *ChannelValueSumRequest
 
 type ChannelValueSumResponse struct {
   // {'en':'provider', 'zh_CN':'结果'}
-  Provider *ChannelValueSumChannelValueSumResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+  Provider *ChannelValueSumResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
 func (s ChannelValueSumResponse) String() string {
@@ -5002,12 +5002,12 @@ func (s ChannelValueSumResponse) GoString() string {
   return s.String()
 }
 
-func (s *ChannelValueSumResponse) SetProvider(v *ChannelValueSumChannelValueSumResponseProvider) *ChannelValueSumResponse {
+func (s *ChannelValueSumResponse) SetProvider(v *ChannelValueSumResponseProvider) *ChannelValueSumResponse {
   s.Provider = v
   return s
 }
 
-type ChannelValueSumChannelValueSumResponseProvider struct {
+type ChannelValueSumResponseProvider struct {
   // {'en':'tenant', 'zh_CN':'租户'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'type', 'zh_CN':'接口类型'}
@@ -5015,95 +5015,95 @@ type ChannelValueSumChannelValueSumResponseProvider struct {
   // {'en':'resultType', 'zh_CN':'统计类型'}
   ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'多域名总计费带宽数据'}
-  Date *ChannelValueSumChannelValueSumResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+  Date *ChannelValueSumResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
-func (s ChannelValueSumChannelValueSumResponseProvider) String() string {
+func (s ChannelValueSumResponseProvider) String() string {
   return tea.Prettify(s)
 }
 
-func (s ChannelValueSumChannelValueSumResponseProvider) GoString() string {
+func (s ChannelValueSumResponseProvider) GoString() string {
   return s.String()
 }
 
-func (s *ChannelValueSumChannelValueSumResponseProvider) SetName(v string) *ChannelValueSumChannelValueSumResponseProvider {
+func (s *ChannelValueSumResponseProvider) SetName(v string) *ChannelValueSumResponseProvider {
   s.Name = &v
   return s
 }
 
-func (s *ChannelValueSumChannelValueSumResponseProvider) SetType(v string) *ChannelValueSumChannelValueSumResponseProvider {
+func (s *ChannelValueSumResponseProvider) SetType(v string) *ChannelValueSumResponseProvider {
   s.Type = &v
   return s
 }
 
-func (s *ChannelValueSumChannelValueSumResponseProvider) SetResultType(v string) *ChannelValueSumChannelValueSumResponseProvider {
+func (s *ChannelValueSumResponseProvider) SetResultType(v string) *ChannelValueSumResponseProvider {
   s.ResultType = &v
   return s
 }
 
-func (s *ChannelValueSumChannelValueSumResponseProvider) SetDate(v *ChannelValueSumChannelValueSumResponseProviderDate) *ChannelValueSumChannelValueSumResponseProvider {
+func (s *ChannelValueSumResponseProvider) SetDate(v *ChannelValueSumResponseProviderDate) *ChannelValueSumResponseProvider {
   s.Date = v
   return s
 }
 
-type ChannelValueSumChannelValueSumResponseProviderDate struct {
+type ChannelValueSumResponseProviderDate struct {
   // {'en':'startdate', 'zh_CN':'开始时间'}
   Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
   // {'en':'enddate', 'zh_CN':'结束时间'}
   Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
   // {'en':'information', 'zh_CN':'频道计费数据'}
-  Information []*ChannelValueSumChannelValueSumResponseProviderDateInformation `json:"information,omitempty" xml:"information,omitempty" require:"true" type:"Repeated"`
+  Information []*ChannelValueSumResponseProviderDateInformation `json:"information,omitempty" xml:"information,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ChannelValueSumChannelValueSumResponseProviderDate) String() string {
+func (s ChannelValueSumResponseProviderDate) String() string {
   return tea.Prettify(s)
 }
 
-func (s ChannelValueSumChannelValueSumResponseProviderDate) GoString() string {
+func (s ChannelValueSumResponseProviderDate) GoString() string {
   return s.String()
 }
 
-func (s *ChannelValueSumChannelValueSumResponseProviderDate) SetStartdate(v string) *ChannelValueSumChannelValueSumResponseProviderDate {
+func (s *ChannelValueSumResponseProviderDate) SetStartdate(v string) *ChannelValueSumResponseProviderDate {
   s.Startdate = &v
   return s
 }
 
-func (s *ChannelValueSumChannelValueSumResponseProviderDate) SetEnddate(v string) *ChannelValueSumChannelValueSumResponseProviderDate {
+func (s *ChannelValueSumResponseProviderDate) SetEnddate(v string) *ChannelValueSumResponseProviderDate {
   s.Enddate = &v
   return s
 }
 
-func (s *ChannelValueSumChannelValueSumResponseProviderDate) SetInformation(v []*ChannelValueSumChannelValueSumResponseProviderDateInformation) *ChannelValueSumChannelValueSumResponseProviderDate {
+func (s *ChannelValueSumResponseProviderDate) SetInformation(v []*ChannelValueSumResponseProviderDateInformation) *ChannelValueSumResponseProviderDate {
   s.Information = v
   return s
 }
 
-type ChannelValueSumChannelValueSumResponseProviderDateInformation struct     {
+type ChannelValueSumResponseProviderDateInformation struct     {
   // {'en':'channel', 'zh_CN':'频道'}
   Channel *string `json:"channel,omitempty" xml:"channel,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'带宽数据'}
-  Bandwidth []*ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
+  Bandwidth []*ChannelValueSumResponseProviderDateInformationBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ChannelValueSumChannelValueSumResponseProviderDateInformation) String() string {
+func (s ChannelValueSumResponseProviderDateInformation) String() string {
   return tea.Prettify(s)
 }
 
-func (s ChannelValueSumChannelValueSumResponseProviderDateInformation) GoString() string {
+func (s ChannelValueSumResponseProviderDateInformation) GoString() string {
   return s.String()
 }
 
-func (s *ChannelValueSumChannelValueSumResponseProviderDateInformation) SetChannel(v string) *ChannelValueSumChannelValueSumResponseProviderDateInformation {
+func (s *ChannelValueSumResponseProviderDateInformation) SetChannel(v string) *ChannelValueSumResponseProviderDateInformation {
   s.Channel = &v
   return s
 }
 
-func (s *ChannelValueSumChannelValueSumResponseProviderDateInformation) SetBandwidth(v []*ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth) *ChannelValueSumChannelValueSumResponseProviderDateInformation {
+func (s *ChannelValueSumResponseProviderDateInformation) SetBandwidth(v []*ChannelValueSumResponseProviderDateInformationBandwidth) *ChannelValueSumResponseProviderDateInformation {
   s.Bandwidth = v
   return s
 }
 
-type ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth struct     {
+type ChannelValueSumResponseProviderDateInformationBandwidth struct     {
   // {'en':'timestamp', 'zh_CN':'时间点'}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
   // {'en':'charge method', 'zh_CN':'计费方式'}
@@ -5114,30 +5114,30 @@ type ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth stru
   Unit *string `json:"unit,omitempty" xml:"unit,omitempty" require:"true"`
 }
 
-func (s ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth) String() string {
+func (s ChannelValueSumResponseProviderDateInformationBandwidth) String() string {
   return tea.Prettify(s)
 }
 
-func (s ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth) GoString() string {
+func (s ChannelValueSumResponseProviderDateInformationBandwidth) GoString() string {
   return s.String()
 }
 
-func (s *ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth) SetTime(v string) *ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth {
+func (s *ChannelValueSumResponseProviderDateInformationBandwidth) SetTime(v string) *ChannelValueSumResponseProviderDateInformationBandwidth {
   s.Time = &v
   return s
 }
 
-func (s *ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth) SetChargeMethod(v string) *ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth {
+func (s *ChannelValueSumResponseProviderDateInformationBandwidth) SetChargeMethod(v string) *ChannelValueSumResponseProviderDateInformationBandwidth {
   s.ChargeMethod = &v
   return s
 }
 
-func (s *ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth) SetValue(v string) *ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth {
+func (s *ChannelValueSumResponseProviderDateInformationBandwidth) SetValue(v string) *ChannelValueSumResponseProviderDateInformationBandwidth {
   s.Value = &v
   return s
 }
 
-func (s *ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth) SetUnit(v string) *ChannelValueSumChannelValueSumResponseProviderDateInformationBandwidth {
+func (s *ChannelValueSumResponseProviderDateInformationBandwidth) SetUnit(v string) *ChannelValueSumResponseProviderDateInformationBandwidth {
   s.Unit = &v
   return s
 }
@@ -5266,7 +5266,7 @@ type ReportLowDelayCountryBandwidthServiceResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportLowDelayCountryBandwidthServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportLowDelayCountryBandwidthServiceResponse) String() string {
@@ -5287,60 +5287,60 @@ func (s *ReportLowDelayCountryBandwidthServiceResponse) SetMessage(v string) *Re
   return s
 }
 
-func (s *ReportLowDelayCountryBandwidthServiceResponse) SetData(v []*ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseData) *ReportLowDelayCountryBandwidthServiceResponse {
+func (s *ReportLowDelayCountryBandwidthServiceResponse) SetData(v []*ReportLowDelayCountryBandwidthServiceResponseData) *ReportLowDelayCountryBandwidthServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseData struct     {
+type ReportLowDelayCountryBandwidthServiceResponseData struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  CountryData []*ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryData `json:"countryData,omitempty" xml:"countryData,omitempty" require:"true" type:"Repeated"`
+  CountryData []*ReportLowDelayCountryBandwidthServiceResponseDataCountryData `json:"countryData,omitempty" xml:"countryData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseData) String() string {
+func (s ReportLowDelayCountryBandwidthServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseData) GoString() string {
+func (s ReportLowDelayCountryBandwidthServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseData) SetDomain(v string) *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseData {
+func (s *ReportLowDelayCountryBandwidthServiceResponseData) SetDomain(v string) *ReportLowDelayCountryBandwidthServiceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseData) SetCountryData(v []*ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryData) *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseData {
+func (s *ReportLowDelayCountryBandwidthServiceResponseData) SetCountryData(v []*ReportLowDelayCountryBandwidthServiceResponseDataCountryData) *ReportLowDelayCountryBandwidthServiceResponseData {
   s.CountryData = v
   return s
 }
 
-type ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryData struct     {
+type ReportLowDelayCountryBandwidthServiceResponseDataCountryData struct     {
   // {"en":"CountryCode", "zh_CN":"国家地区"}
   CountryCode *string `json:"countryCode,omitempty" xml:"countryCode,omitempty" require:"true"`
-  BandwidthList []*ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList `json:"bandwidthList,omitempty" xml:"bandwidthList,omitempty" require:"true" type:"Repeated"`
+  BandwidthList []*ReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList `json:"bandwidthList,omitempty" xml:"bandwidthList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryData) String() string {
+func (s ReportLowDelayCountryBandwidthServiceResponseDataCountryData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryData) GoString() string {
+func (s ReportLowDelayCountryBandwidthServiceResponseDataCountryData) GoString() string {
   return s.String()
 }
 
-func (s *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryData) SetCountryCode(v string) *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryData {
+func (s *ReportLowDelayCountryBandwidthServiceResponseDataCountryData) SetCountryCode(v string) *ReportLowDelayCountryBandwidthServiceResponseDataCountryData {
   s.CountryCode = &v
   return s
 }
 
-func (s *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryData) SetBandwidthList(v []*ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList) *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryData {
+func (s *ReportLowDelayCountryBandwidthServiceResponseDataCountryData) SetBandwidthList(v []*ReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList) *ReportLowDelayCountryBandwidthServiceResponseDataCountryData {
   s.BandwidthList = v
   return s
 }
 
-type ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList struct     {
+type ReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList struct     {
   // {"en":"time:
   // 																	1.When the query data granularity is 5m, the format is yyyy-MM-dd HH:mm; each time slice data value represents the data value within the previous time granularity range. 
   // 																	2.The time slice at the beginning of a day is yyyy-MM-dd 00:05, and the last time slice is (yyyy-MM-dd+1) 00:00; return the time slice included in the start time and end time.", "zh_CN":"时间:
@@ -5351,20 +5351,20 @@ type ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceR
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList) String() string {
+func (s ReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList) GoString() string {
+func (s ReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList) GoString() string {
   return s.String()
 }
 
-func (s *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList) SetTimestamp(v string) *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList {
+func (s *ReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList) SetTimestamp(v string) *ReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList) SetValue(v string) *ReportLowDelayCountryBandwidthServiceReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList {
+func (s *ReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList) SetValue(v string) *ReportLowDelayCountryBandwidthServiceResponseDataCountryDataBandwidthList {
   s.Value = &v
   return s
 }
@@ -5514,7 +5514,7 @@ type ReportLogFlowIspProvinceServiceResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportLogFlowIspProvinceServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportLogFlowIspProvinceServiceResponse) String() string {
@@ -5535,84 +5535,84 @@ func (s *ReportLogFlowIspProvinceServiceResponse) SetMessage(v string) *ReportLo
   return s
 }
 
-func (s *ReportLogFlowIspProvinceServiceResponse) SetData(v []*ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseData) *ReportLogFlowIspProvinceServiceResponse {
+func (s *ReportLogFlowIspProvinceServiceResponse) SetData(v []*ReportLogFlowIspProvinceServiceResponseData) *ReportLogFlowIspProvinceServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseData struct     {
+type ReportLogFlowIspProvinceServiceResponseData struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  IspData []*ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*ReportLogFlowIspProvinceServiceResponseDataIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseData) String() string {
+func (s ReportLogFlowIspProvinceServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseData) GoString() string {
+func (s ReportLogFlowIspProvinceServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseData) SetDomain(v string) *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseData {
+func (s *ReportLogFlowIspProvinceServiceResponseData) SetDomain(v string) *ReportLogFlowIspProvinceServiceResponseData {
   s.Domain = &v
   return s
 }
 
-func (s *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseData) SetIspData(v []*ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspData) *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseData {
+func (s *ReportLogFlowIspProvinceServiceResponseData) SetIspData(v []*ReportLogFlowIspProvinceServiceResponseDataIspData) *ReportLogFlowIspProvinceServiceResponseData {
   s.IspData = v
   return s
 }
 
-type ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspData struct     {
+type ReportLogFlowIspProvinceServiceResponseDataIspData struct     {
   // {"en":"ISP", "zh_CN":"运营商"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
-  ProvinceData []*ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*ReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspData) String() string {
+func (s ReportLogFlowIspProvinceServiceResponseDataIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspData) GoString() string {
+func (s ReportLogFlowIspProvinceServiceResponseDataIspData) GoString() string {
   return s.String()
 }
 
-func (s *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspData) SetIsp(v string) *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspData {
+func (s *ReportLogFlowIspProvinceServiceResponseDataIspData) SetIsp(v string) *ReportLogFlowIspProvinceServiceResponseDataIspData {
   s.Isp = &v
   return s
 }
 
-func (s *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspData) SetProvinceData(v []*ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData) *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspData {
+func (s *ReportLogFlowIspProvinceServiceResponseDataIspData) SetProvinceData(v []*ReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData) *ReportLogFlowIspProvinceServiceResponseDataIspData {
   s.ProvinceData = v
   return s
 }
 
-type ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData struct     {
+type ReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData struct     {
   // {"en":"Province", "zh_CN":"省份"}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
-  Details []*ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
+  Details []*ReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData) String() string {
+func (s ReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData) GoString() string {
+func (s ReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData) SetProvince(v string) *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData {
+func (s *ReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData) SetProvince(v string) *ReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData {
   s.Province = &v
   return s
 }
 
-func (s *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData) SetDetails(v []*ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails) *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData {
+func (s *ReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData) SetDetails(v []*ReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails) *ReportLogFlowIspProvinceServiceResponseDataIspDataProvinceData {
   s.Details = v
   return s
 }
 
-type ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails struct     {
+type ReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails struct     {
   // {"en":"Time:
   // 				1.When the data query granularity is 5m, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 12:05 AM, and the last one is (yyyy-MM-dd+1) 00:00;
   // 				2.When the data query granularity is 1h, the format is yyyy-MM-dd HH; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is (yyyy-MM-dd+1) 00;
@@ -5628,25 +5628,25 @@ type ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataI
   Bandwidth *string `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true"`
 }
 
-func (s ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails) String() string {
+func (s ReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails) GoString() string {
+func (s ReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails) GoString() string {
   return s.String()
 }
 
-func (s *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails) SetTimestamp(v string) *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails {
+func (s *ReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails) SetTimestamp(v string) *ReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails) SetFlow(v string) *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails {
+func (s *ReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails) SetFlow(v string) *ReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails {
   s.Flow = &v
   return s
 }
 
-func (s *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails) SetBandwidth(v string) *ReportLogFlowIspProvinceServiceReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails {
+func (s *ReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails) SetBandwidth(v string) *ReportLogFlowIspProvinceServiceResponseDataIspDataProvinceDataDetails {
   s.Bandwidth = &v
   return s
 }
@@ -5838,7 +5838,7 @@ func (s *BandwidthVmRequest) SetGroupBy(v string) *BandwidthVmRequest {
 
 type BandwidthVmResponse struct {
   // {'en':'provider', 'zh_CN':'结果'}
-  Provider *BandwidthVmBandwidthVmResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+  Provider *BandwidthVmResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
 func (s BandwidthVmResponse) String() string {
@@ -5849,133 +5849,133 @@ func (s BandwidthVmResponse) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthVmResponse) SetProvider(v *BandwidthVmBandwidthVmResponseProvider) *BandwidthVmResponse {
+func (s *BandwidthVmResponse) SetProvider(v *BandwidthVmResponseProvider) *BandwidthVmResponse {
   s.Provider = v
   return s
 }
 
-type BandwidthVmBandwidthVmResponseProvider struct {
+type BandwidthVmResponseProvider struct {
   // {'en':'tenant', 'zh_CN':'租户'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'type', 'zh_CN':'接口类型'}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'频道带宽数据'}
-  Date *BandwidthVmBandwidthVmResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+  Date *BandwidthVmResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
-func (s BandwidthVmBandwidthVmResponseProvider) String() string {
+func (s BandwidthVmResponseProvider) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthVmBandwidthVmResponseProvider) GoString() string {
+func (s BandwidthVmResponseProvider) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthVmBandwidthVmResponseProvider) SetName(v string) *BandwidthVmBandwidthVmResponseProvider {
+func (s *BandwidthVmResponseProvider) SetName(v string) *BandwidthVmResponseProvider {
   s.Name = &v
   return s
 }
 
-func (s *BandwidthVmBandwidthVmResponseProvider) SetType(v string) *BandwidthVmBandwidthVmResponseProvider {
+func (s *BandwidthVmResponseProvider) SetType(v string) *BandwidthVmResponseProvider {
   s.Type = &v
   return s
 }
 
-func (s *BandwidthVmBandwidthVmResponseProvider) SetDate(v *BandwidthVmBandwidthVmResponseProviderDate) *BandwidthVmBandwidthVmResponseProvider {
+func (s *BandwidthVmResponseProvider) SetDate(v *BandwidthVmResponseProviderDate) *BandwidthVmResponseProvider {
   s.Date = v
   return s
 }
 
-type BandwidthVmBandwidthVmResponseProviderDate struct {
+type BandwidthVmResponseProviderDate struct {
   // {'en':'startdate', 'zh_CN':'开始时间'}
   Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
   // {'en':'enddate', 'zh_CN':'结束时间'}
   Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
   // {'en':'channel', 'zh_CN':'频道'}
-  Channel *BandwidthVmBandwidthVmResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+  Channel *BandwidthVmResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
   // {'en':'isp', 'zh_CN':'运营商'}
-  Isp *BandwidthVmBandwidthVmResponseProviderDateIsp `json:"isp,omitempty" xml:"isp,omitempty" require:"true" type:"Struct"`
+  Isp *BandwidthVmResponseProviderDateIsp `json:"isp,omitempty" xml:"isp,omitempty" require:"true" type:"Struct"`
 }
 
-func (s BandwidthVmBandwidthVmResponseProviderDate) String() string {
+func (s BandwidthVmResponseProviderDate) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthVmBandwidthVmResponseProviderDate) GoString() string {
+func (s BandwidthVmResponseProviderDate) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthVmBandwidthVmResponseProviderDate) SetStartdate(v string) *BandwidthVmBandwidthVmResponseProviderDate {
+func (s *BandwidthVmResponseProviderDate) SetStartdate(v string) *BandwidthVmResponseProviderDate {
   s.Startdate = &v
   return s
 }
 
-func (s *BandwidthVmBandwidthVmResponseProviderDate) SetEnddate(v string) *BandwidthVmBandwidthVmResponseProviderDate {
+func (s *BandwidthVmResponseProviderDate) SetEnddate(v string) *BandwidthVmResponseProviderDate {
   s.Enddate = &v
   return s
 }
 
-func (s *BandwidthVmBandwidthVmResponseProviderDate) SetChannel(v *BandwidthVmBandwidthVmResponseProviderDateChannel) *BandwidthVmBandwidthVmResponseProviderDate {
+func (s *BandwidthVmResponseProviderDate) SetChannel(v *BandwidthVmResponseProviderDateChannel) *BandwidthVmResponseProviderDate {
   s.Channel = v
   return s
 }
 
-func (s *BandwidthVmBandwidthVmResponseProviderDate) SetIsp(v *BandwidthVmBandwidthVmResponseProviderDateIsp) *BandwidthVmBandwidthVmResponseProviderDate {
+func (s *BandwidthVmResponseProviderDate) SetIsp(v *BandwidthVmResponseProviderDateIsp) *BandwidthVmResponseProviderDate {
   s.Isp = v
   return s
 }
 
-type BandwidthVmBandwidthVmResponseProviderDateChannel struct {
+type BandwidthVmResponseProviderDateChannel struct {
   // {'en':'channel', 'zh_CN':'频道'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'带宽数据'}
-  Bandwidth []*BandwidthVmBandwidthVmResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
+  Bandwidth []*BandwidthVmResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s BandwidthVmBandwidthVmResponseProviderDateChannel) String() string {
+func (s BandwidthVmResponseProviderDateChannel) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthVmBandwidthVmResponseProviderDateChannel) GoString() string {
+func (s BandwidthVmResponseProviderDateChannel) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthVmBandwidthVmResponseProviderDateChannel) SetName(v string) *BandwidthVmBandwidthVmResponseProviderDateChannel {
+func (s *BandwidthVmResponseProviderDateChannel) SetName(v string) *BandwidthVmResponseProviderDateChannel {
   s.Name = &v
   return s
 }
 
-func (s *BandwidthVmBandwidthVmResponseProviderDateChannel) SetBandwidth(v []*BandwidthVmBandwidthVmResponseProviderDateChannelBandwidth) *BandwidthVmBandwidthVmResponseProviderDateChannel {
+func (s *BandwidthVmResponseProviderDateChannel) SetBandwidth(v []*BandwidthVmResponseProviderDateChannelBandwidth) *BandwidthVmResponseProviderDateChannel {
   s.Bandwidth = v
   return s
 }
 
-type BandwidthVmBandwidthVmResponseProviderDateChannelBandwidth struct     {
+type BandwidthVmResponseProviderDateChannelBandwidth struct     {
   // {'en':'timestamp', 'zh_CN':'时间点'}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'带宽'}
   Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
 }
 
-func (s BandwidthVmBandwidthVmResponseProviderDateChannelBandwidth) String() string {
+func (s BandwidthVmResponseProviderDateChannelBandwidth) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthVmBandwidthVmResponseProviderDateChannelBandwidth) GoString() string {
+func (s BandwidthVmResponseProviderDateChannelBandwidth) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthVmBandwidthVmResponseProviderDateChannelBandwidth) SetTime(v string) *BandwidthVmBandwidthVmResponseProviderDateChannelBandwidth {
+func (s *BandwidthVmResponseProviderDateChannelBandwidth) SetTime(v string) *BandwidthVmResponseProviderDateChannelBandwidth {
   s.Time = &v
   return s
 }
 
-func (s *BandwidthVmBandwidthVmResponseProviderDateChannelBandwidth) SetText(v string) *BandwidthVmBandwidthVmResponseProviderDateChannelBandwidth {
+func (s *BandwidthVmResponseProviderDateChannelBandwidth) SetText(v string) *BandwidthVmResponseProviderDateChannelBandwidth {
   s.Text = &v
   return s
 }
 
-type BandwidthVmBandwidthVmResponseProviderDateIsp struct {
+type BandwidthVmResponseProviderDateIsp struct {
   // {'en':'isp id', 'zh_CN':'isp id'}
   Ispid *string `json:"ispid,omitempty" xml:"ispid,omitempty" require:"true"`
   // {'en':'node', 'zh_CN':'节点名称'}
@@ -5986,30 +5986,30 @@ type BandwidthVmBandwidthVmResponseProviderDateIsp struct {
   PeakValue *string `json:"peakValue,omitempty" xml:"peakValue,omitempty" require:"true"`
 }
 
-func (s BandwidthVmBandwidthVmResponseProviderDateIsp) String() string {
+func (s BandwidthVmResponseProviderDateIsp) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthVmBandwidthVmResponseProviderDateIsp) GoString() string {
+func (s BandwidthVmResponseProviderDateIsp) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthVmBandwidthVmResponseProviderDateIsp) SetIspid(v string) *BandwidthVmBandwidthVmResponseProviderDateIsp {
+func (s *BandwidthVmResponseProviderDateIsp) SetIspid(v string) *BandwidthVmResponseProviderDateIsp {
   s.Ispid = &v
   return s
 }
 
-func (s *BandwidthVmBandwidthVmResponseProviderDateIsp) SetNode(v string) *BandwidthVmBandwidthVmResponseProviderDateIsp {
+func (s *BandwidthVmResponseProviderDateIsp) SetNode(v string) *BandwidthVmResponseProviderDateIsp {
   s.Node = &v
   return s
 }
 
-func (s *BandwidthVmBandwidthVmResponseProviderDateIsp) SetPeakTime(v string) *BandwidthVmBandwidthVmResponseProviderDateIsp {
+func (s *BandwidthVmResponseProviderDateIsp) SetPeakTime(v string) *BandwidthVmResponseProviderDateIsp {
   s.PeakTime = &v
   return s
 }
 
-func (s *BandwidthVmBandwidthVmResponseProviderDateIsp) SetPeakValue(v string) *BandwidthVmBandwidthVmResponseProviderDateIsp {
+func (s *BandwidthVmResponseProviderDateIsp) SetPeakValue(v string) *BandwidthVmResponseProviderDateIsp {
   s.PeakValue = &v
   return s
 }
@@ -6161,7 +6161,7 @@ func (s *QueryBandwidthbyISPProvinceRequest) SetIsp(v []*string) *QueryBandwidth
 
 type QueryBandwidthbyISPProvinceResponse struct {
   // {'en':'result', 'zh_CN':'结果'}
-  Result []*QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryBandwidthbyISPProvinceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryBandwidthbyISPProvinceResponse) String() string {
@@ -6172,29 +6172,29 @@ func (s QueryBandwidthbyISPProvinceResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryBandwidthbyISPProvinceResponse) SetResult(v []*QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResult) *QueryBandwidthbyISPProvinceResponse {
+func (s *QueryBandwidthbyISPProvinceResponse) SetResult(v []*QueryBandwidthbyISPProvinceResponseResult) *QueryBandwidthbyISPProvinceResponse {
   s.Result = v
   return s
 }
 
-type QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResult struct     {
-  BandwidthData []*QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResultBandwidthData `json:"bandwidthData,omitempty" xml:"bandwidthData,omitempty" require:"true" type:"Repeated"`
+type QueryBandwidthbyISPProvinceResponseResult struct     {
+  BandwidthData []*QueryBandwidthbyISPProvinceResponseResultBandwidthData `json:"bandwidthData,omitempty" xml:"bandwidthData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResult) String() string {
+func (s QueryBandwidthbyISPProvinceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResult) GoString() string {
+func (s QueryBandwidthbyISPProvinceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResult) SetBandwidthData(v []*QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResultBandwidthData) *QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResult {
+func (s *QueryBandwidthbyISPProvinceResponseResult) SetBandwidthData(v []*QueryBandwidthbyISPProvinceResponseResultBandwidthData) *QueryBandwidthbyISPProvinceResponseResult {
   s.BandwidthData = v
   return s
 }
 
-type QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResultBandwidthData struct     {
+type QueryBandwidthbyISPProvinceResponseResultBandwidthData struct     {
   // {'en':'Date
   // 
   // 1.        When   the data query granularity is fiveminutes, the format is yyyy-MM-dd HH:mm;   the data value of every time slice represents the data value within the   previous time granularity range. 
@@ -6211,20 +6211,20 @@ type QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResultBandwid
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResultBandwidthData) String() string {
+func (s QueryBandwidthbyISPProvinceResponseResultBandwidthData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResultBandwidthData) GoString() string {
+func (s QueryBandwidthbyISPProvinceResponseResultBandwidthData) GoString() string {
   return s.String()
 }
 
-func (s *QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResultBandwidthData) SetTimestamp(v string) *QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResultBandwidthData {
+func (s *QueryBandwidthbyISPProvinceResponseResultBandwidthData) SetTimestamp(v string) *QueryBandwidthbyISPProvinceResponseResultBandwidthData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResultBandwidthData) SetValue(v string) *QueryBandwidthbyISPProvinceQueryBandwidthbyISPProvinceResponseResultBandwidthData {
+func (s *QueryBandwidthbyISPProvinceResponseResultBandwidthData) SetValue(v string) *QueryBandwidthbyISPProvinceResponseResultBandwidthData {
   s.Value = &v
   return s
 }
@@ -6387,7 +6387,7 @@ func (s *BandwidthPeakRankingRequest) SetDatatype(v string) *BandwidthPeakRankin
 
 type BandwidthPeakRankingResponse struct {
   // {'en':'provider', 'zh_CN':'结果'}
-  Provider *BandwidthPeakRankingBandwidthPeakRankingResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+  Provider *BandwidthPeakRankingResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
 func (s BandwidthPeakRankingResponse) String() string {
@@ -6398,76 +6398,76 @@ func (s BandwidthPeakRankingResponse) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthPeakRankingResponse) SetProvider(v *BandwidthPeakRankingBandwidthPeakRankingResponseProvider) *BandwidthPeakRankingResponse {
+func (s *BandwidthPeakRankingResponse) SetProvider(v *BandwidthPeakRankingResponseProvider) *BandwidthPeakRankingResponse {
   s.Provider = v
   return s
 }
 
-type BandwidthPeakRankingBandwidthPeakRankingResponseProvider struct {
+type BandwidthPeakRankingResponseProvider struct {
   // {'en':'tenant', 'zh_CN':'租户'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'type', 'zh_CN':'接口类型'}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'数据'}
-  Date *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+  Date *BandwidthPeakRankingResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
-func (s BandwidthPeakRankingBandwidthPeakRankingResponseProvider) String() string {
+func (s BandwidthPeakRankingResponseProvider) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthPeakRankingBandwidthPeakRankingResponseProvider) GoString() string {
+func (s BandwidthPeakRankingResponseProvider) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthPeakRankingBandwidthPeakRankingResponseProvider) SetName(v string) *BandwidthPeakRankingBandwidthPeakRankingResponseProvider {
+func (s *BandwidthPeakRankingResponseProvider) SetName(v string) *BandwidthPeakRankingResponseProvider {
   s.Name = &v
   return s
 }
 
-func (s *BandwidthPeakRankingBandwidthPeakRankingResponseProvider) SetType(v string) *BandwidthPeakRankingBandwidthPeakRankingResponseProvider {
+func (s *BandwidthPeakRankingResponseProvider) SetType(v string) *BandwidthPeakRankingResponseProvider {
   s.Type = &v
   return s
 }
 
-func (s *BandwidthPeakRankingBandwidthPeakRankingResponseProvider) SetDate(v *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate) *BandwidthPeakRankingBandwidthPeakRankingResponseProvider {
+func (s *BandwidthPeakRankingResponseProvider) SetDate(v *BandwidthPeakRankingResponseProviderDate) *BandwidthPeakRankingResponseProvider {
   s.Date = v
   return s
 }
 
-type BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate struct {
+type BandwidthPeakRankingResponseProviderDate struct {
   // {'en':'startdate', 'zh_CN':'开始日期'}
   Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
   // {'en':'enddate', 'zh_CN':'结束日期'}
   Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
   // {'en':'channelPeak', 'zh_CN':'频道峰值数据'}
-  ChannelPeak *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak `json:"channelPeak,omitempty" xml:"channelPeak,omitempty" require:"true" type:"Struct"`
+  ChannelPeak *BandwidthPeakRankingResponseProviderDateChannelPeak `json:"channelPeak,omitempty" xml:"channelPeak,omitempty" require:"true" type:"Struct"`
 }
 
-func (s BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate) String() string {
+func (s BandwidthPeakRankingResponseProviderDate) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate) GoString() string {
+func (s BandwidthPeakRankingResponseProviderDate) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate) SetStartdate(v string) *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate {
+func (s *BandwidthPeakRankingResponseProviderDate) SetStartdate(v string) *BandwidthPeakRankingResponseProviderDate {
   s.Startdate = &v
   return s
 }
 
-func (s *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate) SetEnddate(v string) *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate {
+func (s *BandwidthPeakRankingResponseProviderDate) SetEnddate(v string) *BandwidthPeakRankingResponseProviderDate {
   s.Enddate = &v
   return s
 }
 
-func (s *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate) SetChannelPeak(v *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak) *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDate {
+func (s *BandwidthPeakRankingResponseProviderDate) SetChannelPeak(v *BandwidthPeakRankingResponseProviderDateChannelPeak) *BandwidthPeakRankingResponseProviderDate {
   s.ChannelPeak = v
   return s
 }
 
-type BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak struct {
+type BandwidthPeakRankingResponseProviderDateChannelPeak struct {
   // {'en':'channel', 'zh_CN':'频道'}
   Channel *string `json:"channel,omitempty" xml:"channel,omitempty" require:"true"`
   // {'en':'peakTime', 'zh_CN':'峰值时间'}
@@ -6478,30 +6478,30 @@ type BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak str
   TotalFlow *string `json:"totalFlow,omitempty" xml:"totalFlow,omitempty" require:"true"`
 }
 
-func (s BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak) String() string {
+func (s BandwidthPeakRankingResponseProviderDateChannelPeak) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak) GoString() string {
+func (s BandwidthPeakRankingResponseProviderDateChannelPeak) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak) SetChannel(v string) *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak {
+func (s *BandwidthPeakRankingResponseProviderDateChannelPeak) SetChannel(v string) *BandwidthPeakRankingResponseProviderDateChannelPeak {
   s.Channel = &v
   return s
 }
 
-func (s *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak) SetPeakTime(v string) *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak {
+func (s *BandwidthPeakRankingResponseProviderDateChannelPeak) SetPeakTime(v string) *BandwidthPeakRankingResponseProviderDateChannelPeak {
   s.PeakTime = &v
   return s
 }
 
-func (s *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak) SetPeakValue(v string) *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak {
+func (s *BandwidthPeakRankingResponseProviderDateChannelPeak) SetPeakValue(v string) *BandwidthPeakRankingResponseProviderDateChannelPeak {
   s.PeakValue = &v
   return s
 }
 
-func (s *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak) SetTotalFlow(v string) *BandwidthPeakRankingBandwidthPeakRankingResponseProviderDateChannelPeak {
+func (s *BandwidthPeakRankingResponseProviderDateChannelPeak) SetTotalFlow(v string) *BandwidthPeakRankingResponseProviderDateChannelPeak {
   s.TotalFlow = &v
   return s
 }
@@ -6653,7 +6653,7 @@ func (s *BandwidthEcdnRequest) SetDatasource(v string) *BandwidthEcdnRequest {
 
 type BandwidthEcdnResponse struct {
   // {'en':'provider', 'zh_CN':'结果'}
-  Provider *BandwidthEcdnBandwidthEcdnResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+  Provider *BandwidthEcdnResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
 func (s BandwidthEcdnResponse) String() string {
@@ -6664,107 +6664,107 @@ func (s BandwidthEcdnResponse) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthEcdnResponse) SetProvider(v *BandwidthEcdnBandwidthEcdnResponseProvider) *BandwidthEcdnResponse {
+func (s *BandwidthEcdnResponse) SetProvider(v *BandwidthEcdnResponseProvider) *BandwidthEcdnResponse {
   s.Provider = v
   return s
 }
 
-type BandwidthEcdnBandwidthEcdnResponseProvider struct {
+type BandwidthEcdnResponseProvider struct {
   // {'en':'tenant', 'zh_CN':'租户'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'type', 'zh_CN':'接口类型'}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'ecdn数据'}
-  Date *BandwidthEcdnBandwidthEcdnResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+  Date *BandwidthEcdnResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
-func (s BandwidthEcdnBandwidthEcdnResponseProvider) String() string {
+func (s BandwidthEcdnResponseProvider) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthEcdnBandwidthEcdnResponseProvider) GoString() string {
+func (s BandwidthEcdnResponseProvider) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthEcdnBandwidthEcdnResponseProvider) SetName(v string) *BandwidthEcdnBandwidthEcdnResponseProvider {
+func (s *BandwidthEcdnResponseProvider) SetName(v string) *BandwidthEcdnResponseProvider {
   s.Name = &v
   return s
 }
 
-func (s *BandwidthEcdnBandwidthEcdnResponseProvider) SetType(v string) *BandwidthEcdnBandwidthEcdnResponseProvider {
+func (s *BandwidthEcdnResponseProvider) SetType(v string) *BandwidthEcdnResponseProvider {
   s.Type = &v
   return s
 }
 
-func (s *BandwidthEcdnBandwidthEcdnResponseProvider) SetDate(v *BandwidthEcdnBandwidthEcdnResponseProviderDate) *BandwidthEcdnBandwidthEcdnResponseProvider {
+func (s *BandwidthEcdnResponseProvider) SetDate(v *BandwidthEcdnResponseProviderDate) *BandwidthEcdnResponseProvider {
   s.Date = v
   return s
 }
 
-type BandwidthEcdnBandwidthEcdnResponseProviderDate struct {
+type BandwidthEcdnResponseProviderDate struct {
   // {'en':'chartDataList', 'zh_CN':'带宽明细'}
-  ChartDataList []*BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataList `json:"chartDataList,omitempty" xml:"chartDataList,omitempty" require:"true" type:"Repeated"`
+  ChartDataList []*BandwidthEcdnResponseProviderDateChartDataList `json:"chartDataList,omitempty" xml:"chartDataList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s BandwidthEcdnBandwidthEcdnResponseProviderDate) String() string {
+func (s BandwidthEcdnResponseProviderDate) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthEcdnBandwidthEcdnResponseProviderDate) GoString() string {
+func (s BandwidthEcdnResponseProviderDate) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthEcdnBandwidthEcdnResponseProviderDate) SetChartDataList(v []*BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataList) *BandwidthEcdnBandwidthEcdnResponseProviderDate {
+func (s *BandwidthEcdnResponseProviderDate) SetChartDataList(v []*BandwidthEcdnResponseProviderDateChartDataList) *BandwidthEcdnResponseProviderDate {
   s.ChartDataList = v
   return s
 }
 
-type BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataList struct     {
+type BandwidthEcdnResponseProviderDateChartDataList struct     {
   // {'en':'ecdnBandwidth', 'zh_CN':'支持：[ecdnBandwidth],[cdnBandwidth],[cdnPlusEcdnBandwidth] 3种类型带宽数据'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'带宽明细'}
-  Data []*BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataListData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*BandwidthEcdnResponseProviderDateChartDataListData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataList) String() string {
+func (s BandwidthEcdnResponseProviderDateChartDataList) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataList) GoString() string {
+func (s BandwidthEcdnResponseProviderDateChartDataList) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataList) SetName(v string) *BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataList {
+func (s *BandwidthEcdnResponseProviderDateChartDataList) SetName(v string) *BandwidthEcdnResponseProviderDateChartDataList {
   s.Name = &v
   return s
 }
 
-func (s *BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataList) SetData(v []*BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataListData) *BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataList {
+func (s *BandwidthEcdnResponseProviderDateChartDataList) SetData(v []*BandwidthEcdnResponseProviderDateChartDataListData) *BandwidthEcdnResponseProviderDateChartDataList {
   s.Data = v
   return s
 }
 
-type BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataListData struct     {
+type BandwidthEcdnResponseProviderDateChartDataListData struct     {
   // {'en':'time of every 5 duration,with format yyyy-mmm-dd hh:MM:ss', 'zh_CN':'ecdn带宽5分钟粒度时间，格式yyyy-mm-dd hh:MM:ss'}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
   // {'en':'displaying the Bandwidth(Mbps)', 'zh_CN':'ecdn带宽(Mbps)'}
   Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
 }
 
-func (s BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataListData) String() string {
+func (s BandwidthEcdnResponseProviderDateChartDataListData) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataListData) GoString() string {
+func (s BandwidthEcdnResponseProviderDateChartDataListData) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataListData) SetTime(v string) *BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataListData {
+func (s *BandwidthEcdnResponseProviderDateChartDataListData) SetTime(v string) *BandwidthEcdnResponseProviderDateChartDataListData {
   s.Time = &v
   return s
 }
 
-func (s *BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataListData) SetText(v string) *BandwidthEcdnBandwidthEcdnResponseProviderDateChartDataListData {
+func (s *BandwidthEcdnResponseProviderDateChartDataListData) SetText(v string) *BandwidthEcdnResponseProviderDateChartDataListData {
   s.Text = &v
   return s
 }
@@ -6916,7 +6916,7 @@ func (s *BandwidthLogEcdnRequest) SetDatasource(v string) *BandwidthLogEcdnReque
 
 type BandwidthLogEcdnResponse struct {
   // {'en':'provider', 'zh_CN':'结果'}
-  Provider *BandwidthLogEcdnBandwidthLogEcdnResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+  Provider *BandwidthLogEcdnResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
 func (s BandwidthLogEcdnResponse) String() string {
@@ -6927,107 +6927,107 @@ func (s BandwidthLogEcdnResponse) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthLogEcdnResponse) SetProvider(v *BandwidthLogEcdnBandwidthLogEcdnResponseProvider) *BandwidthLogEcdnResponse {
+func (s *BandwidthLogEcdnResponse) SetProvider(v *BandwidthLogEcdnResponseProvider) *BandwidthLogEcdnResponse {
   s.Provider = v
   return s
 }
 
-type BandwidthLogEcdnBandwidthLogEcdnResponseProvider struct {
+type BandwidthLogEcdnResponseProvider struct {
   // {'en':'tenant', 'zh_CN':'租户'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'type', 'zh_CN':'接口类型'}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'ecdn数据'}
-  Date *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+  Date *BandwidthLogEcdnResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
-func (s BandwidthLogEcdnBandwidthLogEcdnResponseProvider) String() string {
+func (s BandwidthLogEcdnResponseProvider) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthLogEcdnBandwidthLogEcdnResponseProvider) GoString() string {
+func (s BandwidthLogEcdnResponseProvider) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthLogEcdnBandwidthLogEcdnResponseProvider) SetName(v string) *BandwidthLogEcdnBandwidthLogEcdnResponseProvider {
+func (s *BandwidthLogEcdnResponseProvider) SetName(v string) *BandwidthLogEcdnResponseProvider {
   s.Name = &v
   return s
 }
 
-func (s *BandwidthLogEcdnBandwidthLogEcdnResponseProvider) SetType(v string) *BandwidthLogEcdnBandwidthLogEcdnResponseProvider {
+func (s *BandwidthLogEcdnResponseProvider) SetType(v string) *BandwidthLogEcdnResponseProvider {
   s.Type = &v
   return s
 }
 
-func (s *BandwidthLogEcdnBandwidthLogEcdnResponseProvider) SetDate(v *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDate) *BandwidthLogEcdnBandwidthLogEcdnResponseProvider {
+func (s *BandwidthLogEcdnResponseProvider) SetDate(v *BandwidthLogEcdnResponseProviderDate) *BandwidthLogEcdnResponseProvider {
   s.Date = v
   return s
 }
 
-type BandwidthLogEcdnBandwidthLogEcdnResponseProviderDate struct {
+type BandwidthLogEcdnResponseProviderDate struct {
   // {'en':'chartDataList', 'zh_CN':'带宽明细'}
-  ChartDataList []*BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataList `json:"chartDataList,omitempty" xml:"chartDataList,omitempty" require:"true" type:"Repeated"`
+  ChartDataList []*BandwidthLogEcdnResponseProviderDateChartDataList `json:"chartDataList,omitempty" xml:"chartDataList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s BandwidthLogEcdnBandwidthLogEcdnResponseProviderDate) String() string {
+func (s BandwidthLogEcdnResponseProviderDate) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthLogEcdnBandwidthLogEcdnResponseProviderDate) GoString() string {
+func (s BandwidthLogEcdnResponseProviderDate) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDate) SetChartDataList(v []*BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataList) *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDate {
+func (s *BandwidthLogEcdnResponseProviderDate) SetChartDataList(v []*BandwidthLogEcdnResponseProviderDateChartDataList) *BandwidthLogEcdnResponseProviderDate {
   s.ChartDataList = v
   return s
 }
 
-type BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataList struct     {
+type BandwidthLogEcdnResponseProviderDateChartDataList struct     {
   // {'en':'ecdnBandwidth', 'zh_CN':'支持：[ecdnBandwidth],[cdnBandwidth],[cdnPlusEcdnBandwidth] 3种类型带宽数据'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'带宽明细'}
-  Data []*BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataListData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*BandwidthLogEcdnResponseProviderDateChartDataListData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataList) String() string {
+func (s BandwidthLogEcdnResponseProviderDateChartDataList) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataList) GoString() string {
+func (s BandwidthLogEcdnResponseProviderDateChartDataList) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataList) SetName(v string) *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataList {
+func (s *BandwidthLogEcdnResponseProviderDateChartDataList) SetName(v string) *BandwidthLogEcdnResponseProviderDateChartDataList {
   s.Name = &v
   return s
 }
 
-func (s *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataList) SetData(v []*BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataListData) *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataList {
+func (s *BandwidthLogEcdnResponseProviderDateChartDataList) SetData(v []*BandwidthLogEcdnResponseProviderDateChartDataListData) *BandwidthLogEcdnResponseProviderDateChartDataList {
   s.Data = v
   return s
 }
 
-type BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataListData struct     {
+type BandwidthLogEcdnResponseProviderDateChartDataListData struct     {
   // {'en':'time of every 5 duration,with format yyyy-mmm-dd hh:MM:ss', 'zh_CN':'ecdn带宽5分钟粒度时间，格式yyyy-mm-dd hh:MM:ss'}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
   // {'en':'displaying the Bandwidth(Mbps)', 'zh_CN':'ecdn带宽(Mbps)'}
   Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
 }
 
-func (s BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataListData) String() string {
+func (s BandwidthLogEcdnResponseProviderDateChartDataListData) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataListData) GoString() string {
+func (s BandwidthLogEcdnResponseProviderDateChartDataListData) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataListData) SetTime(v string) *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataListData {
+func (s *BandwidthLogEcdnResponseProviderDateChartDataListData) SetTime(v string) *BandwidthLogEcdnResponseProviderDateChartDataListData {
   s.Time = &v
   return s
 }
 
-func (s *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataListData) SetText(v string) *BandwidthLogEcdnBandwidthLogEcdnResponseProviderDateChartDataListData {
+func (s *BandwidthLogEcdnResponseProviderDateChartDataListData) SetText(v string) *BandwidthLogEcdnResponseProviderDateChartDataListData {
   s.Text = &v
   return s
 }
@@ -7208,7 +7208,7 @@ func (s *QueryIPV6BandwidthOfeachISPandProvinceRequest) SetGroupBy(v []*string) 
 
 type QueryIPV6BandwidthOfeachISPandProvinceResponse struct {
   // {"en":"result", "zh_CN":"结果"}
-  Result []*QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*QueryIPV6BandwidthOfeachISPandProvinceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryIPV6BandwidthOfeachISPandProvinceResponse) String() string {
@@ -7219,84 +7219,84 @@ func (s QueryIPV6BandwidthOfeachISPandProvinceResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryIPV6BandwidthOfeachISPandProvinceResponse) SetResult(v []*QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResult) *QueryIPV6BandwidthOfeachISPandProvinceResponse {
+func (s *QueryIPV6BandwidthOfeachISPandProvinceResponse) SetResult(v []*QueryIPV6BandwidthOfeachISPandProvinceResponseResult) *QueryIPV6BandwidthOfeachISPandProvinceResponse {
   s.Result = v
   return s
 }
 
-type QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResult struct     {
+type QueryIPV6BandwidthOfeachISPandProvinceResponseResult struct     {
   // {"en":"Domain", "zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  IspData []*QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+  IspData []*QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResult) String() string {
+func (s QueryIPV6BandwidthOfeachISPandProvinceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResult) GoString() string {
+func (s QueryIPV6BandwidthOfeachISPandProvinceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResult) SetDomain(v string) *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResult {
+func (s *QueryIPV6BandwidthOfeachISPandProvinceResponseResult) SetDomain(v string) *QueryIPV6BandwidthOfeachISPandProvinceResponseResult {
   s.Domain = &v
   return s
 }
 
-func (s *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResult) SetIspData(v []*QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData) *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResult {
+func (s *QueryIPV6BandwidthOfeachISPandProvinceResponseResult) SetIspData(v []*QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData) *QueryIPV6BandwidthOfeachISPandProvinceResponseResult {
   s.IspData = v
   return s
 }
 
-type QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData struct     {
+type QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData struct     {
   // {"en":"ISP", "zh_CN":"运营商"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
-  ProvinceData []*QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+  ProvinceData []*QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData) String() string {
+func (s QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData) GoString() string {
+func (s QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData) GoString() string {
   return s.String()
 }
 
-func (s *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData) SetIsp(v string) *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData {
+func (s *QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData) SetIsp(v string) *QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData {
   s.Isp = &v
   return s
 }
 
-func (s *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData) SetProvinceData(v []*QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData) *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData {
+func (s *QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData) SetProvinceData(v []*QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData) *QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspData {
   s.ProvinceData = v
   return s
 }
 
-type QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData struct     {
+type QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData struct     {
   // {"en":"Province", "zh_CN":"省份"}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
-  BandwidthData []*QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData `json:"bandwidthData,omitempty" xml:"bandwidthData,omitempty" require:"true" type:"Repeated"`
+  BandwidthData []*QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData `json:"bandwidthData,omitempty" xml:"bandwidthData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData) String() string {
+func (s QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData) GoString() string {
+func (s QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData) GoString() string {
   return s.String()
 }
 
-func (s *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData) SetProvince(v string) *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData {
+func (s *QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData) SetProvince(v string) *QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData {
   s.Province = &v
   return s
 }
 
-func (s *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData) SetBandwidthData(v []*QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData) *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData {
+func (s *QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData) SetBandwidthData(v []*QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData) *QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceData {
   s.BandwidthData = v
   return s
 }
 
-type QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData struct     {
+type QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData struct     {
   // {"en":"Time
   // 1. When the data size of the query is 5m, the format is yyyy-MM-dd HH:mm; each time slice data value represents the data value in the previous time granularity range. The time slice starting at the beginning of the day is yyyy-MM-dd 00:05, and the last time slice is (yyyy-MM-dd+1) 00:00.
   // 2. When the data granularity of the query is 1h, the format is yyyy-MM-dd HH; each time slice data value represents the data value within the previous time granularity range. The time slice starting at the beginning of the day is yyyy-MM-dd 01, and the last time slice is (yyyy-MM-dd+1) 00.
@@ -7309,20 +7309,20 @@ type QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinc
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData) String() string {
+func (s QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData) GoString() string {
+func (s QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData) GoString() string {
   return s.String()
 }
 
-func (s *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData) SetTimestamp(v string) *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData {
+func (s *QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData) SetTimestamp(v string) *QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData) SetValue(v string) *QueryIPV6BandwidthOfeachISPandProvinceQueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData {
+func (s *QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData) SetValue(v string) *QueryIPV6BandwidthOfeachISPandProvinceResponseResultIspDataProvinceDataBandwidthData {
   s.Value = &v
   return s
 }
@@ -7436,7 +7436,7 @@ func (s *ReportBandwidthRealTimeEdgeServiceRequest) SetDataInterval(v string) *R
 }
 
 type ReportBandwidthRealTimeEdgeServiceResponse struct {
-  Result []*ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+  Result []*ReportBandwidthRealTimeEdgeServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportBandwidthRealTimeEdgeServiceResponse) String() string {
@@ -7447,70 +7447,70 @@ func (s ReportBandwidthRealTimeEdgeServiceResponse) GoString() string {
   return s.String()
 }
 
-func (s *ReportBandwidthRealTimeEdgeServiceResponse) SetResult(v []*ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult) *ReportBandwidthRealTimeEdgeServiceResponse {
+func (s *ReportBandwidthRealTimeEdgeServiceResponse) SetResult(v []*ReportBandwidthRealTimeEdgeServiceResponseResult) *ReportBandwidthRealTimeEdgeServiceResponse {
   s.Result = v
   return s
 }
 
-type ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult struct     {
+type ReportBandwidthRealTimeEdgeServiceResponseResult struct     {
   // {"en":"Peak Bandwidth,unit is Mbps,example(9811.21Mbps)", "zh_CN":"峰值带宽 Mbps,示例 (931556.21 Mbps)"}
   PeakValue *string `json:"peakValue,omitempty" xml:"peakValue,omitempty" require:"true"`
   // {"en":"Time of peak bandwidth,example(2019-02-13 18:01)", "zh_CN":"峰值时间,示例(2019-02-13 18:01);"}
   PeakTime *string `json:"peakTime,omitempty" xml:"peakTime,omitempty" require:"true"`
   // {"en":"Edge total traffic,example(74099.91MB)", "zh_CN":"边缘总流量,示例 ( 74099.92 MB )"}
   Total *string `json:"total,omitempty" xml:"total,omitempty" require:"true"`
-  BandwidthData []*ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData `json:"bandwidthData,omitempty" xml:"bandwidthData,omitempty" require:"true" type:"Repeated"`
+  BandwidthData []*ReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData `json:"bandwidthData,omitempty" xml:"bandwidthData,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult) String() string {
+func (s ReportBandwidthRealTimeEdgeServiceResponseResult) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult) GoString() string {
+func (s ReportBandwidthRealTimeEdgeServiceResponseResult) GoString() string {
   return s.String()
 }
 
-func (s *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult) SetPeakValue(v string) *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult {
+func (s *ReportBandwidthRealTimeEdgeServiceResponseResult) SetPeakValue(v string) *ReportBandwidthRealTimeEdgeServiceResponseResult {
   s.PeakValue = &v
   return s
 }
 
-func (s *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult) SetPeakTime(v string) *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult {
+func (s *ReportBandwidthRealTimeEdgeServiceResponseResult) SetPeakTime(v string) *ReportBandwidthRealTimeEdgeServiceResponseResult {
   s.PeakTime = &v
   return s
 }
 
-func (s *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult) SetTotal(v string) *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult {
+func (s *ReportBandwidthRealTimeEdgeServiceResponseResult) SetTotal(v string) *ReportBandwidthRealTimeEdgeServiceResponseResult {
   s.Total = &v
   return s
 }
 
-func (s *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult) SetBandwidthData(v []*ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData) *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResult {
+func (s *ReportBandwidthRealTimeEdgeServiceResponseResult) SetBandwidthData(v []*ReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData) *ReportBandwidthRealTimeEdgeServiceResponseResult {
   s.BandwidthData = v
   return s
 }
 
-type ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData struct     {
+type ReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData struct     {
   // {"en":"The data granularity is 1 minute,the format is yyyy-MM-dd HH:mm", "zh_CN":"数据粒度为1分钟,格式为yyyy-MM-dd HH:mm;"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Edge bandwidth,the unit is Mbps,keep 2 decimal places", "zh_CN":"边缘带宽值,单位Mbps,保留2位小数。"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData) String() string {
+func (s ReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData) GoString() string {
+func (s ReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData) GoString() string {
   return s.String()
 }
 
-func (s *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData) SetTimestamp(v string) *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData {
+func (s *ReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData) SetTimestamp(v string) *ReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData) SetValue(v string) *ReportBandwidthRealTimeEdgeServiceReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData {
+func (s *ReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData) SetValue(v string) *ReportBandwidthRealTimeEdgeServiceResponseResultBandwidthData {
   s.Value = &v
   return s
 }
@@ -7692,7 +7692,7 @@ func (s *BandwidthMiddleRequest) SetNeedFlow(v string) *BandwidthMiddleRequest {
 
 type BandwidthMiddleResponse struct {
   // {'en':'provider', 'zh_CN':'结果'}
-  Provider *BandwidthMiddleBandwidthMiddleResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+  Provider *BandwidthMiddleResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
 func (s BandwidthMiddleResponse) String() string {
@@ -7703,12 +7703,12 @@ func (s BandwidthMiddleResponse) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthMiddleResponse) SetProvider(v *BandwidthMiddleBandwidthMiddleResponseProvider) *BandwidthMiddleResponse {
+func (s *BandwidthMiddleResponse) SetProvider(v *BandwidthMiddleResponseProvider) *BandwidthMiddleResponse {
   s.Provider = v
   return s
 }
 
-type BandwidthMiddleBandwidthMiddleResponseProvider struct {
+type BandwidthMiddleResponseProvider struct {
   // {'en':'tenant', 'zh_CN':'租户'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'type', 'zh_CN':'接口类型'}
@@ -7716,95 +7716,95 @@ type BandwidthMiddleBandwidthMiddleResponseProvider struct {
   // {'en':'resultType', 'zh_CN':'统计类型'}
   ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty" require:"true"`
   // {'en':'data', 'zh_CN':'中间缓存带宽数据'}
-  Date *BandwidthMiddleBandwidthMiddleResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+  Date *BandwidthMiddleResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
-func (s BandwidthMiddleBandwidthMiddleResponseProvider) String() string {
+func (s BandwidthMiddleResponseProvider) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthMiddleBandwidthMiddleResponseProvider) GoString() string {
+func (s BandwidthMiddleResponseProvider) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthMiddleBandwidthMiddleResponseProvider) SetName(v string) *BandwidthMiddleBandwidthMiddleResponseProvider {
+func (s *BandwidthMiddleResponseProvider) SetName(v string) *BandwidthMiddleResponseProvider {
   s.Name = &v
   return s
 }
 
-func (s *BandwidthMiddleBandwidthMiddleResponseProvider) SetType(v string) *BandwidthMiddleBandwidthMiddleResponseProvider {
+func (s *BandwidthMiddleResponseProvider) SetType(v string) *BandwidthMiddleResponseProvider {
   s.Type = &v
   return s
 }
 
-func (s *BandwidthMiddleBandwidthMiddleResponseProvider) SetResultType(v string) *BandwidthMiddleBandwidthMiddleResponseProvider {
+func (s *BandwidthMiddleResponseProvider) SetResultType(v string) *BandwidthMiddleResponseProvider {
   s.ResultType = &v
   return s
 }
 
-func (s *BandwidthMiddleBandwidthMiddleResponseProvider) SetDate(v *BandwidthMiddleBandwidthMiddleResponseProviderDate) *BandwidthMiddleBandwidthMiddleResponseProvider {
+func (s *BandwidthMiddleResponseProvider) SetDate(v *BandwidthMiddleResponseProviderDate) *BandwidthMiddleResponseProvider {
   s.Date = v
   return s
 }
 
-type BandwidthMiddleBandwidthMiddleResponseProviderDate struct {
+type BandwidthMiddleResponseProviderDate struct {
   // {'en':'startdate', 'zh_CN':'开始时间'}
   Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
   // {'en':'enddate', 'zh_CN':'结束时间'}
   Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
   // {'en':'channel', 'zh_CN':'频道'}
-  Channel *BandwidthMiddleBandwidthMiddleResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+  Channel *BandwidthMiddleResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
 }
 
-func (s BandwidthMiddleBandwidthMiddleResponseProviderDate) String() string {
+func (s BandwidthMiddleResponseProviderDate) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthMiddleBandwidthMiddleResponseProviderDate) GoString() string {
+func (s BandwidthMiddleResponseProviderDate) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthMiddleBandwidthMiddleResponseProviderDate) SetStartdate(v string) *BandwidthMiddleBandwidthMiddleResponseProviderDate {
+func (s *BandwidthMiddleResponseProviderDate) SetStartdate(v string) *BandwidthMiddleResponseProviderDate {
   s.Startdate = &v
   return s
 }
 
-func (s *BandwidthMiddleBandwidthMiddleResponseProviderDate) SetEnddate(v string) *BandwidthMiddleBandwidthMiddleResponseProviderDate {
+func (s *BandwidthMiddleResponseProviderDate) SetEnddate(v string) *BandwidthMiddleResponseProviderDate {
   s.Enddate = &v
   return s
 }
 
-func (s *BandwidthMiddleBandwidthMiddleResponseProviderDate) SetChannel(v *BandwidthMiddleBandwidthMiddleResponseProviderDateChannel) *BandwidthMiddleBandwidthMiddleResponseProviderDate {
+func (s *BandwidthMiddleResponseProviderDate) SetChannel(v *BandwidthMiddleResponseProviderDateChannel) *BandwidthMiddleResponseProviderDate {
   s.Channel = v
   return s
 }
 
-type BandwidthMiddleBandwidthMiddleResponseProviderDateChannel struct {
+type BandwidthMiddleResponseProviderDateChannel struct {
   // {'en':'channel', 'zh_CN':'频道'}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {'en':'bandwidth', 'zh_CN':'中间缓存带宽数据'}
-  Bandwidth []*BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
+  Bandwidth []*BandwidthMiddleResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s BandwidthMiddleBandwidthMiddleResponseProviderDateChannel) String() string {
+func (s BandwidthMiddleResponseProviderDateChannel) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthMiddleBandwidthMiddleResponseProviderDateChannel) GoString() string {
+func (s BandwidthMiddleResponseProviderDateChannel) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthMiddleBandwidthMiddleResponseProviderDateChannel) SetName(v string) *BandwidthMiddleBandwidthMiddleResponseProviderDateChannel {
+func (s *BandwidthMiddleResponseProviderDateChannel) SetName(v string) *BandwidthMiddleResponseProviderDateChannel {
   s.Name = &v
   return s
 }
 
-func (s *BandwidthMiddleBandwidthMiddleResponseProviderDateChannel) SetBandwidth(v []*BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth) *BandwidthMiddleBandwidthMiddleResponseProviderDateChannel {
+func (s *BandwidthMiddleResponseProviderDateChannel) SetBandwidth(v []*BandwidthMiddleResponseProviderDateChannelBandwidth) *BandwidthMiddleResponseProviderDateChannel {
   s.Bandwidth = v
   return s
 }
 
-type BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth struct     {
+type BandwidthMiddleResponseProviderDateChannelBandwidth struct     {
   // {'en':'timestamp', 'zh_CN':'时间点'}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
   // {'en':'summary', 'zh_CN':'带宽合计'}
@@ -7821,45 +7821,45 @@ type BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth struct  
   ThirdWs *string `json:"thirdWs,omitempty" xml:"thirdWs,omitempty" require:"true"`
 }
 
-func (s BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth) String() string {
+func (s BandwidthMiddleResponseProviderDateChannelBandwidth) String() string {
   return tea.Prettify(s)
 }
 
-func (s BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth) GoString() string {
+func (s BandwidthMiddleResponseProviderDateChannelBandwidth) GoString() string {
   return s.String()
 }
 
-func (s *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth) SetTime(v string) *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth {
+func (s *BandwidthMiddleResponseProviderDateChannelBandwidth) SetTime(v string) *BandwidthMiddleResponseProviderDateChannelBandwidth {
   s.Time = &v
   return s
 }
 
-func (s *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth) SetSummary(v string) *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth {
+func (s *BandwidthMiddleResponseProviderDateChannelBandwidth) SetSummary(v string) *BandwidthMiddleResponseProviderDateChannelBandwidth {
   s.Summary = &v
   return s
 }
 
-func (s *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth) SetStafuHit(v string) *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth {
+func (s *BandwidthMiddleResponseProviderDateChannelBandwidth) SetStafuHit(v string) *BandwidthMiddleResponseProviderDateChannelBandwidth {
   s.StafuHit = &v
   return s
 }
 
-func (s *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth) SetDynfuHit(v string) *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth {
+func (s *BandwidthMiddleResponseProviderDateChannelBandwidth) SetDynfuHit(v string) *BandwidthMiddleResponseProviderDateChannelBandwidth {
   s.DynfuHit = &v
   return s
 }
 
-func (s *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth) SetStafuMiss(v string) *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth {
+func (s *BandwidthMiddleResponseProviderDateChannelBandwidth) SetStafuMiss(v string) *BandwidthMiddleResponseProviderDateChannelBandwidth {
   s.StafuMiss = &v
   return s
 }
 
-func (s *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth) SetDynfuMiss(v string) *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth {
+func (s *BandwidthMiddleResponseProviderDateChannelBandwidth) SetDynfuMiss(v string) *BandwidthMiddleResponseProviderDateChannelBandwidth {
   s.DynfuMiss = &v
   return s
 }
 
-func (s *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth) SetThirdWs(v string) *BandwidthMiddleBandwidthMiddleResponseProviderDateChannelBandwidth {
+func (s *BandwidthMiddleResponseProviderDateChannelBandwidth) SetThirdWs(v string) *BandwidthMiddleResponseProviderDateChannelBandwidth {
   s.ThirdWs = &v
   return s
 }
@@ -8001,7 +8001,7 @@ type WsiInfoResponse struct {
   // {"en":"Average number of domain names", "zh_CN":"域名数均值"}
   ChannelAvg *string `json:"channelAvg,omitempty" xml:"channelAvg,omitempty" require:"true"`
   // {'en':'channel', 'zh_CN':'channel'}
-  Channel *WsiInfoWsiInfoResponseChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+  Channel *WsiInfoResponseChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
 }
 
 func (s WsiInfoResponse) String() string {
@@ -8047,30 +8047,30 @@ func (s *WsiInfoResponse) SetChannelAvg(v string) *WsiInfoResponse {
   return s
 }
 
-func (s *WsiInfoResponse) SetChannel(v *WsiInfoWsiInfoResponseChannel) *WsiInfoResponse {
+func (s *WsiInfoResponse) SetChannel(v *WsiInfoResponseChannel) *WsiInfoResponse {
   s.Channel = v
   return s
 }
 
-type WsiInfoWsiInfoResponseChannel struct {
+type WsiInfoResponseChannel struct {
   // {'en':'detail', 'zh_CN':'detail'}
-  Detail []*WsiInfoWsiInfoResponseChannelDetail `json:"detail,omitempty" xml:"detail,omitempty" require:"true" type:"Repeated"`
+  Detail []*WsiInfoResponseChannelDetail `json:"detail,omitempty" xml:"detail,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s WsiInfoWsiInfoResponseChannel) String() string {
+func (s WsiInfoResponseChannel) String() string {
   return tea.Prettify(s)
 }
 
-func (s WsiInfoWsiInfoResponseChannel) GoString() string {
+func (s WsiInfoResponseChannel) GoString() string {
   return s.String()
 }
 
-func (s *WsiInfoWsiInfoResponseChannel) SetDetail(v []*WsiInfoWsiInfoResponseChannelDetail) *WsiInfoWsiInfoResponseChannel {
+func (s *WsiInfoResponseChannel) SetDetail(v []*WsiInfoResponseChannelDetail) *WsiInfoResponseChannel {
   s.Detail = v
   return s
 }
 
-type WsiInfoWsiInfoResponseChannelDetail struct     {
+type WsiInfoResponseChannelDetail struct     {
   // {"en":"time", "zh_CN":"时间点"}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
   // {"en":"The bandwidth value corresponding to the time point, the default unit is Mbps,
@@ -8078,20 +8078,20 @@ type WsiInfoWsiInfoResponseChannelDetail struct     {
   Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
 }
 
-func (s WsiInfoWsiInfoResponseChannelDetail) String() string {
+func (s WsiInfoResponseChannelDetail) String() string {
   return tea.Prettify(s)
 }
 
-func (s WsiInfoWsiInfoResponseChannelDetail) GoString() string {
+func (s WsiInfoResponseChannelDetail) GoString() string {
   return s.String()
 }
 
-func (s *WsiInfoWsiInfoResponseChannelDetail) SetTime(v string) *WsiInfoWsiInfoResponseChannelDetail {
+func (s *WsiInfoResponseChannelDetail) SetTime(v string) *WsiInfoResponseChannelDetail {
   s.Time = &v
   return s
 }
 
-func (s *WsiInfoWsiInfoResponseChannelDetail) SetText(v string) *WsiInfoWsiInfoResponseChannelDetail {
+func (s *WsiInfoResponseChannelDetail) SetText(v string) *WsiInfoResponseChannelDetail {
   s.Text = &v
   return s
 }
@@ -8200,7 +8200,7 @@ type ReportBandwidthWildcardDomainServiceResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"request result information", "zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  Data []*ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+  Data []*ReportBandwidthWildcardDomainServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ReportBandwidthWildcardDomainServiceResponse) String() string {
@@ -8221,80 +8221,80 @@ func (s *ReportBandwidthWildcardDomainServiceResponse) SetMessage(v string) *Rep
   return s
 }
 
-func (s *ReportBandwidthWildcardDomainServiceResponse) SetData(v []*ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseData) *ReportBandwidthWildcardDomainServiceResponse {
+func (s *ReportBandwidthWildcardDomainServiceResponse) SetData(v []*ReportBandwidthWildcardDomainServiceResponseData) *ReportBandwidthWildcardDomainServiceResponse {
   s.Data = v
   return s
 }
 
-type ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseData struct     {
+type ReportBandwidthWildcardDomainServiceResponseData struct     {
   // {"en":"wildcard Domain", "zh_CN":"泛域名"}
   WildcardDomain *string `json:"wildcardDomain,omitempty" xml:"wildcardDomain,omitempty" require:"true"`
-  DomainList []*ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainList `json:"domainList,omitempty" xml:"domainList,omitempty" require:"true" type:"Repeated"`
+  DomainList []*ReportBandwidthWildcardDomainServiceResponseDataDomainList `json:"domainList,omitempty" xml:"domainList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseData) String() string {
+func (s ReportBandwidthWildcardDomainServiceResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseData) GoString() string {
+func (s ReportBandwidthWildcardDomainServiceResponseData) GoString() string {
   return s.String()
 }
 
-func (s *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseData) SetWildcardDomain(v string) *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseData {
+func (s *ReportBandwidthWildcardDomainServiceResponseData) SetWildcardDomain(v string) *ReportBandwidthWildcardDomainServiceResponseData {
   s.WildcardDomain = &v
   return s
 }
 
-func (s *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseData) SetDomainList(v []*ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainList) *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseData {
+func (s *ReportBandwidthWildcardDomainServiceResponseData) SetDomainList(v []*ReportBandwidthWildcardDomainServiceResponseDataDomainList) *ReportBandwidthWildcardDomainServiceResponseData {
   s.DomainList = v
   return s
 }
 
-type ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainList struct     {
+type ReportBandwidthWildcardDomainServiceResponseDataDomainList struct     {
   // {"en":"domain", "zh_CN":"明细域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  BandwidthList []*ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList `json:"bandwidthList,omitempty" xml:"bandwidthList,omitempty" require:"true" type:"Repeated"`
+  BandwidthList []*ReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList `json:"bandwidthList,omitempty" xml:"bandwidthList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainList) String() string {
+func (s ReportBandwidthWildcardDomainServiceResponseDataDomainList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainList) GoString() string {
+func (s ReportBandwidthWildcardDomainServiceResponseDataDomainList) GoString() string {
   return s.String()
 }
 
-func (s *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainList) SetDomain(v string) *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainList {
+func (s *ReportBandwidthWildcardDomainServiceResponseDataDomainList) SetDomain(v string) *ReportBandwidthWildcardDomainServiceResponseDataDomainList {
   s.Domain = &v
   return s
 }
 
-func (s *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainList) SetBandwidthList(v []*ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList) *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainList {
+func (s *ReportBandwidthWildcardDomainServiceResponseDataDomainList) SetBandwidthList(v []*ReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList) *ReportBandwidthWildcardDomainServiceResponseDataDomainList {
   s.BandwidthList = v
   return s
 }
 
-type ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList struct     {
+type ReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList struct     {
   // {"en":"Time slice, returns the time slice containing the start time and end time. Time format: yyyy-MM-dd HH:mm", "zh_CN":"时间片,返回开始时间和结束时间包含的时间片。时间格式:yyyy-MM-dd HH:mm"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
   // {"en":"Bandwidth value, unit Mbps, keep 2 decimal places", "zh_CN":"带宽值,单位Mbps,保留2位小数。"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
-func (s ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList) String() string {
+func (s ReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList) GoString() string {
+func (s ReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList) GoString() string {
   return s.String()
 }
 
-func (s *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList) SetTimestamp(v string) *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList {
+func (s *ReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList) SetTimestamp(v string) *ReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList {
   s.Timestamp = &v
   return s
 }
 
-func (s *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList) SetValue(v string) *ReportBandwidthWildcardDomainServiceReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList {
+func (s *ReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList) SetValue(v string) *ReportBandwidthWildcardDomainServiceResponseDataDomainListBandwidthList {
   s.Value = &v
   return s
 }
@@ -8385,7 +8385,7 @@ func (s *QueryDomainBandwidthDomainList) SetDomainName(v []*string) *QueryDomain
 }
 
 type QueryDomainBandwidthResponse struct {
-  BandwidthReport []*QueryDomainBandwidthQueryDomainBandwidthResponseBandwidthReport `json:"bandwidthReport,omitempty" xml:"bandwidthReport,omitempty" require:"true" type:"Repeated"`
+  BandwidthReport []*QueryDomainBandwidthResponseBandwidthReport `json:"bandwidthReport,omitempty" xml:"bandwidthReport,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryDomainBandwidthResponse) String() string {
@@ -8396,12 +8396,12 @@ func (s QueryDomainBandwidthResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryDomainBandwidthResponse) SetBandwidthReport(v []*QueryDomainBandwidthQueryDomainBandwidthResponseBandwidthReport) *QueryDomainBandwidthResponse {
+func (s *QueryDomainBandwidthResponse) SetBandwidthReport(v []*QueryDomainBandwidthResponseBandwidthReport) *QueryDomainBandwidthResponse {
   s.BandwidthReport = v
   return s
 }
 
-type QueryDomainBandwidthQueryDomainBandwidthResponseBandwidthReport struct     {
+type QueryDomainBandwidthResponseBandwidthReport struct     {
   // {"en":"Date
   // When the querying data granularity is fiveminutes, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:05 AM, and the last one is yyyy-MM-dd 24:00;When the querying data granularity is hourly, the format is yyyy-MM-dd HH; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 01, and the last one is yyyy-MM-dd 24;When the querying data granularity is daily, the format is yyyy-MM-dd; the data value of every time slice represents the value of the daily data;Return the time slice contained in start time and in end time", "zh_CN":"时间
   // 1.查询的数据粒度为fiveminutes时,格式为yyyy-MM-dd HH:mm;每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05,最后一个时间片是yyyy-MM-dd 24:00。
@@ -8413,20 +8413,20 @@ type QueryDomainBandwidthQueryDomainBandwidthResponseBandwidthReport struct     
   Bandwidth *int `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true"`
 }
 
-func (s QueryDomainBandwidthQueryDomainBandwidthResponseBandwidthReport) String() string {
+func (s QueryDomainBandwidthResponseBandwidthReport) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDomainBandwidthQueryDomainBandwidthResponseBandwidthReport) GoString() string {
+func (s QueryDomainBandwidthResponseBandwidthReport) GoString() string {
   return s.String()
 }
 
-func (s *QueryDomainBandwidthQueryDomainBandwidthResponseBandwidthReport) SetTimestamp(v string) *QueryDomainBandwidthQueryDomainBandwidthResponseBandwidthReport {
+func (s *QueryDomainBandwidthResponseBandwidthReport) SetTimestamp(v string) *QueryDomainBandwidthResponseBandwidthReport {
   s.Timestamp = &v
   return s
 }
 
-func (s *QueryDomainBandwidthQueryDomainBandwidthResponseBandwidthReport) SetBandwidth(v int) *QueryDomainBandwidthQueryDomainBandwidthResponseBandwidthReport {
+func (s *QueryDomainBandwidthResponseBandwidthReport) SetBandwidth(v int) *QueryDomainBandwidthResponseBandwidthReport {
   s.Bandwidth = &v
   return s
 }

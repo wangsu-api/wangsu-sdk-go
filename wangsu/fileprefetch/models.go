@@ -85,7 +85,7 @@ type QueryPrefetchStatusResponse struct {
   // {'en':'How many purge task data is displayed per page.', 'zh_CN':'每页显示多少条预取文件的任务数据'}
   PageSize *int32 `json:"pageSize,omitempty" xml:"pageSize,omitempty" require:"true"`
   // {'en':'Collection of task results.', 'zh_CN':'任务结果的集合'}
-  ResultDetail []*QueryPrefetchStatusQueryPrefetchStatusResponseResultDetail `json:"resultDetail,omitempty" xml:"resultDetail,omitempty" require:"true" type:"Repeated"`
+  ResultDetail []*QueryPrefetchStatusResponseResultDetail `json:"resultDetail,omitempty" xml:"resultDetail,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryPrefetchStatusResponse) String() string {
@@ -121,12 +121,12 @@ func (s *QueryPrefetchStatusResponse) SetPageSize(v int32) *QueryPrefetchStatusR
   return s
 }
 
-func (s *QueryPrefetchStatusResponse) SetResultDetail(v []*QueryPrefetchStatusQueryPrefetchStatusResponseResultDetail) *QueryPrefetchStatusResponse {
+func (s *QueryPrefetchStatusResponse) SetResultDetail(v []*QueryPrefetchStatusResponseResultDetail) *QueryPrefetchStatusResponse {
   s.ResultDetail = v
   return s
 }
 
-type QueryPrefetchStatusQueryPrefetchStatusResponseResultDetail struct     {
+type QueryPrefetchStatusResponseResultDetail struct     {
   // {'en':'The time at which the content management system begins to get the file.', 'zh_CN':'内容管理系统开始同步文件的时间'}
   BeginTime *string `json:"beginTime,omitempty" xml:"beginTime,omitempty" require:"true"`
   // {'en':'The time at which the content management system receive the request and creates a prefetch task.', 'zh_CN':'内容管理系统接收预取任务成功并创建预取任务的时间'}
@@ -149,40 +149,40 @@ type QueryPrefetchStatusQueryPrefetchStatusResponseResultDetail struct     {
   Url *string `json:"url,omitempty" xml:"url,omitempty" require:"true"`
 }
 
-func (s QueryPrefetchStatusQueryPrefetchStatusResponseResultDetail) String() string {
+func (s QueryPrefetchStatusResponseResultDetail) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryPrefetchStatusQueryPrefetchStatusResponseResultDetail) GoString() string {
+func (s QueryPrefetchStatusResponseResultDetail) GoString() string {
   return s.String()
 }
 
-func (s *QueryPrefetchStatusQueryPrefetchStatusResponseResultDetail) SetBeginTime(v string) *QueryPrefetchStatusQueryPrefetchStatusResponseResultDetail {
+func (s *QueryPrefetchStatusResponseResultDetail) SetBeginTime(v string) *QueryPrefetchStatusResponseResultDetail {
   s.BeginTime = &v
   return s
 }
 
-func (s *QueryPrefetchStatusQueryPrefetchStatusResponseResultDetail) SetCreateTime(v string) *QueryPrefetchStatusQueryPrefetchStatusResponseResultDetail {
+func (s *QueryPrefetchStatusResponseResultDetail) SetCreateTime(v string) *QueryPrefetchStatusResponseResultDetail {
   s.CreateTime = &v
   return s
 }
 
-func (s *QueryPrefetchStatusQueryPrefetchStatusResponseResultDetail) SetFinishTime(v string) *QueryPrefetchStatusQueryPrefetchStatusResponseResultDetail {
+func (s *QueryPrefetchStatusResponseResultDetail) SetFinishTime(v string) *QueryPrefetchStatusResponseResultDetail {
   s.FinishTime = &v
   return s
 }
 
-func (s *QueryPrefetchStatusQueryPrefetchStatusResponseResultDetail) SetRate(v string) *QueryPrefetchStatusQueryPrefetchStatusResponseResultDetail {
+func (s *QueryPrefetchStatusResponseResultDetail) SetRate(v string) *QueryPrefetchStatusResponseResultDetail {
   s.Rate = &v
   return s
 }
 
-func (s *QueryPrefetchStatusQueryPrefetchStatusResponseResultDetail) SetStatus(v string) *QueryPrefetchStatusQueryPrefetchStatusResponseResultDetail {
+func (s *QueryPrefetchStatusResponseResultDetail) SetStatus(v string) *QueryPrefetchStatusResponseResultDetail {
   s.Status = &v
   return s
 }
 
-func (s *QueryPrefetchStatusQueryPrefetchStatusResponseResultDetail) SetUrl(v string) *QueryPrefetchStatusQueryPrefetchStatusResponseResultDetail {
+func (s *QueryPrefetchStatusResponseResultDetail) SetUrl(v string) *QueryPrefetchStatusResponseResultDetail {
   s.Url = &v
   return s
 }
@@ -382,7 +382,9 @@ type PrefetchRequest struct {
   // 1.The URL must start with http:// or https://, url example: http://www.a.com/image/test.png.
   // 2.Each url has a maximum length of 2000 characters.
   // 3.The domain in the URL is must be the domain of the CDN service.
-  // 4.If the url contains special characters such as Chinese characters and spaces, our system will generate multiple push tasks. In addition to pushing the original URL, these special characters will be converted int32o ASCII codes and pushed. If you only want to clean up the transcoded URL, you need to use UTF-8 to complete the transcoding before submitting the URL, and then submit the escaped url to our system.'
+  // 4.If the url contains special characters such as Chinese characters and spaces, our system will generate multiple push tasks. In addition to pushing the original URL, these special characters will be converted int32o ASCII codes and pushed. If you only want to clean up the transcoded URL, you need to use UTF-8 to complete the transcoding before submitting the URL, and then submit the escaped url to our system.
+  // 5.No more than 20000 urls per day, and no more than 200G file size (it can be adjusted according to account, contact your technical support).
+  // 6.The total number of URLs called by each interface shall not exceed 400'
   // , 'zh_CN':'要预取到CDN节点的url集合，url格式说明：
   // 1、URL 必须以 http:// 或 https:// 开头，输入示例：http://www.a.com/image/test.png。
   // 2、每个url最大长度 2000 字符。

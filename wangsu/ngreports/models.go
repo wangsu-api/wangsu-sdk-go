@@ -66,7 +66,7 @@ func (s GetASummaryOfTrafficBandwidthRequestHeader) GoString() string {
 
 type GetASummaryOfTrafficBandwidthRequest struct {
   // {"en" : "Specify conditions to filter report data.", "zh_CN": "指定查询条件过滤报表数据。"}
-  Filters *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetASummaryOfTrafficBandwidthRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
   // {"en" : "<= 2 items 
   // You can group results using a combination of up to two of the following: 'hostnames', 'serverGroups', and 'customerIds'.", "zh_CN": "<= 2 条目 
   // 指定分组依据对数据进行分组汇总。支持按'hostnames'，'serverGroups'单独进行分组汇总，也支持同时指定这2个参数进行分组汇总。"}
@@ -81,7 +81,7 @@ func (s GetASummaryOfTrafficBandwidthRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfTrafficBandwidthRequest) SetFilters(v *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthRequestFilters) *GetASummaryOfTrafficBandwidthRequest {
+func (s *GetASummaryOfTrafficBandwidthRequest) SetFilters(v *GetASummaryOfTrafficBandwidthRequestFilters) *GetASummaryOfTrafficBandwidthRequest {
   s.Filters = v
   return s
 }
@@ -91,27 +91,27 @@ func (s *GetASummaryOfTrafficBandwidthRequest) SetGroupBy(v []*string) *GetASumm
   return s
 }
 
-type GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthRequestFilters struct {
+type GetASummaryOfTrafficBandwidthRequestFilters struct {
   // {"en" : "List of hostnames for which to return data. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, data from all hostnames will be returned.", "zh_CN": "指定加速域名进行查询。可使用泛域名，如*.domain.com。如果未指定，将返回所有加速域名的数据。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
   // {"en" : "Indicates one or more server groups.", "zh_CN": "指定serverGroups（节点组）进行查询。"}
   ServerGroups []*string `json:"serverGroups,omitempty" xml:"serverGroups,omitempty" type:"Repeated"`
 }
 
-func (s GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthRequestFilters) String() string {
+func (s GetASummaryOfTrafficBandwidthRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthRequestFilters) GoString() string {
+func (s GetASummaryOfTrafficBandwidthRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthRequestFilters) SetHostnames(v []*string) *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthRequestFilters {
+func (s *GetASummaryOfTrafficBandwidthRequestFilters) SetHostnames(v []*string) *GetASummaryOfTrafficBandwidthRequestFilters {
   s.Hostnames = v
   return s
 }
 
-func (s *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthRequestFilters) SetServerGroups(v []*string) *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthRequestFilters {
+func (s *GetASummaryOfTrafficBandwidthRequestFilters) SetServerGroups(v []*string) *GetASummaryOfTrafficBandwidthRequestFilters {
   s.ServerGroups = v
   return s
 }
@@ -129,9 +129,9 @@ func (s GetASummaryOfTrafficBandwidthResponseHeader) GoString() string {
 
 type GetASummaryOfTrafficBandwidthResponse struct {
   // {"en" : "Metadata that describes the data in the response.", "zh_CN": "对响应体中的报表数据的相关说明。"}
-  MetaData *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseMetaData `json:"metaData,omitempty" xml:"metaData,omitempty" require:"true" type:"Struct"`
+  MetaData *GetASummaryOfTrafficBandwidthResponseMetaData `json:"metaData,omitempty" xml:"metaData,omitempty" require:"true" type:"Struct"`
   // {"en" : "This object contains the breakdown of traffic by group. Groups are determined by the request body.", "zh_CN": "每个分组及其带宽。"}
-  Groups []*GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseGroups `json:"groups,omitempty" xml:"groups,omitempty" require:"true" type:"Repeated"`
+  Groups []*GetASummaryOfTrafficBandwidthResponseGroups `json:"groups,omitempty" xml:"groups,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetASummaryOfTrafficBandwidthResponse) String() string {
@@ -142,17 +142,17 @@ func (s GetASummaryOfTrafficBandwidthResponse) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfTrafficBandwidthResponse) SetMetaData(v *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseMetaData) *GetASummaryOfTrafficBandwidthResponse {
+func (s *GetASummaryOfTrafficBandwidthResponse) SetMetaData(v *GetASummaryOfTrafficBandwidthResponseMetaData) *GetASummaryOfTrafficBandwidthResponse {
   s.MetaData = v
   return s
 }
 
-func (s *GetASummaryOfTrafficBandwidthResponse) SetGroups(v []*GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseGroups) *GetASummaryOfTrafficBandwidthResponse {
+func (s *GetASummaryOfTrafficBandwidthResponse) SetGroups(v []*GetASummaryOfTrafficBandwidthResponseGroups) *GetASummaryOfTrafficBandwidthResponse {
   s.Groups = v
   return s
 }
 
-type GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseMetaData struct {
+type GetASummaryOfTrafficBandwidthResponseMetaData struct {
   // {"en" : "RFC 3339 date indicating the beginning of the period.", "zh_CN": "RFC 3339格式的日期，表示查询的起始时间。"}
   StartTime *string `json:"startTime,omitempty" xml:"startTime,omitempty"`
   // {"en" : "RFC 3339 date indicating the end.", "zh_CN": "RFC 3339格式的日期，表示查询的结束时间。"}
@@ -165,60 +165,60 @@ type GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseMetaData 
   DataUnit *string `json:"dataUnit,omitempty" xml:"dataUnit,omitempty"`
 }
 
-func (s GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseMetaData) String() string {
+func (s GetASummaryOfTrafficBandwidthResponseMetaData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseMetaData) GoString() string {
+func (s GetASummaryOfTrafficBandwidthResponseMetaData) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseMetaData) SetStartTime(v string) *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseMetaData {
+func (s *GetASummaryOfTrafficBandwidthResponseMetaData) SetStartTime(v string) *GetASummaryOfTrafficBandwidthResponseMetaData {
   s.StartTime = &v
   return s
 }
 
-func (s *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseMetaData) SetEndTime(v string) *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseMetaData {
+func (s *GetASummaryOfTrafficBandwidthResponseMetaData) SetEndTime(v string) *GetASummaryOfTrafficBandwidthResponseMetaData {
   s.EndTime = &v
   return s
 }
 
-func (s *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseMetaData) SetIsComplete(v bool) *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseMetaData {
+func (s *GetASummaryOfTrafficBandwidthResponseMetaData) SetIsComplete(v bool) *GetASummaryOfTrafficBandwidthResponseMetaData {
   s.IsComplete = &v
   return s
 }
 
-func (s *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseMetaData) SetDataNames(v []*string) *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseMetaData {
+func (s *GetASummaryOfTrafficBandwidthResponseMetaData) SetDataNames(v []*string) *GetASummaryOfTrafficBandwidthResponseMetaData {
   s.DataNames = v
   return s
 }
 
-func (s *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseMetaData) SetDataUnit(v string) *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseMetaData {
+func (s *GetASummaryOfTrafficBandwidthResponseMetaData) SetDataUnit(v string) *GetASummaryOfTrafficBandwidthResponseMetaData {
   s.DataUnit = &v
   return s
 }
 
-type GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseGroups struct     {
+type GetASummaryOfTrafficBandwidthResponseGroups struct     {
   // {"en" : "Name of a group.  '__all__' is a special group encompassing all groups.", "zh_CN": "分组名称。'__all__' 是一个特殊分组，表示总带宽。"}
   Group *string `json:"group,omitempty" xml:"group,omitempty"`
   // {"en" : "Data values. The units of measurement are determined by the dataUnit field.", "zh_CN": "每个分组的带宽值。"}
   Data []*string `json:"data,omitempty" xml:"data,omitempty" type:"Repeated"`
 }
 
-func (s GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseGroups) String() string {
+func (s GetASummaryOfTrafficBandwidthResponseGroups) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseGroups) GoString() string {
+func (s GetASummaryOfTrafficBandwidthResponseGroups) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseGroups) SetGroup(v string) *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseGroups {
+func (s *GetASummaryOfTrafficBandwidthResponseGroups) SetGroup(v string) *GetASummaryOfTrafficBandwidthResponseGroups {
   s.Group = &v
   return s
 }
 
-func (s *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseGroups) SetData(v []*string) *GetASummaryOfTrafficBandwidthGetASummaryOfTrafficBandwidthResponseGroups {
+func (s *GetASummaryOfTrafficBandwidthResponseGroups) SetData(v []*string) *GetASummaryOfTrafficBandwidthResponseGroups {
   s.Data = v
   return s
 }
@@ -276,7 +276,7 @@ func (s GetEdgeHostnameSummaryStatisticsRequestHeader) GoString() string {
 type GetEdgeHostnameSummaryStatisticsRequest struct {
   // {"en" : "Limit statistics to specific edge hostnames.
   // ", "zh_CN": "指定查询范围。"}
-  Filters *GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetEdgeHostnameSummaryStatisticsRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
   // {"en" : "Specify an array containing 'edgeHostnames' to get data for each edge hostname. Omit to get only a cumulative total.", "zh_CN": "指定edgeHostnames，按调度域名分组汇总返回数据。如未指定，则只返回所有调度域名的汇总数据。"}
   GroupBy []*string `json:"groupBy,omitempty" xml:"groupBy,omitempty" type:"Repeated"`
 }
@@ -289,7 +289,7 @@ func (s GetEdgeHostnameSummaryStatisticsRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeHostnameSummaryStatisticsRequest) SetFilters(v *GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsRequestFilters) *GetEdgeHostnameSummaryStatisticsRequest {
+func (s *GetEdgeHostnameSummaryStatisticsRequest) SetFilters(v *GetEdgeHostnameSummaryStatisticsRequestFilters) *GetEdgeHostnameSummaryStatisticsRequest {
   s.Filters = v
   return s
 }
@@ -299,20 +299,20 @@ func (s *GetEdgeHostnameSummaryStatisticsRequest) SetGroupBy(v []*string) *GetEd
   return s
 }
 
-type GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsRequestFilters struct {
+type GetEdgeHostnameSummaryStatisticsRequestFilters struct {
   // {"en" : "One or more edge hostnames.", "zh_CN": "指定一个或多个调度域名进行查询。"}
   EdgeHostnames []*string `json:"edgeHostnames,omitempty" xml:"edgeHostnames,omitempty" type:"Repeated"`
 }
 
-func (s GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsRequestFilters) String() string {
+func (s GetEdgeHostnameSummaryStatisticsRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsRequestFilters) GoString() string {
+func (s GetEdgeHostnameSummaryStatisticsRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsRequestFilters) SetEdgeHostnames(v []*string) *GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsRequestFilters {
+func (s *GetEdgeHostnameSummaryStatisticsRequestFilters) SetEdgeHostnames(v []*string) *GetEdgeHostnameSummaryStatisticsRequestFilters {
   s.EdgeHostnames = v
   return s
 }
@@ -330,9 +330,9 @@ func (s GetEdgeHostnameSummaryStatisticsResponseHeader) GoString() string {
 
 type GetEdgeHostnameSummaryStatisticsResponse struct {
   // {"en" : "This object contains fields describing the data returned in the groups object.", "zh_CN": "此对象包含的字段是对groups对象中返回数据的描述。"}
-  MetaData *GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseMetaData `json:"metaData,omitempty" xml:"metaData,omitempty" require:"true" type:"Struct"`
+  MetaData *GetEdgeHostnameSummaryStatisticsResponseMetaData `json:"metaData,omitempty" xml:"metaData,omitempty" require:"true" type:"Struct"`
   // {"en" : "This object contains the breakdown of DNS requests by group. Groups are determined by the request body.", "zh_CN": "按调度域名分组汇总的数据。"}
-  Groups []*GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseGroups `json:"groups,omitempty" xml:"groups,omitempty" require:"true" type:"Repeated"`
+  Groups []*GetEdgeHostnameSummaryStatisticsResponseGroups `json:"groups,omitempty" xml:"groups,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetEdgeHostnameSummaryStatisticsResponse) String() string {
@@ -343,17 +343,17 @@ func (s GetEdgeHostnameSummaryStatisticsResponse) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeHostnameSummaryStatisticsResponse) SetMetaData(v *GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseMetaData) *GetEdgeHostnameSummaryStatisticsResponse {
+func (s *GetEdgeHostnameSummaryStatisticsResponse) SetMetaData(v *GetEdgeHostnameSummaryStatisticsResponseMetaData) *GetEdgeHostnameSummaryStatisticsResponse {
   s.MetaData = v
   return s
 }
 
-func (s *GetEdgeHostnameSummaryStatisticsResponse) SetGroups(v []*GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseGroups) *GetEdgeHostnameSummaryStatisticsResponse {
+func (s *GetEdgeHostnameSummaryStatisticsResponse) SetGroups(v []*GetEdgeHostnameSummaryStatisticsResponseGroups) *GetEdgeHostnameSummaryStatisticsResponse {
   s.Groups = v
   return s
 }
 
-type GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseMetaData struct {
+type GetEdgeHostnameSummaryStatisticsResponseMetaData struct {
   // {"en" : "RFC 3339 date indicating the beginning of the period.", "zh_CN": "RFC 3339格式的日期，表示查询的起始时间。"}
   StartTime *string `json:"startTime,omitempty" xml:"startTime,omitempty"`
   // {"en" : "RFC 3339 date indicating the end of the period.", "zh_CN": "RFC 3339格式的日期，表示查询的结束时间。"}
@@ -366,40 +366,40 @@ type GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseMet
   DataUnit *string `json:"dataUnit,omitempty" xml:"dataUnit,omitempty"`
 }
 
-func (s GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseMetaData) String() string {
+func (s GetEdgeHostnameSummaryStatisticsResponseMetaData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseMetaData) GoString() string {
+func (s GetEdgeHostnameSummaryStatisticsResponseMetaData) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseMetaData) SetStartTime(v string) *GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseMetaData {
+func (s *GetEdgeHostnameSummaryStatisticsResponseMetaData) SetStartTime(v string) *GetEdgeHostnameSummaryStatisticsResponseMetaData {
   s.StartTime = &v
   return s
 }
 
-func (s *GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseMetaData) SetEndTime(v string) *GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseMetaData {
+func (s *GetEdgeHostnameSummaryStatisticsResponseMetaData) SetEndTime(v string) *GetEdgeHostnameSummaryStatisticsResponseMetaData {
   s.EndTime = &v
   return s
 }
 
-func (s *GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseMetaData) SetIsComplete(v bool) *GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseMetaData {
+func (s *GetEdgeHostnameSummaryStatisticsResponseMetaData) SetIsComplete(v bool) *GetEdgeHostnameSummaryStatisticsResponseMetaData {
   s.IsComplete = &v
   return s
 }
 
-func (s *GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseMetaData) SetDataNames(v []*string) *GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseMetaData {
+func (s *GetEdgeHostnameSummaryStatisticsResponseMetaData) SetDataNames(v []*string) *GetEdgeHostnameSummaryStatisticsResponseMetaData {
   s.DataNames = v
   return s
 }
 
-func (s *GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseMetaData) SetDataUnit(v string) *GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseMetaData {
+func (s *GetEdgeHostnameSummaryStatisticsResponseMetaData) SetDataUnit(v string) *GetEdgeHostnameSummaryStatisticsResponseMetaData {
   s.DataUnit = &v
   return s
 }
 
-type GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseGroups struct     {
+type GetEdgeHostnameSummaryStatisticsResponseGroups struct     {
   // {"en" : "Name of a group.  '__all__' is a special group encompassing all groups.
   // ", "zh_CN": "分组名称。'__all__' 是一个特殊分组，包含其它所有分组的数据。"}
   Group *string `json:"group,omitempty" xml:"group,omitempty"`
@@ -407,20 +407,20 @@ type GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseGro
   Data []*string `json:"data,omitempty" xml:"data,omitempty" type:"Repeated"`
 }
 
-func (s GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseGroups) String() string {
+func (s GetEdgeHostnameSummaryStatisticsResponseGroups) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseGroups) GoString() string {
+func (s GetEdgeHostnameSummaryStatisticsResponseGroups) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseGroups) SetGroup(v string) *GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseGroups {
+func (s *GetEdgeHostnameSummaryStatisticsResponseGroups) SetGroup(v string) *GetEdgeHostnameSummaryStatisticsResponseGroups {
   s.Group = &v
   return s
 }
 
-func (s *GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseGroups) SetData(v []*string) *GetEdgeHostnameSummaryStatisticsGetEdgeHostnameSummaryStatisticsResponseGroups {
+func (s *GetEdgeHostnameSummaryStatisticsResponseGroups) SetData(v []*string) *GetEdgeHostnameSummaryStatisticsResponseGroups {
   s.Data = v
   return s
 }
@@ -499,7 +499,7 @@ func (s GetOriginStatusCodeDetailsRequestHeader) GoString() string {
 
 type GetOriginStatusCodeDetailsRequest struct {
   // {"en" : "Specify conditions to filter report data.", "zh_CN": "指定查询条件过滤报表数据。"}
-  Filters *GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetOriginStatusCodeDetailsRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
 }
 
 func (s GetOriginStatusCodeDetailsRequest) String() string {
@@ -510,25 +510,25 @@ func (s GetOriginStatusCodeDetailsRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetOriginStatusCodeDetailsRequest) SetFilters(v *GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsRequestFilters) *GetOriginStatusCodeDetailsRequest {
+func (s *GetOriginStatusCodeDetailsRequest) SetFilters(v *GetOriginStatusCodeDetailsRequestFilters) *GetOriginStatusCodeDetailsRequest {
   s.Filters = v
   return s
 }
 
-type GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsRequestFilters struct {
+type GetOriginStatusCodeDetailsRequestFilters struct {
   // {"en" : "List of hostnames for which to return data. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, data from all hostnames will be returned.", "zh_CN": "指定加速域名进行查询。可使用泛域名，如*.domain.com。如果未指定，将返回所有加速域名的数据。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
 }
 
-func (s GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsRequestFilters) String() string {
+func (s GetOriginStatusCodeDetailsRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsRequestFilters) GoString() string {
+func (s GetOriginStatusCodeDetailsRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsRequestFilters) SetHostnames(v []*string) *GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsRequestFilters {
+func (s *GetOriginStatusCodeDetailsRequestFilters) SetHostnames(v []*string) *GetOriginStatusCodeDetailsRequestFilters {
   s.Hostnames = v
   return s
 }
@@ -552,7 +552,7 @@ type GetOriginStatusCodeDetailsResponse struct {
   // 计量单位。对于状态码报表接口，单位为'次数'，表示某个状态码出现的次数。"}
   DataUnit *string `json:"dataUnit,omitempty" xml:"dataUnit,omitempty" require:"true"`
   // {"en" : "Contains information about status codes at different points in time.", "zh_CN": "不同时间点的状态码统计信息。"}
-  DataSeries []*GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
+  DataSeries []*GetOriginStatusCodeDetailsResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetOriginStatusCodeDetailsResponse) String() string {
@@ -573,37 +573,37 @@ func (s *GetOriginStatusCodeDetailsResponse) SetDataUnit(v string) *GetOriginSta
   return s
 }
 
-func (s *GetOriginStatusCodeDetailsResponse) SetDataSeries(v []*GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsResponseDataSeries) *GetOriginStatusCodeDetailsResponse {
+func (s *GetOriginStatusCodeDetailsResponse) SetDataSeries(v []*GetOriginStatusCodeDetailsResponseDataSeries) *GetOriginStatusCodeDetailsResponse {
   s.DataSeries = v
   return s
 }
 
-type GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsResponseDataSeries struct     {
+type GetOriginStatusCodeDetailsResponseDataSeries struct     {
   // {"en" : "RFC 3339 format date indicate the beginning of an interval.", "zh_CN": "RFC 3339格式的日期，表示每个时间段的开始时间。"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty"`
   // {"en" : "", "zh_CN": ""}
-  Details []*GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsResponseDataSeriesDetails `json:"details,omitempty" xml:"details,omitempty" type:"Repeated"`
+  Details []*GetOriginStatusCodeDetailsResponseDataSeriesDetails `json:"details,omitempty" xml:"details,omitempty" type:"Repeated"`
 }
 
-func (s GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsResponseDataSeries) String() string {
+func (s GetOriginStatusCodeDetailsResponseDataSeries) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsResponseDataSeries) GoString() string {
+func (s GetOriginStatusCodeDetailsResponseDataSeries) GoString() string {
   return s.String()
 }
 
-func (s *GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsResponseDataSeries) SetTimestamp(v string) *GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsResponseDataSeries {
+func (s *GetOriginStatusCodeDetailsResponseDataSeries) SetTimestamp(v string) *GetOriginStatusCodeDetailsResponseDataSeries {
   s.Timestamp = &v
   return s
 }
 
-func (s *GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsResponseDataSeries) SetDetails(v []*GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsResponseDataSeriesDetails) *GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsResponseDataSeries {
+func (s *GetOriginStatusCodeDetailsResponseDataSeries) SetDetails(v []*GetOriginStatusCodeDetailsResponseDataSeriesDetails) *GetOriginStatusCodeDetailsResponseDataSeries {
   s.Details = v
   return s
 }
 
-type GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsResponseDataSeriesDetails struct     {
+type GetOriginStatusCodeDetailsResponseDataSeriesDetails struct     {
   // {"en" : "Indicates an HTTP status code, for example, '200'.", "zh_CN": "HTTP状态码，例如'200'。"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty"`
   // {"en" : "Range: >= 0 
@@ -612,20 +612,20 @@ type GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsResponseDataSeriesDetai
   Data *int `json:"data,omitempty" xml:"data,omitempty"`
 }
 
-func (s GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsResponseDataSeriesDetails) String() string {
+func (s GetOriginStatusCodeDetailsResponseDataSeriesDetails) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsResponseDataSeriesDetails) GoString() string {
+func (s GetOriginStatusCodeDetailsResponseDataSeriesDetails) GoString() string {
   return s.String()
 }
 
-func (s *GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsResponseDataSeriesDetails) SetStatusCode(v string) *GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsResponseDataSeriesDetails {
+func (s *GetOriginStatusCodeDetailsResponseDataSeriesDetails) SetStatusCode(v string) *GetOriginStatusCodeDetailsResponseDataSeriesDetails {
   s.StatusCode = &v
   return s
 }
 
-func (s *GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsResponseDataSeriesDetails) SetData(v int) *GetOriginStatusCodeDetailsGetOriginStatusCodeDetailsResponseDataSeriesDetails {
+func (s *GetOriginStatusCodeDetailsResponseDataSeriesDetails) SetData(v int) *GetOriginStatusCodeDetailsResponseDataSeriesDetails {
   s.Data = &v
   return s
 }
@@ -704,7 +704,7 @@ func (s GetEdgeBandwidthRequestHeader) GoString() string {
 
 type GetEdgeBandwidthRequest struct {
   // {"en" : "Specify conditions to filter report data.", "zh_CN": "指定查询条件过滤报表数据。"}
-  Filters *GetEdgeBandwidthGetEdgeBandwidthRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetEdgeBandwidthRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
 }
 
 func (s GetEdgeBandwidthRequest) String() string {
@@ -715,12 +715,12 @@ func (s GetEdgeBandwidthRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeBandwidthRequest) SetFilters(v *GetEdgeBandwidthGetEdgeBandwidthRequestFilters) *GetEdgeBandwidthRequest {
+func (s *GetEdgeBandwidthRequest) SetFilters(v *GetEdgeBandwidthRequestFilters) *GetEdgeBandwidthRequest {
   s.Filters = v
   return s
 }
 
-type GetEdgeBandwidthGetEdgeBandwidthRequestFilters struct {
+type GetEdgeBandwidthRequestFilters struct {
   // {"en" : "List of hostnames for which to return data. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, data from all hostnames will be returned.", "zh_CN": "指定加速域名进行查询。可使用泛域名，如*.domain.com。如果未指定，将返回所有加速域名的数据。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
   // {"en" : "Enum: standard premium deluxe ultra 
@@ -729,20 +729,20 @@ type GetEdgeBandwidthGetEdgeBandwidthRequestFilters struct {
   ServerGroups []*string `json:"serverGroups,omitempty" xml:"serverGroups,omitempty" type:"Repeated"`
 }
 
-func (s GetEdgeBandwidthGetEdgeBandwidthRequestFilters) String() string {
+func (s GetEdgeBandwidthRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetEdgeBandwidthGetEdgeBandwidthRequestFilters) GoString() string {
+func (s GetEdgeBandwidthRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeBandwidthGetEdgeBandwidthRequestFilters) SetHostnames(v []*string) *GetEdgeBandwidthGetEdgeBandwidthRequestFilters {
+func (s *GetEdgeBandwidthRequestFilters) SetHostnames(v []*string) *GetEdgeBandwidthRequestFilters {
   s.Hostnames = v
   return s
 }
 
-func (s *GetEdgeBandwidthGetEdgeBandwidthRequestFilters) SetServerGroups(v []*string) *GetEdgeBandwidthGetEdgeBandwidthRequestFilters {
+func (s *GetEdgeBandwidthRequestFilters) SetServerGroups(v []*string) *GetEdgeBandwidthRequestFilters {
   s.ServerGroups = v
   return s
 }
@@ -764,7 +764,7 @@ type GetEdgeBandwidthResponse struct {
   // {"en" : "Unit of measurement. This will depend on the report API.", "zh_CN": "计量单位。不同报表类型计量单位不一样。"}
   DataUnit *string `json:"dataUnit,omitempty" xml:"dataUnit,omitempty" require:"true"`
   // {"en" : "The data points.", "zh_CN": "数据点。"}
-  DataSeries []*GetEdgeBandwidthGetEdgeBandwidthResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
+  DataSeries []*GetEdgeBandwidthResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetEdgeBandwidthResponse) String() string {
@@ -785,32 +785,32 @@ func (s *GetEdgeBandwidthResponse) SetDataUnit(v string) *GetEdgeBandwidthRespon
   return s
 }
 
-func (s *GetEdgeBandwidthResponse) SetDataSeries(v []*GetEdgeBandwidthGetEdgeBandwidthResponseDataSeries) *GetEdgeBandwidthResponse {
+func (s *GetEdgeBandwidthResponse) SetDataSeries(v []*GetEdgeBandwidthResponseDataSeries) *GetEdgeBandwidthResponse {
   s.DataSeries = v
   return s
 }
 
-type GetEdgeBandwidthGetEdgeBandwidthResponseDataSeries struct     {
+type GetEdgeBandwidthResponseDataSeries struct     {
   // {"en" : "An RFC 3339 format date representing the beginning of a time interval. It is always in <b>UTC</b> time. For example:  'timestamp': '2019-10-29T01:00:00Z'", "zh_CN": "每个时间段的起始时间，以RFC 3339日期格式表示。始终采用UTC时区。例如：'timestamp': '2019-10-29T01:00:00Z'"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty"`
   // {"en" : "A value at that timestamp. Refer to the dataUnit field for the unit of measurement.", "zh_CN": "该时间段对应的值。计量单位，由dataUnit字段指定。"}
   Data *int `json:"data,omitempty" xml:"data,omitempty"`
 }
 
-func (s GetEdgeBandwidthGetEdgeBandwidthResponseDataSeries) String() string {
+func (s GetEdgeBandwidthResponseDataSeries) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetEdgeBandwidthGetEdgeBandwidthResponseDataSeries) GoString() string {
+func (s GetEdgeBandwidthResponseDataSeries) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeBandwidthGetEdgeBandwidthResponseDataSeries) SetTimestamp(v string) *GetEdgeBandwidthGetEdgeBandwidthResponseDataSeries {
+func (s *GetEdgeBandwidthResponseDataSeries) SetTimestamp(v string) *GetEdgeBandwidthResponseDataSeries {
   s.Timestamp = &v
   return s
 }
 
-func (s *GetEdgeBandwidthGetEdgeBandwidthResponseDataSeries) SetData(v int) *GetEdgeBandwidthGetEdgeBandwidthResponseDataSeries {
+func (s *GetEdgeBandwidthResponseDataSeries) SetData(v int) *GetEdgeBandwidthResponseDataSeries {
   s.Data = &v
   return s
 }
@@ -889,7 +889,7 @@ func (s GetEdgeStatusCodeDetailsRequestHeader) GoString() string {
 
 type GetEdgeStatusCodeDetailsRequest struct {
   // {"en" : "Specify conditions to filter report data.", "zh_CN": "指定查询条件过滤报表数据。"}
-  Filters *GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetEdgeStatusCodeDetailsRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
 }
 
 func (s GetEdgeStatusCodeDetailsRequest) String() string {
@@ -900,25 +900,25 @@ func (s GetEdgeStatusCodeDetailsRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeStatusCodeDetailsRequest) SetFilters(v *GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsRequestFilters) *GetEdgeStatusCodeDetailsRequest {
+func (s *GetEdgeStatusCodeDetailsRequest) SetFilters(v *GetEdgeStatusCodeDetailsRequestFilters) *GetEdgeStatusCodeDetailsRequest {
   s.Filters = v
   return s
 }
 
-type GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsRequestFilters struct {
+type GetEdgeStatusCodeDetailsRequestFilters struct {
   // {"en" : "List of hostnames for which to return data. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, data from all hostnames will be returned.", "zh_CN": "指定加速域名进行查询。可使用泛域名，如*.domain.com。如果未指定，将返回所有加速域名的数据。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
 }
 
-func (s GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsRequestFilters) String() string {
+func (s GetEdgeStatusCodeDetailsRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsRequestFilters) GoString() string {
+func (s GetEdgeStatusCodeDetailsRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsRequestFilters) SetHostnames(v []*string) *GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsRequestFilters {
+func (s *GetEdgeStatusCodeDetailsRequestFilters) SetHostnames(v []*string) *GetEdgeStatusCodeDetailsRequestFilters {
   s.Hostnames = v
   return s
 }
@@ -942,7 +942,7 @@ type GetEdgeStatusCodeDetailsResponse struct {
   // 计量单位。对于状态码报表接口，单位为'次数'，表示某个状态码出现的次数。"}
   DataUnit *string `json:"dataUnit,omitempty" xml:"dataUnit,omitempty" require:"true"`
   // {"en" : "Contains information about status codes at different points in time.", "zh_CN": "不同时间点的状态码统计信息。"}
-  DataSeries []*GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
+  DataSeries []*GetEdgeStatusCodeDetailsResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetEdgeStatusCodeDetailsResponse) String() string {
@@ -963,37 +963,37 @@ func (s *GetEdgeStatusCodeDetailsResponse) SetDataUnit(v string) *GetEdgeStatusC
   return s
 }
 
-func (s *GetEdgeStatusCodeDetailsResponse) SetDataSeries(v []*GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsResponseDataSeries) *GetEdgeStatusCodeDetailsResponse {
+func (s *GetEdgeStatusCodeDetailsResponse) SetDataSeries(v []*GetEdgeStatusCodeDetailsResponseDataSeries) *GetEdgeStatusCodeDetailsResponse {
   s.DataSeries = v
   return s
 }
 
-type GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsResponseDataSeries struct     {
+type GetEdgeStatusCodeDetailsResponseDataSeries struct     {
   // {"en" : "RFC 3339 format date indicate the beginning of an interval.", "zh_CN": "RFC 3339格式的日期，表示每个时间段的开始时间。"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty"`
   // {"en" : "", "zh_CN": ""}
-  Details []*GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsResponseDataSeriesDetails `json:"details,omitempty" xml:"details,omitempty" type:"Repeated"`
+  Details []*GetEdgeStatusCodeDetailsResponseDataSeriesDetails `json:"details,omitempty" xml:"details,omitempty" type:"Repeated"`
 }
 
-func (s GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsResponseDataSeries) String() string {
+func (s GetEdgeStatusCodeDetailsResponseDataSeries) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsResponseDataSeries) GoString() string {
+func (s GetEdgeStatusCodeDetailsResponseDataSeries) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsResponseDataSeries) SetTimestamp(v string) *GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsResponseDataSeries {
+func (s *GetEdgeStatusCodeDetailsResponseDataSeries) SetTimestamp(v string) *GetEdgeStatusCodeDetailsResponseDataSeries {
   s.Timestamp = &v
   return s
 }
 
-func (s *GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsResponseDataSeries) SetDetails(v []*GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsResponseDataSeriesDetails) *GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsResponseDataSeries {
+func (s *GetEdgeStatusCodeDetailsResponseDataSeries) SetDetails(v []*GetEdgeStatusCodeDetailsResponseDataSeriesDetails) *GetEdgeStatusCodeDetailsResponseDataSeries {
   s.Details = v
   return s
 }
 
-type GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsResponseDataSeriesDetails struct     {
+type GetEdgeStatusCodeDetailsResponseDataSeriesDetails struct     {
   // {"en" : "Indicates an HTTP status code, for example, '200'.", "zh_CN": "HTTP状态码，例如'200'。"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty"`
   // {"en" : "Range: >= 0 
@@ -1002,20 +1002,20 @@ type GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsResponseDataSeriesDetails s
   Data *int `json:"data,omitempty" xml:"data,omitempty"`
 }
 
-func (s GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsResponseDataSeriesDetails) String() string {
+func (s GetEdgeStatusCodeDetailsResponseDataSeriesDetails) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsResponseDataSeriesDetails) GoString() string {
+func (s GetEdgeStatusCodeDetailsResponseDataSeriesDetails) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsResponseDataSeriesDetails) SetStatusCode(v string) *GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsResponseDataSeriesDetails {
+func (s *GetEdgeStatusCodeDetailsResponseDataSeriesDetails) SetStatusCode(v string) *GetEdgeStatusCodeDetailsResponseDataSeriesDetails {
   s.StatusCode = &v
   return s
 }
 
-func (s *GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsResponseDataSeriesDetails) SetData(v int) *GetEdgeStatusCodeDetailsGetEdgeStatusCodeDetailsResponseDataSeriesDetails {
+func (s *GetEdgeStatusCodeDetailsResponseDataSeriesDetails) SetData(v int) *GetEdgeStatusCodeDetailsResponseDataSeriesDetails {
   s.Data = &v
   return s
 }
@@ -1094,7 +1094,7 @@ func (s GetTheNumberOfRequestsToOriginRequestHeader) GoString() string {
 
 type GetTheNumberOfRequestsToOriginRequest struct {
   // {"en" : "", "zh_CN": ""}
-  Filters *GetTheNumberOfRequestsToOriginGetTheNumberOfRequestsToOriginRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetTheNumberOfRequestsToOriginRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
 }
 
 func (s GetTheNumberOfRequestsToOriginRequest) String() string {
@@ -1105,25 +1105,25 @@ func (s GetTheNumberOfRequestsToOriginRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetTheNumberOfRequestsToOriginRequest) SetFilters(v *GetTheNumberOfRequestsToOriginGetTheNumberOfRequestsToOriginRequestFilters) *GetTheNumberOfRequestsToOriginRequest {
+func (s *GetTheNumberOfRequestsToOriginRequest) SetFilters(v *GetTheNumberOfRequestsToOriginRequestFilters) *GetTheNumberOfRequestsToOriginRequest {
   s.Filters = v
   return s
 }
 
-type GetTheNumberOfRequestsToOriginGetTheNumberOfRequestsToOriginRequestFilters struct {
+type GetTheNumberOfRequestsToOriginRequestFilters struct {
   // {"en" : "List of hostnames for which to return data. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, data from all hostnames will be returned.", "zh_CN": "指定加速域名进行查询。可使用泛域名，如*.domain.com。如果未指定，将返回所有加速域名的数据。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
 }
 
-func (s GetTheNumberOfRequestsToOriginGetTheNumberOfRequestsToOriginRequestFilters) String() string {
+func (s GetTheNumberOfRequestsToOriginRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetTheNumberOfRequestsToOriginGetTheNumberOfRequestsToOriginRequestFilters) GoString() string {
+func (s GetTheNumberOfRequestsToOriginRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetTheNumberOfRequestsToOriginGetTheNumberOfRequestsToOriginRequestFilters) SetHostnames(v []*string) *GetTheNumberOfRequestsToOriginGetTheNumberOfRequestsToOriginRequestFilters {
+func (s *GetTheNumberOfRequestsToOriginRequestFilters) SetHostnames(v []*string) *GetTheNumberOfRequestsToOriginRequestFilters {
   s.Hostnames = v
   return s
 }
@@ -1145,7 +1145,7 @@ type GetTheNumberOfRequestsToOriginResponse struct {
   // {"en" : "Unit of measurement. This will depend on the report API.", "zh_CN": "计量单位。不同报表类型计量单位不一样。"}
   DataUnit *string `json:"dataUnit,omitempty" xml:"dataUnit,omitempty" require:"true"`
   // {"en" : "The data points.", "zh_CN": "数据点。"}
-  DataSeries []*GetTheNumberOfRequestsToOriginGetTheNumberOfRequestsToOriginResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
+  DataSeries []*GetTheNumberOfRequestsToOriginResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetTheNumberOfRequestsToOriginResponse) String() string {
@@ -1166,32 +1166,32 @@ func (s *GetTheNumberOfRequestsToOriginResponse) SetDataUnit(v string) *GetTheNu
   return s
 }
 
-func (s *GetTheNumberOfRequestsToOriginResponse) SetDataSeries(v []*GetTheNumberOfRequestsToOriginGetTheNumberOfRequestsToOriginResponseDataSeries) *GetTheNumberOfRequestsToOriginResponse {
+func (s *GetTheNumberOfRequestsToOriginResponse) SetDataSeries(v []*GetTheNumberOfRequestsToOriginResponseDataSeries) *GetTheNumberOfRequestsToOriginResponse {
   s.DataSeries = v
   return s
 }
 
-type GetTheNumberOfRequestsToOriginGetTheNumberOfRequestsToOriginResponseDataSeries struct     {
+type GetTheNumberOfRequestsToOriginResponseDataSeries struct     {
   // {"en" : "An RFC 3339 format date representing the beginning of a time interval. It is always in <b>UTC</b> time. For example:  'timestamp': '2019-10-29T01:00:00Z'", "zh_CN": "每个时间段的起始时间，以RFC 3339日期格式表示。始终采用UTC时区。例如：'timestamp': '2019-10-29T01:00:00Z'"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty"`
   // {"en" : "A value at that timestamp. Refer to the dataUnit field for the unit of measurement.", "zh_CN": "该时间段对应的值。计量单位，由dataUnit字段指定。"}
   Data *int `json:"data,omitempty" xml:"data,omitempty"`
 }
 
-func (s GetTheNumberOfRequestsToOriginGetTheNumberOfRequestsToOriginResponseDataSeries) String() string {
+func (s GetTheNumberOfRequestsToOriginResponseDataSeries) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetTheNumberOfRequestsToOriginGetTheNumberOfRequestsToOriginResponseDataSeries) GoString() string {
+func (s GetTheNumberOfRequestsToOriginResponseDataSeries) GoString() string {
   return s.String()
 }
 
-func (s *GetTheNumberOfRequestsToOriginGetTheNumberOfRequestsToOriginResponseDataSeries) SetTimestamp(v string) *GetTheNumberOfRequestsToOriginGetTheNumberOfRequestsToOriginResponseDataSeries {
+func (s *GetTheNumberOfRequestsToOriginResponseDataSeries) SetTimestamp(v string) *GetTheNumberOfRequestsToOriginResponseDataSeries {
   s.Timestamp = &v
   return s
 }
 
-func (s *GetTheNumberOfRequestsToOriginGetTheNumberOfRequestsToOriginResponseDataSeries) SetData(v int) *GetTheNumberOfRequestsToOriginGetTheNumberOfRequestsToOriginResponseDataSeries {
+func (s *GetTheNumberOfRequestsToOriginResponseDataSeries) SetData(v int) *GetTheNumberOfRequestsToOriginResponseDataSeries {
   s.Data = &v
   return s
 }
@@ -1257,7 +1257,7 @@ func (s GetEdgeHostnameStatisticsRequestHeader) GoString() string {
 
 type GetEdgeHostnameStatisticsRequest struct {
   // {"en" : "Limit statistics to specific edge hostnames.", "zh_CN": "指定调度域名进行查询。"}
-  Filters *GetEdgeHostnameStatisticsGetEdgeHostnameStatisticsRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetEdgeHostnameStatisticsRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
 }
 
 func (s GetEdgeHostnameStatisticsRequest) String() string {
@@ -1268,25 +1268,25 @@ func (s GetEdgeHostnameStatisticsRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeHostnameStatisticsRequest) SetFilters(v *GetEdgeHostnameStatisticsGetEdgeHostnameStatisticsRequestFilters) *GetEdgeHostnameStatisticsRequest {
+func (s *GetEdgeHostnameStatisticsRequest) SetFilters(v *GetEdgeHostnameStatisticsRequestFilters) *GetEdgeHostnameStatisticsRequest {
   s.Filters = v
   return s
 }
 
-type GetEdgeHostnameStatisticsGetEdgeHostnameStatisticsRequestFilters struct {
+type GetEdgeHostnameStatisticsRequestFilters struct {
   // {"en" : "One or more edge hostnames.", "zh_CN": "一个或多个调度域名。"}
   EdgeHostnames []*string `json:"edgeHostnames,omitempty" xml:"edgeHostnames,omitempty" type:"Repeated"`
 }
 
-func (s GetEdgeHostnameStatisticsGetEdgeHostnameStatisticsRequestFilters) String() string {
+func (s GetEdgeHostnameStatisticsRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetEdgeHostnameStatisticsGetEdgeHostnameStatisticsRequestFilters) GoString() string {
+func (s GetEdgeHostnameStatisticsRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeHostnameStatisticsGetEdgeHostnameStatisticsRequestFilters) SetEdgeHostnames(v []*string) *GetEdgeHostnameStatisticsGetEdgeHostnameStatisticsRequestFilters {
+func (s *GetEdgeHostnameStatisticsRequestFilters) SetEdgeHostnames(v []*string) *GetEdgeHostnameStatisticsRequestFilters {
   s.EdgeHostnames = v
   return s
 }
@@ -1308,7 +1308,7 @@ type GetEdgeHostnameStatisticsResponse struct {
   // {"en" : "Unit of measurement. This will depend on the report API.", "zh_CN": "计量单位。不同报表类型计量单位不一样。"}
   DataUnit *string `json:"dataUnit,omitempty" xml:"dataUnit,omitempty" require:"true"`
   // {"en" : "The data points.", "zh_CN": "数据点。"}
-  DataSeries []*GetEdgeHostnameStatisticsGetEdgeHostnameStatisticsResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
+  DataSeries []*GetEdgeHostnameStatisticsResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetEdgeHostnameStatisticsResponse) String() string {
@@ -1329,32 +1329,32 @@ func (s *GetEdgeHostnameStatisticsResponse) SetDataUnit(v string) *GetEdgeHostna
   return s
 }
 
-func (s *GetEdgeHostnameStatisticsResponse) SetDataSeries(v []*GetEdgeHostnameStatisticsGetEdgeHostnameStatisticsResponseDataSeries) *GetEdgeHostnameStatisticsResponse {
+func (s *GetEdgeHostnameStatisticsResponse) SetDataSeries(v []*GetEdgeHostnameStatisticsResponseDataSeries) *GetEdgeHostnameStatisticsResponse {
   s.DataSeries = v
   return s
 }
 
-type GetEdgeHostnameStatisticsGetEdgeHostnameStatisticsResponseDataSeries struct     {
+type GetEdgeHostnameStatisticsResponseDataSeries struct     {
   // {"en" : "An RFC 3339 format date representing the beginning of a time interval. It is always in <b>UTC</b> time. For example:  'timestamp': '2019-10-29T01:00:00Z'", "zh_CN": "每个时间段的起始时间，以RFC 3339日期格式表示。始终采用UTC时区。例如：'timestamp': '2019-10-29T01:00:00Z'"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty"`
   // {"en" : "A value at that timestamp. Refer to the dataUnit field for the unit of measurement.", "zh_CN": "该时间段对应的值。计量单位，由dataUnit字段指定。"}
   Data *int `json:"data,omitempty" xml:"data,omitempty"`
 }
 
-func (s GetEdgeHostnameStatisticsGetEdgeHostnameStatisticsResponseDataSeries) String() string {
+func (s GetEdgeHostnameStatisticsResponseDataSeries) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetEdgeHostnameStatisticsGetEdgeHostnameStatisticsResponseDataSeries) GoString() string {
+func (s GetEdgeHostnameStatisticsResponseDataSeries) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeHostnameStatisticsGetEdgeHostnameStatisticsResponseDataSeries) SetTimestamp(v string) *GetEdgeHostnameStatisticsGetEdgeHostnameStatisticsResponseDataSeries {
+func (s *GetEdgeHostnameStatisticsResponseDataSeries) SetTimestamp(v string) *GetEdgeHostnameStatisticsResponseDataSeries {
   s.Timestamp = &v
   return s
 }
 
-func (s *GetEdgeHostnameStatisticsGetEdgeHostnameStatisticsResponseDataSeries) SetData(v int) *GetEdgeHostnameStatisticsGetEdgeHostnameStatisticsResponseDataSeries {
+func (s *GetEdgeHostnameStatisticsResponseDataSeries) SetData(v int) *GetEdgeHostnameStatisticsResponseDataSeries {
   s.Data = &v
   return s
 }
@@ -1430,7 +1430,7 @@ func (s GetCpuTimeUsedRequestHeader) GoString() string {
 
 type GetCpuTimeUsedRequest struct {
   // {"en" : "Filter results by specifying hostnames or server groups.", "zh_CN": "Filter results by specifying hostnames or server groups."}
-  Filters *GetCpuTimeUsedGetCpuTimeUsedRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetCpuTimeUsedRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
 }
 
 func (s GetCpuTimeUsedRequest) String() string {
@@ -1441,32 +1441,32 @@ func (s GetCpuTimeUsedRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetCpuTimeUsedRequest) SetFilters(v *GetCpuTimeUsedGetCpuTimeUsedRequestFilters) *GetCpuTimeUsedRequest {
+func (s *GetCpuTimeUsedRequest) SetFilters(v *GetCpuTimeUsedRequestFilters) *GetCpuTimeUsedRequest {
   s.Filters = v
   return s
 }
 
-type GetCpuTimeUsedGetCpuTimeUsedRequestFilters struct {
+type GetCpuTimeUsedRequestFilters struct {
   // {"en" : "List of hostnames for which to return data. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, data from all hostnames will be returned.", "zh_CN": "指定加速域名进行查询。可使用泛域名，如*.domain.com。如果未指定，将返回所有加速域名的数据。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
   // {"en" : "One or more server groups for which to return data. If unspecified, data for all server groups will be returned.", "zh_CN": "指定serverGroups（节点组）进行查询。"}
   ServerGroups []*string `json:"serverGroups,omitempty" xml:"serverGroups,omitempty" type:"Repeated"`
 }
 
-func (s GetCpuTimeUsedGetCpuTimeUsedRequestFilters) String() string {
+func (s GetCpuTimeUsedRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetCpuTimeUsedGetCpuTimeUsedRequestFilters) GoString() string {
+func (s GetCpuTimeUsedRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetCpuTimeUsedGetCpuTimeUsedRequestFilters) SetHostnames(v []*string) *GetCpuTimeUsedGetCpuTimeUsedRequestFilters {
+func (s *GetCpuTimeUsedRequestFilters) SetHostnames(v []*string) *GetCpuTimeUsedRequestFilters {
   s.Hostnames = v
   return s
 }
 
-func (s *GetCpuTimeUsedGetCpuTimeUsedRequestFilters) SetServerGroups(v []*string) *GetCpuTimeUsedGetCpuTimeUsedRequestFilters {
+func (s *GetCpuTimeUsedRequestFilters) SetServerGroups(v []*string) *GetCpuTimeUsedRequestFilters {
   s.ServerGroups = v
   return s
 }
@@ -1488,7 +1488,7 @@ type GetCpuTimeUsedResponse struct {
   // {"en" : "Unit of measurement. This will depend on the report API.", "zh_CN": "计量单位。不同报表类型计量单位不一样。"}
   DataUnit *string `json:"dataUnit,omitempty" xml:"dataUnit,omitempty" require:"true"`
   // {"en" : "The data points.", "zh_CN": "数据点。"}
-  DataSeries []*GetCpuTimeUsedGetCpuTimeUsedResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
+  DataSeries []*GetCpuTimeUsedResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetCpuTimeUsedResponse) String() string {
@@ -1509,32 +1509,32 @@ func (s *GetCpuTimeUsedResponse) SetDataUnit(v string) *GetCpuTimeUsedResponse {
   return s
 }
 
-func (s *GetCpuTimeUsedResponse) SetDataSeries(v []*GetCpuTimeUsedGetCpuTimeUsedResponseDataSeries) *GetCpuTimeUsedResponse {
+func (s *GetCpuTimeUsedResponse) SetDataSeries(v []*GetCpuTimeUsedResponseDataSeries) *GetCpuTimeUsedResponse {
   s.DataSeries = v
   return s
 }
 
-type GetCpuTimeUsedGetCpuTimeUsedResponseDataSeries struct     {
+type GetCpuTimeUsedResponseDataSeries struct     {
   // {"en" : "An RFC 3339 format date representing the beginning of a time interval. It is always in <b>UTC</b> time. For example:  'timestamp': '2019-10-29T01:00:00Z'", "zh_CN": "每个时间段的起始时间，以RFC 3339日期格式表示。始终采用UTC时区。例如：'timestamp': '2019-10-29T01:00:00Z'"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty"`
   // {"en" : "A value at that timestamp. Refer to the dataUnit field for the unit of measurement.", "zh_CN": "该时间段对应的值。计量单位，由dataUnit字段指定。"}
   Data *int `json:"data,omitempty" xml:"data,omitempty"`
 }
 
-func (s GetCpuTimeUsedGetCpuTimeUsedResponseDataSeries) String() string {
+func (s GetCpuTimeUsedResponseDataSeries) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetCpuTimeUsedGetCpuTimeUsedResponseDataSeries) GoString() string {
+func (s GetCpuTimeUsedResponseDataSeries) GoString() string {
   return s.String()
 }
 
-func (s *GetCpuTimeUsedGetCpuTimeUsedResponseDataSeries) SetTimestamp(v string) *GetCpuTimeUsedGetCpuTimeUsedResponseDataSeries {
+func (s *GetCpuTimeUsedResponseDataSeries) SetTimestamp(v string) *GetCpuTimeUsedResponseDataSeries {
   s.Timestamp = &v
   return s
 }
 
-func (s *GetCpuTimeUsedGetCpuTimeUsedResponseDataSeries) SetData(v int) *GetCpuTimeUsedGetCpuTimeUsedResponseDataSeries {
+func (s *GetCpuTimeUsedResponseDataSeries) SetData(v int) *GetCpuTimeUsedResponseDataSeries {
   s.Data = &v
   return s
 }
@@ -1603,7 +1603,7 @@ func (s GetASummaryOfRequestsRequestHeader) GoString() string {
 
 type GetASummaryOfRequestsRequest struct {
   // {"en" : "Specify conditions to filter report data.", "zh_CN": "指定查询条件过滤报表数据。"}
-  Filters *GetASummaryOfRequestsGetASummaryOfRequestsRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetASummaryOfRequestsRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
   // {"en" : "<= 2 items 
   // items Enum: hostnames, serverGroups 
   // You can group results using a combination of up to two of the following: 'hostnames', and 'serverGroups'.", "zh_CN": "<= 2 条目 
@@ -1620,7 +1620,7 @@ func (s GetASummaryOfRequestsRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfRequestsRequest) SetFilters(v *GetASummaryOfRequestsGetASummaryOfRequestsRequestFilters) *GetASummaryOfRequestsRequest {
+func (s *GetASummaryOfRequestsRequest) SetFilters(v *GetASummaryOfRequestsRequestFilters) *GetASummaryOfRequestsRequest {
   s.Filters = v
   return s
 }
@@ -1630,27 +1630,27 @@ func (s *GetASummaryOfRequestsRequest) SetGroupBy(v []*string) *GetASummaryOfReq
   return s
 }
 
-type GetASummaryOfRequestsGetASummaryOfRequestsRequestFilters struct {
+type GetASummaryOfRequestsRequestFilters struct {
   // {"en" : "List of hostnames for which to return data. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, data from all hostnames will be returned.", "zh_CN": "指定加速域名进行查询。可使用泛域名，如*.domain.com。如果未指定，将返回所有加速域名的数据。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
   // {"en" : "Indicates one or more server groups.", "zh_CN": "指定serverGroups（节点组）进行查询。"}
   ServerGroups []*string `json:"serverGroups,omitempty" xml:"serverGroups,omitempty" type:"Repeated"`
 }
 
-func (s GetASummaryOfRequestsGetASummaryOfRequestsRequestFilters) String() string {
+func (s GetASummaryOfRequestsRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetASummaryOfRequestsGetASummaryOfRequestsRequestFilters) GoString() string {
+func (s GetASummaryOfRequestsRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfRequestsGetASummaryOfRequestsRequestFilters) SetHostnames(v []*string) *GetASummaryOfRequestsGetASummaryOfRequestsRequestFilters {
+func (s *GetASummaryOfRequestsRequestFilters) SetHostnames(v []*string) *GetASummaryOfRequestsRequestFilters {
   s.Hostnames = v
   return s
 }
 
-func (s *GetASummaryOfRequestsGetASummaryOfRequestsRequestFilters) SetServerGroups(v []*string) *GetASummaryOfRequestsGetASummaryOfRequestsRequestFilters {
+func (s *GetASummaryOfRequestsRequestFilters) SetServerGroups(v []*string) *GetASummaryOfRequestsRequestFilters {
   s.ServerGroups = v
   return s
 }
@@ -1668,9 +1668,9 @@ func (s GetASummaryOfRequestsResponseHeader) GoString() string {
 
 type GetASummaryOfRequestsResponse struct {
   // {"en" : "This object contains fields describing the data returned in the groups object.", "zh_CN": "此对象包含的字段是对groups对象中返回数据的描述。"}
-  MetaData *GetASummaryOfRequestsGetASummaryOfRequestsResponseMetaData `json:"metaData,omitempty" xml:"metaData,omitempty" require:"true" type:"Struct"`
+  MetaData *GetASummaryOfRequestsResponseMetaData `json:"metaData,omitempty" xml:"metaData,omitempty" require:"true" type:"Struct"`
   // {"en" : "This object contains the breakdown of requests by group.", "zh_CN": "每个分组及其请求数。"}
-  Groups []*GetASummaryOfRequestsGetASummaryOfRequestsResponseGroups `json:"groups,omitempty" xml:"groups,omitempty" require:"true" type:"Repeated"`
+  Groups []*GetASummaryOfRequestsResponseGroups `json:"groups,omitempty" xml:"groups,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetASummaryOfRequestsResponse) String() string {
@@ -1681,17 +1681,17 @@ func (s GetASummaryOfRequestsResponse) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfRequestsResponse) SetMetaData(v *GetASummaryOfRequestsGetASummaryOfRequestsResponseMetaData) *GetASummaryOfRequestsResponse {
+func (s *GetASummaryOfRequestsResponse) SetMetaData(v *GetASummaryOfRequestsResponseMetaData) *GetASummaryOfRequestsResponse {
   s.MetaData = v
   return s
 }
 
-func (s *GetASummaryOfRequestsResponse) SetGroups(v []*GetASummaryOfRequestsGetASummaryOfRequestsResponseGroups) *GetASummaryOfRequestsResponse {
+func (s *GetASummaryOfRequestsResponse) SetGroups(v []*GetASummaryOfRequestsResponseGroups) *GetASummaryOfRequestsResponse {
   s.Groups = v
   return s
 }
 
-type GetASummaryOfRequestsGetASummaryOfRequestsResponseMetaData struct {
+type GetASummaryOfRequestsResponseMetaData struct {
   // {"en" : "RFC 3339 date indicating the beginning of the period.", "zh_CN": "RFC 3339格式的日期，表示查询的起始时间。"}
   StartTime *string `json:"startTime,omitempty" xml:"startTime,omitempty"`
   // {"en" : "RFC 3339 date indicating the end of the period.", "zh_CN": "RFC 3339格式的日期，表示查询的结束时间。"}
@@ -1704,60 +1704,60 @@ type GetASummaryOfRequestsGetASummaryOfRequestsResponseMetaData struct {
   DataUnit *string `json:"dataUnit,omitempty" xml:"dataUnit,omitempty"`
 }
 
-func (s GetASummaryOfRequestsGetASummaryOfRequestsResponseMetaData) String() string {
+func (s GetASummaryOfRequestsResponseMetaData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetASummaryOfRequestsGetASummaryOfRequestsResponseMetaData) GoString() string {
+func (s GetASummaryOfRequestsResponseMetaData) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfRequestsGetASummaryOfRequestsResponseMetaData) SetStartTime(v string) *GetASummaryOfRequestsGetASummaryOfRequestsResponseMetaData {
+func (s *GetASummaryOfRequestsResponseMetaData) SetStartTime(v string) *GetASummaryOfRequestsResponseMetaData {
   s.StartTime = &v
   return s
 }
 
-func (s *GetASummaryOfRequestsGetASummaryOfRequestsResponseMetaData) SetEndTime(v string) *GetASummaryOfRequestsGetASummaryOfRequestsResponseMetaData {
+func (s *GetASummaryOfRequestsResponseMetaData) SetEndTime(v string) *GetASummaryOfRequestsResponseMetaData {
   s.EndTime = &v
   return s
 }
 
-func (s *GetASummaryOfRequestsGetASummaryOfRequestsResponseMetaData) SetIsComplete(v bool) *GetASummaryOfRequestsGetASummaryOfRequestsResponseMetaData {
+func (s *GetASummaryOfRequestsResponseMetaData) SetIsComplete(v bool) *GetASummaryOfRequestsResponseMetaData {
   s.IsComplete = &v
   return s
 }
 
-func (s *GetASummaryOfRequestsGetASummaryOfRequestsResponseMetaData) SetDataNames(v []*string) *GetASummaryOfRequestsGetASummaryOfRequestsResponseMetaData {
+func (s *GetASummaryOfRequestsResponseMetaData) SetDataNames(v []*string) *GetASummaryOfRequestsResponseMetaData {
   s.DataNames = v
   return s
 }
 
-func (s *GetASummaryOfRequestsGetASummaryOfRequestsResponseMetaData) SetDataUnit(v string) *GetASummaryOfRequestsGetASummaryOfRequestsResponseMetaData {
+func (s *GetASummaryOfRequestsResponseMetaData) SetDataUnit(v string) *GetASummaryOfRequestsResponseMetaData {
   s.DataUnit = &v
   return s
 }
 
-type GetASummaryOfRequestsGetASummaryOfRequestsResponseGroups struct     {
+type GetASummaryOfRequestsResponseGroups struct     {
   // {"en" : "Name of a group.  '__all__' is a special group encompassing all groups.", "zh_CN": "分组名称。'__all__' 是一个特殊分组，表示总请求数。"}
   Group *string `json:"group,omitempty" xml:"group,omitempty"`
   // {"en" : "Data values. The units of measurement are determined by the dataUnit field.", "zh_CN": "每个分组的请求数。注意：当分组条件包含serverGroups时，极个别情况下，可能会出现'__all__' 组的值明显大于其它组累加的和。这是由于存在未知原因导致某些请求无法映射到serverGroup所致。"}
   Data []*string `json:"data,omitempty" xml:"data,omitempty" type:"Repeated"`
 }
 
-func (s GetASummaryOfRequestsGetASummaryOfRequestsResponseGroups) String() string {
+func (s GetASummaryOfRequestsResponseGroups) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetASummaryOfRequestsGetASummaryOfRequestsResponseGroups) GoString() string {
+func (s GetASummaryOfRequestsResponseGroups) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfRequestsGetASummaryOfRequestsResponseGroups) SetGroup(v string) *GetASummaryOfRequestsGetASummaryOfRequestsResponseGroups {
+func (s *GetASummaryOfRequestsResponseGroups) SetGroup(v string) *GetASummaryOfRequestsResponseGroups {
   s.Group = &v
   return s
 }
 
-func (s *GetASummaryOfRequestsGetASummaryOfRequestsResponseGroups) SetData(v []*string) *GetASummaryOfRequestsGetASummaryOfRequestsResponseGroups {
+func (s *GetASummaryOfRequestsResponseGroups) SetData(v []*string) *GetASummaryOfRequestsResponseGroups {
   s.Data = v
   return s
 }
@@ -1832,7 +1832,7 @@ func (s GetOriginFastRouteRequestsRequestHeader) GoString() string {
 
 type GetOriginFastRouteRequestsRequest struct {
   // {"en" : "", "zh_CN": ""}
-  Filters *GetOriginFastRouteRequestsGetOriginFastRouteRequestsRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetOriginFastRouteRequestsRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
 }
 
 func (s GetOriginFastRouteRequestsRequest) String() string {
@@ -1843,25 +1843,25 @@ func (s GetOriginFastRouteRequestsRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetOriginFastRouteRequestsRequest) SetFilters(v *GetOriginFastRouteRequestsGetOriginFastRouteRequestsRequestFilters) *GetOriginFastRouteRequestsRequest {
+func (s *GetOriginFastRouteRequestsRequest) SetFilters(v *GetOriginFastRouteRequestsRequestFilters) *GetOriginFastRouteRequestsRequest {
   s.Filters = v
   return s
 }
 
-type GetOriginFastRouteRequestsGetOriginFastRouteRequestsRequestFilters struct {
+type GetOriginFastRouteRequestsRequestFilters struct {
   // {"en" : "List of hostnames for which to return data. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, data from all hostnames will be returned.", "zh_CN": "指定加速域名进行查询。可使用泛域名，如*.domain.com。如果未指定，将返回所有加速域名的数据。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
 }
 
-func (s GetOriginFastRouteRequestsGetOriginFastRouteRequestsRequestFilters) String() string {
+func (s GetOriginFastRouteRequestsRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetOriginFastRouteRequestsGetOriginFastRouteRequestsRequestFilters) GoString() string {
+func (s GetOriginFastRouteRequestsRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetOriginFastRouteRequestsGetOriginFastRouteRequestsRequestFilters) SetHostnames(v []*string) *GetOriginFastRouteRequestsGetOriginFastRouteRequestsRequestFilters {
+func (s *GetOriginFastRouteRequestsRequestFilters) SetHostnames(v []*string) *GetOriginFastRouteRequestsRequestFilters {
   s.Hostnames = v
   return s
 }
@@ -1883,7 +1883,7 @@ type GetOriginFastRouteRequestsResponse struct {
   // {"en" : "Unit of measurement. This will depend on the report API.", "zh_CN": "计量单位。不同报表类型计量单位不一样。"}
   DataUnit *string `json:"dataUnit,omitempty" xml:"dataUnit,omitempty" require:"true"`
   // {"en" : "The data points.", "zh_CN": "数据点。"}
-  DataSeries []*GetOriginFastRouteRequestsGetOriginFastRouteRequestsResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
+  DataSeries []*GetOriginFastRouteRequestsResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetOriginFastRouteRequestsResponse) String() string {
@@ -1904,32 +1904,32 @@ func (s *GetOriginFastRouteRequestsResponse) SetDataUnit(v string) *GetOriginFas
   return s
 }
 
-func (s *GetOriginFastRouteRequestsResponse) SetDataSeries(v []*GetOriginFastRouteRequestsGetOriginFastRouteRequestsResponseDataSeries) *GetOriginFastRouteRequestsResponse {
+func (s *GetOriginFastRouteRequestsResponse) SetDataSeries(v []*GetOriginFastRouteRequestsResponseDataSeries) *GetOriginFastRouteRequestsResponse {
   s.DataSeries = v
   return s
 }
 
-type GetOriginFastRouteRequestsGetOriginFastRouteRequestsResponseDataSeries struct     {
+type GetOriginFastRouteRequestsResponseDataSeries struct     {
   // {"en" : "An RFC 3339 format date representing the beginning of a time interval. It is always in <b>UTC</b> time. For example:  'timestamp': '2019-10-29T01:00:00Z'", "zh_CN": "每个时间段的起始时间，以RFC 3339日期格式表示。始终采用UTC时区。例如：'timestamp': '2019-10-29T01:00:00Z'"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty"`
   // {"en" : "A value at that timestamp. Refer to the dataUnit field for the unit of measurement.", "zh_CN": "该时间段对应的值。计量单位，由dataUnit字段指定。"}
   Data *int `json:"data,omitempty" xml:"data,omitempty"`
 }
 
-func (s GetOriginFastRouteRequestsGetOriginFastRouteRequestsResponseDataSeries) String() string {
+func (s GetOriginFastRouteRequestsResponseDataSeries) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetOriginFastRouteRequestsGetOriginFastRouteRequestsResponseDataSeries) GoString() string {
+func (s GetOriginFastRouteRequestsResponseDataSeries) GoString() string {
   return s.String()
 }
 
-func (s *GetOriginFastRouteRequestsGetOriginFastRouteRequestsResponseDataSeries) SetTimestamp(v string) *GetOriginFastRouteRequestsGetOriginFastRouteRequestsResponseDataSeries {
+func (s *GetOriginFastRouteRequestsResponseDataSeries) SetTimestamp(v string) *GetOriginFastRouteRequestsResponseDataSeries {
   s.Timestamp = &v
   return s
 }
 
-func (s *GetOriginFastRouteRequestsGetOriginFastRouteRequestsResponseDataSeries) SetData(v int) *GetOriginFastRouteRequestsGetOriginFastRouteRequestsResponseDataSeries {
+func (s *GetOriginFastRouteRequestsResponseDataSeries) SetData(v int) *GetOriginFastRouteRequestsResponseDataSeries {
   s.Data = &v
   return s
 }
@@ -1995,7 +1995,7 @@ func (s GetASummaryOfTrafficVolumeRequestHeader) GoString() string {
 
 type GetASummaryOfTrafficVolumeRequest struct {
   // {"en" : "Specify conditions to filter report data.", "zh_CN": "指定查询条件过滤报表数据。"}
-  Filters *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetASummaryOfTrafficVolumeRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
   // {"en" : "Range: <= 2 items 
   // You can group results using a combination of up to two of the following: 'hostnames', 'serverGroups',  'customerIds', 'propertyIds', and 'propertyHostnames'.", "zh_CN": "取值范围: <= 2 条目 
   // 指定分组依据对数据进行分组汇总。支持按'hostnames'，'serverGroups'单独进行分组汇总，也支持同时指定这2个参数进行分组汇总。"}
@@ -2010,7 +2010,7 @@ func (s GetASummaryOfTrafficVolumeRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfTrafficVolumeRequest) SetFilters(v *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeRequestFilters) *GetASummaryOfTrafficVolumeRequest {
+func (s *GetASummaryOfTrafficVolumeRequest) SetFilters(v *GetASummaryOfTrafficVolumeRequestFilters) *GetASummaryOfTrafficVolumeRequest {
   s.Filters = v
   return s
 }
@@ -2020,7 +2020,7 @@ func (s *GetASummaryOfTrafficVolumeRequest) SetGroupBy(v []*string) *GetASummary
   return s
 }
 
-type GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeRequestFilters struct {
+type GetASummaryOfTrafficVolumeRequestFilters struct {
   // {"en" : "List of hostnames for which to return data. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, data from all hostnames will be returned.", "zh_CN": "指定加速域名进行查询。可使用泛域名，如*.domain.com。如果未指定，将返回所有加速域名的数据。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
   // {"en" : "Indicates one or more server groups.", "zh_CN": "指定serverGroups（节点组）进行查询。"}
@@ -2031,30 +2031,30 @@ type GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeRequestFilters struct {
   PropertyHostnames []*string `json:"propertyHostnames,omitempty" xml:"propertyHostnames,omitempty" type:"Repeated"`
 }
 
-func (s GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeRequestFilters) String() string {
+func (s GetASummaryOfTrafficVolumeRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeRequestFilters) GoString() string {
+func (s GetASummaryOfTrafficVolumeRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeRequestFilters) SetHostnames(v []*string) *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeRequestFilters {
+func (s *GetASummaryOfTrafficVolumeRequestFilters) SetHostnames(v []*string) *GetASummaryOfTrafficVolumeRequestFilters {
   s.Hostnames = v
   return s
 }
 
-func (s *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeRequestFilters) SetServerGroups(v []*string) *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeRequestFilters {
+func (s *GetASummaryOfTrafficVolumeRequestFilters) SetServerGroups(v []*string) *GetASummaryOfTrafficVolumeRequestFilters {
   s.ServerGroups = v
   return s
 }
 
-func (s *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeRequestFilters) SetPropertyIds(v []*string) *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeRequestFilters {
+func (s *GetASummaryOfTrafficVolumeRequestFilters) SetPropertyIds(v []*string) *GetASummaryOfTrafficVolumeRequestFilters {
   s.PropertyIds = v
   return s
 }
 
-func (s *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeRequestFilters) SetPropertyHostnames(v []*string) *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeRequestFilters {
+func (s *GetASummaryOfTrafficVolumeRequestFilters) SetPropertyHostnames(v []*string) *GetASummaryOfTrafficVolumeRequestFilters {
   s.PropertyHostnames = v
   return s
 }
@@ -2072,9 +2072,9 @@ func (s GetASummaryOfTrafficVolumeResponseHeader) GoString() string {
 
 type GetASummaryOfTrafficVolumeResponse struct {
   // {"en" : "This object contains fields describing the data returned in the groups object.", "zh_CN": "此对象包含的字段是对groups对象中返回数据的描述。"}
-  MetaData *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseMetaData `json:"metaData,omitempty" xml:"metaData,omitempty" require:"true" type:"Struct"`
+  MetaData *GetASummaryOfTrafficVolumeResponseMetaData `json:"metaData,omitempty" xml:"metaData,omitempty" require:"true" type:"Struct"`
   // {"en" : "This object contains the breakdown of traffic by group. ", "zh_CN": "每个分组及其流量值。"}
-  Groups []*GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseGroups `json:"groups,omitempty" xml:"groups,omitempty" require:"true" type:"Repeated"`
+  Groups []*GetASummaryOfTrafficVolumeResponseGroups `json:"groups,omitempty" xml:"groups,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetASummaryOfTrafficVolumeResponse) String() string {
@@ -2085,17 +2085,17 @@ func (s GetASummaryOfTrafficVolumeResponse) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfTrafficVolumeResponse) SetMetaData(v *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseMetaData) *GetASummaryOfTrafficVolumeResponse {
+func (s *GetASummaryOfTrafficVolumeResponse) SetMetaData(v *GetASummaryOfTrafficVolumeResponseMetaData) *GetASummaryOfTrafficVolumeResponse {
   s.MetaData = v
   return s
 }
 
-func (s *GetASummaryOfTrafficVolumeResponse) SetGroups(v []*GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseGroups) *GetASummaryOfTrafficVolumeResponse {
+func (s *GetASummaryOfTrafficVolumeResponse) SetGroups(v []*GetASummaryOfTrafficVolumeResponseGroups) *GetASummaryOfTrafficVolumeResponse {
   s.Groups = v
   return s
 }
 
-type GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseMetaData struct {
+type GetASummaryOfTrafficVolumeResponseMetaData struct {
   // {"en" : "RFC 3339 date indicating the beginning of the period.", "zh_CN": "RFC 3339格式的日期，表示查询的起始时间。"}
   StartTime *string `json:"startTime,omitempty" xml:"startTime,omitempty"`
   // {"en" : "RFC 3339 date indicating the end of the period.", "zh_CN": "RFC 3339格式的日期，表示查询的结束时间。"}
@@ -2111,40 +2111,40 @@ type GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseMetaData struct
   DataUnit *string `json:"dataUnit,omitempty" xml:"dataUnit,omitempty"`
 }
 
-func (s GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseMetaData) String() string {
+func (s GetASummaryOfTrafficVolumeResponseMetaData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseMetaData) GoString() string {
+func (s GetASummaryOfTrafficVolumeResponseMetaData) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseMetaData) SetStartTime(v string) *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseMetaData {
+func (s *GetASummaryOfTrafficVolumeResponseMetaData) SetStartTime(v string) *GetASummaryOfTrafficVolumeResponseMetaData {
   s.StartTime = &v
   return s
 }
 
-func (s *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseMetaData) SetEndTime(v string) *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseMetaData {
+func (s *GetASummaryOfTrafficVolumeResponseMetaData) SetEndTime(v string) *GetASummaryOfTrafficVolumeResponseMetaData {
   s.EndTime = &v
   return s
 }
 
-func (s *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseMetaData) SetIsComplete(v bool) *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseMetaData {
+func (s *GetASummaryOfTrafficVolumeResponseMetaData) SetIsComplete(v bool) *GetASummaryOfTrafficVolumeResponseMetaData {
   s.IsComplete = &v
   return s
 }
 
-func (s *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseMetaData) SetDataNames(v []*string) *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseMetaData {
+func (s *GetASummaryOfTrafficVolumeResponseMetaData) SetDataNames(v []*string) *GetASummaryOfTrafficVolumeResponseMetaData {
   s.DataNames = v
   return s
 }
 
-func (s *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseMetaData) SetDataUnit(v string) *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseMetaData {
+func (s *GetASummaryOfTrafficVolumeResponseMetaData) SetDataUnit(v string) *GetASummaryOfTrafficVolumeResponseMetaData {
   s.DataUnit = &v
   return s
 }
 
-type GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseGroups struct     {
+type GetASummaryOfTrafficVolumeResponseGroups struct     {
   // {"en" : "Name of the group. '__all__' is a special group encompassing all groups.
   // ", "zh_CN": "分组名称。'__all__' 是一个特殊分组，表示总流量。"}
   Group *string `json:"group,omitempty" xml:"group,omitempty"`
@@ -2152,20 +2152,20 @@ type GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseGroups struct  
   Data []*string `json:"data,omitempty" xml:"data,omitempty" type:"Repeated"`
 }
 
-func (s GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseGroups) String() string {
+func (s GetASummaryOfTrafficVolumeResponseGroups) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseGroups) GoString() string {
+func (s GetASummaryOfTrafficVolumeResponseGroups) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseGroups) SetGroup(v string) *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseGroups {
+func (s *GetASummaryOfTrafficVolumeResponseGroups) SetGroup(v string) *GetASummaryOfTrafficVolumeResponseGroups {
   s.Group = &v
   return s
 }
 
-func (s *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseGroups) SetData(v []*string) *GetASummaryOfTrafficVolumeGetASummaryOfTrafficVolumeResponseGroups {
+func (s *GetASummaryOfTrafficVolumeResponseGroups) SetData(v []*string) *GetASummaryOfTrafficVolumeResponseGroups {
   s.Data = v
   return s
 }
@@ -2244,7 +2244,7 @@ func (s GetTheEdgeUploadTrafficVolumeRequestHeader) GoString() string {
 
 type GetTheEdgeUploadTrafficVolumeRequest struct {
   // {"en" : "", "zh_CN": ""}
-  Filters *GetTheEdgeUploadTrafficVolumeGetTheEdgeUploadTrafficVolumeRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetTheEdgeUploadTrafficVolumeRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
 }
 
 func (s GetTheEdgeUploadTrafficVolumeRequest) String() string {
@@ -2255,12 +2255,12 @@ func (s GetTheEdgeUploadTrafficVolumeRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetTheEdgeUploadTrafficVolumeRequest) SetFilters(v *GetTheEdgeUploadTrafficVolumeGetTheEdgeUploadTrafficVolumeRequestFilters) *GetTheEdgeUploadTrafficVolumeRequest {
+func (s *GetTheEdgeUploadTrafficVolumeRequest) SetFilters(v *GetTheEdgeUploadTrafficVolumeRequestFilters) *GetTheEdgeUploadTrafficVolumeRequest {
   s.Filters = v
   return s
 }
 
-type GetTheEdgeUploadTrafficVolumeGetTheEdgeUploadTrafficVolumeRequestFilters struct {
+type GetTheEdgeUploadTrafficVolumeRequestFilters struct {
   // {"en" : "List of hostnames for which to return data. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, data from all hostnames will be returned.", "zh_CN": "指定加速域名进行查询。可使用泛域名，如*.domain.com。如果未指定，将返回所有加速域名的数据。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
   // {"en" : "items Enum: standard,premium,deluxe,ultra,nearChina,ChinaStandard,ChinaPremium 
@@ -2269,20 +2269,20 @@ type GetTheEdgeUploadTrafficVolumeGetTheEdgeUploadTrafficVolumeRequestFilters st
   ServerGroups []*string `json:"serverGroups,omitempty" xml:"serverGroups,omitempty" type:"Repeated"`
 }
 
-func (s GetTheEdgeUploadTrafficVolumeGetTheEdgeUploadTrafficVolumeRequestFilters) String() string {
+func (s GetTheEdgeUploadTrafficVolumeRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetTheEdgeUploadTrafficVolumeGetTheEdgeUploadTrafficVolumeRequestFilters) GoString() string {
+func (s GetTheEdgeUploadTrafficVolumeRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetTheEdgeUploadTrafficVolumeGetTheEdgeUploadTrafficVolumeRequestFilters) SetHostnames(v []*string) *GetTheEdgeUploadTrafficVolumeGetTheEdgeUploadTrafficVolumeRequestFilters {
+func (s *GetTheEdgeUploadTrafficVolumeRequestFilters) SetHostnames(v []*string) *GetTheEdgeUploadTrafficVolumeRequestFilters {
   s.Hostnames = v
   return s
 }
 
-func (s *GetTheEdgeUploadTrafficVolumeGetTheEdgeUploadTrafficVolumeRequestFilters) SetServerGroups(v []*string) *GetTheEdgeUploadTrafficVolumeGetTheEdgeUploadTrafficVolumeRequestFilters {
+func (s *GetTheEdgeUploadTrafficVolumeRequestFilters) SetServerGroups(v []*string) *GetTheEdgeUploadTrafficVolumeRequestFilters {
   s.ServerGroups = v
   return s
 }
@@ -2304,7 +2304,7 @@ type GetTheEdgeUploadTrafficVolumeResponse struct {
   // {"en" : "Unit of measurement. This will depend on the report API.", "zh_CN": "计量单位。不同报表类型计量单位不一样。"}
   DataUnit *string `json:"dataUnit,omitempty" xml:"dataUnit,omitempty" require:"true"`
   // {"en" : "The data points.", "zh_CN": "数据点。"}
-  DataSeries []*GetTheEdgeUploadTrafficVolumeGetTheEdgeUploadTrafficVolumeResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
+  DataSeries []*GetTheEdgeUploadTrafficVolumeResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetTheEdgeUploadTrafficVolumeResponse) String() string {
@@ -2325,32 +2325,32 @@ func (s *GetTheEdgeUploadTrafficVolumeResponse) SetDataUnit(v string) *GetTheEdg
   return s
 }
 
-func (s *GetTheEdgeUploadTrafficVolumeResponse) SetDataSeries(v []*GetTheEdgeUploadTrafficVolumeGetTheEdgeUploadTrafficVolumeResponseDataSeries) *GetTheEdgeUploadTrafficVolumeResponse {
+func (s *GetTheEdgeUploadTrafficVolumeResponse) SetDataSeries(v []*GetTheEdgeUploadTrafficVolumeResponseDataSeries) *GetTheEdgeUploadTrafficVolumeResponse {
   s.DataSeries = v
   return s
 }
 
-type GetTheEdgeUploadTrafficVolumeGetTheEdgeUploadTrafficVolumeResponseDataSeries struct     {
+type GetTheEdgeUploadTrafficVolumeResponseDataSeries struct     {
   // {"en" : "An RFC 3339 format date representing the beginning of a time interval. It is always in <b>UTC</b> time. For example:  'timestamp': '2019-10-29T01:00:00Z'", "zh_CN": "每个时间段的起始时间，以RFC 3339日期格式表示。始终采用UTC时区。例如：'timestamp': '2019-10-29T01:00:00Z'"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty"`
   // {"en" : "A value at that timestamp. Refer to the dataUnit field for the unit of measurement.", "zh_CN": "该时间段对应的值。计量单位，由dataUnit字段指定。"}
   Data *int `json:"data,omitempty" xml:"data,omitempty"`
 }
 
-func (s GetTheEdgeUploadTrafficVolumeGetTheEdgeUploadTrafficVolumeResponseDataSeries) String() string {
+func (s GetTheEdgeUploadTrafficVolumeResponseDataSeries) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetTheEdgeUploadTrafficVolumeGetTheEdgeUploadTrafficVolumeResponseDataSeries) GoString() string {
+func (s GetTheEdgeUploadTrafficVolumeResponseDataSeries) GoString() string {
   return s.String()
 }
 
-func (s *GetTheEdgeUploadTrafficVolumeGetTheEdgeUploadTrafficVolumeResponseDataSeries) SetTimestamp(v string) *GetTheEdgeUploadTrafficVolumeGetTheEdgeUploadTrafficVolumeResponseDataSeries {
+func (s *GetTheEdgeUploadTrafficVolumeResponseDataSeries) SetTimestamp(v string) *GetTheEdgeUploadTrafficVolumeResponseDataSeries {
   s.Timestamp = &v
   return s
 }
 
-func (s *GetTheEdgeUploadTrafficVolumeGetTheEdgeUploadTrafficVolumeResponseDataSeries) SetData(v int) *GetTheEdgeUploadTrafficVolumeGetTheEdgeUploadTrafficVolumeResponseDataSeries {
+func (s *GetTheEdgeUploadTrafficVolumeResponseDataSeries) SetData(v int) *GetTheEdgeUploadTrafficVolumeResponseDataSeries {
   s.Data = &v
   return s
 }
@@ -2419,7 +2419,7 @@ func (s GetASummaryOfStatusCodesReturnedByEdgeServersRequestHeader) GoString() s
 
 type GetASummaryOfStatusCodesReturnedByEdgeServersRequest struct {
   // {"en" : "", "zh_CN": ""}
-  Filters *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetASummaryOfStatusCodesReturnedByEdgeServersRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
   // {"en" : "Range: <= 2 items 
   // You can group results using any combination of up to two of 'hostnames', 'serverGroups', and 'customerIds'.", "zh_CN": "取值范围: <= 2 条目 
   // 指定分组依据对数据进行分组汇总。支持按'hostnames'，'serverGroups'单独进行分组汇总，也支持同时指定这2个参数进行分组汇总。"}
@@ -2434,7 +2434,7 @@ func (s GetASummaryOfStatusCodesReturnedByEdgeServersRequest) GoString() string 
   return s.String()
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByEdgeServersRequest) SetFilters(v *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersRequestFilters) *GetASummaryOfStatusCodesReturnedByEdgeServersRequest {
+func (s *GetASummaryOfStatusCodesReturnedByEdgeServersRequest) SetFilters(v *GetASummaryOfStatusCodesReturnedByEdgeServersRequestFilters) *GetASummaryOfStatusCodesReturnedByEdgeServersRequest {
   s.Filters = v
   return s
 }
@@ -2444,27 +2444,27 @@ func (s *GetASummaryOfStatusCodesReturnedByEdgeServersRequest) SetGroupBy(v []*s
   return s
 }
 
-type GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersRequestFilters struct {
+type GetASummaryOfStatusCodesReturnedByEdgeServersRequestFilters struct {
   // {"en" : "List of hostnames for which to return data. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, data from all hostnames will be returned.", "zh_CN": "指定加速域名进行查询。可使用泛域名，如*.domain.com。如果未指定，将返回所有加速域名的数据。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
   // {"en" : "Indicates one or more server groups.", "zh_CN": "指定serverGroups（节点组）进行查询。"}
   ServerGroups []*string `json:"serverGroups,omitempty" xml:"serverGroups,omitempty" type:"Repeated"`
 }
 
-func (s GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersRequestFilters) String() string {
+func (s GetASummaryOfStatusCodesReturnedByEdgeServersRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersRequestFilters) GoString() string {
+func (s GetASummaryOfStatusCodesReturnedByEdgeServersRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersRequestFilters) SetHostnames(v []*string) *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersRequestFilters {
+func (s *GetASummaryOfStatusCodesReturnedByEdgeServersRequestFilters) SetHostnames(v []*string) *GetASummaryOfStatusCodesReturnedByEdgeServersRequestFilters {
   s.Hostnames = v
   return s
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersRequestFilters) SetServerGroups(v []*string) *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersRequestFilters {
+func (s *GetASummaryOfStatusCodesReturnedByEdgeServersRequestFilters) SetServerGroups(v []*string) *GetASummaryOfStatusCodesReturnedByEdgeServersRequestFilters {
   s.ServerGroups = v
   return s
 }
@@ -2482,9 +2482,9 @@ func (s GetASummaryOfStatusCodesReturnedByEdgeServersResponseHeader) GoString() 
 
 type GetASummaryOfStatusCodesReturnedByEdgeServersResponse struct {
   // {"en" : "This object contains fields describing the data returned in the groups object.", "zh_CN": "此对象包含的字段是对groups对象中返回数据的描述。"}
-  MetaData *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData `json:"metaData,omitempty" xml:"metaData,omitempty" require:"true" type:"Struct"`
+  MetaData *GetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData `json:"metaData,omitempty" xml:"metaData,omitempty" require:"true" type:"Struct"`
   // {"en" : "This object contains the breakdown of requests by group.", "zh_CN": "每个分组及其状态码。"}
-  Groups []*GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseGroups `json:"groups,omitempty" xml:"groups,omitempty" require:"true" type:"Repeated"`
+  Groups []*GetASummaryOfStatusCodesReturnedByEdgeServersResponseGroups `json:"groups,omitempty" xml:"groups,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetASummaryOfStatusCodesReturnedByEdgeServersResponse) String() string {
@@ -2495,17 +2495,17 @@ func (s GetASummaryOfStatusCodesReturnedByEdgeServersResponse) GoString() string
   return s.String()
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByEdgeServersResponse) SetMetaData(v *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData) *GetASummaryOfStatusCodesReturnedByEdgeServersResponse {
+func (s *GetASummaryOfStatusCodesReturnedByEdgeServersResponse) SetMetaData(v *GetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData) *GetASummaryOfStatusCodesReturnedByEdgeServersResponse {
   s.MetaData = v
   return s
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByEdgeServersResponse) SetGroups(v []*GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseGroups) *GetASummaryOfStatusCodesReturnedByEdgeServersResponse {
+func (s *GetASummaryOfStatusCodesReturnedByEdgeServersResponse) SetGroups(v []*GetASummaryOfStatusCodesReturnedByEdgeServersResponseGroups) *GetASummaryOfStatusCodesReturnedByEdgeServersResponse {
   s.Groups = v
   return s
 }
 
-type GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData struct {
+type GetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData struct {
   // {"en" : "RFC 3339 date indicating the beginning of the period.", "zh_CN": "RFC 3339格式的日期，表示查询的起始时间。"}
   StartTime *string `json:"startTime,omitempty" xml:"startTime,omitempty"`
   // {"en" : "RFC 3339 date indicating the end of the period.", "zh_CN": "RFC 3339格式的日期，表示查询的结束时间。"}
@@ -2518,60 +2518,60 @@ type GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturn
   DataUnit *string `json:"dataUnit,omitempty" xml:"dataUnit,omitempty"`
 }
 
-func (s GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData) String() string {
+func (s GetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData) GoString() string {
+func (s GetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData) SetStartTime(v string) *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData {
+func (s *GetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData) SetStartTime(v string) *GetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData {
   s.StartTime = &v
   return s
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData) SetEndTime(v string) *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData {
+func (s *GetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData) SetEndTime(v string) *GetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData {
   s.EndTime = &v
   return s
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData) SetIsComplete(v bool) *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData {
+func (s *GetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData) SetIsComplete(v bool) *GetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData {
   s.IsComplete = &v
   return s
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData) SetDataNames(v []*string) *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData {
+func (s *GetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData) SetDataNames(v []*string) *GetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData {
   s.DataNames = v
   return s
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData) SetDataUnit(v string) *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData {
+func (s *GetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData) SetDataUnit(v string) *GetASummaryOfStatusCodesReturnedByEdgeServersResponseMetaData {
   s.DataUnit = &v
   return s
 }
 
-type GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseGroups struct     {
+type GetASummaryOfStatusCodesReturnedByEdgeServersResponseGroups struct     {
   // {"en" : "Name of a group.  '__all__' is a special group encompassing all groups.", "zh_CN": "分组名称。'__all__' 是一个特殊分组，表示每个状态码的总数。"}
   Group *string `json:"group,omitempty" xml:"group,omitempty"`
   // {"en" : "Data values. The units of measurement are determined by the dataUnit field.", "zh_CN": "每个分组的状态码数量。注意：当分组条件包含serverGroups时，极个别情况下，可能会出现'__all__' 组的值明显大于其它组累加的和。这是由于存在未知原因导致某些请求无法映射到serverGroup所致。"}
   Data []*string `json:"data,omitempty" xml:"data,omitempty" type:"Repeated"`
 }
 
-func (s GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseGroups) String() string {
+func (s GetASummaryOfStatusCodesReturnedByEdgeServersResponseGroups) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseGroups) GoString() string {
+func (s GetASummaryOfStatusCodesReturnedByEdgeServersResponseGroups) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseGroups) SetGroup(v string) *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseGroups {
+func (s *GetASummaryOfStatusCodesReturnedByEdgeServersResponseGroups) SetGroup(v string) *GetASummaryOfStatusCodesReturnedByEdgeServersResponseGroups {
   s.Group = &v
   return s
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseGroups) SetData(v []*string) *GetASummaryOfStatusCodesReturnedByEdgeServersGetASummaryOfStatusCodesReturnedByEdgeServersResponseGroups {
+func (s *GetASummaryOfStatusCodesReturnedByEdgeServersResponseGroups) SetData(v []*string) *GetASummaryOfStatusCodesReturnedByEdgeServersResponseGroups {
   s.Data = v
   return s
 }
@@ -2646,7 +2646,7 @@ func (s GetOriginFastRouteTrafficVolumeRequestHeader) GoString() string {
 
 type GetOriginFastRouteTrafficVolumeRequest struct {
   // {"en" : "Specify conditions to filter report data.", "zh_CN": "指定查询条件过滤报表数据。"}
-  Filters *GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetOriginFastRouteTrafficVolumeRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
 }
 
 func (s GetOriginFastRouteTrafficVolumeRequest) String() string {
@@ -2657,12 +2657,12 @@ func (s GetOriginFastRouteTrafficVolumeRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetOriginFastRouteTrafficVolumeRequest) SetFilters(v *GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeRequestFilters) *GetOriginFastRouteTrafficVolumeRequest {
+func (s *GetOriginFastRouteTrafficVolumeRequest) SetFilters(v *GetOriginFastRouteTrafficVolumeRequestFilters) *GetOriginFastRouteTrafficVolumeRequest {
   s.Filters = v
   return s
 }
 
-type GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeRequestFilters struct {
+type GetOriginFastRouteTrafficVolumeRequestFilters struct {
   // {"en" : "List of hostnames for which to return data. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, data from all hostnames will be returned.", "zh_CN": "指定加速域名进行查询。可使用泛域名，如*.domain.com。如果未指定，将返回所有加速域名的数据。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
   // {"en" : "Enum: standard premium deluxe ultra 
@@ -2671,20 +2671,20 @@ type GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeRequestFilter
   ServerGroups []*string `json:"serverGroups,omitempty" xml:"serverGroups,omitempty" type:"Repeated"`
 }
 
-func (s GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeRequestFilters) String() string {
+func (s GetOriginFastRouteTrafficVolumeRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeRequestFilters) GoString() string {
+func (s GetOriginFastRouteTrafficVolumeRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeRequestFilters) SetHostnames(v []*string) *GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeRequestFilters {
+func (s *GetOriginFastRouteTrafficVolumeRequestFilters) SetHostnames(v []*string) *GetOriginFastRouteTrafficVolumeRequestFilters {
   s.Hostnames = v
   return s
 }
 
-func (s *GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeRequestFilters) SetServerGroups(v []*string) *GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeRequestFilters {
+func (s *GetOriginFastRouteTrafficVolumeRequestFilters) SetServerGroups(v []*string) *GetOriginFastRouteTrafficVolumeRequestFilters {
   s.ServerGroups = v
   return s
 }
@@ -2708,7 +2708,7 @@ type GetOriginFastRouteTrafficVolumeResponse struct {
   // 计量单位。"}
   DataUnit *string `json:"dataUnit,omitempty" xml:"dataUnit,omitempty" require:"true"`
   // {"en" : "The data points for the time period include the upload and download traffic.", "zh_CN": "指定时间段的流量，包括上行和下行流量。"}
-  DataSeries []*GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
+  DataSeries []*GetOriginFastRouteTrafficVolumeResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetOriginFastRouteTrafficVolumeResponse) String() string {
@@ -2729,12 +2729,12 @@ func (s *GetOriginFastRouteTrafficVolumeResponse) SetDataUnit(v string) *GetOrig
   return s
 }
 
-func (s *GetOriginFastRouteTrafficVolumeResponse) SetDataSeries(v []*GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeResponseDataSeries) *GetOriginFastRouteTrafficVolumeResponse {
+func (s *GetOriginFastRouteTrafficVolumeResponse) SetDataSeries(v []*GetOriginFastRouteTrafficVolumeResponseDataSeries) *GetOriginFastRouteTrafficVolumeResponse {
   s.DataSeries = v
   return s
 }
 
-type GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeResponseDataSeries struct     {
+type GetOriginFastRouteTrafficVolumeResponseDataSeries struct     {
   // {"en" : "An RFC 3339 format date representing the beginning of  a time interval. It is always in <b>UTC</b> time. For example:  'timestamp': '2019-10-29T01:00:00Z'", "zh_CN": "RFC 3339格式的日期，表示每个时间段的开始时间，始终采用<b>UTC</b>时间。例如：'timestamp':'2019-10-29T01:00:00Z'"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty"`
   // {"en" : "Default: 0 >= 0 
@@ -2747,25 +2747,25 @@ type GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeResponseDataS
   DataDown *int `json:"dataDown,omitempty" xml:"dataDown,omitempty"`
 }
 
-func (s GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeResponseDataSeries) String() string {
+func (s GetOriginFastRouteTrafficVolumeResponseDataSeries) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeResponseDataSeries) GoString() string {
+func (s GetOriginFastRouteTrafficVolumeResponseDataSeries) GoString() string {
   return s.String()
 }
 
-func (s *GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeResponseDataSeries) SetTimestamp(v string) *GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeResponseDataSeries {
+func (s *GetOriginFastRouteTrafficVolumeResponseDataSeries) SetTimestamp(v string) *GetOriginFastRouteTrafficVolumeResponseDataSeries {
   s.Timestamp = &v
   return s
 }
 
-func (s *GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeResponseDataSeries) SetDataUp(v int) *GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeResponseDataSeries {
+func (s *GetOriginFastRouteTrafficVolumeResponseDataSeries) SetDataUp(v int) *GetOriginFastRouteTrafficVolumeResponseDataSeries {
   s.DataUp = &v
   return s
 }
 
-func (s *GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeResponseDataSeries) SetDataDown(v int) *GetOriginFastRouteTrafficVolumeGetOriginFastRouteTrafficVolumeResponseDataSeries {
+func (s *GetOriginFastRouteTrafficVolumeResponseDataSeries) SetDataDown(v int) *GetOriginFastRouteTrafficVolumeResponseDataSeries {
   s.DataDown = &v
   return s
 }
@@ -2844,7 +2844,7 @@ func (s GetEdgeRequestsRequestHeader) GoString() string {
 
 type GetEdgeRequestsRequest struct {
   // {"en" : "Specify conditions to filter report data.", "zh_CN": "指定查询条件过滤报表数据。"}
-  Filters *GetEdgeRequestsGetEdgeRequestsRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetEdgeRequestsRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
 }
 
 func (s GetEdgeRequestsRequest) String() string {
@@ -2855,12 +2855,12 @@ func (s GetEdgeRequestsRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeRequestsRequest) SetFilters(v *GetEdgeRequestsGetEdgeRequestsRequestFilters) *GetEdgeRequestsRequest {
+func (s *GetEdgeRequestsRequest) SetFilters(v *GetEdgeRequestsRequestFilters) *GetEdgeRequestsRequest {
   s.Filters = v
   return s
 }
 
-type GetEdgeRequestsGetEdgeRequestsRequestFilters struct {
+type GetEdgeRequestsRequestFilters struct {
   // {"en" : "List of hostnames for which to return data. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, data from all hostnames will be returned.", "zh_CN": "指定加速域名进行查询。可使用泛域名，如*.domain.com。如果未指定，将返回所有加速域名的数据。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
   // {"en" : "items Enum: standard premium deluxe ultra nearChina ChinaStandard ChinaPremium 
@@ -2869,20 +2869,20 @@ type GetEdgeRequestsGetEdgeRequestsRequestFilters struct {
   ServerGroups []*string `json:"serverGroups,omitempty" xml:"serverGroups,omitempty" type:"Repeated"`
 }
 
-func (s GetEdgeRequestsGetEdgeRequestsRequestFilters) String() string {
+func (s GetEdgeRequestsRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetEdgeRequestsGetEdgeRequestsRequestFilters) GoString() string {
+func (s GetEdgeRequestsRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeRequestsGetEdgeRequestsRequestFilters) SetHostnames(v []*string) *GetEdgeRequestsGetEdgeRequestsRequestFilters {
+func (s *GetEdgeRequestsRequestFilters) SetHostnames(v []*string) *GetEdgeRequestsRequestFilters {
   s.Hostnames = v
   return s
 }
 
-func (s *GetEdgeRequestsGetEdgeRequestsRequestFilters) SetServerGroups(v []*string) *GetEdgeRequestsGetEdgeRequestsRequestFilters {
+func (s *GetEdgeRequestsRequestFilters) SetServerGroups(v []*string) *GetEdgeRequestsRequestFilters {
   s.ServerGroups = v
   return s
 }
@@ -2904,7 +2904,7 @@ type GetEdgeRequestsResponse struct {
   // {"en" : "Unit of measurement. This will depend on the report API.", "zh_CN": "计量单位。不同报表类型计量单位不一样。"}
   DataUnit *string `json:"dataUnit,omitempty" xml:"dataUnit,omitempty" require:"true"`
   // {"en" : "The data points.", "zh_CN": "数据点。"}
-  DataSeries []*GetEdgeRequestsGetEdgeRequestsResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
+  DataSeries []*GetEdgeRequestsResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetEdgeRequestsResponse) String() string {
@@ -2925,32 +2925,32 @@ func (s *GetEdgeRequestsResponse) SetDataUnit(v string) *GetEdgeRequestsResponse
   return s
 }
 
-func (s *GetEdgeRequestsResponse) SetDataSeries(v []*GetEdgeRequestsGetEdgeRequestsResponseDataSeries) *GetEdgeRequestsResponse {
+func (s *GetEdgeRequestsResponse) SetDataSeries(v []*GetEdgeRequestsResponseDataSeries) *GetEdgeRequestsResponse {
   s.DataSeries = v
   return s
 }
 
-type GetEdgeRequestsGetEdgeRequestsResponseDataSeries struct     {
+type GetEdgeRequestsResponseDataSeries struct     {
   // {"en" : "An RFC 3339 format date representing the beginning of a time interval. It is always in <b>UTC</b> time. For example:  'timestamp': '2019-10-29T01:00:00Z'", "zh_CN": "每个时间段的起始时间，以RFC 3339日期格式表示。始终采用UTC时区。例如：'timestamp': '2019-10-29T01:00:00Z'"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty"`
   // {"en" : "A value at that timestamp. Refer to the dataUnit field for the unit of measurement.", "zh_CN": "该时间段对应的值。计量单位，由dataUnit字段指定。"}
   Data *int `json:"data,omitempty" xml:"data,omitempty"`
 }
 
-func (s GetEdgeRequestsGetEdgeRequestsResponseDataSeries) String() string {
+func (s GetEdgeRequestsResponseDataSeries) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetEdgeRequestsGetEdgeRequestsResponseDataSeries) GoString() string {
+func (s GetEdgeRequestsResponseDataSeries) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeRequestsGetEdgeRequestsResponseDataSeries) SetTimestamp(v string) *GetEdgeRequestsGetEdgeRequestsResponseDataSeries {
+func (s *GetEdgeRequestsResponseDataSeries) SetTimestamp(v string) *GetEdgeRequestsResponseDataSeries {
   s.Timestamp = &v
   return s
 }
 
-func (s *GetEdgeRequestsGetEdgeRequestsResponseDataSeries) SetData(v int) *GetEdgeRequestsGetEdgeRequestsResponseDataSeries {
+func (s *GetEdgeRequestsResponseDataSeries) SetData(v int) *GetEdgeRequestsResponseDataSeries {
   s.Data = &v
   return s
 }
@@ -3019,7 +3019,7 @@ func (s GetASummaryOfStatusCodesReturnedByOriginServersRequestHeader) GoString()
 
 type GetASummaryOfStatusCodesReturnedByOriginServersRequest struct {
   // {"en" : "", "zh_CN": ""}
-  Filters *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetASummaryOfStatusCodesReturnedByOriginServersRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
   // {"en" : "Range: <= 2 items 
   // You can group results using a combination of up to two of the following: 'hostnames', 'serverGroups', and 'customerIds'.", "zh_CN": "取值范围: <= 2 条目 
   // 指定分组依据对数据进行分组汇总。支持按'hostnames'，'serverGroups'单独进行分组汇总，也支持同时指定这2个参数进行分组汇总。"}
@@ -3034,7 +3034,7 @@ func (s GetASummaryOfStatusCodesReturnedByOriginServersRequest) GoString() strin
   return s.String()
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByOriginServersRequest) SetFilters(v *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersRequestFilters) *GetASummaryOfStatusCodesReturnedByOriginServersRequest {
+func (s *GetASummaryOfStatusCodesReturnedByOriginServersRequest) SetFilters(v *GetASummaryOfStatusCodesReturnedByOriginServersRequestFilters) *GetASummaryOfStatusCodesReturnedByOriginServersRequest {
   s.Filters = v
   return s
 }
@@ -3044,27 +3044,27 @@ func (s *GetASummaryOfStatusCodesReturnedByOriginServersRequest) SetGroupBy(v []
   return s
 }
 
-type GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersRequestFilters struct {
+type GetASummaryOfStatusCodesReturnedByOriginServersRequestFilters struct {
   // {"en" : "List of hostnames for which to return data. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, data from all hostnames will be returned.", "zh_CN": "指定加速域名进行查询。可使用泛域名，如*.domain.com。如果未指定，将返回所有加速域名的数据。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
   // {"en" : "Indicates one or more server groups.", "zh_CN": "指定serverGroups（节点组）进行查询。"}
   ServerGroups []*string `json:"serverGroups,omitempty" xml:"serverGroups,omitempty" type:"Repeated"`
 }
 
-func (s GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersRequestFilters) String() string {
+func (s GetASummaryOfStatusCodesReturnedByOriginServersRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersRequestFilters) GoString() string {
+func (s GetASummaryOfStatusCodesReturnedByOriginServersRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersRequestFilters) SetHostnames(v []*string) *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersRequestFilters {
+func (s *GetASummaryOfStatusCodesReturnedByOriginServersRequestFilters) SetHostnames(v []*string) *GetASummaryOfStatusCodesReturnedByOriginServersRequestFilters {
   s.Hostnames = v
   return s
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersRequestFilters) SetServerGroups(v []*string) *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersRequestFilters {
+func (s *GetASummaryOfStatusCodesReturnedByOriginServersRequestFilters) SetServerGroups(v []*string) *GetASummaryOfStatusCodesReturnedByOriginServersRequestFilters {
   s.ServerGroups = v
   return s
 }
@@ -3082,9 +3082,9 @@ func (s GetASummaryOfStatusCodesReturnedByOriginServersResponseHeader) GoString(
 
 type GetASummaryOfStatusCodesReturnedByOriginServersResponse struct {
   // {"en" : "This object contains fields describing the data returned in the groups object.", "zh_CN": "此对象包含的字段是对groups对象中返回数据的描述。"}
-  MetaData *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData `json:"metaData,omitempty" xml:"metaData,omitempty" require:"true" type:"Struct"`
+  MetaData *GetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData `json:"metaData,omitempty" xml:"metaData,omitempty" require:"true" type:"Struct"`
   // {"en" : "This object contains the breakdown of requests by group.", "zh_CN": "分组汇总数据。"}
-  Groups []*GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseGroups `json:"groups,omitempty" xml:"groups,omitempty" require:"true" type:"Repeated"`
+  Groups []*GetASummaryOfStatusCodesReturnedByOriginServersResponseGroups `json:"groups,omitempty" xml:"groups,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetASummaryOfStatusCodesReturnedByOriginServersResponse) String() string {
@@ -3095,17 +3095,17 @@ func (s GetASummaryOfStatusCodesReturnedByOriginServersResponse) GoString() stri
   return s.String()
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByOriginServersResponse) SetMetaData(v *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData) *GetASummaryOfStatusCodesReturnedByOriginServersResponse {
+func (s *GetASummaryOfStatusCodesReturnedByOriginServersResponse) SetMetaData(v *GetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData) *GetASummaryOfStatusCodesReturnedByOriginServersResponse {
   s.MetaData = v
   return s
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByOriginServersResponse) SetGroups(v []*GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseGroups) *GetASummaryOfStatusCodesReturnedByOriginServersResponse {
+func (s *GetASummaryOfStatusCodesReturnedByOriginServersResponse) SetGroups(v []*GetASummaryOfStatusCodesReturnedByOriginServersResponseGroups) *GetASummaryOfStatusCodesReturnedByOriginServersResponse {
   s.Groups = v
   return s
 }
 
-type GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData struct {
+type GetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData struct {
   // {"en" : "RFC 3339 date indicating the beginning of the period.", "zh_CN": "RFC 3339格式的日期，表示查询的起始时间。"}
   StartTime *string `json:"startTime,omitempty" xml:"startTime,omitempty"`
   // {"en" : "RFC 3339 date indicating the end of the period.", "zh_CN": "RFC 3339格式的日期，表示查询的结束时间。"}
@@ -3118,60 +3118,60 @@ type GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesRetu
   DataUnit *string `json:"dataUnit,omitempty" xml:"dataUnit,omitempty"`
 }
 
-func (s GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData) String() string {
+func (s GetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData) GoString() string {
+func (s GetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData) SetStartTime(v string) *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData {
+func (s *GetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData) SetStartTime(v string) *GetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData {
   s.StartTime = &v
   return s
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData) SetEndTime(v string) *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData {
+func (s *GetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData) SetEndTime(v string) *GetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData {
   s.EndTime = &v
   return s
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData) SetIsComplete(v bool) *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData {
+func (s *GetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData) SetIsComplete(v bool) *GetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData {
   s.IsComplete = &v
   return s
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData) SetDataNames(v []*string) *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData {
+func (s *GetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData) SetDataNames(v []*string) *GetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData {
   s.DataNames = v
   return s
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData) SetDataUnit(v string) *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData {
+func (s *GetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData) SetDataUnit(v string) *GetASummaryOfStatusCodesReturnedByOriginServersResponseMetaData {
   s.DataUnit = &v
   return s
 }
 
-type GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseGroups struct     {
+type GetASummaryOfStatusCodesReturnedByOriginServersResponseGroups struct     {
   // {"en" : "Name of a group.  '__all__' is a special group encompassing all groups.", "zh_CN": "分组名称。'__all__' 是一个特殊分组，包含其它所有分组的数据。"}
   Group *string `json:"group,omitempty" xml:"group,omitempty"`
   // {"en" : "Data values. The units of measurement are determined by the dataUnit field.", "zh_CN": "状态码数量。"}
   Data []*string `json:"data,omitempty" xml:"data,omitempty" type:"Repeated"`
 }
 
-func (s GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseGroups) String() string {
+func (s GetASummaryOfStatusCodesReturnedByOriginServersResponseGroups) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseGroups) GoString() string {
+func (s GetASummaryOfStatusCodesReturnedByOriginServersResponseGroups) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseGroups) SetGroup(v string) *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseGroups {
+func (s *GetASummaryOfStatusCodesReturnedByOriginServersResponseGroups) SetGroup(v string) *GetASummaryOfStatusCodesReturnedByOriginServersResponseGroups {
   s.Group = &v
   return s
 }
 
-func (s *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseGroups) SetData(v []*string) *GetASummaryOfStatusCodesReturnedByOriginServersGetASummaryOfStatusCodesReturnedByOriginServersResponseGroups {
+func (s *GetASummaryOfStatusCodesReturnedByOriginServersResponseGroups) SetData(v []*string) *GetASummaryOfStatusCodesReturnedByOriginServersResponseGroups {
   s.Data = v
   return s
 }
@@ -3250,7 +3250,7 @@ func (s GetOriginTrafficVolumeRequestHeader) GoString() string {
 
 type GetOriginTrafficVolumeRequest struct {
   // {"en" : "", "zh_CN": ""}
-  Filters *GetOriginTrafficVolumeGetOriginTrafficVolumeRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetOriginTrafficVolumeRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
 }
 
 func (s GetOriginTrafficVolumeRequest) String() string {
@@ -3261,12 +3261,12 @@ func (s GetOriginTrafficVolumeRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetOriginTrafficVolumeRequest) SetFilters(v *GetOriginTrafficVolumeGetOriginTrafficVolumeRequestFilters) *GetOriginTrafficVolumeRequest {
+func (s *GetOriginTrafficVolumeRequest) SetFilters(v *GetOriginTrafficVolumeRequestFilters) *GetOriginTrafficVolumeRequest {
   s.Filters = v
   return s
 }
 
-type GetOriginTrafficVolumeGetOriginTrafficVolumeRequestFilters struct {
+type GetOriginTrafficVolumeRequestFilters struct {
   // {"en" : "List of hostnames for which to return data. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, data from all hostnames will be returned.", "zh_CN": "指定加速域名进行查询。可使用泛域名，如*.domain.com。如果未指定，将返回所有加速域名的数据。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
   // {"en" : "items Enum: standard,premium,deluxe,ultra,nearChina,ChinaStandard,ChinaPremium 
@@ -3275,20 +3275,20 @@ type GetOriginTrafficVolumeGetOriginTrafficVolumeRequestFilters struct {
   ServerGroups []*string `json:"serverGroups,omitempty" xml:"serverGroups,omitempty" type:"Repeated"`
 }
 
-func (s GetOriginTrafficVolumeGetOriginTrafficVolumeRequestFilters) String() string {
+func (s GetOriginTrafficVolumeRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetOriginTrafficVolumeGetOriginTrafficVolumeRequestFilters) GoString() string {
+func (s GetOriginTrafficVolumeRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetOriginTrafficVolumeGetOriginTrafficVolumeRequestFilters) SetHostnames(v []*string) *GetOriginTrafficVolumeGetOriginTrafficVolumeRequestFilters {
+func (s *GetOriginTrafficVolumeRequestFilters) SetHostnames(v []*string) *GetOriginTrafficVolumeRequestFilters {
   s.Hostnames = v
   return s
 }
 
-func (s *GetOriginTrafficVolumeGetOriginTrafficVolumeRequestFilters) SetServerGroups(v []*string) *GetOriginTrafficVolumeGetOriginTrafficVolumeRequestFilters {
+func (s *GetOriginTrafficVolumeRequestFilters) SetServerGroups(v []*string) *GetOriginTrafficVolumeRequestFilters {
   s.ServerGroups = v
   return s
 }
@@ -3310,7 +3310,7 @@ type GetOriginTrafficVolumeResponse struct {
   // {"en" : "Unit of measurement. This will depend on the report API.", "zh_CN": "计量单位。不同报表类型计量单位不一样。"}
   DataUnit *string `json:"dataUnit,omitempty" xml:"dataUnit,omitempty" require:"true"`
   // {"en" : "The data points.", "zh_CN": "数据点。"}
-  DataSeries []*GetOriginTrafficVolumeGetOriginTrafficVolumeResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
+  DataSeries []*GetOriginTrafficVolumeResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetOriginTrafficVolumeResponse) String() string {
@@ -3331,32 +3331,32 @@ func (s *GetOriginTrafficVolumeResponse) SetDataUnit(v string) *GetOriginTraffic
   return s
 }
 
-func (s *GetOriginTrafficVolumeResponse) SetDataSeries(v []*GetOriginTrafficVolumeGetOriginTrafficVolumeResponseDataSeries) *GetOriginTrafficVolumeResponse {
+func (s *GetOriginTrafficVolumeResponse) SetDataSeries(v []*GetOriginTrafficVolumeResponseDataSeries) *GetOriginTrafficVolumeResponse {
   s.DataSeries = v
   return s
 }
 
-type GetOriginTrafficVolumeGetOriginTrafficVolumeResponseDataSeries struct     {
+type GetOriginTrafficVolumeResponseDataSeries struct     {
   // {"en" : "An RFC 3339 format date representing the beginning of a time interval. It is always in <b>UTC</b> time. For example:  'timestamp': '2019-10-29T01:00:00Z'", "zh_CN": "每个时间段的起始时间，以RFC 3339日期格式表示。始终采用UTC时区。例如：'timestamp': '2019-10-29T01:00:00Z'"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty"`
   // {"en" : "A value at that timestamp. Refer to the dataUnit field for the unit of measurement.", "zh_CN": "该时间段对应的值。计量单位，由dataUnit字段指定。"}
   Data *int `json:"data,omitempty" xml:"data,omitempty"`
 }
 
-func (s GetOriginTrafficVolumeGetOriginTrafficVolumeResponseDataSeries) String() string {
+func (s GetOriginTrafficVolumeResponseDataSeries) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetOriginTrafficVolumeGetOriginTrafficVolumeResponseDataSeries) GoString() string {
+func (s GetOriginTrafficVolumeResponseDataSeries) GoString() string {
   return s.String()
 }
 
-func (s *GetOriginTrafficVolumeGetOriginTrafficVolumeResponseDataSeries) SetTimestamp(v string) *GetOriginTrafficVolumeGetOriginTrafficVolumeResponseDataSeries {
+func (s *GetOriginTrafficVolumeResponseDataSeries) SetTimestamp(v string) *GetOriginTrafficVolumeResponseDataSeries {
   s.Timestamp = &v
   return s
 }
 
-func (s *GetOriginTrafficVolumeGetOriginTrafficVolumeResponseDataSeries) SetData(v int) *GetOriginTrafficVolumeGetOriginTrafficVolumeResponseDataSeries {
+func (s *GetOriginTrafficVolumeResponseDataSeries) SetData(v int) *GetOriginTrafficVolumeResponseDataSeries {
   s.Data = &v
   return s
 }
@@ -3435,7 +3435,7 @@ func (s GetTheIntermediateTrafficVolumeRequestHeader) GoString() string {
 
 type GetTheIntermediateTrafficVolumeRequest struct {
   // {"en" : "", "zh_CN": ""}
-  Filters *GetTheIntermediateTrafficVolumeGetTheIntermediateTrafficVolumeRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetTheIntermediateTrafficVolumeRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
 }
 
 func (s GetTheIntermediateTrafficVolumeRequest) String() string {
@@ -3446,12 +3446,12 @@ func (s GetTheIntermediateTrafficVolumeRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetTheIntermediateTrafficVolumeRequest) SetFilters(v *GetTheIntermediateTrafficVolumeGetTheIntermediateTrafficVolumeRequestFilters) *GetTheIntermediateTrafficVolumeRequest {
+func (s *GetTheIntermediateTrafficVolumeRequest) SetFilters(v *GetTheIntermediateTrafficVolumeRequestFilters) *GetTheIntermediateTrafficVolumeRequest {
   s.Filters = v
   return s
 }
 
-type GetTheIntermediateTrafficVolumeGetTheIntermediateTrafficVolumeRequestFilters struct {
+type GetTheIntermediateTrafficVolumeRequestFilters struct {
   // {"en" : "List of hostnames for which to return data. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, data from all hostnames will be returned.", "zh_CN": "指定加速域名进行查询。可使用泛域名，如*.domain.com。如果未指定，将返回所有加速域名的数据。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
   // {"en" : "items Enum: standard,premium,deluxe,ultra,nearChina,ChinaStandard,ChinaPremium 
@@ -3460,20 +3460,20 @@ type GetTheIntermediateTrafficVolumeGetTheIntermediateTrafficVolumeRequestFilter
   ServerGroups []*string `json:"serverGroups,omitempty" xml:"serverGroups,omitempty" type:"Repeated"`
 }
 
-func (s GetTheIntermediateTrafficVolumeGetTheIntermediateTrafficVolumeRequestFilters) String() string {
+func (s GetTheIntermediateTrafficVolumeRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetTheIntermediateTrafficVolumeGetTheIntermediateTrafficVolumeRequestFilters) GoString() string {
+func (s GetTheIntermediateTrafficVolumeRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetTheIntermediateTrafficVolumeGetTheIntermediateTrafficVolumeRequestFilters) SetHostnames(v []*string) *GetTheIntermediateTrafficVolumeGetTheIntermediateTrafficVolumeRequestFilters {
+func (s *GetTheIntermediateTrafficVolumeRequestFilters) SetHostnames(v []*string) *GetTheIntermediateTrafficVolumeRequestFilters {
   s.Hostnames = v
   return s
 }
 
-func (s *GetTheIntermediateTrafficVolumeGetTheIntermediateTrafficVolumeRequestFilters) SetServerGroups(v []*string) *GetTheIntermediateTrafficVolumeGetTheIntermediateTrafficVolumeRequestFilters {
+func (s *GetTheIntermediateTrafficVolumeRequestFilters) SetServerGroups(v []*string) *GetTheIntermediateTrafficVolumeRequestFilters {
   s.ServerGroups = v
   return s
 }
@@ -3495,7 +3495,7 @@ type GetTheIntermediateTrafficVolumeResponse struct {
   // {"en" : "Unit of measurement. This will depend on the report API.", "zh_CN": "计量单位。不同报表类型计量单位不一样。"}
   DataUnit *string `json:"dataUnit,omitempty" xml:"dataUnit,omitempty" require:"true"`
   // {"en" : "The data points.", "zh_CN": "数据点。"}
-  DataSeries []*GetTheIntermediateTrafficVolumeGetTheIntermediateTrafficVolumeResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
+  DataSeries []*GetTheIntermediateTrafficVolumeResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetTheIntermediateTrafficVolumeResponse) String() string {
@@ -3516,32 +3516,32 @@ func (s *GetTheIntermediateTrafficVolumeResponse) SetDataUnit(v string) *GetTheI
   return s
 }
 
-func (s *GetTheIntermediateTrafficVolumeResponse) SetDataSeries(v []*GetTheIntermediateTrafficVolumeGetTheIntermediateTrafficVolumeResponseDataSeries) *GetTheIntermediateTrafficVolumeResponse {
+func (s *GetTheIntermediateTrafficVolumeResponse) SetDataSeries(v []*GetTheIntermediateTrafficVolumeResponseDataSeries) *GetTheIntermediateTrafficVolumeResponse {
   s.DataSeries = v
   return s
 }
 
-type GetTheIntermediateTrafficVolumeGetTheIntermediateTrafficVolumeResponseDataSeries struct     {
+type GetTheIntermediateTrafficVolumeResponseDataSeries struct     {
   // {"en" : "An RFC 3339 format date representing the beginning of a time interval. It is always in <b>UTC</b> time. For example:  'timestamp': '2019-10-29T01:00:00Z'", "zh_CN": "每个时间段的起始时间，以RFC 3339日期格式表示。始终采用UTC时区。例如：'timestamp': '2019-10-29T01:00:00Z'"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty"`
   // {"en" : "A value at that timestamp. Refer to the dataUnit field for the unit of measurement.", "zh_CN": "该时间段对应的值。计量单位，由dataUnit字段指定。"}
   Data *int `json:"data,omitempty" xml:"data,omitempty"`
 }
 
-func (s GetTheIntermediateTrafficVolumeGetTheIntermediateTrafficVolumeResponseDataSeries) String() string {
+func (s GetTheIntermediateTrafficVolumeResponseDataSeries) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetTheIntermediateTrafficVolumeGetTheIntermediateTrafficVolumeResponseDataSeries) GoString() string {
+func (s GetTheIntermediateTrafficVolumeResponseDataSeries) GoString() string {
   return s.String()
 }
 
-func (s *GetTheIntermediateTrafficVolumeGetTheIntermediateTrafficVolumeResponseDataSeries) SetTimestamp(v string) *GetTheIntermediateTrafficVolumeGetTheIntermediateTrafficVolumeResponseDataSeries {
+func (s *GetTheIntermediateTrafficVolumeResponseDataSeries) SetTimestamp(v string) *GetTheIntermediateTrafficVolumeResponseDataSeries {
   s.Timestamp = &v
   return s
 }
 
-func (s *GetTheIntermediateTrafficVolumeGetTheIntermediateTrafficVolumeResponseDataSeries) SetData(v int) *GetTheIntermediateTrafficVolumeGetTheIntermediateTrafficVolumeResponseDataSeries {
+func (s *GetTheIntermediateTrafficVolumeResponseDataSeries) SetData(v int) *GetTheIntermediateTrafficVolumeResponseDataSeries {
   s.Data = &v
   return s
 }
@@ -3620,7 +3620,7 @@ func (s GetEdgeTrafficVolumeRequestHeader) GoString() string {
 
 type GetEdgeTrafficVolumeRequest struct {
   // {"en" : "Specify conditions to filter report data.", "zh_CN": "指定查询条件过滤报表数据。"}
-  Filters *GetEdgeTrafficVolumeGetEdgeTrafficVolumeRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetEdgeTrafficVolumeRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
 }
 
 func (s GetEdgeTrafficVolumeRequest) String() string {
@@ -3631,12 +3631,12 @@ func (s GetEdgeTrafficVolumeRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeTrafficVolumeRequest) SetFilters(v *GetEdgeTrafficVolumeGetEdgeTrafficVolumeRequestFilters) *GetEdgeTrafficVolumeRequest {
+func (s *GetEdgeTrafficVolumeRequest) SetFilters(v *GetEdgeTrafficVolumeRequestFilters) *GetEdgeTrafficVolumeRequest {
   s.Filters = v
   return s
 }
 
-type GetEdgeTrafficVolumeGetEdgeTrafficVolumeRequestFilters struct {
+type GetEdgeTrafficVolumeRequestFilters struct {
   // {"en" : "List of hostnames for which to return data. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, data from all hostnames will be returned.", "zh_CN": "指定加速域名进行查询。可使用泛域名，如*.domain.com。如果未指定，将返回所有加速域名的数据。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
   // {"en" : "items Enum: standard premium deluxe ultra nearChina ChinaStandard ChinaPremium 
@@ -3645,20 +3645,20 @@ type GetEdgeTrafficVolumeGetEdgeTrafficVolumeRequestFilters struct {
   ServerGroups []*string `json:"serverGroups,omitempty" xml:"serverGroups,omitempty" type:"Repeated"`
 }
 
-func (s GetEdgeTrafficVolumeGetEdgeTrafficVolumeRequestFilters) String() string {
+func (s GetEdgeTrafficVolumeRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetEdgeTrafficVolumeGetEdgeTrafficVolumeRequestFilters) GoString() string {
+func (s GetEdgeTrafficVolumeRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeTrafficVolumeGetEdgeTrafficVolumeRequestFilters) SetHostnames(v []*string) *GetEdgeTrafficVolumeGetEdgeTrafficVolumeRequestFilters {
+func (s *GetEdgeTrafficVolumeRequestFilters) SetHostnames(v []*string) *GetEdgeTrafficVolumeRequestFilters {
   s.Hostnames = v
   return s
 }
 
-func (s *GetEdgeTrafficVolumeGetEdgeTrafficVolumeRequestFilters) SetServerGroups(v []*string) *GetEdgeTrafficVolumeGetEdgeTrafficVolumeRequestFilters {
+func (s *GetEdgeTrafficVolumeRequestFilters) SetServerGroups(v []*string) *GetEdgeTrafficVolumeRequestFilters {
   s.ServerGroups = v
   return s
 }
@@ -3680,7 +3680,7 @@ type GetEdgeTrafficVolumeResponse struct {
   // {"en" : "Unit of measurement. This will depend on the report API.", "zh_CN": "计量单位。不同报表类型计量单位不一样。"}
   DataUnit *string `json:"dataUnit,omitempty" xml:"dataUnit,omitempty" require:"true"`
   // {"en" : "The data points.", "zh_CN": "数据点。"}
-  DataSeries []*GetEdgeTrafficVolumeGetEdgeTrafficVolumeResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
+  DataSeries []*GetEdgeTrafficVolumeResponseDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetEdgeTrafficVolumeResponse) String() string {
@@ -3701,32 +3701,32 @@ func (s *GetEdgeTrafficVolumeResponse) SetDataUnit(v string) *GetEdgeTrafficVolu
   return s
 }
 
-func (s *GetEdgeTrafficVolumeResponse) SetDataSeries(v []*GetEdgeTrafficVolumeGetEdgeTrafficVolumeResponseDataSeries) *GetEdgeTrafficVolumeResponse {
+func (s *GetEdgeTrafficVolumeResponse) SetDataSeries(v []*GetEdgeTrafficVolumeResponseDataSeries) *GetEdgeTrafficVolumeResponse {
   s.DataSeries = v
   return s
 }
 
-type GetEdgeTrafficVolumeGetEdgeTrafficVolumeResponseDataSeries struct     {
+type GetEdgeTrafficVolumeResponseDataSeries struct     {
   // {"en" : "An RFC 3339 format date representing the beginning of a time interval. It is always in <b>UTC</b> time. For example:  'timestamp': '2019-10-29T01:00:00Z'", "zh_CN": "每个时间段的起始时间，以RFC 3339日期格式表示。始终采用UTC时区。例如：'timestamp': '2019-10-29T01:00:00Z'"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty"`
   // {"en" : "A value at that timestamp. Refer to the dataUnit field for the unit of measurement.", "zh_CN": "该时间段对应的值。计量单位，由dataUnit字段指定。"}
   Data *int `json:"data,omitempty" xml:"data,omitempty"`
 }
 
-func (s GetEdgeTrafficVolumeGetEdgeTrafficVolumeResponseDataSeries) String() string {
+func (s GetEdgeTrafficVolumeResponseDataSeries) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetEdgeTrafficVolumeGetEdgeTrafficVolumeResponseDataSeries) GoString() string {
+func (s GetEdgeTrafficVolumeResponseDataSeries) GoString() string {
   return s.String()
 }
 
-func (s *GetEdgeTrafficVolumeGetEdgeTrafficVolumeResponseDataSeries) SetTimestamp(v string) *GetEdgeTrafficVolumeGetEdgeTrafficVolumeResponseDataSeries {
+func (s *GetEdgeTrafficVolumeResponseDataSeries) SetTimestamp(v string) *GetEdgeTrafficVolumeResponseDataSeries {
   s.Timestamp = &v
   return s
 }
 
-func (s *GetEdgeTrafficVolumeGetEdgeTrafficVolumeResponseDataSeries) SetData(v int) *GetEdgeTrafficVolumeGetEdgeTrafficVolumeResponseDataSeries {
+func (s *GetEdgeTrafficVolumeResponseDataSeries) SetData(v int) *GetEdgeTrafficVolumeResponseDataSeries {
   s.Data = &v
   return s
 }
@@ -3795,7 +3795,7 @@ func (s GetASummaryOfCpuUsageRequestHeader) GoString() string {
 
 type GetASummaryOfCpuUsageRequest struct {
   // {"en" : "", "zh_CN": ""}
-  Filters *GetASummaryOfCpuUsageGetASummaryOfCpuUsageRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
+  Filters *GetASummaryOfCpuUsageRequestFilters `json:"filters,omitempty" xml:"filters,omitempty" type:"Struct"`
   // {"en" : "Range: <= 2 items 
   // You can group results using a combination of up to two of the following: 'hostnames', 'serverGroups'", "zh_CN": "取值范围: <= 2 条目 
   // 指定分组依据对数据进行分组汇总。支持按'hostnames'，'serverGroups'单独进行分组汇总，也支持同时指定这2个参数进行分组汇总。"}
@@ -3810,7 +3810,7 @@ func (s GetASummaryOfCpuUsageRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfCpuUsageRequest) SetFilters(v *GetASummaryOfCpuUsageGetASummaryOfCpuUsageRequestFilters) *GetASummaryOfCpuUsageRequest {
+func (s *GetASummaryOfCpuUsageRequest) SetFilters(v *GetASummaryOfCpuUsageRequestFilters) *GetASummaryOfCpuUsageRequest {
   s.Filters = v
   return s
 }
@@ -3820,27 +3820,27 @@ func (s *GetASummaryOfCpuUsageRequest) SetGroupBy(v []*string) *GetASummaryOfCpu
   return s
 }
 
-type GetASummaryOfCpuUsageGetASummaryOfCpuUsageRequestFilters struct {
+type GetASummaryOfCpuUsageRequestFilters struct {
   // {"en" : "List of hostnames for which to return data. Wildcard hostnames such as *.domain.com are also permitted. If unspecified, data from all hostnames will be returned.", "zh_CN": "指定加速域名进行查询。可使用泛域名，如*.domain.com。如果未指定，将返回所有加速域名的数据。"}
   Hostnames []*string `json:"hostnames,omitempty" xml:"hostnames,omitempty" type:"Repeated"`
   // {"en" : "Indicates one or more server groups.", "zh_CN": "指定serverGroups（节点组）进行查询。"}
   ServerGroups []*string `json:"serverGroups,omitempty" xml:"serverGroups,omitempty" type:"Repeated"`
 }
 
-func (s GetASummaryOfCpuUsageGetASummaryOfCpuUsageRequestFilters) String() string {
+func (s GetASummaryOfCpuUsageRequestFilters) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetASummaryOfCpuUsageGetASummaryOfCpuUsageRequestFilters) GoString() string {
+func (s GetASummaryOfCpuUsageRequestFilters) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfCpuUsageGetASummaryOfCpuUsageRequestFilters) SetHostnames(v []*string) *GetASummaryOfCpuUsageGetASummaryOfCpuUsageRequestFilters {
+func (s *GetASummaryOfCpuUsageRequestFilters) SetHostnames(v []*string) *GetASummaryOfCpuUsageRequestFilters {
   s.Hostnames = v
   return s
 }
 
-func (s *GetASummaryOfCpuUsageGetASummaryOfCpuUsageRequestFilters) SetServerGroups(v []*string) *GetASummaryOfCpuUsageGetASummaryOfCpuUsageRequestFilters {
+func (s *GetASummaryOfCpuUsageRequestFilters) SetServerGroups(v []*string) *GetASummaryOfCpuUsageRequestFilters {
   s.ServerGroups = v
   return s
 }
@@ -3858,9 +3858,9 @@ func (s GetASummaryOfCpuUsageResponseHeader) GoString() string {
 
 type GetASummaryOfCpuUsageResponse struct {
   // {"en" : "This object contains fields describing the data returned in the groups object.", "zh_CN": "此对象包含的字段是对groups对象中返回数据的描述。"}
-  MetaData *GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseMetaData `json:"metaData,omitempty" xml:"metaData,omitempty" require:"true" type:"Struct"`
+  MetaData *GetASummaryOfCpuUsageResponseMetaData `json:"metaData,omitempty" xml:"metaData,omitempty" require:"true" type:"Struct"`
   // {"en" : "This object contains the breakdown of CPU usage by group. ", "zh_CN": "每个分组及其cpu时间。"}
-  Groups []*GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseGroups `json:"groups,omitempty" xml:"groups,omitempty" require:"true" type:"Repeated"`
+  Groups []*GetASummaryOfCpuUsageResponseGroups `json:"groups,omitempty" xml:"groups,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s GetASummaryOfCpuUsageResponse) String() string {
@@ -3871,17 +3871,17 @@ func (s GetASummaryOfCpuUsageResponse) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfCpuUsageResponse) SetMetaData(v *GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseMetaData) *GetASummaryOfCpuUsageResponse {
+func (s *GetASummaryOfCpuUsageResponse) SetMetaData(v *GetASummaryOfCpuUsageResponseMetaData) *GetASummaryOfCpuUsageResponse {
   s.MetaData = v
   return s
 }
 
-func (s *GetASummaryOfCpuUsageResponse) SetGroups(v []*GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseGroups) *GetASummaryOfCpuUsageResponse {
+func (s *GetASummaryOfCpuUsageResponse) SetGroups(v []*GetASummaryOfCpuUsageResponseGroups) *GetASummaryOfCpuUsageResponse {
   s.Groups = v
   return s
 }
 
-type GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseMetaData struct {
+type GetASummaryOfCpuUsageResponseMetaData struct {
   // {"en" : "RFC 3339 date indicating the beginning of the period.", "zh_CN": "RFC 3339格式的日期，表示查询的起始时间。"}
   StartTime *string `json:"startTime,omitempty" xml:"startTime,omitempty" require:"true"`
   // {"en" : "RFC 3339 date indicating the end of the period.", "zh_CN": "RFC 3339格式的日期，表示查询的结束时间。"}
@@ -3898,40 +3898,40 @@ type GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseMetaData struct {
   DataUnit *string `json:"dataUnit,omitempty" xml:"dataUnit,omitempty" require:"true"`
 }
 
-func (s GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseMetaData) String() string {
+func (s GetASummaryOfCpuUsageResponseMetaData) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseMetaData) GoString() string {
+func (s GetASummaryOfCpuUsageResponseMetaData) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseMetaData) SetStartTime(v string) *GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseMetaData {
+func (s *GetASummaryOfCpuUsageResponseMetaData) SetStartTime(v string) *GetASummaryOfCpuUsageResponseMetaData {
   s.StartTime = &v
   return s
 }
 
-func (s *GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseMetaData) SetEndTime(v string) *GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseMetaData {
+func (s *GetASummaryOfCpuUsageResponseMetaData) SetEndTime(v string) *GetASummaryOfCpuUsageResponseMetaData {
   s.EndTime = &v
   return s
 }
 
-func (s *GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseMetaData) SetIsComplete(v bool) *GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseMetaData {
+func (s *GetASummaryOfCpuUsageResponseMetaData) SetIsComplete(v bool) *GetASummaryOfCpuUsageResponseMetaData {
   s.IsComplete = &v
   return s
 }
 
-func (s *GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseMetaData) SetDataNames(v []*string) *GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseMetaData {
+func (s *GetASummaryOfCpuUsageResponseMetaData) SetDataNames(v []*string) *GetASummaryOfCpuUsageResponseMetaData {
   s.DataNames = v
   return s
 }
 
-func (s *GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseMetaData) SetDataUnit(v string) *GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseMetaData {
+func (s *GetASummaryOfCpuUsageResponseMetaData) SetDataUnit(v string) *GetASummaryOfCpuUsageResponseMetaData {
   s.DataUnit = &v
   return s
 }
 
-type GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseGroups struct     {
+type GetASummaryOfCpuUsageResponseGroups struct     {
   // {"en" : "Name of the group. '__all__' is a special group encompassing all groups.
   // ", "zh_CN": "分组名称。'__all__' 是一个特殊分组，表示总cpu时间。"}
   Group *string `json:"group,omitempty" xml:"group,omitempty"`
@@ -3939,20 +3939,20 @@ type GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseGroups struct     {
   Data []*string `json:"data,omitempty" xml:"data,omitempty" type:"Repeated"`
 }
 
-func (s GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseGroups) String() string {
+func (s GetASummaryOfCpuUsageResponseGroups) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseGroups) GoString() string {
+func (s GetASummaryOfCpuUsageResponseGroups) GoString() string {
   return s.String()
 }
 
-func (s *GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseGroups) SetGroup(v string) *GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseGroups {
+func (s *GetASummaryOfCpuUsageResponseGroups) SetGroup(v string) *GetASummaryOfCpuUsageResponseGroups {
   s.Group = &v
   return s
 }
 
-func (s *GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseGroups) SetData(v []*string) *GetASummaryOfCpuUsageGetASummaryOfCpuUsageResponseGroups {
+func (s *GetASummaryOfCpuUsageResponseGroups) SetData(v []*string) *GetASummaryOfCpuUsageResponseGroups {
   s.Data = v
   return s
 }

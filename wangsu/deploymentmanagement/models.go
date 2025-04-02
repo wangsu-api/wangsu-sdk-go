@@ -73,7 +73,7 @@ type GetDeploymentTaskResponse struct {
   // {"en" : "RFC 3339 date indicating when the task was created.", "zh_CN": "RFC 3339格式的日期，表示任务的创建时间。"}
   SubmissionTime *string `json:"submissionTime,omitempty" xml:"submissionTime,omitempty" require:"true"`
   // {"en" : "This array contains all the actions related to a deployment. They can include deployment and removal of properties and certificates to the staging or production environments.", "zh_CN": "部署任务所要执行的操作，可以包括加速项目和证书的部署或卸载操作。"}
-  Actions []*GetDeploymentTaskGetDeploymentTaskResponseActions `json:"actions,omitempty" xml:"actions,omitempty" require:"true" type:"Repeated"`
+  Actions []*GetDeploymentTaskResponseActions `json:"actions,omitempty" xml:"actions,omitempty" require:"true" type:"Repeated"`
   // {"en" : "Enum: staging,production 
   // Indicates the environment affected by the deployment.", "zh_CN": "取值范围: staging,production 
   // 部署任务对应的环境。"}
@@ -115,7 +115,7 @@ func (s *GetDeploymentTaskResponse) SetSubmissionTime(v string) *GetDeploymentTa
   return s
 }
 
-func (s *GetDeploymentTaskResponse) SetActions(v []*GetDeploymentTaskGetDeploymentTaskResponseActions) *GetDeploymentTaskResponse {
+func (s *GetDeploymentTaskResponse) SetActions(v []*GetDeploymentTaskResponseActions) *GetDeploymentTaskResponse {
   s.Actions = v
   return s
 }
@@ -150,7 +150,7 @@ func (s *GetDeploymentTaskResponse) SetWebhook(v string) *GetDeploymentTaskRespo
   return s
 }
 
-type GetDeploymentTaskGetDeploymentTaskResponseActions struct     {
+type GetDeploymentTaskResponseActions struct     {
   // {"en" : "Enum: deploy_property,remove_property,deploy_cert,remove_cert 
   // Describe an action to take. You can deploy a property, remove a property, deploy a certificate, or remove a certificate.", "zh_CN": "取值范围: deploy_property,remove_property,deploy_cert,remove_cert 
   // 指定操作类型，包括部署加速项目、卸载加速项目、部署证书以及卸载证书。"}
@@ -163,30 +163,30 @@ type GetDeploymentTaskGetDeploymentTaskResponseActions struct     {
   Version *string `json:"version,omitempty" xml:"version,omitempty"`
 }
 
-func (s GetDeploymentTaskGetDeploymentTaskResponseActions) String() string {
+func (s GetDeploymentTaskResponseActions) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetDeploymentTaskGetDeploymentTaskResponseActions) GoString() string {
+func (s GetDeploymentTaskResponseActions) GoString() string {
   return s.String()
 }
 
-func (s *GetDeploymentTaskGetDeploymentTaskResponseActions) SetAction(v string) *GetDeploymentTaskGetDeploymentTaskResponseActions {
+func (s *GetDeploymentTaskResponseActions) SetAction(v string) *GetDeploymentTaskResponseActions {
   s.Action = &v
   return s
 }
 
-func (s *GetDeploymentTaskGetDeploymentTaskResponseActions) SetPropertyId(v string) *GetDeploymentTaskGetDeploymentTaskResponseActions {
+func (s *GetDeploymentTaskResponseActions) SetPropertyId(v string) *GetDeploymentTaskResponseActions {
   s.PropertyId = &v
   return s
 }
 
-func (s *GetDeploymentTaskGetDeploymentTaskResponseActions) SetCertificateId(v string) *GetDeploymentTaskGetDeploymentTaskResponseActions {
+func (s *GetDeploymentTaskResponseActions) SetCertificateId(v string) *GetDeploymentTaskResponseActions {
   s.CertificateId = &v
   return s
 }
 
-func (s *GetDeploymentTaskGetDeploymentTaskResponseActions) SetVersion(v string) *GetDeploymentTaskGetDeploymentTaskResponseActions {
+func (s *GetDeploymentTaskResponseActions) SetVersion(v string) *GetDeploymentTaskResponseActions {
   s.Version = &v
   return s
 }
@@ -249,7 +249,7 @@ type CreateADeploymentTaskRequest struct {
   // 指定部署任务的目标环境，即演练或生产环境。"}
   Target *string `json:"target,omitempty" xml:"target,omitempty" require:"true"`
   // {"en" : "This array contains all the actions related to a deployment. They can include deployment and removal of properties and certificates to the staging or production environments.", "zh_CN": "部署任务所要执行的操作，可以包括加速项目和证书的部署或卸载操作。"}
-  Actions []*CreateADeploymentTaskCreateADeploymentTaskRequestActions `json:"actions,omitempty" xml:"actions,omitempty" type:"Repeated"`
+  Actions []*CreateADeploymentTaskRequestActions `json:"actions,omitempty" xml:"actions,omitempty" type:"Repeated"`
   // {"en" : "ID of a webhook to call when the deployment task completes.", "zh_CN": "部署任务完成时要调用的webhook的ID。"}
   Webhook *string `json:"webhook,omitempty" xml:"webhook,omitempty"`
 }
@@ -272,7 +272,7 @@ func (s *CreateADeploymentTaskRequest) SetTarget(v string) *CreateADeploymentTas
   return s
 }
 
-func (s *CreateADeploymentTaskRequest) SetActions(v []*CreateADeploymentTaskCreateADeploymentTaskRequestActions) *CreateADeploymentTaskRequest {
+func (s *CreateADeploymentTaskRequest) SetActions(v []*CreateADeploymentTaskRequestActions) *CreateADeploymentTaskRequest {
   s.Actions = v
   return s
 }
@@ -282,7 +282,7 @@ func (s *CreateADeploymentTaskRequest) SetWebhook(v string) *CreateADeploymentTa
   return s
 }
 
-type CreateADeploymentTaskCreateADeploymentTaskRequestActions struct     {
+type CreateADeploymentTaskRequestActions struct     {
   // {"en" : "Enum: deploy_property,remove_property,deploy_cert,remove_cert 
   // Describe an action to take. You can deploy a property, remove a property, deploy a certificate, or remove a certificate.", "zh_CN": "取值范围: deploy_property,remove_property,deploy_cert,remove_cert 
   // 指定操作类型，包括部署加速项目、卸载加速项目、部署证书以及卸载证书。"}
@@ -295,30 +295,30 @@ type CreateADeploymentTaskCreateADeploymentTaskRequestActions struct     {
   Version *string `json:"version,omitempty" xml:"version,omitempty"`
 }
 
-func (s CreateADeploymentTaskCreateADeploymentTaskRequestActions) String() string {
+func (s CreateADeploymentTaskRequestActions) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateADeploymentTaskCreateADeploymentTaskRequestActions) GoString() string {
+func (s CreateADeploymentTaskRequestActions) GoString() string {
   return s.String()
 }
 
-func (s *CreateADeploymentTaskCreateADeploymentTaskRequestActions) SetAction(v string) *CreateADeploymentTaskCreateADeploymentTaskRequestActions {
+func (s *CreateADeploymentTaskRequestActions) SetAction(v string) *CreateADeploymentTaskRequestActions {
   s.Action = &v
   return s
 }
 
-func (s *CreateADeploymentTaskCreateADeploymentTaskRequestActions) SetPropertyId(v string) *CreateADeploymentTaskCreateADeploymentTaskRequestActions {
+func (s *CreateADeploymentTaskRequestActions) SetPropertyId(v string) *CreateADeploymentTaskRequestActions {
   s.PropertyId = &v
   return s
 }
 
-func (s *CreateADeploymentTaskCreateADeploymentTaskRequestActions) SetCertificateId(v string) *CreateADeploymentTaskCreateADeploymentTaskRequestActions {
+func (s *CreateADeploymentTaskRequestActions) SetCertificateId(v string) *CreateADeploymentTaskRequestActions {
   s.CertificateId = &v
   return s
 }
 
-func (s *CreateADeploymentTaskCreateADeploymentTaskRequestActions) SetVersion(v string) *CreateADeploymentTaskCreateADeploymentTaskRequestActions {
+func (s *CreateADeploymentTaskRequestActions) SetVersion(v string) *CreateADeploymentTaskRequestActions {
   s.Version = &v
   return s
 }
@@ -512,7 +512,7 @@ func (s GetListOfDeploymentTasksResponseHeader) GoString() string {
 
 type GetListOfDeploymentTasksResponse struct {
   // {"en" : "List of deployment task summaries.", "zh_CN": "部署任务列表。"}
-  Deploy []*GetListOfDeploymentTasksGetListOfDeploymentTasksResponseDeploy `json:"deploy,omitempty" xml:"deploy,omitempty" require:"true" type:"Repeated"`
+  Deploy []*GetListOfDeploymentTasksResponseDeploy `json:"deploy,omitempty" xml:"deploy,omitempty" require:"true" type:"Repeated"`
   // {"en" : "Range: >= 0 
   // Total number of deployment tasks.", "zh_CN": "取值范围: >= 0 
   // 部署任务的总数。"}
@@ -527,7 +527,7 @@ func (s GetListOfDeploymentTasksResponse) GoString() string {
   return s.String()
 }
 
-func (s *GetListOfDeploymentTasksResponse) SetDeploy(v []*GetListOfDeploymentTasksGetListOfDeploymentTasksResponseDeploy) *GetListOfDeploymentTasksResponse {
+func (s *GetListOfDeploymentTasksResponse) SetDeploy(v []*GetListOfDeploymentTasksResponseDeploy) *GetListOfDeploymentTasksResponse {
   s.Deploy = v
   return s
 }
@@ -537,7 +537,7 @@ func (s *GetListOfDeploymentTasksResponse) SetCount(v int) *GetListOfDeploymentT
   return s
 }
 
-type GetListOfDeploymentTasksGetListOfDeploymentTasksResponseDeploy struct     {
+type GetListOfDeploymentTasksResponseDeploy struct     {
   // {"en" : "ID representing the deployment task. You can obtain more information about a task by calling the Query deployment task API.", "zh_CN": "部署任务的ID。您可以通过调用'获取部署任务的详细信息'接口来获取部署任务的更多信息。"}
   Id *string `json:"id,omitempty" xml:"id,omitempty"`
   // {"en" : "Name of the deployment task.", "zh_CN": "部署任务的名称。"}
@@ -558,45 +558,45 @@ type GetListOfDeploymentTasksGetListOfDeploymentTasksResponseDeploy struct     {
   ApiRequestId *string `json:"apiRequestId,omitempty" xml:"apiRequestId,omitempty"`
 }
 
-func (s GetListOfDeploymentTasksGetListOfDeploymentTasksResponseDeploy) String() string {
+func (s GetListOfDeploymentTasksResponseDeploy) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetListOfDeploymentTasksGetListOfDeploymentTasksResponseDeploy) GoString() string {
+func (s GetListOfDeploymentTasksResponseDeploy) GoString() string {
   return s.String()
 }
 
-func (s *GetListOfDeploymentTasksGetListOfDeploymentTasksResponseDeploy) SetId(v string) *GetListOfDeploymentTasksGetListOfDeploymentTasksResponseDeploy {
+func (s *GetListOfDeploymentTasksResponseDeploy) SetId(v string) *GetListOfDeploymentTasksResponseDeploy {
   s.Id = &v
   return s
 }
 
-func (s *GetListOfDeploymentTasksGetListOfDeploymentTasksResponseDeploy) SetName(v string) *GetListOfDeploymentTasksGetListOfDeploymentTasksResponseDeploy {
+func (s *GetListOfDeploymentTasksResponseDeploy) SetName(v string) *GetListOfDeploymentTasksResponseDeploy {
   s.Name = &v
   return s
 }
 
-func (s *GetListOfDeploymentTasksGetListOfDeploymentTasksResponseDeploy) SetSubmissionTime(v string) *GetListOfDeploymentTasksGetListOfDeploymentTasksResponseDeploy {
+func (s *GetListOfDeploymentTasksResponseDeploy) SetSubmissionTime(v string) *GetListOfDeploymentTasksResponseDeploy {
   s.SubmissionTime = &v
   return s
 }
 
-func (s *GetListOfDeploymentTasksGetListOfDeploymentTasksResponseDeploy) SetFinishTime(v string) *GetListOfDeploymentTasksGetListOfDeploymentTasksResponseDeploy {
+func (s *GetListOfDeploymentTasksResponseDeploy) SetFinishTime(v string) *GetListOfDeploymentTasksResponseDeploy {
   s.FinishTime = &v
   return s
 }
 
-func (s *GetListOfDeploymentTasksGetListOfDeploymentTasksResponseDeploy) SetStatus(v string) *GetListOfDeploymentTasksGetListOfDeploymentTasksResponseDeploy {
+func (s *GetListOfDeploymentTasksResponseDeploy) SetStatus(v string) *GetListOfDeploymentTasksResponseDeploy {
   s.Status = &v
   return s
 }
 
-func (s *GetListOfDeploymentTasksGetListOfDeploymentTasksResponseDeploy) SetTarget(v string) *GetListOfDeploymentTasksGetListOfDeploymentTasksResponseDeploy {
+func (s *GetListOfDeploymentTasksResponseDeploy) SetTarget(v string) *GetListOfDeploymentTasksResponseDeploy {
   s.Target = &v
   return s
 }
 
-func (s *GetListOfDeploymentTasksGetListOfDeploymentTasksResponseDeploy) SetApiRequestId(v string) *GetListOfDeploymentTasksGetListOfDeploymentTasksResponseDeploy {
+func (s *GetListOfDeploymentTasksResponseDeploy) SetApiRequestId(v string) *GetListOfDeploymentTasksResponseDeploy {
   s.ApiRequestId = &v
   return s
 }
