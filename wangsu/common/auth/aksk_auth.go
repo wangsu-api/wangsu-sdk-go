@@ -112,8 +112,8 @@ func Invoke(config AkskConfig, request interface{}, response interface{}) (reqeu
 
 	bodyReadError = json.Unmarshal(body, &response)
 	if bodyReadError != nil {
-		log.Printf("Unable to parse the response body : %v", err)
-		return "", err
+		log.Printf("Unable to parse the response body : %v", bodyReadError)
+		return "", bodyReadError
 	}
 
 	return xCncRequestId, nil
