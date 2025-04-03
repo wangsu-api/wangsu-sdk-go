@@ -2,8 +2,8 @@ package domain
 
 import (
 	"errors"
-	"github.com/wangsu-api/wangsu-sdk-go/common"
-	"github.com/wangsu-api/wangsu-sdk-go/common/auth"
+	"github.com/wangsu-api/wangsu-sdk-go/wangsu/common"
+	"github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
 )
 
 type Client struct {

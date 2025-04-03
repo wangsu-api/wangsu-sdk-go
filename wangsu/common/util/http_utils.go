@@ -2,7 +2,7 @@ package util
 
 import (
 	"fmt"
-	"github.com/wangsu-api/wangsu-sdk-go/common/model"
+	"github.com/wangsu-api/wangsu-sdk-go/wangsu/common/model"
 	"log"
 	"net/http"
 	"strings"

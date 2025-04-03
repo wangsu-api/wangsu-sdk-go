@@ -22,7 +22,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/incidentlogs
 package main
 
 import (
-    "github.com/wangsu-api/wangsu-sdk-go/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/incidentlogs"
     "log"
 )
