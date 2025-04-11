@@ -433,19 +433,13 @@ func (s *QuerySubAccountInfoSubAccount) SetStatus(v int) *QuerySubAccountInfoSub
 
 
 type BatchAddOrRevokePolicyToSubAccountRequest struct {
-  // {"en":"Sub account login name", "zh_CN":"子用户登录名"}
+  // {"en":"Specify policy ID","zh_CN":"指定权限策略id"}
+  PolicyId []*int64 `json:"policyId,omitempty" xml:"policyId,omitempty" type:"Repeated"`
+  // {"en":"Policy name","zh_CN":"策略名称"}
+  PolicyName []*string `json:"policyName,omitempty" xml:"policyName,omitempty" type:"Repeated"`
+  // {"en":"Sub account login name","zh_CN":"子用户登录名"}
   LoginName *string `json:"loginName,omitempty" xml:"loginName,omitempty" require:"true"`
-  // {"en":"Specify policy ID", "zh_CN":"指定权限策略id"}
-  PolicyId []*int64 `json:"policyId,omitempty" xml:"policyId,omitempty" require:"true" type:"Repeated"`
-  // {"en":"Select you want to add or revoke policy for sub account.
-  // 
-  // 0:add policy
-  // 
-  // 1:revoke policy", "zh_CN":"选择需要为子用户添加或撤销权限策略
-  // 
-  // 0：添加权限
-  // 
-  // 1：撤销权限"}
+  // {"en":"Select you want to add or revoke policy for sub account.\n\n0:add policy\n\n1:revoke policy","zh_CN":"选择需要为子用户添加或撤销权限策略\n\n0：添加权限\n\n1：撤销权限"}
   Type *int `json:"type,omitempty" xml:"type,omitempty" require:"true"`
 }
 
@@ -457,13 +451,18 @@ func (s BatchAddOrRevokePolicyToSubAccountRequest) GoString() string {
   return s.String()
 }
 
-func (s *BatchAddOrRevokePolicyToSubAccountRequest) SetLoginName(v string) *BatchAddOrRevokePolicyToSubAccountRequest {
-  s.LoginName = &v
+func (s *BatchAddOrRevokePolicyToSubAccountRequest) SetPolicyId(v []*int64) *BatchAddOrRevokePolicyToSubAccountRequest {
+  s.PolicyId = v
   return s
 }
 
-func (s *BatchAddOrRevokePolicyToSubAccountRequest) SetPolicyId(v []*int64) *BatchAddOrRevokePolicyToSubAccountRequest {
-  s.PolicyId = v
+func (s *BatchAddOrRevokePolicyToSubAccountRequest) SetPolicyName(v []*string) *BatchAddOrRevokePolicyToSubAccountRequest {
+  s.PolicyName = v
+  return s
+}
+
+func (s *BatchAddOrRevokePolicyToSubAccountRequest) SetLoginName(v string) *BatchAddOrRevokePolicyToSubAccountRequest {
+  s.LoginName = &v
   return s
 }
 
@@ -472,29 +471,15 @@ func (s *BatchAddOrRevokePolicyToSubAccountRequest) SetType(v int) *BatchAddOrRe
   return s
 }
 
-type BatchAddOrRevokePolicyToSubAccountResponse struct {
-  // {"en":"Request result status code", "zh_CN":"请求结果状态码"}
-  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
-  // {"en":"Request result information", "zh_CN":"请求结果信息"}
-  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+type BatchAddOrRevokePolicyToSubAccountRequestHeader struct {
 }
 
-func (s BatchAddOrRevokePolicyToSubAccountResponse) String() string {
+func (s BatchAddOrRevokePolicyToSubAccountRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s BatchAddOrRevokePolicyToSubAccountResponse) GoString() string {
+func (s BatchAddOrRevokePolicyToSubAccountRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *BatchAddOrRevokePolicyToSubAccountResponse) SetCode(v string) *BatchAddOrRevokePolicyToSubAccountResponse {
-  s.Code = &v
-  return s
-}
-
-func (s *BatchAddOrRevokePolicyToSubAccountResponse) SetMessage(v string) *BatchAddOrRevokePolicyToSubAccountResponse {
-  s.Message = &v
-  return s
 }
 
 type BatchAddOrRevokePolicyToSubAccountPaths struct {
@@ -519,15 +504,29 @@ func (s BatchAddOrRevokePolicyToSubAccountParameters) GoString() string {
   return s.String()
 }
 
-type BatchAddOrRevokePolicyToSubAccountRequestHeader struct {
+type BatchAddOrRevokePolicyToSubAccountResponse struct {
+  // {"en":"Request result status code","zh_CN":"请求结果状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Request result information","zh_CN":"请求结果信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
 }
 
-func (s BatchAddOrRevokePolicyToSubAccountRequestHeader) String() string {
+func (s BatchAddOrRevokePolicyToSubAccountResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s BatchAddOrRevokePolicyToSubAccountRequestHeader) GoString() string {
+func (s BatchAddOrRevokePolicyToSubAccountResponse) GoString() string {
   return s.String()
+}
+
+func (s *BatchAddOrRevokePolicyToSubAccountResponse) SetCode(v string) *BatchAddOrRevokePolicyToSubAccountResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *BatchAddOrRevokePolicyToSubAccountResponse) SetMsg(v string) *BatchAddOrRevokePolicyToSubAccountResponse {
+  s.Msg = &v
+  return s
 }
 
 type BatchAddOrRevokePolicyToSubAccountResponseHeader struct {
@@ -656,7 +655,7 @@ type QueryAgentAssociatedMainAccountServiceResponse struct {
   // {"en":"Status Code", "zh_CN":"请求结果状态码"}
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"Message", "zh_CN":"请求结果信息"}
-  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
   // {"en":"Primary account login name", "zh_CN":"主账号登录名"}
   MainAccount *string `json:"mainAccount,omitempty" xml:"mainAccount,omitempty" require:"true"`
   // {"en":"Primary account display name", "zh_CN":"主账号显示名"}
@@ -678,8 +677,8 @@ func (s *QueryAgentAssociatedMainAccountServiceResponse) SetCode(v string) *Quer
   return s
 }
 
-func (s *QueryAgentAssociatedMainAccountServiceResponse) SetMessage(v string) *QueryAgentAssociatedMainAccountServiceResponse {
-  s.Message = &v
+func (s *QueryAgentAssociatedMainAccountServiceResponse) SetMsg(v string) *QueryAgentAssociatedMainAccountServiceResponse {
+  s.Msg = &v
   return s
 }
 
@@ -1230,10 +1229,10 @@ type QueryPolicyAttachedMainAccountOrSubAccountResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"","zh_CN":""}
   Data []*QueryPolicyAttachedMainAccountOrSubAccountResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
-  // {"en":"请求ID","zh_CN":"Request ID"}
+  // {"en":"Request ID","zh_CN":"请求ID"}
   RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
   // {"en":"Message","zh_CN":"请求结果信息"}
-  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
 }
 
 func (s QueryPolicyAttachedMainAccountOrSubAccountResponse) String() string {
@@ -1259,8 +1258,8 @@ func (s *QueryPolicyAttachedMainAccountOrSubAccountResponse) SetRequestId(v stri
   return s
 }
 
-func (s *QueryPolicyAttachedMainAccountOrSubAccountResponse) SetMessage(v string) *QueryPolicyAttachedMainAccountOrSubAccountResponse {
-  s.Message = &v
+func (s *QueryPolicyAttachedMainAccountOrSubAccountResponse) SetMsg(v string) *QueryPolicyAttachedMainAccountOrSubAccountResponse {
+  s.Msg = &v
   return s
 }
 

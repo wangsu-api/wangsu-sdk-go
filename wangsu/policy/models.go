@@ -27,7 +27,7 @@ type DeletePolicyResponse struct {
   // {"en":"request result status code", "zh_CN":"请求结果状态码"}
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
-  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
 }
 
 func (s DeletePolicyResponse) String() string {
@@ -43,8 +43,8 @@ func (s *DeletePolicyResponse) SetCode(v string) *DeletePolicyResponse {
   return s
 }
 
-func (s *DeletePolicyResponse) SetMessage(v string) *DeletePolicyResponse {
-  s.Message = &v
+func (s *DeletePolicyResponse) SetMsg(v string) *DeletePolicyResponse {
+  s.Msg = &v
   return s
 }
 
@@ -181,7 +181,7 @@ type EditPolicyResponse struct {
   // {"en":"request result status code", "zh_CN":"请求结果状态码"}
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"Request result information", "zh_CN":"请求结果信息"}
-  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
 }
 
 func (s EditPolicyResponse) String() string {
@@ -197,8 +197,8 @@ func (s *EditPolicyResponse) SetCode(v string) *EditPolicyResponse {
   return s
 }
 
-func (s *EditPolicyResponse) SetMessage(v string) *EditPolicyResponse {
-  s.Message = &v
+func (s *EditPolicyResponse) SetMsg(v string) *EditPolicyResponse {
+  s.Msg = &v
   return s
 }
 
@@ -250,8 +250,10 @@ func (s EditPolicyResponseHeader) GoString() string {
 
 
 type GetPolicyRequest struct {
-  // {"en":"Policy ID", "zh_CN":"策略ID"}
-  PolicyId *string `json:"policyId,omitempty" xml:"policyId,omitempty" require:"true"`
+  // {"en":"Policy ID","zh_CN":"策略ID"}
+  PolicyId *int64 `json:"policyId,omitempty" xml:"policyId,omitempty"`
+  // {"en":"Policy name","zh_CN":"策略名称"}
+  PolicyName *string `json:"policyName,omitempty" xml:"policyName,omitempty"`
 }
 
 func (s GetPolicyRequest) String() string {
@@ -262,130 +264,25 @@ func (s GetPolicyRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetPolicyRequest) SetPolicyId(v string) *GetPolicyRequest {
+func (s *GetPolicyRequest) SetPolicyId(v int64) *GetPolicyRequest {
   s.PolicyId = &v
   return s
 }
 
-type GetPolicyResponse struct {
-  // {"en":"request result status code", "zh_CN":"请求结果状态码"}
-  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
-  // {"en":"Request result information", "zh_CN":"请求结果信息"}
-  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  // {"en":"Request ID", "zh_CN":"请求ID"}
-  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
-  // {"en":"Detailed data on the results of the request", "zh_CN":"请求结果的详细数据"}
-  Data *GetPolicyResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
-}
-
-func (s GetPolicyResponse) String() string {
-  return tea.Prettify(s)
-}
-
-func (s GetPolicyResponse) GoString() string {
-  return s.String()
-}
-
-func (s *GetPolicyResponse) SetCode(v string) *GetPolicyResponse {
-  s.Code = &v
-  return s
-}
-
-func (s *GetPolicyResponse) SetMessage(v string) *GetPolicyResponse {
-  s.Message = &v
-  return s
-}
-
-func (s *GetPolicyResponse) SetRequestId(v string) *GetPolicyResponse {
-  s.RequestId = &v
-  return s
-}
-
-func (s *GetPolicyResponse) SetData(v *GetPolicyResponseData) *GetPolicyResponse {
-  s.Data = v
-  return s
-}
-
-type GetPolicyResponseData struct {
-  // {"en":"Policy ID", "zh_CN":"策略ID"}
-  PolicyId *string `json:"policyId,omitempty" xml:"policyId,omitempty" require:"true"`
-  // {"en":"Policy name", "zh_CN":"策略名称"}
-  PolicyName *string `json:"policyName,omitempty" xml:"policyName,omitempty" require:"true"`
-  // {"en":"Policy description", "zh_CN":"策略描述"}
-  Description *string `json:"description,omitempty" xml:"description,omitempty" require:"true"`
-  // {"en":"Policy type: custom represents a custom Policy , system represents a system global Policy", "zh_CN":"策略类型：custom代表自定义策略  system代表系统策略"}
-  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
-  // {"en":"Permission policy content, as follows:
-  // 
-  // [{
-  //         \"effect\": \"allow\",
-  //         \"action\": [
-  //            \"productCode:actionCode\"
-  //         ],
-  //        \"resource\": [
-  //            \"*\"
-  //         ]
-  //     }]
-  // 
-  // Field descriptions:
-  // 
-  // -effect: The authorization effect includes two types: allow and deny.
-  // 
-  // -action: Describes the specific operations allowed or denied,  format: productCode:actionCode.
-  // 
-  // -resource: The specific resources authorized. For all resources use *, for specific resources refer to the format: wsc:&lt;service-name&gt;:&lt;region&gt;:&lt;account&gt;:&lt;relatice-id&gt;. Note: CDN products do not support specifying resources.", "zh_CN":"策略权限描述，示例如下：
-  // 
-  // [{
-  //         \"effect\": \"allow\",
-  //         \"action\": [
-  //            \"productCode:actionCode\"
-  //         ],
-  //        \"resource\": [
-  //            \"*\"
-  //         ]
-  //     }]
-  // 
-  // 各字段说明：
-  // 
-  // -effect：授权效果包括两种允许（allow）和拒绝（deny）
-  // 
-  // -action：描述允许或拒绝的特定操作，格式：productCode:actionCode
-  // 
-  // -resource：授权的具体资源对象。若是全部资源用*表示，若是指定资源参考格式：wsc:&lt;service-name&gt;:&lt;region&gt;:&lt;account&gt;:&lt;relatice-id&gt;。注意：CDN类产品不支持指定资源"}
-  PolicyDocument *string `json:"policyDocument,omitempty" xml:"policyDocument,omitempty" require:"true"`
-}
-
-func (s GetPolicyResponseData) String() string {
-  return tea.Prettify(s)
-}
-
-func (s GetPolicyResponseData) GoString() string {
-  return s.String()
-}
-
-func (s *GetPolicyResponseData) SetPolicyId(v string) *GetPolicyResponseData {
-  s.PolicyId = &v
-  return s
-}
-
-func (s *GetPolicyResponseData) SetPolicyName(v string) *GetPolicyResponseData {
+func (s *GetPolicyRequest) SetPolicyName(v string) *GetPolicyRequest {
   s.PolicyName = &v
   return s
 }
 
-func (s *GetPolicyResponseData) SetDescription(v string) *GetPolicyResponseData {
-  s.Description = &v
-  return s
+type GetPolicyRequestHeader struct {
 }
 
-func (s *GetPolicyResponseData) SetType(v string) *GetPolicyResponseData {
-  s.Type = &v
-  return s
+func (s GetPolicyRequestHeader) String() string {
+  return tea.Prettify(s)
 }
 
-func (s *GetPolicyResponseData) SetPolicyDocument(v string) *GetPolicyResponseData {
-  s.PolicyDocument = &v
-  return s
+func (s GetPolicyRequestHeader) GoString() string {
+  return s.String()
 }
 
 type GetPolicyPaths struct {
@@ -410,15 +307,89 @@ func (s GetPolicyParameters) GoString() string {
   return s.String()
 }
 
-type GetPolicyRequestHeader struct {
+type GetPolicyResponse struct {
+  // {"en":"request result status code","zh_CN":"请求结果状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Detailed data on the results of the request","zh_CN":"请求结果的详细数据"}
+  Data *GetPolicyResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  // {"en":"Request ID","zh_CN":"请求ID"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"Request result information","zh_CN":"请求结果信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
 }
 
-func (s GetPolicyRequestHeader) String() string {
+func (s GetPolicyResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetPolicyRequestHeader) GoString() string {
+func (s GetPolicyResponse) GoString() string {
   return s.String()
+}
+
+func (s *GetPolicyResponse) SetCode(v string) *GetPolicyResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *GetPolicyResponse) SetData(v *GetPolicyResponseData) *GetPolicyResponse {
+  s.Data = v
+  return s
+}
+
+func (s *GetPolicyResponse) SetRequestId(v string) *GetPolicyResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *GetPolicyResponse) SetMsg(v string) *GetPolicyResponse {
+  s.Msg = &v
+  return s
+}
+
+type GetPolicyResponseData struct {
+  // {"en":"Permission policy content, as follows:\n\n[{\n\"effect\": \"allow\",\n\"action\": [\n\"productCode:actionCode\"\n],\n\"resource\": [\n\"*\"\n]\n}]\n\nField descriptions:\n\n-effect: The authorization effect includes two types: allow and deny.\n\n-action: Describes the specific operations allowed or denied,  format: productCode:actionCode.\n\n-resource: The specific resources authorized. For all resources use, for specific resources refer to the format: wsc:&lt;service-name&gt;:&lt;region&gt;:&lt;account&gt;:&lt;relatice-id&gt;. Note: CDN products do not support specifying resources.","zh_CN":"策略权限描述，示例如下：\n\n[{\n\"effect\": \"allow\",\n\"action\": [\n\"productCode:actionCode\"\n],\n\"resource\": [\n\"*\"\n]\n}]\n\n各字段说明：\n\n-effect：授权效果包括两种允许（allow）和拒绝（deny）\n\n-action：描述允许或拒绝的特定操作，格式：productCode:actionCode\n\n-resource：授权的具体资源对象。若是全部资源用*表示，若是指定资源参考格式：wsc:&lt;service-name&gt;:&lt;region&gt;:&lt;account&gt;:&lt;relatice-id&gt;。注意：CDN类产品不支持指定资源"}
+  PolicyDocument *string `json:"policyDocument,omitempty" xml:"policyDocument,omitempty" require:"true"`
+  // {"en":"Policy ID","zh_CN":"策略ID"}
+  PolicyId *int64 `json:"policyId,omitempty" xml:"policyId,omitempty" require:"true"`
+  // {"en":"Policy name","zh_CN":"策略名称"}
+  PolicyName *string `json:"policyName,omitempty" xml:"policyName,omitempty" require:"true"`
+  // {"en":"Policy description","zh_CN":"策略描述"}
+  Description *string `json:"description,omitempty" xml:"description,omitempty" require:"true"`
+  // {"en":"Policy type: custom represents a custom Policy , system represents a system global Policy","zh_CN":"策略类型：custom代表自定义策略  system代表系统策略"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+}
+
+func (s GetPolicyResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPolicyResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *GetPolicyResponseData) SetPolicyDocument(v string) *GetPolicyResponseData {
+  s.PolicyDocument = &v
+  return s
+}
+
+func (s *GetPolicyResponseData) SetPolicyId(v int64) *GetPolicyResponseData {
+  s.PolicyId = &v
+  return s
+}
+
+func (s *GetPolicyResponseData) SetPolicyName(v string) *GetPolicyResponseData {
+  s.PolicyName = &v
+  return s
+}
+
+func (s *GetPolicyResponseData) SetDescription(v string) *GetPolicyResponseData {
+  s.Description = &v
+  return s
+}
+
+func (s *GetPolicyResponseData) SetType(v string) *GetPolicyResponseData {
+  s.Type = &v
+  return s
 }
 
 type GetPolicyResponseHeader struct {
