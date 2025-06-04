@@ -1,4 +1,4 @@
-package rule
+package policy
 
 import (
 	"errors"
@@ -16,8 +16,7 @@ func NewClient(credential common2.CredentialIface, httpProfile common2.HttpProfi
 	client.WithHttpProfile(httpProfile)
 	return
 }
-
-func (c *Client) CreateRealTimeRule(req *CreateCloudMonitorRealTimeAlarmRuleRequest) (requestId string, response *CreateCloudMonitorRealTimeAlarmRuleResponse, err error) {
+func (c *Client) AddPolicy(req *CreatePolicyRequest) (requestId string, response *CreatePolicyResponse, err error) {
 	if req == nil {
 		return "", nil, errors.New("request is required")
 	}
@@ -26,8 +25,8 @@ func (c *Client) CreateRealTimeRule(req *CreateCloudMonitorRealTimeAlarmRuleRequ
 		return "", nil, errors.New("credential is required")
 	}
 
-	var resp CreateCloudMonitorRealTimeAlarmRuleResponse
-	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/api/cloudmonitor/alarm/real-time/add", "POST")
+	var resp CreatePolicyResponse
+	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/user/policies/create", "POST")
 	requestId, err = auth.Invoke(config, req, &resp)
 
 	if err != nil {
@@ -37,7 +36,7 @@ func (c *Client) CreateRealTimeRule(req *CreateCloudMonitorRealTimeAlarmRuleRequ
 	return requestId, &resp, nil
 }
 
-func (c *Client) EditRealTimeRule(req *EditCloudMonitorRealTimeAlarmRuleRequest) (requestId string, response *EditCloudMonitorRealTimeAlarmRuleResponse, err error) {
+func (c *Client) DeletePolicy(req *DeletePolicyRequest) (requestId string, response *DeletePolicyResponse, err error) {
 	if req == nil {
 		return "", nil, errors.New("request is required")
 	}
@@ -46,8 +45,8 @@ func (c *Client) EditRealTimeRule(req *EditCloudMonitorRealTimeAlarmRuleRequest)
 		return "", nil, errors.New("credential is required")
 	}
 
-	var resp EditCloudMonitorRealTimeAlarmRuleResponse
-	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/api/cloudmonitor/alarm/real-time/edit", "POST")
+	var resp DeletePolicyResponse
+	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/user/policies/delete", "POST")
 	requestId, err = auth.Invoke(config, req, &resp)
 
 	if err != nil {
@@ -57,7 +56,7 @@ func (c *Client) EditRealTimeRule(req *EditCloudMonitorRealTimeAlarmRuleRequest)
 	return requestId, &resp, nil
 }
 
-func (c *Client) QueryRealTimeRule(req *QueryCloudMonitorRealTimeAlarmRuleRequest) (requestId string, response *QueryCloudMonitorRealTimeAlarmRuleResponse, err error) {
+func (c *Client) GetPolicy(req *GetPolicyRequest) (requestId string, response *GetPolicyResponse, err error) {
 	if req == nil {
 		return "", nil, errors.New("request is required")
 	}
@@ -66,8 +65,8 @@ func (c *Client) QueryRealTimeRule(req *QueryCloudMonitorRealTimeAlarmRuleReques
 		return "", nil, errors.New("credential is required")
 	}
 
-	var resp QueryCloudMonitorRealTimeAlarmRuleResponse
-	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/api/cloudmonitor/alarm/real-time/query", "POST")
+	var resp GetPolicyResponse
+	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/user/policies/get", "POST")
 	requestId, err = auth.Invoke(config, req, &resp)
 
 	if err != nil {
@@ -77,7 +76,7 @@ func (c *Client) QueryRealTimeRule(req *QueryCloudMonitorRealTimeAlarmRuleReques
 	return requestId, &resp, nil
 }
 
-func (c *Client) DeleteRealTimeRule(req *DeleteCloudMonitorRealTimeAlarmRuleRequest) (requestId string, response *DeleteCloudMonitorRealTimeAlarmRuleResponse, err error) {
+func (c *Client) EditPolicy(req *EditPolicyRequest) (requestId string, response *EditPolicyResponse, err error) {
 	if req == nil {
 		return "", nil, errors.New("request is required")
 	}
@@ -86,8 +85,8 @@ func (c *Client) DeleteRealTimeRule(req *DeleteCloudMonitorRealTimeAlarmRuleRequ
 		return "", nil, errors.New("credential is required")
 	}
 
-	var resp DeleteCloudMonitorRealTimeAlarmRuleResponse
-	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/api/cloudmonitor/alarm/real-time/delete", "POST")
+	var resp EditPolicyResponse
+	config := auth.NewAkskConfig(c.GetCredential(), c.GetHttpProfile(), "/user/policies/edit", "POST")
 	requestId, err = auth.Invoke(config, req, &resp)
 
 	if err != nil {

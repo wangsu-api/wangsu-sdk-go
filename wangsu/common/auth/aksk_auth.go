@@ -7,7 +7,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/alibabacloud-go/tea/tea"
-	"github.com/wangsu-api/wangsu-sdk-go/wangsu/common"
+	common2 "github.com/wangsu-api/wangsu-sdk-go/wangsu/common"
 	"github.com/wangsu-api/wangsu-sdk-go/wangsu/common/constant"
 	"github.com/wangsu-api/wangsu-sdk-go/wangsu/common/model"
 	"github.com/wangsu-api/wangsu-sdk-go/wangsu/common/util"
@@ -31,7 +31,7 @@ type AkskConfig struct {
 	CustomHeaders map[string]string //custom headers
 }
 
-func NewAkskConfig(credential common.CredentialIface, httpProfile common.HttpProfileIface, uri string, method string) (config AkskConfig) {
+func NewAkskConfig(credential common2.CredentialIface, httpProfile common2.HttpProfileIface, uri string, method string) (config AkskConfig) {
 	config.AccessKey = credential.GetAccessKey()
 	config.SecretKey = credential.GetSecretKey()
 

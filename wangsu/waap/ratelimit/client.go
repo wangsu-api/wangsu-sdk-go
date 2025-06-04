@@ -2,15 +2,15 @@ package ratelimit
 
 import (
 	"errors"
-	"github.com/wangsu-api/wangsu-sdk-go/wangsu/common"
+	common2 "github.com/wangsu-api/wangsu-sdk-go/wangsu/common"
 	"github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
 )
 
 type Client struct {
-	common.Client
+	common2.Client
 }
 
-func NewClient(credential common.CredentialIface, httpProfile common.HttpProfileIface) (client *Client, err error) {
+func NewClient(credential common2.CredentialIface, httpProfile common2.HttpProfileIface) (client *Client, err error) {
 	client = &Client{}
 	client.WithCredential(credential)
 	client.WithHttpProfile(httpProfile)

@@ -2,6 +2,7 @@ module github.com/wangsu-api/wangsu-sdk-go/wangsu/certificateapplication
 go 1.17
 
 require github.com/alibabacloud-go/tea v1.2.0
+require github.com/wangsu-api/wangsu-sdk-go/wangsu/common v1.2.4
 
 require (
     github.com/alibabacloud-go/debug v0.0.0-20190504072949-9472017b5c68 // indirect
