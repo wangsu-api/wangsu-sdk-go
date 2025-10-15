@@ -4402,22 +4402,23 @@ func (s *VMPCreateInstanceDisk) SetIsIndependent(v string) *VMPCreateInstanceDis
 }
 
 type VMPCreateInstanceResponse struct {
-  // {"en":"Virtual machine identity list", "zh_CN":"实例标识列表"}
-  Servers []*string `json:"servers,omitempty" xml:"servers,omitempty" require:"true" type:"Repeated"`
+	// {"en":"Virtual machine identity list","zh_CN":"实例id"}
+	Id []*string `json:"id,omitempty" xml:"id,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s VMPCreateInstanceResponse) String() string {
-  return tea.Prettify(s)
+	return tea.Prettify(s)
 }
 
 func (s VMPCreateInstanceResponse) GoString() string {
-  return s.String()
+	return s.String()
 }
 
-func (s *VMPCreateInstanceResponse) SetServers(v []*string) *VMPCreateInstanceResponse {
-  s.Servers = v
-  return s
+func (s *VMPCreateInstanceResponse) SetId(v []*string) *VMPCreateInstanceResponse {
+	s.Id = v
+	return s
 }
+
 
 type VMPCreateInstancePaths struct {
 }
