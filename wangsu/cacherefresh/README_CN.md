@@ -22,7 +22,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/cacherefresh
 package main
 
 import (
-    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/cacherefresh"
     "log"
 )

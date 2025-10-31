@@ -625,6 +625,14 @@ type CreatePropertyForTerraformRequestHostnamesDefaultOrigin struct {
 	Host *string `json:"host,omitempty" xml:"host,omitempty"`
 	// {"en":"https port","zh_CN":"https端口"}
 	HttpsPort *int `json:"httpsPort,omitempty" xml:"httpsPort,omitempty"`
+	// {"en":"Scheme used for origin requests","zh_CN":"回源请求HTTP/HTTPS协议"}
+	Scheme *string `json:"scheme,omitempty" xml:"scheme,omitempty"`
+	// {"en":"Whether to enable SNI","zh_CN":"是否启用SNI"}
+	ProxySSLSNIEnabled *bool `json:"proxySSLSNIEnabled,omitempty" xml:"proxySSLSNIEnabled,omitempty"`
+	// {"en":"After enabling SNI, you need to configure the specified SNI server to include the SNI information carried in the origin TLS handshake.","zh_CN":"启用SNI后需同时配置指定SNI服务器"}
+	ProxySSLSNIServer *string `json:"proxySSLSNIServer,omitempty" xml:"proxySSLSNIServer,omitempty"`
+	// {"en":"List of origin TLS protocol versions,","zh_CN":"回源TLS协议版本列表"}
+	ProxySSLVersion []*string `json:"proxySSLVersion,omitempty" xml:"proxySSLVersion,omitempty" type:"Repeated"`
 }
 
 func (s CreatePropertyForTerraformRequestHostnamesDefaultOrigin) String() string {
@@ -657,6 +665,26 @@ func (s *CreatePropertyForTerraformRequestHostnamesDefaultOrigin) SetHost(v stri
 
 func (s *CreatePropertyForTerraformRequestHostnamesDefaultOrigin) SetHttpsPort(v int) *CreatePropertyForTerraformRequestHostnamesDefaultOrigin {
 	s.HttpsPort = &v
+	return s
+}
+
+func (s *CreatePropertyForTerraformRequestHostnamesDefaultOrigin) SetScheme(v string) *CreatePropertyForTerraformRequestHostnamesDefaultOrigin {
+	s.Scheme = &v
+	return s
+}
+
+func (s *CreatePropertyForTerraformRequestHostnamesDefaultOrigin) SetProxySSLSNIEnabled(v bool) *CreatePropertyForTerraformRequestHostnamesDefaultOrigin {
+	s.ProxySSLSNIEnabled = &v
+	return s
+}
+
+func (s *CreatePropertyForTerraformRequestHostnamesDefaultOrigin) SetProxySSLSNIServer(v string) *CreatePropertyForTerraformRequestHostnamesDefaultOrigin {
+	s.ProxySSLSNIServer = &v
+	return s
+}
+
+func (s *CreatePropertyForTerraformRequestHostnamesDefaultOrigin) SetProxySSLVersion(v []*string) *CreatePropertyForTerraformRequestHostnamesDefaultOrigin {
+	s.ProxySSLVersion = v
 	return s
 }
 
@@ -2066,6 +2094,14 @@ type QueryPropertyConfigForTerrformResponseDataHostnamesDefaultOrigin struct {
 	Host *string `json:"host,omitempty" xml:"host,omitempty" require:"true"`
 	// {"en":"https port","zh_CN":"https端口"}
 	HttpsPort *int `json:"httpsPort,omitempty" xml:"httpsPort,omitempty" require:"true"`
+	// {"en":"Scheme used for origin requests","zh_CN":"回源请求HTTP/HTTPS协议"}
+	Scheme *string `json:"scheme,omitempty" xml:"scheme,omitempty" require:"true"`
+	// {"en":"Whether to enable SNI","zh_CN":"是否启用SNI"}
+	ProxySSLSNIEnabled *bool `json:"proxySSLSNIEnabled,omitempty" xml:"proxySSLSNIEnabled,omitempty" require:"true"`
+	// {"en":"After enabling SNI, you need to configure the specified SNI server to include the SNI information carried in the origin TLS handshake.","zh_CN":"启用SNI后需同时配置指定SNI服务器"}
+	ProxySSLSNIServer *string `json:"proxySSLSNIServer,omitempty" xml:"proxySSLSNIServer,omitempty" require:"true"`
+	// {"en":"List of origin TLS protocol versions,","zh_CN":"回源TLS协议版本列表"}
+	ProxySSLVersion []*string `json:"proxySSLVersion,omitempty" xml:"proxySSLVersion,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryPropertyConfigForTerrformResponseDataHostnamesDefaultOrigin) String() string {
@@ -2098,6 +2134,26 @@ func (s *QueryPropertyConfigForTerrformResponseDataHostnamesDefaultOrigin) SetHo
 
 func (s *QueryPropertyConfigForTerrformResponseDataHostnamesDefaultOrigin) SetHttpsPort(v int) *QueryPropertyConfigForTerrformResponseDataHostnamesDefaultOrigin {
 	s.HttpsPort = &v
+	return s
+}
+
+func (s *QueryPropertyConfigForTerrformResponseDataHostnamesDefaultOrigin) SetScheme(v string) *QueryPropertyConfigForTerrformResponseDataHostnamesDefaultOrigin {
+	s.Scheme = &v
+	return s
+}
+
+func (s *QueryPropertyConfigForTerrformResponseDataHostnamesDefaultOrigin) SetProxySSLSNIEnabled(v bool) *QueryPropertyConfigForTerrformResponseDataHostnamesDefaultOrigin {
+	s.ProxySSLSNIEnabled = &v
+	return s
+}
+
+func (s *QueryPropertyConfigForTerrformResponseDataHostnamesDefaultOrigin) SetProxySSLSNIServer(v string) *QueryPropertyConfigForTerrformResponseDataHostnamesDefaultOrigin {
+	s.ProxySSLSNIServer = &v
+	return s
+}
+
+func (s *QueryPropertyConfigForTerrformResponseDataHostnamesDefaultOrigin) SetProxySSLVersion(v []*string) *QueryPropertyConfigForTerrformResponseDataHostnamesDefaultOrigin {
+	s.ProxySSLVersion = v
 	return s
 }
 
@@ -2574,6 +2630,14 @@ type QueryPropertyVersionConfigForTerrformResponseDataHostnamesDefaultOrigin str
 	Host *string `json:"host,omitempty" xml:"host,omitempty" require:"true"`
 	// {"en":"https port","zh_CN":"https端口"}
 	HttpsPort *int `json:"httpsPort,omitempty" xml:"httpsPort,omitempty" require:"true"`
+	// {"en":"Scheme used for origin requests","zh_CN":"回源请求HTTP/HTTPS协议"}
+	Scheme *string `json:"scheme,omitempty" xml:"scheme,omitempty" require:"true"`
+	// {"en":"Whether to enable SNI","zh_CN":"是否启用SNI"}
+	ProxySSLSNIEnabled *bool `json:"proxySSLSNIEnabled,omitempty" xml:"proxySSLSNIEnabled,omitempty" require:"true"`
+	// {"en":"After enabling SNI, you need to configure the specified SNI server to include the SNI information carried in the origin TLS handshake.","zh_CN":"启用SNI后需同时配置指定SNI服务器"}
+	ProxySSLSNIServer *string `json:"proxySSLSNIServer,omitempty" xml:"proxySSLSNIServer,omitempty" require:"true"`
+	// {"en":"List of origin TLS protocol versions,","zh_CN":"回源TLS协议版本列表"}
+	ProxySSLVersion []*string `json:"proxySSLVersion,omitempty" xml:"proxySSLVersion,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s QueryPropertyVersionConfigForTerrformResponseDataHostnamesDefaultOrigin) String() string {
@@ -2606,6 +2670,25 @@ func (s *QueryPropertyVersionConfigForTerrformResponseDataHostnamesDefaultOrigin
 
 func (s *QueryPropertyVersionConfigForTerrformResponseDataHostnamesDefaultOrigin) SetHttpsPort(v int) *QueryPropertyVersionConfigForTerrformResponseDataHostnamesDefaultOrigin {
 	s.HttpsPort = &v
+	return s
+}
+func (s *QueryPropertyVersionConfigForTerrformResponseDataHostnamesDefaultOrigin) SetScheme(v string) *QueryPropertyVersionConfigForTerrformResponseDataHostnamesDefaultOrigin {
+	s.Scheme = &v
+	return s
+}
+
+func (s *QueryPropertyVersionConfigForTerrformResponseDataHostnamesDefaultOrigin) SetProxySSLSNIEnabled(v bool) *QueryPropertyVersionConfigForTerrformResponseDataHostnamesDefaultOrigin {
+	s.ProxySSLSNIEnabled = &v
+	return s
+}
+
+func (s *QueryPropertyVersionConfigForTerrformResponseDataHostnamesDefaultOrigin) SetProxySSLSNIServer(v string) *QueryPropertyVersionConfigForTerrformResponseDataHostnamesDefaultOrigin {
+	s.ProxySSLSNIServer = &v
+	return s
+}
+
+func (s *QueryPropertyVersionConfigForTerrformResponseDataHostnamesDefaultOrigin) SetProxySSLVersion(v []*string) *QueryPropertyVersionConfigForTerrformResponseDataHostnamesDefaultOrigin {
+	s.ProxySSLVersion = v
 	return s
 }
 
@@ -2794,6 +2877,14 @@ type UpdatePropertyForTerraformRequestHostnamesDefaultOrigin struct {
 	Host *string `json:"host,omitempty" xml:"host,omitempty"`
 	// {"en":"https port","zh_CN":"https端口"}
 	HttpsPort *int `json:"httpsPort,omitempty" xml:"httpsPort,omitempty"`
+	// {"en":"Scheme used for origin requests","zh_CN":"回源请求HTTP/HTTPS协议"}
+	Scheme *string `json:"scheme,omitempty" xml:"scheme,omitempty"`
+	// {"en":"Whether to enable SNI","zh_CN":"是否启用SNI"}
+	ProxySSLSNIEnabled *bool `json:"proxySSLSNIEnabled,omitempty" xml:"proxySSLSNIEnabled,omitempty"`
+	// {"en":"After enabling SNI, you need to configure the specified SNI server to include the SNI information carried in the origin TLS handshake.","zh_CN":"启用SNI后需同时配置指定SNI服务器"}
+	ProxySSLSNIServer *string `json:"proxySSLSNIServer,omitempty" xml:"proxySSLSNIServer,omitempty"`
+	// {"en":"List of origin TLS protocol versions,","zh_CN":"回源TLS协议版本列表"}
+	ProxySSLVersion []*string `json:"proxySSLVersion,omitempty" xml:"proxySSLVersion,omitempty" type:"Repeated"`
 }
 
 func (s UpdatePropertyForTerraformRequestHostnamesDefaultOrigin) String() string {
@@ -2826,6 +2917,26 @@ func (s *UpdatePropertyForTerraformRequestHostnamesDefaultOrigin) SetHost(v stri
 
 func (s *UpdatePropertyForTerraformRequestHostnamesDefaultOrigin) SetHttpsPort(v int) *UpdatePropertyForTerraformRequestHostnamesDefaultOrigin {
 	s.HttpsPort = &v
+	return s
+}
+
+func (s *UpdatePropertyForTerraformRequestHostnamesDefaultOrigin) SetScheme(v string) *UpdatePropertyForTerraformRequestHostnamesDefaultOrigin {
+	s.Scheme = &v
+	return s
+}
+
+func (s *UpdatePropertyForTerraformRequestHostnamesDefaultOrigin) SetProxySSLSNIEnabled(v bool) *UpdatePropertyForTerraformRequestHostnamesDefaultOrigin {
+	s.ProxySSLSNIEnabled = &v
+	return s
+}
+
+func (s *UpdatePropertyForTerraformRequestHostnamesDefaultOrigin) SetProxySSLSNIServer(v string) *UpdatePropertyForTerraformRequestHostnamesDefaultOrigin {
+	s.ProxySSLSNIServer = &v
+	return s
+}
+
+func (s *UpdatePropertyForTerraformRequestHostnamesDefaultOrigin) SetProxySSLVersion(v []*string) *UpdatePropertyForTerraformRequestHostnamesDefaultOrigin {
+	s.ProxySSLVersion = v
 	return s
 }
 
