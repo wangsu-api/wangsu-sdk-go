@@ -943,9 +943,9 @@ func (s *PatchImagePullJobOwnerReference) SetBlockOwnerDeletion(v bool) *PatchIm
 
 
 type DeployVmpImagePreheatingRequest struct {
-  // {"en":"Image ID", "zh_CN":"镜像id"}
+  // {"en":"Image ID","zh_CN":"镜像id"}
   ImageId *string `json:"imageId,omitempty" xml:"imageId,omitempty" require:"true"`
-  // {"en":"Name of preheating node", "zh_CN":"预热节点"}
+  // {"en":"Name of preheating node","zh_CN":"预热节点"}
   NodeNames []*string `json:"nodeNames,omitempty" xml:"nodeNames,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -967,14 +967,14 @@ func (s *DeployVmpImagePreheatingRequest) SetNodeNames(v []*string) *DeployVmpIm
   return s
 }
 
-type DeployVmpImagePreheatingResponse struct {
+type DeployVmpImagePreheatingRequestHeader struct {
 }
 
-func (s DeployVmpImagePreheatingResponse) String() string {
+func (s DeployVmpImagePreheatingRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s DeployVmpImagePreheatingResponse) GoString() string {
+func (s DeployVmpImagePreheatingRequestHeader) GoString() string {
   return s.String()
 }
 
@@ -1000,15 +1000,29 @@ func (s DeployVmpImagePreheatingParameters) GoString() string {
   return s.String()
 }
 
-type DeployVmpImagePreheatingRequestHeader struct {
+type DeployVmpImagePreheatingResponse struct {
+  // {"en":"Response code","zh_CN":"响应码，0为成功"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Error message","zh_CN":"错误信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
 }
 
-func (s DeployVmpImagePreheatingRequestHeader) String() string {
+func (s DeployVmpImagePreheatingResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s DeployVmpImagePreheatingRequestHeader) GoString() string {
+func (s DeployVmpImagePreheatingResponse) GoString() string {
   return s.String()
+}
+
+func (s *DeployVmpImagePreheatingResponse) SetCode(v string) *DeployVmpImagePreheatingResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *DeployVmpImagePreheatingResponse) SetMessage(v string) *DeployVmpImagePreheatingResponse {
+  s.Message = &v
+  return s
 }
 
 type DeployVmpImagePreheatingResponseHeader struct {
@@ -2920,50 +2934,19 @@ func (s QueryVmpImagePreheatingStateRequest) GoString() string {
   return s.String()
 }
 
-type QueryVmpImagePreheatingStateResponse struct {
-  QueryVmpImagePreheatingStatePreHeatingInfo []*QueryVmpImagePreheatingStatePreHeatingInfo `json:"preHeatingInfo,omitempty" xml:"preHeatingInfo,omitempty" require:"true" type:"Repeated"`
+type QueryVmpImagePreheatingStateRequestHeader struct {
 }
 
-func (s QueryVmpImagePreheatingStateResponse) String() string {
+func (s QueryVmpImagePreheatingStateRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryVmpImagePreheatingStateResponse) GoString() string {
+func (s QueryVmpImagePreheatingStateRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *QueryVmpImagePreheatingStateResponse) SetPreHeatingInfo(v []*QueryVmpImagePreheatingStatePreHeatingInfo) *QueryVmpImagePreheatingStateResponse {
-  s.QueryVmpImagePreheatingStatePreHeatingInfo = v
-  return s
-}
-
-type QueryVmpImagePreheatingStatePreHeatingInfo struct {
-  // {"en":"Node name", "zh_CN":"节点名称"}
-  NodeName *string `json:"nodeName,omitempty" xml:"nodeName,omitempty" require:"true"`
-  // {"en":"Preheating status: SUCCESS - preheated; FAIL - preheating failed; SENDING - preheating", "zh_CN":"预热状态：SUCCESS-已预热；FAIL-预热失败；SENDING-预热中"}
-  State *string `json:"state,omitempty" xml:"state,omitempty" require:"true"`
-}
-
-func (s QueryVmpImagePreheatingStatePreHeatingInfo) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryVmpImagePreheatingStatePreHeatingInfo) GoString() string {
-  return s.String()
-}
-
-func (s *QueryVmpImagePreheatingStatePreHeatingInfo) SetNodeName(v string) *QueryVmpImagePreheatingStatePreHeatingInfo {
-  s.NodeName = &v
-  return s
-}
-
-func (s *QueryVmpImagePreheatingStatePreHeatingInfo) SetState(v string) *QueryVmpImagePreheatingStatePreHeatingInfo {
-  s.State = &v
-  return s
 }
 
 type QueryVmpImagePreheatingStatePaths struct {
-  // {"en":"no", "zh_CN":"镜像id"}
+  // {"en":"no","zh_CN":"镜像id"}
   Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
 }
 
@@ -2991,15 +2974,79 @@ func (s QueryVmpImagePreheatingStateParameters) GoString() string {
   return s.String()
 }
 
-type QueryVmpImagePreheatingStateRequestHeader struct {
+type QueryVmpImagePreheatingStateResponse struct {
+  // {"en":"Response code","zh_CN":"响应码，0为成功"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Error message","zh_CN":"错误信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Response data","zh_CN":"响应数据"}
+  Data *QueryVmpImagePreheatingStateResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryVmpImagePreheatingStateRequestHeader) String() string {
+func (s QueryVmpImagePreheatingStateResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryVmpImagePreheatingStateRequestHeader) GoString() string {
+func (s QueryVmpImagePreheatingStateResponse) GoString() string {
   return s.String()
+}
+
+func (s *QueryVmpImagePreheatingStateResponse) SetCode(v string) *QueryVmpImagePreheatingStateResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QueryVmpImagePreheatingStateResponse) SetMessage(v string) *QueryVmpImagePreheatingStateResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *QueryVmpImagePreheatingStateResponse) SetData(v *QueryVmpImagePreheatingStateResponseData) *QueryVmpImagePreheatingStateResponse {
+  s.Data = v
+  return s
+}
+
+type QueryVmpImagePreheatingStateResponseData struct {
+  // {"en":"Preheating info","zh_CN":"预热信息"}
+  PreHeatingInfo []*QueryVmpImagePreheatingStateResponseDataPreHeatingInfo `json:"preHeatingInfo,omitempty" xml:"preHeatingInfo,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryVmpImagePreheatingStateResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryVmpImagePreheatingStateResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryVmpImagePreheatingStateResponseData) SetPreHeatingInfo(v []*QueryVmpImagePreheatingStateResponseDataPreHeatingInfo) *QueryVmpImagePreheatingStateResponseData {
+  s.PreHeatingInfo = v
+  return s
+}
+
+type QueryVmpImagePreheatingStateResponseDataPreHeatingInfo struct     {
+  // {"en":"Node name","zh_CN":"节点名称"}
+  NodeName *string `json:"nodeName,omitempty" xml:"nodeName,omitempty" require:"true"`
+  // {"en":"State","zh_CN":"状态"}
+  State *string `json:"state,omitempty" xml:"state,omitempty" require:"true"`
+}
+
+func (s QueryVmpImagePreheatingStateResponseDataPreHeatingInfo) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryVmpImagePreheatingStateResponseDataPreHeatingInfo) GoString() string {
+  return s.String()
+}
+
+func (s *QueryVmpImagePreheatingStateResponseDataPreHeatingInfo) SetNodeName(v string) *QueryVmpImagePreheatingStateResponseDataPreHeatingInfo {
+  s.NodeName = &v
+  return s
+}
+
+func (s *QueryVmpImagePreheatingStateResponseDataPreHeatingInfo) SetState(v string) *QueryVmpImagePreheatingStateResponseDataPreHeatingInfo {
+  s.State = &v
+  return s
 }
 
 type QueryVmpImagePreheatingStateResponseHeader struct {
@@ -3010,6 +3057,103 @@ func (s QueryVmpImagePreheatingStateResponseHeader) String() string {
 }
 
 func (s QueryVmpImagePreheatingStateResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type LECHDeployImagePreheatingRequest struct {
+  // {"en":"Image ID","zh_CN":"镜像id"}
+  ImageId *string `json:"imageId,omitempty" xml:"imageId,omitempty" require:"true"`
+  // {"en":"Name of preheating node","zh_CN":"预热节点"}
+  NodeNames []*string `json:"nodeNames,omitempty" xml:"nodeNames,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s LECHDeployImagePreheatingRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHDeployImagePreheatingRequest) GoString() string {
+  return s.String()
+}
+
+func (s *LECHDeployImagePreheatingRequest) SetImageId(v string) *LECHDeployImagePreheatingRequest {
+  s.ImageId = &v
+  return s
+}
+
+func (s *LECHDeployImagePreheatingRequest) SetNodeNames(v []*string) *LECHDeployImagePreheatingRequest {
+  s.NodeNames = v
+  return s
+}
+
+type LECHDeployImagePreheatingRequestHeader struct {
+}
+
+func (s LECHDeployImagePreheatingRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHDeployImagePreheatingRequestHeader) GoString() string {
+  return s.String()
+}
+
+type LECHDeployImagePreheatingPaths struct {
+}
+
+func (s LECHDeployImagePreheatingPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHDeployImagePreheatingPaths) GoString() string {
+  return s.String()
+}
+
+type LECHDeployImagePreheatingParameters struct {
+}
+
+func (s LECHDeployImagePreheatingParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHDeployImagePreheatingParameters) GoString() string {
+  return s.String()
+}
+
+type LECHDeployImagePreheatingResponse struct {
+  // {"en":"Response code","zh_CN":"响应码，0为成功"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Error message","zh_CN":"错误信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s LECHDeployImagePreheatingResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHDeployImagePreheatingResponse) GoString() string {
+  return s.String()
+}
+
+func (s *LECHDeployImagePreheatingResponse) SetCode(v string) *LECHDeployImagePreheatingResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *LECHDeployImagePreheatingResponse) SetMessage(v string) *LECHDeployImagePreheatingResponse {
+  s.Message = &v
+  return s
+}
+
+type LECHDeployImagePreheatingResponseHeader struct {
+}
+
+func (s LECHDeployImagePreheatingResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHDeployImagePreheatingResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -4079,6 +4223,222 @@ func (s VMPRemoveImageResponseHeader) GoString() string {
 
 
 
+type LECHQueryImagePreheatingStateRequest struct {
+}
+
+func (s LECHQueryImagePreheatingStateRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryImagePreheatingStateRequest) GoString() string {
+  return s.String()
+}
+
+type LECHQueryImagePreheatingStateRequestHeader struct {
+}
+
+func (s LECHQueryImagePreheatingStateRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryImagePreheatingStateRequestHeader) GoString() string {
+  return s.String()
+}
+
+type LECHQueryImagePreheatingStatePaths struct {
+  // {"en":"no","zh_CN":"镜像id"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+}
+
+func (s LECHQueryImagePreheatingStatePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryImagePreheatingStatePaths) GoString() string {
+  return s.String()
+}
+
+func (s *LECHQueryImagePreheatingStatePaths) SetId(v string) *LECHQueryImagePreheatingStatePaths {
+  s.Id = &v
+  return s
+}
+
+type LECHQueryImagePreheatingStateParameters struct {
+}
+
+func (s LECHQueryImagePreheatingStateParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryImagePreheatingStateParameters) GoString() string {
+  return s.String()
+}
+
+type LECHQueryImagePreheatingStateResponse struct {
+  // {"en":"Response code","zh_CN":"响应码，0为成功"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Error message","zh_CN":"错误信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Response data","zh_CN":"响应数据"}
+  Data *LECHQueryImagePreheatingStateResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s LECHQueryImagePreheatingStateResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryImagePreheatingStateResponse) GoString() string {
+  return s.String()
+}
+
+func (s *LECHQueryImagePreheatingStateResponse) SetCode(v string) *LECHQueryImagePreheatingStateResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *LECHQueryImagePreheatingStateResponse) SetMessage(v string) *LECHQueryImagePreheatingStateResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *LECHQueryImagePreheatingStateResponse) SetData(v *LECHQueryImagePreheatingStateResponseData) *LECHQueryImagePreheatingStateResponse {
+  s.Data = v
+  return s
+}
+
+type LECHQueryImagePreheatingStateResponseData struct {
+  // {"en":"Preheating info","zh_CN":"预热信息"}
+  PreHeatingInfo []*LECHQueryImagePreheatingStateResponseDataPreHeatingInfo `json:"preHeatingInfo,omitempty" xml:"preHeatingInfo,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s LECHQueryImagePreheatingStateResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryImagePreheatingStateResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *LECHQueryImagePreheatingStateResponseData) SetPreHeatingInfo(v []*LECHQueryImagePreheatingStateResponseDataPreHeatingInfo) *LECHQueryImagePreheatingStateResponseData {
+  s.PreHeatingInfo = v
+  return s
+}
+
+type LECHQueryImagePreheatingStateResponseDataPreHeatingInfo struct     {
+  // {"en":"Node name","zh_CN":"节点名称"}
+  NodeName *string `json:"nodeName,omitempty" xml:"nodeName,omitempty" require:"true"`
+  // {"en":"State","zh_CN":"状态"}
+  State *string `json:"state,omitempty" xml:"state,omitempty" require:"true"`
+}
+
+func (s LECHQueryImagePreheatingStateResponseDataPreHeatingInfo) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryImagePreheatingStateResponseDataPreHeatingInfo) GoString() string {
+  return s.String()
+}
+
+func (s *LECHQueryImagePreheatingStateResponseDataPreHeatingInfo) SetNodeName(v string) *LECHQueryImagePreheatingStateResponseDataPreHeatingInfo {
+  s.NodeName = &v
+  return s
+}
+
+func (s *LECHQueryImagePreheatingStateResponseDataPreHeatingInfo) SetState(v string) *LECHQueryImagePreheatingStateResponseDataPreHeatingInfo {
+  s.State = &v
+  return s
+}
+
+type LECHQueryImagePreheatingStateResponseHeader struct {
+}
+
+func (s LECHQueryImagePreheatingStateResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryImagePreheatingStateResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type LECHRemoveImageRequest struct {
+  // {"en":"Image unique identification","zh_CN":"镜像唯一标识"}
+  ImageId *string `json:"imageId,omitempty" xml:"imageId,omitempty" require:"true"`
+}
+
+func (s LECHRemoveImageRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHRemoveImageRequest) GoString() string {
+  return s.String()
+}
+
+func (s *LECHRemoveImageRequest) SetImageId(v string) *LECHRemoveImageRequest {
+  s.ImageId = &v
+  return s
+}
+
+type LECHRemoveImageRequestHeader struct {
+}
+
+func (s LECHRemoveImageRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHRemoveImageRequestHeader) GoString() string {
+  return s.String()
+}
+
+type LECHRemoveImagePaths struct {
+}
+
+func (s LECHRemoveImagePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHRemoveImagePaths) GoString() string {
+  return s.String()
+}
+
+type LECHRemoveImageParameters struct {
+}
+
+func (s LECHRemoveImageParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHRemoveImageParameters) GoString() string {
+  return s.String()
+}
+
+type LECHRemoveImageResponse struct {
+}
+
+func (s LECHRemoveImageResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHRemoveImageResponse) GoString() string {
+  return s.String()
+}
+
+type LECHRemoveImageResponseHeader struct {
+}
+
+func (s LECHRemoveImageResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHRemoveImageResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type CreateHarborUserRequest struct {
   // {"en":"user name", "zh_CN":"用户名称"}
   Username *string `json:"username,omitempty" xml:"username,omitempty" require:"true"`
@@ -4851,6 +5211,131 @@ func (s DeleteHarborProjectResponseHeader) GoString() string {
 
 
 
+type LECHCreateImageRequest struct {
+  // {"en":"Mirror name","zh_CN":"镜像名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"Virtual machine instance ID, optional parameter. This parameter and imagesrcurl must be one of two choices","zh_CN":"虚拟机实例标识，可选参数，该参数与imageSrcUrl必须二选一"}
+  InstanceUuid *string `json:"instanceUuid,omitempty" xml:"instanceUuid,omitempty"`
+  // {"en":"Virtual machine image URL address, optional parameter. The parameter and instanceuuid must be one of two choices.","zh_CN":"虚拟机镜像Url地址，可选参数，该参数与instanceUuid必须二选一"}
+  ImageSrcUrl *string `json:"imageSrcUrl,omitempty" xml:"imageSrcUrl,omitempty"`
+  // {"en":"MD5 value of virtual machine image, used with imagesrcurl","zh_CN":"虚拟机镜像的md5值，与imageSrcUrl配合使用"}
+  Md5 *string `json:"md5,omitempty" xml:"md5,omitempty"`
+  // {"en":"Operating system type, if the URL address is carried, this parameter is required; if the virtual machine is specified to be created, the ostype of the virtual machine shall prevail.\n\nThere are two values: windows and Linux'","zh_CN":"操作系统类型，如果携带的是url地址时，该参数必填；如果是指定虚拟机创建，则以虚拟机的ostype为准。\n有2种取值：windows、linux"}
+  Ostype *string `json:"ostype,omitempty" xml:"ostype,omitempty"`
+  // {"en":"Minimum requirements for system disk, unit: GB. The system disk size of the selected template must be greater than or equal to this value, otherwise virtual machine creation fails","zh_CN":"系统盘最小要求，单位是GB。选择的模板的系统盘大小必须大于等于该值，否则虚拟机创建失败"}
+  MinDisk *int `json:"minDisk,omitempty" xml:"minDisk,omitempty"`
+  // {"en":"Whether QEMU guest agent is enabled for the image, and password reset is supported for the opened image\n\nThere are two values: true and false'","zh_CN":"镜像是否开启了qemu guest agent，有开启的镜像支持密码重置\n有2种取值：TRUE、FALSE"}
+  QgaEnabled *string `json:"qgaEnabled,omitempty" xml:"qgaEnabled,omitempty"`
+}
+
+func (s LECHCreateImageRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHCreateImageRequest) GoString() string {
+  return s.String()
+}
+
+func (s *LECHCreateImageRequest) SetName(v string) *LECHCreateImageRequest {
+  s.Name = &v
+  return s
+}
+
+func (s *LECHCreateImageRequest) SetInstanceUuid(v string) *LECHCreateImageRequest {
+  s.InstanceUuid = &v
+  return s
+}
+
+func (s *LECHCreateImageRequest) SetImageSrcUrl(v string) *LECHCreateImageRequest {
+  s.ImageSrcUrl = &v
+  return s
+}
+
+func (s *LECHCreateImageRequest) SetMd5(v string) *LECHCreateImageRequest {
+  s.Md5 = &v
+  return s
+}
+
+func (s *LECHCreateImageRequest) SetOstype(v string) *LECHCreateImageRequest {
+  s.Ostype = &v
+  return s
+}
+
+func (s *LECHCreateImageRequest) SetMinDisk(v int) *LECHCreateImageRequest {
+  s.MinDisk = &v
+  return s
+}
+
+func (s *LECHCreateImageRequest) SetQgaEnabled(v string) *LECHCreateImageRequest {
+  s.QgaEnabled = &v
+  return s
+}
+
+type LECHCreateImageRequestHeader struct {
+}
+
+func (s LECHCreateImageRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHCreateImageRequestHeader) GoString() string {
+  return s.String()
+}
+
+type LECHCreateImagePaths struct {
+}
+
+func (s LECHCreateImagePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHCreateImagePaths) GoString() string {
+  return s.String()
+}
+
+type LECHCreateImageParameters struct {
+}
+
+func (s LECHCreateImageParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHCreateImageParameters) GoString() string {
+  return s.String()
+}
+
+type LECHCreateImageResponse struct {
+  // {"en":"Image unique ID, global unique","zh_CN":"镜像唯一标识，全局唯一"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+}
+
+func (s LECHCreateImageResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHCreateImageResponse) GoString() string {
+  return s.String()
+}
+
+func (s *LECHCreateImageResponse) SetId(v string) *LECHCreateImageResponse {
+  s.Id = &v
+  return s
+}
+
+type LECHCreateImageResponseHeader struct {
+}
+
+func (s LECHCreateImageResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHCreateImageResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type ListHarborProjectRequest struct {
 }
 
@@ -5049,6 +5534,180 @@ func (s *ListHarborProjectProject) SetUpdateTime(v int64) *ListHarborProjectProj
 func (s *ListHarborProjectProject) SetRepoUsers(v []*string) *ListHarborProjectProject {
   s.RepoUsers = v
   return s
+}
+
+
+
+
+type LECHQueryImageRequest struct {
+}
+
+func (s LECHQueryImageRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryImageRequest) GoString() string {
+  return s.String()
+}
+
+type LECHQueryImageRequestHeader struct {
+}
+
+func (s LECHQueryImageRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryImageRequestHeader) GoString() string {
+  return s.String()
+}
+
+type LECHQueryImagePaths struct {
+}
+
+func (s LECHQueryImagePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryImagePaths) GoString() string {
+  return s.String()
+}
+
+type LECHQueryImageParameters struct {
+  // {"en":"There can be multiple field names for sorting. The values are:\nName, createdat, type, size, state","zh_CN":"排序的字段名称，可以有多个，取值：\nname、createdAt、type、size、state"}
+  SortKey *string `json:"sortKey,omitempty" xml:"sortKey,omitempty"`
+  // {"en":"Sorting direction must follow sortkey. Value:\nDesc: descending, default\nASC: ascending order","zh_CN":"排序方向，必须跟在sortKey后面出现，取值：\ndesc：降序，默认值\nasc：升序"}
+  SortDir *string `json:"sortDir,omitempty" xml:"sortDir,omitempty"`
+  // {"en":"The number of items displayed on each page is 20 by default","zh_CN":"每个页面显示条数，默认是20"}
+  Limit *int `json:"limit,omitempty" xml:"limit,omitempty"`
+  // {"en":"Query from the image ID specified by the marker","zh_CN":"从marker指定的镜像id开始查询"}
+  Marker *string `json:"marker,omitempty" xml:"marker,omitempty"`
+  // {"en":"Mirror ID. A maximum of 100 IDS can be queried at a time. The IDs are separated by a half angle comma character ','.","zh_CN":"镜像 ID。单次最多查询 100 条 ID，ID 之间用半角逗号字符','隔开。"}
+  Ids *string `json:"ids,omitempty" xml:"ids,omitempty"`
+  // {"en":"Mirror name","zh_CN":"镜像名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"The image belongs to the master. Is it a public image or a user-defined image? Value:\n\nCommon: official image\n\nSnapshot: user snapshot image\n\nCustom: user defined image'","zh_CN":"镜像属主，是公共镜像还是用户自定义镜像，取值：\nCOMMON：官方镜像\nSNAPSHOT：用户快照镜像\nCUSTOM：用户自定义镜像"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty"`
+  // {"en":"Image status, value:\n\nActive: available status\n\nBuilding: Creating\n\nInactive: not available (such as creation failure, etc.)'","zh_CN":"镜像状态，取值：\nACTIVE：可用状态\nBUILDING：创建中\nINACTIVE：不可用（如创建失败等）"}
+  State *string `json:"state,omitempty" xml:"state,omitempty"`
+}
+
+func (s LECHQueryImageParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryImageParameters) GoString() string {
+  return s.String()
+}
+
+func (s *LECHQueryImageParameters) SetSortKey(v string) *LECHQueryImageParameters {
+  s.SortKey = &v
+  return s
+}
+
+func (s *LECHQueryImageParameters) SetSortDir(v string) *LECHQueryImageParameters {
+  s.SortDir = &v
+  return s
+}
+
+func (s *LECHQueryImageParameters) SetLimit(v int) *LECHQueryImageParameters {
+  s.Limit = &v
+  return s
+}
+
+func (s *LECHQueryImageParameters) SetMarker(v string) *LECHQueryImageParameters {
+  s.Marker = &v
+  return s
+}
+
+func (s *LECHQueryImageParameters) SetIds(v string) *LECHQueryImageParameters {
+  s.Ids = &v
+  return s
+}
+
+func (s *LECHQueryImageParameters) SetName(v string) *LECHQueryImageParameters {
+  s.Name = &v
+  return s
+}
+
+func (s *LECHQueryImageParameters) SetType(v string) *LECHQueryImageParameters {
+  s.Type = &v
+  return s
+}
+
+func (s *LECHQueryImageParameters) SetState(v string) *LECHQueryImageParameters {
+  s.State = &v
+  return s
+}
+
+type LECHQueryImageResponse struct {
+  // {"en":"Image information array","zh_CN":"镜像信息数组"}
+  Images []*string `json:"images,omitempty" xml:"images,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Image unique ID, global unique","zh_CN":"镜像唯一标识，全局唯一"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+  // {"en":"Mirror name","zh_CN":"镜像名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"Mirror belongs to the Lord.","zh_CN":"镜像属主"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {"en":"Image creation time, such as: 2017-11-04 14:17:41","zh_CN":"镜像创建时间，如：2017-11-04 14:17:41"}
+  CreatedAt *string `json:"createdAt,omitempty" xml:"createdAt,omitempty" require:"true"`
+  // {"en":"Image size in GB","zh_CN":"镜像大小，单位是GB"}
+  Size *string `json:"size,omitempty" xml:"size,omitempty" require:"true"`
+  // {"en":"Mirror Status","zh_CN":"镜像状态"}
+  State *string `json:"state,omitempty" xml:"state,omitempty" require:"true"`
+}
+
+func (s LECHQueryImageResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryImageResponse) GoString() string {
+  return s.String()
+}
+
+func (s *LECHQueryImageResponse) SetImages(v []*string) *LECHQueryImageResponse {
+  s.Images = v
+  return s
+}
+
+func (s *LECHQueryImageResponse) SetId(v string) *LECHQueryImageResponse {
+  s.Id = &v
+  return s
+}
+
+func (s *LECHQueryImageResponse) SetName(v string) *LECHQueryImageResponse {
+  s.Name = &v
+  return s
+}
+
+func (s *LECHQueryImageResponse) SetType(v string) *LECHQueryImageResponse {
+  s.Type = &v
+  return s
+}
+
+func (s *LECHQueryImageResponse) SetCreatedAt(v string) *LECHQueryImageResponse {
+  s.CreatedAt = &v
+  return s
+}
+
+func (s *LECHQueryImageResponse) SetSize(v string) *LECHQueryImageResponse {
+  s.Size = &v
+  return s
+}
+
+func (s *LECHQueryImageResponse) SetState(v string) *LECHQueryImageResponse {
+  s.State = &v
+  return s
+}
+
+type LECHQueryImageResponseHeader struct {
+}
+
+func (s LECHQueryImageResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryImageResponseHeader) GoString() string {
+  return s.String()
 }
 
 

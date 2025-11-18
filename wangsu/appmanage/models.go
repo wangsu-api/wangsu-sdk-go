@@ -162,6 +162,146 @@ func (s CreateAppResponseHeader) GoString() string {
 
 
 
+type GetAppRequest struct {
+  // {"en":"Application package name list","zh_CN":"应用包名列表"}
+  PackageNameList []*string `json:"packageNameList,omitempty" xml:"packageNameList,omitempty" type:"Repeated"`
+}
+
+func (s GetAppRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetAppRequest) GoString() string {
+  return s.String()
+}
+
+func (s *GetAppRequest) SetPackageNameList(v []*string) *GetAppRequest {
+  s.PackageNameList = v
+  return s
+}
+
+type GetAppRequestHeader struct {
+}
+
+func (s GetAppRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetAppRequestHeader) GoString() string {
+  return s.String()
+}
+
+type GetAppPaths struct {
+}
+
+func (s GetAppPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetAppPaths) GoString() string {
+  return s.String()
+}
+
+type GetAppParameters struct {
+}
+
+func (s GetAppParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetAppParameters) GoString() string {
+  return s.String()
+}
+
+type GetAppResponse struct {
+  // {"dictionary":"belong=MAA-masp-portal-console|dict=wplus_code","en":"Response Code","zh_CN":"响应码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Response Description","zh_CN":"响应描述"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Return data","zh_CN":"返回结果"}
+  Data *GetAppResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s GetAppResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetAppResponse) GoString() string {
+  return s.String()
+}
+
+func (s *GetAppResponse) SetCode(v string) *GetAppResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *GetAppResponse) SetMessage(v string) *GetAppResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *GetAppResponse) SetData(v *GetAppResponseData) *GetAppResponse {
+  s.Data = v
+  return s
+}
+
+type GetAppResponseData struct {
+  // {"en":"Application List","zh_CN":"应用列表"}
+  AppList []*GetAppResponseDataAppList `json:"appList,omitempty" xml:"appList,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s GetAppResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetAppResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *GetAppResponseData) SetAppList(v []*GetAppResponseDataAppList) *GetAppResponseData {
+  s.AppList = v
+  return s
+}
+
+type GetAppResponseDataAppList struct     {
+  // {"en":"Application ID","zh_CN":"应用ID"}
+  AppId *int `json:"appId,omitempty" xml:"appId,omitempty" require:"true"`
+  // {"en":"Application package name","zh_CN":"应用包名"}
+  PackageName *string `json:"packageName,omitempty" xml:"packageName,omitempty" require:"true"`
+}
+
+func (s GetAppResponseDataAppList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetAppResponseDataAppList) GoString() string {
+  return s.String()
+}
+
+func (s *GetAppResponseDataAppList) SetAppId(v int) *GetAppResponseDataAppList {
+  s.AppId = &v
+  return s
+}
+
+func (s *GetAppResponseDataAppList) SetPackageName(v string) *GetAppResponseDataAppList {
+  s.PackageName = &v
+  return s
+}
+
+type GetAppResponseHeader struct {
+}
+
+func (s GetAppResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetAppResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type UpdateTunnelApplicationsRequest struct {
   // {"en":"application name", "zh_CN":"应用名称"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true" maxLength:"128"`
@@ -428,16 +568,16 @@ func (s AddDebugFingerprintResponseHeader) GoString() string {
 
 
 type AuthorizeUserApplicationRequest struct {
-  // {"en":"Resource/Application type, default is tunnel. tunnel: tunnelApp, web: webApp, link: linkApp, saas: saasApp", "zh_CN":"资源/应用类型，默认是隧道应用. tunnel: 隧道应用, web: WEB应用, link: 快捷链接, saas: saas应用"}
-  ResourceType *string `json:"resourceType,omitempty" xml:"resourceType,omitempty"`
-  // {"en":"List of resource/application names", "zh_CN":"资源/应用名称列表"}
+  // {"en":"List of resource/application names","zh_CN":"资源/应用名称列表"}
   ResourceNames []*string `json:"resourceNames,omitempty" xml:"resourceNames,omitempty" require:"true" type:"Repeated"`
-  // {"en":"Action Type, 0: Append, 1: Overwrite", "zh_CN":"操作类型，0：追加，1：覆盖"}
+  // {"en":"Action Type, 0: Append, 1: Overwrite","zh_CN":"操作类型，0：追加，1：覆盖"}
   ActionType *int `json:"actionType,omitempty" xml:"actionType,omitempty" require:"true"`
-  // {"en":"List of authorized users", "zh_CN":"授权的用户列表"}
-  AuthorizedUsers []*string `json:"authorizedUsers,omitempty" xml:"authorizedUsers,omitempty" type:"Repeated"`
-  // {"en":"List of authorized user group IDs", "zh_CN":"授权的用户组ID列表"}
+  // {"en":"List of authorized user group IDs","zh_CN":"授权的用户组ID列表"}
   AuthorizedUserGroupIds []*int64 `json:"authorizedUserGroupIds,omitempty" xml:"authorizedUserGroupIds,omitempty" type:"Repeated"`
+  // {"en":"List of authorized users","zh_CN":"授权的用户列表"}
+  AuthorizedUsers []*string `json:"authorizedUsers,omitempty" xml:"authorizedUsers,omitempty" type:"Repeated"`
+  // {"en":"Resource/Application type, default is tunnel. tunnel: tunnelApp, web: webApp, link: linkApp, saas: saasApp","zh_CN":"资源/应用类型，默认是隧道应用. tunnel: 隧道应用, web: WEB应用, link: 快捷链接, saas: saas应用"}
+  ResourceType *string `json:"resourceType,omitempty" xml:"resourceType,omitempty"`
 }
 
 func (s AuthorizeUserApplicationRequest) String() string {
@@ -446,11 +586,6 @@ func (s AuthorizeUserApplicationRequest) String() string {
 
 func (s AuthorizeUserApplicationRequest) GoString() string {
   return s.String()
-}
-
-func (s *AuthorizeUserApplicationRequest) SetResourceType(v string) *AuthorizeUserApplicationRequest {
-  s.ResourceType = &v
-  return s
 }
 
 func (s *AuthorizeUserApplicationRequest) SetResourceNames(v []*string) *AuthorizeUserApplicationRequest {
@@ -463,60 +598,30 @@ func (s *AuthorizeUserApplicationRequest) SetActionType(v int) *AuthorizeUserApp
   return s
 }
 
-func (s *AuthorizeUserApplicationRequest) SetAuthorizedUsers(v []*string) *AuthorizeUserApplicationRequest {
-  s.AuthorizedUsers = v
-  return s
-}
-
 func (s *AuthorizeUserApplicationRequest) SetAuthorizedUserGroupIds(v []*int64) *AuthorizeUserApplicationRequest {
   s.AuthorizedUserGroupIds = v
   return s
 }
 
-type AuthorizeUserApplicationResponse struct {
-  // {"en":"Resource/Application type.tunnel: tunnelApp, web: webApp, link: linkApp, saas: saasApp", "zh_CN":"资源/应用类型 tunnel: 隧道应用, web: WEB应用, link: 快捷链接, saas: saas应用"}
-  ResourceType *string `json:"resourceType,omitempty" xml:"resourceType,omitempty" require:"true"`
-  // {"en":"List of resource/application names", "zh_CN":"资源/应用名称列表"}
-  ResourceNames []*string `json:"resourceNames,omitempty" xml:"resourceNames,omitempty" require:"true" type:"Repeated"`
-  // {"en":"Action Type, 0: Append, 1: Overwrite", "zh_CN":"操作类型，0：追加，1：覆盖"}
-  ActionType *int `json:"actionType,omitempty" xml:"actionType,omitempty" require:"true"`
-  // {"en":"List of authorized users", "zh_CN":"授权的用户列表"}
-  AuthorizedUsers []*string `json:"authorizedUsers,omitempty" xml:"authorizedUsers,omitempty" type:"Repeated"`
-  // {"en":"List of authorized user group IDs", "zh_CN":"授权的用户组ID列表"}
-  AuthorizedUserGroupIds []*int64 `json:"authorizedUserGroupIds,omitempty" xml:"authorizedUserGroupIds,omitempty" type:"Repeated"`
-}
-
-func (s AuthorizeUserApplicationResponse) String() string {
-  return tea.Prettify(s)
-}
-
-func (s AuthorizeUserApplicationResponse) GoString() string {
-  return s.String()
-}
-
-func (s *AuthorizeUserApplicationResponse) SetResourceType(v string) *AuthorizeUserApplicationResponse {
-  s.ResourceType = &v
-  return s
-}
-
-func (s *AuthorizeUserApplicationResponse) SetResourceNames(v []*string) *AuthorizeUserApplicationResponse {
-  s.ResourceNames = v
-  return s
-}
-
-func (s *AuthorizeUserApplicationResponse) SetActionType(v int) *AuthorizeUserApplicationResponse {
-  s.ActionType = &v
-  return s
-}
-
-func (s *AuthorizeUserApplicationResponse) SetAuthorizedUsers(v []*string) *AuthorizeUserApplicationResponse {
+func (s *AuthorizeUserApplicationRequest) SetAuthorizedUsers(v []*string) *AuthorizeUserApplicationRequest {
   s.AuthorizedUsers = v
   return s
 }
 
-func (s *AuthorizeUserApplicationResponse) SetAuthorizedUserGroupIds(v []*int64) *AuthorizeUserApplicationResponse {
-  s.AuthorizedUserGroupIds = v
+func (s *AuthorizeUserApplicationRequest) SetResourceType(v string) *AuthorizeUserApplicationRequest {
+  s.ResourceType = &v
   return s
+}
+
+type AuthorizeUserApplicationRequestHeader struct {
+}
+
+func (s AuthorizeUserApplicationRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AuthorizeUserApplicationRequestHeader) GoString() string {
+  return s.String()
 }
 
 type AuthorizeUserApplicationPaths struct {
@@ -541,15 +646,50 @@ func (s AuthorizeUserApplicationParameters) GoString() string {
   return s.String()
 }
 
-type AuthorizeUserApplicationRequestHeader struct {
+type AuthorizeUserApplicationResponse struct {
+  // {"en":"List of resource/application names","zh_CN":"资源/应用名称列表"}
+  ResourceNames []*string `json:"resourceNames,omitempty" xml:"resourceNames,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Action Type, 0: Append, 1: Overwrite","zh_CN":"操作类型，0：追加，1：覆盖"}
+  ActionType *int `json:"actionType,omitempty" xml:"actionType,omitempty" require:"true"`
+  // {"en":"List of authorized user group IDs","zh_CN":"授权的用户组ID列表"}
+  AuthorizedUserGroupIds []*int64 `json:"authorizedUserGroupIds,omitempty" xml:"authorizedUserGroupIds,omitempty" require:"true" type:"Repeated"`
+  // {"en":"List of authorized users","zh_CN":"授权的用户列表"}
+  AuthorizedUsers []*string `json:"authorizedUsers,omitempty" xml:"authorizedUsers,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Resource/Application type.tunnel: tunnelApp, web: webApp, link: linkApp, saas: saasApp","zh_CN":"资源/应用类型 tunnel: 隧道应用, web: WEB应用, link: 快捷链接, saas: saas应用"}
+  ResourceType *string `json:"resourceType,omitempty" xml:"resourceType,omitempty" require:"true"`
 }
 
-func (s AuthorizeUserApplicationRequestHeader) String() string {
+func (s AuthorizeUserApplicationResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s AuthorizeUserApplicationRequestHeader) GoString() string {
+func (s AuthorizeUserApplicationResponse) GoString() string {
   return s.String()
+}
+
+func (s *AuthorizeUserApplicationResponse) SetResourceNames(v []*string) *AuthorizeUserApplicationResponse {
+  s.ResourceNames = v
+  return s
+}
+
+func (s *AuthorizeUserApplicationResponse) SetActionType(v int) *AuthorizeUserApplicationResponse {
+  s.ActionType = &v
+  return s
+}
+
+func (s *AuthorizeUserApplicationResponse) SetAuthorizedUserGroupIds(v []*int64) *AuthorizeUserApplicationResponse {
+  s.AuthorizedUserGroupIds = v
+  return s
+}
+
+func (s *AuthorizeUserApplicationResponse) SetAuthorizedUsers(v []*string) *AuthorizeUserApplicationResponse {
+  s.AuthorizedUsers = v
+  return s
+}
+
+func (s *AuthorizeUserApplicationResponse) SetResourceType(v string) *AuthorizeUserApplicationResponse {
+  s.ResourceType = &v
+  return s
 }
 
 type AuthorizeUserApplicationResponseHeader struct {

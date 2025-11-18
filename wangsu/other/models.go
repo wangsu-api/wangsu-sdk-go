@@ -461,6 +461,89 @@ func (s MtrTestResponseHeader) GoString() string {
 
 
 
+type QueryHwTaskStatusRequest struct {
+}
+
+func (s QueryHwTaskStatusRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwTaskStatusRequest) GoString() string {
+  return s.String()
+}
+
+type QueryHwTaskStatusRequestHeader struct {
+}
+
+func (s QueryHwTaskStatusRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwTaskStatusRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryHwTaskStatusPaths struct {
+}
+
+func (s QueryHwTaskStatusPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwTaskStatusPaths) GoString() string {
+  return s.String()
+}
+
+type QueryHwTaskStatusParameters struct {
+  // {"en":"task id","zh_CN":"任务ID"}
+  TaskId *string `json:"task_id,omitempty" xml:"task_id,omitempty" require:"true"`
+}
+
+func (s QueryHwTaskStatusParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwTaskStatusParameters) GoString() string {
+  return s.String()
+}
+
+func (s *QueryHwTaskStatusParameters) SetTaskId(v string) *QueryHwTaskStatusParameters {
+  s.TaskId = &v
+  return s
+}
+
+type QueryHwTaskStatusResponse struct {
+  // {"en":"state.waiting,processing,success,failure","zh_CN":"任务执行状态。waiting：等待处理。 processing：正在执行。 success：成功。 failure：失败"}
+  TaskState *string `json:"task_state,omitempty" xml:"task_state,omitempty" require:"true"`
+}
+
+func (s QueryHwTaskStatusResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwTaskStatusResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryHwTaskStatusResponse) SetTaskState(v string) *QueryHwTaskStatusResponse {
+  s.TaskState = &v
+  return s
+}
+
+type QueryHwTaskStatusResponseHeader struct {
+}
+
+func (s QueryHwTaskStatusResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwTaskStatusResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type ReportAvgSpeedDomainIspProvinceServiceRequest struct {
   // {"en":"Start date:
   // 1. The time format is yyyy-MM-ddTHH:MM:ss+08:00. For example, 2019-01-01T10:00:00+08:00
@@ -874,7 +957,7 @@ func (s GetLiveStreamPushingStatusPaths) GoString() string {
 type GetLiveStreamPushingStatusParameters struct {
   // {'en':'Push domain(multiple domains supported, separated by commas)', 'zh_CN':'推流域名（支持多个域名，以逗号分隔）'}
   U *string `json:"u,omitempty" xml:"u,omitempty" require:"true"`
-  // {'en':'Time, eg: 20160527152300, if not filled in, the current time -5 minutes', 'zh_CN':'时间，eg：20160527152300，不填时为当前时间-5分钟'}
+  // {'en':'Time, eg: 20160527152300, if not filled in, the current time -3 minutes', 'zh_CN':'时间，eg：20160527152300，不填时为当前时间-3分钟'}
   T *int64 `json:"t,omitempty" xml:"t,omitempty"`
   // {'en':'Push channel URL (multiple push channel URLs are supported, separated by commas)', 'zh_CN':'推流流名(支持多个推流流名，以逗号分隔)'}
   Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
@@ -1217,36 +1300,26 @@ func (s ReportOnlineNumIspProvinceServiceResponseHeader) GoString() string {
 
 
 type ConcurrentSessionRequest struct {
-  // {"en":"cust_en_name of sub-client.
-  // When a merged-account wants to  view the information of the subclient,the cust_en_name is required.", "zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名"}
-  Cust *string `json:"cust,omitempty" xml:"cust,omitempty"`
-  // {"en":"Specifies the query date:
-  // 1)With format yyyy-mm-dd.
-  // 2)If not specified,it means today as default.", "zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
+  // {"en":"Specifies the query date:\n1)With format yyyy-mm-dd.\n2)If not specified,it means today as default.","zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
   Date *string `json:"date,omitempty" xml:"date,omitempty"`
-  // {"en":"1)Must work with 'enddate' and they  specify the query date scope. 
-  // 2)With format yyyy-mm-dd.
-  // 3)If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的起始日期 ,日期格式为yyyy-mm-dd；此参数需与enddate参数配合,若存在date参数,则该参数无效"}
+  // {"en":"1)Must work with 'enddate' and they  specify the query date scope.\n2)With format yyyy-mm-dd.\n3)If there is a 'date' parameter,this parameter will be omitted.","zh_CN":"查询的起始日期 ,日期格式为yyyy-mm-dd；此参数需与enddate参数配合,若存在date参数,则该参数无效"}
   Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty"`
-  // {"en":"1)Must work with 'startdate' and they  specify the query date scope. 
-  // 2)With format yyyy-mm-dd
-  // 3)If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的结束日期 ,日期格式为yyyy-mm-dd；此参数需与startdate参数配合,若存在date参数,则该参数无效。"}
+  // {"en":"1)Must work with 'startdate' and they  specify the query date scope.\n2)With format yyyy-mm-dd\n3)If there is a 'date' parameter,this parameter will be omitted.","zh_CN":"查询的结束日期 ,日期格式为yyyy-mm-dd；此参数需与startdate参数配合,若存在date参数,则该参数无效。"}
   Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty"`
-  // {"en":"domains that been queried:
-  // 1)If there are multiple inputs,use  ';' as separator.
-  // 2)If not specified, it means all the domains of the account .", "zh_CN":"查询的频道，多个频道值请用英文分号';'，不选或者为空时默认为所查询客户的所有频道"}
+  // {"en":"domains that been queried:\n1)If there are multiple inputs,use  ';' as separator.\n2)If not specified, it means all the domains of the account .","zh_CN":"查询的频道，多个频道值请用英文分号';'，不选或者为空时默认为所查询客户的所有频道"}
   Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
-  // {"en":"1)If there are multiple inputs,use ';' as separator.For example,u can use 'region=cn;apac' to query data of cn and apac region.
-  // 2)If not specified, it means all the regions.", "zh_CN":"查询的加速区域的缩写，多个区域请用英文分号';'分隔开，如查询大陆及亚太区域，参数填写为：'region=cn;apac'。不选或者为空时默认为全部区域。"}
+  // {"dictionary":"belong=BCS-CC-API|dict=flowRegionCode","en":"1)If there are multiple inputs,use ';' as separator.For example,u can use 'region=cn;apac' to query data of cn and apac region.\n2)If not specified, it means all the regions.","zh_CN":"查询的加速区域的缩写，多个区域请用英文分号';'分隔开，如查询大陆及亚太区域，参数填写为：'region=cn;apac'。不选或者为空时默认为全部区域。"}
   Region *string `json:"region,omitempty" xml:"region,omitempty"`
-  // {"en":"acceleration type.
-  // 1)If there are multiple inputs,use ';' as separator.
-  // 2)If not specified or specified as 'all', it means all the accetypes.", "zh_CN":"加速类型参数，如accetype=web。多个请用英文分号';'分隔开，不填或值为all表示所有类型"}
+  // {"en":"acceleration type.\n1)If there are multiple inputs,use ';' as separator.\n2)If not specified or specified as 'all', it means all the accetypes.","zh_CN":"加速类型参数，如accetype=web。多个请用英文分号';'分隔开，不填或值为all表示所有类型"}
   Accetype *string `json:"accetype,omitempty" xml:"accetype,omitempty"`
-  // {"en":"The response format:
-  // 1)optional values:xml, json.
-  // 2)'xml' as default.", "zh_CN":"返回结果格式,支持格式为xml和json,默认为xml"}
+  // {"en":"The response format:\n1)optional values:xml, json.\n2)'xml' as default.","zh_CN":"返回结果格式,支持格式为xml和json,默认为xml"}
   Dataformat *string `json:"dataformat,omitempty" xml:"dataformat,omitempty"`
+  // {"en":"Greenwich Mean Time zone. The format GMT+09:00 represents UTC+9 (East 9), while GMT-09:00 represents UTC-9 (West 9). If not specified, the default is the local time zone (UTC+8).","zh_CN":"格林尼治时区，参数格式 GMT+09:00 表示东九区，GMT-09:00 表示西9区，不传则默认为本地时区（东八区）"}
+  Timezone *string `json:"timezone,omitempty" xml:"timezone,omitempty"`
+  // {"en":"Data granularity: 1-minute granularity by default\n5m: 5-minute granularity\n1m: 1-minute granularity","zh_CN":"数据粒度：默认1分钟粒度\n5m: 5分钟粒度\n1m: 1分钟粒度","exampleValue":"1m,5m"}
+  Granularity *string `json:"granularity,omitempty" xml:"granularity,omitempty"`
+  // {"en":"Group by keyword:  \n1. If not provided, the results will be aggregated and displayed by default.\n2. If a keyword is provided, the details will be displayed based on the dimension corresponding to that keyword (for example, if 'channel' is provided, the details will be returned and expanded by domain). If an unsupported keyword is provided, an error message \"invalid groupby\" will be returned.\n3. Multiple values are supported; separate multiple values with an English semicolon ';'. Currently, only 'channel' is supported.","zh_CN":"分组关键词：  \n1.未传递时，默认聚合展示\n2.传入关键词则代表需要按照关键词维度分组对应的值展示明细（例如传channel，则代表返回按照domain明细展开。），如传入不支持的关键词，返回错误提示\"invalid groupby\"\n3.支持传多个值，多个值以英文分号';'分隔，当前只支持channel","exampleValue":"channel"}
+  GroupBy *string `json:"groupBy,omitempty" xml:"groupBy,omitempty"`
 }
 
 func (s ConcurrentSessionRequest) String() string {
@@ -1255,11 +1328,6 @@ func (s ConcurrentSessionRequest) String() string {
 
 func (s ConcurrentSessionRequest) GoString() string {
   return s.String()
-}
-
-func (s *ConcurrentSessionRequest) SetCust(v string) *ConcurrentSessionRequest {
-  s.Cust = &v
-  return s
 }
 
 func (s *ConcurrentSessionRequest) SetDate(v string) *ConcurrentSessionRequest {
@@ -1297,8 +1365,56 @@ func (s *ConcurrentSessionRequest) SetDataformat(v string) *ConcurrentSessionReq
   return s
 }
 
+func (s *ConcurrentSessionRequest) SetTimezone(v string) *ConcurrentSessionRequest {
+  s.Timezone = &v
+  return s
+}
+
+func (s *ConcurrentSessionRequest) SetGranularity(v string) *ConcurrentSessionRequest {
+  s.Granularity = &v
+  return s
+}
+
+func (s *ConcurrentSessionRequest) SetGroupBy(v string) *ConcurrentSessionRequest {
+  s.GroupBy = &v
+  return s
+}
+
+type ConcurrentSessionRequestHeader struct {
+}
+
+func (s ConcurrentSessionRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ConcurrentSessionRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ConcurrentSessionPaths struct {
+}
+
+func (s ConcurrentSessionPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ConcurrentSessionPaths) GoString() string {
+  return s.String()
+}
+
+type ConcurrentSessionParameters struct {
+}
+
+func (s ConcurrentSessionParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ConcurrentSessionParameters) GoString() string {
+  return s.String()
+}
+
 type ConcurrentSessionResponse struct {
-  // {'en':'provider', 'zh_CN':'结果'}
+  // {"en":"provider","zh_CN":"结果"}
   Provider *ConcurrentSessionResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
@@ -1316,11 +1432,11 @@ func (s *ConcurrentSessionResponse) SetProvider(v *ConcurrentSessionResponseProv
 }
 
 type ConcurrentSessionResponseProvider struct {
-  // {'en':'tenant', 'zh_CN':'租户'}
+  // {"en":"tenant","zh_CN":"租户"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
-  // {'en':'type', 'zh_CN':'接口类型'}
+  // {"en":"type","zh_CN":"接口类型"}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
-  // {'en':'data', 'zh_CN':'明细数据'}
+  // {"en":"data","zh_CN":"明细数据"}
   Date *ConcurrentSessionResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
@@ -1348,11 +1464,11 @@ func (s *ConcurrentSessionResponseProvider) SetDate(v *ConcurrentSessionResponse
 }
 
 type ConcurrentSessionResponseProviderDate struct {
-  // {'en':'startdate', 'zh_CN':'开始时间'}
+  // {"en":"startdate","zh_CN":"开始时间"}
   Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
-  // {'en':'enddate', 'zh_CN':'结束时间'}
+  // {"en":"enddate","zh_CN":"结束时间"}
   Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
-  // {'en':'concurrent', 'zh_CN':'明细数据'}
+  // {"en":"concurrent","zh_CN":"明细数据"}
   Concurrent []*ConcurrentSessionResponseProviderDateConcurrent `json:"concurrent,omitempty" xml:"concurrent,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -1380,9 +1496,9 @@ func (s *ConcurrentSessionResponseProviderDate) SetConcurrent(v []*ConcurrentSes
 }
 
 type ConcurrentSessionResponseProviderDateConcurrent struct     {
-  // {'en':'timestamp', 'zh_CN':'时间点'}
+  // {"en":"timestamp","zh_CN":"时间点"}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
-  // {'en':'hit count', 'zh_CN':'明细数据'}
+  // {"en":"hit count","zh_CN":"明细数据"}
   Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
 }
 
@@ -1402,39 +1518,6 @@ func (s *ConcurrentSessionResponseProviderDateConcurrent) SetTime(v string) *Con
 func (s *ConcurrentSessionResponseProviderDateConcurrent) SetText(v string) *ConcurrentSessionResponseProviderDateConcurrent {
   s.Text = &v
   return s
-}
-
-type ConcurrentSessionPaths struct {
-}
-
-func (s ConcurrentSessionPaths) String() string {
-  return tea.Prettify(s)
-}
-
-func (s ConcurrentSessionPaths) GoString() string {
-  return s.String()
-}
-
-type ConcurrentSessionParameters struct {
-}
-
-func (s ConcurrentSessionParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s ConcurrentSessionParameters) GoString() string {
-  return s.String()
-}
-
-type ConcurrentSessionRequestHeader struct {
-}
-
-func (s ConcurrentSessionRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s ConcurrentSessionRequestHeader) GoString() string {
-  return s.String()
 }
 
 type ConcurrentSessionResponseHeader struct {
@@ -1471,6 +1554,8 @@ type BandwidthAppaRequest struct {
   // 1)If there are multiple inputs,use  ';' as separator.
   // 2)If not specified, it means all the domains of the account .", "zh_CN":"查询的频道，多个频道值请用英文分号';'，不选或者为空时默认为所查询客户的所有频道"}
   Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
+  // {"en":"GMT time zone, parameter format: GMT+09:00 means east 9th zone, GMT-09:00 means west 9th zone, if not transmitted, the default is local time zone (east 8th zone).", "zh_CN":"格林尼治时区，参数格式 GMT+09:00 表示东九区，GMT-09:00 表示西9区，不传则默认为本地时区（东八区）"}
+  Timezone *string `json:"timezone,omitempty" xml:"timezone,omitempty"`
   // {"en":"Specifies if  the 'channel' parameter should be exactly matched:
   // 1)'true' as default.
   // 2) If not 'true',it will query data of channels that ends with any item of input 'channel's.", "zh_CN":"&nbsp;频道是否完全匹配,为true时，必须填写完整的域名(此时会过滤用户输入的无效或重复频道,所有输入频道都无效时返403)。不为true时，显示以用户输入的频道为结尾的所有频道。默认为true"}
@@ -1525,6 +1610,11 @@ func (s *BandwidthAppaRequest) SetEnddate(v string) *BandwidthAppaRequest {
 
 func (s *BandwidthAppaRequest) SetChannel(v string) *BandwidthAppaRequest {
   s.Channel = &v
+  return s
+}
+
+func (s *BandwidthAppaRequest) SetTimezone(v string) *BandwidthAppaRequest {
+  s.Timezone = &v
   return s
 }
 
@@ -1983,12 +2073,12 @@ type QueryDailyLiveTranscodingDurationRequest struct {
   ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty"`
   // {"en":"Transcoding type, values can be h264, h265, zdgq_264, zdgq_265, cf_264, cf_265, or other. Multiple transcoding types should be separated by a semicolon. If some of the transcoding types are incorrect, the system will return data for the correct types; if all transcoding types are incorrect, it will return an error 'invalid transcodeType.' If not provided or left empty, it defaults to all types.", "zh_CN":"转码类型,值为h264、h265、zdgq_264、zdgq_265、cf_264、cf_265，other 多个转码类型用英文分号;分隔开。当传入转码类型部分错误时，返回正确的类型的数据；当传入转码类型全部错误时，返回错误invalid transcodeType. 不填或为空，默认为所有类型."}
   TranscodeType *string `json:"transcodeType,omitempty" xml:"transcodeType,omitempty"`
-  // {"en":"Resolution types include LD480, SD720, HD1080, 2K, 4K, 8K, SD576. Multiple resolutions are separated by a semicolon. When isAudio=1, this parameter is invalid and will return an error. Param definition must be empty when querying audio data.", "zh_CN":"清晰度类型,值为LD480、SD720、HD1080、2K、4K、8K、SD576，多个清晰度用英文分号;分隔开, 当isAudio=1时，此入参无效返回错误 param definition must be empty when query audio data."}
+  // {"en":"GMT time zone, parameter format: GMT+09:00 means east 9th zone, GMT-09:00 means west 9th zone, if not transmitted, the default is local time zone (east 8th zone).", "zh_CN":"格林尼治时区，参数格式 GMT+09:00 表示东九区，GMT-09:00 表示西9区，不传则默认为本地时区（东八区）"}
+  Timezone *string `json:"timezone,omitempty" xml:"timezone,omitempty"`
+  // {"en":"Resolution types include LD480,SD720,HD1080,2K,4K,8K,SD576,SD540,LD360,LD240. Multiple resolutions are separated by a semicolon. When isAudio=1, this parameter is invalid and will return an error. Param definition must be empty when querying audio data.", "zh_CN":"清晰度类型,值为LD480,SD720,HD1080,2K,4K,8K,SD576,SD540,LD360,LD240，多个清晰度用英文分号;分隔开, 当isAudio=1时，此入参无效返回错误 param definition must be empty when query audio data."}
   Definition *string `json:"definition,omitempty" xml:"definition,omitempty"`
   // {"en":"Audio/Video Type, 1: Audio 2: Video. Defaults to 2 if not selected or empty. Only a single value is allowed.", "zh_CN":"音视频类型, 1:音频   2:视频. 不选或者为空时默认为2. 只能输入单个值."}
   IsAudio *string `json:"isAudio,omitempty" xml:"isAudio,omitempty"`
-  // {"en":"Greenwich time zone, the parameter format GMT+09:00 means East Nine District, GMT-09:00 means West Nine District, if not passed, the default is the local time zone (East Eight District)", "zh_CN":"格林尼治时区，参数格式 GMT+09:00 表示东九区，GMT-09:00 表示西9区，不传则默认为本地时区（东八区）"}
-  Timezone *string `json:"timezone,omitempty" xml:"timezone,omitempty"`
 }
 
 func (s QueryDailyLiveTranscodingDurationRequest) String() string {
@@ -2049,6 +2139,11 @@ func (s *QueryDailyLiveTranscodingDurationRequest) SetTranscodeType(v string) *Q
   return s
 }
 
+func (s *QueryDailyLiveTranscodingDurationRequest) SetTimezone(v string) *QueryDailyLiveTranscodingDurationRequest {
+  s.Timezone = &v
+  return s
+}
+
 func (s *QueryDailyLiveTranscodingDurationRequest) SetDefinition(v string) *QueryDailyLiveTranscodingDurationRequest {
   s.Definition = &v
   return s
@@ -2056,11 +2151,6 @@ func (s *QueryDailyLiveTranscodingDurationRequest) SetDefinition(v string) *Quer
 
 func (s *QueryDailyLiveTranscodingDurationRequest) SetIsAudio(v string) *QueryDailyLiveTranscodingDurationRequest {
   s.IsAudio = &v
-  return s
-}
-
-func (s *QueryDailyLiveTranscodingDurationRequest) SetTimezone(v string) *QueryDailyLiveTranscodingDurationRequest {
-  s.Timezone = &v
   return s
 }
 
@@ -2272,6 +2362,142 @@ func (s QueryDailyLiveTranscodingDurationResponseHeader) String() string {
 }
 
 func (s QueryDailyLiveTranscodingDurationResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryHwDomainCacheRuleForWplusRequest struct {
+}
+
+func (s QueryHwDomainCacheRuleForWplusRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainCacheRuleForWplusRequest) GoString() string {
+  return s.String()
+}
+
+type QueryHwDomainCacheRuleForWplusRequestHeader struct {
+}
+
+func (s QueryHwDomainCacheRuleForWplusRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainCacheRuleForWplusRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryHwDomainCacheRuleForWplusPaths struct {
+  // {"en":"domain name","zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+}
+
+func (s QueryHwDomainCacheRuleForWplusPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainCacheRuleForWplusPaths) GoString() string {
+  return s.String()
+}
+
+func (s *QueryHwDomainCacheRuleForWplusPaths) SetDomain(v string) *QueryHwDomainCacheRuleForWplusPaths {
+  s.Domain = &v
+  return s
+}
+
+type QueryHwDomainCacheRuleForWplusParameters struct {
+}
+
+func (s QueryHwDomainCacheRuleForWplusParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainCacheRuleForWplusParameters) GoString() string {
+  return s.String()
+}
+
+type QueryHwDomainCacheRuleForWplusResponse struct {
+  // {"en":"cache rule list","zh_CN":"缓存过期时间配置"}
+  CacheRuleList []*QueryHwDomainCacheRuleForWplusResponseCacheRuleList `json:"cache_rule_list,omitempty" xml:"cache_rule_list,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryHwDomainCacheRuleForWplusResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainCacheRuleForWplusResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryHwDomainCacheRuleForWplusResponse) SetCacheRuleList(v []*QueryHwDomainCacheRuleForWplusResponseCacheRuleList) *QueryHwDomainCacheRuleForWplusResponse {
+  s.CacheRuleList = v
+  return s
+}
+
+type QueryHwDomainCacheRuleForWplusResponseCacheRuleList struct     {
+  // {"en":"match pattern","zh_CN":"匹配模式"}
+  MatchPattern []*string `json:"match_pattern,omitempty" xml:"match_pattern,omitempty" require:"true" type:"Repeated"`
+  // {"en":"cache time mode","zh_CN":"ttl生效模式"}
+  TtlMode *string `json:"ttl_mode,omitempty" xml:"ttl_mode,omitempty" require:"true"`
+  // {"en":"content index type","zh_CN":"内容index计算方式"}
+  ContentIndexType *string `json:"content_index_type,omitempty" xml:"content_index_type,omitempty" require:"true"`
+  // {"en":"match type","zh_CN":"匹配类型"}
+  MatchType *string `json:"match_type,omitempty" xml:"match_type,omitempty" require:"true"`
+  // {"en":"priority","zh_CN":"缓存规则优先级"}
+  Priority *int `json:"priority,omitempty" xml:"priority,omitempty" require:"true"`
+  // {"en":"cache time","zh_CN":"缓存时间"}
+  Ttl *int `json:"ttl,omitempty" xml:"ttl,omitempty" require:"true"`
+}
+
+func (s QueryHwDomainCacheRuleForWplusResponseCacheRuleList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainCacheRuleForWplusResponseCacheRuleList) GoString() string {
+  return s.String()
+}
+
+func (s *QueryHwDomainCacheRuleForWplusResponseCacheRuleList) SetMatchPattern(v []*string) *QueryHwDomainCacheRuleForWplusResponseCacheRuleList {
+  s.MatchPattern = v
+  return s
+}
+
+func (s *QueryHwDomainCacheRuleForWplusResponseCacheRuleList) SetTtlMode(v string) *QueryHwDomainCacheRuleForWplusResponseCacheRuleList {
+  s.TtlMode = &v
+  return s
+}
+
+func (s *QueryHwDomainCacheRuleForWplusResponseCacheRuleList) SetContentIndexType(v string) *QueryHwDomainCacheRuleForWplusResponseCacheRuleList {
+  s.ContentIndexType = &v
+  return s
+}
+
+func (s *QueryHwDomainCacheRuleForWplusResponseCacheRuleList) SetMatchType(v string) *QueryHwDomainCacheRuleForWplusResponseCacheRuleList {
+  s.MatchType = &v
+  return s
+}
+
+func (s *QueryHwDomainCacheRuleForWplusResponseCacheRuleList) SetPriority(v int) *QueryHwDomainCacheRuleForWplusResponseCacheRuleList {
+  s.Priority = &v
+  return s
+}
+
+func (s *QueryHwDomainCacheRuleForWplusResponseCacheRuleList) SetTtl(v int) *QueryHwDomainCacheRuleForWplusResponseCacheRuleList {
+  s.Ttl = &v
+  return s
+}
+
+type QueryHwDomainCacheRuleForWplusResponseHeader struct {
+}
+
+func (s QueryHwDomainCacheRuleForWplusResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainCacheRuleForWplusResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -2796,36 +3022,28 @@ func (s ReportDomainStreamDurationServiceResponseHeader) GoString() string {
 
 
 type FlowAppaChannelRequest struct {
-  // {"en":"cust_en_name of sub-client.
-  // When a merged-account wants to  view the information of the subclient,the cust_en_name is required.", "zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名"}
+  // {"en":"cust_en_name of sub-client.\nWhen a merged-account wants to  view the information of the subclient,the cust_en_name is required.","zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名"}
   Cust *string `json:"cust,omitempty" xml:"cust,omitempty"`
-  // {"en":"Specifies the query date:
-  // 1)With format yyyy-mm-dd.
-  // 2)If not specified,it means today as default.", "zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
+  // {"en":"Specifies the query date:\n1)With format yyyy-mm-dd.\n2)If not specified,it means today as default.","zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
   Date *string `json:"date,omitempty" xml:"date,omitempty"`
-  // {"en":"1)Must work with 'enddate' and they  specify the query date scope. 
-  // 2)With format yyyy-mm-dd.
-  // 3)If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的起始日期 ,日期格式为yyyy-mm-dd；此参数需与enddate参数配合,若存在date参数,则该参数无效"}
+  // {"en":"1)Must work with 'enddate' and they  specify the query date scope.\n2)With format yyyy-mm-dd.\n3)If there is a 'date' parameter,this parameter will be omitted.","zh_CN":"查询的起始日期 ,日期格式为yyyy-mm-dd；此参数需与enddate参数配合,若存在date参数,则该参数无效"}
   Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty"`
-  // {"en":"1)Must work with 'startdate' and they  specify the query date scope. 
-  // 2)With format yyyy-mm-dd
-  // 3)If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的结束日期 ,日期格式为yyyy-mm-dd；此参数需与startdate参数配合,若存在date参数,则该参数无效。"}
+  // {"en":"1)Must work with 'startdate' and they  specify the query date scope.\n2)With format yyyy-mm-dd\n3)If there is a 'date' parameter,this parameter will be omitted.","zh_CN":"查询的结束日期 ,日期格式为yyyy-mm-dd；此参数需与startdate参数配合,若存在date参数,则该参数无效。"}
   Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty"`
-  // {"en":"domains that been queried:
-  // 1)If there are multiple inputs,use  ';' as separator.
-  // 2)If not specified, it means all the domains of the account .", "zh_CN":"查询的频道，多个频道值请用英文分号';'，不选或者为空时默认为所查询客户的所有频道"}
+  // {"en":"domains that been queried:\n1)If there are multiple inputs,use  ';' as separator.\n2)If not specified, it means all the domains of the account .","zh_CN":"查询的频道，多个频道值请用英文分号';'，不选或者为空时默认为所查询客户的所有频道"}
   Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
-  // {"en":"1)If there are multiple inputs,use ';' as separator.For example,u can use 'region=cn;apac' to query data of cn and apac region.
-  // 2)If not specified, it means all the regions.", "zh_CN":"查询的加速区域的缩写，多个区域请用英文分号';'分隔开，如查询大陆及亚太区域，参数填写为：'region=cn;apac'。不选或者为空时默认为全部区域。"}
+  // {"en":"GMT time zone, parameter format: GMT+09:00 means east 9th zone, GMT-09:00 means west 9th zone, if not transmitted, the default is local time zone (east 8th zone).","zh_CN":"格林尼治时区，参数格式 GMT+09:00 表示东九区，GMT-09:00 表示西9区，不传则默认为本地时区（东八区）"}
+  Timezone *string `json:"timezone,omitempty" xml:"timezone,omitempty"`
+  // {"en":"1)If there are multiple inputs,use ';' as separator.For example,u can use 'region=cn;apac' to query data of cn and apac region.\n2)If not specified, it means all the regions.","zh_CN":"查询的加速区域的缩写，多个区域请用英文分号';'分隔开，如查询大陆及亚太区域，参数填写为：'region=cn;apac'。不选或者为空时默认为全部区域。"}
   Region *string `json:"region,omitempty" xml:"region,omitempty"`
-  // {"en":"acceleration type.
-  // 1)If there are multiple inputs,use ';' as separator.
-  // 2)If not specified or specified as 'all', it means all the accetypes.", "zh_CN":"加速类型参数，如accetype=web。多个请用英文分号';'分隔开，不填或值为all表示所有类型"}
+  // {"en":"acceleration type.\n1)If there are multiple inputs,use ';' as separator.\n2)If not specified or specified as 'all', it means all the accetypes.","zh_CN":"加速类型参数，如accetype=web。多个请用英文分号';'分隔开，不填或值为all表示所有类型"}
   Accetype *string `json:"accetype,omitempty" xml:"accetype,omitempty"`
-  // {"en":"The response format:
-  // 1)optional values:xml, json.
-  // 2)'xml' as default.", "zh_CN":"返回结果格式,支持格式为xml和json,默认为xml"}
+  // {"en":"The response format:\n1)optional values:xml, json.\n2)'xml' as default.","zh_CN":"返回结果格式,支持格式为xml和json,默认为xml"}
   Dataformat *string `json:"dataformat,omitempty" xml:"dataformat,omitempty"`
+  // {"en":"If TopN is empty, the system will return the top 200 by default. Otherwise, it returns data based on the TopN parameter value. If TopN is set to -1, all domains will be returned (subject to the domain quantity limits required by the API).","zh_CN":"TopN为空,则默认返回top200, 否则按topN参数值返回, TopN为-1，则返回全部域名(接口限制要求的域名个数)"}
+  TopN *string `json:"topN,omitempty" xml:"topN,omitempty"`
+  // {"en":"Ranking method: 1: Total Traffic Ranking; 2: Total Bandwidth Peak Value Ranking; 3: Edge Downstream Traffic Ranking; 4: Edge Downstream Bandwidth Peak Value Ranking; 5: Edge Upstream Traffic Ranking; 6: Edge Upstream Bandwidth Peak Value Ranking","zh_CN":"排行方式: 1:总流量排行;2:总带宽峰值排行; 3:边缘下行流量排行; 4:边缘下行带宽峰值排行; 5:边缘上行流量排行; 6:边缘上行带宽峰值排行"}
+  SortBy *string `json:"sortBy,omitempty" xml:"sortBy,omitempty"`
 }
 
 func (s FlowAppaChannelRequest) String() string {
@@ -2861,6 +3079,11 @@ func (s *FlowAppaChannelRequest) SetChannel(v string) *FlowAppaChannelRequest {
   return s
 }
 
+func (s *FlowAppaChannelRequest) SetTimezone(v string) *FlowAppaChannelRequest {
+  s.Timezone = &v
+  return s
+}
+
 func (s *FlowAppaChannelRequest) SetRegion(v string) *FlowAppaChannelRequest {
   s.Region = &v
   return s
@@ -2876,8 +3099,51 @@ func (s *FlowAppaChannelRequest) SetDataformat(v string) *FlowAppaChannelRequest
   return s
 }
 
+func (s *FlowAppaChannelRequest) SetTopN(v string) *FlowAppaChannelRequest {
+  s.TopN = &v
+  return s
+}
+
+func (s *FlowAppaChannelRequest) SetSortBy(v string) *FlowAppaChannelRequest {
+  s.SortBy = &v
+  return s
+}
+
+type FlowAppaChannelRequestHeader struct {
+}
+
+func (s FlowAppaChannelRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s FlowAppaChannelRequestHeader) GoString() string {
+  return s.String()
+}
+
+type FlowAppaChannelPaths struct {
+}
+
+func (s FlowAppaChannelPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s FlowAppaChannelPaths) GoString() string {
+  return s.String()
+}
+
+type FlowAppaChannelParameters struct {
+}
+
+func (s FlowAppaChannelParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s FlowAppaChannelParameters) GoString() string {
+  return s.String()
+}
+
 type FlowAppaChannelResponse struct {
-  // {'en':'provider', 'zh_CN':'结果'}
+  // {"en":"provider","zh_CN":"结果"}
   Provider *FlowAppaChannelResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
 }
 
@@ -2895,11 +3161,11 @@ func (s *FlowAppaChannelResponse) SetProvider(v *FlowAppaChannelResponseProvider
 }
 
 type FlowAppaChannelResponseProvider struct {
-  // {'en':'tenant', 'zh_CN':'租户'}
+  // {"en":"tenant","zh_CN":"租户"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
-  // {'en':'type', 'zh_CN':'接口类型'}
+  // {"en":"type","zh_CN":"接口类型"}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
-  // {'en':'data', 'zh_CN':'请求数数据'}
+  // {"en":"data","zh_CN":"请求数数据"}
   Date *FlowAppaChannelResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
@@ -2927,13 +3193,13 @@ func (s *FlowAppaChannelResponseProvider) SetDate(v *FlowAppaChannelResponseProv
 }
 
 type FlowAppaChannelResponseProviderDate struct {
-  // {'en':'startdate', 'zh_CN':'开始时间'}
+  // {"en":"startdate","zh_CN":"开始时间"}
   Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
-  // {'en':'enddate', 'zh_CN':'结束时间'}
+  // {"en":"enddate","zh_CN":"结束时间"}
   Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
-  // {'en':'total', 'zh_CN':'汇总'}
+  // {"en":"total","zh_CN":"汇总"}
   Total *FlowAppaChannelResponseProviderDateTotal `json:"total,omitempty" xml:"total,omitempty" require:"true" type:"Struct"`
-  // {'en':'channel', 'zh_CN':'频道'}
+  // {"en":"channel","zh_CN":"频道"}
   Channel *FlowAppaChannelResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
 }
 
@@ -2966,14 +3232,22 @@ func (s *FlowAppaChannelResponseProviderDate) SetChannel(v *FlowAppaChannelRespo
 }
 
 type FlowAppaChannelResponseProviderDateTotal struct {
-  // {'en':'channel', 'zh_CN':'频道'}
+  // {"en":"channel","zh_CN":"频道"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
-  // {'en':'edgeup', 'zh_CN':'边缘上行总流量,单位Mbps'}
+  // {"en":"edgeup","zh_CN":"边缘上行总流量,单位Mbps"}
   Edgeup *string `json:"edgeup,omitempty" xml:"edgeup,omitempty" require:"true"`
-  // {'en':'edgedown', 'zh_CN':'边缘下行总流量,单位Mbps'}
+  // {"en":"edgedown","zh_CN":"边缘下行总流量,单位Mbps"}
   Edgedown *string `json:"edgedown,omitempty" xml:"edgedown,omitempty" require:"true"`
-  // {'en':'total', 'zh_CN':'汇总'}
+  // {"en":"total","zh_CN":"汇总"}
   Total *string `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+  // {"en":"edgeupPeakValue","zh_CN":"边缘上行带宽峰值(MBps)"}
+  EdgeupPeakValue *string `json:"edgeupPeakValue,omitempty" xml:"edgeupPeakValue,omitempty" require:"true"`
+  // {"en":"edgedownPeakValue","zh_CN":"边缘下行带宽峰值(MBps)"}
+  EdgedownPeakValue *string `json:"edgedownPeakValue,omitempty" xml:"edgedownPeakValue,omitempty" require:"true"`
+  // {"en":"totalPeakValue","zh_CN":"总带宽峰值:边缘上行流量和边缘下行流量叠加后取带宽峰值(MBps)"}
+  TotalPeakValue *string `json:"totalPeakValue,omitempty" xml:"totalPeakValue,omitempty" require:"true"`
+  // {"en":"The moment corresponding to the total bandwidth peak (sum of edge upstream traffic and edge downstream traffic)","zh_CN":"总带宽峰值对应的时刻 （边缘上行流量和边缘下行流量叠加）"}
+  TotalPeakTime *string `json:"totalPeakTime,omitempty" xml:"totalPeakTime,omitempty" require:"true"`
 }
 
 func (s FlowAppaChannelResponseProviderDateTotal) String() string {
@@ -3004,15 +3278,43 @@ func (s *FlowAppaChannelResponseProviderDateTotal) SetTotal(v string) *FlowAppaC
   return s
 }
 
+func (s *FlowAppaChannelResponseProviderDateTotal) SetEdgeupPeakValue(v string) *FlowAppaChannelResponseProviderDateTotal {
+  s.EdgeupPeakValue = &v
+  return s
+}
+
+func (s *FlowAppaChannelResponseProviderDateTotal) SetEdgedownPeakValue(v string) *FlowAppaChannelResponseProviderDateTotal {
+  s.EdgedownPeakValue = &v
+  return s
+}
+
+func (s *FlowAppaChannelResponseProviderDateTotal) SetTotalPeakValue(v string) *FlowAppaChannelResponseProviderDateTotal {
+  s.TotalPeakValue = &v
+  return s
+}
+
+func (s *FlowAppaChannelResponseProviderDateTotal) SetTotalPeakTime(v string) *FlowAppaChannelResponseProviderDateTotal {
+  s.TotalPeakTime = &v
+  return s
+}
+
 type FlowAppaChannelResponseProviderDateChannel struct {
-  // {'en':'channel', 'zh_CN':'频道'}
+  // {"en":"channel","zh_CN":"频道"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
-  // {'en':'edgeup', 'zh_CN':'边缘上行总流量,单位Mbps'}
+  // {"en":"edgeup","zh_CN":"边缘上行总流量,单位Mbps"}
   Edgeup *string `json:"edgeup,omitempty" xml:"edgeup,omitempty" require:"true"`
-  // {'en':'edgedown', 'zh_CN':'边缘下行总流量,单位Mbps'}
+  // {"en":"edgedown","zh_CN":"边缘下行总流量,单位Mbps"}
   Edgedown *string `json:"edgedown,omitempty" xml:"edgedown,omitempty" require:"true"`
-  // {'en':'total', 'zh_CN':'汇总'}
+  // {"en":"total","zh_CN":"汇总"}
   Total *string `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+  // {"en":"edgeupPeakValue","zh_CN":"边缘上行带宽峰值(MBps)"}
+  EdgeupPeakValue *string `json:"edgeupPeakValue,omitempty" xml:"edgeupPeakValue,omitempty" require:"true"`
+  // {"en":"edgedownPeakValue","zh_CN":"边缘下行带宽峰值(MBps)"}
+  EdgedownPeakValue *string `json:"edgedownPeakValue,omitempty" xml:"edgedownPeakValue,omitempty" require:"true"`
+  // {"en":"totalPeakValue","zh_CN":"总带宽峰值:边缘上行流量和边缘下行流量叠加后取带宽峰值(MBps)"}
+  TotalPeakValue *string `json:"totalPeakValue,omitempty" xml:"totalPeakValue,omitempty" require:"true"`
+  // {"en":"The moment when the channel bandwidth peak occurs (the sum of edge upstream traffic and edge downstream traffic)","zh_CN":"频道带宽峰值对应的时刻 （边缘上行流量和边缘下行流量叠加）"}
+  TotalPeakTime *string `json:"totalPeakTime,omitempty" xml:"totalPeakTime,omitempty" require:"true"`
 }
 
 func (s FlowAppaChannelResponseProviderDateChannel) String() string {
@@ -3043,37 +3345,24 @@ func (s *FlowAppaChannelResponseProviderDateChannel) SetTotal(v string) *FlowApp
   return s
 }
 
-type FlowAppaChannelPaths struct {
+func (s *FlowAppaChannelResponseProviderDateChannel) SetEdgeupPeakValue(v string) *FlowAppaChannelResponseProviderDateChannel {
+  s.EdgeupPeakValue = &v
+  return s
 }
 
-func (s FlowAppaChannelPaths) String() string {
-  return tea.Prettify(s)
+func (s *FlowAppaChannelResponseProviderDateChannel) SetEdgedownPeakValue(v string) *FlowAppaChannelResponseProviderDateChannel {
+  s.EdgedownPeakValue = &v
+  return s
 }
 
-func (s FlowAppaChannelPaths) GoString() string {
-  return s.String()
+func (s *FlowAppaChannelResponseProviderDateChannel) SetTotalPeakValue(v string) *FlowAppaChannelResponseProviderDateChannel {
+  s.TotalPeakValue = &v
+  return s
 }
 
-type FlowAppaChannelParameters struct {
-}
-
-func (s FlowAppaChannelParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s FlowAppaChannelParameters) GoString() string {
-  return s.String()
-}
-
-type FlowAppaChannelRequestHeader struct {
-}
-
-func (s FlowAppaChannelRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s FlowAppaChannelRequestHeader) GoString() string {
-  return s.String()
+func (s *FlowAppaChannelResponseProviderDateChannel) SetTotalPeakTime(v string) *FlowAppaChannelResponseProviderDateChannel {
+  s.TotalPeakTime = &v
+  return s
 }
 
 type FlowAppaChannelResponseHeader struct {
@@ -3084,6 +3373,135 @@ func (s FlowAppaChannelResponseHeader) String() string {
 }
 
 func (s FlowAppaChannelResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryHwDomainSrcStrategyConfigForWplusRequest struct {
+}
+
+func (s QueryHwDomainSrcStrategyConfigForWplusRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainSrcStrategyConfigForWplusRequest) GoString() string {
+  return s.String()
+}
+
+type QueryHwDomainSrcStrategyConfigForWplusRequestHeader struct {
+}
+
+func (s QueryHwDomainSrcStrategyConfigForWplusRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainSrcStrategyConfigForWplusRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryHwDomainSrcStrategyConfigForWplusPaths struct {
+  // {"en":"domain name","zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+}
+
+func (s QueryHwDomainSrcStrategyConfigForWplusPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainSrcStrategyConfigForWplusPaths) GoString() string {
+  return s.String()
+}
+
+func (s *QueryHwDomainSrcStrategyConfigForWplusPaths) SetDomain(v string) *QueryHwDomainSrcStrategyConfigForWplusPaths {
+  s.Domain = &v
+  return s
+}
+
+type QueryHwDomainSrcStrategyConfigForWplusParameters struct {
+}
+
+func (s QueryHwDomainSrcStrategyConfigForWplusParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainSrcStrategyConfigForWplusParameters) GoString() string {
+  return s.String()
+}
+
+type QueryHwDomainSrcStrategyConfigForWplusResponse struct {
+  // {"en":"header name and value","zh_CN":"自定义HTTP头域名称和取值"}
+  Headers []*QueryHwDomainSrcStrategyConfigForWplusQueryHwDomainSrcStrategyConfigForWplusResponseHeaders `json:"headers,omitempty" xml:"headers,omitempty" require:"true" type:"Repeated"`
+  // {"en":"follow 302: on/off,default:off","zh_CN":"是否启用302跟随: on/off。默认off"}
+  Follow302 *string `json:"follow_302,omitempty" xml:"follow_302,omitempty" require:"true"`
+  // {"en":"enable range.on/off","zh_CN":"是否启用range回源: on/off。网页类型默认为off，点播和下载默认为on。"}
+  Range *string `json:"range,omitempty" xml:"range,omitempty" require:"true"`
+  // {"en":"ignore url parameter.on/off, default:off.not support now.","zh_CN":"是否忽略URL参数: on/off。默认off。目前暂不支持。"}
+  IgnoreUrlParameter *string `json:"ignore_url_parameter,omitempty" xml:"ignore_url_parameter,omitempty" require:"true"`
+}
+
+func (s QueryHwDomainSrcStrategyConfigForWplusResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainSrcStrategyConfigForWplusResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryHwDomainSrcStrategyConfigForWplusResponse) SetHeaders(v []*QueryHwDomainSrcStrategyConfigForWplusQueryHwDomainSrcStrategyConfigForWplusResponseHeaders) *QueryHwDomainSrcStrategyConfigForWplusResponse {
+  s.Headers = v
+  return s
+}
+
+func (s *QueryHwDomainSrcStrategyConfigForWplusResponse) SetFollow302(v string) *QueryHwDomainSrcStrategyConfigForWplusResponse {
+  s.Follow302 = &v
+  return s
+}
+
+func (s *QueryHwDomainSrcStrategyConfigForWplusResponse) SetRange(v string) *QueryHwDomainSrcStrategyConfigForWplusResponse {
+  s.Range = &v
+  return s
+}
+
+func (s *QueryHwDomainSrcStrategyConfigForWplusResponse) SetIgnoreUrlParameter(v string) *QueryHwDomainSrcStrategyConfigForWplusResponse {
+  s.IgnoreUrlParameter = &v
+  return s
+}
+
+type QueryHwDomainSrcStrategyConfigForWplusQueryHwDomainSrcStrategyConfigForWplusResponseHeaders struct     {
+  // {"en":"header name","zh_CN":"HTTP头域名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"header value","zh_CN":"HTTP头域取值"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+}
+
+func (s QueryHwDomainSrcStrategyConfigForWplusQueryHwDomainSrcStrategyConfigForWplusResponseHeaders) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainSrcStrategyConfigForWplusQueryHwDomainSrcStrategyConfigForWplusResponseHeaders) GoString() string {
+  return s.String()
+}
+
+func (s *QueryHwDomainSrcStrategyConfigForWplusQueryHwDomainSrcStrategyConfigForWplusResponseHeaders) SetName(v string) *QueryHwDomainSrcStrategyConfigForWplusQueryHwDomainSrcStrategyConfigForWplusResponseHeaders {
+  s.Name = &v
+  return s
+}
+
+func (s *QueryHwDomainSrcStrategyConfigForWplusQueryHwDomainSrcStrategyConfigForWplusResponseHeaders) SetValue(v string) *QueryHwDomainSrcStrategyConfigForWplusQueryHwDomainSrcStrategyConfigForWplusResponseHeaders {
+  s.Value = &v
+  return s
+}
+
+type QueryHwDomainSrcStrategyConfigForWplusResponseHeader struct {
+}
+
+func (s QueryHwDomainSrcStrategyConfigForWplusResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainSrcStrategyConfigForWplusResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -3238,6 +3656,142 @@ func (s ReportUrlDlFinishServiceResponseHeader) String() string {
 }
 
 func (s ReportUrlDlFinishServiceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type UpdateHwDomainSrcStrategyConfigForWplusRequest struct {
+  // {"en":"header name and value","zh_CN":"自定义HTTP头域名称和取值"}
+  Headers []*UpdateHwDomainSrcStrategyConfigForWplusUpdateHwDomainSrcStrategyConfigForWplusRequestHeaders `json:"headers,omitempty" xml:"headers,omitempty" type:"Repeated"`
+  // {"en":"follow 302: on/off,default:off","zh_CN":"是否启用302跟随: on/off。默认off"}
+  Follow302 *string `json:"follow_302,omitempty" xml:"follow_302,omitempty"`
+  // {"en":"enable range.on/off","zh_CN":"是否启用range回源: on/off。网页类型默认为off，点播和下载默认为on。"}
+  Range *string `json:"range,omitempty" xml:"range,omitempty"`
+  // {"en":"ignore url parameter.on/off, default:off.not support now.","zh_CN":"是否忽略URL参数: on/off。默认off。目前暂不支持。"}
+  IgnoreUrlParameter *string `json:"ignore_url_parameter,omitempty" xml:"ignore_url_parameter,omitempty"`
+}
+
+func (s UpdateHwDomainSrcStrategyConfigForWplusRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHwDomainSrcStrategyConfigForWplusRequest) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHwDomainSrcStrategyConfigForWplusRequest) SetHeaders(v []*UpdateHwDomainSrcStrategyConfigForWplusUpdateHwDomainSrcStrategyConfigForWplusRequestHeaders) *UpdateHwDomainSrcStrategyConfigForWplusRequest {
+  s.Headers = v
+  return s
+}
+
+func (s *UpdateHwDomainSrcStrategyConfigForWplusRequest) SetFollow302(v string) *UpdateHwDomainSrcStrategyConfigForWplusRequest {
+  s.Follow302 = &v
+  return s
+}
+
+func (s *UpdateHwDomainSrcStrategyConfigForWplusRequest) SetRange(v string) *UpdateHwDomainSrcStrategyConfigForWplusRequest {
+  s.Range = &v
+  return s
+}
+
+func (s *UpdateHwDomainSrcStrategyConfigForWplusRequest) SetIgnoreUrlParameter(v string) *UpdateHwDomainSrcStrategyConfigForWplusRequest {
+  s.IgnoreUrlParameter = &v
+  return s
+}
+
+type UpdateHwDomainSrcStrategyConfigForWplusUpdateHwDomainSrcStrategyConfigForWplusRequestHeaders struct     {
+  // {"en":"header name","zh_CN":"HTTP头域名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"header value","zh_CN":"HTTP头域取值"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty"`
+}
+
+func (s UpdateHwDomainSrcStrategyConfigForWplusUpdateHwDomainSrcStrategyConfigForWplusRequestHeaders) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHwDomainSrcStrategyConfigForWplusUpdateHwDomainSrcStrategyConfigForWplusRequestHeaders) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHwDomainSrcStrategyConfigForWplusUpdateHwDomainSrcStrategyConfigForWplusRequestHeaders) SetName(v string) *UpdateHwDomainSrcStrategyConfigForWplusUpdateHwDomainSrcStrategyConfigForWplusRequestHeaders {
+  s.Name = &v
+  return s
+}
+
+func (s *UpdateHwDomainSrcStrategyConfigForWplusUpdateHwDomainSrcStrategyConfigForWplusRequestHeaders) SetValue(v string) *UpdateHwDomainSrcStrategyConfigForWplusUpdateHwDomainSrcStrategyConfigForWplusRequestHeaders {
+  s.Value = &v
+  return s
+}
+
+type UpdateHwDomainSrcStrategyConfigForWplusRequestHeader struct {
+}
+
+func (s UpdateHwDomainSrcStrategyConfigForWplusRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHwDomainSrcStrategyConfigForWplusRequestHeader) GoString() string {
+  return s.String()
+}
+
+type UpdateHwDomainSrcStrategyConfigForWplusPaths struct {
+  // {"en":"domain name","zh_CN":"要修改的域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+}
+
+func (s UpdateHwDomainSrcStrategyConfigForWplusPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHwDomainSrcStrategyConfigForWplusPaths) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHwDomainSrcStrategyConfigForWplusPaths) SetDomain(v string) *UpdateHwDomainSrcStrategyConfigForWplusPaths {
+  s.Domain = &v
+  return s
+}
+
+type UpdateHwDomainSrcStrategyConfigForWplusParameters struct {
+}
+
+func (s UpdateHwDomainSrcStrategyConfigForWplusParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHwDomainSrcStrategyConfigForWplusParameters) GoString() string {
+  return s.String()
+}
+
+type UpdateHwDomainSrcStrategyConfigForWplusResponse struct {
+  // {"en":"task ID","zh_CN":"任务ID"}
+  TaskId *string `json:"task_id,omitempty" xml:"task_id,omitempty" require:"true"`
+}
+
+func (s UpdateHwDomainSrcStrategyConfigForWplusResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHwDomainSrcStrategyConfigForWplusResponse) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHwDomainSrcStrategyConfigForWplusResponse) SetTaskId(v string) *UpdateHwDomainSrcStrategyConfigForWplusResponse {
+  s.TaskId = &v
+  return s
+}
+
+type UpdateHwDomainSrcStrategyConfigForWplusResponseHeader struct {
+}
+
+func (s UpdateHwDomainSrcStrategyConfigForWplusResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHwDomainSrcStrategyConfigForWplusResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -4389,7 +4943,7 @@ type Query5minLiveTranscodingDurationRequest struct {
   ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty"`
   // {"en":"Transcoding type, values can be h264, h265, zdgq_264, zdgq_265, cf_264, cf_265, or other. Multiple transcoding types should be separated by a semicolon. If some of the transcoding types are incorrect, the system will return data for the correct types; if all transcoding types are incorrect, it will return an error 'invalid transcodeType.' If not provided or left empty, it defaults to all types.", "zh_CN":"转码类型,值为h264、h265、zdgq_264、zdgq_265、cf_264、cf_265，other 多个转码类型用英文分号;分隔开。当传入转码类型部分错误时，返回正确的类型的数据；当传入转码类型全部错误时，返回错误invalid transcodeType. 不填或为空，默认为所有类型."}
   TranscodeType *string `json:"transcodeType,omitempty" xml:"transcodeType,omitempty"`
-  // {"en":"Resolution types include LD480, SD720, HD1080, 2K, 4K, 8K, SD576. Multiple resolutions are separated by a semicolon. When isAudio=1, this parameter is invalid and will return an error. Param definition must be empty when querying audio data.", "zh_CN":"清晰度类型,值为LD480、SD720、HD1080、2K、4K、8K、SD576，多个清晰度用英文分号;分隔开, 当isAudio=1时，此入参无效返回错误 param definition must be empty when query audio data."}
+  // {"en":"Resolution types include LD480,SD720,HD1080,2K,4K,8K,SD576,SD540,LD360,LD240. Multiple resolutions are separated by a semicolon. When isAudio=1, this parameter is invalid and will return an error. Param definition must be empty when querying audio data.", "zh_CN":"清晰度类型,值为LD480,SD720,HD1080,2K,4K,8K,SD576,SD540,LD360,LD240，多个清晰度用英文分号;分隔开, 当isAudio=1时，此入参无效返回错误 param definition must be empty when query audio data."}
   Definition *string `json:"definition,omitempty" xml:"definition,omitempty"`
   // {"en":"Audio/Video Type, 1: Audio 2: Video. Defaults to 2 if not selected or empty. Only a single value is allowed.", "zh_CN":"音视频类型, 1:音频   2:视频. 不选或者为空时默认为2. 只能输入单个值."}
   IsAudio *string `json:"isAudio,omitempty" xml:"isAudio,omitempty"`
@@ -5014,6 +5568,149 @@ func (s PicProcessStatisticsResponseHeader) GoString() string {
 
 
 
+type UpdateHwDomainCacheRuleForWplusRequest struct {
+  // {"en":"cache rule list","zh_CN":"缓存过期时间配置"}
+  CacheRuleList []*UpdateHwDomainCacheRuleForWplusRequestCacheRuleList `json:"cache_rule_list,omitempty" xml:"cache_rule_list,omitempty" type:"Repeated"`
+}
+
+func (s UpdateHwDomainCacheRuleForWplusRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHwDomainCacheRuleForWplusRequest) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHwDomainCacheRuleForWplusRequest) SetCacheRuleList(v []*UpdateHwDomainCacheRuleForWplusRequestCacheRuleList) *UpdateHwDomainCacheRuleForWplusRequest {
+  s.CacheRuleList = v
+  return s
+}
+
+type UpdateHwDomainCacheRuleForWplusRequestCacheRuleList struct     {
+  // {"en":"match pattern","zh_CN":"匹配模式"}
+  MatchPattern []*string `json:"match_pattern,omitempty" xml:"match_pattern,omitempty" type:"Repeated"`
+  // {"en":"cache time mode","zh_CN":"ttl生效模式"}
+  TtlMode *string `json:"ttl_mode,omitempty" xml:"ttl_mode,omitempty"`
+  // {"en":"content index type","zh_CN":"内容index计算方式"}
+  ContentIndexType *string `json:"content_index_type,omitempty" xml:"content_index_type,omitempty"`
+  // {"en":"match type","zh_CN":"匹配类型"}
+  MatchType *string `json:"match_type,omitempty" xml:"match_type,omitempty"`
+  // {"en":"priority","zh_CN":"缓存规则优先级"}
+  Priority *int `json:"priority,omitempty" xml:"priority,omitempty"`
+  // {"en":"cache time","zh_CN":"缓存时间"}
+  Ttl *int `json:"ttl,omitempty" xml:"ttl,omitempty"`
+}
+
+func (s UpdateHwDomainCacheRuleForWplusRequestCacheRuleList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHwDomainCacheRuleForWplusRequestCacheRuleList) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList) SetMatchPattern(v []*string) *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList {
+  s.MatchPattern = v
+  return s
+}
+
+func (s *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList) SetTtlMode(v string) *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList {
+  s.TtlMode = &v
+  return s
+}
+
+func (s *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList) SetContentIndexType(v string) *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList {
+  s.ContentIndexType = &v
+  return s
+}
+
+func (s *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList) SetMatchType(v string) *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList {
+  s.MatchType = &v
+  return s
+}
+
+func (s *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList) SetPriority(v int) *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList {
+  s.Priority = &v
+  return s
+}
+
+func (s *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList) SetTtl(v int) *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList {
+  s.Ttl = &v
+  return s
+}
+
+type UpdateHwDomainCacheRuleForWplusRequestHeader struct {
+}
+
+func (s UpdateHwDomainCacheRuleForWplusRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHwDomainCacheRuleForWplusRequestHeader) GoString() string {
+  return s.String()
+}
+
+type UpdateHwDomainCacheRuleForWplusPaths struct {
+  // {"en":"domain","zh_CN":"要修改的域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+}
+
+func (s UpdateHwDomainCacheRuleForWplusPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHwDomainCacheRuleForWplusPaths) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHwDomainCacheRuleForWplusPaths) SetDomain(v string) *UpdateHwDomainCacheRuleForWplusPaths {
+  s.Domain = &v
+  return s
+}
+
+type UpdateHwDomainCacheRuleForWplusParameters struct {
+}
+
+func (s UpdateHwDomainCacheRuleForWplusParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHwDomainCacheRuleForWplusParameters) GoString() string {
+  return s.String()
+}
+
+type UpdateHwDomainCacheRuleForWplusResponse struct {
+  // {"en":"Task ID","zh_CN":"任务ID"}
+  TaskId *string `json:"task_id,omitempty" xml:"task_id,omitempty" require:"true"`
+}
+
+func (s UpdateHwDomainCacheRuleForWplusResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHwDomainCacheRuleForWplusResponse) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateHwDomainCacheRuleForWplusResponse) SetTaskId(v string) *UpdateHwDomainCacheRuleForWplusResponse {
+  s.TaskId = &v
+  return s
+}
+
+type UpdateHwDomainCacheRuleForWplusResponseHeader struct {
+}
+
+func (s UpdateHwDomainCacheRuleForWplusResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateHwDomainCacheRuleForWplusResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type ReportDomainStreamHlsOnlineServiceRequest struct {
   // {"en":"Start time:
   // 1. Time format is yyyy-MM-ddTHH:mm:ss+08:00,
@@ -5236,6 +5933,345 @@ func (s ReportDomainStreamHlsOnlineServiceResponseHeader) GoString() string {
 
 
 
+type QueryHwDomainIpConfigRequest struct {
+}
+
+func (s QueryHwDomainIpConfigRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainIpConfigRequest) GoString() string {
+  return s.String()
+}
+
+type QueryHwDomainIpConfigRequestHeader struct {
+}
+
+func (s QueryHwDomainIpConfigRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainIpConfigRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryHwDomainIpConfigPaths struct {
+  // {"en":"domain name","zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+}
+
+func (s QueryHwDomainIpConfigPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainIpConfigPaths) GoString() string {
+  return s.String()
+}
+
+func (s *QueryHwDomainIpConfigPaths) SetDomain(v string) *QueryHwDomainIpConfigPaths {
+  s.Domain = &v
+  return s
+}
+
+type QueryHwDomainIpConfigParameters struct {
+}
+
+func (s QueryHwDomainIpConfigParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainIpConfigParameters) GoString() string {
+  return s.String()
+}
+
+type QueryHwDomainIpConfigResponse struct {
+  // {"en":"IP blacklist. Supports single IP addresses, IP ranges with subnet masks, or using the '-' symbol to specify a range of IPs. For example, 127.0.0.1/24 represents the IP range from 127.0.0.1 to 127.0.0.255, or you can directly use 127.0.0.1-127.0.0.100 to specify part of the IP range.","zh_CN":"IP黑名单列表。支持单个IP，按子网掩码或者-方式表示IP段，比如127.0.0.1/24表示IP网段范围是：127.0.0.1~127.0.0.255或者直接用127.0.0.1-127.0.0.100表示部分IP段。备注：非标网段会转换成标准网段  例如：  入参：172.1.1.2/16，实际生效：172.1.0.0/16"}
+  IpBlacklist []*string `json:"ip_blacklist,omitempty" xml:"ip_blacklist,omitempty" require:"true" type:"Repeated"`
+  // {"en":"IP whitelist. Supports single IP addresses, IP ranges with subnet masks, or using the '-' symbol to specify a range of IPs. For example, 127.0.0.1/24 represents the IP range from 127.0.0.1 to 127.0.0.255, or you can directly use 127.0.0.1-127.0.0.100 to specify part of the IP range.","zh_CN":"IP白名单列表。支持单个IP，或者按子网掩码方式表示IP端，比如127.0.0.1/24表示IP网段范围是：127.0.0.1~127.0.0.255。如果IP白名单未设置，默认允许所有用户访问。备注：非标网段会转换成标准网段  例如：  入参：172.1.1.2/16，实际生效：172.1.0.0/16"}
+  IpWhitelist []*string `json:"ip_whitelist,omitempty" xml:"ip_whitelist,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryHwDomainIpConfigResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainIpConfigResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryHwDomainIpConfigResponse) SetIpBlacklist(v []*string) *QueryHwDomainIpConfigResponse {
+  s.IpBlacklist = v
+  return s
+}
+
+func (s *QueryHwDomainIpConfigResponse) SetIpWhitelist(v []*string) *QueryHwDomainIpConfigResponse {
+  s.IpWhitelist = v
+  return s
+}
+
+type QueryHwDomainIpConfigResponseHeader struct {
+}
+
+func (s QueryHwDomainIpConfigResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainIpConfigResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type StreamTrafficServiceRequest struct {
+  // {"en":"Stream(s), multiple allowed, separated by commas","zh_CN":"流名，可多个，英文逗号分隔"}
+  StreamNameList *string `json:"streamNameList,omitempty" xml:"streamNameList,omitempty"`
+  // {"en":"Value: rtmp, hdl, hls, rtc, srt, other; multiple values allowed, separated by commas.","zh_CN":"值：rtmp，hdl，hls，rtc，srt，other  可多个，英文逗号分隔"}
+  ProtocolList *string `json:"protocolList,omitempty" xml:"protocolList,omitempty"`
+  // {"en":"Domain(s), up to a maximum of 5 supported","zh_CN":"域名，最多可支持5个"}
+  DomainList *string `json:"domainList,omitempty" xml:"domainList,omitempty" require:"true"`
+  // {"en":"Region(s), multiple regions are separated by commas","zh_CN":"区域，可多个，英文逗号分隔"}
+  RegionList *string `json:"regionList,omitempty" xml:"regionList,omitempty"`
+  // {"en":"App(s), multiple, separated by commas","zh_CN":"发布点，可多个，英文逗号分隔"}
+  AppList *string `json:"appList,omitempty" xml:"appList,omitempty"`
+  // {"en":"Query end time. The format is  yyyy-MM-ddTHH:mm:ss+08:00","zh_CN":"查询结束时间。格式为yyyy-MM-ddTHH:mm:ss+08:00"}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty" require:"true"`
+  // {"en":"Query start time. The format is yyyy-MM-ddTHH:mm:ss+08:00; for example, 2024-12-12T10:00:00+08:00 (which is 10:00 AM Beijing time on December 12, 2024). You can query data for up to 1 day.","zh_CN":"查询开始时间。  格式为yyyy-MM-ddTHH:mm:ss+08:00；例如，2024-12-12T10:00:00+08:00（为北京时间2024年12月12日10点0分0秒）;最多查1天数据"}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty" require:"true"`
+}
+
+func (s StreamTrafficServiceRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StreamTrafficServiceRequest) GoString() string {
+  return s.String()
+}
+
+func (s *StreamTrafficServiceRequest) SetStreamNameList(v string) *StreamTrafficServiceRequest {
+  s.StreamNameList = &v
+  return s
+}
+
+func (s *StreamTrafficServiceRequest) SetProtocolList(v string) *StreamTrafficServiceRequest {
+  s.ProtocolList = &v
+  return s
+}
+
+func (s *StreamTrafficServiceRequest) SetDomainList(v string) *StreamTrafficServiceRequest {
+  s.DomainList = &v
+  return s
+}
+
+func (s *StreamTrafficServiceRequest) SetRegionList(v string) *StreamTrafficServiceRequest {
+  s.RegionList = &v
+  return s
+}
+
+func (s *StreamTrafficServiceRequest) SetAppList(v string) *StreamTrafficServiceRequest {
+  s.AppList = &v
+  return s
+}
+
+func (s *StreamTrafficServiceRequest) SetDateTo(v string) *StreamTrafficServiceRequest {
+  s.DateTo = &v
+  return s
+}
+
+func (s *StreamTrafficServiceRequest) SetDateFrom(v string) *StreamTrafficServiceRequest {
+  s.DateFrom = &v
+  return s
+}
+
+type StreamTrafficServiceRequestHeader struct {
+}
+
+func (s StreamTrafficServiceRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StreamTrafficServiceRequestHeader) GoString() string {
+  return s.String()
+}
+
+type StreamTrafficServicePaths struct {
+}
+
+func (s StreamTrafficServicePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StreamTrafficServicePaths) GoString() string {
+  return s.String()
+}
+
+type StreamTrafficServiceParameters struct {
+}
+
+func (s StreamTrafficServiceParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StreamTrafficServiceParameters) GoString() string {
+  return s.String()
+}
+
+type StreamTrafficServiceResponse struct {
+  // {"en":"regions","zh_CN":"区域"}
+  Regions []*StreamTrafficServiceResponseRegions `json:"regions,omitempty" xml:"regions,omitempty" require:"true" type:"Repeated"`
+  // {"en":"requestId","zh_CN":"请求id"}
+  RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
+  // {"en":"Query start time","zh_CN":"查询开始时间"}
+  StartTime *string `json:"startTime,omitempty" xml:"startTime,omitempty" require:"true"`
+  // {"en":"Query end time","zh_CN":"查询结束时间"}
+  EndTime *string `json:"endTime,omitempty" xml:"endTime,omitempty" require:"true"`
+  // {"en":"message","zh_CN":"message"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"statusCode","zh_CN":"状态码"}
+  StatusCode *int `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
+}
+
+func (s StreamTrafficServiceResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StreamTrafficServiceResponse) GoString() string {
+  return s.String()
+}
+
+func (s *StreamTrafficServiceResponse) SetRegions(v []*StreamTrafficServiceResponseRegions) *StreamTrafficServiceResponse {
+  s.Regions = v
+  return s
+}
+
+func (s *StreamTrafficServiceResponse) SetRequestId(v string) *StreamTrafficServiceResponse {
+  s.RequestId = &v
+  return s
+}
+
+func (s *StreamTrafficServiceResponse) SetStartTime(v string) *StreamTrafficServiceResponse {
+  s.StartTime = &v
+  return s
+}
+
+func (s *StreamTrafficServiceResponse) SetEndTime(v string) *StreamTrafficServiceResponse {
+  s.EndTime = &v
+  return s
+}
+
+func (s *StreamTrafficServiceResponse) SetMessage(v string) *StreamTrafficServiceResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *StreamTrafficServiceResponse) SetStatusCode(v int) *StreamTrafficServiceResponse {
+  s.StatusCode = &v
+  return s
+}
+
+type StreamTrafficServiceResponseRegions struct     {
+  // {"en":"regionCode","zh_CN":"区域编码"}
+  RegionCode *string `json:"regionCode,omitempty" xml:"regionCode,omitempty" require:"true"`
+  // {"en":"","zh_CN":""}
+  Domains []*StreamTrafficServiceResponseRegionsDomains `json:"domains,omitempty" xml:"domains,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s StreamTrafficServiceResponseRegions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StreamTrafficServiceResponseRegions) GoString() string {
+  return s.String()
+}
+
+func (s *StreamTrafficServiceResponseRegions) SetRegionCode(v string) *StreamTrafficServiceResponseRegions {
+  s.RegionCode = &v
+  return s
+}
+
+func (s *StreamTrafficServiceResponseRegions) SetDomains(v []*StreamTrafficServiceResponseRegionsDomains) *StreamTrafficServiceResponseRegions {
+  s.Domains = v
+  return s
+}
+
+type StreamTrafficServiceResponseRegionsDomains struct     {
+  // {"en":"domain","zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {"en":"","zh_CN":""}
+  Streams []*StreamTrafficServiceResponseRegionsDomainsStreams `json:"streams,omitempty" xml:"streams,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s StreamTrafficServiceResponseRegionsDomains) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StreamTrafficServiceResponseRegionsDomains) GoString() string {
+  return s.String()
+}
+
+func (s *StreamTrafficServiceResponseRegionsDomains) SetDomain(v string) *StreamTrafficServiceResponseRegionsDomains {
+  s.Domain = &v
+  return s
+}
+
+func (s *StreamTrafficServiceResponseRegionsDomains) SetStreams(v []*StreamTrafficServiceResponseRegionsDomainsStreams) *StreamTrafficServiceResponseRegionsDomains {
+  s.Streams = v
+  return s
+}
+
+type StreamTrafficServiceResponseRegionsDomainsStreams struct     {
+  // {"en":"Application Name","zh_CN":"发布点"}
+  App *string `json:"app,omitempty" xml:"app,omitempty" require:"true"`
+  // {"en":"protocol","zh_CN":"协议"}
+  Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty" require:"true"`
+  // {"en":"streamName","zh_CN":"流名"}
+  StreamName *string `json:"streamName,omitempty" xml:"streamName,omitempty" require:"true"`
+  // {"en":"flow(Byte)","zh_CN":"流量"}
+  Traffic *int64 `json:"traffic,omitempty" xml:"traffic,omitempty" require:"true"`
+}
+
+func (s StreamTrafficServiceResponseRegionsDomainsStreams) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StreamTrafficServiceResponseRegionsDomainsStreams) GoString() string {
+  return s.String()
+}
+
+func (s *StreamTrafficServiceResponseRegionsDomainsStreams) SetApp(v string) *StreamTrafficServiceResponseRegionsDomainsStreams {
+  s.App = &v
+  return s
+}
+
+func (s *StreamTrafficServiceResponseRegionsDomainsStreams) SetProtocol(v string) *StreamTrafficServiceResponseRegionsDomainsStreams {
+  s.Protocol = &v
+  return s
+}
+
+func (s *StreamTrafficServiceResponseRegionsDomainsStreams) SetStreamName(v string) *StreamTrafficServiceResponseRegionsDomainsStreams {
+  s.StreamName = &v
+  return s
+}
+
+func (s *StreamTrafficServiceResponseRegionsDomainsStreams) SetTraffic(v int64) *StreamTrafficServiceResponseRegionsDomainsStreams {
+  s.Traffic = &v
+  return s
+}
+
+type StreamTrafficServiceResponseHeader struct {
+}
+
+func (s StreamTrafficServiceResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StreamTrafficServiceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type ReportDomainListExistFlowServiceRequest struct {
   // {"en":"Start time:
   // 1.The format is yyyy-MM-ddTHH:mm:ss+08:00;
@@ -5340,6 +6376,211 @@ func (s ReportDomainListExistFlowServiceResponseHeader) String() string {
 }
 
 func (s ReportDomainListExistFlowServiceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigRequest struct {
+}
+
+func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigRequest) GoString() string {
+  return s.String()
+}
+
+type QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigRequestHeader struct {
+}
+
+func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigPaths struct {
+  // {"en":"domain name","zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+}
+
+func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigPaths) GoString() string {
+  return s.String()
+}
+
+func (s *QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigPaths) SetDomain(v string) *QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigPaths {
+  s.Domain = &v
+  return s
+}
+
+type QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigParameters struct {
+}
+
+func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigParameters) GoString() string {
+  return s.String()
+}
+
+type QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigResponse struct {
+  // {"en":"HTTP response header name and value. If the header to be added already exists in the original response, it will be overwritten; if it does not exist, it will be added.","zh_CN":"HTTP响应头域名称和取值。如果要增加的头域在原始响应中已经存在，则进行覆盖；如果不存在，则新增。"}
+  Headers []*QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigQueryHwDomainResponseHeadersConfigResponseHeaders `json:"headers,omitempty" xml:"headers,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigResponse) SetHeaders(v []*QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigQueryHwDomainResponseHeadersConfigResponseHeaders) *QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigResponse {
+  s.Headers = v
+  return s
+}
+
+type QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigQueryHwDomainResponseHeadersConfigResponseHeaders struct     {
+  // {"en":"HTTP header name. Length: 1-64 characters. The name and value fields must match one-to-one. If neither name nor value is provided, it means to clear all headers.","zh_CN":"HTTP头域名称。长度1～64。 name和value必须一一匹配，如果没有name和value，表示清空headers。"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"HTTP header value. Length: 1-512 characters.","zh_CN":"HTTP头域取值。长度1～512。"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+}
+
+func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigQueryHwDomainResponseHeadersConfigResponseHeaders) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigQueryHwDomainResponseHeadersConfigResponseHeaders) GoString() string {
+  return s.String()
+}
+
+func (s *QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigQueryHwDomainResponseHeadersConfigResponseHeaders) SetName(v string) *QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigQueryHwDomainResponseHeadersConfigResponseHeaders {
+  s.Name = &v
+  return s
+}
+
+func (s *QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigQueryHwDomainResponseHeadersConfigResponseHeaders) SetValue(v string) *QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigQueryHwDomainResponseHeadersConfigResponseHeaders {
+  s.Value = &v
+  return s
+}
+
+type QueryHwDomainResponseHeadersConfigResponseHeader struct {
+}
+
+func (s QueryHwDomainResponseHeadersConfigResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainResponseHeadersConfigResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryHwDomainRefererConfigRequest struct {
+}
+
+func (s QueryHwDomainRefererConfigRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainRefererConfigRequest) GoString() string {
+  return s.String()
+}
+
+type QueryHwDomainRefererConfigRequestHeader struct {
+}
+
+func (s QueryHwDomainRefererConfigRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainRefererConfigRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryHwDomainRefererConfigPaths struct {
+  // {"en":"domain name","zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+}
+
+func (s QueryHwDomainRefererConfigPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainRefererConfigPaths) GoString() string {
+  return s.String()
+}
+
+func (s *QueryHwDomainRefererConfigPaths) SetDomain(v string) *QueryHwDomainRefererConfigPaths {
+  s.Domain = &v
+  return s
+}
+
+type QueryHwDomainRefererConfigParameters struct {
+}
+
+func (s QueryHwDomainRefererConfigParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainRefererConfigParameters) GoString() string {
+  return s.String()
+}
+
+type QueryHwDomainRefererConfigResponse struct {
+  // {"en":"Referer whitelist/blacklist type. The default is none.","zh_CN":"Referer黑白名单类型，默认为none。 none：不设置Referer黑白名单，允许所有用户访问。 blacklist：Referer黑名单。 whitelist：Referer白名单。"}
+  RefererAclType *string `json:"referer_acl_type,omitempty" xml:"referer_acl_type,omitempty" require:"true"`
+  // {"en":"Referer List: Each Referer should be a domain name or an IP address, with a length between 3 and 64 characters. For example, *.test.com represents both test.com itself and all its subdomains. A maximum of 100 Referers are supported.","zh_CN":"Referer列表，单条Referer为域名或者IP，长度为3～64。*.test.com代表test.com本身及其所有子域名。最大支持100条Referer。"}
+  RefererList []*string `json:"referer_list,omitempty" xml:"referer_list,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Allow empty Referer. The default is on. on: Allowed. off: Not allowed.","zh_CN":"是否允许空Referer访问，默认为on。 on：允许。 off：不允许。"}
+  AllowEmpty *string `json:"allow_empty,omitempty" xml:"allow_empty,omitempty" require:"true"`
+}
+
+func (s QueryHwDomainRefererConfigResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainRefererConfigResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryHwDomainRefererConfigResponse) SetRefererAclType(v string) *QueryHwDomainRefererConfigResponse {
+  s.RefererAclType = &v
+  return s
+}
+
+func (s *QueryHwDomainRefererConfigResponse) SetRefererList(v []*string) *QueryHwDomainRefererConfigResponse {
+  s.RefererList = v
+  return s
+}
+
+func (s *QueryHwDomainRefererConfigResponse) SetAllowEmpty(v string) *QueryHwDomainRefererConfigResponse {
+  s.AllowEmpty = &v
+  return s
+}
+
+type QueryHwDomainRefererConfigResponseHeader struct {
+}
+
+func (s QueryHwDomainRefererConfigResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryHwDomainRefererConfigResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -5473,6 +6714,153 @@ func (s ReportStreamListServiceResponseHeader) String() string {
 }
 
 func (s ReportStreamListServiceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryDomainResourceGroupRequest struct {
+  // {"en":"Domain list, up to 100 domains","zh_CN":"域名列表，最多100个域名"}
+  DomainList []*string `json:"domainList,omitempty" xml:"domainList,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryDomainResourceGroupRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDomainResourceGroupRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDomainResourceGroupRequest) SetDomainList(v []*string) *QueryDomainResourceGroupRequest {
+  s.DomainList = v
+  return s
+}
+
+type QueryDomainResourceGroupRequestHeader struct {
+}
+
+func (s QueryDomainResourceGroupRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDomainResourceGroupRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryDomainResourceGroupPaths struct {
+}
+
+func (s QueryDomainResourceGroupPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDomainResourceGroupPaths) GoString() string {
+  return s.String()
+}
+
+type QueryDomainResourceGroupParameters struct {
+}
+
+func (s QueryDomainResourceGroupParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDomainResourceGroupParameters) GoString() string {
+  return s.String()
+}
+
+type QueryDomainResourceGroupResponse struct {
+  // {"en":"Data","zh_CN":"数据"}
+  Data *QueryDomainResourceGroupResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  // {"en":"Status code","zh_CN":"状态码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Message","zh_CN":"信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+}
+
+func (s QueryDomainResourceGroupResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDomainResourceGroupResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDomainResourceGroupResponse) SetData(v *QueryDomainResourceGroupResponseData) *QueryDomainResourceGroupResponse {
+  s.Data = v
+  return s
+}
+
+func (s *QueryDomainResourceGroupResponse) SetCode(v int) *QueryDomainResourceGroupResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QueryDomainResourceGroupResponse) SetMsg(v string) *QueryDomainResourceGroupResponse {
+  s.Msg = &v
+  return s
+}
+
+type QueryDomainResourceGroupResponseData struct {
+  // {"en":"List of domain associated resource group information","zh_CN":"域名关联资源组信息列表"}
+  InfoList []*QueryDomainResourceGroupResponseDataInfoList `json:"infoList,omitempty" xml:"infoList,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryDomainResourceGroupResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDomainResourceGroupResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDomainResourceGroupResponseData) SetInfoList(v []*QueryDomainResourceGroupResponseDataInfoList) *QueryDomainResourceGroupResponseData {
+  s.InfoList = v
+  return s
+}
+
+type QueryDomainResourceGroupResponseDataInfoList struct     {
+  // {"en":"Domain","zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {"en":"Resource group name","zh_CN":"资源组名称"}
+  Resource *string `json:"resource,omitempty" xml:"resource,omitempty" require:"true"`
+  // {"en":"Resource group ID","zh_CN":"资源组Id"}
+  ResourceGroupId *string `json:"resourceGroupId,omitempty" xml:"resourceGroupId,omitempty" require:"true"`
+}
+
+func (s QueryDomainResourceGroupResponseDataInfoList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDomainResourceGroupResponseDataInfoList) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDomainResourceGroupResponseDataInfoList) SetDomain(v string) *QueryDomainResourceGroupResponseDataInfoList {
+  s.Domain = &v
+  return s
+}
+
+func (s *QueryDomainResourceGroupResponseDataInfoList) SetResource(v string) *QueryDomainResourceGroupResponseDataInfoList {
+  s.Resource = &v
+  return s
+}
+
+func (s *QueryDomainResourceGroupResponseDataInfoList) SetResourceGroupId(v string) *QueryDomainResourceGroupResponseDataInfoList {
+  s.ResourceGroupId = &v
+  return s
+}
+
+type QueryDomainResourceGroupResponseHeader struct {
+}
+
+func (s QueryDomainResourceGroupResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDomainResourceGroupResponseHeader) GoString() string {
   return s.String()
 }
 

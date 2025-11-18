@@ -611,6 +611,202 @@ func (s *UpdatePvcsPersistentVolumeClaimCondition) SetMessage(v string) *UpdateP
 
 
 
+type QueryDeviceRecordFilesRequest struct {
+  // {"en":"Start time:  1. The format is yyyyy-MM-ddTHH: mm: SS + 08:00, for example, 2024-01-23T10:00 + 08:00 (10:00:00 Beijing time on January 23, 2024);  2. Can not exceed the current time;","zh_CN":"开始时间： 1.格式为yyyy-MM-ddTHH:mm:ss+08:00，例如，2024-01-23T10:00:00+08:00（为北京时间2024年01月23日10点0分0秒）； 2.不能大于当前时间；"}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
+  // {"en":"End time:  1. The format is yyyy-MM-ddTHH:mm:ss+08:00;  2. The end time is greater than the start time.  3. If the end time is greater than the current time, the current time is taken.  4. DateFrom and dateTo are not uploaded, defaulting to query the past 24 hours; if only one is not uploaded, throw an exception;  5. Maximum query interval allowed: 7 days, that is, the difference between dateFrom and dateTo can not exceed 7 days.","zh_CN":"结束时间： 1.格式为yyyy-MM-ddTHH:mm:ss+08:00； 2.结束时间需大于开始时间； 3.结束时间如果大于当前时间，取当前时间； 4.dateFrom，dateTo二者都未传，默认查询过去的24小时；如仅有一个未传，抛异常； 5.允许查询最大间隔：7天，即dateFrom和dateTo相差不能超过7天。"}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
+  // {"en":"Device GB28181 Id","zh_CN":"设备国标ID"}
+  DeviceId *string `json:"deviceId,omitempty" xml:"deviceId,omitempty" require:"true"`
+  // {"en":"ChannelGB28181 Id","zh_CN":"通道国标ID"}
+  ChannelId *string `json:"channelId,omitempty" xml:"channelId,omitempty" require:"true"`
+}
+
+func (s QueryDeviceRecordFilesRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDeviceRecordFilesRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDeviceRecordFilesRequest) SetDateFrom(v string) *QueryDeviceRecordFilesRequest {
+  s.DateFrom = &v
+  return s
+}
+
+func (s *QueryDeviceRecordFilesRequest) SetDateTo(v string) *QueryDeviceRecordFilesRequest {
+  s.DateTo = &v
+  return s
+}
+
+func (s *QueryDeviceRecordFilesRequest) SetDeviceId(v string) *QueryDeviceRecordFilesRequest {
+  s.DeviceId = &v
+  return s
+}
+
+func (s *QueryDeviceRecordFilesRequest) SetChannelId(v string) *QueryDeviceRecordFilesRequest {
+  s.ChannelId = &v
+  return s
+}
+
+type QueryDeviceRecordFilesRequestHeader struct {
+}
+
+func (s QueryDeviceRecordFilesRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDeviceRecordFilesRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryDeviceRecordFilesPaths struct {
+}
+
+func (s QueryDeviceRecordFilesPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDeviceRecordFilesPaths) GoString() string {
+  return s.String()
+}
+
+type QueryDeviceRecordFilesParameters struct {
+}
+
+func (s QueryDeviceRecordFilesParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDeviceRecordFilesParameters) GoString() string {
+  return s.String()
+}
+
+type QueryDeviceRecordFilesResponse struct {
+  // {"en":"Result status code, 0 indicates success","zh_CN":"结果状态码，0为成功"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Return message","zh_CN":"返回消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Return data","zh_CN":"返回数据"}
+  Data *QueryDeviceRecordFilesResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryDeviceRecordFilesResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDeviceRecordFilesResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDeviceRecordFilesResponse) SetCode(v int) *QueryDeviceRecordFilesResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QueryDeviceRecordFilesResponse) SetMessage(v string) *QueryDeviceRecordFilesResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *QueryDeviceRecordFilesResponse) SetData(v *QueryDeviceRecordFilesResponseData) *QueryDeviceRecordFilesResponse {
+  s.Data = v
+  return s
+}
+
+type QueryDeviceRecordFilesResponseData struct {
+  // {"en":"Total","zh_CN":"总数"}
+  Total *int `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+  // {"en":"File List","zh_CN":"文件列表"}
+  Rows []*QueryDeviceRecordFilesResponseDataRows `json:"rows,omitempty" xml:"rows,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryDeviceRecordFilesResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDeviceRecordFilesResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDeviceRecordFilesResponseData) SetTotal(v int) *QueryDeviceRecordFilesResponseData {
+  s.Total = &v
+  return s
+}
+
+func (s *QueryDeviceRecordFilesResponseData) SetRows(v []*QueryDeviceRecordFilesResponseDataRows) *QueryDeviceRecordFilesResponseData {
+  s.Rows = v
+  return s
+}
+
+type QueryDeviceRecordFilesResponseDataRows struct     {
+  // {"en":"File start time The format is \"year-month-day T hour: minute: second\", such as 2024-11-10T08:00:05","zh_CN":"文件开始时间  格式为\"年-月-日T时:分:秒\"，如2024-11-10T08:00:05"}
+  StartTime *string `json:"startTime,omitempty" xml:"startTime,omitempty" require:"true"`
+  // {"en":"File end time The format is \"year-month-day T hour: minute: second\", such as 2024-11-10T08:00:05","zh_CN":"文件结束时间  格式为\"年-月-日T时:分:秒\"，如2024-11-10T08:00:05"}
+  EndTime *string `json:"endTime,omitempty" xml:"endTime,omitempty" require:"true"`
+  // {"en":"File name","zh_CN":"文件名"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"File Path","zh_CN":"文件路径"}
+  FilePath *string `json:"filePath,omitempty" xml:"filePath,omitempty" require:"true"`
+  // {"en":"File address","zh_CN":"文件地址"}
+  Address *string `json:"address,omitempty" xml:"address,omitempty" require:"true"`
+  // {"en":"Is it private: 0 no, 1 yes","zh_CN":"是否隐私：0否，1是"}
+  Secrecy *int `json:"secrecy,omitempty" xml:"secrecy,omitempty" require:"true"`
+}
+
+func (s QueryDeviceRecordFilesResponseDataRows) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDeviceRecordFilesResponseDataRows) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDeviceRecordFilesResponseDataRows) SetStartTime(v string) *QueryDeviceRecordFilesResponseDataRows {
+  s.StartTime = &v
+  return s
+}
+
+func (s *QueryDeviceRecordFilesResponseDataRows) SetEndTime(v string) *QueryDeviceRecordFilesResponseDataRows {
+  s.EndTime = &v
+  return s
+}
+
+func (s *QueryDeviceRecordFilesResponseDataRows) SetName(v string) *QueryDeviceRecordFilesResponseDataRows {
+  s.Name = &v
+  return s
+}
+
+func (s *QueryDeviceRecordFilesResponseDataRows) SetFilePath(v string) *QueryDeviceRecordFilesResponseDataRows {
+  s.FilePath = &v
+  return s
+}
+
+func (s *QueryDeviceRecordFilesResponseDataRows) SetAddress(v string) *QueryDeviceRecordFilesResponseDataRows {
+  s.Address = &v
+  return s
+}
+
+func (s *QueryDeviceRecordFilesResponseDataRows) SetSecrecy(v int) *QueryDeviceRecordFilesResponseDataRows {
+  s.Secrecy = &v
+  return s
+}
+
+type QueryDeviceRecordFilesResponseHeader struct {
+}
+
+func (s QueryDeviceRecordFilesResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDeviceRecordFilesResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type ListStorageClassRequest struct {
 }
 
@@ -994,6 +1190,352 @@ func (s PagingPvcsResponseHeader) String() string {
 }
 
 func (s PagingPvcsResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type PlaybackControlRequest struct {
+  // {"en":"Device GB28181 Id","zh_CN":"设备国标ID"}
+  DeviceId *string `json:"deviceId,omitempty" xml:"deviceId,omitempty" require:"true"`
+  // {"en":"ChannelGB28181 Id","zh_CN":"通道国标ID"}
+  ChannelId *string `json:"channelId,omitempty" xml:"channelId,omitempty" require:"true"`
+  // {"en":"Control instructions record-play: video playback record-pause: pause the video playback record-control: video playback control","zh_CN":"控制指令  record-play：录像回放播放  record-pause：录像回放暂停  record-control:录像回放控制"}
+  Cmd *string `json:"cmd,omitempty" xml:"cmd,omitempty" require:"true"`
+  // {"en":"When cmd = record-control is in effect scale and scale cannot be sent at the same time. Video playback progress control, unit is seconds, if you want to start playing from the 20th second of the video, set 20, 0 to play from the beginning of the video","zh_CN":"当cmd = record-control生效  scale和scale不能同时下发。  录像播放进度控制，单位秒，如从录像第20秒开始播放则设置20，0则从录像开始位置播放"}
+  Range *int `json:"range,omitempty" xml:"range,omitempty"`
+  // {"en":"When cmd = record-control is in effect scale and scale cannot be sent at the same time. The video playback rate, such as 0.25, 0.5 means slow motion, 2 means fast motion, 1 means normal speed  Value range: 0.25, 0.5, 1, 2, 4","zh_CN":"当cmd = record-control生效  scale和scale不能同时下发。  录像播放速率，如0.25、0.5则表示慢放，2则表示快放，1表示正常速率  取值范围：0.25、0.5、1、2、4"}
+  Scale *int64 `json:"scale,omitempty" xml:"scale,omitempty"`
+  // {"en":"Stream Name","zh_CN":"流名"}
+  StreamName *string `json:"streamName,omitempty" xml:"streamName,omitempty" require:"true"`
+}
+
+func (s PlaybackControlRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PlaybackControlRequest) GoString() string {
+  return s.String()
+}
+
+func (s *PlaybackControlRequest) SetDeviceId(v string) *PlaybackControlRequest {
+  s.DeviceId = &v
+  return s
+}
+
+func (s *PlaybackControlRequest) SetChannelId(v string) *PlaybackControlRequest {
+  s.ChannelId = &v
+  return s
+}
+
+func (s *PlaybackControlRequest) SetCmd(v string) *PlaybackControlRequest {
+  s.Cmd = &v
+  return s
+}
+
+func (s *PlaybackControlRequest) SetRange(v int) *PlaybackControlRequest {
+  s.Range = &v
+  return s
+}
+
+func (s *PlaybackControlRequest) SetScale(v int64) *PlaybackControlRequest {
+  s.Scale = &v
+  return s
+}
+
+func (s *PlaybackControlRequest) SetStreamName(v string) *PlaybackControlRequest {
+  s.StreamName = &v
+  return s
+}
+
+type PlaybackControlRequestHeader struct {
+}
+
+func (s PlaybackControlRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PlaybackControlRequestHeader) GoString() string {
+  return s.String()
+}
+
+type PlaybackControlPaths struct {
+}
+
+func (s PlaybackControlPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PlaybackControlPaths) GoString() string {
+  return s.String()
+}
+
+type PlaybackControlParameters struct {
+}
+
+func (s PlaybackControlParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PlaybackControlParameters) GoString() string {
+  return s.String()
+}
+
+type PlaybackControlResponse struct {
+  // {"en":"Result status code, 0 indicates success","zh_CN":"结果状态码，0为成功"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Return message","zh_CN":"返回消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s PlaybackControlResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PlaybackControlResponse) GoString() string {
+  return s.String()
+}
+
+func (s *PlaybackControlResponse) SetCode(v int) *PlaybackControlResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *PlaybackControlResponse) SetMessage(v string) *PlaybackControlResponse {
+  s.Message = &v
+  return s
+}
+
+type PlaybackControlResponseHeader struct {
+}
+
+func (s PlaybackControlResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PlaybackControlResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryPlaybackListRequest struct {
+  // {"en":"Device GB28181 Id","zh_CN":"设备国标ID"}
+  DeviceId *string `json:"deviceId,omitempty" xml:"deviceId,omitempty"`
+  // {"en":"Channel national standard ID. When passing the channel ID, the device ID must be passed.","zh_CN":"通道国标ID，传通道ID时必须传设备ID"}
+  ChannelId *string `json:"channelId,omitempty" xml:"channelId,omitempty"`
+}
+
+func (s QueryPlaybackListRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryPlaybackListRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryPlaybackListRequest) SetDeviceId(v string) *QueryPlaybackListRequest {
+  s.DeviceId = &v
+  return s
+}
+
+func (s *QueryPlaybackListRequest) SetChannelId(v string) *QueryPlaybackListRequest {
+  s.ChannelId = &v
+  return s
+}
+
+type QueryPlaybackListRequestHeader struct {
+}
+
+func (s QueryPlaybackListRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryPlaybackListRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryPlaybackListPaths struct {
+}
+
+func (s QueryPlaybackListPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryPlaybackListPaths) GoString() string {
+  return s.String()
+}
+
+type QueryPlaybackListParameters struct {
+}
+
+func (s QueryPlaybackListParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryPlaybackListParameters) GoString() string {
+  return s.String()
+}
+
+type QueryPlaybackListResponse struct {
+  // {"en":"Return message","zh_CN":"返回消息"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Return data","zh_CN":"返回数据"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"","zh_CN":""}
+  Data *QueryPlaybackListResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryPlaybackListResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryPlaybackListResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryPlaybackListResponse) SetCode(v int) *QueryPlaybackListResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QueryPlaybackListResponse) SetMessage(v string) *QueryPlaybackListResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *QueryPlaybackListResponse) SetData(v *QueryPlaybackListResponseData) *QueryPlaybackListResponse {
+  s.Data = v
+  return s
+}
+
+type QueryPlaybackListResponseData struct {
+  // {"en":"Total","zh_CN":"总数"}
+  Total *int `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+  // {"en":"List","zh_CN":"列表"}
+  Rows []*QueryPlaybackListResponseDataRows `json:"rows,omitempty" xml:"rows,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryPlaybackListResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryPlaybackListResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryPlaybackListResponseData) SetTotal(v int) *QueryPlaybackListResponseData {
+  s.Total = &v
+  return s
+}
+
+func (s *QueryPlaybackListResponseData) SetRows(v []*QueryPlaybackListResponseDataRows) *QueryPlaybackListResponseData {
+  s.Rows = v
+  return s
+}
+
+type QueryPlaybackListResponseDataRows struct     {
+  // {"en":"Device GB28181 Id","zh_CN":"设备国标id"}
+  DeviceId *string `json:"deviceId,omitempty" xml:"deviceId,omitempty" require:"true"`
+  // {"en":"ChannelGB28181 Id","zh_CN":"通道国标id"}
+  ChannelId *string `json:"channelId,omitempty" xml:"channelId,omitempty" require:"true"`
+  // {"en":"stream Name","zh_CN":"流名"}
+  StreamName *string `json:"streamName,omitempty" xml:"streamName,omitempty" require:"true"`
+  // {"en":"Play address","zh_CN":"播放地址"}
+  PlayUrl *QueryPlaybackListResponseDataRowsPlayUrl `json:"playUrl,omitempty" xml:"playUrl,omitempty" require:"true" type:"Struct"`
+  // {"en":"File start time  1. Timestamp format","zh_CN":"文件开始时间  1、时间戳格式"}
+  StartTime *int `json:"startTime,omitempty" xml:"startTime,omitempty" require:"true"`
+  // {"en":"File endtime  1. Timestamp format","zh_CN":"文件结束时间  1、时间戳格式"}
+  EndTime *int `json:"endTime,omitempty" xml:"endTime,omitempty" require:"true"`
+}
+
+func (s QueryPlaybackListResponseDataRows) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryPlaybackListResponseDataRows) GoString() string {
+  return s.String()
+}
+
+func (s *QueryPlaybackListResponseDataRows) SetDeviceId(v string) *QueryPlaybackListResponseDataRows {
+  s.DeviceId = &v
+  return s
+}
+
+func (s *QueryPlaybackListResponseDataRows) SetChannelId(v string) *QueryPlaybackListResponseDataRows {
+  s.ChannelId = &v
+  return s
+}
+
+func (s *QueryPlaybackListResponseDataRows) SetStreamName(v string) *QueryPlaybackListResponseDataRows {
+  s.StreamName = &v
+  return s
+}
+
+func (s *QueryPlaybackListResponseDataRows) SetPlayUrl(v *QueryPlaybackListResponseDataRowsPlayUrl) *QueryPlaybackListResponseDataRows {
+  s.PlayUrl = v
+  return s
+}
+
+func (s *QueryPlaybackListResponseDataRows) SetStartTime(v int) *QueryPlaybackListResponseDataRows {
+  s.StartTime = &v
+  return s
+}
+
+func (s *QueryPlaybackListResponseDataRows) SetEndTime(v int) *QueryPlaybackListResponseDataRows {
+  s.EndTime = &v
+  return s
+}
+
+type QueryPlaybackListResponseDataRowsPlayUrl struct {
+  // {"en":"flv url","zh_CN":"flv拉流地址"}
+  Flv *string `json:"flv,omitempty" xml:"flv,omitempty" require:"true"`
+  // {"en":"rtmp url","zh_CN":"rtmp拉流地址"}
+  Rtmp *string `json:"rtmp,omitempty" xml:"rtmp,omitempty" require:"true"`
+  // {"en":"hls url","zh_CN":"hls拉流地址"}
+  Hls *string `json:"hls,omitempty" xml:"hls,omitempty" require:"true"`
+  // {"en":"webrtc url","zh_CN":"webrtc拉流地址"}
+  Webrtc *string `json:"webrtc,omitempty" xml:"webrtc,omitempty" require:"true"`
+}
+
+func (s QueryPlaybackListResponseDataRowsPlayUrl) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryPlaybackListResponseDataRowsPlayUrl) GoString() string {
+  return s.String()
+}
+
+func (s *QueryPlaybackListResponseDataRowsPlayUrl) SetFlv(v string) *QueryPlaybackListResponseDataRowsPlayUrl {
+  s.Flv = &v
+  return s
+}
+
+func (s *QueryPlaybackListResponseDataRowsPlayUrl) SetRtmp(v string) *QueryPlaybackListResponseDataRowsPlayUrl {
+  s.Rtmp = &v
+  return s
+}
+
+func (s *QueryPlaybackListResponseDataRowsPlayUrl) SetHls(v string) *QueryPlaybackListResponseDataRowsPlayUrl {
+  s.Hls = &v
+  return s
+}
+
+func (s *QueryPlaybackListResponseDataRowsPlayUrl) SetWebrtc(v string) *QueryPlaybackListResponseDataRowsPlayUrl {
+  s.Webrtc = &v
+  return s
+}
+
+type QueryPlaybackListResponseHeader struct {
+}
+
+func (s QueryPlaybackListResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryPlaybackListResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -3068,6 +3610,124 @@ func (s *ListPvcsPersistentVolumeClaimCondition) SetMessage(v string) *ListPvcsP
 
 
 
+type StopPlaybackRequest struct {
+  // {"en":"Device GB28181 Id","zh_CN":"设备国标ID"}
+  DeviceId *string `json:"deviceId,omitempty" xml:"deviceId,omitempty" require:"true"`
+  // {"en":"Channel GB28181 Id","zh_CN":"通道国标ID"}
+  ChannelId *string `json:"channelId,omitempty" xml:"channelId,omitempty" require:"true"`
+  // {"en":"Stream Name","zh_CN":"流名"}
+  StreamName *string `json:"streamName,omitempty" xml:"streamName,omitempty" require:"true"`
+  // {"en":"Callback notification url","zh_CN":"回调通知url"}
+  NoticeUrl *string `json:"noticeUrl,omitempty" xml:"noticeUrl,omitempty"`
+  // {"en":"Customize the API request ID, the customer must keep it unique","zh_CN":"自定义api请求id, 客户要保持唯一"}
+  TransNo *string `json:"transNo,omitempty" xml:"transNo,omitempty" require:"true"`
+}
+
+func (s StopPlaybackRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StopPlaybackRequest) GoString() string {
+  return s.String()
+}
+
+func (s *StopPlaybackRequest) SetDeviceId(v string) *StopPlaybackRequest {
+  s.DeviceId = &v
+  return s
+}
+
+func (s *StopPlaybackRequest) SetChannelId(v string) *StopPlaybackRequest {
+  s.ChannelId = &v
+  return s
+}
+
+func (s *StopPlaybackRequest) SetStreamName(v string) *StopPlaybackRequest {
+  s.StreamName = &v
+  return s
+}
+
+func (s *StopPlaybackRequest) SetNoticeUrl(v string) *StopPlaybackRequest {
+  s.NoticeUrl = &v
+  return s
+}
+
+func (s *StopPlaybackRequest) SetTransNo(v string) *StopPlaybackRequest {
+  s.TransNo = &v
+  return s
+}
+
+type StopPlaybackRequestHeader struct {
+}
+
+func (s StopPlaybackRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StopPlaybackRequestHeader) GoString() string {
+  return s.String()
+}
+
+type StopPlaybackPaths struct {
+}
+
+func (s StopPlaybackPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StopPlaybackPaths) GoString() string {
+  return s.String()
+}
+
+type StopPlaybackParameters struct {
+}
+
+func (s StopPlaybackParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StopPlaybackParameters) GoString() string {
+  return s.String()
+}
+
+type StopPlaybackResponse struct {
+  // {"en":"Result status code, 0 indicates success","zh_CN":"结果状态码，0为成功"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Return message","zh_CN":"返回消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s StopPlaybackResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StopPlaybackResponse) GoString() string {
+  return s.String()
+}
+
+func (s *StopPlaybackResponse) SetCode(v int) *StopPlaybackResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *StopPlaybackResponse) SetMessage(v string) *StopPlaybackResponse {
+  s.Message = &v
+  return s
+}
+
+type StopPlaybackResponseHeader struct {
+}
+
+func (s StopPlaybackResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StopPlaybackResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type QueryChannelRecordFilesRequest struct {
   // {"en":"Start time:
   // 1. The format is yyyyy-MM-ddTHH: mm: SS + 08:00, for example, 2024-01-23T10:00 + 08:00 (10:00:00 Beijing time on January 23, 2024);
@@ -4108,6 +4768,202 @@ func (s *CreatePvcsPersistentVolumeClaimCondition) SetReason(v string) *CreatePv
 func (s *CreatePvcsPersistentVolumeClaimCondition) SetMessage(v string) *CreatePvcsPersistentVolumeClaimCondition {
   s.Message = &v
   return s
+}
+
+
+
+
+type StartPlaybackRequest struct {
+  // {"en":"Device GB28181 Id","zh_CN":"设备国标ID"}
+  DeviceId *string `json:"deviceId,omitempty" xml:"deviceId,omitempty" require:"true"`
+  // {"en":"Channel GB28181 Id","zh_CN":"通道国标ID"}
+  ChannelId *string `json:"channelId,omitempty" xml:"channelId,omitempty" require:"true"`
+  // {"en":"Callback notification url","zh_CN":"回调通知url"}
+  NoticeUrl *string `json:"noticeUrl,omitempty" xml:"noticeUrl,omitempty"`
+  // {"en":"Customize the API request ID, the customer must keep it unique","zh_CN":"自定义api请求id, 客户要保持唯一"}
+  TransNo *string `json:"transNo,omitempty" xml:"transNo,omitempty" require:"true"`
+  // {"en":"The starting Unix timestamp of the video playback, 10 digits","zh_CN":"录像回放时的起始unix时间戳，10位"}
+  Start *int `json:"start,omitempty" xml:"start,omitempty" require:"true"`
+  // {"en":"End Unix timestamp of video playback, 10 digits","zh_CN":"录像回放时的结束unix时间戳，10位"}
+  End *int `json:"end,omitempty" xml:"end,omitempty" require:"true"`
+}
+
+func (s StartPlaybackRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartPlaybackRequest) GoString() string {
+  return s.String()
+}
+
+func (s *StartPlaybackRequest) SetDeviceId(v string) *StartPlaybackRequest {
+  s.DeviceId = &v
+  return s
+}
+
+func (s *StartPlaybackRequest) SetChannelId(v string) *StartPlaybackRequest {
+  s.ChannelId = &v
+  return s
+}
+
+func (s *StartPlaybackRequest) SetNoticeUrl(v string) *StartPlaybackRequest {
+  s.NoticeUrl = &v
+  return s
+}
+
+func (s *StartPlaybackRequest) SetTransNo(v string) *StartPlaybackRequest {
+  s.TransNo = &v
+  return s
+}
+
+func (s *StartPlaybackRequest) SetStart(v int) *StartPlaybackRequest {
+  s.Start = &v
+  return s
+}
+
+func (s *StartPlaybackRequest) SetEnd(v int) *StartPlaybackRequest {
+  s.End = &v
+  return s
+}
+
+type StartPlaybackRequestHeader struct {
+}
+
+func (s StartPlaybackRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartPlaybackRequestHeader) GoString() string {
+  return s.String()
+}
+
+type StartPlaybackPaths struct {
+}
+
+func (s StartPlaybackPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartPlaybackPaths) GoString() string {
+  return s.String()
+}
+
+type StartPlaybackParameters struct {
+}
+
+func (s StartPlaybackParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartPlaybackParameters) GoString() string {
+  return s.String()
+}
+
+type StartPlaybackResponse struct {
+  // {"en":"Result status code, 0 indicates success","zh_CN":"结果状态码，0为成功"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Return message","zh_CN":"返回消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Return data","zh_CN":"返回数据"}
+  Data *StartPlaybackResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s StartPlaybackResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartPlaybackResponse) GoString() string {
+  return s.String()
+}
+
+func (s *StartPlaybackResponse) SetCode(v int) *StartPlaybackResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *StartPlaybackResponse) SetMessage(v string) *StartPlaybackResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *StartPlaybackResponse) SetData(v *StartPlaybackResponseData) *StartPlaybackResponse {
+  s.Data = v
+  return s
+}
+
+type StartPlaybackResponseData struct {
+  // {"en":"Stream Name","zh_CN":"流名"}
+  StreamName *string `json:"streamName,omitempty" xml:"streamName,omitempty" require:"true"`
+  // {"en":"Play address","zh_CN":"播放地址"}
+  PlayUrl *StartPlaybackResponseDataPlayUrl `json:"playUrl,omitempty" xml:"playUrl,omitempty" require:"true" type:"Struct"`
+}
+
+func (s StartPlaybackResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartPlaybackResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *StartPlaybackResponseData) SetStreamName(v string) *StartPlaybackResponseData {
+  s.StreamName = &v
+  return s
+}
+
+func (s *StartPlaybackResponseData) SetPlayUrl(v *StartPlaybackResponseDataPlayUrl) *StartPlaybackResponseData {
+  s.PlayUrl = v
+  return s
+}
+
+type StartPlaybackResponseDataPlayUrl struct {
+  // {"en":"flv url","zh_CN":"flv拉流地址"}
+  Flv *string `json:"flv,omitempty" xml:"flv,omitempty" require:"true"`
+  // {"en":"rtmp url","zh_CN":"tmp拉流地址"}
+  Rtmp *string `json:"rtmp,omitempty" xml:"rtmp,omitempty" require:"true"`
+  // {"en":"hls url","zh_CN":"hls拉流地址"}
+  Hls *string `json:"hls,omitempty" xml:"hls,omitempty" require:"true"`
+  // {"en":"webrtc url","zh_CN":"webrtc拉流地址"}
+  Webrtc *string `json:"webrtc,omitempty" xml:"webrtc,omitempty" require:"true"`
+}
+
+func (s StartPlaybackResponseDataPlayUrl) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartPlaybackResponseDataPlayUrl) GoString() string {
+  return s.String()
+}
+
+func (s *StartPlaybackResponseDataPlayUrl) SetFlv(v string) *StartPlaybackResponseDataPlayUrl {
+  s.Flv = &v
+  return s
+}
+
+func (s *StartPlaybackResponseDataPlayUrl) SetRtmp(v string) *StartPlaybackResponseDataPlayUrl {
+  s.Rtmp = &v
+  return s
+}
+
+func (s *StartPlaybackResponseDataPlayUrl) SetHls(v string) *StartPlaybackResponseDataPlayUrl {
+  s.Hls = &v
+  return s
+}
+
+func (s *StartPlaybackResponseDataPlayUrl) SetWebrtc(v string) *StartPlaybackResponseDataPlayUrl {
+  s.Webrtc = &v
+  return s
+}
+
+type StartPlaybackResponseHeader struct {
+}
+
+func (s StartPlaybackResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartPlaybackResponseHeader) GoString() string {
+  return s.String()
 }
 
 

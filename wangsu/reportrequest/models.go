@@ -322,20 +322,20 @@ func (s ReportHitServiceResponseHeader) GoString() string {
 
 type ReportUserRequestCountryServiceRequest struct {
   // {"en":"Start time:
-  // 1. The format is yyyyy-MM-ddTHH: mm: SS + 08:00, for example, 2016-12-02T10:00 + 08:00 (10:0:00 Beijing time on December 2, 2016);
+  // 1. The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM;
   // 2. Can not exceed the current time;
   // 3. The latest half year (183 days) data can be obtained at most.", "zh_CN":"开始时间:
-  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00,例如,2016-12-02T10:00:00+08:00(为北京时间2016年12月2日10点0分0秒);
+  // 1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒;
   // 2.不能大于当前时间;
   // 3.最多可获取最近半年(183天)的数据。"}
   DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
   // {"en":"End time:
-  // 1. The format is yyyy-MM-ddTHH:mm:ss+08:00;
+  // 1. The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM;
   // 2. The end time is greater than the start time;
   // 3. If the end time is greater than the current time, the current time is taken.
   // 4. DateFrom and dateTo are not uploaded, defaulting to query the past 24 hours; if only one is not uploaded, throw an exception;
   // 5. The default query interval is 7 days, Maximum query interval allowed: 31 days, that is, the difference between dateFrom and dateTo can not exceed 31 days.", "zh_CN":"结束时间:
-  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00;
+  // 1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒;
   // 2.结束时间需大于开始时间;
   // 3.结束时间如果大于当前时间,取当前时间;
   // 4.dateFrom,dateTo二者都未传,默认查询过去的24小时;如仅有一个未传,抛异常;
@@ -1667,10 +1667,8 @@ func (s ReportStreamTaskNumberServiceResponseHeader) GoString() string {
 
 
 type QueryDomainTotalRequestRequest struct {
-  // {"en":"Domain list
-  // Domain number limits can be adjusted depending on different accounts. The default value is 20(if you want to adjust,please, contact technical support)", "zh_CN":"域名列表
-  // 1.域名个数限制根据账号可调，默认为20个（可联系技术支持下单调整）；"}
-  QueryDomainTotalRequestDomainList *QueryDomainTotalRequestDomainList `json:"domain-list,omitempty" xml:"domain-list,omitempty" require:"true"`
+  // {"en":"Domain listDomain number limits can be adjusted depending on different accounts. The default value is 1000(if you want to adjust,please, contact technical support)","zh_CN":"域名列表1.域名个数限制根据账号可调，默认为1000个（可联系技术支持下单调整）；"}
+  DomainList *QueryDomainTotalRequestRequestDomainList `json:"domain-list,omitempty" xml:"domain-list,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryDomainTotalRequestRequest) String() string {
@@ -1681,82 +1679,38 @@ func (s QueryDomainTotalRequestRequest) GoString() string {
   return s.String()
 }
 
-func (s *QueryDomainTotalRequestRequest) SetDomainList(v *QueryDomainTotalRequestDomainList) *QueryDomainTotalRequestRequest {
-  s.QueryDomainTotalRequestDomainList = v
+func (s *QueryDomainTotalRequestRequest) SetDomainList(v *QueryDomainTotalRequestRequestDomainList) *QueryDomainTotalRequestRequest {
+  s.DomainList = v
   return s
 }
 
-type QueryDomainTotalRequestDomainList struct {
-  // {"en":"Domain", "zh_CN":"域名"}
-  DomainName []*string `json:"domain-name,omitempty" xml:"domain-name,omitempty" require:"true" type:"Repeated"`
+type QueryDomainTotalRequestRequestDomainList struct {
+  // {"en":"Domain","zh_CN":"域名"}
+  DomainName []*string `json:"domain-name,omitempty" xml:"domain-name,omitempty" type:"Repeated"`
 }
 
-func (s QueryDomainTotalRequestDomainList) String() string {
+func (s QueryDomainTotalRequestRequestDomainList) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDomainTotalRequestDomainList) GoString() string {
+func (s QueryDomainTotalRequestRequestDomainList) GoString() string {
   return s.String()
 }
 
-func (s *QueryDomainTotalRequestDomainList) SetDomainName(v []*string) *QueryDomainTotalRequestDomainList {
+func (s *QueryDomainTotalRequestRequestDomainList) SetDomainName(v []*string) *QueryDomainTotalRequestRequestDomainList {
   s.DomainName = v
   return s
 }
 
-type QueryDomainTotalRequestResponse struct {
-  // {"en":"Total requests", "zh_CN":"总请求数"}
-  HitSummary *int `json:"hit-summary,omitempty" xml:"hit-summary,omitempty" require:"true"`
-  // {'en':'hitData', 'zh_CN':'请求数据'}
-  HitData []*QueryDomainTotalRequestResponseHitData `json:"hit-data,omitempty" xml:"hit-data,omitempty" require:"true" type:"Repeated"`
+type QueryDomainTotalRequestRequestHeader struct {
 }
 
-func (s QueryDomainTotalRequestResponse) String() string {
+func (s QueryDomainTotalRequestRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDomainTotalRequestResponse) GoString() string {
+func (s QueryDomainTotalRequestRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *QueryDomainTotalRequestResponse) SetHitSummary(v int) *QueryDomainTotalRequestResponse {
-  s.HitSummary = &v
-  return s
-}
-
-func (s *QueryDomainTotalRequestResponse) SetHitData(v []*QueryDomainTotalRequestResponseHitData) *QueryDomainTotalRequestResponse {
-  s.HitData = v
-  return s
-}
-
-type QueryDomainTotalRequestResponseHitData struct     {
-  // {"en":"Date
-  // When the querying data granularity is fiveminutes, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:05 AM, and the last one is yyyy-MM-dd 24:00;When the data query granularity is hourly, the format is yyyy-MM-dd HH; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is yyyy-MM-dd 24;When the querying data granularity is daily, the format is yyyy-MM-dd; the data value of every time slice represents the value of the data;Return the time slices contained in start time and in end time", "zh_CN":"时间
-  // 1.查询的数据粒度为fiveminutes时，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05，最后一个时间片是yyyy-MM-dd 24:00。
-  // 2.查询的数据粒度为hourly时，格式为yyyy-MM-dd HH；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 01，最后一个时间片是yyyy-MM-dd 24
-  // 3.查询的数据粒度为daily时，格式为yyyy-MM-dd；每一个时间片数据值代表的该天内的数据值；
-  // 4.返回开始时间和结束时间包含的时间片。"}
-  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
-  // {"en":"Total number of requests, More than 6 digits are displayed in scientific notation,e.g.:1642565=1.642565E6", "zh_CN":"请求数,超过6位数的以科学计数展示，例：1642565=1.642565E6"}
-  Hit *int `json:"hit,omitempty" xml:"hit,omitempty" require:"true"`
-}
-
-func (s QueryDomainTotalRequestResponseHitData) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryDomainTotalRequestResponseHitData) GoString() string {
-  return s.String()
-}
-
-func (s *QueryDomainTotalRequestResponseHitData) SetTimestamp(v string) *QueryDomainTotalRequestResponseHitData {
-  s.Timestamp = &v
-  return s
-}
-
-func (s *QueryDomainTotalRequestResponseHitData) SetHit(v int) *QueryDomainTotalRequestResponseHitData {
-  s.Hit = &v
-  return s
 }
 
 type QueryDomainTotalRequestPaths struct {
@@ -1771,30 +1725,11 @@ func (s QueryDomainTotalRequestPaths) GoString() string {
 }
 
 type QueryDomainTotalRequestParameters struct {
-  // {"en":"Start time
-  // 1.The format is yyyy-MM-ddTHH:mm:ss+08:00;
-  // 2.And smaller than the current time and dateTo;
-  // 3.Period between dataFrom and dateTo should not be longer than 31 days;", "zh_CN":"开始时间
-  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00；
-  // 2.并且小于当前时间和dateTo；
-  // 3.dateFrom和dateTo相差不能超过31天；
-  // 4.只能查询最近2年内数据。"}
+  // {"en":"Start time\n1.The format is yyyy-MM-ddTHH:mm:ss+08:00;\n2.And smaller than the current time and dateTo;\n3.Period between dataFrom and dateTo should not be longer than 31 days;","zh_CN":"开始时间\n1.格式为yyyy-MM-ddTHH:mm:ss+08:00；\n2.并且小于当前时间和dateTo；\n3.dateFrom和dateTo相差不能超过31天；\n4.只能查询最近2年内数据。"}
   DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty" require:"true"`
-  // {"en":"End time
-  // 1.The format is yyyy-MM-ddTHH:mm:ss+08:00
-  // 2.Must be greater than dateFrom;
-  // 3.If it is greater than the current time, then the current time will be assigned as the value;", "zh_CN":"结束时间
-  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00；
-  // 2.必须大于dateFrom；
-  // 3.如果大于当前时间，则重新赋值为当前时间；"}
+  // {"en":"End time\n1.The format is yyyy-MM-ddTHH:mm:ss+08:00\n2.Must be greater than dateFrom;\n3.If it is greater than the current time, then the current time will be assigned as the value;","zh_CN":"结束时间\n1.格式为yyyy-MM-ddTHH:mm:ss+08:00；\n2.必须大于dateFrom；\n3.如果大于当前时间，则重新赋值为当前时间；"}
   DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty" require:"true"`
-  // {"en":"Data granularity
-  // 1.fiveminutes: five minutes, hourly: one hour, daily: one day;
-  // 2.If not specified, daily is set as the default value;
-  // 3.If fiveminutes is specified as the value, then data is returned in the granularity of actual configuration when there is specific configuration of the data collecting granularity for the customer", "zh_CN":"数据粒度
-  // 1.fiveminutes：5分钟，hourly：1小时，daily：1天；
-  // 2.不传递，默认为daily；
-  // 3.传递fiveminutes时，若客户数据采集粒度有特殊配置将按实际配置粒度返回。"}
+  // {"en":"Data granularity\n1.fiveminutes: five minutes, hourly: one hour, daily: one day;\n2.If not specified, daily is set as the default value;\n3.If fiveminutes is specified as the value, then data is returned in the granularity of actual configuration when there is specific configuration of the data collecting granularity for the customer","zh_CN":"数据粒度\n1.fiveminutes：5分钟，hourly：1小时，daily：1天；\n2.不传递，默认为daily；\n3.传递fiveminutes时，若客户数据采集粒度有特殊配置将按实际配置粒度返回。"}
   Type *string `json:"type,omitempty" xml:"type,omitempty"`
 }
 
@@ -1821,15 +1756,54 @@ func (s *QueryDomainTotalRequestParameters) SetType(v string) *QueryDomainTotalR
   return s
 }
 
-type QueryDomainTotalRequestRequestHeader struct {
+type QueryDomainTotalRequestResponse struct {
+  // {"en":"Total requests","zh_CN":"总请求数"}
+  HitSummary *int `json:"hit-summary,omitempty" xml:"hit-summary,omitempty" require:"true"`
+  // {"en":"hitData","zh_CN":"请求数据"}
+  HitData []*QueryDomainTotalRequestResponseHitData `json:"hit-data,omitempty" xml:"hit-data,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryDomainTotalRequestRequestHeader) String() string {
+func (s QueryDomainTotalRequestResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryDomainTotalRequestRequestHeader) GoString() string {
+func (s QueryDomainTotalRequestResponse) GoString() string {
   return s.String()
+}
+
+func (s *QueryDomainTotalRequestResponse) SetHitSummary(v int) *QueryDomainTotalRequestResponse {
+  s.HitSummary = &v
+  return s
+}
+
+func (s *QueryDomainTotalRequestResponse) SetHitData(v []*QueryDomainTotalRequestResponseHitData) *QueryDomainTotalRequestResponse {
+  s.HitData = v
+  return s
+}
+
+type QueryDomainTotalRequestResponseHitData struct     {
+  // {"en":"Date\nWhen the querying data granularity is fiveminutes, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:05 AM, and the last one is yyyy-MM-dd 24:00;When the data query granularity is hourly, the format is yyyy-MM-dd HH; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is yyyy-MM-dd 24;When the querying data granularity is daily, the format is yyyy-MM-dd; the data value of every time slice represents the value of the data;Return the time slices contained in start time and in end time","zh_CN":"时间\n1.查询的数据粒度为fiveminutes时，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05，最后一个时间片是yyyy-MM-dd 24:00。\n2.查询的数据粒度为hourly时，格式为yyyy-MM-dd HH；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 01，最后一个时间片是yyyy-MM-dd 24\n3.查询的数据粒度为daily时，格式为yyyy-MM-dd；每一个时间片数据值代表的该天内的数据值；\n4.返回开始时间和结束时间包含的时间片。"}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {"en":"Total number of requests, More than 6 digits are displayed in scientific notation,e.g.:1642565=1.642565E6","zh_CN":"请求数,超过6位数的以科学计数展示，例：1642565=1.642565E6"}
+  Hit *int `json:"hit,omitempty" xml:"hit,omitempty" require:"true"`
+}
+
+func (s QueryDomainTotalRequestResponseHitData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDomainTotalRequestResponseHitData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDomainTotalRequestResponseHitData) SetTimestamp(v string) *QueryDomainTotalRequestResponseHitData {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *QueryDomainTotalRequestResponseHitData) SetHit(v int) *QueryDomainTotalRequestResponseHitData {
+  s.Hit = &v
+  return s
 }
 
 type QueryDomainTotalRequestResponseHeader struct {
@@ -1846,294 +1820,274 @@ func (s QueryDomainTotalRequestResponseHeader) GoString() string {
 
 
 
-type HitRequest struct {
-  // {"en":"cust_en_name of sub-client.
-  // When a merged-account wants to  view the information of the subclient,the cust_en_name is required.", "zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名"}
+type GetRequestsByDomainRequest struct {
+  // {"en":"cust_en_name of sub-client.\nWhen a merged-account wants to  view the information of the subclient,the cust_en_name is required.","zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名"}
   Cust *string `json:"cust,omitempty" xml:"cust,omitempty"`
-  // {"en":"Specifies the query date:
-  // 1.With format yyyy-mm-dd.
-  // 2.If not specified,it means today as default.", "zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
+  // {"en":"Specifies the query date:\n1.With format yyyy-mm-dd.\n2.If not specified,it means today as default.","zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
   Date *string `json:"date,omitempty" xml:"date,omitempty"`
-  // {"en":"1.Must work with 'enddate' and they  specify the query date scope.
-  // 2.With format yyyy-mm-dd.
-  // 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的起始日期 ,日期格式为yyyy-mm-dd；此参数需与enddate参数配合,若存在date参数,则该参数无效"}
+  // {"en":"1.Must work with 'enddate' and they  specify the query date scope.\n2.With format yyyy-mm-dd.\n3.If there is a 'date' parameter,this parameter will be omitted.","zh_CN":"查询的起始日期 ,日期格式为yyyy-mm-dd；此参数需与enddate参数配合,若存在date参数,则该参数无效"}
   Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty"`
-  // {"en":"1.Must work with 'startdate' and they  specify the query date scope.
-  // 2.With format yyyy-mm-dd.
-  // 3.If there is a 'date' parameter,this parameter will be omitted.", "zh_CN":"查询的结束日期 ,日期格式为yyyy-mm-dd；此参数需与startdate参数配合,若存在date参数,则该参数无效。"}
+  // {"en":"1.Must work with 'startdate' and they  specify the query date scope.\n2.With format yyyy-mm-dd.\n3.If there is a 'date' parameter,this parameter will be omitted.","zh_CN":"查询的结束日期 ,日期格式为yyyy-mm-dd；此参数需与startdate参数配合,若存在date参数,则该参数无效。"}
   Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty"`
-  // {"en":"GMT time zone, parameter format: GMT+09:00 means east 9th zone, GMT-09:00 means west 9th zone, if not transmitted, the default is local time zone (east 8th zone).", "zh_CN":"格林尼治时区，参数格式 GMT+09:00 表示东九区，GMT-09:00 表示西9区，不传则默认为本地时区（东八区）"}
+  // {"en":"GMT time zone, parameter format: GMT+09:00 means east 9th zone, GMT-09:00 means west 9th zone, if not transmitted, the default is local time zone (east 8th zone).","zh_CN":"格林尼治时区，参数格式 GMT+09:00 表示东九区，GMT-09:00 表示西9区，不传则默认为本地时区（东八区）"}
   Timezone *string `json:"timezone,omitempty" xml:"timezone,omitempty"`
-  // {"en":"domains that been queried:
-  // 1.If there are multiple inputs,use  ';' as separator.
-  // 2.If not specified, it means all the domains of the account .", "zh_CN":"查询的频道，多个频道值请用英文分号';'，不选或者为空时默认为所查询客户的所有频道"}
+  // {"en":"domains that been queried:\n1.If there are multiple inputs,use  ';' as separator.\n2.If not specified, it means all the domains of the account .","zh_CN":"查询的频道，多个频道值请用英文分号';'，不选或者为空时默认为所查询客户的所有频道"}
   Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
-  // {"en":"This parameter specifies if the 'channel' parameter should be exactly matched:
-  // 1.'true' as default.
-  // 2. If not 'true',it will query data of channels that ends with any item of input 'channel's.", "zh_CN":"&nbsp;频道是否完全匹配,为true时，必须填写完整的域名(此时会过滤用户输入的无效或重复频道,所有输入频道都无效时返403.。不为true时，显示以用户输入的频道为结尾的所有频道。默认为true"}
+  // {"en":"This parameter specifies if the 'channel' parameter should be exactly matched:\n1.'true' as default.\n2. If not 'true',it will query data of channels that ends with any item of input 'channel's.","zh_CN":"&nbsp;频道是否完全匹配,为true时，必须填写完整的域名(此时会过滤用户输入的无效或重复频道,所有输入频道都无效时返403.。不为true时，显示以用户输入的频道为结尾的所有频道。默认为true"}
   IsExactMatch *string `json:"isExactMatch,omitempty" xml:"isExactMatch,omitempty"`
-  // {"en":"1.If there are multiple inputs,use ';' as separator.For example,u can use 'region=cn;apac' to query data of cn and apac region.
-  // 2.If not specified, it means all the regions.", "zh_CN":"查询的加速区域的缩写，多个区域请用英文分号';'分隔开，如查询大陆及亚太区域，参数填写为：'region=cn;apac'。不选或者为空时默认为全部区域。"}
+  // {"en":"1.If there are multiple inputs,use ';' as separator.For example,u can use 'region=cn;apac' to query data of cn and apac region.\n2.If not specified, it means all the regions.","zh_CN":"查询的加速区域的缩写，多个区域请用英文分号';'分隔开，如查询大陆及亚太区域，参数填写为：'region=cn;apac'。不选或者为空时默认为全部区域。"}
   Region *string `json:"region,omitempty" xml:"region,omitempty"`
-  // {"en":"acceleration type.
-  // 1.If there are multiple inputs,use ';' as separator.
-  // 2.If not specified or specified as 'all', it means all the accetypes.", "zh_CN":"加速类型参数，如accetype=web。多个请用英文分号';'分隔开，不填或值为all表示所有类型"}
+  // {"en":"acceleration type.\n1.If there are multiple inputs,use ';' as separator.\n2.If not specified or specified as 'all', it means all the accetypes.","zh_CN":"加速类型参数，如accetype=web。多个请用英文分号';'分隔开，不填或值为all表示所有类型"}
   Accetype *string `json:"accetype,omitempty" xml:"accetype,omitempty"`
-  // {"en":"The response format:
-  // 1.optional values:xml, json.
-  // 2.'xml' as default.", "zh_CN":"返回结果格式,支持格式为xml和json,默认为xml"}
+  // {"en":"The response format:\n1.optional values:xml, json.\n2.'xml' as default.","zh_CN":"返回结果格式,支持格式为xml和json,默认为xml"}
   Dataformat *string `json:"dataformat,omitempty" xml:"dataformat,omitempty"`
-  // {"en":"Display statistic result in merged or separate way
-  // 1.If specified 1,get the merged result.
-  // 2.If specified 2,get the separate result.
-  // 3.If specified 3,get both merged result and separate result.
-  // 4.If not specified,means '1'.", "zh_CN":"&nbsp;结果的显示是否提供合并值。填写1时：只提供合并结果；填写2时：只提供拆分值；填写3时：既提供合并值，又提供拆分值。不选或者为空时默认为'1'。"}
+  // {"en":"Display statistic result in merged or separate way\n1.If specified 1,get the merged result.\n2.If specified 2,get the separate result.\n3.If specified 3,get both merged result and separate result.\n4.If not specified,means '1'.","zh_CN":"&nbsp;结果的显示是否提供合并值。填写1时：只提供合并结果；填写2时：只提供拆分值；填写3时：既提供合并值，又提供拆分值。不选或者为空时默认为'1'。"}
   ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty"`
 }
 
-func (s HitRequest) String() string {
+func (s GetRequestsByDomainRequest) String() string {
   return tea.Prettify(s)
 }
 
-func (s HitRequest) GoString() string {
+func (s GetRequestsByDomainRequest) GoString() string {
   return s.String()
 }
 
-func (s *HitRequest) SetCust(v string) *HitRequest {
+func (s *GetRequestsByDomainRequest) SetCust(v string) *GetRequestsByDomainRequest {
   s.Cust = &v
   return s
 }
 
-func (s *HitRequest) SetDate(v string) *HitRequest {
+func (s *GetRequestsByDomainRequest) SetDate(v string) *GetRequestsByDomainRequest {
   s.Date = &v
   return s
 }
 
-func (s *HitRequest) SetStartdate(v string) *HitRequest {
+func (s *GetRequestsByDomainRequest) SetStartdate(v string) *GetRequestsByDomainRequest {
   s.Startdate = &v
   return s
 }
 
-func (s *HitRequest) SetEnddate(v string) *HitRequest {
+func (s *GetRequestsByDomainRequest) SetEnddate(v string) *GetRequestsByDomainRequest {
   s.Enddate = &v
   return s
 }
 
-func (s *HitRequest) SetTimezone(v string) *HitRequest {
+func (s *GetRequestsByDomainRequest) SetTimezone(v string) *GetRequestsByDomainRequest {
   s.Timezone = &v
   return s
 }
 
-func (s *HitRequest) SetChannel(v string) *HitRequest {
+func (s *GetRequestsByDomainRequest) SetChannel(v string) *GetRequestsByDomainRequest {
   s.Channel = &v
   return s
 }
 
-func (s *HitRequest) SetIsExactMatch(v string) *HitRequest {
+func (s *GetRequestsByDomainRequest) SetIsExactMatch(v string) *GetRequestsByDomainRequest {
   s.IsExactMatch = &v
   return s
 }
 
-func (s *HitRequest) SetRegion(v string) *HitRequest {
+func (s *GetRequestsByDomainRequest) SetRegion(v string) *GetRequestsByDomainRequest {
   s.Region = &v
   return s
 }
 
-func (s *HitRequest) SetAccetype(v string) *HitRequest {
+func (s *GetRequestsByDomainRequest) SetAccetype(v string) *GetRequestsByDomainRequest {
   s.Accetype = &v
   return s
 }
 
-func (s *HitRequest) SetDataformat(v string) *HitRequest {
+func (s *GetRequestsByDomainRequest) SetDataformat(v string) *GetRequestsByDomainRequest {
   s.Dataformat = &v
   return s
 }
 
-func (s *HitRequest) SetResultType(v string) *HitRequest {
+func (s *GetRequestsByDomainRequest) SetResultType(v string) *GetRequestsByDomainRequest {
   s.ResultType = &v
   return s
 }
 
-type HitResponse struct {
-  // {'en':'provider', 'zh_CN':'结果'}
-  Provider *HitResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+type GetRequestsByDomainRequestHeader struct {
 }
 
-func (s HitResponse) String() string {
+func (s GetRequestsByDomainRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s HitResponse) GoString() string {
+func (s GetRequestsByDomainRequestHeader) GoString() string {
   return s.String()
 }
 
-func (s *HitResponse) SetProvider(v *HitResponseProvider) *HitResponse {
+type GetRequestsByDomainPaths struct {
+}
+
+func (s GetRequestsByDomainPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetRequestsByDomainPaths) GoString() string {
+  return s.String()
+}
+
+type GetRequestsByDomainParameters struct {
+}
+
+func (s GetRequestsByDomainParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetRequestsByDomainParameters) GoString() string {
+  return s.String()
+}
+
+type GetRequestsByDomainResponse struct {
+  // {"en":"provider","zh_CN":"结果"}
+  Provider *GetRequestsByDomainResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+}
+
+func (s GetRequestsByDomainResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetRequestsByDomainResponse) GoString() string {
+  return s.String()
+}
+
+func (s *GetRequestsByDomainResponse) SetProvider(v *GetRequestsByDomainResponseProvider) *GetRequestsByDomainResponse {
   s.Provider = v
   return s
 }
 
-type HitResponseProvider struct {
-  // {'en':'tenant', 'zh_CN':'租户'}
+type GetRequestsByDomainResponseProvider struct {
+  // {"en":"tenant","zh_CN":"租户"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
-  // {'en':'type', 'zh_CN':'接口类型'}
+  // {"en":"type","zh_CN":"接口类型"}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
-  // {'en':'resultType', 'zh_CN':'统计类型'}
+  // {"en":"resultType","zh_CN":"统计类型"}
   ResultType *string `json:"resultType,omitempty" xml:"resultType,omitempty" require:"true"`
-  // {'en':'data', 'zh_CN':'请求数数据'}
-  Date *HitResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+  // {"en":"data","zh_CN":"请求数数据"}
+  Date *GetRequestsByDomainResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
 }
 
-func (s HitResponseProvider) String() string {
+func (s GetRequestsByDomainResponseProvider) String() string {
   return tea.Prettify(s)
 }
 
-func (s HitResponseProvider) GoString() string {
+func (s GetRequestsByDomainResponseProvider) GoString() string {
   return s.String()
 }
 
-func (s *HitResponseProvider) SetName(v string) *HitResponseProvider {
+func (s *GetRequestsByDomainResponseProvider) SetName(v string) *GetRequestsByDomainResponseProvider {
   s.Name = &v
   return s
 }
 
-func (s *HitResponseProvider) SetType(v string) *HitResponseProvider {
+func (s *GetRequestsByDomainResponseProvider) SetType(v string) *GetRequestsByDomainResponseProvider {
   s.Type = &v
   return s
 }
 
-func (s *HitResponseProvider) SetResultType(v string) *HitResponseProvider {
+func (s *GetRequestsByDomainResponseProvider) SetResultType(v string) *GetRequestsByDomainResponseProvider {
   s.ResultType = &v
   return s
 }
 
-func (s *HitResponseProvider) SetDate(v *HitResponseProviderDate) *HitResponseProvider {
+func (s *GetRequestsByDomainResponseProvider) SetDate(v *GetRequestsByDomainResponseProviderDate) *GetRequestsByDomainResponseProvider {
   s.Date = v
   return s
 }
 
-type HitResponseProviderDate struct {
-  // {'en':'startdate', 'zh_CN':'开始时间'}
+type GetRequestsByDomainResponseProviderDate struct {
+  // {"en":"startdate","zh_CN":"开始时间"}
   Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
-  // {'en':'enddate', 'zh_CN':'结束时间'}
+  // {"en":"enddate","zh_CN":"结束时间"}
   Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
-  // {'en':'channel', 'zh_CN':'频道'}
-  Channel *HitResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+  // {"en":"channel","zh_CN":"频道"}
+  Channel *GetRequestsByDomainResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
 }
 
-func (s HitResponseProviderDate) String() string {
+func (s GetRequestsByDomainResponseProviderDate) String() string {
   return tea.Prettify(s)
 }
 
-func (s HitResponseProviderDate) GoString() string {
+func (s GetRequestsByDomainResponseProviderDate) GoString() string {
   return s.String()
 }
 
-func (s *HitResponseProviderDate) SetStartdate(v string) *HitResponseProviderDate {
+func (s *GetRequestsByDomainResponseProviderDate) SetStartdate(v string) *GetRequestsByDomainResponseProviderDate {
   s.Startdate = &v
   return s
 }
 
-func (s *HitResponseProviderDate) SetEnddate(v string) *HitResponseProviderDate {
+func (s *GetRequestsByDomainResponseProviderDate) SetEnddate(v string) *GetRequestsByDomainResponseProviderDate {
   s.Enddate = &v
   return s
 }
 
-func (s *HitResponseProviderDate) SetChannel(v *HitResponseProviderDateChannel) *HitResponseProviderDate {
+func (s *GetRequestsByDomainResponseProviderDate) SetChannel(v *GetRequestsByDomainResponseProviderDateChannel) *GetRequestsByDomainResponseProviderDate {
   s.Channel = v
   return s
 }
 
-type HitResponseProviderDateChannel struct {
-  // {'en':'channel', 'zh_CN':'频道'}
+type GetRequestsByDomainResponseProviderDateChannel struct {
+  // {"en":"channel","zh_CN":"频道"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
-  // {'en':'bandwidth', 'zh_CN':'请求数数据'}
-  Bandwidth []*HitResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
+  // {"en":"bandwidth","zh_CN":"请求数数据"}
+  Bandwidth []*GetRequestsByDomainResponseProviderDateChannelBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s HitResponseProviderDateChannel) String() string {
+func (s GetRequestsByDomainResponseProviderDateChannel) String() string {
   return tea.Prettify(s)
 }
 
-func (s HitResponseProviderDateChannel) GoString() string {
+func (s GetRequestsByDomainResponseProviderDateChannel) GoString() string {
   return s.String()
 }
 
-func (s *HitResponseProviderDateChannel) SetName(v string) *HitResponseProviderDateChannel {
+func (s *GetRequestsByDomainResponseProviderDateChannel) SetName(v string) *GetRequestsByDomainResponseProviderDateChannel {
   s.Name = &v
   return s
 }
 
-func (s *HitResponseProviderDateChannel) SetBandwidth(v []*HitResponseProviderDateChannelBandwidth) *HitResponseProviderDateChannel {
+func (s *GetRequestsByDomainResponseProviderDateChannel) SetBandwidth(v []*GetRequestsByDomainResponseProviderDateChannelBandwidth) *GetRequestsByDomainResponseProviderDateChannel {
   s.Bandwidth = v
   return s
 }
 
-type HitResponseProviderDateChannelBandwidth struct     {
-  // {'en':'timestamp', 'zh_CN':'时间点'}
+type GetRequestsByDomainResponseProviderDateChannelBandwidth struct     {
+  // {"en":"timestamp","zh_CN":"时间点"}
   Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
-  // {'en':'hit count', 'zh_CN':'请求数'}
+  // {"en":"hit count","zh_CN":"请求数"}
   Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
 }
 
-func (s HitResponseProviderDateChannelBandwidth) String() string {
+func (s GetRequestsByDomainResponseProviderDateChannelBandwidth) String() string {
   return tea.Prettify(s)
 }
 
-func (s HitResponseProviderDateChannelBandwidth) GoString() string {
+func (s GetRequestsByDomainResponseProviderDateChannelBandwidth) GoString() string {
   return s.String()
 }
 
-func (s *HitResponseProviderDateChannelBandwidth) SetTime(v string) *HitResponseProviderDateChannelBandwidth {
+func (s *GetRequestsByDomainResponseProviderDateChannelBandwidth) SetTime(v string) *GetRequestsByDomainResponseProviderDateChannelBandwidth {
   s.Time = &v
   return s
 }
 
-func (s *HitResponseProviderDateChannelBandwidth) SetText(v string) *HitResponseProviderDateChannelBandwidth {
+func (s *GetRequestsByDomainResponseProviderDateChannelBandwidth) SetText(v string) *GetRequestsByDomainResponseProviderDateChannelBandwidth {
   s.Text = &v
   return s
 }
 
-type HitPaths struct {
+type GetRequestsByDomainResponseHeader struct {
 }
 
-func (s HitPaths) String() string {
+func (s GetRequestsByDomainResponseHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s HitPaths) GoString() string {
-  return s.String()
-}
-
-type HitParameters struct {
-}
-
-func (s HitParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s HitParameters) GoString() string {
-  return s.String()
-}
-
-type HitRequestHeader struct {
-}
-
-func (s HitRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s HitRequestHeader) GoString() string {
-  return s.String()
-}
-
-type HitResponseHeader struct {
-}
-
-func (s HitResponseHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s HitResponseHeader) GoString() string {
+func (s GetRequestsByDomainResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -2141,86 +2095,19 @@ func (s HitResponseHeader) GoString() string {
 
 
 type ReportMinuteUserRequestIspProvinceServiceRequest struct {
-  // {"en":"Start time:
-  // 
-  // 1. The format is yyyyy-MM-ddTHH: mm: SS + 08:00, for example, 2016-12-02T10:00 + 08:00 (10:00:00 Beijing time on December 2, 2016);
-  // 
-  // 2. Can not exceed the current time;
-  // 
-  // 3. The latest half year (183 days) data can be obtained at most.", "zh_CN":"开始时间：
-  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00，例如，2016-12-02T10:00:00+08:00（为北京时间2016年12月2日10点0分0秒）；
-  // 2.不能大于当前时间；
-  // 3.最多可获取最近半年（183天）的数据。"}
+  // {"en":"Start Time:\n\n1.The Time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM\n\n2.Cannot exceed the current time\n\n3.Up to the past six months (183 days) of data can be obtained","zh_CN":"开始时间：\n\n1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，如 +00:00 代表 UTC 时间，+08:00 代表东八区，2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒\n\n2.不能大于当前时间\n\n3.最多可获取最近半年年（183天）的数据"}
   DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
-  // {"en":"End time:
-  // 
-  // 1. The 1format is yyyy-MM-ddTHH:mm:ss+08:00;
-  // 
-  // 2. The end time is greater than the start time.
-  // 
-  // 3. If the end time is greater than the current time, the current time is taken.
-  // 
-  // 4. DateFrom and dateTo are not uploaded, defaulting to query the past 24 hours; if only one is not uploaded, throw an exception;
-  // 
-  // 5. Maximum query interval allowed: 7 days, that is, the difference between dateFrom and dateTo can not exceed 7 days. ", "zh_CN":"结束时间：
-  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00；
-  // 2.结束时间需大于开始时间；
-  // 3.结束时间如果大于当前时间，取当前时间；
-  // 4.dateFrom，dateTo二者都未传，默认查询过去的24小时；如仅有一个未传，抛异常；
-  // 5.允许查询最大间隔：7天，即dateFrom和dateTo相差不能超过7天。"}
+  // {"en":"End time:\n\n1. The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM;\n\n2. The end time is greater than the start time.\n\n3. If the end time is greater than the current time, the current time is taken.\n\n4. DateFrom and dateTo are not uploaded, defaulting to query the past 24 hours; if only one is not uploaded, throw an exception;\n\n5. Maximum query interval allowed: 7 days, that is, the difference between dateFrom and dateTo can not exceed 7 days.","zh_CN":"结束时间：\n1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒；\n2.结束时间需大于开始时间；\n3.结束时间如果大于当前时间，取当前时间；\n4.dateFrom，dateTo二者都未传，默认查询过去的24小时；如仅有一个未传，抛异常；\n5.允许查询最大间隔：7天，即dateFrom和dateTo相差不能超过7天。"}
   DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
-  // {"en":"Domains:
-  // 
-  // 1.Domain is not uploaded: Query all domain names of the account (More than 20 domains will error, you can contact technical support for adjustment)
-  // 
-  // 2.Domain is uploaded: Up to 20 domains are supported (you can contact technical support for adjustment).", "zh_CN":"域名：
-  // 
-  // 1.未传递domain时：查询账号下所有全部域名(域名超过20个则报错，可联系技术支持调整)；
-  // 
-  // 2.有传递domain时：域名最多支持传20个（可联系技术支持调整）。"}
+  // {"en":"Domains:\n\n1.Domain is not uploaded: Query all domain names of the account (More than 20 domains will error, you can contact technical support for adjustment)\n\n2.Domain is uploaded: Up to 20 domains are supported (you can contact technical support for adjustment).","zh_CN":"域名：\n\n1.未传递domain时：查询账号下所有全部域名(域名超过20个则报错，可联系技术支持调整)；\n\n2.有传递domain时：域名最多支持传20个（可联系技术支持调整）。"}
   Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" type:"Repeated"`
-  // {"en":"Province:
-  // 
-  // 1. Province is not upload: Query all provinces and aggregate the returned data according to all provinces;
-  // 
-  // 2. Province is upload: Support upload multiple provinces. Upload the Chinese name of the province, such as: beijing, shanghai. Please refer to the appendix description section of the overview page for the provincial information code table.", "zh_CN":"省份：
-  // 
-  // 1.未传递province时：查询所有省份，返回的数据按照所有省份聚合。
-  // 
-  // 2.有传递province时：支持传多个。传递省份code，如：beijing、shanghai。省份信息码表详见概览页附录说明章节"}
+  // {"en":"Province:\n\n1. Province is not upload: Query all provinces and aggregate the returned data according to all provinces;\n\n2. Province is upload: Support upload multiple provinces. Upload the Chinese name of the province, such as: beijing, shanghai. Please refer to the appendix description section of the overview page for the provincial information code table.","zh_CN":"省份：\n\n1.未传递province时：查询所有省份，返回的数据按照所有省份聚合。\n\n2.有传递province时：支持传多个。传递省份code，如：beijing、shanghai。省份信息码表详见概览页附录说明章节"}
   Province []*string `json:"province,omitempty" xml:"province,omitempty" type:"Repeated"`
-  // {"en":"ISP:
-  // 
-  // 1. ISP is not upload: Query all ISPs and aggregate the returned data according to all ISPs;
-  // 
-  // 2. ISPs is upload: Support upload multiple ISPs. Upload the Chinese name of the ISPs, such as: dx, tt. Please refer to the appendix description section of the overview page for the ISP information code table.", "zh_CN":"运营商：
-  // 
-  // 1.未传递isp时：查询所有isp，返回的数据按照所有运营商聚合。
-  // 
-  // 2.有传递isp时：支持传多个。传递运营商code，如：dx、tt。运营商信息码表详见概览页附录说明章节"}
+  // {"en":"ISP:\n\n1. ISP is not upload: Query all ISPs and aggregate the returned data according to all ISPs;\n\n2. ISPs is upload: Support upload multiple ISPs. Upload the Chinese name of the ISPs, such as: dx, tt. Please refer to the appendix description section of the overview page for the ISP information code table.","zh_CN":"运营商：\n\n1.未传递isp时：查询所有isp，返回的数据按照所有运营商聚合。\n\n2.有传递isp时：支持传多个。传递运营商code，如：dx、tt。运营商信息码表详见概览页附录说明章节"}
   Isp []*string `json:"isp,omitempty" xml:"isp,omitempty" type:"Repeated"`
-  // {"en":"Data granularity:
-  // 
-  // 1m: 1 minute granularity.
-  // 
-  // 5m: 5 minute granularity; Default value is 5m.
-  // 
-  // 1h: 1 hour granularity.", "zh_CN":"数据粒度：
-  // 
-  // 1m：1分钟粒度。
-  // 
-  // 5m：5分钟粒度。不传默认5分钟粒度
-  // 
-  // 1h：1小时粒度;"}
+  // {"defaultValue":"5m","en":"Data granularity:\n\n1m: 1 minute granularity.\n\n5m: 5 minute granularity; Default value is 5m.\n\n1h: 1 hour granularity.","zh_CN":"数据粒度：\n\n1m：1分钟粒度。\n\n5m：5分钟粒度。不传默认5分钟粒度\n\n1h：1小时粒度;","exampleValue":"1m,5m,1h"}
   DataInterval *string `json:"dataInterval,omitempty" xml:"dataInterval,omitempty"`
-  // {"en":"Grouped dimension:
-  // 
-  // 1. The optional values are province, isp,domain;Multiple values can be uploaded;
-  // 
-  // 2. If no value is uploaded: Aggregate all data by default.", "zh_CN":"分组维度
-  // 可选值为province、isp、domain，可传入多个值；
-  // 有传入则按照该维度展示明细数据；
-  // 没传默认全部聚合。"}
+  // {"en":"Grouped dimension:\n\n1. The optional values are province, isp,domain;Multiple values can be uploaded;\n\n2. If no value is uploaded: Aggregate all data by default.","zh_CN":"分组维度\n可选值为province、isp、domain，可传入多个值；\n有传入则按照该维度展示明细数据；\n没传默认全部聚合。"}
   GroupBy []*string `json:"groupBy,omitempty" xml:"groupBy,omitempty" type:"Repeated"`
 }
 
@@ -2267,7 +2154,41 @@ func (s *ReportMinuteUserRequestIspProvinceServiceRequest) SetGroupBy(v []*strin
   return s
 }
 
+type ReportMinuteUserRequestIspProvinceServiceRequestHeader struct {
+}
+
+func (s ReportMinuteUserRequestIspProvinceServiceRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportMinuteUserRequestIspProvinceServiceRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ReportMinuteUserRequestIspProvinceServicePaths struct {
+}
+
+func (s ReportMinuteUserRequestIspProvinceServicePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportMinuteUserRequestIspProvinceServicePaths) GoString() string {
+  return s.String()
+}
+
+type ReportMinuteUserRequestIspProvinceServiceParameters struct {
+}
+
+func (s ReportMinuteUserRequestIspProvinceServiceParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportMinuteUserRequestIspProvinceServiceParameters) GoString() string {
+  return s.String()
+}
+
 type ReportMinuteUserRequestIspProvinceServiceResponse struct {
+  // {"en":"","zh_CN":""}
   Data []*ReportMinuteUserRequestIspProvinceServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -2285,8 +2206,9 @@ func (s *ReportMinuteUserRequestIspProvinceServiceResponse) SetData(v []*ReportM
 }
 
 type ReportMinuteUserRequestIspProvinceServiceResponseData struct     {
-  // {"en":"domain", "zh_CN":"域名"}
+  // {"en":"domain","zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {"en":"","zh_CN":""}
   IspData []*ReportMinuteUserRequestIspProvinceServiceResponseDataIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -2309,8 +2231,9 @@ func (s *ReportMinuteUserRequestIspProvinceServiceResponseData) SetIspData(v []*
 }
 
 type ReportMinuteUserRequestIspProvinceServiceResponseDataIspData struct     {
-  // {"en":"ISP", "zh_CN":"运营商"}
+  // {"en":"ISP","zh_CN":"运营商"}
   Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
+  // {"en":"","zh_CN":""}
   ProvinceData []*ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -2333,10 +2256,11 @@ func (s *ReportMinuteUserRequestIspProvinceServiceResponseDataIspData) SetProvin
 }
 
 type ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceData struct     {
-  // {"en":"Province", "zh_CN":"省份"}
+  // {"en":"Province","zh_CN":"省份"}
   Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
-  // {"en":"Total number of requests.", "zh_CN":"省份运营商的请求总数"}
+  // {"en":"Total number of requests.","zh_CN":"省份运营商的请求总数"}
   TotalRequest *string `json:"totalRequest,omitempty" xml:"totalRequest,omitempty" require:"true"`
+  // {"en":"","zh_CN":""}
   Details []*ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDataDetails `json:"details,omitempty" xml:"details,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -2364,21 +2288,9 @@ func (s *ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDat
 }
 
 type ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDataDetails struct     {
-  // {"en":"ime:
-  // 
-  // 1. When the data query granularity is 1m, then the format is yyyy-MM-dd HH:mm; Each time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is (yyyy-MM-dd+1) 00:00;
-  // 
-  // 2. When the data query granularity is 5m, then the format is yyyy-MM-dd HH:mm; Each time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:05, and the last one is (yyyy-MM-dd+1) 00:00;
-  // 
-  // 3. When the data query granularity is 1h, the format is yyyy-MM-dd HH; Each time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 01, and the last one is (yyyy-MM-dd+1) 00;
-  // 
-  // 4. Return the time slices that contained in start time and in end time.", "zh_CN":"时间，
-  // 查询的数据粒度为1m时，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:01，最后一个时间片是（yyyy-MM-dd+1） 00:00；
-  // 查询的数据粒度为5m时，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05，最后一个时间片是（yyyy-MM-dd+1） 00:00；
-  // 查询的数据粒度为1h时，格式为yyyy-MM-dd HH；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 01，最后一个时间片是（yyyy-MM-dd+1） 00；
-  // 返回开始时间和结束时间包含的时间片。"}
+  // {"en":"Time:\n\n1. When the data query granularity is 1m, then the format is yyyy-MM-dd HH:mm; Each time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is (yyyy-MM-dd+1) 00:00;\n\n2. When the data query granularity is 5m, then the format is yyyy-MM-dd HH:mm; Each time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:05, and the last one is (yyyy-MM-dd+1) 00:00;\n\n3. When the data query granularity is 1h, the format is yyyy-MM-dd HH; Each time slice value represents the value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 01, and the last one is (yyyy-MM-dd+1) 00;\n\n4. Return the time slices that contained in start time and in end time.","zh_CN":"时间，\n查询的数据粒度为1m时，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:01，最后一个时间片是（yyyy-MM-dd+1） 00:00；\n查询的数据粒度为5m时，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05，最后一个时间片是（yyyy-MM-dd+1） 00:00；\n查询的数据粒度为1h时，格式为yyyy-MM-dd HH；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 01，最后一个时间片是（yyyy-MM-dd+1） 00；\n返回开始时间和结束时间包含的时间片。"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
-  // {"en":"Number of requests.", "zh_CN":"请求数"}
+  // {"en":"Number of requests.","zh_CN":"请求数"}
   Request *string `json:"request,omitempty" xml:"request,omitempty" require:"true"`
 }
 
@@ -2400,39 +2312,6 @@ func (s *ReportMinuteUserRequestIspProvinceServiceResponseDataIspDataProvinceDat
   return s
 }
 
-type ReportMinuteUserRequestIspProvinceServicePaths struct {
-}
-
-func (s ReportMinuteUserRequestIspProvinceServicePaths) String() string {
-  return tea.Prettify(s)
-}
-
-func (s ReportMinuteUserRequestIspProvinceServicePaths) GoString() string {
-  return s.String()
-}
-
-type ReportMinuteUserRequestIspProvinceServiceParameters struct {
-}
-
-func (s ReportMinuteUserRequestIspProvinceServiceParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s ReportMinuteUserRequestIspProvinceServiceParameters) GoString() string {
-  return s.String()
-}
-
-type ReportMinuteUserRequestIspProvinceServiceRequestHeader struct {
-}
-
-func (s ReportMinuteUserRequestIspProvinceServiceRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s ReportMinuteUserRequestIspProvinceServiceRequestHeader) GoString() string {
-  return s.String()
-}
-
 type ReportMinuteUserRequestIspProvinceServiceResponseHeader struct {
 }
 
@@ -2449,19 +2328,19 @@ func (s ReportMinuteUserRequestIspProvinceServiceResponseHeader) GoString() stri
 
 type QueryRequestHitRatioRequest struct {
   // {"en":"From date:
-  //         1.The time format is yyyy-MM-ddTHH:MM:ss+08:00. For example: 2019-01-01T10:00:00+08:00 (10:00 on December 2, 2018 10:00:00:00 UTC+8)
+  //         1.The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM
   //         2.Cannot exceed current time
   //         3.The most recent six-month (183 days) data are available.", "zh_CN":"开始时间:
-  //         1.时间格式为yyyy-MM-ddTHH:mm:ss+08:00,例如,2019-01-01T10:00:00+08:00(为北京时间2018年12月2日10点0分0秒)；
+  //         1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒；
   //         2.不能大于当前时间
   //         3.最多可获取最近半年(183天)的数据。"}
   DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
   // {"en":"To time:
-  //         1.The time format is yyyy-MM-ddTHH:MM:ss+08:00. For example: 2019-01-01T10:00:00+08:00 (10:00 on December 2, 2018 10:00:00:00 UTC+8)
+  //         1.The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM
   //         2.The end time needs to be greater than the start time. If the end time is greater than the current time, take the current time.
   //         3.Date from, Date to both, the default query past 24 hours; If there is only one unsent, throw an exception
   //         4.Maximum allowed query time interval: 31 days, Date from and dateTo, not more than 31 days", "zh_CN":"结束时间:
-  //         1.时间格式2019-01-02T10:00:00+08:00
+  //         1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒
   //         2.结束时间需大于开始时间,结束时间如果大于当前时间,取当前时间。
   //         3.dateFrom,dateTo二者都未传,默认查询过去的24小时；如仅有一个未传,抛异常
   //         4.允许查询最大时间间隔:31天,即dateFrom和dateTo相差不能超过31天"}
@@ -2664,24 +2543,22 @@ func (s QueryRequestHitRatioResponseHeader) GoString() string {
 
 type QueryRequestBySpecificProtocolRequest struct {
   // {"en":"Start time:
-  // 
-  // 1.The format is yyyy-MM-ddTHH:mm:ss+08:00;
+  // 1.The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM;
   // 2.Must be a time that is 183 days earlier than the current time, and the time must be earlier than the current time and dateTo;
   // 3.Period between dataFrom and dateTo cannot be longer than 7 days(technical support can be contacted to adjust);
   // 4.dateFrom and dateTo can be either both are specified or neither is specifies;
   // 5.If neither dateFrom nor dateTo is specified, then by default, data in the last 24 hour is queried", "zh_CN":"开始时间:
-  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00；
+  // 1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒；
   // 2.必须大于当前时间-183天，并且小于当前时间和dateTo；
   // 3.dateFrom和dateTo相差不能超过7天（可联系技术支持调整）；
   // 4.dateFrom和dateTo要么都传递，要么都不传递；
   // 5.dateFrom和dateTo都未传递，则默认查询过去24小时的数据"}
   DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
   // {"en":"End time
-  // 
-  // 1.The format is yyyy-MM-ddTHH:mm:ss+08:00;
+  // 1.The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM;
   // 2.Must be greater than dateFrom;
   // 3.If it's greater than the current time, then the current time is assigned as the value;", "zh_CN":"结束时间
-  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00；
+  // 1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒；
   // 2.必须大于dateFrom；
   // 3.如果大于当前时间，则重新赋值为当前时间；"}
   DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
@@ -2859,65 +2736,21 @@ func (s QueryRequestBySpecificProtocolResponseHeader) GoString() string {
 
 
 type QueryIPV6RequestOfeachISPandProvinceRequest struct {
-  // {"en":"Start time: 
-  //     1. Time format is yyyy-MM-ddTHH:mm:ss+08:00, for example, 2016-12-02T10:00:00+08:00 (10:00 on 2nd of December 2016, Beijing Time); 
-  //     2. No bigger than the current time;
-  //     3. Data in the last 183 days at most can be queried.", "zh_CN":"开始时间：
-  // 1.时间格式为yyyy-MM-ddTHH:mm:ss+08:00，例如，2016-12-02T10:00:00+08:00（为北京时间2016年12月2日10点0分0秒）;
-  // 2.不能大于当前时间;
-  // 3.最多可获取最近半年（183天）的数据。"}
+  // {"en":"Start time:\n1. Time format is yyyy-MM-ddTHH:mm:ss+08:00, for example, 2016-12-02T10:00:00+08:00 (10:00 on 2nd of December 2016, Beijing Time);\n2. No bigger than the current time;\n3. Data in the last 183 days at most can be queried.","zh_CN":"开始时间：\n1.时间格式为yyyy-MM-ddTHH:mm:ss+08:00，例如，2016-12-02T10:00:00+08:00（为北京时间2016年12月2日10点0分0秒）;\n2.不能大于当前时间;\n3.最多可获取最近半年（183天）的数据。"}
   DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
-  // {"en":"End time: 1. the time format is 2016-12-02T10:00:00+08:00;
-  //     2.End time should be greater than start time. If the end time is greater than current time, current time will be used;
-  //     3.If both fields of dataFrom and dateTo are left empty, then data in the last 24 hours will be queried by default; if only one field is filled in and one is left empty, then exception will be occur;
-  //     4.Allowable maximum time range for query: 1 day, means the period between dateFrom to dateTo should not exceed 1 day (can be adjusted by contacting technical support).", "zh_CN":"结束时间：
-  // 1.时间格式yyyy-MM-ddTHH:mm:ss+08:00;
-  // 2.结束时间需大于开始时间，结束时间如果大于当前时间，取当前时间;
-  // 3.dateFrom，dateTo二者都未传，默认查询过去的24小时，如仅有一个未传，抛异常;
-  // 4.允许查询最大时间间隔：1天，即dateFrom和dateTo相差不能超过1天。（可联系技术支持调整）"}
+  // {"en":"End time: 1. the time format is 2016-12-02T10:00:00+08:00;\n2.End time should be greater than start time. If the end time is greater than current time, current time will be used;\n3.If both fields of dataFrom and dateTo are left empty, then data in the last 24 hours will be queried by default; if only one field is filled in and one is left empty, then exception will be occur;\n4.Allowable maximum time range for query: 1 day, means the period between dateFrom to dateTo should not exceed 1 day (can be adjusted by contacting technical support).","zh_CN":"结束时间：\n1.时间格式yyyy-MM-ddTHH:mm:ss+08:00;\n2.结束时间需大于开始时间，结束时间如果大于当前时间，取当前时间;\n3.dateFrom，dateTo二者都未传，默认查询过去的24小时，如仅有一个未传，抛异常;\n4.允许查询最大时间间隔：1天，即dateFrom和dateTo相差不能超过1天。（可联系技术支持调整）"}
   DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
-  // {"en":"Domain name: 1. The maximum number of TLDs is 20 by default (Technical Support Adjustment can be contacted); 
-  //     2. automatic filtering invalid domain name (if pass illegal domain name, can be filtered, query result only returns the data of valid domain name).", "zh_CN":"域名：
-  // 1.可传递域名数量上限默认为200个（可联系技术支持调整）;
-  // 2.自动过滤掉无效域名（如传递非法域名，会被过滤掉，查询结果只返回有效域名的数据）。"}
+  // {"en":"Domain name: \n1. The maximum number of TLDs is 20 by default (Technical Support Adjustment can be contacted);\n2. automatic filtering invalid domain name (if pass illegal domain name, can be filtered, query result only returns the data of valid domain name).","zh_CN":"域名：\n1.可传递域名数量上限默认为200个（可联系技术支持调整）;\n2.自动过滤掉无效域名（如传递非法域名，会被过滤掉，查询结果只返回有效域名的数据）。"}
   Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" type:"Repeated"`
-  // {"en":"Data granularity 1. Support 5m (5 minute granularity), 1h (1 hour granularity); 2. The default is 5m;", "zh_CN":"数据粒度：
-  // 1.支持5m（5分钟）、1h（1小时）
-  // 2.不传默认5m。"}
+  // {"defaultValue":"5m","en":"Data granularity \n1. Support 5m (5 minute granularity), 1h (1 hour granularity); 2. The default is 5m;","zh_CN":"数据粒度：\n1.支持5m（5分钟）、1h（1小时）\n2.不传默认5m。","exampleValue":"5m,1h"}
   DataInterval *string `json:"dataInterval,omitempty" xml:"dataInterval,omitempty"`
-  // {"en":"Province
-  // 
-  // 1.Province is not upload: Query all provinces and aggregate the returned data according to all provinces; 
-  // 2.Province is upload: Provinces can transmit Chinese or code. Please refer to the appendix description section of the overview page for the provincial information code table.
-  // 
-  // 3.Support language request header Accept Language, only support zh-CN and en-US, default to zh-CN. Accept Language: en-US, both the province and isp input and return are in code, otherwise the return is in Chinese.", "zh_CN":"省份
-  // 
-  // 1.未传递province时：查询所有省份，返回的数据按照所有省份聚合。
-  // 
-  // 2.有传递province时：省份 可传中文或code。省份信息码表详见概览页附录说明章节
-  // 
-  // 3.支持语言请求头Accept-Language，只支持zh-CN、en-US，默认为zh-CN。Accept-Language：en-US时，省份及运营商 入参及返回都为code，否则返回的为中文。"}
+  // {"en":"Province\n\n1.Province is not upload: Query all provinces and aggregate the returned data according to all provinces;\n2.Province is upload: Provinces can transmit Chinese or code. Please refer to the appendix description section of the overview page for the provincial information code table.\n\n3.Support language request header Accept Language, only support zh-CN and en-US, default to zh-CN. Accept Language: en-US, both the province and isp input and return are in code, otherwise the return is in Chinese.","zh_CN":"省份\n\n1.未传递province时：查询所有省份，返回的数据按照所有省份聚合。\n\n2.有传递province时：省份 可传中文或code。省份信息码表详见概览页附录说明章节\n\n3.支持语言请求头Accept-Language，只支持zh-CN、en-US，默认为zh-CN。Accept-Language：en-US时，省份及运营商 入参及返回都为code，否则返回的为中文。"}
   Province []*string `json:"province,omitempty" xml:"province,omitempty" type:"Repeated"`
-  // {"en":"ISP:
-  // 1.ISP is not upload: Query all ISPs and aggregate the returned data according to all ISPs; 
-  // 2.ISPs is upload: Isp can transmit Chinese or code. Please refer to the appendix description section of the overview page for the ISP information code table.", "zh_CN":"运营商：
-  // 1.未传递isp时：查询所有isp，返回的数据按照所有运营商聚合。 
-  // 2.有传递isp时：运营商 可传中文或code。运营商信息码表详见概览页附录说明章节"}
+  // {"en":"ISP:\n1.ISP is not upload: Query all ISPs and aggregate the returned data according to all ISPs;\n2.ISP is upload: Isp can transmit Chinese or code. Please refer to the appendix description section of the overview page for the ISP information code table.","zh_CN":"运营商：\n1.未传递isp时：查询所有isp，返回的数据按照所有运营商聚合。\n2.有传递isp时：运营商 可传中文或code。运营商信息码表详见概览页附录说明章节"}
   Isp []*string `json:"isp,omitempty" xml:"isp,omitempty" type:"Repeated"`
-  // {"en":"IP type:
-  // 	1.The optional values are IPv6 and IPv4;
-  // 	2.If let this parameter empty,it will query all IP type.", "zh_CN":"IP类型：
-  // 1.可选值为 IPV6、IPV4;
-  // 2.不传默认查询全部"}
+  // {"en":"IP type:\n1.The optional values are IPv6 and IPv4;\n2.If let this parameter empty,it will query all IP type.","zh_CN":"IP类型：\n1.可选值为 IPV6、IPV4;\n2.不传默认查询全部","exampleValue":"IPV6,IPV4"}
   IPType *string `json:"IPType,omitempty" xml:"IPType,omitempty"`
-  // {"en":"Grouped dimension:
-  //     1.Aggregation date by default;
-  //     2.the optional value is domain,province,isp,allow to send multi option ;
-  //     3.send the Grouped dimension represent the need to display details by their corresponding values.For example, when groupBy is isp, the ISP dimension needs to be displayed in detail. When an ISP is not passed, it represents an aggregate date and would not return the ISP node.Provinces and domains have the same logic. For example, by passing 'groupBy': ['domain', 'province'], the ISP node under ispData does not need to return. {domain:'www.aaaa.com','ispData': [{'isp','China Telecom','provinceData': [...]}}",
-  //     "zh_CN":"分组关键词：
-  // 1.默认聚合展示;
-  // 2.可选值为domain.province.isp，可传入多个值;
-  // 3.传入关键词则代表需要按照关键词对应的值展示明细; 例如groupBy传入isp，则isp维度需要明细展示;当没有传递isp，则代表isp聚合展示，同时isp节点则不返回。其他province和domain相同逻辑。 例如：传递'groupBy':   ['domain','province']，则ispData下的isp节点无需返回。 { 'domain': 'www.aaaa.com', 'ispData': [ { 'isp':   '中国电信', 'provinceData': [....] }]}"}
+  // {"en":"Grouped dimension:\n1.Aggregation date by default;\n2.the optional value is domain,province,isp,allow to send multi option ;\n3.send the Grouped dimension represent the need to display details by their corresponding values.For example, when groupBy is isp, the ISP dimension needs to be displayed in detail. When an ISP is not passed, it represents an aggregate date and would not return the ISP node.Provinces and domains have the same logic. For example, by passing 'groupBy': ['domain', 'province'], the ISP node under ispData does not need to return. {domain:'www.aaaa.com','ispData': [{'isp','China Telecom','provinceData': [...]}}","zh_CN":"分组关键词：\n1.默认聚合展示;\n2.可选值为domain.province.isp，可传入多个值;\n3.传入关键词则代表需要按照关键词对应的值展示明细; 例如groupBy传入isp，则isp维度需要明细展示;当没有传递isp，则代表isp聚合展示，同时isp节点则不返回。其他province和domain相同逻辑。 例如：传递'groupBy':   ['domain','province']，则ispData下的isp节点无需返回。 { 'domain': 'www.aaaa.com', 'ispData': [ { 'isp':   '中国电信', 'provinceData': [....] }]}"}
   GroupBy []*string `json:"groupBy,omitempty" xml:"groupBy,omitempty" type:"Repeated"`
 }
 
@@ -2969,124 +2802,15 @@ func (s *QueryIPV6RequestOfeachISPandProvinceRequest) SetGroupBy(v []*string) *Q
   return s
 }
 
-type QueryIPV6RequestOfeachISPandProvinceResponse struct {
-  // {"en":"", "zh_CN":""}
-  Result []*QueryIPV6RequestOfeachISPandProvinceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+type QueryIPV6RequestOfeachISPandProvinceRequestHeader struct {
 }
 
-func (s QueryIPV6RequestOfeachISPandProvinceResponse) String() string {
+func (s QueryIPV6RequestOfeachISPandProvinceRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryIPV6RequestOfeachISPandProvinceResponse) GoString() string {
+func (s QueryIPV6RequestOfeachISPandProvinceRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *QueryIPV6RequestOfeachISPandProvinceResponse) SetResult(v []*QueryIPV6RequestOfeachISPandProvinceResponseResult) *QueryIPV6RequestOfeachISPandProvinceResponse {
-  s.Result = v
-  return s
-}
-
-type QueryIPV6RequestOfeachISPandProvinceResponseResult struct     {
-  // {"en":"domain", "zh_CN":"域名"}
-  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  IspData []*QueryIPV6RequestOfeachISPandProvinceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
-}
-
-func (s QueryIPV6RequestOfeachISPandProvinceResponseResult) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryIPV6RequestOfeachISPandProvinceResponseResult) GoString() string {
-  return s.String()
-}
-
-func (s *QueryIPV6RequestOfeachISPandProvinceResponseResult) SetDomain(v string) *QueryIPV6RequestOfeachISPandProvinceResponseResult {
-  s.Domain = &v
-  return s
-}
-
-func (s *QueryIPV6RequestOfeachISPandProvinceResponseResult) SetIspData(v []*QueryIPV6RequestOfeachISPandProvinceResponseResultIspData) *QueryIPV6RequestOfeachISPandProvinceResponseResult {
-  s.IspData = v
-  return s
-}
-
-type QueryIPV6RequestOfeachISPandProvinceResponseResultIspData struct     {
-  // {"en":"isp", "zh_CN":"运营商"}
-  Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
-  ProvinceData []*QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
-}
-
-func (s QueryIPV6RequestOfeachISPandProvinceResponseResultIspData) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryIPV6RequestOfeachISPandProvinceResponseResultIspData) GoString() string {
-  return s.String()
-}
-
-func (s *QueryIPV6RequestOfeachISPandProvinceResponseResultIspData) SetIsp(v string) *QueryIPV6RequestOfeachISPandProvinceResponseResultIspData {
-  s.Isp = &v
-  return s
-}
-
-func (s *QueryIPV6RequestOfeachISPandProvinceResponseResultIspData) SetProvinceData(v []*QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData) *QueryIPV6RequestOfeachISPandProvinceResponseResultIspData {
-  s.ProvinceData = v
-  return s
-}
-
-type QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData struct     {
-  // {"en":"province", "zh_CN":"省份"}
-  Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
-  RequestData []*QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
-}
-
-func (s QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData) GoString() string {
-  return s.String()
-}
-
-func (s *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData) SetProvince(v string) *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData {
-  s.Province = &v
-  return s
-}
-
-func (s *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData) SetRequestData(v []*QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData) *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData {
-  s.RequestData = v
-  return s
-}
-
-type QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData struct     {
-  // {"en":"1.When the data query granularity is 5m, then the format is yyyy-MM-dd HH:mm (the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 12:05 AM, and the last one is (yyyy-MM-dd+1) 00:00 ); 
-  //                     2.When the data query granularity is hourly, the format is yyyy-MM-dd HH; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 00:01, and the last one is yyyy-MM-dd 24;
-  //                     3.Return the time slices that contained in start time and in end time.", "zh_CN":"时间，
-  // 1.查询的数据粒度为5m时，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05，最后一个时间片是（yyyy-MM-dd+1） 00:00；
-  // 2.查询的数据粒度为1h时，格式为yyyy-MM-dd HH；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 01，最后一个时间片是（yyyy-MM-dd+1） 00；
-  // 3.返回开始时间和结束时间包含的时间片。"}
-  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
-  // {"en":"Requests", "zh_CN":"请求数"}
-  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
-}
-
-func (s QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData) GoString() string {
-  return s.String()
-}
-
-func (s *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData) SetTimestamp(v string) *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData {
-  s.Timestamp = &v
-  return s
-}
-
-func (s *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData) SetValue(v string) *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData {
-  s.Value = &v
-  return s
 }
 
 type QueryIPV6RequestOfeachISPandProvincePaths struct {
@@ -3111,15 +2835,122 @@ func (s QueryIPV6RequestOfeachISPandProvinceParameters) GoString() string {
   return s.String()
 }
 
-type QueryIPV6RequestOfeachISPandProvinceRequestHeader struct {
+type QueryIPV6RequestOfeachISPandProvinceResponse struct {
+  // {"en":"","zh_CN":""}
+  Result []*QueryIPV6RequestOfeachISPandProvinceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryIPV6RequestOfeachISPandProvinceRequestHeader) String() string {
+func (s QueryIPV6RequestOfeachISPandProvinceResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryIPV6RequestOfeachISPandProvinceRequestHeader) GoString() string {
+func (s QueryIPV6RequestOfeachISPandProvinceResponse) GoString() string {
   return s.String()
+}
+
+func (s *QueryIPV6RequestOfeachISPandProvinceResponse) SetResult(v []*QueryIPV6RequestOfeachISPandProvinceResponseResult) *QueryIPV6RequestOfeachISPandProvinceResponse {
+  s.Result = v
+  return s
+}
+
+type QueryIPV6RequestOfeachISPandProvinceResponseResult struct     {
+  // {"en":"domain","zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {"en":"","zh_CN":""}
+  IspData []*QueryIPV6RequestOfeachISPandProvinceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryIPV6RequestOfeachISPandProvinceResponseResult) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryIPV6RequestOfeachISPandProvinceResponseResult) GoString() string {
+  return s.String()
+}
+
+func (s *QueryIPV6RequestOfeachISPandProvinceResponseResult) SetDomain(v string) *QueryIPV6RequestOfeachISPandProvinceResponseResult {
+  s.Domain = &v
+  return s
+}
+
+func (s *QueryIPV6RequestOfeachISPandProvinceResponseResult) SetIspData(v []*QueryIPV6RequestOfeachISPandProvinceResponseResultIspData) *QueryIPV6RequestOfeachISPandProvinceResponseResult {
+  s.IspData = v
+  return s
+}
+
+type QueryIPV6RequestOfeachISPandProvinceResponseResultIspData struct     {
+  // {"en":"isp","zh_CN":"运营商"}
+  Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
+  // {"en":"","zh_CN":""}
+  ProvinceData []*QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryIPV6RequestOfeachISPandProvinceResponseResultIspData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryIPV6RequestOfeachISPandProvinceResponseResultIspData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryIPV6RequestOfeachISPandProvinceResponseResultIspData) SetIsp(v string) *QueryIPV6RequestOfeachISPandProvinceResponseResultIspData {
+  s.Isp = &v
+  return s
+}
+
+func (s *QueryIPV6RequestOfeachISPandProvinceResponseResultIspData) SetProvinceData(v []*QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData) *QueryIPV6RequestOfeachISPandProvinceResponseResultIspData {
+  s.ProvinceData = v
+  return s
+}
+
+type QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData struct     {
+  // {"en":"province","zh_CN":"省份"}
+  Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
+  // {"en":"","zh_CN":""}
+  RequestData []*QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData) SetProvince(v string) *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData {
+  s.Province = &v
+  return s
+}
+
+func (s *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData) SetRequestData(v []*QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData) *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceData {
+  s.RequestData = v
+  return s
+}
+
+type QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData struct     {
+  // {"en":"1.When the data query granularity is 5m, then the format is yyyy-MM-dd HH:mm (the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 12:05 AM, and the last one is (yyyy-MM-dd+1) 00:00 );\n2.When the data query granularity is hourly, the format is yyyy-MM-dd HH; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 01, and the last one is yyyy-MM-dd 24;\n3.Return the time slices that contained in start time and in end time.","zh_CN":"时间，\n1.查询的数据粒度为5m时，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05，最后一个时间片是（yyyy-MM-dd+1） 00:00；\n2.查询的数据粒度为1h时，格式为yyyy-MM-dd HH；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 01，最后一个时间片是（yyyy-MM-dd+1） 00；\n3.返回开始时间和结束时间包含的时间片。"}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {"en":"Requests","zh_CN":"请求数"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+}
+
+func (s QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData) SetTimestamp(v string) *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData) SetValue(v string) *QueryIPV6RequestOfeachISPandProvinceResponseResultIspDataProvinceDataRequestData {
+  s.Value = &v
+  return s
 }
 
 type QueryIPV6RequestOfeachISPandProvinceResponseHeader struct {
@@ -3341,52 +3172,19 @@ func (s QueryRequestNumbersUnderShieldPoPResponseHeader) GoString() string {
 
 
 type ReportRequestIspProvinceServiceRequest struct {
-  // {"en":"Start time:
-  // 1. The format is yyyyy-MM-ddTHH: mm: SS + 08:00, for example, 2016-12-02T10:00 + 08:00 (10:0:00 Beijing time on December 2, 2016);
-  // 2. can not exceed the current time;
-  // 3. the latest half year (183 days) data can be obtained at most.", "zh_CN":"开始时间:
-  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00,例如,2016-12-02T10:00:00+08:00(为北京时间2016年12月2日10点0分0秒)；
-  // 2.不能大于当前时间；
-  // 3.最多可获取最近半年(183天)的数据。"}
+  // {"en":"Start time:\n1. The format is yyyyy-MM-ddTHH: mm: SS + 08:00, for example, 2016-12-02T10:00 + 08:00 (10:0:00 Beijing time on December 2, 2016);\n2. can not exceed the current time;\n3. the latest half year (183 days) data can be obtained at most.","zh_CN":"开始时间:\n1.格式为yyyy-MM-ddTHH:mm:ss+08:00,例如,2016-12-02T10:00:00+08:00(为北京时间2016年12月2日10点0分0秒)；\n2.不能大于当前时间；\n3.最多可获取最近半年(183天)的数据。"}
   DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
-  // {"en":"End time:
-  // 1. The format is yyyy-MM-ddTHH:mm:ss+08:00;
-  // 2. the end time is greater than the start time. If the end time is greater than the current time, the current time is taken.
-  // 3. DateFrom and dateTo are not uploaded, defaulting to query the past 24 hours; if only one is not uploaded, throw an exception;
-  // 4. Maximum query interval allowed: 7 days, that is, the difference between dateFrom and dateTo can not exceed 7 days (technical support can be contacted to adjust).", "zh_CN":"结束时间:
-  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00；
-  // 2.结束时间需大于开始时间,结束时间如果大于当前时间,取当前时间；
-  // 3.dateFrom,dateTo二者都未传,默认查询过去的24小时；如仅有一个未传,抛异常；
-  // 4.允许查询最大间隔:7天,即dateFrom和dateTo相差不能超过7天(可联系技术支持调整)。"}
+  // {"en":"End time:\n1. The format is yyyy-MM-ddTHH:mm:ss+08:00;\n2. the end time is greater than the start time. If the end time is greater than the current time, the current time is taken.\n3. DateFrom and dateTo are not uploaded, defaulting to query the past 24 hours; if only one is not uploaded, throw an exception;\n4. Maximum query interval allowed: 7 days, that is, the difference between dateFrom and dateTo can not exceed 7 days (technical support can be contacted to adjust).","zh_CN":"结束时间:\n1.格式为yyyy-MM-ddTHH:mm:ss+08:00；\n2.结束时间需大于开始时间,结束时间如果大于当前时间,取当前时间；\n3.dateFrom,dateTo二者都未传,默认查询过去的24小时；如仅有一个未传,抛异常；\n4.允许查询最大间隔:7天,即dateFrom和dateTo相差不能超过7天(可联系技术支持调整)。"}
   DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
-  // {"en":"Domain names, domain number limits can be adjusted depending on different accounts. The default value is 20", "zh_CN":"域名:可传递域名数量上限默认为20个(可联系技术支持调整),未传递该入参时查询账号下所有域名,但当账号下域名数量超过限制时不可查询(报错)。"}
+  // {"en":"Domain names, domain number limits can be adjusted depending on different accounts. The default value is 20","zh_CN":"域名:可传递域名数量上限默认为20个(可联系技术支持调整),未传递该入参时查询账号下所有域名,但当账号下域名数量超过限制时不可查询(报错)。"}
   Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" require:"true" type:"Repeated"`
-  // {"en":"Data granularity, 5m: 5-minute; granularity, 1h: 1-hour granularity", "zh_CN":"数据粒度,5m:5分钟粒度,1h:1小时粒度"}
+  // {"en":"Data granularity, 5m: 5-minute; granularity, 1h: 1-hour granularity","zh_CN":"数据粒度,5m:5分钟粒度,1h:1小时粒度"}
   DataInterval *string `json:"dataInterval,omitempty" xml:"dataInterval,omitempty"`
-  // {"en":"Province
-  // 
-  // 1.Province is not upload: Query all provinces and aggregate the returned data according to all provinces; 
-  // 2.Province is upload: Provinces can transmit Chinese or code. Please refer to the appendix description section of the overview page for the provincial information code table.
-  // 
-  // 3.Support language request header Accept Language, only support zh-CN and en-US, default to zh-CN. Accept Language: en-US, both the province and isp input and return are in code, otherwise the return is in Chinese.", "zh_CN":"省份
-  // 
-  // 1.未传递province时：查询所有省份，返回的数据按照所有省份聚合。
-  // 
-  // 2.有传递province时：省份 可传中文或code。省份信息码表详见概览页附录说明章节
-  // 
-  // 3.支持语言请求头Accept-Language，只支持zh-CN、en-US，默认为zh-CN。Accept-Language：en-US时，省份及运营商 入参及返回都为code，否则返回的为中文。"}
+  // {"en":"Province\n\n1.Province is not upload: Query all provinces and aggregate the returned data according to all provinces;\n2.Province is upload: Provinces can transmit Chinese or code. Please refer to the appendix description section of the overview page for the provincial information code table.\n\n3.Support language request header Accept Language, only support zh-CN and en-US, default to zh-CN. Accept Language: en-US, both the province and isp input and return are in code, otherwise the return is in Chinese.","zh_CN":"省份\n\n1.未传递province时：查询所有省份，返回的数据按照所有省份聚合。\n\n2.有传递province时：省份 可传中文或code。省份信息码表详见概览页附录说明章节\n\n3.支持语言请求头Accept-Language，只支持zh-CN、en-US，默认为zh-CN。Accept-Language：en-US时，省份及运营商 入参及返回都为code，否则返回的为中文。"}
   Province []*string `json:"province,omitempty" xml:"province,omitempty" type:"Repeated"`
-  // {"en":"ISP:
-  // 1.ISP is not upload: Query all ISPs and aggregate the returned data according to all ISPs; 
-  // 2.ISPs is upload: Isp can transmit Chinese or code. Please refer to the appendix description section of the overview page for the ISP information code table.", "zh_CN":"运营商：
-  // 1.未传递isp时：查询所有isp，返回的数据按照所有运营商聚合。 
-  // 2.有传递isp时：运营商 可传中文或code。运营商信息码表详见概览页附录说明章节"}
+  // {"en":"ISP:\n1.ISP is not upload: Query all ISPs and aggregate the returned data according to all ISPs;\n2.ISPs is upload: Isp can transmit Chinese or code. Please refer to the appendix description section of the overview page for the ISP information code table.","zh_CN":"运营商：\n1.未传递isp时：查询所有isp，返回的数据按照所有运营商聚合。\n2.有传递isp时：运营商 可传中文或code。运营商信息码表详见概览页附录说明章节"}
   Isp []*string `json:"isp,omitempty" xml:"isp,omitempty" type:"Repeated"`
-  // {"en":"Group dimension
-  // 1. Options are domain, province, isp, and more than one value can be entered;
-  // 2. The data is displayed according to the specified dimension;", "zh_CN":"分组维度
-  // 1.可选值为domain、province、isp,可传入多个值；
-  // 2.有传入则按照该维度展示明细数据；"}
+  // {"en":"Group dimension\n1. Options are domain, province, isp, and more than one value can be entered;\n2. The data is displayed according to the specified dimension;","zh_CN":"分组维度\n1.可选值为domain、province、isp,可传入多个值；\n2.有传入则按照该维度展示明细数据；"}
   GroupBy []*string `json:"groupBy,omitempty" xml:"groupBy,omitempty" type:"Repeated"`
 }
 
@@ -3433,132 +3231,15 @@ func (s *ReportRequestIspProvinceServiceRequest) SetGroupBy(v []*string) *Report
   return s
 }
 
-type ReportRequestIspProvinceServiceResponse struct {
-  // {"en":"result", "zh_CN":"结果"}
-  Result []*ReportRequestIspProvinceServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+type ReportRequestIspProvinceServiceRequestHeader struct {
 }
 
-func (s ReportRequestIspProvinceServiceResponse) String() string {
+func (s ReportRequestIspProvinceServiceRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportRequestIspProvinceServiceResponse) GoString() string {
+func (s ReportRequestIspProvinceServiceRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *ReportRequestIspProvinceServiceResponse) SetResult(v []*ReportRequestIspProvinceServiceResponseResult) *ReportRequestIspProvinceServiceResponse {
-  s.Result = v
-  return s
-}
-
-type ReportRequestIspProvinceServiceResponseResult struct     {
-  // {"en":"Domain", "zh_CN":"域名"}
-  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  // {"en":"ispData", "zh_CN":"isp数据"}
-  IspData []*ReportRequestIspProvinceServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
-}
-
-func (s ReportRequestIspProvinceServiceResponseResult) String() string {
-  return tea.Prettify(s)
-}
-
-func (s ReportRequestIspProvinceServiceResponseResult) GoString() string {
-  return s.String()
-}
-
-func (s *ReportRequestIspProvinceServiceResponseResult) SetDomain(v string) *ReportRequestIspProvinceServiceResponseResult {
-  s.Domain = &v
-  return s
-}
-
-func (s *ReportRequestIspProvinceServiceResponseResult) SetIspData(v []*ReportRequestIspProvinceServiceResponseResultIspData) *ReportRequestIspProvinceServiceResponseResult {
-  s.IspData = v
-  return s
-}
-
-type ReportRequestIspProvinceServiceResponseResultIspData struct     {
-  // {"en":"ISP", "zh_CN":"运营商"}
-  Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
-  // {"en":"provinceData", "zh_CN":"省份数据"}
-  ProvinceData []*ReportRequestIspProvinceServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
-}
-
-func (s ReportRequestIspProvinceServiceResponseResultIspData) String() string {
-  return tea.Prettify(s)
-}
-
-func (s ReportRequestIspProvinceServiceResponseResultIspData) GoString() string {
-  return s.String()
-}
-
-func (s *ReportRequestIspProvinceServiceResponseResultIspData) SetIsp(v string) *ReportRequestIspProvinceServiceResponseResultIspData {
-  s.Isp = &v
-  return s
-}
-
-func (s *ReportRequestIspProvinceServiceResponseResultIspData) SetProvinceData(v []*ReportRequestIspProvinceServiceResponseResultIspDataProvinceData) *ReportRequestIspProvinceServiceResponseResultIspData {
-  s.ProvinceData = v
-  return s
-}
-
-type ReportRequestIspProvinceServiceResponseResultIspDataProvinceData struct     {
-  // {"en":"Province", "zh_CN":"省份"}
-  Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
-  // {"en":"qps", "zh_CN":"qps数据"}
-  RequestData []*ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
-}
-
-func (s ReportRequestIspProvinceServiceResponseResultIspDataProvinceData) String() string {
-  return tea.Prettify(s)
-}
-
-func (s ReportRequestIspProvinceServiceResponseResultIspDataProvinceData) GoString() string {
-  return s.String()
-}
-
-func (s *ReportRequestIspProvinceServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportRequestIspProvinceServiceResponseResultIspDataProvinceData {
-  s.Province = &v
-  return s
-}
-
-func (s *ReportRequestIspProvinceServiceResponseResultIspDataProvinceData) SetRequestData(v []*ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) *ReportRequestIspProvinceServiceResponseResultIspDataProvinceData {
-  s.RequestData = v
-  return s
-}
-
-type ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData struct     {
-  // {"en":"Time,", "zh_CN":"时间,
-  //                1.查询的数据粒度为5m时,格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05,最后一个时间片是(yyyy-MM-dd+1)00:00；
-  //                2.查询的数据粒度为1h时,格式为yyyy-MM-dd HH；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 01,最后一个时间片是(yyyy-MM-dd+1);00；
-  //                3.返回开始时间和结束时间包含的时间片。"}
-  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
-  // {"en":"Total number of requests", "zh_CN":"请求数"}
-  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
-  // {"en":"Number of requests within unit ; time. Keep two digits of decimals.", "zh_CN":"单位时间内的请求数,保留2位小数"}
-  Qps *string `json:"qps,omitempty" xml:"qps,omitempty" require:"true"`
-}
-
-func (s ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) String() string {
-  return tea.Prettify(s)
-}
-
-func (s ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) GoString() string {
-  return s.String()
-}
-
-func (s *ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) SetTimestamp(v string) *ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData {
-  s.Timestamp = &v
-  return s
-}
-
-func (s *ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) SetValue(v string) *ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData {
-  s.Value = &v
-  return s
-}
-
-func (s *ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) SetQps(v string) *ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData {
-  s.Qps = &v
-  return s
 }
 
 type ReportRequestIspProvinceServicePaths struct {
@@ -3583,15 +3264,129 @@ func (s ReportRequestIspProvinceServiceParameters) GoString() string {
   return s.String()
 }
 
-type ReportRequestIspProvinceServiceRequestHeader struct {
+type ReportRequestIspProvinceServiceResponse struct {
+  // {"en":"result","zh_CN":"结果"}
+  Result []*ReportRequestIspProvinceServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportRequestIspProvinceServiceRequestHeader) String() string {
+func (s ReportRequestIspProvinceServiceResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportRequestIspProvinceServiceRequestHeader) GoString() string {
+func (s ReportRequestIspProvinceServiceResponse) GoString() string {
   return s.String()
+}
+
+func (s *ReportRequestIspProvinceServiceResponse) SetResult(v []*ReportRequestIspProvinceServiceResponseResult) *ReportRequestIspProvinceServiceResponse {
+  s.Result = v
+  return s
+}
+
+type ReportRequestIspProvinceServiceResponseResult struct     {
+  // {"en":"Domain","zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {"en":"ispData","zh_CN":"isp数据"}
+  IspData []*ReportRequestIspProvinceServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportRequestIspProvinceServiceResponseResult) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportRequestIspProvinceServiceResponseResult) GoString() string {
+  return s.String()
+}
+
+func (s *ReportRequestIspProvinceServiceResponseResult) SetDomain(v string) *ReportRequestIspProvinceServiceResponseResult {
+  s.Domain = &v
+  return s
+}
+
+func (s *ReportRequestIspProvinceServiceResponseResult) SetIspData(v []*ReportRequestIspProvinceServiceResponseResultIspData) *ReportRequestIspProvinceServiceResponseResult {
+  s.IspData = v
+  return s
+}
+
+type ReportRequestIspProvinceServiceResponseResultIspData struct     {
+  // {"en":"ISP","zh_CN":"运营商"}
+  Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
+  // {"en":"provinceData","zh_CN":"省份数据"}
+  ProvinceData []*ReportRequestIspProvinceServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportRequestIspProvinceServiceResponseResultIspData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportRequestIspProvinceServiceResponseResultIspData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportRequestIspProvinceServiceResponseResultIspData) SetIsp(v string) *ReportRequestIspProvinceServiceResponseResultIspData {
+  s.Isp = &v
+  return s
+}
+
+func (s *ReportRequestIspProvinceServiceResponseResultIspData) SetProvinceData(v []*ReportRequestIspProvinceServiceResponseResultIspDataProvinceData) *ReportRequestIspProvinceServiceResponseResultIspData {
+  s.ProvinceData = v
+  return s
+}
+
+type ReportRequestIspProvinceServiceResponseResultIspDataProvinceData struct     {
+  // {"en":"Province","zh_CN":"省份"}
+  Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
+  // {"en":"qps","zh_CN":"qps数据"}
+  RequestData []*ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportRequestIspProvinceServiceResponseResultIspDataProvinceData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportRequestIspProvinceServiceResponseResultIspDataProvinceData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportRequestIspProvinceServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportRequestIspProvinceServiceResponseResultIspDataProvinceData {
+  s.Province = &v
+  return s
+}
+
+func (s *ReportRequestIspProvinceServiceResponseResultIspDataProvinceData) SetRequestData(v []*ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) *ReportRequestIspProvinceServiceResponseResultIspDataProvinceData {
+  s.RequestData = v
+  return s
+}
+
+type ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData struct     {
+  // {"en":"time\n1. When the data granularity of the query is 5m, the format is yyyy-MM-dd HH: MM; Each time slice data value represents the data value in the previous time granularity range. The time slice at the beginning of the day is yyyy-MM-dd 00:05, and the last time slice is yyyy-MM-dd 24:00.\n2. When the data granularity of query is 1h, the format is yyyy-MM-dd HH. Each time slice data value represents the data value in the previous time granularity range. The time slice at the beginning of the day is yyyy-MM-dd 01, and the last time slice is yyyy-MM-dd 24.\n3. return the time slice contained in the start and end times.","zh_CN":"时间,\n1.查询的数据粒度为5m时,格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05,最后一个时间片是(yyyy-MM-dd+1)00:00；\n2.查询的数据粒度为1h时,格式为yyyy-MM-dd HH；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 01,最后一个时间片是(yyyy-MM-dd+1);00；\n3.返回开始时间和结束时间包含的时间片。"}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {"en":"Total number of requests","zh_CN":"请求数"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+  // {"en":"Number of requests within unit ; time. Keep two digits of decimals.","zh_CN":"单位时间内的请求数,保留2位小数"}
+  Qps *string `json:"qps,omitempty" xml:"qps,omitempty" require:"true"`
+}
+
+func (s ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) SetTimestamp(v string) *ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) SetValue(v string) *ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData {
+  s.Value = &v
+  return s
+}
+
+func (s *ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData) SetQps(v string) *ReportRequestIspProvinceServiceResponseResultIspDataProvinceDataRequestData {
+  s.Qps = &v
+  return s
 }
 
 type ReportRequestIspProvinceServiceResponseHeader struct {
@@ -3720,73 +3515,19 @@ func (s PolicyDetailReportResponseHeader) GoString() string {
 
 
 type ReportRequestHitRateIspProvinceServiceRequest struct {
-  // {"en":"Starting time:
-  //         1.The time format is yyyy-MM-ddTHH:mm:ss+08:00, for example, 2016-12-02T10:00:00+08:00 (for Beijing time, December 2, 2016, 10:00:00) );
-  //         2.Cannot be greater than the current time
-  //         3.Up to the data for the last six months (183 days) can be obtained.", "zh_CN":"开始时间:
-  //         1.时间格式为yyyy-MM-ddTHH:mm:ss+08:00,例如,2016-12-02T10:00:00+08:00（为北京时间2016年12月2日10点0分0秒）；
-  //         2.不能大于当前时间
-  //         3.最多可获取最近半年（183天）的数据。"}
+  // {"en":"Start time:\n1.The time format is yyyy-MM-ddTHH:mm:ss+08:00, for example, 2016-12-02T10:00:00+08:00 (for Beijing time, December 2, 2016, 10:00:00) );\n2.Cannot be greater than the current time\n3.Up to the data for the last six months (183 days) can be obtained.","zh_CN":"开始时间:\n1.时间格式为yyyy-MM-ddTHH:mm:ss+08:00,例如,2016-12-02T10:00:00+08:00（为北京时间2016年12月2日10点0分0秒）；\n2.不能大于当前时间\n3.最多可获取最近半年（183天）的数据。"}
   DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
-  // {"en":"End Time:
-  //         1.Time format yyyy-MM-ddTHH:mm:ss+08:00
-  //         2.The end time needs to be greater than the start time. If the end time is greater than the current time, the current time is taken.
-  //         3.dateFrom, dateTo are not passed, the default query for the past 24 hours; if there is only one undelivered, throw an exception
-  //         4.Allow query maximum time interval: 7 days, that is, the difference between dateFrom and dateTo cannot exceed 7 days","zh_CN":"结束时间:
-  //         1.时间格式yyyy-MM-ddTHH:mm:ss+08:00
-  //         2.结束时间需大于开始时间,结束时间如果大于当前时间,取当前时间。
-  //         3.dateFrom,dateTo二者都未传,默认查询过去的24小时；如仅有一个未传,抛异常
-  //         4.允许查询最大时间间隔:7天,即dateFrom和dateTo相差不能超过7天。
-  //         （可联系技术支持调整）"}
+  // {"en":"End Time:\n1.Time format yyyy-MM-ddTHH:mm:ss+08:00\n2.The end time needs to be greater than the start time. If the end time is greater than the current time, the current time is taken.\n3.dateFrom, dateTo are not passed, the default query for the past 24 hours; if there is only one undelivered, throw an exception\n4.Allow query maximum time interval: 7 days, that is, the difference between dateFrom and dateTo cannot exceed 7 days","zh_CN":"结束时间:\n1.时间格式yyyy-MM-ddTHH:mm:ss+08:00\n2.结束时间需大于开始时间,结束时间如果大于当前时间,取当前时间。\n3.dateFrom,dateTo二者都未传,默认查询过去的24小时；如仅有一个未传,抛异常\n4.允许查询最大时间间隔:7天,即dateFrom和dateTo相差不能超过7天。\n（可联系技术支持调整）"}
   DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
-  // {"en":"domain name:
-  // 
-  //         1.The maximum number of deliverable domain names is 20 by default (can be contacted by technical support);
-  //         2.Automatically filter out invalid domain names (such as passing illegal domain names, they will be filtered out, and the query results only return data of valid domain names).", "zh_CN":"域名:
-  //         1.可传递域名数量上限默认为20个（可联系技术支持调整）；
-  //         2.自动过滤掉无效域名（如传递非法域名,会被过滤掉,查询结果只返回有效域名的数据）。"}
+  // {"en":"domain name:\n\n1.The maximum number of deliverable domain names is 20 by default (can be contacted by technical support);\n2.Automatically filter out invalid domain names (such as passing illegal domain names, they will be filtered out, and the query results only return data of valid domain names).","zh_CN":"域名:\n1.可传递域名数量上限默认为20个（可联系技术支持调整）；\n2.自动过滤掉无效域名（如传递非法域名,会被过滤掉,查询结果只返回有效域名的数据）。"}
   Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" require:"true" type:"Repeated"`
-  // {"en":"Data granularity:
-  // 
-  //         1.support 5m (5 minutes), 1h (1 hour)
-  // 
-  //         2.do not pass the default 5m.", "zh_CN":"数据粒度:
-  //         1.支持5m（5分钟）、1h（1小时）
-  //         2.不传默认5m。"}
+  // {"defaultValue":"5m","en":"Data granularity:\n\n1.support 5m (5 minutes), 1h (1 hour)\n\n2.do not pass the default 5m.","zh_CN":"数据粒度:\n1.支持5m（5分钟）、1h（1小时）\n2.不传默认5m。","exampleValue":"5m,1h"}
   DataInterval *string `json:"dataInterval,omitempty" xml:"dataInterval,omitempty"`
-  // {"en":"Province
-  // 
-  // 1.Province is not upload: Query all provinces and aggregate the returned data according to all provinces; 
-  // 2.Province is upload: Provinces can transmit Chinese or code. Please refer to the appendix description section of the overview page for the provincial information code table.
-  // 
-  // 3.Support language request header Accept Language, only support zh-CN and en-US, default to zh-CN. Accept Language: en-US, both the province and isp input and return are in code, otherwise the return is in Chinese.", "zh_CN":"省份
-  // 
-  // 1.未传递province时：查询所有省份，返回的数据按照所有省份聚合。
-  // 
-  // 2.有传递province时：省份 可传中文或code。省份信息码表详见概览页附录说明章节
-  // 
-  // 3.支持语言请求头Accept-Language，只支持zh-CN、en-US，默认为zh-CN。Accept-Language：en-US时，省份及运营商 入参及返回都为code，否则返回的为中文。"}
+  // {"dictionary":"belong=Portal-CDN-Service|dict=si-provinceCodeList","en":"Province:\n1.If no province is specified: Query all provinces and aggregate the returned data according to all provinces\n2.Province specified: Send province code, multiple codes can be sent.","zh_CN":"省份：\n1.未传递province时：查询所有省份，返回的数据按照所有省份聚合。\n2.有传递province时：省份传code，可传多个。"}
   Province []*string `json:"province,omitempty" xml:"province,omitempty" type:"Repeated"`
-  // {"en":"ISP:
-  // 1.ISP is not upload: Query all ISPs and aggregate the returned data according to all ISPs; 
-  // 2.ISPs is upload: Isp can transmit Chinese or code. Please refer to the appendix description section of the overview page for the ISP information code table.", "zh_CN":"运营商：
-  // 1.未传递isp时：查询所有isp，返回的数据按照所有运营商聚合。 
-  // 2.有传递isp时：运营商 可传中文或code。运营商信息码表详见概览页附录说明章节"}
+  // {"dictionary":"belong=Portal-CDN-Service|dict=ISP_CODE_BY_SI_ISP","en":"ISP:\n1.If no ISP is specified: all ISPs will be queried, and the returned data will be aggregated by all ISPs\n2.ISP specified: Send ISP code, multiple codes can be provided","zh_CN":"运营商：\n1.未传递isp时：查询所有isp，返回的数据按照所有运营商聚合\n2.有传递isp时：传递运营商code，可传多个"}
   Isp []*string `json:"isp,omitempty" xml:"isp,omitempty" type:"Repeated"`
-  // {"en":"Group keywords:
-  // 
-  //         1. the default aggregate display;
-  //         2. The optional values are domain, province, and isp, which can pass multiple values.
-  //         3. The incoming keyword means that the details need to be displayed according to the value corresponding to the keyword;
-  //         For example, when groupBy is passed into isp, the isp dimension needs to be displayed in detail; when it is not passed, it represents the isp aggregation display, and the isp node does not return. Other provinces and domains have the same logic.
-  //         For example: pass 'groupBy': ['domain', 'province'], then the isp node under ispData does not need to return.
-  //         { 'domain': 'www.aaaa.com', 'ispData': [ { 'isp': 'China Telecom', 'provinceData': [....] }]}", "zh_CN":"分组关键词:
-  //         1.默认聚合展示；
-  //         2.可选值为domain、province、isp,可传入多个值；
-  //         3.传入关键词则代表需要按照关键词对应的值展示明细；
-  //         例如groupBy传入isp,则isp维度需要明细展示；当没有传递isp,则代表isp聚合展示,同时isp节点则不返回。其他province和domain相同逻辑。
-  //         例如:传递'groupBy':  ['domain','province'],则ispData下的isp节点无需返回。
-  //         { 'domain': 'www.aaaa.com', 'ispData': [ {'isp':  '中国电信','provinceData': [....] }]}"}
+  // {"en":"Group keywords:  \n1.If not specified, the default aggregation display  \n2.Passing in a keyword means that the details need to be displayed according to the values corresponding to the keyword dimension grouping (for example, passing in domain means that the details are expanded according to domain).  \n3.Support passing multiple values","zh_CN":"分组关键词： \n1.未传递时，默认聚合展示\n2.传入关键词则代表需要按照关键词维度分组对应的值展示明细（例如传domain，则代表返回按照domain明细展开。）\n3.支持传多个值","exampleValue":"domain、province、isp"}
   GroupBy []*string `json:"groupBy,omitempty" xml:"groupBy,omitempty" type:"Repeated"`
 }
 
@@ -3833,136 +3574,15 @@ func (s *ReportRequestHitRateIspProvinceServiceRequest) SetGroupBy(v []*string) 
   return s
 }
 
-type ReportRequestHitRateIspProvinceServiceResponse struct {
-  // {"en":"result", "zh_CN":"结果"}
-  Result []*ReportRequestHitRateIspProvinceServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
+type ReportRequestHitRateIspProvinceServiceRequestHeader struct {
 }
 
-func (s ReportRequestHitRateIspProvinceServiceResponse) String() string {
+func (s ReportRequestHitRateIspProvinceServiceRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportRequestHitRateIspProvinceServiceResponse) GoString() string {
+func (s ReportRequestHitRateIspProvinceServiceRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *ReportRequestHitRateIspProvinceServiceResponse) SetResult(v []*ReportRequestHitRateIspProvinceServiceResponseResult) *ReportRequestHitRateIspProvinceServiceResponse {
-  s.Result = v
-  return s
-}
-
-type ReportRequestHitRateIspProvinceServiceResponseResult struct     {
-  // {"en":"Domain", "zh_CN":"域名"}
-  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  // {"en":"isp", "zh_CN":"ISP数据"}
-  IspData []*ReportRequestHitRateIspProvinceServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
-}
-
-func (s ReportRequestHitRateIspProvinceServiceResponseResult) String() string {
-  return tea.Prettify(s)
-}
-
-func (s ReportRequestHitRateIspProvinceServiceResponseResult) GoString() string {
-  return s.String()
-}
-
-func (s *ReportRequestHitRateIspProvinceServiceResponseResult) SetDomain(v string) *ReportRequestHitRateIspProvinceServiceResponseResult {
-  s.Domain = &v
-  return s
-}
-
-func (s *ReportRequestHitRateIspProvinceServiceResponseResult) SetIspData(v []*ReportRequestHitRateIspProvinceServiceResponseResultIspData) *ReportRequestHitRateIspProvinceServiceResponseResult {
-  s.IspData = v
-  return s
-}
-
-type ReportRequestHitRateIspProvinceServiceResponseResultIspData struct     {
-  // {"en":"Internet service providers", "zh_CN":"运营商"}
-  Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
-  // {"en":"province", "zh_CN":"省份数据"}
-  ProvinceData []*ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
-}
-
-func (s ReportRequestHitRateIspProvinceServiceResponseResultIspData) String() string {
-  return tea.Prettify(s)
-}
-
-func (s ReportRequestHitRateIspProvinceServiceResponseResultIspData) GoString() string {
-  return s.String()
-}
-
-func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspData) SetIsp(v string) *ReportRequestHitRateIspProvinceServiceResponseResultIspData {
-  s.Isp = &v
-  return s
-}
-
-func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspData) SetProvinceData(v []*ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData) *ReportRequestHitRateIspProvinceServiceResponseResultIspData {
-  s.ProvinceData = v
-  return s
-}
-
-type ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData struct     {
-  // {"en":"Province", "zh_CN":"省份"}
-  Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
-  // {"en":"Request number hit rate, retain 4 decimal places", "zh_CN":"求数命中率数据"}
-  HitRateData []*ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData `json:"hitRateData,omitempty" xml:"hitRateData,omitempty" require:"true" type:"Repeated"`
-}
-
-func (s ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData) String() string {
-  return tea.Prettify(s)
-}
-
-func (s ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData) GoString() string {
-  return s.String()
-}
-
-func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData {
-  s.Province = &v
-  return s
-}
-
-func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData) SetHitRateData(v []*ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData {
-  s.HitRateData = v
-  return s
-}
-
-type ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData struct     {
-  // {"en":"time,
-  //         1. When the data size of the query is 5m, the format is yyyy-MM-dd HH:mm; each time slice data value represents the data value within the previous time granularity range. The time slice starting at the beginning of the day is yyyy-MM-dd 00:05, and the last time slice is (yyyy-MM-dd+1) 00:00;
-  //         2. When the data granularity of the query is 1h, the format is yyyy-MM-dd HH; each time slice data value represents the data value within the previous time granularity range. The time slice starting at the beginning of the day is yyyy-MM-dd 01, and the last time slice is (yyyy-MM-dd+1) 00;
-  //         3. Return to the time slice included in the start time and end time.", "zh_CN":"时间,
-  //         1.查询的数据粒度为5m时,格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05,最后一个时间片是（yyyy-MM-dd+1）00:00；
-  //         2.查询的数据粒度为1h时,格式为yyyy-MM-dd HH；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 01,最后一个时间片是（yyyy-MM-dd+1）00；
-  //         3.返回开始时间和结束时间包含的时间片。"}
-  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
-  // {"en":"Request number hit rate, retain 4 decimal places", "zh_CN":"请求数命中率,保留4位小数"}
-  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
-  // {"en":"Number of hit requests. (This field is not provided by default, if you need this field, you can contact configuration support)", "zh_CN":"命中请求数
-  //         (该字段默认不提供,需要该字段可联系配置支持)"}
-  HitRequest *string `json:"hitRequest,omitempty" xml:"hitRequest,omitempty" require:"true"`
-}
-
-func (s ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) String() string {
-  return tea.Prettify(s)
-}
-
-func (s ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) GoString() string {
-  return s.String()
-}
-
-func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) SetTimestamp(v string) *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData {
-  s.Timestamp = &v
-  return s
-}
-
-func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) SetValue(v string) *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData {
-  s.Value = &v
-  return s
-}
-
-func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) SetHitRequest(v string) *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData {
-  s.HitRequest = &v
-  return s
 }
 
 type ReportRequestHitRateIspProvinceServicePaths struct {
@@ -3987,15 +3607,129 @@ func (s ReportRequestHitRateIspProvinceServiceParameters) GoString() string {
   return s.String()
 }
 
-type ReportRequestHitRateIspProvinceServiceRequestHeader struct {
+type ReportRequestHitRateIspProvinceServiceResponse struct {
+  // {"en":"result","zh_CN":"结果"}
+  Result []*ReportRequestHitRateIspProvinceServiceResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s ReportRequestHitRateIspProvinceServiceRequestHeader) String() string {
+func (s ReportRequestHitRateIspProvinceServiceResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportRequestHitRateIspProvinceServiceRequestHeader) GoString() string {
+func (s ReportRequestHitRateIspProvinceServiceResponse) GoString() string {
   return s.String()
+}
+
+func (s *ReportRequestHitRateIspProvinceServiceResponse) SetResult(v []*ReportRequestHitRateIspProvinceServiceResponseResult) *ReportRequestHitRateIspProvinceServiceResponse {
+  s.Result = v
+  return s
+}
+
+type ReportRequestHitRateIspProvinceServiceResponseResult struct     {
+  // {"en":"Domain","zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {"en":"isp","zh_CN":"ISP数据"}
+  IspData []*ReportRequestHitRateIspProvinceServiceResponseResultIspData `json:"ispData,omitempty" xml:"ispData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportRequestHitRateIspProvinceServiceResponseResult) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportRequestHitRateIspProvinceServiceResponseResult) GoString() string {
+  return s.String()
+}
+
+func (s *ReportRequestHitRateIspProvinceServiceResponseResult) SetDomain(v string) *ReportRequestHitRateIspProvinceServiceResponseResult {
+  s.Domain = &v
+  return s
+}
+
+func (s *ReportRequestHitRateIspProvinceServiceResponseResult) SetIspData(v []*ReportRequestHitRateIspProvinceServiceResponseResultIspData) *ReportRequestHitRateIspProvinceServiceResponseResult {
+  s.IspData = v
+  return s
+}
+
+type ReportRequestHitRateIspProvinceServiceResponseResultIspData struct     {
+  // {"en":"Internet service providers","zh_CN":"运营商"}
+  Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
+  // {"en":"province","zh_CN":"省份数据"}
+  ProvinceData []*ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData `json:"provinceData,omitempty" xml:"provinceData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportRequestHitRateIspProvinceServiceResponseResultIspData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportRequestHitRateIspProvinceServiceResponseResultIspData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspData) SetIsp(v string) *ReportRequestHitRateIspProvinceServiceResponseResultIspData {
+  s.Isp = &v
+  return s
+}
+
+func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspData) SetProvinceData(v []*ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData) *ReportRequestHitRateIspProvinceServiceResponseResultIspData {
+  s.ProvinceData = v
+  return s
+}
+
+type ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData struct     {
+  // {"en":"Province","zh_CN":"省份"}
+  Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
+  // {"en":"Request number hit rate, retain 4 decimal places","zh_CN":"求数命中率数据"}
+  HitRateData []*ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData `json:"hitRateData,omitempty" xml:"hitRateData,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData) SetProvince(v string) *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData {
+  s.Province = &v
+  return s
+}
+
+func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData) SetHitRateData(v []*ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceData {
+  s.HitRateData = v
+  return s
+}
+
+type ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData struct     {
+  // {"en":"time,\n1. When the data size of the query is 5m, the format is yyyy-MM-dd HH:mm; each time slice data value represents the data value within the previous time granularity range. The time slice starting at the beginning of the day is yyyy-MM-dd 00:05, and the last time slice is (yyyy-MM-dd+1) 00:00;\n2. When the data granularity of the query is 1h, the format is yyyy-MM-dd HH; each time slice data value represents the data value within the previous time granularity range. The time slice starting at the beginning of the day is yyyy-MM-dd 01, and the last time slice is (yyyy-MM-dd+1) 00;\n3. Return to the time slice included in the start time and end time.","zh_CN":"时间,\n1.查询的数据粒度为5m时,格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05,最后一个时间片是（yyyy-MM-dd+1）00:00；\n2.查询的数据粒度为1h时,格式为yyyy-MM-dd HH；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 01,最后一个时间片是（yyyy-MM-dd+1）00；\n3.返回开始时间和结束时间包含的时间片。"}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {"en":"Request number hit rate, retain 4 decimal places","zh_CN":"请求数命中率,保留4位小数"}
+  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+  // {"en":"Number of hit requests. (This field is not provided by default, if you need this field, you can contact Technical Support)","zh_CN":"命中请求数(该字段默认不提供,需要该字段可联系技术支持)"}
+  HitRequest *string `json:"hitRequest,omitempty" xml:"hitRequest,omitempty" require:"true"`
+}
+
+func (s ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) GoString() string {
+  return s.String()
+}
+
+func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) SetTimestamp(v string) *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) SetValue(v string) *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData {
+  s.Value = &v
+  return s
+}
+
+func (s *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData) SetHitRequest(v string) *ReportRequestHitRateIspProvinceServiceResponseResultIspDataProvinceDataHitRateData {
+  s.HitRequest = &v
+  return s
 }
 
 type ReportRequestHitRateIspProvinceServiceResponseHeader struct {

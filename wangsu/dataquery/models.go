@@ -322,12 +322,66 @@ func (s SiteSessionInfoRequest) GoString() string {
   return s.String()
 }
 
+type SiteSessionInfoRequestHeader struct {
+}
+
+func (s SiteSessionInfoRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SiteSessionInfoRequestHeader) GoString() string {
+  return s.String()
+}
+
+type SiteSessionInfoPaths struct {
+}
+
+func (s SiteSessionInfoPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SiteSessionInfoPaths) GoString() string {
+  return s.String()
+}
+
+type SiteSessionInfoParameters struct {
+  // {"en":"Site name\nWhen this parameter must be specified, query the specified site data","zh_CN":"站点名称\n该参数必须指定时，查询指定的站点数据"}
+  SiteName *string `json:"siteName,omitempty" xml:"siteName,omitempty" require:"true"`
+  // {"en":"1.the start time of the query, in the format: yyyy-mm-ddThh:mm:ss or yyyy-mm-ddThh:mm\n2.must be less than the current time and endtime\n3.the difference between startTime and endTime cannot exceed 31 days (can be adjusted by contacting technical support)\n4.can only query the last six months of data","zh_CN":"1、查询的开始时间，格式：yyyy-mm-ddThh:mm:ss 或 yyyy-mm-ddThh:mm\n2、必须小于当前时间和endtime\n3、startTime和endTime相差不能超过31天（可联系技术支持调整）\n4、只能查询最近半年内数据"}
+  StartTime *string `json:"startTime,omitempty" xml:"startTime,omitempty" require:"true"`
+  // {"en":"1.the end time of the query, format: yyyy-mm-ddThh:mm:ss or yyyy-mm-ddThh:mm\n2.must be less than the current time, more than starttime\n3.the difference between startTime and endTime cannot exceed 31 days (can be adjusted by contacting technical support)\n4.can only query the last six months of data","zh_CN":"1、查询的结束时间，格式：yyyy-mm-ddThh:mm:ss或 yyyy-mm-ddThh:mm\n2、必须小于当前时间，大于starttime\n3、startTime和endTime相差不能超过31天（可联系技术支持调整）\n4、只能查询最近半年内数据"}
+  EndTime *string `json:"endTime,omitempty" xml:"endTime,omitempty" require:"true"`
+}
+
+func (s SiteSessionInfoParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SiteSessionInfoParameters) GoString() string {
+  return s.String()
+}
+
+func (s *SiteSessionInfoParameters) SetSiteName(v string) *SiteSessionInfoParameters {
+  s.SiteName = &v
+  return s
+}
+
+func (s *SiteSessionInfoParameters) SetStartTime(v string) *SiteSessionInfoParameters {
+  s.StartTime = &v
+  return s
+}
+
+func (s *SiteSessionInfoParameters) SetEndTime(v string) *SiteSessionInfoParameters {
+  s.EndTime = &v
+  return s
+}
+
 type SiteSessionInfoResponse struct {
-  // {'en':'Interface status codes', 'zh_CN':'接口状态码'}
+  // {"en":"Interface status codes","zh_CN":"接口状态码"}
   ReturnCode *int `json:"returnCode,omitempty" xml:"returnCode,omitempty" require:"true"`
-  // {'en':'Interface information', 'zh_CN':'接口信息'}
+  // {"en":"Interface information","zh_CN":"接口信息"}
   ReturnMsg *string `json:"returnMsg,omitempty" xml:"returnMsg,omitempty" require:"true"`
-  // {'en':'response content', 'zh_CN':'响应内容'}
+  // {"en":"response content","zh_CN":"响应内容"}
   Content *SiteSessionInfoResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
 }
 
@@ -355,11 +409,11 @@ func (s *SiteSessionInfoResponse) SetContent(v *SiteSessionInfoResponseContent) 
 }
 
 type SiteSessionInfoResponseContent struct {
-  // {'en':'site name', 'zh_CN':'站点名称'}
+  // {"en":"site name","zh_CN":"站点名称"}
   SiteName *string `json:"siteName,omitempty" xml:"siteName,omitempty" require:"true"`
-  // {'en':'site Id', 'zh_CN':'站点 ID'}
+  // {"en":"site Id","zh_CN":"站点 ID"}
   SiteId *int64 `json:"siteId,omitempty" xml:"siteId,omitempty" require:"true"`
-  // {'en':'Session data', 'zh_CN':'会话数据'}
+  // {"en":"Session data","zh_CN":"会话数据"}
   Content []*SiteSessionInfoResponseContentContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -387,18 +441,18 @@ func (s *SiteSessionInfoResponseContent) SetContent(v []*SiteSessionInfoResponse
 }
 
 type SiteSessionInfoResponseContentContent struct     {
-  // {'en':'Original IP', 'zh_CN':'原始IP'}
+  // {"en":"Original IP","zh_CN":"原始IP"}
   SrcIp *string `json:"srcIp,omitempty" xml:"srcIp,omitempty" require:"true"`
-  // {'en':'Original Port', 'zh_CN':'原始端口'}
+  // {"en":"Original Port","zh_CN":"原始端口"}
   SrcPort *int `json:"srcPort,omitempty" xml:"srcPort,omitempty" require:"true"`
-  // {'en':'Destination IP', 'zh_CN':'目的IP'}
+  // {"en":"Destination IP","zh_CN":"目的IP"}
   DestIp *string `json:"destIp,omitempty" xml:"destIp,omitempty" require:"true"`
-  // {'en':'Destination Port', 'zh_CN':'目的端口'}
+  // {"en":"Destination Port","zh_CN":"目的端口"}
   DestPort *int `json:"destPort,omitempty" xml:"destPort,omitempty" require:"true"`
-  // {'en':'protocol', 'zh_CN':'协议'}
+  // {"en":"protocol","zh_CN":"协议"}
   Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty" require:"true"`
-  // {'en':'Flow size in byte', 'zh_CN':'流量大小，单位byte'}
-  Flow *int `json:"flow,omitempty" xml:"flow,omitempty" require:"true"`
+  // {"en":"Flow size in byte","zh_CN":"流量大小，单位byte"}
+  Flow *SiteSessionInfoResponseContentContentFlow `json:"flow,omitempty" xml:"flow,omitempty" require:"true" type:"Struct"`
 }
 
 func (s SiteSessionInfoResponseContentContent) String() string {
@@ -434,76 +488,19 @@ func (s *SiteSessionInfoResponseContentContent) SetProtocol(v string) *SiteSessi
   return s
 }
 
-func (s *SiteSessionInfoResponseContentContent) SetFlow(v int) *SiteSessionInfoResponseContentContent {
-  s.Flow = &v
+func (s *SiteSessionInfoResponseContentContent) SetFlow(v *SiteSessionInfoResponseContentContentFlow) *SiteSessionInfoResponseContentContent {
+  s.Flow = v
   return s
 }
 
-type SiteSessionInfoPaths struct {
+type SiteSessionInfoResponseContentContentFlow struct {
 }
 
-func (s SiteSessionInfoPaths) String() string {
+func (s SiteSessionInfoResponseContentContentFlow) String() string {
   return tea.Prettify(s)
 }
 
-func (s SiteSessionInfoPaths) GoString() string {
-  return s.String()
-}
-
-type SiteSessionInfoParameters struct {
-  // {'en':'Site name
-  // When this parameter must be specified, query the specified site data', 'zh_CN':'站点名称
-  // 该参数必须指定时，查询指定的站点数据'}
-  SiteName *string `json:"siteName,omitempty" xml:"siteName,omitempty" require:"true"`
-  // {'en':'1.the start time of the query, in the format: yyyy-mm-ddThh:mm:ss or yyyy-mm-ddThh:mm
-  // 2.must be less than the current time and endtime
-  // 3.the difference between startTime and endTime cannot exceed 31 days (can be adjusted by contacting technical support)
-  // 4.can only query the last six months of data', 'zh_CN':'1、查询的开始时间，格式：yyyy-mm-ddThh:mm:ss 或 yyyy-mm-ddThh:mm
-  // 2、必须小于当前时间和endtime
-  // 3、startTime和endTime相差不能超过31天（可联系技术支持调整）
-  // 4、只能查询最近半年内数据'}
-  StartTime *string `json:"startTime,omitempty" xml:"startTime,omitempty" require:"true"`
-  // {'en':'1.the end time of the query, format: yyyy-mm-ddThh:mm:ss or yyyy-mm-ddThh:mm
-  // 2.must be less than the current time, more than starttime
-  // 3.the difference between startTime and endTime cannot exceed 31 days (can be adjusted by contacting technical support)
-  // 4.can only query the last six months of data', 'zh_CN':'1、查询的结束时间，格式：yyyy-mm-ddThh:mm:ss或 yyyy-mm-ddThh:mm
-  // 2、必须小于当前时间，大于starttime
-  // 3、startTime和endTime相差不能超过31天（可联系技术支持调整）
-  // 4、只能查询最近半年内数据'}
-  EndTime *string `json:"endTime,omitempty" xml:"endTime,omitempty" require:"true"`
-}
-
-func (s SiteSessionInfoParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s SiteSessionInfoParameters) GoString() string {
-  return s.String()
-}
-
-func (s *SiteSessionInfoParameters) SetSiteName(v string) *SiteSessionInfoParameters {
-  s.SiteName = &v
-  return s
-}
-
-func (s *SiteSessionInfoParameters) SetStartTime(v string) *SiteSessionInfoParameters {
-  s.StartTime = &v
-  return s
-}
-
-func (s *SiteSessionInfoParameters) SetEndTime(v string) *SiteSessionInfoParameters {
-  s.EndTime = &v
-  return s
-}
-
-type SiteSessionInfoRequestHeader struct {
-}
-
-func (s SiteSessionInfoRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s SiteSessionInfoRequestHeader) GoString() string {
+func (s SiteSessionInfoResponseContentContentFlow) GoString() string {
   return s.String()
 }
 
@@ -532,114 +529,15 @@ func (s SiteTotalFlowChartRequest) GoString() string {
   return s.String()
 }
 
-type SiteTotalFlowChartResponse struct {
-  // {'en':'Interface status codes', 'zh_CN':'接口状态码'}
-  ReturnCode *int `json:"returnCode,omitempty" xml:"returnCode,omitempty" require:"true"`
-  // {'en':'Interface information', 'zh_CN':'接口信息'}
-  ReturnMsg *string `json:"returnMsg,omitempty" xml:"returnMsg,omitempty" require:"true"`
-  // {'en':'response content', 'zh_CN':'响应内容'}
-  Content *SiteTotalFlowChartResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
+type SiteTotalFlowChartRequestHeader struct {
 }
 
-func (s SiteTotalFlowChartResponse) String() string {
+func (s SiteTotalFlowChartRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s SiteTotalFlowChartResponse) GoString() string {
+func (s SiteTotalFlowChartRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *SiteTotalFlowChartResponse) SetReturnCode(v int) *SiteTotalFlowChartResponse {
-  s.ReturnCode = &v
-  return s
-}
-
-func (s *SiteTotalFlowChartResponse) SetReturnMsg(v string) *SiteTotalFlowChartResponse {
-  s.ReturnMsg = &v
-  return s
-}
-
-func (s *SiteTotalFlowChartResponse) SetContent(v *SiteTotalFlowChartResponseContent) *SiteTotalFlowChartResponse {
-  s.Content = v
-  return s
-}
-
-type SiteTotalFlowChartResponseContent struct {
-  // {'en':'site name', 'zh_CN':'站点名称'}
-  SiteName *string `json:"siteName,omitempty" xml:"siteName,omitempty" require:"true"`
-  // {'en':'site Id', 'zh_CN':'站点 ID'}
-  SiteId *int64 `json:"siteId,omitempty" xml:"siteId,omitempty" require:"true"`
-  // {'en':'Allocated bandwidth in Mbps', 'zh_CN':'分配带宽，单位：Mbps'}
-  AllocateBandwidth *int `json:"allocateBandwidth,omitempty" xml:"allocateBandwidth,omitempty" require:"true"`
-  // {'en':'Bandwidth trend data', 'zh_CN':'带宽趋势数据'}
-  Bandwidths *SiteTotalFlowChartResponseContentBandwidths `json:"bandwidths,omitempty" xml:"bandwidths,omitempty" require:"true" type:"Struct"`
-}
-
-func (s SiteTotalFlowChartResponseContent) String() string {
-  return tea.Prettify(s)
-}
-
-func (s SiteTotalFlowChartResponseContent) GoString() string {
-  return s.String()
-}
-
-func (s *SiteTotalFlowChartResponseContent) SetSiteName(v string) *SiteTotalFlowChartResponseContent {
-  s.SiteName = &v
-  return s
-}
-
-func (s *SiteTotalFlowChartResponseContent) SetSiteId(v int64) *SiteTotalFlowChartResponseContent {
-  s.SiteId = &v
-  return s
-}
-
-func (s *SiteTotalFlowChartResponseContent) SetAllocateBandwidth(v int) *SiteTotalFlowChartResponseContent {
-  s.AllocateBandwidth = &v
-  return s
-}
-
-func (s *SiteTotalFlowChartResponseContent) SetBandwidths(v *SiteTotalFlowChartResponseContentBandwidths) *SiteTotalFlowChartResponseContent {
-  s.Bandwidths = v
-  return s
-}
-
-type SiteTotalFlowChartResponseContentBandwidths struct {
-  // {'en':'timeStamp', 'zh_CN':'时间戳'}
-  TimeStamp []*int64 `json:"timeStamp,omitempty" xml:"timeStamp,omitempty" require:"true" type:"Repeated"`
-  // {'en':'Time slice', 'zh_CN':'时间分片'}
-  TimeData []*string `json:"timeData,omitempty" xml:"timeData,omitempty" require:"true" type:"Repeated"`
-  // {'en':'1min granularity, showing direct uplink bandwidth, 5min granularity, showing average uplink bandwidth over 5min, unit is byte', 'zh_CN':'单位为byte，1min粒度，直接显示上行流量，5min粒度，显示5min内的平均上行流量，带宽(Mbps)=流量/1000/1000/60'}
-  UpStreamBandwidth []*int `json:"upStreamBandwidth,omitempty" xml:"upStreamBandwidth,omitempty" require:"true" type:"Repeated"`
-  // {'en':'1min granularity, showing direct downlink bandwidth, 5min granularity, showing average downlink bandwidth over 5min, unit is byte', 'zh_CN':'单位为byte，1min粒度，直接显示下行流量，5min粒度，显示5min内的平均下行流量，带宽（Mbps）=流量/1000/1000/60'}
-  DownStreamBandwidth []*int `json:"downStreamBandwidth,omitempty" xml:"downStreamBandwidth,omitempty" require:"true" type:"Repeated"`
-}
-
-func (s SiteTotalFlowChartResponseContentBandwidths) String() string {
-  return tea.Prettify(s)
-}
-
-func (s SiteTotalFlowChartResponseContentBandwidths) GoString() string {
-  return s.String()
-}
-
-func (s *SiteTotalFlowChartResponseContentBandwidths) SetTimeStamp(v []*int64) *SiteTotalFlowChartResponseContentBandwidths {
-  s.TimeStamp = v
-  return s
-}
-
-func (s *SiteTotalFlowChartResponseContentBandwidths) SetTimeData(v []*string) *SiteTotalFlowChartResponseContentBandwidths {
-  s.TimeData = v
-  return s
-}
-
-func (s *SiteTotalFlowChartResponseContentBandwidths) SetUpStreamBandwidth(v []*int) *SiteTotalFlowChartResponseContentBandwidths {
-  s.UpStreamBandwidth = v
-  return s
-}
-
-func (s *SiteTotalFlowChartResponseContentBandwidths) SetDownStreamBandwidth(v []*int) *SiteTotalFlowChartResponseContentBandwidths {
-  s.DownStreamBandwidth = v
-  return s
 }
 
 type SiteTotalFlowChartPaths struct {
@@ -654,33 +552,13 @@ func (s SiteTotalFlowChartPaths) GoString() string {
 }
 
 type SiteTotalFlowChartParameters struct {
-  // {'en':'Site name
-  // When this parameter must be specified, query the specified site data', 'zh_CN':'站点名称
-  // 该参数必须指定时，查询指定的站点数据'}
+  // {"en":"Site name\nWhen this parameter must be specified, query the specified site data","zh_CN":"站点名称\n该参数必须指定时，查询指定的站点数据"}
   SiteName *string `json:"siteName,omitempty" xml:"siteName,omitempty" require:"true"`
-  // {'en':'1.the start time of the query, in the format: yyyy-mm-ddThh:mm:ss or yyyy-mm-ddThh:mm
-  // 2.must be less than the current time and endtime
-  // 3.the difference between startTime and endTime cannot exceed 31 days (can be adjusted by contacting technical support)
-  // 4.can only query the last six months of data', 'zh_CN':'1、查询的开始时间，格式：yyyy-mm-ddThh:mm:ss 或 yyyy-mm-ddThh:mm
-  // 2、必须小于当前时间和endtime
-  // 3、startTime和endTime相差不能超过31天（可联系技术支持调整）
-  // 4、只能查询最近半年内数据'}
+  // {"en":"1.the start time of the query, in the format: yyyy-mm-ddThh:mm:ss or yyyy-mm-ddThh:mm\n2.must be less than the current time and endtime\n3.the difference between startTime and endTime cannot exceed 31 days (can be adjusted by contacting technical support)\n4.can only query the last six months of data","zh_CN":"1、查询的开始时间，格式：yyyy-mm-ddThh:mm:ss 或 yyyy-mm-ddThh:mm\n2、必须小于当前时间和endtime\n3、startTime和endTime相差不能超过31天（可联系技术支持调整）\n4、只能查询最近半年内数据"}
   StartTime *string `json:"startTime,omitempty" xml:"startTime,omitempty" require:"true"`
-  // {'en':'1.the end time of the query, format: yyyy-mm-ddThh:mm:ss or yyyy-mm-ddThh:mm
-  // 2.must be less than the current time, more than starttime
-  // 3.the difference between startTime and endTime cannot exceed 31 days (can be adjusted by contacting technical support)
-  // 4.can only query the last six months of data', 'zh_CN':'1、查询的结束时间，格式：yyyy-mm-ddThh:mm:ss或 yyyy-mm-ddThh:mm
-  // 2、必须小于当前时间，大于starttime
-  // 3、startTime和endTime相差不能超过31天（可联系技术支持调整）
-  // 4、只能查询最近半年内数据'}
+  // {"en":"1.the end time of the query, format: yyyy-mm-ddThh:mm:ss or yyyy-mm-ddThh:mm\n2.must be less than the current time, more than starttime\n3.the difference between startTime and endTime cannot exceed 31 days (can be adjusted by contacting technical support)\n4.can only query the last six months of data","zh_CN":"1、查询的结束时间，格式：yyyy-mm-ddThh:mm:ss或 yyyy-mm-ddThh:mm\n2、必须小于当前时间，大于starttime\n3、startTime和endTime相差不能超过31天（可联系技术支持调整）\n4、只能查询最近半年内数据"}
   EndTime *string `json:"endTime,omitempty" xml:"endTime,omitempty" require:"true"`
-  // {'en':'Time interval, enumerated
-  // 1 = 1 minute
-  // 2 = 5 minutes
-  // No pass default 5 minutes', 'zh_CN':'时间间隔，枚举
-  // 1 = 1分钟
-  // 2 = 5分钟
-  // 不传默认5分钟'}
+  // {"en":"Time interval, enumerated\n1 = 1 minute\n2 = 5 minutes\nNo pass default 5 minutes","zh_CN":"时间间隔，枚举\n1 = 1分钟\n2 = 5分钟\n不传默认5分钟"}
   ChartAccuracy *int `json:"chartAccuracy,omitempty" xml:"chartAccuracy,omitempty"`
 }
 
@@ -712,14 +590,146 @@ func (s *SiteTotalFlowChartParameters) SetChartAccuracy(v int) *SiteTotalFlowCha
   return s
 }
 
-type SiteTotalFlowChartRequestHeader struct {
+type SiteTotalFlowChartResponse struct {
+  // {"en":"Interface status codes","zh_CN":"接口状态码"}
+  ReturnCode *int `json:"returnCode,omitempty" xml:"returnCode,omitempty" require:"true"`
+  // {"en":"Interface information","zh_CN":"接口信息"}
+  ReturnMsg *string `json:"returnMsg,omitempty" xml:"returnMsg,omitempty" require:"true"`
+  // {"en":"response content","zh_CN":"响应内容"}
+  Content *SiteTotalFlowChartResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
 }
 
-func (s SiteTotalFlowChartRequestHeader) String() string {
+func (s SiteTotalFlowChartResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s SiteTotalFlowChartRequestHeader) GoString() string {
+func (s SiteTotalFlowChartResponse) GoString() string {
+  return s.String()
+}
+
+func (s *SiteTotalFlowChartResponse) SetReturnCode(v int) *SiteTotalFlowChartResponse {
+  s.ReturnCode = &v
+  return s
+}
+
+func (s *SiteTotalFlowChartResponse) SetReturnMsg(v string) *SiteTotalFlowChartResponse {
+  s.ReturnMsg = &v
+  return s
+}
+
+func (s *SiteTotalFlowChartResponse) SetContent(v *SiteTotalFlowChartResponseContent) *SiteTotalFlowChartResponse {
+  s.Content = v
+  return s
+}
+
+type SiteTotalFlowChartResponseContent struct {
+  // {"en":"site name","zh_CN":"站点名称"}
+  SiteName *string `json:"siteName,omitempty" xml:"siteName,omitempty" require:"true"`
+  // {"en":"site Id","zh_CN":"站点 ID"}
+  SiteId *int64 `json:"siteId,omitempty" xml:"siteId,omitempty" require:"true"`
+  // {"en":"Allocated bandwidth in Mbps","zh_CN":"分配带宽，单位：Mbps"}
+  AllocateBandwidth *SiteTotalFlowChartResponseContentAllocateBandwidth `json:"allocateBandwidth,omitempty" xml:"allocateBandwidth,omitempty" require:"true" type:"Struct"`
+  // {"en":"Bandwidth trend data","zh_CN":"带宽趋势数据"}
+  Bandwidths *SiteTotalFlowChartResponseContentBandwidths `json:"bandwidths,omitempty" xml:"bandwidths,omitempty" require:"true" type:"Struct"`
+}
+
+func (s SiteTotalFlowChartResponseContent) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SiteTotalFlowChartResponseContent) GoString() string {
+  return s.String()
+}
+
+func (s *SiteTotalFlowChartResponseContent) SetSiteName(v string) *SiteTotalFlowChartResponseContent {
+  s.SiteName = &v
+  return s
+}
+
+func (s *SiteTotalFlowChartResponseContent) SetSiteId(v int64) *SiteTotalFlowChartResponseContent {
+  s.SiteId = &v
+  return s
+}
+
+func (s *SiteTotalFlowChartResponseContent) SetAllocateBandwidth(v *SiteTotalFlowChartResponseContentAllocateBandwidth) *SiteTotalFlowChartResponseContent {
+  s.AllocateBandwidth = v
+  return s
+}
+
+func (s *SiteTotalFlowChartResponseContent) SetBandwidths(v *SiteTotalFlowChartResponseContentBandwidths) *SiteTotalFlowChartResponseContent {
+  s.Bandwidths = v
+  return s
+}
+
+type SiteTotalFlowChartResponseContentAllocateBandwidth struct {
+}
+
+func (s SiteTotalFlowChartResponseContentAllocateBandwidth) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SiteTotalFlowChartResponseContentAllocateBandwidth) GoString() string {
+  return s.String()
+}
+
+type SiteTotalFlowChartResponseContentBandwidths struct {
+  // {"en":"timeStamp","zh_CN":"时间戳"}
+  TimeStamp []*int64 `json:"timeStamp,omitempty" xml:"timeStamp,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Time slice","zh_CN":"时间分片"}
+  TimeData []*string `json:"timeData,omitempty" xml:"timeData,omitempty" require:"true" type:"Repeated"`
+  // {"en":"1min granularity, showing direct uplink bandwidth, 5min granularity, showing average uplink bandwidth over 5min, unit is byte","zh_CN":"单位为byte，1min粒度，直接显示上行流量，5min粒度，显示5min内的平均上行流量，带宽(Mbps)=流量/1000/1000/60"}
+  UpStreamBandwidth []*SiteTotalFlowChartResponseContentBandwidthsUpStreamBandwidth `json:"upStreamBandwidth,omitempty" xml:"upStreamBandwidth,omitempty" require:"true" type:"Repeated"`
+  // {"en":"1min granularity, showing direct downlink bandwidth, 5min granularity, showing average downlink bandwidth over 5min, unit is byte","zh_CN":"单位为byte，1min粒度，直接显示下行流量，5min粒度，显示5min内的平均下行流量，带宽（Mbps）=流量/1000/1000/60"}
+  DownStreamBandwidth []*SiteTotalFlowChartResponseContentBandwidthsDownStreamBandwidth `json:"downStreamBandwidth,omitempty" xml:"downStreamBandwidth,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s SiteTotalFlowChartResponseContentBandwidths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SiteTotalFlowChartResponseContentBandwidths) GoString() string {
+  return s.String()
+}
+
+func (s *SiteTotalFlowChartResponseContentBandwidths) SetTimeStamp(v []*int64) *SiteTotalFlowChartResponseContentBandwidths {
+  s.TimeStamp = v
+  return s
+}
+
+func (s *SiteTotalFlowChartResponseContentBandwidths) SetTimeData(v []*string) *SiteTotalFlowChartResponseContentBandwidths {
+  s.TimeData = v
+  return s
+}
+
+func (s *SiteTotalFlowChartResponseContentBandwidths) SetUpStreamBandwidth(v []*SiteTotalFlowChartResponseContentBandwidthsUpStreamBandwidth) *SiteTotalFlowChartResponseContentBandwidths {
+  s.UpStreamBandwidth = v
+  return s
+}
+
+func (s *SiteTotalFlowChartResponseContentBandwidths) SetDownStreamBandwidth(v []*SiteTotalFlowChartResponseContentBandwidthsDownStreamBandwidth) *SiteTotalFlowChartResponseContentBandwidths {
+  s.DownStreamBandwidth = v
+  return s
+}
+
+type SiteTotalFlowChartResponseContentBandwidthsUpStreamBandwidth struct     {
+}
+
+func (s SiteTotalFlowChartResponseContentBandwidthsUpStreamBandwidth) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SiteTotalFlowChartResponseContentBandwidthsUpStreamBandwidth) GoString() string {
+  return s.String()
+}
+
+type SiteTotalFlowChartResponseContentBandwidthsDownStreamBandwidth struct     {
+}
+
+func (s SiteTotalFlowChartResponseContentBandwidthsDownStreamBandwidth) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SiteTotalFlowChartResponseContentBandwidthsDownStreamBandwidth) GoString() string {
   return s.String()
 }
 
@@ -1219,12 +1229,66 @@ func (s SiteQualityChartRequest) GoString() string {
   return s.String()
 }
 
+type SiteQualityChartRequestHeader struct {
+}
+
+func (s SiteQualityChartRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SiteQualityChartRequestHeader) GoString() string {
+  return s.String()
+}
+
+type SiteQualityChartPaths struct {
+}
+
+func (s SiteQualityChartPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SiteQualityChartPaths) GoString() string {
+  return s.String()
+}
+
+type SiteQualityChartParameters struct {
+  // {"en":"Site name\nWhen this parameter must be specified, query the specified site data","zh_CN":"站点名称\n该参数必须指定时，查询指定的站点数据"}
+  SiteName *string `json:"siteName,omitempty" xml:"siteName,omitempty" require:"true"`
+  // {"en":"1.the start time of the query, in the format: yyyy-mm-ddThh:mm:ss or yyyy-mm-ddThh:mm\n2.must be less than the current time and endtime\n3.the difference between startTime and endTime cannot exceed 31 days (can be adjusted by contacting technical support)\n4.can only query the last six months of data","zh_CN":"1、查询的开始时间，格式：yyyy-mm-ddThh:mm:ss 或 yyyy-mm-ddThh:mm\n2、必须小于当前时间和endtime\n3、startTime和endTime相差不能超过31天（可联系技术支持调整）\n4、只能查询最近半年内数据"}
+  StartTime *string `json:"startTime,omitempty" xml:"startTime,omitempty" require:"true"`
+  // {"en":"1.the end time of the query, format: yyyy-mm-ddThh:mm:ss or yyyy-mm-ddThh:mm\n2.must be less than the current time, more than starttime\n3.the difference between startTime and endTime cannot exceed 31 days (can be adjusted by contacting technical support)\n4.can only query the last six months of data","zh_CN":"1、查询的结束时间，格式：yyyy-mm-ddThh:mm:ss或 yyyy-mm-ddThh:mm\n2、必须小于当前时间，大于starttime\n3、startTime和endTime相差不能超过31天（可联系技术支持调整）\n4、只能查询最近半年内数据"}
+  EndTime *string `json:"endTime,omitempty" xml:"endTime,omitempty" require:"true"`
+}
+
+func (s SiteQualityChartParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SiteQualityChartParameters) GoString() string {
+  return s.String()
+}
+
+func (s *SiteQualityChartParameters) SetSiteName(v string) *SiteQualityChartParameters {
+  s.SiteName = &v
+  return s
+}
+
+func (s *SiteQualityChartParameters) SetStartTime(v string) *SiteQualityChartParameters {
+  s.StartTime = &v
+  return s
+}
+
+func (s *SiteQualityChartParameters) SetEndTime(v string) *SiteQualityChartParameters {
+  s.EndTime = &v
+  return s
+}
+
 type SiteQualityChartResponse struct {
-  // {'en':'Interface status codes', 'zh_CN':'接口状态码'}
+  // {"en":"Interface status codes","zh_CN":"接口状态码"}
   ReturnCode *int `json:"returnCode,omitempty" xml:"returnCode,omitempty" require:"true"`
-  // {'en':'Interface information', 'zh_CN':'接口信息'}
+  // {"en":"Interface information","zh_CN":"接口信息"}
   ReturnMsg *string `json:"returnMsg,omitempty" xml:"returnMsg,omitempty" require:"true"`
-  // {'en':'response content', 'zh_CN':'响应内容'}
+  // {"en":"response content","zh_CN":"响应内容"}
   Content *SiteQualityChartResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
 }
 
@@ -1252,11 +1316,11 @@ func (s *SiteQualityChartResponse) SetContent(v *SiteQualityChartResponseContent
 }
 
 type SiteQualityChartResponseContent struct {
-  // {'en':'site name', 'zh_CN':'站点名称'}
+  // {"en":"site name","zh_CN":"站点名称"}
   SiteName *string `json:"siteName,omitempty" xml:"siteName,omitempty" require:"true"`
-  // {'en':'site Id', 'zh_CN':'站点 ID'}
+  // {"en":"site Id","zh_CN":"站点 ID"}
   SiteId *int64 `json:"siteId,omitempty" xml:"siteId,omitempty" require:"true"`
-  // {'en':'Tunnel quality data under site', 'zh_CN':'站点下的隧道质量数据'}
+  // {"en":"Tunnel quality data under site","zh_CN":"站点下的隧道质量数据"}
   Tunnel []*SiteQualityChartResponseContentTunnel `json:"tunnel,omitempty" xml:"tunnel,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -1284,22 +1348,22 @@ func (s *SiteQualityChartResponseContent) SetTunnel(v []*SiteQualityChartRespons
 }
 
 type SiteQualityChartResponseContentTunnel struct     {
-  // {'en':'tunnel name', 'zh_CN':'链路名称'}
+  // {"en":"tunnel name","zh_CN":"链路名称"}
   TunnelName *string `json:"tunnelName,omitempty" xml:"tunnelName,omitempty" require:"true"`
-  // {'en':'tunnel Id', 'zh_CN':'链路 ID'}
+  // {"en":"tunnel Id","zh_CN":"链路 ID"}
   TunnelId *int64 `json:"tunnelId,omitempty" xml:"tunnelId,omitempty" require:"true"`
-  // {'en':'tunnel status 0-unknown, 1-online, 2-offline, 3-not reported, 4-suspend', 'zh_CN':'链路状态0–未知，1–在线，2-离线，3-未上报，4-挂起'}
+  // {"en":"tunnel status 0-unknown, 1-online, 2-offline, 3-not reported, 4-suspend","zh_CN":"链路状态0–未知，1–在线，2-离线，3-未上报，4-挂起"}
   Status *int `json:"status,omitempty" xml:"status,omitempty" require:"true"`
-  // {'en':'timeStamp', 'zh_CN':'时间戳'}
+  // {"en":"timeStamp","zh_CN":"时间戳"}
   TimeStamp []*int64 `json:"timeStamp,omitempty" xml:"timeStamp,omitempty" require:"true" type:"Repeated"`
-  // {'en':'Time slice', 'zh_CN':'时间分片'}
+  // {"en":"Time slice","zh_CN":"时间分片"}
   TimeData []*string `json:"timeData,omitempty" xml:"timeData,omitempty" require:"true" type:"Repeated"`
-  // {'en':'Time delay', 'zh_CN':'时延'}
-  Rtt []*int `json:"rtt,omitempty" xml:"rtt,omitempty" require:"true" type:"Repeated"`
-  // {'en':'Packet loss rate', 'zh_CN':'丢包率'}
-  Loss []*int `json:"loss,omitempty" xml:"loss,omitempty" require:"true" type:"Repeated"`
-  // {'en':'jitter', 'zh_CN':'抖动'}
-  Mdev []*int `json:"mdev,omitempty" xml:"mdev,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Time delay","zh_CN":"时延"}
+  Rtt []*SiteQualityChartResponseContentTunnelRtt `json:"rtt,omitempty" xml:"rtt,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Packet loss rate","zh_CN":"丢包率"}
+  Loss []*SiteQualityChartResponseContentTunnelLoss `json:"loss,omitempty" xml:"loss,omitempty" require:"true" type:"Repeated"`
+  // {"en":"jitter","zh_CN":"抖动"}
+  Mdev []*SiteQualityChartResponseContentTunnelMdev `json:"mdev,omitempty" xml:"mdev,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s SiteQualityChartResponseContentTunnel) String() string {
@@ -1335,86 +1399,51 @@ func (s *SiteQualityChartResponseContentTunnel) SetTimeData(v []*string) *SiteQu
   return s
 }
 
-func (s *SiteQualityChartResponseContentTunnel) SetRtt(v []*int) *SiteQualityChartResponseContentTunnel {
+func (s *SiteQualityChartResponseContentTunnel) SetRtt(v []*SiteQualityChartResponseContentTunnelRtt) *SiteQualityChartResponseContentTunnel {
   s.Rtt = v
   return s
 }
 
-func (s *SiteQualityChartResponseContentTunnel) SetLoss(v []*int) *SiteQualityChartResponseContentTunnel {
+func (s *SiteQualityChartResponseContentTunnel) SetLoss(v []*SiteQualityChartResponseContentTunnelLoss) *SiteQualityChartResponseContentTunnel {
   s.Loss = v
   return s
 }
 
-func (s *SiteQualityChartResponseContentTunnel) SetMdev(v []*int) *SiteQualityChartResponseContentTunnel {
+func (s *SiteQualityChartResponseContentTunnel) SetMdev(v []*SiteQualityChartResponseContentTunnelMdev) *SiteQualityChartResponseContentTunnel {
   s.Mdev = v
   return s
 }
 
-type SiteQualityChartPaths struct {
+type SiteQualityChartResponseContentTunnelRtt struct     {
 }
 
-func (s SiteQualityChartPaths) String() string {
+func (s SiteQualityChartResponseContentTunnelRtt) String() string {
   return tea.Prettify(s)
 }
 
-func (s SiteQualityChartPaths) GoString() string {
+func (s SiteQualityChartResponseContentTunnelRtt) GoString() string {
   return s.String()
 }
 
-type SiteQualityChartParameters struct {
-  // {'en':'Site name
-  // When this parameter must be specified, query the specified site data', 'zh_CN':'站点名称
-  // 该参数必须指定时，查询指定的站点数据'}
-  SiteName *string `json:"siteName,omitempty" xml:"siteName,omitempty" require:"true"`
-  // {'en':'1.the start time of the query, in the format: yyyy-mm-ddThh:mm:ss or yyyy-mm-ddThh:mm
-  // 2.must be less than the current time and endtime
-  // 3.the difference between startTime and endTime cannot exceed 31 days (can be adjusted by contacting technical support)
-  // 4.can only query the last six months of data', 'zh_CN':'1、查询的开始时间，格式：yyyy-mm-ddThh:mm:ss 或 yyyy-mm-ddThh:mm
-  // 2、必须小于当前时间和endtime
-  // 3、startTime和endTime相差不能超过31天（可联系技术支持调整）
-  // 4、只能查询最近半年内数据'}
-  StartTime *string `json:"startTime,omitempty" xml:"startTime,omitempty" require:"true"`
-  // {'en':'1.the end time of the query, format: yyyy-mm-ddThh:mm:ss or yyyy-mm-ddThh:mm
-  // 2.must be less than the current time, more than starttime
-  // 3.the difference between startTime and endTime cannot exceed 31 days (can be adjusted by contacting technical support)
-  // 4.can only query the last six months of data', 'zh_CN':'1、查询的结束时间，格式：yyyy-mm-ddThh:mm:ss或 yyyy-mm-ddThh:mm
-  // 2、必须小于当前时间，大于starttime
-  // 3、startTime和endTime相差不能超过31天（可联系技术支持调整）
-  // 4、只能查询最近半年内数据'}
-  EndTime *string `json:"endTime,omitempty" xml:"endTime,omitempty" require:"true"`
+type SiteQualityChartResponseContentTunnelLoss struct     {
 }
 
-func (s SiteQualityChartParameters) String() string {
+func (s SiteQualityChartResponseContentTunnelLoss) String() string {
   return tea.Prettify(s)
 }
 
-func (s SiteQualityChartParameters) GoString() string {
+func (s SiteQualityChartResponseContentTunnelLoss) GoString() string {
   return s.String()
 }
 
-func (s *SiteQualityChartParameters) SetSiteName(v string) *SiteQualityChartParameters {
-  s.SiteName = &v
-  return s
+type SiteQualityChartResponseContentTunnelMdev struct     {
 }
 
-func (s *SiteQualityChartParameters) SetStartTime(v string) *SiteQualityChartParameters {
-  s.StartTime = &v
-  return s
-}
-
-func (s *SiteQualityChartParameters) SetEndTime(v string) *SiteQualityChartParameters {
-  s.EndTime = &v
-  return s
-}
-
-type SiteQualityChartRequestHeader struct {
-}
-
-func (s SiteQualityChartRequestHeader) String() string {
+func (s SiteQualityChartResponseContentTunnelMdev) String() string {
   return tea.Prettify(s)
 }
 
-func (s SiteQualityChartRequestHeader) GoString() string {
+func (s SiteQualityChartResponseContentTunnelMdev) GoString() string {
   return s.String()
 }
 

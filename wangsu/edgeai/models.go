@@ -5,6 +5,387 @@ import (
   "github.com/alibabacloud-go/tea/tea"
 )
 
+type UpdateWRConnectorRequest struct {
+  // {"en":"QueueIT platform account ID, obtained from the 'Customer Account ID' value on the 'Company Profile' page under 'Account' in the left navigation bar of go.queue-it.net.","zh_CN":"QueueIT账号ID：QueueIT 平台账号，取自go.queue-it.net左侧导航栏 \"Account\" 下 \"Company Profile\" 页面的 \"Customer Account ID\" 值"}
+  QtAccountId *string `json:"qtAccountId,omitempty" xml:"qtAccountId,omitempty"`
+  // {"en":"QueueIT platform Secret Key, obtained from the 'KnownUser secret key' value in the 'Integration' tab at the top of the 'Settings' page under 'Account' in the left navigation bar of go.queue-it.net.","zh_CN":"QueueIT Secret Key：QueueIT 平台的 SecretKey，取自go.queue-it.net左侧导航栏 \"Account\" 下 \"Settings\" 页面顶部 \"Integration\" 标签中的 \"KnownUser secret key\" 值"}
+  QtSK *string `json:"qtSK,omitempty" xml:"qtSK,omitempty"`
+  // {"en":"QueueIT platform API Key, obtainable from the 'API Keys' page under 'Account' in the left navigation bar of go.queue-it.net.","zh_CN":"QueueIT API Key：QueueIT 平台的 APIKey，可从go.queue-it.net左侧导航栏 \"Account\" 下 \"API Keys\" 页面获取"}
+  QtApiKey *string `json:"qtApiKey,omitempty" xml:"qtApiKey,omitempty"`
+  // {"en":"Synchronization period (unit: seconds)","zh_CN":"同步周期：从 QueueIT 平台自动同步连接器配置的周期（单位：秒）"}
+  SynCycle *int `json:"synCycle,omitempty" xml:"synCycle,omitempty"`
+  // {"en":"Whether to verify the user identity secret key. If enabled, only invited users are allowed to access.","zh_CN":"验证用户身份：是否验证用户身份标识秘钥，开启时仅允许受邀用户访问"}
+  VerifyUser *bool `json:"verifyUser,omitempty" xml:"verifyUser,omitempty"`
+  // {"en":"Whether to generate a queue token","zh_CN":"生成队列令牌：是否生成访问等候室的队列令牌（ENTOKEN）"}
+  GenerateQueueToken *bool `json:"generateQueueToken,omitempty" xml:"generateQueueToken,omitempty"`
+  // {"en":"Queue token validity period (unit: seconds)","zh_CN":"队列令牌有效期：队列令牌（ENTOKEN）的有效期（单位：秒）"}
+  QueueTokenValidityPeriod *int `json:"queueTokenValidityPeriod,omitempty" xml:"queueTokenValidityPeriod,omitempty"`
+}
+
+func (s UpdateWRConnectorRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateWRConnectorRequest) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateWRConnectorRequest) SetQtAccountId(v string) *UpdateWRConnectorRequest {
+  s.QtAccountId = &v
+  return s
+}
+
+func (s *UpdateWRConnectorRequest) SetQtSK(v string) *UpdateWRConnectorRequest {
+  s.QtSK = &v
+  return s
+}
+
+func (s *UpdateWRConnectorRequest) SetQtApiKey(v string) *UpdateWRConnectorRequest {
+  s.QtApiKey = &v
+  return s
+}
+
+func (s *UpdateWRConnectorRequest) SetSynCycle(v int) *UpdateWRConnectorRequest {
+  s.SynCycle = &v
+  return s
+}
+
+func (s *UpdateWRConnectorRequest) SetVerifyUser(v bool) *UpdateWRConnectorRequest {
+  s.VerifyUser = &v
+  return s
+}
+
+func (s *UpdateWRConnectorRequest) SetGenerateQueueToken(v bool) *UpdateWRConnectorRequest {
+  s.GenerateQueueToken = &v
+  return s
+}
+
+func (s *UpdateWRConnectorRequest) SetQueueTokenValidityPeriod(v int) *UpdateWRConnectorRequest {
+  s.QueueTokenValidityPeriod = &v
+  return s
+}
+
+type UpdateWRConnectorRequestHeader struct {
+}
+
+func (s UpdateWRConnectorRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateWRConnectorRequestHeader) GoString() string {
+  return s.String()
+}
+
+type UpdateWRConnectorPaths struct {
+  // {"en":"instance id","zh_CN":"实例id"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+}
+
+func (s UpdateWRConnectorPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateWRConnectorPaths) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateWRConnectorPaths) SetId(v string) *UpdateWRConnectorPaths {
+  s.Id = &v
+  return s
+}
+
+type UpdateWRConnectorParameters struct {
+}
+
+func (s UpdateWRConnectorParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateWRConnectorParameters) GoString() string {
+  return s.String()
+}
+
+type UpdateWRConnectorResponse struct {
+  // {"en":"response code","zh_CN":"响应码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message","zh_CN":"响应信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"response data","zh_CN":"响应数据"}
+  Data *UpdateWRConnectorResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s UpdateWRConnectorResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateWRConnectorResponse) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateWRConnectorResponse) SetCode(v string) *UpdateWRConnectorResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *UpdateWRConnectorResponse) SetMessage(v string) *UpdateWRConnectorResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *UpdateWRConnectorResponse) SetData(v *UpdateWRConnectorResponseData) *UpdateWRConnectorResponse {
+  s.Data = v
+  return s
+}
+
+type UpdateWRConnectorResponseData struct {
+}
+
+func (s UpdateWRConnectorResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateWRConnectorResponseData) GoString() string {
+  return s.String()
+}
+
+type UpdateWRConnectorResponseHeader struct {
+}
+
+func (s UpdateWRConnectorResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateWRConnectorResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type ViewWRConnectorInfoRequest struct {
+}
+
+func (s ViewWRConnectorInfoRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ViewWRConnectorInfoRequest) GoString() string {
+  return s.String()
+}
+
+type ViewWRConnectorInfoRequestHeader struct {
+}
+
+func (s ViewWRConnectorInfoRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ViewWRConnectorInfoRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ViewWRConnectorInfoPaths struct {
+  // {"en":"instance id","zh_CN":"实例id"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+}
+
+func (s ViewWRConnectorInfoPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ViewWRConnectorInfoPaths) GoString() string {
+  return s.String()
+}
+
+func (s *ViewWRConnectorInfoPaths) SetId(v string) *ViewWRConnectorInfoPaths {
+  s.Id = &v
+  return s
+}
+
+type ViewWRConnectorInfoParameters struct {
+}
+
+func (s ViewWRConnectorInfoParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ViewWRConnectorInfoParameters) GoString() string {
+  return s.String()
+}
+
+type ViewWRConnectorInfoResponse struct {
+  // {"en":"response code","zh_CN":"响应码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message","zh_CN":"响应信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"response data","zh_CN":"响应数据"}
+  Data *ViewWRConnectorInfoResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s ViewWRConnectorInfoResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ViewWRConnectorInfoResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ViewWRConnectorInfoResponse) SetCode(v string) *ViewWRConnectorInfoResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ViewWRConnectorInfoResponse) SetMessage(v string) *ViewWRConnectorInfoResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *ViewWRConnectorInfoResponse) SetData(v *ViewWRConnectorInfoResponseData) *ViewWRConnectorInfoResponse {
+  s.Data = v
+  return s
+}
+
+type ViewWRConnectorInfoResponseData struct {
+  // {"en":"connector","zh_CN":"连接器"}
+  Connector *ViewWRConnectorInfoResponseDataConnector `json:"connector,omitempty" xml:"connector,omitempty" require:"true" type:"Struct"`
+}
+
+func (s ViewWRConnectorInfoResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ViewWRConnectorInfoResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *ViewWRConnectorInfoResponseData) SetConnector(v *ViewWRConnectorInfoResponseDataConnector) *ViewWRConnectorInfoResponseData {
+  s.Connector = v
+  return s
+}
+
+type ViewWRConnectorInfoResponseDataConnector struct {
+  // {"en":"instance id","zh_CN":"实例id"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+  // {"en":"The unique name of the QueueIT connector across the platform. Supports Chinese characters, English letters, numbers, hyphens (-), and underscores (_). The length must not exceed 50 characters.","zh_CN":"QueueIT连接器名称：全平台唯一，支持输入中文、英文、数字、中划线(-)、下划线(_)，长度不超过50个字符。"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"QueueIT platform account ID, obtained from the 'Customer Account ID' value on the 'Company Profile' page under 'Account' in the left navigation bar of go.queue-it.net.","zh_CN":"QueueIT账号ID：QueueIT 平台账号，取自go.queue-it.net左侧导航栏 \"Account\" 下 \"Company Profile\" 页面的 \"Customer Account ID\" 值"}
+  QtAccountId *string `json:"qtAccountId,omitempty" xml:"qtAccountId,omitempty" require:"true"`
+  // {"en":"QueueIT platform Secret Key, obtained from the 'KnownUser secret key' value in the 'Integration' tab at the top of the 'Settings' page under 'Account' in the left navigation bar of go.queue-it.net.","zh_CN":"QueueIT Secret Key：QueueIT 平台的 SecretKey，取自go.queue-it.net左侧导航栏 \"Account\" 下 \"Settings\" 页面顶部 \"Integration\" 标签中的 \"KnownUser secret key\" 值"}
+  QtSK *string `json:"qtSK,omitempty" xml:"qtSK,omitempty" require:"true"`
+  // {"en":"QueueIT platform API Key, obtainable from the 'API Keys' page under 'Account' in the left navigation bar of go.queue-it.net.","zh_CN":"QueueIT API Key：QueueIT 平台的 APIKey，可从go.queue-it.net左侧导航栏 \"Account\" 下 \"API Keys\" 页面获取"}
+  QtApiKey *string `json:"qtApiKey,omitempty" xml:"qtApiKey,omitempty" require:"true"`
+  // {"en":"The period (in seconds) for automatically synchronizing connector configurations from the QueueIT platform.","zh_CN":"同步周期：从 QueueIT 平台自动同步连接器配置的周期（单位：秒）"}
+  SynCycle *int `json:"synCycle,omitempty" xml:"synCycle,omitempty" require:"true"`
+  // {"en":"Configuration content","zh_CN":"配置内容"}
+  ConfigContent *string `json:"configContent,omitempty" xml:"configContent,omitempty" require:"true"`
+  // {"en":"Whether to verify the user identity secret key. If enabled, only invited users are allowed to access.","zh_CN":"验证用户身份：是否验证用户身份标识秘钥，开启时仅允许受邀用户访问"}
+  VerifyUser *bool `json:"verifyUser,omitempty" xml:"verifyUser,omitempty" require:"true"`
+  // {"en":"Whether to generate a queue token (ENTOKEN) for accessing the waiting room.","zh_CN":"生成队列令牌：是否生成访问等候室的队列令牌（ENTOKEN）"}
+  GenerateQueueToken *bool `json:"generateQueueToken,omitempty" xml:"generateQueueToken,omitempty" require:"true"`
+  // {"en":"The validity period of the queue token (ENTOKEN) in seconds.","zh_CN":"队列令牌有效期：队列令牌（ENTOKEN）的有效期（单位：秒）"}
+  QueueTokenValidityPeriod *int `json:"queueTokenValidityPeriod,omitempty" xml:"queueTokenValidityPeriod,omitempty" require:"true"`
+  // {"en":"Status: 0 Not deployed 1 Deployed 2 Effective","zh_CN":"状态：0未部署 1已部署 2已生效"}
+  Status *int `json:"status,omitempty" xml:"status,omitempty" require:"true"`
+  // {"en":"Creation time (timestamp)","zh_CN":"创建时间（时间戳）"}
+  CreateTime *int `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
+  // {"en":"Modification time (timestamp)","zh_CN":"修改时间（时间戳）"}
+  UpdateTime *int `json:"updateTime,omitempty" xml:"updateTime,omitempty" require:"true"`
+  // {"en":"Whether the configuration has been modified or not deployed","zh_CN":"是否配置修改，未部署"}
+  ConfigChanged *bool `json:"configChanged,omitempty" xml:"configChanged,omitempty" require:"true"`
+}
+
+func (s ViewWRConnectorInfoResponseDataConnector) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ViewWRConnectorInfoResponseDataConnector) GoString() string {
+  return s.String()
+}
+
+func (s *ViewWRConnectorInfoResponseDataConnector) SetId(v string) *ViewWRConnectorInfoResponseDataConnector {
+  s.Id = &v
+  return s
+}
+
+func (s *ViewWRConnectorInfoResponseDataConnector) SetName(v string) *ViewWRConnectorInfoResponseDataConnector {
+  s.Name = &v
+  return s
+}
+
+func (s *ViewWRConnectorInfoResponseDataConnector) SetQtAccountId(v string) *ViewWRConnectorInfoResponseDataConnector {
+  s.QtAccountId = &v
+  return s
+}
+
+func (s *ViewWRConnectorInfoResponseDataConnector) SetQtSK(v string) *ViewWRConnectorInfoResponseDataConnector {
+  s.QtSK = &v
+  return s
+}
+
+func (s *ViewWRConnectorInfoResponseDataConnector) SetQtApiKey(v string) *ViewWRConnectorInfoResponseDataConnector {
+  s.QtApiKey = &v
+  return s
+}
+
+func (s *ViewWRConnectorInfoResponseDataConnector) SetSynCycle(v int) *ViewWRConnectorInfoResponseDataConnector {
+  s.SynCycle = &v
+  return s
+}
+
+func (s *ViewWRConnectorInfoResponseDataConnector) SetConfigContent(v string) *ViewWRConnectorInfoResponseDataConnector {
+  s.ConfigContent = &v
+  return s
+}
+
+func (s *ViewWRConnectorInfoResponseDataConnector) SetVerifyUser(v bool) *ViewWRConnectorInfoResponseDataConnector {
+  s.VerifyUser = &v
+  return s
+}
+
+func (s *ViewWRConnectorInfoResponseDataConnector) SetGenerateQueueToken(v bool) *ViewWRConnectorInfoResponseDataConnector {
+  s.GenerateQueueToken = &v
+  return s
+}
+
+func (s *ViewWRConnectorInfoResponseDataConnector) SetQueueTokenValidityPeriod(v int) *ViewWRConnectorInfoResponseDataConnector {
+  s.QueueTokenValidityPeriod = &v
+  return s
+}
+
+func (s *ViewWRConnectorInfoResponseDataConnector) SetStatus(v int) *ViewWRConnectorInfoResponseDataConnector {
+  s.Status = &v
+  return s
+}
+
+func (s *ViewWRConnectorInfoResponseDataConnector) SetCreateTime(v int) *ViewWRConnectorInfoResponseDataConnector {
+  s.CreateTime = &v
+  return s
+}
+
+func (s *ViewWRConnectorInfoResponseDataConnector) SetUpdateTime(v int) *ViewWRConnectorInfoResponseDataConnector {
+  s.UpdateTime = &v
+  return s
+}
+
+func (s *ViewWRConnectorInfoResponseDataConnector) SetConfigChanged(v bool) *ViewWRConnectorInfoResponseDataConnector {
+  s.ConfigChanged = &v
+  return s
+}
+
+type ViewWRConnectorInfoResponseHeader struct {
+}
+
+func (s ViewWRConnectorInfoResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ViewWRConnectorInfoResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type EnableDisableFileRequest struct {
   // {"en":"knowledgeId", "zh_CN":"知识库id"}
   KnowledgeBaseId *string `json:"knowledgeBaseId,omitempty" xml:"knowledgeBaseId,omitempty" require:"true"`
@@ -634,6 +1015,258 @@ func (s ListRagFileResponseHeader) GoString() string {
 
 
 
+type ListConnectorsByPageRequest struct {
+}
+
+func (s ListConnectorsByPageRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConnectorsByPageRequest) GoString() string {
+  return s.String()
+}
+
+type ListConnectorsByPageRequestHeader struct {
+}
+
+func (s ListConnectorsByPageRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConnectorsByPageRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ListConnectorsByPagePaths struct {
+}
+
+func (s ListConnectorsByPagePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConnectorsByPagePaths) GoString() string {
+  return s.String()
+}
+
+type ListConnectorsByPageParameters struct {
+  // {"en":"Name for fuzzy matching.","zh_CN":"名称（模糊查询）"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"page number","zh_CN":"页码"}
+  PageNo *int `json:"pageNo,omitempty" xml:"pageNo,omitempty"`
+  // {"en":"page size","zh_CN":"每页大小"}
+  PageSize *int `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
+  // {"en":"Connector ID for exact matching.","zh_CN":"连接器ID（精确查询）"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+func (s ListConnectorsByPageParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConnectorsByPageParameters) GoString() string {
+  return s.String()
+}
+
+func (s *ListConnectorsByPageParameters) SetName(v string) *ListConnectorsByPageParameters {
+  s.Name = &v
+  return s
+}
+
+func (s *ListConnectorsByPageParameters) SetPageNo(v int) *ListConnectorsByPageParameters {
+  s.PageNo = &v
+  return s
+}
+
+func (s *ListConnectorsByPageParameters) SetPageSize(v int) *ListConnectorsByPageParameters {
+  s.PageSize = &v
+  return s
+}
+
+func (s *ListConnectorsByPageParameters) SetId(v string) *ListConnectorsByPageParameters {
+  s.Id = &v
+  return s
+}
+
+type ListConnectorsByPageResponse struct {
+  // {"en":"response code","zh_CN":"响应编码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message","zh_CN":"响应信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"response data","zh_CN":"响应数据"}
+  Data *ListConnectorsByPageResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s ListConnectorsByPageResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConnectorsByPageResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ListConnectorsByPageResponse) SetCode(v string) *ListConnectorsByPageResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ListConnectorsByPageResponse) SetMessage(v string) *ListConnectorsByPageResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *ListConnectorsByPageResponse) SetData(v *ListConnectorsByPageResponseData) *ListConnectorsByPageResponse {
+  s.Data = v
+  return s
+}
+
+type ListConnectorsByPageResponseData struct {
+  // {"en":"Total number of records","zh_CN":"总记录数"}
+  Total *int `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+  // {"en":"List of connectors","zh_CN":"连接器列表"}
+  Connectors []*ListConnectorsByPageResponseDataConnectors `json:"connectors,omitempty" xml:"connectors,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ListConnectorsByPageResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConnectorsByPageResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *ListConnectorsByPageResponseData) SetTotal(v int) *ListConnectorsByPageResponseData {
+  s.Total = &v
+  return s
+}
+
+func (s *ListConnectorsByPageResponseData) SetConnectors(v []*ListConnectorsByPageResponseDataConnectors) *ListConnectorsByPageResponseData {
+  s.Connectors = v
+  return s
+}
+
+type ListConnectorsByPageResponseDataConnectors struct     {
+  // {"en":"Connector ID","zh_CN":"连接器ID"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+  // {"en":"The unique name of the QueueIT connector across the platform. Supports Chinese characters, English letters, numbers, hyphens (-), and underscores (_). The length must not exceed 50 characters.","zh_CN":"QueueIT连接器名称：全平台唯一，支持输入中文、英文、数字、中划线(-)、下划线(_)，长度不超过50个字符。"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"QueueIT platform account ID, obtained from the 'Customer Account ID' value on the 'Company Profile' page under 'Account' in the left navigation bar of go.queue-it.net.","zh_CN":"QueueIT账号ID：QueueIT 平台账号，取自go.queue-it.net左侧导航栏 \"Account\" 下 \"Company Profile\" 页面的 \"Customer Account ID\" 值"}
+  QtAccountId *string `json:"qtAccountId,omitempty" xml:"qtAccountId,omitempty" require:"true"`
+  // {"en":"QueueIT platform Secret Key, obtained from the 'KnownUser secret key' value in the 'Integration' tab at the top of the 'Settings' page under 'Account' in the left navigation bar of go.queue-it.net.","zh_CN":"QueueIT Secret Key：QueueIT 平台的 SecretKey，取自go.queue-it.net左侧导航栏 \"Account\" 下 \"Settings\" 页面顶部 \"Integration\" 标签中的 \"KnownUser secret key\" 值"}
+  QtSK *string `json:"qtSK,omitempty" xml:"qtSK,omitempty" require:"true"`
+  // {"en":"QueueIT platform API Key, obtainable from the 'API Keys' page under 'Account' in the left navigation bar of go.queue-it.net.","zh_CN":"QueueIT API Key：QueueIT 平台的 APIKey，可从go.queue-it.net左侧导航栏 \"Account\" 下 \"API Keys\" 页面获取"}
+  QtApiKey *string `json:"qtApiKey,omitempty" xml:"qtApiKey,omitempty" require:"true"`
+  // {"en":"Synchronization period (unit: seconds)","zh_CN":"同步周期：从 QueueIT 平台自动同步连接器配置的周期（单位：秒）"}
+  SynCycle *int `json:"synCycle,omitempty" xml:"synCycle,omitempty" require:"true"`
+  // {"en":"Configuration content","zh_CN":"配置内容"}
+  ConfigContent *string `json:"configContent,omitempty" xml:"configContent,omitempty" require:"true"`
+  // {"en":"Whether to verify the user identity secret key. If enabled, only invited users are allowed to access.","zh_CN":"验证用户身份：是否验证用户身份标识秘钥，开启时仅允许受邀用户访问"}
+  VerifyUser *bool `json:"verifyUser,omitempty" xml:"verifyUser,omitempty" require:"true"`
+  // {"en":"Whether to generate a queue token","zh_CN":"生成队列令牌：是否生成访问等候室的队列令牌（ENTOKEN）"}
+  GenerateQueueToken *bool `json:"generateQueueToken,omitempty" xml:"generateQueueToken,omitempty" require:"true"`
+  // {"en":"Queue token validity period (unit: seconds)","zh_CN":"队列令牌有效期：队列令牌（ENTOKEN）的有效期（单位：秒）"}
+  QueueTokenValidityPeriod *int `json:"queueTokenValidityPeriod,omitempty" xml:"queueTokenValidityPeriod,omitempty" require:"true"`
+  // {"en":"Status: 0 Not deployed 1 Deployed 2 Effective","zh_CN":"状态：0未部署 1已部署 2已生效"}
+  Status *int `json:"status,omitempty" xml:"status,omitempty" require:"true"`
+  // {"en":"Creation time (timestamp)","zh_CN":"创建时间（时间戳）"}
+  CreateTime *int `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
+  // {"en":"Modification time (timestamp)","zh_CN":"修改时间（时间戳）"}
+  UpdateTime *int `json:"updateTime,omitempty" xml:"updateTime,omitempty" require:"true"`
+  // {"en":"Whether the configuration has been modified or not deployed","zh_CN":"是否配置修改，未部署"}
+  ConfigChanged *bool `json:"configChanged,omitempty" xml:"configChanged,omitempty" require:"true"`
+}
+
+func (s ListConnectorsByPageResponseDataConnectors) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConnectorsByPageResponseDataConnectors) GoString() string {
+  return s.String()
+}
+
+func (s *ListConnectorsByPageResponseDataConnectors) SetId(v string) *ListConnectorsByPageResponseDataConnectors {
+  s.Id = &v
+  return s
+}
+
+func (s *ListConnectorsByPageResponseDataConnectors) SetName(v string) *ListConnectorsByPageResponseDataConnectors {
+  s.Name = &v
+  return s
+}
+
+func (s *ListConnectorsByPageResponseDataConnectors) SetQtAccountId(v string) *ListConnectorsByPageResponseDataConnectors {
+  s.QtAccountId = &v
+  return s
+}
+
+func (s *ListConnectorsByPageResponseDataConnectors) SetQtSK(v string) *ListConnectorsByPageResponseDataConnectors {
+  s.QtSK = &v
+  return s
+}
+
+func (s *ListConnectorsByPageResponseDataConnectors) SetQtApiKey(v string) *ListConnectorsByPageResponseDataConnectors {
+  s.QtApiKey = &v
+  return s
+}
+
+func (s *ListConnectorsByPageResponseDataConnectors) SetSynCycle(v int) *ListConnectorsByPageResponseDataConnectors {
+  s.SynCycle = &v
+  return s
+}
+
+func (s *ListConnectorsByPageResponseDataConnectors) SetConfigContent(v string) *ListConnectorsByPageResponseDataConnectors {
+  s.ConfigContent = &v
+  return s
+}
+
+func (s *ListConnectorsByPageResponseDataConnectors) SetVerifyUser(v bool) *ListConnectorsByPageResponseDataConnectors {
+  s.VerifyUser = &v
+  return s
+}
+
+func (s *ListConnectorsByPageResponseDataConnectors) SetGenerateQueueToken(v bool) *ListConnectorsByPageResponseDataConnectors {
+  s.GenerateQueueToken = &v
+  return s
+}
+
+func (s *ListConnectorsByPageResponseDataConnectors) SetQueueTokenValidityPeriod(v int) *ListConnectorsByPageResponseDataConnectors {
+  s.QueueTokenValidityPeriod = &v
+  return s
+}
+
+func (s *ListConnectorsByPageResponseDataConnectors) SetStatus(v int) *ListConnectorsByPageResponseDataConnectors {
+  s.Status = &v
+  return s
+}
+
+func (s *ListConnectorsByPageResponseDataConnectors) SetCreateTime(v int) *ListConnectorsByPageResponseDataConnectors {
+  s.CreateTime = &v
+  return s
+}
+
+func (s *ListConnectorsByPageResponseDataConnectors) SetUpdateTime(v int) *ListConnectorsByPageResponseDataConnectors {
+  s.UpdateTime = &v
+  return s
+}
+
+func (s *ListConnectorsByPageResponseDataConnectors) SetConfigChanged(v bool) *ListConnectorsByPageResponseDataConnectors {
+  s.ConfigChanged = &v
+  return s
+}
+
+type ListConnectorsByPageResponseHeader struct {
+}
+
+func (s ListConnectorsByPageResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListConnectorsByPageResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type CreateRagFileRequest struct {
   // {"en":"knowledge id", "zh_CN":"知识库id"}
   KnowledgeBaseId *string `json:"knowledgeBaseId,omitempty" xml:"knowledgeBaseId,omitempty" require:"true"`
@@ -849,6 +1482,289 @@ func (s RagKnowledgeBaseCreateServiceResponseHeader) GoString() string {
 
 
 
+type CreateWRConnectorRequest struct {
+  // {"en":"The unique name of the QueueIT connector across the platform. Supports Chinese characters, English letters, numbers, hyphens (-), and underscores (_). The length must not exceed 50 characters.","zh_CN":"QueueIT连接器名称：全平台唯一，支持输入中文、英文、数字、中划线(-)、下划线(_)，长度不超过50个字符。"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"QueueIT platform account ID, obtained from the 'Customer Account ID' value on the 'Company Profile' page under 'Account' in the left navigation bar of go.queue-it.net.","zh_CN":"QueueIT账号ID：QueueIT 平台账号，取自go.queue-it.net左侧导航栏 \"Account\" 下 \"Company Profile\" 页面的 \"Customer Account ID\" 值"}
+  QtAccountId *string `json:"qtAccountId,omitempty" xml:"qtAccountId,omitempty" require:"true"`
+  // {"en":"QueueIT platform Secret Key, obtained from the 'KnownUser secret key' value in the 'Integration' tab at the top of the 'Settings' page under 'Account' in the left navigation bar of go.queue-it.net.","zh_CN":"QueueIT Secret Key：QueueIT 平台的 SecretKey，取自go.queue-it.net左侧导航栏 \"Account\" 下 \"Settings\" 页面顶部 \"Integration\" 标签中的 \"KnownUser secret key\" 值"}
+  QtSK *string `json:"qtSK,omitempty" xml:"qtSK,omitempty"`
+  // {"en":"QueueIT platform API Key, obtainable from the 'API Keys' page under 'Account' in the left navigation bar of go.queue-it.net.","zh_CN":"QueueIT API Key：QueueIT 平台的 APIKey，可从go.queue-it.net左侧导航栏 \"Account\" 下 \"API Keys\" 页面获取"}
+  QtApiKey *string `json:"qtApiKey,omitempty" xml:"qtApiKey,omitempty"`
+  // {"en":"Synchronization period (unit: seconds)","zh_CN":"同步周期：从 QueueIT 平台自动同步连接器配置的周期（单位：秒）"}
+  SynCycle *int `json:"synCycle,omitempty" xml:"synCycle,omitempty"`
+  // {"en":"Whether to verify the user identity secret key. If enabled, only invited users are allowed to access.","zh_CN":"验证用户身份：是否验证用户身份标识秘钥，开启时仅允许受邀用户访问"}
+  VerifyUser *bool `json:"verifyUser,omitempty" xml:"verifyUser,omitempty"`
+  // {"en":"Whether to generate a queue token","zh_CN":"生成队列令牌：是否生成访问等候室的队列令牌（ENTOKEN）"}
+  GenerateQueueToken *bool `json:"generateQueueToken,omitempty" xml:"generateQueueToken,omitempty"`
+  // {"en":"Queue token validity period (unit: seconds)","zh_CN":"队列令牌有效期：队列令牌（ENTOKEN）的有效期（单位：秒）"}
+  QueueTokenValidityPeriod *int `json:"queueTokenValidityPeriod,omitempty" xml:"queueTokenValidityPeriod,omitempty"`
+}
+
+func (s CreateWRConnectorRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateWRConnectorRequest) GoString() string {
+  return s.String()
+}
+
+func (s *CreateWRConnectorRequest) SetName(v string) *CreateWRConnectorRequest {
+  s.Name = &v
+  return s
+}
+
+func (s *CreateWRConnectorRequest) SetQtAccountId(v string) *CreateWRConnectorRequest {
+  s.QtAccountId = &v
+  return s
+}
+
+func (s *CreateWRConnectorRequest) SetQtSK(v string) *CreateWRConnectorRequest {
+  s.QtSK = &v
+  return s
+}
+
+func (s *CreateWRConnectorRequest) SetQtApiKey(v string) *CreateWRConnectorRequest {
+  s.QtApiKey = &v
+  return s
+}
+
+func (s *CreateWRConnectorRequest) SetSynCycle(v int) *CreateWRConnectorRequest {
+  s.SynCycle = &v
+  return s
+}
+
+func (s *CreateWRConnectorRequest) SetVerifyUser(v bool) *CreateWRConnectorRequest {
+  s.VerifyUser = &v
+  return s
+}
+
+func (s *CreateWRConnectorRequest) SetGenerateQueueToken(v bool) *CreateWRConnectorRequest {
+  s.GenerateQueueToken = &v
+  return s
+}
+
+func (s *CreateWRConnectorRequest) SetQueueTokenValidityPeriod(v int) *CreateWRConnectorRequest {
+  s.QueueTokenValidityPeriod = &v
+  return s
+}
+
+type CreateWRConnectorRequestHeader struct {
+}
+
+func (s CreateWRConnectorRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateWRConnectorRequestHeader) GoString() string {
+  return s.String()
+}
+
+type CreateWRConnectorPaths struct {
+}
+
+func (s CreateWRConnectorPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateWRConnectorPaths) GoString() string {
+  return s.String()
+}
+
+type CreateWRConnectorParameters struct {
+}
+
+func (s CreateWRConnectorParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateWRConnectorParameters) GoString() string {
+  return s.String()
+}
+
+type CreateWRConnectorResponse struct {
+  // {"en":"response code","zh_CN":"响应码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message","zh_CN":"响应信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"response data","zh_CN":"响应数据对象"}
+  Data *CreateWRConnectorResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s CreateWRConnectorResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateWRConnectorResponse) GoString() string {
+  return s.String()
+}
+
+func (s *CreateWRConnectorResponse) SetCode(v string) *CreateWRConnectorResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *CreateWRConnectorResponse) SetMessage(v string) *CreateWRConnectorResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *CreateWRConnectorResponse) SetData(v *CreateWRConnectorResponseData) *CreateWRConnectorResponse {
+  s.Data = v
+  return s
+}
+
+type CreateWRConnectorResponseData struct {
+  // {"en":"instance id","zh_CN":"实例id"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+}
+
+func (s CreateWRConnectorResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateWRConnectorResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *CreateWRConnectorResponseData) SetId(v string) *CreateWRConnectorResponseData {
+  s.Id = &v
+  return s
+}
+
+type CreateWRConnectorResponseHeader struct {
+}
+
+func (s CreateWRConnectorResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateWRConnectorResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type AddImageConfigRequest struct {
+  // {"en":"Properties of the image processing configuration, including basic information.","zh_CN":"图片处理配置的属性，包含基本信息等。"}
+  Property *AddImageConfigRequestProperty `json:"property,omitempty" xml:"property,omitempty" type:"Struct"`
+  // {"en":"Collection of image processing policies, containing specific processing rules.","zh_CN":"图片处理策略的集合，包含具体的处理规则。"}
+  PolicySets []*AddImageConfigRequestPolicySets `json:"policySets,omitempty" xml:"policySets,omitempty" type:"Repeated"`
+}
+
+func (s AddImageConfigRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddImageConfigRequest) GoString() string {
+  return s.String()
+}
+
+func (s *AddImageConfigRequest) SetProperty(v *AddImageConfigRequestProperty) *AddImageConfigRequest {
+  s.Property = v
+  return s
+}
+
+func (s *AddImageConfigRequest) SetPolicySets(v []*AddImageConfigRequestPolicySets) *AddImageConfigRequest {
+  s.PolicySets = v
+  return s
+}
+
+type AddImageConfigRequestProperty struct {
+}
+
+func (s AddImageConfigRequestProperty) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddImageConfigRequestProperty) GoString() string {
+  return s.String()
+}
+
+type AddImageConfigRequestPolicySets struct     {
+}
+
+func (s AddImageConfigRequestPolicySets) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddImageConfigRequestPolicySets) GoString() string {
+  return s.String()
+}
+
+type AddImageConfigRequestHeader struct {
+}
+
+func (s AddImageConfigRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddImageConfigRequestHeader) GoString() string {
+  return s.String()
+}
+
+type AddImageConfigPaths struct {
+}
+
+func (s AddImageConfigPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddImageConfigPaths) GoString() string {
+  return s.String()
+}
+
+type AddImageConfigParameters struct {
+}
+
+func (s AddImageConfigParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddImageConfigParameters) GoString() string {
+  return s.String()
+}
+
+type AddImageConfigResponse struct {
+  // {"en":"The response code indicating the result of the operation.","zh_CN":"操作结果的响应码。"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"The detailed message or error description for the operation result.","zh_CN":"操作结果的详细信息或错误提示。"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s AddImageConfigResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddImageConfigResponse) GoString() string {
+  return s.String()
+}
+
+func (s *AddImageConfigResponse) SetCode(v int) *AddImageConfigResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *AddImageConfigResponse) SetMessage(v string) *AddImageConfigResponse {
+  s.Message = &v
+  return s
+}
+
+type AddImageConfigResponseHeader struct {
+}
+
+func (s AddImageConfigResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddImageConfigResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type RagKnowledgeBaseUpdateServiceRequest struct {
   // {"en":"knowledge base id","zh_CN":"知识库 id"}
   Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
@@ -1058,6 +1974,114 @@ func (s UpdatefileResponseHeader) String() string {
 }
 
 func (s UpdatefileResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type DeleteWaitingRoomConnectorRequest struct {
+}
+
+func (s DeleteWaitingRoomConnectorRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteWaitingRoomConnectorRequest) GoString() string {
+  return s.String()
+}
+
+type DeleteWaitingRoomConnectorRequestHeader struct {
+}
+
+func (s DeleteWaitingRoomConnectorRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteWaitingRoomConnectorRequestHeader) GoString() string {
+  return s.String()
+}
+
+type DeleteWaitingRoomConnectorPaths struct {
+  // {"en":"The ID of the connector instance to be deleted","zh_CN":"待删除的连接器实例ID"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+}
+
+func (s DeleteWaitingRoomConnectorPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteWaitingRoomConnectorPaths) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteWaitingRoomConnectorPaths) SetId(v string) *DeleteWaitingRoomConnectorPaths {
+  s.Id = &v
+  return s
+}
+
+type DeleteWaitingRoomConnectorParameters struct {
+}
+
+func (s DeleteWaitingRoomConnectorParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteWaitingRoomConnectorParameters) GoString() string {
+  return s.String()
+}
+
+type DeleteWaitingRoomConnectorResponse struct {
+  // {"en":"response code","zh_CN":"响应码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message","zh_CN":"响应信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"response data","zh_CN":"响应数据"}
+  Data *DeleteWaitingRoomConnectorResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s DeleteWaitingRoomConnectorResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteWaitingRoomConnectorResponse) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteWaitingRoomConnectorResponse) SetCode(v string) *DeleteWaitingRoomConnectorResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *DeleteWaitingRoomConnectorResponse) SetMessage(v string) *DeleteWaitingRoomConnectorResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *DeleteWaitingRoomConnectorResponse) SetData(v *DeleteWaitingRoomConnectorResponseData) *DeleteWaitingRoomConnectorResponse {
+  s.Data = v
+  return s
+}
+
+type DeleteWaitingRoomConnectorResponseData struct {
+}
+
+func (s DeleteWaitingRoomConnectorResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteWaitingRoomConnectorResponseData) GoString() string {
+  return s.String()
+}
+
+type DeleteWaitingRoomConnectorResponseHeader struct {
+}
+
+func (s DeleteWaitingRoomConnectorResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteWaitingRoomConnectorResponseHeader) GoString() string {
   return s.String()
 }
 

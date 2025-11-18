@@ -5,372 +5,442 @@ import (
   "github.com/alibabacloud-go/tea/tea"
 )
 
-type QueryPrefetchStatusRequest struct {
-  // {'en':'Query the start time of the task creation time, such as 2017-01-10 23:33:26. It is not allowed to query tasks before 7 days ago.', 'zh_CN':'查询的任务创建开始时间，如 2017-01-10 06:33:26，不允许查询3天之前的任务'}
+type GetPrefetchStatusRequest struct {
+  // {"en":"Query the start time of the task creation time, such as 2017-01-10 23:33:26. It is not allowed to query tasks before 7 days ago.","zh_CN":"查询的任务创建开始时间，如 2017-01-10 06:33:26，不允许查询3天之前的任务"}
   StartTime *string `json:"startTime,omitempty" xml:"startTime,omitempty"`
-  // {'en':'Query the end time of the task creation time, such as 2017-01-10 23:33:26,. The query time is no more than 1 days from the start time.', 'zh_CN':'查询的任务创建结束时间，如 2017-01-10 23:33:26
-  // 1）查询跨度不能超过1天；'}
+  // {"en":"Query the end time of the task creation time, such as 2017-01-10 23:33:26,. The query time is no more than 1 days from the start time.","zh_CN":"查询的任务创建结束时间，如 2017-01-10 23:33:26\n1）查询跨度不能超过1天；"}
   EndTime *string `json:"endTime,omitempty" xml:"endTime,omitempty"`
-  // {'en':'A unique identifier for the same batch of tasks. If you submit multiple urls from an API request, the ID is a unique number for these tasks.
-  // Query tasks by batch, such as submitting 10 url refreshes at a time. After the submission is successful, the content management system will return an itemId in the response message.', 'zh_CN':'表示任务单次提交多个url时任务的唯一标识。
-  // 按批次查询任务，如单次提交10条url文件预取，提交成功后内容管理系统将返回一个itemId在响应消息里。
-  // itemId 和 查询起止时间不能同时为空。'}
+  // {"en":"A unique identifier for the same batch of tasks. If you submit multiple urls from an API request, the ID is a unique number for these tasks.\nQuery tasks by batch, such as submitting 10 url refreshes at a time. After the submission is successful, the content management system will return an itemId in the response message.","zh_CN":"表示任务单次提交多个url时任务的唯一标识。\n按批次查询任务，如单次提交10条url文件预取，提交成功后内容管理系统将返回一个itemId在响应消息里。\nitemId 和 查询起止时间不能同时为空。"}
   ItemId *string `json:"itemId,omitempty" xml:"itemId,omitempty"`
-  // {'en':'It is the url that you want to prefetch. This element only allows one url to be submitted per query.', 'zh_CN':'需要预取的文件完整访问路径（url），单次查询只允许输入一条url'}
+  // {"en":"It is the url that you want to prefetch. This element only allows one url to be submitted per query.","zh_CN":"需要预取的文件完整访问路径（url），单次查询只允许输入一条url"}
   Url *string `json:"url,omitempty" xml:"url,omitempty"`
-  // {'en':'Task status. The system allows you to select a task status query. These states can be queried:
-  // 1.success
-  // 2.failure', 'zh_CN':'任务状态，允许执行任务状态过滤查询结果，支持查询的状态有：
-  // 1、success
-  // 2、failure'}
+  // {"en":"Task status. The system allows you to select a task status query. These states can be queried:\n1) success\n2) failure\n3) wait\n4) run","zh_CN":"任务状态，允许执行任务状态过滤查询结果，支持查询的状态有：\n1) success\n2) failure\n3) wait\n4) run","exampleValue":"success,failure,wait,run"}
   Status *string `json:"status,omitempty" xml:"status,omitempty"`
-  // {'en':'Request page number. The default is 1.', 'zh_CN':'请求页数，缺省情况下，默认为1'}
+  // {"defaultValue":"1","en":"Request page number. The default is 1.","zh_CN":"请求页数，缺省情况下，默认为1"}
   PageNo *string `json:"pageNo,omitempty" xml:"pageNo,omitempty"`
-  // {'en':'The number of pages displayed. The default is 20.', 'zh_CN':'每页显示的条数，缺省情况下，默认值为20'}
+  // {"defaultValue":"20","en":"The number of pages displayed. The default is 20.","zh_CN":"每页显示的条数，缺省情况下，默认值为20"}
   PageSize *string `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
 }
 
-func (s QueryPrefetchStatusRequest) String() string {
+func (s GetPrefetchStatusRequest) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryPrefetchStatusRequest) GoString() string {
+func (s GetPrefetchStatusRequest) GoString() string {
   return s.String()
 }
 
-func (s *QueryPrefetchStatusRequest) SetStartTime(v string) *QueryPrefetchStatusRequest {
+func (s *GetPrefetchStatusRequest) SetStartTime(v string) *GetPrefetchStatusRequest {
   s.StartTime = &v
   return s
 }
 
-func (s *QueryPrefetchStatusRequest) SetEndTime(v string) *QueryPrefetchStatusRequest {
+func (s *GetPrefetchStatusRequest) SetEndTime(v string) *GetPrefetchStatusRequest {
   s.EndTime = &v
   return s
 }
 
-func (s *QueryPrefetchStatusRequest) SetItemId(v string) *QueryPrefetchStatusRequest {
+func (s *GetPrefetchStatusRequest) SetItemId(v string) *GetPrefetchStatusRequest {
   s.ItemId = &v
   return s
 }
 
-func (s *QueryPrefetchStatusRequest) SetUrl(v string) *QueryPrefetchStatusRequest {
+func (s *GetPrefetchStatusRequest) SetUrl(v string) *GetPrefetchStatusRequest {
   s.Url = &v
   return s
 }
 
-func (s *QueryPrefetchStatusRequest) SetStatus(v string) *QueryPrefetchStatusRequest {
+func (s *GetPrefetchStatusRequest) SetStatus(v string) *GetPrefetchStatusRequest {
   s.Status = &v
   return s
 }
 
-func (s *QueryPrefetchStatusRequest) SetPageNo(v string) *QueryPrefetchStatusRequest {
+func (s *GetPrefetchStatusRequest) SetPageNo(v string) *GetPrefetchStatusRequest {
   s.PageNo = &v
   return s
 }
 
-func (s *QueryPrefetchStatusRequest) SetPageSize(v string) *QueryPrefetchStatusRequest {
+func (s *GetPrefetchStatusRequest) SetPageSize(v string) *GetPrefetchStatusRequest {
   s.PageSize = &v
   return s
 }
 
-type QueryPrefetchStatusResponse struct {
-  // {'en':'The number of tasks that match the query criteria. If 10 tasks meet the query criteria, the value of count is 10.', 'zh_CN':'表示本次查询结果的数量，如有10个任务符合查询条件，则count的值为10'}
-  Count *int32 `json:"count,omitempty" xml:"count,omitempty" require:"true"`
-  // {'en':'The status code of the task creation result. 1 means success, 0 means failure.', 'zh_CN':'任务提交后，系统的响应码，0表示失败，1表示成功'}
-  Code *int32 `json:"Code,omitempty" xml:"Code,omitempty" require:"true"`
-  // {'en':'Content system response message after submitting the task.', 'zh_CN':'表示任务提交后，系统的响应消息'}
-  Message *string `json:"Message,omitempty" xml:"Message,omitempty" require:"true"`
-  // {'en':'The total number of pages for task query results.', 'zh_CN':'任务查询结果的总页数'}
-  PageNo *int32 `json:"pageNo,omitempty" xml:"pageNo,omitempty" require:"true"`
-  // {'en':'How many purge task data is displayed per page.', 'zh_CN':'每页显示多少条预取文件的任务数据'}
-  PageSize *int32 `json:"pageSize,omitempty" xml:"pageSize,omitempty" require:"true"`
-  // {'en':'Collection of task results.', 'zh_CN':'任务结果的集合'}
-  ResultDetail []*QueryPrefetchStatusResponseResultDetail `json:"resultDetail,omitempty" xml:"resultDetail,omitempty" require:"true" type:"Repeated"`
+type GetPrefetchStatusRequestHeader struct {
 }
 
-func (s QueryPrefetchStatusResponse) String() string {
+func (s GetPrefetchStatusRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryPrefetchStatusResponse) GoString() string {
+func (s GetPrefetchStatusRequestHeader) GoString() string {
   return s.String()
 }
 
-func (s *QueryPrefetchStatusResponse) SetCount(v int32) *QueryPrefetchStatusResponse {
+type GetPrefetchStatusPaths struct {
+}
+
+func (s GetPrefetchStatusPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPrefetchStatusPaths) GoString() string {
+  return s.String()
+}
+
+type GetPrefetchStatusParameters struct {
+}
+
+func (s GetPrefetchStatusParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPrefetchStatusParameters) GoString() string {
+  return s.String()
+}
+
+type GetPrefetchStatusResponse struct {
+  // {"en":"The number of tasks that match the query criteria. If 10 tasks meet the query criteria, the value of count is 10.","zh_CN":"表示本次查询结果的数量，如有10个任务符合查询条件，则count的值为10"}
+  Count *int `json:"count,omitempty" xml:"count,omitempty" require:"true"`
+  // {"en":"The status code of the task creation result:\n1) 1 means success\n2) 0 means failure.","zh_CN":"任务提交后，系统的响应码:\n1) 0表示失败\n2) 1表示成功","exampleValue":"0,1"}
+  Code *int `json:"Code,omitempty" xml:"Code,omitempty" require:"true"`
+  // {"en":"Content system response message after submitting the task.","zh_CN":"表示任务提交后，系统的响应消息"}
+  Message *string `json:"Message,omitempty" xml:"Message,omitempty" require:"true"`
+  // {"en":"The total number of pages for task query results.","zh_CN":"任务查询结果的总页数"}
+  PageNo *int `json:"pageNo,omitempty" xml:"pageNo,omitempty" require:"true"`
+  // {"en":"How many purge task data is displayed per page.","zh_CN":"每页显示多少条预取文件的任务数据"}
+  PageSize *int `json:"pageSize,omitempty" xml:"pageSize,omitempty" require:"true"`
+  // {"en":"Collection of task results.","zh_CN":"任务结果的集合"}
+  ResultDetail []*GetPrefetchStatusResponseResultDetail `json:"resultDetail,omitempty" xml:"resultDetail,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s GetPrefetchStatusResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetPrefetchStatusResponse) GoString() string {
+  return s.String()
+}
+
+func (s *GetPrefetchStatusResponse) SetCount(v int) *GetPrefetchStatusResponse {
   s.Count = &v
   return s
 }
 
-func (s *QueryPrefetchStatusResponse) SetCode(v int32) *QueryPrefetchStatusResponse {
+func (s *GetPrefetchStatusResponse) SetCode(v int) *GetPrefetchStatusResponse {
   s.Code = &v
   return s
 }
 
-func (s *QueryPrefetchStatusResponse) SetMessage(v string) *QueryPrefetchStatusResponse {
+func (s *GetPrefetchStatusResponse) SetMessage(v string) *GetPrefetchStatusResponse {
   s.Message = &v
   return s
 }
 
-func (s *QueryPrefetchStatusResponse) SetPageNo(v int32) *QueryPrefetchStatusResponse {
+func (s *GetPrefetchStatusResponse) SetPageNo(v int) *GetPrefetchStatusResponse {
   s.PageNo = &v
   return s
 }
 
-func (s *QueryPrefetchStatusResponse) SetPageSize(v int32) *QueryPrefetchStatusResponse {
+func (s *GetPrefetchStatusResponse) SetPageSize(v int) *GetPrefetchStatusResponse {
   s.PageSize = &v
   return s
 }
 
-func (s *QueryPrefetchStatusResponse) SetResultDetail(v []*QueryPrefetchStatusResponseResultDetail) *QueryPrefetchStatusResponse {
+func (s *GetPrefetchStatusResponse) SetResultDetail(v []*GetPrefetchStatusResponseResultDetail) *GetPrefetchStatusResponse {
   s.ResultDetail = v
   return s
 }
 
-type QueryPrefetchStatusResponseResultDetail struct     {
-  // {'en':'The time at which the content management system begins to get the file.', 'zh_CN':'内容管理系统开始同步文件的时间'}
+type GetPrefetchStatusResponseResultDetail struct     {
+  // {"en":"The time at which the content management system begins to get the file.","zh_CN":"内容管理系统开始同步文件的时间"}
   BeginTime *string `json:"beginTime,omitempty" xml:"beginTime,omitempty" require:"true"`
-  // {'en':'The time at which the content management system receive the request and creates a prefetch task.', 'zh_CN':'内容管理系统接收预取任务成功并创建预取任务的时间'}
+  // {"en":"The time at which the content management system receive the request and creates a prefetch task.","zh_CN":"内容管理系统接收预取任务成功并创建预取任务的时间"}
   CreateTime *string `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
-  // {'en':'The time at which cdn cache the file and the content management system completes the summary task results.', 'zh_CN':'内容管理系统执行预取完成的时间'}
+  // {"en":"The time at which cdn cache the file and the content management system completes the summary task results.","zh_CN":"内容管理系统执行预取完成的时间"}
   FinishTime *string `json:"finishTime,omitempty" xml:"finishTime,omitempty" require:"true"`
-  // {"en":"The content management system handles the prefetch tasks's success rate. If the success rate is 98%, the value is 98.", "zh_CN":"执行文件预取任务的成功率，如98%，则值为98"}
+  // {"en":"The content management system handles the prefetch tasks's success rate. If the success rate is 98%, the value is 98.","zh_CN":"执行文件预取任务的成功率，如98%，则值为98"}
   Rate *string `json:"rate,omitempty" xml:"rate,omitempty" require:"true"`
-  // {'en':'The status of the prefetch task. There are several states:
-  // Success: Prefetch success.
-  // Failure: Prefetch failed.
-  // Wait: The prefetch task is waiting to be processed.
-  // Run: The prefetch task is being executed.', 'zh_CN':'预取文件的任务状态：
-  // success：表示文件预取的任务执行成功
-  // failure：表示文件预取的任务执行失败
-  // wait：表示文件预取的任务正在排队中
-  // run：表示文件预取的任务正在执行中'}
+  // {"en":"The status of the prefetch task. There are several states:\n1) success: Prefetch success.\n2) failure: Prefetch failed.\n3) wait: The prefetch task is waiting to be processed.\n4) run: The prefetch task is being executed.","zh_CN":"预取文件的任务状态：\n1) success：表示文件预取的任务执行成功\n2) failure：表示文件预取的任务执行失败\n3) wait：表示文件预取的任务正在排队中\n4) run：表示文件预取的任务正在执行中","exampleValue":"success,failure,wait,run"}
   Status *string `json:"status,omitempty" xml:"status,omitempty" require:"true"`
-  // {'en':'Prefetched file URL.', 'zh_CN':'要预取的文件url'}
+  // {"en":"Prefetched file URL.","zh_CN":"要预取的文件url"}
   Url *string `json:"url,omitempty" xml:"url,omitempty" require:"true"`
 }
 
-func (s QueryPrefetchStatusResponseResultDetail) String() string {
+func (s GetPrefetchStatusResponseResultDetail) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryPrefetchStatusResponseResultDetail) GoString() string {
+func (s GetPrefetchStatusResponseResultDetail) GoString() string {
   return s.String()
 }
 
-func (s *QueryPrefetchStatusResponseResultDetail) SetBeginTime(v string) *QueryPrefetchStatusResponseResultDetail {
+func (s *GetPrefetchStatusResponseResultDetail) SetBeginTime(v string) *GetPrefetchStatusResponseResultDetail {
   s.BeginTime = &v
   return s
 }
 
-func (s *QueryPrefetchStatusResponseResultDetail) SetCreateTime(v string) *QueryPrefetchStatusResponseResultDetail {
+func (s *GetPrefetchStatusResponseResultDetail) SetCreateTime(v string) *GetPrefetchStatusResponseResultDetail {
   s.CreateTime = &v
   return s
 }
 
-func (s *QueryPrefetchStatusResponseResultDetail) SetFinishTime(v string) *QueryPrefetchStatusResponseResultDetail {
+func (s *GetPrefetchStatusResponseResultDetail) SetFinishTime(v string) *GetPrefetchStatusResponseResultDetail {
   s.FinishTime = &v
   return s
 }
 
-func (s *QueryPrefetchStatusResponseResultDetail) SetRate(v string) *QueryPrefetchStatusResponseResultDetail {
+func (s *GetPrefetchStatusResponseResultDetail) SetRate(v string) *GetPrefetchStatusResponseResultDetail {
   s.Rate = &v
   return s
 }
 
-func (s *QueryPrefetchStatusResponseResultDetail) SetStatus(v string) *QueryPrefetchStatusResponseResultDetail {
+func (s *GetPrefetchStatusResponseResultDetail) SetStatus(v string) *GetPrefetchStatusResponseResultDetail {
   s.Status = &v
   return s
 }
 
-func (s *QueryPrefetchStatusResponseResultDetail) SetUrl(v string) *QueryPrefetchStatusResponseResultDetail {
+func (s *GetPrefetchStatusResponseResultDetail) SetUrl(v string) *GetPrefetchStatusResponseResultDetail {
   s.Url = &v
   return s
 }
 
-type QueryPrefetchStatusPaths struct {
+type GetPrefetchStatusResponseHeader struct {
 }
 
-func (s QueryPrefetchStatusPaths) String() string {
+func (s GetPrefetchStatusResponseHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryPrefetchStatusPaths) GoString() string {
-  return s.String()
-}
-
-type QueryPrefetchStatusParameters struct {
-}
-
-func (s QueryPrefetchStatusParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryPrefetchStatusParameters) GoString() string {
-  return s.String()
-}
-
-type QueryPrefetchStatusRequestHeader struct {
-}
-
-func (s QueryPrefetchStatusRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryPrefetchStatusRequestHeader) GoString() string {
-  return s.String()
-}
-
-type QueryPrefetchStatusResponseHeader struct {
-}
-
-func (s QueryPrefetchStatusResponseHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryPrefetchStatusResponseHeader) GoString() string {
+func (s GetPrefetchStatusResponseHeader) GoString() string {
   return s.String()
 }
 
 
 
 
-type ApiCmCcmquotaqueryFetchDnaRequest struct {
+type TencentFetchQueryRequest struct {
+  // {"en":"Task ID","zh_CN":"任务id"}
+  TaskId *string `json:"task_id,omitempty" xml:"task_id,omitempty"`
 }
 
-func (s ApiCmCcmquotaqueryFetchDnaRequest) String() string {
+func (s TencentFetchQueryRequest) String() string {
   return tea.Prettify(s)
 }
 
-func (s ApiCmCcmquotaqueryFetchDnaRequest) GoString() string {
+func (s TencentFetchQueryRequest) GoString() string {
   return s.String()
 }
 
-type ApiCmCcmquotaqueryFetchDnaResponse struct {
-  // {'en':'It is the logo of our company.', 'zh_CN':'数据提供方'}
-  Supplier *string `json:"supplier,omitempty" xml:"supplier,omitempty" require:"true"`
-  // {'en':'The status code of the query result. 0 means success, 1 means failure.', 'zh_CN':'查询结果，0表示成功，1表示失败'}
-  Code *int32 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
-  // {'en':'Content system response message after query.', 'zh_CN':'查询的响应消息'}
-  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  // {'en':'The number of urls back to the origin at the same time.', 'zh_CN':'同时最多有多少条url回源预取'}
-  MaxRuningFetch *int32 `json:"maxRuningFetch,omitempty" xml:"maxRuningFetch,omitempty" require:"true"`
-  // {'en':'The number of urls that have been prefetched back to the origin today.', 'zh_CN':'当天已经回源预取了多少条url'}
-  FetchCount *int32 `json:"fetchCount,omitempty" xml:"fetchCount,omitempty" require:"true"`
-  // {'en':'The maximum number of the prefetch files today.', 'zh_CN':'当天文件预取任务允许提交的最大数量'}
-  FetchUpper *int32 `json:"fetchUpper,omitempty" xml:"fetchUpper,omitempty" require:"true"`
-  // {'en':'The number of urls that can be prefetched today.', 'zh_CN':'当天文件预取剩余url的数量'}
-  FetchRemain *int32 `json:"fetchRemain,omitempty" xml:"fetchRemain,omitempty" require:"true"`
-  // {'en':'The maximum size of the prefetch files today. The unit is MB.', 'zh_CN':'当天允许预取的文件大小，单位MB'}
-  FetchSizeUpper *int32 `json:"fetchSizeUpper,omitempty" xml:"fetchSizeUpper,omitempty" require:"true"`
-  // {'en':'The size of urls that can be prefetched today.The unit is MB', 'zh_CN':'当天剩余可预取的文件大小，单位MB'}
-  FetchSizeRemain *int32 `json:"fetchSizeRemain,omitempty" xml:"fetchSizeRemain,omitempty" require:"true"`
+func (s *TencentFetchQueryRequest) SetTaskId(v string) *TencentFetchQueryRequest {
+  s.TaskId = &v
+  return s
 }
 
-func (s ApiCmCcmquotaqueryFetchDnaResponse) String() string {
+type TencentFetchQueryRequestHeader struct {
+}
+
+func (s TencentFetchQueryRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s ApiCmCcmquotaqueryFetchDnaResponse) GoString() string {
+func (s TencentFetchQueryRequestHeader) GoString() string {
   return s.String()
 }
 
-func (s *ApiCmCcmquotaqueryFetchDnaResponse) SetSupplier(v string) *ApiCmCcmquotaqueryFetchDnaResponse {
-  s.Supplier = &v
-  return s
+type TencentFetchQueryPaths struct {
 }
 
-func (s *ApiCmCcmquotaqueryFetchDnaResponse) SetCode(v int32) *ApiCmCcmquotaqueryFetchDnaResponse {
-  s.Code = &v
-  return s
-}
-
-func (s *ApiCmCcmquotaqueryFetchDnaResponse) SetMessage(v string) *ApiCmCcmquotaqueryFetchDnaResponse {
-  s.Message = &v
-  return s
-}
-
-func (s *ApiCmCcmquotaqueryFetchDnaResponse) SetMaxRuningFetch(v int32) *ApiCmCcmquotaqueryFetchDnaResponse {
-  s.MaxRuningFetch = &v
-  return s
-}
-
-func (s *ApiCmCcmquotaqueryFetchDnaResponse) SetFetchCount(v int32) *ApiCmCcmquotaqueryFetchDnaResponse {
-  s.FetchCount = &v
-  return s
-}
-
-func (s *ApiCmCcmquotaqueryFetchDnaResponse) SetFetchUpper(v int32) *ApiCmCcmquotaqueryFetchDnaResponse {
-  s.FetchUpper = &v
-  return s
-}
-
-func (s *ApiCmCcmquotaqueryFetchDnaResponse) SetFetchRemain(v int32) *ApiCmCcmquotaqueryFetchDnaResponse {
-  s.FetchRemain = &v
-  return s
-}
-
-func (s *ApiCmCcmquotaqueryFetchDnaResponse) SetFetchSizeUpper(v int32) *ApiCmCcmquotaqueryFetchDnaResponse {
-  s.FetchSizeUpper = &v
-  return s
-}
-
-func (s *ApiCmCcmquotaqueryFetchDnaResponse) SetFetchSizeRemain(v int32) *ApiCmCcmquotaqueryFetchDnaResponse {
-  s.FetchSizeRemain = &v
-  return s
-}
-
-type ApiCmCcmquotaqueryFetchDnaPaths struct {
-}
-
-func (s ApiCmCcmquotaqueryFetchDnaPaths) String() string {
+func (s TencentFetchQueryPaths) String() string {
   return tea.Prettify(s)
 }
 
-func (s ApiCmCcmquotaqueryFetchDnaPaths) GoString() string {
+func (s TencentFetchQueryPaths) GoString() string {
   return s.String()
 }
 
-type ApiCmCcmquotaqueryFetchDnaParameters struct {
-  // {"en":"Query the feature's daily limit:
-  // Purge: Query the number of daily purge
-  // Fetch: Query the number and size of daily prefetch", "zh_CN":"用于指定查询哪种业务类型的每日资源上限，可选值有：
-  // purge：表示查询每日刷新缓存的数量限制
-  // fetch：表示查询每日预取文件的数量、大小限制"}
+type TencentFetchQueryParameters struct {
+}
+
+func (s TencentFetchQueryParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s TencentFetchQueryParameters) GoString() string {
+  return s.String()
+}
+
+type TencentFetchQueryResponse struct {
+  // {"en":"Return status code, 0 indicates task completed, 1 indicates not completed, other status codes indicate exceptions.","zh_CN":"返回状态码，0表示任务完成，1表示未完成，其他状态码说明异常。"}
+  Result *string `json:"result,omitempty" xml:"result,omitempty" require:"true"`
+  // {"en":"Description corresponding to the return status code.","zh_CN":"返回状态码对应的描述。"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+}
+
+func (s TencentFetchQueryResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s TencentFetchQueryResponse) GoString() string {
+  return s.String()
+}
+
+func (s *TencentFetchQueryResponse) SetResult(v string) *TencentFetchQueryResponse {
+  s.Result = &v
+  return s
+}
+
+func (s *TencentFetchQueryResponse) SetMsg(v string) *TencentFetchQueryResponse {
+  s.Msg = &v
+  return s
+}
+
+type TencentFetchQueryResponseHeader struct {
+}
+
+func (s TencentFetchQueryResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s TencentFetchQueryResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryPrefetchResidualsRequest struct {
+}
+
+func (s QueryPrefetchResidualsRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryPrefetchResidualsRequest) GoString() string {
+  return s.String()
+}
+
+type QueryPrefetchResidualsRequestHeader struct {
+}
+
+func (s QueryPrefetchResidualsRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryPrefetchResidualsRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryPrefetchResidualsPaths struct {
+}
+
+func (s QueryPrefetchResidualsPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryPrefetchResidualsPaths) GoString() string {
+  return s.String()
+}
+
+type QueryPrefetchResidualsParameters struct {
+  // {"en":"Query the feature's daily limit:\nPurge: Query the number of daily purge\nFetch: Query the number and size of daily prefetch","zh_CN":"用于指定查询哪种业务类型的每日资源上限，可选值有：\npurge：表示查询每日刷新缓存的数量限制\nfetch：表示查询每日预取文件的数量、大小限制","exampleValue":"purge,fetch"}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
 }
 
-func (s ApiCmCcmquotaqueryFetchDnaParameters) String() string {
+func (s QueryPrefetchResidualsParameters) String() string {
   return tea.Prettify(s)
 }
 
-func (s ApiCmCcmquotaqueryFetchDnaParameters) GoString() string {
+func (s QueryPrefetchResidualsParameters) GoString() string {
   return s.String()
 }
 
-func (s *ApiCmCcmquotaqueryFetchDnaParameters) SetType(v string) *ApiCmCcmquotaqueryFetchDnaParameters {
+func (s *QueryPrefetchResidualsParameters) SetType(v string) *QueryPrefetchResidualsParameters {
   s.Type = &v
   return s
 }
 
-type ApiCmCcmquotaqueryFetchDnaRequestHeader struct {
+type QueryPrefetchResidualsResponse struct {
+  // {"en":"It is the logo of our company.","zh_CN":"数据提供方"}
+  Supplier *string `json:"supplier,omitempty" xml:"supplier,omitempty" require:"true"`
+  // {"en":"The status code of the query result. 0 means success, 1 means failure.","zh_CN":"查询结果，0表示成功，1表示失败","exampleValue":"0,1"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Content system response message after query.","zh_CN":"查询的响应消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"The number of urls back to the origin at the same time.","zh_CN":"同时最多有多少条url回源预取"}
+  MaxRuningFetch *int `json:"maxRuningFetch,omitempty" xml:"maxRuningFetch,omitempty" require:"true"`
+  // {"en":"The number of urls that have been prefetched back to the origin today.","zh_CN":"当天已经回源预取了多少条url"}
+  FetchCount *int `json:"fetchCount,omitempty" xml:"fetchCount,omitempty" require:"true"`
+  // {"en":"The maximum number of the prefetch files today.","zh_CN":"当天文件预取任务允许提交的最大数量"}
+  FetchUpper *int `json:"fetchUpper,omitempty" xml:"fetchUpper,omitempty" require:"true"`
+  // {"en":"The number of urls that can be prefetched today.","zh_CN":"当天文件预取剩余url的数量"}
+  FetchRemain *int `json:"fetchRemain,omitempty" xml:"fetchRemain,omitempty" require:"true"`
+  // {"en":"The maximum size of the prefetch files today. The unit is MB.","zh_CN":"当天允许预取的文件大小，单位MB"}
+  FetchSizeUpper *int `json:"fetchSizeUpper,omitempty" xml:"fetchSizeUpper,omitempty" require:"true"`
+  // {"en":"The size of urls that can be prefetched today.The unit is MB","zh_CN":"当天剩余可预取的文件大小，单位MB"}
+  FetchSizeRemain *int `json:"fetchSizeRemain,omitempty" xml:"fetchSizeRemain,omitempty" require:"true"`
 }
 
-func (s ApiCmCcmquotaqueryFetchDnaRequestHeader) String() string {
+func (s QueryPrefetchResidualsResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s ApiCmCcmquotaqueryFetchDnaRequestHeader) GoString() string {
+func (s QueryPrefetchResidualsResponse) GoString() string {
   return s.String()
 }
 
-type ApiCmCcmquotaqueryFetchDnaResponseHeader struct {
+func (s *QueryPrefetchResidualsResponse) SetSupplier(v string) *QueryPrefetchResidualsResponse {
+  s.Supplier = &v
+  return s
 }
 
-func (s ApiCmCcmquotaqueryFetchDnaResponseHeader) String() string {
+func (s *QueryPrefetchResidualsResponse) SetCode(v int) *QueryPrefetchResidualsResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QueryPrefetchResidualsResponse) SetMessage(v string) *QueryPrefetchResidualsResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *QueryPrefetchResidualsResponse) SetMaxRuningFetch(v int) *QueryPrefetchResidualsResponse {
+  s.MaxRuningFetch = &v
+  return s
+}
+
+func (s *QueryPrefetchResidualsResponse) SetFetchCount(v int) *QueryPrefetchResidualsResponse {
+  s.FetchCount = &v
+  return s
+}
+
+func (s *QueryPrefetchResidualsResponse) SetFetchUpper(v int) *QueryPrefetchResidualsResponse {
+  s.FetchUpper = &v
+  return s
+}
+
+func (s *QueryPrefetchResidualsResponse) SetFetchRemain(v int) *QueryPrefetchResidualsResponse {
+  s.FetchRemain = &v
+  return s
+}
+
+func (s *QueryPrefetchResidualsResponse) SetFetchSizeUpper(v int) *QueryPrefetchResidualsResponse {
+  s.FetchSizeUpper = &v
+  return s
+}
+
+func (s *QueryPrefetchResidualsResponse) SetFetchSizeRemain(v int) *QueryPrefetchResidualsResponse {
+  s.FetchSizeRemain = &v
+  return s
+}
+
+type QueryPrefetchResidualsResponseHeader struct {
+}
+
+func (s QueryPrefetchResidualsResponseHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s ApiCmCcmquotaqueryFetchDnaResponseHeader) GoString() string {
+func (s QueryPrefetchResidualsResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -378,26 +448,10 @@ func (s ApiCmCcmquotaqueryFetchDnaResponseHeader) GoString() string {
 
 
 type PrefetchRequest struct {
-  // {'en':'If you need to prefetch several cached URLs. The submitted URL should meet the following format requirements:
-  // 1.The URL must start with http:// or https://, url example: http://www.a.com/image/test.png.
-  // 2.Each url has a maximum length of 2000 characters.
-  // 3.The domain in the URL is must be the domain of the CDN service.
-  // 4.If the url contains special characters such as Chinese characters and spaces, our system will generate multiple push tasks. In addition to pushing the original URL, these special characters will be converted int32o ASCII codes and pushed. If you only want to clean up the transcoded URL, you need to use UTF-8 to complete the transcoding before submitting the URL, and then submit the escaped url to our system.
-  // 5.No more than 20000 urls per day, and no more than 200G file size (it can be adjusted according to account, contact your technical support).
-  // 6.The total number of URLs called by each interface shall not exceed 400'
-  // , 'zh_CN':'要预取到CDN节点的url集合，url格式说明：
-  // 1、URL 必须以 http:// 或 https:// 开头，输入示例：http://www.a.com/image/test.png。
-  // 2、每个url最大长度 2000 字符。
-  // 3、每个url所在的域名必须是在我司加速的域名且有预取权限。
-  // 4、url中如果包含中文字符，则提交的url需要是中文转义后的url，采用utf-8方式转义。
-  // 5、每日不超过20000条，不超过200G文件大小（账号粒度可调，联系技术支持人员调整）。
-  // 6、每次接口调用url的总数不超过400条。'}
+  // {"en":"If you need to prefetch several cached URLs. The submitted URL should meet the following format requirements:\n1.The URL must start with http:// or https://, url example: http://www.a.com/image/test.png.\n2.Each url has a maximum length of 2000 characters.\n3.The domain in the URL is must be the domain of the CDN service.\n4.If the url contains special characters such as Chinese characters and spaces, our system will generate multiple push tasks. In addition to pushing the original URL, these special characters will be converted int32o ASCII codes and pushed. If you only want to clean up the transcoded URL, you need to use UTF-8 to complete the transcoding before submitting the URL, and then submit the escaped url to our system.\n5.No more than 20000 urls per day, and no more than 200G file size (it can be adjusted according to account, contact your technical support).\n6.The total number of URLs called by each interface shall not exceed 400","zh_CN":"要预取到CDN节点的url集合，url格式说明：\n1、URL 必须以 http:// 或 https:// 开头，输入示例：http://www.a.com/image/test.png。\n2、每个url最大长度 2000 字符。\n3、每个url所在的域名必须是在我司加速的域名且有预取权限。\n4、url中如果包含中文字符，则提交的url需要是中文转义后的url，采用utf-8方式转义。\n5、每日不超过20000条，不超过200G文件大小（账号粒度可调，联系技术支持人员调整）。\n6、每次接口调用url的总数不超过400条。"}
   Urls []*string `json:"urls,omitempty" xml:"urls,omitempty" require:"true" type:"Repeated"`
-  // {"en":"Only prefetch a range segment of the file header. The user get the file from the beginning, and they will select quickly their int32erested. If the file header is cached, the first pack time of the user's http request will be short.This feature allows users to filter content faster. For example, if a file has 200MB, only the size of the file 0~range is prefetched, instead of prefetching the entire file. Each account can be configured with a size of the range. If you need to modify the size, please contact us. If this element is assigned a value of 1, the default prefetch is 0~512KB.", "zh_CN":"是否需要预取range段。
-  // 
-  // 1、默认为0，表示预取完整的文件；
-  // 2、1表示预取文件0~512KB的range段（账号粒度可调，联系技术支持人员调整）。"}
-  IsRange *int32 `json:"isRange,omitempty" xml:"isRange,omitempty"`
+  // {"defaultValue":"0","en":"Only prefetch a range segment of the file header. The user get the file from the beginning, and they will select quickly their int32erested. If the file header is cached, the first pack time of the user's http request will be short.This feature allows users to filter content faster. For example, if a file has 200MB, only the size of the file 0~range is prefetched, instead of prefetching the entire file. Each account can be configured with a size of the range. If you need to modify the size, please contact us. If this element is assigned a value of 1, the default prefetch is 0~512KB.","zh_CN":"是否需要预取range段。\n\n1、默认为0，表示预取完整的文件；\n2、1表示预取文件0~512KB的range段（账号粒度可调，联系技术支持人员调整）。","exampleValue":"0,1"}
+  IsRange *int `json:"isRange,omitempty" xml:"isRange,omitempty"`
 }
 
 func (s PrefetchRequest) String() string {
@@ -413,41 +467,20 @@ func (s *PrefetchRequest) SetUrls(v []*string) *PrefetchRequest {
   return s
 }
 
-func (s *PrefetchRequest) SetIsRange(v int32) *PrefetchRequest {
+func (s *PrefetchRequest) SetIsRange(v int) *PrefetchRequest {
   s.IsRange = &v
   return s
 }
 
-type PrefetchResponse struct {
-  // {'en':'The status code of the task creation result, 1 means success, 0 means failure.', 'zh_CN':'表示任务创建结果的状态码，1表示任务提交成功，0表示任务提交失败'}
-  Code *int32 `json:"Code,omitempty" xml:"Code,omitempty" require:"true"`
-  // {'en':'Content system response message after submitting the task.', 'zh_CN':'表示任务提交后，系统的响应消息'}
-  Message *string `json:"Message,omitempty" xml:"Message,omitempty" require:"true"`
-  // {'en':'After calling the API once and submitting the task successfully, the content system will return an itemId. This ID is the unique identifier for each submission. You can use itemId to batch query the status (success/failure) of the task.', 'zh_CN':'调用一次接口并提交任务成功后，将返回一个itemId，是当次提交任务的唯一标识，通过itemId可批量查询任务的状态（成功/失败）。'}
-  ItemId *string `json:"itemId,omitempty" xml:"itemId,omitempty" require:"true"`
+type PrefetchRequestHeader struct {
 }
 
-func (s PrefetchResponse) String() string {
+func (s PrefetchRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s PrefetchResponse) GoString() string {
+func (s PrefetchRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *PrefetchResponse) SetCode(v int32) *PrefetchResponse {
-  s.Code = &v
-  return s
-}
-
-func (s *PrefetchResponse) SetMessage(v string) *PrefetchResponse {
-  s.Message = &v
-  return s
-}
-
-func (s *PrefetchResponse) SetItemId(v string) *PrefetchResponse {
-  s.ItemId = &v
-  return s
 }
 
 type PrefetchPaths struct {
@@ -472,15 +505,36 @@ func (s PrefetchParameters) GoString() string {
   return s.String()
 }
 
-type PrefetchRequestHeader struct {
+type PrefetchResponse struct {
+  // {"en":"The status code of the task creation result:\n1) 1 means success,\n2) 0 means failure.","zh_CN":"表示任务创建结果的状态码:\n1) 1表示任务提交成功\n2) 0表示任务提交失败","exampleValue":"0,1"}
+  Code *int `json:"Code,omitempty" xml:"Code,omitempty" require:"true"`
+  // {"en":"Content system response message after submitting the task.","zh_CN":"表示任务提交后，系统的响应消息"}
+  Message *string `json:"Message,omitempty" xml:"Message,omitempty" require:"true"`
+  // {"en":"After calling the API once and submitting the task successfully, the content system will return an itemId. This ID is the unique identifier for each submission. You can use itemId to batch query the status (success/failure) of the task.","zh_CN":"调用一次接口并提交任务成功后，将返回一个itemId，是当次提交任务的唯一标识，通过itemId可批量查询任务的状态（成功/失败）。"}
+  ItemId *string `json:"itemId,omitempty" xml:"itemId,omitempty" require:"true"`
 }
 
-func (s PrefetchRequestHeader) String() string {
+func (s PrefetchResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s PrefetchRequestHeader) GoString() string {
+func (s PrefetchResponse) GoString() string {
   return s.String()
+}
+
+func (s *PrefetchResponse) SetCode(v int) *PrefetchResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *PrefetchResponse) SetMessage(v string) *PrefetchResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *PrefetchResponse) SetItemId(v string) *PrefetchResponse {
+  s.ItemId = &v
+  return s
 }
 
 type PrefetchResponseHeader struct {

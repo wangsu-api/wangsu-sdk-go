@@ -242,22 +242,22 @@ func (s StopPushResponseHeader) GoString() string {
 
 
 type GetDevicesListRequest struct {
-  // {"en":"Relay node ID", "zh_CN":"父节点ID"}
-  ParentNodeId *string `json:"parentNodeId,omitempty" xml:"parentNodeId,omitempty"`
-  // {"en":"Space name. Fuzzy search is not supported.", "zh_CN":"空间名称。不支持模糊搜索"}
+  // {"en":"Space name. Fuzzy search is not supported.","zh_CN":"空间名称。不支持模糊搜索"}
   SpaceName *string `json:"spaceName,omitempty" xml:"spaceName,omitempty"`
-  // {"en":"GetDevicesListDevice status: 0: Offline 1: Online", "zh_CN":"设备状态： 0:离线    1：在线"}
-  Status *int32 `json:"status,omitempty" xml:"status,omitempty"`
-  // {"en":"GetDevicesListDevice type: 1: IPC 2: NVR", "zh_CN":"设备类型：1：IPC   2：NVR"}
-  Type *int32 `json:"type,omitempty" xml:"type,omitempty"`
-  // {"en":"GetDevicesListDevice name. Supports fuzzy search", "zh_CN":"设备名称。支持模糊搜索"}
+  // {"en":"Page number, default is first page","zh_CN":"第几页，默认第一页"}
+  PageIndex *int `json:"pageIndex,omitempty" xml:"pageIndex,omitempty"`
+  // {"en":"Device name. Supports fuzzy search","zh_CN":"设备名称。支持模糊搜索"}
   Name *string `json:"name,omitempty" xml:"name,omitempty"`
-  // {"en":"The national standard id of the device. Fuzzy search is not supported.", "zh_CN":"设备国标id。不支持模糊搜索。"}
+  // {"en":"Specify the paging size. The default value is 10, and the maximum value is 50.","zh_CN":"分页大小。默认10，最大50"}
+  PageSize *int `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
+  // {"en":"Relay node ID","zh_CN":"父节点ID"}
+  ParentNodeId *string `json:"parentNodeId,omitempty" xml:"parentNodeId,omitempty"`
+  // {"en":"Device type: 1: IPC 2: NVR","zh_CN":"设备类型：1：IPC   2：NVR"}
+  Type *int `json:"type,omitempty" xml:"type,omitempty"`
+  // {"en":"The national standard id of the device. Fuzzy search is not supported.","zh_CN":"设备国标id。不支持模糊搜索。"}
   DeviceId *string `json:"deviceId,omitempty" xml:"deviceId,omitempty"`
-  // {"en":"Specify the paging size. The default value is 10, and the maximum value is 50.", "zh_CN":"分页大小。默认10，最大50"}
-  PageSize *int32 `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
-  // {"en":"Page number, default is first page", "zh_CN":"第几页，默认第一页"}
-  PageIndex *int32 `json:"pageIndex,omitempty" xml:"pageIndex,omitempty"`
+  // {"en":"Device status: 0: Offline 1: Online","zh_CN":"设备状态： 0:离线    1：在线"}
+  Status *int `json:"status,omitempty" xml:"status,omitempty"`
 }
 
 func (s GetDevicesListRequest) String() string {
@@ -268,23 +268,13 @@ func (s GetDevicesListRequest) GoString() string {
   return s.String()
 }
 
-func (s *GetDevicesListRequest) SetParentNodeId(v string) *GetDevicesListRequest {
-  s.ParentNodeId = &v
-  return s
-}
-
 func (s *GetDevicesListRequest) SetSpaceName(v string) *GetDevicesListRequest {
   s.SpaceName = &v
   return s
 }
 
-func (s *GetDevicesListRequest) SetStatus(v int32) *GetDevicesListRequest {
-  s.Status = &v
-  return s
-}
-
-func (s *GetDevicesListRequest) SetType(v int32) *GetDevicesListRequest {
-  s.Type = &v
+func (s *GetDevicesListRequest) SetPageIndex(v int) *GetDevicesListRequest {
+  s.PageIndex = &v
   return s
 }
 
@@ -293,252 +283,40 @@ func (s *GetDevicesListRequest) SetName(v string) *GetDevicesListRequest {
   return s
 }
 
+func (s *GetDevicesListRequest) SetPageSize(v int) *GetDevicesListRequest {
+  s.PageSize = &v
+  return s
+}
+
+func (s *GetDevicesListRequest) SetParentNodeId(v string) *GetDevicesListRequest {
+  s.ParentNodeId = &v
+  return s
+}
+
+func (s *GetDevicesListRequest) SetType(v int) *GetDevicesListRequest {
+  s.Type = &v
+  return s
+}
+
 func (s *GetDevicesListRequest) SetDeviceId(v string) *GetDevicesListRequest {
   s.DeviceId = &v
   return s
 }
 
-func (s *GetDevicesListRequest) SetPageSize(v int32) *GetDevicesListRequest {
-  s.PageSize = &v
-  return s
-}
-
-func (s *GetDevicesListRequest) SetPageIndex(v int32) *GetDevicesListRequest {
-  s.PageIndex = &v
-  return s
-}
-
-type GetDevicesListResponse struct {
-  // {"en":"Result status code, 0 indicates success", "zh_CN":"结果状态码，0为成功"}
-  Code *int32 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
-  // {"en":"Return message", "zh_CN":"返回消息"}
-  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  // {"en":"Return data", "zh_CN":"返回数据"}
-  GetDevicesListData *GetDevicesListData `json:"data,omitempty" xml:"data,omitempty" require:"true"`
-}
-
-func (s GetDevicesListResponse) String() string {
-  return tea.Prettify(s)
-}
-
-func (s GetDevicesListResponse) GoString() string {
-  return s.String()
-}
-
-func (s *GetDevicesListResponse) SetCode(v int32) *GetDevicesListResponse {
-  s.Code = &v
-  return s
-}
-
-func (s *GetDevicesListResponse) SetMessage(v string) *GetDevicesListResponse {
-  s.Message = &v
-  return s
-}
-
-func (s *GetDevicesListResponse) SetData(v *GetDevicesListData) *GetDevicesListResponse {
-  s.GetDevicesListData = v
-  return s
-}
-
-type GetDevicesListData struct {
-  // {"en":"GetDevicesListDevice List", "zh_CN":"设备列表"}
-  Rows []*GetDevicesListDevice `json:"rows,omitempty" xml:"rows,omitempty" require:"true" type:"Repeated"`
-  // {"en":"Page number,", "zh_CN":"第几页"}
-  PageIndex *int32 `json:"pageIndex,omitempty" xml:"pageIndex,omitempty" require:"true"`
-  // {"en":"Specify the paging size", "zh_CN":"分页大小"}
-  PageSize *int32 `json:"pageSize,omitempty" xml:"pageSize,omitempty" require:"true"`
-  // {"en":"Total number of devices", "zh_CN":"总设备数"}
-  Total *int32 `json:"total,omitempty" xml:"total,omitempty" require:"true"`
-}
-
-func (s GetDevicesListData) String() string {
-  return tea.Prettify(s)
-}
-
-func (s GetDevicesListData) GoString() string {
-  return s.String()
-}
-
-func (s *GetDevicesListData) SetRows(v []*GetDevicesListDevice) *GetDevicesListData {
-  s.Rows = v
-  return s
-}
-
-func (s *GetDevicesListData) SetPageIndex(v int32) *GetDevicesListData {
-  s.PageIndex = &v
-  return s
-}
-
-func (s *GetDevicesListData) SetPageSize(v int32) *GetDevicesListData {
-  s.PageSize = &v
-  return s
-}
-
-func (s *GetDevicesListData) SetTotal(v int32) *GetDevicesListData {
-  s.Total = &v
-  return s
-}
-
-type GetDevicesListDevice struct {
-  // {"en":"GetDevicesListDevice name", "zh_CN":"设备名称"}
-  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
-  // {"en":"National standard id of the device", "zh_CN":"设备国标id"}
-  DeviceId *string `json:"deviceId,omitempty" xml:"deviceId,omitempty" require:"true"`
-  // {"en":"GetDevicesListDevice type: 1: IPC 2: NVR","zh_CN":"设备类型：1：IPC   2：NVR"}
-  Type *int32 `json:"type,omitempty" xml:"type,omitempty" require:"true"`
-  // {"en":"Access Agreement 1: GB28181-2016",zh_CN:"接入协议 1：GB28181-2016"}
-  AccessProtocol *int32 `json:"accessProtocol,omitempty" xml:"accessProtocol,omitempty" require:"true"`
-  // {"en":"SIP server ID","zh_CN":"sip服务器id"}
-  SipId *string `json:"sipId,omitempty" xml:"sipId,omitempty" require:"true"`
-  // {"en":"SIP Server Address","zh_CN":"sip服务器地址"}
-  SipServerAddress *string `json:"sipServerAddress,omitempty" xml:"sipServerAddress,omitempty" require:"true"`
-  // {"en":"SIP server port","zh_CN":"sip服务器端口"}
-  SipServerPort *int32 `json:"sipServerPort,omitempty" xml:"sipServerPort,omitempty" require:"true"`
-  // {"en":"The status of the device.","zh_CN":"设备状态"}
-  Status *int32 `json:"status,omitempty" xml:"status,omitempty" require:"true"`
-  // {"en":"Whether to enable automatic invitation streaming. true: Enable automatic invitation streaming, false: Disable automatic invitation streaming","zh_CN":"是否启动自动邀请推流。1:启动自动邀请推流，0:不启动自动邀请推流"}
-  IsAutoPush *int32 `json:"isAutoPush,omitempty" xml:"isAutoPush,omitempty" require:"true"`
-  // {"en":"Number of channels","zh_CN":"通道数量"}
-  ChannelNum *int32 `json:"channelNum,omitempty" xml:"channelNum,omitempty" require:"true"`
-  // {"en":"Space Name","zh_CN":"所属空间名称"}
-  SpaceName *int32 `json:"spaceName,omitempty" xml:"spaceName,omitempty" require:"true"`
-  // {"en":"GetDevicesListDevice Description","zh_CN":"设备描述"}
-  Description *string `json:"description,omitempty" xml:"description,omitempty" require:"true"`
-  // {"en":"GetDevicesListDevice creation time (timestamp)","zh_CN":"设备创建时间（时间戳）"}
-  CreateTime *int64 `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
-  // {"en":"Equipment Manufacturer","zh_CN":"设备厂商"}
-  Manufacturer *string `json:"manufacturer,omitempty" xml:"manufacturer,omitempty" require:"true"`
-  // {"en":"longitude","zh_CN":"经度"}
-  Longitude *float64 `json:"longitude,omitempty" xml:"longitude,omitempty" require:"true"`
-  // {"en":"latitude","zh_CN":"纬度"}
-  Latitude *float64 `json:"latitude,omitempty" xml:"latitude,omitempty" require:"true"`
-  // {"en":"GetDevicesListDevice Address","zh_CN":"设备地址"}
-  Address *string `json:"address,omitempty" xml:"address,omitempty" require:"true"`
-  // {"en":"Relay node ID", "zh_CN":"父节点ID"}
-  ParentNodeId *string `json:"parentNodeId,omitempty" xml:"parentNodeId,omitempty" require:"true"`
-  // {"en":"Stream Type:
-  // default
-  // stream:0
-  // stream:1
-  // streamnumber:0
-  // streamnumber:1
-  // streamprofile:0 
-  // streamprofile:1
-  // streamMode:MAIN
-  // streamMode:SUB", "zh_CN":"码流类型:
-  // default
-  // stream:0
-  // stream:1
-  // streamnumber:0
-  // streamnumber:1
-  // streamprofile:0 
-  // streamprofile:1
-  // streamMode:MAIN
-  // streamMode:SUB"}
-  StreamType *string `json:"streamType,omitempty" xml:"streamType,omitempty" require:"true"`
-}
-
-func (s GetDevicesListDevice) String() string {
-  return tea.Prettify(s)
-}
-
-func (s GetDevicesListDevice) GoString() string {
-  return s.String()
-}
-
-func (s *GetDevicesListDevice) SetName(v string) *GetDevicesListDevice {
-  s.Name = &v
-  return s
-}
-
-func (s *GetDevicesListDevice) SetDeviceId(v string) *GetDevicesListDevice {
-  s.DeviceId = &v
-  return s
-}
-
-func (s *GetDevicesListDevice) SetType(v int32) *GetDevicesListDevice {
-  s.Type = &v
-  return s
-}
-
-func (s *GetDevicesListDevice) SetAccessProtocol(v int32) *GetDevicesListDevice {
-  s.AccessProtocol = &v
-  return s
-}
-
-func (s *GetDevicesListDevice) SetSipId(v string) *GetDevicesListDevice {
-  s.SipId = &v
-  return s
-}
-
-func (s *GetDevicesListDevice) SetSipServerAddress(v string) *GetDevicesListDevice {
-  s.SipServerAddress = &v
-  return s
-}
-
-func (s *GetDevicesListDevice) SetSipServerPort(v int32) *GetDevicesListDevice {
-  s.SipServerPort = &v
-  return s
-}
-
-func (s *GetDevicesListDevice) SetStatus(v int32) *GetDevicesListDevice {
+func (s *GetDevicesListRequest) SetStatus(v int) *GetDevicesListRequest {
   s.Status = &v
   return s
 }
 
-func (s *GetDevicesListDevice) SetIsAutoPush(v int32) *GetDevicesListDevice {
-  s.IsAutoPush = &v
-  return s
+type GetDevicesListRequestHeader struct {
 }
 
-func (s *GetDevicesListDevice) SetChannelNum(v int32) *GetDevicesListDevice {
-  s.ChannelNum = &v
-  return s
+func (s GetDevicesListRequestHeader) String() string {
+  return tea.Prettify(s)
 }
 
-func (s *GetDevicesListDevice) SetSpaceName(v int32) *GetDevicesListDevice {
-  s.SpaceName = &v
-  return s
-}
-
-func (s *GetDevicesListDevice) SetDescription(v string) *GetDevicesListDevice {
-  s.Description = &v
-  return s
-}
-
-func (s *GetDevicesListDevice) SetCreateTime(v int64) *GetDevicesListDevice {
-  s.CreateTime = &v
-  return s
-}
-
-func (s *GetDevicesListDevice) SetManufacturer(v string) *GetDevicesListDevice {
-  s.Manufacturer = &v
-  return s
-}
-
-func (s *GetDevicesListDevice) SetLongitude(v float64) *GetDevicesListDevice {
-  s.Longitude = &v
-  return s
-}
-
-func (s *GetDevicesListDevice) SetLatitude(v float64) *GetDevicesListDevice {
-  s.Latitude = &v
-  return s
-}
-
-func (s *GetDevicesListDevice) SetAddress(v string) *GetDevicesListDevice {
-  s.Address = &v
-  return s
-}
-
-func (s *GetDevicesListDevice) SetParentNodeId(v string) *GetDevicesListDevice {
-  s.ParentNodeId = &v
-  return s
-}
-
-func (s *GetDevicesListDevice) SetStreamType(v string) *GetDevicesListDevice {
-  s.StreamType = &v
-  return s
+func (s GetDevicesListRequestHeader) GoString() string {
+  return s.String()
 }
 
 type GetDevicesListPaths struct {
@@ -563,14 +341,247 @@ func (s GetDevicesListParameters) GoString() string {
   return s.String()
 }
 
-type GetDevicesListRequestHeader struct {
+type GetDevicesListResponse struct {
+  // {"en":"Result status code, 0 indicates success","zh_CN":"结果状态码，0为成功"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Return data","zh_CN":"返回数据"}
+  Data *GetDevicesListResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  // {"en":"Return message","zh_CN":"返回消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
 }
 
-func (s GetDevicesListRequestHeader) String() string {
+func (s GetDevicesListResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetDevicesListRequestHeader) GoString() string {
+func (s GetDevicesListResponse) GoString() string {
+  return s.String()
+}
+
+func (s *GetDevicesListResponse) SetCode(v int) *GetDevicesListResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *GetDevicesListResponse) SetData(v *GetDevicesListResponseData) *GetDevicesListResponse {
+  s.Data = v
+  return s
+}
+
+func (s *GetDevicesListResponse) SetMessage(v string) *GetDevicesListResponse {
+  s.Message = &v
+  return s
+}
+
+type GetDevicesListResponseData struct {
+  // {"en":"Total number of devices","zh_CN":"总设备数"}
+  Total *int `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+  // {"en":"Page number,","zh_CN":"第几页"}
+  PageIndex *int `json:"pageIndex,omitempty" xml:"pageIndex,omitempty" require:"true"`
+  // {"en":"Specify the paging size","zh_CN":"分页大小"}
+  PageSize *int `json:"pageSize,omitempty" xml:"pageSize,omitempty" require:"true"`
+  // {"en":"Device List","zh_CN":"设备列表"}
+  Rows []*GetDevicesListResponseDataRows `json:"rows,omitempty" xml:"rows,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s GetDevicesListResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetDevicesListResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *GetDevicesListResponseData) SetTotal(v int) *GetDevicesListResponseData {
+  s.Total = &v
+  return s
+}
+
+func (s *GetDevicesListResponseData) SetPageIndex(v int) *GetDevicesListResponseData {
+  s.PageIndex = &v
+  return s
+}
+
+func (s *GetDevicesListResponseData) SetPageSize(v int) *GetDevicesListResponseData {
+  s.PageSize = &v
+  return s
+}
+
+func (s *GetDevicesListResponseData) SetRows(v []*GetDevicesListResponseDataRows) *GetDevicesListResponseData {
+  s.Rows = v
+  return s
+}
+
+type GetDevicesListResponseDataRows struct     {
+  // {"en":"Device Address","zh_CN":"设备地址"}
+  Address *string `json:"address,omitempty" xml:"address,omitempty" require:"true"`
+  // {"en":"Whether to enable automatic invitation streaming. true: Enable automatic invitation streaming, false: Disable automatic invitation streaming","zh_CN":"是否启动自动邀请推流。1:启动自动邀请推流，0:不启动自动邀请推流"}
+  IsAutoPush *int `json:"isAutoPush,omitempty" xml:"isAutoPush,omitempty" require:"true"`
+  // {"en":"latitude","zh_CN":"纬度"}
+  Latitude *GetDevicesListResponseDataRowsLatitude `json:"latitude,omitempty" xml:"latitude,omitempty" require:"true" type:"Struct"`
+  // {"en":"Device Description","zh_CN":"设备描述"}
+  Description *string `json:"description,omitempty" xml:"description,omitempty" require:"true"`
+  // {"en":"Number of channels","zh_CN":"通道数量"}
+  ChannelNum *int `json:"channelNum,omitempty" xml:"channelNum,omitempty" require:"true"`
+  // {"en":"Relay node ID","zh_CN":"父节点ID"}
+  ParentNodeId *string `json:"parentNodeId,omitempty" xml:"parentNodeId,omitempty" require:"true"`
+  // {"en":"Streaming protocols","zh_CN":"流协议"}
+  StreamProtocol *string `json:"streamProtocol,omitempty" xml:"streamProtocol,omitempty" require:"true"`
+  // {"en":"Device type: 1: IPC 2: NVR","zh_CN":"设备类型：1：IPC   2：NVR"}
+  Type *int `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {"en":"National standard id of the device","zh_CN":"设备国标id"}
+  DeviceId *string `json:"deviceId,omitempty" xml:"deviceId,omitempty" require:"true"`
+  // {"en":"Equipment Manufacturer","zh_CN":"设备厂商"}
+  Manufacturer *string `json:"manufacturer,omitempty" xml:"manufacturer,omitempty" require:"true"`
+  // {"en":"SIP server ID","zh_CN":"sip服务器id"}
+  SipId *string `json:"sipId,omitempty" xml:"sipId,omitempty" require:"true"`
+  // {"en":"Space Name","zh_CN":"所属空间名称"}
+  SpaceName *int `json:"spaceName,omitempty" xml:"spaceName,omitempty" require:"true"`
+  // {"en":"SIP Server Address","zh_CN":"sip服务器地址"}
+  SipServerAddress *string `json:"sipServerAddress,omitempty" xml:"sipServerAddress,omitempty" require:"true"`
+  // {"en":"Stream Type:\ndefault\nstream:0\nstream:1\nstreamnumber:0\nstreamnumber:1\nstreamprofile:0\nstreamprofile:1\nstreamMode:MAIN\nstreamMode:SUB","zh_CN":"码流类型:\ndefault\nstream:0\nstream:1\nstreamnumber:0\nstreamnumber:1\nstreamprofile:0\nstreamprofile:1\nstreamMode:MAIN\nstreamMode:SUB"}
+  StreamType *string `json:"streamType,omitempty" xml:"streamType,omitempty" require:"true"`
+  // {"en":"Device creation time (timestamp)","zh_CN":"设备创建时间（时间戳）"}
+  CreateTime *int64 `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
+  // {"en":"Device name","zh_CN":"设备名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"Access Agreement 1: GB28181-2016","zh_CN":"接入协议 1：GB28181-2016"}
+  AccessProtocol *int `json:"accessProtocol,omitempty" xml:"accessProtocol,omitempty" require:"true"`
+  // {"en":"SIP server port","zh_CN":"sip服务器端口"}
+  SipServerPort *int `json:"sipServerPort,omitempty" xml:"sipServerPort,omitempty" require:"true"`
+  // {"en":"The status of the device.","zh_CN":"设备状态"}
+  Status *int `json:"status,omitempty" xml:"status,omitempty" require:"true"`
+  // {"en":"longitude","zh_CN":"经度"}
+  Longitude *GetDevicesListResponseDataRowsLongitude `json:"longitude,omitempty" xml:"longitude,omitempty" require:"true" type:"Struct"`
+}
+
+func (s GetDevicesListResponseDataRows) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetDevicesListResponseDataRows) GoString() string {
+  return s.String()
+}
+
+func (s *GetDevicesListResponseDataRows) SetAddress(v string) *GetDevicesListResponseDataRows {
+  s.Address = &v
+  return s
+}
+
+func (s *GetDevicesListResponseDataRows) SetIsAutoPush(v int) *GetDevicesListResponseDataRows {
+  s.IsAutoPush = &v
+  return s
+}
+
+func (s *GetDevicesListResponseDataRows) SetLatitude(v *GetDevicesListResponseDataRowsLatitude) *GetDevicesListResponseDataRows {
+  s.Latitude = v
+  return s
+}
+
+func (s *GetDevicesListResponseDataRows) SetDescription(v string) *GetDevicesListResponseDataRows {
+  s.Description = &v
+  return s
+}
+
+func (s *GetDevicesListResponseDataRows) SetChannelNum(v int) *GetDevicesListResponseDataRows {
+  s.ChannelNum = &v
+  return s
+}
+
+func (s *GetDevicesListResponseDataRows) SetParentNodeId(v string) *GetDevicesListResponseDataRows {
+  s.ParentNodeId = &v
+  return s
+}
+
+func (s *GetDevicesListResponseDataRows) SetStreamProtocol(v string) *GetDevicesListResponseDataRows {
+  s.StreamProtocol = &v
+  return s
+}
+
+func (s *GetDevicesListResponseDataRows) SetType(v int) *GetDevicesListResponseDataRows {
+  s.Type = &v
+  return s
+}
+
+func (s *GetDevicesListResponseDataRows) SetDeviceId(v string) *GetDevicesListResponseDataRows {
+  s.DeviceId = &v
+  return s
+}
+
+func (s *GetDevicesListResponseDataRows) SetManufacturer(v string) *GetDevicesListResponseDataRows {
+  s.Manufacturer = &v
+  return s
+}
+
+func (s *GetDevicesListResponseDataRows) SetSipId(v string) *GetDevicesListResponseDataRows {
+  s.SipId = &v
+  return s
+}
+
+func (s *GetDevicesListResponseDataRows) SetSpaceName(v int) *GetDevicesListResponseDataRows {
+  s.SpaceName = &v
+  return s
+}
+
+func (s *GetDevicesListResponseDataRows) SetSipServerAddress(v string) *GetDevicesListResponseDataRows {
+  s.SipServerAddress = &v
+  return s
+}
+
+func (s *GetDevicesListResponseDataRows) SetStreamType(v string) *GetDevicesListResponseDataRows {
+  s.StreamType = &v
+  return s
+}
+
+func (s *GetDevicesListResponseDataRows) SetCreateTime(v int64) *GetDevicesListResponseDataRows {
+  s.CreateTime = &v
+  return s
+}
+
+func (s *GetDevicesListResponseDataRows) SetName(v string) *GetDevicesListResponseDataRows {
+  s.Name = &v
+  return s
+}
+
+func (s *GetDevicesListResponseDataRows) SetAccessProtocol(v int) *GetDevicesListResponseDataRows {
+  s.AccessProtocol = &v
+  return s
+}
+
+func (s *GetDevicesListResponseDataRows) SetSipServerPort(v int) *GetDevicesListResponseDataRows {
+  s.SipServerPort = &v
+  return s
+}
+
+func (s *GetDevicesListResponseDataRows) SetStatus(v int) *GetDevicesListResponseDataRows {
+  s.Status = &v
+  return s
+}
+
+func (s *GetDevicesListResponseDataRows) SetLongitude(v *GetDevicesListResponseDataRowsLongitude) *GetDevicesListResponseDataRows {
+  s.Longitude = v
+  return s
+}
+
+type GetDevicesListResponseDataRowsLatitude struct {
+}
+
+func (s GetDevicesListResponseDataRowsLatitude) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetDevicesListResponseDataRowsLatitude) GoString() string {
+  return s.String()
+}
+
+type GetDevicesListResponseDataRowsLongitude struct {
+}
+
+func (s GetDevicesListResponseDataRowsLongitude) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetDevicesListResponseDataRowsLongitude) GoString() string {
   return s.String()
 }
 
@@ -839,52 +850,34 @@ func (s GetStreamUrlResponseHeader) GoString() string {
 
 
 type CreateDeviceRequest struct {
-  // {"en":"Organization tree directory node id. If not filled in, it will be added to the root directory by default", "zh_CN":"组织树目录节点id。不填默认新增到根目录下"}
+  // {"en":"Device Description","zh_CN":"设备地址"}
+  Address *string `json:"address,omitempty" xml:"address,omitempty"`
+  // {"en":"Whether to enable automatic invitation streaming. true: Enable automatic invitation streaming, false: Disable automatic invitation streaming","zh_CN":"是否启动自动邀请推流。1:启动自动邀请推流，0:不启动自动邀请推流"}
+  IsAutoPush *int `json:"isAutoPush,omitempty" xml:"isAutoPush,omitempty"`
+  // {"en":"Latitude","zh_CN":"纬度"}
+  Latitude *int64 `json:"latitude,omitempty" xml:"latitude,omitempty"`
+  // {"en":"Device Address","zh_CN":"设备描述"}
+  Description *string `json:"description,omitempty" xml:"description,omitempty"`
+  // {"en":"Organization tree directory node id. If not filled in, it will be added to the root directory by default","zh_CN":"组织树目录节点id。不填默认新增到根目录下"}
   ParentNodeId *string `json:"parentNodeId,omitempty" xml:"parentNodeId,omitempty"`
-  // {"en":"The national standard id of the device", "zh_CN":"设备国标id"}
-  DeviceId *string `json:"deviceId,omitempty" xml:"deviceId,omitempty" require:"true"`
-  // {"en":"Device Name","zh_CN":"设备名称"}
-  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"Streaming protocols, Do not pass the default TCP mode to stream pushing. If you need to use UDP to stream pushing, carry this field The values are as follows: TCP UDP","zh_CN":"流协议，  不传默认TCP方式推流，如果需要使用UDP推流则携带这个字段  取值如下：  TCP  UDP"}
+  StreamProtocol *string `json:"streamProtocol,omitempty" xml:"streamProtocol,omitempty"`
   // {"en":"Device type: 1: IPC 2: NVR","zh_CN":"设备类型：1：IPC   2：NVR"}
-  Type *int32 `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  Type *int `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {"en":"The national standard id of the device","zh_CN":"设备国标id"}
+  DeviceId *string `json:"deviceId,omitempty" xml:"deviceId,omitempty" require:"true"`
+  // {"en":"Equipment Manufacturer","zh_CN":"设备厂商"}
+  Manufacturer *string `json:"manufacturer,omitempty" xml:"manufacturer,omitempty"`
   // {"en":"Space name","zh_CN":"所属空间名称"}
   SpaceName *string `json:"spaceName,omitempty" xml:"spaceName,omitempty" require:"true"`
   // {"en":"Device registration password","zh_CN":"设备注册密码"}
   Password *string `json:"password,omitempty" xml:"password,omitempty" require:"true"`
-  // {"en":"Whether to enable automatic invitation streaming. true: Enable automatic invitation streaming, false: Disable automatic invitation streaming","zh_CN":"是否启动自动邀请推流。1:启动自动邀请推流，0:不启动自动邀请推流"}
-  IsAutoPush *int32 `json:"isAutoPush,omitempty" xml:"isAutoPush,omitempty"`
-  // {"en":"Equipment Manufacturer", "zh_CN":"设备厂商"}
-  Manufacturer *string `json:"manufacturer,omitempty" xml:"manufacturer,omitempty"`
-  // {"en":"Longituder", "zh_CN":"经度"}
-  Longitude *float64 `json:"longitude,omitempty" xml:"longitude,omitempty"`
-  // {"en":"Latitude", "zh_CN":"纬度"}
-  Latitude *float64 `json:"latitude,omitempty" xml:"latitude,omitempty"`
-  // {"en":"Device Description", "zh_CN":"设备地址"}
-  Address *string `json:"address,omitempty" xml:"address,omitempty"`
-  // {"en":"Device Address", "zh_CN":"设备描述"}
-  Description *string `json:"description,omitempty" xml:"description,omitempty"`
-  // {"en":"When not transmitting, the code stream type is default
-  // Stream Type:
-  // default
-  // stream:0
-  // stream:1
-  // streamnumber:0
-  // streamnumber:1
-  // streamprofile:0 
-  // streamprofile:1
-  // streamMode:MAIN
-  // streamMode:SUB", "zh_CN":"不传时码流类型为default
-  // 码流类型:
-  // default
-  // stream:0
-  // stream:1
-  // streamnumber:0
-  // streamnumber:1
-  // streamprofile:0 
-  // streamprofile:1
-  // streamMode:MAIN
-  // streamMode:SUB"}
+  // {"en":"When not transmitting, the code stream type is default\nStream Type:\ndefault\nstream:0\nstream:1\nstreamnumber:0\nstreamnumber:1\nstreamprofile:0\nstreamprofile:1\nstreamMode:MAIN\nstreamMode:SUB","zh_CN":"不传时码流类型为default\n码流类型:\ndefault\nstream:0\nstream:1\nstreamnumber:0\nstreamnumber:1\nstreamprofile:0\nstreamprofile:1\nstreamMode:MAIN\nstreamMode:SUB"}
   StreamType *string `json:"streamType,omitempty" xml:"streamType,omitempty"`
+  // {"en":"Device Name","zh_CN":"设备名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"Longituder","zh_CN":"经度"}
+  Longitude *int64 `json:"longitude,omitempty" xml:"longitude,omitempty"`
 }
 
 func (s CreateDeviceRequest) String() string {
@@ -895,8 +888,38 @@ func (s CreateDeviceRequest) GoString() string {
   return s.String()
 }
 
+func (s *CreateDeviceRequest) SetAddress(v string) *CreateDeviceRequest {
+  s.Address = &v
+  return s
+}
+
+func (s *CreateDeviceRequest) SetIsAutoPush(v int) *CreateDeviceRequest {
+  s.IsAutoPush = &v
+  return s
+}
+
+func (s *CreateDeviceRequest) SetLatitude(v int64) *CreateDeviceRequest {
+  s.Latitude = &v
+  return s
+}
+
+func (s *CreateDeviceRequest) SetDescription(v string) *CreateDeviceRequest {
+  s.Description = &v
+  return s
+}
+
 func (s *CreateDeviceRequest) SetParentNodeId(v string) *CreateDeviceRequest {
   s.ParentNodeId = &v
+  return s
+}
+
+func (s *CreateDeviceRequest) SetStreamProtocol(v string) *CreateDeviceRequest {
+  s.StreamProtocol = &v
+  return s
+}
+
+func (s *CreateDeviceRequest) SetType(v int) *CreateDeviceRequest {
+  s.Type = &v
   return s
 }
 
@@ -905,13 +928,8 @@ func (s *CreateDeviceRequest) SetDeviceId(v string) *CreateDeviceRequest {
   return s
 }
 
-func (s *CreateDeviceRequest) SetName(v string) *CreateDeviceRequest {
-  s.Name = &v
-  return s
-}
-
-func (s *CreateDeviceRequest) SetType(v int32) *CreateDeviceRequest {
-  s.Type = &v
+func (s *CreateDeviceRequest) SetManufacturer(v string) *CreateDeviceRequest {
+  s.Manufacturer = &v
   return s
 }
 
@@ -925,64 +943,30 @@ func (s *CreateDeviceRequest) SetPassword(v string) *CreateDeviceRequest {
   return s
 }
 
-func (s *CreateDeviceRequest) SetIsAutoPush(v int32) *CreateDeviceRequest {
-  s.IsAutoPush = &v
-  return s
-}
-
-func (s *CreateDeviceRequest) SetManufacturer(v string) *CreateDeviceRequest {
-  s.Manufacturer = &v
-  return s
-}
-
-func (s *CreateDeviceRequest) SetLongitude(v float64) *CreateDeviceRequest {
-  s.Longitude = &v
-  return s
-}
-
-func (s *CreateDeviceRequest) SetLatitude(v float64) *CreateDeviceRequest {
-  s.Latitude = &v
-  return s
-}
-
-func (s *CreateDeviceRequest) SetAddress(v string) *CreateDeviceRequest {
-  s.Address = &v
-  return s
-}
-
-func (s *CreateDeviceRequest) SetDescription(v string) *CreateDeviceRequest {
-  s.Description = &v
-  return s
-}
-
 func (s *CreateDeviceRequest) SetStreamType(v string) *CreateDeviceRequest {
   s.StreamType = &v
   return s
 }
 
-type CreateDeviceResponse struct {
-  // {"en":"Result status code, 0 indicates success", "zh_CN":"结果状态码，0为成功"}
-  Code *int32 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
-  // {"en":"Return message", "zh_CN":"返回消息"}
-  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+func (s *CreateDeviceRequest) SetName(v string) *CreateDeviceRequest {
+  s.Name = &v
+  return s
 }
 
-func (s CreateDeviceResponse) String() string {
+func (s *CreateDeviceRequest) SetLongitude(v int64) *CreateDeviceRequest {
+  s.Longitude = &v
+  return s
+}
+
+type CreateDeviceRequestHeader struct {
+}
+
+func (s CreateDeviceRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateDeviceResponse) GoString() string {
+func (s CreateDeviceRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *CreateDeviceResponse) SetCode(v int32) *CreateDeviceResponse {
-  s.Code = &v
-  return s
-}
-
-func (s *CreateDeviceResponse) SetMessage(v string) *CreateDeviceResponse {
-  s.Message = &v
-  return s
 }
 
 type CreateDevicePaths struct {
@@ -1007,15 +991,29 @@ func (s CreateDeviceParameters) GoString() string {
   return s.String()
 }
 
-type CreateDeviceRequestHeader struct {
+type CreateDeviceResponse struct {
+  // {"en":"Result status code, 0 indicates success","zh_CN":"结果状态码，0为成功"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Return message","zh_CN":"返回消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
 }
 
-func (s CreateDeviceRequestHeader) String() string {
+func (s CreateDeviceResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s CreateDeviceRequestHeader) GoString() string {
+func (s CreateDeviceResponse) GoString() string {
   return s.String()
+}
+
+func (s *CreateDeviceResponse) SetCode(v int) *CreateDeviceResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *CreateDeviceResponse) SetMessage(v string) *CreateDeviceResponse {
+  s.Message = &v
+  return s
 }
 
 type CreateDeviceResponseHeader struct {
@@ -1291,46 +1289,28 @@ func (s PtzControlResponseHeader) GoString() string {
 
 
 type EditDeviceRequest struct {
-  // {"en":"The national standard id of the device", "zh_CN":"设备国标id"}
-  DeviceId *string `json:"deviceId,omitempty" xml:"deviceId,omitempty" require:"true"`
-  // {"en":"Device Name", "zh_CN":"设备名称"}
-  Name *string `json:"name,omitempty" xml:"name,omitempty"`
-  // {"en":"Device registration password", "zh_CN":"设备注册密码"}
+  // {"en":"Device registration password","zh_CN":"设备注册密码"}
   Password *string `json:"password,omitempty" xml:"password,omitempty"`
-  // {"en":"Whether to enable automatic invitation streaming. true: Enable automatic invitation streaming, false: Disable automatic invitation streaming", "zh_CN":"是否启动自动邀请推流 
-  // 1.是，0.否
-  // 默认：01:启动自动邀请推流0:不启动自动邀请推流"}
-  IsAutoPush *int32 `json:"isAutoPush,omitempty" xml:"isAutoPush,omitempty"`
-  // {"en":"Equipment Manufacturer", "zh_CN":"设备厂商"}
-  Manufacturer *string `json:"manufacturer,omitempty" xml:"manufacturer,omitempty"`
-  // {"en":"Longituder", "zh_CN":"经度 仅支持正负数，整数部分最多3位，小数部分最多8位"}
-  Longitude *float64 `json:"longitude,omitempty" xml:"longitude,omitempty"`
-  // {"en":"Laitude", "zh_CN":"纬度 仅支持正负数，整数部分最多3位，小数部分最多8位"}
-  Latitude *float64 `json:"latitude,omitempty" xml:"latitude,omitempty"`
-  // {"en":"Device Address", "zh_CN":"设备地址"}
+  // {"en":"Device Address","zh_CN":"设备地址"}
   Address *string `json:"address,omitempty" xml:"address,omitempty"`
-  // {"en":"Device Description", "zh_CN":"设备描述"}
-  Description *string `json:"description,omitempty" xml:"description,omitempty"`
-  // {"en":"Stream Type:
-  // default
-  // stream:0
-  // stream:1
-  // streamnumber:0
-  // streamnumber:1
-  // streamprofile:0 
-  // streamprofile:1
-  // streamMode:MAIN
-  // streamMode:SUB", "zh_CN":"码流类型:
-  // default
-  // stream:0
-  // stream:1
-  // streamnumber:0
-  // streamnumber:1
-  // streamprofile:0 
-  // streamprofile:1
-  // streamMode:MAIN
-  // streamMode:SUB"}
+  // {"en":"Stream Type:\ndefault\nstream:0\nstream:1\nstreamnumber:0\nstreamnumber:1\nstreamprofile:0\nstreamprofile:1\nstreamMode:MAIN\nstreamMode:SUB","zh_CN":"码流类型:\ndefault\nstream:0\nstream:1\nstreamnumber:0\nstreamnumber:1\nstreamprofile:0\nstreamprofile:1\nstreamMode:MAIN\nstreamMode:SUB"}
   StreamType *string `json:"streamType,omitempty" xml:"streamType,omitempty"`
+  // {"en":"Whether to enable automatic invitation streaming. true: Enable automatic invitation streaming, false: Disable automatic invitation streaming","zh_CN":"是否启动自动邀请推流\n1.是，0.否\n默认：01:启动自动邀请推流0:不启动自动邀请推流"}
+  IsAutoPush *int `json:"isAutoPush,omitempty" xml:"isAutoPush,omitempty"`
+  // {"en":"Laitude","zh_CN":"纬度 仅支持正负数，整数部分最多3位，小数部分最多8位"}
+  Latitude *int64 `json:"latitude,omitempty" xml:"latitude,omitempty"`
+  // {"en":"Device Name","zh_CN":"设备名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty"`
+  // {"en":"Device Description","zh_CN":"设备描述"}
+  Description *string `json:"description,omitempty" xml:"description,omitempty"`
+  // {"en":"Streaming protocols, Do not pass the default TCP mode to stream pushing. If you need to use UDP to stream pushing, carry this field The values are as follows: TCP UDP","zh_CN":"流协议，  不传默认TCP方式推流，如果需要使用UDP推流则携带这个字段  取值如下：  TCP  UDP"}
+  StreamProtocol *string `json:"streamProtocol,omitempty" xml:"streamProtocol,omitempty"`
+  // {"en":"The national standard id of the device","zh_CN":"设备国标id"}
+  DeviceId *string `json:"deviceId,omitempty" xml:"deviceId,omitempty" require:"true"`
+  // {"en":"Equipment Manufacturer","zh_CN":"设备厂商"}
+  Manufacturer *string `json:"manufacturer,omitempty" xml:"manufacturer,omitempty"`
+  // {"en":"Longituder","zh_CN":"经度 仅支持正负数，整数部分最多3位，小数部分最多8位"}
+  Longitude *int64 `json:"longitude,omitempty" xml:"longitude,omitempty"`
 }
 
 func (s EditDeviceRequest) String() string {
@@ -1341,38 +1321,8 @@ func (s EditDeviceRequest) GoString() string {
   return s.String()
 }
 
-func (s *EditDeviceRequest) SetDeviceId(v string) *EditDeviceRequest {
-  s.DeviceId = &v
-  return s
-}
-
-func (s *EditDeviceRequest) SetName(v string) *EditDeviceRequest {
-  s.Name = &v
-  return s
-}
-
 func (s *EditDeviceRequest) SetPassword(v string) *EditDeviceRequest {
   s.Password = &v
-  return s
-}
-
-func (s *EditDeviceRequest) SetIsAutoPush(v int32) *EditDeviceRequest {
-  s.IsAutoPush = &v
-  return s
-}
-
-func (s *EditDeviceRequest) SetManufacturer(v string) *EditDeviceRequest {
-  s.Manufacturer = &v
-  return s
-}
-
-func (s *EditDeviceRequest) SetLongitude(v float64) *EditDeviceRequest {
-  s.Longitude = &v
-  return s
-}
-
-func (s *EditDeviceRequest) SetLatitude(v float64) *EditDeviceRequest {
-  s.Latitude = &v
   return s
 }
 
@@ -1381,46 +1331,60 @@ func (s *EditDeviceRequest) SetAddress(v string) *EditDeviceRequest {
   return s
 }
 
-func (s *EditDeviceRequest) SetDescription(v string) *EditDeviceRequest {
-  s.Description = &v
-  return s
-}
-
 func (s *EditDeviceRequest) SetStreamType(v string) *EditDeviceRequest {
   s.StreamType = &v
   return s
 }
 
-type EditDeviceResponse struct {
-  // {"en":"Result status code, 0 indicates success", "zh_CN":"结果状态码，0为成功"}
-  Code *int32 `json:"code,omitempty" xml:"code,omitempty" require:"true"`
-  // {"en":"Return message", "zh_CN":"返回消息"}
-  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  // {"en":"Return data", "zh_CN":"返回数据"}
-  Data *string `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+func (s *EditDeviceRequest) SetIsAutoPush(v int) *EditDeviceRequest {
+  s.IsAutoPush = &v
+  return s
 }
 
-func (s EditDeviceResponse) String() string {
+func (s *EditDeviceRequest) SetLatitude(v int64) *EditDeviceRequest {
+  s.Latitude = &v
+  return s
+}
+
+func (s *EditDeviceRequest) SetName(v string) *EditDeviceRequest {
+  s.Name = &v
+  return s
+}
+
+func (s *EditDeviceRequest) SetDescription(v string) *EditDeviceRequest {
+  s.Description = &v
+  return s
+}
+
+func (s *EditDeviceRequest) SetStreamProtocol(v string) *EditDeviceRequest {
+  s.StreamProtocol = &v
+  return s
+}
+
+func (s *EditDeviceRequest) SetDeviceId(v string) *EditDeviceRequest {
+  s.DeviceId = &v
+  return s
+}
+
+func (s *EditDeviceRequest) SetManufacturer(v string) *EditDeviceRequest {
+  s.Manufacturer = &v
+  return s
+}
+
+func (s *EditDeviceRequest) SetLongitude(v int64) *EditDeviceRequest {
+  s.Longitude = &v
+  return s
+}
+
+type EditDeviceRequestHeader struct {
+}
+
+func (s EditDeviceRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditDeviceResponse) GoString() string {
+func (s EditDeviceRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *EditDeviceResponse) SetCode(v int32) *EditDeviceResponse {
-  s.Code = &v
-  return s
-}
-
-func (s *EditDeviceResponse) SetMessage(v string) *EditDeviceResponse {
-  s.Message = &v
-  return s
-}
-
-func (s *EditDeviceResponse) SetData(v string) *EditDeviceResponse {
-  s.Data = &v
-  return s
 }
 
 type EditDevicePaths struct {
@@ -1445,15 +1409,36 @@ func (s EditDeviceParameters) GoString() string {
   return s.String()
 }
 
-type EditDeviceRequestHeader struct {
+type EditDeviceResponse struct {
+  // {"en":"Result status code, 0 indicates success","zh_CN":"结果状态码，0为成功"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Return data","zh_CN":"返回数据"}
+  Data *string `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+  // {"en":"Return message","zh_CN":"返回消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
 }
 
-func (s EditDeviceRequestHeader) String() string {
+func (s EditDeviceResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s EditDeviceRequestHeader) GoString() string {
+func (s EditDeviceResponse) GoString() string {
   return s.String()
+}
+
+func (s *EditDeviceResponse) SetCode(v int) *EditDeviceResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *EditDeviceResponse) SetData(v string) *EditDeviceResponse {
+  s.Data = &v
+  return s
+}
+
+func (s *EditDeviceResponse) SetMessage(v string) *EditDeviceResponse {
+  s.Message = &v
+  return s
 }
 
 type EditDeviceResponseHeader struct {

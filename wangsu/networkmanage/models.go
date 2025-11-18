@@ -5,162 +5,189 @@ import (
   "github.com/alibabacloud-go/tea/tea"
 )
 
-type VMPQueryEdgePrivateIPRequest struct {
+type QueryEdgePrivateIPRequest struct {
 }
 
-func (s VMPQueryEdgePrivateIPRequest) String() string {
+func (s QueryEdgePrivateIPRequest) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPQueryEdgePrivateIPRequest) GoString() string {
+func (s QueryEdgePrivateIPRequest) GoString() string {
   return s.String()
 }
 
-type VMPQueryEdgePrivateIPResponse struct {
-  // {"en":"additional IP details", "zh_CN":"额外内网Ip详细信息"}
-  EdgeIps []*VMPQueryEdgePrivateIPVMPEdgePrivateIP `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+type QueryEdgePrivateIPRequestHeader struct {
 }
 
-func (s VMPQueryEdgePrivateIPResponse) String() string {
+func (s QueryEdgePrivateIPRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPQueryEdgePrivateIPResponse) GoString() string {
+func (s QueryEdgePrivateIPRequestHeader) GoString() string {
   return s.String()
 }
 
-func (s *VMPQueryEdgePrivateIPResponse) SetEdgeIps(v []*VMPQueryEdgePrivateIPVMPEdgePrivateIP) *VMPQueryEdgePrivateIPResponse {
+type QueryEdgePrivateIPPaths struct {
+}
+
+func (s QueryEdgePrivateIPPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryEdgePrivateIPPaths) GoString() string {
+  return s.String()
+}
+
+type QueryEdgePrivateIPParameters struct {
+  // {"en":"node name","zh_CN":"可选\n节点名称，多个用英文逗号分隔"}
+  NodeName *string `json:"nodeName,omitempty" xml:"nodeName,omitempty"`
+  // {"en":"virtual machine ID","zh_CN":"可选\n虚拟机ID，多个用英文逗号分隔"}
+  InstanceId *string `json:"instanceId,omitempty" xml:"instanceId,omitempty"`
+  // {"en":"extra Ip","zh_CN":"可选\n额外Ip，多个用英文逗号分隔"}
+  EdgeIp *string `json:"edgeIp,omitempty" xml:"edgeIp,omitempty"`
+  // {"en":"extra Ip","zh_CN":"可选\n额外公网Ip，多个用英文逗号分隔"}
+  PublicEdgeIp *string `json:"publicEdgeIp,omitempty" xml:"publicEdgeIp,omitempty"`
+  // {"en":"IP state","zh_CN":"可选\nIP状态：FREE-空闲未绑定；ASSIGNED-已绑定"}
+  State *string `json:"state,omitempty" xml:"state,omitempty"`
+}
+
+func (s QueryEdgePrivateIPParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryEdgePrivateIPParameters) GoString() string {
+  return s.String()
+}
+
+func (s *QueryEdgePrivateIPParameters) SetNodeName(v string) *QueryEdgePrivateIPParameters {
+  s.NodeName = &v
+  return s
+}
+
+func (s *QueryEdgePrivateIPParameters) SetInstanceId(v string) *QueryEdgePrivateIPParameters {
+  s.InstanceId = &v
+  return s
+}
+
+func (s *QueryEdgePrivateIPParameters) SetEdgeIp(v string) *QueryEdgePrivateIPParameters {
+  s.EdgeIp = &v
+  return s
+}
+
+func (s *QueryEdgePrivateIPParameters) SetPublicEdgeIp(v string) *QueryEdgePrivateIPParameters {
+  s.PublicEdgeIp = &v
+  return s
+}
+
+func (s *QueryEdgePrivateIPParameters) SetState(v string) *QueryEdgePrivateIPParameters {
+  s.State = &v
+  return s
+}
+
+type QueryEdgePrivateIPResponse struct {
+  // {"en":"Return Code","zh_CN":"返回码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Message","zh_CN":"消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Data","zh_CN":"数据"}
+  Data *QueryEdgePrivateIPResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryEdgePrivateIPResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryEdgePrivateIPResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryEdgePrivateIPResponse) SetCode(v string) *QueryEdgePrivateIPResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QueryEdgePrivateIPResponse) SetMessage(v string) *QueryEdgePrivateIPResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *QueryEdgePrivateIPResponse) SetData(v *QueryEdgePrivateIPResponseData) *QueryEdgePrivateIPResponse {
+  s.Data = v
+  return s
+}
+
+type QueryEdgePrivateIPResponseData struct {
+  // {"en":"additional IP details","zh_CN":"额外内网Ip详细信息"}
+  EdgeIps []*QueryEdgePrivateIPResponseDataEdgeIps `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryEdgePrivateIPResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryEdgePrivateIPResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryEdgePrivateIPResponseData) SetEdgeIps(v []*QueryEdgePrivateIPResponseDataEdgeIps) *QueryEdgePrivateIPResponseData {
   s.EdgeIps = v
   return s
 }
 
-type VMPQueryEdgePrivateIPVMPEdgePrivateIP struct {
-  // {"en":"extra Ip", "zh_CN":"额外内网Ip"}
+type QueryEdgePrivateIPResponseDataEdgeIps struct     {
+  // {"en":"extra Ip","zh_CN":"额外内网Ip"}
   EdgeIp *string `json:"edgeIp,omitempty" xml:"edgeIp,omitempty" require:"true"`
-  // {"en":"IP state", "zh_CN":"IP状态：FREE-空闲未绑定；ASSIGNED-已绑定"}
+  // {"en":"IP state","zh_CN":"IP状态：FREE-空闲未绑定；ASSIGNED-已绑定"}
   State *string `json:"state,omitempty" xml:"state,omitempty" require:"true"`
-  // {"en":"binding virtual machine ID", "zh_CN":"绑定的虚拟机ID"}
+  // {"en":"binding virtual machine ID","zh_CN":"绑定的虚拟机ID"}
   InstanceId *string `json:"instanceId,omitempty" xml:"instanceId,omitempty" require:"true"`
-  // {"en":"binding edge public IP", "zh_CN":"绑定的额外公网IP"}
+  // {"en":"binding edge public IP","zh_CN":"绑定的额外公网IP"}
   PublicEdgeIp *string `json:"publicEdgeIp,omitempty" xml:"publicEdgeIp,omitempty" require:"true"`
-  // {"en":"node name", "zh_CN":"所属节点名称"}
+  // {"en":"node name","zh_CN":"所属节点名称"}
   NodeName *string `json:"nodeName,omitempty" xml:"nodeName,omitempty" require:"true"`
 }
 
-func (s VMPQueryEdgePrivateIPVMPEdgePrivateIP) String() string {
+func (s QueryEdgePrivateIPResponseDataEdgeIps) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPQueryEdgePrivateIPVMPEdgePrivateIP) GoString() string {
+func (s QueryEdgePrivateIPResponseDataEdgeIps) GoString() string {
   return s.String()
 }
 
-func (s *VMPQueryEdgePrivateIPVMPEdgePrivateIP) SetEdgeIp(v string) *VMPQueryEdgePrivateIPVMPEdgePrivateIP {
+func (s *QueryEdgePrivateIPResponseDataEdgeIps) SetEdgeIp(v string) *QueryEdgePrivateIPResponseDataEdgeIps {
   s.EdgeIp = &v
   return s
 }
 
-func (s *VMPQueryEdgePrivateIPVMPEdgePrivateIP) SetState(v string) *VMPQueryEdgePrivateIPVMPEdgePrivateIP {
+func (s *QueryEdgePrivateIPResponseDataEdgeIps) SetState(v string) *QueryEdgePrivateIPResponseDataEdgeIps {
   s.State = &v
   return s
 }
 
-func (s *VMPQueryEdgePrivateIPVMPEdgePrivateIP) SetInstanceId(v string) *VMPQueryEdgePrivateIPVMPEdgePrivateIP {
+func (s *QueryEdgePrivateIPResponseDataEdgeIps) SetInstanceId(v string) *QueryEdgePrivateIPResponseDataEdgeIps {
   s.InstanceId = &v
   return s
 }
 
-func (s *VMPQueryEdgePrivateIPVMPEdgePrivateIP) SetPublicEdgeIp(v string) *VMPQueryEdgePrivateIPVMPEdgePrivateIP {
+func (s *QueryEdgePrivateIPResponseDataEdgeIps) SetPublicEdgeIp(v string) *QueryEdgePrivateIPResponseDataEdgeIps {
   s.PublicEdgeIp = &v
   return s
 }
 
-func (s *VMPQueryEdgePrivateIPVMPEdgePrivateIP) SetNodeName(v string) *VMPQueryEdgePrivateIPVMPEdgePrivateIP {
+func (s *QueryEdgePrivateIPResponseDataEdgeIps) SetNodeName(v string) *QueryEdgePrivateIPResponseDataEdgeIps {
   s.NodeName = &v
   return s
 }
 
-type VMPQueryEdgePrivateIPPaths struct {
+type QueryEdgePrivateIPResponseHeader struct {
 }
 
-func (s VMPQueryEdgePrivateIPPaths) String() string {
+func (s QueryEdgePrivateIPResponseHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPQueryEdgePrivateIPPaths) GoString() string {
-  return s.String()
-}
-
-type VMPQueryEdgePrivateIPParameters struct {
-  // {"en":"node name", "zh_CN":"可选
-  // 节点名称，多个用英文逗号分隔"}
-  NodeName *string `json:"nodeName,omitempty" xml:"nodeName,omitempty"`
-  // {"en":"virtual machine ID", "zh_CN":"可选
-  // 虚拟机ID，多个用英文逗号分隔"}
-  InstanceId *string `json:"instanceId,omitempty" xml:"instanceId,omitempty"`
-  // {"en":"extra Ip", "zh_CN":"可选
-  // 额外Ip，多个用英文逗号分隔"}
-  EdgeIp *string `json:"edgeIp,omitempty" xml:"edgeIp,omitempty"`
-  // {"en":"extra Ip", "zh_CN":"可选
-  // 额外公网Ip，多个用英文逗号分隔"}
-  PublicEdgeIp *string `json:"publicEdgeIp,omitempty" xml:"publicEdgeIp,omitempty"`
-  // {"en":"IP state", "zh_CN":"可选
-  // IP状态：FREE-空闲未绑定；ASSIGNED-已绑定"}
-  State *string `json:"state,omitempty" xml:"state,omitempty"`
-}
-
-func (s VMPQueryEdgePrivateIPParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s VMPQueryEdgePrivateIPParameters) GoString() string {
-  return s.String()
-}
-
-func (s *VMPQueryEdgePrivateIPParameters) SetNodeName(v string) *VMPQueryEdgePrivateIPParameters {
-  s.NodeName = &v
-  return s
-}
-
-func (s *VMPQueryEdgePrivateIPParameters) SetInstanceId(v string) *VMPQueryEdgePrivateIPParameters {
-  s.InstanceId = &v
-  return s
-}
-
-func (s *VMPQueryEdgePrivateIPParameters) SetEdgeIp(v string) *VMPQueryEdgePrivateIPParameters {
-  s.EdgeIp = &v
-  return s
-}
-
-func (s *VMPQueryEdgePrivateIPParameters) SetPublicEdgeIp(v string) *VMPQueryEdgePrivateIPParameters {
-  s.PublicEdgeIp = &v
-  return s
-}
-
-func (s *VMPQueryEdgePrivateIPParameters) SetState(v string) *VMPQueryEdgePrivateIPParameters {
-  s.State = &v
-  return s
-}
-
-type VMPQueryEdgePrivateIPRequestHeader struct {
-}
-
-func (s VMPQueryEdgePrivateIPRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s VMPQueryEdgePrivateIPRequestHeader) GoString() string {
-  return s.String()
-}
-
-type VMPQueryEdgePrivateIPResponseHeader struct {
-}
-
-func (s VMPQueryEdgePrivateIPResponseHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s VMPQueryEdgePrivateIPResponseHeader) GoString() string {
+func (s QueryEdgePrivateIPResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -178,93 +205,15 @@ func (s VMPQueryAvailableCidrsDetailRequest) GoString() string {
   return s.String()
 }
 
-type VMPQueryAvailableCidrsDetailResponse struct {
-  // {"en":"available cidrs", "zh_CN":"可用的cidr列表"}
-  Nodes []*VMPQueryAvailableCidrsDetailNodeResource `json:"nodes,omitempty" xml:"nodes,omitempty" require:"true" type:"Repeated"`
+type VMPQueryAvailableCidrsDetailRequestHeader struct {
 }
 
-func (s VMPQueryAvailableCidrsDetailResponse) String() string {
+func (s VMPQueryAvailableCidrsDetailRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPQueryAvailableCidrsDetailResponse) GoString() string {
+func (s VMPQueryAvailableCidrsDetailRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *VMPQueryAvailableCidrsDetailResponse) SetNodes(v []*VMPQueryAvailableCidrsDetailNodeResource) *VMPQueryAvailableCidrsDetailResponse {
-  s.Nodes = v
-  return s
-}
-
-type VMPQueryAvailableCidrsDetailNodeResource struct {
-  // {"en":"Node name.", "zh_CN":"节点名称"}
-  Node *string `json:"node,omitempty" xml:"node,omitempty" require:"true"`
-  // {"en":"CIDR detail.", "zh_CN":"网段详情"}
-  Cidrs []*VMPQueryAvailableCidrsDetailCidrDetail `json:"cidrs,omitempty" xml:"cidrs,omitempty" require:"true" type:"Repeated"`
-}
-
-func (s VMPQueryAvailableCidrsDetailNodeResource) String() string {
-  return tea.Prettify(s)
-}
-
-func (s VMPQueryAvailableCidrsDetailNodeResource) GoString() string {
-  return s.String()
-}
-
-func (s *VMPQueryAvailableCidrsDetailNodeResource) SetNode(v string) *VMPQueryAvailableCidrsDetailNodeResource {
-  s.Node = &v
-  return s
-}
-
-func (s *VMPQueryAvailableCidrsDetailNodeResource) SetCidrs(v []*VMPQueryAvailableCidrsDetailCidrDetail) *VMPQueryAvailableCidrsDetailNodeResource {
-  s.Cidrs = v
-  return s
-}
-
-type VMPQueryAvailableCidrsDetailCidrDetail struct {
-  // {"en":"CIDR", "zh_CN":"网段 CIDR"}
-  Cidr *string `json:"cidr,omitempty" xml:"cidr,omitempty" require:"true"`
-  // {"en":"IP native attribute.(-1: Native, 1: Non-native)", "zh_CN":"原生属性. (-1: 原生, 1: 非原生)"}
-  NativeAttribute *string `json:"nativeAttribute,omitempty" xml:"nativeAttribute,omitempty" require:"true"`
-  // {"en":"Number of free and available IPs", "zh_CN":"空闲可用IP数"}
-  FreeIps *int `json:"freeIps,omitempty" xml:"freeIps,omitempty" require:"true"`
-  // {"en":"Freezing IP number", "zh_CN":"冷却IP数"}
-  FreezingIps *int `json:"freezingIps,omitempty" xml:"freezingIps,omitempty" require:"true"`
-  // {"en":"Number of IPs already used", "zh_CN":"已用IP数"}
-  UsedIps *int `json:"usedIps,omitempty" xml:"usedIps,omitempty" require:"true"`
-}
-
-func (s VMPQueryAvailableCidrsDetailCidrDetail) String() string {
-  return tea.Prettify(s)
-}
-
-func (s VMPQueryAvailableCidrsDetailCidrDetail) GoString() string {
-  return s.String()
-}
-
-func (s *VMPQueryAvailableCidrsDetailCidrDetail) SetCidr(v string) *VMPQueryAvailableCidrsDetailCidrDetail {
-  s.Cidr = &v
-  return s
-}
-
-func (s *VMPQueryAvailableCidrsDetailCidrDetail) SetNativeAttribute(v string) *VMPQueryAvailableCidrsDetailCidrDetail {
-  s.NativeAttribute = &v
-  return s
-}
-
-func (s *VMPQueryAvailableCidrsDetailCidrDetail) SetFreeIps(v int) *VMPQueryAvailableCidrsDetailCidrDetail {
-  s.FreeIps = &v
-  return s
-}
-
-func (s *VMPQueryAvailableCidrsDetailCidrDetail) SetFreezingIps(v int) *VMPQueryAvailableCidrsDetailCidrDetail {
-  s.FreezingIps = &v
-  return s
-}
-
-func (s *VMPQueryAvailableCidrsDetailCidrDetail) SetUsedIps(v int) *VMPQueryAvailableCidrsDetailCidrDetail {
-  s.UsedIps = &v
-  return s
 }
 
 type VMPQueryAvailableCidrsDetailPaths struct {
@@ -279,13 +228,13 @@ func (s VMPQueryAvailableCidrsDetailPaths) GoString() string {
 }
 
 type VMPQueryAvailableCidrsDetailParameters struct {
-  // {"en":"Node name.", "zh_CN":"节点名称，多个节点用英文逗号分隔，最多填写20个"}
+  // {"en":"Node name.","zh_CN":"节点名称，多个节点用英文逗号分隔，最多填写20个"}
   Node *string `json:"node,omitempty" xml:"node,omitempty" require:"true"`
-  // {"en":"CIDR", "zh_CN":"网段 CIDR"}
+  // {"en":"CIDR","zh_CN":"网段 CIDR"}
   Cidr *string `json:"cidr,omitempty" xml:"cidr,omitempty"`
-  // {"en":"IP native attribute.(-1: Native, 1: Non-native)", "zh_CN":"原生属性. (-1: 原生, 1: 非原生)"}
+  // {"en":"IP native attribute.(-1: Native, 1: Non-native)","zh_CN":"原生属性. (-1: 原生, 1: 非原生)"}
   NativeAttribute *string `json:"nativeAttribute,omitempty" xml:"nativeAttribute,omitempty"`
-  // {"en":"IPv6 segment(1: yes, -1: no)", "zh_CN":"是否返回IPV6网段(1: 是, -1: 否)"}
+  // {"en":"IPv6 segment(1: yes, -1: no)","zh_CN":"是否返回IPV6网段(1: 是, -1: 否)"}
   NeedIPv6 *string `json:"needIPv6,omitempty" xml:"needIPv6,omitempty"`
 }
 
@@ -317,15 +266,125 @@ func (s *VMPQueryAvailableCidrsDetailParameters) SetNeedIPv6(v string) *VMPQuery
   return s
 }
 
-type VMPQueryAvailableCidrsDetailRequestHeader struct {
+type VMPQueryAvailableCidrsDetailResponse struct {
+  // {"en":"Response code","zh_CN":"响应码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Response data","zh_CN":"响应数据"}
+  Data *VMPQueryAvailableCidrsDetailResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  // {"en":"Error message","zh_CN":"错误信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
 }
 
-func (s VMPQueryAvailableCidrsDetailRequestHeader) String() string {
+func (s VMPQueryAvailableCidrsDetailResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPQueryAvailableCidrsDetailRequestHeader) GoString() string {
+func (s VMPQueryAvailableCidrsDetailResponse) GoString() string {
   return s.String()
+}
+
+func (s *VMPQueryAvailableCidrsDetailResponse) SetCode(v string) *VMPQueryAvailableCidrsDetailResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *VMPQueryAvailableCidrsDetailResponse) SetData(v *VMPQueryAvailableCidrsDetailResponseData) *VMPQueryAvailableCidrsDetailResponse {
+  s.Data = v
+  return s
+}
+
+func (s *VMPQueryAvailableCidrsDetailResponse) SetMessage(v string) *VMPQueryAvailableCidrsDetailResponse {
+  s.Message = &v
+  return s
+}
+
+type VMPQueryAvailableCidrsDetailResponseData struct {
+  // {"en":"available cidrs","zh_CN":"可用的cidr列表"}
+  Nodes []*VMPQueryAvailableCidrsDetailResponseDataNodes `json:"nodes,omitempty" xml:"nodes,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s VMPQueryAvailableCidrsDetailResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s VMPQueryAvailableCidrsDetailResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *VMPQueryAvailableCidrsDetailResponseData) SetNodes(v []*VMPQueryAvailableCidrsDetailResponseDataNodes) *VMPQueryAvailableCidrsDetailResponseData {
+  s.Nodes = v
+  return s
+}
+
+type VMPQueryAvailableCidrsDetailResponseDataNodes struct     {
+  // {"en":"CIDR detail.","zh_CN":"网段详情"}
+  Cidrs []*VMPQueryAvailableCidrsDetailResponseDataNodesCidrs `json:"cidrs,omitempty" xml:"cidrs,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Node name.","zh_CN":"节点名称"}
+  Node *string `json:"node,omitempty" xml:"node,omitempty" require:"true"`
+}
+
+func (s VMPQueryAvailableCidrsDetailResponseDataNodes) String() string {
+  return tea.Prettify(s)
+}
+
+func (s VMPQueryAvailableCidrsDetailResponseDataNodes) GoString() string {
+  return s.String()
+}
+
+func (s *VMPQueryAvailableCidrsDetailResponseDataNodes) SetCidrs(v []*VMPQueryAvailableCidrsDetailResponseDataNodesCidrs) *VMPQueryAvailableCidrsDetailResponseDataNodes {
+  s.Cidrs = v
+  return s
+}
+
+func (s *VMPQueryAvailableCidrsDetailResponseDataNodes) SetNode(v string) *VMPQueryAvailableCidrsDetailResponseDataNodes {
+  s.Node = &v
+  return s
+}
+
+type VMPQueryAvailableCidrsDetailResponseDataNodesCidrs struct     {
+  // {"en":"CIDR","zh_CN":"网段 CIDR"}
+  Cidr *string `json:"cidr,omitempty" xml:"cidr,omitempty" require:"true"`
+  // {"en":"Number of free and available IPs","zh_CN":"空闲可用IP数"}
+  FreeIps *int `json:"freeIps,omitempty" xml:"freeIps,omitempty" require:"true"`
+  // {"en":"Freezing IP number","zh_CN":"冷却IP数"}
+  FreezingIps *int `json:"freezingIps,omitempty" xml:"freezingIps,omitempty" require:"true"`
+  // {"en":"IP native attribute.(-1: Native, 1: Non-native)","zh_CN":"原生属性. (-1: 原生, 1: 非原生)"}
+  NativeAttribute *string `json:"nativeAttribute,omitempty" xml:"nativeAttribute,omitempty" require:"true"`
+  // {"en":"Number of IPs already used","zh_CN":"已用IP数"}
+  UsedIps *int `json:"usedIps,omitempty" xml:"usedIps,omitempty" require:"true"`
+}
+
+func (s VMPQueryAvailableCidrsDetailResponseDataNodesCidrs) String() string {
+  return tea.Prettify(s)
+}
+
+func (s VMPQueryAvailableCidrsDetailResponseDataNodesCidrs) GoString() string {
+  return s.String()
+}
+
+func (s *VMPQueryAvailableCidrsDetailResponseDataNodesCidrs) SetCidr(v string) *VMPQueryAvailableCidrsDetailResponseDataNodesCidrs {
+  s.Cidr = &v
+  return s
+}
+
+func (s *VMPQueryAvailableCidrsDetailResponseDataNodesCidrs) SetFreeIps(v int) *VMPQueryAvailableCidrsDetailResponseDataNodesCidrs {
+  s.FreeIps = &v
+  return s
+}
+
+func (s *VMPQueryAvailableCidrsDetailResponseDataNodesCidrs) SetFreezingIps(v int) *VMPQueryAvailableCidrsDetailResponseDataNodesCidrs {
+  s.FreezingIps = &v
+  return s
+}
+
+func (s *VMPQueryAvailableCidrsDetailResponseDataNodesCidrs) SetNativeAttribute(v string) *VMPQueryAvailableCidrsDetailResponseDataNodesCidrs {
+  s.NativeAttribute = &v
+  return s
+}
+
+func (s *VMPQueryAvailableCidrsDetailResponseDataNodesCidrs) SetUsedIps(v int) *VMPQueryAvailableCidrsDetailResponseDataNodesCidrs {
+  s.UsedIps = &v
+  return s
 }
 
 type VMPQueryAvailableCidrsDetailResponseHeader struct {
@@ -336,6 +395,177 @@ func (s VMPQueryAvailableCidrsDetailResponseHeader) String() string {
 }
 
 func (s VMPQueryAvailableCidrsDetailResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type LECHQueryEdgeIPRequest struct {
+}
+
+func (s LECHQueryEdgeIPRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryEdgeIPRequest) GoString() string {
+  return s.String()
+}
+
+type LECHQueryEdgeIPRequestHeader struct {
+}
+
+func (s LECHQueryEdgeIPRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryEdgeIPRequestHeader) GoString() string {
+  return s.String()
+}
+
+type LECHQueryEdgeIPPaths struct {
+}
+
+func (s LECHQueryEdgeIPPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryEdgeIPPaths) GoString() string {
+  return s.String()
+}
+
+type LECHQueryEdgeIPParameters struct {
+  // {"en":"node name","zh_CN":"可选\n节点名称，多个用英文逗号分隔"}
+  NodeName *string `json:"nodeName,omitempty" xml:"nodeName,omitempty"`
+  // {"en":"virtual machine ID","zh_CN":"可选\n虚拟机ID，多个用英文逗号分隔"}
+  ServerId *string `json:"serverId,omitempty" xml:"serverId,omitempty"`
+  // {"en":"virtual machine master IP","zh_CN":"可选\n虚拟机主IP，多个用英文逗号分隔"}
+  ServerIp *string `json:"serverIp,omitempty" xml:"serverIp,omitempty"`
+  // {"en":"extra Ip","zh_CN":"可选\n额外Ip，多个用英文逗号分隔"}
+  EdgeIp *string `json:"edgeIp,omitempty" xml:"edgeIp,omitempty"`
+  // {"en":"IP state","zh_CN":"可选\nIP状态：FREE-空闲未绑定；ASSIGNED-已绑定"}
+  State *string `json:"state,omitempty" xml:"state,omitempty"`
+}
+
+func (s LECHQueryEdgeIPParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryEdgeIPParameters) GoString() string {
+  return s.String()
+}
+
+func (s *LECHQueryEdgeIPParameters) SetNodeName(v string) *LECHQueryEdgeIPParameters {
+  s.NodeName = &v
+  return s
+}
+
+func (s *LECHQueryEdgeIPParameters) SetServerId(v string) *LECHQueryEdgeIPParameters {
+  s.ServerId = &v
+  return s
+}
+
+func (s *LECHQueryEdgeIPParameters) SetServerIp(v string) *LECHQueryEdgeIPParameters {
+  s.ServerIp = &v
+  return s
+}
+
+func (s *LECHQueryEdgeIPParameters) SetEdgeIp(v string) *LECHQueryEdgeIPParameters {
+  s.EdgeIp = &v
+  return s
+}
+
+func (s *LECHQueryEdgeIPParameters) SetState(v string) *LECHQueryEdgeIPParameters {
+  s.State = &v
+  return s
+}
+
+type LECHQueryEdgeIPResponse struct {
+  // {"en":"additional IP details","zh_CN":"额外Ip详细信息"}
+  EdgeIps []*LECHQueryEdgeIPResponseEdgeIps `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s LECHQueryEdgeIPResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryEdgeIPResponse) GoString() string {
+  return s.String()
+}
+
+func (s *LECHQueryEdgeIPResponse) SetEdgeIps(v []*LECHQueryEdgeIPResponseEdgeIps) *LECHQueryEdgeIPResponse {
+  s.EdgeIps = v
+  return s
+}
+
+type LECHQueryEdgeIPResponseEdgeIps struct     {
+  // {"en":"extra Ip","zh_CN":"额外Ip"}
+  EdgeIp *string `json:"edgeIp,omitempty" xml:"edgeIp,omitempty" require:"true"`
+  // {"en":"IP state","zh_CN":"IP状态：FREE-空闲未绑定；ASSIGNED-已绑定"}
+  State *string `json:"state,omitempty" xml:"state,omitempty" require:"true"`
+  // {"en":"binding virtual machine ID","zh_CN":"绑定的虚拟机ID"}
+  ServerId *string `json:"serverId,omitempty" xml:"serverId,omitempty" require:"true"`
+  // {"en":"binding virtual machine extranet IP","zh_CN":"绑定的虚拟机外网IP"}
+  ServerIp []*string `json:"serverIp,omitempty" xml:"serverIp,omitempty" require:"true" type:"Repeated"`
+  // {"en":"node name","zh_CN":"所属节点名称"}
+  NodeName *string `json:"nodeName,omitempty" xml:"nodeName,omitempty" require:"true"`
+  // {"en":"Is it exclusive","zh_CN":"是否独占"}
+  OccupancyFlag *bool `json:"occupancyFlag,omitempty" xml:"occupancyFlag,omitempty" require:"true"`
+  // {"en":"Net Mask","zh_CN":"子网掩码"}
+  Netmask *string `json:"netmask,omitempty" xml:"netmask,omitempty" require:"true"`
+}
+
+func (s LECHQueryEdgeIPResponseEdgeIps) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryEdgeIPResponseEdgeIps) GoString() string {
+  return s.String()
+}
+
+func (s *LECHQueryEdgeIPResponseEdgeIps) SetEdgeIp(v string) *LECHQueryEdgeIPResponseEdgeIps {
+  s.EdgeIp = &v
+  return s
+}
+
+func (s *LECHQueryEdgeIPResponseEdgeIps) SetState(v string) *LECHQueryEdgeIPResponseEdgeIps {
+  s.State = &v
+  return s
+}
+
+func (s *LECHQueryEdgeIPResponseEdgeIps) SetServerId(v string) *LECHQueryEdgeIPResponseEdgeIps {
+  s.ServerId = &v
+  return s
+}
+
+func (s *LECHQueryEdgeIPResponseEdgeIps) SetServerIp(v []*string) *LECHQueryEdgeIPResponseEdgeIps {
+  s.ServerIp = v
+  return s
+}
+
+func (s *LECHQueryEdgeIPResponseEdgeIps) SetNodeName(v string) *LECHQueryEdgeIPResponseEdgeIps {
+  s.NodeName = &v
+  return s
+}
+
+func (s *LECHQueryEdgeIPResponseEdgeIps) SetOccupancyFlag(v bool) *LECHQueryEdgeIPResponseEdgeIps {
+  s.OccupancyFlag = &v
+  return s
+}
+
+func (s *LECHQueryEdgeIPResponseEdgeIps) SetNetmask(v string) *LECHQueryEdgeIPResponseEdgeIps {
+  s.Netmask = &v
+  return s
+}
+
+type LECHQueryEdgeIPResponseHeader struct {
+}
+
+func (s LECHQueryEdgeIPResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryEdgeIPResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -1357,20 +1587,17 @@ func (s *CreateServiceOwnerReference) SetBlockOwnerDeletion(v bool) *CreateServi
 
 
 type VMPAllocateEdgeIPRequest struct {
-  // {"en":"node name", "zh_CN":"节点名称"}
+  // {"en":"node name","zh_CN":"节点名称"}
   NodeName *string `json:"nodeName,omitempty" xml:"nodeName,omitempty" require:"true"`
-  // {"en":"IP protocol:4-ipv4(default);6-ipv6(temporary unsupported)", "zh_CN":"可选
-  // IP协议：4-ipv4(默认)；6-ipv6"}
+  // {"en":"IP protocol:4-ipv4(default);6-ipv6(temporary unsupported)","zh_CN":"可选\nIP协议：4-ipv4(默认)；6-ipv6"}
   Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty"`
-  // {"en":"IP native attribute, 1: non-native;-1: native;", "zh_CN":"IPv4原生属性，1：非原生；-1：原生；不指定默认随机分配原生属性"}
+  // {"en":"IP native attribute, 1: non-native;-1: native;","zh_CN":"IPv4原生属性，1：非原生；-1：原生；不指定默认随机分配原生属性"}
   NativeAttribute *string `json:"nativeAttribute,omitempty" xml:"nativeAttribute,omitempty"`
-  // {"en":"cidr", "zh_CN":"CIDR，一次只能传入一个CIDR"}
+  // {"en":"cidr","zh_CN":"CIDR，一次只能传入一个CIDR"}
   Cidr *string `json:"cidr,omitempty" xml:"cidr,omitempty"`
-  // {"en":"number of applications IP  (the single upper limit is 50)", "zh_CN":"申请IP数（单次申请Ip数上限为50个）"}
+  // {"en":"number of applications IP  (the single upper limit is 50)","zh_CN":"申请IP数（单次申请Ip数上限为50个）"}
   Count *int `json:"count,omitempty" xml:"count,omitempty" require:"true"`
-  // {"en":"Allocate IP randomly", "zh_CN":"是否需要随机分配IP（仅对ipv4生效）  
-  // 1：是
-  // -1：否"}
+  // {"en":"Allocate IP randomly","zh_CN":"是否需要随机分配IP（仅对ipv4生效）\n1：是\n-1：否"}
   RandomAllocateIp *int `json:"randomAllocateIp,omitempty" xml:"randomAllocateIp,omitempty"`
 }
 
@@ -1412,27 +1639,15 @@ func (s *VMPAllocateEdgeIPRequest) SetRandomAllocateIp(v int) *VMPAllocateEdgeIP
   return s
 }
 
-type VMPAllocateEdgeIPResponse struct {
-  // {"en":"successful application for all or part of IP", "zh_CN":"成功申请到的全部或部分IP
-  // 说明：不同场景的响应说明如下
-  // A、所有IP都申请成功，返回申请到的所有IP
-  // B、只申请到部分IP，返回申请到的那部分IP
-  // C、未申请到任何IP，返回失败信息
-  // D、若出现申请失败的情况，请间隔10S之后再次申请"}
-  EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+type VMPAllocateEdgeIPRequestHeader struct {
 }
 
-func (s VMPAllocateEdgeIPResponse) String() string {
+func (s VMPAllocateEdgeIPRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPAllocateEdgeIPResponse) GoString() string {
+func (s VMPAllocateEdgeIPRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *VMPAllocateEdgeIPResponse) SetEdgeIps(v []*string) *VMPAllocateEdgeIPResponse {
-  s.EdgeIps = v
-  return s
 }
 
 type VMPAllocateEdgeIPPaths struct {
@@ -1457,15 +1672,22 @@ func (s VMPAllocateEdgeIPParameters) GoString() string {
   return s.String()
 }
 
-type VMPAllocateEdgeIPRequestHeader struct {
+type VMPAllocateEdgeIPResponse struct {
+  // {"en":"successful application for all or part of IP","zh_CN":"成功申请到的全部或部分IP\n说明：不同场景的响应说明如下\nA、所有IP都申请成功，返回申请到的所有IP\nB、只申请到部分IP，返回申请到的那部分IP\nC、未申请到任何IP，返回失败信息\nD、若出现申请失败的情况，请间隔10S之后再次申请"}
+  EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s VMPAllocateEdgeIPRequestHeader) String() string {
+func (s VMPAllocateEdgeIPResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPAllocateEdgeIPRequestHeader) GoString() string {
+func (s VMPAllocateEdgeIPResponse) GoString() string {
   return s.String()
+}
+
+func (s *VMPAllocateEdgeIPResponse) SetEdgeIps(v []*string) *VMPAllocateEdgeIPResponse {
+  s.EdgeIps = v
+  return s
 }
 
 type VMPAllocateEdgeIPResponseHeader struct {
@@ -1482,122 +1704,179 @@ func (s VMPAllocateEdgeIPResponseHeader) GoString() string {
 
 
 
-type VMPAssignEdgePrivateIPRequest struct {
-  // {"en":"target virtual machine id", "zh_CN":"目标实例ID"}
+type AssignEdgePrivateIPRequest struct {
+  // {"en":"target virtual machine id","zh_CN":"目标实例ID"}
   InstanceId *string `json:"instanceId,omitempty" xml:"instanceId,omitempty" require:"true"`
-  // {"en":"additional IP to bind to the virtual machine", "zh_CN":"要绑定到目标实例的额外IP"}
-  EdgeIps []*VMPAssignEdgePrivateIPVMPEdgeIPMapping `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+  // {"en":"additional IP to bind to the virtual machine","zh_CN":"要绑定到目标实例的额外IP"}
+  EdgeIps []*AssignEdgePrivateIPRequestEdgeIps `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s VMPAssignEdgePrivateIPRequest) String() string {
+func (s AssignEdgePrivateIPRequest) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPAssignEdgePrivateIPRequest) GoString() string {
+func (s AssignEdgePrivateIPRequest) GoString() string {
   return s.String()
 }
 
-func (s *VMPAssignEdgePrivateIPRequest) SetInstanceId(v string) *VMPAssignEdgePrivateIPRequest {
+func (s *AssignEdgePrivateIPRequest) SetInstanceId(v string) *AssignEdgePrivateIPRequest {
   s.InstanceId = &v
   return s
 }
 
-func (s *VMPAssignEdgePrivateIPRequest) SetEdgeIps(v []*VMPAssignEdgePrivateIPVMPEdgeIPMapping) *VMPAssignEdgePrivateIPRequest {
+func (s *AssignEdgePrivateIPRequest) SetEdgeIps(v []*AssignEdgePrivateIPRequestEdgeIps) *AssignEdgePrivateIPRequest {
   s.EdgeIps = v
   return s
 }
 
-type VMPAssignEdgePrivateIPVMPEdgeIPMapping struct {
-  // {"en":"edge private ip", "zh_CN":"额外内网IP"}
+type AssignEdgePrivateIPRequestEdgeIps struct     {
+  // {"en":"edge private ip","zh_CN":"额外内网IP"}
   EdgePrivateIp *string `json:"edgePrivateIp,omitempty" xml:"edgePrivateIp,omitempty" require:"true"`
-  // {"en":"edge public IP", "zh_CN":"额外公网IP"}
+  // {"en":"edge public IP","zh_CN":"额外公网IP"}
   EdgePublicIp *string `json:"edgePublicIp,omitempty" xml:"edgePublicIp,omitempty" require:"true"`
 }
 
-func (s VMPAssignEdgePrivateIPVMPEdgeIPMapping) String() string {
+func (s AssignEdgePrivateIPRequestEdgeIps) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPAssignEdgePrivateIPVMPEdgeIPMapping) GoString() string {
+func (s AssignEdgePrivateIPRequestEdgeIps) GoString() string {
   return s.String()
 }
 
-func (s *VMPAssignEdgePrivateIPVMPEdgeIPMapping) SetEdgePrivateIp(v string) *VMPAssignEdgePrivateIPVMPEdgeIPMapping {
+func (s *AssignEdgePrivateIPRequestEdgeIps) SetEdgePrivateIp(v string) *AssignEdgePrivateIPRequestEdgeIps {
   s.EdgePrivateIp = &v
   return s
 }
 
-func (s *VMPAssignEdgePrivateIPVMPEdgeIPMapping) SetEdgePublicIp(v string) *VMPAssignEdgePrivateIPVMPEdgeIPMapping {
+func (s *AssignEdgePrivateIPRequestEdgeIps) SetEdgePublicIp(v string) *AssignEdgePrivateIPRequestEdgeIps {
   s.EdgePublicIp = &v
   return s
 }
 
-type VMPAssignEdgePrivateIPResponse struct {
-  // {"en":"target virtual machine id", "zh_CN":"目标实例ID"}
-  InstanceId *string `json:"instanceId,omitempty" xml:"instanceId,omitempty" require:"true"`
-  // {"en":"Additional IP that is bound to the instance", "zh_CN":"已绑定到目标实例的额外IP"}
-  EdgeIps []*VMPAssignEdgePrivateIPVMPEdgeIPMapping `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+type AssignEdgePrivateIPRequestHeader struct {
 }
 
-func (s VMPAssignEdgePrivateIPResponse) String() string {
+func (s AssignEdgePrivateIPRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPAssignEdgePrivateIPResponse) GoString() string {
+func (s AssignEdgePrivateIPRequestHeader) GoString() string {
   return s.String()
 }
 
-func (s *VMPAssignEdgePrivateIPResponse) SetInstanceId(v string) *VMPAssignEdgePrivateIPResponse {
+type AssignEdgePrivateIPPaths struct {
+}
+
+func (s AssignEdgePrivateIPPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AssignEdgePrivateIPPaths) GoString() string {
+  return s.String()
+}
+
+type AssignEdgePrivateIPParameters struct {
+}
+
+func (s AssignEdgePrivateIPParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AssignEdgePrivateIPParameters) GoString() string {
+  return s.String()
+}
+
+type AssignEdgePrivateIPResponse struct {
+  // {"en":"Return Code","zh_CN":"返回码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Message","zh_CN":"消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Data","zh_CN":"数据"}
+  Data *AssignEdgePrivateIPResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s AssignEdgePrivateIPResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AssignEdgePrivateIPResponse) GoString() string {
+  return s.String()
+}
+
+func (s *AssignEdgePrivateIPResponse) SetCode(v string) *AssignEdgePrivateIPResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *AssignEdgePrivateIPResponse) SetMessage(v string) *AssignEdgePrivateIPResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *AssignEdgePrivateIPResponse) SetData(v *AssignEdgePrivateIPResponseData) *AssignEdgePrivateIPResponse {
+  s.Data = v
+  return s
+}
+
+type AssignEdgePrivateIPResponseData struct {
+  // {"en":"target virtual machine id","zh_CN":"目标实例ID"}
+  InstanceId *string `json:"instanceId,omitempty" xml:"instanceId,omitempty" require:"true"`
+  // {"en":"Additional IP that is bound to the instance","zh_CN":"已绑定到目标实例的额外IP"}
+  EdgeIps []*AssignEdgePrivateIPResponseDataEdgeIps `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s AssignEdgePrivateIPResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AssignEdgePrivateIPResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *AssignEdgePrivateIPResponseData) SetInstanceId(v string) *AssignEdgePrivateIPResponseData {
   s.InstanceId = &v
   return s
 }
 
-func (s *VMPAssignEdgePrivateIPResponse) SetEdgeIps(v []*VMPAssignEdgePrivateIPVMPEdgeIPMapping) *VMPAssignEdgePrivateIPResponse {
+func (s *AssignEdgePrivateIPResponseData) SetEdgeIps(v []*AssignEdgePrivateIPResponseDataEdgeIps) *AssignEdgePrivateIPResponseData {
   s.EdgeIps = v
   return s
 }
 
-type VMPAssignEdgePrivateIPPaths struct {
+type AssignEdgePrivateIPResponseDataEdgeIps struct     {
+  // {"en":"edge private ip","zh_CN":"额外内网IP"}
+  EdgePrivateIp *string `json:"edgePrivateIp,omitempty" xml:"edgePrivateIp,omitempty" require:"true"`
+  // {"en":"edge public IP","zh_CN":"额外公网IP"}
+  EdgePublicIp *string `json:"edgePublicIp,omitempty" xml:"edgePublicIp,omitempty" require:"true"`
 }
 
-func (s VMPAssignEdgePrivateIPPaths) String() string {
+func (s AssignEdgePrivateIPResponseDataEdgeIps) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPAssignEdgePrivateIPPaths) GoString() string {
+func (s AssignEdgePrivateIPResponseDataEdgeIps) GoString() string {
   return s.String()
 }
 
-type VMPAssignEdgePrivateIPParameters struct {
+func (s *AssignEdgePrivateIPResponseDataEdgeIps) SetEdgePrivateIp(v string) *AssignEdgePrivateIPResponseDataEdgeIps {
+  s.EdgePrivateIp = &v
+  return s
 }
 
-func (s VMPAssignEdgePrivateIPParameters) String() string {
+func (s *AssignEdgePrivateIPResponseDataEdgeIps) SetEdgePublicIp(v string) *AssignEdgePrivateIPResponseDataEdgeIps {
+  s.EdgePublicIp = &v
+  return s
+}
+
+type AssignEdgePrivateIPResponseHeader struct {
+}
+
+func (s AssignEdgePrivateIPResponseHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPAssignEdgePrivateIPParameters) GoString() string {
-  return s.String()
-}
-
-type VMPAssignEdgePrivateIPRequestHeader struct {
-}
-
-func (s VMPAssignEdgePrivateIPRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s VMPAssignEdgePrivateIPRequestHeader) GoString() string {
-  return s.String()
-}
-
-type VMPAssignEdgePrivateIPResponseHeader struct {
-}
-
-func (s VMPAssignEdgePrivateIPResponseHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s VMPAssignEdgePrivateIPResponseHeader) GoString() string {
+func (s AssignEdgePrivateIPResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -2279,6 +2558,103 @@ func (s ListNetworkPolicyFieldsV1) GoString() string {
 
 
 
+type LECHAssignEdgeIPRequest struct {
+  // {"en":"target virtual machine external network Ip","zh_CN":"目标实例的公网Ip"}
+  ServerIp *string `json:"serverIp,omitempty" xml:"serverIp,omitempty" require:"true"`
+  // {"en":"additional IP to bind to the virtual machine","zh_CN":"要绑定到目标实例的额外IP"}
+  EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s LECHAssignEdgeIPRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHAssignEdgeIPRequest) GoString() string {
+  return s.String()
+}
+
+func (s *LECHAssignEdgeIPRequest) SetServerIp(v string) *LECHAssignEdgeIPRequest {
+  s.ServerIp = &v
+  return s
+}
+
+func (s *LECHAssignEdgeIPRequest) SetEdgeIps(v []*string) *LECHAssignEdgeIPRequest {
+  s.EdgeIps = v
+  return s
+}
+
+type LECHAssignEdgeIPRequestHeader struct {
+}
+
+func (s LECHAssignEdgeIPRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHAssignEdgeIPRequestHeader) GoString() string {
+  return s.String()
+}
+
+type LECHAssignEdgeIPPaths struct {
+}
+
+func (s LECHAssignEdgeIPPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHAssignEdgeIPPaths) GoString() string {
+  return s.String()
+}
+
+type LECHAssignEdgeIPParameters struct {
+}
+
+func (s LECHAssignEdgeIPParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHAssignEdgeIPParameters) GoString() string {
+  return s.String()
+}
+
+type LECHAssignEdgeIPResponse struct {
+  // {"en":"target virtual machine IP","zh_CN":"目标实例公网IP"}
+  ServerIp *string `json:"serverIp,omitempty" xml:"serverIp,omitempty" require:"true"`
+  // {"en":"Additional IP that is bound to the instance","zh_CN":"已绑定到实例的额外公网IP"}
+  EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s LECHAssignEdgeIPResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHAssignEdgeIPResponse) GoString() string {
+  return s.String()
+}
+
+func (s *LECHAssignEdgeIPResponse) SetServerIp(v string) *LECHAssignEdgeIPResponse {
+  s.ServerIp = &v
+  return s
+}
+
+func (s *LECHAssignEdgeIPResponse) SetEdgeIps(v []*string) *LECHAssignEdgeIPResponse {
+  s.EdgeIps = v
+  return s
+}
+
+type LECHAssignEdgeIPResponseHeader struct {
+}
+
+func (s LECHAssignEdgeIPResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHAssignEdgeIPResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type VMPQueryEdgeIPRequest struct {
 }
 
@@ -2290,57 +2666,15 @@ func (s VMPQueryEdgeIPRequest) GoString() string {
   return s.String()
 }
 
-type VMPQueryEdgeIPResponse struct {
-  // {"en":"additional IP details", "zh_CN":"额外Ip详细信息"}
-  EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
-  // {"en":"extra Ip", "zh_CN":"额外Ip"}
-  EdgeIp *string `json:"edgeIp,omitempty" xml:"edgeIp,omitempty" require:"true"`
-  // {"en":"IP state", "zh_CN":"IP状态：FREE-空闲未绑定；ASSIGNED-已绑定"}
-  State *string `json:"state,omitempty" xml:"state,omitempty" require:"true"`
-  // {"en":"binding virtual machine ID", "zh_CN":"绑定的虚拟机ID"}
-  ServerId *string `json:"serverId,omitempty" xml:"serverId,omitempty" require:"true"`
-  // {"en":"binding virtual machine extranet IP", "zh_CN":"绑定的虚拟机外网IP"}
-  ServerIp []*string `json:"serverIp,omitempty" xml:"serverIp,omitempty" require:"true" type:"Repeated"`
-  // {"en":"node name", "zh_CN":"所属节点名称"}
-  NodeName *string `json:"nodeName,omitempty" xml:"nodeName,omitempty" require:"true"`
+type VMPQueryEdgeIPRequestHeader struct {
 }
 
-func (s VMPQueryEdgeIPResponse) String() string {
+func (s VMPQueryEdgeIPRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPQueryEdgeIPResponse) GoString() string {
+func (s VMPQueryEdgeIPRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *VMPQueryEdgeIPResponse) SetEdgeIps(v []*string) *VMPQueryEdgeIPResponse {
-  s.EdgeIps = v
-  return s
-}
-
-func (s *VMPQueryEdgeIPResponse) SetEdgeIp(v string) *VMPQueryEdgeIPResponse {
-  s.EdgeIp = &v
-  return s
-}
-
-func (s *VMPQueryEdgeIPResponse) SetState(v string) *VMPQueryEdgeIPResponse {
-  s.State = &v
-  return s
-}
-
-func (s *VMPQueryEdgeIPResponse) SetServerId(v string) *VMPQueryEdgeIPResponse {
-  s.ServerId = &v
-  return s
-}
-
-func (s *VMPQueryEdgeIPResponse) SetServerIp(v []*string) *VMPQueryEdgeIPResponse {
-  s.ServerIp = v
-  return s
-}
-
-func (s *VMPQueryEdgeIPResponse) SetNodeName(v string) *VMPQueryEdgeIPResponse {
-  s.NodeName = &v
-  return s
 }
 
 type VMPQueryEdgeIPPaths struct {
@@ -2355,20 +2689,15 @@ func (s VMPQueryEdgeIPPaths) GoString() string {
 }
 
 type VMPQueryEdgeIPParameters struct {
-  // {"en":"node name", "zh_CN":"可选
-  // 节点名称，多个用英文逗号分隔"}
+  // {"en":"node name","zh_CN":"可选\n节点名称，多个用英文逗号分隔"}
   NodeName *string `json:"nodeName,omitempty" xml:"nodeName,omitempty"`
-  // {"en":"virtual machine ID", "zh_CN":"可选
-  // 虚拟机ID，多个用英文逗号分隔"}
+  // {"en":"virtual machine ID","zh_CN":"可选\n虚拟机ID，多个用英文逗号分隔"}
   ServerId *string `json:"serverId,omitempty" xml:"serverId,omitempty"`
-  // {"en":"virtual machine master IP", "zh_CN":"可选
-  // 虚拟机主IP，多个用英文逗号分隔"}
+  // {"en":"virtual machine master IP","zh_CN":"可选\n虚拟机主IP，多个用英文逗号分隔"}
   ServerIp *string `json:"serverIp,omitempty" xml:"serverIp,omitempty"`
-  // {"en":"extra Ip", "zh_CN":"可选
-  // 额外Ip，多个用英文逗号分隔"}
+  // {"en":"extra Ip","zh_CN":"可选\n额外Ip，多个用英文逗号分隔"}
   EdgeIp *string `json:"edgeIp,omitempty" xml:"edgeIp,omitempty"`
-  // {"en":"IP state", "zh_CN":"可选
-  // IP状态：FREE-空闲未绑定；ASSIGNED-已绑定"}
+  // {"en":"IP state","zh_CN":"可选\nIP状态：FREE-空闲未绑定；ASSIGNED-已绑定"}
   State *string `json:"state,omitempty" xml:"state,omitempty"`
 }
 
@@ -2405,15 +2734,82 @@ func (s *VMPQueryEdgeIPParameters) SetState(v string) *VMPQueryEdgeIPParameters 
   return s
 }
 
-type VMPQueryEdgeIPRequestHeader struct {
+type VMPQueryEdgeIPResponse struct {
+  // {"en":"additional IP details","zh_CN":"额外Ip详细信息"}
+  EdgeIps []*VMPQueryEdgeIPResponseEdgeIps `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s VMPQueryEdgeIPRequestHeader) String() string {
+func (s VMPQueryEdgeIPResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPQueryEdgeIPRequestHeader) GoString() string {
+func (s VMPQueryEdgeIPResponse) GoString() string {
   return s.String()
+}
+
+func (s *VMPQueryEdgeIPResponse) SetEdgeIps(v []*VMPQueryEdgeIPResponseEdgeIps) *VMPQueryEdgeIPResponse {
+  s.EdgeIps = v
+  return s
+}
+
+type VMPQueryEdgeIPResponseEdgeIps struct     {
+  // {"en":"extra Ip","zh_CN":"额外Ip"}
+  EdgeIp *string `json:"edgeIp,omitempty" xml:"edgeIp,omitempty" require:"true"`
+  // {"en":"IP state","zh_CN":"IP状态：FREE-空闲未绑定；ASSIGNED-已绑定"}
+  State *string `json:"state,omitempty" xml:"state,omitempty" require:"true"`
+  // {"en":"binding virtual machine ID","zh_CN":"绑定的虚拟机ID"}
+  ServerId *string `json:"serverId,omitempty" xml:"serverId,omitempty" require:"true"`
+  // {"en":"binding virtual machine extranet IP","zh_CN":"绑定的虚拟机外网IP"}
+  ServerIp []*string `json:"serverIp,omitempty" xml:"serverIp,omitempty" require:"true" type:"Repeated"`
+  // {"en":"node name","zh_CN":"所属节点名称"}
+  NodeName *string `json:"nodeName,omitempty" xml:"nodeName,omitempty" require:"true"`
+  // {"en":"Is it exclusive","zh_CN":"是否独占"}
+  OccupancyFlag *bool `json:"occupancyFlag,omitempty" xml:"occupancyFlag,omitempty" require:"true"`
+  // {"en":"Net Mask","zh_CN":"子网掩码"}
+  Netmask *string `json:"netmask,omitempty" xml:"netmask,omitempty" require:"true"`
+}
+
+func (s VMPQueryEdgeIPResponseEdgeIps) String() string {
+  return tea.Prettify(s)
+}
+
+func (s VMPQueryEdgeIPResponseEdgeIps) GoString() string {
+  return s.String()
+}
+
+func (s *VMPQueryEdgeIPResponseEdgeIps) SetEdgeIp(v string) *VMPQueryEdgeIPResponseEdgeIps {
+  s.EdgeIp = &v
+  return s
+}
+
+func (s *VMPQueryEdgeIPResponseEdgeIps) SetState(v string) *VMPQueryEdgeIPResponseEdgeIps {
+  s.State = &v
+  return s
+}
+
+func (s *VMPQueryEdgeIPResponseEdgeIps) SetServerId(v string) *VMPQueryEdgeIPResponseEdgeIps {
+  s.ServerId = &v
+  return s
+}
+
+func (s *VMPQueryEdgeIPResponseEdgeIps) SetServerIp(v []*string) *VMPQueryEdgeIPResponseEdgeIps {
+  s.ServerIp = v
+  return s
+}
+
+func (s *VMPQueryEdgeIPResponseEdgeIps) SetNodeName(v string) *VMPQueryEdgeIPResponseEdgeIps {
+  s.NodeName = &v
+  return s
+}
+
+func (s *VMPQueryEdgeIPResponseEdgeIps) SetOccupancyFlag(v bool) *VMPQueryEdgeIPResponseEdgeIps {
+  s.OccupancyFlag = &v
+  return s
+}
+
+func (s *VMPQueryEdgeIPResponseEdgeIps) SetNetmask(v string) *VMPQueryEdgeIPResponseEdgeIps {
+  s.Netmask = &v
+  return s
 }
 
 type VMPQueryEdgeIPResponseHeader struct {
@@ -2430,95 +2826,122 @@ func (s VMPQueryEdgeIPResponseHeader) GoString() string {
 
 
 
-type VmpEdgeIPrivatepAllocateRequest struct {
-  // {"en":"node name", "zh_CN":"节点名称"}
+type EdgeIPrivatepAllocateRequest struct {
+  // {"en":"node name","zh_CN":"节点名称"}
   NodeName *string `json:"nodeName,omitempty" xml:"nodeName,omitempty" require:"true"`
-  // {"en":"number of applications IP  (the single upper limit is 50)", "zh_CN":"申请IP数（单次申请Ip数上限为50个）"}
+  // {"en":"number of applications IP  (the single upper limit is 50)","zh_CN":"申请IP数（单次申请Ip数上限为50个）"}
   Count *int `json:"count,omitempty" xml:"count,omitempty" require:"true"`
 }
 
-func (s VmpEdgeIPrivatepAllocateRequest) String() string {
+func (s EdgeIPrivatepAllocateRequest) String() string {
   return tea.Prettify(s)
 }
 
-func (s VmpEdgeIPrivatepAllocateRequest) GoString() string {
+func (s EdgeIPrivatepAllocateRequest) GoString() string {
   return s.String()
 }
 
-func (s *VmpEdgeIPrivatepAllocateRequest) SetNodeName(v string) *VmpEdgeIPrivatepAllocateRequest {
+func (s *EdgeIPrivatepAllocateRequest) SetNodeName(v string) *EdgeIPrivatepAllocateRequest {
   s.NodeName = &v
   return s
 }
 
-func (s *VmpEdgeIPrivatepAllocateRequest) SetCount(v int) *VmpEdgeIPrivatepAllocateRequest {
+func (s *EdgeIPrivatepAllocateRequest) SetCount(v int) *EdgeIPrivatepAllocateRequest {
   s.Count = &v
   return s
 }
 
-type VmpEdgeIPrivatepAllocateResponse struct {
-  // {"en":"successful application for all or part of IP", "zh_CN":"成功申请到的全部或部分IP
-  // 说明：不同场景的响应说明如下
-  // A、所有IP都申请成功，返回申请到的所有IP
-  // B、只申请到部分IP，返回申请到的那部分IP
-  // C、未申请到任何IP，返回失败信息
-  // D、若出现申请失败的情况，请间隔10S之后再次申请"}
-  EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+type EdgeIPrivatepAllocateRequestHeader struct {
 }
 
-func (s VmpEdgeIPrivatepAllocateResponse) String() string {
+func (s EdgeIPrivatepAllocateRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s VmpEdgeIPrivatepAllocateResponse) GoString() string {
+func (s EdgeIPrivatepAllocateRequestHeader) GoString() string {
   return s.String()
 }
 
-func (s *VmpEdgeIPrivatepAllocateResponse) SetEdgeIps(v []*string) *VmpEdgeIPrivatepAllocateResponse {
+type EdgeIPrivatepAllocatePaths struct {
+}
+
+func (s EdgeIPrivatepAllocatePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EdgeIPrivatepAllocatePaths) GoString() string {
+  return s.String()
+}
+
+type EdgeIPrivatepAllocateParameters struct {
+}
+
+func (s EdgeIPrivatepAllocateParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EdgeIPrivatepAllocateParameters) GoString() string {
+  return s.String()
+}
+
+type EdgeIPrivatepAllocateResponse struct {
+  // {"en":"Return Code","zh_CN":"返回码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Message","zh_CN":"消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Data","zh_CN":"数据"}
+  Data *EdgeIPrivatepAllocateResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s EdgeIPrivatepAllocateResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EdgeIPrivatepAllocateResponse) GoString() string {
+  return s.String()
+}
+
+func (s *EdgeIPrivatepAllocateResponse) SetCode(v string) *EdgeIPrivatepAllocateResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *EdgeIPrivatepAllocateResponse) SetMessage(v string) *EdgeIPrivatepAllocateResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *EdgeIPrivatepAllocateResponse) SetData(v *EdgeIPrivatepAllocateResponseData) *EdgeIPrivatepAllocateResponse {
+  s.Data = v
+  return s
+}
+
+type EdgeIPrivatepAllocateResponseData struct {
+  // {"en":"successful application for all or part of IP","zh_CN":"成功申请到的全部或部分IP说明：不同场景的响应说明如下A、所有IP都申请成功，返回申请到的所有IPB、只申请到部分IP，返回申请到的那部分IPC、未申请到任何IP，返回失败信息D、若出现申请失败的情况，请间隔10S之后再次申请"}
+  EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s EdgeIPrivatepAllocateResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EdgeIPrivatepAllocateResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *EdgeIPrivatepAllocateResponseData) SetEdgeIps(v []*string) *EdgeIPrivatepAllocateResponseData {
   s.EdgeIps = v
   return s
 }
 
-type VmpEdgeIPrivatepAllocatePaths struct {
+type EdgeIPrivatepAllocateResponseHeader struct {
 }
 
-func (s VmpEdgeIPrivatepAllocatePaths) String() string {
+func (s EdgeIPrivatepAllocateResponseHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s VmpEdgeIPrivatepAllocatePaths) GoString() string {
-  return s.String()
-}
-
-type VmpEdgeIPrivatepAllocateParameters struct {
-}
-
-func (s VmpEdgeIPrivatepAllocateParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s VmpEdgeIPrivatepAllocateParameters) GoString() string {
-  return s.String()
-}
-
-type VmpEdgeIPrivatepAllocateRequestHeader struct {
-}
-
-func (s VmpEdgeIPrivatepAllocateRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s VmpEdgeIPrivatepAllocateRequestHeader) GoString() string {
-  return s.String()
-}
-
-type VmpEdgeIPrivatepAllocateResponseHeader struct {
-}
-
-func (s VmpEdgeIPrivatepAllocateResponseHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s VmpEdgeIPrivatepAllocateResponseHeader) GoString() string {
+func (s EdgeIPrivatepAllocateResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -3161,6 +3584,163 @@ func (s GetNetworkPolicyFieldsV1) GoString() string {
 
 
 
+type LECHEdgeIpAllocate4OccupancyRequest struct {
+  // {"en":"Instance IP to be bound","zh_CN":"额外IP要绑定的实例IP"}
+  ServerIp *string `json:"serverIp,omitempty" xml:"serverIp,omitempty" require:"true"`
+  // {"en":"IP protocol: 4-ipv4(default); 6-ipv6","zh_CN":"IP协议：4-ipv4（默认）；6-ipv6"}
+  Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty"`
+  // {"en":"IP native attribute, 1: non-native;-1: native;","zh_CN":"指定IPv4原生属性。可选值：1：非原生，-1：原生。不指定默认随机分配原生属性"}
+  NativeAttribute *string `json:"nativeAttribute,omitempty" xml:"nativeAttribute,omitempty"`
+  // {"en":"CIDR","zh_CN":"指定CIDR申请IP"}
+  Cidr *string `json:"cidr,omitempty" xml:"cidr,omitempty"`
+  // {"en":"A. When an instance has multiple carrier IPs, you can specify an additional IP carrier. B. If not specified: For instances with a single carrier IP, the additional IP will use the same carrier as the instance. For instances with cross-ISP IPs, For the additional IP, one of the carrier BGP nodes will be selected; this field will not take effect.","zh_CN":"A、实例有多个运营商IP时，可指定额外IP运营商\nB、不指定时：\n实例单运营商IP，额外IP运营商一致\n实例多运营商IP，额外IP选其中一个运营商\nBGP节点该字段不生效。"}
+  Carrier *string `json:"carrier,omitempty" xml:"carrier,omitempty"`
+  // {"en":"Allocate ip random","zh_CN":"IPv4是否随机分配\n1：是\n-1：否"}
+  RandomAllocateIp *int `json:"randomAllocateIp,omitempty" xml:"randomAllocateIp,omitempty"`
+  // {"en":"Number of applications IP","zh_CN":"申请个数"}
+  Count *int `json:"count,omitempty" xml:"count,omitempty" require:"true"`
+}
+
+func (s LECHEdgeIpAllocate4OccupancyRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHEdgeIpAllocate4OccupancyRequest) GoString() string {
+  return s.String()
+}
+
+func (s *LECHEdgeIpAllocate4OccupancyRequest) SetServerIp(v string) *LECHEdgeIpAllocate4OccupancyRequest {
+  s.ServerIp = &v
+  return s
+}
+
+func (s *LECHEdgeIpAllocate4OccupancyRequest) SetProtocol(v string) *LECHEdgeIpAllocate4OccupancyRequest {
+  s.Protocol = &v
+  return s
+}
+
+func (s *LECHEdgeIpAllocate4OccupancyRequest) SetNativeAttribute(v string) *LECHEdgeIpAllocate4OccupancyRequest {
+  s.NativeAttribute = &v
+  return s
+}
+
+func (s *LECHEdgeIpAllocate4OccupancyRequest) SetCidr(v string) *LECHEdgeIpAllocate4OccupancyRequest {
+  s.Cidr = &v
+  return s
+}
+
+func (s *LECHEdgeIpAllocate4OccupancyRequest) SetCarrier(v string) *LECHEdgeIpAllocate4OccupancyRequest {
+  s.Carrier = &v
+  return s
+}
+
+func (s *LECHEdgeIpAllocate4OccupancyRequest) SetRandomAllocateIp(v int) *LECHEdgeIpAllocate4OccupancyRequest {
+  s.RandomAllocateIp = &v
+  return s
+}
+
+func (s *LECHEdgeIpAllocate4OccupancyRequest) SetCount(v int) *LECHEdgeIpAllocate4OccupancyRequest {
+  s.Count = &v
+  return s
+}
+
+type LECHEdgeIpAllocate4OccupancyRequestHeader struct {
+}
+
+func (s LECHEdgeIpAllocate4OccupancyRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHEdgeIpAllocate4OccupancyRequestHeader) GoString() string {
+  return s.String()
+}
+
+type LECHEdgeIpAllocate4OccupancyPaths struct {
+}
+
+func (s LECHEdgeIpAllocate4OccupancyPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHEdgeIpAllocate4OccupancyPaths) GoString() string {
+  return s.String()
+}
+
+type LECHEdgeIpAllocate4OccupancyParameters struct {
+}
+
+func (s LECHEdgeIpAllocate4OccupancyParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHEdgeIpAllocate4OccupancyParameters) GoString() string {
+  return s.String()
+}
+
+type LECHEdgeIpAllocate4OccupancyResponse struct {
+  // {"en":"Message","zh_CN":"消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Data","zh_CN":"数据"}
+  Data *LECHEdgeIpAllocate4OccupancyResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  // {"en":"Return Code","zh_CN":"返回码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+}
+
+func (s LECHEdgeIpAllocate4OccupancyResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHEdgeIpAllocate4OccupancyResponse) GoString() string {
+  return s.String()
+}
+
+func (s *LECHEdgeIpAllocate4OccupancyResponse) SetMessage(v string) *LECHEdgeIpAllocate4OccupancyResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *LECHEdgeIpAllocate4OccupancyResponse) SetData(v *LECHEdgeIpAllocate4OccupancyResponseData) *LECHEdgeIpAllocate4OccupancyResponse {
+  s.Data = v
+  return s
+}
+
+func (s *LECHEdgeIpAllocate4OccupancyResponse) SetCode(v string) *LECHEdgeIpAllocate4OccupancyResponse {
+  s.Code = &v
+  return s
+}
+
+type LECHEdgeIpAllocate4OccupancyResponseData struct {
+  // {"en":"Successful application for all or part of IP","zh_CN":"成功申请到的全部或部分IP说明：不同场景的响应说明如下 A、所有IP都申请成功，返回申请到的所有IP B、只申请到部分IP，返回申请到的那部分IP C、未申请到任何IP，返回失败信息 D、若出现申请失败的情况，请间隔10S之后再次申请"}
+  EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s LECHEdgeIpAllocate4OccupancyResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHEdgeIpAllocate4OccupancyResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *LECHEdgeIpAllocate4OccupancyResponseData) SetEdgeIps(v []*string) *LECHEdgeIpAllocate4OccupancyResponseData {
+  s.EdgeIps = v
+  return s
+}
+
+type LECHEdgeIpAllocate4OccupancyResponseHeader struct {
+}
+
+func (s LECHEdgeIpAllocate4OccupancyResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHEdgeIpAllocate4OccupancyResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type GetIngressControllerRequest struct {
 }
 
@@ -3322,10 +3902,118 @@ func (s *GetIngressControllerIngressCluster) SetReplicate(v int32) *GetIngressCo
 
 
 
+type LECHReleaseEdgeIPRequest struct {
+  // {"en":"additional IP to be released","zh_CN":"要释放的额外IP"}
+  EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s LECHReleaseEdgeIPRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHReleaseEdgeIPRequest) GoString() string {
+  return s.String()
+}
+
+func (s *LECHReleaseEdgeIPRequest) SetEdgeIps(v []*string) *LECHReleaseEdgeIPRequest {
+  s.EdgeIps = v
+  return s
+}
+
+type LECHReleaseEdgeIPRequestHeader struct {
+}
+
+func (s LECHReleaseEdgeIPRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHReleaseEdgeIPRequestHeader) GoString() string {
+  return s.String()
+}
+
+type LECHReleaseEdgeIPPaths struct {
+}
+
+func (s LECHReleaseEdgeIPPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHReleaseEdgeIPPaths) GoString() string {
+  return s.String()
+}
+
+type LECHReleaseEdgeIPParameters struct {
+}
+
+func (s LECHReleaseEdgeIPParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHReleaseEdgeIPParameters) GoString() string {
+  return s.String()
+}
+
+type LECHReleaseEdgeIPResponse struct {
+  // {"en":"Error Message Set","zh_CN":"错误信息集"}
+  BatchErrorMsg []*LECHReleaseEdgeIPResponseBatchErrorMsg `json:"batchErrorMsg,omitempty" xml:"batchErrorMsg,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s LECHReleaseEdgeIPResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHReleaseEdgeIPResponse) GoString() string {
+  return s.String()
+}
+
+func (s *LECHReleaseEdgeIPResponse) SetBatchErrorMsg(v []*LECHReleaseEdgeIPResponseBatchErrorMsg) *LECHReleaseEdgeIPResponse {
+  s.BatchErrorMsg = v
+  return s
+}
+
+type LECHReleaseEdgeIPResponseBatchErrorMsg struct     {
+  // {"en":"Ip","zh_CN":"Ip"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty" require:"true"`
+  // {"en":"Message","zh_CN":"消息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+}
+
+func (s LECHReleaseEdgeIPResponseBatchErrorMsg) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHReleaseEdgeIPResponseBatchErrorMsg) GoString() string {
+  return s.String()
+}
+
+func (s *LECHReleaseEdgeIPResponseBatchErrorMsg) SetKey(v string) *LECHReleaseEdgeIPResponseBatchErrorMsg {
+  s.Key = &v
+  return s
+}
+
+func (s *LECHReleaseEdgeIPResponseBatchErrorMsg) SetMsg(v string) *LECHReleaseEdgeIPResponseBatchErrorMsg {
+  s.Msg = &v
+  return s
+}
+
+type LECHReleaseEdgeIPResponseHeader struct {
+}
+
+func (s LECHReleaseEdgeIPResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHReleaseEdgeIPResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type VMPAssignEdgeIPRequest struct {
-  // {"en":"target virtual machine external network Ip", "zh_CN":"目标实例的公网Ip"}
+  // {"en":"target virtual machine external network Ip","zh_CN":"目标实例的公网Ip"}
   ServerIp *string `json:"serverIp,omitempty" xml:"serverIp,omitempty" require:"true"`
-  // {"en":"additional IP to bind to the virtual machine", "zh_CN":"要绑定到目标实例的额外IP"}
+  // {"en":"additional IP to bind to the virtual machine","zh_CN":"要绑定到目标实例的额外IP"}
   EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -3347,29 +4035,15 @@ func (s *VMPAssignEdgeIPRequest) SetEdgeIps(v []*string) *VMPAssignEdgeIPRequest
   return s
 }
 
-type VMPAssignEdgeIPResponse struct {
-  // {"en":"target virtual machine IP", "zh_CN":"目标实例公网IP"}
-  ServerIp *string `json:"serverIp,omitempty" xml:"serverIp,omitempty" require:"true"`
-  // {"en":"Additional IP that is bound to the instance", "zh_CN":"已绑定到实例的额外公网IP"}
-  EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+type VMPAssignEdgeIPRequestHeader struct {
 }
 
-func (s VMPAssignEdgeIPResponse) String() string {
+func (s VMPAssignEdgeIPRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPAssignEdgeIPResponse) GoString() string {
+func (s VMPAssignEdgeIPRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *VMPAssignEdgeIPResponse) SetServerIp(v string) *VMPAssignEdgeIPResponse {
-  s.ServerIp = &v
-  return s
-}
-
-func (s *VMPAssignEdgeIPResponse) SetEdgeIps(v []*string) *VMPAssignEdgeIPResponse {
-  s.EdgeIps = v
-  return s
 }
 
 type VMPAssignEdgeIPPaths struct {
@@ -3394,15 +4068,29 @@ func (s VMPAssignEdgeIPParameters) GoString() string {
   return s.String()
 }
 
-type VMPAssignEdgeIPRequestHeader struct {
+type VMPAssignEdgeIPResponse struct {
+  // {"en":"target virtual machine IP","zh_CN":"目标实例公网IP"}
+  ServerIp *string `json:"serverIp,omitempty" xml:"serverIp,omitempty" require:"true"`
+  // {"en":"Additional IP that is bound to the instance","zh_CN":"已绑定到实例的额外公网IP"}
+  EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s VMPAssignEdgeIPRequestHeader) String() string {
+func (s VMPAssignEdgeIPResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPAssignEdgeIPRequestHeader) GoString() string {
+func (s VMPAssignEdgeIPResponse) GoString() string {
   return s.String()
+}
+
+func (s *VMPAssignEdgeIPResponse) SetServerIp(v string) *VMPAssignEdgeIPResponse {
+  s.ServerIp = &v
+  return s
+}
+
+func (s *VMPAssignEdgeIPResponse) SetEdgeIps(v []*string) *VMPAssignEdgeIPResponse {
+  s.EdgeIps = v
+  return s
 }
 
 type VMPAssignEdgeIPResponseHeader struct {
@@ -3413,6 +4101,103 @@ func (s VMPAssignEdgeIPResponseHeader) String() string {
 }
 
 func (s VMPAssignEdgeIPResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type LECHUnassignEdgeIPRequest struct {
+  // {"en":"target virtual machine external network Ip","zh_CN":"目标实例外网Ip"}
+  ServerIp *string `json:"serverIp,omitempty" xml:"serverIp,omitempty" require:"true"`
+  // {"en":"additional Ip to unbind","zh_CN":"要解除绑定的额外IP"}
+  EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s LECHUnassignEdgeIPRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHUnassignEdgeIPRequest) GoString() string {
+  return s.String()
+}
+
+func (s *LECHUnassignEdgeIPRequest) SetServerIp(v string) *LECHUnassignEdgeIPRequest {
+  s.ServerIp = &v
+  return s
+}
+
+func (s *LECHUnassignEdgeIPRequest) SetEdgeIps(v []*string) *LECHUnassignEdgeIPRequest {
+  s.EdgeIps = v
+  return s
+}
+
+type LECHUnassignEdgeIPRequestHeader struct {
+}
+
+func (s LECHUnassignEdgeIPRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHUnassignEdgeIPRequestHeader) GoString() string {
+  return s.String()
+}
+
+type LECHUnassignEdgeIPPaths struct {
+}
+
+func (s LECHUnassignEdgeIPPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHUnassignEdgeIPPaths) GoString() string {
+  return s.String()
+}
+
+type LECHUnassignEdgeIPParameters struct {
+}
+
+func (s LECHUnassignEdgeIPParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHUnassignEdgeIPParameters) GoString() string {
+  return s.String()
+}
+
+type LECHUnassignEdgeIPResponse struct {
+  // {"en":"target virtual machine IP","zh_CN":"目标实例公网IP"}
+  ServerIp *string `json:"serverIp,omitempty" xml:"serverIp,omitempty" require:"true"`
+  // {"en":"additional Ip that has been bound to the virtual machine","zh_CN":"已绑定到实例的额外公网IP"}
+  EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s LECHUnassignEdgeIPResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHUnassignEdgeIPResponse) GoString() string {
+  return s.String()
+}
+
+func (s *LECHUnassignEdgeIPResponse) SetServerIp(v string) *LECHUnassignEdgeIPResponse {
+  s.ServerIp = &v
+  return s
+}
+
+func (s *LECHUnassignEdgeIPResponse) SetEdgeIps(v []*string) *LECHUnassignEdgeIPResponse {
+  s.EdgeIps = v
+  return s
+}
+
+type LECHUnassignEdgeIPResponseHeader struct {
+}
+
+func (s LECHUnassignEdgeIPResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHUnassignEdgeIPResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -5068,6 +5853,124 @@ func (s *ListIngressOwnerReference) SetBlockOwnerDeletion(v bool) *ListIngressOw
 
 
 
+type LECHAllocateEdgeIPRequest struct {
+  // {"en":"node name","zh_CN":"节点名称"}
+  NodeName *string `json:"nodeName,omitempty" xml:"nodeName,omitempty" require:"true"`
+  // {"en":"IP protocol:4-ipv4(default);6-ipv6(temporary unsupported)","zh_CN":"可选\nIP协议：4-ipv4(默认)；6-ipv6"}
+  Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty"`
+  // {"en":"IP native attribute, 1: non-native;-1: native;","zh_CN":"IPv4原生属性，1：非原生；-1：原生；不指定默认随机分配原生属性"}
+  NativeAttribute *string `json:"nativeAttribute,omitempty" xml:"nativeAttribute,omitempty"`
+  // {"en":"cidr","zh_CN":"CIDR，一次只能传入一个CIDR"}
+  Cidr *string `json:"cidr,omitempty" xml:"cidr,omitempty"`
+  // {"en":"number of applications IP  (the single upper limit is 50)","zh_CN":"申请IP数（单次申请Ip数上限为50个）"}
+  Count *int `json:"count,omitempty" xml:"count,omitempty" require:"true"`
+  // {"en":"Allocate IP randomly","zh_CN":"是否需要随机分配IP（仅对ipv4生效）\n1：是\n-1：否"}
+  RandomAllocateIp *int `json:"randomAllocateIp,omitempty" xml:"randomAllocateIp,omitempty"`
+}
+
+func (s LECHAllocateEdgeIPRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHAllocateEdgeIPRequest) GoString() string {
+  return s.String()
+}
+
+func (s *LECHAllocateEdgeIPRequest) SetNodeName(v string) *LECHAllocateEdgeIPRequest {
+  s.NodeName = &v
+  return s
+}
+
+func (s *LECHAllocateEdgeIPRequest) SetProtocol(v string) *LECHAllocateEdgeIPRequest {
+  s.Protocol = &v
+  return s
+}
+
+func (s *LECHAllocateEdgeIPRequest) SetNativeAttribute(v string) *LECHAllocateEdgeIPRequest {
+  s.NativeAttribute = &v
+  return s
+}
+
+func (s *LECHAllocateEdgeIPRequest) SetCidr(v string) *LECHAllocateEdgeIPRequest {
+  s.Cidr = &v
+  return s
+}
+
+func (s *LECHAllocateEdgeIPRequest) SetCount(v int) *LECHAllocateEdgeIPRequest {
+  s.Count = &v
+  return s
+}
+
+func (s *LECHAllocateEdgeIPRequest) SetRandomAllocateIp(v int) *LECHAllocateEdgeIPRequest {
+  s.RandomAllocateIp = &v
+  return s
+}
+
+type LECHAllocateEdgeIPRequestHeader struct {
+}
+
+func (s LECHAllocateEdgeIPRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHAllocateEdgeIPRequestHeader) GoString() string {
+  return s.String()
+}
+
+type LECHAllocateEdgeIPPaths struct {
+}
+
+func (s LECHAllocateEdgeIPPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHAllocateEdgeIPPaths) GoString() string {
+  return s.String()
+}
+
+type LECHAllocateEdgeIPParameters struct {
+}
+
+func (s LECHAllocateEdgeIPParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHAllocateEdgeIPParameters) GoString() string {
+  return s.String()
+}
+
+type LECHAllocateEdgeIPResponse struct {
+  // {"en":"successful application for all or part of IP","zh_CN":"成功申请到的全部或部分IP\n说明：不同场景的响应说明如下\nA、所有IP都申请成功，返回申请到的所有IP\nB、只申请到部分IP，返回申请到的那部分IP\nC、未申请到任何IP，返回失败信息\nD、若出现申请失败的情况，请间隔10S之后再次申请"}
+  EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s LECHAllocateEdgeIPResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHAllocateEdgeIPResponse) GoString() string {
+  return s.String()
+}
+
+func (s *LECHAllocateEdgeIPResponse) SetEdgeIps(v []*string) *LECHAllocateEdgeIPResponse {
+  s.EdgeIps = v
+  return s
+}
+
+type LECHAllocateEdgeIPResponseHeader struct {
+}
+
+func (s LECHAllocateEdgeIPResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHAllocateEdgeIPResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type DeleteIngressRequest struct {
 }
 
@@ -5166,6 +6069,121 @@ func (s DeleteIngressResponseHeader) String() string {
 }
 
 func (s DeleteIngressResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type LECHQueryAvailableCidrsRequest struct {
+}
+
+func (s LECHQueryAvailableCidrsRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryAvailableCidrsRequest) GoString() string {
+  return s.String()
+}
+
+type LECHQueryAvailableCidrsRequestHeader struct {
+}
+
+func (s LECHQueryAvailableCidrsRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryAvailableCidrsRequestHeader) GoString() string {
+  return s.String()
+}
+
+type LECHQueryAvailableCidrsPaths struct {
+}
+
+func (s LECHQueryAvailableCidrsPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryAvailableCidrsPaths) GoString() string {
+  return s.String()
+}
+
+type LECHQueryAvailableCidrsParameters struct {
+  // {"en":"node name","zh_CN":"节点英文名称"}
+  NodeName *string `json:"nodeName,omitempty" xml:"nodeName,omitempty" require:"true"`
+}
+
+func (s LECHQueryAvailableCidrsParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryAvailableCidrsParameters) GoString() string {
+  return s.String()
+}
+
+func (s *LECHQueryAvailableCidrsParameters) SetNodeName(v string) *LECHQueryAvailableCidrsParameters {
+  s.NodeName = &v
+  return s
+}
+
+type LECHQueryAvailableCidrsResponse struct {
+  // {"en":"Response code","zh_CN":"响应码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Response data","zh_CN":"响应数据"}
+  Data *LECHQueryAvailableCidrsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  // {"en":"Error message","zh_CN":"错误信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s LECHQueryAvailableCidrsResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryAvailableCidrsResponse) GoString() string {
+  return s.String()
+}
+
+func (s *LECHQueryAvailableCidrsResponse) SetCode(v string) *LECHQueryAvailableCidrsResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *LECHQueryAvailableCidrsResponse) SetData(v *LECHQueryAvailableCidrsResponseData) *LECHQueryAvailableCidrsResponse {
+  s.Data = v
+  return s
+}
+
+func (s *LECHQueryAvailableCidrsResponse) SetMessage(v string) *LECHQueryAvailableCidrsResponse {
+  s.Message = &v
+  return s
+}
+
+type LECHQueryAvailableCidrsResponseData struct {
+  // {"en":"available cidrs","zh_CN":"可用的cidr列表"}
+  Cidrs []*string `json:"cidrs,omitempty" xml:"cidrs,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s LECHQueryAvailableCidrsResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryAvailableCidrsResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *LECHQueryAvailableCidrsResponseData) SetCidrs(v []*string) *LECHQueryAvailableCidrsResponseData {
+  s.Cidrs = v
+  return s
+}
+
+type LECHQueryAvailableCidrsResponseHeader struct {
+}
+
+func (s LECHQueryAvailableCidrsResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryAvailableCidrsResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -7554,22 +8572,15 @@ func (s VMPQueryAvailableCidrsRequest) GoString() string {
   return s.String()
 }
 
-type VMPQueryAvailableCidrsResponse struct {
-  // {"en":"available cidrs", "zh_CN":"可用的cidr列表"}
-  Cidrs []*string `json:"cidrs,omitempty" xml:"cidrs,omitempty" require:"true" type:"Repeated"`
+type VMPQueryAvailableCidrsRequestHeader struct {
 }
 
-func (s VMPQueryAvailableCidrsResponse) String() string {
+func (s VMPQueryAvailableCidrsRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPQueryAvailableCidrsResponse) GoString() string {
+func (s VMPQueryAvailableCidrsRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *VMPQueryAvailableCidrsResponse) SetCidrs(v []*string) *VMPQueryAvailableCidrsResponse {
-  s.Cidrs = v
-  return s
 }
 
 type VMPQueryAvailableCidrsPaths struct {
@@ -7584,7 +8595,7 @@ func (s VMPQueryAvailableCidrsPaths) GoString() string {
 }
 
 type VMPQueryAvailableCidrsParameters struct {
-  // {"en":"node name", "zh_CN":"节点英文名称"}
+  // {"en":"node name","zh_CN":"节点英文名称"}
   NodeName *string `json:"nodeName,omitempty" xml:"nodeName,omitempty" require:"true"`
 }
 
@@ -7601,15 +8612,54 @@ func (s *VMPQueryAvailableCidrsParameters) SetNodeName(v string) *VMPQueryAvaila
   return s
 }
 
-type VMPQueryAvailableCidrsRequestHeader struct {
+type VMPQueryAvailableCidrsResponse struct {
+  // {"en":"Response code","zh_CN":"响应码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Response data","zh_CN":"响应数据"}
+  Data *VMPQueryAvailableCidrsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  // {"en":"Error message","zh_CN":"错误信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
 }
 
-func (s VMPQueryAvailableCidrsRequestHeader) String() string {
+func (s VMPQueryAvailableCidrsResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPQueryAvailableCidrsRequestHeader) GoString() string {
+func (s VMPQueryAvailableCidrsResponse) GoString() string {
   return s.String()
+}
+
+func (s *VMPQueryAvailableCidrsResponse) SetCode(v string) *VMPQueryAvailableCidrsResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *VMPQueryAvailableCidrsResponse) SetData(v *VMPQueryAvailableCidrsResponseData) *VMPQueryAvailableCidrsResponse {
+  s.Data = v
+  return s
+}
+
+func (s *VMPQueryAvailableCidrsResponse) SetMessage(v string) *VMPQueryAvailableCidrsResponse {
+  s.Message = &v
+  return s
+}
+
+type VMPQueryAvailableCidrsResponseData struct {
+  // {"en":"available cidrs","zh_CN":"可用的cidr列表"}
+  Cidrs []*string `json:"cidrs,omitempty" xml:"cidrs,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s VMPQueryAvailableCidrsResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s VMPQueryAvailableCidrsResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *VMPQueryAvailableCidrsResponseData) SetCidrs(v []*string) *VMPQueryAvailableCidrsResponseData {
+  s.Cidrs = v
+  return s
 }
 
 type VMPQueryAvailableCidrsResponseHeader struct {
@@ -7626,122 +8676,154 @@ func (s VMPQueryAvailableCidrsResponseHeader) GoString() string {
 
 
 
-type VMPUnassignEdgePrivateIPRequest struct {
-  // {"en":"target virtual machine id", "zh_CN":"目标实例id"}
+type UnassignEdgePrivateIPRequest struct {
+  // {"en":"Target virtual machine id","zh_CN":"目标实例id"}
   InstanceId *string `json:"instanceId,omitempty" xml:"instanceId,omitempty" require:"true"`
-  // {"en":"additional Ip to unbind", "zh_CN":"要解除绑定的额外内网IP"}
+  // {"en":"Additional Ip to unbind","zh_CN":"要解除绑定的额外内网IP"}
   EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s VMPUnassignEdgePrivateIPRequest) String() string {
+func (s UnassignEdgePrivateIPRequest) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPUnassignEdgePrivateIPRequest) GoString() string {
+func (s UnassignEdgePrivateIPRequest) GoString() string {
   return s.String()
 }
 
-func (s *VMPUnassignEdgePrivateIPRequest) SetInstanceId(v string) *VMPUnassignEdgePrivateIPRequest {
+func (s *UnassignEdgePrivateIPRequest) SetInstanceId(v string) *UnassignEdgePrivateIPRequest {
   s.InstanceId = &v
   return s
 }
 
-func (s *VMPUnassignEdgePrivateIPRequest) SetEdgeIps(v []*string) *VMPUnassignEdgePrivateIPRequest {
+func (s *UnassignEdgePrivateIPRequest) SetEdgeIps(v []*string) *UnassignEdgePrivateIPRequest {
   s.EdgeIps = v
   return s
 }
 
-type VMPUnassignEdgePrivateIPVMPEdgeIPMapping struct {
-  // {"en":"edge private ip", "zh_CN":"额外内网IP"}
-  EdgePrivateIp *string `json:"edgePrivateIp,omitempty" xml:"edgePrivateIp,omitempty" require:"true"`
-  // {"en":"edge public IP", "zh_CN":"额外公网IP"}
-  EdgePublicIp *string `json:"edgePublicIp,omitempty" xml:"edgePublicIp,omitempty" require:"true"`
+type UnassignEdgePrivateIPRequestHeader struct {
 }
 
-func (s VMPUnassignEdgePrivateIPVMPEdgeIPMapping) String() string {
+func (s UnassignEdgePrivateIPRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPUnassignEdgePrivateIPVMPEdgeIPMapping) GoString() string {
+func (s UnassignEdgePrivateIPRequestHeader) GoString() string {
   return s.String()
 }
 
-func (s *VMPUnassignEdgePrivateIPVMPEdgeIPMapping) SetEdgePrivateIp(v string) *VMPUnassignEdgePrivateIPVMPEdgeIPMapping {
+type UnassignEdgePrivateIPPaths struct {
+}
+
+func (s UnassignEdgePrivateIPPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UnassignEdgePrivateIPPaths) GoString() string {
+  return s.String()
+}
+
+type UnassignEdgePrivateIPParameters struct {
+}
+
+func (s UnassignEdgePrivateIPParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UnassignEdgePrivateIPParameters) GoString() string {
+  return s.String()
+}
+
+type UnassignEdgePrivateIPResponse struct {
+  // {"en":"Return Code","zh_CN":"返回码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Message","zh_CN":"消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Data","zh_CN":"数据"}
+  Data *UnassignEdgePrivateIPResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s UnassignEdgePrivateIPResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UnassignEdgePrivateIPResponse) GoString() string {
+  return s.String()
+}
+
+func (s *UnassignEdgePrivateIPResponse) SetCode(v string) *UnassignEdgePrivateIPResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *UnassignEdgePrivateIPResponse) SetMessage(v string) *UnassignEdgePrivateIPResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *UnassignEdgePrivateIPResponse) SetData(v *UnassignEdgePrivateIPResponseData) *UnassignEdgePrivateIPResponse {
+  s.Data = v
+  return s
+}
+
+type UnassignEdgePrivateIPResponseData struct {
+  // {"en":"target virtual machine id","zh_CN":"目标实例ID"}
+  InstanceId *string `json:"instanceId,omitempty" xml:"instanceId,omitempty" require:"true"`
+  // {"en":"Additional IP that is bound to the instance","zh_CN":"已绑定到目标实例的额外IP"}
+  EdgeIps []*UnassignEdgePrivateIPResponseDataEdgeIps `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s UnassignEdgePrivateIPResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UnassignEdgePrivateIPResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *UnassignEdgePrivateIPResponseData) SetInstanceId(v string) *UnassignEdgePrivateIPResponseData {
+  s.InstanceId = &v
+  return s
+}
+
+func (s *UnassignEdgePrivateIPResponseData) SetEdgeIps(v []*UnassignEdgePrivateIPResponseDataEdgeIps) *UnassignEdgePrivateIPResponseData {
+  s.EdgeIps = v
+  return s
+}
+
+type UnassignEdgePrivateIPResponseDataEdgeIps struct     {
+  // {"en":"Edge private ip","zh_CN":"额外内网IP"}
+  EdgePrivateIp *string `json:"edgePrivateIp,omitempty" xml:"edgePrivateIp,omitempty" require:"true"`
+  // {"en":"Edge public IP","zh_CN":"额外公网IP"}
+  EdgePublicIp *string `json:"edgePublicIp,omitempty" xml:"edgePublicIp,omitempty" require:"true"`
+}
+
+func (s UnassignEdgePrivateIPResponseDataEdgeIps) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UnassignEdgePrivateIPResponseDataEdgeIps) GoString() string {
+  return s.String()
+}
+
+func (s *UnassignEdgePrivateIPResponseDataEdgeIps) SetEdgePrivateIp(v string) *UnassignEdgePrivateIPResponseDataEdgeIps {
   s.EdgePrivateIp = &v
   return s
 }
 
-func (s *VMPUnassignEdgePrivateIPVMPEdgeIPMapping) SetEdgePublicIp(v string) *VMPUnassignEdgePrivateIPVMPEdgeIPMapping {
+func (s *UnassignEdgePrivateIPResponseDataEdgeIps) SetEdgePublicIp(v string) *UnassignEdgePrivateIPResponseDataEdgeIps {
   s.EdgePublicIp = &v
   return s
 }
 
-type VMPUnassignEdgePrivateIPResponse struct {
-  // {"en":"target virtual machine id", "zh_CN":"目标实例ID"}
-  InstanceId *string `json:"instanceId,omitempty" xml:"instanceId,omitempty" require:"true"`
-  // {"en":"Additional IP that is bound to the instance", "zh_CN":"已绑定到目标实例的额外IP"}
-  EdgeIps []*VMPUnassignEdgePrivateIPVMPEdgeIPMapping `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+type UnassignEdgePrivateIPResponseHeader struct {
 }
 
-func (s VMPUnassignEdgePrivateIPResponse) String() string {
+func (s UnassignEdgePrivateIPResponseHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPUnassignEdgePrivateIPResponse) GoString() string {
-  return s.String()
-}
-
-func (s *VMPUnassignEdgePrivateIPResponse) SetInstanceId(v string) *VMPUnassignEdgePrivateIPResponse {
-  s.InstanceId = &v
-  return s
-}
-
-func (s *VMPUnassignEdgePrivateIPResponse) SetEdgeIps(v []*VMPUnassignEdgePrivateIPVMPEdgeIPMapping) *VMPUnassignEdgePrivateIPResponse {
-  s.EdgeIps = v
-  return s
-}
-
-type VMPUnassignEdgePrivateIPPaths struct {
-}
-
-func (s VMPUnassignEdgePrivateIPPaths) String() string {
-  return tea.Prettify(s)
-}
-
-func (s VMPUnassignEdgePrivateIPPaths) GoString() string {
-  return s.String()
-}
-
-type VMPUnassignEdgePrivateIPParameters struct {
-}
-
-func (s VMPUnassignEdgePrivateIPParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s VMPUnassignEdgePrivateIPParameters) GoString() string {
-  return s.String()
-}
-
-type VMPUnassignEdgePrivateIPRequestHeader struct {
-}
-
-func (s VMPUnassignEdgePrivateIPRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s VMPUnassignEdgePrivateIPRequestHeader) GoString() string {
-  return s.String()
-}
-
-type VMPUnassignEdgePrivateIPResponseHeader struct {
-}
-
-func (s VMPUnassignEdgePrivateIPResponseHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s VMPUnassignEdgePrivateIPResponseHeader) GoString() string {
+func (s UnassignEdgePrivateIPResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -7749,7 +8831,7 @@ func (s VMPUnassignEdgePrivateIPResponseHeader) GoString() string {
 
 
 type VMPReleaseEdgeIPRequest struct {
-  // {"en":"additional IP to be released", "zh_CN":"要释放的额外IP"}
+  // {"en":"additional IP to be released","zh_CN":"要释放的额外IP"}
   EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -7766,14 +8848,14 @@ func (s *VMPReleaseEdgeIPRequest) SetEdgeIps(v []*string) *VMPReleaseEdgeIPReque
   return s
 }
 
-type VMPReleaseEdgeIPResponse struct {
+type VMPReleaseEdgeIPRequestHeader struct {
 }
 
-func (s VMPReleaseEdgeIPResponse) String() string {
+func (s VMPReleaseEdgeIPRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPReleaseEdgeIPResponse) GoString() string {
+func (s VMPReleaseEdgeIPRequestHeader) GoString() string {
   return s.String()
 }
 
@@ -7799,15 +8881,47 @@ func (s VMPReleaseEdgeIPParameters) GoString() string {
   return s.String()
 }
 
-type VMPReleaseEdgeIPRequestHeader struct {
+type VMPReleaseEdgeIPResponse struct {
+  // {"en":"Error Message Set","zh_CN":"错误信息集"}
+  BatchErrorMsg []*VMPReleaseEdgeIPResponseBatchErrorMsg `json:"batchErrorMsg,omitempty" xml:"batchErrorMsg,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s VMPReleaseEdgeIPRequestHeader) String() string {
+func (s VMPReleaseEdgeIPResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPReleaseEdgeIPRequestHeader) GoString() string {
+func (s VMPReleaseEdgeIPResponse) GoString() string {
   return s.String()
+}
+
+func (s *VMPReleaseEdgeIPResponse) SetBatchErrorMsg(v []*VMPReleaseEdgeIPResponseBatchErrorMsg) *VMPReleaseEdgeIPResponse {
+  s.BatchErrorMsg = v
+  return s
+}
+
+type VMPReleaseEdgeIPResponseBatchErrorMsg struct     {
+  // {"en":"Ip","zh_CN":"Ip"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty" require:"true"`
+  // {"en":"Message","zh_CN":"消息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+}
+
+func (s VMPReleaseEdgeIPResponseBatchErrorMsg) String() string {
+  return tea.Prettify(s)
+}
+
+func (s VMPReleaseEdgeIPResponseBatchErrorMsg) GoString() string {
+  return s.String()
+}
+
+func (s *VMPReleaseEdgeIPResponseBatchErrorMsg) SetKey(v string) *VMPReleaseEdgeIPResponseBatchErrorMsg {
+  s.Key = &v
+  return s
+}
+
+func (s *VMPReleaseEdgeIPResponseBatchErrorMsg) SetMsg(v string) *VMPReleaseEdgeIPResponseBatchErrorMsg {
+  s.Msg = &v
+  return s
 }
 
 type VMPReleaseEdgeIPResponseHeader struct {
@@ -8488,83 +9602,147 @@ func (s UpdateNetworkPolicyFieldsV1) GoString() string {
 
 
 
-type VMPReleaseEdgePrivateIPRequest struct {
-  // {"en":"node name", "zh_CN":"节点名称"}
+type ReleaseEdgePrivateIPRequest struct {
+  // {"en":"node name","zh_CN":"节点名称"}
   NodeName *string `json:"nodeName,omitempty" xml:"nodeName,omitempty" require:"true"`
-  // {"en":"additional IP to be released", "zh_CN":"要释放的额外IP"}
+  // {"en":"additional IP to be released","zh_CN":"要释放的额外IP"}
   EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s VMPReleaseEdgePrivateIPRequest) String() string {
+func (s ReleaseEdgePrivateIPRequest) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPReleaseEdgePrivateIPRequest) GoString() string {
+func (s ReleaseEdgePrivateIPRequest) GoString() string {
   return s.String()
 }
 
-func (s *VMPReleaseEdgePrivateIPRequest) SetNodeName(v string) *VMPReleaseEdgePrivateIPRequest {
+func (s *ReleaseEdgePrivateIPRequest) SetNodeName(v string) *ReleaseEdgePrivateIPRequest {
   s.NodeName = &v
   return s
 }
 
-func (s *VMPReleaseEdgePrivateIPRequest) SetEdgeIps(v []*string) *VMPReleaseEdgePrivateIPRequest {
+func (s *ReleaseEdgePrivateIPRequest) SetEdgeIps(v []*string) *ReleaseEdgePrivateIPRequest {
   s.EdgeIps = v
   return s
 }
 
-type VMPReleaseEdgePrivateIPResponse struct {
+type ReleaseEdgePrivateIPRequestHeader struct {
 }
 
-func (s VMPReleaseEdgePrivateIPResponse) String() string {
+func (s ReleaseEdgePrivateIPRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPReleaseEdgePrivateIPResponse) GoString() string {
+func (s ReleaseEdgePrivateIPRequestHeader) GoString() string {
   return s.String()
 }
 
-type VMPReleaseEdgePrivateIPPaths struct {
+type ReleaseEdgePrivateIPPaths struct {
 }
 
-func (s VMPReleaseEdgePrivateIPPaths) String() string {
+func (s ReleaseEdgePrivateIPPaths) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPReleaseEdgePrivateIPPaths) GoString() string {
+func (s ReleaseEdgePrivateIPPaths) GoString() string {
   return s.String()
 }
 
-type VMPReleaseEdgePrivateIPParameters struct {
+type ReleaseEdgePrivateIPParameters struct {
 }
 
-func (s VMPReleaseEdgePrivateIPParameters) String() string {
+func (s ReleaseEdgePrivateIPParameters) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPReleaseEdgePrivateIPParameters) GoString() string {
+func (s ReleaseEdgePrivateIPParameters) GoString() string {
   return s.String()
 }
 
-type VMPReleaseEdgePrivateIPRequestHeader struct {
+type ReleaseEdgePrivateIPResponse struct {
+  // {"en":"Return Code","zh_CN":"返回码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Message","zh_CN":"消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Data","zh_CN":"数据"}
+  Data *ReleaseEdgePrivateIPResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
-func (s VMPReleaseEdgePrivateIPRequestHeader) String() string {
+func (s ReleaseEdgePrivateIPResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPReleaseEdgePrivateIPRequestHeader) GoString() string {
+func (s ReleaseEdgePrivateIPResponse) GoString() string {
   return s.String()
 }
 
-type VMPReleaseEdgePrivateIPResponseHeader struct {
+func (s *ReleaseEdgePrivateIPResponse) SetCode(v string) *ReleaseEdgePrivateIPResponse {
+  s.Code = &v
+  return s
 }
 
-func (s VMPReleaseEdgePrivateIPResponseHeader) String() string {
+func (s *ReleaseEdgePrivateIPResponse) SetMessage(v string) *ReleaseEdgePrivateIPResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *ReleaseEdgePrivateIPResponse) SetData(v *ReleaseEdgePrivateIPResponseData) *ReleaseEdgePrivateIPResponse {
+  s.Data = v
+  return s
+}
+
+type ReleaseEdgePrivateIPResponseData struct {
+  // {"en":"Release IP error message","zh_CN":"释放Ip错误信息"}
+  BatchErrorMsg []*ReleaseEdgePrivateIPResponseDataBatchErrorMsg `json:"batchErrorMsg,omitempty" xml:"batchErrorMsg,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ReleaseEdgePrivateIPResponseData) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPReleaseEdgePrivateIPResponseHeader) GoString() string {
+func (s ReleaseEdgePrivateIPResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *ReleaseEdgePrivateIPResponseData) SetBatchErrorMsg(v []*ReleaseEdgePrivateIPResponseDataBatchErrorMsg) *ReleaseEdgePrivateIPResponseData {
+  s.BatchErrorMsg = v
+  return s
+}
+
+type ReleaseEdgePrivateIPResponseDataBatchErrorMsg struct     {
+  // {"en":"Ip","zh_CN":"Ip"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty" require:"true"`
+  // {"en":"Ip Error message","zh_CN":"Ip错误信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+}
+
+func (s ReleaseEdgePrivateIPResponseDataBatchErrorMsg) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReleaseEdgePrivateIPResponseDataBatchErrorMsg) GoString() string {
+  return s.String()
+}
+
+func (s *ReleaseEdgePrivateIPResponseDataBatchErrorMsg) SetKey(v string) *ReleaseEdgePrivateIPResponseDataBatchErrorMsg {
+  s.Key = &v
+  return s
+}
+
+func (s *ReleaseEdgePrivateIPResponseDataBatchErrorMsg) SetMsg(v string) *ReleaseEdgePrivateIPResponseDataBatchErrorMsg {
+  s.Msg = &v
+  return s
+}
+
+type ReleaseEdgePrivateIPResponseHeader struct {
+}
+
+func (s ReleaseEdgePrivateIPResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReleaseEdgePrivateIPResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -9730,6 +10908,213 @@ func (s *UpdateIngressControllerIngressCluster) SetName(v string) *UpdateIngress
 func (s *UpdateIngressControllerIngressCluster) SetReplicate(v int32) *UpdateIngressControllerIngressCluster {
   s.Replicate = &v
   return s
+}
+
+
+
+
+type LECHQueryAvailableCidrsDetailRequest struct {
+}
+
+func (s LECHQueryAvailableCidrsDetailRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryAvailableCidrsDetailRequest) GoString() string {
+  return s.String()
+}
+
+type LECHQueryAvailableCidrsDetailRequestHeader struct {
+}
+
+func (s LECHQueryAvailableCidrsDetailRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryAvailableCidrsDetailRequestHeader) GoString() string {
+  return s.String()
+}
+
+type LECHQueryAvailableCidrsDetailPaths struct {
+}
+
+func (s LECHQueryAvailableCidrsDetailPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryAvailableCidrsDetailPaths) GoString() string {
+  return s.String()
+}
+
+type LECHQueryAvailableCidrsDetailParameters struct {
+  // {"en":"Node name.","zh_CN":"节点名称，多个节点用英文逗号分隔，最多填写20个"}
+  Node *string `json:"node,omitempty" xml:"node,omitempty" require:"true"`
+  // {"en":"CIDR","zh_CN":"网段 CIDR"}
+  Cidr *string `json:"cidr,omitempty" xml:"cidr,omitempty"`
+  // {"en":"IP native attribute.(-1: Native, 1: Non-native)","zh_CN":"原生属性. (-1: 原生, 1: 非原生)"}
+  NativeAttribute *string `json:"nativeAttribute,omitempty" xml:"nativeAttribute,omitempty"`
+  // {"en":"IPv6 segment(1: yes, -1: no)","zh_CN":"是否返回IPV6网段(1: 是, -1: 否)"}
+  NeedIPv6 *string `json:"needIPv6,omitempty" xml:"needIPv6,omitempty"`
+}
+
+func (s LECHQueryAvailableCidrsDetailParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryAvailableCidrsDetailParameters) GoString() string {
+  return s.String()
+}
+
+func (s *LECHQueryAvailableCidrsDetailParameters) SetNode(v string) *LECHQueryAvailableCidrsDetailParameters {
+  s.Node = &v
+  return s
+}
+
+func (s *LECHQueryAvailableCidrsDetailParameters) SetCidr(v string) *LECHQueryAvailableCidrsDetailParameters {
+  s.Cidr = &v
+  return s
+}
+
+func (s *LECHQueryAvailableCidrsDetailParameters) SetNativeAttribute(v string) *LECHQueryAvailableCidrsDetailParameters {
+  s.NativeAttribute = &v
+  return s
+}
+
+func (s *LECHQueryAvailableCidrsDetailParameters) SetNeedIPv6(v string) *LECHQueryAvailableCidrsDetailParameters {
+  s.NeedIPv6 = &v
+  return s
+}
+
+type LECHQueryAvailableCidrsDetailResponse struct {
+  // {"en":"Response code","zh_CN":"响应码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Response data","zh_CN":"响应数据"}
+  Data *LECHQueryAvailableCidrsDetailResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  // {"en":"Error message","zh_CN":"错误信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s LECHQueryAvailableCidrsDetailResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryAvailableCidrsDetailResponse) GoString() string {
+  return s.String()
+}
+
+func (s *LECHQueryAvailableCidrsDetailResponse) SetCode(v string) *LECHQueryAvailableCidrsDetailResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *LECHQueryAvailableCidrsDetailResponse) SetData(v *LECHQueryAvailableCidrsDetailResponseData) *LECHQueryAvailableCidrsDetailResponse {
+  s.Data = v
+  return s
+}
+
+func (s *LECHQueryAvailableCidrsDetailResponse) SetMessage(v string) *LECHQueryAvailableCidrsDetailResponse {
+  s.Message = &v
+  return s
+}
+
+type LECHQueryAvailableCidrsDetailResponseData struct {
+  // {"en":"available cidrs","zh_CN":"可用的cidr列表"}
+  Nodes []*LECHQueryAvailableCidrsDetailResponseDataNodes `json:"nodes,omitempty" xml:"nodes,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s LECHQueryAvailableCidrsDetailResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryAvailableCidrsDetailResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *LECHQueryAvailableCidrsDetailResponseData) SetNodes(v []*LECHQueryAvailableCidrsDetailResponseDataNodes) *LECHQueryAvailableCidrsDetailResponseData {
+  s.Nodes = v
+  return s
+}
+
+type LECHQueryAvailableCidrsDetailResponseDataNodes struct     {
+  // {"en":"CIDR detail.","zh_CN":"网段详情"}
+  Cidrs []*LECHQueryAvailableCidrsDetailResponseDataNodesCidrs `json:"cidrs,omitempty" xml:"cidrs,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Node name.","zh_CN":"节点名称"}
+  Node *string `json:"node,omitempty" xml:"node,omitempty" require:"true"`
+}
+
+func (s LECHQueryAvailableCidrsDetailResponseDataNodes) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryAvailableCidrsDetailResponseDataNodes) GoString() string {
+  return s.String()
+}
+
+func (s *LECHQueryAvailableCidrsDetailResponseDataNodes) SetCidrs(v []*LECHQueryAvailableCidrsDetailResponseDataNodesCidrs) *LECHQueryAvailableCidrsDetailResponseDataNodes {
+  s.Cidrs = v
+  return s
+}
+
+func (s *LECHQueryAvailableCidrsDetailResponseDataNodes) SetNode(v string) *LECHQueryAvailableCidrsDetailResponseDataNodes {
+  s.Node = &v
+  return s
+}
+
+type LECHQueryAvailableCidrsDetailResponseDataNodesCidrs struct     {
+  // {"en":"CIDR","zh_CN":"网段 CIDR"}
+  Cidr *string `json:"cidr,omitempty" xml:"cidr,omitempty" require:"true"`
+  // {"en":"Number of free and available IPs","zh_CN":"空闲可用IP数"}
+  FreeIps *int `json:"freeIps,omitempty" xml:"freeIps,omitempty" require:"true"`
+  // {"en":"Freezing IP number","zh_CN":"冷却IP数"}
+  FreezingIps *int `json:"freezingIps,omitempty" xml:"freezingIps,omitempty" require:"true"`
+  // {"en":"IP native attribute.(-1: Native, 1: Non-native)","zh_CN":"原生属性. (-1: 原生, 1: 非原生)"}
+  NativeAttribute *string `json:"nativeAttribute,omitempty" xml:"nativeAttribute,omitempty" require:"true"`
+  // {"en":"Number of IPs already used","zh_CN":"已用IP数"}
+  UsedIps *int `json:"usedIps,omitempty" xml:"usedIps,omitempty" require:"true"`
+}
+
+func (s LECHQueryAvailableCidrsDetailResponseDataNodesCidrs) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryAvailableCidrsDetailResponseDataNodesCidrs) GoString() string {
+  return s.String()
+}
+
+func (s *LECHQueryAvailableCidrsDetailResponseDataNodesCidrs) SetCidr(v string) *LECHQueryAvailableCidrsDetailResponseDataNodesCidrs {
+  s.Cidr = &v
+  return s
+}
+
+func (s *LECHQueryAvailableCidrsDetailResponseDataNodesCidrs) SetFreeIps(v int) *LECHQueryAvailableCidrsDetailResponseDataNodesCidrs {
+  s.FreeIps = &v
+  return s
+}
+
+func (s *LECHQueryAvailableCidrsDetailResponseDataNodesCidrs) SetFreezingIps(v int) *LECHQueryAvailableCidrsDetailResponseDataNodesCidrs {
+  s.FreezingIps = &v
+  return s
+}
+
+func (s *LECHQueryAvailableCidrsDetailResponseDataNodesCidrs) SetNativeAttribute(v string) *LECHQueryAvailableCidrsDetailResponseDataNodesCidrs {
+  s.NativeAttribute = &v
+  return s
+}
+
+func (s *LECHQueryAvailableCidrsDetailResponseDataNodesCidrs) SetUsedIps(v int) *LECHQueryAvailableCidrsDetailResponseDataNodesCidrs {
+  s.UsedIps = &v
+  return s
+}
+
+type LECHQueryAvailableCidrsDetailResponseHeader struct {
+}
+
+func (s LECHQueryAvailableCidrsDetailResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s LECHQueryAvailableCidrsDetailResponseHeader) GoString() string {
+  return s.String()
 }
 
 
@@ -11994,9 +13379,9 @@ func (s PutNetworkPolicyFieldsV1) GoString() string {
 
 
 type VMPUnassignEdgeIPRequest struct {
-  // {"en":"target virtual machine external network Ip", "zh_CN":"目标实例外网Ip"}
+  // {"en":"target virtual machine external network Ip","zh_CN":"目标实例外网Ip"}
   ServerIp *string `json:"serverIp,omitempty" xml:"serverIp,omitempty" require:"true"`
-  // {"en":"additional Ip to unbind", "zh_CN":"要解除绑定的额外IP"}
+  // {"en":"additional Ip to unbind","zh_CN":"要解除绑定的额外IP"}
   EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -12018,29 +13403,15 @@ func (s *VMPUnassignEdgeIPRequest) SetEdgeIps(v []*string) *VMPUnassignEdgeIPReq
   return s
 }
 
-type VMPUnassignEdgeIPResponse struct {
-  // {"en":"target virtual machine IP", "zh_CN":"目标实例公网IP"}
-  ServerIp *string `json:"serverIp,omitempty" xml:"serverIp,omitempty" require:"true"`
-  // {"en":"additional Ip that has been bound to the virtual machine", "zh_CN":"已绑定到实例的额外公网IP"}
-  EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+type VMPUnassignEdgeIPRequestHeader struct {
 }
 
-func (s VMPUnassignEdgeIPResponse) String() string {
+func (s VMPUnassignEdgeIPRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPUnassignEdgeIPResponse) GoString() string {
+func (s VMPUnassignEdgeIPRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *VMPUnassignEdgeIPResponse) SetServerIp(v string) *VMPUnassignEdgeIPResponse {
-  s.ServerIp = &v
-  return s
-}
-
-func (s *VMPUnassignEdgeIPResponse) SetEdgeIps(v []*string) *VMPUnassignEdgeIPResponse {
-  s.EdgeIps = v
-  return s
 }
 
 type VMPUnassignEdgeIPPaths struct {
@@ -12065,15 +13436,29 @@ func (s VMPUnassignEdgeIPParameters) GoString() string {
   return s.String()
 }
 
-type VMPUnassignEdgeIPRequestHeader struct {
+type VMPUnassignEdgeIPResponse struct {
+  // {"en":"target virtual machine IP","zh_CN":"目标实例公网IP"}
+  ServerIp *string `json:"serverIp,omitempty" xml:"serverIp,omitempty" require:"true"`
+  // {"en":"additional Ip that has been bound to the virtual machine","zh_CN":"已绑定到实例的额外公网IP"}
+  EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s VMPUnassignEdgeIPRequestHeader) String() string {
+func (s VMPUnassignEdgeIPResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s VMPUnassignEdgeIPRequestHeader) GoString() string {
+func (s VMPUnassignEdgeIPResponse) GoString() string {
   return s.String()
+}
+
+func (s *VMPUnassignEdgeIPResponse) SetServerIp(v string) *VMPUnassignEdgeIPResponse {
+  s.ServerIp = &v
+  return s
+}
+
+func (s *VMPUnassignEdgeIPResponse) SetEdgeIps(v []*string) *VMPUnassignEdgeIPResponse {
+  s.EdgeIps = v
+  return s
 }
 
 type VMPUnassignEdgeIPResponseHeader struct {
@@ -13417,25 +14802,19 @@ func (s *ListIngressControllerClusterAttr) SetUpdatedReplicas(v string) *ListIng
 
 
 type VmpEdgeIpAllocate4OccupancyRequest struct {
-  // {"en":"Instance IP to be bound", "zh_CN":"额外IP要绑定的实例IP"}
+  // {"en":"Instance IP to be bound","zh_CN":"额外IP要绑定的实例IP"}
   ServerIp *string `json:"serverIp,omitempty" xml:"serverIp,omitempty" require:"true"`
-  // {"en":"IP protocol: 4-ipv4(default); 6-ipv6", "zh_CN":"IP协议：4-ipv4（默认）；6-ipv6"}
+  // {"en":"IP protocol: 4-ipv4(default); 6-ipv6","zh_CN":"IP协议：4-ipv4（默认）；6-ipv6"}
   Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty"`
-  // {"en":"IP native attribute, 1: non-native;-1: native;", "zh_CN":"指定IPv4原生属性。可选值：1：非原生，-1：原生。不指定默认随机分配原生属性"}
+  // {"en":"IP native attribute, 1: non-native;-1: native;","zh_CN":"指定IPv4原生属性。可选值：1：非原生，-1：原生。不指定默认随机分配原生属性"}
   NativeAttribute *string `json:"nativeAttribute,omitempty" xml:"nativeAttribute,omitempty"`
-  // {"en":"CIDR", "zh_CN":"指定CIDR申请IP"}
+  // {"en":"CIDR","zh_CN":"指定CIDR申请IP"}
   Cidr *string `json:"cidr,omitempty" xml:"cidr,omitempty"`
-  // {"en":"null", "zh_CN":"A、实例有多个运营商IP时，可指定额外IP运营商
-  // B、不指定时：
-  // 实例单运营商IP，额外IP运营商一致
-  // 实例多运营商IP，额外IP选其中一个运营商
-  // BGP节点该字段不生效。"}
+  // {"en":"A. When an instance has multiple carrier IPs, you can specify an additional IP carrier. B. If not specified: For instances with a single carrier IP, the additional IP will use the same carrier as the instance. For instances with cross-ISP IPs, For the additional IP, one of the carrier BGP nodes will be selected; this field will not take effect.","zh_CN":"A、实例有多个运营商IP时，可指定额外IP运营商\nB、不指定时：\n实例单运营商IP，额外IP运营商一致\n实例多运营商IP，额外IP选其中一个运营商\nBGP节点该字段不生效。"}
   Carrier *string `json:"carrier,omitempty" xml:"carrier,omitempty"`
-  // {"en":"Allocate ip random", "zh_CN":"IPv4是否随机分配
-  // 1：是
-  // -1：否"}
+  // {"en":"Allocate ip random","zh_CN":"IPv4是否随机分配\n1：是\n-1：否"}
   RandomAllocateIp *int `json:"randomAllocateIp,omitempty" xml:"randomAllocateIp,omitempty"`
-  // {"en":"number of applications IP", "zh_CN":"申请个数"}
+  // {"en":"Number of applications IP","zh_CN":"申请个数"}
   Count *int `json:"count,omitempty" xml:"count,omitempty" require:"true"`
 }
 
@@ -13482,23 +14861,15 @@ func (s *VmpEdgeIpAllocate4OccupancyRequest) SetCount(v int) *VmpEdgeIpAllocate4
   return s
 }
 
-type VmpEdgeIpAllocate4OccupancyResponse struct {
-  // {"en":"successful application for all or part of IP", "zh_CN":"成功申请到的全部或部分IP 
-  // 说明：不同场景的响应说明如下 A、所有IP都申请成功，返回申请到的所有IP B、只申请到部分IP，返回申请到的那部分IP C、未申请到任何IP，返回失败信息 D、若出现申请失败的情况，请间隔10S之后再次申请"}
-  EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+type VmpEdgeIpAllocate4OccupancyRequestHeader struct {
 }
 
-func (s VmpEdgeIpAllocate4OccupancyResponse) String() string {
+func (s VmpEdgeIpAllocate4OccupancyRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s VmpEdgeIpAllocate4OccupancyResponse) GoString() string {
+func (s VmpEdgeIpAllocate4OccupancyRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *VmpEdgeIpAllocate4OccupancyResponse) SetEdgeIps(v []*string) *VmpEdgeIpAllocate4OccupancyResponse {
-  s.EdgeIps = v
-  return s
 }
 
 type VmpEdgeIpAllocate4OccupancyPaths struct {
@@ -13523,15 +14894,54 @@ func (s VmpEdgeIpAllocate4OccupancyParameters) GoString() string {
   return s.String()
 }
 
-type VmpEdgeIpAllocate4OccupancyRequestHeader struct {
+type VmpEdgeIpAllocate4OccupancyResponse struct {
+  // {"en":"Message","zh_CN":"消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Data","zh_CN":"数据"}
+  Data *VmpEdgeIpAllocate4OccupancyResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  // {"en":"Return Code","zh_CN":"返回码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
 }
 
-func (s VmpEdgeIpAllocate4OccupancyRequestHeader) String() string {
+func (s VmpEdgeIpAllocate4OccupancyResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s VmpEdgeIpAllocate4OccupancyRequestHeader) GoString() string {
+func (s VmpEdgeIpAllocate4OccupancyResponse) GoString() string {
   return s.String()
+}
+
+func (s *VmpEdgeIpAllocate4OccupancyResponse) SetMessage(v string) *VmpEdgeIpAllocate4OccupancyResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *VmpEdgeIpAllocate4OccupancyResponse) SetData(v *VmpEdgeIpAllocate4OccupancyResponseData) *VmpEdgeIpAllocate4OccupancyResponse {
+  s.Data = v
+  return s
+}
+
+func (s *VmpEdgeIpAllocate4OccupancyResponse) SetCode(v string) *VmpEdgeIpAllocate4OccupancyResponse {
+  s.Code = &v
+  return s
+}
+
+type VmpEdgeIpAllocate4OccupancyResponseData struct {
+  // {"en":"Successful application for all or part of IP","zh_CN":"成功申请到的全部或部分IP说明：不同场景的响应说明如下 A、所有IP都申请成功，返回申请到的所有IP B、只申请到部分IP，返回申请到的那部分IP C、未申请到任何IP，返回失败信息 D、若出现申请失败的情况，请间隔10S之后再次申请"}
+  EdgeIps []*string `json:"edgeIps,omitempty" xml:"edgeIps,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s VmpEdgeIpAllocate4OccupancyResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s VmpEdgeIpAllocate4OccupancyResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *VmpEdgeIpAllocate4OccupancyResponseData) SetEdgeIps(v []*string) *VmpEdgeIpAllocate4OccupancyResponseData {
+  s.EdgeIps = v
+  return s
 }
 
 type VmpEdgeIpAllocate4OccupancyResponseHeader struct {
