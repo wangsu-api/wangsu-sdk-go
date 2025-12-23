@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/networkmanage
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/networkmanage
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/networkmanage"
     "log"
 )
@@ -105,3 +99,11 @@ if err != nil {
 | Queryedgeprivateip | 用于查询已申请的额外内网IP。<br> | GET | /vmp/edgeIp/private |
 | Vmpqueryavailablecidrs | 用于查询节点中可用的网段信息 | GET | /vmp/cidrs |
 | Vmpqueryavailablecidrsdetail | 该接口用于查询指定节点中可用的网段详情信息，可以通过提供节点名称来获取节点下可用的网段、网段的空闲可用IP数、IP原生属性等，用于后续指定网段申请IP或创建实例。 | GET | /vmp/cidrs/detail |
+| Lechqueryavailablecidrs | 用于查询节点中可用的网段信息 | GET | /lech/cidrs |
+| Lechqueryavailablecidrsdetail | 该接口用于查询指定节点中可用的网段详情信息，可以通过提供节点名称来获取节点下可用的网段、网段的空闲可用IP数、IP原生属性等，用于后续指定网段申请IP或创建实例。 | GET | /lech/cidrs/detail |
+| Lechedgeipallocate4occupancy | 用于申请独占式额外公网IP，IP申请完会同时绑定到指定实例上，一个IP只能绑定一台实例。<br> | POST | /lech/edgeIp/allocate4Occupancy |
+| Lechallocateedgeip | 用于申请漂移式额外公网IP。漂移模式支持同一IP为多实例同时使用，常用于主备切换场景，如LVS等。 | POST | /lech/edgeIp/allocate |
+| Lechassignedgeip | 将申请到的漂移式额外IP绑定到指定实例。<br>漂移式额外IP支持同一IP为多实例同时使用，常用于主备切换场景，如LVS。<br> | PUT | /lech/edgeIp/assign |
+| Lechqueryedgeip | 用于查询已申请的额外公网IP。 | GET | /lech/edgeIp |
+| Lechreleaseedgeip | 用于释放独占式和漂移式额外公网IP。<br>说明：<br>1）漂移式额外IP需要先解除和云主机的绑定才能释放，如果未解除绑定会释放失败；<br>2）如果批量释放多个漂移式IP，部分IP已解除绑定，部分IP未解除，则已解除绑定的会正常释放，未解除绑定的会释放失败。<br>3）独占式IP无需解除绑定直接释放。<br> | PUT | /lech/edgeIp/release |
+| Lechunassignedgeip | 可用于解除漂移式额外公网IP和实例的绑定。漂移式额外公网IP支持同一IP为多实例同时使用，常用于主备切换场景，如LVS。<br>说明：<br>1）要解绑的漂移式额外公网IP必须是绑定在指定实例上的IP，不能是绑定在其他虚拟机的IP；<br>2）如果批量解绑多个漂移式额外公网IP，存在部分IP是绑定在其他实例上的，则全部IP都解绑失败，接口返回错误提示信息。 | PUT | /lech/edgeIp/unassign |

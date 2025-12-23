@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/nghostnames
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/nghostnames"
     "log"
 )
@@ -74,4 +69,3 @@ For detailed API documentation and available methods, please refer to the [offic
 | GetHistoricalInformationAboutHostnames | Get a list of hostnames belonging to properties that were successfully <a href="#tag/Deployment-Management">deployed</a> to production or staging during a particular timeframe. | GET | /cdn/hostnames/historical |
 | GetHistoricalInformationAboutOneHostname | This API returns information about a hostname's deployments to production and staging. Query parameters let you specify a timeframe to search. | GET | /cdn/hostnames/historical/* |
 | GetInformationAboutASpecificHostname | This API returns information about a specific hostname belonging to a property that has been deployed to production or staging. | GET | /cdn/hostnames/* |
-| Querynghostnameandedgehostnameforwplus | This api is used to query the relationship between the cdnpro acceleration name and the real service domain. Used to query all information without passing parameters, or to query specified information by providing hostName or edgeHostName, including hostName e and edgeHostName. | POST | /api/ngcdn/hostname/edgehostname |

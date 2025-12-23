@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/statisticsanalysis
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/statisticsanalysis"
     "log"
 )
@@ -71,3 +66,4 @@ For detailed API documentation and available methods, please refer to the [offic
 | ActionName | enDescription | client_methods | uri |
 | --- | --- | --- | --- |
 | Getrealtimechannelonlinenumber | The watermark position can be queried in real time through this interface.<br>Note: This interface is applicable to rtmp traffic, but not to hls, httpflv, hds, or ts traffic | POST | /live/onlinenumber/getRealTimeChannelOnlineNumber |
+| Querycloudvodstoragevolume | Query the Cloud VOD storage capacity | POST | /vod/statisticalAnalysis/getStorageVolume |

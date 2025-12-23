@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/contentsercurity
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/contentsercurity
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/contentsercurity"
     "log"
 )
@@ -70,5 +64,5 @@ if err != nil {
 
 | ActionName | description | client_methods | uri |
 | --- | --- | --- | --- |
-| Textaudit | 敏感词审计接口 | POST | /cms/api/text |
+| Textaudit | 短文本审计接口 | POST | /cms/api/text |
 | Imageaudit | 图片审计接口, 同步返回结果 | POST | /cms/api/pic/audit |

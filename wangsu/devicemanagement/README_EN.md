@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/devicemanagement
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/devicemanagement"
     "log"
 )

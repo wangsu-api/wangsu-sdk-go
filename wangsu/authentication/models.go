@@ -16,8 +16,8 @@ type CreateUserRequest struct {
   Password *string `json:"password,omitempty" xml:"password,omitempty"`
   // {"en":"Parent group name.\nIf the request parameters do not contain this field or it is empty, the user will belongs the root deirectory group.","zh_CN":"父组名称\n不传或空保存在根用户组下"}
   GroupName *string `json:"groupName,omitempty" xml:"groupName,omitempty"`
-  // {"en":"Bandwidth limit.\nIf the parameters do not contains this field,it  will be 1/2 of maximum bandwidth limit.\nIf the value exceeds the maximum bandwidth,it  will be maximum bandwidth limit.","zh_CN":"带宽限制\n不传参为 1/2{最大带宽}\n传参超过最大带宽，则为{最大带宽}"}
-  Bandwidth *CreateUserRequestBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" type:"Struct"`
+  // {"en":"Bandwidth limit.\nIf the parameters do not contains this field,it  will be 1/2 of maximum bandwidth limit.\nIf the value exceeds the maximum bandwidth,it  will be maximum bandwidth limit.","zh_CN":"带宽限制(单位：Mbps)\n不传参为 1/2{最大带宽}\n传参超过最大带宽，则为{最大带宽}"}
+  Bandwidth *int64 `json:"bandwidth,omitempty" xml:"bandwidth,omitempty"`
   // {"en":"Area code\nIf the areaCode is null and when cellPhone is not null, areaCode  will be 86.","zh_CN":"区号，手机号存在但区号不存在时会默认设置86"}
   AreaCode *string `json:"areaCode,omitempty" xml:"areaCode,omitempty"`
   // {"en":"Mobile.When phoneSendPwd is equal to \"1\", this field cannnot be empty.","zh_CN":"手机号；当phoneSendPwd=1时，不为空"}
@@ -71,8 +71,8 @@ func (s *CreateUserRequest) SetGroupName(v string) *CreateUserRequest {
   return s
 }
 
-func (s *CreateUserRequest) SetBandwidth(v *CreateUserRequestBandwidth) *CreateUserRequest {
-  s.Bandwidth = v
+func (s *CreateUserRequest) SetBandwidth(v int64) *CreateUserRequest {
+  s.Bandwidth = &v
   return s
 }
 
@@ -119,17 +119,6 @@ func (s *CreateUserRequest) SetRemark(v string) *CreateUserRequest {
 func (s *CreateUserRequest) SetParentGroupId(v string) *CreateUserRequest {
   s.ParentGroupId = &v
   return s
-}
-
-type CreateUserRequestBandwidth struct {
-}
-
-func (s CreateUserRequestBandwidth) String() string {
-  return tea.Prettify(s)
-}
-
-func (s CreateUserRequestBandwidth) GoString() string {
-  return s.String()
 }
 
 type CreateUserRequestHeader struct {
@@ -847,12 +836,52 @@ func (s DescribeUserInfoRequest) GoString() string {
   return s.String()
 }
 
+type DescribeUserInfoRequestHeader struct {
+}
+
+func (s DescribeUserInfoRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DescribeUserInfoRequestHeader) GoString() string {
+  return s.String()
+}
+
+type DescribeUserInfoPaths struct {
+}
+
+func (s DescribeUserInfoPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DescribeUserInfoPaths) GoString() string {
+  return s.String()
+}
+
+type DescribeUserInfoParameters struct {
+  // {"en":"username","zh_CN":"用户名"}
+  Username *string `json:"username,omitempty" xml:"username,omitempty" require:"true"`
+}
+
+func (s DescribeUserInfoParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DescribeUserInfoParameters) GoString() string {
+  return s.String()
+}
+
+func (s *DescribeUserInfoParameters) SetUsername(v string) *DescribeUserInfoParameters {
+  s.Username = &v
+  return s
+}
+
 type DescribeUserInfoResponse struct {
-  // {'en':'Interface error code, 0-fail,1-success', 'zh_CN':'接口错误码，0-代表失败，1-代表成功'}
+  // {"en":"Interface error code, 0-fail,1-success","zh_CN":"接口错误码，0-代表失败，1-代表成功"}
   ReturnCode *string `json:"returnCode,omitempty" xml:"returnCode,omitempty" require:"true"`
-  // {'en':'Error message', 'zh_CN':'错误信息'}
+  // {"en":"Error message","zh_CN":"错误信息"}
   ReturnMsg *string `json:"returnMsg,omitempty" xml:"returnMsg,omitempty" require:"true"`
-  // {'en':'content', 'zh_CN':'数据，下面全是数据的内容'}
+  // {"en":"content","zh_CN":"数据，下面全是数据的内容"}
   Content *DescribeUserInfoResponseContent `json:"content,omitempty" xml:"content,omitempty" require:"true" type:"Struct"`
 }
 
@@ -880,35 +909,35 @@ func (s *DescribeUserInfoResponse) SetContent(v *DescribeUserInfoResponseContent
 }
 
 type DescribeUserInfoResponseContent struct {
-  // {'en':'username', 'zh_CN':'用户名称'}
+  // {"en":"username","zh_CN":"用户名称"}
   Username *string `json:"username,omitempty" xml:"username,omitempty" require:"true"`
-  // {'en':'id', 'zh_CN':'用户id'}
+  // {"en":"id","zh_CN":"用户id"}
   Id *int64 `json:"id,omitempty" xml:"id,omitempty" require:"true"`
-  // {'en':'email', 'zh_CN':'邮箱'}
+  // {"en":"email","zh_CN":"邮箱"}
   Email *string `json:"email,omitempty" xml:"email,omitempty" require:"true"`
-  // {'en':'areaCode', 'zh_CN':'区号'}
+  // {"en":"areaCode","zh_CN":"区号"}
   AreaCode *string `json:"areaCode,omitempty" xml:"areaCode,omitempty" require:"true"`
-  // {'en':'cellPhone', 'zh_CN':'手机号'}
+  // {"en":"cellPhone","zh_CN":"手机号"}
   CellPhone *string `json:"cellPhone,omitempty" xml:"cellPhone,omitempty" require:"true"`
-  // {'en':'groupId', 'zh_CN':'父组ID'}
+  // {"en":"groupId","zh_CN":"父组ID"}
   GroupId *int64 `json:"groupId,omitempty" xml:"groupId,omitempty" require:"true"`
-  // {'en':'groupName', 'zh_CN':'父组名称'}
+  // {"en":"groupName","zh_CN":"父组名称"}
   GroupName *string `json:"groupName,omitempty" xml:"groupName,omitempty" require:"true"`
-  // {'en':'bandwidth', 'zh_CN':'带宽'}
+  // {"en":"bandwidth","zh_CN":"带宽"}
   Bandwidth *string `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true"`
-  // {'en':'remark', 'zh_CN':'备注'}
+  // {"en":"remark","zh_CN":"备注"}
   Remark *string `json:"remark,omitempty" xml:"remark,omitempty" require:"true"`
-  // {'en':'expirationTime', 'zh_CN':'过期时间戳，0-永不过期'}
+  // {"en":"expirationTime","zh_CN":"过期时间戳，0-永不过期"}
   ExpirationTime *int64 `json:"expirationTime,omitempty" xml:"expirationTime,omitempty" require:"true"`
-  // {'en':'enableUser', 'zh_CN':'启用状态'}
+  // {"en":"enableUser","zh_CN":"启用状态"}
   EnableUser *int `json:"enableUser,omitempty" xml:"enableUser,omitempty" require:"true"`
-  // {'en':'smsAuth', 'zh_CN':'短信认证启用'}
+  // {"en":"smsAuth","zh_CN":"短信认证启用"}
   SmsAuth *int `json:"smsAuth,omitempty" xml:"smsAuth,omitempty" require:"true"`
-  // {'en':'totpAuth', 'zh_CN':'totp认证启用'}
+  // {"en":"totpAuth","zh_CN":"totp认证启用"}
   TotpAuth *int `json:"totpAuth,omitempty" xml:"totpAuth,omitempty" require:"true"`
-  // {'en':'virtual ip', 'zh_CN':'虚拟ip'}
+  // {"en":"virtual ip","zh_CN":"虚拟ip"}
   Vip *string `json:"vip,omitempty" xml:"vip,omitempty" require:"true"`
-  // {'en':'createTime', 'zh_CN':'创建时间戳'}
+  // {"en":"createTime","zh_CN":"创建时间戳"}
   CreateTime *int64 `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
 }
 
@@ -993,46 +1022,6 @@ func (s *DescribeUserInfoResponseContent) SetVip(v string) *DescribeUserInfoResp
 func (s *DescribeUserInfoResponseContent) SetCreateTime(v int64) *DescribeUserInfoResponseContent {
   s.CreateTime = &v
   return s
-}
-
-type DescribeUserInfoPaths struct {
-}
-
-func (s DescribeUserInfoPaths) String() string {
-  return tea.Prettify(s)
-}
-
-func (s DescribeUserInfoPaths) GoString() string {
-  return s.String()
-}
-
-type DescribeUserInfoParameters struct {
-  // {'en':'username', 'zh_CN':'用户名'}
-  Username *string `json:"username,omitempty" xml:"username,omitempty" require:"true"`
-}
-
-func (s DescribeUserInfoParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s DescribeUserInfoParameters) GoString() string {
-  return s.String()
-}
-
-func (s *DescribeUserInfoParameters) SetUsername(v string) *DescribeUserInfoParameters {
-  s.Username = &v
-  return s
-}
-
-type DescribeUserInfoRequestHeader struct {
-}
-
-func (s DescribeUserInfoRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s DescribeUserInfoRequestHeader) GoString() string {
-  return s.String()
 }
 
 type DescribeUserInfoResponseHeader struct {

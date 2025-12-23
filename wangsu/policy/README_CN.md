@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/policy
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/policy
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/policy"
     "log"
 )
@@ -74,3 +68,5 @@ if err != nil {
 | Deletepolicy | 本接口用于删除自定义权限策略 | POST | /user/policies/delete |
 | Editpolicy | 本接口用于修改自定义权限策略 | POST | /user/policies/edit |
 | Getpolicy | 本接口用于查询指定的权限策略明细信息 | POST | /user/policies/get |
+| Getaccountsummary | 该接口用于查询调用账号的所属主账号的概览信息。包括允许创建用户组的最大数量、 用户组数量、 允许创建自定义策略的最大数量、 允许创建 RAM 用户的最大数量、 自定义策略数量、RAM 用户数量。 | POST | /user/summary |
+| Querypolicyassociateuser | 该接口用于查询指定策略关联的用户/用户组。根据策略id或策略名称，可查询策略关联的用户名/用户组名及其id | POST | /user/policies/associate |

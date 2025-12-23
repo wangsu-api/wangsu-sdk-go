@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/imagemanage
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/imagemanage
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/imagemanage"
     "log"
 )
@@ -96,3 +90,8 @@ if err != nil {
 | Createoemimage | 通过该接口可以为某个实例创建OEM镜像。 | POST | /ephone/oemImages/create |
 | Queryoemimage | 用于查询指定的边缘云手机OEM镜像列表 | GET | /ephone/oemImages/list |
 | Manageoemimage | 指定边缘云手机OEM镜像进行操作，目前仅支持删除操作 | POST | /ephone/oemImages/action |
+| Lechdeployimagepreheating | 用于提取预热客户私有镜像，该接口为异步接口，镜像预热结果需另外查询 | PUT | /lech/images/preHeating |
+| Lechcreateimage | 支持将某个虚拟机系统盘制作成镜像，之后便可将其用于创建新的虚拟机。建议在制作镜像期间关闭虚拟机或者停止虚拟机上的应用或服务，以免影响镜像数据的完整性，待镜像制作完成，再启动虚拟机及其应用。此类操作创建的镜像在镜像查询接口中返回的镜像属主是SNAPSHOT，表示用虚拟机快照做的镜像。 | POST | /lech/images |
+| Lechqueryimagepreheatingstate | 用于查询镜像预热状态 | GET | /lech/images/preHeatingInfo/* |
+| Lechqueryimage | 查询用户可以使用的镜像列表。显示出的镜像资源列表包括用户自定义的镜像及边缘计算平台提供的公共镜像。 | GET | /lech/images |
+| Lechremoveimage | 删除您自定义镜像，删除镜像不影响已经创建的虚拟机，只是后续不能再使用该镜像创建新的虚拟机。您只能删除自己创建的自定义镜像，其他客户的自定义镜像以及公共镜像不能删除。 | DELETE | /lech/images/* |

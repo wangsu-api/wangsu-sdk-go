@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/edgekv
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/edgekv
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/edgekv"
     "log"
 )
@@ -76,5 +70,5 @@ if err != nil {
 | Createshorturl | 短网址生成接口<br><br><br>短链方案基于EdgeKV实现。需要先开通EdgeKV 并创建全局模式的空间。 | POST | /short-urls/create |
 | Getshorturl | 短网址查询接口 | POST | /short-urls/query |
 | Delshorturl | 短网址删除接口 | POST | /short-urls/del |
-| Ecakvinfo | 查询边缘KV存储信息，包括：存储量、读请求数、写请求数、删请求数 | POST | /myview/Ecakvinfo |
+| Ecakvinfo | 查询边缘KV存储信息，包括：存储量、读请求数、写请求数、删请求数 | POST | /myview/ecaKvInfo |
 | Sharkletvisit | 边缘应用请求数，包括基础应用请求数、中型应用请求数、特殊应用请求数 | POST | /myview/sharkletVisit |

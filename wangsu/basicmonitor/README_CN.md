@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/basicmonitor
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/basicmonitor
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/basicmonitor"
     "log"
 )
@@ -72,3 +66,4 @@ if err != nil {
 | --- | --- | --- | --- |
 | Reportflowdomainispprovinceiaasservice | 该接口用于查询边缘服务器在各ISP和省份的流量数据，支持根据请求头Accept-Language返回中文或英文数据。用户需提供查询的时间范围、域名、ISP和省份等信息，返回内容包含每个ISP和省份的流量明细，以MB为单位，并按5分钟的时间粒度显示。适用于需要分析不同地区和运营商流量分布的用户，帮助优化网络资源和提升服务效率。 | POST | /api/report/flow/domain-isp-province/iaas |
 | Vmpqueryservermetric | 查询云主机实例的CPU使用率、内存使用情况和带宽使用情况，以便接入自身的监控系统，掌控云主机的运行情况。提供近90天的监控数据查询，单次查询范围不超过3天，数据粒度为5分钟。如果是裸机实例，当前仅支持查询带宽，不支持查询CPU和内存。 | GET | /vmp/servers/metric |
+| Lechqueryservermetric | 查询云主机实例的CPU使用率、内存使用情况和带宽使用情况，以便接入自身的监控系统，掌控云主机的运行情况。提供近90天的监控数据查询，单次查询范围不超过3天，数据粒度为5分钟。如果是裸机实例，当前仅支持查询带宽，不支持查询CPU和内存。 | GET | /lech/servers/metric |

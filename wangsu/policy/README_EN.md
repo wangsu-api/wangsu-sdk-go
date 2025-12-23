@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/policy
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/policy"
     "log"
 )
@@ -74,3 +69,5 @@ For detailed API documentation and available methods, please refer to the [offic
 | Deletepolicy | This API is used to delete custom permission policy | POST | /user/policies/delete |
 | Editpolicy | This API is used to edit custom permission policy | POST | /user/policies/edit |
 | Getpolicy | This API is used to query the detail information of permission policy | POST | /user/policies/get |
+| Getaccountsummary | This API is used to query the overview information of the primary account associated with the invoking account. It includes the maximum number of user groups allowed to be created, the number of user groups, the maximum number of custom policies allowed to be created, the maximum number of RAM users allowed to be created, the number of custom policies, the number of RAM users. | POST | /user/summary |
+| Querypolicyassociateuser | This API is used to query users or user groups associated with a specified policy. You can retrieve the usernames or user group names and their IDs associated with the policy based on the policy ID or policy name. | POST | /user/policies/associate |

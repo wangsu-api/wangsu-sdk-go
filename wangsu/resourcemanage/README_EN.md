@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/resourcemanage
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/resourcemanage"
     "log"
 )
@@ -74,3 +69,5 @@ For detailed API documentation and available methods, please refer to the [offic
 | Vmpquerynode | Query which nodes of the edge computing platform can provide services. | GET | /vmp/nodes |
 | Vmpquerybandwidth | Query the real-time redundant bandwidth of all the nodes you are using. Nodes with redundant bandwidth will return True, while nodes without redundant bandwidth will return False. If the bandwidth data collection results of the node are insufficient to support the timeliness requirements of the interface, that is, if the bandwidth statistics data is old and does not meet the timeliness requirements, undefined will be returned.<br>The judgment method for whether a node has redundant bandwidth: the upper limit bandwidth of the node is greater than the real-time usage bandwidth of the node. Data granularity: 5 minutes. | POST | /vmp/redundant-bandwidth |
 | Noderedundantbandwidth4pstatp | Query for node redundant bandwidth | GET | /vmp/nodeRedundantBandwidth4Pstatp |
+| Lechquerynode | Query which nodes of the edge computing platform can provide services. | GET | /lech/nodes |
+| Lechqueryflavor | You can use this interface to query the specification list of instances that a certain region can provide, and then create instances using this specification. | GET | /lech/flavors |

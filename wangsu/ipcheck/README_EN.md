@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/ipcheck
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/ipcheck"
     "log"
 )
@@ -72,5 +67,6 @@ For detailed API documentation and available methods, please refer to the [offic
 | --- | --- | --- | --- |
 | Querycdnservicerealip | This interface is used to obtain the real IP list of the CDN service, which is particularly suitable for scenarios where the source station has set whitelist restrictions. Users can obtain the IP whitelist of the CDN node provided by our company for back-to-source by calling this interface, so as to correctly configure and ensure that the data request can smoothly reach the source station through the CDN. | GET | /api/si/report/whiteip-list |
 | Queryspecificipbelong | Query whether a given IP address belongs to our CDN IP. The user needs to provide a list of IP addresses. The returned result includes whether each IP address belongs to our CDN IP. | POST | /api/si/tools/ipCheck |
-| Ipinfoservice | This API is used to query the affiliation information of specific IP addresses. Users can provide one or more IP addresses to check if they belong to the company CDN nodes, as well as their affiliated country, province, city, and carrier information. The returned results include an identifier indicating whether the IP is a company CDN node; if not, it will return 'unknown'. This API applies when users want to check if an IP is our company's IP. | POST | /api/tools/ip-info |
-| Checkiscuswhiteip | This interface is used to supplement the CDN acceleration IP query functionality. It mainly provides customers with the ability to check whether an IP is a real service node resource pool IP that provides acceleration services. | GET | /task/api/customers/whitelist-check |
+| Checkipowner | This API is used to query the affiliation information of specific IP addresses. Users can provide one or more IP addresses to check if they belong to the company CDN nodes, as well as their affiliated country, province, city, and carrier information. The returned results include an identifier indicating whether the IP is a company CDN node; if not, it will return 'unknown'. This API is applicable for users who wish to verify if an IP address belongs to our company. | POST | /api/tools/ip-info |
+| Checkiscuswhiteip | This interface is used to supplement the CDN acceleration IP query functionality. It mainly provides customers with the ability to check whether an IP is a real service node resource pool IP that provides acceleration services. | POST | /task/api/customers/whitelist-check |
+| Querystageflowip | the interface allows users to query flow ip info. by providing service group ID, users can obtain associated flow ip details, including flow ip, region, country, and protocol. For edge components, it enables real-time access to flow ip information, enhancing the accuracy of traffic forwarding | GET | /api/apm/stage/flowIp |

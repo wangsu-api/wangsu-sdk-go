@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/billingsystem
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/billingsystem"
     "log"
 )
@@ -73,3 +68,4 @@ For detailed API documentation and available methods, please refer to the [offic
 | Querybillingdetailsofcomputingservice | Query the customer's computing power usage details within the specified time. | GET | /vmp/bills/server |
 | Queryusednodes | Query the nodes that have been used | GET | /vmp/nodes/used |
 | Vmnodeinfoformaxoutandin | For each node, take the larger value of inbound and outbound traffic, and then calculate the following metrics for each node: 95th percentile value, peak value, total traffic, and average peak. | POST | /myview/vmNodeInfoForMaxOutAndIn |
+| Lechquerybillingdetails | Query the customer's computing power usage details within the specified time. | GET | /lech/bills/server |

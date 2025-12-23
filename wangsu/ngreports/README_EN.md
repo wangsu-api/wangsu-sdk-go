@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/ngreports
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/ngreports"
     "log"
 )
@@ -90,3 +85,5 @@ For detailed API documentation and available methods, please refer to the [offic
 | GetCpuTimeUsed | Get the amount of CPU time in seconds used to handle requests for your content. | POST | /cdn/report/cpuTime |
 | GetASummaryOfTrafficVolume | Get a summary of edge, intermediate (between CDN Pro servers), and origin traffic volume during a time period. You can filter and group results by hostnames or server groups. If you are a reseller, you can also filter and group by customerIds to distinguish your child customers' traffic.<br> | POST | /cdn/report/volSummary |
 | Getedgehostnamestatistics | Get the number of DNS requests to resolve your edge hostnames during a time period. | POST | /cdn/report/edgeHostnameReq |
+| ToqueryserviceDr01 | For NG API to get the report data on Druid Storage(Basically the reports from raw traffic log is stored on druid ) | POST | /api/gdp/to-query-service/dr01 |
+| Getqtlconfig | Query the log configuration for the specified logConfigId. Only a single logConfigId is supported.<br><br> | GET | /api/qtlconfig/* |

@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/security
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/security"
     "log"
 )
@@ -81,3 +76,14 @@ For detailed API documentation and available methods, please refer to the [offic
 | Deletesecuritygroup | Used to delete security group information. If the security group has defined rules, they will be deleted together with the rules.<br>Explanation:<br>1) If there is currently an instance bound to a security group, the deletion of the security group fails;<br>2) When deleting multiple security groups in bulk, if one security group fails to be deleted, it does not affect the normal deletion of other security groups. | DELETE | /vmp/security-group/* |
 | Editsecuritygroup | Used to modify the security group name or comment information. | PUT | /vmp/security-group |
 | Addsecuritygroup | Used to add a security group. | POST | /vmp/security-group |
+| Lechaddsecuritygroup | Used to add a security group. | POST | /lech/security-group |
+| Lechbindsecuritygroup | Use to change the binding relationship between an instance and a security group. Only virtual instances support binding security groups, not bare metal instances. | PUT | /lech/security-group/server |
+| Lechremovesshkey | Delete the specified key pair by name. The instances created using this key pair are not affected and cannot be found on the query interface after deletion, nor can new instances be created using this key pair. | DELETE | /lech/osKeypairs/* |
+| Lecheditsecuritygroup | Used to modify the security group name or comment information. | PUT | /lech/security-group |
+| Lechquerysecuritygroup | Used to query the basic information of security groups created by customers. | GET | /lech/security-group |
+| Lechdeletesecuritygroup | Used to delete security group information. If the security group has defined rules, they will be deleted together with the rules.<br>Explanation:<br>1) If there is currently an instance bound to a security group, the deletion of the security group fails;<br>2) When deleting multiple security groups in bulk, if one security group fails to be deleted, it does not affect the normal deletion of other security groups. | DELETE | /lech/security-group/* |
+| Lechaddsecuritygrouprules | Used to add security group rule information.<br>1) Within the same security group, the content of different rules cannot be completely the same;<br>2) When adding multiple rules in bulk, the result is either successful or failed addition. | POST | /lech/security-group/rule |
+| Lecheditsecuritygrouprules | Used to modify security group rule information. | PUT | /lech/security-group/rule |
+| Lechdeletionsecuritygrouprules | Used to delete security group rule information. | DELETE | /lech/security-group/rule/* |
+| Lechcreatesshkey | When creating an instance, it can specify the use of key pairs. Before that, it need to create a key pair. | POST | /lech/osKeypairs |
+| Lechquerysshkey | Query all key pairs. | GET | /lech/osKeypairs |

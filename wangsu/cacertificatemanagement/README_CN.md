@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/cacertificatemanagement
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/cacertificatemanagement
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/cacertificatemanagement"
     "log"
 )
@@ -75,5 +69,5 @@ if err != nil {
 | DeleteACaCertificate | 删除CA证书 | DELETE | /api/certificate/ca/* |
 | DisassociateDomainWithCaCertificate | 解除CA证书与域名关联关系接口 | POST | /api/certificate/ca/disassociatedomain |
 | UpdateACaCertificate | 更新CA证书 | PUT | /api/certificate/ca/* |
-| QueryCaCertificateList | 查询ca证书列表 | POST | /api/certificate/ca/list |
-| GetACaCertificate | 获取ca证书详情 | GET | /api/certificate/ca/* |
+| Listcacertificates | 查询ca证书列表 | POST | /api/certificate/ca/list |
+| Getcacertificate | 获取ca证书详情 | GET | /api/certificate/ca/* |

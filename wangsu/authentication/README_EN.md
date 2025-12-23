@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/authentication
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/authentication"
     "log"
 )
@@ -80,3 +75,4 @@ For detailed API documentation and available methods, please refer to the [offic
 | Modifyuser | Modify the information of the specific user. | PUT | /api/securelink/idaas/user |
 | Describeuserinfo | Describe User | GET | /api/securelink/idaas/user |
 | Syncauthconfig | sync auth config  | POST | /api/securelink/idaas/authconfig/sync |
+| Resetuserpassword | To reset a local user's password, you can use this interface. By varying the input parameters, the password can be reset either with a randomly generated password or one that is manually specified. Furthermore, the new password can be sent to the specified phone number or email address via SMS or email. | POST | /api/securelink/idaas/user/reset-pwd |

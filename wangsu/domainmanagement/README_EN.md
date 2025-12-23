@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/domainmanagement
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/domainmanagement"
     "log"
 )
@@ -70,15 +65,18 @@ For detailed API documentation and available methods, please refer to the [offic
 
 | ActionName | enDescription | client_methods | uri |
 | --- | --- | --- | --- |
+| Channelaccetype | Query the channels and their acceleration types for the customer. | POST | /myview/Channelaccetype |
 | Cancelapidomainservice | Cancel the CDN acceleration service of the specified domain, that is, force the request to back to source directly from the DNS level. It is mostly used for customers not responding in time to deal with Yellow-Related websites, and so on. | PUT | /api/domain/*/cancel |
 | Restoreapidomainservice | Restore the CDN acceleration service of the specified domain, that is, let the request return to the CDN node. | PUT | /api/domain/*/restore |
 | Enablesingledomainservice | Enable an accelerated domain with a state of "disabled" and provide accelerated service with an existing configuration. | PUT | /api/domain/*/enable |
 | Disablesingledomainservice | Disables the specified accelerated domain name, and requests for the accelerated domain name after it is disabled will be rejected directly and will not be back to origin. | PUT | /api/domain/*/disable |
 | Deleteapidomainservice | Delete one of the added accelerator domains. Cannot be enabled after deletion, only the accelerated domain name can be re-created. | DELETE | /api/domain/* |
 | Getfuzzypagingdomainlist | Queries all, or specified, acceleration domains and states under the user's account. Each acceleration domain name contains profile information. The returned accelerated domain name list is sorted in alphabetical order of the initials. | POST | /api/domain/domainList |
-| Querydomainbyoriginip | Query the list of all domain name names corresponding to the source station IP under the user account. | GET | /api/originaldomainlist |
+| Querydomainbyoriginip | Query the list of all domain name names corresponding to the origin station IP under the user account. | GET | /api/originaldomainlist |
+| Disablemultidomainservice | Disable multiple accelerated domain names. Once disabled, all requests for accelerated domain names will be directly rejected and will not be forwarded to the source server. | POST | /api/domain/disable |
+| Enablemultidomainservice | Enable multiple acceleration domain names that are currently disabled, and provide acceleration services using the existing configuration. | POST | /api/domain/enable |
 | Createdomain | Create a domain. | POST | /api/domain |
-| Queryapidomainlistservice | Query all the accelerated domain names and states indicated by the user account or the specific cname-label. Each accelerated domain name contains summary information, and the returned accelerated domain name list is sorted in alphabetical order.<br>Note: Offline domains("enabled" value equals false) could not be modified. | GET | /api/domain |
+| Queryapidomainlistservice | Query all the accelerated domain names and states indicated by the user account or the specific cname-label. Each accelerated domain name contains summary information, and the returned accelerated domain name list is sorted in alphabetical order.<br>Note: Disabled domains("enabled" value equals false) could not be modified. | GET | /api/domain |
 | Querycustomerdomainnamegroupservice | This interface is used to query the domain information under the customer's domain group. Users can use this interface to retrieve one or more domain groups. The interface returns the basic information of each domain group and the list of domain names it contains. This interface is suitable for scenarios where multiple domain groups need to be managed, and helps users obtain the corresponding business domain name set according to different business scenarios. | POST | /api/report/domainlist/domain |
 | Queryapidomainattribution | Get domain list. | GET | /api/domainlist |
 | Controldomain | Used to query user's domain name and domain name information. | POST | /clouddns/Controldomain |
@@ -91,7 +89,6 @@ For detailed API documentation and available methods, please refer to the [offic
 | Dispatchwarnlog | Querying the Scheduling Alarm Log | POST | /clouddns/Dispatchwarnlog |
 | Updatedispatchdomain | Edit Scheduling Domain Name | POST | /clouddns/Updatedispatchdomain |
 | Controldispatchdomain | Start or stop scheduling domain name | POST | /clouddns/Controldispatchdomain |
-| Channelaccetype | Query the channels and their acceleration types for the customer. | POST | /myview/Channelaccetype |
 | Adddomaingroup | Domain group can group domain, making it easy for you to quickly query data by domain group.<br>This API provides create domain group functionality | POST | /api/report/domainlist/domaingroup/add |
 | Editdomaingroup | Domain group can group domain, making it easy for you to quickly query data by domain group.<br>This API provides edit domain group functionality | POST | /api/report/domainlist/domaingroup/edit |
 | Getpagingdomainlist | Queries all, or specified, acceleration domains and states under the user's account. Each acceleration domain name contains profile information. The returned accelerated domain name list is sorted by version. | POST | /api/domain/list |
@@ -103,5 +100,4 @@ For detailed API documentation and available methods, please refer to the [offic
 | Disablecdndomainservice | Disables the specified accelerated domain name, and requests for the accelerated domain name after it is disabled will be rejected directly and will not be back to origin. | PUT | /cdn/domains/*/disable |
 | Deletecdndomainservice | Delete one of the added accelerator domains. Cannot be enabled after deletion, only the accelerated domain name can be re-created. | DELETE | /cdn/domains/* |
 | Updatecustomeranycastiprecordstatus | Update the record status of Anycast IP | POST | /api/anycast-ips/record-status |
-| Deletehwdomain | Delete a HW accelerated domain that has been added. By specifying the domain name in the URI, the HW accelerated domain can be deleted. After deletion, the domain will stop accelerating. For example: /v1/domain/www.test.com. | DELETE | /v1/domain/* |
-| Enabledisablehwdomain | Enable or Disable Hw Domain.For example: If "state" is set to "online", it means the domain is enabled. If "state" is set to "offline", it means the domain is disabled. | PUT | /v1/domain/*/state |
+| Batchaddapidomain | Batch create domains. | POST | /api/domain/batch-add |

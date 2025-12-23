@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/edgeai
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/edgeai
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/edgeai"
     "log"
 )
@@ -79,3 +73,9 @@ if err != nil {
 | Ragknowledgebasecreateservice | 知识库创建接口 | POST | /rag/knowledgebase/create |
 | Ragknowledgebaselistservice | 知识库查询接口 | POST | /rag/knowledgebase/list |
 | Ragknowledgebaseupdateservice | 知识库更新接口 | POST | /rag/knowledgebase/update |
+| Createwrconnector | 该接口用于创建一个等候室连接器，支持配置QT账号信息、连接器名称、同步周期、是否验证用户身份以及队列令牌有效期等参数。成功后返回连接器的实例ID。 | POST | /api/v2/waiting_room_connectors |
+| Updatewrconnector | 该接口用于更新现有等候室连接器的配置信息。用户需通过REST参数指定要更新的连接器实例ID，并通过请求体参数更新如QT账号ID、API密钥、是否生成队列令牌、同步周期等配置。接口响应将返回操作结果、响应数据和消息。 | PUT | /api/v2/waiting_room_connectors/* |
+| Deletewaitingroomconnector | 该接口用于根据指定的连接器ID删除等候室连接器。用户需提供连接器的唯一ID作为REST参数进行删除操作。 | DELETE | /api/v2/waiting_room_connectors/* |
+| Listconnectorsbypage | 该接口用于分页查询连接器列表。用户可以根据名称（支持模糊查询）、ID（支持精确查询）等条件进行筛选，并指定页码和每页大小。响应结果包含连接器总数及当前页的连接器详细信息。 | GET | /api/v2/waiting_room_connectors |
+| Viewwrconnectorinfo | 该接口用于查看等候室连接器的详细信息。用户需通过RESTful路径参数`id`指定连接器实例，接口将返回该连接器的配置内容、同步周期、队列令牌有效期、状态、创建及修改时间等详细信息。 | GET | /api/v2/waiting_room_connectors/* |
+| Addimageconfig | 该接口用于上传或修改图片处理配置。用户通过请求体中的property和policySets参数上传配置详情，系统将返回操作结果的响应码和信息。 | POST | /api/v2/ivm_configs |

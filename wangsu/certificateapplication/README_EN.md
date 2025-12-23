@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/certificateapplication
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/certificateapplication"
     "log"
 )
@@ -70,8 +65,14 @@ For detailed API documentation and available methods, please refer to the [offic
 
 | ActionName | enDescription | client_methods | uri |
 | --- | --- | --- | --- |
-| Createcertificateapplyingorder | Create the certificate applying order. | POST | /api/certificate/order/create |
-| Getcertificateapplyingorderlist | Get List of Certificate Applying Orders. | POST | /api/certificate/order/list |
-| Getdomaincontrolvalidationcontent | Get the validate content for domain control validation. | POST | /api/certificate/order/domain/validate/info |
-| Cancelcertificateapplyingorder | Cancel the certificate applying order. | POST | /api/certificate/order/cancel |
-| Querycertificatesalesorderdetailforwplus | query certificate sale order detail info | POST | /api/certificate/order/detail |
+| Createcertificateapplicationorder | Create the certificate applying order. | POST | /api/certificate/order/create |
+| Listcertificateapplicationorders | Get List of Certificate Applying Orders. | POST | /api/certificate/order/list |
+| Getdcvcontent | Get the validate content for domain control validation. | POST | /api/certificate/order/domain/validate/info |
+| Cancelcertificateapplicationorder | Cancel the certificate applying order. | POST | /api/certificate/order/cancel |
+| Getcertificateapplicationorder | query certificate sale order detail info | POST | /api/certificate/order/detail |
+| Reissuecertificateforwplus | This interface is used for reissuing certificates. You can reissue the certificate by providing the certificate ID, certificate description, certificate algorithm, verification method, whether it is automatically verified, whether it is automatically deployed, common name, and subject alternate name. When the call is successful, the interface will return the sales order ID. | POST | /api/certificate/reissue |
+| Createcertificateapplicationorderforterraform | Creates a certificate application order specifically for the Terraform scenario. | POST | /api/terraform/certificate/order/create |
+| Listcertificateapplicationordersforterraform | Retrieves a list of certificate application orders for the Terraform scenario. | POST | /api/terraform/certificate/order/list |
+| Getcertificateapplicationorderforterraform | This interface is used to query certificate application order details in the Terraform scenario. | POST | /api/terraform/certificate/order/detail |
+| Cancelcertificateapplicationorderforterraform | Cancel the certificate applying order in the Terraform scenario. | POST | /api/terraform/certificate/order/cancel |
+| Batchgetdcvcontent | This interface is used to batch query the validation content required by CA organizations for domain control validation (DCV). Users need to provide a list of purchase record IDs or domain names for the query, and the interface will return the corresponding certificate domain validation information. | POST | /api/certificate/orders/domain/validate/info |

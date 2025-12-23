@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/templatemanage
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/templatemanage
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/templatemanage"
     "log"
 )
@@ -71,3 +65,4 @@ if err != nil {
 | ActionName | description | client_methods | uri |
 | --- | --- | --- | --- |
 | Vmpquerynodeservers | 查询某个（些）节点能够创建某种规格的实例的数量，供您作为实例创建的参考。由于节点资源实时变化，该接口返回值仅供参考。<br>入参province和nodename字段，只要有一项填写，就可以正常查询出结果，两项都不填写将返回错误。 | GET | /vmp/servers_count |
+| Lechquerynodeservers | 查询某个（些）节点能够创建某种规格的实例的数量，供您作为实例创建的参考。由于节点资源实时变化，该接口返回值仅供参考。<br>入参province和nodename字段，只要有一项填写，就可以正常查询出结果，两项都不填写将返回错误。 | GET | /lech/servers_count |

@@ -69,24 +69,38 @@ type QueryCsrServiceResponse struct {
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {"en":"Key algorithm","zh_CN":"密钥算法","exampleValue":"RSA,EC"}
   Algorithm *string `json:"algorithm,omitempty" xml:"algorithm,omitempty" require:"true"`
-  // {"en":"csr content","zh_CN":"CSR内容"}
+  // {"en":"CSR content","zh_CN":"CSR内容"}
   CsrFile *string `json:"csr-file,omitempty" xml:"csr-file,omitempty" require:"true"`
   // {"en":"The main domain name","zh_CN":"主域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
   // {"en":"Backup domain name list","zh_CN":"备份域名列表"}
   Sans []*string `json:"sans,omitempty" xml:"sans,omitempty" require:"true" type:"Repeated"`
-  // {"en":"comment","zh_CN":"备注"}
+  // {"en":"Comment","zh_CN":"备注"}
   Comment *string `json:"comment,omitempty" xml:"comment,omitempty" require:"true"`
   // {"en":"Country or region","zh_CN":"国家地区"}
   Country *string `json:"country,omitempty" xml:"country,omitempty" require:"true"`
-  // {"en":"state","zh_CN":"州"}
+  // {"en":"State","zh_CN":"州"}
   State *string `json:"state,omitempty" xml:"state,omitempty" require:"true"`
-  // {"en":"city","zh_CN":"城市"}
+  // {"en":"City","zh_CN":"城市"}
   City *string `json:"city,omitempty" xml:"city,omitempty" require:"true"`
-  // {"en":"company","zh_CN":"公司"}
+  // {"en":"Company","zh_CN":"公司"}
   Company *string `json:"company,omitempty" xml:"company,omitempty" require:"true"`
-  // {"en":"department","zh_CN":"部门"}
+  // {"en":"Department","zh_CN":"部门"}
   Department *string `json:"department,omitempty" xml:"department,omitempty" require:"true"`
+  // {"en":"Key Length.\nRSA: 2048 | 3072 | 4096 (Default: 2048)\nECC: 256 | 384 | 521 (Default: 256)\nSM2: 256 (Default: 256)","zh_CN":"秘钥强度，RSA：2048\3072\4096， 默认2048 EC：256\384\521， 默认256 SM2：256， 默认256"}
+  KeyLength *int `json:"keyLength,omitempty" xml:"keyLength,omitempty" require:"true"`
+  // {"en":"Street","zh_CN":"街道1"}
+  Street *string `json:"street,omitempty" xml:"street,omitempty" require:"true"`
+  // {"en":"Street1","zh_CN":"街道2"}
+  Street1 *string `json:"street1,omitempty" xml:"street1,omitempty" require:"true"`
+  // {"en":"Postal code","zh_CN":"邮编"}
+  PostalCode *string `json:"postalCode,omitempty" xml:"postalCode,omitempty" require:"true"`
+  // {"en":"Organization contact phone number","zh_CN":"组织联系电话"}
+  Phone *string `json:"phone,omitempty" xml:"phone,omitempty" require:"true"`
+  // {"en":"Modification time, format: yyyy-MM-dd HH:mm:ss","zh_CN":"修改时间，时间格式：yyyy-MM-dd HH:mm:ss"}
+  ModifyTime *string `json:"modifyTime,omitempty" xml:"modifyTime,omitempty" require:"true"`
+  // {"en":"Creation time, format: yyyy-MM-dd HH:mm:ss","zh_CN":"创建时间，时间格式：yyyy-MM-dd HH:mm:ss"}
+  CreateTime *string `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
 }
 
 func (s QueryCsrServiceResponse) String() string {
@@ -172,6 +186,41 @@ func (s *QueryCsrServiceResponse) SetDepartment(v string) *QueryCsrServiceRespon
   return s
 }
 
+func (s *QueryCsrServiceResponse) SetKeyLength(v int) *QueryCsrServiceResponse {
+  s.KeyLength = &v
+  return s
+}
+
+func (s *QueryCsrServiceResponse) SetStreet(v string) *QueryCsrServiceResponse {
+  s.Street = &v
+  return s
+}
+
+func (s *QueryCsrServiceResponse) SetStreet1(v string) *QueryCsrServiceResponse {
+  s.Street1 = &v
+  return s
+}
+
+func (s *QueryCsrServiceResponse) SetPostalCode(v string) *QueryCsrServiceResponse {
+  s.PostalCode = &v
+  return s
+}
+
+func (s *QueryCsrServiceResponse) SetPhone(v string) *QueryCsrServiceResponse {
+  s.Phone = &v
+  return s
+}
+
+func (s *QueryCsrServiceResponse) SetModifyTime(v string) *QueryCsrServiceResponse {
+  s.ModifyTime = &v
+  return s
+}
+
+func (s *QueryCsrServiceResponse) SetCreateTime(v string) *QueryCsrServiceResponse {
+  s.CreateTime = &v
+  return s
+}
+
 type QueryCsrServiceResponseData struct {
 }
 
@@ -202,9 +251,9 @@ type CreateTheCsrRequest struct {
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {"en":"Key algorithm.\nChoose RSA if you will use the RSA algorithm for your certificate. Choose EC if you will be using Elliptic Curve Cryptography instead.","zh_CN":"密钥算法","exampleValue":"RSA,EC"}
   Algorithm *string `json:"algorithm,omitempty" xml:"algorithm,omitempty" require:"true"`
-  // {"en":"The main domain name","zh_CN":"主域名"}
+  // {"en":"Common name","zh_CN":"主域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  // {"en":"If you wish to specify subject alternative names for your certificate.Wildcards are permitted. Specify '*' in front of the domain name. For example, *.domain.com.You must enter like this\nsans': [\n'aaa.com',\n'bbb.com'\n]","zh_CN":"备份域名列表"}
+  // {"en":"Subject Alternative Names (SANs). \nSupports wildcards (e.g., *.example.com). Underscores (_) are not allowed in domain names.","zh_CN":"证书备用名称（SAN）。支持泛域名，以“*”开头（例如：*.example.com）；域名不能包含“_”。"}
   Sans []*string `json:"sans,omitempty" xml:"sans,omitempty" type:"Repeated"`
   // {"en":"Choose the country where your organization is located.","zh_CN":"国家地区"}
   Country *string `json:"country,omitempty" xml:"country,omitempty"`
@@ -218,6 +267,18 @@ type CreateTheCsrRequest struct {
   Department *string `json:"department,omitempty" xml:"department,omitempty"`
   // {"en":"Enter a department name if appropriate.","zh_CN":"备注"}
   Comment *string `json:"comment,omitempty" xml:"comment,omitempty"`
+  // {"en":"Key Length.\nRSA: 2048 | 3072 | 4096 (Default: 2048)\nECC: 256 | 384 | 521 (Default: 256)\nSM2: 256 (Default: 256)","zh_CN":"秘钥强度，RSA：2048\3072\4096， 默认2048 EC：256\384\521， 默认256 SM2：256， 默认256"}
+  KeyLength *int `json:"keyLength,omitempty" xml:"keyLength,omitempty"`
+  // {"en":"street","zh_CN":"街道1"}
+  Street *string `json:"street,omitempty" xml:"street,omitempty"`
+  // {"en":"street1","zh_CN":"街道2"}
+  Street1 *string `json:"street1,omitempty" xml:"street1,omitempty"`
+  // {"en":"postalCode","zh_CN":"邮编"}
+  PostalCode *string `json:"postalCode,omitempty" xml:"postalCode,omitempty"`
+  // {"en":"phone","zh_CN":"组织联系电话"}
+  Phone *string `json:"phone,omitempty" xml:"phone,omitempty"`
+  // {"en":"email","zh_CN":"邮箱"}
+  Email *string `json:"email,omitempty" xml:"email,omitempty"`
 }
 
 func (s CreateTheCsrRequest) String() string {
@@ -275,6 +336,36 @@ func (s *CreateTheCsrRequest) SetDepartment(v string) *CreateTheCsrRequest {
 
 func (s *CreateTheCsrRequest) SetComment(v string) *CreateTheCsrRequest {
   s.Comment = &v
+  return s
+}
+
+func (s *CreateTheCsrRequest) SetKeyLength(v int) *CreateTheCsrRequest {
+  s.KeyLength = &v
+  return s
+}
+
+func (s *CreateTheCsrRequest) SetStreet(v string) *CreateTheCsrRequest {
+  s.Street = &v
+  return s
+}
+
+func (s *CreateTheCsrRequest) SetStreet1(v string) *CreateTheCsrRequest {
+  s.Street1 = &v
+  return s
+}
+
+func (s *CreateTheCsrRequest) SetPostalCode(v string) *CreateTheCsrRequest {
+  s.PostalCode = &v
+  return s
+}
+
+func (s *CreateTheCsrRequest) SetPhone(v string) *CreateTheCsrRequest {
+  s.Phone = &v
+  return s
+}
+
+func (s *CreateTheCsrRequest) SetEmail(v string) *CreateTheCsrRequest {
+  s.Email = &v
   return s
 }
 
@@ -375,7 +466,123 @@ func (s CreateTheCsrResponseHeader) GoString() string {
 
 
 
+type UpdateCsrRequest struct {
+  // {"en":"The name of the CSR.","zh_CN":"CSR名称"}
+  RecordName *string `json:"recordName,omitempty" xml:"recordName,omitempty" require:"true"`
+  // {"en":"Additional comments for the CSR.","zh_CN":"备注"}
+  Comment *string `json:"comment,omitempty" xml:"comment,omitempty"`
+}
+
+func (s UpdateCsrRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateCsrRequest) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateCsrRequest) SetRecordName(v string) *UpdateCsrRequest {
+  s.RecordName = &v
+  return s
+}
+
+func (s *UpdateCsrRequest) SetComment(v string) *UpdateCsrRequest {
+  s.Comment = &v
+  return s
+}
+
+type UpdateCsrRequestHeader struct {
+}
+
+func (s UpdateCsrRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateCsrRequestHeader) GoString() string {
+  return s.String()
+}
+
+type UpdateCsrPaths struct {
+  // {"en":"The csr record id","zh_CN":"CSR记录ID"}
+  CsrId *int `json:"csrId,omitempty" xml:"csrId,omitempty" require:"true"`
+}
+
+func (s UpdateCsrPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateCsrPaths) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateCsrPaths) SetCsrId(v int) *UpdateCsrPaths {
+  s.CsrId = &v
+  return s
+}
+
+type UpdateCsrParameters struct {
+}
+
+func (s UpdateCsrParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateCsrParameters) GoString() string {
+  return s.String()
+}
+
+type UpdateCsrResponse struct {
+  // {"en":"Request result code","zh_CN":"响应代码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Request result information","zh_CN":"响应信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s UpdateCsrResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateCsrResponse) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateCsrResponse) SetCode(v string) *UpdateCsrResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *UpdateCsrResponse) SetMessage(v string) *UpdateCsrResponse {
+  s.Message = &v
+  return s
+}
+
+type UpdateCsrResponseHeader struct {
+}
+
+func (s UpdateCsrResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateCsrResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type QueryCsrListRequest struct {
+  // {"en":"Csr record name","zh_CN":"CSR名称"}
+  RecordName *string `json:"recordName,omitempty" xml:"recordName,omitempty"`
+  // {"en":"Domain name","zh_CN":"CSR授权域名"}
+  Domains []*string `json:"domains,omitempty" xml:"domains,omitempty" type:"Repeated"`
+  // {"en":"Company Name","zh_CN":"组织名称"}
+  Companies []*string `json:"companies,omitempty" xml:"companies,omitempty" type:"Repeated"`
+  // {"en":"Page index","zh_CN":"分页页码"}
+  PageIndex *int `json:"pageIndex,omitempty" xml:"pageIndex,omitempty"`
+  // {"en":"Page size","zh_CN":"每页个数"}
+  PageSize *int `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
+  // {"en":"Sort order, default: desc, range: asc,desc","zh_CN":"排序方式，默认值: desc，取值范围: asc,desc"}
+  SortOrder *string `json:"sortOrder,omitempty" xml:"sortOrder,omitempty"`
 }
 
 func (s QueryCsrListRequest) String() string {
@@ -386,82 +593,45 @@ func (s QueryCsrListRequest) GoString() string {
   return s.String()
 }
 
-type QueryCsrListResponse struct {
-  // {"en":"Request result code", "zh_CN":"请求结果状态码"}
-  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
-  // {"en":"Request result information", "zh_CN":"请求结果信息"}
-  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  // {"en":"Request result data", "zh_CN":"请求结果数据"}
-  CsrRecords []*QueryCsrListResponseCsrRecords `json:"csr-records,omitempty" xml:"csr-records,omitempty" require:"true" type:"Repeated"`
+func (s *QueryCsrListRequest) SetRecordName(v string) *QueryCsrListRequest {
+  s.RecordName = &v
+  return s
 }
 
-func (s QueryCsrListResponse) String() string {
+func (s *QueryCsrListRequest) SetDomains(v []*string) *QueryCsrListRequest {
+  s.Domains = v
+  return s
+}
+
+func (s *QueryCsrListRequest) SetCompanies(v []*string) *QueryCsrListRequest {
+  s.Companies = v
+  return s
+}
+
+func (s *QueryCsrListRequest) SetPageIndex(v int) *QueryCsrListRequest {
+  s.PageIndex = &v
+  return s
+}
+
+func (s *QueryCsrListRequest) SetPageSize(v int) *QueryCsrListRequest {
+  s.PageSize = &v
+  return s
+}
+
+func (s *QueryCsrListRequest) SetSortOrder(v string) *QueryCsrListRequest {
+  s.SortOrder = &v
+  return s
+}
+
+type QueryCsrListRequestHeader struct {
+}
+
+func (s QueryCsrListRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCsrListResponse) GoString() string {
+func (s QueryCsrListRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *QueryCsrListResponse) SetCode(v string) *QueryCsrListResponse {
-  s.Code = &v
-  return s
-}
-
-func (s *QueryCsrListResponse) SetMessage(v string) *QueryCsrListResponse {
-  s.Message = &v
-  return s
-}
-
-func (s *QueryCsrListResponse) SetCsrRecords(v []*QueryCsrListResponseCsrRecords) *QueryCsrListResponse {
-  s.CsrRecords = v
-  return s
-}
-
-type QueryCsrListResponseCsrRecords struct     {
-  // {"en":"CSR ID", "zh_CN":"CSR ID"}
-  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
-  // {"en":"CSR name", "zh_CN":"csr名称"}
-  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
-  // {"en":"Key algorithm", "zh_CN":"密钥算法"}
-  Algorithm *string `json:"algorithm,omitempty" xml:"algorithm,omitempty" require:"true"`
-  // {"en":"The main domain name", "zh_CN":"主域名"}
-  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  // {"en":"comment", "zh_CN":"备注"}
-  Comment *string `json:"comment,omitempty" xml:"comment,omitempty" require:"true"`
-}
-
-func (s QueryCsrListResponseCsrRecords) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryCsrListResponseCsrRecords) GoString() string {
-  return s.String()
-}
-
-func (s *QueryCsrListResponseCsrRecords) SetId(v string) *QueryCsrListResponseCsrRecords {
-  s.Id = &v
-  return s
-}
-
-func (s *QueryCsrListResponseCsrRecords) SetName(v string) *QueryCsrListResponseCsrRecords {
-  s.Name = &v
-  return s
-}
-
-func (s *QueryCsrListResponseCsrRecords) SetAlgorithm(v string) *QueryCsrListResponseCsrRecords {
-  s.Algorithm = &v
-  return s
-}
-
-func (s *QueryCsrListResponseCsrRecords) SetDomain(v string) *QueryCsrListResponseCsrRecords {
-  s.Domain = &v
-  return s
-}
-
-func (s *QueryCsrListResponseCsrRecords) SetComment(v string) *QueryCsrListResponseCsrRecords {
-  s.Comment = &v
-  return s
 }
 
 type QueryCsrListPaths struct {
@@ -486,15 +656,142 @@ func (s QueryCsrListParameters) GoString() string {
   return s.String()
 }
 
-type QueryCsrListRequestHeader struct {
+type QueryCsrListResponse struct {
+  // {"en":"Request result code","zh_CN":"请求结果状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Request result information","zh_CN":"请求结果信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"","zh_CN":""}
+  Data *QueryCsrListResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
-func (s QueryCsrListRequestHeader) String() string {
+func (s QueryCsrListResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryCsrListRequestHeader) GoString() string {
+func (s QueryCsrListResponse) GoString() string {
   return s.String()
+}
+
+func (s *QueryCsrListResponse) SetCode(v string) *QueryCsrListResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QueryCsrListResponse) SetMessage(v string) *QueryCsrListResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *QueryCsrListResponse) SetData(v *QueryCsrListResponseData) *QueryCsrListResponse {
+  s.Data = v
+  return s
+}
+
+type QueryCsrListResponseData struct {
+  // {"en":"Page size","zh_CN":"分页页码"}
+  PageIndex *int `json:"pageIndex,omitempty" xml:"pageIndex,omitempty" require:"true"`
+  // {"en":"Page size","zh_CN":"每页个数"}
+  PageSize *int `json:"pageSize,omitempty" xml:"pageSize,omitempty" require:"true"`
+  // {"en":"Record total","zh_CN":"记录总数"}
+  Total *int `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+  // {"en":"","zh_CN":""}
+  CsrRecords []*QueryCsrListResponseDataCsrRecords `json:"csrRecords,omitempty" xml:"csrRecords,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryCsrListResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCsrListResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryCsrListResponseData) SetPageIndex(v int) *QueryCsrListResponseData {
+  s.PageIndex = &v
+  return s
+}
+
+func (s *QueryCsrListResponseData) SetPageSize(v int) *QueryCsrListResponseData {
+  s.PageSize = &v
+  return s
+}
+
+func (s *QueryCsrListResponseData) SetTotal(v int) *QueryCsrListResponseData {
+  s.Total = &v
+  return s
+}
+
+func (s *QueryCsrListResponseData) SetCsrRecords(v []*QueryCsrListResponseDataCsrRecords) *QueryCsrListResponseData {
+  s.CsrRecords = v
+  return s
+}
+
+type QueryCsrListResponseDataCsrRecords struct     {
+  // {"en":"CSR ID","zh_CN":"CSR ID"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+  // {"en":"CSR name","zh_CN":"csr名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"Key algorithm","zh_CN":"密钥算法"}
+  Algorithm *string `json:"algorithm,omitempty" xml:"algorithm,omitempty" require:"true"`
+  // {"en":"The main domain name","zh_CN":"主域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {"en":"Comment","zh_CN":"备注"}
+  Comment *string `json:"comment,omitempty" xml:"comment,omitempty" require:"true"`
+  // {"en":"Sans","zh_CN":"备用域名"}
+  Sans []*string `json:"sans,omitempty" xml:"sans,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Modify time","zh_CN":"修改时间；时间格式：yyyy-MM-dd HH:mm:ss"}
+  ModifyTime *string `json:"modifyTime,omitempty" xml:"modifyTime,omitempty" require:"true"`
+  // {"en":"Company","zh_CN":"组织名称"}
+  Company *string `json:"company,omitempty" xml:"company,omitempty" require:"true"`
+}
+
+func (s QueryCsrListResponseDataCsrRecords) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCsrListResponseDataCsrRecords) GoString() string {
+  return s.String()
+}
+
+func (s *QueryCsrListResponseDataCsrRecords) SetId(v string) *QueryCsrListResponseDataCsrRecords {
+  s.Id = &v
+  return s
+}
+
+func (s *QueryCsrListResponseDataCsrRecords) SetName(v string) *QueryCsrListResponseDataCsrRecords {
+  s.Name = &v
+  return s
+}
+
+func (s *QueryCsrListResponseDataCsrRecords) SetAlgorithm(v string) *QueryCsrListResponseDataCsrRecords {
+  s.Algorithm = &v
+  return s
+}
+
+func (s *QueryCsrListResponseDataCsrRecords) SetDomain(v string) *QueryCsrListResponseDataCsrRecords {
+  s.Domain = &v
+  return s
+}
+
+func (s *QueryCsrListResponseDataCsrRecords) SetComment(v string) *QueryCsrListResponseDataCsrRecords {
+  s.Comment = &v
+  return s
+}
+
+func (s *QueryCsrListResponseDataCsrRecords) SetSans(v []*string) *QueryCsrListResponseDataCsrRecords {
+  s.Sans = v
+  return s
+}
+
+func (s *QueryCsrListResponseDataCsrRecords) SetModifyTime(v string) *QueryCsrListResponseDataCsrRecords {
+  s.ModifyTime = &v
+  return s
+}
+
+func (s *QueryCsrListResponseDataCsrRecords) SetCompany(v string) *QueryCsrListResponseDataCsrRecords {
+  s.Company = &v
+  return s
 }
 
 type QueryCsrListResponseHeader struct {

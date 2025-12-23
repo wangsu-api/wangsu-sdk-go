@@ -5,6 +5,378 @@ import (
   "github.com/alibabacloud-go/tea/tea"
 )
 
+type QueryDeviceOperationalInfoServiceRequest struct {
+  // {"en":"Device serial number (SN)","zh_CN":"设备序列号"}
+  Sn *string `json:"sn,omitempty" xml:"sn,omitempty"`
+  // {"en":"Query type. Dictionary `srAgentQueryType`. `0` indicates querying for qualifiable status.","zh_CN":"字典：srAgentQueryType  0:查询可质检状态"}
+  QueryType *string `json:"queryType,omitempty" xml:"queryType,omitempty"`
+}
+
+func (s QueryDeviceOperationalInfoServiceRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDeviceOperationalInfoServiceRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDeviceOperationalInfoServiceRequest) SetSn(v string) *QueryDeviceOperationalInfoServiceRequest {
+  s.Sn = &v
+  return s
+}
+
+func (s *QueryDeviceOperationalInfoServiceRequest) SetQueryType(v string) *QueryDeviceOperationalInfoServiceRequest {
+  s.QueryType = &v
+  return s
+}
+
+type QueryDeviceOperationalInfoServiceRequestHeader struct {
+}
+
+func (s QueryDeviceOperationalInfoServiceRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDeviceOperationalInfoServiceRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryDeviceOperationalInfoServicePaths struct {
+}
+
+func (s QueryDeviceOperationalInfoServicePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDeviceOperationalInfoServicePaths) GoString() string {
+  return s.String()
+}
+
+type QueryDeviceOperationalInfoServiceParameters struct {
+}
+
+func (s QueryDeviceOperationalInfoServiceParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDeviceOperationalInfoServiceParameters) GoString() string {
+  return s.String()
+}
+
+type QueryDeviceOperationalInfoServiceResponse struct {
+  // {"en":"Service request ID","zh_CN":"服务请求ID"}
+  SrId *string `json:"srId,omitempty" xml:"srId,omitempty" require:"true"`
+  // {"en":"Device serial number","zh_CN":"设备序列号"}
+  Sn *string `json:"sn,omitempty" xml:"sn,omitempty" require:"true"`
+  // {"en":"Query result code. `000`: Indicates SN conflict (an identical SN exists in the database but is retired) or existing device does not meet quality inspection conditions (device is in use or a fault order for quality inspection has not been applied). `001`: Existing device, awaiting quality inspection. `002`: SN does not exist. `999`: Query content is currently not supported.","zh_CN":"查询结果,返回Code（000/001/002/999）  000：对应两种情况  1、SN冲突，库内存在同名已退用的SN。  2、存量设备但不满足质检条件（设备在用或者故障单未申请质检）  001：存量设备，等待质检  002：SN不存在  999：要查询的内容暂未支持"}
+  Result *string `json:"result,omitempty" xml:"result,omitempty" require:"true"`
+  // {"en":"Reference message","zh_CN":"参考信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s QueryDeviceOperationalInfoServiceResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDeviceOperationalInfoServiceResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDeviceOperationalInfoServiceResponse) SetSrId(v string) *QueryDeviceOperationalInfoServiceResponse {
+  s.SrId = &v
+  return s
+}
+
+func (s *QueryDeviceOperationalInfoServiceResponse) SetSn(v string) *QueryDeviceOperationalInfoServiceResponse {
+  s.Sn = &v
+  return s
+}
+
+func (s *QueryDeviceOperationalInfoServiceResponse) SetResult(v string) *QueryDeviceOperationalInfoServiceResponse {
+  s.Result = &v
+  return s
+}
+
+func (s *QueryDeviceOperationalInfoServiceResponse) SetMessage(v string) *QueryDeviceOperationalInfoServiceResponse {
+  s.Message = &v
+  return s
+}
+
+type QueryDeviceOperationalInfoServiceResponseHeader struct {
+}
+
+func (s QueryDeviceOperationalInfoServiceResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDeviceOperationalInfoServiceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryConversionTaskListRequest struct {
+  // {"en":"Start Time. Format: yyyy-MM-dd HH:mm:ss","zh_CN":"开始时间。格式为yyyy-MM-dd HH:mm:ss"}
+  StartTime *string `json:"startTime,omitempty" xml:"startTime,omitempty"`
+  // {"en":"End Time. Format: yyyy-MM-dd HH:mm:ss","zh_CN":"结束时间。格式为yyyy-MM-dd HH:mm:ss"}
+  EndTime *string `json:"endTime,omitempty" xml:"endTime,omitempty"`
+  // {"en":"Task ID or domain name. Supports fuzzy search","zh_CN":"任务ID或者域名。支持模糊查询"}
+  SearchText *string `json:"searchText,omitempty" xml:"searchText,omitempty"`
+}
+
+func (s QueryConversionTaskListRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryConversionTaskListRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryConversionTaskListRequest) SetStartTime(v string) *QueryConversionTaskListRequest {
+  s.StartTime = &v
+  return s
+}
+
+func (s *QueryConversionTaskListRequest) SetEndTime(v string) *QueryConversionTaskListRequest {
+  s.EndTime = &v
+  return s
+}
+
+func (s *QueryConversionTaskListRequest) SetSearchText(v string) *QueryConversionTaskListRequest {
+  s.SearchText = &v
+  return s
+}
+
+type QueryConversionTaskListRequestHeader struct {
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_serviceType","en":"Security service type. Please enter a specific service type, if you purchase multiple security services.","zh_CN":"安全服务类型。有使用多个不同的安全服务时，需要填写具体的服务类型。"}
+  ServiceType *string `json:"serviceType,omitempty" xml:"serviceType,omitempty"`
+  // {"defaultValue":"GMT+8","en":"Report Data Timezone:\n1. Indicates the timezone for the report data. lt must be relative to GMT andspecified in the format GMT+n where -12<=n <= 12. For example,timezone=GMT-7 and timezone=GMT+8.\n2. If the parameter is unspecified,results will be in the GMT timezone.","zh_CN":"报表数据时区： \n1.请传递GMT时区。示例格式：GMT+N（其中12<=N <= 12），示例：timezone=GMT-7或timezone=GMT+8\n2.若参数未传递，将默认按GMT+8时区查询"}
+  Timezone *string `json:"timezone,omitempty" xml:"timezone,omitempty"`
+}
+
+func (s QueryConversionTaskListRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryConversionTaskListRequestHeader) GoString() string {
+  return s.String()
+}
+
+func (s *QueryConversionTaskListRequestHeader) SetServiceType(v string) *QueryConversionTaskListRequestHeader {
+  s.ServiceType = &v
+  return s
+}
+
+func (s *QueryConversionTaskListRequestHeader) SetTimezone(v string) *QueryConversionTaskListRequestHeader {
+  s.Timezone = &v
+  return s
+}
+
+type QueryConversionTaskListPaths struct {
+}
+
+func (s QueryConversionTaskListPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryConversionTaskListPaths) GoString() string {
+  return s.String()
+}
+
+type QueryConversionTaskListParameters struct {
+}
+
+func (s QueryConversionTaskListParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryConversionTaskListParameters) GoString() string {
+  return s.String()
+}
+
+type QueryConversionTaskListResponse struct {
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_retCodeEnum","en":"Status code.","zh_CN":"状态码。"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Detailed information of the interface response.","zh_CN":"接口响应的详细信息。"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"The specific business data list returned by the interface, containing detailed conversion task information.","zh_CN":"接口返回的具体业务数据列表，包含转换任务的详细信息。"}
+  Data []*QueryConversionTaskListResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryConversionTaskListResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryConversionTaskListResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryConversionTaskListResponse) SetCode(v int) *QueryConversionTaskListResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QueryConversionTaskListResponse) SetMsg(v string) *QueryConversionTaskListResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *QueryConversionTaskListResponse) SetData(v []*QueryConversionTaskListResponseData) *QueryConversionTaskListResponse {
+  s.Data = v
+  return s
+}
+
+type QueryConversionTaskListResponseData struct     {
+  // {"en":"Task creation time.","zh_CN":"任务创建时间。"}
+  CreateTime *string `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
+  // {"en":"Task ID.","zh_CN":"任务ID。"}
+  TaskNo *string `json:"taskNo,omitempty" xml:"taskNo,omitempty" require:"true"`
+  // {"en":"Configuration file type. \nDOMAIN: Akamai Web security configuration \nCLIENT_LIST: Akamai client/network list","zh_CN":"配置文件类型。\nDOMAIN：Akamai Web安全配置\nCLIENT_LIST：Akamai 客户端/网络列表"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {"en":"Task status. \nPROCESSING: Processing \nSUCCESS: Success FAIL: Fail","zh_CN":"任务状态。\nPROCESSING：处理中\nSUCCESS：成功\nFAIL：失败"}
+  Status *string `json:"status,omitempty" xml:"status,omitempty" require:"true"`
+}
+
+func (s QueryConversionTaskListResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryConversionTaskListResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryConversionTaskListResponseData) SetCreateTime(v string) *QueryConversionTaskListResponseData {
+  s.CreateTime = &v
+  return s
+}
+
+func (s *QueryConversionTaskListResponseData) SetTaskNo(v string) *QueryConversionTaskListResponseData {
+  s.TaskNo = &v
+  return s
+}
+
+func (s *QueryConversionTaskListResponseData) SetType(v string) *QueryConversionTaskListResponseData {
+  s.Type = &v
+  return s
+}
+
+func (s *QueryConversionTaskListResponseData) SetStatus(v string) *QueryConversionTaskListResponseData {
+  s.Status = &v
+  return s
+}
+
+type QueryConversionTaskListResponseHeader struct {
+}
+
+func (s QueryConversionTaskListResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryConversionTaskListResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type PublishConvertedDomainRequest struct {
+  // {"en":"List of domains to be published.","zh_CN":"待发布的域名列表。"}
+  DomainList []*string `json:"domainList,omitempty" xml:"domainList,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s PublishConvertedDomainRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PublishConvertedDomainRequest) GoString() string {
+  return s.String()
+}
+
+func (s *PublishConvertedDomainRequest) SetDomainList(v []*string) *PublishConvertedDomainRequest {
+  s.DomainList = v
+  return s
+}
+
+type PublishConvertedDomainRequestHeader struct {
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_serviceType","en":"Security service type. Please enter a specific service type, if you purchase multiple security services.","zh_CN":"安全服务类型。有使用多个不同的安全服务时，需要填写具体的服务类型。"}
+  ServiceType *string `json:"serviceType,omitempty" xml:"serviceType,omitempty"`
+}
+
+func (s PublishConvertedDomainRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PublishConvertedDomainRequestHeader) GoString() string {
+  return s.String()
+}
+
+func (s *PublishConvertedDomainRequestHeader) SetServiceType(v string) *PublishConvertedDomainRequestHeader {
+  s.ServiceType = &v
+  return s
+}
+
+type PublishConvertedDomainPaths struct {
+}
+
+func (s PublishConvertedDomainPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PublishConvertedDomainPaths) GoString() string {
+  return s.String()
+}
+
+type PublishConvertedDomainParameters struct {
+}
+
+func (s PublishConvertedDomainParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PublishConvertedDomainParameters) GoString() string {
+  return s.String()
+}
+
+type PublishConvertedDomainResponse struct {
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_retCodeEnum","en":"Status code.","zh_CN":"状态码。"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Response message.","zh_CN":"响应信息。"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+}
+
+func (s PublishConvertedDomainResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PublishConvertedDomainResponse) GoString() string {
+  return s.String()
+}
+
+func (s *PublishConvertedDomainResponse) SetCode(v int) *PublishConvertedDomainResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *PublishConvertedDomainResponse) SetMsg(v string) *PublishConvertedDomainResponse {
+  s.Msg = &v
+  return s
+}
+
+type PublishConvertedDomainResponseHeader struct {
+}
+
+func (s PublishConvertedDomainResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s PublishConvertedDomainResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type IcpQueryServiceRequest struct {
 }
 
@@ -215,6 +587,227 @@ func (s QueryBandwidthLimitTaskListServiceResponseHeader) String() string {
 }
 
 func (s QueryBandwidthLimitTaskListServiceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryConversionTaskDetailRequest struct {
+  // {"en":"Task ID","zh_CN":"任务ID"}
+  TaskNo *string `json:"taskNo,omitempty" xml:"taskNo,omitempty" require:"true"`
+  // {"en":"Configuration file type. \nDOMAIN: Akamai Web security configuration\nCLIENT_LIST: Akamai client/network list","zh_CN":"配置文件类型。\nDOMAIN：Akamai Web安全配置\nCLIENT_LIST：Akamai 客户端/网络列表"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+}
+
+func (s QueryConversionTaskDetailRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryConversionTaskDetailRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryConversionTaskDetailRequest) SetTaskNo(v string) *QueryConversionTaskDetailRequest {
+  s.TaskNo = &v
+  return s
+}
+
+func (s *QueryConversionTaskDetailRequest) SetType(v string) *QueryConversionTaskDetailRequest {
+  s.Type = &v
+  return s
+}
+
+type QueryConversionTaskDetailRequestHeader struct {
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_serviceType","en":"Security service type. Please enter a specific service type, if you purchase multiple security services.","zh_CN":"安全服务类型。有使用多个不同的安全服务时，需要填写具体的服务类型。"}
+  ServiceType *string `json:"serviceType,omitempty" xml:"serviceType,omitempty"`
+}
+
+func (s QueryConversionTaskDetailRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryConversionTaskDetailRequestHeader) GoString() string {
+  return s.String()
+}
+
+func (s *QueryConversionTaskDetailRequestHeader) SetServiceType(v string) *QueryConversionTaskDetailRequestHeader {
+  s.ServiceType = &v
+  return s
+}
+
+type QueryConversionTaskDetailPaths struct {
+}
+
+func (s QueryConversionTaskDetailPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryConversionTaskDetailPaths) GoString() string {
+  return s.String()
+}
+
+type QueryConversionTaskDetailParameters struct {
+}
+
+func (s QueryConversionTaskDetailParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryConversionTaskDetailParameters) GoString() string {
+  return s.String()
+}
+
+type QueryConversionTaskDetailResponse struct {
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_retCodeEnum","en":"Status code.","zh_CN":"状态码。"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Response message.","zh_CN":"响应信息。"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"Response data.","zh_CN":"响应数据。"}
+  Data *QueryConversionTaskDetailResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryConversionTaskDetailResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryConversionTaskDetailResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryConversionTaskDetailResponse) SetCode(v int) *QueryConversionTaskDetailResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QueryConversionTaskDetailResponse) SetMsg(v string) *QueryConversionTaskDetailResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *QueryConversionTaskDetailResponse) SetData(v *QueryConversionTaskDetailResponseData) *QueryConversionTaskDetailResponse {
+  s.Data = v
+  return s
+}
+
+type QueryConversionTaskDetailResponseData struct {
+  // {"en":"Task details.","zh_CN":"任务详情。"}
+  TaskDetail *QueryConversionTaskDetailResponseDataTaskDetail `json:"taskDetail,omitempty" xml:"taskDetail,omitempty" require:"true" type:"Struct"`
+  // {"en":"File name. Multiple files are separated by semicolons.","zh_CN":"文件名称。多个文件使用;分隔。"}
+  FileName *string `json:"fileName,omitempty" xml:"fileName,omitempty" require:"true"`
+  // {"en":"Task creation time.","zh_CN":"任务创建时间。"}
+  CreateTime *string `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
+  // {"en":"Domain list.","zh_CN":"域名列表。"}
+  DomainList []*string `json:"domainList,omitempty" xml:"domainList,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Task ID.","zh_CN":"任务ID。"}
+  TaskNo *string `json:"taskNo,omitempty" xml:"taskNo,omitempty" require:"true"`
+  // {"en":"Configuration file type. \nDOMAIN: Akamai Web security configuration\nCLIENT_LIST: Akamai client/network list","zh_CN":"配置文件类型。\nDOMAIN：Akamai Web安全配置\nCLIENT_LIST：Akamai 客户端/网络列表"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {"en":"Task status. \nPROCESSING: Processing \nSUCCESS: Success \nFAIL: Fail","zh_CN":"任务状态。\nPROCESSING：处理中\nSUCCESS：成功\nFAIL：失败"}
+  Status *string `json:"status,omitempty" xml:"status,omitempty" require:"true"`
+  // {"en":"Verification environment information.","zh_CN":"验证环境信息。"}
+  DeployObject *string `json:"deployObject,omitempty" xml:"deployObject,omitempty" require:"true"`
+}
+
+func (s QueryConversionTaskDetailResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryConversionTaskDetailResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryConversionTaskDetailResponseData) SetTaskDetail(v *QueryConversionTaskDetailResponseDataTaskDetail) *QueryConversionTaskDetailResponseData {
+  s.TaskDetail = v
+  return s
+}
+
+func (s *QueryConversionTaskDetailResponseData) SetFileName(v string) *QueryConversionTaskDetailResponseData {
+  s.FileName = &v
+  return s
+}
+
+func (s *QueryConversionTaskDetailResponseData) SetCreateTime(v string) *QueryConversionTaskDetailResponseData {
+  s.CreateTime = &v
+  return s
+}
+
+func (s *QueryConversionTaskDetailResponseData) SetDomainList(v []*string) *QueryConversionTaskDetailResponseData {
+  s.DomainList = v
+  return s
+}
+
+func (s *QueryConversionTaskDetailResponseData) SetTaskNo(v string) *QueryConversionTaskDetailResponseData {
+  s.TaskNo = &v
+  return s
+}
+
+func (s *QueryConversionTaskDetailResponseData) SetType(v string) *QueryConversionTaskDetailResponseData {
+  s.Type = &v
+  return s
+}
+
+func (s *QueryConversionTaskDetailResponseData) SetStatus(v string) *QueryConversionTaskDetailResponseData {
+  s.Status = &v
+  return s
+}
+
+func (s *QueryConversionTaskDetailResponseData) SetDeployObject(v string) *QueryConversionTaskDetailResponseData {
+  s.DeployObject = &v
+  return s
+}
+
+type QueryConversionTaskDetailResponseDataTaskDetail struct {
+  // {"en":"Conversion module.","zh_CN":"转换模块。"}
+  CLIENTLIST []*QueryConversionTaskDetailResponseDataTaskDetailCLIENTLIST `json:"CLIENT_LIST,omitempty" xml:"CLIENT_LIST,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryConversionTaskDetailResponseDataTaskDetail) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryConversionTaskDetailResponseDataTaskDetail) GoString() string {
+  return s.String()
+}
+
+func (s *QueryConversionTaskDetailResponseDataTaskDetail) SetCLIENTLIST(v []*QueryConversionTaskDetailResponseDataTaskDetailCLIENTLIST) *QueryConversionTaskDetailResponseDataTaskDetail {
+  s.CLIENTLIST = v
+  return s
+}
+
+type QueryConversionTaskDetailResponseDataTaskDetailCLIENTLIST struct     {
+  // {"en":"Conversion information.","zh_CN":"转换信息。"}
+  ParseMessage *string `json:"parseMessage,omitempty" xml:"parseMessage,omitempty" require:"true"`
+  // {"en":"Conversion result.","zh_CN":"转换结果。"}
+  ParseResult *string `json:"parseResult,omitempty" xml:"parseResult,omitempty" require:"true"`
+}
+
+func (s QueryConversionTaskDetailResponseDataTaskDetailCLIENTLIST) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryConversionTaskDetailResponseDataTaskDetailCLIENTLIST) GoString() string {
+  return s.String()
+}
+
+func (s *QueryConversionTaskDetailResponseDataTaskDetailCLIENTLIST) SetParseMessage(v string) *QueryConversionTaskDetailResponseDataTaskDetailCLIENTLIST {
+  s.ParseMessage = &v
+  return s
+}
+
+func (s *QueryConversionTaskDetailResponseDataTaskDetailCLIENTLIST) SetParseResult(v string) *QueryConversionTaskDetailResponseDataTaskDetailCLIENTLIST {
+  s.ParseResult = &v
+  return s
+}
+
+type QueryConversionTaskDetailResponseHeader struct {
+}
+
+func (s QueryConversionTaskDetailResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryConversionTaskDetailResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -1113,6 +1706,142 @@ func (s BandwidthLimitServiceResponseHeader) GoString() string {
 
 
 
+type CreateWebSecurityConfigurationTaskRequest struct {
+  // {"en":"Domain list. Limit of 100 domains per request.","zh_CN":"域名列表。单次限制100个域名。"}
+  DomainList []*string `json:"domainList,omitempty" xml:"domainList,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Name of the configuration file to be uploaded. Must include file extension.","zh_CN":"需要上传的配置文件的名称。需要包含文件后缀。"}
+  FileName *string `json:"fileName,omitempty" xml:"fileName,omitempty" require:"true"`
+  // {"en":"File content, a single line string obtained by standard base64 encoding of the XML configuration file.","zh_CN":"文件内容，对XML配置文件进行标准base64编码后得到的单行字符串"}
+  FileContentBase64 *string `json:"fileContentBase64,omitempty" xml:"fileContentBase64,omitempty" require:"true"`
+}
+
+func (s CreateWebSecurityConfigurationTaskRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateWebSecurityConfigurationTaskRequest) GoString() string {
+  return s.String()
+}
+
+func (s *CreateWebSecurityConfigurationTaskRequest) SetDomainList(v []*string) *CreateWebSecurityConfigurationTaskRequest {
+  s.DomainList = v
+  return s
+}
+
+func (s *CreateWebSecurityConfigurationTaskRequest) SetFileName(v string) *CreateWebSecurityConfigurationTaskRequest {
+  s.FileName = &v
+  return s
+}
+
+func (s *CreateWebSecurityConfigurationTaskRequest) SetFileContentBase64(v string) *CreateWebSecurityConfigurationTaskRequest {
+  s.FileContentBase64 = &v
+  return s
+}
+
+type CreateWebSecurityConfigurationTaskRequestHeader struct {
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_serviceType","en":"Security service type. Please enter a specific service type, if you purchase multiple security services.","zh_CN":"安全服务类型。有使用多个不同的安全服务时，需要填写具体的服务类型。"}
+  ServiceType *string `json:"serviceType,omitempty" xml:"serviceType,omitempty"`
+}
+
+func (s CreateWebSecurityConfigurationTaskRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateWebSecurityConfigurationTaskRequestHeader) GoString() string {
+  return s.String()
+}
+
+func (s *CreateWebSecurityConfigurationTaskRequestHeader) SetServiceType(v string) *CreateWebSecurityConfigurationTaskRequestHeader {
+  s.ServiceType = &v
+  return s
+}
+
+type CreateWebSecurityConfigurationTaskPaths struct {
+}
+
+func (s CreateWebSecurityConfigurationTaskPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateWebSecurityConfigurationTaskPaths) GoString() string {
+  return s.String()
+}
+
+type CreateWebSecurityConfigurationTaskParameters struct {
+}
+
+func (s CreateWebSecurityConfigurationTaskParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateWebSecurityConfigurationTaskParameters) GoString() string {
+  return s.String()
+}
+
+type CreateWebSecurityConfigurationTaskResponse struct {
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_retCodeEnum","en":"Please refer to the error code.","zh_CN":"请参照错误码。"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Description information.","zh_CN":"描述信息。"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"Specific business data returned by the interface, including the task ID.","zh_CN":"接口返回的具体业务数据，包含任务ID。"}
+  Data *CreateWebSecurityConfigurationTaskResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s CreateWebSecurityConfigurationTaskResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateWebSecurityConfigurationTaskResponse) GoString() string {
+  return s.String()
+}
+
+func (s *CreateWebSecurityConfigurationTaskResponse) SetCode(v int) *CreateWebSecurityConfigurationTaskResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *CreateWebSecurityConfigurationTaskResponse) SetMsg(v string) *CreateWebSecurityConfigurationTaskResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *CreateWebSecurityConfigurationTaskResponse) SetData(v *CreateWebSecurityConfigurationTaskResponseData) *CreateWebSecurityConfigurationTaskResponse {
+  s.Data = v
+  return s
+}
+
+type CreateWebSecurityConfigurationTaskResponseData struct {
+  // {"en":"Task ID.","zh_CN":"任务ID。"}
+  TaskNo *string `json:"taskNo,omitempty" xml:"taskNo,omitempty" require:"true"`
+}
+
+func (s CreateWebSecurityConfigurationTaskResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateWebSecurityConfigurationTaskResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *CreateWebSecurityConfigurationTaskResponseData) SetTaskNo(v string) *CreateWebSecurityConfigurationTaskResponseData {
+  s.TaskNo = &v
+  return s
+}
+
+type CreateWebSecurityConfigurationTaskResponseHeader struct {
+}
+
+func (s CreateWebSecurityConfigurationTaskResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateWebSecurityConfigurationTaskResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type AkamaiIpForbiddenServiceRequest struct {
   // {"en":"accessToken", "zh_CN":"accessToken"}
   AccessToken *string `json:"accessToken,omitempty" xml:"accessToken,omitempty" require:"true"`
@@ -1248,6 +1977,160 @@ func (s AkamaiIpForbiddenServiceResponseHeader) String() string {
 }
 
 func (s AkamaiIpForbiddenServiceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type CreateClientNetworkListTaskRequest struct {
+  // {"en":"List of configuration transformations.","zh_CN":"转换配置列表。"}
+  MoveList []*CreateClientNetworkListTaskRequestMoveList `json:"moveList,omitempty" xml:"moveList,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s CreateClientNetworkListTaskRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateClientNetworkListTaskRequest) GoString() string {
+  return s.String()
+}
+
+func (s *CreateClientNetworkListTaskRequest) SetMoveList(v []*CreateClientNetworkListTaskRequestMoveList) *CreateClientNetworkListTaskRequest {
+  s.MoveList = v
+  return s
+}
+
+type CreateClientNetworkListTaskRequestMoveList struct     {
+  // {"en":"The name of the configuration file to be uploaded. It must include the file extension.","zh_CN":"需要上传的配置文件的名称。需要包含文件后缀。"}
+  FileName *string `json:"fileName,omitempty" xml:"fileName,omitempty" require:"true"`
+  // {"en":"File type.\nCLIENT_LIST_JSON: Client list in JSON file format\nCLIENT_LIST_CSV: Client list in CSV file format\nNETWORK_LIST_JSON: Network list in JSON file format","zh_CN":"文件类型。\nCLIENT_LIST_JSON：客户端列表JSON文件格式\nCLIENT_LIST_CSV：客户端列表CSV文件格式\nNETWORK_LIST_JSON：网络列表JSON文件格式"}
+  MoveType *string `json:"moveType,omitempty" xml:"moveType,omitempty" require:"true"`
+  // {"en":"Base64 encoded file content.","zh_CN":"base64加密的文件内容。"}
+  FileContentBase64 *string `json:"fileContentBase64,omitempty" xml:"fileContentBase64,omitempty" require:"true"`
+}
+
+func (s CreateClientNetworkListTaskRequestMoveList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateClientNetworkListTaskRequestMoveList) GoString() string {
+  return s.String()
+}
+
+func (s *CreateClientNetworkListTaskRequestMoveList) SetFileName(v string) *CreateClientNetworkListTaskRequestMoveList {
+  s.FileName = &v
+  return s
+}
+
+func (s *CreateClientNetworkListTaskRequestMoveList) SetMoveType(v string) *CreateClientNetworkListTaskRequestMoveList {
+  s.MoveType = &v
+  return s
+}
+
+func (s *CreateClientNetworkListTaskRequestMoveList) SetFileContentBase64(v string) *CreateClientNetworkListTaskRequestMoveList {
+  s.FileContentBase64 = &v
+  return s
+}
+
+type CreateClientNetworkListTaskRequestHeader struct {
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_serviceType","en":"Security service type. Please enter a specific service type, if you purchase multiple security services.","zh_CN":"安全服务类型。有使用多个不同的安全服务时，需要填写具体的服务类型。"}
+  ServiceType *string `json:"serviceType,omitempty" xml:"serviceType,omitempty"`
+}
+
+func (s CreateClientNetworkListTaskRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateClientNetworkListTaskRequestHeader) GoString() string {
+  return s.String()
+}
+
+func (s *CreateClientNetworkListTaskRequestHeader) SetServiceType(v string) *CreateClientNetworkListTaskRequestHeader {
+  s.ServiceType = &v
+  return s
+}
+
+type CreateClientNetworkListTaskPaths struct {
+}
+
+func (s CreateClientNetworkListTaskPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateClientNetworkListTaskPaths) GoString() string {
+  return s.String()
+}
+
+type CreateClientNetworkListTaskParameters struct {
+}
+
+func (s CreateClientNetworkListTaskParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateClientNetworkListTaskParameters) GoString() string {
+  return s.String()
+}
+
+type CreateClientNetworkListTaskResponse struct {
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_retCodeEnum","en":"Status code.","zh_CN":"状态码。"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Response message.","zh_CN":"响应信息。"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"Response data.","zh_CN":"响应数据。"}
+  Data *CreateClientNetworkListTaskResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s CreateClientNetworkListTaskResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateClientNetworkListTaskResponse) GoString() string {
+  return s.String()
+}
+
+func (s *CreateClientNetworkListTaskResponse) SetCode(v int) *CreateClientNetworkListTaskResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *CreateClientNetworkListTaskResponse) SetMsg(v string) *CreateClientNetworkListTaskResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *CreateClientNetworkListTaskResponse) SetData(v *CreateClientNetworkListTaskResponseData) *CreateClientNetworkListTaskResponse {
+  s.Data = v
+  return s
+}
+
+type CreateClientNetworkListTaskResponseData struct {
+  // {"en":"Task ID.","zh_CN":"任务ID。"}
+  TaskNo *string `json:"taskNo,omitempty" xml:"taskNo,omitempty" require:"true"`
+}
+
+func (s CreateClientNetworkListTaskResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateClientNetworkListTaskResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *CreateClientNetworkListTaskResponseData) SetTaskNo(v string) *CreateClientNetworkListTaskResponseData {
+  s.TaskNo = &v
+  return s
+}
+
+type CreateClientNetworkListTaskResponseHeader struct {
+}
+
+func (s CreateClientNetworkListTaskResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateClientNetworkListTaskResponseHeader) GoString() string {
   return s.String()
 }
 

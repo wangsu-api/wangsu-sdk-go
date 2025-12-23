@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/customeralarm
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/customeralarm"
     "log"
 )
@@ -72,3 +67,5 @@ For detailed API documentation and available methods, please refer to the [offic
 | --- | --- | --- | --- |
 | Querypopsmaintenancenotification | Used to query the cutting and returning information of edge nodes used by customers. | GET | /vmp/node-event |
 | Queryinstancedowntimenotification | Query instance downtime alarm information and only return virtual machines that have been down for less than half an hour. | GET | /vmp/instance-faults |
+| Lechqueryinstancedowntimenotification | Query instance downtime alarm information and only return virtual machines that have been down for less than half an hour. | GET | /lech/instance-faults |
+| Lechquerymaintenancenotification | Used to query the cutting and returning information of edge nodes used by customers. | GET | /lech/node-event |

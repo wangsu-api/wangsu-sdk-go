@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/instancemanage
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/instancemanage"
     "log"
 )
@@ -96,3 +91,17 @@ For detailed API documentation and available methods, please refer to the [offic
 | Runephoneadbshell | This interface allows you to execute adb shell commands in the ephone instance | POST | /ephone/instances/adbshell |
 | Screenshotephoneinstance | Take a screenshot of the specified cloud phone instance. | POST | /ephone/instances/screenshot |
 | Vmpinstancebandwidth5minquery | Query instance single-node 5-minute granularity bandwidth data.<br> | GET | /vmp/servers/bandwidth_5_minutes |
+| Settrafficlimit | set instance traffic limit | PUT | /vmp/servers/trafficLimit |
+| Lechcreateinstance | Through this interface, you can apply for a cloud host instance of a specified specification in a certain region. After the instance is created, you can obtain the latest status of the instance by using the instance query interface. | POST | /lech/servers |
+| Lechqueryinstance | instance query | GET | /lech/servers |
+| Lechinstancerebuild | Through this api, it is possible to reinstall the system for the already created instances. | POST | /lech/servers/rebuild |
+| Lechremoveinstance | Destroy the specified instance, supporting batch destruction. After destruction, all physical resources used by the instance will be reclaimed, including disks and snapshots. All related data will be lost and permanently irreparable. | POST | /lech/servers/delete |
+| Lechinstancereplaceip | Replace virtual machine IP, this function supports simultaneous replacement of multiple IPs, but note that each virtual machine can only be replaced once | PUT | /lech/servers/ipReplace |
+| Lechsettrafficlimit | set instance traffic limit | PUT | /lech/servers/trafficLimit |
+| Lecheditinstance | Used to modify instance information. Currently, only instance name modification is supported. | PUT | /lech/servers |
+| Lechinstanceoperation | If you find that an instance is not functioning properly (such as being able to ping but unable to log in), you can call the interface to attempt to forcibly restart the machine. Forcing a reboot is equivalent to a traditional server power outage reboot, which may result in the loss of data in the instance operating system that has not been written to the disk. A normal shutdown is a normal shutdown operation. After successfully calling the interface, it is necessary to call the instance query interface again to confirm the latest status of the instance and verify whether the restart was successful. | POST | /lech/servers/*/action |
+| Lechinstanceipv6management | Assign/remove IPv6 addresses for existing cloud host instances, and bare metal instances do not support it.<br>Instructions for assigning IPv6:<br>1) Action=ALLOCATION;<br>2) The instance status must be running or down, and the node where the host is located must support IPv6;<br>3) If the instance already has IPv6, the interface will directly return the existing IPv6 address.<br>Instructions for removing IPv6:<br>1) Action=REMOVE;<br>2) The instance state must be running or down. | POST | /lech/servers/ipv6 |
+| Lechinstancediskscaling | Supports attaching disks to instances online. | POST | /lech/servers/attachDisk |
+| Lechinstancebandwidth5minquery | Query instance single-node 5-minute granularity bandwidth data.<br> | GET | /lech/servers/bandwidth_5_minutes |
+| Lechinstancebandwidthaggregationquery | Virtual Machine Bandwidth Summary Query Interface, where users query the total traffic of virtual machines within a certain period of time, in MB. extTrafficIn: the total inbound traffic of the external network, extTrafficOut: the total outbound traffic of the external network. | GET | /lech/servers/bandwidth_aggregation |
+| Lechconvertfreetypeinstancetochargetype | Convert free type instance to charge type.Transfer the designated free instances to regular status to prevent them from being deleted upon expiration, and support batch transfer to regular status. After being confirmed, the instance will be converted to a billing instance. | POST | /lech/servers/charge |

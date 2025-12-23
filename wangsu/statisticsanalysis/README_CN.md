@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/statisticsanalysis
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/statisticsanalysis
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/statisticsanalysis"
     "log"
 )
@@ -71,3 +65,4 @@ if err != nil {
 | ActionName | description | client_methods | uri |
 | --- | --- | --- | --- |
 | Getrealtimechannelonlinenumber | 通过该接口可实时查询指定的一个或多个频道在线人数。<br>注：该接口适用于 rtmp 拉流，不适用于 hls、httpflv、hds、ts 拉流 | POST | /live/onlinenumber/getRealTimeChannelOnlineNumber |
+| Querycloudvodstoragevolume | 查询云点播存储量 | POST | /vod/statisticalAnalysis/getStorageVolume |

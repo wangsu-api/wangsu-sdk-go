@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/reportstatuscode
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/reportstatuscode"
     "log"
 )
@@ -72,7 +67,7 @@ For detailed API documentation and available methods, please refer to the [offic
 | --- | --- | --- | --- |
 | Querystatuscodedistributionofeachispandprovince | Query the status code distribution for multiple domains across various ISPs and provinces. Users provide a time range and a list of domains, with optional selection of ISP and province. Results display the status code distribution by domain, ISP, and province, supporting queries at 1-minute/5-minute/1-hour granularity. The API supports the `Accept-Language` request header, with `zh-CN` and `en-US` as the only options; `zh-CN` is the default. When `en-US` is selected, provinces and ISPs are shown in code, otherwise in Chinese. | POST | /api/report/status-code/isp-province |
 | Querystatuscodedistribution | This interface is used to count the edge status code data of multiple domain names. Users can select the query time range and domain name list to obtain data. The returned content includes the status code distribution of each domain name and its corresponding number of requests. It helps users analyze the domain name access status and optimize content distribution strategies. | POST | /api/report/status-code |
-| Queryoriginstatuscodedistribution | Statistics of the distribution of origin status codes of multiple domains, and the statistics contain the origin data of all nodes. Around 5-15 minutes of data delay. It's recommended that the call frequency is no higher than 30/5min. | POST | /api/report/status-code/origin |
+| Queryoriginstatuscodedistribution | Statistics of the distribution of origin status codes of multiple domains, and the statistics contain the origin data of all nodes. Around 5-15 minutes of data delay.  | POST | /api/report/status-code/origin |
 | Reportstatuscodenodeoriginservice | Query the back to origin status code distribution for multiple domains at CDN nodes. Users specify a time range and domain list, with an option to return results by domain. It provides status codes and request counts for each time slice, useful for monitoring origin requests from edge nodes. Data latency is 5 to 15 minutes. | POST | /api/report/status-code/node/origin |
 | Reportstatuscoderealtimeoriginservice | This interface is used to query the minute-level edge-only back-to-source status code information of a domain name. The user needs to provide the query time range and domain name list, and the returned content includes the number of requests and timestamps for each status code. It helps users monitor website availability and optimize service quality. | POST | /api/report/status-code/real-time/origin |
 | Queryipv6statusofeachispandprovince | Query IPV6 status codes for multiple domains across provinces and ISPs. Users can specify domains, provinces, ISPs, and IP protocol types, with time granularity of 5 minutes or 1 hour. It returns status codes and request counts for each domain by province and ISP, aiding in monitoring website access conditions by IP protocol.<br>Supports the Accept-Language header with "zh-CN" and "en-US" options; default is "zh-CN". When set to "en-US", provinces and operators use codes for input and output; otherwise, they are in Chinese. | POST | /api/report/statusCode/isp-province/ipv6 |
@@ -89,3 +84,4 @@ For detailed API documentation and available methods, please refer to the [offic
 | Querystatuscodedistributionincountries | Query status code distribution by country granularity (Statistics by CDN IP) | POST | /api/report/status-code/country |
 | Querystatuscodedistributionofeachispandprovincebyuserip | Query of the traffic of multiple domains of each ISP in each province, Province and ISP are based on visitor IP ownership. | POST | /api/report/status-code/isp-province/user-ip |
 | Reportstatuscodeurltopservice | Used to query the ranking of TOP URLs under domain names and status codes. Data latency: 3 hour. | POST | /api/report/domain/statuscode/url/top |
+| Reportstatuscodebycountrybasevisitorip | This API is used to query the distribution of status codes in various countries within a specified time range based on the visitor's IP ownership for multiple domains. Users need to provide a time range and domain for querying, and can choose to group by domain name or country for return. It supports optional return of 1-minute or 5-minute granularity data. The number of status code requests returned in response to the corresponding domain country. | POST | /api/report/status-code/country/user-ip |

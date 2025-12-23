@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/imagemanage
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/imagemanage"
     "log"
 )
@@ -96,3 +91,8 @@ For detailed API documentation and available methods, please refer to the [offic
 | Createoemimage | Create OEM Image | POST | /ephone/oemImages/create |
 | Queryoemimage | Queries the list of oem image. | GET | /ephone/oemImages/list |
 | Manageoemimage | Specify the EdgeCloud phone OEM image to operate, currently only supports the delete operation | POST | /ephone/oemImages/action |
+| Lechdeployimagepreheating | Used to extract private images of preheating customers. This interface is asynchronous, and the image preheating results need to be queried separately. | PUT | /lech/images/preHeating |
+| Lechcreateimage | You can create a virtual machine system disk as a mirror, and then use it to create a new virtual machine. It is recommended to shut down the virtual machine or stop applications or services on the virtual machine during the production of the image to avoid affecting the integrity of the image data. After the image production is completed, restart the virtual machine and its applications. The image created by this type of operation is returned as SNAPSHOT in the image query interface, representing the image created using a virtual machine snapshot. | POST | /lech/images |
+| Lechqueryimagepreheatingstate | Used to query the image preheating status. | GET | /lech/images/preHeatingInfo/* |
+| Lechqueryimage | Query the list of images that users can use. The list of image resources displayed includes user-defined images and public images provided by the edge computing platform. | GET | /lech/images |
+| Lechremoveimage | Delete your custom image.<br>Deleting the image does not affect the already created virtual machine, but it cannot be used to create new virtual machines in the future. <br>You can only delete custom images created by yourself, and other customers' custom images and public images cannot be deleted. | DELETE | /lech/images/* |

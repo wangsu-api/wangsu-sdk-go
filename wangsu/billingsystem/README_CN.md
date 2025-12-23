@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/billingsystem
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/billingsystem
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/billingsystem"
     "log"
 )
@@ -73,3 +67,4 @@ if err != nil {
 | Querybillingdetailsofcomputingservice | 用于查询客户在指定时间内的算力用量明细。 | GET | /vmp/bills/server |
 | Queryusednodes | 用于查询已使用过的节点列表 | GET | /vmp/nodes/used |
 | Vmnodeinfoformaxoutandin | 每个节点取流入/流出的较大值，然后算每个节点信息，包括：95%值、峰值、总流量、峰值平均 | POST | /myview/vmNodeInfoForMaxOutAndIn |
+| Lechquerybillingdetails | 用于查询客户在指定时间内的算力用量明细。 | GET | /lech/bills/server |

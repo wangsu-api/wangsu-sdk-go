@@ -461,83 +461,232 @@ func (s MtrTestResponseHeader) GoString() string {
 
 
 
-type QueryHwTaskStatusRequest struct {
+type GetCdnOriginIpRequestRequest struct {
+  // {"en":"Start Time:\n\n1.The Time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM\n\n2.Cannot exceed the current time\n\n3.Up to the past 183 days of data can be obtained","zh_CN":"开始时间：\n\n1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，如 +00:00 代表 UTC 时间，+08:00 代表东八区，2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒\n\n2.不能大于当前时间\n\n3.最多可获取最近183天的数据"}
+  DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty" require:"true"`
+  // {"en":"End time:\n\n1. The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM\n\n2. The end time is greater than the start time\n\n3. If the end time is greater than the current time, the current time is taken\n\n4. Maximum query interval allowed: 1 day, that is, the difference between dateFrom and dateTo can not exceed 1 day","zh_CN":"结束时间：  \n1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒  \n2.结束时间需大于开始时间   \n3. 结束时间需大于开始时间，结束时间如果大于当前时间,取当前时间。\n4.允许查询最大间隔：1天，即dateFrom和dateTo相差不能超过1天"}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty" require:"true"`
+  // {"en":"Rounds up or down a timestamp by a given time period. Only valid when the granularity is less than 1d(not including 1day)\n1. up-rounds up, e.g.: granularity=5m, 00:00:00-00:04:49 will be displayed as 00:05:00\n2. down-rounds down, e.g.: granularity=5m, 00:00:00-00:04:49 will be displayed as 00:00:00\n3. If not specified, the result will be rounded up (up).","zh_CN":"根据指定的时间周期对时间戳进行向上或向下取整。仅当粒度小于1天（不包含1天）时有效。 1. up – 向上取整。例如：granularity=5m，00:00:00-00:04:49 将会显示为 00:05:00 2. down-向下取整，例如：granularity=5m时，00:00:00-00:04:49将显示为00:00:00 3. 如未传值，结果将进行向上取整(up)"}
+  TimeRounding *string `json:"timeRounding,omitempty" xml:"timeRounding,omitempty"`
+  // {"en":"Domain Name: The maximum number of domain names that can be submitted is 20 by default.","zh_CN":"域名：可传递域名数量上限默认为20个"}
+  Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Origin IP: The maximum number of origin IPs that can be submitted is 50 by default.","zh_CN":"源站IP：可传递源站IP数量上限默认为50个"}
+  OriginIp []*string `json:"originIp,omitempty" xml:"originIp,omitempty" type:"Repeated"`
 }
 
-func (s QueryHwTaskStatusRequest) String() string {
+func (s GetCdnOriginIpRequestRequest) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryHwTaskStatusRequest) GoString() string {
+func (s GetCdnOriginIpRequestRequest) GoString() string {
   return s.String()
 }
 
-type QueryHwTaskStatusRequestHeader struct {
-}
-
-func (s QueryHwTaskStatusRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwTaskStatusRequestHeader) GoString() string {
-  return s.String()
-}
-
-type QueryHwTaskStatusPaths struct {
-}
-
-func (s QueryHwTaskStatusPaths) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwTaskStatusPaths) GoString() string {
-  return s.String()
-}
-
-type QueryHwTaskStatusParameters struct {
-  // {"en":"task id","zh_CN":"任务ID"}
-  TaskId *string `json:"task_id,omitempty" xml:"task_id,omitempty" require:"true"`
-}
-
-func (s QueryHwTaskStatusParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwTaskStatusParameters) GoString() string {
-  return s.String()
-}
-
-func (s *QueryHwTaskStatusParameters) SetTaskId(v string) *QueryHwTaskStatusParameters {
-  s.TaskId = &v
+func (s *GetCdnOriginIpRequestRequest) SetDateFrom(v string) *GetCdnOriginIpRequestRequest {
+  s.DateFrom = &v
   return s
 }
 
-type QueryHwTaskStatusResponse struct {
-  // {"en":"state.waiting,processing,success,failure","zh_CN":"任务执行状态。waiting：等待处理。 processing：正在执行。 success：成功。 failure：失败"}
-  TaskState *string `json:"task_state,omitempty" xml:"task_state,omitempty" require:"true"`
-}
-
-func (s QueryHwTaskStatusResponse) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwTaskStatusResponse) GoString() string {
-  return s.String()
-}
-
-func (s *QueryHwTaskStatusResponse) SetTaskState(v string) *QueryHwTaskStatusResponse {
-  s.TaskState = &v
+func (s *GetCdnOriginIpRequestRequest) SetDateTo(v string) *GetCdnOriginIpRequestRequest {
+  s.DateTo = &v
   return s
 }
 
-type QueryHwTaskStatusResponseHeader struct {
+func (s *GetCdnOriginIpRequestRequest) SetTimeRounding(v string) *GetCdnOriginIpRequestRequest {
+  s.TimeRounding = &v
+  return s
 }
 
-func (s QueryHwTaskStatusResponseHeader) String() string {
+func (s *GetCdnOriginIpRequestRequest) SetDomain(v []*string) *GetCdnOriginIpRequestRequest {
+  s.Domain = v
+  return s
+}
+
+func (s *GetCdnOriginIpRequestRequest) SetOriginIp(v []*string) *GetCdnOriginIpRequestRequest {
+  s.OriginIp = v
+  return s
+}
+
+type GetCdnOriginIpRequestRequestHeader struct {
+}
+
+func (s GetCdnOriginIpRequestRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryHwTaskStatusResponseHeader) GoString() string {
+func (s GetCdnOriginIpRequestRequestHeader) GoString() string {
+  return s.String()
+}
+
+type GetCdnOriginIpRequestPaths struct {
+}
+
+func (s GetCdnOriginIpRequestPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetCdnOriginIpRequestPaths) GoString() string {
+  return s.String()
+}
+
+type GetCdnOriginIpRequestParameters struct {
+}
+
+func (s GetCdnOriginIpRequestParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetCdnOriginIpRequestParameters) GoString() string {
+  return s.String()
+}
+
+type GetCdnOriginIpRequestResponse struct {
+  // {"en":"Status Code","zh_CN":"状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Message","zh_CN":"信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Result","zh_CN":"结果"}
+  Data []*GetCdnOriginIpRequestResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s GetCdnOriginIpRequestResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetCdnOriginIpRequestResponse) GoString() string {
+  return s.String()
+}
+
+func (s *GetCdnOriginIpRequestResponse) SetCode(v string) *GetCdnOriginIpRequestResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *GetCdnOriginIpRequestResponse) SetMessage(v string) *GetCdnOriginIpRequestResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *GetCdnOriginIpRequestResponse) SetData(v []*GetCdnOriginIpRequestResponseData) *GetCdnOriginIpRequestResponse {
+  s.Data = v
+  return s
+}
+
+type GetCdnOriginIpRequestResponseData struct     {
+  // {"en":"Domain","zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {"en":"Results per minute","zh_CN":"每一分钟的结果数据"}
+  PerMinuteStats []*GetCdnOriginIpRequestResponseDataPerMinuteStats `json:"perMinuteStats,omitempty" xml:"perMinuteStats,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s GetCdnOriginIpRequestResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetCdnOriginIpRequestResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *GetCdnOriginIpRequestResponseData) SetDomain(v string) *GetCdnOriginIpRequestResponseData {
+  s.Domain = &v
+  return s
+}
+
+func (s *GetCdnOriginIpRequestResponseData) SetPerMinuteStats(v []*GetCdnOriginIpRequestResponseDataPerMinuteStats) *GetCdnOriginIpRequestResponseData {
+  s.PerMinuteStats = v
+  return s
+}
+
+type GetCdnOriginIpRequestResponseDataPerMinuteStats struct     {
+  // {"en":"Time","zh_CN":"时间"}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {"en":"List of origin IPs","zh_CN":"源站ip列表"}
+  OriginIp []*GetCdnOriginIpRequestResponseDataPerMinuteStatsOriginIp `json:"originIp,omitempty" xml:"originIp,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s GetCdnOriginIpRequestResponseDataPerMinuteStats) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetCdnOriginIpRequestResponseDataPerMinuteStats) GoString() string {
+  return s.String()
+}
+
+func (s *GetCdnOriginIpRequestResponseDataPerMinuteStats) SetTimestamp(v string) *GetCdnOriginIpRequestResponseDataPerMinuteStats {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *GetCdnOriginIpRequestResponseDataPerMinuteStats) SetOriginIp(v []*GetCdnOriginIpRequestResponseDataPerMinuteStatsOriginIp) *GetCdnOriginIpRequestResponseDataPerMinuteStats {
+  s.OriginIp = v
+  return s
+}
+
+type GetCdnOriginIpRequestResponseDataPerMinuteStatsOriginIp struct     {
+  // {"en":"Origin IP","zh_CN":"源站ip"}
+  Ip *string `json:"ip,omitempty" xml:"ip,omitempty" require:"true"`
+  // {"en":"Total number of requests under this IP","zh_CN":"该ip下的总请求数"}
+  TotalRequests *int `json:"totalRequests,omitempty" xml:"totalRequests,omitempty" require:"true"`
+  // {"en":"List of status codes","zh_CN":"状态码列表"}
+  StatusCodes []*GetCdnOriginIpRequestResponseDataPerMinuteStatsOriginIpStatusCodes `json:"statusCodes,omitempty" xml:"statusCodes,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s GetCdnOriginIpRequestResponseDataPerMinuteStatsOriginIp) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetCdnOriginIpRequestResponseDataPerMinuteStatsOriginIp) GoString() string {
+  return s.String()
+}
+
+func (s *GetCdnOriginIpRequestResponseDataPerMinuteStatsOriginIp) SetIp(v string) *GetCdnOriginIpRequestResponseDataPerMinuteStatsOriginIp {
+  s.Ip = &v
+  return s
+}
+
+func (s *GetCdnOriginIpRequestResponseDataPerMinuteStatsOriginIp) SetTotalRequests(v int) *GetCdnOriginIpRequestResponseDataPerMinuteStatsOriginIp {
+  s.TotalRequests = &v
+  return s
+}
+
+func (s *GetCdnOriginIpRequestResponseDataPerMinuteStatsOriginIp) SetStatusCodes(v []*GetCdnOriginIpRequestResponseDataPerMinuteStatsOriginIpStatusCodes) *GetCdnOriginIpRequestResponseDataPerMinuteStatsOriginIp {
+  s.StatusCodes = v
+  return s
+}
+
+type GetCdnOriginIpRequestResponseDataPerMinuteStatsOriginIpStatusCodes struct     {
+  // {"en":"Status code, summary status code: provide summarized status code, 0, 1XX-6XX, others categorized as others","zh_CN":"状态码，汇总状态码:提供汇总后的状态码，0,1XX-6XX,其他归类到others"}
+  StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
+  // {"en":"Number of requests","zh_CN":"请求数"}
+  Requests *int `json:"requests,omitempty" xml:"requests,omitempty" require:"true"`
+}
+
+func (s GetCdnOriginIpRequestResponseDataPerMinuteStatsOriginIpStatusCodes) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetCdnOriginIpRequestResponseDataPerMinuteStatsOriginIpStatusCodes) GoString() string {
+  return s.String()
+}
+
+func (s *GetCdnOriginIpRequestResponseDataPerMinuteStatsOriginIpStatusCodes) SetStatusCode(v string) *GetCdnOriginIpRequestResponseDataPerMinuteStatsOriginIpStatusCodes {
+  s.StatusCode = &v
+  return s
+}
+
+func (s *GetCdnOriginIpRequestResponseDataPerMinuteStatsOriginIpStatusCodes) SetRequests(v int) *GetCdnOriginIpRequestResponseDataPerMinuteStatsOriginIpStatusCodes {
+  s.Requests = &v
+  return s
+}
+
+type GetCdnOriginIpRequestResponseHeader struct {
+}
+
+func (s GetCdnOriginIpRequestResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetCdnOriginIpRequestResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -844,12 +993,73 @@ func (s GetLiveStreamPushingStatusRequest) GoString() string {
   return s.String()
 }
 
+type GetLiveStreamPushingStatusRequestHeader struct {
+}
+
+func (s GetLiveStreamPushingStatusRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetLiveStreamPushingStatusRequestHeader) GoString() string {
+  return s.String()
+}
+
+type GetLiveStreamPushingStatusPaths struct {
+}
+
+func (s GetLiveStreamPushingStatusPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetLiveStreamPushingStatusPaths) GoString() string {
+  return s.String()
+}
+
+type GetLiveStreamPushingStatusParameters struct {
+  // {"en":"Push domain(multiple domains supported, separated by commas)(    All parameters are passed via HTTP GET requests.)","zh_CN":"推流域名（所有参数以HTTP GET请求方式传参)"}
+  U *string `json:"u,omitempty" xml:"u,omitempty" require:"true"`
+  // {"en":"Time, eg: 20160527152300, if not filled in, the current time -5 minutes","zh_CN":"时间，eg：20160527152300，不填时为当前时间-5分钟"}
+  T *int `json:"t,omitempty" xml:"t,omitempty"`
+  // {"en":"Push channel URL (multiple push channel URLs are supported, separated by commas)","zh_CN":"推流流名(支持多个推流流名，以逗号分隔)"}
+  Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
+  // {"en":"Query interval. The value can be 10 or 60. The default value is 60\nWhen g is 10, query the data of the nearest whole 10 seconds to time t\nWhen g is 60, query the data of the nearest whole minute to time t","zh_CN":"查询间隔，可选值10、60，默认60\n当g为10时，查询距离时间t最近的整10秒点数据\n当g为60时，查询距离时间t最近的整分钟点数据"}
+  G *string `json:"g,omitempty" xml:"g,omitempty"`
+}
+
+func (s GetLiveStreamPushingStatusParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetLiveStreamPushingStatusParameters) GoString() string {
+  return s.String()
+}
+
+func (s *GetLiveStreamPushingStatusParameters) SetU(v string) *GetLiveStreamPushingStatusParameters {
+  s.U = &v
+  return s
+}
+
+func (s *GetLiveStreamPushingStatusParameters) SetT(v int) *GetLiveStreamPushingStatusParameters {
+  s.T = &v
+  return s
+}
+
+func (s *GetLiveStreamPushingStatusParameters) SetChannel(v string) *GetLiveStreamPushingStatusParameters {
+  s.Channel = &v
+  return s
+}
+
+func (s *GetLiveStreamPushingStatusParameters) SetG(v string) *GetLiveStreamPushingStatusParameters {
+  s.G = &v
+  return s
+}
+
 type GetLiveStreamPushingStatusResponse struct {
-  // {'en':'The time of the data returned', 'zh_CN':'返回的数据的时间'}
+  // {"en":"The time of the data returned","zh_CN":"返回的数据的时间"}
   Rettime *string `json:"rettime,omitempty" xml:"rettime,omitempty" require:"true"`
-  // {'en':'Number of data items. 0 is returned if there is no data', 'zh_CN':'数据条数，无数据返回0'}
+  // {"en":"Number of data items. 0 is returned if there is no data","zh_CN":"数据条数，无数据返回0"}
   Retcode *int64 `json:"retcode,omitempty" xml:"retcode,omitempty" require:"true"`
-  // {'en':'', 'zh_CN':'推流信息数据集合'}
+  // {"en":"","zh_CN":"推流信息数据集合"}
   DataValue []*GetLiveStreamPushingStatusResponseDataValue `json:"dataValue,omitempty" xml:"dataValue,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -877,21 +1087,21 @@ func (s *GetLiveStreamPushingStatusResponse) SetDataValue(v []*GetLiveStreamPush
 }
 
 type GetLiveStreamPushingStatusResponseDataValue struct     {
-  // {'en':'Push stream CDN node, that is, the IP address of edge node of the received data source, separated by multiple commas', 'zh_CN':'推流cdn节点，即收到数据源的edge节点IP地址，多个逗号分隔'}
+  // {"en":"Push stream CDN node, that is, the IP address of edge node of the received data source, separated by multiple commas","zh_CN":"推流cdn节点，即收到数据源的edge节点IP地址，多个逗号分隔"}
   Deployaddress *string `json:"deployaddress,omitempty" xml:"deployaddress,omitempty" require:"true"`
-  // {'en':'Push user IP (data source) address, separated by multiple commas', 'zh_CN':'推流用户ip（数据源）地址，多个逗号分隔'}
+  // {"en":"Push user IP (data source) address, separated by multiple commas","zh_CN":"推流用户ip（数据源）地址，多个逗号分隔"}
   Inaddress *string `json:"inaddress,omitempty" xml:"inaddress,omitempty" require:"true"`
-  // {'en':'The channel of anchor', 'zh_CN':'主播流名'}
+  // {"en":"The channel of anchor","zh_CN":"主播流名"}
   Streamname *string `json:"streamname,omitempty" xml:"streamname,omitempty" require:"true"`
-  // {'en':'Anchor Current encoding frame rate.Unit: fps', 'zh_CN':'主播当前编码帧率，单位:fps'}
+  // {"en":"Anchor Current encoding frame rate","zh_CN":"主播当前编码帧率"}
   Fps *int64 `json:"fps,omitempty" xml:"fps,omitempty" require:"true"`
-  // {'en':'Current frame loss rate of anchor.Unit: fps', 'zh_CN':'主播当前丢帧率，单位:fps'}
-  Lfr *float64 `json:"lfr,omitempty" xml:"lfr,omitempty" require:"true"`
-  // {'en':'Anchor Current bit rate.Unit: bps', 'zh_CN':'主播当前码率，单位:bps'}
+  // {"en":"Current frame loss rate of anchor","zh_CN":"主播当前丢帧率"}
+  Lfr *GetLiveStreamPushingStatusResponseDataValueLfr `json:"lfr,omitempty" xml:"lfr,omitempty" require:"true" type:"Struct"`
+  // {"en":"Anchor Current bit rate","zh_CN":"主播当前码率"}
   Inbandwidth *int64 `json:"inbandwidth,omitempty" xml:"inbandwidth,omitempty" require:"true"`
-  // {'en':'Video timestamps are separated by multiple commas.Unit: ms', 'zh_CN':'视频时间戳 多个逗号分隔，单位:ms'}
+  // {"en":"Video timestamps are separated by multiple commas","zh_CN":"视频时间戳 多个逗号分隔"}
   Videotmstmp *string `json:"videotmstmp,omitempty" xml:"videotmstmp,omitempty" require:"true"`
-  // {'en':'Audio timestamp, separated by multiple commas.Unit: ms', 'zh_CN':'音频时间戳，多个逗号分隔，单位:ms'}
+  // {"en":"Audio timestamp, separated by multiple commas","zh_CN":"音频时间戳，多个逗号分隔"}
   Audiotmstmp *string `json:"audiotmstmp,omitempty" xml:"audiotmstmp,omitempty" require:"true"`
 }
 
@@ -923,8 +1133,8 @@ func (s *GetLiveStreamPushingStatusResponseDataValue) SetFps(v int64) *GetLiveSt
   return s
 }
 
-func (s *GetLiveStreamPushingStatusResponseDataValue) SetLfr(v float64) *GetLiveStreamPushingStatusResponseDataValue {
-  s.Lfr = &v
+func (s *GetLiveStreamPushingStatusResponseDataValue) SetLfr(v *GetLiveStreamPushingStatusResponseDataValueLfr) *GetLiveStreamPushingStatusResponseDataValue {
+  s.Lfr = v
   return s
 }
 
@@ -943,68 +1153,14 @@ func (s *GetLiveStreamPushingStatusResponseDataValue) SetAudiotmstmp(v string) *
   return s
 }
 
-type GetLiveStreamPushingStatusPaths struct {
+type GetLiveStreamPushingStatusResponseDataValueLfr struct {
 }
 
-func (s GetLiveStreamPushingStatusPaths) String() string {
+func (s GetLiveStreamPushingStatusResponseDataValueLfr) String() string {
   return tea.Prettify(s)
 }
 
-func (s GetLiveStreamPushingStatusPaths) GoString() string {
-  return s.String()
-}
-
-type GetLiveStreamPushingStatusParameters struct {
-  // {'en':'Push domain(multiple domains supported, separated by commas)', 'zh_CN':'推流域名（支持多个域名，以逗号分隔）'}
-  U *string `json:"u,omitempty" xml:"u,omitempty" require:"true"`
-  // {'en':'Time, eg: 20160527152300, if not filled in, the current time -3 minutes', 'zh_CN':'时间，eg：20160527152300，不填时为当前时间-3分钟'}
-  T *int64 `json:"t,omitempty" xml:"t,omitempty"`
-  // {'en':'Push channel URL (multiple push channel URLs are supported, separated by commas)', 'zh_CN':'推流流名(支持多个推流流名，以逗号分隔)'}
-  Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
-  // {'en':'Query interval. The value can be 10 or 60. The default value is 60
-  // When g is 10, query the data of the nearest whole 10 seconds to time t
-  // When g is 60, query the data of the nearest whole minute to time t', 'zh_CN':'查询间隔，可选值10、60，默认60
-  // 当g为10时，查询距离时间t最近的整10秒点数据
-  // 当g为60时，查询距离时间t最近的整分钟点数据'}
-  G *string `json:"g,omitempty" xml:"g,omitempty"`
-}
-
-func (s GetLiveStreamPushingStatusParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s GetLiveStreamPushingStatusParameters) GoString() string {
-  return s.String()
-}
-
-func (s *GetLiveStreamPushingStatusParameters) SetU(v string) *GetLiveStreamPushingStatusParameters {
-  s.U = &v
-  return s
-}
-
-func (s *GetLiveStreamPushingStatusParameters) SetT(v int64) *GetLiveStreamPushingStatusParameters {
-  s.T = &v
-  return s
-}
-
-func (s *GetLiveStreamPushingStatusParameters) SetChannel(v string) *GetLiveStreamPushingStatusParameters {
-  s.Channel = &v
-  return s
-}
-
-func (s *GetLiveStreamPushingStatusParameters) SetG(v string) *GetLiveStreamPushingStatusParameters {
-  s.G = &v
-  return s
-}
-
-type GetLiveStreamPushingStatusRequestHeader struct {
-}
-
-func (s GetLiveStreamPushingStatusRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s GetLiveStreamPushingStatusRequestHeader) GoString() string {
+func (s GetLiveStreamPushingStatusResponseDataValueLfr) GoString() string {
   return s.String()
 }
 
@@ -2368,142 +2524,6 @@ func (s QueryDailyLiveTranscodingDurationResponseHeader) GoString() string {
 
 
 
-type QueryHwDomainCacheRuleForWplusRequest struct {
-}
-
-func (s QueryHwDomainCacheRuleForWplusRequest) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainCacheRuleForWplusRequest) GoString() string {
-  return s.String()
-}
-
-type QueryHwDomainCacheRuleForWplusRequestHeader struct {
-}
-
-func (s QueryHwDomainCacheRuleForWplusRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainCacheRuleForWplusRequestHeader) GoString() string {
-  return s.String()
-}
-
-type QueryHwDomainCacheRuleForWplusPaths struct {
-  // {"en":"domain name","zh_CN":"域名"}
-  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-}
-
-func (s QueryHwDomainCacheRuleForWplusPaths) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainCacheRuleForWplusPaths) GoString() string {
-  return s.String()
-}
-
-func (s *QueryHwDomainCacheRuleForWplusPaths) SetDomain(v string) *QueryHwDomainCacheRuleForWplusPaths {
-  s.Domain = &v
-  return s
-}
-
-type QueryHwDomainCacheRuleForWplusParameters struct {
-}
-
-func (s QueryHwDomainCacheRuleForWplusParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainCacheRuleForWplusParameters) GoString() string {
-  return s.String()
-}
-
-type QueryHwDomainCacheRuleForWplusResponse struct {
-  // {"en":"cache rule list","zh_CN":"缓存过期时间配置"}
-  CacheRuleList []*QueryHwDomainCacheRuleForWplusResponseCacheRuleList `json:"cache_rule_list,omitempty" xml:"cache_rule_list,omitempty" require:"true" type:"Repeated"`
-}
-
-func (s QueryHwDomainCacheRuleForWplusResponse) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainCacheRuleForWplusResponse) GoString() string {
-  return s.String()
-}
-
-func (s *QueryHwDomainCacheRuleForWplusResponse) SetCacheRuleList(v []*QueryHwDomainCacheRuleForWplusResponseCacheRuleList) *QueryHwDomainCacheRuleForWplusResponse {
-  s.CacheRuleList = v
-  return s
-}
-
-type QueryHwDomainCacheRuleForWplusResponseCacheRuleList struct     {
-  // {"en":"match pattern","zh_CN":"匹配模式"}
-  MatchPattern []*string `json:"match_pattern,omitempty" xml:"match_pattern,omitempty" require:"true" type:"Repeated"`
-  // {"en":"cache time mode","zh_CN":"ttl生效模式"}
-  TtlMode *string `json:"ttl_mode,omitempty" xml:"ttl_mode,omitempty" require:"true"`
-  // {"en":"content index type","zh_CN":"内容index计算方式"}
-  ContentIndexType *string `json:"content_index_type,omitempty" xml:"content_index_type,omitempty" require:"true"`
-  // {"en":"match type","zh_CN":"匹配类型"}
-  MatchType *string `json:"match_type,omitempty" xml:"match_type,omitempty" require:"true"`
-  // {"en":"priority","zh_CN":"缓存规则优先级"}
-  Priority *int `json:"priority,omitempty" xml:"priority,omitempty" require:"true"`
-  // {"en":"cache time","zh_CN":"缓存时间"}
-  Ttl *int `json:"ttl,omitempty" xml:"ttl,omitempty" require:"true"`
-}
-
-func (s QueryHwDomainCacheRuleForWplusResponseCacheRuleList) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainCacheRuleForWplusResponseCacheRuleList) GoString() string {
-  return s.String()
-}
-
-func (s *QueryHwDomainCacheRuleForWplusResponseCacheRuleList) SetMatchPattern(v []*string) *QueryHwDomainCacheRuleForWplusResponseCacheRuleList {
-  s.MatchPattern = v
-  return s
-}
-
-func (s *QueryHwDomainCacheRuleForWplusResponseCacheRuleList) SetTtlMode(v string) *QueryHwDomainCacheRuleForWplusResponseCacheRuleList {
-  s.TtlMode = &v
-  return s
-}
-
-func (s *QueryHwDomainCacheRuleForWplusResponseCacheRuleList) SetContentIndexType(v string) *QueryHwDomainCacheRuleForWplusResponseCacheRuleList {
-  s.ContentIndexType = &v
-  return s
-}
-
-func (s *QueryHwDomainCacheRuleForWplusResponseCacheRuleList) SetMatchType(v string) *QueryHwDomainCacheRuleForWplusResponseCacheRuleList {
-  s.MatchType = &v
-  return s
-}
-
-func (s *QueryHwDomainCacheRuleForWplusResponseCacheRuleList) SetPriority(v int) *QueryHwDomainCacheRuleForWplusResponseCacheRuleList {
-  s.Priority = &v
-  return s
-}
-
-func (s *QueryHwDomainCacheRuleForWplusResponseCacheRuleList) SetTtl(v int) *QueryHwDomainCacheRuleForWplusResponseCacheRuleList {
-  s.Ttl = &v
-  return s
-}
-
-type QueryHwDomainCacheRuleForWplusResponseHeader struct {
-}
-
-func (s QueryHwDomainCacheRuleForWplusResponseHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainCacheRuleForWplusResponseHeader) GoString() string {
-  return s.String()
-}
-
-
-
-
 type ChannelValueRequest struct {
   // {"en":"cust_en_name of sub-client.
   // When a merged-account wants to  view the information of the subclient,the cust_en_name is required.", "zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名"}
@@ -2775,27 +2795,11 @@ func (s ChannelValueResponseHeader) GoString() string {
 
 
 type ReportDomainStreamDurationServiceRequest struct {
-  // {"en":"Start time: 
-  // 1.Format is yyyyMMdd; 
-  // 2.Must be smaller than the current system time; 
-  // 3.Default value of current time is used if the field is not specified; 
-  // 4.You can only query data for the last 6 months.
-  // ", "zh_CN":"开始时间:
-  // 1.时间格式为yyyy-MM-dd,例如,2021-08-10
-  // 2.不能大于当前时间
-  // 3.只能查询最近半年内数据。"}
+  // {"en":"Start time:\n1.Format is yyyyMMdd;\n2.Must be smaller than the current system time;\n3.Default value of current time is used if the field is not specified;\n4.You can only query data for the last 6 months.","zh_CN":"开始时间:\n1.时间格式为yyyy-MM-dd,例如,2021-08-10\n2.不能大于当前时间\n3.只能查询最近半年内数据。"}
   DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
-  // {"en":"End Time:
-  // 1. The time format is yyyy-MM-dd
-  // 2. The end time must be greater than the start time. If the end time is greater than the current time, take the current time
-  // 3. Both dateFrom and dateTo have not been passed, and the past 7 days are queried by default; if only one has not been passed, an exception will be thrown
-  // 4. The maximum time interval allowed for query: 31 days, that is, the difference between dateFrom and dateTo cannot exceed 31 days", "zh_CN":"结束时间:
-  // 1.时间格式为yyyy-MM-dd
-  // 2.结束时间需大于开始时间,结束时间如果大于当前时间,取当前时间
-  // 3.dateFrom,dateTo二者都未传,默认查询过去的7天;如仅有一个未传,抛异常
-  // 4.允许查询最大时间间隔:31天,即dateFrom和dateTo相差不能超过31天。"}
+  // {"en":"End Time:\n1. The time format is yyyy-MM-dd\n2. The end time must be greater than the start time. If the end time is greater than the current time, take the current time\n3. Both dateFrom and dateTo have not been passed, and the past 7 days are queried by default; if only one has not been passed, an exception will be thrown\n4. The maximum time interval allowed for query: 31 days, that is, the difference between dateFrom and dateTo cannot exceed 31 days","zh_CN":"结束时间:\n1.时间格式为yyyy-MM-dd\n2.结束时间需大于开始时间,结束时间如果大于当前时间,取当前时间\n3.dateFrom,dateTo二者都未传,默认查询过去的7天;如仅有一个未传,抛异常\n4.允许查询最大时间间隔:31天,即dateFrom和dateTo相差不能超过31天。"}
   DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
-  // {"en":"-", "zh_CN":"-"}
+  // {"en":"-","zh_CN":"-"}
   DomainStream []*ReportDomainStreamDurationServiceRequestDomainStream `json:"domainStream,omitempty" xml:"domainStream,omitempty" type:"Repeated"`
 }
 
@@ -2823,15 +2827,9 @@ func (s *ReportDomainStreamDurationServiceRequest) SetDomainStream(v []*ReportDo
 }
 
 type ReportDomainStreamDurationServiceRequestDomainStream struct     {
-  // {"en":"Domain name: 
-  // 1. The maximum number of domain names that can be transferred is 1 by default; 
-  // 2. Automatically filter out invalid domain names (if an illegal domain name is transferred, it will be filtered out, and the query results will only return the data of valid domain names).", "zh_CN":"域名:
-  // 1、可传递域名数量上限默认为1个;
-  // 2、自动过滤掉无效域名(如传递非法域名,会被过滤掉,查询结果只返回有效域名的数据)。"}
+  // {"en":"Domain name:\n1. The maximum number of domain names that can be transferred is 1 by default;\n2. Automatically filter out invalid domain names (if an illegal domain name is transferred, it will be filtered out, and the query results will only return the data of valid domain names).","zh_CN":"域名:\n1、可传递域名数量上限默认为1个;\n2、自动过滤掉无效域名(如传递非法域名,会被过滤掉,查询结果只返回有效域名的数据)。"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty"`
-  // {"en":"stream name:
-  // Just pass the publishing point + stream name, Example: live/test-20180101-test where live is a publishing point and test-20180101-test is a stream name", "zh_CN":"流名:
-  // 只需要传发布点+流名,例如:live/test-20180101-test ,其中live是发布点，test-20180101-test是流名"}
+  // {"en":"stream name:\nJust pass the publishing point + stream name, Example: live/test-20180101-test where live is a publishing point and test-20180101-test is a stream name","zh_CN":"流名:\n只需要传发布点+流名,例如:live/test-20180101-test ,其中live是发布点，test-20180101-test是流名"}
   Stream []*string `json:"stream,omitempty" xml:"stream,omitempty" type:"Repeated"`
 }
 
@@ -2853,12 +2851,45 @@ func (s *ReportDomainStreamDurationServiceRequestDomainStream) SetStream(v []*st
   return s
 }
 
+type ReportDomainStreamDurationServiceRequestHeader struct {
+}
+
+func (s ReportDomainStreamDurationServiceRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDomainStreamDurationServiceRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ReportDomainStreamDurationServicePaths struct {
+}
+
+func (s ReportDomainStreamDurationServicePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDomainStreamDurationServicePaths) GoString() string {
+  return s.String()
+}
+
+type ReportDomainStreamDurationServiceParameters struct {
+}
+
+func (s ReportDomainStreamDurationServiceParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDomainStreamDurationServiceParameters) GoString() string {
+  return s.String()
+}
+
 type ReportDomainStreamDurationServiceResponse struct {
-  // {"en":"request result status code", "zh_CN":"请求结果状态码"}
+  // {"en":"request result status code","zh_CN":"请求结果状态码"}
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
-  // {"en":"Request result information", "zh_CN":"请求结果信息"}
+  // {"en":"Request result information","zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  // {"en":"Detailed data on the result of the request", "zh_CN":"请求结果的详细数据"}
+  // {"en":"Detailed data on the result of the request","zh_CN":"请求结果的详细数据"}
   Data []*ReportDomainStreamDurationServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -2886,9 +2917,9 @@ func (s *ReportDomainStreamDurationServiceResponse) SetData(v []*ReportDomainStr
 }
 
 type ReportDomainStreamDurationServiceResponseData struct     {
-  // {"en":"Domain", "zh_CN":"域名"}
+  // {"en":"Domain","zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  // {"en":"-", "zh_CN":"-"}
+  // {"en":"-","zh_CN":"-"}
   StreamList []*ReportDomainStreamDurationServiceResponseDataStreamList `json:"streamList,omitempty" xml:"streamList,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -2911,11 +2942,11 @@ func (s *ReportDomainStreamDurationServiceResponseData) SetStreamList(v []*Repor
 }
 
 type ReportDomainStreamDurationServiceResponseDataStreamList struct     {
-  // {"en":"domain + publishing point + stream name", "zh_CN":"流名(域名+发布点+流名)"}
+  // {"en":"domain + publishing point + stream name","zh_CN":"流名(域名+发布点+流名)"}
   Stream *string `json:"stream,omitempty" xml:"stream,omitempty" require:"true"`
-  // {"en":"The sum of the flow duration of the flow name in the corresponding time period, in milliseconds", "zh_CN":"对应时间段内流名推流时长之和,单位为毫秒"}
-  SumTime *int `json:"sumTime,omitempty" xml:"sumTime,omitempty" require:"true"`
-  // {"en":"-", "zh_CN":"-"}
+  // {"en":"The sum of the flow duration of the flow name in the corresponding time period, in milliseconds","zh_CN":"对应时间段内流名推流时长之和,单位为毫秒"}
+  SumTime *ReportDomainStreamDurationServiceResponseDataStreamListSumTime `json:"sumTime,omitempty" xml:"sumTime,omitempty" require:"true" type:"Struct"`
+  // {"en":"-","zh_CN":"-"}
   DurationDetailList []*ReportDomainStreamDurationServiceResponseDataStreamListDurationDetailList `json:"durationDetailList,omitempty" xml:"durationDetailList,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -2932,8 +2963,8 @@ func (s *ReportDomainStreamDurationServiceResponseDataStreamList) SetStream(v st
   return s
 }
 
-func (s *ReportDomainStreamDurationServiceResponseDataStreamList) SetSumTime(v int) *ReportDomainStreamDurationServiceResponseDataStreamList {
-  s.SumTime = &v
+func (s *ReportDomainStreamDurationServiceResponseDataStreamList) SetSumTime(v *ReportDomainStreamDurationServiceResponseDataStreamListSumTime) *ReportDomainStreamDurationServiceResponseDataStreamList {
+  s.SumTime = v
   return s
 }
 
@@ -2942,13 +2973,24 @@ func (s *ReportDomainStreamDurationServiceResponseDataStreamList) SetDurationDet
   return s
 }
 
+type ReportDomainStreamDurationServiceResponseDataStreamListSumTime struct {
+}
+
+func (s ReportDomainStreamDurationServiceResponseDataStreamListSumTime) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportDomainStreamDurationServiceResponseDataStreamListSumTime) GoString() string {
+  return s.String()
+}
+
 type ReportDomainStreamDurationServiceResponseDataStreamListDurationDetailList struct     {
-  // {"en":"Stream start time", "zh_CN":"推流起始时间"}
+  // {"en":"Stream start time","zh_CN":"推流起始时间"}
   StartTime *string `json:"startTime,omitempty" xml:"startTime,omitempty" require:"true"`
-  // {"en":"Stream end time", "zh_CN":"推流终止时间"}
+  // {"en":"Stream end time","zh_CN":"推流终止时间"}
   EndTime *string `json:"endTime,omitempty" xml:"endTime,omitempty" require:"true"`
-  // {"en":"Streaming duration, in milliseconds", "zh_CN":"推流时长,单位为毫秒"}
-  Duration *int `json:"duration,omitempty" xml:"duration,omitempty" require:"true"`
+  // {"en":"Streaming duration, in milliseconds","zh_CN":"推流时长,单位为毫秒"}
+  Duration *ReportDomainStreamDurationServiceResponseDataStreamListDurationDetailListDuration `json:"duration,omitempty" xml:"duration,omitempty" require:"true" type:"Struct"`
 }
 
 func (s ReportDomainStreamDurationServiceResponseDataStreamListDurationDetailList) String() string {
@@ -2969,41 +3011,19 @@ func (s *ReportDomainStreamDurationServiceResponseDataStreamListDurationDetailLi
   return s
 }
 
-func (s *ReportDomainStreamDurationServiceResponseDataStreamListDurationDetailList) SetDuration(v int) *ReportDomainStreamDurationServiceResponseDataStreamListDurationDetailList {
-  s.Duration = &v
+func (s *ReportDomainStreamDurationServiceResponseDataStreamListDurationDetailList) SetDuration(v *ReportDomainStreamDurationServiceResponseDataStreamListDurationDetailListDuration) *ReportDomainStreamDurationServiceResponseDataStreamListDurationDetailList {
+  s.Duration = v
   return s
 }
 
-type ReportDomainStreamDurationServicePaths struct {
+type ReportDomainStreamDurationServiceResponseDataStreamListDurationDetailListDuration struct {
 }
 
-func (s ReportDomainStreamDurationServicePaths) String() string {
+func (s ReportDomainStreamDurationServiceResponseDataStreamListDurationDetailListDuration) String() string {
   return tea.Prettify(s)
 }
 
-func (s ReportDomainStreamDurationServicePaths) GoString() string {
-  return s.String()
-}
-
-type ReportDomainStreamDurationServiceParameters struct {
-}
-
-func (s ReportDomainStreamDurationServiceParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s ReportDomainStreamDurationServiceParameters) GoString() string {
-  return s.String()
-}
-
-type ReportDomainStreamDurationServiceRequestHeader struct {
-}
-
-func (s ReportDomainStreamDurationServiceRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s ReportDomainStreamDurationServiceRequestHeader) GoString() string {
+func (s ReportDomainStreamDurationServiceResponseDataStreamListDurationDetailListDuration) GoString() string {
   return s.String()
 }
 
@@ -3379,135 +3399,6 @@ func (s FlowAppaChannelResponseHeader) GoString() string {
 
 
 
-type QueryHwDomainSrcStrategyConfigForWplusRequest struct {
-}
-
-func (s QueryHwDomainSrcStrategyConfigForWplusRequest) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainSrcStrategyConfigForWplusRequest) GoString() string {
-  return s.String()
-}
-
-type QueryHwDomainSrcStrategyConfigForWplusRequestHeader struct {
-}
-
-func (s QueryHwDomainSrcStrategyConfigForWplusRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainSrcStrategyConfigForWplusRequestHeader) GoString() string {
-  return s.String()
-}
-
-type QueryHwDomainSrcStrategyConfigForWplusPaths struct {
-  // {"en":"domain name","zh_CN":"域名"}
-  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-}
-
-func (s QueryHwDomainSrcStrategyConfigForWplusPaths) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainSrcStrategyConfigForWplusPaths) GoString() string {
-  return s.String()
-}
-
-func (s *QueryHwDomainSrcStrategyConfigForWplusPaths) SetDomain(v string) *QueryHwDomainSrcStrategyConfigForWplusPaths {
-  s.Domain = &v
-  return s
-}
-
-type QueryHwDomainSrcStrategyConfigForWplusParameters struct {
-}
-
-func (s QueryHwDomainSrcStrategyConfigForWplusParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainSrcStrategyConfigForWplusParameters) GoString() string {
-  return s.String()
-}
-
-type QueryHwDomainSrcStrategyConfigForWplusResponse struct {
-  // {"en":"header name and value","zh_CN":"自定义HTTP头域名称和取值"}
-  Headers []*QueryHwDomainSrcStrategyConfigForWplusQueryHwDomainSrcStrategyConfigForWplusResponseHeaders `json:"headers,omitempty" xml:"headers,omitempty" require:"true" type:"Repeated"`
-  // {"en":"follow 302: on/off,default:off","zh_CN":"是否启用302跟随: on/off。默认off"}
-  Follow302 *string `json:"follow_302,omitempty" xml:"follow_302,omitempty" require:"true"`
-  // {"en":"enable range.on/off","zh_CN":"是否启用range回源: on/off。网页类型默认为off，点播和下载默认为on。"}
-  Range *string `json:"range,omitempty" xml:"range,omitempty" require:"true"`
-  // {"en":"ignore url parameter.on/off, default:off.not support now.","zh_CN":"是否忽略URL参数: on/off。默认off。目前暂不支持。"}
-  IgnoreUrlParameter *string `json:"ignore_url_parameter,omitempty" xml:"ignore_url_parameter,omitempty" require:"true"`
-}
-
-func (s QueryHwDomainSrcStrategyConfigForWplusResponse) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainSrcStrategyConfigForWplusResponse) GoString() string {
-  return s.String()
-}
-
-func (s *QueryHwDomainSrcStrategyConfigForWplusResponse) SetHeaders(v []*QueryHwDomainSrcStrategyConfigForWplusQueryHwDomainSrcStrategyConfigForWplusResponseHeaders) *QueryHwDomainSrcStrategyConfigForWplusResponse {
-  s.Headers = v
-  return s
-}
-
-func (s *QueryHwDomainSrcStrategyConfigForWplusResponse) SetFollow302(v string) *QueryHwDomainSrcStrategyConfigForWplusResponse {
-  s.Follow302 = &v
-  return s
-}
-
-func (s *QueryHwDomainSrcStrategyConfigForWplusResponse) SetRange(v string) *QueryHwDomainSrcStrategyConfigForWplusResponse {
-  s.Range = &v
-  return s
-}
-
-func (s *QueryHwDomainSrcStrategyConfigForWplusResponse) SetIgnoreUrlParameter(v string) *QueryHwDomainSrcStrategyConfigForWplusResponse {
-  s.IgnoreUrlParameter = &v
-  return s
-}
-
-type QueryHwDomainSrcStrategyConfigForWplusQueryHwDomainSrcStrategyConfigForWplusResponseHeaders struct     {
-  // {"en":"header name","zh_CN":"HTTP头域名称"}
-  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
-  // {"en":"header value","zh_CN":"HTTP头域取值"}
-  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
-}
-
-func (s QueryHwDomainSrcStrategyConfigForWplusQueryHwDomainSrcStrategyConfigForWplusResponseHeaders) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainSrcStrategyConfigForWplusQueryHwDomainSrcStrategyConfigForWplusResponseHeaders) GoString() string {
-  return s.String()
-}
-
-func (s *QueryHwDomainSrcStrategyConfigForWplusQueryHwDomainSrcStrategyConfigForWplusResponseHeaders) SetName(v string) *QueryHwDomainSrcStrategyConfigForWplusQueryHwDomainSrcStrategyConfigForWplusResponseHeaders {
-  s.Name = &v
-  return s
-}
-
-func (s *QueryHwDomainSrcStrategyConfigForWplusQueryHwDomainSrcStrategyConfigForWplusResponseHeaders) SetValue(v string) *QueryHwDomainSrcStrategyConfigForWplusQueryHwDomainSrcStrategyConfigForWplusResponseHeaders {
-  s.Value = &v
-  return s
-}
-
-type QueryHwDomainSrcStrategyConfigForWplusResponseHeader struct {
-}
-
-func (s QueryHwDomainSrcStrategyConfigForWplusResponseHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainSrcStrategyConfigForWplusResponseHeader) GoString() string {
-  return s.String()
-}
-
-
-
-
 type ReportUrlDlFinishServiceRequest struct {
   // {'en':'Start time
   // 
@@ -3656,142 +3547,6 @@ func (s ReportUrlDlFinishServiceResponseHeader) String() string {
 }
 
 func (s ReportUrlDlFinishServiceResponseHeader) GoString() string {
-  return s.String()
-}
-
-
-
-
-type UpdateHwDomainSrcStrategyConfigForWplusRequest struct {
-  // {"en":"header name and value","zh_CN":"自定义HTTP头域名称和取值"}
-  Headers []*UpdateHwDomainSrcStrategyConfigForWplusUpdateHwDomainSrcStrategyConfigForWplusRequestHeaders `json:"headers,omitempty" xml:"headers,omitempty" type:"Repeated"`
-  // {"en":"follow 302: on/off,default:off","zh_CN":"是否启用302跟随: on/off。默认off"}
-  Follow302 *string `json:"follow_302,omitempty" xml:"follow_302,omitempty"`
-  // {"en":"enable range.on/off","zh_CN":"是否启用range回源: on/off。网页类型默认为off，点播和下载默认为on。"}
-  Range *string `json:"range,omitempty" xml:"range,omitempty"`
-  // {"en":"ignore url parameter.on/off, default:off.not support now.","zh_CN":"是否忽略URL参数: on/off。默认off。目前暂不支持。"}
-  IgnoreUrlParameter *string `json:"ignore_url_parameter,omitempty" xml:"ignore_url_parameter,omitempty"`
-}
-
-func (s UpdateHwDomainSrcStrategyConfigForWplusRequest) String() string {
-  return tea.Prettify(s)
-}
-
-func (s UpdateHwDomainSrcStrategyConfigForWplusRequest) GoString() string {
-  return s.String()
-}
-
-func (s *UpdateHwDomainSrcStrategyConfigForWplusRequest) SetHeaders(v []*UpdateHwDomainSrcStrategyConfigForWplusUpdateHwDomainSrcStrategyConfigForWplusRequestHeaders) *UpdateHwDomainSrcStrategyConfigForWplusRequest {
-  s.Headers = v
-  return s
-}
-
-func (s *UpdateHwDomainSrcStrategyConfigForWplusRequest) SetFollow302(v string) *UpdateHwDomainSrcStrategyConfigForWplusRequest {
-  s.Follow302 = &v
-  return s
-}
-
-func (s *UpdateHwDomainSrcStrategyConfigForWplusRequest) SetRange(v string) *UpdateHwDomainSrcStrategyConfigForWplusRequest {
-  s.Range = &v
-  return s
-}
-
-func (s *UpdateHwDomainSrcStrategyConfigForWplusRequest) SetIgnoreUrlParameter(v string) *UpdateHwDomainSrcStrategyConfigForWplusRequest {
-  s.IgnoreUrlParameter = &v
-  return s
-}
-
-type UpdateHwDomainSrcStrategyConfigForWplusUpdateHwDomainSrcStrategyConfigForWplusRequestHeaders struct     {
-  // {"en":"header name","zh_CN":"HTTP头域名称"}
-  Name *string `json:"name,omitempty" xml:"name,omitempty"`
-  // {"en":"header value","zh_CN":"HTTP头域取值"}
-  Value *string `json:"value,omitempty" xml:"value,omitempty"`
-}
-
-func (s UpdateHwDomainSrcStrategyConfigForWplusUpdateHwDomainSrcStrategyConfigForWplusRequestHeaders) String() string {
-  return tea.Prettify(s)
-}
-
-func (s UpdateHwDomainSrcStrategyConfigForWplusUpdateHwDomainSrcStrategyConfigForWplusRequestHeaders) GoString() string {
-  return s.String()
-}
-
-func (s *UpdateHwDomainSrcStrategyConfigForWplusUpdateHwDomainSrcStrategyConfigForWplusRequestHeaders) SetName(v string) *UpdateHwDomainSrcStrategyConfigForWplusUpdateHwDomainSrcStrategyConfigForWplusRequestHeaders {
-  s.Name = &v
-  return s
-}
-
-func (s *UpdateHwDomainSrcStrategyConfigForWplusUpdateHwDomainSrcStrategyConfigForWplusRequestHeaders) SetValue(v string) *UpdateHwDomainSrcStrategyConfigForWplusUpdateHwDomainSrcStrategyConfigForWplusRequestHeaders {
-  s.Value = &v
-  return s
-}
-
-type UpdateHwDomainSrcStrategyConfigForWplusRequestHeader struct {
-}
-
-func (s UpdateHwDomainSrcStrategyConfigForWplusRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s UpdateHwDomainSrcStrategyConfigForWplusRequestHeader) GoString() string {
-  return s.String()
-}
-
-type UpdateHwDomainSrcStrategyConfigForWplusPaths struct {
-  // {"en":"domain name","zh_CN":"要修改的域名"}
-  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-}
-
-func (s UpdateHwDomainSrcStrategyConfigForWplusPaths) String() string {
-  return tea.Prettify(s)
-}
-
-func (s UpdateHwDomainSrcStrategyConfigForWplusPaths) GoString() string {
-  return s.String()
-}
-
-func (s *UpdateHwDomainSrcStrategyConfigForWplusPaths) SetDomain(v string) *UpdateHwDomainSrcStrategyConfigForWplusPaths {
-  s.Domain = &v
-  return s
-}
-
-type UpdateHwDomainSrcStrategyConfigForWplusParameters struct {
-}
-
-func (s UpdateHwDomainSrcStrategyConfigForWplusParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s UpdateHwDomainSrcStrategyConfigForWplusParameters) GoString() string {
-  return s.String()
-}
-
-type UpdateHwDomainSrcStrategyConfigForWplusResponse struct {
-  // {"en":"task ID","zh_CN":"任务ID"}
-  TaskId *string `json:"task_id,omitempty" xml:"task_id,omitempty" require:"true"`
-}
-
-func (s UpdateHwDomainSrcStrategyConfigForWplusResponse) String() string {
-  return tea.Prettify(s)
-}
-
-func (s UpdateHwDomainSrcStrategyConfigForWplusResponse) GoString() string {
-  return s.String()
-}
-
-func (s *UpdateHwDomainSrcStrategyConfigForWplusResponse) SetTaskId(v string) *UpdateHwDomainSrcStrategyConfigForWplusResponse {
-  s.TaskId = &v
-  return s
-}
-
-type UpdateHwDomainSrcStrategyConfigForWplusResponseHeader struct {
-}
-
-func (s UpdateHwDomainSrcStrategyConfigForWplusResponseHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s UpdateHwDomainSrcStrategyConfigForWplusResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -5568,149 +5323,6 @@ func (s PicProcessStatisticsResponseHeader) GoString() string {
 
 
 
-type UpdateHwDomainCacheRuleForWplusRequest struct {
-  // {"en":"cache rule list","zh_CN":"缓存过期时间配置"}
-  CacheRuleList []*UpdateHwDomainCacheRuleForWplusRequestCacheRuleList `json:"cache_rule_list,omitempty" xml:"cache_rule_list,omitempty" type:"Repeated"`
-}
-
-func (s UpdateHwDomainCacheRuleForWplusRequest) String() string {
-  return tea.Prettify(s)
-}
-
-func (s UpdateHwDomainCacheRuleForWplusRequest) GoString() string {
-  return s.String()
-}
-
-func (s *UpdateHwDomainCacheRuleForWplusRequest) SetCacheRuleList(v []*UpdateHwDomainCacheRuleForWplusRequestCacheRuleList) *UpdateHwDomainCacheRuleForWplusRequest {
-  s.CacheRuleList = v
-  return s
-}
-
-type UpdateHwDomainCacheRuleForWplusRequestCacheRuleList struct     {
-  // {"en":"match pattern","zh_CN":"匹配模式"}
-  MatchPattern []*string `json:"match_pattern,omitempty" xml:"match_pattern,omitempty" type:"Repeated"`
-  // {"en":"cache time mode","zh_CN":"ttl生效模式"}
-  TtlMode *string `json:"ttl_mode,omitempty" xml:"ttl_mode,omitempty"`
-  // {"en":"content index type","zh_CN":"内容index计算方式"}
-  ContentIndexType *string `json:"content_index_type,omitempty" xml:"content_index_type,omitempty"`
-  // {"en":"match type","zh_CN":"匹配类型"}
-  MatchType *string `json:"match_type,omitempty" xml:"match_type,omitempty"`
-  // {"en":"priority","zh_CN":"缓存规则优先级"}
-  Priority *int `json:"priority,omitempty" xml:"priority,omitempty"`
-  // {"en":"cache time","zh_CN":"缓存时间"}
-  Ttl *int `json:"ttl,omitempty" xml:"ttl,omitempty"`
-}
-
-func (s UpdateHwDomainCacheRuleForWplusRequestCacheRuleList) String() string {
-  return tea.Prettify(s)
-}
-
-func (s UpdateHwDomainCacheRuleForWplusRequestCacheRuleList) GoString() string {
-  return s.String()
-}
-
-func (s *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList) SetMatchPattern(v []*string) *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList {
-  s.MatchPattern = v
-  return s
-}
-
-func (s *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList) SetTtlMode(v string) *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList {
-  s.TtlMode = &v
-  return s
-}
-
-func (s *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList) SetContentIndexType(v string) *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList {
-  s.ContentIndexType = &v
-  return s
-}
-
-func (s *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList) SetMatchType(v string) *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList {
-  s.MatchType = &v
-  return s
-}
-
-func (s *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList) SetPriority(v int) *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList {
-  s.Priority = &v
-  return s
-}
-
-func (s *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList) SetTtl(v int) *UpdateHwDomainCacheRuleForWplusRequestCacheRuleList {
-  s.Ttl = &v
-  return s
-}
-
-type UpdateHwDomainCacheRuleForWplusRequestHeader struct {
-}
-
-func (s UpdateHwDomainCacheRuleForWplusRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s UpdateHwDomainCacheRuleForWplusRequestHeader) GoString() string {
-  return s.String()
-}
-
-type UpdateHwDomainCacheRuleForWplusPaths struct {
-  // {"en":"domain","zh_CN":"要修改的域名"}
-  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-}
-
-func (s UpdateHwDomainCacheRuleForWplusPaths) String() string {
-  return tea.Prettify(s)
-}
-
-func (s UpdateHwDomainCacheRuleForWplusPaths) GoString() string {
-  return s.String()
-}
-
-func (s *UpdateHwDomainCacheRuleForWplusPaths) SetDomain(v string) *UpdateHwDomainCacheRuleForWplusPaths {
-  s.Domain = &v
-  return s
-}
-
-type UpdateHwDomainCacheRuleForWplusParameters struct {
-}
-
-func (s UpdateHwDomainCacheRuleForWplusParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s UpdateHwDomainCacheRuleForWplusParameters) GoString() string {
-  return s.String()
-}
-
-type UpdateHwDomainCacheRuleForWplusResponse struct {
-  // {"en":"Task ID","zh_CN":"任务ID"}
-  TaskId *string `json:"task_id,omitempty" xml:"task_id,omitempty" require:"true"`
-}
-
-func (s UpdateHwDomainCacheRuleForWplusResponse) String() string {
-  return tea.Prettify(s)
-}
-
-func (s UpdateHwDomainCacheRuleForWplusResponse) GoString() string {
-  return s.String()
-}
-
-func (s *UpdateHwDomainCacheRuleForWplusResponse) SetTaskId(v string) *UpdateHwDomainCacheRuleForWplusResponse {
-  s.TaskId = &v
-  return s
-}
-
-type UpdateHwDomainCacheRuleForWplusResponseHeader struct {
-}
-
-func (s UpdateHwDomainCacheRuleForWplusResponseHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s UpdateHwDomainCacheRuleForWplusResponseHeader) GoString() string {
-  return s.String()
-}
-
-
-
-
 type ReportDomainStreamHlsOnlineServiceRequest struct {
   // {"en":"Start time:
   // 1. Time format is yyyy-MM-ddTHH:mm:ss+08:00,
@@ -5933,111 +5545,21 @@ func (s ReportDomainStreamHlsOnlineServiceResponseHeader) GoString() string {
 
 
 
-type QueryHwDomainIpConfigRequest struct {
-}
-
-func (s QueryHwDomainIpConfigRequest) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainIpConfigRequest) GoString() string {
-  return s.String()
-}
-
-type QueryHwDomainIpConfigRequestHeader struct {
-}
-
-func (s QueryHwDomainIpConfigRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainIpConfigRequestHeader) GoString() string {
-  return s.String()
-}
-
-type QueryHwDomainIpConfigPaths struct {
-  // {"en":"domain name","zh_CN":"域名"}
-  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-}
-
-func (s QueryHwDomainIpConfigPaths) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainIpConfigPaths) GoString() string {
-  return s.String()
-}
-
-func (s *QueryHwDomainIpConfigPaths) SetDomain(v string) *QueryHwDomainIpConfigPaths {
-  s.Domain = &v
-  return s
-}
-
-type QueryHwDomainIpConfigParameters struct {
-}
-
-func (s QueryHwDomainIpConfigParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainIpConfigParameters) GoString() string {
-  return s.String()
-}
-
-type QueryHwDomainIpConfigResponse struct {
-  // {"en":"IP blacklist. Supports single IP addresses, IP ranges with subnet masks, or using the '-' symbol to specify a range of IPs. For example, 127.0.0.1/24 represents the IP range from 127.0.0.1 to 127.0.0.255, or you can directly use 127.0.0.1-127.0.0.100 to specify part of the IP range.","zh_CN":"IP黑名单列表。支持单个IP，按子网掩码或者-方式表示IP段，比如127.0.0.1/24表示IP网段范围是：127.0.0.1~127.0.0.255或者直接用127.0.0.1-127.0.0.100表示部分IP段。备注：非标网段会转换成标准网段  例如：  入参：172.1.1.2/16，实际生效：172.1.0.0/16"}
-  IpBlacklist []*string `json:"ip_blacklist,omitempty" xml:"ip_blacklist,omitempty" require:"true" type:"Repeated"`
-  // {"en":"IP whitelist. Supports single IP addresses, IP ranges with subnet masks, or using the '-' symbol to specify a range of IPs. For example, 127.0.0.1/24 represents the IP range from 127.0.0.1 to 127.0.0.255, or you can directly use 127.0.0.1-127.0.0.100 to specify part of the IP range.","zh_CN":"IP白名单列表。支持单个IP，或者按子网掩码方式表示IP端，比如127.0.0.1/24表示IP网段范围是：127.0.0.1~127.0.0.255。如果IP白名单未设置，默认允许所有用户访问。备注：非标网段会转换成标准网段  例如：  入参：172.1.1.2/16，实际生效：172.1.0.0/16"}
-  IpWhitelist []*string `json:"ip_whitelist,omitempty" xml:"ip_whitelist,omitempty" require:"true" type:"Repeated"`
-}
-
-func (s QueryHwDomainIpConfigResponse) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainIpConfigResponse) GoString() string {
-  return s.String()
-}
-
-func (s *QueryHwDomainIpConfigResponse) SetIpBlacklist(v []*string) *QueryHwDomainIpConfigResponse {
-  s.IpBlacklist = v
-  return s
-}
-
-func (s *QueryHwDomainIpConfigResponse) SetIpWhitelist(v []*string) *QueryHwDomainIpConfigResponse {
-  s.IpWhitelist = v
-  return s
-}
-
-type QueryHwDomainIpConfigResponseHeader struct {
-}
-
-func (s QueryHwDomainIpConfigResponseHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainIpConfigResponseHeader) GoString() string {
-  return s.String()
-}
-
-
-
-
 type StreamTrafficServiceRequest struct {
-  // {"en":"Stream(s), multiple allowed, separated by commas","zh_CN":"流名，可多个，英文逗号分隔"}
-  StreamNameList *string `json:"streamNameList,omitempty" xml:"streamNameList,omitempty"`
-  // {"en":"Value: rtmp, hdl, hls, rtc, srt, other; multiple values allowed, separated by commas.","zh_CN":"值：rtmp，hdl，hls，rtc，srt，other  可多个，英文逗号分隔"}
-  ProtocolList *string `json:"protocolList,omitempty" xml:"protocolList,omitempty"`
-  // {"en":"Domain(s), up to a maximum of 5 supported","zh_CN":"域名，最多可支持5个"}
+  // {"en":"Domain(s),  multiple domains are separated by commas,up to a maximum of 5 supported","zh_CN":"域名，可多个，英文逗号分隔，最多可支持5个"}
   DomainList *string `json:"domainList,omitempty" xml:"domainList,omitempty" require:"true"`
   // {"en":"Region(s), multiple regions are separated by commas","zh_CN":"区域，可多个，英文逗号分隔"}
   RegionList *string `json:"regionList,omitempty" xml:"regionList,omitempty"`
+  // {"en":"Stream(s), multiple allowed, separated by commas","zh_CN":"流名，可多个，英文逗号分隔"}
+  StreamNameList *string `json:"streamNameList,omitempty" xml:"streamNameList,omitempty"`
   // {"en":"App(s), multiple, separated by commas","zh_CN":"发布点，可多个，英文逗号分隔"}
   AppList *string `json:"appList,omitempty" xml:"appList,omitempty"`
-  // {"en":"Query end time. The format is  yyyy-MM-ddTHH:mm:ss+08:00","zh_CN":"查询结束时间。格式为yyyy-MM-ddTHH:mm:ss+08:00"}
-  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty" require:"true"`
-  // {"en":"Query start time. The format is yyyy-MM-ddTHH:mm:ss+08:00; for example, 2024-12-12T10:00:00+08:00 (which is 10:00 AM Beijing time on December 12, 2024). You can query data for up to 1 day.","zh_CN":"查询开始时间。  格式为yyyy-MM-ddTHH:mm:ss+08:00；例如，2024-12-12T10:00:00+08:00（为北京时间2024年12月12日10点0分0秒）;最多查1天数据"}
+  // {"en":"Query start time. The format is yyyy-MM-ddTHH:mm:ss+08:00; for example, 2024-12-12T10:00:00+08:00 (which is 10:00 AM Beijing time on December 12, 2024). You can query data for up to 1 day.","zh_CN":"查询开始时间。格式为yyyy-MM-ddTHH:mm:ss+08:00；例如，2024-12-12T10:00:00+08:00（为北京时间2024年12月12日10点0分0秒）;最多查1天数据"}
   DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty" require:"true"`
+  // {"en":"Query end time. The format is yyyy-MM-ddTHH:mm:ss+08:00","zh_CN":"查询结束时间。格式为yyyy-MM-ddTHH:mm:ss+08:00"}
+  DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty" require:"true"`
+  // {"en":"Value: rtmp, hdl, hls, rtc, srt, other; multiple values allowed, separated by commas.","zh_CN":"值：rtmp，hdl，hls，rtc，srt，other  可多个，英文逗号分隔"}
+  ProtocolList *string `json:"protocolList,omitempty" xml:"protocolList,omitempty"`
 }
 
 func (s StreamTrafficServiceRequest) String() string {
@@ -6046,16 +5568,6 @@ func (s StreamTrafficServiceRequest) String() string {
 
 func (s StreamTrafficServiceRequest) GoString() string {
   return s.String()
-}
-
-func (s *StreamTrafficServiceRequest) SetStreamNameList(v string) *StreamTrafficServiceRequest {
-  s.StreamNameList = &v
-  return s
-}
-
-func (s *StreamTrafficServiceRequest) SetProtocolList(v string) *StreamTrafficServiceRequest {
-  s.ProtocolList = &v
-  return s
 }
 
 func (s *StreamTrafficServiceRequest) SetDomainList(v string) *StreamTrafficServiceRequest {
@@ -6068,8 +5580,18 @@ func (s *StreamTrafficServiceRequest) SetRegionList(v string) *StreamTrafficServ
   return s
 }
 
+func (s *StreamTrafficServiceRequest) SetStreamNameList(v string) *StreamTrafficServiceRequest {
+  s.StreamNameList = &v
+  return s
+}
+
 func (s *StreamTrafficServiceRequest) SetAppList(v string) *StreamTrafficServiceRequest {
   s.AppList = &v
+  return s
+}
+
+func (s *StreamTrafficServiceRequest) SetDateFrom(v string) *StreamTrafficServiceRequest {
+  s.DateFrom = &v
   return s
 }
 
@@ -6078,8 +5600,8 @@ func (s *StreamTrafficServiceRequest) SetDateTo(v string) *StreamTrafficServiceR
   return s
 }
 
-func (s *StreamTrafficServiceRequest) SetDateFrom(v string) *StreamTrafficServiceRequest {
-  s.DateFrom = &v
+func (s *StreamTrafficServiceRequest) SetProtocolList(v string) *StreamTrafficServiceRequest {
+  s.ProtocolList = &v
   return s
 }
 
@@ -6117,18 +5639,14 @@ func (s StreamTrafficServiceParameters) GoString() string {
 }
 
 type StreamTrafficServiceResponse struct {
-  // {"en":"regions","zh_CN":"区域"}
-  Regions []*StreamTrafficServiceResponseRegions `json:"regions,omitempty" xml:"regions,omitempty" require:"true" type:"Repeated"`
   // {"en":"requestId","zh_CN":"请求id"}
   RequestId *string `json:"requestId,omitempty" xml:"requestId,omitempty" require:"true"`
   // {"en":"Query start time","zh_CN":"查询开始时间"}
   StartTime *string `json:"startTime,omitempty" xml:"startTime,omitempty" require:"true"`
   // {"en":"Query end time","zh_CN":"查询结束时间"}
   EndTime *string `json:"endTime,omitempty" xml:"endTime,omitempty" require:"true"`
-  // {"en":"message","zh_CN":"message"}
-  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  // {"en":"statusCode","zh_CN":"状态码"}
-  StatusCode *int `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
+  // {"en":"regions","zh_CN":"区域"}
+  Regions []*StreamTrafficServiceResponseRegions `json:"regions,omitempty" xml:"regions,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s StreamTrafficServiceResponse) String() string {
@@ -6137,11 +5655,6 @@ func (s StreamTrafficServiceResponse) String() string {
 
 func (s StreamTrafficServiceResponse) GoString() string {
   return s.String()
-}
-
-func (s *StreamTrafficServiceResponse) SetRegions(v []*StreamTrafficServiceResponseRegions) *StreamTrafficServiceResponse {
-  s.Regions = v
-  return s
 }
 
 func (s *StreamTrafficServiceResponse) SetRequestId(v string) *StreamTrafficServiceResponse {
@@ -6159,13 +5672,8 @@ func (s *StreamTrafficServiceResponse) SetEndTime(v string) *StreamTrafficServic
   return s
 }
 
-func (s *StreamTrafficServiceResponse) SetMessage(v string) *StreamTrafficServiceResponse {
-  s.Message = &v
-  return s
-}
-
-func (s *StreamTrafficServiceResponse) SetStatusCode(v int) *StreamTrafficServiceResponse {
-  s.StatusCode = &v
+func (s *StreamTrafficServiceResponse) SetRegions(v []*StreamTrafficServiceResponseRegions) *StreamTrafficServiceResponse {
+  s.Regions = v
   return s
 }
 
@@ -6220,13 +5728,13 @@ func (s *StreamTrafficServiceResponseRegionsDomains) SetStreams(v []*StreamTraff
 }
 
 type StreamTrafficServiceResponseRegionsDomainsStreams struct     {
+  // {"en":"streamName","zh_CN":"流名"}
+  StreamName *string `json:"streamName,omitempty" xml:"streamName,omitempty" require:"true"`
   // {"en":"Application Name","zh_CN":"发布点"}
   App *string `json:"app,omitempty" xml:"app,omitempty" require:"true"`
   // {"en":"protocol","zh_CN":"协议"}
   Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty" require:"true"`
-  // {"en":"streamName","zh_CN":"流名"}
-  StreamName *string `json:"streamName,omitempty" xml:"streamName,omitempty" require:"true"`
-  // {"en":"flow(Byte)","zh_CN":"流量"}
+  // {"en":"flow","zh_CN":"流量"}
   Traffic *int64 `json:"traffic,omitempty" xml:"traffic,omitempty" require:"true"`
 }
 
@@ -6238,6 +5746,11 @@ func (s StreamTrafficServiceResponseRegionsDomainsStreams) GoString() string {
   return s.String()
 }
 
+func (s *StreamTrafficServiceResponseRegionsDomainsStreams) SetStreamName(v string) *StreamTrafficServiceResponseRegionsDomainsStreams {
+  s.StreamName = &v
+  return s
+}
+
 func (s *StreamTrafficServiceResponseRegionsDomainsStreams) SetApp(v string) *StreamTrafficServiceResponseRegionsDomainsStreams {
   s.App = &v
   return s
@@ -6245,11 +5758,6 @@ func (s *StreamTrafficServiceResponseRegionsDomainsStreams) SetApp(v string) *St
 
 func (s *StreamTrafficServiceResponseRegionsDomainsStreams) SetProtocol(v string) *StreamTrafficServiceResponseRegionsDomainsStreams {
   s.Protocol = &v
-  return s
-}
-
-func (s *StreamTrafficServiceResponseRegionsDomainsStreams) SetStreamName(v string) *StreamTrafficServiceResponseRegionsDomainsStreams {
-  s.StreamName = &v
   return s
 }
 
@@ -6376,211 +5884,6 @@ func (s ReportDomainListExistFlowServiceResponseHeader) String() string {
 }
 
 func (s ReportDomainListExistFlowServiceResponseHeader) GoString() string {
-  return s.String()
-}
-
-
-
-
-type QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigRequest struct {
-}
-
-func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigRequest) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigRequest) GoString() string {
-  return s.String()
-}
-
-type QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigRequestHeader struct {
-}
-
-func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigRequestHeader) GoString() string {
-  return s.String()
-}
-
-type QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigPaths struct {
-  // {"en":"domain name","zh_CN":"域名"}
-  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-}
-
-func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigPaths) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigPaths) GoString() string {
-  return s.String()
-}
-
-func (s *QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigPaths) SetDomain(v string) *QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigPaths {
-  s.Domain = &v
-  return s
-}
-
-type QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigParameters struct {
-}
-
-func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigParameters) GoString() string {
-  return s.String()
-}
-
-type QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigResponse struct {
-  // {"en":"HTTP response header name and value. If the header to be added already exists in the original response, it will be overwritten; if it does not exist, it will be added.","zh_CN":"HTTP响应头域名称和取值。如果要增加的头域在原始响应中已经存在，则进行覆盖；如果不存在，则新增。"}
-  Headers []*QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigQueryHwDomainResponseHeadersConfigResponseHeaders `json:"headers,omitempty" xml:"headers,omitempty" require:"true" type:"Repeated"`
-}
-
-func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigResponse) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigResponse) GoString() string {
-  return s.String()
-}
-
-func (s *QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigResponse) SetHeaders(v []*QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigQueryHwDomainResponseHeadersConfigResponseHeaders) *QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigResponse {
-  s.Headers = v
-  return s
-}
-
-type QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigQueryHwDomainResponseHeadersConfigResponseHeaders struct     {
-  // {"en":"HTTP header name. Length: 1-64 characters. The name and value fields must match one-to-one. If neither name nor value is provided, it means to clear all headers.","zh_CN":"HTTP头域名称。长度1～64。 name和value必须一一匹配，如果没有name和value，表示清空headers。"}
-  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
-  // {"en":"HTTP header value. Length: 1-512 characters.","zh_CN":"HTTP头域取值。长度1～512。"}
-  Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
-}
-
-func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigQueryHwDomainResponseHeadersConfigResponseHeaders) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigQueryHwDomainResponseHeadersConfigResponseHeaders) GoString() string {
-  return s.String()
-}
-
-func (s *QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigQueryHwDomainResponseHeadersConfigResponseHeaders) SetName(v string) *QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigQueryHwDomainResponseHeadersConfigResponseHeaders {
-  s.Name = &v
-  return s
-}
-
-func (s *QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigQueryHwDomainResponseHeadersConfigResponseHeaders) SetValue(v string) *QueryHwDomainQueryHwDomainResponseHeadersConfigResponseHeadersConfigQueryHwDomainResponseHeadersConfigResponseHeaders {
-  s.Value = &v
-  return s
-}
-
-type QueryHwDomainResponseHeadersConfigResponseHeader struct {
-}
-
-func (s QueryHwDomainResponseHeadersConfigResponseHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainResponseHeadersConfigResponseHeader) GoString() string {
-  return s.String()
-}
-
-
-
-
-type QueryHwDomainRefererConfigRequest struct {
-}
-
-func (s QueryHwDomainRefererConfigRequest) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainRefererConfigRequest) GoString() string {
-  return s.String()
-}
-
-type QueryHwDomainRefererConfigRequestHeader struct {
-}
-
-func (s QueryHwDomainRefererConfigRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainRefererConfigRequestHeader) GoString() string {
-  return s.String()
-}
-
-type QueryHwDomainRefererConfigPaths struct {
-  // {"en":"domain name","zh_CN":"域名"}
-  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-}
-
-func (s QueryHwDomainRefererConfigPaths) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainRefererConfigPaths) GoString() string {
-  return s.String()
-}
-
-func (s *QueryHwDomainRefererConfigPaths) SetDomain(v string) *QueryHwDomainRefererConfigPaths {
-  s.Domain = &v
-  return s
-}
-
-type QueryHwDomainRefererConfigParameters struct {
-}
-
-func (s QueryHwDomainRefererConfigParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainRefererConfigParameters) GoString() string {
-  return s.String()
-}
-
-type QueryHwDomainRefererConfigResponse struct {
-  // {"en":"Referer whitelist/blacklist type. The default is none.","zh_CN":"Referer黑白名单类型，默认为none。 none：不设置Referer黑白名单，允许所有用户访问。 blacklist：Referer黑名单。 whitelist：Referer白名单。"}
-  RefererAclType *string `json:"referer_acl_type,omitempty" xml:"referer_acl_type,omitempty" require:"true"`
-  // {"en":"Referer List: Each Referer should be a domain name or an IP address, with a length between 3 and 64 characters. For example, *.test.com represents both test.com itself and all its subdomains. A maximum of 100 Referers are supported.","zh_CN":"Referer列表，单条Referer为域名或者IP，长度为3～64。*.test.com代表test.com本身及其所有子域名。最大支持100条Referer。"}
-  RefererList []*string `json:"referer_list,omitempty" xml:"referer_list,omitempty" require:"true" type:"Repeated"`
-  // {"en":"Allow empty Referer. The default is on. on: Allowed. off: Not allowed.","zh_CN":"是否允许空Referer访问，默认为on。 on：允许。 off：不允许。"}
-  AllowEmpty *string `json:"allow_empty,omitempty" xml:"allow_empty,omitempty" require:"true"`
-}
-
-func (s QueryHwDomainRefererConfigResponse) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainRefererConfigResponse) GoString() string {
-  return s.String()
-}
-
-func (s *QueryHwDomainRefererConfigResponse) SetRefererAclType(v string) *QueryHwDomainRefererConfigResponse {
-  s.RefererAclType = &v
-  return s
-}
-
-func (s *QueryHwDomainRefererConfigResponse) SetRefererList(v []*string) *QueryHwDomainRefererConfigResponse {
-  s.RefererList = v
-  return s
-}
-
-func (s *QueryHwDomainRefererConfigResponse) SetAllowEmpty(v string) *QueryHwDomainRefererConfigResponse {
-  s.AllowEmpty = &v
-  return s
-}
-
-type QueryHwDomainRefererConfigResponseHeader struct {
-}
-
-func (s QueryHwDomainRefererConfigResponseHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryHwDomainRefererConfigResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -7728,166 +7031,15 @@ func (s QueryLiveStreamStatusRequest) GoString() string {
   return s.String()
 }
 
-type QueryLiveStreamStatusResponse struct {
-  // {'en':'The time of the data returned', 'zh_CN':'返回的数据的时间'}
-  Rettime *string `json:"rettime,omitempty" xml:"rettime,omitempty" require:"true"`
-  // {'en':'Number of data items. 0 is returned if there is no data', 'zh_CN':'数据条数，无数据返回0'}
-  Retcode *int64 `json:"retcode,omitempty" xml:"retcode,omitempty" require:"true"`
-  // {'en':'Total onlines', 'zh_CN':'总在线人数'}
-  Histscount *int64 `json:"histscount,omitempty" xml:"histscount,omitempty" require:"true"`
-  // {'en':'Total channel bandwidth', 'zh_CN':'总频道带宽'}
-  Bandwidthcount *int64 `json:"bandwidthcount,omitempty" xml:"bandwidthcount,omitempty" require:"true"`
-  // {'en':'Timestamp', 'zh_CN':'数据的时间戳,如果有传t,则等于t'}
-  Datetime *int64 `json:"datetime,omitempty" xml:"datetime,omitempty" require:"true"`
-  // {'en':'', 'zh_CN':'数据集合'}
-  DataValue []*QueryLiveStreamStatusResponseDataValue `json:"dataValue,omitempty" xml:"dataValue,omitempty" require:"true" type:"Repeated"`
+type QueryLiveStreamStatusRequestHeader struct {
 }
 
-func (s QueryLiveStreamStatusResponse) String() string {
+func (s QueryLiveStreamStatusRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveStreamStatusResponse) GoString() string {
+func (s QueryLiveStreamStatusRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *QueryLiveStreamStatusResponse) SetRettime(v string) *QueryLiveStreamStatusResponse {
-  s.Rettime = &v
-  return s
-}
-
-func (s *QueryLiveStreamStatusResponse) SetRetcode(v int64) *QueryLiveStreamStatusResponse {
-  s.Retcode = &v
-  return s
-}
-
-func (s *QueryLiveStreamStatusResponse) SetHistscount(v int64) *QueryLiveStreamStatusResponse {
-  s.Histscount = &v
-  return s
-}
-
-func (s *QueryLiveStreamStatusResponse) SetBandwidthcount(v int64) *QueryLiveStreamStatusResponse {
-  s.Bandwidthcount = &v
-  return s
-}
-
-func (s *QueryLiveStreamStatusResponse) SetDatetime(v int64) *QueryLiveStreamStatusResponse {
-  s.Datetime = &v
-  return s
-}
-
-func (s *QueryLiveStreamStatusResponse) SetDataValue(v []*QueryLiveStreamStatusResponseDataValue) *QueryLiveStreamStatusResponse {
-  s.DataValue = v
-  return s
-}
-
-type QueryLiveStreamStatusResponseDataValue struct     {
-  // {'en':'The channel of anchor', 'zh_CN':'主播流名'}
-  Streamname *string `json:"streamname,omitempty" xml:"streamname,omitempty" require:"true"`
-  // {'en':'IP address of the CDN node', 'zh_CN':'推流cdn节点IP'}
-  Deployaddress *string `json:"deployaddress,omitempty" xml:"deployaddress,omitempty" require:"true"`
-  // {'en':'Anchor exit Address', 'zh_CN':'主播出口地址'}
-  Inaddress *string `json:"inaddress,omitempty" xml:"inaddress,omitempty" require:"true"`
-  // {'en':'The number of online', 'zh_CN':'在线人数'}
-  Hists *int64 `json:"hists,omitempty" xml:"hists,omitempty" require:"true"`
-  // {'en':'Anchor Current bit rate (transcoding stream has no bit rate data) unit: BPS', 'zh_CN':'主播当前码率(转码流没有码率数据) 单位：bps'}
-  Inbandwidth *int64 `json:"inbandwidth,omitempty" xml:"inbandwidth,omitempty" require:"true"`
-  // {'en':'Channel current viewing bandwidth unit: BPS ', 'zh_CN':'频道当前观看带宽 单位：bps'}
-  Bandwidth *int64 `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true"`
-  // {'en':'Anchor delay (MS)', 'zh_CN':'主播延迟(ms)'}
-  Delay *int64 `json:"delay,omitempty" xml:"delay,omitempty" require:"true"`
-  // {'en':'Anchor Current encoding frame rate(fps)', 'zh_CN':'主播当前编码帧率(fps)'}
-  Fps *int64 `json:"fps,omitempty" xml:"fps,omitempty" require:"true"`
-  // {'en':'Current frame loss rate of anchor(fps)', 'zh_CN':'主播当前丢帧率(fps)'}
-  Lfr *float64 `json:"lfr,omitempty" xml:"lfr,omitempty" require:"true"`
-  // {'en':'Anchor raw frame rate(fps)', 'zh_CN':'主播原始帧率(fps)'}
-  Ofr *int64 `json:"ofr,omitempty" xml:"ofr,omitempty" require:"true"`
-  // {'en':'The resolution of the', 'zh_CN':'分辨率'}
-  Resolution *string `json:"resolution,omitempty" xml:"resolution,omitempty" require:"true"`
-  // {'en':'Video coding', 'zh_CN':'视频编码'}
-  Video_codec *string `json:"video_codec,omitempty" xml:"video_codec,omitempty" require:"true"`
-  // {'en':'Audio coding', 'zh_CN':'音频编码'}
-  Audio_codec *string `json:"audio_codec,omitempty" xml:"audio_codec,omitempty" require:"true"`
-  // {'en':'Keyframe interval', 'zh_CN':'关键帧间隔,有传expand才会返回'}
-  Gop *int64 `json:"gop,omitempty" xml:"gop,omitempty" require:"true"`
-}
-
-func (s QueryLiveStreamStatusResponseDataValue) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryLiveStreamStatusResponseDataValue) GoString() string {
-  return s.String()
-}
-
-func (s *QueryLiveStreamStatusResponseDataValue) SetStreamname(v string) *QueryLiveStreamStatusResponseDataValue {
-  s.Streamname = &v
-  return s
-}
-
-func (s *QueryLiveStreamStatusResponseDataValue) SetDeployaddress(v string) *QueryLiveStreamStatusResponseDataValue {
-  s.Deployaddress = &v
-  return s
-}
-
-func (s *QueryLiveStreamStatusResponseDataValue) SetInaddress(v string) *QueryLiveStreamStatusResponseDataValue {
-  s.Inaddress = &v
-  return s
-}
-
-func (s *QueryLiveStreamStatusResponseDataValue) SetHists(v int64) *QueryLiveStreamStatusResponseDataValue {
-  s.Hists = &v
-  return s
-}
-
-func (s *QueryLiveStreamStatusResponseDataValue) SetInbandwidth(v int64) *QueryLiveStreamStatusResponseDataValue {
-  s.Inbandwidth = &v
-  return s
-}
-
-func (s *QueryLiveStreamStatusResponseDataValue) SetBandwidth(v int64) *QueryLiveStreamStatusResponseDataValue {
-  s.Bandwidth = &v
-  return s
-}
-
-func (s *QueryLiveStreamStatusResponseDataValue) SetDelay(v int64) *QueryLiveStreamStatusResponseDataValue {
-  s.Delay = &v
-  return s
-}
-
-func (s *QueryLiveStreamStatusResponseDataValue) SetFps(v int64) *QueryLiveStreamStatusResponseDataValue {
-  s.Fps = &v
-  return s
-}
-
-func (s *QueryLiveStreamStatusResponseDataValue) SetLfr(v float64) *QueryLiveStreamStatusResponseDataValue {
-  s.Lfr = &v
-  return s
-}
-
-func (s *QueryLiveStreamStatusResponseDataValue) SetOfr(v int64) *QueryLiveStreamStatusResponseDataValue {
-  s.Ofr = &v
-  return s
-}
-
-func (s *QueryLiveStreamStatusResponseDataValue) SetResolution(v string) *QueryLiveStreamStatusResponseDataValue {
-  s.Resolution = &v
-  return s
-}
-
-func (s *QueryLiveStreamStatusResponseDataValue) SetVideo_codec(v string) *QueryLiveStreamStatusResponseDataValue {
-  s.Video_codec = &v
-  return s
-}
-
-func (s *QueryLiveStreamStatusResponseDataValue) SetAudio_codec(v string) *QueryLiveStreamStatusResponseDataValue {
-  s.Audio_codec = &v
-  return s
-}
-
-func (s *QueryLiveStreamStatusResponseDataValue) SetGop(v int64) *QueryLiveStreamStatusResponseDataValue {
-  s.Gop = &v
-  return s
 }
 
 type QueryLiveStreamStatusPaths struct {
@@ -7902,35 +7054,21 @@ func (s QueryLiveStreamStatusPaths) GoString() string {
 }
 
 type QueryLiveStreamStatusParameters struct {
-  // {'en':'Domain (multiple domains supported, separated by commas)', 'zh_CN':'域名（支持多个域名，以逗号分隔）'}
+  // {"en":"Domain (multiple domains supported, separated by commas)(    All parameters are passed via HTTP GET requests.)","zh_CN":"域名（支持多个域名，以逗号分隔）(所有参数以HTTP GET请求方式传参)"}
   U *string `json:"u,omitempty" xml:"u,omitempty" require:"true"`
-  // {'en':'20160527152300, non-real-time indicates the current time -5 minutes, real-time indicates the current time -30 seconds
-  // A:
-  // (t is not transmitted, the current system time is obtained and rounded to second (for example, 2017/3/28 14:38:55 rounded to second 2017/3/28 14:38:50 rounded to second);) If the query interval g=10, the final time (dateFrom) is rounded in seconds (e.g. 2017/3/28 14:38:55 after rounded in seconds 2017/3/28 14:38:50); If the g! =10, rounded minutes: (e.g. 2017/3/28 14:38:55 rounded seconds 2017/3/28 14:38:00); DateTo = dataFrom + 9 (9 seconds)', 'zh_CN':'20160527152300，不填为当前时间-5分钟
-  // 详解：
-  // （t不传，获取当前系统时间，对秒取整(如：2017/3/28 14:38:55 对秒取整后2017/3/28 14:38:50)；）如果查询间隔g=10，最后获得的时间对秒取整(如：2017/3/28 14:38:55 对秒取整后2017/3/28 14:38:50)；如果g!=10，对分钟取整：(如：2017/3/28 14:38:55 对秒取整后2017/3/28 14:38:00);'}
+  // {"en":"20160527152300, non-real-time indicates the current time -5 minutes, real-time indicates the current time -30 seconds\nA:\n(t is not transmitted, the current system time is obtained and rounded to second (for example, 2017/3/28 14:38:55 rounded to second 2017/3/28 14:38:50 rounded to second);) If the query interval g=10, the final time (dateFrom) is rounded in seconds (e.g. 2017/3/28 14:38:55 after rounded in seconds 2017/3/28 14:38:50); If the g! =10, rounded minutes: (e.g. 2017/3/28 14:38:55 rounded seconds 2017/3/28 14:38:00); DateTo = dataFrom + 9 (9 seconds)","zh_CN":"20160527152300，不填为当前时间-5分钟\n详解：\n（t不传，获取当前系统时间，对秒取整(如：2017/3/28 14:38:55 对秒取整后2017/3/28 14:38:50)；）如果查询间隔g=10，最后获得的时间对秒取整(如：2017/3/28 14:38:55 对秒取整后2017/3/28 14:38:50)；如果g!=10，对分钟取整：(如：2017/3/28 14:38:55 对秒取整后2017/3/28 14:38:00);"}
   T *string `json:"t,omitempty" xml:"t,omitempty"`
-  // {'en':'Channel URL (simple channel url are supported,eg:push1.test.com/test/test1)', 'zh_CN':'流名(支持单流名，如：push1.test.com/test/test1)'}
+  // {"en":"Channel URL (simple channel url are supported,eg:push1.test.com/test/test1)","zh_CN":"流名(支持单流名，如：push1.test.com/test/test1)"}
   Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
-  // {'en':'Optional value: push or pull. The default value is push
-  // Push stands for watershed name
-  // Pull indicates the name of a pull basin', 'zh_CN':'域名类型，可选值：push、pull，默认push
-  // push代表推流域名
-  // pull代表拉流域名'}
+  // {"en":"Optional value: push or pull. The default value is push\nPush stands for watershed name\nPull indicates the name of a pull basin","zh_CN":"域名类型，可选值：push、pull，默认push\npush代表推流域名\npull代表拉流域名"}
   D *string `json:"d,omitempty" xml:"d,omitempty"`
-  // {'en':'The value can be true or false. The default value is false
-  // Only realtime data is returned when realtime=true', 'zh_CN':'是否返回端口，可选值：true、false，默认false
-  // '}
+  // {"en":"The value can be true or false. The default value is false\nOnly realtime data is returned when realtime=true","zh_CN":"是否返回端口，可选值：true、false，默认false"}
   Showport *string `json:"showport,omitempty" xml:"showport,omitempty"`
-  // {'en':'Query interval. The value can be 10 or 60. The default value is 60
-  // When g is 10, query the data of the nearest whole 10 seconds to time t
-  // When g is 60, query the data of the nearest whole minute to time t', 'zh_CN':'查询间隔，可选值10、60，默认60
-  // 当g为10时，查询距离时间t最近的整10秒点数据
-  // 当g为60时，查询距离时间t最近的整分钟点数据'}
+  // {"en":"Query interval. The value can be 10 or 60. The default value is 60\nWhen g is 10, query the data of the nearest whole 10 seconds to time t\nWhen g is 60, query the data of the nearest whole minute to time t","zh_CN":"查询间隔，可选值10、60，默认60\n当g为10时，查询距离时间t最近的整10秒点数据\n当g为60时，查询距离时间t最近的整分钟点数据"}
   G *string `json:"g,omitempty" xml:"g,omitempty"`
-  // {'en':'it is query realtime datas,default false', 'zh_CN':'是否返回实时数据，默认false'}
+  // {"en":"it is query realtime datas,default false","zh_CN":"是否返回实时数据，默认false"}
   Realtime *string `json:"realtime,omitempty" xml:"realtime,omitempty"`
-  // {'en':'Data extension fields(Only supports non-real-time query), providing optional return fields:gop', 'zh_CN':'数据扩展字段(仅支持按非实时查)，提供可选返回字段：gop'}
+  // {"en":"Data extension fields(Only supports non-real-time query), providing optional return fields:gop","zh_CN":"数据扩展字段(仅支持按非实时查)，提供可选返回字段：gop"}
   Expand *string `json:"expand,omitempty" xml:"expand,omitempty"`
 }
 
@@ -7982,14 +7120,176 @@ func (s *QueryLiveStreamStatusParameters) SetExpand(v string) *QueryLiveStreamSt
   return s
 }
 
-type QueryLiveStreamStatusRequestHeader struct {
+type QueryLiveStreamStatusResponse struct {
+  // {"en":"The time of the data returned","zh_CN":"返回的数据的时间"}
+  Rettime *string `json:"rettime,omitempty" xml:"rettime,omitempty" require:"true"`
+  // {"en":"Number of data items. 0 is returned if there is no data","zh_CN":"数据条数，无数据返回0"}
+  Retcode *int64 `json:"retcode,omitempty" xml:"retcode,omitempty" require:"true"`
+  // {"en":"Total onlines","zh_CN":"总在线人数"}
+  Histscount *int64 `json:"histscount,omitempty" xml:"histscount,omitempty" require:"true"`
+  // {"en":"Total channel bandwidth","zh_CN":"总频道带宽"}
+  Bandwidthcount *int64 `json:"bandwidthcount,omitempty" xml:"bandwidthcount,omitempty" require:"true"`
+  // {"en":"Timestamp","zh_CN":"数据的时间戳,如果有传t,则等于t"}
+  Datetime *int64 `json:"datetime,omitempty" xml:"datetime,omitempty" require:"true"`
+  // {"en":"","zh_CN":"数据集合"}
+  DataValue []*QueryLiveStreamStatusResponseDataValue `json:"dataValue,omitempty" xml:"dataValue,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryLiveStreamStatusRequestHeader) String() string {
+func (s QueryLiveStreamStatusResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryLiveStreamStatusRequestHeader) GoString() string {
+func (s QueryLiveStreamStatusResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryLiveStreamStatusResponse) SetRettime(v string) *QueryLiveStreamStatusResponse {
+  s.Rettime = &v
+  return s
+}
+
+func (s *QueryLiveStreamStatusResponse) SetRetcode(v int64) *QueryLiveStreamStatusResponse {
+  s.Retcode = &v
+  return s
+}
+
+func (s *QueryLiveStreamStatusResponse) SetHistscount(v int64) *QueryLiveStreamStatusResponse {
+  s.Histscount = &v
+  return s
+}
+
+func (s *QueryLiveStreamStatusResponse) SetBandwidthcount(v int64) *QueryLiveStreamStatusResponse {
+  s.Bandwidthcount = &v
+  return s
+}
+
+func (s *QueryLiveStreamStatusResponse) SetDatetime(v int64) *QueryLiveStreamStatusResponse {
+  s.Datetime = &v
+  return s
+}
+
+func (s *QueryLiveStreamStatusResponse) SetDataValue(v []*QueryLiveStreamStatusResponseDataValue) *QueryLiveStreamStatusResponse {
+  s.DataValue = v
+  return s
+}
+
+type QueryLiveStreamStatusResponseDataValue struct     {
+  // {"en":"The channel of anchor","zh_CN":"主播流名"}
+  Streamname *string `json:"streamname,omitempty" xml:"streamname,omitempty" require:"true"`
+  // {"en":"IP address of the CDN node","zh_CN":"推流cdn节点IP"}
+  Deployaddress *string `json:"deployaddress,omitempty" xml:"deployaddress,omitempty" require:"true"`
+  // {"en":"Anchor exit Address","zh_CN":"主播出口地址"}
+  Inaddress *string `json:"inaddress,omitempty" xml:"inaddress,omitempty" require:"true"`
+  // {"en":"The number of online","zh_CN":"在线人数"}
+  Hists *int64 `json:"hists,omitempty" xml:"hists,omitempty" require:"true"`
+  // {"en":"Anchor Current bit rate (transcoding stream has no bit rate data) unit: BPS","zh_CN":"主播当前码率(转码流没有码率数据) 单位：bps"}
+  Inbandwidth *int64 `json:"inbandwidth,omitempty" xml:"inbandwidth,omitempty" require:"true"`
+  // {"en":"Channel current viewing bandwidth unit: BPS","zh_CN":"频道当前观看带宽 单位：bps"}
+  Bandwidth *int64 `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true"`
+  // {"en":"Anchor delay (MS)","zh_CN":"主播延迟(ms)"}
+  Delay *int64 `json:"delay,omitempty" xml:"delay,omitempty" require:"true"`
+  // {"en":"Anchor Current encoding frame rate","zh_CN":"主播当前编码帧率"}
+  Fps *int64 `json:"fps,omitempty" xml:"fps,omitempty" require:"true"`
+  // {"en":"Current frame loss rate of anchor","zh_CN":"主播当前丢帧率"}
+  Lfr *QueryLiveStreamStatusResponseDataValueLfr `json:"lfr,omitempty" xml:"lfr,omitempty" require:"true" type:"Struct"`
+  // {"en":"Anchor raw frame rate","zh_CN":"主播原始帧率"}
+  Ofr *int64 `json:"ofr,omitempty" xml:"ofr,omitempty" require:"true"`
+  // {"en":"The resolution of the","zh_CN":"分辨率"}
+  Resolution *string `json:"resolution,omitempty" xml:"resolution,omitempty" require:"true"`
+  // {"en":"Video coding","zh_CN":"视频编码"}
+  VideoCodec *string `json:"video_codec,omitempty" xml:"video_codec,omitempty" require:"true"`
+  // {"en":"Audio coding","zh_CN":"音频编码"}
+  AudioCodec *string `json:"audio_codec,omitempty" xml:"audio_codec,omitempty" require:"true"`
+  // {"en":"Keyframe interval","zh_CN":"关键帧间隔,有传expand才会返回"}
+  Gop *int64 `json:"gop,omitempty" xml:"gop,omitempty" require:"true"`
+}
+
+func (s QueryLiveStreamStatusResponseDataValue) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryLiveStreamStatusResponseDataValue) GoString() string {
+  return s.String()
+}
+
+func (s *QueryLiveStreamStatusResponseDataValue) SetStreamname(v string) *QueryLiveStreamStatusResponseDataValue {
+  s.Streamname = &v
+  return s
+}
+
+func (s *QueryLiveStreamStatusResponseDataValue) SetDeployaddress(v string) *QueryLiveStreamStatusResponseDataValue {
+  s.Deployaddress = &v
+  return s
+}
+
+func (s *QueryLiveStreamStatusResponseDataValue) SetInaddress(v string) *QueryLiveStreamStatusResponseDataValue {
+  s.Inaddress = &v
+  return s
+}
+
+func (s *QueryLiveStreamStatusResponseDataValue) SetHists(v int64) *QueryLiveStreamStatusResponseDataValue {
+  s.Hists = &v
+  return s
+}
+
+func (s *QueryLiveStreamStatusResponseDataValue) SetInbandwidth(v int64) *QueryLiveStreamStatusResponseDataValue {
+  s.Inbandwidth = &v
+  return s
+}
+
+func (s *QueryLiveStreamStatusResponseDataValue) SetBandwidth(v int64) *QueryLiveStreamStatusResponseDataValue {
+  s.Bandwidth = &v
+  return s
+}
+
+func (s *QueryLiveStreamStatusResponseDataValue) SetDelay(v int64) *QueryLiveStreamStatusResponseDataValue {
+  s.Delay = &v
+  return s
+}
+
+func (s *QueryLiveStreamStatusResponseDataValue) SetFps(v int64) *QueryLiveStreamStatusResponseDataValue {
+  s.Fps = &v
+  return s
+}
+
+func (s *QueryLiveStreamStatusResponseDataValue) SetLfr(v *QueryLiveStreamStatusResponseDataValueLfr) *QueryLiveStreamStatusResponseDataValue {
+  s.Lfr = v
+  return s
+}
+
+func (s *QueryLiveStreamStatusResponseDataValue) SetOfr(v int64) *QueryLiveStreamStatusResponseDataValue {
+  s.Ofr = &v
+  return s
+}
+
+func (s *QueryLiveStreamStatusResponseDataValue) SetResolution(v string) *QueryLiveStreamStatusResponseDataValue {
+  s.Resolution = &v
+  return s
+}
+
+func (s *QueryLiveStreamStatusResponseDataValue) SetVideoCodec(v string) *QueryLiveStreamStatusResponseDataValue {
+  s.VideoCodec = &v
+  return s
+}
+
+func (s *QueryLiveStreamStatusResponseDataValue) SetAudioCodec(v string) *QueryLiveStreamStatusResponseDataValue {
+  s.AudioCodec = &v
+  return s
+}
+
+func (s *QueryLiveStreamStatusResponseDataValue) SetGop(v int64) *QueryLiveStreamStatusResponseDataValue {
+  s.Gop = &v
+  return s
+}
+
+type QueryLiveStreamStatusResponseDataValueLfr struct {
+}
+
+func (s QueryLiveStreamStatusResponseDataValueLfr) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryLiveStreamStatusResponseDataValueLfr) GoString() string {
   return s.String()
 }
 
@@ -8928,89 +8228,15 @@ func (s QueryOnlineViewerCountRequest) GoString() string {
   return s.String()
 }
 
-type QueryOnlineViewerCountResponse struct {
-  // {'en':'Total number of online users. This parameter is displayed only when from and to are empty', 'zh_CN':'在线总人数，仅当查询时间点，即from和to为空时才显示'}
-  Count *int64 `json:"count,omitempty" xml:"count,omitempty" require:"true"`
-  // {'en':'Total abnormal online number, only need customers return', 'zh_CN':'异常总在线人数，只对有需要客户进行返回'}
-  ErrorCount *int64 `json:"errorCount,omitempty" xml:"errorCount,omitempty" require:"true"`
-  // {'en':'The number of data items is displayed only when from and to are empty.', 'zh_CN':'数据条数，仅当查询时间点，即from和to为空时才显示'}
-  Retcode *int64 `json:"retcode,omitempty" xml:"retcode,omitempty" require:"true"`
-  // {'en':'The time of the data returned', 'zh_CN':'返回的数据的时间'}
-  Rettime *string `json:"rettime,omitempty" xml:"rettime,omitempty" require:"true"`
-  // {'en':'', 'zh_CN':'数据集合'}
-  DataValue []*QueryOnlineViewerCountResponseDataValue `json:"dataValue,omitempty" xml:"dataValue,omitempty" require:"true" type:"Repeated"`
+type QueryOnlineViewerCountRequestHeader struct {
 }
 
-func (s QueryOnlineViewerCountResponse) String() string {
+func (s QueryOnlineViewerCountRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryOnlineViewerCountResponse) GoString() string {
+func (s QueryOnlineViewerCountRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *QueryOnlineViewerCountResponse) SetCount(v int64) *QueryOnlineViewerCountResponse {
-  s.Count = &v
-  return s
-}
-
-func (s *QueryOnlineViewerCountResponse) SetErrorCount(v int64) *QueryOnlineViewerCountResponse {
-  s.ErrorCount = &v
-  return s
-}
-
-func (s *QueryOnlineViewerCountResponse) SetRetcode(v int64) *QueryOnlineViewerCountResponse {
-  s.Retcode = &v
-  return s
-}
-
-func (s *QueryOnlineViewerCountResponse) SetRettime(v string) *QueryOnlineViewerCountResponse {
-  s.Rettime = &v
-  return s
-}
-
-func (s *QueryOnlineViewerCountResponse) SetDataValue(v []*QueryOnlineViewerCountResponseDataValue) *QueryOnlineViewerCountResponse {
-  s.DataValue = v
-  return s
-}
-
-type QueryOnlineViewerCountResponseDataValue struct     {
-  // {'en':'Stream name', 'zh_CN':'流名'}
-  Prog *string `json:"prog,omitempty" xml:"prog,omitempty" require:"true"`
-  // {'en':'Time is displayed only if the query time range (channel, FROM, and to parameters) is not empty', 'zh_CN':'时间，仅当查询时间范围，即channel，from和to参数不为空时才显示'}
-  Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
-  // {'en':'The number of online', 'zh_CN':'在线人数'}
-  Value *int64 `json:"value,omitempty" xml:"value,omitempty" require:"true"`
-  // {'en':'Abnormal online number, only need customers return', 'zh_CN':'异常在线人数，只对需要客户进行返回'}
-  ErrorValue *int64 `json:"errorValue,omitempty" xml:"errorValue,omitempty" require:"true"`
-}
-
-func (s QueryOnlineViewerCountResponseDataValue) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryOnlineViewerCountResponseDataValue) GoString() string {
-  return s.String()
-}
-
-func (s *QueryOnlineViewerCountResponseDataValue) SetProg(v string) *QueryOnlineViewerCountResponseDataValue {
-  s.Prog = &v
-  return s
-}
-
-func (s *QueryOnlineViewerCountResponseDataValue) SetTime(v string) *QueryOnlineViewerCountResponseDataValue {
-  s.Time = &v
-  return s
-}
-
-func (s *QueryOnlineViewerCountResponseDataValue) SetValue(v int64) *QueryOnlineViewerCountResponseDataValue {
-  s.Value = &v
-  return s
-}
-
-func (s *QueryOnlineViewerCountResponseDataValue) SetErrorValue(v int64) *QueryOnlineViewerCountResponseDataValue {
-  s.ErrorValue = &v
-  return s
 }
 
 type QueryOnlineViewerCountPaths struct {
@@ -9025,27 +8251,23 @@ func (s QueryOnlineViewerCountPaths) GoString() string {
 }
 
 type QueryOnlineViewerCountParameters struct {
-  // {'en':'Domain (multiple domains supported, separated by commas)', 'zh_CN':'域名（支持多个域名，以逗号分隔）'}
+  // {"en":"Domain (multiple domains supported, separated by commas)(    All parameters are passed via HTTP GET requests.)","zh_CN":"域名（支持多个域名，以逗号分隔）(所有参数以HTTP GET请求方式传参)"}
   U *string `json:"u,omitempty" xml:"u,omitempty" require:"true"`
-  // {'en':'Time,eg:20160527152300.If the parameter is not specified, the value is 3 minutes', 'zh_CN':'时间，eg：20160527152300，不填为当前时间-3分钟'}
+  // {"en":"Time,eg:20160527152300.If the parameter is not specified, the value is 3 minutes","zh_CN":"时间，eg：20160527152300，不填为当前时间-3分钟"}
   T *string `json:"t,omitempty" xml:"t,omitempty"`
-  // {'en':'The domain type can be pull or push. If this parameter is not specified, the default value is pull', 'zh_CN':'域名类型，pull或push，不填时默认为pull'}
+  // {"en":"The domain type can be pull or push. If this parameter is not specified, the default value is pull","zh_CN":"域名类型，pull或push，不填时默认为pull"}
   D *string `json:"d,omitempty" xml:"d,omitempty"`
-  // {'en':'Channel URL(single channel query only),It is not recommended to query with this parameter, and the performance of range query is poor.', 'zh_CN':'频道URL(仅支持单频道查询),不建议带该参数查询，范围查询性能较差'}
+  // {"en":"Channel URL(single channel query only),It is not recommended to query with this parameter, and the performance of range query is poor.","zh_CN":"频道URL(仅支持单频道查询),不建议带该参数查询，范围查询性能较差"}
   Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
-  // {'en':'Start time, eg: 20160803103500, when both from and to are filled or left blank, channel parameter is mandatory. The query time span is two hours at most. If the query time exceeds two hours, the system queries the data within two hours from the start time and the number of online users within the last 7 days', 'zh_CN':'开始时间，eg: 20160803103500，from和to都填或都不填，都填时channel参数必填，查询时间跨度最大为两个小时，如果超过两个小时，将查询开始时间两个小时内的数据，可查近7天内在线人数数据'}
+  // {"en":"Start time, eg: 20160803103500, when both from and to are filled or left blank, channel parameter is mandatory. The query time span is two hours at most. If the query time exceeds two hours, the system queries the data within two hours from the start time and the number of online users within the last 7 days","zh_CN":"开始时间，eg: 20160803103500，from和to都填或都不填，都填时channel参数必填，查询时间跨度最大为两个小时，如果超过两个小时，将查询开始时间两个小时内的数据，可查近7天内在线人数数据"}
   From *string `json:"from,omitempty" xml:"from,omitempty"`
-  // {'en':'End time, eg: 20160803103900, when both from and to are filled or left blank, channel parameter is mandatory. The query time span is two hours at most. If the query time exceeds two hours, the system queries the data within two hours from the start time and the number of online users in the last 7 days', 'zh_CN':'结束时间，eg: 20160803103900，from和to都填或都不填，都填时channel参数必填，查询时间跨度最大为两个小时，如果超过两个小时，将查询开始时间两个小时内的数据，可查近7天内在线人数数据'}
+  // {"en":"End time, eg: 20160803103900, when both from and to are filled or left blank, channel parameter is mandatory. The query time span is two hours at most. If the query time exceeds two hours, the system queries the data within two hours from the start time and the number of online users in the last 7 days","zh_CN":"结束时间，eg: 20160803103900，from和to都填或都不填，都填时channel参数必填，查询时间跨度最大为两个小时，如果超过两个小时，将查询开始时间两个小时内的数据，可查近7天内在线人数数据"}
   To *string `json:"to,omitempty" xml:"to,omitempty"`
-  // {'en':'Query interval, optional value: 10, 60s.
-  // When g is 10, the number of online users every 10 seconds is queried;
-  // When g is 60, the number of online users at the whole minute within the time range is queried.', 'zh_CN':'查询间隔，可选值10、60s，
-  // 当g为10时，查询时间范围内每10秒的在线人数
-  // 当g为60时，查询时间范围内整分钟点对应的在线人数'}
+  // {"en":"Query interval, optional value: 10, 60s.\nWhen g is 10, the number of online users every 10 seconds is queried;\nWhen g is 60, the number of online users at the whole minute within the time range is queried.","zh_CN":"查询间隔，可选值10、60s，\n当g为10时，查询时间范围内每10秒的在线人数\n当g为60时，查询时间范围内整分钟点对应的在线人数"}
   G *string `json:"g,omitempty" xml:"g,omitempty"`
-  // {'en':'it is query realtime datas,default false', 'zh_CN':'是否返回实时数据，默认false'}
+  // {"en":"it is query realtime datas,default false","zh_CN":"是否返回实时数据，默认false"}
   Realtime *string `json:"realtime,omitempty" xml:"realtime,omitempty"`
-  // {'en':'The default value is false. If the value is true, the domain data is split. If the value is false, the domain data is merged', 'zh_CN':'域名拆分控制，默认为false，为true时，拆分域名数据，为false时，合并域名数据'}
+  // {"en":"The default value is false. If the value is true, the domain data is split. If the value is false, the domain data is merged","zh_CN":"域名拆分控制，默认为false，为true时，拆分域名数据，为false时，合并域名数据"}
   Unpack *string `json:"unpack,omitempty" xml:"unpack,omitempty"`
 }
 
@@ -9102,15 +8324,89 @@ func (s *QueryOnlineViewerCountParameters) SetUnpack(v string) *QueryOnlineViewe
   return s
 }
 
-type QueryOnlineViewerCountRequestHeader struct {
+type QueryOnlineViewerCountResponse struct {
+  // {"en":"Total number of online users. This parameter is displayed only when from and to are empty","zh_CN":"在线总人数，仅当查询时间点，即from和to为空时才显示"}
+  Count *int64 `json:"count,omitempty" xml:"count,omitempty" require:"true"`
+  // {"en":"Total abnormal online number, only need customers return","zh_CN":"异常总在线人数，只对有需要客户进行返回"}
+  ErrorCount *int64 `json:"errorCount,omitempty" xml:"errorCount,omitempty" require:"true"`
+  // {"en":"The number of data items is displayed only when from and to are empty.","zh_CN":"数据条数，仅当查询时间点，即from和to为空时才显示"}
+  Retcode *int64 `json:"retcode,omitempty" xml:"retcode,omitempty" require:"true"`
+  // {"en":"The time of the data returned","zh_CN":"返回的数据的时间"}
+  Rettime *string `json:"rettime,omitempty" xml:"rettime,omitempty" require:"true"`
+  // {"en":"","zh_CN":"数据集合"}
+  DataValue []*QueryOnlineViewerCountResponseDataValue `json:"dataValue,omitempty" xml:"dataValue,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryOnlineViewerCountRequestHeader) String() string {
+func (s QueryOnlineViewerCountResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryOnlineViewerCountRequestHeader) GoString() string {
+func (s QueryOnlineViewerCountResponse) GoString() string {
   return s.String()
+}
+
+func (s *QueryOnlineViewerCountResponse) SetCount(v int64) *QueryOnlineViewerCountResponse {
+  s.Count = &v
+  return s
+}
+
+func (s *QueryOnlineViewerCountResponse) SetErrorCount(v int64) *QueryOnlineViewerCountResponse {
+  s.ErrorCount = &v
+  return s
+}
+
+func (s *QueryOnlineViewerCountResponse) SetRetcode(v int64) *QueryOnlineViewerCountResponse {
+  s.Retcode = &v
+  return s
+}
+
+func (s *QueryOnlineViewerCountResponse) SetRettime(v string) *QueryOnlineViewerCountResponse {
+  s.Rettime = &v
+  return s
+}
+
+func (s *QueryOnlineViewerCountResponse) SetDataValue(v []*QueryOnlineViewerCountResponseDataValue) *QueryOnlineViewerCountResponse {
+  s.DataValue = v
+  return s
+}
+
+type QueryOnlineViewerCountResponseDataValue struct     {
+  // {"en":"Stream name","zh_CN":"流名"}
+  Prog *string `json:"prog,omitempty" xml:"prog,omitempty" require:"true"`
+  // {"en":"Time is displayed only if the query time range (channel, FROM, and to parameters) is not empty","zh_CN":"时间，仅当查询时间范围，即channel，from和to参数不为空时才显示"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
+  // {"en":"The number of online","zh_CN":"在线人数"}
+  Value *int64 `json:"value,omitempty" xml:"value,omitempty" require:"true"`
+  // {"en":"Abnormal online number, only need customers return","zh_CN":"异常在线人数，只对需要客户进行返回"}
+  ErrorValue *int64 `json:"errorValue,omitempty" xml:"errorValue,omitempty" require:"true"`
+}
+
+func (s QueryOnlineViewerCountResponseDataValue) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryOnlineViewerCountResponseDataValue) GoString() string {
+  return s.String()
+}
+
+func (s *QueryOnlineViewerCountResponseDataValue) SetProg(v string) *QueryOnlineViewerCountResponseDataValue {
+  s.Prog = &v
+  return s
+}
+
+func (s *QueryOnlineViewerCountResponseDataValue) SetTime(v string) *QueryOnlineViewerCountResponseDataValue {
+  s.Time = &v
+  return s
+}
+
+func (s *QueryOnlineViewerCountResponseDataValue) SetValue(v int64) *QueryOnlineViewerCountResponseDataValue {
+  s.Value = &v
+  return s
+}
+
+func (s *QueryOnlineViewerCountResponseDataValue) SetErrorValue(v int64) *QueryOnlineViewerCountResponseDataValue {
+  s.ErrorValue = &v
+  return s
 }
 
 type QueryOnlineViewerCountResponseHeader struct {

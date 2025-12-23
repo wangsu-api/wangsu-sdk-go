@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/authentication
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/authentication
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/authentication"
     "log"
 )
@@ -80,3 +74,4 @@ if err != nil {
 | Modifyuser | 修改一个本地用户的信息 | PUT | /api/securelink/idaas/user |
 | Describeuserinfo | 查询一个用户的信息 | GET | /api/securelink/idaas/user |
 | Syncauthconfig | 手动同步身份源 | POST | /api/securelink/idaas/authconfig/sync |
+| Resetuserpassword | 重置一个本地用户的密码。通过该接口可以重置指定用户的密码，通过传入的参数差异，重置的密码允许随机生成和手动指定，并且支持将新密码通过手机短信及邮箱的方式发送给指定手机号或邮箱。 | POST | /api/securelink/idaas/user/reset-pwd |

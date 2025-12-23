@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/reportrequest
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/reportrequest
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/reportrequest"
     "log"
 )
@@ -70,6 +64,7 @@ if err != nil {
 
 | ActionName | description | client_methods | uri |
 | --- | --- | --- | --- |
+| Getrequestsbydomain | 查询请求数，输出5分钟粒度的请求数数据 | POST | /myview/hit |
 | Querydomaintotalrequest | 该接口用于查询多个域名的总请求数。用户通过提供时间，域名等信息，接口将返回每个时间片段内的请求数，支持不同粒度的数据（如每五分钟、每小时或每天的数据）。该接口有助于用户监控网站访问情况，及时对异常情况进行跟进和优化。 | POST | /api/report/domainhit |
 | Reportrequestispprovinceservice | 查询多域名服务节点归属各ISP各省份请求数及QPS；<br>数据延迟在5~15分钟左右；<br>支持语言请求头Accept-Language，只支持zh-CN、en-US，默认为zh-CN。Accept-Language：en-US时，省份及运营商 入参及返回都为code，否则返回的为中文。 | POST | /api/report/request/isp-province |
 | Reportrequesthitrateispprovinceservice | 该接口允许用户查询域名在不同运营商和省份的请求数命中率，支持根据请求头Accept-Language返回中文或者英文数据。用户需提供时间范围和域名等参数获取不同时间维度的数据。返回内容包括每个域名在不同运营商及省份的请求数命中率。有助于用户分析网络请求的分布情况。 | POST | /api/report/request/hit-rate/isp-province |
@@ -79,7 +74,6 @@ if err != nil {
 | Reporthitservice | 该接口用于查询账号下所有加速域名的请求数汇总信息。用户可以通过调用此接口获取指定时间段内的总请求数及每个时间片段的请求数详细数据。通过利用该接口，用户能够方便地监控和分析域名在不同时间段的请求量，以优化资源分配和提升性能表现。 | GET | /api/report/hit |
 | Queryrequesthitratio | 该接口用于查询特定时间段内的分钟级别请求数缓存命中率，用户需提供开始时间、结束时间和域名信息，以获取请求命中率的数据。可选数据粒度1分钟、5分钟、1小时和1天。接口返回的数据信息包括每分钟的缓存命中率，帮助用户评估其域名命中CDN缓存的情况。 | POST | /api/report/request/hit-ratio/total |
 | Reportstreamtasknumberservice | 该接口用于查询指定时间段内的直播转码任务数。用户需提供查询时间范围和域名获取转码任务详细数据。接口返回内容包括使用的编码格式、转码数量、每次转码的时长等。该接口有助于用户监控直播转码任务的数量和效率，从而优化直播服务的资源分配与性能提升。 | POST | /api/report/stream/task-number |
-| Hit | 查询请求数，输出分钟粒度的请求数数据 | POST | /myview/Hit |
 | Dispatchdomainareatimereport | 获取调度域名解析量 | POST | /clouddns/Dispatchdomainareatimereport |
 | Policydetailreport | 获取调度报告api | POST | /clouddns/Policydetailreport |
 | Reportrequesthttphttpsservice | 该接口用于查询多个域名在指定时间段内每分钟的HTTP和HTTPS请求数量统计。用户输入开始和结束时间及域名，返回数据可选按域名分组或合并数据，接口将返回域名的每分钟的HTTP和HTTPS请求数。 | POST | /api/report/request/http/https |

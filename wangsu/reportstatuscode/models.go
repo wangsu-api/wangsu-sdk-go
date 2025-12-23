@@ -3256,49 +3256,19 @@ func (s QueryStatusCodeDistributionOfeachISPandProvinceByUserIPResponseHeader) G
 
 
 type QueryStatusCodeDistributionRequest struct {
-  // {"en":"Start time:
-  // 1.The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM;
-  // 2.Must be a time that is 183 days earlier than the current time, and the time must be earlier than the current time and dateTo;
-  // 3.Period between dataFrom and dateTo cannot be longer than 7 days(technical support can be contacted to adjust);
-  // 4.dateFrom and dateTo can be either both are specified or neither is specifies;
-  // 5.If neither dateFrom nor dateTo is specified, then by default, data in the last 24 hour is queried", "zh_CN":"开始时间
-  // 1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒；
-  // 2.必须大于当前时间-183天，并且小于当前时间和dateTo；
-  // 3.dateFrom和dateTo相差不能超过7天(可联系技术支持调整)；
-  // 4.dateFrom和dateTo要么都传递，要么都不传递；
-  // 5.dateFrom和dateTo都未传递，则默认查询过去24小时的数据"}
+  // {"en":"Start time:\n1.The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM;\n2.Must be a time that is 183 days earlier than the current time, and the time must be earlier than the current time and dateTo;\n3.Period between dataFrom and dateTo cannot be longer than 7 days(technical support can be contacted to adjust);\n4.dateFrom and dateTo can be either both are specified or neither is specifies;\n5.If neither dateFrom nor dateTo is specified, then by default, data in the last 24 hour is queried","zh_CN":"开始时间\n1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒；\n2.必须大于当前时间-183天，并且小于当前时间和dateTo；\n3.dateFrom和dateTo相差不能超过7天(可联系技术支持调整)；\n4.dateFrom和dateTo要么都传递，要么都不传递；\n5.dateFrom和dateTo都未传递，则默认查询过去24小时的数据"}
   DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
-  // {"en":"End time:
-  // 1.The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM;
-  // 2.Must be greater than dateFrom; if it's greater than the current time, then the current time is assigned as the value;", "zh_CN":"结束时间
-  // 1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒；
-  // 2.必须大于dateFrom；如果大于当前时间，则重新赋值为当前时间；"}
+  // {"en":"End time:\n1.The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM;\n2.Must be greater than dateFrom; if it's greater than the current time, then the current time is assigned as the value;","zh_CN":"结束时间\n1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒；\n2.必须大于dateFrom；如果大于当前时间，则重新赋值为当前时间；"}
   DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
-  // {"en":"Domain names:
-  // 1.Domain number limits can be adjusted depending on different accounts. The default value is 20
-  // 2.Query all domain names under account when this entry is not passed", "zh_CN":"域名：
-  // 1.可传递域名数量上限默认为20个(可联系技术支持调整)；
-  // 2.未传递该入参时查询账号下所有域名"}
+  // {"en":"Domain names:\n1.Domain number limits can be adjusted depending on different accounts. The default value is 20\n2.Query all domain names under account when this entry is not passed","zh_CN":"域名：\n1.可传递域名数量上限默认为20个(可联系技术支持调整)；\n2.未传递该入参时查询账号下所有域名"}
   Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" type:"Repeated"`
-  // {"en":"Data granularity, 5m: granularity of 5 minutes", "zh_CN":"数据粒度，5m：5分钟粒度"}
+  // {"en":"Data granularity, 5m: granularity of 5 minutes","zh_CN":"数据粒度，5m：5分钟粒度"}
   DataInterval *string `json:"dataInterval,omitempty" xml:"dataInterval,omitempty"`
-  // {"en":"Group dimension
-  // 1.The value can be selected is domain;
-  // 2.The data is displayed according to the specified dimension;", "zh_CN":"分组维度
-  // 1.可选值为domain；
-  // 2.有传入则按照该维度展示明细数据；"}
+  // {"en":"Group dimension\n1.The value can be selected is domain;\n2.The data is displayed according to the specified dimension;","zh_CN":"分组维度\n1.可选值为domain；\n2.有传入则按照该维度展示明细数据；"}
   GroupBy []*string `json:"groupBy,omitempty" xml:"groupBy,omitempty" type:"Repeated"`
-  // {"en":"1.If 0 is added, the value is true or false, which is false by default
-  // 2.When the value of data adding is true, data is added to time points without data
-  // 3.When the dataPadding value is false, no treatment will be done", "zh_CN":"是否补0，取值为true或false，默认为false
-  // 当dataPadding取值为true时，对没有数据的时间点填充数据，取值为0
-  // 当dataPadding取值为false时，不做处理"}
+  // {"en":"1.If 0 is added, the value is true or false, which is false by default\n2.When the value of data adding is true, data is added to time points without data\n3.When the dataPadding value is false, no treatment will be done","zh_CN":"是否补0，取值为true或false，默认为false\n当dataPadding取值为true时，对没有数据的时间点填充数据，取值为0\n当dataPadding取值为false时，不做处理"}
   DataPadding *bool `json:"dataPadding,omitempty" xml:"dataPadding,omitempty"`
-  // {"en":"Query dimension. Optional values: statusCode, statusCodeType. Default value is statuscode.
-  // 1.statusCode: returns the status code details;
-  // 2.statusCodeType: returns the requests of eachstatus code type (such as the number of requests corresponding to success, redirect, not modified, permission, not found, server error, and other)", "zh_CN":"查询维度，可选值：statusCode、statusCodeType；不传默认statusCode
-  // 1.statusCode ：返回状态码明细；
-  // 2.statusCodeType：返回状态码类型对应明细(如Success、Redirect、Not-Modified、Permission、Not-Found、Server Error、Other对应的请求数)"}
+  // {"en":"Query dimension. Optional values: statusCode, statusCodeType. Default value is statuscode.\n1.statusCode: returns the status code details;\n2.statusCodeType: returns the requests of eachstatus code type (such as the number of requests corresponding to success, redirect, not modified, permission, not found, server error, and other)","zh_CN":"查询维度，可选值：statusCode、statusCodeType；不传默认statusCode\n1.statusCode ：返回状态码明细；\n2.statusCodeType：返回状态码类型对应明细(如Success、Redirect、Not-Modified、Permission、Not-Found、Server Error、Other对应的请求数)"}
   QueryBy *string `json:"queryBy,omitempty" xml:"queryBy,omitempty"`
 }
 
@@ -3345,8 +3315,41 @@ func (s *QueryStatusCodeDistributionRequest) SetQueryBy(v string) *QueryStatusCo
   return s
 }
 
+type QueryStatusCodeDistributionRequestHeader struct {
+}
+
+func (s QueryStatusCodeDistributionRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryStatusCodeDistributionRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryStatusCodeDistributionPaths struct {
+}
+
+func (s QueryStatusCodeDistributionPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryStatusCodeDistributionPaths) GoString() string {
+  return s.String()
+}
+
+type QueryStatusCodeDistributionParameters struct {
+}
+
+func (s QueryStatusCodeDistributionParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryStatusCodeDistributionParameters) GoString() string {
+  return s.String()
+}
+
 type QueryStatusCodeDistributionResponse struct {
-  // {"en":"result", "zh_CN":"结果"}
+  // {"en":"result","zh_CN":"结果"}
   Result []*QueryStatusCodeDistributionResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -3364,9 +3367,9 @@ func (s *QueryStatusCodeDistributionResponse) SetResult(v []*QueryStatusCodeDist
 }
 
 type QueryStatusCodeDistributionResponseResult struct     {
-  // {"en":"Domain", "zh_CN":"域名"}
+  // {"en":"Domain","zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  // {"en":"statusCodeData", "zh_CN":"状态码数据"}
+  // {"en":"statusCodeData","zh_CN":"状态码数据"}
   StatusCodeData []*QueryStatusCodeDistributionResponseResultStatusCodeData `json:"statusCodeData,omitempty" xml:"statusCodeData,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -3389,13 +3392,13 @@ func (s *QueryStatusCodeDistributionResponseResult) SetStatusCodeData(v []*Query
 }
 
 type QueryStatusCodeDistributionResponseResultStatusCodeData struct     {
-  // {"en":"Status code", "zh_CN":"状态码"}
+  // {"en":"Status code","zh_CN":"状态码"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
-  // {"en":"totalRequest", "zh_CN":"总请求数"}
+  // {"en":"totalRequest","zh_CN":"总请求数"}
   TotalRequest *string `json:"totalRequest,omitempty" xml:"totalRequest,omitempty" require:"true"`
-  // {"en":"Success, Redirect, Not-Modified, Permission, Not-Found, Server Error, Other", "zh_CN":"Success, Redirect, Not-Modified, Permission, Not-Found, Server Error, Other"}
+  // {"en":"Success, Redirect, Not-Modified, Permission, Not-Found, Server Error, Other","zh_CN":"Success, Redirect, Not-Modified, Permission, Not-Found, Server Error, Other"}
   StatusCodeType *string `json:"statusCodeType,omitempty" xml:"statusCodeType,omitempty" require:"true"`
-  // {"en":"requestData", "zh_CN":"请求数数据"}
+  // {"en":"requestData","zh_CN":"请求数数据"}
   RequestData []*QueryStatusCodeDistributionResponseResultStatusCodeDataRequestData `json:"requestData,omitempty" xml:"requestData,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -3428,9 +3431,9 @@ func (s *QueryStatusCodeDistributionResponseResultStatusCodeData) SetRequestData
 }
 
 type QueryStatusCodeDistributionResponseResultStatusCodeDataRequestData struct     {
-  // {"en":"DateTime, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range.", "zh_CN":"时间，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。比如yyyy-MM-dd 00:05，代表00:00到00:05范围内的数据。"}
+  // {"en":"DateTime, the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range.","zh_CN":"时间，格式为yyyy-MM-dd HH:mm；每一个时间片数据值代表的是前一个时间粒度范围内的数据值。比如yyyy-MM-dd 00:05，代表00:00到00:05范围内的数据。"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
-  // {"en":"Number of requests for status codes", "zh_CN":"状态码对应的请求数"}
+  // {"en":"Number of requests for status codes","zh_CN":"状态码对应的请求数"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
@@ -3450,39 +3453,6 @@ func (s *QueryStatusCodeDistributionResponseResultStatusCodeDataRequestData) Set
 func (s *QueryStatusCodeDistributionResponseResultStatusCodeDataRequestData) SetValue(v string) *QueryStatusCodeDistributionResponseResultStatusCodeDataRequestData {
   s.Value = &v
   return s
-}
-
-type QueryStatusCodeDistributionPaths struct {
-}
-
-func (s QueryStatusCodeDistributionPaths) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryStatusCodeDistributionPaths) GoString() string {
-  return s.String()
-}
-
-type QueryStatusCodeDistributionParameters struct {
-}
-
-func (s QueryStatusCodeDistributionParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryStatusCodeDistributionParameters) GoString() string {
-  return s.String()
-}
-
-type QueryStatusCodeDistributionRequestHeader struct {
-}
-
-func (s QueryStatusCodeDistributionRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s QueryStatusCodeDistributionRequestHeader) GoString() string {
-  return s.String()
 }
 
 type QueryStatusCodeDistributionResponseHeader struct {
@@ -3629,47 +3599,15 @@ func (s ReportStatusAllServiceResponseHeader) GoString() string {
 
 
 type ReportStatusCodeUrlTopServiceRequest struct {
-  // {"en":"Start time:
-  // 
-  // 1. The format is yyyyy-MM-ddTHH: mm: SS + 08:00, for example, 2024-12-23T10:00 + 08:00 (10:00:00 Beijing time on December 23, 2024);
-  // 
-  // 2. Can not exceed the current time;
-  // 
-  // 3. The latest half year (183 days) data can be obtained at most.", "zh_CN":"开始时间：
-  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00，例如，2024-12-23T10:00:00+08:00（为北京时间2024年12月23日10点0分0秒）；
-  // 2.不能大于当前时间；
-  // 3.最多可获取最近半年（183天）的数据。"}
+  // {"en":"Start time:\n\n1. The format is yyyyy-MM-ddTHH: mm: SS + 08:00, for example, 2024-12-23T10:00 + 08:00 (10:00:00 Beijing time on December 23, 2024);\n\n2. Can not exceed the current time;\n\n3. The latest half year (183 days) data can be obtained at most.","zh_CN":"开始时间：\n1.格式为yyyy-MM-ddTHH:mm:ss+08:00，例如，2024-12-23T10:00:00+08:00（为北京时间2024年12月23日10点0分0秒）；\n2.不能大于当前时间；\n3.最多可获取最近半年（183天）的数据。"}
   DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
-  // {"en":"End time:
-  // 
-  // 1. The 1format is yyyy-MM-ddTHH:mm:ss+08:00;
-  // 
-  // 2. The end time is greater than the start time.
-  // 
-  // 3. If the end time is greater than the current time, the current time is taken.
-  // 
-  // 4. DateFrom and dateTo are not uploaded, defaulting to query the past 24 hours; if only one is not uploaded, throw an exception;
-  // 
-  // 5. Maximum query interval allowed: 7 days, that is, the difference between dateFrom and dateTo can not exceed 7 days.", "zh_CN":"结束时间：
-  // 1.格式为yyyy-MM-ddTHH:mm:ss+08:00；
-  // 2.结束时间需大于开始时间；
-  // 3.结束时间如果大于当前时间，取当前时间；
-  // 4.dateFrom，dateTo二者都未传，默认查询过去的24小时；如仅有一个未传，抛异常；
-  // 5.允许查询最大间隔：7天，即dateFrom和dateTo相差不能超过7天。"}
+  // {"en":"End time:\n\n1. The 1format is yyyy-MM-ddTHH:mm:ss+08:00;\n\n2. The end time is greater than the start time.\n\n3. If the end time is greater than the current time, the current time is taken.\n\n4. DateFrom and dateTo are not uploaded, defaulting to query the past 24 hours; if only one is not uploaded, throw an exception;\n\n5. Maximum query interval allowed: 7 days, that is, the difference between dateFrom and dateTo can not exceed 7 days.","zh_CN":"结束时间：\n1.格式为yyyy-MM-ddTHH:mm:ss+08:00；\n2.结束时间需大于开始时间；\n3.结束时间如果大于当前时间，取当前时间；\n4.dateFrom，dateTo二者都未传，默认查询过去的24小时；如仅有一个未传，抛异常；\n5.允许查询最大间隔：7天，即dateFrom和dateTo相差不能超过7天。"}
   DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
-  // {"en":"Domain
-  // 
-  // Can only transfer one domain.", "zh_CN":"域名：
-  // 
-  // 只能传一个域名"}
+  // {"en":"Domain\n\nCan only transfer one domain.","zh_CN":"域名：\n\n只能传一个域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  // {"en":"Status code
-  // 
-  // Support transmitting specific status codes, such as 201/202, or summarizing status codes 1XX/2XX/3XX/4XX/5XX", "zh_CN":"状态码
-  // 
-  // 支持传具体状态码，如201，202、或者是汇总状态码1XX/2XX/3XX/4XX/5XX"}
+  // {"en":"Status code\n\nSupport transmitting specific status codes, such as 201/202, or summarizing status codes 1XX/2XX/3XX/4XX/5XX","zh_CN":"状态码\n\n支持传具体状态码，如201，202、或者是汇总状态码1XX/2XX/3XX/4XX/5XX"}
   StatusCode *string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true"`
-  // {"en":"Default top 200, maximum input 1000", "zh_CN":"不传默认top200，最多输入1000"}
+  // {"en":"Default top 200, maximum input 1000","zh_CN":"不传默认top200，最多输入1000"}
   Top *int `json:"top,omitempty" xml:"top,omitempty"`
 }
 
@@ -3706,11 +3644,45 @@ func (s *ReportStatusCodeUrlTopServiceRequest) SetTop(v int) *ReportStatusCodeUr
   return s
 }
 
+type ReportStatusCodeUrlTopServiceRequestHeader struct {
+}
+
+func (s ReportStatusCodeUrlTopServiceRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportStatusCodeUrlTopServiceRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ReportStatusCodeUrlTopServicePaths struct {
+}
+
+func (s ReportStatusCodeUrlTopServicePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportStatusCodeUrlTopServicePaths) GoString() string {
+  return s.String()
+}
+
+type ReportStatusCodeUrlTopServiceParameters struct {
+}
+
+func (s ReportStatusCodeUrlTopServiceParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ReportStatusCodeUrlTopServiceParameters) GoString() string {
+  return s.String()
+}
+
 type ReportStatusCodeUrlTopServiceResponse struct {
-  // {"en":"request result status code", "zh_CN":"请求结果状态码"}
+  // {"en":"request result status code","zh_CN":"请求结果状态码"}
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
-  // {"en":"Request result information", "zh_CN":"请求结果信息"}
+  // {"en":"Request result information","zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"","zh_CN":""}
   Data []*ReportStatusCodeUrlTopServiceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -3738,9 +3710,9 @@ func (s *ReportStatusCodeUrlTopServiceResponse) SetData(v []*ReportStatusCodeUrl
 }
 
 type ReportStatusCodeUrlTopServiceResponseData struct     {
-  // {"en":"url", "zh_CN":"URL"}
+  // {"en":"url","zh_CN":"URL"}
   Url *string `json:"url,omitempty" xml:"url,omitempty" require:"true"`
-  // {"en":"Number of requests", "zh_CN":"请求数"}
+  // {"en":"Number of requests","zh_CN":"请求数"}
   Value *string `json:"value,omitempty" xml:"value,omitempty" require:"true"`
 }
 
@@ -3760,39 +3732,6 @@ func (s *ReportStatusCodeUrlTopServiceResponseData) SetUrl(v string) *ReportStat
 func (s *ReportStatusCodeUrlTopServiceResponseData) SetValue(v string) *ReportStatusCodeUrlTopServiceResponseData {
   s.Value = &v
   return s
-}
-
-type ReportStatusCodeUrlTopServicePaths struct {
-}
-
-func (s ReportStatusCodeUrlTopServicePaths) String() string {
-  return tea.Prettify(s)
-}
-
-func (s ReportStatusCodeUrlTopServicePaths) GoString() string {
-  return s.String()
-}
-
-type ReportStatusCodeUrlTopServiceParameters struct {
-}
-
-func (s ReportStatusCodeUrlTopServiceParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s ReportStatusCodeUrlTopServiceParameters) GoString() string {
-  return s.String()
-}
-
-type ReportStatusCodeUrlTopServiceRequestHeader struct {
-}
-
-func (s ReportStatusCodeUrlTopServiceRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s ReportStatusCodeUrlTopServiceRequestHeader) GoString() string {
-  return s.String()
 }
 
 type ReportStatusCodeUrlTopServiceResponseHeader struct {

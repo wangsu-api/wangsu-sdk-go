@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/reportbandwidth
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/reportbandwidth
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/reportbandwidth"
     "log"
 )
@@ -74,6 +68,8 @@ if err != nil {
 | Bandwidthchannelprotocol | 查询分协议带宽情况 | POST | /myview/Bandwidthchannelprotocol |
 | Channelvaluesum | 按计费方式汇总频道计费值（域名列表、计费说明、计费值），查询周期内相同计费方式的域名带宽进行累加计费 | POST | /myview/Channelvaluesum |
 | Bandwidthmiddle | 查询中间缓存带宽，输出分钟粒度的中间缓存带宽、动态hit、动态misss、静态hit、静态miss带宽 | POST | /myview/bandwidth-middle |
+| Bandwidthtotal | 查询频道总流量 | POST | /myview/bandwidth-total |
+| CacheClientBandwidth | 查询cache和websocket连接的带宽，输出计费方式、计费值、总流量，以及分钟粒度的带宽值（可指定Cache->客户端带宽、Cache->源带宽、客户端->Cache带宽、源-->Cache带宽） | POST | /myview/CacheClientBandwidth |
 | Querydomainbandwidth | 该接口用于统计多个域名在指定时间内的带宽汇总信息。用户需提供加速域名及时间参数来生成汇总数据，返回内容包括每个时间片的带宽汇总数据。此接口有助于用户监控和分析域名的流量使用情况，以便更好地进行网络优化和成本控制。<br> | POST | /api/report/domainbandwidth |
 | Billingorder | 查询客户正式订单计费信息，包括计费方式说明、计费值、详情等 | POST | /myview/Billingorder |
 | Queryipv6bandwidthofeachispandprovince | 根据访客访问日志，查询域名在各ISP各省份不同IP类型的带宽<br>支持语言请求头Accept-Language，只支持zh-CN、en-US，默认为zh-CN。Accept-Language：en-US时，省份及运营商 入参及返回都为code，否则返回的为中文。 | POST | /api/report/bandwidth/isp-province/ipv6 |
@@ -86,11 +82,11 @@ if err != nil {
 | Querybandwidthminutely | 该接口用于查询多个域名在分钟级别的实时带宽信息。用户需要提供时间跨度和域名列表，查询时间范围限制单次最多可查30分钟。返回的数据包括带宽峰值，每分钟的带宽值。该接口适用于需要对不同域名的带宽流量进行细粒度实时监控的场景。 | POST | /api/report/bandwidth/multi-domain/real-time |
 | Querycpsbandwidth | 专线带宽接口 | POST | /myview/bandwidth-HK |
 | Bandwidthvm | 查询域名带宽，输出分钟粒度的带宽和对应计费信息。 | POST | /api/bandwidth-vm |
+| Bandwidthchannelvalid | 查询域名带宽，输出分钟粒度的带宽和对应计费信息。 | POST | /api/Bandwidthchannelvalid |
 | Queryrealtimebandwidthformultidomain | 该接口用于查询域名分钟级别的边缘带宽，用户需提供时间范围和域名来获取详细的带宽使用数据。返回内容包括每个域名的总流量、分钟级别带宽数据，以及带宽峰值等。有助于用户分析网站或应用的流量情况，从而优化资源管理和提升性能。<br> | POST | /api/report/bandwidth/multi-domain/real-time/edge |
 | Reportlogflowispprovinceservice | 该接口用于查询多域名在不同ISP和省份的日志带宽及流量数据，根据请求头Accept-Language可获取中文或英文的返回结果。用户需提供查询时间范围、域名、省份、ISP获取数据。返回结果包括每个域名在各ISP和省份的带宽和流量。该接口有助于用户分析网络性能和流量分布，以优化资源配置和提高服务质量。 | POST | /api/report/flow/log/isp-province |
 | Reportbandwidthwildcarddomainservice | 查询泛域名的明细域名P2P带宽数据 | POST | /api/report/bandwidth/wildcard-domain |
 | Reportp2pbandwidthdomainservice | 该接口用于查真实加速域名（含泛域名和非泛域名的真实域名）的明细域名P2P带宽数据。用户需提供查询时间和相关域名信息以获取结果。返回的数据包括每个详细域名的CDN带宽、P2P带宽和P2P带宽中的IPv6带宽，均以Mbps显示。有助于用户监控和管理域名的网络环境，分析网络流量，以优化域名资源。 | POST | /api/report/p2p/bandwidth |
-| Bandwidthtotal | 查询频道总流量 | POST | /myview/bandwidth-total |
 | Reportlowdelaycountrybandwidthservice | 该接口用于查询在特定时间段内指定域名的各国家带宽数据。支持指指定查询国家地区。接口返回每个域名在各个国家相应时间的带宽值。此接口可用于监控分析不同国家和地区的带宽情况，数据延时较低。 | POST | /api/report/low-delay/country-bandwidth |
 | Perzonebilling | 查询perzone计费数据 | POST | /myview/perzone-billing |
 | Reportcountryserverbandwidthservice | 该接口用于查询服务器IP所属国家的带宽明细。用户需提供时间范围、域名、国家地区代码以及数据粒度。返回内容包含指定时间段内的每个时间点的边缘流量和带宽值。此接口有助于用户了解当前在全球不同国家的服务流量分布和使用情况。 | POST | /api/report/server/country-bandwidth |
@@ -103,3 +99,6 @@ if err != nil {
 | Reportdirbandwidthinfoservice | 查询域名下多级目录的带宽及流量明细 | POST | /api/report/flow-bandwidth/dir/info |
 | Reportdomainoriginresponsetimeservice | 该接口用于查询特定域名的回源响应时间，用户可以通过提供域名、开始时间和结束时间来获取相应的数据。返回的信息包括每个域名每分钟的响应时间数据，以毫秒为单位，精确到小数点后两位。此接口对于了解网站的回源性能表现至关重要，用户可根据查询结果进行性能优化和故障排查。 | POST | /api/report/origin/response-time |
 | Reportbandwidthrequestbyipispprovince | 该接口用于查询多域名根据访客IP归属的指定时间范围内各省份运营商的IPv6和IPv4带宽或请求数。用户需提供时间范围和域名进行查询，可选择按域名或省份或运营商进行分组返回，支持可选返回1分钟或5分钟粒度数据。响应返回对应域名省份运营商的IPv6和IPv4带宽或请求数。 | POST | /api/report/bandwidth-request/isp-province/multi-ip-version |
+| Quiclogbandwidth | 查询QUIC的日志带宽信息，包括：QUIC日志带宽、日志带宽扣减QUIC带宽 | POST | /myview/Quiclogbandwidth |
+| Getcdnrelaytraffic | 该接口用于查询指定维度的cdn中间流量数据，用户可以通过该接口来查询对应客户的详细频道中间流量报表，包括输出日期、峰值时间、带宽峰值、总流量等。这对客户了解自身的中间流量使用情况有很直接的帮助。 | POST | /cdn/traffic/relay |
+| Reportappaflowdomaincountryservice | 该接口查询指定域名在各国家和地区的流量带宽分布。用户输入时间范围和域名列表，可按域名、国家或国内外查询数据。返回结果包括各地区的流量总和及其百分比，以及每个时间片段的流量和带宽，帮助分析和管理全球范围内的网站流量带宽。建议查询24小时前的数据。 | POST | /api/report/appa-flow/domain-country |

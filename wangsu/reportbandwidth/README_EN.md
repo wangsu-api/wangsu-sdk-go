@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/reportbandwidth
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/reportbandwidth"
     "log"
 )
@@ -74,6 +69,8 @@ For detailed API documentation and available methods, please refer to the [offic
 | Bandwidthchannelprotocol | Query the bandwidth of different protocals. | POST | /myview/Bandwidthchannelprotocol |
 | Channelvaluesum | Query the sum of charge values group by channels' charge method. | POST | /myview/Channelvaluesum |
 | Bandwidthmiddle | Query the bandwidth of middle cache. | POST | /myview/bandwidth-middle |
+| Bandwidthtotal | Query total traffic of channels | POST | /myview/bandwidth-total |
+| CacheClientBandwidth | Query the bandwidth of cache and websocket connection. | POST | /myview/CacheClientBandwidth |
 | Querydomainbandwidth | This interface is used to collect statistics on bandwidth summary information of multiple domain names within a specified time. Users need to provide acceleration domain names and time parameters to generate summary data, and the returned content includes bandwidth summary data for each time slice. This interface helps users monitor and analyze the traffic usage of domain names to better optimize the network and control costs. | POST | /api/report/domainbandwidth |
 | Billingorder | Query customer's formal order billing information, including billing method description, billing value, details, etc. | POST | /myview/Billingorder |
 | Queryipv6bandwidthofeachispandprovince | According to the visitor visit log, query bandwidth of domain in each ISP each province different IP type.<br>Support language request header Accept Language, only support zh-CN and en-US, default to zh-CN. Accept Language: en-US, both the province and isp input and return are in code, otherwise the return is in Chinese. | POST | /api/report/bandwidth/isp-province/ipv6 |
@@ -86,11 +83,11 @@ For detailed API documentation and available methods, please refer to the [offic
 | Querybandwidthminutely | Query real-time bandwidth for multiple domains at the minute level. Users provide a time span and domain list, with a maximum query range of 30 minutes. It returns peak bandwidth and per-minute values, ideal for detailed real-time bandwidth monitoring of different domains. | POST | /api/report/bandwidth/multi-domain/real-time |
 | Querycpsbandwidth | The channels' bandwidth of  dedicated line | POST | /myview/bandwidth-HK |
 | Bandwidthvm | Query the channels' bandwidth and the charge info | POST | /api/bandwidth-vm |
+| Bandwidthchannelvalid | Query the bandwidth of Valid | POST | /api/Bandwidthchannelvalid |
 | Queryrealtimebandwidthformultidomain | This interface is used to query the minute-level edge bandwidth of a domain name. Users need to provide a time range and domain name to obtain detailed bandwidth usage data. The returned content includes the total traffic of each domain name, minute-level bandwidth data, and bandwidth peak, etc. It helps users analyze the traffic of websites or applications, thereby optimizing resource management and improving performance. | POST | /api/report/bandwidth/multi-domain/real-time/edge |
 | Reportlogflowispprovinceservice | This interface is used to query the log bandwidth and traffic data of multiple domain names in different ISPs and provinces. The return results in Chinese or English can be obtained according to the request header Accept-Language. Users need to provide the query time range, domain name, province, and ISP to obtain data. The return results include the bandwidth and traffic of each domain name in each ISP and province. This interface helps users analyze network performance and traffic distribution to optimize resource allocation and improve service quality. | POST | /api/report/flow/log/isp-province |
 | Reportbandwidthwildcarddomainservice | Query Wildcard Domain Bandwidth | POST | /api/report/bandwidth/wildcard-domain |
 | Reportp2pbandwidthdomainservice | This interface is used to query the detailed domain name P2P bandwidth data of real accelerated domain names (including wildcard domain names and real domain names that are not wildcard domain names). Users need to provide the query time and relevant domain name information to obtain the results. The returned data includes the CDN bandwidth, P2P bandwidth, and IPv6 bandwidth in P2P bandwidth of each detailed domain name, all displayed in Mbps. It helps users monitor and manage the network environment of domain names, analyze network traffic, and optimize domain name resources. | POST | /api/report/p2p/bandwidth |
-| Bandwidthtotal | Query total traffic of channels | POST | /myview/bandwidth-total |
 | Reportlowdelaycountrybandwidthservice | Query bandwidth data for specified domains in different countries over a specific time period. It supports queries for selected countries and regions, returning bandwidth values for each domain at corresponding times in various countries. Ideal for monitoring and analyzing bandwidth conditions with low data latency across regions. | POST | /api/report/low-delay/country-bandwidth |
 | Perzonebilling | Query the perzone data | POST | /myview/perzone-billing |
 | Reportcountryserverbandwidthservice | This interface is used to query the bandwidth details of the country to which the server IP belongs. The user needs to provide the time range, domain name, country code, and data granularity. The return content includes the edge traffic and bandwidth values at each time point in the specified time period. This interface helps users understand the current service traffic distribution and usage in different countries around the world. | POST | /api/report/server/country-bandwidth |
@@ -103,3 +100,6 @@ For detailed API documentation and available methods, please refer to the [offic
 | Reportdirbandwidthinfoservice | Query the bandwidth and flow details of multi-level directories under the domains. | POST | /api/report/flow-bandwidth/dir/info |
 | Reportdomainoriginresponsetimeservice | This interface is used to query the back-to-origin response time of a specific domain name. Users can obtain the corresponding data by providing the domain name, start time, and end time. The returned information includes the response time data of each domain name per minute, in milliseconds, accurate to two decimal places. This interface is crucial for understanding the back-to-origin performance of the website. Users can optimize performance and troubleshoot problems based on the query results. | POST | /api/report/origin/response-time |
 | Reportbandwidthrequestbyipispprovince | This API is used to query IPv6/IPv4 bandwidth or request counts for provinces and ISPs based on visitors' IPs for multiple domains within a specified time range. Provide the time range and domain to query. You can group results by domain, province, or ISP and get data at 1-minute or 5-minute intervals. The response shows the bandwidth or request counts for each domain, province, and ISP. | POST | /api/report/bandwidth-request/isp-province/multi-ip-version |
+| Quiclogbandwidth | Query the quic log bandwidth. | POST | /myview/Quiclogbandwidth |
+| Getcdnrelaytraffic | This API is used to query cdn relay traffic data for specified dimensions. Users can use this API to query detailed channel relay traffic reports for the corresponding customer, including output date, peak time, bandwidth peak, total traffic, etc. This is very helpful for customers to gain a direct understanding of their own relay traffic usage. | POST | /cdn/traffic/relay |
+| Reportappaflowdomaincountryservice | Query the  traffic bandwidth distribution of a domain across countries and regions. Users input a time range and domain list to view data by domain, country, or domestic vs. foreign. Results include total region traffic, its percentage, and traffic and bandwidth per time segment, aiding in global website traffic analysis and management. Query data from 24 hours prior is recommended. | POST | /api/report/appa-flow/domain-country |

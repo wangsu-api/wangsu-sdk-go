@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/mediaprocessing
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/mediaprocessing
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/mediaprocessing"
     "log"
 )
@@ -77,3 +71,4 @@ if err != nil {
 | Createclearadtask | 调用createClearAdTask为指定视频创建AI去广告任务，系统会自动针对该视频进行AI去广告操作（增值服务功能，如若需要请联系客服开通“AI清除广告”增值服务）。 | POST | /vod/ai/createClearAdTask |
 | Clearadtaskquery | 调用clearAdTaskQuery查询AI去广告任务处理状态和结果。 | POST | /vod/ai/clearAdTaskQuery |
 | Transcode | 调用transCode对指定的视频进行转码（主要包含：分辨率转码、加水印转码） | POST | /vod/videoManage/transCode |
+| Startworkflow | 调用startWorkflow对指定的视频进行工作流执行操作。主要用于批量修改视频信息 | POST | /workflow/startWorkflow |

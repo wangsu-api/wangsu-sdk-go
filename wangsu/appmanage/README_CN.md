@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/appmanage
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/appmanage
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/appmanage"
     "log"
 )
@@ -85,3 +79,4 @@ if err != nil {
 | Createapp | 创建应用，用于接入Android或者iOS的应用，返回应用ID。 | POST | /mah/v1/app/create |
 | Adddebugfingerprint | 添加调试指纹，用于应用调试，仅限Android应用。 | POST | /mah/v1/app/add-debug-fingerprint |
 | Deleteapp | 删除应用，指定应用ID删除对应应用 | POST | /mah/v1/app/delete |
+| Getapp | 查询应用信息列表，只能查询权限范围内的应用，返回应用ID、包名等信息。可按包名精准查询，默认查询权限范围内全部应用。 | POST | /mah/v1/app/getApp |

@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/csrmanage
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/csrmanage"
     "log"
 )
@@ -72,5 +67,6 @@ For detailed API documentation and available methods, please refer to the [offic
 | --- | --- | --- | --- |
 | CreateTheCsr | add csr record | POST | /api/csr-manage/csr |
 | DeleteCsrRecord | Delete CSR file.<br>Please refer to the example for calling method.<br> | DELETE | /api/csr-manage/csr/* |
-| QueryCsrService | query csr Service | GET | /api/csr-manage/csr/* |
+| QueryCsrService | This interface is used to retrieve the detailed information of a single CSR based on its CSR ID. Users need to provide a CSR ID as a path parameter, and the system will return detailed attributes such as the CSR's creation time, modification time, main domain, backup domain list, key algorithm, key length, and CSR content. | GET | /api/csr-manage/csr/* |
 | QueryCsrList | query csr list | GET | /api/csr-manage/list |
+| Updatecsr | This API is used to update a specified CSR (Certificate Signing Request) record. Users must provide the CSR name and can optionally add comments. | PUT | /api/csr-manage/update/csr/* |

@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/ipcheck
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/ipcheck
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/ipcheck"
     "log"
 )
@@ -72,5 +66,6 @@ if err != nil {
 | --- | --- | --- | --- |
 | Querycdnservicerealip | 该接口用于获取CDN服务的真实IP列表，特别适用于源站设置了白名单限制的场景。用户可以通过调用此接口获得我司提供的CDN节点用于回源的IP白名单，以便正确配置并确保数据请求能够通过CDN顺利到达源站。 | GET | /api/si/report/whiteip-list |
 | Queryspecificipbelong | 该接口用于查询给定IP地址是否属于我司CDN IP。用户需提供IP地址列表。返回结果包含每个IP地址是否归属于我司CDN IP。 | POST | /api/si/tools/ipCheck |
-| Ipinfoservice | 该接口用于查询特定IP地址的归属信息。用户可以通过提供一个或多个IP地址来查询它们是否为公司CDN节点，以及其归属的国家、省份、城市和运营商信息。返回结果包括是否为公司CDN节点的标识，如不是公司CDN的节点，该接口将返回未知。此接口适用于当用户查询IP是否我司IP。 | POST | /api/tools/ip-info |
-| Checkiscuswhiteip | 本接口主要是提供给客户查询指定ip，是否为客户提供服务节点的ip。<br>查询指定的ip是否是实际在用的服务节点资源池ip，如果是返回ip;yes,否返回ip:no | GET | /task/api/customers/whitelist-check |
+| Checkipowner | 该接口用于查询特定IP地址的归属信息。用户可以通过提供一个或多个IP地址来查询它们是否为公司CDN节点，以及其归属的国家、省份、城市和运营商信息。返回结果包括是否为公司CDN节点的标识，如不是公司CDN的节点，该接口将返回未知。此接口适用于当用户查询IP是否我司IP。 | POST | /api/tools/ip-info |
+| Checkiscuswhiteip | 本接口主要是提供给客户查询指定ip，是否为客户提供服务节点的ip。<br>查询指定的ip是否是实际在用的服务节点资源池ip，如果是返回ip;yes,否返回ip:no | POST | /task/api/customers/whitelist-check |
+| Querystageflowip | 该接口用户查询上流量信息。用户可以通过提供应用服务组ID获取关联的上流量信息，包括上流量ip、区域、国家、协议等。对于边缘组件可实时获取上流量信息，提高流量转发的准确性。 | GET | /api/apm/stage/flowIp |

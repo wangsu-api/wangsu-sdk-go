@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/templatemanage
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/templatemanage"
     "log"
 )
@@ -71,3 +66,4 @@ For detailed API documentation and available methods, please refer to the [offic
 | ActionName | enDescription | client_methods | uri |
 | --- | --- | --- | --- |
 | Vmpquerynodeservers | Query the number of instances that a certain node can create of a certain specification, for you to use as a reference for instance creation. Due to real-time changes in node resources, the return value of this interface is for reference only.<br>By entering the province and nodename fields, as long as one item is filled in, the results can be queried normally. If neither item is filled in, an error will be returned. | GET | /vmp/servers_count |
+| Lechquerynodeservers | Query the number of instances that a certain node can create of a certain specification, for you to use as a reference for instance creation. Due to real-time changes in node resources, the return value of this interface is for reference only.<br>By entering the province and nodename fields, as long as one item is filled in, the results can be queried normally. If neither item is filled in, an error will be returned. | GET | /lech/servers_count |

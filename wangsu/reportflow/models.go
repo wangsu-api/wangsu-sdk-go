@@ -440,17 +440,17 @@ func (s GetOriginTrafficAndRequestsForMultiDomainsResponseHeader) GoString() str
 
 
 type GetBandwidthAndRequestsByIpVersionForMultiDomainsRequest struct {
-  // {"en":"Start Time:\n\n1.The Time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM\n\n2.Cannot exceed the current time\n\n3.Up to the past six months (183 days) of data can be obtained","zh_CN":"开始时间：\n\n1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，如 +00:00 代表 UTC 时间，+08:00 代表东八区，2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒\n\n2.不能大于当前时间\n\n3.最多可获取最近半年（183天）的数据"}
+  // {"en":"Start Time:\n\n1.The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, e.g., +00:00 represents UTC time, +08:00 represents East 8th District. For example, 2024-01-15T10:30:45+00:00 indicates January 15, 2024, 10:30:45 AM UTC time.\n2.Cannot be later than the current time.\n3.Data for up to the past six months (183 days) can be retrieved.","zh_CN":"开始时间：\n\n1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，如 +00:00 代表 UTC 时间，+08:00 代表东八区，2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒\n\n2.不能大于当前时间\n\n3.最多可获取最近半年（183天）的数据"}
   DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
-  // {"en":"End time:\n\n1. The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM\n\n2. The end time is greater than the start time\n\n3. If the end time is greater than the current time, the current time is taken\n\n4. Maximum query interval allowed: 1 day by default, that is, the difference between dateFrom and dateTo cannot exceed 1 day (you can contact technical support to adjust)","zh_CN":"结束时间： 1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒  \n2.结束时间需大于开始时间  \n3.结束时间如果大于当前时间，取当前时间  \n4.允许查询最大时间间隔:1天,即dateFrom和dateTo相差不能超过1天。(可联系技术支持调整)"}
+  // {"en":"End time:\n\n1. The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM.\n2. The end time must be greater than the start time.\n3. If the end time is set later than the current time, the current time will be used instead.\n4. The maximum allowed query interval is 1 day (i.e., the difference between `dateFrom` and `dateTo` cannot exceed 1 day). This limit can be adjusted by contacting technical support.","zh_CN":"结束时间： 1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒  \n2.结束时间需大于开始时间  \n3.结束时间如果大于当前时间，取当前时间  \n4.允许查询最大时间间隔:1天,即dateFrom和dateTo相差不能超过1天。(可联系技术支持调整)"}
   DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
-  // {"en":"Domain:\n1.Allowable maximum number of domain is 20 (can be adjusted by contacting technical support).\n2.Automatically filter out illegal domain names (pass illegal domain names, will be filtered out, the query results only return the data of legitimate domain names)","zh_CN":"域名:\n1、可传递域名数量上限默认为20个(可联系技术支持调整);\n2、自动过滤掉无效域名(如传递非法域名,会被过滤掉,查询结果只返回有效域名的数据)。"}
+  // {"en":"Domain:\n1. The maximum number of domains allowed is 20 (can be adjusted by contacting technical support).\n2. Invalid domain names (e.g., illegal domain names passed in the request) will be automatically filtered out, and query results will only return data for valid domain names.","zh_CN":"域名:\n1、可传递域名数量上限默认为20个(可联系技术支持调整);\n2、自动过滤掉无效域名(如传递非法域名,会被过滤掉,查询结果只返回有效域名的数据)。"}
   Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" type:"Repeated"`
-  // {"defaultValue":"5m","en":"Data granularity:\n1.Support for 1m(1 minutes), 5m (5 minutes), 1h (1 hour)\n2.Default 5m","zh_CN":"数据粒度:\n1、支持1m(1分钟)、5m(5分钟)、1h(1小时)\n2、不传默认5m","exampleValue":"1m,5m,1h"}
+  // {"defaultValue":"5m","en":"Data granularity: \n1. Supports 1m (1 minute), 5m (5 minutes), 1h (1 hour).\n2. Defaults to 5m if not specified.","zh_CN":"数据粒度:\n1、支持1m(1分钟)、5m(5分钟)、1h(1小时)\n2、不传默认5m","exampleValue":"1m,5m,1h"}
   Granularity *string `json:"granularity,omitempty" xml:"granularity,omitempty"`
-  // {"defaultValue":"bandwidth","en":"Query data types:\nBandwidth, requests","zh_CN":"查询数据类型：\n带宽(bandwidth)，请求数(request)","exampleValue":"bandwidth,request"}
+  // {"defaultValue":"bandwidth","en":"Query data types:\nbandwidth and request","zh_CN":"查询数据类型：\n带宽(bandwidth)，请求数(request)","exampleValue":"bandwidth,request"}
   QueryBy *string `json:"queryBy,omitempty" xml:"queryBy,omitempty"`
-  // {"en":"If groupBy left empty, merge date of all domains","zh_CN":"不传默认聚合所有频道数据","exampleValue":"domain"}
+  // {"en":"If `groupBy` is left empty, data for all domains will be aggregated.","zh_CN":"不传默认聚合所有频道数据","exampleValue":"domain"}
   GroupBy []*string `json:"groupBy,omitempty" xml:"groupBy,omitempty" type:"Repeated"`
 }
 
@@ -530,7 +530,7 @@ type GetBandwidthAndRequestsByIpVersionForMultiDomainsResponse struct {
   Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
   // {"en":"request result information","zh_CN":"请求结果信息"}
   Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  // {"en":"","zh_CN":""}
+  // {"en":"List of response data","zh_CN":"响应数据列表"}
   Data []*GetBandwidthAndRequestsByIpVersionForMultiDomainsResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -560,7 +560,7 @@ func (s *GetBandwidthAndRequestsByIpVersionForMultiDomainsResponse) SetData(v []
 type GetBandwidthAndRequestsByIpVersionForMultiDomainsResponseData struct     {
   // {"en":"Domain. This field is not returned when aggregating all domain data.","zh_CN":"域名, 聚合全部域名数据时不返回该字段"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  // {"en":"","zh_CN":""}
+  // {"en":"Time-series data list.","zh_CN":"时间序列数据列表"}
   DataSeries []*GetBandwidthAndRequestsByIpVersionForMultiDomainsResponseDataDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -583,11 +583,11 @@ func (s *GetBandwidthAndRequestsByIpVersionForMultiDomainsResponseData) SetDataS
 }
 
 type GetBandwidthAndRequestsByIpVersionForMultiDomainsResponseDataDataSeries struct     {
-  // {"en":"timestamp, Returns the timestamp between the start time and end time.Time format:Minutes: yyyy-MM-dd HH:mm; Hours: yyyy-MM-dd HH","zh_CN":"时间片, 返回开始时间和结束时间包含的时间片。时间格式:1/5分钟:yyyy-MM-dd HH:mm, 1小时:yyyy-MM-dd HH"}
+  // {"en":"Timestamp. Returns the timestamps within the specified start and end times. Time format: 1/5 minutes: yyyy-MM-dd HH:mm; 1 hour: yyyy-MM-dd HH.","zh_CN":"时间片, 返回开始时间和结束时间包含的时间片。时间格式:1/5分钟:yyyy-MM-dd HH:mm, 1小时:yyyy-MM-dd HH"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
-  // {"en":"Ipv4 (Bandwidth unit is Mbps, number of requests is in units","zh_CN":"IPv4数据（带宽单位 Mbps，请求数单位 个）"}
+  // {"en":"IPv4 data (bandwidth unit: Mbps, number of requests unit: count)","zh_CN":"IPv4数据（带宽单位 Mbps，请求数单位 个）"}
   V4Value *string `json:"v4Value,omitempty" xml:"v4Value,omitempty" require:"true"`
-  // {"en":"Ipv6 (Bandwidth unit is Mbps, number of requests is in units","zh_CN":"IPv6数据（带宽单位 Mbps，请求数单位 个）"}
+  // {"en":"IPv6 data (bandwidth unit: Mbps, number of requests unit: count)","zh_CN":"IPv6数据（带宽单位 Mbps，请求数单位 个）"}
   V6Value *string `json:"v6Value,omitempty" xml:"v6Value,omitempty" require:"true"`
 }
 
@@ -1304,17 +1304,17 @@ func (s QueryOutputTrafficUnderShieldPoPResponseHeader) GoString() string {
 
 
 type GetTrafficByProtocolRequest struct {
-  // {"en":"Start time:\n1.The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM;\n2.Must be a time that is 183 days earlier than the current time, and the time must be earlier than the current time and dateTo;\n3.Period between dataFrom and dateTo cannot be longer than 7 days(technical support can be contacted to adjust);\n4.dateFrom and dateTo can be either both are specified or neither is specifies;\n5.If neither dateFrom nor dateTo is specified, then by default, data in the last 24 hour is queried","zh_CN":"开始时间\n1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒;\n2.必须大于当前时间-183天,并且小于当前时间和dateTo;\n3.dateFrom和dateTo相差不能超过7天(可联系技术支持调整);\n4.dateFrom和dateTo要么都传递,要么都不传递;\n5.dateFrom和dateTo都未传递,则默认查询过去24小时的数据"}
+  // {"en":"Start time:\n1.The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM;\n2.Must be no more than 183 days prior to the current time, and must be earlier than both the current time and `dateTo`.\n3.The period between `dateFrom` and `dateTo` cannot exceed 7 days (contact technical support for adjustments).\n4.Either both `dateFrom` and `dateTo` must be specified, or neither should be specified.\n5.If neither dateFrom nor dateTo is specified, then by default, data for the last 24 hours is queried.","zh_CN":"开始时间\n1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒;\n2.必须大于当前时间-183天,并且小于当前时间和dateTo;\n3.dateFrom和dateTo相差不能超过7天(可联系技术支持调整);\n4.dateFrom和dateTo要么都传递,要么都不传递;\n5.dateFrom和dateTo都未传递,则默认查询过去24小时的数据"}
   DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
-  // {"en":"End time:\n1.The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM;\n2.Must be greater than dateFrom;\n3.If it's greater than the current time, then the current time is assigned as the value;","zh_CN":"结束时间\n1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒;\n2.必须大于dateFrom;\n3.如果大于当前时间,则重新赋值为当前时间;"}
+  // {"en":"End time:\n1.The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM.\n2.Must be greater than dateFrom.\n3.If it is greater than the current time, it will be reset to the current time.","zh_CN":"结束时间\n1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒;\n2.必须大于dateFrom;\n3.如果大于当前时间,则重新赋值为当前时间;"}
   DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty"`
-  // {"en":"Domain names, domain number limits can be adjusted depending on different accounts. The default value is 20","zh_CN":"域名,域名个数限制根据账号可调,默认为20个"}
+  // {"en":"Domain names. The number of allowed domains can be adjusted based on the account type, with a default limit of 20.","zh_CN":"域名,域名个数限制根据账号可调,默认为20个"}
   Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" require:"true" type:"Repeated"`
-  // {"defaultValue":"5m","en":"Data granularity:\n1m: 1minute\n5m: 5minutes\n1h: 1hour\n1d: 1day","zh_CN":"数据粒度：\n1m：1分钟粒度\n5m：5分钟粒度\n1h：1小时粒度\n1d：1天粒度","exampleValue":"1m,5m,1h,1d"}
+  // {"defaultValue":"5m","en":"**Data granularity**\n1m: 1minute\n5m: 5minutes\n1h: 1hour\n1d: 1day","zh_CN":"数据粒度：\n1m：1分钟粒度\n5m：5分钟粒度\n1h：1小时粒度\n1d：1天粒度","exampleValue":"1m,5m,1h,1d"}
   Granularity *string `json:"granularity,omitempty" xml:"granularity,omitempty"`
-  // {"defaultValue":"https","en":"Transmission protocol:\n1.Options: http, https;\n2.https is used as the default value is no value specified;\n3.httpFlowData is displayed if http is queried, and httpsFlowData is displayed if https is queried;","zh_CN":"传输协议\n1.可选值为http、https;\n2.不传默认查询https;\n3.查询http时出参展示httpFlowData,查询https时出参展示httpsFlowData;","exampleValue":"http,https"}
+  // {"defaultValue":"https","en":"Transmission protocol:\n1.Options: http, https.\n2.If no value is specified, https is used as the default.\n3.If http is queried, `httpFlowData` is displayed in the response; if https is queried, `httpsFlowData` is displayed.","zh_CN":"传输协议\n1.可选值为http、https;\n2.不传默认查询https;\n3.查询http时出参展示httpFlowData,查询https时出参展示httpsFlowData;","exampleValue":"http,https"}
   ProtocolType *string `json:"protocolType,omitempty" xml:"protocolType,omitempty"`
-  // {"en":"Group dimension:\n1.The value can be selected is domain;\n2.The data is displayed according to the specified dimension;","zh_CN":"分组维度\n1.可选值为domain;\n2.有传入则按照该维度展示明细数据;","exampleValue":"domain"}
+  // {"en":"Group dimension:\n1.Only 'domain' is a valid value.\n2.If provided, detailed data will be displayed according to this dimension.","zh_CN":"分组维度\n1.可选值为domain;\n2.有传入则按照该维度展示明细数据;","exampleValue":"domain"}
   GroupBy []*string `json:"groupBy,omitempty" xml:"groupBy,omitempty" type:"Repeated"`
 }
 
@@ -1390,7 +1390,7 @@ func (s GetTrafficByProtocolParameters) GoString() string {
 }
 
 type GetTrafficByProtocolResponse struct {
-  // {"en":"result","zh_CN":"结果"}
+  // {"en":"The query result set.","zh_CN":"结果"}
   Result []*GetTrafficByProtocolResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -1408,9 +1408,9 @@ func (s *GetTrafficByProtocolResponse) SetResult(v []*GetTrafficByProtocolRespon
 }
 
 type GetTrafficByProtocolResponseResult struct     {
-  // {"en":"Domain","zh_CN":"域名"}
+  // {"en":"The domain name.","zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  // {"en":"","zh_CN":""}
+  // {"en":"Time-series data list.","zh_CN":"时间序列数据列表"}
   DataSeries []*GetTrafficByProtocolResponseResultDataSeries `json:"dataSeries,omitempty" xml:"dataSeries,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -1433,9 +1433,9 @@ func (s *GetTrafficByProtocolResponseResult) SetDataSeries(v []*GetTrafficByProt
 }
 
 type GetTrafficByProtocolResponseResultDataSeries struct     {
-  // {"en":"DateTime: the format is yyyy-MM-dd HH:mm; the data value of every time slice represents the data value within the previous time granularity range. The first time slice of the day is yyyy-MM-dd 12:05 AM, and the last one is (yyyy-MM-dd+1) 00:00.","zh_CN":"时间,格式为yyyy-MM-dd HH:mm;每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05,最后一个时间片是(yyyy-MM-dd+1)00:00。"}
+  // {"en":"Timestamp, in yyyy-MM-dd HH:mm format. Each timestamp's data value represents the aggregated data within the preceding time granularity interval. The first timestamp for a day is yyyy-MM-dd 00:05, and the last is (yyyy-MM-dd+1) 00:00.","zh_CN":"时间,格式为yyyy-MM-dd HH:mm;每一个时间片数据值代表的是前一个时间粒度范围内的数据值。一天开始的时间片是yyyy-MM-dd 00:05,最后一个时间片是(yyyy-MM-dd+1)00:00。"}
   Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
-  // {"en":"Traffic value:\nUnit:  MB, retain two decimals","zh_CN":"流量值：\n\n单位MB，保留2位小数"}
+  // {"en":"Traffic value:\nUnit: MB. Retains two decimal places.","zh_CN":"流量值：\n\n单位MB，保留2位小数"}
   Traffic *string `json:"traffic,omitempty" xml:"traffic,omitempty" require:"true"`
 }
 
@@ -1472,13 +1472,13 @@ func (s GetTrafficByProtocolResponseHeader) GoString() string {
 
 
 type GetBandwidthAndTrafficByDirectoriesMainlandChinaOnlyRequest struct {
-  // {"en":"Start time\n1.The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM;\n2.Must be smaller than the current time and dateTo;\n3.Period between dataFrom and dateTo cannot be longer than 31 days;\n4.You can only query data for the last 6 months.","zh_CN":"开始时间\n1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒; \n2.必须小于当前时间和dateTo;\n3.dateFrom和dateTo相差不能超过31天;\n4.只能查询最近半年内数据。"}
+  // {"en":"Start time\n1.The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM.\n2.Must be smaller than the current time and dateTo.\n3.Period between dateFrom and dateTo cannot be longer than 31 days.\n4.You can only query data for the last 6 months.","zh_CN":"开始时间\n1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒; \n2.必须小于当前时间和dateTo;\n3.dateFrom和dateTo相差不能超过31天;\n4.只能查询最近半年内数据。"}
   DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty" require:"true"`
-  // {"en":"End time\n1.The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM;\n2.Must be greater than dateFrom;\n3.If it's greater than the current time, then the current time is assigned as the value;","zh_CN":"结束时间\n1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒; \n2.必须大于dateFrom;\n3.如果大于当前时间,则重新赋值为当前时间;"}
+  // {"en":"End time\n1.The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM.\n2.Must be greater than dateFrom.\n3.If it is greater than the current time, it will be reset to the current time.","zh_CN":"结束时间\n1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒; \n2.必须大于dateFrom;\n3.如果大于当前时间,则重新赋值为当前时间;"}
   DateTo *string `json:"dateTo,omitempty" xml:"dateTo,omitempty" require:"true"`
-  // {"en":"Directory levels, value range 1-4. Only one vlaue can be submitted","zh_CN":"目录层级,取值范围1~4,只能提交单个值","exampleValue":"1,2,3,4"}
+  // {"en":"Directory levels, value range 1-4. Only one value can be submitted.","zh_CN":"目录层级,取值范围1~4,只能提交单个值"}
   DirHierarchy *string `json:"dirHierarchy,omitempty" xml:"dirHierarchy,omitempty" require:"true"`
-  // {"en":"","zh_CN":""}
+  // {"en":"Domain and directory details","zh_CN":"域名目录详情"}
   DomainDir []*GetBandwidthAndTrafficByDirectoriesMainlandChinaOnlyRequestDomainDir `json:"domainDir,omitempty" xml:"domainDir,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -1511,9 +1511,9 @@ func (s *GetBandwidthAndTrafficByDirectoriesMainlandChinaOnlyRequest) SetDomainD
 }
 
 type GetBandwidthAndTrafficByDirectoriesMainlandChinaOnlyRequestDomainDir struct     {
-  // {"en":"Domain\n1.Need to meet the regular expression rules that are used to validate domains;\n2.Domain number limits can be adjusted depending on different accounts. The default value is 1;","zh_CN":"域名\n1.需要满足域名的正则校验;\n2.域名个数限制根据账号可调,默认为1个;"}
+  // {"en":"Domain\n1.Must comply with domain name regular expression validation rules.\n2.Domain number limits can be adjusted depending on different accounts. The default value is 1.","zh_CN":"域名\n1.需要满足域名的正则校验;\n2.域名个数限制根据账号可调,默认为1个;"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-  // {"en":"Table of contents\n1.Directory number limits can be adjusted depending on different accounts. The default value is 200;\n2.Empty value means to query all directories. Number of directories shall not exceed set limit;\n3.Invalid directories are not returned","zh_CN":"目录\n1.目录个数限制根据账号可调,默认为200个;\n2.不传代表查询该域名下的所有目录,同时接受目录个数限制;\n3.无效的目录不返回"}
+  // {"en":"Directory\n1.Directory number limits can be adjusted depending on different accounts. The default value is 200.\n2.Empty value means to query all directories. The number of directories must not exceed the set limit.\n3.Invalid directories are not returned.","zh_CN":"目录\n1.目录个数限制根据账号可调,默认为200个;\n2.不传代表查询该域名下的所有目录,同时接受目录个数限制;\n3.无效的目录不返回"}
   Dir []*string `json:"dir,omitempty" xml:"dir,omitempty" type:"Repeated"`
 }
 
@@ -1569,7 +1569,7 @@ func (s GetBandwidthAndTrafficByDirectoriesMainlandChinaOnlyParameters) GoString
 }
 
 type GetBandwidthAndTrafficByDirectoriesMainlandChinaOnlyResponse struct {
-  // {"en":"result","zh_CN":"结果"}
+  // {"en":"List of query results","zh_CN":"查询结果列表"}
   Result []*GetBandwidthAndTrafficByDirectoriesMainlandChinaOnlyResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -1614,9 +1614,9 @@ func (s *GetBandwidthAndTrafficByDirectoriesMainlandChinaOnlyResponseResult) Set
 type GetBandwidthAndTrafficByDirectoriesMainlandChinaOnlyResponseResultDetails struct     {
   // {"en":"Directory name of corresponding level","zh_CN":"对应层级的目录名称"}
   Dir *string `json:"dir,omitempty" xml:"dir,omitempty" require:"true"`
-  // {"en":"Total traffic:\nunit MB, retain two decimals","zh_CN":"总流量,单位MB,保留2位小数"}
+  // {"en":"Total traffic, unit MB, retained to two decimal places","zh_CN":"总流量,单位MB,保留2位小数"}
   TotalTraffic *string `json:"totalTraffic,omitempty" xml:"totalTraffic,omitempty" require:"true"`
-  // {"en":"Bandwidth peak value with granularity of 5 minutes. \nUnit Mbps, retain two decimals","zh_CN":"带宽峰值,单位Mbps,保留2位小数"}
+  // {"en":"Peak bandwidth, unit Mbps, retained to two decimal places","zh_CN":"带宽峰值,单位Mbps,保留2位小数"}
   PeakBandwidth *string `json:"peakBandwidth,omitempty" xml:"peakBandwidth,omitempty" require:"true"`
 }
 

@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/edgekv
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/edgekv"
     "log"
 )
@@ -76,5 +71,5 @@ For detailed API documentation and available methods, please refer to the [offic
 | Createshorturl | Short Url Create | POST | /short-urls/create |
 | Getshorturl | query long url by short url | POST | /short-urls/query |
 | Delshorturl | delete  short url | POST | /short-urls/del |
-| Ecakvinfo | Query edge KV storage information, including: storage capacity, read request count, write request count, delete request count. | POST | /myview/Ecakvinfo |
+| Ecakvinfo | Query edge KV storage information, including: storage capacity, read request count, write request count, delete request count. | POST | /myview/ecaKvInfo |
 | Sharkletvisit | Number of edge application requests, including basic application requests, medium-sized application requests, and special application requests | POST | /myview/sharkletVisit |

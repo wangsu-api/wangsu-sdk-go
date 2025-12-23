@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/customeralarm
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/customeralarm
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/customeralarm"
     "log"
 )
@@ -72,3 +66,5 @@ if err != nil {
 | --- | --- | --- | --- |
 | Querypopsmaintenancenotification | 用于查询客户所使用的边缘节点的割接和退用信息。 | GET | /vmp/node-event |
 | Queryinstancedowntimenotification | 查询实例宕机告警信息，只返回宕机时间在半小时以内的虚拟机。 | GET | /vmp/instance-faults |
+| Lechqueryinstancedowntimenotification | 查询实例宕机告警信息，只返回宕机时间在半小时以内的虚拟机。 | GET | /lech/instance-faults |
+| Lechquerymaintenancenotification | 用于查询客户所使用的边缘节点的割接和退用信息。 | GET | /lech/node-event |

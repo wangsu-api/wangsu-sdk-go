@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/fileprefetch
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/fileprefetch
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/fileprefetch"
     "log"
 )
@@ -71,5 +65,5 @@ if err != nil {
 | ActionName | description | client_methods | uri |
 | --- | --- | --- | --- |
 | Prefetch | 将源站的内容主动预取到CDN节点，用户首次访问可直接命中缓存，即提升首次访问速度，又能有效缓解源站压力。 | POST | /ccm/fetch/ItemIdReceiver |
-| Queryprefetchstatus | 查询预取任务的执行状态，可查看是否已经全网执行生效。 | POST | /ccm/fetch/ItemIdQuery |
-| ApiCmCcmquotaqueryFetchDna | 预取剩余量查询 | GET | /ccm/upperQuery |
+| Getprefetchstatus | 查询预取任务的执行状态，可查看是否已经全网执行生效。 | POST | /ccm/fetch/ItemIdQuery |
+| Queryprefetchresiduals | 预取剩余量查询 | GET | /ccm/upperQuery |

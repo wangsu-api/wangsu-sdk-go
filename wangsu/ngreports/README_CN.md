@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/ngreports
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/ngreports
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/ngreports"
     "log"
 )
@@ -90,3 +84,5 @@ if err != nil {
 | GetCpuTimeUsed | 查询处理用户请求所消耗的CPU时间（以秒为单位）。 | POST | /cdn/report/cpuTime |
 | GetASummaryOfTrafficVolume | 获取一段时间内的边缘、中间层（CDN Pro服务器之间）和回源流量的汇总数据。可以在请求体中指定加速域名或serverGroups（节点组）等参数进行查询和分组。<br> | POST | /cdn/report/volSummary |
 | Getedgehostnamestatistics | 获取一段时间内对调度域名发起的DNS解析请求数。 | POST | /cdn/report/edgeHostnameReq |
+| ToqueryserviceDr01 | NG API查询基于Druid存储的报表数据（主要来源：流量数据） | POST | /api/gdp/to-query-service/dr01 |
+| Getqtlconfig | 查询指定logConfigId的日志配置，只支持单个。 | GET | /api/qtlconfig/* |

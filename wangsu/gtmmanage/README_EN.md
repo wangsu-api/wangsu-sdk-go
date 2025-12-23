@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/gtmmanage
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/gtmmanage"
     "log"
 )
@@ -70,10 +65,10 @@ For detailed API documentation and available methods, please refer to the [offic
 
 | ActionName | enDescription | client_methods | uri |
 | --- | --- | --- | --- |
+| Controldispatchresource | Start or stop scheduling resources | POST | /clouddns/Controldispatchresource |
+| Controlresourcecluster | Scheduling policy enable/disable primary source | POST | /clouddns/Controlresourcecluster |
 | Deldispatchpolicy | q | POST | /clouddns/Deldispatchpolicy |
 | Controldispatchpolicy | Use to batch enable/disable dispatch policies. Takes one minute to take effect. | POST | /clouddns/Controldispatchpolicy |
 | Querydispatchpolicydetail | Used to query the detailed information of dispatch policy. Takes one minute to take effect. | POST | /clouddns/Querydispatchpolicydetail |
 | Savedispatchpolicy | Used to add dispatch policy, and the interface used is the same to the one to midify dispatch policy, but the two use different json formats. Takes one minute to take effect. | POST | /clouddns/Savedispatchpolicy |
 | Querydispatchpolicies | Used to query dispatch policy information by page. Takes one minute to take effect. | POST | /clouddns/Querydispatchpolicies |
-| Controldispatchresource | Start or stop scheduling resources | POST | /clouddns/Controldispatchresource |
-| Controlresourcecluster | Scheduling policy enable/disable primary source | POST | /clouddns/Controlresourcecluster |

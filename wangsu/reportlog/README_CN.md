@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/reportlog
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/reportlog
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/reportlog"
     "log"
 )
@@ -70,5 +64,8 @@ if err != nil {
 
 | ActionName | description | client_methods | uri |
 | --- | --- | --- | --- |
+| Queryccllogs | 查询CC攻击详情 | POST | /soc/api/LogManagement/queryCCAttackLogs |
 | Getbotattackincidentlogdata | 获取Bot事件日志数据 | POST | /api/bot/report/event-log |
+| GetNgRelayAppserviceIp | 提供给ng cdn 组件来查询ng父应用白名单ip段情况 | POST | /api/GetNgRelayAppserviceIp |
+| GetNgRelayWhiteIp | 查询task上ng中转方案白名单ip段 | POST | /api/GetNgRelayWhiteIp |
 | Checkiswhiteip | 本接口用于补充是否CDN加速ip 查询的功能。主要是 提供给客户检查某个ip，是否是真实给客户提供加速的ip<br>工作原理：<br>1 技术支持在task上为客户配置白名单并生成api地址和参数<br>2 客户通过w+ api请求转发到task的api地址，查询指定的ip是否是实在在用的 cdn加速ip，如果是返回ip:yes,否返回ip:no | GET | /task/api/customers/whitelist-check |

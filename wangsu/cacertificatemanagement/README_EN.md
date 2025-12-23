@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/cacertificatemanagement
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/cacertificatemanagement"
     "log"
 )
@@ -75,5 +70,5 @@ For detailed API documentation and available methods, please refer to the [offic
 | DeleteACaCertificate | DeleteACaCertificate | DELETE | /api/certificate/ca/* |
 | DisassociateDomainWithCaCertificate | DisassociateDomainWithCaCertificate | POST | /api/certificate/ca/disassociatedomain |
 | UpdateACaCertificate | UpdateACaCertificate. | PUT | /api/certificate/ca/* |
-| QueryCaCertificateList | QueryCaCertificateList | POST | /api/certificate/ca/list |
-| GetACaCertificate | GetACaCertificate | GET | /api/certificate/ca/* |
+| Listcacertificates | Query ca certificate list | POST | /api/certificate/ca/list |
+| Getcacertificate | Get a ca certificate | GET | /api/certificate/ca/* |

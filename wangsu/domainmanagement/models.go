@@ -118,9 +118,9 @@ func (s AddDomainResponseHeader) GoString() string {
 
 
 type UpdateCustomerAnycastIPRecordStatusRequest struct {
-  // {"en":"Ip list", "zh_CN":"ip 列表"}
+  // {"en":"Ip list","zh_CN":"ip 列表"}
   Ips []*string `json:"ips,omitempty" xml:"ips,omitempty" require:"true" type:"Repeated"`
-  // {"en":"Record Status, For example, lock or unlock; data of length 1 or 2 can be passed.", "zh_CN":"记录状态，例如锁定、非锁定等，可以传长度为1或2的数据"}
+  // {"en":"Record status, such as locked, unlocked, etc. The maximum length of the status value is 2 characters.","zh_CN":"记录状态，例如锁定、非锁定等。状态值最长为2个字符。"}
   RecordStatus *string `json:"recordStatus,omitempty" xml:"recordStatus,omitempty" require:"true"`
 }
 
@@ -142,29 +142,15 @@ func (s *UpdateCustomerAnycastIPRecordStatusRequest) SetRecordStatus(v string) *
   return s
 }
 
-type UpdateCustomerAnycastIPRecordStatusResponse struct {
-  // {"en":"The error code that appears when the HTTP status is not 202, indicating the type of error for the current request.", "zh_CN":"错误代码，当HTTPStatus不为202时出现，表示当前请求调用的错误类型"}
-  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
-  // {"en":"Response information, when success is successful", "zh_CN":"响应信息，成功时为success"}
-  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+type UpdateCustomerAnycastIPRecordStatusRequestHeader struct {
 }
 
-func (s UpdateCustomerAnycastIPRecordStatusResponse) String() string {
+func (s UpdateCustomerAnycastIPRecordStatusRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateCustomerAnycastIPRecordStatusResponse) GoString() string {
+func (s UpdateCustomerAnycastIPRecordStatusRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *UpdateCustomerAnycastIPRecordStatusResponse) SetCode(v string) *UpdateCustomerAnycastIPRecordStatusResponse {
-  s.Code = &v
-  return s
-}
-
-func (s *UpdateCustomerAnycastIPRecordStatusResponse) SetMessage(v string) *UpdateCustomerAnycastIPRecordStatusResponse {
-  s.Message = &v
-  return s
 }
 
 type UpdateCustomerAnycastIPRecordStatusPaths struct {
@@ -189,15 +175,29 @@ func (s UpdateCustomerAnycastIPRecordStatusParameters) GoString() string {
   return s.String()
 }
 
-type UpdateCustomerAnycastIPRecordStatusRequestHeader struct {
+type UpdateCustomerAnycastIPRecordStatusResponse struct {
+  // {"en":"The error code that appears when the HTTP status is not 202, indicating the type of error for the current request.","zh_CN":"错误代码，当HTTPStatus不为202时出现，表示当前请求调用的错误类型"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Response information, when success is successful","zh_CN":"响应信息，成功时为success"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
 }
 
-func (s UpdateCustomerAnycastIPRecordStatusRequestHeader) String() string {
+func (s UpdateCustomerAnycastIPRecordStatusResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateCustomerAnycastIPRecordStatusRequestHeader) GoString() string {
+func (s UpdateCustomerAnycastIPRecordStatusResponse) GoString() string {
   return s.String()
+}
+
+func (s *UpdateCustomerAnycastIPRecordStatusResponse) SetCode(v string) *UpdateCustomerAnycastIPRecordStatusResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *UpdateCustomerAnycastIPRecordStatusResponse) SetMessage(v string) *UpdateCustomerAnycastIPRecordStatusResponse {
+  s.Message = &v
+  return s
 }
 
 type UpdateCustomerAnycastIPRecordStatusResponseHeader struct {
@@ -1378,135 +1378,6 @@ func (s EnableSingleDomainServiceResponseHeader) GoString() string {
 
 
 
-type EnableDisableHwDomainRequest struct {
-  // {"en":"state.online/offline", "zh_CN":"状态.online：启用.offline：停用。"}
-  State *string `json:"state,omitempty" xml:"state,omitempty" require:"true"`
-}
-
-func (s EnableDisableHwDomainRequest) String() string {
-  return tea.Prettify(s)
-}
-
-func (s EnableDisableHwDomainRequest) GoString() string {
-  return s.String()
-}
-
-func (s *EnableDisableHwDomainRequest) SetState(v string) *EnableDisableHwDomainRequest {
-  s.State = &v
-  return s
-}
-
-type EnableDisableHwDomainResponse struct {
-  // {"en":"The error code, when HTTPStatus is not 201, indicates the type of error the current request is calling.", "zh_CN":"错误代码，当HTTPStatus不为201时出现，表示当前请求调用的错误类型"}
-  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
-  // {"en":"Response information, when success is successful", "zh_CN":"响应信息，成功时为success"}
-  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  // {"en":"The response data", "zh_CN":"响应数据"}
-  Data *EnableDisableHwDomainResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
-  // {"en":"Uniquely labeled id for querying each requested task (for all interfaces)", "zh_CN":"唯一标示的id，用于查询每次请求的任务 （适用全部接口）"}
-  XRequestId *string `json:"X-Request-Id,omitempty" xml:"X-Request-Id,omitempty" require:"true"`
-}
-
-func (s EnableDisableHwDomainResponse) String() string {
-  return tea.Prettify(s)
-}
-
-func (s EnableDisableHwDomainResponse) GoString() string {
-  return s.String()
-}
-
-func (s *EnableDisableHwDomainResponse) SetCode(v string) *EnableDisableHwDomainResponse {
-  s.Code = &v
-  return s
-}
-
-func (s *EnableDisableHwDomainResponse) SetMessage(v string) *EnableDisableHwDomainResponse {
-  s.Message = &v
-  return s
-}
-
-func (s *EnableDisableHwDomainResponse) SetData(v *EnableDisableHwDomainResponseData) *EnableDisableHwDomainResponse {
-  s.Data = v
-  return s
-}
-
-func (s *EnableDisableHwDomainResponse) SetXRequestId(v string) *EnableDisableHwDomainResponse {
-  s.XRequestId = &v
-  return s
-}
-
-type EnableDisableHwDomainResponseData struct {
-  // {"en":"task id.", "zh_CN":"任务id"}
-  TaskId *string `json:"task_id,omitempty" xml:"task_id,omitempty" require:"true"`
-}
-
-func (s EnableDisableHwDomainResponseData) String() string {
-  return tea.Prettify(s)
-}
-
-func (s EnableDisableHwDomainResponseData) GoString() string {
-  return s.String()
-}
-
-func (s *EnableDisableHwDomainResponseData) SetTaskId(v string) *EnableDisableHwDomainResponseData {
-  s.TaskId = &v
-  return s
-}
-
-type EnableDisableHwDomainPaths struct {
-  // {"en":"The domain name for the acceleration domain to be deleted", "zh_CN":"要删除的域名"}
-  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-}
-
-func (s EnableDisableHwDomainPaths) String() string {
-  return tea.Prettify(s)
-}
-
-func (s EnableDisableHwDomainPaths) GoString() string {
-  return s.String()
-}
-
-func (s *EnableDisableHwDomainPaths) SetDomain(v string) *EnableDisableHwDomainPaths {
-  s.Domain = &v
-  return s
-}
-
-type EnableDisableHwDomainParameters struct {
-}
-
-func (s EnableDisableHwDomainParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s EnableDisableHwDomainParameters) GoString() string {
-  return s.String()
-}
-
-type EnableDisableHwDomainRequestHeader struct {
-}
-
-func (s EnableDisableHwDomainRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s EnableDisableHwDomainRequestHeader) GoString() string {
-  return s.String()
-}
-
-type EnableDisableHwDomainResponseHeader struct {
-}
-
-func (s EnableDisableHwDomainResponseHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s EnableDisableHwDomainResponseHeader) GoString() string {
-  return s.String()
-}
-
-
-
-
 type DisableCdnDomainServiceRequest struct {
 }
 
@@ -1829,128 +1700,6 @@ func (s DeleteApiDomainServiceResponseHeader) String() string {
 }
 
 func (s DeleteApiDomainServiceResponseHeader) GoString() string {
-  return s.String()
-}
-
-
-
-
-type DeleteHwDomainRequest struct {
-}
-
-func (s DeleteHwDomainRequest) String() string {
-  return tea.Prettify(s)
-}
-
-func (s DeleteHwDomainRequest) GoString() string {
-  return s.String()
-}
-
-type DeleteHwDomainResponse struct {
-  // {"en":"The error code, when HTTPStatus is not 201, indicates the type of error the current request is calling.", "zh_CN":"错误代码，当HTTPStatus不为201时出现，表示当前请求调用的错误类型"}
-  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
-  // {"en":"Response information, when success is successful", "zh_CN":"响应信息，成功时为success"}
-  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
-  // {"en":"The response data", "zh_CN":"响应数据"}
-  Data *DeleteHwDomainResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
-  // {"en":"Uniquely labeled id for querying each requested task (for all interfaces)", "zh_CN":"唯一标示的id，用于查询每次请求的任务 （适用全部接口）"}
-  XRequestId *string `json:"X-Request-Id,omitempty" xml:"X-Request-Id,omitempty" require:"true"`
-}
-
-func (s DeleteHwDomainResponse) String() string {
-  return tea.Prettify(s)
-}
-
-func (s DeleteHwDomainResponse) GoString() string {
-  return s.String()
-}
-
-func (s *DeleteHwDomainResponse) SetCode(v string) *DeleteHwDomainResponse {
-  s.Code = &v
-  return s
-}
-
-func (s *DeleteHwDomainResponse) SetMessage(v string) *DeleteHwDomainResponse {
-  s.Message = &v
-  return s
-}
-
-func (s *DeleteHwDomainResponse) SetData(v *DeleteHwDomainResponseData) *DeleteHwDomainResponse {
-  s.Data = v
-  return s
-}
-
-func (s *DeleteHwDomainResponse) SetXRequestId(v string) *DeleteHwDomainResponse {
-  s.XRequestId = &v
-  return s
-}
-
-type DeleteHwDomainResponseData struct {
-  // {"en":"task id.", "zh_CN":"任务id"}
-  TaskId *string `json:"task_id,omitempty" xml:"task_id,omitempty" require:"true"`
-}
-
-func (s DeleteHwDomainResponseData) String() string {
-  return tea.Prettify(s)
-}
-
-func (s DeleteHwDomainResponseData) GoString() string {
-  return s.String()
-}
-
-func (s *DeleteHwDomainResponseData) SetTaskId(v string) *DeleteHwDomainResponseData {
-  s.TaskId = &v
-  return s
-}
-
-type DeleteHwDomainPaths struct {
-  // {"en":"The domain name for the acceleration domain to be deleted", "zh_CN":"要删除的域名"}
-  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
-}
-
-func (s DeleteHwDomainPaths) String() string {
-  return tea.Prettify(s)
-}
-
-func (s DeleteHwDomainPaths) GoString() string {
-  return s.String()
-}
-
-func (s *DeleteHwDomainPaths) SetDomain(v string) *DeleteHwDomainPaths {
-  s.Domain = &v
-  return s
-}
-
-type DeleteHwDomainParameters struct {
-}
-
-func (s DeleteHwDomainParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s DeleteHwDomainParameters) GoString() string {
-  return s.String()
-}
-
-type DeleteHwDomainRequestHeader struct {
-}
-
-func (s DeleteHwDomainRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s DeleteHwDomainRequestHeader) GoString() string {
-  return s.String()
-}
-
-type DeleteHwDomainResponseHeader struct {
-}
-
-func (s DeleteHwDomainResponseHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s DeleteHwDomainResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -3274,6 +3023,443 @@ func (s ControlDispatchDomainResponseHeader) GoString() string {
 
 
 
+type BatchAddApiDomainRequest struct {
+  // {"en":"Domain configuration list","zh_CN":"域名配置列表"}
+  DomainConfigs []*BatchAddApiDomainRequestDomainConfigs `json:"domainConfigs,omitempty" xml:"domainConfigs,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s BatchAddApiDomainRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BatchAddApiDomainRequest) GoString() string {
+  return s.String()
+}
+
+func (s *BatchAddApiDomainRequest) SetDomainConfigs(v []*BatchAddApiDomainRequestDomainConfigs) *BatchAddApiDomainRequest {
+  s.DomainConfigs = v
+  return s
+}
+
+type BatchAddApiDomainRequestDomainConfigs struct     {
+  // {"en":"Version number, current version 1.0.0","zh_CN":"版本号，当前版本号1.0.0"}
+  Version *string `json:"version,omitempty" xml:"version,omitempty"`
+  // {"en":"Domain to be connected to CDN. Supports wildcard domains, starting with the symbol '.', such as: .example.com, wildcard domains also include multi-level 'a.b.example.com'. If example.com is registered, then the domain xx.example.com does not need to be registered.","zh_CN":"需要接入CDN的域名。支持泛域名，以符号“.”开头，如：.example.com，泛域名也包含多级“a.b.example.com”。\n如果example.com已备案，那么域名xx.example.com则不需要备案。"}
+  DomainName *string `json:"domain-name,omitempty" xml:"domain-name,omitempty"`
+  // {"en":"Service type of the accelerated domain (only one service type can be submitted at a time):\nweb/web-https: Web acceleration/Web acceleration-https\nwsa/wsa-https: Whole site acceleration/Whole site acceleration-https\nvodstream/vod-https: On-demand acceleration/On-demand acceleration-https\ndownload/dl-https: Download acceleration/Download acceleration-https\nlivestream/live-https/cloudv-live: Live streaming acceleration\nv6sa/osv6: IPv6 security acceleration solution/IPv6 integrated solution\nNote:\n1. The https in service-type does not mean that https is enabled immediately, for example, the https in web-https does not mean that https access is supported immediately, you need to upload the certificate before you can support https, remember!","zh_CN":"加速域名的服务类型（一次只能提交一个服务类型）：\nweb/web-https：网页加速/网页加速-https\nwsa/wsa-https：全站加速/全站加速-https\nvodstream/vod-https：点播加速/点播加速-https\ndownload/dl-https：下载加速/下载加速-https\nlivestream/live-https/cloudv-live：直播加速\nv6sa/osv6：ipv6安全加速解决方案/IPv6一体化解决方案\n注意：\n1、service-type中的https不代表立即开启https，比如web-https中的https并不代表立刻支持https访问，需上传完证书后才可以支持https，切记！"}
+  ServiceType *string `json:"service-type,omitempty" xml:"service-type,omitempty"`
+  // {"en":"Acceleration area of the accelerated domain. If there is a need to limit resource coverage by area, the acceleration area needs to be specified. If no acceleration area is specified, we will provide acceleration services with optimal resource coverage according to the service area opened by the customer. Multiple areas are separated by semicolons. The supported areas are as follows: cn (China Mainland), am (America), emea (Europe, Middle East, Africa), apac (Asia Pacific)","zh_CN":"加速域名的加速区域，如果有需要根据区域限定资源覆盖时，才需要指定加速区域。未指定加速区域时，我们将按照客户开通的服务区域，以最优的资源覆盖提供加速服务。多个区域以分号分隔，支持配置的区域如下：cn（中国大陆）、am（美洲）、emea（欧洲、中东、非洲）、apac（亚太地区）"}
+  ServiceAreas *string `json:"service-areas,omitempty" xml:"service-areas,omitempty"`
+  // {"en":"Remarks, maximum limit of 1000 characters","zh_CN":"备注信息，最大限制1000个字符"}
+  Comment *string `json:"comment,omitempty" xml:"comment,omitempty"`
+  // {"en":"Configuration form template. In specific usage scenarios, if you want the newly added accelerated domain to refer to certain specified configurations, you can specify the configuration form template. Please consult the corresponding customer representative for specific usage.","zh_CN":"配置单模板，特定的使用场景下，如果希望新增的加速域名参照某些指定配置时，可以指定配置单模板，具体使用请咨询对应的客户负责人。"}
+  ConfigFormId *int `json:"config-form-id,omitempty" xml:"config-form-id,omitempty"`
+  // {"en":"Create an accelerated domain by referring to the configuration of a specified domain.\nNote:\n1. If the referenced domain uses a certificate, the new domain must also be within the authorized range of the corresponding certificate.\n2. If the referenced domain is not registered, the new domain may affect resource usage and service quality if it is registered.\n3. If the referenced domain is registered, the new domain may be reselected if it is not registered and the resources do not meet policy requirements.\n4. It is not allowed to create a new domain by referring to a traffic-free domain.","zh_CN":"参照指定域名的配置，来创建加速域名。\n注意：\n1.参照域名如果有使用证书，新增域名也要在对应证书授权范围内。\n2.参照未备案域名，新增的域名如果已备案，可能影响资源使用和服务质量。\n3.参照备案域名，新增的域名如果未备案，若资源不满足政策要求，可能重选。\n4.不允许参照免流域名创建新域名。"}
+  ReferencedDomainName *string `json:"referenced-domain-name,omitempty" xml:"referenced-domain-name,omitempty"`
+  // {"en":"Shared first-level label. If multiple accelerated domains need to share a first-level domain, this parameter can be used. That is, a group of domains with the same cname-label share a first-level cname.\nNote:\n1. Domains with the same cname-label share a first-level cname and have completely consistent DNS coverage.\n2. Shared first-level constraints: consistent acceleration type (service-type), consistent certificate id (certificate-id, if there is a certificate), consistent acceleration area (service-areas)\n3. Multiple http domains can share a first-level, multiple sni https domains can share a first-level\n4. When a single domain uses cname-label, the domain can be canceled; when multiple domains share a first-level, these domains cannot be canceled\n5. It is supported to modify the cname by modifying the cname-label.","zh_CN":"共用一级标签，若有多个加速域名需要共用一级域名，则可以使用该参数。即拥有相同cname-label的一组域名，共用一级cname。\n注意：\n1、拥有相同cname-label的域名共用一级cname，且有完全一致的dns覆盖\n2、共用一级的约束：加速类型一致(service-type)、证书id一致（certificate-id,如果有证书）、加速区域一致(service-areas)\n3、多个http域名可共用一级，多个sni https域名可共用一级\n4、单个域名使用cname-label时，域名可cancel；多个域名共用一级时，不允许cancel这些域名\n5、支持通过修改cname-label达到修改cname的目的。）"}
+  CnameLabel *string `json:"cname-label,omitempty" xml:"cname-label,omitempty"`
+  // {"en":"First-level cname prefix, true means using the domain name as the cname prefix, otherwise, a 14-character random string (numbers + letters) is used as the cname prefix.\nNote: When the prefix is a wildcard domain, wsall is added as a prefix. For example, .baidu.com.wscloudcdn.com will generate wsall.baidu.com.wscloudcdn.com","zh_CN":"一级cname前缀，true表示使用域名名称作为cname前缀，否则，使用14位随机串（数字+字母）作为cname前缀。\n注意：当前缀是泛域名时，则再增加wsall作为前缀。如.baidu.com.wscloudcdn.com，会生成wsall.baidu.com.wscloudcdn.com"}
+  CnameWithCustomizedPrefix *string `json:"cname-with-customized-prefix,omitempty" xml:"cname-with-customized-prefix,omitempty"`
+  // {"en":"Origin strategy settings (used for non-live domains), used to set the source station information and origin strategy of the accelerated domain.","zh_CN":"回源策略设置(非直播域名使用)，用于设置加速域名的源站信息和回源策略。"}
+  OriginConfig *BatchAddApiDomainRequestDomainConfigsOriginConfig `json:"origin-config,omitempty" xml:"origin-config,omitempty" type:"Struct"`
+  // {"en":"Live domain configuration, used to set the push and pull stream of rtmp live accelerated domain (application required)\nNote: The relevant parameter configuration under this node, in addition to opening API call permissions, also needs to contact the dedicated customer service to apply for the corresponding API customer template","zh_CN":"直播域名配置，用于设置rtmp直播加速域名的推拉流（使用需申请）\n注意：该节点下的相关参数配置，除开通API调用权限外，还需要联系专属客服申请开通对应的API客户模板"}
+  LiveConfig *BatchAddApiDomainRequestDomainConfigsLiveConfig `json:"live-config,omitempty" xml:"live-config,omitempty" type:"Struct"`
+  // {"en":"Indicates whether the domain is purely overseas accelerated.\nThe default value is 'false'.\ntrue: Indicates that the customer's domain is purely overseas accelerated.\nfalse: Indicates that the customer's domain is accelerated in China.","zh_CN":"标识域名是否是纯海外加速的。\n默认值为“false”。\ntrue ：表示客户域名纯海外加速。\nfalse：表示客户域名有在中国加速。"}
+  AccelerateNoChina *string `json:"accelerate-no-china,omitempty" xml:"accelerate-no-china,omitempty"`
+  // {"en":"Response header for passing client IP, optional values are Cdn-Src-Ip, X-Forwarded-For, ori_X-Forwarded-For\n1) Cdn-Src-Ip: The origin header name is Cdn-Src-Ip, and the IP that establishes a connection with the node is obtained as the client IP and passed back to the origin.\n2) X-Forwarded-For: The origin header name is X-Forwarded-For, and the client IP value carried is the connection IP obtained by Cdn-Src-Ip.\n3) ori_X-Forwarded-For: When the client requests the CDN node, it will carry the X-Forwarded-For, and the CDN will transparently pass this header and value back to the origin.","zh_CN":"传递客户端ip的响应头部，可选值为Cdn-Src-Ip、X-Forwarded-For、ori_X-Forwarded-For\n1） Cdn-Src-Ip： 回源头部名称为Cdn-Src-Ip，获取与节点进行建联的IP作为客户端IP传递回源。\n2） X-Forwarded-For： 回源头部名称为X-Forwarded-For，携带的客户端IP值是Cdn-Src-Ip获取到的建联IP。\n3） ori_X-Forwarded-For：客户端请求CDN节点时会自带X-Forwarded-For，则CDN透传此头部和值回源。"}
+  HeaderOfClientip *string `json:"header-of-clientip,omitempty" xml:"header-of-clientip,omitempty"`
+  // {"en":"Live pull domain name, direct origin verification configuration.\nCan be IP or domain name. Only one of IP and domain name is supported. Multiple input parameters are not supported.","zh_CN":"直播拉流域名，直接回源校验配置。\n可以是IP或域名。ip和域名只能一种。不支持多个入参。"}
+  UpstreamHost *string `json:"upstream-host,omitempty" xml:"upstream-host,omitempty"`
+  // {"en":"Set the publish point of the live push-pull stream domain name\nNote:\n1. The pull stream and the corresponding push domain name must configure the same publish point;\n2. If you do not want to modify the publish point, do not pass in this node and the following input parameters;\n3. The publish point is updated in an overlay manner. Each modification requires submitting all publish points, and only the parts that need to be modified cannot be submitted.","zh_CN":"设置直播推拉流域名的发布点\n注意：\n1、拉流和对应的推流域名，必须配置相同的发布点；\n2、不想修改发布点时，不要传入该节点及以下入参；\n3、发布点采用覆盖式更新，每次修改时，需要提交全部发布点，不能仅提交需要修改的部分。"}
+  PublishPoints []*BatchAddApiDomainRequestDomainConfigsPublishPoints `json:"publish-points,omitempty" xml:"publish-points,omitempty" type:"Repeated"`
+  // {"en":"SSL certificate settings, used to set the SSL certificate configuration of the accelerated domain. To upload a certificate, please use the interface: [Add Certificate V2]; to modify the certificate, please use the interface: [Modify Certificate V2]","zh_CN":"ssl证书设置，用于设置加速域名的ssl证书配置。上传证书请使用接口：【新增证书V2】；若要修改证书，请使用接口：【修改证书V2】"}
+  Ssl *BatchAddApiDomainRequestDomainConfigsSsl `json:"ssl,omitempty" xml:"ssl,omitempty" type:"Struct"`
+}
+
+func (s BatchAddApiDomainRequestDomainConfigs) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BatchAddApiDomainRequestDomainConfigs) GoString() string {
+  return s.String()
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigs) SetVersion(v string) *BatchAddApiDomainRequestDomainConfigs {
+  s.Version = &v
+  return s
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigs) SetDomainName(v string) *BatchAddApiDomainRequestDomainConfigs {
+  s.DomainName = &v
+  return s
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigs) SetServiceType(v string) *BatchAddApiDomainRequestDomainConfigs {
+  s.ServiceType = &v
+  return s
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigs) SetServiceAreas(v string) *BatchAddApiDomainRequestDomainConfigs {
+  s.ServiceAreas = &v
+  return s
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigs) SetComment(v string) *BatchAddApiDomainRequestDomainConfigs {
+  s.Comment = &v
+  return s
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigs) SetConfigFormId(v int) *BatchAddApiDomainRequestDomainConfigs {
+  s.ConfigFormId = &v
+  return s
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigs) SetReferencedDomainName(v string) *BatchAddApiDomainRequestDomainConfigs {
+  s.ReferencedDomainName = &v
+  return s
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigs) SetCnameLabel(v string) *BatchAddApiDomainRequestDomainConfigs {
+  s.CnameLabel = &v
+  return s
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigs) SetCnameWithCustomizedPrefix(v string) *BatchAddApiDomainRequestDomainConfigs {
+  s.CnameWithCustomizedPrefix = &v
+  return s
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigs) SetOriginConfig(v *BatchAddApiDomainRequestDomainConfigsOriginConfig) *BatchAddApiDomainRequestDomainConfigs {
+  s.OriginConfig = v
+  return s
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigs) SetLiveConfig(v *BatchAddApiDomainRequestDomainConfigsLiveConfig) *BatchAddApiDomainRequestDomainConfigs {
+  s.LiveConfig = v
+  return s
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigs) SetAccelerateNoChina(v string) *BatchAddApiDomainRequestDomainConfigs {
+  s.AccelerateNoChina = &v
+  return s
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigs) SetHeaderOfClientip(v string) *BatchAddApiDomainRequestDomainConfigs {
+  s.HeaderOfClientip = &v
+  return s
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigs) SetUpstreamHost(v string) *BatchAddApiDomainRequestDomainConfigs {
+  s.UpstreamHost = &v
+  return s
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigs) SetPublishPoints(v []*BatchAddApiDomainRequestDomainConfigsPublishPoints) *BatchAddApiDomainRequestDomainConfigs {
+  s.PublishPoints = v
+  return s
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigs) SetSsl(v *BatchAddApiDomainRequestDomainConfigsSsl) *BatchAddApiDomainRequestDomainConfigs {
+  s.Ssl = v
+  return s
+}
+
+type BatchAddApiDomainRequestDomainConfigsOriginConfig struct {
+  // {"en":"Origin address, can be IP or domain name.\n1. IPs are separated by semicolons, multiple are supported.\n2. Only one domain name can be entered. IP and domain name cannot be entered at the same time.\n3. The maximum length cannot exceed 500 characters.\n4. The number of source IPs cannot exceed 15.","zh_CN":"回源地址，可以是IP或域名。\n1、IP以分号分隔，支持多个。\n2、域名只能输入一个。IP与域名不能同时输入。\n3、限制最大不能超过500个字符长度。\n4、源IP个数不能超过15个。"}
+  OriginIps *string `json:"origin-ips,omitempty" xml:"origin-ips,omitempty"`
+  // {"en":"Origin HOST, used to change the HOST field in the origin HTTP request header. The supported format is: domain name, each segment (dot-separated) length is less than or equal to 62, and the total length of the domain name is less than or equal to 128.","zh_CN":"回源HOST，用于更改回源HTTP请求头中的HOST字段。支持格式为: 域名，每段（点号分隔）长度小于等于62，域名总长度小于等于128。"}
+  DefaultOriginHostHeader *string `json:"default-origin-host-header,omitempty" xml:"default-origin-host-header,omitempty"`
+}
+
+func (s BatchAddApiDomainRequestDomainConfigsOriginConfig) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BatchAddApiDomainRequestDomainConfigsOriginConfig) GoString() string {
+  return s.String()
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigsOriginConfig) SetOriginIps(v string) *BatchAddApiDomainRequestDomainConfigsOriginConfig {
+  s.OriginIps = &v
+  return s
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigsOriginConfig) SetDefaultOriginHostHeader(v string) *BatchAddApiDomainRequestDomainConfigsOriginConfig {
+  s.DefaultOriginHostHeader = &v
+  return s
+}
+
+type BatchAddApiDomainRequestDomainConfigsLiveConfig struct {
+  // {"en":"Live stream type, optional values are pull and push, pull means pull stream; push means push stream.","zh_CN":"直播推拉流类型，可选值为pull和push，pull表示拉流；   push表示推流。"}
+  StreamType *string `json:"stream-type,omitempty" xml:"stream-type,omitempty"`
+  // {"en":"Supporting push domain name, used to set the push domain name corresponding to the rtmp live pull domain name. When stream-type is pull, at least one of the source station IP and supporting push domain name is not empty; when stream-type is push, it is not necessary to pass in.","zh_CN":"配套推流域名，用于设置rtmp直播拉流域名对应的推流域名，当stream-type为pull时，源站IP和配套推流域名至少一个不为空；当stream-type为push时，无需传入。"}
+  OriginPushHost *string `json:"origin-push-host,omitempty" xml:"origin-push-host,omitempty"`
+  // {"en":"Source station IP, when stream-type is pull, at least one of the source station IP and supporting push domain name is not empty.\n1. If it is a push-pull stream match, fill in 127.0.0.1, and the system defaults to 127.0.0.1 if not passed\n2. If it is a direct origin pull stream, fill in the source station IP of the origin pull stream","zh_CN":"源站IP，当stream-type为pull时，源站IP和配套推流域名至少一个不为空。\n1、如果是推拉流配套，则填写127.0.0.1，不传系统也默认为127.0.0.1\n2、如果是直接回源拉流，则填写回源拉流的源站IP"}
+  OriginIps *string `json:"origin-ips,omitempty" xml:"origin-ips,omitempty"`
+}
+
+func (s BatchAddApiDomainRequestDomainConfigsLiveConfig) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BatchAddApiDomainRequestDomainConfigsLiveConfig) GoString() string {
+  return s.String()
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigsLiveConfig) SetStreamType(v string) *BatchAddApiDomainRequestDomainConfigsLiveConfig {
+  s.StreamType = &v
+  return s
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigsLiveConfig) SetOriginPushHost(v string) *BatchAddApiDomainRequestDomainConfigsLiveConfig {
+  s.OriginPushHost = &v
+  return s
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigsLiveConfig) SetOriginIps(v string) *BatchAddApiDomainRequestDomainConfigsLiveConfig {
+  s.OriginIps = &v
+  return s
+}
+
+type BatchAddApiDomainRequestDomainConfigsPublishPoints struct     {
+  // {"en":"Publish point, supports multiple, if not passed, the system defaults to generate a publish point uri as '/'","zh_CN":"发布点，支持多个，不传系统默认生成一条发布点uri为“/”"}
+  Uri *string `json:"uri,omitempty" xml:"uri,omitempty"`
+}
+
+func (s BatchAddApiDomainRequestDomainConfigsPublishPoints) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BatchAddApiDomainRequestDomainConfigsPublishPoints) GoString() string {
+  return s.String()
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigsPublishPoints) SetUri(v string) *BatchAddApiDomainRequestDomainConfigsPublishPoints {
+  s.Uri = &v
+  return s
+}
+
+type BatchAddApiDomainRequestDomainConfigsSsl struct {
+  // {"en":"Use certificate, optional values are true and false, true means using certificate, false means not using certificate","zh_CN":"使用证书，可选值为true和false，true表示使用证书，false表示不使用证书"}
+  UseSsl *string `json:"use-ssl,omitempty" xml:"use-ssl,omitempty"`
+  // {"en":"Use SNI certificate, optional values are true and false, true means using SNI certificate, false means using shared certificate (not supported yet)","zh_CN":"使用sni证书，可选值为true和false，true表示使用sni证书，false表示使用合用证书（暂不支持）"}
+  UseForSni *string `json:"use-for-sni,omitempty" xml:"use-for-sni,omitempty"`
+  // {"en":"Certificate ID, the certificate ID returned by the system after the certificate is successfully added, ssl-certificate-id can only be passed when use-ssl is true.","zh_CN":"证书ID，新增证书成功后，系统返回的证书ID，use-ssl为true时，才能传ssl-certificate-id。"}
+  SslCertificateId *int `json:"ssl-certificate-id,omitempty" xml:"ssl-certificate-id,omitempty"`
+}
+
+func (s BatchAddApiDomainRequestDomainConfigsSsl) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BatchAddApiDomainRequestDomainConfigsSsl) GoString() string {
+  return s.String()
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigsSsl) SetUseSsl(v string) *BatchAddApiDomainRequestDomainConfigsSsl {
+  s.UseSsl = &v
+  return s
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigsSsl) SetUseForSni(v string) *BatchAddApiDomainRequestDomainConfigsSsl {
+  s.UseForSni = &v
+  return s
+}
+
+func (s *BatchAddApiDomainRequestDomainConfigsSsl) SetSslCertificateId(v int) *BatchAddApiDomainRequestDomainConfigsSsl {
+  s.SslCertificateId = &v
+  return s
+}
+
+type BatchAddApiDomainRequestHeader struct {
+  // {"en":"If this header is present, adding the domain will fail when a primary-domain conflict exists, and the customer will be notified that the domain has a primary-domain conflict.","zh_CN":"如果有头部，则主域名冲突时域名新增失败，提示客户该域名存在主域名冲突"}
+  MainDomainConflict *string `json:"Main-Domain-Conflict,omitempty" xml:"Main-Domain-Conflict,omitempty"`
+}
+
+func (s BatchAddApiDomainRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BatchAddApiDomainRequestHeader) GoString() string {
+  return s.String()
+}
+
+func (s *BatchAddApiDomainRequestHeader) SetMainDomainConflict(v string) *BatchAddApiDomainRequestHeader {
+  s.MainDomainConflict = &v
+  return s
+}
+
+type BatchAddApiDomainPaths struct {
+}
+
+func (s BatchAddApiDomainPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BatchAddApiDomainPaths) GoString() string {
+  return s.String()
+}
+
+type BatchAddApiDomainParameters struct {
+}
+
+func (s BatchAddApiDomainParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BatchAddApiDomainParameters) GoString() string {
+  return s.String()
+}
+
+type BatchAddApiDomainResponse struct {
+  // {"en":"Result of batch domain creation","zh_CN":"批量创建域名的结果"}
+  Data *BatchAddApiDomainResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+  // {"en":"Error code, appears when HTTPStatus is not 202, indicating the error type of the current request call","zh_CN":"错误代码，当HTTPStatus不为202时出现，表示当前请求调用的错误类型"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Response message, success when successful","zh_CN":"响应信息，成功时为success"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s BatchAddApiDomainResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BatchAddApiDomainResponse) GoString() string {
+  return s.String()
+}
+
+func (s *BatchAddApiDomainResponse) SetData(v *BatchAddApiDomainResponseData) *BatchAddApiDomainResponse {
+  s.Data = v
+  return s
+}
+
+func (s *BatchAddApiDomainResponse) SetCode(v string) *BatchAddApiDomainResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *BatchAddApiDomainResponse) SetMessage(v string) *BatchAddApiDomainResponse {
+  s.Message = &v
+  return s
+}
+
+type BatchAddApiDomainResponseData struct {
+  // {"en":"Domains created successfully","zh_CN":"创建成功的域名"}
+  SuccessDomains []*BatchAddApiDomainResponseDataSuccessDomains `json:"successDomains,omitempty" xml:"successDomains,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Domains failed to create","zh_CN":"创建失败的域名"}
+  FailedDomains []*BatchAddApiDomainResponseDataFailedDomains `json:"failedDomains,omitempty" xml:"failedDomains,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s BatchAddApiDomainResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BatchAddApiDomainResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *BatchAddApiDomainResponseData) SetSuccessDomains(v []*BatchAddApiDomainResponseDataSuccessDomains) *BatchAddApiDomainResponseData {
+  s.SuccessDomains = v
+  return s
+}
+
+func (s *BatchAddApiDomainResponseData) SetFailedDomains(v []*BatchAddApiDomainResponseDataFailedDomains) *BatchAddApiDomainResponseData {
+  s.FailedDomains = v
+  return s
+}
+
+type BatchAddApiDomainResponseDataSuccessDomains struct     {
+  // {"en":"Domain","zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {"en":"Task ID","zh_CN":"任务ID"}
+  TaskId *string `json:"taskId,omitempty" xml:"taskId,omitempty" require:"true"`
+  // {"en":"Status, optional values: success, fail","zh_CN":"状态，可选值：success、fail"}
+  Status *string `json:"status,omitempty" xml:"status,omitempty" require:"true"`
+  // {"en":"Message","zh_CN":"消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s BatchAddApiDomainResponseDataSuccessDomains) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BatchAddApiDomainResponseDataSuccessDomains) GoString() string {
+  return s.String()
+}
+
+func (s *BatchAddApiDomainResponseDataSuccessDomains) SetDomain(v string) *BatchAddApiDomainResponseDataSuccessDomains {
+  s.Domain = &v
+  return s
+}
+
+func (s *BatchAddApiDomainResponseDataSuccessDomains) SetTaskId(v string) *BatchAddApiDomainResponseDataSuccessDomains {
+  s.TaskId = &v
+  return s
+}
+
+func (s *BatchAddApiDomainResponseDataSuccessDomains) SetStatus(v string) *BatchAddApiDomainResponseDataSuccessDomains {
+  s.Status = &v
+  return s
+}
+
+func (s *BatchAddApiDomainResponseDataSuccessDomains) SetMessage(v string) *BatchAddApiDomainResponseDataSuccessDomains {
+  s.Message = &v
+  return s
+}
+
+type BatchAddApiDomainResponseDataFailedDomains struct     {
+  // {"en":"Domain","zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {"en":"Task ID","zh_CN":"任务ID"}
+  TaskId *string `json:"taskId,omitempty" xml:"taskId,omitempty" require:"true"`
+  // {"en":"Status, optional values: success, fail","zh_CN":"状态，可选值：success、fail"}
+  Status *string `json:"status,omitempty" xml:"status,omitempty" require:"true"`
+  // {"en":"Message","zh_CN":"消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s BatchAddApiDomainResponseDataFailedDomains) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BatchAddApiDomainResponseDataFailedDomains) GoString() string {
+  return s.String()
+}
+
+func (s *BatchAddApiDomainResponseDataFailedDomains) SetDomain(v string) *BatchAddApiDomainResponseDataFailedDomains {
+  s.Domain = &v
+  return s
+}
+
+func (s *BatchAddApiDomainResponseDataFailedDomains) SetTaskId(v string) *BatchAddApiDomainResponseDataFailedDomains {
+  s.TaskId = &v
+  return s
+}
+
+func (s *BatchAddApiDomainResponseDataFailedDomains) SetStatus(v string) *BatchAddApiDomainResponseDataFailedDomains {
+  s.Status = &v
+  return s
+}
+
+func (s *BatchAddApiDomainResponseDataFailedDomains) SetMessage(v string) *BatchAddApiDomainResponseDataFailedDomains {
+  s.Message = &v
+  return s
+}
+
+type BatchAddApiDomainResponseHeader struct {
+}
+
+func (s BatchAddApiDomainResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s BatchAddApiDomainResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type QueryApiDomainListServiceRequest struct {
 }
 
@@ -3470,7 +3656,7 @@ type CreateDomainRequest struct {
   LiveConfig *CreateDomainRequestLiveConfig `json:"live-config,omitempty" xml:"live-config,omitempty" type:"Struct"`
   // {"en":"Identifies whether a domain name is fully overseas accelerated.\nThe default value is \"false\".\nTrue: indicates that the client domain name is a pure overseas acceleration.\nFalse: Indicates that the client domain name has accelerated in China.","zh_CN":"标识域名是否是纯海外加速的。\n默认值为“false”。\ntrue ：表示客户域名纯海外加速。\nfalse：表示客户域名有在中国加速。"}
   AccelerateNoChina *string `json:"accelerate-no-china,omitempty" xml:"accelerate-no-china,omitempty"`
-  // {"en":"Pass the response header of client IP. The optional values are Cdn-Src-Ip, X-Forwarded-For and ori_X-Forwarded-For.","zh_CN":"传递客户端ip的响应头部，可选值为Cdn-Src-Ip、X-Forwarded-For、ori_X-Forwarded-For\n1） Cdn-Src-Ip： 回源头部名称为Cdn-Src-Ip，获取与节点进行建联的IP作为客户端IP传递回源。\n2） X-Forwarded-For： 回源头部名称为X-Forwarded-For，携带的客户端IP值是Cdn-Src-Ip获取到的建联IP。\n3） ori_X-Forwarded-For：客户端请求CDN节点时会自带X-Forwarded-For，则CDN透传此头部和值回源。"}
+  // {"en":"Pass the response header of client IP. The optional values are Cdn-Src-Ip, X-Forwarded-For and ori_X-Forwarded-For. The default value is Cdn-Src-Ip.","zh_CN":"传递客户端ip的响应头部，可选值为Cdn-Src-Ip、X-Forwarded-For、ori_X-Forwarded-For\n1） Cdn-Src-Ip： 回源头部名称为Cdn-Src-Ip，获取与节点进行建联的IP作为客户端IP传递回源。\n2） X-Forwarded-For： 回源头部名称为X-Forwarded-For，携带的客户端IP值是Cdn-Src-Ip获取到的建联IP。\n3） ori_X-Forwarded-For：客户端请求CDN节点时会自带X-Forwarded-For，则CDN透传此头部和值回源。"}
   HeaderOfClientip *string `json:"header-of-clientip,omitempty" xml:"header-of-clientip,omitempty"`
   // {"en":"The live streaming domain which is pull domian ,and  directly returned to the source to verify the configuration.\nwhich can be an IP or a domain name.\nCan be IP or domain name. Ip and domain names can only be one. Multiple input parameters are not supported.","zh_CN":"直播拉流域名，直接回源校验配置。\n可以是IP或域名。ip和域名只能一种。不支持多个入参。"}
   UpstreamHost *string `json:"upstream-host,omitempty" xml:"upstream-host,omitempty"`

@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/reportstatuscode
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/reportstatuscode
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/reportstatuscode"
     "log"
 )
@@ -89,3 +83,4 @@ if err != nil {
 | Querystatuscodedistributionincountries | 按国家粒度查询状态码分布情况(按服务IP归属) | POST | /api/report/status-code/country |
 | Querystatuscodedistributionofeachispandprovincebyuserip | 查询多域名在各ISP各省份的状态码分布，省份运营商基于访客IP归属。 | POST | /api/report/status-code/isp-province/user-ip |
 | Reportstatuscodeurltopservice | 用于查询域名及状态码下的TOP URL排行。数据时延：3小时 | POST | /api/report/domain/statuscode/url/top |
+| Reportstatuscodebycountrybasevisitorip | 该接口用于查询多域名根据访客IP归属的指定时间范围内各国家的状态码分布。用户需提供时间范围和域名进行查询，可选择按域名或国家进行分组返回，支持可选返回1分钟或5分钟粒度数据。响应返回对应域名国家的状态码请求数。 | POST | /api/report/status-code/country/user-ip |

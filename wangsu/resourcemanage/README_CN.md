@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/resourcemanage
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/resourcemanage
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/resourcemanage"
     "log"
 )
@@ -74,3 +68,5 @@ if err != nil {
 | Vmpquerynode | 查询边缘计算平台有哪些节点可以提供服务。 | GET | /vmp/nodes |
 | Vmpquerybandwidth | 查询您所有在用的节点的实时冗余带宽，有冗余带宽的节点就返回True，无冗余带宽的节点就返回False，如果该节点的带宽数据采集结果不足以支撑该接口的时效性要求，即带宽统计数据较旧暂不满足时效性要求，则返回Undefined。节点是否有冗余带宽的判断方法：节点上限带宽大于节点的实时使用带宽。数据粒度：5分钟。<br>备注：<br>1）只返回客户有使用的节点的带宽冗余情况，有使用的前提是该客户在这个节点至少有1台云主机；<br>2）如果某个节点返回的result是Undefined，表示该节点无10分钟内的实时带宽统计数据，为了保证冗余带宽的时效性，返回Undefined，建议稍后再次调用该接口以查询该节点的最新情况；<br>3）如果节点是双线或多线节点，则分别返回每个运营商的带宽冗余情况；<br>4）节点的实时冗余带宽是动态变化的，若通过该接口的返回结果做业务调度，建议周期获取数据。 | POST | /vmp/redundant-bandwidth |
 | Noderedundantbandwidth4pstatp | 用于查询客户所使用节点的实时冗余带宽 | GET | /vmp/nodeRedundantBandwidth4Pstatp |
+| Lechquerynode | 查询边缘计算平台有哪些节点可以提供服务。 | GET | /lech/nodes |
+| Lechqueryflavor | 您可以通过此接口查询得到某个区域能提供的实例的规格列表，然后通过这个规格来创建实例。 | GET | /lech/flavors |

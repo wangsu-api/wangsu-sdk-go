@@ -8,12 +8,6 @@
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## 单独安装
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/storagemanagement
-```
-
 ## 示例用法
 
 该 SDK 使用 AKSK（访问密钥/秘密密钥）认证。按如下方式配置您的凭据：
@@ -22,7 +16,7 @@ go get github.com/wangsu-api/wangsu-sdk-go/wangsu/storagemanagement
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/storagemanagement"
     "log"
 )
@@ -81,3 +75,8 @@ if err != nil {
 | Deletepvcfromedge | 直接从边缘删除pvc | DELETE | /openapi/custom/api/v1/namespaces/*/persistentvolumeclaims/* |
 | Liststorageclass | 获取storageClass列表 | GET | /openapi/custom/api/v1/storageclasses |
 | Querychannelrecordfiles | 查询通道录制文件 | POST | /ivcs/report/origin/query-channel-record |
+| Querydevicerecordfiles | 用于查询gb28181设备端录像文件。接口一次最长只能查询7天数据，避免文件太多设备返回失败，最好是按天查询。如果返回内容为空说明设备没有录像文件或者设备端有异常，建议咨询设备生产服务厂商。 | POST | /ivcs/report/origin/query-device-record |
+| Playbackcontrol | 通过该接口可以设置回放进度、回放倍率、回放暂停、回放继续播放。为了提高用户体验，回放控制时尽量使用webrtc拉流协议，降低数据延迟。 | POST | /ivcs/report/origin/playback-control |
+| Startplayback | 开始回放指定设备端录制文件，该接口是下发指令给设备端，让设备端开始推录制文件视频流。为了保证设备推流带宽稳定，当前一个通道只能支持一路流进行回放，如果要回放该通道其他文件，需要结束已经在回放的那路流，才能开始回放新的文件 | POST | /ivcs/report/origin/start-playback |
+| Stopplayback | 结束回放，下发信令让设备停止推录像文件视频流。是否断流成功可以通过回调信息进行判断。 | POST | /ivcs/report/origin/stop-playback |
+| Queryplaybacklist | 通过调用查询该接口可以查询正在进行设备录像回放的流，可以通过查询接口对不需要回放的流进行结束回放，避免占用设备带宽资源。 | POST | /ivcs/report/origin/query-playback-list |

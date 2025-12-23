@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/logdownload
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/logdownload"
     "log"
 )
@@ -72,3 +67,4 @@ For detailed API documentation and available methods, please refer to the [offic
 | --- | --- | --- | --- |
 | Querydomainlogdownloadaddress | Report Log Multi-Domain Service Interface description Query the log download address of multiple domains. <br>The default granularity of log file is 24 hours and data are returned according to the actual configurations.<br>Around 3-5 hours of data delay | POST | /api/report/log/downloadLink |
 | Querytranscodingdurationlogdownloadaddress | This interface is used to provide the download address of the transcoding duration log file of multiple domain names. Users can obtain the transcoding log information related to each domain name by specifying the time range and domain name list. The returned content includes the start and end time of the log file, download address, file name, file size, and expiration time of the download address. This interface helps users accurately grasp the transcoding details of each domain name within the specified time and make corresponding optimizations. | POST | /api/report/log/download-file/transcoding |
+| Querycataloguetrafficandbroadcastcountdownload | This interface is used to query the download address for directory traffic statistics and playback count statistics of multiple domain names within a specified time range. Users need to specify the domain name and start/end time. If no domain name is specified, all domain names under the account will be queried by default (limited by quantity). The response will return information such as the download address, file size, expiration time, etc. of the log file. | POST | /api/report/catalogue/broadcast/download-file |

@@ -8,11 +8,6 @@ This README provides documentation for using the Wangsu SDK for Go.
 go get github.com/wangsu-api/wangsu-sdk-go
 ```
 
-## Product Single Installation
-
-```bash
-go get github.com/wangsu-api/wangsu-sdk-go/wangsu/mediaprocessing
-```
 
 ## Example Usage
 
@@ -22,7 +17,7 @@ The SDK uses AKSK (Access Key/Secret Key) authentication. Configure your credent
 package main
 
 import (
-    "ggithub.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
+    "github.com/wangsu-api/wangsu-sdk-go/wangsu/common/auth"
     "github.com/wangsu-api/wangsu-sdk-go/wangsu/mediaprocessing"
     "log"
 )
@@ -77,3 +72,4 @@ For detailed API documentation and available methods, please refer to the [offic
 | Createclearadtask | Call createClearAdTask to create AI de-advertising task for the specified video, and the system will automatically conduct AI de-advertising operation for the video (value-added service function, if necessary, please contact customer service to open the value-added service of "AI de-advertising"). | POST | /vod/ai/createClearAdTask |
 | Clearadtaskquery | Query AI clear AD task status and results | POST | /vod/ai/clearAdTaskQuery |
 | Transcode | Use the transCode method to convert the specified video, mainly including transcoding the resolution and adding watermarks. | POST | /vod/videoManage/transCode |
+| Startworkflow | Startworkflow | POST | /workflow/startWorkflow |
