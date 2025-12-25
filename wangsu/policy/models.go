@@ -6,8 +6,8 @@ import (
 )
 
 type DeletePolicyRequest struct {
-  // {"en":"Policy ID. Only supports deleting custom permission policies.", "zh_CN":"策略ID。仅支持删除自定义权限策略"}
-  PolicyId *string `json:"policyId,omitempty" xml:"policyId,omitempty" require:"true"`
+  // {"en":"Policy ID. Only supports deleting custom permission policies.","zh_CN":"策略ID。仅支持删除自定义权限策略"}
+  PolicyId *int64 `json:"policyId,omitempty" xml:"policyId,omitempty" require:"true"`
 }
 
 func (s DeletePolicyRequest) String() string {
@@ -18,34 +18,20 @@ func (s DeletePolicyRequest) GoString() string {
   return s.String()
 }
 
-func (s *DeletePolicyRequest) SetPolicyId(v string) *DeletePolicyRequest {
+func (s *DeletePolicyRequest) SetPolicyId(v int64) *DeletePolicyRequest {
   s.PolicyId = &v
   return s
 }
 
-type DeletePolicyResponse struct {
-  // {"en":"request result status code", "zh_CN":"请求结果状态码"}
-  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
-  // {"en":"Request result information", "zh_CN":"请求结果信息"}
-  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+type DeletePolicyRequestHeader struct {
 }
 
-func (s DeletePolicyResponse) String() string {
+func (s DeletePolicyRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s DeletePolicyResponse) GoString() string {
+func (s DeletePolicyRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *DeletePolicyResponse) SetCode(v string) *DeletePolicyResponse {
-  s.Code = &v
-  return s
-}
-
-func (s *DeletePolicyResponse) SetMsg(v string) *DeletePolicyResponse {
-  s.Msg = &v
-  return s
 }
 
 type DeletePolicyPaths struct {
@@ -70,15 +56,29 @@ func (s DeletePolicyParameters) GoString() string {
   return s.String()
 }
 
-type DeletePolicyRequestHeader struct {
+type DeletePolicyResponse struct {
+  // {"en":"request result status code","zh_CN":"请求结果状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Request result information","zh_CN":"请求结果信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
 }
 
-func (s DeletePolicyRequestHeader) String() string {
+func (s DeletePolicyResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s DeletePolicyRequestHeader) GoString() string {
+func (s DeletePolicyResponse) GoString() string {
   return s.String()
+}
+
+func (s *DeletePolicyResponse) SetCode(v string) *DeletePolicyResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *DeletePolicyResponse) SetMsg(v string) *DeletePolicyResponse {
+  s.Msg = &v
+  return s
 }
 
 type DeletePolicyResponseHeader struct {
@@ -173,19 +173,19 @@ func (s *GetAccountSummaryResponse) SetData(v *GetAccountSummaryResponseData) *G
 
 type GetAccountSummaryResponseData struct {
   // {"en":"Maximum number of user groups to be created","zh_CN":"允许创建用户组最大数量"}
-  GroupsQuota *int64 `json:"groupsQuota,omitempty" xml:"groupsQuota,omitempty" require:"true"`
+  GroupsQuota *int `json:"groupsQuota,omitempty" xml:"groupsQuota,omitempty" require:"true"`
   // {"en":"Number of user groups","zh_CN":"用户组数量"}
-  Groups *int64 `json:"groups,omitempty" xml:"groups,omitempty" require:"true"`
+  Groups *int `json:"groups,omitempty" xml:"groups,omitempty" require:"true"`
   // {"en":"Maximum number of custom Policies allowed to be created","zh_CN":"允许创建自定义策略的最大数量"}
-  PoliciesQuota *int64 `json:"policiesQuota,omitempty" xml:"policiesQuota,omitempty" require:"true"`
+  PoliciesQuota *int `json:"policiesQuota,omitempty" xml:"policiesQuota,omitempty" require:"true"`
   // {"en":"Number of custom policies","zh_CN":"自定义策略数量"}
-  Policies *int64 `json:"policies,omitempty" xml:"policies,omitempty" require:"true"`
+  Policies *int `json:"policies,omitempty" xml:"policies,omitempty" require:"true"`
   // {"en":"Maximum number of permission policy versions","zh_CN":"权限策略版本的最大数量"}
-  VersionPolicyQuota *int64 `json:"versionPolicyQuota,omitempty" xml:"versionPolicyQuota,omitempty" require:"true"`
+  VersionPolicyQuota *int `json:"versionPolicyQuota,omitempty" xml:"versionPolicyQuota,omitempty" require:"true"`
   // {"en":"Maximum number of sub-users allowed to create","zh_CN":"允许创建的子用户最大数量"}
-  UsersQuota *int64 `json:"usersQuota,omitempty" xml:"usersQuota,omitempty" require:"true"`
+  UsersQuota *int `json:"usersQuota,omitempty" xml:"usersQuota,omitempty" require:"true"`
   // {"en":"Number of sub-users","zh_CN":"子用户数量"}
-  Users *int64 `json:"users,omitempty" xml:"users,omitempty" require:"true"`
+  Users *int `json:"users,omitempty" xml:"users,omitempty" require:"true"`
 }
 
 func (s GetAccountSummaryResponseData) String() string {
@@ -196,37 +196,37 @@ func (s GetAccountSummaryResponseData) GoString() string {
   return s.String()
 }
 
-func (s *GetAccountSummaryResponseData) SetGroupsQuota(v int64) *GetAccountSummaryResponseData {
+func (s *GetAccountSummaryResponseData) SetGroupsQuota(v int) *GetAccountSummaryResponseData {
   s.GroupsQuota = &v
   return s
 }
 
-func (s *GetAccountSummaryResponseData) SetGroups(v int64) *GetAccountSummaryResponseData {
+func (s *GetAccountSummaryResponseData) SetGroups(v int) *GetAccountSummaryResponseData {
   s.Groups = &v
   return s
 }
 
-func (s *GetAccountSummaryResponseData) SetPoliciesQuota(v int64) *GetAccountSummaryResponseData {
+func (s *GetAccountSummaryResponseData) SetPoliciesQuota(v int) *GetAccountSummaryResponseData {
   s.PoliciesQuota = &v
   return s
 }
 
-func (s *GetAccountSummaryResponseData) SetPolicies(v int64) *GetAccountSummaryResponseData {
+func (s *GetAccountSummaryResponseData) SetPolicies(v int) *GetAccountSummaryResponseData {
   s.Policies = &v
   return s
 }
 
-func (s *GetAccountSummaryResponseData) SetVersionPolicyQuota(v int64) *GetAccountSummaryResponseData {
+func (s *GetAccountSummaryResponseData) SetVersionPolicyQuota(v int) *GetAccountSummaryResponseData {
   s.VersionPolicyQuota = &v
   return s
 }
 
-func (s *GetAccountSummaryResponseData) SetUsersQuota(v int64) *GetAccountSummaryResponseData {
+func (s *GetAccountSummaryResponseData) SetUsersQuota(v int) *GetAccountSummaryResponseData {
   s.UsersQuota = &v
   return s
 }
 
-func (s *GetAccountSummaryResponseData) SetUsers(v int64) *GetAccountSummaryResponseData {
+func (s *GetAccountSummaryResponseData) SetUsers(v int) *GetAccountSummaryResponseData {
   s.Users = &v
   return s
 }
@@ -247,7 +247,7 @@ func (s GetAccountSummaryResponseHeader) GoString() string {
 
 type EditPolicyRequest struct {
   // {"en":"The ID of the policy to be modified.","zh_CN":"要修改的策略id"}
-  PolicyId *string `json:"policyId,omitempty" xml:"policyId,omitempty" require:"true"`
+  PolicyId *int64 `json:"policyId,omitempty" xml:"policyId,omitempty" require:"true"`
   // {"en":"The name of the policy to be modified..Not passing means no modification.","zh_CN":"要修改的策略名称。不传代表不修改。"}
   PolicyName *string `json:"policyName,omitempty" xml:"policyName,omitempty"`
   // {"en":"Policy description. You may describe the strategy here, including permission details, limited to a maximum of 250 characters.Not passing means no modification.","zh_CN":"修改后策略描述。可在此用文字简单描述策略包含权限内容，限制最多250字符。不传代表不修改。"}
@@ -264,7 +264,7 @@ func (s EditPolicyRequest) GoString() string {
   return s.String()
 }
 
-func (s *EditPolicyRequest) SetPolicyId(v string) *EditPolicyRequest {
+func (s *EditPolicyRequest) SetPolicyId(v int64) *EditPolicyRequest {
   s.PolicyId = &v
   return s
 }
@@ -579,12 +579,12 @@ func (s QueryPolicyAssociateUserParameters) GoString() string {
 }
 
 type QueryPolicyAssociateUserResponse struct {
-  // {"en":"Policy ID","zh_CN":"策略策略ID"}
-  PolicyId *int64 `json:"policyId,omitempty" xml:"policyId,omitempty" require:"true"`
-  // {"en":"Policy Name","zh_CN":"策略名称"}
-  PolicyName *string `json:"policyName,omitempty" xml:"policyName,omitempty" require:"true"`
+  // {"en":"request result status code","zh_CN":"请求结果状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Request result information","zh_CN":"请求结果信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
   // {"en":"","zh_CN":""}
-  AssociateDetail []*QueryPolicyAssociateUserResponseAssociateDetail `json:"associateDetail,omitempty" xml:"associateDetail,omitempty" require:"true" type:"Repeated"`
+  Data *QueryPolicyAssociateUserResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
 func (s QueryPolicyAssociateUserResponse) String() string {
@@ -595,56 +595,88 @@ func (s QueryPolicyAssociateUserResponse) GoString() string {
   return s.String()
 }
 
-func (s *QueryPolicyAssociateUserResponse) SetPolicyId(v int64) *QueryPolicyAssociateUserResponse {
+func (s *QueryPolicyAssociateUserResponse) SetCode(v string) *QueryPolicyAssociateUserResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QueryPolicyAssociateUserResponse) SetMessage(v string) *QueryPolicyAssociateUserResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *QueryPolicyAssociateUserResponse) SetData(v *QueryPolicyAssociateUserResponseData) *QueryPolicyAssociateUserResponse {
+  s.Data = v
+  return s
+}
+
+type QueryPolicyAssociateUserResponseData struct {
+  // {"en":"Policy ID","zh_CN":"策略策略ID"}
+  PolicyId *int64 `json:"policyId,omitempty" xml:"policyId,omitempty" require:"true"`
+  // {"en":"Policy Name","zh_CN":"策略名称"}
+  PolicyName *string `json:"policyName,omitempty" xml:"policyName,omitempty" require:"true"`
+  // {"en":"","zh_CN":""}
+  AssociateDetail []*QueryPolicyAssociateUserResponseDataAssociateDetail `json:"associateDetail,omitempty" xml:"associateDetail,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryPolicyAssociateUserResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryPolicyAssociateUserResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryPolicyAssociateUserResponseData) SetPolicyId(v int64) *QueryPolicyAssociateUserResponseData {
   s.PolicyId = &v
   return s
 }
 
-func (s *QueryPolicyAssociateUserResponse) SetPolicyName(v string) *QueryPolicyAssociateUserResponse {
+func (s *QueryPolicyAssociateUserResponseData) SetPolicyName(v string) *QueryPolicyAssociateUserResponseData {
   s.PolicyName = &v
   return s
 }
 
-func (s *QueryPolicyAssociateUserResponse) SetAssociateDetail(v []*QueryPolicyAssociateUserResponseAssociateDetail) *QueryPolicyAssociateUserResponse {
+func (s *QueryPolicyAssociateUserResponseData) SetAssociateDetail(v []*QueryPolicyAssociateUserResponseDataAssociateDetail) *QueryPolicyAssociateUserResponseData {
   s.AssociateDetail = v
   return s
 }
 
-type QueryPolicyAssociateUserResponseAssociateDetail struct     {
+type QueryPolicyAssociateUserResponseDataAssociateDetail struct     {
   // {"en":"Type:  user  userGroup","zh_CN":"关联类型：  用户-user  用户组-userGroup"}
   Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
   // {"en":"User Login Name/User Group Name","zh_CN":"用户登录名称/用户组名称"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
   // {"en":"User ID/User Group ID","zh_CN":"用户id/用户组id"}
-  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+  Id *int64 `json:"id,omitempty" xml:"id,omitempty" require:"true"`
   // {"en":"Associate policy date, example: 2015-01-23T12:33:18+00:00","zh_CN":"授权时间，示例值：2015-01-23T12:33:18+00:00"}
   AttachDate *string `json:"attachDate,omitempty" xml:"attachDate,omitempty" require:"true"`
 }
 
-func (s QueryPolicyAssociateUserResponseAssociateDetail) String() string {
+func (s QueryPolicyAssociateUserResponseDataAssociateDetail) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryPolicyAssociateUserResponseAssociateDetail) GoString() string {
+func (s QueryPolicyAssociateUserResponseDataAssociateDetail) GoString() string {
   return s.String()
 }
 
-func (s *QueryPolicyAssociateUserResponseAssociateDetail) SetType(v string) *QueryPolicyAssociateUserResponseAssociateDetail {
+func (s *QueryPolicyAssociateUserResponseDataAssociateDetail) SetType(v string) *QueryPolicyAssociateUserResponseDataAssociateDetail {
   s.Type = &v
   return s
 }
 
-func (s *QueryPolicyAssociateUserResponseAssociateDetail) SetName(v string) *QueryPolicyAssociateUserResponseAssociateDetail {
+func (s *QueryPolicyAssociateUserResponseDataAssociateDetail) SetName(v string) *QueryPolicyAssociateUserResponseDataAssociateDetail {
   s.Name = &v
   return s
 }
 
-func (s *QueryPolicyAssociateUserResponseAssociateDetail) SetId(v string) *QueryPolicyAssociateUserResponseAssociateDetail {
+func (s *QueryPolicyAssociateUserResponseDataAssociateDetail) SetId(v int64) *QueryPolicyAssociateUserResponseDataAssociateDetail {
   s.Id = &v
   return s
 }
 
-func (s *QueryPolicyAssociateUserResponseAssociateDetail) SetAttachDate(v string) *QueryPolicyAssociateUserResponseAssociateDetail {
+func (s *QueryPolicyAssociateUserResponseDataAssociateDetail) SetAttachDate(v string) *QueryPolicyAssociateUserResponseDataAssociateDetail {
   s.AttachDate = &v
   return s
 }

@@ -23,7 +23,7 @@ import (
 
 func main() {
     // 参考本文档最后的API列表，修改一下对应的{ActionName}、Method、Uri
-    request := &appmanage.ActionNameRequest{}
+    request := &appmanage.{ActionName}Request{}
 
     // Configure authentication
     var config auth.AkskConfig
