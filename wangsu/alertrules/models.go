@@ -483,7 +483,7 @@ func (s *EditCloudMonitorRealTimeAlarmRuleRequestRuleItemsConditionRules) SetThr
 type EditCloudMonitorRealTimeAlarmRuleRequestNotices struct     {
   // {"en":"Notification method. Options: MOBILE, EMAIL, robot, webhook","zh_CN":"通知方式。可选值：MOBILE-短信、EMAIL-邮件、ROBOT-机器人、WEBHOOK-webhook回调","exampleValue":"MOBILE,EMAIL,ROBOT,WEBHOOK"}
   NoticeMethod *string `json:"noticeMethod,omitempty" xml:"noticeMethod,omitempty" require:"true"`
-  // {"en":"Notification object. For MOBILE/EMAIL: contact IDs separated by ;. For ROBOT: robot IDs separated by ;. For WEBHOOK: webhook URL","zh_CN":"告警通知对象。若noticeMethod为MOBILE、EMAIL：请传递联系人id，多个用;分隔。若为ROBOT：请传递机器人id，多个用;分隔。若为WEBHOOK：请直接传递webhook地址"}
+  // {"en":"noticeObject: If you select MOBILE or EMAIL as the notification method, please enter the corresponding contact ID(s) (not the phone number or email address). Multiple IDs should be separated by ; . Please contact technical support to obtain the necessary contact IDs. For ROBOT: robot IDs separated by ;. For WEBHOOK: webhook URL.","zh_CN":"告警通知对象。若noticeMethod为MOBILE、EMAIL：请传递联系人id，可联系技术支持获取联系人ID信息，多个用;分隔。若为ROBOT：请传递机器人id，多个用;分隔。若为WEBHOOK：请直接传递webhook地址"}
   NoticeObject *string `json:"noticeObject,omitempty" xml:"noticeObject,omitempty" require:"true"`
 }
 
@@ -854,7 +854,7 @@ func (s *CreateCloudMonitorRealTimeAlarmRuleRequestRuleItemsConditionRules) SetT
 type CreateCloudMonitorRealTimeAlarmRuleRequestNotices struct     {
   // {"en":"Notification method. Options: MOBILE, EMAIL, ROBOT, WEBHOOK","zh_CN":"通知方式。可选值：MOBILE-短信、EMAIL-邮件、ROBOT-机器人、WEBHOOK-webhook回调","exampleValue":"MOBILE, EMAIL, ROBOT, WEBHOOK"}
   NoticeMethod *string `json:"noticeMethod,omitempty" xml:"noticeMethod,omitempty" require:"true"`
-  // {"en":"Notification object. For MOBILE/EMAIL: contact IDs separated by ;. For ROBOT: robot IDs separated by ;. For WEBHOOK: webhook URL","zh_CN":"告警通知对象。若noticeMethod为MOBILE、EMAIL：请传递联系人id，多个用;分隔。若为ROBOT：请传递机器人id，多个用;分隔。若为WEBHOOK：请直接传递webhook地址"}
+  // {"en":"noticeObject: If you select MOBILE or EMAIL as the notification method, please enter the corresponding contact ID(s) (not the phone number or email address). Multiple IDs should be separated by ; . Please contact technical support to obtain the necessary contact IDs. For ROBOT: robot IDs separated by ;. For WEBHOOK: webhook URL.","zh_CN":"告警通知对象。若noticeMethod为MOBILE、EMAIL：请传递联系人id，可联系技术支持获取联系人ID信息，多个用;分隔。若为ROBOT：请传递机器人id，多个用;分隔。若为WEBHOOK：请直接传递webhook地址"}
   NoticeObject *string `json:"noticeObject,omitempty" xml:"noticeObject,omitempty" require:"true"`
 }
 

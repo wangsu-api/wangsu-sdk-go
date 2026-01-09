@@ -2088,3 +2088,347 @@ func (s DeleteWaitingRoomConnectorResponseHeader) GoString() string {
 
 
 
+type QueryAiGatewayUsageRequest struct {
+  // {"en":"The English name (cust_en_name) of a sub-client. When a merged account needs to view a sub-client's information, this parameter is required.","zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名。"}
+  Cust *string `json:"cust,omitempty" xml:"cust,omitempty"`
+  // {"en":"Specifies the query date. The date format is yyyy-mm-dd. If not provided or empty, it defaults to the current day.","zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
+  Date *string `json:"date,omitempty" xml:"date,omitempty"`
+  // {"en":"The start date for the query. Format: yyyy-mm-dd. This parameter must be used with 'enddate'. If the 'date' parameter is also provided, this parameter will be ignored.","zh_CN":"查询的起始日期，日期格式为yyyy-mm-dd；此参数需与enddate参数配合，若存在date参数，则该参数无效。"}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty"`
+  // {"en":"The end date for the query. Format: yyyy-mm-dd. This parameter must be used with 'startdate'. If the 'date' parameter is also provided, this parameter will be ignored.","zh_CN":"查询的结束日期，日期格式为yyyy-mm-dd；此参数需与startdate参数配合，若存在date参数，则该参数无效。"}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty"`
+  // {"dictionary":"belong=BCS-CC-API|dict=flowRegionCode","en":"The abbreviation for the accelerated region to query. If there are multiple regions, use ';' as a separator. For example, 'region=cn;apac' queries data for the CN and APAC regions. If not specified or empty, it defaults to all regions.","zh_CN":"查询的加速区域的缩写，多个区域请用英文分号';'分隔开，如查询大陆及亚太区域，参数填写为：'region=cn;apac'。不选或者为空时默认为全部区域。"}
+  Region *string `json:"region,omitempty" xml:"region,omitempty"`
+  // {"en":"The acceleration type, for example, 'web'. If multiple types are provided, use ';' as a separator. If not specified or if the value is 'all', it refers to all acceleration types.","zh_CN":"加速类型参数，如accetype=web。多个请用英文分号';'分隔开，不填或值为all表示所有类型。"}
+  Accetype *string `json:"accetype,omitempty" xml:"accetype,omitempty"`
+  // {"en":"The format of the response. Supported values are 'xml' and 'json', with 'xml' as the default.","zh_CN":"返回结果格式，支持格式为xml和json，默认为xml。"}
+  Dataformat *string `json:"dataformat,omitempty" xml:"dataformat,omitempty"`
+  // {"en":"AI service provider. For multiple values, please separate them with an English semicolon ';'. If not filled in or set to 'all', it refers to all providers.","zh_CN":"AI服务提供商。多个请用英文分号“;”分隔开，不填或值为all表示所有提供商。"}
+  Aiprovider *string `json:"aiprovider,omitempty" xml:"aiprovider,omitempty"`
+  // {"en":"AI Gateway. For multiple types, please separate them with a semicolon ';'. If left blank or set to 'all', it will indicate all gateways.","zh_CN":"AI网关。多个请用英文分号“;”分隔开，不填或值为all表示所有网关。"}
+  Aigateway *string `json:"aigateway,omitempty" xml:"aigateway,omitempty"`
+  // {"en":"Model. If specifying multiple types, please separate them with an English semicolon ';'. Leaving this field empty or setting it to 'all' indicates all models.","zh_CN":"模型，多个请用英文分号“;”分隔开，不填或值为all表示所有模型。"}
+  Model *string `json:"model,omitempty" xml:"model,omitempty"`
+  // {"en":"Deep thinking status: '1' indicates yes, '0' indicates no, '-' represents historical data. For multiple entries, please separate using a semicolon ';'. Leave blank or use 'all' to indicate all types.","zh_CN":"是否深度思考，'1'表示是，'0'表示否，'-'表示历史数据，多个请用英文分号“;”分隔开，不填或值为all表示所有类型。"}
+  Reasonflag *string `json:"reasonflag,omitempty" xml:"reasonflag,omitempty"`
+  // {"en":"The GMT time zone. The parameter format is GMT+09:00 for the East Ninth Zone and GMT-09:00 for the West Ninth Zone. If not provided, it defaults to the local time zone (GMT+08:00, East Eighth Zone).","zh_CN":"格林尼治时区，参数格式 GMT+09:00 表示东九区，GMT-09:00 表示西9区，不传则默认为本地时区（东八区）。"}
+  Timezone *string `json:"timezone,omitempty" xml:"timezone,omitempty"`
+  // {"en":"Whether to aggregate in a specific way. Format: number_day|hour. For example, '2_day' means aggregation by every 2 days. If not specified, data will be returned in its original granularity (5_min) by default.","zh_CN":"是否按照特定方式聚合,格式 :  数字_day|hour，例如‘2_day’表示按照2天聚合, 不填默认以底层数据粒度返回 （5_min）。"}
+  ReturnType *string `json:"returnType,omitempty" xml:"returnType,omitempty"`
+  // {"en":"Datatype\n- 0: Total number of requests\n- 1: Total number of tokens\n- 2: Number of input tokens\n- 3: Number of output tokens\n- 4: Number of generated images\n- 5: Input audio duration\n- 6: Number of input characters\n- 7: Number of input images\n- Default: all (return all)","zh_CN":"数据类型\n- 0：总请求数\n- 1：总Tokens数\n- 2：输入Tokens数\n- 3：输出Tokens数\n- 4：生成图片数\n- 5：输入语音时长\n- 6：输入字符数 \n- 7：输入图片数\n- 默认：all（全部都返回）"}
+  Datatype *string `json:"datatype,omitempty" xml:"datatype,omitempty"`
+}
+
+func (s QueryAiGatewayUsageRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryAiGatewayUsageRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryAiGatewayUsageRequest) SetCust(v string) *QueryAiGatewayUsageRequest {
+  s.Cust = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageRequest) SetDate(v string) *QueryAiGatewayUsageRequest {
+  s.Date = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageRequest) SetStartdate(v string) *QueryAiGatewayUsageRequest {
+  s.Startdate = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageRequest) SetEnddate(v string) *QueryAiGatewayUsageRequest {
+  s.Enddate = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageRequest) SetRegion(v string) *QueryAiGatewayUsageRequest {
+  s.Region = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageRequest) SetAccetype(v string) *QueryAiGatewayUsageRequest {
+  s.Accetype = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageRequest) SetDataformat(v string) *QueryAiGatewayUsageRequest {
+  s.Dataformat = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageRequest) SetAiprovider(v string) *QueryAiGatewayUsageRequest {
+  s.Aiprovider = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageRequest) SetAigateway(v string) *QueryAiGatewayUsageRequest {
+  s.Aigateway = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageRequest) SetModel(v string) *QueryAiGatewayUsageRequest {
+  s.Model = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageRequest) SetReasonflag(v string) *QueryAiGatewayUsageRequest {
+  s.Reasonflag = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageRequest) SetTimezone(v string) *QueryAiGatewayUsageRequest {
+  s.Timezone = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageRequest) SetReturnType(v string) *QueryAiGatewayUsageRequest {
+  s.ReturnType = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageRequest) SetDatatype(v string) *QueryAiGatewayUsageRequest {
+  s.Datatype = &v
+  return s
+}
+
+type QueryAiGatewayUsageRequestHeader struct {
+}
+
+func (s QueryAiGatewayUsageRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryAiGatewayUsageRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryAiGatewayUsagePaths struct {
+}
+
+func (s QueryAiGatewayUsagePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryAiGatewayUsagePaths) GoString() string {
+  return s.String()
+}
+
+type QueryAiGatewayUsageParameters struct {
+}
+
+func (s QueryAiGatewayUsageParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryAiGatewayUsageParameters) GoString() string {
+  return s.String()
+}
+
+type QueryAiGatewayUsageResponse struct {
+  // {"en":"Result data from the provider.","zh_CN":"提供方返回的结果数据。"}
+  Provider *QueryAiGatewayUsageResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryAiGatewayUsageResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryAiGatewayUsageResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryAiGatewayUsageResponse) SetProvider(v *QueryAiGatewayUsageResponseProvider) *QueryAiGatewayUsageResponse {
+  s.Provider = v
+  return s
+}
+
+type QueryAiGatewayUsageResponseProvider struct {
+  // {"en":"Tenant name.","zh_CN":"租户名称。"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"defaultValue":"sharkletAIgateway","en":"The business type of the interface.","zh_CN":"接口的业务类型。"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {"en":"AI Gateway Data","zh_CN":"AI网关数据"}
+  Date *QueryAiGatewayUsageResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryAiGatewayUsageResponseProvider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryAiGatewayUsageResponseProvider) GoString() string {
+  return s.String()
+}
+
+func (s *QueryAiGatewayUsageResponseProvider) SetName(v string) *QueryAiGatewayUsageResponseProvider {
+  s.Name = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageResponseProvider) SetType(v string) *QueryAiGatewayUsageResponseProvider {
+  s.Type = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageResponseProvider) SetDate(v *QueryAiGatewayUsageResponseProviderDate) *QueryAiGatewayUsageResponseProvider {
+  s.Date = v
+  return s
+}
+
+type QueryAiGatewayUsageResponseProviderDate struct {
+  // {"en":"Start date.","zh_CN":"开始时间"}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
+  // {"en":"End date.","zh_CN":"结束时间"}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
+  // {"en":"Total number of requests","zh_CN":"总请求数"}
+  TotalVisit *string `json:"totalVisit,omitempty" xml:"totalVisit,omitempty" require:"true"`
+  // {"en":"Total number of tokens","zh_CN":"总Tokens数"}
+  TotalTokens *string `json:"totalTokens,omitempty" xml:"totalTokens,omitempty" require:"true"`
+  // {"en":"Total number of input tokens","zh_CN":"总输入Tokens数"}
+  TotalPromptTokens *string `json:"totalPromptTokens,omitempty" xml:"totalPromptTokens,omitempty" require:"true"`
+  // {"en":"Total number of output tokens","zh_CN":"总输出Tokens"}
+  TotalCompleteTokens *string `json:"totalCompleteTokens,omitempty" xml:"totalCompleteTokens,omitempty" require:"true"`
+  // {"en":"Total number of generated images","zh_CN":"总生成图片数"}
+  TotalItemNum *string `json:"totalItemNum,omitempty" xml:"totalItemNum,omitempty" require:"true"`
+  // {"en":"Total input audio duration","zh_CN":"总输入语音时长"}
+  TotalDuration *string `json:"totalDuration,omitempty" xml:"totalDuration,omitempty" require:"true"`
+  // {"en":"Total number of input characters","zh_CN":"总输入字符数"}
+  TotalInputCharacters *string `json:"totalInputCharacters,omitempty" xml:"totalInputCharacters,omitempty" require:"true"`
+  // {"en":"Total number of input images","zh_CN":"总输入图片数"}
+  TotalInputImageNum *string `json:"totalInputImageNum,omitempty" xml:"totalInputImageNum,omitempty" require:"true"`
+  // {"en":"Detailed data","zh_CN":"明细数据"}
+  ChartDataList []*QueryAiGatewayUsageResponseProviderDateChartDataList `json:"chartDataList,omitempty" xml:"chartDataList,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryAiGatewayUsageResponseProviderDate) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryAiGatewayUsageResponseProviderDate) GoString() string {
+  return s.String()
+}
+
+func (s *QueryAiGatewayUsageResponseProviderDate) SetStartdate(v string) *QueryAiGatewayUsageResponseProviderDate {
+  s.Startdate = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageResponseProviderDate) SetEnddate(v string) *QueryAiGatewayUsageResponseProviderDate {
+  s.Enddate = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageResponseProviderDate) SetTotalVisit(v string) *QueryAiGatewayUsageResponseProviderDate {
+  s.TotalVisit = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageResponseProviderDate) SetTotalTokens(v string) *QueryAiGatewayUsageResponseProviderDate {
+  s.TotalTokens = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageResponseProviderDate) SetTotalPromptTokens(v string) *QueryAiGatewayUsageResponseProviderDate {
+  s.TotalPromptTokens = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageResponseProviderDate) SetTotalCompleteTokens(v string) *QueryAiGatewayUsageResponseProviderDate {
+  s.TotalCompleteTokens = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageResponseProviderDate) SetTotalItemNum(v string) *QueryAiGatewayUsageResponseProviderDate {
+  s.TotalItemNum = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageResponseProviderDate) SetTotalDuration(v string) *QueryAiGatewayUsageResponseProviderDate {
+  s.TotalDuration = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageResponseProviderDate) SetTotalInputCharacters(v string) *QueryAiGatewayUsageResponseProviderDate {
+  s.TotalInputCharacters = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageResponseProviderDate) SetTotalInputImageNum(v string) *QueryAiGatewayUsageResponseProviderDate {
+  s.TotalInputImageNum = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageResponseProviderDate) SetChartDataList(v []*QueryAiGatewayUsageResponseProviderDateChartDataList) *QueryAiGatewayUsageResponseProviderDate {
+  s.ChartDataList = v
+  return s
+}
+
+type QueryAiGatewayUsageResponseProviderDateChartDataList struct     {
+  // {"en":"Detailed Data Type\n- totalVisit: Total number of requests\n- totalTokens: Total number of Tokens\n- promptTokens: Number of input Tokens\n- completeTokens: Number of output Tokens\n- itemNum: Number of generated images\n- duration: Duration of input audio (milliseconds)\n- inputCharacters: Number of input characters\n- inputImageNum: Number of input images","zh_CN":"明细数据类型\n- totalVisit：总请求数\n- totalTokens：总Tokens数\n- promptTokens：输入Tokens数\n- completeTokens：输出Tokens数\n- itemNum：生成图片数\n- duration：输入语音时长（毫秒）\n- inputCharacters：输入字符数\n- inputImageNum：输入图片数","exampleValue":"totalVisit,totalTokens,promptTokens,completeTokens,itemNum,duration,inputCharacters,inputImageNum"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"Detailed data","zh_CN":"明细数据"}
+  Data []*QueryAiGatewayUsageResponseProviderDateChartDataListData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryAiGatewayUsageResponseProviderDateChartDataList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryAiGatewayUsageResponseProviderDateChartDataList) GoString() string {
+  return s.String()
+}
+
+func (s *QueryAiGatewayUsageResponseProviderDateChartDataList) SetName(v string) *QueryAiGatewayUsageResponseProviderDateChartDataList {
+  s.Name = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageResponseProviderDateChartDataList) SetData(v []*QueryAiGatewayUsageResponseProviderDateChartDataListData) *QueryAiGatewayUsageResponseProviderDateChartDataList {
+  s.Data = v
+  return s
+}
+
+type QueryAiGatewayUsageResponseProviderDateChartDataListData struct     {
+  // {"en":"time","zh_CN":"时间"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
+  // {"en":"value","zh_CN":"明细值"}
+  Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
+}
+
+func (s QueryAiGatewayUsageResponseProviderDateChartDataListData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryAiGatewayUsageResponseProviderDateChartDataListData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryAiGatewayUsageResponseProviderDateChartDataListData) SetTime(v string) *QueryAiGatewayUsageResponseProviderDateChartDataListData {
+  s.Time = &v
+  return s
+}
+
+func (s *QueryAiGatewayUsageResponseProviderDateChartDataListData) SetText(v string) *QueryAiGatewayUsageResponseProviderDateChartDataListData {
+  s.Text = &v
+  return s
+}
+
+type QueryAiGatewayUsageResponseHeader struct {
+}
+
+func (s QueryAiGatewayUsageResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryAiGatewayUsageResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+

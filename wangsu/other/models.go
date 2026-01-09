@@ -5890,6 +5890,231 @@ func (s ReportDomainListExistFlowServiceResponseHeader) GoString() string {
 
 
 
+type SubmitXlwInjectTaskRequest struct {
+  // {"en":"CDN manufacturer authorized username","zh_CN":"cdn厂家授权用户名"}
+  Username *string `json:"username,omitempty" xml:"username,omitempty" require:"true"`
+  // {"en":"Password authorized by the CDN manufacturer","zh_CN":"cdn厂家授权用户名密码"}
+  Password *string `json:"password,omitempty" xml:"password,omitempty" require:"true"`
+  // {"en":"The injected content supports submitting multiple injection tasks simultaneously.","zh_CN":"注入的内容 支持同时提交多条注入任务"}
+  FcSub []*SubmitXlwInjectTaskRequestFcSub `json:"fc_sub,omitempty" xml:"fc_sub,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s SubmitXlwInjectTaskRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SubmitXlwInjectTaskRequest) GoString() string {
+  return s.String()
+}
+
+func (s *SubmitXlwInjectTaskRequest) SetUsername(v string) *SubmitXlwInjectTaskRequest {
+  s.Username = &v
+  return s
+}
+
+func (s *SubmitXlwInjectTaskRequest) SetPassword(v string) *SubmitXlwInjectTaskRequest {
+  s.Password = &v
+  return s
+}
+
+func (s *SubmitXlwInjectTaskRequest) SetFcSub(v []*SubmitXlwInjectTaskRequestFcSub) *SubmitXlwInjectTaskRequest {
+  s.FcSub = v
+  return s
+}
+
+type SubmitXlwInjectTaskRequestFcSub struct     {
+  // {"en":"The unique identifier of the video","zh_CN":"视频的唯一标识"}
+  ItemId *string `json:"item_id,omitempty" xml:"item_id,omitempty" require:"true"`
+  // {"en":"Operation instructions","zh_CN":"操作指令"}
+  Operation *string `json:"operation,omitempty" xml:"operation,omitempty" require:"true"`
+  // {"en":"File source URL","zh_CN":"文件源 url"}
+  SourcePath *string `json:"source_path,omitempty" xml:"source_path,omitempty" require:"true"`
+  // {"en":"File distribution path","zh_CN":"文件发布路径"}
+  PublishPath *string `json:"publish_path,omitempty" xml:"publish_path,omitempty" require:"true"`
+  // {"en":"1 indicates sectioning, 0 indicates no sectioning","zh_CN":"1标示切片，0标示不切片"}
+  Slice *string `json:"slice,omitempty" xml:"slice,omitempty" require:"true"`
+}
+
+func (s SubmitXlwInjectTaskRequestFcSub) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SubmitXlwInjectTaskRequestFcSub) GoString() string {
+  return s.String()
+}
+
+func (s *SubmitXlwInjectTaskRequestFcSub) SetItemId(v string) *SubmitXlwInjectTaskRequestFcSub {
+  s.ItemId = &v
+  return s
+}
+
+func (s *SubmitXlwInjectTaskRequestFcSub) SetOperation(v string) *SubmitXlwInjectTaskRequestFcSub {
+  s.Operation = &v
+  return s
+}
+
+func (s *SubmitXlwInjectTaskRequestFcSub) SetSourcePath(v string) *SubmitXlwInjectTaskRequestFcSub {
+  s.SourcePath = &v
+  return s
+}
+
+func (s *SubmitXlwInjectTaskRequestFcSub) SetPublishPath(v string) *SubmitXlwInjectTaskRequestFcSub {
+  s.PublishPath = &v
+  return s
+}
+
+func (s *SubmitXlwInjectTaskRequestFcSub) SetSlice(v string) *SubmitXlwInjectTaskRequestFcSub {
+  s.Slice = &v
+  return s
+}
+
+type SubmitXlwInjectTaskRequestHeader struct {
+}
+
+func (s SubmitXlwInjectTaskRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SubmitXlwInjectTaskRequestHeader) GoString() string {
+  return s.String()
+}
+
+type SubmitXlwInjectTaskPaths struct {
+}
+
+func (s SubmitXlwInjectTaskPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SubmitXlwInjectTaskPaths) GoString() string {
+  return s.String()
+}
+
+type SubmitXlwInjectTaskParameters struct {
+}
+
+func (s SubmitXlwInjectTaskParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SubmitXlwInjectTaskParameters) GoString() string {
+  return s.String()
+}
+
+type SubmitXlwInjectTaskResponse struct {
+  // {"en":"Operation success or failure status: 0 for Failure, 1 for Success","zh_CN":"操作是否成功 0 失败 1成功"}
+  Status *int `json:"status,omitempty" xml:"status,omitempty" require:"true"`
+  // {"en":"Feedback information","zh_CN":"反馈信息"}
+  Info *string `json:"info,omitempty" xml:"info,omitempty" require:"true"`
+  // {"en":"Returns the result; if all results are successful, it returns true.","zh_CN":"返回结果内容，如果全都成功了 直接返回true"}
+  Result *SubmitXlwInjectTaskResponseResult `json:"result,omitempty" xml:"result,omitempty" require:"true" type:"Struct"`
+}
+
+func (s SubmitXlwInjectTaskResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SubmitXlwInjectTaskResponse) GoString() string {
+  return s.String()
+}
+
+func (s *SubmitXlwInjectTaskResponse) SetStatus(v int) *SubmitXlwInjectTaskResponse {
+  s.Status = &v
+  return s
+}
+
+func (s *SubmitXlwInjectTaskResponse) SetInfo(v string) *SubmitXlwInjectTaskResponse {
+  s.Info = &v
+  return s
+}
+
+func (s *SubmitXlwInjectTaskResponse) SetResult(v *SubmitXlwInjectTaskResponseResult) *SubmitXlwInjectTaskResponse {
+  s.Result = v
+  return s
+}
+
+type SubmitXlwInjectTaskResponseResult struct {
+  // {"en":"Success data","zh_CN":"成功数据"}
+  Finish []*SubmitXlwInjectTaskResponseResultFinish `json:"finish,omitempty" xml:"finish,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Failure data","zh_CN":"失败数据"}
+  Failed []*SubmitXlwInjectTaskResponseResultFailed `json:"failed,omitempty" xml:"failed,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s SubmitXlwInjectTaskResponseResult) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SubmitXlwInjectTaskResponseResult) GoString() string {
+  return s.String()
+}
+
+func (s *SubmitXlwInjectTaskResponseResult) SetFinish(v []*SubmitXlwInjectTaskResponseResultFinish) *SubmitXlwInjectTaskResponseResult {
+  s.Finish = v
+  return s
+}
+
+func (s *SubmitXlwInjectTaskResponseResult) SetFailed(v []*SubmitXlwInjectTaskResponseResultFailed) *SubmitXlwInjectTaskResponseResult {
+  s.Failed = v
+  return s
+}
+
+type SubmitXlwInjectTaskResponseResultFinish struct     {
+  // {"en":"Video ID","zh_CN":"视频id"}
+  ItemId *string `json:"item_id,omitempty" xml:"item_id,omitempty" require:"true"`
+}
+
+func (s SubmitXlwInjectTaskResponseResultFinish) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SubmitXlwInjectTaskResponseResultFinish) GoString() string {
+  return s.String()
+}
+
+func (s *SubmitXlwInjectTaskResponseResultFinish) SetItemId(v string) *SubmitXlwInjectTaskResponseResultFinish {
+  s.ItemId = &v
+  return s
+}
+
+type SubmitXlwInjectTaskResponseResultFailed struct     {
+  // {"en":"Video ID","zh_CN":"视频id"}
+  ItemId *string `json:"item_id,omitempty" xml:"item_id,omitempty" require:"true"`
+  // {"en":"Failure message","zh_CN":"失败信息"}
+  FailedInfo *string `json:"failed_info,omitempty" xml:"failed_info,omitempty" require:"true"`
+}
+
+func (s SubmitXlwInjectTaskResponseResultFailed) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SubmitXlwInjectTaskResponseResultFailed) GoString() string {
+  return s.String()
+}
+
+func (s *SubmitXlwInjectTaskResponseResultFailed) SetItemId(v string) *SubmitXlwInjectTaskResponseResultFailed {
+  s.ItemId = &v
+  return s
+}
+
+func (s *SubmitXlwInjectTaskResponseResultFailed) SetFailedInfo(v string) *SubmitXlwInjectTaskResponseResultFailed {
+  s.FailedInfo = &v
+  return s
+}
+
+type SubmitXlwInjectTaskResponseHeader struct {
+}
+
+func (s SubmitXlwInjectTaskResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SubmitXlwInjectTaskResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type ReportStreamListServiceRequest struct {
   // {"en":"Start time
   // 1.The format is yyyy-MM-ddTHH:mm:ss+08:00;

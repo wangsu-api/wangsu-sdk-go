@@ -6,7 +6,7 @@ import (
 )
 
 type AddAccountIdentRequest struct {
-  // {"en":"login name", "zh_CN":"登录名"}
+  // {"en":"login name","zh_CN":"登录名"}
   LoginName *string `json:"loginName,omitempty" xml:"loginName,omitempty"`
 }
 
@@ -23,29 +23,15 @@ func (s *AddAccountIdentRequest) SetLoginName(v string) *AddAccountIdentRequest 
   return s
 }
 
-type AddAccountIdentResponse struct {
-  // {"en":"accessKey", "zh_CN":"accessKey"}
-  AccessKey *string `json:"accessKey,omitempty" xml:"accessKey,omitempty" require:"true"`
-  // {"en":"secretKey", "zh_CN":"secretKey"}
-  SecretKey *string `json:"secretKey,omitempty" xml:"secretKey,omitempty" require:"true"`
+type AddAccountIdentRequestHeader struct {
 }
 
-func (s AddAccountIdentResponse) String() string {
+func (s AddAccountIdentRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s AddAccountIdentResponse) GoString() string {
+func (s AddAccountIdentRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *AddAccountIdentResponse) SetAccessKey(v string) *AddAccountIdentResponse {
-  s.AccessKey = &v
-  return s
-}
-
-func (s *AddAccountIdentResponse) SetSecretKey(v string) *AddAccountIdentResponse {
-  s.SecretKey = &v
-  return s
 }
 
 type AddAccountIdentPaths struct {
@@ -70,15 +56,61 @@ func (s AddAccountIdentParameters) GoString() string {
   return s.String()
 }
 
-type AddAccountIdentRequestHeader struct {
+type AddAccountIdentResponse struct {
+  // {"en":"response code","zh_CN":"响应编码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"response message","zh_CN":"响应消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"","zh_CN":""}
+  Data *AddAccountIdentResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
 }
 
-func (s AddAccountIdentRequestHeader) String() string {
+func (s AddAccountIdentResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s AddAccountIdentRequestHeader) GoString() string {
+func (s AddAccountIdentResponse) GoString() string {
   return s.String()
+}
+
+func (s *AddAccountIdentResponse) SetCode(v string) *AddAccountIdentResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *AddAccountIdentResponse) SetMessage(v string) *AddAccountIdentResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *AddAccountIdentResponse) SetData(v *AddAccountIdentResponseData) *AddAccountIdentResponse {
+  s.Data = v
+  return s
+}
+
+type AddAccountIdentResponseData struct {
+  // {"en":"account accessKey","zh_CN":"账号的accessKey"}
+  AccessKey *string `json:"accessKey,omitempty" xml:"accessKey,omitempty" require:"true"`
+  // {"en":"account secretKey","zh_CN":"账号的secretKey"}
+  SecretKey *string `json:"secretKey,omitempty" xml:"secretKey,omitempty" require:"true"`
+}
+
+func (s AddAccountIdentResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddAccountIdentResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *AddAccountIdentResponseData) SetAccessKey(v string) *AddAccountIdentResponseData {
+  s.AccessKey = &v
+  return s
+}
+
+func (s *AddAccountIdentResponseData) SetSecretKey(v string) *AddAccountIdentResponseData {
+  s.SecretKey = &v
+  return s
 }
 
 type AddAccountIdentResponseHeader struct {

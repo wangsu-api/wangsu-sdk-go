@@ -34,7 +34,7 @@ func main() {
     config.Method = "HTTP_METHOD"  // GET, POST, PUT, DELETE, etc.
 
     // Create response object and make API call
-    response := reporturl.{ActionName}Response{}
+    response := &reporturl.{ActionName}Response{}
     _, err := auth.Invoke(config, request, response)
 
     // Handle response

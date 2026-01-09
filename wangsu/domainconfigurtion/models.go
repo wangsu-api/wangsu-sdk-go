@@ -13239,6 +13239,198 @@ func (s UpdateDomainMultiCertConfigForWplusResponseHeader) GoString() string {
 
 
 
+type UpdateFingerprintAntiHotlinkingConfigRequest struct {
+  // {"en":"Visit control fingerprint rules","zh_CN":"指纹防盗链配置"}
+  VisitControlFingerprintRules []*UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules `json:"visit-control-fingerprint-rules,omitempty" xml:"visit-control-fingerprint-rules,omitempty" require:"true" type:"Repeated"`
+  // {"defaultValue":"false","en":"Whether to reset the configuration. Possible values: true, false. \nIf true, existing configurations will be cleared before adding new ones. \nIf false, existing configurations will be retained, and new configurations will be appended.","zh_CN":"是否重置配置，可选值：true,false\n1。值为true时，会清空已有的配置后进行新增动作\n2。值为false时，不会清空已有的配置，在保留原有配置的基础上增量处理"}
+  IsReset *bool `json:"isReset,omitempty" xml:"isReset,omitempty" require:"true"`
+}
+
+func (s UpdateFingerprintAntiHotlinkingConfigRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateFingerprintAntiHotlinkingConfigRequest) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateFingerprintAntiHotlinkingConfigRequest) SetVisitControlFingerprintRules(v []*UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules) *UpdateFingerprintAntiHotlinkingConfigRequest {
+  s.VisitControlFingerprintRules = v
+  return s
+}
+
+func (s *UpdateFingerprintAntiHotlinkingConfigRequest) SetIsReset(v bool) *UpdateFingerprintAntiHotlinkingConfigRequest {
+  s.IsReset = &v
+  return s
+}
+
+type UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules struct     {
+  // {"en":"When configuring multiple configuration sets, the specific configuration set's ID. The data-id can be obtained through the query interface.","zh_CN":"配置多组配置时，具体某组配置的id。data-id可以通过查询接口获取。"}
+  DataId *int64 `json:"data-id,omitempty" xml:"data-id,omitempty"`
+  // {"en":"Data operation type. Possible values: ADD, UPDATE, DELETE. \nWhen the value is ADD, it indicates adding new data, and `data-id` must not have a value.\nWhen the value is UPDATE, it indicates updating data, and `data-id` must have a value. \nWhen the value is DELETE, it indicates deleting data, and `data-id` must have a value.\"","zh_CN":"数据操作类型，可选值：ADD，UPDATE，DELETE\n当值为ADD，表示新增数据，其中data-id不能有值\n当值为UPDATE，表示更新数据，其中data-id必须有值\n当值为DELETE，表示删除数据，其中data-id必须有值"}
+  DataOperationType *string `json:"data-operation-type,omitempty" xml:"data-operation-type,omitempty" require:"true"`
+  // {"en":"The url matching mode supports regularization. If all matches, the input parameters can be configured as: .*\ndefault value: .*","zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*\n注：不填写默认为.*"}
+  PathPattern *string `json:"path-pattern,omitempty" xml:"path-pattern,omitempty"`
+  // {"en":"control direction. Available values: 403 and 302\n1) 403 means to return a specific error status code to reject the service (the default mode, the status code can be specified, generally 403).\n2) 302 means to return 302 the redirect url of the Found, the redirected url can be specified. If pass 302, rewrite-to is required","zh_CN":"控制动作。可选值：403和302\n1） 403表示返回特定的错误状态码来拒绝服务（默认方式，状态码可以指定，一般为403）。\n2） 302表示返回302 Found的重定向url，重定向的url可以指定。如果传302，rewrite-to必填"}
+  ControlAction *string `json:"control-action,omitempty" xml:"control-action,omitempty"`
+  // {"en":"Allowed JA4 fingerprint","zh_CN":"允许的ja4指纹"}
+  ExceptionalFingerprintJa4 *string `json:"exceptional-fingerprint-ja4,omitempty" xml:"exceptional-fingerprint-ja4,omitempty"`
+  // {"en":"Prohibited JA4 fingerprint","zh_CN":"禁止的ja4指纹"}
+  ProhibitFingerprintJa4 *string `json:"prohibit-fingerprint-ja4,omitempty" xml:"prohibit-fingerprint-ja4,omitempty"`
+  // {"en":"Indicates the priority execution order of multiple sets of redirected content by the customer. The higher the number, the higher the priority.When adding a new configuration item, the default is 10","zh_CN":"表示客户多组重定向内容的优先执行顺序。数字越大，优先级越高。\n新增配置项时，不传默认为 10"}
+  Priority *int `json:"priority,omitempty" xml:"priority,omitempty"`
+  // {"en":"Specify the url after the 302 jump. This field is required if the control-action value is 302.","zh_CN":"指定302跳转后的url。如果control-action值为302，此项必填"}
+  RewriteTo *string `json:"rewrite-to,omitempty" xml:"rewrite-to,omitempty"`
+}
+
+func (s UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules) SetDataId(v int64) *UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules {
+  s.DataId = &v
+  return s
+}
+
+func (s *UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules) SetDataOperationType(v string) *UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules {
+  s.DataOperationType = &v
+  return s
+}
+
+func (s *UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules) SetPathPattern(v string) *UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules {
+  s.PathPattern = &v
+  return s
+}
+
+func (s *UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules) SetControlAction(v string) *UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules {
+  s.ControlAction = &v
+  return s
+}
+
+func (s *UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules) SetExceptionalFingerprintJa4(v string) *UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules {
+  s.ExceptionalFingerprintJa4 = &v
+  return s
+}
+
+func (s *UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules) SetProhibitFingerprintJa4(v string) *UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules {
+  s.ProhibitFingerprintJa4 = &v
+  return s
+}
+
+func (s *UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules) SetPriority(v int) *UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules {
+  s.Priority = &v
+  return s
+}
+
+func (s *UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules) SetRewriteTo(v string) *UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules {
+  s.RewriteTo = &v
+  return s
+}
+
+type UpdateFingerprintAntiHotlinkingConfigRequestHeader struct {
+}
+
+func (s UpdateFingerprintAntiHotlinkingConfigRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateFingerprintAntiHotlinkingConfigRequestHeader) GoString() string {
+  return s.String()
+}
+
+type UpdateFingerprintAntiHotlinkingConfigPaths struct {
+  // {"en":"The domain or domain ID whose configuration needs to be updated.","zh_CN":"需要修改配置的域名或域名id"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+}
+
+func (s UpdateFingerprintAntiHotlinkingConfigPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateFingerprintAntiHotlinkingConfigPaths) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateFingerprintAntiHotlinkingConfigPaths) SetDomain(v string) *UpdateFingerprintAntiHotlinkingConfigPaths {
+  s.Domain = &v
+  return s
+}
+
+type UpdateFingerprintAntiHotlinkingConfigParameters struct {
+}
+
+func (s UpdateFingerprintAntiHotlinkingConfigParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateFingerprintAntiHotlinkingConfigParameters) GoString() string {
+  return s.String()
+}
+
+type UpdateFingerprintAntiHotlinkingConfigResponse struct {
+  // {"en":"Error code, which appears when HTTPStatus is not 202, represents the error type of the current request call","zh_CN":"错误代码，当HTTPStatus不为202时出现，表示当前请求调用的错误类型"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Response information, success when successful","zh_CN":"响应信息，成功时为success"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s UpdateFingerprintAntiHotlinkingConfigResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateFingerprintAntiHotlinkingConfigResponse) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateFingerprintAntiHotlinkingConfigResponse) SetCode(v string) *UpdateFingerprintAntiHotlinkingConfigResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *UpdateFingerprintAntiHotlinkingConfigResponse) SetMessage(v string) *UpdateFingerprintAntiHotlinkingConfigResponse {
+  s.Message = &v
+  return s
+}
+
+type UpdateFingerprintAntiHotlinkingConfigResponseHeader struct {
+  // {"en":"httpstatus=202; Indicates that the new domain API was successfully invoked, and the current deployment of the new domain can be viewed using x-cnc-request-id in the header","zh_CN":"httpstatus=202;   表示成功调用新增域名接口，可使用header中的x-cnc-request-id查看当前新增域名的部署情况"}
+  HttpStatus *int `json:"httpStatus,omitempty" xml:"httpStatus,omitempty" require:"true"`
+  // {"en":"Uniquely identified id for querying tasks per request (for all API)","zh_CN":"唯一标示的id，用于查询每次请求的任务 （适用全部接口）"}
+  XCncRequestId *string `json:"x-cnc-request-id,omitempty" xml:"x-cnc-request-id,omitempty" require:"true"`
+  // {"en":"The URL used to access the domain information, where domain-id is the unique token generated by our cloud platform for the domain name and whose value is a string.","zh_CN":"响应信用于访问该域名信息的URL，其中domain-id为我司云平台为该域名生成的唯一标示，其值为字符串。"}
+  Location *string `json:"location,omitempty" xml:"location,omitempty" require:"true"`
+}
+
+func (s UpdateFingerprintAntiHotlinkingConfigResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateFingerprintAntiHotlinkingConfigResponseHeader) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateFingerprintAntiHotlinkingConfigResponseHeader) SetHttpStatus(v int) *UpdateFingerprintAntiHotlinkingConfigResponseHeader {
+  s.HttpStatus = &v
+  return s
+}
+
+func (s *UpdateFingerprintAntiHotlinkingConfigResponseHeader) SetXCncRequestId(v string) *UpdateFingerprintAntiHotlinkingConfigResponseHeader {
+  s.XCncRequestId = &v
+  return s
+}
+
+func (s *UpdateFingerprintAntiHotlinkingConfigResponseHeader) SetLocation(v string) *UpdateFingerprintAntiHotlinkingConfigResponseHeader {
+  s.Location = &v
+  return s
+}
+
+
+
+
 type QueryCdnwContractDomainsByCustomerRequest struct {
   // {"en":"Customer Code","zh_CN":"客户编码"}
   CncCustomerCode *string `json:"cnc_customer_code,omitempty" xml:"cnc_customer_code,omitempty" require:"true"`
@@ -21468,6 +21660,163 @@ func (s QueryCacheKeyConfigurationResponseHeader) GoString() string {
 
 
 
+type QueryFingerprintAntiHotlinkingConfigRequest struct {
+}
+
+func (s QueryFingerprintAntiHotlinkingConfigRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryFingerprintAntiHotlinkingConfigRequest) GoString() string {
+  return s.String()
+}
+
+type QueryFingerprintAntiHotlinkingConfigRequestHeader struct {
+}
+
+func (s QueryFingerprintAntiHotlinkingConfigRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryFingerprintAntiHotlinkingConfigRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryFingerprintAntiHotlinkingConfigPaths struct {
+  // {"en":"The domain or domain ID whose configuration is to be queried","zh_CN":"要查询配置的域名或域名ID"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+}
+
+func (s QueryFingerprintAntiHotlinkingConfigPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryFingerprintAntiHotlinkingConfigPaths) GoString() string {
+  return s.String()
+}
+
+func (s *QueryFingerprintAntiHotlinkingConfigPaths) SetDomain(v string) *QueryFingerprintAntiHotlinkingConfigPaths {
+  s.Domain = &v
+  return s
+}
+
+type QueryFingerprintAntiHotlinkingConfigParameters struct {
+}
+
+func (s QueryFingerprintAntiHotlinkingConfigParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryFingerprintAntiHotlinkingConfigParameters) GoString() string {
+  return s.String()
+}
+
+type QueryFingerprintAntiHotlinkingConfigResponse struct {
+  // {"en":"The domain whose configuration is to be queried.","zh_CN":"需要查询配置的域名"}
+  DomainName *string `json:"domain-name,omitempty" xml:"domain-name,omitempty" require:"true"`
+  // {"en":"The domain ID whose configuration is to be queried.","zh_CN":"需要查询配置的域名id"}
+  DomainId *string `json:"domain-id,omitempty" xml:"domain-id,omitempty" require:"true"`
+  // {"en":"Fingerprint anti-hotlinking configuration.","zh_CN":"指纹防盗链配置"}
+  VisitControlFingerprintRules []*QueryFingerprintAntiHotlinkingConfigResponseVisitControlFingerprintRules `json:"visit-control-fingerprint-rules,omitempty" xml:"visit-control-fingerprint-rules,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryFingerprintAntiHotlinkingConfigResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryFingerprintAntiHotlinkingConfigResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryFingerprintAntiHotlinkingConfigResponse) SetDomainName(v string) *QueryFingerprintAntiHotlinkingConfigResponse {
+  s.DomainName = &v
+  return s
+}
+
+func (s *QueryFingerprintAntiHotlinkingConfigResponse) SetDomainId(v string) *QueryFingerprintAntiHotlinkingConfigResponse {
+  s.DomainId = &v
+  return s
+}
+
+func (s *QueryFingerprintAntiHotlinkingConfigResponse) SetVisitControlFingerprintRules(v []*QueryFingerprintAntiHotlinkingConfigResponseVisitControlFingerprintRules) *QueryFingerprintAntiHotlinkingConfigResponse {
+  s.VisitControlFingerprintRules = v
+  return s
+}
+
+type QueryFingerprintAntiHotlinkingConfigResponseVisitControlFingerprintRules struct     {
+  // {"en":"Add a grid type identifier to indicate a specific group configuration when the client has multiple groups of configurations.","zh_CN":"添加grid类型标识，表示客户多组配置时，具体某组配置"}
+  DataId *int `json:"data-id,omitempty" xml:"data-id,omitempty" require:"true"`
+  // {"en":"The url matching mode supports regularization. If all matches, the input parameters can be configured as: .*","zh_CN":"url匹配模式，支持正则，如果是全部匹配，入参可以配置为：.*"}
+  PathPattern *string `json:"path-pattern,omitempty" xml:"path-pattern,omitempty" require:"true"`
+  // {"en":"control direction. Available values: 403 and 302\n1) 403 means to return a specific error status code to reject the service (the default mode, the status code can be specified, generally 403).\n2) 302 means to return 302 the redirect url of the Found, the redirected url can be specified. If pass 302, rewrite-to is required","zh_CN":"控制方向。可选值：403和302\n1） 403表示返回特定的错误状态码来拒绝服务（默认方式，状态码可以指定，一般为403）。\n2） 302表示返回302 Found的重定向url，重定向的url可以指定。如果传302，rewrite-to必填"}
+  ControlAction *string `json:"control-action,omitempty" xml:"control-action,omitempty" require:"true"`
+  // {"en":"Specify the url after the 302 jump. This field is required if the control-action value is 302.","zh_CN":"指定302跳转后的url。如果control-action值为302，此项必填"}
+  RewriteTo *string `json:"rewrite-to,omitempty" xml:"rewrite-to,omitempty" require:"true"`
+  // {"en":"Indicates the priority execution order of multiple sets of redirected content by the customer. The higher the number, the higher the priority.\nWhen adding a new configuration item, the default is 10","zh_CN":"表示客户多组重定向内容的优先执行顺序。数字越大，优先级越高。\n新增配置项时，不传默认为 10"}
+  Priority *int `json:"priority,omitempty" xml:"priority,omitempty" require:"true"`
+  // {"en":"Allowed JA4 fingerprint","zh_CN":"允许的ja4指纹"}
+  ExceptionalFingerprintJa4 *string `json:"exceptional-fingerprint-ja4,omitempty" xml:"exceptional-fingerprint-ja4,omitempty" require:"true"`
+  // {"en":"Prohibited JA4 fingerprint","zh_CN":"禁止的ja4指纹"}
+  ProhibitFingerprintJa4 *string `json:"prohibit-fingerprint-ja4,omitempty" xml:"prohibit-fingerprint-ja4,omitempty" require:"true"`
+}
+
+func (s QueryFingerprintAntiHotlinkingConfigResponseVisitControlFingerprintRules) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryFingerprintAntiHotlinkingConfigResponseVisitControlFingerprintRules) GoString() string {
+  return s.String()
+}
+
+func (s *QueryFingerprintAntiHotlinkingConfigResponseVisitControlFingerprintRules) SetDataId(v int) *QueryFingerprintAntiHotlinkingConfigResponseVisitControlFingerprintRules {
+  s.DataId = &v
+  return s
+}
+
+func (s *QueryFingerprintAntiHotlinkingConfigResponseVisitControlFingerprintRules) SetPathPattern(v string) *QueryFingerprintAntiHotlinkingConfigResponseVisitControlFingerprintRules {
+  s.PathPattern = &v
+  return s
+}
+
+func (s *QueryFingerprintAntiHotlinkingConfigResponseVisitControlFingerprintRules) SetControlAction(v string) *QueryFingerprintAntiHotlinkingConfigResponseVisitControlFingerprintRules {
+  s.ControlAction = &v
+  return s
+}
+
+func (s *QueryFingerprintAntiHotlinkingConfigResponseVisitControlFingerprintRules) SetRewriteTo(v string) *QueryFingerprintAntiHotlinkingConfigResponseVisitControlFingerprintRules {
+  s.RewriteTo = &v
+  return s
+}
+
+func (s *QueryFingerprintAntiHotlinkingConfigResponseVisitControlFingerprintRules) SetPriority(v int) *QueryFingerprintAntiHotlinkingConfigResponseVisitControlFingerprintRules {
+  s.Priority = &v
+  return s
+}
+
+func (s *QueryFingerprintAntiHotlinkingConfigResponseVisitControlFingerprintRules) SetExceptionalFingerprintJa4(v string) *QueryFingerprintAntiHotlinkingConfigResponseVisitControlFingerprintRules {
+  s.ExceptionalFingerprintJa4 = &v
+  return s
+}
+
+func (s *QueryFingerprintAntiHotlinkingConfigResponseVisitControlFingerprintRules) SetProhibitFingerprintJa4(v string) *QueryFingerprintAntiHotlinkingConfigResponseVisitControlFingerprintRules {
+  s.ProhibitFingerprintJa4 = &v
+  return s
+}
+
+type QueryFingerprintAntiHotlinkingConfigResponseHeader struct {
+}
+
+func (s QueryFingerprintAntiHotlinkingConfigResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryFingerprintAntiHotlinkingConfigResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequest struct {
   // {"en":"Cache the file according to the response header content","zh_CN":"根据响应头内容缓存文件\n注意：\n1、需要取消根据响应头内容缓存文件配置设置时，可以传入空节点<cache-by-repheaers></cache-by-repheaers>。\n2、表示需要设置根据响应头内容缓存文件配置时，此项必填"}
   CacheByRespheaders []*UpdateCacheByUpdateCacheByResponseHeaderConfigResponseHeaderConfigRequestCacheByRespheaders `json:"cache-by-respheaders,omitempty" xml:"cache-by-respheaders,omitempty" require:"true" type:"Repeated"`
@@ -22420,7 +22769,7 @@ type UpdatetimecontrolServiceRequestTimestampVisitControlRule struct {
   UpperLimitExpiryTime *int `json:"upper-limit-expiry-time,omitempty" xml:"upper-limit-expiry-time,omitempty"`
   // {"en":"Anti-leech encrypted string, multiple encrypted strings are supported, and multiple encrypted strings are separated by semicolons (;) Example: <multiple-secret-keys>abcdef;uvwxyz</multiple-secret-keys> Notice: 1. Support setting multiple keys for url anti-leech. Support customers to modify the key at will, and achieve seamless switching. The anti-theft chain level is higher. 2. As long as the key of the requested url is consistent with the key calculated from any of the encrypted strings, the verification will pass","zh_CN":"防盗链加密串，支持多个加密串，多个加密串以分号(;)隔开\n示例：<multiple-secret-keys>abcdef;uvwxyz</multiple-secret-keys>\n注意：\n1、支持对url 防盗链设置多个密钥。支持客户任意修改密钥，并做到无缝切换。防盗链等级更高。\n2、请求url的key只要跟其中任意一个加密串算出来的key一致就验证通过"}
   MultipleSecretKeys *string `json:"multiple-secret-keys,omitempty" xml:"multiple-secret-keys,omitempty"`
-  // {"en":"The time format of the anti-leech encryption string, multiple choices can be selected, separated by semicolons (;) Year|Month|Day|Hour|Minute|Second|UNIX timestamp|Hexadecimal timestamp|Timestamp in milliseconds: 1Y;2m;3d;4H;5M;6S;7s;8x Example: <time-format>1Y;2m;3d;4H;5M;6S;7s;8x</time-format> or <time-format>1Y;2m;3d;4H;5M;7s</time-format > Notice: 1. Must be English letters and numbers 2. Each value can only appear once","zh_CN":"防盗链加密串时间格式，可多选，以分号(;)分隔\n年|月|日|时|分|秒|UNIX时间戳|16进制时间戳：1Y;2m;3d;4H;5M;6S;7s;8x\n示例：<time-format>1Y;2m;3d;4H;5M;6S;7s;8x</time-format> 或 <time-format>1Y;2m;3d;4H;5M;7s</time-format>\n注意：\n1、必须是英文字母和数字\n2、每个值只能出现1次\n3、如果配置的是16进制时间戳，则需要同时入参：UNIX时间戳|16进制时间戳"}
+  // {"en":"The time format of the anti-leech encryption string, \nYear|Month|Day|Hour|Minute|Second:1Y;2m;3d;4H;5M;6S\nUNIX timestamp:7s\nMillisecond-level UNIX timestamp:7s;9ms\nHexadecimal timestamp:8x\n\nNotice: The format is fixed; numbers and letters must not be changed, and each value can only appear once.","zh_CN":"防盗链加密串时间格式，\n年月日时分秒：1Y;2m;3d;4H;5M;6S\nUNIX时间戳：7s\n毫秒级UNIX时间戳：7s;9ms\n16进制时间戳：8x\n注意：\n格式固定，不可改变数字和字母，每个值只能出现1次"}
   TimeFormat *string `json:"time-format,omitempty" xml:"time-format,omitempty"`
   // {"en":"The anti-leech request url format supports two anti-leech methods, that is, the encrypted string and timestamp are placed after \"?\" or the encrypted string and timestamp are placed after \"host\". The parameters supported by the url format are as follows: $domain: domain name $uri: the url part that does not contain the domain name $key: MD5 value of anti-leech encrypted string $time: Anti-leech time string $args: the QUERY_STRING parameter after the question mark Example: The following request url format is supported, which can be replaced with https://. The url request protocol is based on actual use. If you don't know how to configure it correctly, please ask customer technical support for assistance; the parameter name carrying two values of encrypted string and time string\" keyname\" and \"tname\", which can be replaced by the actual parameter names used <request-url-style>http://$domain/$key/$time/$uri?$args</request-url-style> <request-url-style>http://$domain/$time/$key/$uri?$args</request-url-style> http://$domain/$uri?auth_key=$key <request-url-style>http://$domain/$uri?keyname=$key&tname=$time</request-url-style> <request-url-style>http://$domain/$uri?$args&keyname=$key&tname=$time</request-url-style> <request-url-style>http://$domain/$uri?keyname=$key&tname=$time&$args</request-url-style> <request-url-style>http://$domain/$uri?$args&keyname=$key&tname=$time&$args</request-url-style> <request-url-style>http://$domain/$uri?tname=$time&keyname=$key</request-url-style> <request-url-style>http://$domain/$uri?$args&tname=$time&keyname=$key</request-url-style> <request-url-style>http://$domain/$uri?tname=$time&keyname=$key&$args</request-url-style> <request-url-style>http://$domain/$uri?$args&tname=$time&keyname=$key&$args</request-url-style> Notice: 1. The input url must start with \"http/https\" 2. If the encrypted string and timestamp are placed after \"?\", the keyname and tname must be consistent with the configured values of <cipher-param> and <time-param> 3. If there is no configuration value for <cipher-param> and <time-param>, the parameter name corresponding to $key defaults to key, and the parameter name corresponding to $time defaults to time 4. If the anti-leech encryption string and time string are in the parameters behind the question mark in the url, the \"keyname\" and \"tname\" in the url correspond to the anti-leech string and time string parameter names configured in cipher-param and time-param.","zh_CN":"防盗链请求url格式，支持两种防盗链方式，即加密串和时间戳放到“?”后面或者是加密串和时间戳放到“host”后面，url格式支持的参数如下：\n$domain：域名\n$uri：不包含域名的url部分\n$key：防盗链加密串的MD5值\n$time：防盗链时间串\n$args：问号后的QUERY_STRING参数\n示例：支持以下请求url格式，可替换为https://，url请求协议根据实际使用，如不知道如何正确配置，请找客户技术支持协助；携带加密串和时间串两个值的参数名“keyname”和“tname”，可替换为实际使用的参数名\n<request-url-style>http://$domain/$key/$time/$uri?$args</request-url-style>\n<request-url-style>http://$domain/$time/$key/$uri?$args</request-url-style>\nhttp://$domain/$uri?auth_key=$key\n<request-url-style>http://$domain/$uri?keyname=$key&tname=$time</request-url-style>\n<request-url-style>http://$domain/$uri?$args&keyname=$key&tname=$time</request-url-style>\n<request-url-style>http://$domain/$uri?keyname=$key&tname=$time&$args</request-url-style>\n<request-url-style>http://$domain/$uri?$args&keyname=$key&tname=$time&$args</request-url-style>\n<request-url-style>http://$domain/$uri?tname=$time&keyname=$key</request-url-style>\n<request-url-style>http://$domain/$uri?$args&tname=$time&keyname=$key</request-url-style>\n<request-url-style>http://$domain/$uri?tname=$time&keyname=$key&$args</request-url-style>\n<request-url-style>http://$domain/$uri?$args&tname=$time&keyname=$key&$args</request-url-style>\n注意：\n1、输入的url必须以“http/https”开头\n2、如果加密串和时间戳是放到“?”后面时，keyname和tname必须跟<cipher-param>和<time-param>配置的值一致\n3、如果<cipher-param>和<time-param>没有配置值，则$key对应的参数名默认为key，$time对应的参数名默认为time\n4、如果防盗链加密串和时间串在url问号后面的参数中，url中的“keyname”和“tname”，对应的是cipher-param和 time-param配置的防盗链串和时间串参数名称。"}
   RequestUrlStyle *string `json:"request-url-style,omitempty" xml:"request-url-style,omitempty"`
@@ -30792,7 +31141,7 @@ type QuerytimecontrolServiceResponseTimestampVisitControlRule struct {
   EncryptMethod *string `json:"encrypt-method,omitempty" xml:"encrypt-method,omitempty" require:"true"`
   // {"en":"Anti-leech encrypted string, multiple encrypted strings are supported, and multiple encrypted strings are separated by semicolons (;) Example: <multiple-secret-keys>abcdef;uvwxyz</multiple-secret-keys> Notice: 1. Support setting multiple keys for url anti-leech. Support customers to modify the key at will, and achieve seamless switching. The anti-theft chain level is higher. 2. As long as the key of the requested url is consistent with the key calculated from any of the encrypted strings, the verification will pass","zh_CN":"防盗链加密串，支持多个加密串，多个加密串以分号(;)隔开\n示例：<multiple-secret-keys>abcdef;uvwxyz</multiple-secret-keys>\n注意：\n1、支持对url 防盗链设置多个密钥。支持客户任意修改密钥，并做到无缝切换。防盗链等级更高。\n2、请求url的key只要跟其中任意一个加密串算出来的key一致就验证通过"}
   MultipleSecretKeys *string `json:"multiple-secret-keys,omitempty" xml:"multiple-secret-keys,omitempty" require:"true"`
-  // {"en":"The time format of the anti-leech encryption string, multiple choices can be selected, separated by semicolons (;) Year|Month|Day|Hour|Minute|Second|UNIX timestamp|Hexadecimal timestamp|Timestamp in milliseconds: 1Y;2m;3d;4H;5M;6S;7s;8x Example: <time-format>1Y;2m;3d;4H;5M;6S;7s;8x</time-format> or <time-format>1Y;2m;3d;4H;5M;7s</time-format > Notice: 1. Must be English letters and numbers 2. Each value can only appear once","zh_CN":"防盗链加密串时间格式，可多选，以分号(;)分隔\n年|月|日|时|分|秒|UNIX时间戳|16进制时间戳：1Y;2m;3d;4H;5M;6S;7s;8x\n示例：<time-format>1Y;2m;3d;4H;5M;6S;7s;8x</time-format> 或 <time-format>1Y;2m;3d;4H;5M;7s</time-format>\n注意：\n1、必须是英文字母和数字\n2、每个值只能出现1次"}
+  // {"en":"The time format of the anti-leech encryption string, \nYear|Month|Day|Hour|Minute|Second:1Y;2m;3d;4H;5M;6S\nUNIX timestamp:7s\nMillisecond-level UNIX timestamp:7s;9ms\nHexadecimal timestamp:8x\n\nNotice: The format is fixed; numbers and letters must not be changed, and each value can only appear once.","zh_CN":"防盗链加密串时间格式，\n年月日时分秒：1Y;2m;3d;4H;5M;6S\nUNIX时间戳：7s\n毫秒级UNIX时间戳：7s;9ms\n16进制时间戳：8x\n注意：\n格式固定，不可改变数字和字母，每个值只能出现1次"}
   TimeFormat *string `json:"time-format,omitempty" xml:"time-format,omitempty" require:"true"`
   // {"en":"Anti-leech back-to-source method, optional values: 1 (use unencrypted url to go back to the source), 2 (use the customer request to return to the source with encrypted string url) Example: <dst-style>1<dst-style> Notice: 1. If the URL format is: http://www.xxx.com/md5/time/uri? parameter, please contact your technical support.","zh_CN":"防盗链回源方式，可选值：1（使用未加密url回源）、2（使用客户请求带加密串url回源）示例：<dst-style>1<dst-style>注意：1、如果URL格式是：http://www.xxx.com/md5/time/uri?参数，则需要下工单给对应客服，让客服在父配置去掉时间戳格式再缓存。"}
   DstStyle *string `json:"dst-style,omitempty" xml:"dst-style,omitempty" require:"true"`

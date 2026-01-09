@@ -1803,6 +1803,170 @@ func (s AssociateSharedWhitelistRuleResponseHeader) GoString() string {
 
 
 
+type AddShareCustomizeBotsRequest struct {
+  // {"en":"Rule name, maximum 50 characters.Does not support # and &.","zh_CN":"规则名称，最多50个字符。\n不支持 # 和 &。"}
+  BotName *string `json:"botName,omitempty" xml:"botName,omitempty" require:"true"`
+  // {"en":"Description, maximum 200 characters.","zh_CN":"规则描述。最多200个字符。"}
+  BotDescription *string `json:"botDescription,omitempty" xml:"botDescription,omitempty"`
+  // {"en":"Actions.\nBLOCK: block\nLOG: log\nACCEPT: release","zh_CN":"处理动作。\nBLOCK：拦截\nLOG：监控\nACCEPT：放行"}
+  BotAct *string `json:"botAct,omitempty" xml:"botAct,omitempty" require:"true"`
+  // {"en":"Matching conditions.\nThere can only be at most one record per matching condition function under each type of condition.","zh_CN":"匹配条件。\n每个类型的条件下一种匹配条件函数最多只能有一条记录。"}
+  ConditionList []*AddShareCustomizeBotsRequestConditionList `json:"conditionList,omitempty" xml:"conditionList,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s AddShareCustomizeBotsRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddShareCustomizeBotsRequest) GoString() string {
+  return s.String()
+}
+
+func (s *AddShareCustomizeBotsRequest) SetBotName(v string) *AddShareCustomizeBotsRequest {
+  s.BotName = &v
+  return s
+}
+
+func (s *AddShareCustomizeBotsRequest) SetBotDescription(v string) *AddShareCustomizeBotsRequest {
+  s.BotDescription = &v
+  return s
+}
+
+func (s *AddShareCustomizeBotsRequest) SetBotAct(v string) *AddShareCustomizeBotsRequest {
+  s.BotAct = &v
+  return s
+}
+
+func (s *AddShareCustomizeBotsRequest) SetConditionList(v []*AddShareCustomizeBotsRequestConditionList) *AddShareCustomizeBotsRequest {
+  s.ConditionList = v
+  return s
+}
+
+type AddShareCustomizeBotsRequestConditionList struct     {
+  // {"en":"Matching condition name. \nIP_IPS: IP/IP segment \nJA3: JA3 Fingerprint\nJA4: JA4 Fingerprint\nUA: User-agent \nHEADER: Request Header \nASN: AS Number \nCLIENT_GROUP: Client Group \nPUBLIC_BOT: Public Bots","zh_CN":"匹配条件名称。 \nIP_IPS：IP/IP段 \nJA3：JA3指纹\nJA4：JA4指纹\nUA：User-agent \nHEADER：请求头 \nASN：AS号 \nCLIENT_GROUP：客户端分组 \nPUBLIC_BOT：公开Bots"}
+  ConditionName *string `json:"conditionName,omitempty" xml:"conditionName,omitempty" require:"true"`
+  // {"en":"Condition value list.\nWhen conditionName is IP_IPS, maximum 300 IP/CIDR.\nWhen conditionName is JA3, maximum 300 JA3 Fingerprint.\nWhen conditionName is JA4, maximum 300 JA4 Fingerprint.\nWhen conditionName is PUBLIC_BOT, supported values: search_engine_bot/site_monitor/marketing_analysis/feed_fetcher/tool/page_preview.","zh_CN":"条件值列表。\n当conditionName是IP_IPS时，最多300个IP/CIDR。\n当conditionName是JA3时，最多300个JA3指纹。\n当conditionName是JA4时，最多300个JA4指纹。\n当conditionName为PUBLIC_BOT时，支持的值：search_engine_bot/site_monitor/marketing_analysis/feed_fetcher/tool/page_preview。"}
+  ConditionValueList []*string `json:"conditionValueList,omitempty" xml:"conditionValueList,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Matching condition function.\nEQUAL: Equals\nNOT_EQUAL: Does not equal\nCONTAIN: Contains\nNOT_CONTAIN: Does not contain\nNONE: Empty or non-existent\nREGEX: Regex match\nNOT_REGEX: Does not match regex\nSTART_WITH: Starts with\nEND_WITH: Ends with\nWILDCARD: Wildcard matches, * represents zero or more arbitrary characters, ? represents any single character\nNOT_WILDCARD: Wildcard does not match, * represents zero or more arbitrary characters, ? represents any single character\n\nWhen conditionName is IP_IPS, the value can be: EQUAL,NOT_EQUAL \nWhen conditionName is JA3, the value can be: EQUAL,NOT_EQUAL\nWhen conditionName is JA4, the value can be: EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD\nWhen conditionName is UA, the value can be: EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,NONE,REGEX,NOT_REGEX,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD \nWhen conditionName is HEADER, the value can be: EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,NONE,REGEX,NOT_REGEX,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD \nWhen conditionName is ASN, the value can be: EQUAL,NOT_EQUAL \nWhen conditionName is CLIENT_GROUP, the value can be: EQUAL,NOT_EQUAL \nWhen conditionName is PUBLIC_BOT, the value can be: EQUAL","zh_CN":"匹配条件函数。\nEQUAL：等于\nNOT_EQUAL：不等于\nCONTAIN：包含\nNOT_CONTAIN：不包含\nNONE：为空或不存在\nREGEX：匹配正则\nNOT_REGEX：正则不匹配\nSTART_WITH：开头是\nEND_WITH：结尾是\nWILDCARD：通配符匹配，*代表零个或多个任意字符，?代表任意单个字符\nNOT_WILDCARD：通配符不匹配，*代表零个或多个任意字符，?代表任意单个字符\n\n当conditionName为IP_IPS时，取值范围为：EQUAL、NOT_EQUAL \n当conditionName为JA3时，取值范围为：EQUAL、NOT_EQUAL \n当conditionName为JA4时，取值范围为：EQUAL、NOT_EQUAL、CONTAIN、NOT_CONTAIN、START_WITH、END_WITH、WILDCARD、NOT_WILDCARD\n当conditionName为UA时，取值范围为：EQUAL、NOT_EQUAL、CONTAIN、NOT_CONTAIN、NONE、REGEX、NOT_REGEX、START_WITH、END_WITH、WILDCARD、NOT_WILDCARD\n当conditionName为HEADER时，取值范围为：EQUAL、NOT_EQUAL、CONTAIN、NOT_CONTAIN、NONE、REGEX、NOT_REGEX、START_WITH、END_WITH、WILDCARD、NOT_WILDCARD\n当conditionName为ASN时，取值范围为：EQUAL、NOT_EQUAL \n当conditionName为CLIENT_GROUP时，取值范围为：EQUAL、NOT_EQUAL \n当conditionName为PUBLIC_BOT时，取值范围为：EQUAL"}
+  ConditionFunc *string `json:"conditionFunc,omitempty" xml:"conditionFunc,omitempty" require:"true"`
+  // {"en":"Request header name. Case insensitive","zh_CN":"头部名称，大小写不敏感"}
+  ConditionKey *string `json:"conditionKey,omitempty" xml:"conditionKey,omitempty"`
+}
+
+func (s AddShareCustomizeBotsRequestConditionList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddShareCustomizeBotsRequestConditionList) GoString() string {
+  return s.String()
+}
+
+func (s *AddShareCustomizeBotsRequestConditionList) SetConditionName(v string) *AddShareCustomizeBotsRequestConditionList {
+  s.ConditionName = &v
+  return s
+}
+
+func (s *AddShareCustomizeBotsRequestConditionList) SetConditionValueList(v []*string) *AddShareCustomizeBotsRequestConditionList {
+  s.ConditionValueList = v
+  return s
+}
+
+func (s *AddShareCustomizeBotsRequestConditionList) SetConditionFunc(v string) *AddShareCustomizeBotsRequestConditionList {
+  s.ConditionFunc = &v
+  return s
+}
+
+func (s *AddShareCustomizeBotsRequestConditionList) SetConditionKey(v string) *AddShareCustomizeBotsRequestConditionList {
+  s.ConditionKey = &v
+  return s
+}
+
+type AddShareCustomizeBotsRequestHeader struct {
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_serviceType","en":"Security service type. Please enter a specific service type, if you purchase multiple security services.","zh_CN":"安全服务类型。有使用多个不同的安全服务时，需要填写具体的服务类型。"}
+  ServiceType *string `json:"serviceType,omitempty" xml:"serviceType,omitempty"`
+}
+
+func (s AddShareCustomizeBotsRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddShareCustomizeBotsRequestHeader) GoString() string {
+  return s.String()
+}
+
+func (s *AddShareCustomizeBotsRequestHeader) SetServiceType(v string) *AddShareCustomizeBotsRequestHeader {
+  s.ServiceType = &v
+  return s
+}
+
+type AddShareCustomizeBotsPaths struct {
+}
+
+func (s AddShareCustomizeBotsPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddShareCustomizeBotsPaths) GoString() string {
+  return s.String()
+}
+
+type AddShareCustomizeBotsParameters struct {
+}
+
+func (s AddShareCustomizeBotsParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddShareCustomizeBotsParameters) GoString() string {
+  return s.String()
+}
+
+type AddShareCustomizeBotsResponse struct {
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_retCodeEnum","en":"Please refer to the error code for exceptions.","zh_CN":"请参照错误码。"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Description.","zh_CN":"描述信息。"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"Rule ID.","zh_CN":"规则ID。"}
+  Data *string `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s AddShareCustomizeBotsResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddShareCustomizeBotsResponse) GoString() string {
+  return s.String()
+}
+
+func (s *AddShareCustomizeBotsResponse) SetCode(v string) *AddShareCustomizeBotsResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *AddShareCustomizeBotsResponse) SetMsg(v string) *AddShareCustomizeBotsResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *AddShareCustomizeBotsResponse) SetData(v string) *AddShareCustomizeBotsResponse {
+  s.Data = &v
+  return s
+}
+
+type AddShareCustomizeBotsResponseHeader struct {
+}
+
+func (s AddShareCustomizeBotsResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddShareCustomizeBotsResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type CreateSharedWAFRuleExceptionRequest struct {
   // {"en":"Exception name,maximum 50 character.\nDoes not support # and &.","zh_CN":"例外名称，最多50个字符。\n不支持 # 和 &。"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
@@ -3576,6 +3740,177 @@ func (s CreateSharedCustomRuleResponseHeader) String() string {
 }
 
 func (s CreateSharedCustomRuleResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type UpdateShareCustomizeBotsRequest struct {
+  // {"en":"Rule ID.","zh_CN":"规则ID。"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+  // {"en":"Rule Name, maximum 50 characters.\nDoes not support # and &.","zh_CN":"规则名称，最多50个字符。\n不支持 # 和 &。"}
+  BotName *string `json:"botName,omitempty" xml:"botName,omitempty"`
+  // {"en":"Description, maximum 200 characters.","zh_CN":"规则描述。最多200个字符。"}
+  BotDescription *string `json:"botDescription,omitempty" xml:"botDescription,omitempty"`
+  // {"en":"Actions.\nBLOCK: block\nLOG: log\nACCEPT: release","zh_CN":"处理动作。\nBLOCK：拦截\nLOG：监控\nACCEPT：放行"}
+  BotAct *string `json:"botAct,omitempty" xml:"botAct,omitempty"`
+  // {"en":"Matching conditions.\nThere can only be at most one record per matching condition function under each type of condition.","zh_CN":"匹配条件。\n每个类型的条件下一种匹配条件函数最多只能有一条记录。"}
+  ConditionList []*UpdateShareCustomizeBotsRequestConditionList `json:"conditionList,omitempty" xml:"conditionList,omitempty" type:"Repeated"`
+}
+
+func (s UpdateShareCustomizeBotsRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateShareCustomizeBotsRequest) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateShareCustomizeBotsRequest) SetId(v string) *UpdateShareCustomizeBotsRequest {
+  s.Id = &v
+  return s
+}
+
+func (s *UpdateShareCustomizeBotsRequest) SetBotName(v string) *UpdateShareCustomizeBotsRequest {
+  s.BotName = &v
+  return s
+}
+
+func (s *UpdateShareCustomizeBotsRequest) SetBotDescription(v string) *UpdateShareCustomizeBotsRequest {
+  s.BotDescription = &v
+  return s
+}
+
+func (s *UpdateShareCustomizeBotsRequest) SetBotAct(v string) *UpdateShareCustomizeBotsRequest {
+  s.BotAct = &v
+  return s
+}
+
+func (s *UpdateShareCustomizeBotsRequest) SetConditionList(v []*UpdateShareCustomizeBotsRequestConditionList) *UpdateShareCustomizeBotsRequest {
+  s.ConditionList = v
+  return s
+}
+
+type UpdateShareCustomizeBotsRequestConditionList struct     {
+  // {"en":"Matching condition name. \nIP_IPS: IP/IP segment \nJA3: JA3 Fingerprint\nJA4: JA4 Fingerprint\nUA: User-agent \nHEADER: Request Header \nASN: AS Number \nCLIENT_GROUP: Client Group \nPUBLIC_BOT: Public Bots","zh_CN":"匹配条件名称。 \nIP_IPS：IP/IP段 \nJA3：JA3指纹\nJA4：JA4指纹\nUA：User-agent \nHEADER：请求头 \nASN：AS号 \nCLIENT_GROUP：客户端分组 \nPUBLIC_BOT：公开Bots"}
+  ConditionName *string `json:"conditionName,omitempty" xml:"conditionName,omitempty" require:"true"`
+  // {"en":"Condition value list.\nWhen conditionName is IP_IPS, maximum 300 IP/CIDR.\nWhen conditionName is JA3, maximum 300 JA3 Fingerprint.\nWhen conditionName is JA4, maximum 300 JA4 Fingerprint.\nWhen conditionName is PUBLIC_BOT, supported values: search_engine_bot/site_monitor/marketing_analysis/feed_fetcher/tool/page_preview.","zh_CN":"条件值列表。\n当conditionName是IP_IPS时，最多300个IP/CIDR。\n当conditionName是JA3时，最多300个JA3指纹。\n当conditionName是JA4时，最多300个JA4指纹。\n当conditionName为PUBLIC_BOT时，支持的值：search_engine_bot/site_monitor/marketing_analysis/feed_fetcher/tool/page_preview。"}
+  ConditionValueList []*string `json:"conditionValueList,omitempty" xml:"conditionValueList,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Matching condition function.\nEQUAL: Equals\nNOT_EQUAL: Does not equal\nCONTAIN: Contains\nNOT_CONTAIN: Does not contain\nNONE: Empty or non-existent\nREGEX: Regex match\nNOT_REGEX: Does not match regex\nSTART_WITH: Starts with\nEND_WITH: Ends with\nWILDCARD: Wildcard matches, * represents zero or more arbitrary characters, ? represents any single character\nNOT_WILDCARD: Wildcard does not match, * represents zero or more arbitrary characters, ? represents any single character\n\nWhen conditionName is IP_IPS, the value can be: EQUAL,NOT_EQUAL \nWhen conditionName is JA3, the value can be: EQUAL,NOT_EQUAL\nWhen conditionName is JA4, the value can be: EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD\nWhen conditionName is UA, the value can be: EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,NONE,REGEX,NOT_REGEX,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD \nWhen conditionName is HEADER, the value can be: EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,NONE,REGEX,NOT_REGEX,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD \nWhen conditionName is ASN, the value can be: EQUAL,NOT_EQUAL \nWhen conditionName is CLIENT_GROUP, the value can be: EQUAL,NOT_EQUAL \nWhen conditionName is PUBLIC_BOT, the value can be: EQUAL","zh_CN":"匹配条件函数。\nEQUAL：等于\nNOT_EQUAL：不等于\nCONTAIN：包含\nNOT_CONTAIN：不包含\nNONE：为空或不存在\nREGEX：匹配正则\nNOT_REGEX：正则不匹配\nSTART_WITH：开头是\nEND_WITH：结尾是\nWILDCARD：通配符匹配，*代表零个或多个任意字符，?代表任意单个字符\nNOT_WILDCARD：通配符不匹配，*代表零个或多个任意字符，?代表任意单个字符\n\n当conditionName为IP_IPS时，取值范围为：EQUAL、NOT_EQUAL \n当conditionName为JA3时，取值范围为：EQUAL、NOT_EQUAL \n当conditionName为JA4时，取值范围为：EQUAL、NOT_EQUAL、CONTAIN、NOT_CONTAIN、START_WITH、END_WITH、WILDCARD、NOT_WILDCARD\n当conditionName为UA时，取值范围为：EQUAL、NOT_EQUAL、CONTAIN、NOT_CONTAIN、NONE、REGEX、NOT_REGEX、START_WITH、END_WITH、WILDCARD、NOT_WILDCARD\n当conditionName为HEADER时，取值范围为：EQUAL、NOT_EQUAL、CONTAIN、NOT_CONTAIN、NONE、REGEX、NOT_REGEX、START_WITH、END_WITH、WILDCARD、NOT_WILDCARD\n当conditionName为ASN时，取值范围为：EQUAL、NOT_EQUAL \n当conditionName为CLIENT_GROUP时，取值范围为：EQUAL、NOT_EQUAL \n当conditionName为PUBLIC_BOT时，取值范围为：EQUAL"}
+  ConditionFunc *string `json:"conditionFunc,omitempty" xml:"conditionFunc,omitempty" require:"true"`
+  // {"en":"Request header name. Case insensitive","zh_CN":"头部名称，大小写不敏感"}
+  ConditionKey *string `json:"conditionKey,omitempty" xml:"conditionKey,omitempty"`
+}
+
+func (s UpdateShareCustomizeBotsRequestConditionList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateShareCustomizeBotsRequestConditionList) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateShareCustomizeBotsRequestConditionList) SetConditionName(v string) *UpdateShareCustomizeBotsRequestConditionList {
+  s.ConditionName = &v
+  return s
+}
+
+func (s *UpdateShareCustomizeBotsRequestConditionList) SetConditionValueList(v []*string) *UpdateShareCustomizeBotsRequestConditionList {
+  s.ConditionValueList = v
+  return s
+}
+
+func (s *UpdateShareCustomizeBotsRequestConditionList) SetConditionFunc(v string) *UpdateShareCustomizeBotsRequestConditionList {
+  s.ConditionFunc = &v
+  return s
+}
+
+func (s *UpdateShareCustomizeBotsRequestConditionList) SetConditionKey(v string) *UpdateShareCustomizeBotsRequestConditionList {
+  s.ConditionKey = &v
+  return s
+}
+
+type UpdateShareCustomizeBotsRequestHeader struct {
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_serviceType","en":"Security service type. Please enter a specific service type, if you purchase multiple security services.","zh_CN":"安全服务类型。有使用多个不同的安全服务时，需要填写具体的服务类型。"}
+  ServiceType *string `json:"serviceType,omitempty" xml:"serviceType,omitempty"`
+}
+
+func (s UpdateShareCustomizeBotsRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateShareCustomizeBotsRequestHeader) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateShareCustomizeBotsRequestHeader) SetServiceType(v string) *UpdateShareCustomizeBotsRequestHeader {
+  s.ServiceType = &v
+  return s
+}
+
+type UpdateShareCustomizeBotsPaths struct {
+}
+
+func (s UpdateShareCustomizeBotsPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateShareCustomizeBotsPaths) GoString() string {
+  return s.String()
+}
+
+type UpdateShareCustomizeBotsParameters struct {
+}
+
+func (s UpdateShareCustomizeBotsParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateShareCustomizeBotsParameters) GoString() string {
+  return s.String()
+}
+
+type UpdateShareCustomizeBotsResponse struct {
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_retCodeEnum","en":"Please refer to the error code for exceptions.","zh_CN":"请参照错误码。"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Description.","zh_CN":"描述信息。"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"Data.","zh_CN":"出参数据。"}
+  Data *string `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s UpdateShareCustomizeBotsResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateShareCustomizeBotsResponse) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateShareCustomizeBotsResponse) SetCode(v string) *UpdateShareCustomizeBotsResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *UpdateShareCustomizeBotsResponse) SetMsg(v string) *UpdateShareCustomizeBotsResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *UpdateShareCustomizeBotsResponse) SetData(v string) *UpdateShareCustomizeBotsResponse {
+  s.Data = &v
+  return s
+}
+
+type UpdateShareCustomizeBotsResponseHeader struct {
+}
+
+func (s UpdateShareCustomizeBotsResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateShareCustomizeBotsResponseHeader) GoString() string {
   return s.String()
 }
 

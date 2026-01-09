@@ -5,6 +5,809 @@ import (
   "github.com/alibabacloud-go/tea/tea"
 )
 
+type ModifyRecordingParameterTemplateRequest struct {
+  // {"en":"Name of the recording parameter template.","zh_CN":"模版名称"}
+  TemplateName *string `json:"templateName,omitempty" xml:"templateName,omitempty"`
+  // {"en":"Access Key for cloud storage access.","zh_CN":"云存储访问的Access Key"}
+  Ak *string `json:"ak,omitempty" xml:"ak,omitempty"`
+  // {"en":"Secret Key for cloud storage access.","zh_CN":"云存储访问的Secret Key"}
+  Sk *string `json:"sk,omitempty" xml:"sk,omitempty"`
+  // {"en":"Cloud storage space management domain name (Management URL).","zh_CN":"云存储空间管理域名"}
+  MgrUrl *string `json:"mgrUrl,omitempty" xml:"mgrUrl,omitempty"`
+  // {"en":"Callback notification URL.","zh_CN":"回调通知地址"}
+  NotifyUrl *string `json:"notifyUrl,omitempty" xml:"notifyUrl,omitempty"`
+  // {"en":"List of recording parameters.","zh_CN":"录制参数列表"}
+  RecordParams []*ModifyRecordingParameterTemplateRequestRecordParams `json:"recordParams,omitempty" xml:"recordParams,omitempty" type:"Repeated"`
+}
+
+func (s ModifyRecordingParameterTemplateRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyRecordingParameterTemplateRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ModifyRecordingParameterTemplateRequest) SetTemplateName(v string) *ModifyRecordingParameterTemplateRequest {
+  s.TemplateName = &v
+  return s
+}
+
+func (s *ModifyRecordingParameterTemplateRequest) SetAk(v string) *ModifyRecordingParameterTemplateRequest {
+  s.Ak = &v
+  return s
+}
+
+func (s *ModifyRecordingParameterTemplateRequest) SetSk(v string) *ModifyRecordingParameterTemplateRequest {
+  s.Sk = &v
+  return s
+}
+
+func (s *ModifyRecordingParameterTemplateRequest) SetMgrUrl(v string) *ModifyRecordingParameterTemplateRequest {
+  s.MgrUrl = &v
+  return s
+}
+
+func (s *ModifyRecordingParameterTemplateRequest) SetNotifyUrl(v string) *ModifyRecordingParameterTemplateRequest {
+  s.NotifyUrl = &v
+  return s
+}
+
+func (s *ModifyRecordingParameterTemplateRequest) SetRecordParams(v []*ModifyRecordingParameterTemplateRequestRecordParams) *ModifyRecordingParameterTemplateRequest {
+  s.RecordParams = v
+  return s
+}
+
+type ModifyRecordingParameterTemplateRequestRecordParams struct     {
+  // {"en":"Name of the storage bucket.","zh_CN":"存储空间名"}
+  BucketName *string `json:"bucketName,omitempty" xml:"bucketName,omitempty"`
+  // {"en":"Storage duration in seconds.","zh_CN":"存储时间"}
+  StorageTime *int `json:"storageTime,omitempty" xml:"storageTime,omitempty"`
+  // {"en":"Name of the stored file.","zh_CN":"存储文件名称"}
+  FilePath *string `json:"filePath,omitempty" xml:"filePath,omitempty"`
+  // {"en":"Recording operation parameters.","zh_CN":"录制参数"}
+  Fops *ModifyRecordingParameterTemplateRequestRecordParamsFops `json:"fops,omitempty" xml:"fops,omitempty" type:"Struct"`
+}
+
+func (s ModifyRecordingParameterTemplateRequestRecordParams) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyRecordingParameterTemplateRequestRecordParams) GoString() string {
+  return s.String()
+}
+
+func (s *ModifyRecordingParameterTemplateRequestRecordParams) SetBucketName(v string) *ModifyRecordingParameterTemplateRequestRecordParams {
+  s.BucketName = &v
+  return s
+}
+
+func (s *ModifyRecordingParameterTemplateRequestRecordParams) SetStorageTime(v int) *ModifyRecordingParameterTemplateRequestRecordParams {
+  s.StorageTime = &v
+  return s
+}
+
+func (s *ModifyRecordingParameterTemplateRequestRecordParams) SetFilePath(v string) *ModifyRecordingParameterTemplateRequestRecordParams {
+  s.FilePath = &v
+  return s
+}
+
+func (s *ModifyRecordingParameterTemplateRequestRecordParams) SetFops(v *ModifyRecordingParameterTemplateRequestRecordParamsFops) *ModifyRecordingParameterTemplateRequestRecordParams {
+  s.Fops = v
+  return s
+}
+
+type ModifyRecordingParameterTemplateRequestRecordParamsFops struct {
+  // {"en":"Format of the recording file (e.g., mp4, flv).","zh_CN":"文件格式"}
+  FileFormat *string `json:"fileFormat,omitempty" xml:"fileFormat,omitempty"`
+  // {"en":"Maximum file size in MB.","zh_CN":"文件大小"}
+  FileSize *int `json:"fileSize,omitempty" xml:"fileSize,omitempty"`
+  // {"en":"Duration of recording segments in seconds.","zh_CN":"录制分段时长"}
+  Interval *int `json:"interval,omitempty" xml:"interval,omitempty"`
+  // {"en":"Whether to concatenate recorded segment files (0: No, 1: Yes).","zh_CN":"录制分段文件是否进行合并"}
+  Concat *int `json:"concat,omitempty" xml:"concat,omitempty"`
+  // {"en":"Duration of each TS segment in m3u8 in seconds.","zh_CN":"指定m3u8的分段ts时长"}
+  Segtime *int `json:"segtime,omitempty" xml:"segtime,omitempty"`
+  // {"en":"Whether to remove the audio stream (0: No, 1: Yes).","zh_CN":"是否去除音频流"}
+  RemoveAudio *int `json:"removeAudio,omitempty" xml:"removeAudio,omitempty"`
+  // {"en":"Whether to remove the video stream (0: No, 1: Yes).","zh_CN":"是否去除视频流"}
+  RemoveVideo *int `json:"removeVideo,omitempty" xml:"removeVideo,omitempty"`
+  // {"en":"Timeout duration for stream pull in milliseconds.","zh_CN":"拉流超时时间"}
+  TimeOut *int `json:"timeOut,omitempty" xml:"timeOut,omitempty"`
+  // {"en":"Number of retries for stream pull timeout.","zh_CN":"拉流超时重试次数"}
+  RetryTimes *int `json:"retryTimes,omitempty" xml:"retryTimes,omitempty"`
+}
+
+func (s ModifyRecordingParameterTemplateRequestRecordParamsFops) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyRecordingParameterTemplateRequestRecordParamsFops) GoString() string {
+  return s.String()
+}
+
+func (s *ModifyRecordingParameterTemplateRequestRecordParamsFops) SetFileFormat(v string) *ModifyRecordingParameterTemplateRequestRecordParamsFops {
+  s.FileFormat = &v
+  return s
+}
+
+func (s *ModifyRecordingParameterTemplateRequestRecordParamsFops) SetFileSize(v int) *ModifyRecordingParameterTemplateRequestRecordParamsFops {
+  s.FileSize = &v
+  return s
+}
+
+func (s *ModifyRecordingParameterTemplateRequestRecordParamsFops) SetInterval(v int) *ModifyRecordingParameterTemplateRequestRecordParamsFops {
+  s.Interval = &v
+  return s
+}
+
+func (s *ModifyRecordingParameterTemplateRequestRecordParamsFops) SetConcat(v int) *ModifyRecordingParameterTemplateRequestRecordParamsFops {
+  s.Concat = &v
+  return s
+}
+
+func (s *ModifyRecordingParameterTemplateRequestRecordParamsFops) SetSegtime(v int) *ModifyRecordingParameterTemplateRequestRecordParamsFops {
+  s.Segtime = &v
+  return s
+}
+
+func (s *ModifyRecordingParameterTemplateRequestRecordParamsFops) SetRemoveAudio(v int) *ModifyRecordingParameterTemplateRequestRecordParamsFops {
+  s.RemoveAudio = &v
+  return s
+}
+
+func (s *ModifyRecordingParameterTemplateRequestRecordParamsFops) SetRemoveVideo(v int) *ModifyRecordingParameterTemplateRequestRecordParamsFops {
+  s.RemoveVideo = &v
+  return s
+}
+
+func (s *ModifyRecordingParameterTemplateRequestRecordParamsFops) SetTimeOut(v int) *ModifyRecordingParameterTemplateRequestRecordParamsFops {
+  s.TimeOut = &v
+  return s
+}
+
+func (s *ModifyRecordingParameterTemplateRequestRecordParamsFops) SetRetryTimes(v int) *ModifyRecordingParameterTemplateRequestRecordParamsFops {
+  s.RetryTimes = &v
+  return s
+}
+
+type ModifyRecordingParameterTemplateRequestHeader struct {
+}
+
+func (s ModifyRecordingParameterTemplateRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyRecordingParameterTemplateRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ModifyRecordingParameterTemplatePaths struct {
+  // {"en":"ID of the template to be modified.","zh_CN":"要修改的模版ID。"}
+  TemplateId *int `json:"templateId,omitempty" xml:"templateId,omitempty" require:"true"`
+}
+
+func (s ModifyRecordingParameterTemplatePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyRecordingParameterTemplatePaths) GoString() string {
+  return s.String()
+}
+
+func (s *ModifyRecordingParameterTemplatePaths) SetTemplateId(v int) *ModifyRecordingParameterTemplatePaths {
+  s.TemplateId = &v
+  return s
+}
+
+type ModifyRecordingParameterTemplateParameters struct {
+}
+
+func (s ModifyRecordingParameterTemplateParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyRecordingParameterTemplateParameters) GoString() string {
+  return s.String()
+}
+
+type ModifyRecordingParameterTemplateResponse struct {
+  // {"en":"Response status code.","zh_CN":"响应码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Response message indicating success or failure.","zh_CN":"响应信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s ModifyRecordingParameterTemplateResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyRecordingParameterTemplateResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ModifyRecordingParameterTemplateResponse) SetCode(v int) *ModifyRecordingParameterTemplateResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ModifyRecordingParameterTemplateResponse) SetMessage(v string) *ModifyRecordingParameterTemplateResponse {
+  s.Message = &v
+  return s
+}
+
+type ModifyRecordingParameterTemplateResponseHeader struct {
+}
+
+func (s ModifyRecordingParameterTemplateResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyRecordingParameterTemplateResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryRecordingParameterTemplateRequest struct {
+  // {"en":"The ID of the recording parameter template to query. If not provided, all templates under the account will be returned.","zh_CN":"要查询的录制参数模板ID。如果未提供，将返回账户下所有模板。"}
+  TemplateId *int `json:"templateId,omitempty" xml:"templateId,omitempty"`
+}
+
+func (s QueryRecordingParameterTemplateRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRecordingParameterTemplateRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryRecordingParameterTemplateRequest) SetTemplateId(v int) *QueryRecordingParameterTemplateRequest {
+  s.TemplateId = &v
+  return s
+}
+
+type QueryRecordingParameterTemplateRequestHeader struct {
+}
+
+func (s QueryRecordingParameterTemplateRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRecordingParameterTemplateRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryRecordingParameterTemplatePaths struct {
+}
+
+func (s QueryRecordingParameterTemplatePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRecordingParameterTemplatePaths) GoString() string {
+  return s.String()
+}
+
+type QueryRecordingParameterTemplateParameters struct {
+}
+
+func (s QueryRecordingParameterTemplateParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRecordingParameterTemplateParameters) GoString() string {
+  return s.String()
+}
+
+type QueryRecordingParameterTemplateResponse struct {
+  // {"en":"Response status code.","zh_CN":"响应码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Response message indicating success or failure.","zh_CN":"响应信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"","zh_CN":""}
+  Data *QueryRecordingParameterTemplateResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryRecordingParameterTemplateResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRecordingParameterTemplateResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryRecordingParameterTemplateResponse) SetCode(v int) *QueryRecordingParameterTemplateResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QueryRecordingParameterTemplateResponse) SetMessage(v string) *QueryRecordingParameterTemplateResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *QueryRecordingParameterTemplateResponse) SetData(v *QueryRecordingParameterTemplateResponseData) *QueryRecordingParameterTemplateResponse {
+  s.Data = v
+  return s
+}
+
+type QueryRecordingParameterTemplateResponseData struct {
+  // {"en":"data size.","zh_CN":"总数"}
+  Total *int `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+  // {"en":"List of screenshot parameter template data.","zh_CN":"截图参数模板数据列表"}
+  List []*QueryRecordingParameterTemplateResponseDataList `json:"list,omitempty" xml:"list,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryRecordingParameterTemplateResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRecordingParameterTemplateResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryRecordingParameterTemplateResponseData) SetTotal(v int) *QueryRecordingParameterTemplateResponseData {
+  s.Total = &v
+  return s
+}
+
+func (s *QueryRecordingParameterTemplateResponseData) SetList(v []*QueryRecordingParameterTemplateResponseDataList) *QueryRecordingParameterTemplateResponseData {
+  s.List = v
+  return s
+}
+
+type QueryRecordingParameterTemplateResponseDataList struct     {
+  // {"en":"Geographical region of the cloud storage.","zh_CN":"区域"}
+  Region *string `json:"region,omitempty" xml:"region,omitempty" require:"true"`
+  // {"en":"Name of the screenshot parameter template.","zh_CN":"模版名称"}
+  TemplateName *string `json:"templateName,omitempty" xml:"templateName,omitempty" require:"true"`
+  // {"en":"Access Key for cloud storage access.","zh_CN":"云存储访问的Access Key"}
+  Ak *string `json:"ak,omitempty" xml:"ak,omitempty" require:"true"`
+  // {"en":"Secret Key for cloud storage access.","zh_CN":"云存储访问的Secret Key"}
+  Sk *string `json:"sk,omitempty" xml:"sk,omitempty" require:"true"`
+  // {"en":"Cloud storage space management domain name (Management URL).","zh_CN":"云存储空间管理域名"}
+  MgrUrl *string `json:"mgrUrl,omitempty" xml:"mgrUrl,omitempty" require:"true"`
+  // {"en":"Callback notification URL.","zh_CN":"回调通知地址"}
+  NotifyUrl *string `json:"notifyUrl,omitempty" xml:"notifyUrl,omitempty" require:"true"`
+  // {"en":"List of snapshot parameters.","zh_CN":"截图参数列表"}
+  RecordParams []*QueryRecordingParameterTemplateResponseDataListRecordParams `json:"recordParams,omitempty" xml:"recordParams,omitempty" require:"true" type:"Repeated"`
+  // {"en":"The unique identifier of the screenshot parameter template.","zh_CN":"模版id"}
+  TemplateId *int64 `json:"templateId,omitempty" xml:"templateId,omitempty" require:"true"`
+}
+
+func (s QueryRecordingParameterTemplateResponseDataList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRecordingParameterTemplateResponseDataList) GoString() string {
+  return s.String()
+}
+
+func (s *QueryRecordingParameterTemplateResponseDataList) SetRegion(v string) *QueryRecordingParameterTemplateResponseDataList {
+  s.Region = &v
+  return s
+}
+
+func (s *QueryRecordingParameterTemplateResponseDataList) SetTemplateName(v string) *QueryRecordingParameterTemplateResponseDataList {
+  s.TemplateName = &v
+  return s
+}
+
+func (s *QueryRecordingParameterTemplateResponseDataList) SetAk(v string) *QueryRecordingParameterTemplateResponseDataList {
+  s.Ak = &v
+  return s
+}
+
+func (s *QueryRecordingParameterTemplateResponseDataList) SetSk(v string) *QueryRecordingParameterTemplateResponseDataList {
+  s.Sk = &v
+  return s
+}
+
+func (s *QueryRecordingParameterTemplateResponseDataList) SetMgrUrl(v string) *QueryRecordingParameterTemplateResponseDataList {
+  s.MgrUrl = &v
+  return s
+}
+
+func (s *QueryRecordingParameterTemplateResponseDataList) SetNotifyUrl(v string) *QueryRecordingParameterTemplateResponseDataList {
+  s.NotifyUrl = &v
+  return s
+}
+
+func (s *QueryRecordingParameterTemplateResponseDataList) SetRecordParams(v []*QueryRecordingParameterTemplateResponseDataListRecordParams) *QueryRecordingParameterTemplateResponseDataList {
+  s.RecordParams = v
+  return s
+}
+
+func (s *QueryRecordingParameterTemplateResponseDataList) SetTemplateId(v int64) *QueryRecordingParameterTemplateResponseDataList {
+  s.TemplateId = &v
+  return s
+}
+
+type QueryRecordingParameterTemplateResponseDataListRecordParams struct     {
+  // {"en":"Name of the storage bucket.","zh_CN":"存储空间名"}
+  BucketName *string `json:"bucketName,omitempty" xml:"bucketName,omitempty" require:"true"`
+  // {"en":"Storage duration in seconds.","zh_CN":"存储时间"}
+  StorageTime *int `json:"storageTime,omitempty" xml:"storageTime,omitempty" require:"true"`
+  // {"en":"Name of the stored file.","zh_CN":"存储文件名称"}
+  FilePath *string `json:"filePath,omitempty" xml:"filePath,omitempty" require:"true"`
+  // {"en":"Screenshot operation parameters.","zh_CN":"截图参数"}
+  Fops *QueryRecordingParameterTemplateResponseDataListRecordParamsFops `json:"fops,omitempty" xml:"fops,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryRecordingParameterTemplateResponseDataListRecordParams) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRecordingParameterTemplateResponseDataListRecordParams) GoString() string {
+  return s.String()
+}
+
+func (s *QueryRecordingParameterTemplateResponseDataListRecordParams) SetBucketName(v string) *QueryRecordingParameterTemplateResponseDataListRecordParams {
+  s.BucketName = &v
+  return s
+}
+
+func (s *QueryRecordingParameterTemplateResponseDataListRecordParams) SetStorageTime(v int) *QueryRecordingParameterTemplateResponseDataListRecordParams {
+  s.StorageTime = &v
+  return s
+}
+
+func (s *QueryRecordingParameterTemplateResponseDataListRecordParams) SetFilePath(v string) *QueryRecordingParameterTemplateResponseDataListRecordParams {
+  s.FilePath = &v
+  return s
+}
+
+func (s *QueryRecordingParameterTemplateResponseDataListRecordParams) SetFops(v *QueryRecordingParameterTemplateResponseDataListRecordParamsFops) *QueryRecordingParameterTemplateResponseDataListRecordParams {
+  s.Fops = v
+  return s
+}
+
+type QueryRecordingParameterTemplateResponseDataListRecordParamsFops struct {
+  // {"en":"Format of the screenshot file (e.g., jpg, png).","zh_CN":"文件格式（如：jpg, png）"}
+  FileFormat *string `json:"fileFormat,omitempty" xml:"fileFormat,omitempty" require:"true"`
+  // {"en":"Screenshot interval duration in seconds.","zh_CN":"截图间隔时长"}
+  Interval *int `json:"interval,omitempty" xml:"interval,omitempty" require:"true"`
+  // {"en":"Screenshot width, in pixels (px).","zh_CN":"截图宽度，单位：像素（px）"}
+  Width *int `json:"width,omitempty" xml:"width,omitempty" require:"true"`
+  // {"en":"Screenshot height, in pixels (px).","zh_CN":"截图高度，单位：像素（px）"}
+  Height *int `json:"height,omitempty" xml:"height,omitempty" require:"true"`
+  // {"en":"The long side value for adaptive screenshot, in pixels (px).","zh_CN":"自适应截图的图像长边值，单位：像素（px）"}
+  Longside *int `json:"longside,omitempty" xml:"longside,omitempty" require:"true"`
+  // {"en":"Timeout duration for stream pull in milliseconds.","zh_CN":"拉流超时时间"}
+  TimeOut *int `json:"timeOut,omitempty" xml:"timeOut,omitempty" require:"true"`
+  // {"en":"Number of retries for stream pull timeout.","zh_CN":"拉流超时重试次数"}
+  RetryTimes *int `json:"retryTimes,omitempty" xml:"retryTimes,omitempty" require:"true"`
+}
+
+func (s QueryRecordingParameterTemplateResponseDataListRecordParamsFops) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRecordingParameterTemplateResponseDataListRecordParamsFops) GoString() string {
+  return s.String()
+}
+
+func (s *QueryRecordingParameterTemplateResponseDataListRecordParamsFops) SetFileFormat(v string) *QueryRecordingParameterTemplateResponseDataListRecordParamsFops {
+  s.FileFormat = &v
+  return s
+}
+
+func (s *QueryRecordingParameterTemplateResponseDataListRecordParamsFops) SetInterval(v int) *QueryRecordingParameterTemplateResponseDataListRecordParamsFops {
+  s.Interval = &v
+  return s
+}
+
+func (s *QueryRecordingParameterTemplateResponseDataListRecordParamsFops) SetWidth(v int) *QueryRecordingParameterTemplateResponseDataListRecordParamsFops {
+  s.Width = &v
+  return s
+}
+
+func (s *QueryRecordingParameterTemplateResponseDataListRecordParamsFops) SetHeight(v int) *QueryRecordingParameterTemplateResponseDataListRecordParamsFops {
+  s.Height = &v
+  return s
+}
+
+func (s *QueryRecordingParameterTemplateResponseDataListRecordParamsFops) SetLongside(v int) *QueryRecordingParameterTemplateResponseDataListRecordParamsFops {
+  s.Longside = &v
+  return s
+}
+
+func (s *QueryRecordingParameterTemplateResponseDataListRecordParamsFops) SetTimeOut(v int) *QueryRecordingParameterTemplateResponseDataListRecordParamsFops {
+  s.TimeOut = &v
+  return s
+}
+
+func (s *QueryRecordingParameterTemplateResponseDataListRecordParamsFops) SetRetryTimes(v int) *QueryRecordingParameterTemplateResponseDataListRecordParamsFops {
+  s.RetryTimes = &v
+  return s
+}
+
+type QueryRecordingParameterTemplateResponseHeader struct {
+}
+
+func (s QueryRecordingParameterTemplateResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRecordingParameterTemplateResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type AddRecordingParameterTemplateRequest struct {
+  // {"en":"Geographical region of the cloud storage.","zh_CN":"区域"}
+  Region *string `json:"region,omitempty" xml:"region,omitempty" require:"true"`
+  // {"en":"Name of the recording parameter template.","zh_CN":"模版名称"}
+  TemplateName *string `json:"templateName,omitempty" xml:"templateName,omitempty" require:"true"`
+  // {"en":"Access Key for cloud storage access.","zh_CN":"云存储访问的Access Key"}
+  Ak *string `json:"ak,omitempty" xml:"ak,omitempty"`
+  // {"en":"Secret Key for cloud storage access.","zh_CN":"云存储访问的Secret Key"}
+  Sk *string `json:"sk,omitempty" xml:"sk,omitempty"`
+  // {"en":"Cloud storage space management domain name (Management URL).","zh_CN":"云存储空间管理域名"}
+  MgrUrl *string `json:"mgrUrl,omitempty" xml:"mgrUrl,omitempty" require:"true"`
+  // {"en":"Callback notification URL.","zh_CN":"回调通知地址"}
+  NotifyUrl *string `json:"notifyUrl,omitempty" xml:"notifyUrl,omitempty"`
+  // {"en":"List of recording parameters.","zh_CN":"录制参数列表"}
+  RecordParams []*AddRecordingParameterTemplateRequestRecordParams `json:"recordParams,omitempty" xml:"recordParams,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s AddRecordingParameterTemplateRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddRecordingParameterTemplateRequest) GoString() string {
+  return s.String()
+}
+
+func (s *AddRecordingParameterTemplateRequest) SetRegion(v string) *AddRecordingParameterTemplateRequest {
+  s.Region = &v
+  return s
+}
+
+func (s *AddRecordingParameterTemplateRequest) SetTemplateName(v string) *AddRecordingParameterTemplateRequest {
+  s.TemplateName = &v
+  return s
+}
+
+func (s *AddRecordingParameterTemplateRequest) SetAk(v string) *AddRecordingParameterTemplateRequest {
+  s.Ak = &v
+  return s
+}
+
+func (s *AddRecordingParameterTemplateRequest) SetSk(v string) *AddRecordingParameterTemplateRequest {
+  s.Sk = &v
+  return s
+}
+
+func (s *AddRecordingParameterTemplateRequest) SetMgrUrl(v string) *AddRecordingParameterTemplateRequest {
+  s.MgrUrl = &v
+  return s
+}
+
+func (s *AddRecordingParameterTemplateRequest) SetNotifyUrl(v string) *AddRecordingParameterTemplateRequest {
+  s.NotifyUrl = &v
+  return s
+}
+
+func (s *AddRecordingParameterTemplateRequest) SetRecordParams(v []*AddRecordingParameterTemplateRequestRecordParams) *AddRecordingParameterTemplateRequest {
+  s.RecordParams = v
+  return s
+}
+
+type AddRecordingParameterTemplateRequestRecordParams struct     {
+  // {"en":"Name of the storage bucket.","zh_CN":"存储空间名"}
+  BucketName *string `json:"bucketName,omitempty" xml:"bucketName,omitempty" require:"true"`
+  // {"en":"Storage duration in seconds.","zh_CN":"存储时间"}
+  StorageTime *int `json:"storageTime,omitempty" xml:"storageTime,omitempty"`
+  // {"en":"Name of the stored file.","zh_CN":"存储文件名称"}
+  FilePath *string `json:"filePath,omitempty" xml:"filePath,omitempty"`
+  // {"en":"Recording operation parameters.","zh_CN":"录制参数"}
+  Fops *AddRecordingParameterTemplateRequestRecordParamsFops `json:"fops,omitempty" xml:"fops,omitempty" type:"Struct"`
+}
+
+func (s AddRecordingParameterTemplateRequestRecordParams) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddRecordingParameterTemplateRequestRecordParams) GoString() string {
+  return s.String()
+}
+
+func (s *AddRecordingParameterTemplateRequestRecordParams) SetBucketName(v string) *AddRecordingParameterTemplateRequestRecordParams {
+  s.BucketName = &v
+  return s
+}
+
+func (s *AddRecordingParameterTemplateRequestRecordParams) SetStorageTime(v int) *AddRecordingParameterTemplateRequestRecordParams {
+  s.StorageTime = &v
+  return s
+}
+
+func (s *AddRecordingParameterTemplateRequestRecordParams) SetFilePath(v string) *AddRecordingParameterTemplateRequestRecordParams {
+  s.FilePath = &v
+  return s
+}
+
+func (s *AddRecordingParameterTemplateRequestRecordParams) SetFops(v *AddRecordingParameterTemplateRequestRecordParamsFops) *AddRecordingParameterTemplateRequestRecordParams {
+  s.Fops = v
+  return s
+}
+
+type AddRecordingParameterTemplateRequestRecordParamsFops struct {
+  // {"en":"Format of the recording file (e.g., mp4, flv).","zh_CN":"文件格式"}
+  FileFormat *string `json:"fileFormat,omitempty" xml:"fileFormat,omitempty" require:"true"`
+  // {"en":"Maximum file size in MB.","zh_CN":"文件大小"}
+  FileSize *int `json:"fileSize,omitempty" xml:"fileSize,omitempty"`
+  // {"en":"Duration of recording segments in seconds.","zh_CN":"录制分段时长"}
+  Interval *int `json:"interval,omitempty" xml:"interval,omitempty"`
+  // {"en":"Whether to concatenate recorded segment files (0: No, 1: Yes).","zh_CN":"录制分段文件是否进行合并"}
+  Concat *int `json:"concat,omitempty" xml:"concat,omitempty"`
+  // {"en":"Duration of each TS segment in m3u8 in seconds.","zh_CN":"指定m3u8的分段ts时长"}
+  Segtime *int `json:"segtime,omitempty" xml:"segtime,omitempty"`
+  // {"en":"Whether to remove the audio stream (0: No, 1: Yes).","zh_CN":"是否去除音频流"}
+  RemoveAudio *int `json:"removeAudio,omitempty" xml:"removeAudio,omitempty"`
+  // {"en":"Whether to remove the video stream (0: No, 1: Yes).","zh_CN":"是否去除视频流"}
+  RemoveVideo *int `json:"removeVideo,omitempty" xml:"removeVideo,omitempty"`
+  // {"en":"Timeout duration for stream pull in milliseconds.","zh_CN":"拉流超时时间"}
+  TimeOut *int `json:"timeOut,omitempty" xml:"timeOut,omitempty"`
+  // {"en":"Number of retries for stream pull timeout.","zh_CN":"拉流超时重试次数"}
+  RetryTimes *int `json:"retryTimes,omitempty" xml:"retryTimes,omitempty"`
+}
+
+func (s AddRecordingParameterTemplateRequestRecordParamsFops) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddRecordingParameterTemplateRequestRecordParamsFops) GoString() string {
+  return s.String()
+}
+
+func (s *AddRecordingParameterTemplateRequestRecordParamsFops) SetFileFormat(v string) *AddRecordingParameterTemplateRequestRecordParamsFops {
+  s.FileFormat = &v
+  return s
+}
+
+func (s *AddRecordingParameterTemplateRequestRecordParamsFops) SetFileSize(v int) *AddRecordingParameterTemplateRequestRecordParamsFops {
+  s.FileSize = &v
+  return s
+}
+
+func (s *AddRecordingParameterTemplateRequestRecordParamsFops) SetInterval(v int) *AddRecordingParameterTemplateRequestRecordParamsFops {
+  s.Interval = &v
+  return s
+}
+
+func (s *AddRecordingParameterTemplateRequestRecordParamsFops) SetConcat(v int) *AddRecordingParameterTemplateRequestRecordParamsFops {
+  s.Concat = &v
+  return s
+}
+
+func (s *AddRecordingParameterTemplateRequestRecordParamsFops) SetSegtime(v int) *AddRecordingParameterTemplateRequestRecordParamsFops {
+  s.Segtime = &v
+  return s
+}
+
+func (s *AddRecordingParameterTemplateRequestRecordParamsFops) SetRemoveAudio(v int) *AddRecordingParameterTemplateRequestRecordParamsFops {
+  s.RemoveAudio = &v
+  return s
+}
+
+func (s *AddRecordingParameterTemplateRequestRecordParamsFops) SetRemoveVideo(v int) *AddRecordingParameterTemplateRequestRecordParamsFops {
+  s.RemoveVideo = &v
+  return s
+}
+
+func (s *AddRecordingParameterTemplateRequestRecordParamsFops) SetTimeOut(v int) *AddRecordingParameterTemplateRequestRecordParamsFops {
+  s.TimeOut = &v
+  return s
+}
+
+func (s *AddRecordingParameterTemplateRequestRecordParamsFops) SetRetryTimes(v int) *AddRecordingParameterTemplateRequestRecordParamsFops {
+  s.RetryTimes = &v
+  return s
+}
+
+type AddRecordingParameterTemplateRequestHeader struct {
+}
+
+func (s AddRecordingParameterTemplateRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddRecordingParameterTemplateRequestHeader) GoString() string {
+  return s.String()
+}
+
+type AddRecordingParameterTemplatePaths struct {
+}
+
+func (s AddRecordingParameterTemplatePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddRecordingParameterTemplatePaths) GoString() string {
+  return s.String()
+}
+
+type AddRecordingParameterTemplateParameters struct {
+}
+
+func (s AddRecordingParameterTemplateParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddRecordingParameterTemplateParameters) GoString() string {
+  return s.String()
+}
+
+type AddRecordingParameterTemplateResponse struct {
+  // {"en":"Response status code.","zh_CN":"响应码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Response message indicating success or failure.","zh_CN":"响应信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Response data payload.","zh_CN":"响应数据"}
+  Data *AddRecordingParameterTemplateResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s AddRecordingParameterTemplateResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddRecordingParameterTemplateResponse) GoString() string {
+  return s.String()
+}
+
+func (s *AddRecordingParameterTemplateResponse) SetCode(v int) *AddRecordingParameterTemplateResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *AddRecordingParameterTemplateResponse) SetMessage(v string) *AddRecordingParameterTemplateResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *AddRecordingParameterTemplateResponse) SetData(v *AddRecordingParameterTemplateResponseData) *AddRecordingParameterTemplateResponse {
+  s.Data = v
+  return s
+}
+
+type AddRecordingParameterTemplateResponseData struct {
+  // {"en":"ID of the created template.","zh_CN":"模版id"}
+  TemplateId *string `json:"templateId,omitempty" xml:"templateId,omitempty" require:"true"`
+}
+
+func (s AddRecordingParameterTemplateResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddRecordingParameterTemplateResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *AddRecordingParameterTemplateResponseData) SetTemplateId(v string) *AddRecordingParameterTemplateResponseData {
+  s.TemplateId = &v
+  return s
+}
+
+type AddRecordingParameterTemplateResponseHeader struct {
+}
+
+func (s AddRecordingParameterTemplateResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddRecordingParameterTemplateResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type LiveVideoConcatRequest struct {
   // {"en":"Channel pull id", "zh_CN":"频道拉流id"}
   PullId *string `json:"pullId,omitempty" xml:"pullId,omitempty" require:"true"`
@@ -179,6 +982,96 @@ func (s LiveVideoConcatResponseHeader) String() string {
 }
 
 func (s LiveVideoConcatResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type DeleteRecordingParameterTemplateRequest struct {
+}
+
+func (s DeleteRecordingParameterTemplateRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteRecordingParameterTemplateRequest) GoString() string {
+  return s.String()
+}
+
+type DeleteRecordingParameterTemplateRequestHeader struct {
+}
+
+func (s DeleteRecordingParameterTemplateRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteRecordingParameterTemplateRequestHeader) GoString() string {
+  return s.String()
+}
+
+type DeleteRecordingParameterTemplatePaths struct {
+  // {"en":"The unique identifier of the template to be deleted.","zh_CN":"模版id"}
+  TemplateId *int `json:"templateId,omitempty" xml:"templateId,omitempty" require:"true"`
+}
+
+func (s DeleteRecordingParameterTemplatePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteRecordingParameterTemplatePaths) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteRecordingParameterTemplatePaths) SetTemplateId(v int) *DeleteRecordingParameterTemplatePaths {
+  s.TemplateId = &v
+  return s
+}
+
+type DeleteRecordingParameterTemplateParameters struct {
+}
+
+func (s DeleteRecordingParameterTemplateParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteRecordingParameterTemplateParameters) GoString() string {
+  return s.String()
+}
+
+type DeleteRecordingParameterTemplateResponse struct {
+  // {"en":"Response status code.","zh_CN":"响应码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Response message indicating success or failure.","zh_CN":"响应信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s DeleteRecordingParameterTemplateResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteRecordingParameterTemplateResponse) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteRecordingParameterTemplateResponse) SetCode(v int) *DeleteRecordingParameterTemplateResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *DeleteRecordingParameterTemplateResponse) SetMessage(v string) *DeleteRecordingParameterTemplateResponse {
+  s.Message = &v
+  return s
+}
+
+type DeleteRecordingParameterTemplateResponseHeader struct {
+}
+
+func (s DeleteRecordingParameterTemplateResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteRecordingParameterTemplateResponseHeader) GoString() string {
   return s.String()
 }
 

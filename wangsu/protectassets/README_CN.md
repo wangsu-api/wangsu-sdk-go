@@ -33,7 +33,7 @@ func main() {
     config.Method = "HTTP_METHOD"  // GET, POST, PUT, DELETE, etc.
 
     // Create response object and make API call
-    response := protectassets.{ActionName}Response{}
+    response := &protectassets.{ActionName}Response{}
     _, err := auth.Invoke(config, request, response)
 
     // Handle response

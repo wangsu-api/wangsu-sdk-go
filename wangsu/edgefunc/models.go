@@ -5,6 +5,384 @@ import (
   "github.com/alibabacloud-go/tea/tea"
 )
 
+type ListFunctionTemplatesRequest struct {
+}
+
+func (s ListFunctionTemplatesRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListFunctionTemplatesRequest) GoString() string {
+  return s.String()
+}
+
+type ListFunctionTemplatesRequestHeader struct {
+}
+
+func (s ListFunctionTemplatesRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListFunctionTemplatesRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ListFunctionTemplatesPaths struct {
+}
+
+func (s ListFunctionTemplatesPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListFunctionTemplatesPaths) GoString() string {
+  return s.String()
+}
+
+type ListFunctionTemplatesParameters struct {
+  // {"defaultValue":"1","en":"Page Number","zh_CN":"页码，默认1"}
+  PageNo *int `json:"pageNo,omitempty" xml:"pageNo,omitempty"`
+  // {"defaultValue":"10","en":"Page Size","zh_CN":"每页大小，默认10"}
+  PageSize *int `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
+  // {"en":"Template name, which supports fuzzy query","zh_CN":"模板名称，支持模糊查询"}
+  Name *int `json:"name,omitempty" xml:"name,omitempty"`
+  // {"defaultValue":"false","en":"is english","zh_CN":"是否英文"}
+  IsEnglish *string `json:"isEnglish,omitempty" xml:"isEnglish,omitempty"`
+}
+
+func (s ListFunctionTemplatesParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListFunctionTemplatesParameters) GoString() string {
+  return s.String()
+}
+
+func (s *ListFunctionTemplatesParameters) SetPageNo(v int) *ListFunctionTemplatesParameters {
+  s.PageNo = &v
+  return s
+}
+
+func (s *ListFunctionTemplatesParameters) SetPageSize(v int) *ListFunctionTemplatesParameters {
+  s.PageSize = &v
+  return s
+}
+
+func (s *ListFunctionTemplatesParameters) SetName(v int) *ListFunctionTemplatesParameters {
+  s.Name = &v
+  return s
+}
+
+func (s *ListFunctionTemplatesParameters) SetIsEnglish(v string) *ListFunctionTemplatesParameters {
+  s.IsEnglish = &v
+  return s
+}
+
+type ListFunctionTemplatesResponse struct {
+  // {"en":"code","zh_CN":"状态码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"message","zh_CN":"描述"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Response data body","zh_CN":"响应数据体"}
+  Data *ListFunctionTemplatesResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s ListFunctionTemplatesResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListFunctionTemplatesResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ListFunctionTemplatesResponse) SetCode(v int) *ListFunctionTemplatesResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ListFunctionTemplatesResponse) SetMessage(v string) *ListFunctionTemplatesResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *ListFunctionTemplatesResponse) SetData(v *ListFunctionTemplatesResponseData) *ListFunctionTemplatesResponse {
+  s.Data = v
+  return s
+}
+
+type ListFunctionTemplatesResponseData struct {
+  // {"en":"Current page number","zh_CN":"当前页码"}
+  PageNum *int `json:"pageNum,omitempty" xml:"pageNum,omitempty" require:"true"`
+  // {"en":"Page size","zh_CN":"每页大小"}
+  PageSize *int `json:"pageSize,omitempty" xml:"pageSize,omitempty" require:"true"`
+  // {"en":"Total number of records","zh_CN":"总记录数"}
+  Total *int `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+  // {"en":"List of function templates","zh_CN":"函数模板列表"}
+  Templates []*ListFunctionTemplatesResponseDataTemplates `json:"templates,omitempty" xml:"templates,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ListFunctionTemplatesResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListFunctionTemplatesResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *ListFunctionTemplatesResponseData) SetPageNum(v int) *ListFunctionTemplatesResponseData {
+  s.PageNum = &v
+  return s
+}
+
+func (s *ListFunctionTemplatesResponseData) SetPageSize(v int) *ListFunctionTemplatesResponseData {
+  s.PageSize = &v
+  return s
+}
+
+func (s *ListFunctionTemplatesResponseData) SetTotal(v int) *ListFunctionTemplatesResponseData {
+  s.Total = &v
+  return s
+}
+
+func (s *ListFunctionTemplatesResponseData) SetTemplates(v []*ListFunctionTemplatesResponseDataTemplates) *ListFunctionTemplatesResponseData {
+  s.Templates = v
+  return s
+}
+
+type ListFunctionTemplatesResponseDataTemplates struct     {
+  // {"en":"Template ID","zh_CN":"模板ID"}
+  Id *int `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+  // {"en":"Template code","zh_CN":"模板编码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Template Name","zh_CN":"模板名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"Template desc","zh_CN":"模板描述"}
+  Description *string `json:"description,omitempty" xml:"description,omitempty" require:"true"`
+}
+
+func (s ListFunctionTemplatesResponseDataTemplates) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListFunctionTemplatesResponseDataTemplates) GoString() string {
+  return s.String()
+}
+
+func (s *ListFunctionTemplatesResponseDataTemplates) SetId(v int) *ListFunctionTemplatesResponseDataTemplates {
+  s.Id = &v
+  return s
+}
+
+func (s *ListFunctionTemplatesResponseDataTemplates) SetCode(v string) *ListFunctionTemplatesResponseDataTemplates {
+  s.Code = &v
+  return s
+}
+
+func (s *ListFunctionTemplatesResponseDataTemplates) SetName(v string) *ListFunctionTemplatesResponseDataTemplates {
+  s.Name = &v
+  return s
+}
+
+func (s *ListFunctionTemplatesResponseDataTemplates) SetDescription(v string) *ListFunctionTemplatesResponseDataTemplates {
+  s.Description = &v
+  return s
+}
+
+type ListFunctionTemplatesResponseHeader struct {
+}
+
+func (s ListFunctionTemplatesResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListFunctionTemplatesResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type GetEdgeFunctionInfoRequest struct {
+}
+
+func (s GetEdgeFunctionInfoRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetEdgeFunctionInfoRequest) GoString() string {
+  return s.String()
+}
+
+type GetEdgeFunctionInfoRequestHeader struct {
+}
+
+func (s GetEdgeFunctionInfoRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetEdgeFunctionInfoRequestHeader) GoString() string {
+  return s.String()
+}
+
+type GetEdgeFunctionInfoPaths struct {
+  // {"en":"Function ID","zh_CN":"函数ID"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+}
+
+func (s GetEdgeFunctionInfoPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetEdgeFunctionInfoPaths) GoString() string {
+  return s.String()
+}
+
+func (s *GetEdgeFunctionInfoPaths) SetId(v string) *GetEdgeFunctionInfoPaths {
+  s.Id = &v
+  return s
+}
+
+type GetEdgeFunctionInfoParameters struct {
+  // {"en":"Function ID","zh_CN":"函数 ID"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+func (s GetEdgeFunctionInfoParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetEdgeFunctionInfoParameters) GoString() string {
+  return s.String()
+}
+
+func (s *GetEdgeFunctionInfoParameters) SetId(v string) *GetEdgeFunctionInfoParameters {
+  s.Id = &v
+  return s
+}
+
+type GetEdgeFunctionInfoResponse struct {
+  // {"en":"code","zh_CN":"状态码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"message","zh_CN":"状态信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Response data body","zh_CN":"响应数据体"}
+  Data *GetEdgeFunctionInfoResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s GetEdgeFunctionInfoResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetEdgeFunctionInfoResponse) GoString() string {
+  return s.String()
+}
+
+func (s *GetEdgeFunctionInfoResponse) SetCode(v int) *GetEdgeFunctionInfoResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *GetEdgeFunctionInfoResponse) SetMessage(v string) *GetEdgeFunctionInfoResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *GetEdgeFunctionInfoResponse) SetData(v *GetEdgeFunctionInfoResponseData) *GetEdgeFunctionInfoResponse {
+  s.Data = v
+  return s
+}
+
+type GetEdgeFunctionInfoResponseData struct {
+  // {"en":"Function info body","zh_CN":"函数信息结构体"}
+  Func *GetEdgeFunctionInfoResponseDataFunc `json:"func,omitempty" xml:"func,omitempty" require:"true" type:"Struct"`
+}
+
+func (s GetEdgeFunctionInfoResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetEdgeFunctionInfoResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *GetEdgeFunctionInfoResponseData) SetFunc(v *GetEdgeFunctionInfoResponseDataFunc) *GetEdgeFunctionInfoResponseData {
+  s.Func = v
+  return s
+}
+
+type GetEdgeFunctionInfoResponseDataFunc struct {
+  // {"en":"Function ID","zh_CN":"函数 ID"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+  // {"en":"Function name","zh_CN":"函数名称"}
+  FuncName *string `json:"funcName,omitempty" xml:"funcName,omitempty" require:"true"`
+  // {"en":"Function alias","zh_CN":"函数别名"}
+  FuncAlias *string `json:"funcAlias,omitempty" xml:"funcAlias,omitempty" require:"true"`
+  // {"en":"Test domain","zh_CN":"测试域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {"en":"comment","zh_CN":"备注"}
+  Memo *string `json:"memo,omitempty" xml:"memo,omitempty" require:"true"`
+  // {"en":"Create time","zh_CN":"创建时间"}
+  CreateTime *string `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
+  // {"en":"Update time","zh_CN":"更新时间"}
+  UpdateTime *string `json:"updateTime,omitempty" xml:"updateTime,omitempty" require:"true"`
+}
+
+func (s GetEdgeFunctionInfoResponseDataFunc) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetEdgeFunctionInfoResponseDataFunc) GoString() string {
+  return s.String()
+}
+
+func (s *GetEdgeFunctionInfoResponseDataFunc) SetId(v string) *GetEdgeFunctionInfoResponseDataFunc {
+  s.Id = &v
+  return s
+}
+
+func (s *GetEdgeFunctionInfoResponseDataFunc) SetFuncName(v string) *GetEdgeFunctionInfoResponseDataFunc {
+  s.FuncName = &v
+  return s
+}
+
+func (s *GetEdgeFunctionInfoResponseDataFunc) SetFuncAlias(v string) *GetEdgeFunctionInfoResponseDataFunc {
+  s.FuncAlias = &v
+  return s
+}
+
+func (s *GetEdgeFunctionInfoResponseDataFunc) SetDomain(v string) *GetEdgeFunctionInfoResponseDataFunc {
+  s.Domain = &v
+  return s
+}
+
+func (s *GetEdgeFunctionInfoResponseDataFunc) SetMemo(v string) *GetEdgeFunctionInfoResponseDataFunc {
+  s.Memo = &v
+  return s
+}
+
+func (s *GetEdgeFunctionInfoResponseDataFunc) SetCreateTime(v string) *GetEdgeFunctionInfoResponseDataFunc {
+  s.CreateTime = &v
+  return s
+}
+
+func (s *GetEdgeFunctionInfoResponseDataFunc) SetUpdateTime(v string) *GetEdgeFunctionInfoResponseDataFunc {
+  s.UpdateTime = &v
+  return s
+}
+
+type GetEdgeFunctionInfoResponseHeader struct {
+}
+
+func (s GetEdgeFunctionInfoResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetEdgeFunctionInfoResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type DeleteFuncDomainTriggerRequest struct {
 }
 
@@ -89,6 +467,179 @@ func (s DeleteFuncDomainTriggerResponseHeader) String() string {
 }
 
 func (s DeleteFuncDomainTriggerResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryFunctionCodeRequest struct {
+}
+
+func (s QueryFunctionCodeRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryFunctionCodeRequest) GoString() string {
+  return s.String()
+}
+
+type QueryFunctionCodeRequestHeader struct {
+}
+
+func (s QueryFunctionCodeRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryFunctionCodeRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryFunctionCodePaths struct {
+  // {"en":"Function ID","zh_CN":"函数 ID"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+}
+
+func (s QueryFunctionCodePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryFunctionCodePaths) GoString() string {
+  return s.String()
+}
+
+func (s *QueryFunctionCodePaths) SetId(v string) *QueryFunctionCodePaths {
+  s.Id = &v
+  return s
+}
+
+type QueryFunctionCodeParameters struct {
+  // {"en":"Function ID","zh_CN":"函数ID"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+func (s QueryFunctionCodeParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryFunctionCodeParameters) GoString() string {
+  return s.String()
+}
+
+func (s *QueryFunctionCodeParameters) SetId(v string) *QueryFunctionCodeParameters {
+  s.Id = &v
+  return s
+}
+
+type QueryFunctionCodeResponse struct {
+}
+
+func (s QueryFunctionCodeResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryFunctionCodeResponse) GoString() string {
+  return s.String()
+}
+
+type QueryFunctionCodeResponseHeader struct {
+}
+
+func (s QueryFunctionCodeResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryFunctionCodeResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type DeleteEdgeFunctionRequest struct {
+}
+
+func (s DeleteEdgeFunctionRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteEdgeFunctionRequest) GoString() string {
+  return s.String()
+}
+
+type DeleteEdgeFunctionRequestHeader struct {
+}
+
+func (s DeleteEdgeFunctionRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteEdgeFunctionRequestHeader) GoString() string {
+  return s.String()
+}
+
+type DeleteEdgeFunctionPaths struct {
+  // {"en":"The function ID to be removed","zh_CN":"要删除的函数ID"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+}
+
+func (s DeleteEdgeFunctionPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteEdgeFunctionPaths) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteEdgeFunctionPaths) SetId(v string) *DeleteEdgeFunctionPaths {
+  s.Id = &v
+  return s
+}
+
+type DeleteEdgeFunctionParameters struct {
+}
+
+func (s DeleteEdgeFunctionParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteEdgeFunctionParameters) GoString() string {
+  return s.String()
+}
+
+type DeleteEdgeFunctionResponse struct {
+  // {"en":"code","zh_CN":"状态码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"message","zh_CN":"状态信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s DeleteEdgeFunctionResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteEdgeFunctionResponse) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteEdgeFunctionResponse) SetCode(v int) *DeleteEdgeFunctionResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *DeleteEdgeFunctionResponse) SetMessage(v string) *DeleteEdgeFunctionResponse {
+  s.Message = &v
+  return s
+}
+
+type DeleteEdgeFunctionResponseHeader struct {
+}
+
+func (s DeleteEdgeFunctionResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteEdgeFunctionResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -288,6 +839,82 @@ func (s QueryEdgeFuncTriggerResponseHeader) GoString() string {
 
 
 
+type SaveFunctionCodeRequest struct {
+}
+
+func (s SaveFunctionCodeRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SaveFunctionCodeRequest) GoString() string {
+  return s.String()
+}
+
+type SaveFunctionCodeRequestHeader struct {
+}
+
+func (s SaveFunctionCodeRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SaveFunctionCodeRequestHeader) GoString() string {
+  return s.String()
+}
+
+type SaveFunctionCodePaths struct {
+  // {"en":"Function ID","zh_CN":"函数 ID"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+}
+
+func (s SaveFunctionCodePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SaveFunctionCodePaths) GoString() string {
+  return s.String()
+}
+
+func (s *SaveFunctionCodePaths) SetId(v string) *SaveFunctionCodePaths {
+  s.Id = &v
+  return s
+}
+
+type SaveFunctionCodeParameters struct {
+}
+
+func (s SaveFunctionCodeParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SaveFunctionCodeParameters) GoString() string {
+  return s.String()
+}
+
+type SaveFunctionCodeResponse struct {
+}
+
+func (s SaveFunctionCodeResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SaveFunctionCodeResponse) GoString() string {
+  return s.String()
+}
+
+type SaveFunctionCodeResponseHeader struct {
+}
+
+func (s SaveFunctionCodeResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s SaveFunctionCodeResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type CreateEdgeFuncTriggerRequest struct {
   // {"en":"Domain","zh_CN":"域名"}
   Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
@@ -474,6 +1101,135 @@ func (s CreateEdgeFuncTriggerResponseHeader) GoString() string {
 
 
 
+type EdgeFuncGetDebugLogRequest struct {
+}
+
+func (s EdgeFuncGetDebugLogRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EdgeFuncGetDebugLogRequest) GoString() string {
+  return s.String()
+}
+
+type EdgeFuncGetDebugLogRequestHeader struct {
+}
+
+func (s EdgeFuncGetDebugLogRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EdgeFuncGetDebugLogRequestHeader) GoString() string {
+  return s.String()
+}
+
+type EdgeFuncGetDebugLogPaths struct {
+  // {"en":"Function ID","zh_CN":"函数 ID"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+  // {"en":"Debug session ID","zh_CN":"调试会话ID"}
+  DebugId *string `json:"debugId,omitempty" xml:"debugId,omitempty" require:"true"`
+}
+
+func (s EdgeFuncGetDebugLogPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EdgeFuncGetDebugLogPaths) GoString() string {
+  return s.String()
+}
+
+func (s *EdgeFuncGetDebugLogPaths) SetId(v string) *EdgeFuncGetDebugLogPaths {
+  s.Id = &v
+  return s
+}
+
+func (s *EdgeFuncGetDebugLogPaths) SetDebugId(v string) *EdgeFuncGetDebugLogPaths {
+  s.DebugId = &v
+  return s
+}
+
+type EdgeFuncGetDebugLogParameters struct {
+}
+
+func (s EdgeFuncGetDebugLogParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EdgeFuncGetDebugLogParameters) GoString() string {
+  return s.String()
+}
+
+type EdgeFuncGetDebugLogResponse struct {
+  // {"en":"Code","zh_CN":"状态码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Message","zh_CN":"状态信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Response data body","zh_CN":"响应数据结构体"}
+  Data *EdgeFuncGetDebugLogResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s EdgeFuncGetDebugLogResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EdgeFuncGetDebugLogResponse) GoString() string {
+  return s.String()
+}
+
+func (s *EdgeFuncGetDebugLogResponse) SetCode(v int) *EdgeFuncGetDebugLogResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *EdgeFuncGetDebugLogResponse) SetMessage(v string) *EdgeFuncGetDebugLogResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *EdgeFuncGetDebugLogResponse) SetData(v *EdgeFuncGetDebugLogResponseData) *EdgeFuncGetDebugLogResponse {
+  s.Data = v
+  return s
+}
+
+type EdgeFuncGetDebugLogResponseData struct {
+  // {"en":"Log content generated by function execution","zh_CN":"函数执行产生的日志内容"}
+  Logs *string `json:"logs,omitempty" xml:"logs,omitempty" require:"true"`
+  // {"en":"Timestamp","zh_CN":"日志获取时间戳"}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+}
+
+func (s EdgeFuncGetDebugLogResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EdgeFuncGetDebugLogResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *EdgeFuncGetDebugLogResponseData) SetLogs(v string) *EdgeFuncGetDebugLogResponseData {
+  s.Logs = &v
+  return s
+}
+
+func (s *EdgeFuncGetDebugLogResponseData) SetTimestamp(v string) *EdgeFuncGetDebugLogResponseData {
+  s.Timestamp = &v
+  return s
+}
+
+type EdgeFuncGetDebugLogResponseHeader struct {
+}
+
+func (s EdgeFuncGetDebugLogResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EdgeFuncGetDebugLogResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type UploadFuncCodeRequest struct {
   // {"en":"func name","zh_CN":"函数名称"}
   FuncName *string `json:"FuncName,omitempty" xml:"FuncName,omitempty"`
@@ -597,6 +1353,274 @@ func (s UploadFuncCodeResponseHeader) String() string {
 }
 
 func (s UploadFuncCodeResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type CreateEdgeFuncRequest struct {
+  // {"en":"function name","zh_CN":"函数名称","exampleValue":"calculateTotal"}
+  FuncName *string `json:"funcName,omitempty" xml:"funcName,omitempty"`
+  // {"en":"function alias","zh_CN":"函数别名","exampleValue":"calcTotal"}
+  FuncAlias *string `json:"funcAlias,omitempty" xml:"funcAlias,omitempty"`
+  // {"en":"test domain","zh_CN":"测试域名","exampleValue":"test.example.com"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty"`
+  // {"en":"template name, specifies the function template to use","zh_CN":"模板名称，指定使用的函数模板","exampleValue":"SumCalculatorTemplate"}
+  TemplateName *string `json:"templateName,omitempty" xml:"templateName,omitempty"`
+  // {"en":"remarks","zh_CN":"备注","exampleValue":"optional notes"}
+  Memo *string `json:"memo,omitempty" xml:"memo,omitempty"`
+}
+
+func (s CreateEdgeFuncRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateEdgeFuncRequest) GoString() string {
+  return s.String()
+}
+
+func (s *CreateEdgeFuncRequest) SetFuncName(v string) *CreateEdgeFuncRequest {
+  s.FuncName = &v
+  return s
+}
+
+func (s *CreateEdgeFuncRequest) SetFuncAlias(v string) *CreateEdgeFuncRequest {
+  s.FuncAlias = &v
+  return s
+}
+
+func (s *CreateEdgeFuncRequest) SetDomain(v string) *CreateEdgeFuncRequest {
+  s.Domain = &v
+  return s
+}
+
+func (s *CreateEdgeFuncRequest) SetTemplateName(v string) *CreateEdgeFuncRequest {
+  s.TemplateName = &v
+  return s
+}
+
+func (s *CreateEdgeFuncRequest) SetMemo(v string) *CreateEdgeFuncRequest {
+  s.Memo = &v
+  return s
+}
+
+type CreateEdgeFuncRequestHeader struct {
+}
+
+func (s CreateEdgeFuncRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateEdgeFuncRequestHeader) GoString() string {
+  return s.String()
+}
+
+type CreateEdgeFuncPaths struct {
+}
+
+func (s CreateEdgeFuncPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateEdgeFuncPaths) GoString() string {
+  return s.String()
+}
+
+type CreateEdgeFuncParameters struct {
+}
+
+func (s CreateEdgeFuncParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateEdgeFuncParameters) GoString() string {
+  return s.String()
+}
+
+type CreateEdgeFuncResponse struct {
+  // {"en":"code","zh_CN":"状态码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"message","zh_CN":"状态信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Create a successful function ID","zh_CN":"创建成功的函数ID"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+}
+
+func (s CreateEdgeFuncResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateEdgeFuncResponse) GoString() string {
+  return s.String()
+}
+
+func (s *CreateEdgeFuncResponse) SetCode(v int) *CreateEdgeFuncResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *CreateEdgeFuncResponse) SetMessage(v string) *CreateEdgeFuncResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *CreateEdgeFuncResponse) SetId(v string) *CreateEdgeFuncResponse {
+  s.Id = &v
+  return s
+}
+
+type CreateEdgeFuncResponseHeader struct {
+}
+
+func (s CreateEdgeFuncResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateEdgeFuncResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryFunctionListRequest struct {
+}
+
+func (s QueryFunctionListRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryFunctionListRequest) GoString() string {
+  return s.String()
+}
+
+type QueryFunctionListRequestHeader struct {
+}
+
+func (s QueryFunctionListRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryFunctionListRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryFunctionListPaths struct {
+}
+
+func (s QueryFunctionListPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryFunctionListPaths) GoString() string {
+  return s.String()
+}
+
+type QueryFunctionListParameters struct {
+  // {"en":"Function ID (for exact query)","zh_CN":"函数ID（精确查询）"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty"`
+  // {"en":"Function name (for fuzzy query)","zh_CN":"函数名称（模糊查询）"}
+  FuncName *string `json:"funcName,omitempty" xml:"funcName,omitempty"`
+  // {"en":"Page number","zh_CN":"页码"}
+  PageNo *string `json:"pageNo,omitempty" xml:"pageNo,omitempty"`
+  // {"en":"Page size","zh_CN":"每页大小"}
+  PageSize *string `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
+}
+
+func (s QueryFunctionListParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryFunctionListParameters) GoString() string {
+  return s.String()
+}
+
+func (s *QueryFunctionListParameters) SetId(v string) *QueryFunctionListParameters {
+  s.Id = &v
+  return s
+}
+
+func (s *QueryFunctionListParameters) SetFuncName(v string) *QueryFunctionListParameters {
+  s.FuncName = &v
+  return s
+}
+
+func (s *QueryFunctionListParameters) SetPageNo(v string) *QueryFunctionListParameters {
+  s.PageNo = &v
+  return s
+}
+
+func (s *QueryFunctionListParameters) SetPageSize(v string) *QueryFunctionListParameters {
+  s.PageSize = &v
+  return s
+}
+
+type QueryFunctionListResponse struct {
+  // {"en":"Status code","zh_CN":"状态码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Status message","zh_CN":"状态信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Response data body","zh_CN":"响应数据体"}
+  Data *QueryFunctionListResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryFunctionListResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryFunctionListResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryFunctionListResponse) SetCode(v int) *QueryFunctionListResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QueryFunctionListResponse) SetMessage(v string) *QueryFunctionListResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *QueryFunctionListResponse) SetData(v *QueryFunctionListResponseData) *QueryFunctionListResponse {
+  s.Data = v
+  return s
+}
+
+type QueryFunctionListResponseData struct {
+  // {"en":"Total","zh_CN":"总数"}
+  Total *int `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+  // {"en":"List of functions","zh_CN":"函数列表"}
+  Funcs []*string `json:"funcs,omitempty" xml:"funcs,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryFunctionListResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryFunctionListResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryFunctionListResponseData) SetTotal(v int) *QueryFunctionListResponseData {
+  s.Total = &v
+  return s
+}
+
+func (s *QueryFunctionListResponseData) SetFuncs(v []*string) *QueryFunctionListResponseData {
+  s.Funcs = v
+  return s
+}
+
+type QueryFunctionListResponseHeader struct {
+}
+
+func (s QueryFunctionListResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryFunctionListResponseHeader) GoString() string {
   return s.String()
 }
 
