@@ -182,6 +182,8 @@ type ListSharedWhitelistRulesResponseDataConditions struct {
   RefererConditions []*ListSharedWhitelistRulesResponseDataConditionsRefererConditions `json:"refererConditions,omitempty" xml:"refererConditions,omitempty" require:"true" type:"Repeated"`
   // {"en":"Request header match conditions.","zh_CN":"请求头匹配条件。"}
   HeaderConditions []*ListSharedWhitelistRulesResponseDataConditionsHeaderConditions `json:"headerConditions,omitempty" xml:"headerConditions,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Geo, match type cannot be repeated.","zh_CN":"区域，匹配类型不可重复。"}
+  AreaConditions []*ListSharedWhitelistRulesResponseDataConditionsAreaConditions `json:"areaConditions,omitempty" xml:"areaConditions,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ListSharedWhitelistRulesResponseDataConditions) String() string {
@@ -219,6 +221,11 @@ func (s *ListSharedWhitelistRulesResponseDataConditions) SetRefererConditions(v 
 
 func (s *ListSharedWhitelistRulesResponseDataConditions) SetHeaderConditions(v []*ListSharedWhitelistRulesResponseDataConditionsHeaderConditions) *ListSharedWhitelistRulesResponseDataConditions {
   s.HeaderConditions = v
+  return s
+}
+
+func (s *ListSharedWhitelistRulesResponseDataConditions) SetAreaConditions(v []*ListSharedWhitelistRulesResponseDataConditionsAreaConditions) *ListSharedWhitelistRulesResponseDataConditions {
+  s.AreaConditions = v
   return s
 }
 
@@ -379,6 +386,31 @@ func (s *ListSharedWhitelistRulesResponseDataConditionsHeaderConditions) SetValu
   return s
 }
 
+type ListSharedWhitelistRulesResponseDataConditionsAreaConditions struct     {
+  // {"en":"Match type.\nEQUAL:Equals\nNOT_EQUAL:Does not equal","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于","exampleValue":"EQUAL,NOT_EQUAL"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_areaCityAndCountry","en":"Geo.","zh_CN":"区域。"}
+  Areas []*string `json:"areas,omitempty" xml:"areas,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ListSharedWhitelistRulesResponseDataConditionsAreaConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedWhitelistRulesResponseDataConditionsAreaConditions) GoString() string {
+  return s.String()
+}
+
+func (s *ListSharedWhitelistRulesResponseDataConditionsAreaConditions) SetMatchType(v string) *ListSharedWhitelistRulesResponseDataConditionsAreaConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *ListSharedWhitelistRulesResponseDataConditionsAreaConditions) SetAreas(v []*string) *ListSharedWhitelistRulesResponseDataConditionsAreaConditions {
+  s.Areas = v
+  return s
+}
+
 type ListSharedWhitelistRulesResponseHeader struct {
 }
 
@@ -502,7 +534,7 @@ type CreateSharedRateLimitingRuleRequest struct {
   RuleName *string `json:"ruleName,omitempty" xml:"ruleName,omitempty" require:"true"`
   // {"en":"Description, maximum 1000 characters.","zh_CN":"规则描述，最多1000个字符。"}
   Description *string `json:"description,omitempty" xml:"description,omitempty"`
-  // {"en":"Client identifier.\nIP:Client IP\nIP_UA:Client IP and User-Agent\nCOOKIE:Cookie\nIP_COOKIE:Client IP and Cookie\nHEADER:Request Header\nWhen there is a status code in the matching condition,this client identifier is not supported.\nIP_HEADER:Client IP and Request Header\nWhen there is a status code in the matching condition,this client identifier is not supported .","zh_CN":"统计粒度。\nIP：客户端IP\nIP_UA：客户端IP和User-Agent\nCOOKIE：Cookie\nIP_COOKIE：客户端IP和Cookie\nHEADER：请求头，当匹配条件中存在状态码时不支持此统计粒度\nIP_HEADER：客户端IP和请求头，当匹配条件中存在状态码时不支持此统计粒度"}
+  // {"en":"Statistical granularity.\nIP:Client IP\nIP_UA:Client IP and User-Agent\nCOOKIE:Cookie\nIP_COOKIE:Client IP and Cookie\nHEADER:Request Header\nIP_HEADER:Client IP and Request Header","zh_CN":"统计粒度。\nIP：客户端IP\nIP_UA：客户端IP和User-Agent\nCOOKIE：Cookie\nIP_COOKIE：客户端IP和Cookie\nHEADER：请求头\nIP_HEADER：客户端IP和请求头"}
   StatisticalItem *string `json:"statisticalItem,omitempty" xml:"statisticalItem,omitempty" require:"true"`
   // {"en":"Statistical key value.\nWhen the client identifier is cookie/header value, the corresponding key value needs to be entered.","zh_CN":"统计key值。\n当统计粒度cookie/header值，需要输入对应的key值。"}
   StatisticsKey *string `json:"statisticsKey,omitempty" xml:"statisticsKey,omitempty"`
@@ -516,7 +548,7 @@ type CreateSharedRateLimitingRuleRequest struct {
   EffectiveStatus *string `json:"effectiveStatus,omitempty" xml:"effectiveStatus,omitempty" require:"true"`
   // {"en":"Effective time period.\nWhen the effective status is effective within the cycle or not effective within the cycle, this field must have a value.","zh_CN":"规则生效周期。\n生效状态为周期内生效或周期内不生效时，此字段必须有值。"}
   RateLimitEffective *CreateSharedRateLimitingRuleRequestRateLimitEffective `json:"rateLimitEffective,omitempty" xml:"rateLimitEffective,omitempty" type:"Struct"`
-  // {"en":"Action.\nNO_USE:Not Used\nLOG:Log\nCOOKIE:Cookie verification\nJS_CHECK:Javascript verification\nDELAY:Delay\nBLOCK:Deny\nRESET:Reset Connection\nCUSTOM_ACTION_ID:Fill in the custom action id of the corresponding action\nWhen there is a status code in the matching condition, the supported actions are Log, Deny, and Reset Connection.","zh_CN":"处理动作。\nNO_USE：不使用\nLOG：监控\nCOOKIE：Cookie校验\nJS_CHECK：JavaScript校验\nDELAY：延迟响应\nBLOCK：拦截\nRESET：断开连接\nCUSTOM_ACTION_ID：传入对应的自定义响应动作的ID\n当匹配条件中存在状态码时，支持处理动作为监控、拦截、断开连接。"}
+  // {"en":"Action.\nNO_USE:Not Used\nLOG:Log\nCOOKIE:Cookie verification\nJS_CHECK:Javascript verification\nDELAY:Delay\nBLOCK:Deny\nRESET:Reset Connection\nIP_BLOCK:IP Blocking\nCUSTOM_ACTION_ID:Fill in the custom action id of the corresponding action\nWhen there is a status code in the matching condition, the supported actions are Log, Deny, Not Used, Reset Connection, and IP Blocking.","zh_CN":"处理动作。\nNO_USE：不使用\nLOG：监控\nCOOKIE：Cookie校验\nJS_CHECK：JavaScript校验\nDELAY：延迟响应\nBLOCK：拦截\nRESET：断开连接\nIP_BLOCK：IP封禁\nCUSTOM_ACTION_ID：传入对应的自定义响应动作的ID\n当匹配条件中存在状态码时，支持处理动作为不使用、监控、拦截、断开连接。"}
   Action *string `json:"action,omitempty" xml:"action,omitempty" require:"true"`
   // {"en":"Matching conditions.","zh_CN":"匹配条件。"}
   RateLimitRuleCondition *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition `json:"rateLimitRuleCondition,omitempty" xml:"rateLimitRuleCondition,omitempty" require:"true" type:"Struct"`
@@ -1210,6 +1242,699 @@ func (s DisassociateShareCustomizeRuleResponseHeader) String() string {
 }
 
 func (s DisassociateShareCustomizeRuleResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type ListSharedRateLimitingRulesRequest struct {
+  // {"en":"Rule name.","zh_CN":"规则名称。"}
+  RuleName *string `json:"ruleName,omitempty" xml:"ruleName,omitempty"`
+}
+
+func (s ListSharedRateLimitingRulesRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ListSharedRateLimitingRulesRequest) SetRuleName(v string) *ListSharedRateLimitingRulesRequest {
+  s.RuleName = &v
+  return s
+}
+
+type ListSharedRateLimitingRulesRequestHeader struct {
+  // {"en":"Security service type. Please enter a specific service type, if you are using multiple security services.","zh_CN":"安全服务类型。有使用多个不同的安全服务时，需要填写具体的服务类型。"}
+  ServiceType *string `json:"serviceType,omitempty" xml:"serviceType,omitempty"`
+}
+
+func (s ListSharedRateLimitingRulesRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesRequestHeader) GoString() string {
+  return s.String()
+}
+
+func (s *ListSharedRateLimitingRulesRequestHeader) SetServiceType(v string) *ListSharedRateLimitingRulesRequestHeader {
+  s.ServiceType = &v
+  return s
+}
+
+type ListSharedRateLimitingRulesPaths struct {
+}
+
+func (s ListSharedRateLimitingRulesPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesPaths) GoString() string {
+  return s.String()
+}
+
+type ListSharedRateLimitingRulesParameters struct {
+}
+
+func (s ListSharedRateLimitingRulesParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesParameters) GoString() string {
+  return s.String()
+}
+
+type ListSharedRateLimitingRulesResponse struct {
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_retCodeEnum","en":"Please refer to the error code for exceptions.","zh_CN":"请参照错误码。"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Description.","zh_CN":"描述信息。"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"Data.","zh_CN":"出参数据。"}
+  Data []*ListSharedRateLimitingRulesResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ListSharedRateLimitingRulesResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ListSharedRateLimitingRulesResponse) SetCode(v string) *ListSharedRateLimitingRulesResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponse) SetMsg(v string) *ListSharedRateLimitingRulesResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponse) SetData(v []*ListSharedRateLimitingRulesResponseData) *ListSharedRateLimitingRulesResponse {
+  s.Data = v
+  return s
+}
+
+type ListSharedRateLimitingRulesResponseData struct     {
+  // {"en":"Rule ID.","zh_CN":"规则ID。"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+  // {"en":"Creator.","zh_CN":"创建者。"}
+  Creator *string `json:"creator,omitempty" xml:"creator,omitempty" require:"true"`
+  // {"en":"Rule name.","zh_CN":"规则名称。"}
+  RuleName *string `json:"ruleName,omitempty" xml:"ruleName,omitempty" require:"true"`
+  // {"en":"Description.","zh_CN":"规则描述。"}
+  Description *string `json:"description,omitempty" xml:"description,omitempty" require:"true"`
+  // {"en":"Statistical stage.\nREQUEST: Request\nRESPONSE: Response","zh_CN":"统计阶段。\nREQUEST：请求\nRESPONSE：响应"}
+  StatisticalStage *string `json:"statisticalStage,omitempty" xml:"statisticalStage,omitempty" require:"true"`
+  // {"en":"Client identifier list.","zh_CN":"统计粒度列表。"}
+  StatisticalItems []*ListSharedRateLimitingRulesResponseDataStatisticalItems `json:"statisticalItems,omitempty" xml:"statisticalItems,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Statistics period, unit: seconds.","zh_CN":"统计周期，单位：秒。"}
+  StatisticalPeriod *int `json:"statisticalPeriod,omitempty" xml:"statisticalPeriod,omitempty" require:"true"`
+  // {"en":"Trigger threshold, unit: times.","zh_CN":"触发阈值，单位：次。"}
+  TriggerThreshold *int `json:"triggerThreshold,omitempty" xml:"triggerThreshold,omitempty" require:"true"`
+  // {"en":"Action duration, unit: seconds.","zh_CN":"处理动作持续时间，单位：秒。"}
+  InterceptTime *int `json:"interceptTime,omitempty" xml:"interceptTime,omitempty" require:"true"`
+  // {"en":"Cycle effective status.\nPERMANENT: Always effective\nWITHOUT: Not effective within the period\nWITHIN: Effective within the period","zh_CN":"周期生效状态。\nPERMANENT：永久生效\nWITHOUT：周期内不生效\nWITHIN：周期内生效"}
+  EffectiveStatus *string `json:"effectiveStatus,omitempty" xml:"effectiveStatus,omitempty" require:"true"`
+  // {"en":"Effective time period.","zh_CN":"规则生效周期。"}
+  RateLimitEffective *ListSharedRateLimitingRulesResponseDataRateLimitEffective `json:"rateLimitEffective,omitempty" xml:"rateLimitEffective,omitempty" require:"true" type:"Struct"`
+  // {"en":"Action.\nNO_USE: Not Used\nLOG: Log\nCOOKIE: Cookie verification\nJS_CHECK: Javascript verification\nDELAY: Delay\nBLOCK: Deny\nRESET: Reset Connection\nIP_BLOCK: IP Blocking\nCUSTOM_ACTION_ID: Fill in the custom action id of the corresponding action","zh_CN":"处理动作。\nNO_USE：不使用\nLOG：监控\nCOOKIE：Cookie校验\nJS_CHECK：JavaScript校验\nDELAY：延迟响应\nBLOCK：拦截\nRESET：断开连接\nIP_BLOCK：IP封禁\nCUSTOM_ACTION_ID：传入对应的自定义响应动作的ID"}
+  Action *string `json:"action,omitempty" xml:"action,omitempty" require:"true"`
+  // {"en":"Matching conditions.","zh_CN":"匹配条件。"}
+  RateLimitRuleCondition *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition `json:"rateLimitRuleCondition,omitempty" xml:"rateLimitRuleCondition,omitempty" require:"true" type:"Struct"`
+  // {"en":"Associated hostnames.","zh_CN":"关联域名数。"}
+  CountShareRateLimitDomain *int `json:"countShareRateLimitDomain,omitempty" xml:"countShareRateLimitDomain,omitempty" require:"true"`
+  // {"en":"List of associated hostnames.","zh_CN":"关联域名列表。"}
+  ShareRateLimitRelDomains []*string `json:"shareRateLimitRelDomains,omitempty" xml:"shareRateLimitRelDomains,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Update time.","zh_CN":"更新时间。"}
+  UpdateTime *string `json:"updateTime,omitempty" xml:"updateTime,omitempty" require:"true"`
+}
+
+func (s ListSharedRateLimitingRulesResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *ListSharedRateLimitingRulesResponseData) SetId(v string) *ListSharedRateLimitingRulesResponseData {
+  s.Id = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseData) SetCreator(v string) *ListSharedRateLimitingRulesResponseData {
+  s.Creator = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseData) SetRuleName(v string) *ListSharedRateLimitingRulesResponseData {
+  s.RuleName = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseData) SetDescription(v string) *ListSharedRateLimitingRulesResponseData {
+  s.Description = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseData) SetStatisticalStage(v string) *ListSharedRateLimitingRulesResponseData {
+  s.StatisticalStage = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseData) SetStatisticalItems(v []*ListSharedRateLimitingRulesResponseDataStatisticalItems) *ListSharedRateLimitingRulesResponseData {
+  s.StatisticalItems = v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseData) SetStatisticalPeriod(v int) *ListSharedRateLimitingRulesResponseData {
+  s.StatisticalPeriod = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseData) SetTriggerThreshold(v int) *ListSharedRateLimitingRulesResponseData {
+  s.TriggerThreshold = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseData) SetInterceptTime(v int) *ListSharedRateLimitingRulesResponseData {
+  s.InterceptTime = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseData) SetEffectiveStatus(v string) *ListSharedRateLimitingRulesResponseData {
+  s.EffectiveStatus = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseData) SetRateLimitEffective(v *ListSharedRateLimitingRulesResponseDataRateLimitEffective) *ListSharedRateLimitingRulesResponseData {
+  s.RateLimitEffective = v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseData) SetAction(v string) *ListSharedRateLimitingRulesResponseData {
+  s.Action = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseData) SetRateLimitRuleCondition(v *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition) *ListSharedRateLimitingRulesResponseData {
+  s.RateLimitRuleCondition = v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseData) SetCountShareRateLimitDomain(v int) *ListSharedRateLimitingRulesResponseData {
+  s.CountShareRateLimitDomain = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseData) SetShareRateLimitRelDomains(v []*string) *ListSharedRateLimitingRulesResponseData {
+  s.ShareRateLimitRelDomains = v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseData) SetUpdateTime(v string) *ListSharedRateLimitingRulesResponseData {
+  s.UpdateTime = &v
+  return s
+}
+
+type ListSharedRateLimitingRulesResponseDataStatisticalItems struct     {
+  // {"en":"Client identifier.\nIP: Client IP\nUA: User-Agent\nCOOKIE: Cookie\nURL: URL\nHEADER: Request Header, when there is a status code in the matching condition, this client identifier is not supported.","zh_CN":"统计粒度。\nIP：客户端IP\nUA：User-Agent\nCOOKIE：Cookie\nURL：URL\nHEADER：请求头，当匹配条件中存在状态码时不支持此统计粒度"}
+  StatisticalItem *string `json:"statisticalItem,omitempty" xml:"statisticalItem,omitempty" require:"true"`
+  // {"en":"Statistical key value list. When the client identifier is cookie/header value, the corresponding key value list needs to be entered.","zh_CN":"当统计粒度为Cookie或HEADER时，对应的key值列表。"}
+  StatisticsKeys []*string `json:"statisticsKeys,omitempty" xml:"statisticsKeys,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ListSharedRateLimitingRulesResponseDataStatisticalItems) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesResponseDataStatisticalItems) GoString() string {
+  return s.String()
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataStatisticalItems) SetStatisticalItem(v string) *ListSharedRateLimitingRulesResponseDataStatisticalItems {
+  s.StatisticalItem = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataStatisticalItems) SetStatisticsKeys(v []*string) *ListSharedRateLimitingRulesResponseDataStatisticalItems {
+  s.StatisticsKeys = v
+  return s
+}
+
+type ListSharedRateLimitingRulesResponseDataRateLimitEffective struct {
+  // {"en":"Days of the week.\nMON: Monday\nTUE: Tuesday\nWED: Wednesday\nTHU: Thursday\nFRI: Friday\nSAT: Saturday\nSUN: Sunday","zh_CN":"周期。\nMON：星期一\nTUE：星期二\nWED：星期三\nTHU：星期四\nFRI：星期五\nSAT：星期六\nSUN：星期天"}
+  Effective []*string `json:"effective,omitempty" xml:"effective,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Start time, format: HH:mm.","zh_CN":"开始时间，格式：HH:mm。"}
+  Start *string `json:"start,omitempty" xml:"start,omitempty" require:"true"`
+  // {"en":"End time, format: HH:mm.","zh_CN":"结束时间，格式：HH:mm。"}
+  End *string `json:"end,omitempty" xml:"end,omitempty" require:"true"`
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_timezone","en":"Timezone, default value: GMT+8.","zh_CN":"时区，默认：GMT+8。"}
+  Timezone *string `json:"timezone,omitempty" xml:"timezone,omitempty" require:"true"`
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitEffective) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitEffective) GoString() string {
+  return s.String()
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitEffective) SetEffective(v []*string) *ListSharedRateLimitingRulesResponseDataRateLimitEffective {
+  s.Effective = v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitEffective) SetStart(v string) *ListSharedRateLimitingRulesResponseDataRateLimitEffective {
+  s.Start = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitEffective) SetEnd(v string) *ListSharedRateLimitingRulesResponseDataRateLimitEffective {
+  s.End = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitEffective) SetTimezone(v string) *ListSharedRateLimitingRulesResponseDataRateLimitEffective {
+  s.Timezone = &v
+  return s
+}
+
+type ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition struct {
+  // {"en":"IP/CIDR, match type cannot be repeated.","zh_CN":"IP/IP段，匹配类型不可重复。"}
+  IpOrIpsConditions []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionIpOrIpsConditions `json:"ipOrIpsConditions,omitempty" xml:"ipOrIpsConditions,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Path, match type cannot be repeated.\nWhen the business scenario is API, this matching condition is not supported.","zh_CN":"路径，匹配类型不可重复。\n当业务场景为API业务时不支持此匹配条件。"}
+  PathConditions []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionPathConditions `json:"pathConditions,omitempty" xml:"pathConditions,omitempty" require:"true" type:"Repeated"`
+  // {"en":"URI, match type cannot be repeated.\nWhen the business scenario is API, this matching condition is not supported.","zh_CN":"URI，匹配类型不可重复。\n当业务场景为API业务时不支持此匹配条件。"}
+  UriConditions []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionUriConditions `json:"uriConditions,omitempty" xml:"uriConditions,omitempty" require:"true" type:"Repeated"`
+  // {"en":"User Agent, match type cannot be repeated.","zh_CN":"User-Agent，匹配类型不可重复。"}
+  UaConditions []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionUaConditions `json:"uaConditions,omitempty" xml:"uaConditions,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Request Method, match type cannot be repeated.\nWhen the business scenario is API, this matching condition is not supported.","zh_CN":"请求方法，匹配类型不可重复。\n当业务场景为API业务时不支持此匹配条件。"}
+  MethodConditions []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionMethodConditions `json:"methodConditions,omitempty" xml:"methodConditions,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Referer, match type cannot be repeated.","zh_CN":"Referer，匹配类型不可重复。"}
+  RefererConditions []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionRefererConditions `json:"refererConditions,omitempty" xml:"refererConditions,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Request Header, match type can be repeated.","zh_CN":"请求头，匹配类型可重复。"}
+  HeaderConditions []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionHeaderConditions `json:"headerConditions,omitempty" xml:"headerConditions,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Geo, match type cannot be repeated.","zh_CN":"区域，匹配类型不可重复。"}
+  AreaConditions []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionAreaConditions `json:"areaConditions,omitempty" xml:"areaConditions,omitempty" require:"true" type:"Repeated"`
+  // {"en":"HTTP/S, match type cannot be repeated.","zh_CN":"应用层协议，匹配类型不可重复。"}
+  SchemeConditions []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionSchemeConditions `json:"schemeConditions,omitempty" xml:"schemeConditions,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Response Code, match type cannot be repeated.","zh_CN":"状态码，匹配类型不可重复。"}
+  StatusCodeConditions []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionStatusCodeConditions `json:"statusCodeConditions,omitempty" xml:"statusCodeConditions,omitempty" require:"true" type:"Repeated"`
+  // {"en":"JA3 Fingerprint, match type cannot be repeated.","zh_CN":"JA3指纹，匹配类型不可重复。"}
+  Ja3Conditions []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionJa3Conditions `json:"ja3Conditions,omitempty" xml:"ja3Conditions,omitempty" require:"true" type:"Repeated"`
+  // {"en":"JA4 Fingerprint, match type cannot be repeated.","zh_CN":"JA4指纹，匹配类型不可重复。"}
+  Ja4Conditions []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionJa4Conditions `json:"ja4Conditions,omitempty" xml:"ja4Conditions,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition) GoString() string {
+  return s.String()
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition) SetIpOrIpsConditions(v []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionIpOrIpsConditions) *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition {
+  s.IpOrIpsConditions = v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition) SetPathConditions(v []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionPathConditions) *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition {
+  s.PathConditions = v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition) SetUriConditions(v []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionUriConditions) *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition {
+  s.UriConditions = v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition) SetUaConditions(v []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionUaConditions) *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition {
+  s.UaConditions = v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition) SetMethodConditions(v []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionMethodConditions) *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition {
+  s.MethodConditions = v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition) SetRefererConditions(v []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionRefererConditions) *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition {
+  s.RefererConditions = v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition) SetHeaderConditions(v []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionHeaderConditions) *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition {
+  s.HeaderConditions = v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition) SetAreaConditions(v []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionAreaConditions) *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition {
+  s.AreaConditions = v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition) SetSchemeConditions(v []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionSchemeConditions) *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition {
+  s.SchemeConditions = v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition) SetStatusCodeConditions(v []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionStatusCodeConditions) *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition {
+  s.StatusCodeConditions = v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition) SetJa3Conditions(v []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionJa3Conditions) *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition {
+  s.Ja3Conditions = v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition) SetJa4Conditions(v []*ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionJa4Conditions) *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition {
+  s.Ja4Conditions = v
+  return s
+}
+
+type ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionIpOrIpsConditions struct     {
+  // {"en":"Match type.\nEQUAL:Equals\nNOT_EQUAL:Does not equal","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于","exampleValue":"EQUAL,NOT_EQUAL"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"IP/CIDR, maximum 500 IP/CIDR.","zh_CN":"IP/IP段，最多500个IP/IP段。"}
+  IpOrIps []*string `json:"ipOrIps,omitempty" xml:"ipOrIps,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionIpOrIpsConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionIpOrIpsConditions) GoString() string {
+  return s.String()
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionIpOrIpsConditions) SetMatchType(v string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionIpOrIpsConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionIpOrIpsConditions) SetIpOrIps(v []*string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionIpOrIpsConditions {
+  s.IpOrIps = v
+  return s
+}
+
+type ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionPathConditions struct     {
+  // {"en":"Match type.\nEQUAL: Equals, path case sensitive\nNOT_EQUAL: Does not equal, path case sensitive\nCONTAIN: Contains, path case insensitive\nNOT_CONTAIN: Does not Contains, path case insensitive\nREGEX: Regex match, path case insensitive\nNOT_REGEX: Regular does not match, path case sensitive\nSTART_WITH: Starts with, path case sensitive\nEND_WITH: Ends with, path case sensitive\nWILDCARD: Wildcard matches, path case sensitive,* represents zero or more arbitrary characters, ? represents any single character.\nNOT_WILDCARD: Wildcard does not match, path case sensitive,* represents zero or more arbitrary characters, ? represents any single character","zh_CN":"匹配类型。\nEQUAL：等于，路径大小写敏感\nNOT_EQUAL：不等于，路径大小写敏感\nCONTAIN：包含，路径大小写不敏感\nNOT_CONTAIN：不包含，路径大小写不敏感\nREGEX：匹配正则，路径大小写不敏感\nNOT_REGEX：正则不匹配，路径大小写不敏感\nSTART_WITH：开头是，路径大小写不敏感\nEND_WITH：结尾是，路径大小写不敏感\nWILDCARD：通配符匹配，路径大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符\nNOT_WILDCARD：通配符不匹配，路径大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符","exampleValue":"EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,REGEX,NOT_REGEX,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"Path.\nWhen match type is EQUAL/NOT_EQUAL/START_WITH/END_WITH, path needs to start with \"/\", and no parameters.\nWhen the match type is REGEX/NOT_REGEX, only one value is allowed.\nExample: /test.html.","zh_CN":"路径。\n当匹配类型为等于/不等于/开头是/结尾是，路径必须以“/”开头，不含参数。\n当匹配类型为正则/正则不匹配，则只允许只有一个值。\n示例：/test.html。"}
+  ListSharedRateLimitingRulesPaths []*string `json:"paths,omitempty" xml:"paths,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionPathConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionPathConditions) GoString() string {
+  return s.String()
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionPathConditions) SetMatchType(v string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionPathConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionPathConditions) SetListSharedRateLimitingRulesPaths(v []*string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionPathConditions {
+  s.ListSharedRateLimitingRulesPaths = v
+  return s
+}
+
+type ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionUriConditions struct     {
+  // {"en":"Match type.\nEQUAL: Equals, URI case sensitive\nNOT_EQUAL: Does not equal, URI case sensitive\nCONTAIN: Contains, URI case insensitive\nNOT_CONTAIN: Does not Contains, URI case insensitive\nREGEX: Regex match, URI case insensitive\nNOT_REGEX: Regular does not match, URI case insensitive\nSTART_WITH: Starts with, URI case insensitive\nEND_WITH: Ends with, URI case insensitive\nWILDCARD: Wildcard matches, URI case insensitive,* represents zero or more arbitrary characters, ? represents any single character\nNOT_WILDCARD: Wildcard does not match, URI case insensitive,* represents zero or more arbitrary characters, ? represents any single character","zh_CN":"匹配类型。\nEQUAL：等于，URI大小写敏感\nNOT_EQUAL：不等于，URI大小写敏感\nCONTAIN：包含，URI大小写不敏感\nNOT_CONTAIN：不包含，URI大小写不敏感\nREGEX：匹配正则，URI大小写不敏感\nNOT_REGEX：正则不匹配，URI大小写不敏感\nSTART_WITH：开头是，URI大小写不敏感\nEND_WITH：结尾是，URI大小写不敏感\nWILDCARD：通配符匹配，URI大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符\nNOT_WILDCARD：通配符不匹配，URI大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符","exampleValue":"EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,REGEX,NOT_REGEX,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"URI.\nWhen match type is EQUAL/NOT_EQUAL/START_WITH/END_WITH, uri needs to start with \"/\", and includes parameters.\nWhen the match type is REGEX/NOT_REGEX, only one value is allowed.\nExample: /test.html?id=1.","zh_CN":"URI。\n当匹配类型为等于/不等于/开头是/结尾是，URI必须以”/“开头，含参数。\n当匹配类型为正则/正则不匹配，则只允许只有一个值。\n示例：/test.html?id=1。"}
+  Uri []*string `json:"uri,omitempty" xml:"uri,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionUriConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionUriConditions) GoString() string {
+  return s.String()
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionUriConditions) SetMatchType(v string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionUriConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionUriConditions) SetUri(v []*string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionUriConditions {
+  s.Uri = v
+  return s
+}
+
+type ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionUaConditions struct     {
+  // {"en":"Match type.\nEQUAL: Equals, user agent case sensitive\nNOT_EQUAL: Does not equal, user agent case sensitive\nCONTAIN: Contains, user agent case insensitive\nNOT_CONTAIN: Does not Contains, user agent case insensitive\nNONE:Empty or non-existent\nREGEX: Regex match, user agent case insensitive\nNOT_REGEX: Regular does not match, user agent case insensitive\nSTART_WITH: Starts with, user agent case insensitive\nEND_WITH: Ends with, user agent case insensitive\nWILDCARD: Wildcard matches, user agent case insensitive,* represents zero or more arbitrary characters, ? represents any single character\nNOT_WILDCARD: Wildcard does not match, user agent case insensitive,* represents zero or more arbitrary characters, ? represents any single character","zh_CN":"匹配类型。\nEQUAL：等于，User-Agent大小写敏感\nNOT_EQUAL：不等于，User-Agent大小写敏感\nCONTAIN：包含，User-Agent大小写不敏感\nNOT_CONTAIN：不包含，User-Agent大小写不敏感\nNONE：为空或不存在\nREGEX：匹配正则，User-Agent大小写不敏感\nNOT_REGEX：正则不匹配，User-Agent大小写不敏感\nSTART_WITH：开头是，User-Agent大小写不敏感\nEND_WITH：结尾是，User-Agent大小写不敏感\nWILDCARD：通配符匹配，User-Agent大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符\nNOT_WILDCARD：通配符不匹配，User-Agent大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符","exampleValue":"EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,NONE,REGEX,NOT_REGEX,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"User agent.\nWhen the match type is REGEX/NOT_REGEX, only one value is allowed.\nExample: go-Http-client/1.1.","zh_CN":"User-Agent。\n当匹配类型为正则/正则不匹配，则只允许只有一个值。\n示例：go-Http-client/1.1。"}
+  Ua []*string `json:"ua,omitempty" xml:"ua,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionUaConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionUaConditions) GoString() string {
+  return s.String()
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionUaConditions) SetMatchType(v string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionUaConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionUaConditions) SetUa(v []*string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionUaConditions {
+  s.Ua = v
+  return s
+}
+
+type ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionMethodConditions struct     {
+  // {"en":"Match type.\nEQUAL:Equals\nNOT_EQUAL:Does not equal","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于","exampleValue":"EQUAL,NOT_EQUAL"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"Request method.\nSupported values: GET/POST/DELETE/PUT/HEAD/OPTIONS/COPY.","zh_CN":"请求方法。\n支持的值：GET/POST/DELETE/PUT/HEAD/OPTIONS/COPY。","exampleValue":"GET,POST,DELETE,PUT,HEAD,OPTIONS,COPY"}
+  RequestMethod []*string `json:"requestMethod,omitempty" xml:"requestMethod,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionMethodConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionMethodConditions) GoString() string {
+  return s.String()
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionMethodConditions) SetMatchType(v string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionMethodConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionMethodConditions) SetRequestMethod(v []*string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionMethodConditions {
+  s.RequestMethod = v
+  return s
+}
+
+type ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionRefererConditions struct     {
+  // {"en":"Referer.\nWhen the match type is REGEX/NOT_REGEX, only one value is allowed.\nExample: http://test.com.","zh_CN":"Referer。\n当匹配类型为正则/正则不匹配，则只允许只有一个值。\n示例：http://test.com。"}
+  Referer []*string `json:"referer,omitempty" xml:"referer,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Match type.\nEQUAL: Equals, referer case sensitive\nNOT_EQUAL: Does not equal, referer case sensitive\nCONTAIN: Contains, referer case insensitive\nNOT_CONTAIN: Does not Contains, referer case insensitive\nNONE:Empty or non-existent\nREGEX: Regex match, referer case insensitive\nNOT_REGEX: Regular does not match, referer case insensitive\nSTART_WITH: Starts with, referer case insensitive\nEND_WITH: Ends with, referer case insensitive\nWILDCARD: Wildcard matches, referer case insensitive,* represents zero or more arbitrary characters, ? represents any single characte\nNOT_WILDCARD: Wildcard does not match, referer case insensitive,* represents zero or more arbitrary characters, ? represents any single character","zh_CN":"匹配类型。\nEQUAL：等于，referer大小写敏感\nNOT_EQUAL：不等于，referer大小写敏感\nCONTAIN：包含，referer大小写不敏感\nNOT_CONTAIN：不包含，referer大小写不敏感\nNONE：为空或不存在\nREGEX：匹配正则，referer大小写不敏感\nNOT_REGEX：正则不匹配，referer大小写不敏感\nSTART_WITH：开头是，referer大小写不敏感\nEND_WITH：结尾是，referer大小写不敏感\nWILDCARD：通配符匹配，referer大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符\nNOT_WILDCARD：通配符不匹配，referer大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符","exampleValue":"EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,NONE,REGEX,NOT_REGEX,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionRefererConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionRefererConditions) GoString() string {
+  return s.String()
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionRefererConditions) SetReferer(v []*string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionRefererConditions {
+  s.Referer = v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionRefererConditions) SetMatchType(v string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionRefererConditions {
+  s.MatchType = &v
+  return s
+}
+
+type ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionHeaderConditions struct     {
+  // {"en":"Match type.EQUAL: Equals, request header values case sensitiveNOT_EQUAL: Does not equal, request header values case sensitiveCONTAIN: Contains, request header values case insensitiveNOT_CONTAIN: Does not Contains, request header values case insensitiveNONE: Empty or non-existentREGEX: Regex match, request header values case insensitiveNOT_REGEX: Regular does not match, request header values case insensitiveSTART_WITH: Starts with, request header values case insensitiveEND_WITH: Ends with, request header values case insensitiveWILDCARD: Wildcard matches, request header values case insensitive,* represents zero or more arbitrary characters, ? represents any single characterNOT_WILDCARD: Wildcard does not match, request header values case insensitive,* represents zero or more arbitrary characters, ? represents any single character","zh_CN":"匹配类型。EQUAL：等于，头部值大小写敏感NOT_EQUAL：不等于，头部值大小写敏感CONTAIN：包含，头部值大小写不敏感NOT_CONTAIN：不包含，头部值大小写不敏感NONE：为空或不存在REGEX：匹配正则，头部值大小写不敏感NOT_REGEX：正则不匹配，头部值大小写不敏感START_WITH：开头是，头部值大小写不敏感END_WITH：结尾是，头部值大小写不敏感WILDCARD：通配符匹配，头部值大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符NOT_WILDCARD：通配符不匹配，头部值大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符","exampleValue":"EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,NONE,REGEX,NOT_REGEX,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"Header value.\nWhen the match type is REGEX/NOT_REGEX, only one value is allowed.","zh_CN":"头部值。\n当匹配类型为正则/正则不匹配，则只允许只有一个值。"}
+  ValueList []*string `json:"valueList,omitempty" xml:"valueList,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Header name,case insensitive,up to 100 characters.\nExample: Accept.","zh_CN":"头部名称，大小写不敏感，最多100个字符。\n示例：Accept。"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty" require:"true"`
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionHeaderConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionHeaderConditions) GoString() string {
+  return s.String()
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionHeaderConditions) SetMatchType(v string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionHeaderConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionHeaderConditions) SetValueList(v []*string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionHeaderConditions {
+  s.ValueList = v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionHeaderConditions) SetKey(v string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionHeaderConditions {
+  s.Key = &v
+  return s
+}
+
+type ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionAreaConditions struct     {
+  // {"en":"Match type.\nEQUAL:Equals\nNOT_EQUAL:Does not equal","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于","exampleValue":"EQUAL,NOT_EQUAL"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_areaCityAndCountry","en":"Geo.","zh_CN":"区域。"}
+  Areas []*string `json:"areas,omitempty" xml:"areas,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionAreaConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionAreaConditions) GoString() string {
+  return s.String()
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionAreaConditions) SetMatchType(v string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionAreaConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionAreaConditions) SetAreas(v []*string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionAreaConditions {
+  s.Areas = v
+  return s
+}
+
+type ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionSchemeConditions struct     {
+  // {"en":"Match type.\nEQUAL:Equals\nNOT_EQUAL:Does not equal","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于","exampleValue":"EQUAL,NOT_EQUAL"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"HTTP/S.\nSupported values: HTTP/HTTPS.","zh_CN":"应用层协议。\n支持的值：HTTP/HTTPS。","exampleValue":"HTTP,HTTPS"}
+  Scheme []*string `json:"scheme,omitempty" xml:"scheme,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionSchemeConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionSchemeConditions) GoString() string {
+  return s.String()
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionSchemeConditions) SetMatchType(v string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionSchemeConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionSchemeConditions) SetScheme(v []*string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionSchemeConditions {
+  s.Scheme = v
+  return s
+}
+
+type ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionStatusCodeConditions struct     {
+  // {"en":"Match type.\nEQUAL:Equals\nNOT_EQUAL:Does not equal","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于","exampleValue":"EQUAL,NOT_EQUAL"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"Response Code.","zh_CN":"状态码。"}
+  StatusCode []*string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionStatusCodeConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionStatusCodeConditions) GoString() string {
+  return s.String()
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionStatusCodeConditions) SetMatchType(v string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionStatusCodeConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionStatusCodeConditions) SetStatusCode(v []*string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionStatusCodeConditions {
+  s.StatusCode = v
+  return s
+}
+
+type ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionJa3Conditions struct     {
+  // {"en":"Match type.\nEQUAL: Equals\nNOT_EQUAL: Does not equal","zh_CN":"匹配类型。\nEQUAL：等于 \nNOT_EQUAL：不等于","exampleValue":"EQUAL,NOT_EQUAL"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"JA3 Fingerprint List, maximum 300 JA3 Fingerprint.\nWhen the match type is EQUAL/NOT_EQUAL, each item's character length must be 32 and can only include numbers and lowercase letters.","zh_CN":"JA3指纹列表，最多300个JA3指纹。\n当匹配类型为等于/不等于时，每项字符长度必须为32，且仅限数字和小写字母。"}
+  Ja3List []*string `json:"ja3List,omitempty" xml:"ja3List,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionJa3Conditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionJa3Conditions) GoString() string {
+  return s.String()
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionJa3Conditions) SetMatchType(v string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionJa3Conditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionJa3Conditions) SetJa3List(v []*string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionJa3Conditions {
+  s.Ja3List = v
+  return s
+}
+
+type ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionJa4Conditions struct     {
+  // {"en":"Match type. \nEQUAL: Equals\nNOT_EQUAL: Does not equal\nCONTAIN: Contains\nNOT_CONTAIN: Does not Contains\nSTART_WITH: Starts with\nEND_WITH: Ends with\nWILDCARD: Wildcard matches, ** represents zero or more arbitrary characters, ? represents any single character\nNOT_WILDCARD: Wildcard does not match, ** represents zero or more arbitrary characters, ? represents any single character","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于\nCONTAIN：包含\nNOT_CONTAIN：不包含\nSTART_WITH：开头是\nEND_WITH：结尾是\nWILDCARD：通配符匹配，*代表零个或多个任意字符，?代表任意单个字符\nNOT_WILDCARD：通配符不匹配，*代表零个或多个任意字符，?代表任意单个字符","exampleValue":"EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"JA4 Fingerprint List, maximum 300 JA4 Fingerprint.\nWhen the match type is EQUAL/NOT_EQUAL, each item's format must be 10 characters + 12 characters + 12 characters, separated by underscores, and can only include underscores, numbers, and lowercase letters.\nWhen the match type is CONTAIN/NOT_CONTAIN/START_WITH/END_WITH, each item is only allowed to include underscores, numbers, and lowercase letters.\nWhen the match type is WILDCARD/NOT_WILDCARD, each item, aside from  ** and ?, is only allowed to include underscores, numbers, and lowercase letters.","zh_CN":"JA4指纹列表，最多300个JA4指纹。\n当匹配类型为等于/不等于时，每项格式必须为10位字符+12位字符+12位字符，中间以“_”分隔，且仅限下划线、数字和小写字母。\n当匹配类型为包含/不包含/开头是/结尾是时，每项只允许输入下划线、数字和小写字母。\n当匹配类型为通配符匹配/通配符不匹配时，每项除*和?外，只允许输入下划线、数字和小写字母。"}
+  Ja4List []*string `json:"ja4List,omitempty" xml:"ja4List,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionJa4Conditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionJa4Conditions) GoString() string {
+  return s.String()
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionJa4Conditions) SetMatchType(v string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionJa4Conditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionJa4Conditions) SetJa4List(v []*string) *ListSharedRateLimitingRulesResponseDataRateLimitRuleConditionJa4Conditions {
+  s.Ja4List = v
+  return s
+}
+
+type ListSharedRateLimitingRulesResponseHeader struct {
+}
+
+func (s ListSharedRateLimitingRulesResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListSharedRateLimitingRulesResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -3087,6 +3812,639 @@ func (s DeleteCustomActionsResponseHeader) GoString() string {
 
 
 
+type UpdateSharedRateLimitingRuleRequest struct {
+  // {"en":"Rule ID.","zh_CN":"规则ID。"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+  // {"en":"Rule name, maximum 100 characters. It does not support # and &.","zh_CN":"规则名称，最多100个字符。 不支持 # 和 &。"}
+  RuleName *string `json:"ruleName,omitempty" xml:"ruleName,omitempty"`
+  // {"en":"Description, maximum 1000 characters.","zh_CN":"规则描述，最多1000个字符。"}
+  Description *string `json:"description,omitempty" xml:"description,omitempty"`
+  // {"en":"Client identifier list.","zh_CN":"统计粒度列表。"}
+  StatisticalItems []*UpdateSharedRateLimitingRuleRequestStatisticalItems `json:"statisticalItems,omitempty" xml:"statisticalItems,omitempty" type:"Repeated"`
+  // {"en":"Statistics period, unit: seconds, the range is 1 - 3600.","zh_CN":"统计周期，单位：秒，范围为 1 - 3600。"}
+  StatisticalPeriod *int `json:"statisticalPeriod,omitempty" xml:"statisticalPeriod,omitempty"`
+  // {"en":"Trigger threshold, unit: times.","zh_CN":"触发阈值，单位：次。"}
+  TriggerThreshold *int `json:"triggerThreshold,omitempty" xml:"triggerThreshold,omitempty"`
+  // {"en":"Action duration, unit: seconds, the range is 10 - 604800.","zh_CN":"处理动作持续时间，单位：秒，范围为 10 - 604800。"}
+  InterceptTime *int `json:"interceptTime,omitempty" xml:"interceptTime,omitempty"`
+  // {"en":"Cycle effective status.\nPERMANENT: Permanently effective\nWITHOUT: Not effective within the cycle\nWITHIN: Effective within the cycle","zh_CN":"周期生效状态。\nPERMANENT：永久生效\nWITHOUT：周期内不生效\nWITHIN：周期内生效"}
+  EffectiveStatus *string `json:"effectiveStatus,omitempty" xml:"effectiveStatus,omitempty"`
+  // {"en":"Effective time period.\nWhen the effective status is effective within the cycle or not effective within the cycle, this field must have a value.","zh_CN":"规则生效周期。\n生效状态为周期内生效或周期内不生效时，此字段必须有值。"}
+  RateLimitEffective *UpdateSharedRateLimitingRuleRequestRateLimitEffective `json:"rateLimitEffective,omitempty" xml:"rateLimitEffective,omitempty" type:"Struct"`
+  // {"en":"Action.\nNO_USE: Not Used\nLOG: Log\nCOOKIE: Cookie verification\nJS_CHECK: JavaScript verification\nDELAY: Delay\nBLOCK: Deny\nRESET: Reset Connection\nIP_BLOCK: IP Blocking\nCUSTOM_ACTION_ID: Fill in the custom action id of the corresponding action\nWhen there is a status code in the matching condition, the supported actions are Log, Deny, Not Used, Reset Connection, and IP Blocking.","zh_CN":"处理动作。\nNO_USE：不使用\nLOG：监控\nCOOKIE：Cookie校验\nJS_CHECK：JavaScript校验\nDELAY：延迟响应\nBLOCK：拦截\nRESET：断开连接\nIP_BLOCK：IP封禁\nCUSTOM_ACTION_ID：传入对应的自定义响应动作的ID\n当匹配条件中存在状态码时，支持处理动作为监控、拦截、不使用、断开连接、IP封禁。"}
+  Action *string `json:"action,omitempty" xml:"action,omitempty"`
+  // {"en":"Matching conditions.","zh_CN":"匹配条件。"}
+  RateLimitRuleCondition *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition `json:"rateLimitRuleCondition,omitempty" xml:"rateLimitRuleCondition,omitempty" type:"Struct"`
+}
+
+func (s UpdateSharedRateLimitingRuleRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRuleRequest) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSharedRateLimitingRuleRequest) SetId(v string) *UpdateSharedRateLimitingRuleRequest {
+  s.Id = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequest) SetRuleName(v string) *UpdateSharedRateLimitingRuleRequest {
+  s.RuleName = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequest) SetDescription(v string) *UpdateSharedRateLimitingRuleRequest {
+  s.Description = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequest) SetStatisticalItems(v []*UpdateSharedRateLimitingRuleRequestStatisticalItems) *UpdateSharedRateLimitingRuleRequest {
+  s.StatisticalItems = v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequest) SetStatisticalPeriod(v int) *UpdateSharedRateLimitingRuleRequest {
+  s.StatisticalPeriod = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequest) SetTriggerThreshold(v int) *UpdateSharedRateLimitingRuleRequest {
+  s.TriggerThreshold = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequest) SetInterceptTime(v int) *UpdateSharedRateLimitingRuleRequest {
+  s.InterceptTime = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequest) SetEffectiveStatus(v string) *UpdateSharedRateLimitingRuleRequest {
+  s.EffectiveStatus = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequest) SetRateLimitEffective(v *UpdateSharedRateLimitingRuleRequestRateLimitEffective) *UpdateSharedRateLimitingRuleRequest {
+  s.RateLimitEffective = v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequest) SetAction(v string) *UpdateSharedRateLimitingRuleRequest {
+  s.Action = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequest) SetRateLimitRuleCondition(v *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition) *UpdateSharedRateLimitingRuleRequest {
+  s.RateLimitRuleCondition = v
+  return s
+}
+
+type UpdateSharedRateLimitingRuleRequestStatisticalItems struct     {
+  // {"en":"Client identifier.\nIP: Client IP\nUA: User-Agent\nCOOKIE: Cookie\nURL: URL\nHEADER: Request Header, when there is a status code in the matching condition, this client identifier is not supported.","zh_CN":"统计粒度。\nIP：客户端IP\nUA：User-Agent\nCOOKIE：Cookie\nURL：URL\nHEADER：请求头，当匹配条件中存在状态码时不支持此统计粒度"}
+  StatisticalItem *string `json:"statisticalItem,omitempty" xml:"statisticalItem,omitempty" require:"true"`
+  // {"en":"Statistical key value list. When the client identifier is cookie/header value, the corresponding key value list needs to be entered.","zh_CN":"当统计粒度为Cookie或HEADER时，对应的key值列表。"}
+  StatisticsKeys []*string `json:"statisticsKeys,omitempty" xml:"statisticsKeys,omitempty" type:"Repeated"`
+}
+
+func (s UpdateSharedRateLimitingRuleRequestStatisticalItems) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRuleRequestStatisticalItems) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestStatisticalItems) SetStatisticalItem(v string) *UpdateSharedRateLimitingRuleRequestStatisticalItems {
+  s.StatisticalItem = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestStatisticalItems) SetStatisticsKeys(v []*string) *UpdateSharedRateLimitingRuleRequestStatisticalItems {
+  s.StatisticsKeys = v
+  return s
+}
+
+type UpdateSharedRateLimitingRuleRequestRateLimitEffective struct {
+  // {"en":"Days of the week.\nMON: Monday\nTUE: Tuesday\nWED: Wednesday\nTHU: Thursday\nFRI: Friday\nSAT: Saturday\nSUN: Sunday","zh_CN":"周期。\nMON：星期一\nTUE：星期二\nWED：星期三\nTHU：星期四\nFRI：星期五\nSAT：星期六\nSUN：星期天"}
+  Effective []*string `json:"effective,omitempty" xml:"effective,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Start time, format: HH:mm.","zh_CN":"开始时间，格式：HH:mm。"}
+  Start *string `json:"start,omitempty" xml:"start,omitempty" require:"true"`
+  // {"en":"End time, format: HH:mm.","zh_CN":"结束时间，格式：HH:mm。"}
+  End *string `json:"end,omitempty" xml:"end,omitempty" require:"true"`
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_timezone","en":"Timezone, default value: GMT+8.","zh_CN":"时区，默认：GMT+8。"}
+  Timezone *string `json:"timezone,omitempty" xml:"timezone,omitempty" require:"true"`
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitEffective) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitEffective) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitEffective) SetEffective(v []*string) *UpdateSharedRateLimitingRuleRequestRateLimitEffective {
+  s.Effective = v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitEffective) SetStart(v string) *UpdateSharedRateLimitingRuleRequestRateLimitEffective {
+  s.Start = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitEffective) SetEnd(v string) *UpdateSharedRateLimitingRuleRequestRateLimitEffective {
+  s.End = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitEffective) SetTimezone(v string) *UpdateSharedRateLimitingRuleRequestRateLimitEffective {
+  s.Timezone = &v
+  return s
+}
+
+type UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition struct {
+  // {"en":"IP/CIDR, match type cannot be repeated.","zh_CN":"IP/IP段，匹配类型不可重复。"}
+  IpOrIpsConditions []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionIpOrIpsConditions `json:"ipOrIpsConditions,omitempty" xml:"ipOrIpsConditions,omitempty" type:"Repeated"`
+  // {"en":"Path, match type cannot be repeated.\nWhen the business scenario is API, this matching condition is not supported.","zh_CN":"路径，匹配类型不可重复。\n当业务场景为API业务时不支持此匹配条件。"}
+  PathConditions []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionPathConditions `json:"pathConditions,omitempty" xml:"pathConditions,omitempty" type:"Repeated"`
+  // {"en":"URI, match type cannot be repeated.\nWhen the business scenario is API, this matching condition is not supported.","zh_CN":"URI，匹配类型不可重复。\n当业务场景为API业务时不支持此匹配条件。"}
+  UriConditions []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionUriConditions `json:"uriConditions,omitempty" xml:"uriConditions,omitempty" type:"Repeated"`
+  // {"en":"User-Agent, match type cannot be repeated.","zh_CN":"User-Agent，匹配类型不可重复。"}
+  UaConditions []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionUaConditions `json:"uaConditions,omitempty" xml:"uaConditions,omitempty" type:"Repeated"`
+  // {"en":"Request Method, match type cannot be repeated. When the business scenario is API, this matching condition is not supported.","zh_CN":"请求方法，匹配类型不可重复。\n当业务场景为API业务时不支持此匹配条件。"}
+  MethodConditions []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionMethodConditions `json:"methodConditions,omitempty" xml:"methodConditions,omitempty" type:"Repeated"`
+  // {"en":"Referer, match type cannot be repeated.","zh_CN":"Referer，匹配类型不可重复。"}
+  RefererConditions []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionRefererConditions `json:"refererConditions,omitempty" xml:"refererConditions,omitempty" type:"Repeated"`
+  // {"en":"Request Header, match type can be repeated.","zh_CN":"请求头，匹配类型可重复。"}
+  HeaderConditions []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions `json:"headerConditions,omitempty" xml:"headerConditions,omitempty" type:"Repeated"`
+  // {"en":"Geo, match type cannot be repeated.","zh_CN":"区域，匹配类型不可重复。"}
+  AreaConditions []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionAreaConditions `json:"areaConditions,omitempty" xml:"areaConditions,omitempty" type:"Repeated"`
+  // {"en":"HTTP/S, match type cannot be repeated.","zh_CN":"应用层协议，匹配类型不可重复。"}
+  SchemeConditions []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionSchemeConditions `json:"schemeConditions,omitempty" xml:"schemeConditions,omitempty" type:"Repeated"`
+  // {"en":"Status Code, match type cannot be repeated.","zh_CN":"状态码，匹配类型不可重复。"}
+  StatusCodeConditions []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionStatusCodeConditions `json:"statusCodeConditions,omitempty" xml:"statusCodeConditions,omitempty" type:"Repeated"`
+  // {"en":"JA3 Fingerprint, match type cannot be repeated.","zh_CN":"JA3指纹，匹配类型不可重复。"}
+  Ja3Conditions []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionJa3Conditions `json:"ja3Conditions,omitempty" xml:"ja3Conditions,omitempty" type:"Repeated"`
+  // {"en":"JA4 Fingerprint, match type cannot be repeated.","zh_CN":"JA4指纹，匹配类型不可重复。"}
+  Ja4Conditions []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionJa4Conditions `json:"ja4Conditions,omitempty" xml:"ja4Conditions,omitempty" type:"Repeated"`
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetIpOrIpsConditions(v []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionIpOrIpsConditions) *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.IpOrIpsConditions = v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetPathConditions(v []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionPathConditions) *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.PathConditions = v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetUriConditions(v []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionUriConditions) *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.UriConditions = v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetUaConditions(v []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionUaConditions) *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.UaConditions = v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetMethodConditions(v []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionMethodConditions) *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.MethodConditions = v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetRefererConditions(v []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionRefererConditions) *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.RefererConditions = v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetHeaderConditions(v []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions) *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.HeaderConditions = v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetAreaConditions(v []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionAreaConditions) *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.AreaConditions = v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetSchemeConditions(v []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionSchemeConditions) *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.SchemeConditions = v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetStatusCodeConditions(v []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionStatusCodeConditions) *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.StatusCodeConditions = v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetJa3Conditions(v []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionJa3Conditions) *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.Ja3Conditions = v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetJa4Conditions(v []*UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionJa4Conditions) *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.Ja4Conditions = v
+  return s
+}
+
+type UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionIpOrIpsConditions struct     {
+  // {"en":"Match type.\nEQUAL:Equals\nNOT_EQUAL:Does not equal","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于","exampleValue":"EQUAL,NOT_EQUAL"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"IP/CIDR, maximum 500 IP/CIDR.","zh_CN":"IP/IP段，最多500个IP/IP段。"}
+  IpOrIps []*string `json:"ipOrIps,omitempty" xml:"ipOrIps,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionIpOrIpsConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionIpOrIpsConditions) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionIpOrIpsConditions) SetMatchType(v string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionIpOrIpsConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionIpOrIpsConditions) SetIpOrIps(v []*string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionIpOrIpsConditions {
+  s.IpOrIps = v
+  return s
+}
+
+type UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionPathConditions struct     {
+  // {"en":"Match type.\nEQUAL: Equals, path case sensitive\nNOT_EQUAL: Does not equal, path case sensitive\nCONTAIN: Contains, path case insensitive\nNOT_CONTAIN: Does not Contains, path case insensitive\nREGEX: Regex match, path case insensitive\nNOT_REGEX: Regular does not match, path case sensitive\nSTART_WITH: Starts with, path case sensitive\nEND_WITH: Ends with, path case sensitive\nWILDCARD: Wildcard matches, path case sensitive,* represents zero or more arbitrary characters, ? represents any single character.\nNOT_WILDCARD: Wildcard does not match, path case sensitive,* represents zero or more arbitrary characters, ? represents any single character","zh_CN":"匹配类型。\nEQUAL：等于，路径大小写敏感\nNOT_EQUAL：不等于，路径大小写敏感\nCONTAIN：包含，路径大小写不敏感\nNOT_CONTAIN：不包含，路径大小写不敏感\nREGEX：匹配正则，路径大小写不敏感\nNOT_REGEX：正则不匹配，路径大小写不敏感\nSTART_WITH：开头是，路径大小写不敏感\nEND_WITH：结尾是，路径大小写不敏感\nWILDCARD：通配符匹配，路径大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符\nNOT_WILDCARD：通配符不匹配，路径大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符","exampleValue":"EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,REGEX,NOT_REGEX,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"Path.\nWhen match type is EQUAL/NOT_EQUAL/START_WITH/END_WITH, path needs to start with \"/\", and no parameters.\nWhen the match type is REGEX/NOT_REGEX, only one value is allowed.\nExample: /test.html.","zh_CN":"路径。\n当匹配类型为等于/不等于/开头是/结尾是，路径必须以“/”开头，不含参数。\n当匹配类型为正则/正则不匹配，则只允许只有一个值。\n示例：/test.html。"}
+  UpdateSharedRateLimitingRulePaths []*string `json:"paths,omitempty" xml:"paths,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionPathConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionPathConditions) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionPathConditions) SetMatchType(v string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionPathConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionPathConditions) SetUpdateSharedRateLimitingRulePaths(v []*string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionPathConditions {
+  s.UpdateSharedRateLimitingRulePaths = v
+  return s
+}
+
+type UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionUriConditions struct     {
+  // {"en":"Match type.\nEQUAL: Equals, URI case sensitive\nNOT_EQUAL: Does not equal, URI case sensitive\nCONTAIN: Contains, URI case insensitive\nNOT_CONTAIN: Does not Contains, URI case insensitive\nREGEX: Regex match, URI case insensitive\nNOT_REGEX: Regular does not match, URI case insensitive\nSTART_WITH: Starts with, URI case insensitive\nEND_WITH: Ends with, URI case insensitive\nWILDCARD: Wildcard matches, URI case insensitive,* represents zero or more arbitrary characters, ? represents any single character\nNOT_WILDCARD: Wildcard does not match, URI case insensitive,* represents zero or more arbitrary characters, ? represents any single character","zh_CN":"匹配类型。\nEQUAL：等于，URI大小写敏感\nNOT_EQUAL：不等于，URI大小写敏感\nCONTAIN：包含，URI大小写不敏感\nNOT_CONTAIN：不包含，URI大小写不敏感\nREGEX：匹配正则，URI大小写不敏感\nNOT_REGEX：正则不匹配，URI大小写不敏感\nSTART_WITH：开头是，URI大小写不敏感\nEND_WITH：结尾是，URI大小写不敏感\nWILDCARD：通配符匹配，URI大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符\nNOT_WILDCARD：通配符不匹配，URI大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符","exampleValue":"EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,REGEX,NOT_REGEX,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"URI.\nWhen match type is EQUAL/NOT_EQUAL/START_WITH/END_WITH, uri needs to start with \"/\", and includes parameters.\nWhen the match type is REGEX/NOT_REGEX, only one value is allowed.\nExample: /test.html?id=1.","zh_CN":"URI。\n当匹配类型为等于/不等于/开头是/结尾是，URI必须以”/“开头，含参数。\n当匹配类型为正则/正则不匹配，则只允许只有一个值。\n示例：/test.html?id=1。"}
+  Uri []*string `json:"uri,omitempty" xml:"uri,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionUriConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionUriConditions) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionUriConditions) SetMatchType(v string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionUriConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionUriConditions) SetUri(v []*string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionUriConditions {
+  s.Uri = v
+  return s
+}
+
+type UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionUaConditions struct     {
+  // {"en":"Match type.\nEQUAL: Equals, user agent case sensitive\nNOT_EQUAL: Does not equal, user agent case sensitive\nCONTAIN: Contains, user agent case insensitive\nNOT_CONTAIN: Does not Contains, user agent case insensitive\nNONE:Empty or non-existent\nREGEX: Regex match, user agent case insensitive\nNOT_REGEX: Regular does not match, user agent case insensitive\nSTART_WITH: Starts with, user agent case insensitive\nEND_WITH: Ends with, user agent case insensitive\nWILDCARD: Wildcard matches, user agent case insensitive,* represents zero or more arbitrary characters, ? represents any single character\nNOT_WILDCARD: Wildcard does not match, user agent case insensitive,* represents zero or more arbitrary characters, ? represents any single character","zh_CN":"匹配类型。\nEQUAL：等于，User-Agent大小写敏感\nNOT_EQUAL：不等于，User-Agent大小写敏感\nCONTAIN：包含，User-Agent大小写不敏感\nNOT_CONTAIN：不包含，User-Agent大小写不敏感\nNONE：为空或不存在\nREGEX：匹配正则，User-Agent大小写不敏感\nNOT_REGEX：正则不匹配，User-Agent大小写不敏感\nSTART_WITH：开头是，User-Agent大小写不敏感\nEND_WITH：结尾是，User-Agent大小写不敏感\nWILDCARD：通配符匹配，User-Agent大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符\nNOT_WILDCARD：通配符不匹配，User-Agent大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符","exampleValue":"EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,NONE,REGEX,NOT_REGEX,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"User agent.\nWhen the match type is REGEX/NOT_REGEX, only one value is allowed.\nExample: go-Http-client/1.1.","zh_CN":"User-Agent。\n当匹配类型为正则/正则不匹配，则只允许只有一个值。\n示例：go-Http-client/1.1。"}
+  Ua []*string `json:"ua,omitempty" xml:"ua,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionUaConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionUaConditions) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionUaConditions) SetMatchType(v string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionUaConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionUaConditions) SetUa(v []*string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionUaConditions {
+  s.Ua = v
+  return s
+}
+
+type UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionMethodConditions struct     {
+  // {"en":"Match type.\nEQUAL:Equals\nNOT_EQUAL:Does not equal","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于","exampleValue":"EQUAL,NOT_EQUAL"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"Request method.\nSupported values: GET/POST/DELETE/PUT/HEAD/OPTIONS/COPY.","zh_CN":"请求方法。\n支持的值：GET/POST/DELETE/PUT/HEAD/OPTIONS/COPY。","exampleValue":"GET,POST,DELETE,PUT,HEAD,OPTIONS,COPY"}
+  RequestMethod []*string `json:"requestMethod,omitempty" xml:"requestMethod,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionMethodConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionMethodConditions) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionMethodConditions) SetMatchType(v string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionMethodConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionMethodConditions) SetRequestMethod(v []*string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionMethodConditions {
+  s.RequestMethod = v
+  return s
+}
+
+type UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionRefererConditions struct     {
+  // {"en":"Referer.\nWhen the match type is REGEX/NOT_REGEX, only one value is allowed.\nExample: http://test.com.","zh_CN":"Referer。\n当匹配类型为正则/正则不匹配，则只允许只有一个值。\n示例：http://test.com。"}
+  Referer []*string `json:"referer,omitempty" xml:"referer,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Match type.\nEQUAL: Equals, referer case sensitive\nNOT_EQUAL: Does not equal, referer case sensitive\nCONTAIN: Contains, referer case insensitive\nNOT_CONTAIN: Does not Contains, referer case insensitive\nNONE:Empty or non-existent\nREGEX: Regex match, referer case insensitive\nNOT_REGEX: Regular does not match, referer case insensitive\nSTART_WITH: Starts with, referer case insensitive\nEND_WITH: Ends with, referer case insensitive\nWILDCARD: Wildcard matches, referer case insensitive,* represents zero or more arbitrary characters, ? represents any single characte\nNOT_WILDCARD: Wildcard does not match, referer case insensitive,* represents zero or more arbitrary characters, ? represents any single character","zh_CN":"匹配类型。\nEQUAL：等于，referer大小写敏感\nNOT_EQUAL：不等于，referer大小写敏感\nCONTAIN：包含，referer大小写不敏感\nNOT_CONTAIN：不包含，referer大小写不敏感\nNONE：为空或不存在\nREGEX：匹配正则，referer大小写不敏感\nNOT_REGEX：正则不匹配，referer大小写不敏感\nSTART_WITH：开头是，referer大小写不敏感\nEND_WITH：结尾是，referer大小写不敏感\nWILDCARD：通配符匹配，referer大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符\nNOT_WILDCARD：通配符不匹配，referer大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符","exampleValue":"EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,NONE,REGEX,NOT_REGEX,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionRefererConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionRefererConditions) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionRefererConditions) SetReferer(v []*string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionRefererConditions {
+  s.Referer = v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionRefererConditions) SetMatchType(v string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionRefererConditions {
+  s.MatchType = &v
+  return s
+}
+
+type UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions struct     {
+  // {"en":"Match type.EQUAL: Equals, request header values case sensitiveNOT_EQUAL: Does not equal, request header values case sensitiveCONTAIN: Contains, request header values case insensitiveNOT_CONTAIN: Does not Contains, request header values case insensitiveNONE: Empty or non-existentREGEX: Regex match, request header values case insensitiveNOT_REGEX: Regular does not match, request header values case insensitiveSTART_WITH: Starts with, request header values case insensitiveEND_WITH: Ends with, request header values case insensitiveWILDCARD: Wildcard matches, request header values case insensitive,* represents zero or more arbitrary characters, ? represents any single characterNOT_WILDCARD: Wildcard does not match, request header values case insensitive,* represents zero or more arbitrary characters, ? represents any single character","zh_CN":"匹配类型。EQUAL：等于，头部值大小写敏感NOT_EQUAL：不等于，头部值大小写敏感CONTAIN：包含，头部值大小写不敏感NOT_CONTAIN：不包含，头部值大小写不敏感NONE：为空或不存在REGEX：匹配正则，头部值大小写不敏感NOT_REGEX：正则不匹配，头部值大小写不敏感START_WITH：开头是，头部值大小写不敏感END_WITH：结尾是，头部值大小写不敏感WILDCARD：通配符匹配，头部值大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符NOT_WILDCARD：通配符不匹配，头部值大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符","exampleValue":"EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,NONE,REGEX,NOT_REGEX,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"Header value.\nWhen the match type is REGEX/NOT_REGEX, only one value is allowed.","zh_CN":"头部值。\n当匹配类型为正则/正则不匹配，则只允许只有一个值。"}
+  ValueList []*string `json:"valueList,omitempty" xml:"valueList,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Header name,case insensitive,up to 100 characters.\nExample: Accept.","zh_CN":"头部名称，大小写不敏感，最多100个字符。\n示例：Accept。"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty" require:"true"`
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions) SetMatchType(v string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions) SetValueList(v []*string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions {
+  s.ValueList = v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions) SetKey(v string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions {
+  s.Key = &v
+  return s
+}
+
+type UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionAreaConditions struct     {
+  // {"en":"Match type.\nEQUAL:Equals\nNOT_EQUAL:Does not equal","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于","exampleValue":"EQUAL,NOT_EQUAL"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_areaCityAndCountry","en":"Geo.","zh_CN":"区域。"}
+  Areas []*string `json:"areas,omitempty" xml:"areas,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionAreaConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionAreaConditions) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionAreaConditions) SetMatchType(v string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionAreaConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionAreaConditions) SetAreas(v []*string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionAreaConditions {
+  s.Areas = v
+  return s
+}
+
+type UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionSchemeConditions struct     {
+  // {"en":"Match type.\nEQUAL:Equals\nNOT_EQUAL:Does not equal","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于","exampleValue":"EQUAL,NOT_EQUAL"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"HTTP/S.\nSupported values: HTTP/HTTPS.","zh_CN":"应用层协议。\n支持的值：HTTP/HTTPS。","exampleValue":"HTTP,HTTPS"}
+  Scheme []*string `json:"scheme,omitempty" xml:"scheme,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionSchemeConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionSchemeConditions) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionSchemeConditions) SetMatchType(v string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionSchemeConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionSchemeConditions) SetScheme(v []*string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionSchemeConditions {
+  s.Scheme = v
+  return s
+}
+
+type UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionStatusCodeConditions struct     {
+  // {"en":"Match type.\nEQUAL:Equals\nNOT_EQUAL:Does not equal","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于","exampleValue":"EQUAL,NOT_EQUAL"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"Response Code.","zh_CN":"状态码。"}
+  StatusCode []*string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionStatusCodeConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionStatusCodeConditions) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionStatusCodeConditions) SetMatchType(v string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionStatusCodeConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionStatusCodeConditions) SetStatusCode(v []*string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionStatusCodeConditions {
+  s.StatusCode = v
+  return s
+}
+
+type UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionJa3Conditions struct     {
+  // {"en":"Match type.\nEQUAL: Equals\nNOT_EQUAL: Does not equal","zh_CN":"匹配类型。\nEQUAL：等于 \nNOT_EQUAL：不等于","exampleValue":"EQUAL,NOT_EQUAL"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"JA3 Fingerprint List, maximum 300 JA3 Fingerprint.\nWhen the match type is EQUAL/NOT_EQUAL, each item's character length must be 32 and can only include numbers and lowercase letters.","zh_CN":"JA3指纹列表，最多300个JA3指纹。\n当匹配类型为等于/不等于时，每项字符长度必须为32，且仅限数字和小写字母。"}
+  Ja3List []*string `json:"ja3List,omitempty" xml:"ja3List,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionJa3Conditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionJa3Conditions) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionJa3Conditions) SetMatchType(v string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionJa3Conditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionJa3Conditions) SetJa3List(v []*string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionJa3Conditions {
+  s.Ja3List = v
+  return s
+}
+
+type UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionJa4Conditions struct     {
+  // {"en":"Match type. \nEQUAL: Equals\nNOT_EQUAL: Does not equal\nCONTAIN: Contains\nNOT_CONTAIN: Does not Contains\nSTART_WITH: Starts with\nEND_WITH: Ends with\nWILDCARD: Wildcard matches, ** represents zero or more arbitrary characters, ? represents any single character\nNOT_WILDCARD: Wildcard does not match, ** represents zero or more arbitrary characters, ? represents any single character","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于\nCONTAIN：包含\nNOT_CONTAIN：不包含\nSTART_WITH：开头是\nEND_WITH：结尾是\nWILDCARD：通配符匹配，*代表零个或多个任意字符，?代表任意单个字符\nNOT_WILDCARD：通配符不匹配，*代表零个或多个任意字符，?代表任意单个字符","exampleValue":"EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"JA4 Fingerprint List, maximum 300 JA4 Fingerprint.\nWhen the match type is EQUAL/NOT_EQUAL, each item's format must be 10 characters + 12 characters + 12 characters, separated by underscores, and can only include underscores, numbers, and lowercase letters.\nWhen the match type is CONTAIN/NOT_CONTAIN/START_WITH/END_WITH, each item is only allowed to include underscores, numbers, and lowercase letters.\nWhen the match type is WILDCARD/NOT_WILDCARD, each item, aside from  ** and ?, is only allowed to include underscores, numbers, and lowercase letters.","zh_CN":"JA4指纹列表，最多300个JA4指纹。\n当匹配类型为等于/不等于时，每项格式必须为10位字符+12位字符+12位字符，中间以“_”分隔，且仅限下划线、数字和小写字母。\n当匹配类型为包含/不包含/开头是/结尾是时，每项只允许输入下划线、数字和小写字母。\n当匹配类型为通配符匹配/通配符不匹配时，每项除*和?外，只允许输入下划线、数字和小写字母。"}
+  Ja4List []*string `json:"ja4List,omitempty" xml:"ja4List,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionJa4Conditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionJa4Conditions) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionJa4Conditions) SetMatchType(v string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionJa4Conditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionJa4Conditions) SetJa4List(v []*string) *UpdateSharedRateLimitingRuleRequestRateLimitRuleConditionJa4Conditions {
+  s.Ja4List = v
+  return s
+}
+
+type UpdateSharedRateLimitingRuleRequestHeader struct {
+  // {"en":"Security service type. Please enter a specific service type, if you purchase multiple security services.","zh_CN":"安全服务类型。有使用多个不同的安全服务时，需要填写具体的服务类型。"}
+  ServiceType *string `json:"serviceType,omitempty" xml:"serviceType,omitempty"`
+}
+
+func (s UpdateSharedRateLimitingRuleRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRuleRequestHeader) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSharedRateLimitingRuleRequestHeader) SetServiceType(v string) *UpdateSharedRateLimitingRuleRequestHeader {
+  s.ServiceType = &v
+  return s
+}
+
+type UpdateSharedRateLimitingRulePaths struct {
+}
+
+func (s UpdateSharedRateLimitingRulePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRulePaths) GoString() string {
+  return s.String()
+}
+
+type UpdateSharedRateLimitingRuleParameters struct {
+}
+
+func (s UpdateSharedRateLimitingRuleParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRuleParameters) GoString() string {
+  return s.String()
+}
+
+type UpdateSharedRateLimitingRuleResponse struct {
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_retCodeEnum","en":"Please refer to the error code for exceptions.","zh_CN":"请参照错误码。"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Description.","zh_CN":"描述信息。"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+}
+
+func (s UpdateSharedRateLimitingRuleResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRuleResponse) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSharedRateLimitingRuleResponse) SetCode(v string) *UpdateSharedRateLimitingRuleResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *UpdateSharedRateLimitingRuleResponse) SetMsg(v string) *UpdateSharedRateLimitingRuleResponse {
+  s.Msg = &v
+  return s
+}
+
+type UpdateSharedRateLimitingRuleResponseHeader struct {
+}
+
+func (s UpdateSharedRateLimitingRuleResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedRateLimitingRuleResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type QueryAppApiExceptionListRequest struct {
   // {"en":"Whether to return the number of associated hostnames.Default:false.","zh_CN":"是否需要返回关联域名数，默认为false"}
   NeedDomain *bool `json:"needDomain,omitempty" xml:"needDomain,omitempty"`
@@ -3277,6 +4635,639 @@ func (s QueryAppApiExceptionListResponseHeader) String() string {
 }
 
 func (s QueryAppApiExceptionListResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type CreateSharedRateLimitingRuleRequest struct {
+  // {"en":"Rule name, maximum 100 characters. Does not support # and &.","zh_CN":"规则名称，最多100个字符。不支持 # 和 &。"}
+  RuleName *string `json:"ruleName,omitempty" xml:"ruleName,omitempty" require:"true"`
+  // {"en":"Description, maximum 1000 characters.","zh_CN":"规则描述，最多1000个字符。"}
+  Description *string `json:"description,omitempty" xml:"description,omitempty"`
+  // {"en":"Client identifier list.","zh_CN":"统计粒度列表。"}
+  StatisticalItems []*CreateSharedRateLimitingRuleRequestStatisticalItems `json:"statisticalItems,omitempty" xml:"statisticalItems,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Statistics period, unit: seconds, the range is 1 - 3600.","zh_CN":"统计周期，单位：秒，范围为 1 - 3600。"}
+  StatisticalPeriod *int `json:"statisticalPeriod,omitempty" xml:"statisticalPeriod,omitempty" require:"true"`
+  // {"en":"Trigger threshold, unit: times.","zh_CN":"触发阈值，单位：次。"}
+  TriggerThreshold *int `json:"triggerThreshold,omitempty" xml:"triggerThreshold,omitempty" require:"true"`
+  // {"en":"Action duration, unit: seconds, the range is 10 - 604800.","zh_CN":"处理动作持续时间，单位：秒，范围为 10 - 604800。"}
+  InterceptTime *int `json:"interceptTime,omitempty" xml:"interceptTime,omitempty" require:"true"`
+  // {"en":"Cycle effective status.\nPERMANENT: Always effective\nWITHOUT: Not effective during the specified period\nWITHIN: Effective during the specified period","zh_CN":"周期生效状态。\nPERMANENT：永久生效\nWITHOUT：周期内不生效\nWITHIN：周期内生效"}
+  EffectiveStatus *string `json:"effectiveStatus,omitempty" xml:"effectiveStatus,omitempty" require:"true"`
+  // {"en":"Effective time period.\nWhen the effective status is effective within the cycle or not effective within the cycle, this field must have a value.","zh_CN":"规则生效周期。\n生效状态为周期内生效或周期内不生效时，此字段必须有值。"}
+  RateLimitEffective *CreateSharedRateLimitingRuleRequestRateLimitEffective `json:"rateLimitEffective,omitempty" xml:"rateLimitEffective,omitempty" type:"Struct"`
+  // {"en":"Action.\nNO_USE: Not Used\nLOG: Log\nCOOKIE: Cookie verification\nJS_CHECK: JavaScript verification\nDELAY: Delay\nBLOCK: Deny\nRESET: Reset Connection\nIP_BLOCK: IP Blocking\nCUSTOM_ACTION_ID: Fill in the custom action id of the corresponding action\nWhen there is a status code in the matching condition, the supported actions are Log, Deny, Not Used, Reset Connection, and IP Blocking.","zh_CN":"处理动作。\nNO_USE：不使用\nLOG：监控\nCOOKIE：Cookie校验\nJS_CHECK：JavaScript校验\nDELAY：延迟响应\nBLOCK：拦截\nRESET：断开连接\nIP_BLOCK：IP封禁\nCUSTOM_ACTION_ID：传入对应的自定义响应动作的ID\n当匹配条件中存在状态码时，支持处理动作为监控、拦截、不使用、断开连接、IP封禁。"}
+  Action *string `json:"action,omitempty" xml:"action,omitempty" require:"true"`
+  // {"en":"Matching conditions.","zh_CN":"匹配条件。"}
+  RateLimitRuleCondition *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition `json:"rateLimitRuleCondition,omitempty" xml:"rateLimitRuleCondition,omitempty" require:"true" type:"Struct"`
+}
+
+func (s CreateSharedRateLimitingRuleRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRuleRequest) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSharedRateLimitingRuleRequest) SetRuleName(v string) *CreateSharedRateLimitingRuleRequest {
+  s.RuleName = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequest) SetDescription(v string) *CreateSharedRateLimitingRuleRequest {
+  s.Description = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequest) SetStatisticalItems(v []*CreateSharedRateLimitingRuleRequestStatisticalItems) *CreateSharedRateLimitingRuleRequest {
+  s.StatisticalItems = v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequest) SetStatisticalPeriod(v int) *CreateSharedRateLimitingRuleRequest {
+  s.StatisticalPeriod = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequest) SetTriggerThreshold(v int) *CreateSharedRateLimitingRuleRequest {
+  s.TriggerThreshold = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequest) SetInterceptTime(v int) *CreateSharedRateLimitingRuleRequest {
+  s.InterceptTime = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequest) SetEffectiveStatus(v string) *CreateSharedRateLimitingRuleRequest {
+  s.EffectiveStatus = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequest) SetRateLimitEffective(v *CreateSharedRateLimitingRuleRequestRateLimitEffective) *CreateSharedRateLimitingRuleRequest {
+  s.RateLimitEffective = v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequest) SetAction(v string) *CreateSharedRateLimitingRuleRequest {
+  s.Action = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequest) SetRateLimitRuleCondition(v *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition) *CreateSharedRateLimitingRuleRequest {
+  s.RateLimitRuleCondition = v
+  return s
+}
+
+type CreateSharedRateLimitingRuleRequestStatisticalItems struct     {
+  // {"en":"Client identifier.\nIP: Client IP\nUA: User-Agent\nCOOKIE: Cookie\nURL: URL\nHEADER: Request Header, when there is a status code in the matching condition, this client identifier is not supported.","zh_CN":"统计粒度。\nIP：客户端IP\nUA：User-Agent\nCOOKIE：Cookie\nURL：URL\nHEADER：请求头，当匹配条件中存在状态码时不支持此统计粒度"}
+  StatisticalItem *string `json:"statisticalItem,omitempty" xml:"statisticalItem,omitempty" require:"true"`
+  // {"en":"Statistical key value list. When the client identifier is Cookie or HEADER, the corresponding key value list should be provided.","zh_CN":"当统计粒度为Cookie或HEADER时，对应的key值列表。"}
+  StatisticsKeys []*string `json:"statisticsKeys,omitempty" xml:"statisticsKeys,omitempty" type:"Repeated"`
+}
+
+func (s CreateSharedRateLimitingRuleRequestStatisticalItems) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRuleRequestStatisticalItems) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSharedRateLimitingRuleRequestStatisticalItems) SetStatisticalItem(v string) *CreateSharedRateLimitingRuleRequestStatisticalItems {
+  s.StatisticalItem = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestStatisticalItems) SetStatisticsKeys(v []*string) *CreateSharedRateLimitingRuleRequestStatisticalItems {
+  s.StatisticsKeys = v
+  return s
+}
+
+type CreateSharedRateLimitingRuleRequestRateLimitEffective struct {
+  // {"en":"Days of the week for the effective period.\nMON: Monday\nTUE: Tuesday\nWED: Wednesday\nTHU: Thursday\nFRI: Friday\nSAT: Saturday\nSUN: Sunday","zh_CN":"周期。\nMON：星期一\nTUE：星期二\nWED：星期三\nTHU：星期四\nFRI：星期五\nSAT：星期六\nSUN：星期天"}
+  Effective []*string `json:"effective,omitempty" xml:"effective,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Start time, format: HH:mm.","zh_CN":"开始时间，格式：HH:mm。"}
+  Start *string `json:"start,omitempty" xml:"start,omitempty" require:"true"`
+  // {"en":"End time, format: HH:mm.","zh_CN":"结束时间，格式：HH:mm。"}
+  End *string `json:"end,omitempty" xml:"end,omitempty" require:"true"`
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_timezone","en":"Timezone, default value: GMT+8.","zh_CN":"时区，默认：GMT+8。"}
+  Timezone *string `json:"timezone,omitempty" xml:"timezone,omitempty" require:"true"`
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitEffective) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitEffective) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitEffective) SetEffective(v []*string) *CreateSharedRateLimitingRuleRequestRateLimitEffective {
+  s.Effective = v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitEffective) SetStart(v string) *CreateSharedRateLimitingRuleRequestRateLimitEffective {
+  s.Start = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitEffective) SetEnd(v string) *CreateSharedRateLimitingRuleRequestRateLimitEffective {
+  s.End = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitEffective) SetTimezone(v string) *CreateSharedRateLimitingRuleRequestRateLimitEffective {
+  s.Timezone = &v
+  return s
+}
+
+type CreateSharedRateLimitingRuleRequestRateLimitRuleCondition struct {
+  // {"en":"IP/CIDR, match type cannot be repeated.","zh_CN":"IP/IP段，匹配类型不可重复。"}
+  IpOrIpsConditions []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionIpOrIpsConditions `json:"ipOrIpsConditions,omitempty" xml:"ipOrIpsConditions,omitempty" type:"Repeated"`
+  // {"en":"Path, match type cannot be repeated.\nWhen the business scenario is API, this matching condition is not supported.","zh_CN":"路径，匹配类型不可重复。\n当业务场景为API业务时不支持此匹配条件。"}
+  PathConditions []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionPathConditions `json:"pathConditions,omitempty" xml:"pathConditions,omitempty" type:"Repeated"`
+  // {"en":"URI, match type cannot be repeated.\nWhen the business scenario is API, this matching condition is not supported.","zh_CN":"URI，匹配类型不可重复。\n当业务场景为API业务时不支持此匹配条件。"}
+  UriConditions []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionUriConditions `json:"uriConditions,omitempty" xml:"uriConditions,omitempty" type:"Repeated"`
+  // {"en":"User Agent, match type cannot be repeated.","zh_CN":"User-Agent，匹配类型不可重复。"}
+  UaConditions []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionUaConditions `json:"uaConditions,omitempty" xml:"uaConditions,omitempty" type:"Repeated"`
+  // {"en":"Request Method, match type cannot be repeated. \nWhen the business scenario is API, this matching condition is not supported.","zh_CN":"请求方法，匹配类型不可重复。\n当业务场景为API业务时不支持此匹配条件。"}
+  MethodConditions []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionMethodConditions `json:"methodConditions,omitempty" xml:"methodConditions,omitempty" type:"Repeated"`
+  // {"en":"Referer, match type cannot be repeated.","zh_CN":"Referer，匹配类型不可重复。"}
+  RefererConditions []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionRefererConditions `json:"refererConditions,omitempty" xml:"refererConditions,omitempty" type:"Repeated"`
+  // {"en":"Request Header, match type can be repeated.","zh_CN":"请求头，匹配类型可重复。"}
+  HeaderConditions []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions `json:"headerConditions,omitempty" xml:"headerConditions,omitempty" type:"Repeated"`
+  // {"en":"Geo, match type cannot be repeated.","zh_CN":"区域，匹配类型不可重复。"}
+  AreaConditions []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionAreaConditions `json:"areaConditions,omitempty" xml:"areaConditions,omitempty" type:"Repeated"`
+  // {"en":"HTTP/S, match type cannot be repeated.","zh_CN":"应用层协议，匹配类型不可重复。"}
+  SchemeConditions []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionSchemeConditions `json:"schemeConditions,omitempty" xml:"schemeConditions,omitempty" type:"Repeated"`
+  // {"en":"Response Code, match type cannot be repeated.","zh_CN":"状态码，匹配类型不可重复。"}
+  StatusCodeConditions []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionStatusCodeConditions `json:"statusCodeConditions,omitempty" xml:"statusCodeConditions,omitempty" type:"Repeated"`
+  // {"en":"JA3 Fingerprint, match type cannot be repeated.","zh_CN":"JA3指纹，匹配类型不可重复。"}
+  Ja3Conditions []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionJa3Conditions `json:"ja3Conditions,omitempty" xml:"ja3Conditions,omitempty" type:"Repeated"`
+  // {"en":"JA4 Fingerprint, match type cannot be repeated.","zh_CN":"JA4指纹，匹配类型不可重复。"}
+  Ja4Conditions []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionJa4Conditions `json:"ja4Conditions,omitempty" xml:"ja4Conditions,omitempty" type:"Repeated"`
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleCondition) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleCondition) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetIpOrIpsConditions(v []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionIpOrIpsConditions) *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.IpOrIpsConditions = v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetPathConditions(v []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionPathConditions) *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.PathConditions = v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetUriConditions(v []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionUriConditions) *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.UriConditions = v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetUaConditions(v []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionUaConditions) *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.UaConditions = v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetMethodConditions(v []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionMethodConditions) *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.MethodConditions = v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetRefererConditions(v []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionRefererConditions) *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.RefererConditions = v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetHeaderConditions(v []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions) *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.HeaderConditions = v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetAreaConditions(v []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionAreaConditions) *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.AreaConditions = v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetSchemeConditions(v []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionSchemeConditions) *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.SchemeConditions = v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetStatusCodeConditions(v []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionStatusCodeConditions) *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.StatusCodeConditions = v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetJa3Conditions(v []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionJa3Conditions) *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.Ja3Conditions = v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition) SetJa4Conditions(v []*CreateSharedRateLimitingRuleRequestRateLimitRuleConditionJa4Conditions) *CreateSharedRateLimitingRuleRequestRateLimitRuleCondition {
+  s.Ja4Conditions = v
+  return s
+}
+
+type CreateSharedRateLimitingRuleRequestRateLimitRuleConditionIpOrIpsConditions struct     {
+  // {"en":"Match type.\nEQUAL:Equals\nNOT_EQUAL:Does not equal","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于","exampleValue":"EQUAL,NOT_EQUAL"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"IP/CIDR, maximum 500 IP/CIDR.","zh_CN":"IP/IP段，最多500个IP/IP段。"}
+  IpOrIps []*string `json:"ipOrIps,omitempty" xml:"ipOrIps,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionIpOrIpsConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionIpOrIpsConditions) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionIpOrIpsConditions) SetMatchType(v string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionIpOrIpsConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionIpOrIpsConditions) SetIpOrIps(v []*string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionIpOrIpsConditions {
+  s.IpOrIps = v
+  return s
+}
+
+type CreateSharedRateLimitingRuleRequestRateLimitRuleConditionPathConditions struct     {
+  // {"en":"Match type.\nEQUAL: Equals, path case sensitive\nNOT_EQUAL: Does not equal, path case sensitive\nCONTAIN: Contains, path case insensitive\nNOT_CONTAIN: Does not Contains, path case insensitive\nREGEX: Regex match, path case insensitive\nNOT_REGEX: Regular does not match, path case sensitive\nSTART_WITH: Starts with, path case sensitive\nEND_WITH: Ends with, path case sensitive\nWILDCARD: Wildcard matches, path case sensitive,* represents zero or more arbitrary characters, ? represents any single character.\nNOT_WILDCARD: Wildcard does not match, path case sensitive,* represents zero or more arbitrary characters, ? represents any single character","zh_CN":"匹配类型。\nEQUAL：等于，路径大小写敏感\nNOT_EQUAL：不等于，路径大小写敏感\nCONTAIN：包含，路径大小写不敏感\nNOT_CONTAIN：不包含，路径大小写不敏感\nREGEX：匹配正则，路径大小写不敏感\nNOT_REGEX：正则不匹配，路径大小写不敏感\nSTART_WITH：开头是，路径大小写不敏感\nEND_WITH：结尾是，路径大小写不敏感\nWILDCARD：通配符匹配，路径大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符\nNOT_WILDCARD：通配符不匹配，路径大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符","exampleValue":"EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,REGEX,NOT_REGEX,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"Path.\nWhen match type is EQUAL/NOT_EQUAL/START_WITH/END_WITH, path needs to start with \"/\", and no parameters.\nWhen the match type is REGEX/NOT_REGEX, only one value is allowed.\nExample: /test.html.","zh_CN":"路径。\n当匹配类型为等于/不等于/开头是/结尾是，路径必须以“/”开头，不含参数。\n当匹配类型为正则/正则不匹配，则只允许只有一个值。\n示例：/test.html。"}
+  CreateSharedRateLimitingRulePaths []*string `json:"paths,omitempty" xml:"paths,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionPathConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionPathConditions) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionPathConditions) SetMatchType(v string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionPathConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionPathConditions) SetCreateSharedRateLimitingRulePaths(v []*string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionPathConditions {
+  s.CreateSharedRateLimitingRulePaths = v
+  return s
+}
+
+type CreateSharedRateLimitingRuleRequestRateLimitRuleConditionUriConditions struct     {
+  // {"en":"Match type.\nEQUAL: Equals, URI case sensitive\nNOT_EQUAL: Does not equal, URI case sensitive\nCONTAIN: Contains, URI case insensitive\nNOT_CONTAIN: Does not Contains, URI case insensitive\nREGEX: Regex match, URI case insensitive\nNOT_REGEX: Regular does not match, URI case insensitive\nSTART_WITH: Starts with, URI case insensitive\nEND_WITH: Ends with, URI case insensitive\nWILDCARD: Wildcard matches, URI case insensitive,* represents zero or more arbitrary characters, ? represents any single character\nNOT_WILDCARD: Wildcard does not match, URI case insensitive,* represents zero or more arbitrary characters, ? represents any single character","zh_CN":"匹配类型。\nEQUAL：等于，URI大小写敏感\nNOT_EQUAL：不等于，URI大小写敏感\nCONTAIN：包含，URI大小写不敏感\nNOT_CONTAIN：不包含，URI大小写不敏感\nREGEX：匹配正则，URI大小写不敏感\nNOT_REGEX：正则不匹配，URI大小写不敏感\nSTART_WITH：开头是，URI大小写不敏感\nEND_WITH：结尾是，URI大小写不敏感\nWILDCARD：通配符匹配，URI大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符\nNOT_WILDCARD：通配符不匹配，URI大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符","exampleValue":"EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,REGEX,NOT_REGEX,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"URI.\nWhen match type is EQUAL/NOT_EQUAL/START_WITH/END_WITH, uri needs to start with \"/\", and includes parameters.\nWhen the match type is REGEX/NOT_REGEX, only one value is allowed.\nExample: /test.html?id=1.","zh_CN":"URI。\n当匹配类型为等于/不等于/开头是/结尾是，URI必须以”/“开头，含参数。\n当匹配类型为正则/正则不匹配，则只允许只有一个值。\n示例：/test.html?id=1。"}
+  Uri []*string `json:"uri,omitempty" xml:"uri,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionUriConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionUriConditions) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionUriConditions) SetMatchType(v string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionUriConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionUriConditions) SetUri(v []*string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionUriConditions {
+  s.Uri = v
+  return s
+}
+
+type CreateSharedRateLimitingRuleRequestRateLimitRuleConditionUaConditions struct     {
+  // {"en":"Match type.\nEQUAL: Equals, user agent case sensitive\nNOT_EQUAL: Does not equal, user agent case sensitive\nCONTAIN: Contains, user agent case insensitive\nNOT_CONTAIN: Does not Contains, user agent case insensitive\nNONE:Empty or non-existent\nREGEX: Regex match, user agent case insensitive\nNOT_REGEX: Regular does not match, user agent case insensitive\nSTART_WITH: Starts with, user agent case insensitive\nEND_WITH: Ends with, user agent case insensitive\nWILDCARD: Wildcard matches, user agent case insensitive,* represents zero or more arbitrary characters, ? represents any single character\nNOT_WILDCARD: Wildcard does not match, user agent case insensitive,* represents zero or more arbitrary characters, ? represents any single character","zh_CN":"匹配类型。\nEQUAL：等于，User-Agent大小写敏感\nNOT_EQUAL：不等于，User-Agent大小写敏感\nCONTAIN：包含，User-Agent大小写不敏感\nNOT_CONTAIN：不包含，User-Agent大小写不敏感\nNONE：为空或不存在\nREGEX：匹配正则，User-Agent大小写不敏感\nNOT_REGEX：正则不匹配，User-Agent大小写不敏感\nSTART_WITH：开头是，User-Agent大小写不敏感\nEND_WITH：结尾是，User-Agent大小写不敏感\nWILDCARD：通配符匹配，User-Agent大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符\nNOT_WILDCARD：通配符不匹配，User-Agent大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符","exampleValue":"EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,NONE,REGEX,NOT_REGEX,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"User agent.\nWhen the match type is REGEX/NOT_REGEX, only one value is allowed.\nExample: go-Http-client/1.1.","zh_CN":"User-Agent。\n当匹配类型为正则/正则不匹配，则只允许只有一个值。\n示例：go-Http-client/1.1。"}
+  Ua []*string `json:"ua,omitempty" xml:"ua,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionUaConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionUaConditions) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionUaConditions) SetMatchType(v string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionUaConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionUaConditions) SetUa(v []*string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionUaConditions {
+  s.Ua = v
+  return s
+}
+
+type CreateSharedRateLimitingRuleRequestRateLimitRuleConditionMethodConditions struct     {
+  // {"en":"Match type.\nEQUAL:Equals\nNOT_EQUAL:Does not equal","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于","exampleValue":"EQUAL,NOT_EQUAL"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"Request method.\nSupported values: GET/POST/DELETE/PUT/HEAD/OPTIONS/COPY.","zh_CN":"请求方法。\n支持的值：GET/POST/DELETE/PUT/HEAD/OPTIONS/COPY。","exampleValue":"GET,POST,DELETE,PUT,HEAD,OPTIONS,COPY"}
+  RequestMethod []*string `json:"requestMethod,omitempty" xml:"requestMethod,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionMethodConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionMethodConditions) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionMethodConditions) SetMatchType(v string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionMethodConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionMethodConditions) SetRequestMethod(v []*string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionMethodConditions {
+  s.RequestMethod = v
+  return s
+}
+
+type CreateSharedRateLimitingRuleRequestRateLimitRuleConditionRefererConditions struct     {
+  // {"en":"Referer.\nWhen the match type is REGEX/NOT_REGEX, only one value is allowed.\nExample: http://test.com.","zh_CN":"Referer。\n当匹配类型为正则/正则不匹配，则只允许只有一个值。\n示例：http://test.com。"}
+  Referer []*string `json:"referer,omitempty" xml:"referer,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Match type.\nEQUAL: Equals, referer case sensitive\nNOT_EQUAL: Does not equal, referer case sensitive\nCONTAIN: Contains, referer case insensitive\nNOT_CONTAIN: Does not Contains, referer case insensitive\nNONE:Empty or non-existent\nREGEX: Regex match, referer case insensitive\nNOT_REGEX: Regular does not match, referer case insensitive\nSTART_WITH: Starts with, referer case insensitive\nEND_WITH: Ends with, referer case insensitive\nWILDCARD: Wildcard matches, referer case insensitive,* represents zero or more arbitrary characters, ? represents any single characte\nNOT_WILDCARD: Wildcard does not match, referer case insensitive,* represents zero or more arbitrary characters, ? represents any single character","zh_CN":"匹配类型。\nEQUAL：等于，referer大小写敏感\nNOT_EQUAL：不等于，referer大小写敏感\nCONTAIN：包含，referer大小写不敏感\nNOT_CONTAIN：不包含，referer大小写不敏感\nNONE：为空或不存在\nREGEX：匹配正则，referer大小写不敏感\nNOT_REGEX：正则不匹配，referer大小写不敏感\nSTART_WITH：开头是，referer大小写不敏感\nEND_WITH：结尾是，referer大小写不敏感\nWILDCARD：通配符匹配，referer大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符\nNOT_WILDCARD：通配符不匹配，referer大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符","exampleValue":"EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,NONE,REGEX,NOT_REGEX,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionRefererConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionRefererConditions) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionRefererConditions) SetReferer(v []*string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionRefererConditions {
+  s.Referer = v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionRefererConditions) SetMatchType(v string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionRefererConditions {
+  s.MatchType = &v
+  return s
+}
+
+type CreateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions struct     {
+  // {"en":"Match type.EQUAL: Equals, request header values case sensitiveNOT_EQUAL: Does not equal, request header values case sensitiveCONTAIN: Contains, request header values case insensitiveNOT_CONTAIN: Does not Contains, request header values case insensitiveNONE: Empty or non-existentREGEX: Regex match, request header values case insensitiveNOT_REGEX: Regular does not match, request header values case insensitiveSTART_WITH: Starts with, request header values case insensitiveEND_WITH: Ends with, request header values case insensitiveWILDCARD: Wildcard matches, request header values case insensitive,* represents zero or more arbitrary characters, ? represents any single characterNOT_WILDCARD: Wildcard does not match, request header values case insensitive,* represents zero or more arbitrary characters, ? represents any single character","zh_CN":"匹配类型。EQUAL：等于，头部值大小写敏感NOT_EQUAL：不等于，头部值大小写敏感CONTAIN：包含，头部值大小写不敏感NOT_CONTAIN：不包含，头部值大小写不敏感NONE：为空或不存在REGEX：匹配正则，头部值大小写不敏感NOT_REGEX：正则不匹配，头部值大小写不敏感START_WITH：开头是，头部值大小写不敏感END_WITH：结尾是，头部值大小写不敏感WILDCARD：通配符匹配，头部值大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符NOT_WILDCARD：通配符不匹配，头部值大小写不敏感，*代表零个或多个任意字符，?代表任意单个字符","exampleValue":"EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,NONE,REGEX,NOT_REGEX,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"Header value.\nWhen the match type is REGEX/NOT_REGEX, only one value is allowed.","zh_CN":"头部值。\n当匹配类型为正则/正则不匹配，则只允许只有一个值。"}
+  ValueList []*string `json:"valueList,omitempty" xml:"valueList,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Header name,case insensitive,up to 100 characters.\nExample: Accept.","zh_CN":"头部名称，大小写不敏感，最多100个字符。\n示例：Accept。"}
+  Key *string `json:"key,omitempty" xml:"key,omitempty" require:"true"`
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions) SetMatchType(v string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions) SetValueList(v []*string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions {
+  s.ValueList = v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions) SetKey(v string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionHeaderConditions {
+  s.Key = &v
+  return s
+}
+
+type CreateSharedRateLimitingRuleRequestRateLimitRuleConditionAreaConditions struct     {
+  // {"en":"Match type.\nEQUAL:Equals\nNOT_EQUAL:Does not equal","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于","exampleValue":"EQUAL,NOT_EQUAL"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_areaCityAndCountry","en":"Geo.","zh_CN":"区域。"}
+  Areas []*string `json:"areas,omitempty" xml:"areas,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionAreaConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionAreaConditions) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionAreaConditions) SetMatchType(v string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionAreaConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionAreaConditions) SetAreas(v []*string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionAreaConditions {
+  s.Areas = v
+  return s
+}
+
+type CreateSharedRateLimitingRuleRequestRateLimitRuleConditionSchemeConditions struct     {
+  // {"en":"Match type.\nEQUAL:Equals\nNOT_EQUAL:Does not equal","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于","exampleValue":"EQUAL,NOT_EQUAL"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"HTTP/S.\nSupported values: HTTP/HTTPS.","zh_CN":"应用层协议。\n支持的值：HTTP/HTTPS。","exampleValue":"HTTP,HTTPS"}
+  Scheme []*string `json:"scheme,omitempty" xml:"scheme,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionSchemeConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionSchemeConditions) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionSchemeConditions) SetMatchType(v string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionSchemeConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionSchemeConditions) SetScheme(v []*string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionSchemeConditions {
+  s.Scheme = v
+  return s
+}
+
+type CreateSharedRateLimitingRuleRequestRateLimitRuleConditionStatusCodeConditions struct     {
+  // {"en":"Match type.\nEQUAL:Equals\nNOT_EQUAL:Does not equal","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于","exampleValue":"EQUAL,NOT_EQUAL"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"Response Code.","zh_CN":"状态码。"}
+  StatusCode []*string `json:"statusCode,omitempty" xml:"statusCode,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionStatusCodeConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionStatusCodeConditions) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionStatusCodeConditions) SetMatchType(v string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionStatusCodeConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionStatusCodeConditions) SetStatusCode(v []*string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionStatusCodeConditions {
+  s.StatusCode = v
+  return s
+}
+
+type CreateSharedRateLimitingRuleRequestRateLimitRuleConditionJa3Conditions struct     {
+  // {"en":"Match type.\nEQUAL: Equals\nNOT_EQUAL: Does not equal","zh_CN":"匹配类型。\nEQUAL：等于 \nNOT_EQUAL：不等于","exampleValue":"EQUAL,NOT_EQUAL"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"JA3 Fingerprint List, maximum 300 JA3 Fingerprint.\nWhen the match type is EQUAL/NOT_EQUAL, each item's character length must be 32 and can only include numbers and lowercase letters.","zh_CN":"JA3指纹列表，最多300个JA3指纹。\n当匹配类型为等于/不等于时，每项字符长度必须为32，且仅限数字和小写字母。"}
+  Ja3List []*string `json:"ja3List,omitempty" xml:"ja3List,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionJa3Conditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionJa3Conditions) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionJa3Conditions) SetMatchType(v string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionJa3Conditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionJa3Conditions) SetJa3List(v []*string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionJa3Conditions {
+  s.Ja3List = v
+  return s
+}
+
+type CreateSharedRateLimitingRuleRequestRateLimitRuleConditionJa4Conditions struct     {
+  // {"en":"Match type. \nEQUAL: Equals\nNOT_EQUAL: Does not equal\nCONTAIN: Contains\nNOT_CONTAIN: Does not Contains\nSTART_WITH: Starts with\nEND_WITH: Ends with\nWILDCARD: Wildcard matches, ** represents zero or more arbitrary characters, ? represents any single character\nNOT_WILDCARD: Wildcard does not match, ** represents zero or more arbitrary characters, ? represents any single character","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于\nCONTAIN：包含\nNOT_CONTAIN：不包含\nSTART_WITH：开头是\nEND_WITH：结尾是\nWILDCARD：通配符匹配，*代表零个或多个任意字符，?代表任意单个字符\nNOT_WILDCARD：通配符不匹配，*代表零个或多个任意字符，?代表任意单个字符","exampleValue":"EQUAL,NOT_EQUAL,CONTAIN,NOT_CONTAIN,START_WITH,END_WITH,WILDCARD,NOT_WILDCARD"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"en":"JA4 Fingerprint List, maximum 300 JA4 Fingerprint.\nWhen the match type is EQUAL/NOT_EQUAL, each item's format must be 10 characters + 12 characters + 12 characters, separated by underscores, and can only include underscores, numbers, and lowercase letters.\nWhen the match type is CONTAIN/NOT_CONTAIN/START_WITH/END_WITH, each item is only allowed to include underscores, numbers, and lowercase letters.\nWhen the match type is WILDCARD/NOT_WILDCARD, each item, aside from  ** and ?, is only allowed to include underscores, numbers, and lowercase letters.","zh_CN":"JA4指纹列表，最多300个JA4指纹。\n当匹配类型为等于/不等于时，每项格式必须为10位字符+12位字符+12位字符，中间以“_”分隔，且仅限下划线、数字和小写字母。\n当匹配类型为包含/不包含/开头是/结尾是时，每项只允许输入下划线、数字和小写字母。\n当匹配类型为通配符匹配/通配符不匹配时，每项除*和?外，只允许输入下划线、数字和小写字母。"}
+  Ja4List []*string `json:"ja4List,omitempty" xml:"ja4List,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionJa4Conditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRuleRequestRateLimitRuleConditionJa4Conditions) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionJa4Conditions) SetMatchType(v string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionJa4Conditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionJa4Conditions) SetJa4List(v []*string) *CreateSharedRateLimitingRuleRequestRateLimitRuleConditionJa4Conditions {
+  s.Ja4List = v
+  return s
+}
+
+type CreateSharedRateLimitingRuleRequestHeader struct {
+  // {"en":"Security service type. Please enter a specific service type, if you purchase multiple security services.","zh_CN":"安全服务类型。有使用多个不同的安全服务时，需要填写具体的服务类型。"}
+  ServiceType *string `json:"serviceType,omitempty" xml:"serviceType,omitempty"`
+}
+
+func (s CreateSharedRateLimitingRuleRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRuleRequestHeader) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSharedRateLimitingRuleRequestHeader) SetServiceType(v string) *CreateSharedRateLimitingRuleRequestHeader {
+  s.ServiceType = &v
+  return s
+}
+
+type CreateSharedRateLimitingRulePaths struct {
+}
+
+func (s CreateSharedRateLimitingRulePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRulePaths) GoString() string {
+  return s.String()
+}
+
+type CreateSharedRateLimitingRuleParameters struct {
+}
+
+func (s CreateSharedRateLimitingRuleParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRuleParameters) GoString() string {
+  return s.String()
+}
+
+type CreateSharedRateLimitingRuleResponse struct {
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_retCodeEnum","en":"Please refer to the error code for exceptions.","zh_CN":"请参照错误码。"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Description.","zh_CN":"描述信息。"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"Rule ID.","zh_CN":"规则ID。"}
+  Data *string `json:"data,omitempty" xml:"data,omitempty" require:"true"`
+}
+
+func (s CreateSharedRateLimitingRuleResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRuleResponse) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSharedRateLimitingRuleResponse) SetCode(v string) *CreateSharedRateLimitingRuleResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleResponse) SetMsg(v string) *CreateSharedRateLimitingRuleResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *CreateSharedRateLimitingRuleResponse) SetData(v string) *CreateSharedRateLimitingRuleResponse {
+  s.Data = &v
+  return s
+}
+
+type CreateSharedRateLimitingRuleResponseHeader struct {
+}
+
+func (s CreateSharedRateLimitingRuleResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedRateLimitingRuleResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -4101,6 +6092,8 @@ type UpdateSharedWhitelistRuleRequestConditions struct {
   RefererConditions []*UpdateSharedWhitelistRuleRequestConditionsRefererConditions `json:"refererConditions,omitempty" xml:"refererConditions,omitempty" type:"Repeated"`
   // {"en":"Request header match conditions.","zh_CN":"请求头匹配条件。"}
   HeaderConditions []*UpdateSharedWhitelistRuleRequestConditionsHeaderConditions `json:"headerConditions,omitempty" xml:"headerConditions,omitempty" type:"Repeated"`
+  // {"en":"Geo, match type cannot be repeated.","zh_CN":"区域，匹配类型不可重复。"}
+  AreaConditions []*UpdateSharedWhitelistRuleRequestConditionsAreaConditions `json:"areaConditions,omitempty" xml:"areaConditions,omitempty" type:"Repeated"`
 }
 
 func (s UpdateSharedWhitelistRuleRequestConditions) String() string {
@@ -4138,6 +6131,11 @@ func (s *UpdateSharedWhitelistRuleRequestConditions) SetRefererConditions(v []*U
 
 func (s *UpdateSharedWhitelistRuleRequestConditions) SetHeaderConditions(v []*UpdateSharedWhitelistRuleRequestConditionsHeaderConditions) *UpdateSharedWhitelistRuleRequestConditions {
   s.HeaderConditions = v
+  return s
+}
+
+func (s *UpdateSharedWhitelistRuleRequestConditions) SetAreaConditions(v []*UpdateSharedWhitelistRuleRequestConditionsAreaConditions) *UpdateSharedWhitelistRuleRequestConditions {
+  s.AreaConditions = v
   return s
 }
 
@@ -4295,6 +6293,31 @@ func (s *UpdateSharedWhitelistRuleRequestConditionsHeaderConditions) SetKey(v st
 
 func (s *UpdateSharedWhitelistRuleRequestConditionsHeaderConditions) SetValueList(v []*string) *UpdateSharedWhitelistRuleRequestConditionsHeaderConditions {
   s.ValueList = v
+  return s
+}
+
+type UpdateSharedWhitelistRuleRequestConditionsAreaConditions struct     {
+  // {"en":"Match type.\nEQUAL:Equals\nNOT_EQUAL:Does not equal","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_areaCityAndCountry","en":"Geo.","zh_CN":"区域。"}
+  Areas []*string `json:"areas,omitempty" xml:"areas,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s UpdateSharedWhitelistRuleRequestConditionsAreaConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateSharedWhitelistRuleRequestConditionsAreaConditions) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateSharedWhitelistRuleRequestConditionsAreaConditions) SetMatchType(v string) *UpdateSharedWhitelistRuleRequestConditionsAreaConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *UpdateSharedWhitelistRuleRequestConditionsAreaConditions) SetAreas(v []*string) *UpdateSharedWhitelistRuleRequestConditionsAreaConditions {
+  s.Areas = v
   return s
 }
 
@@ -4757,7 +6780,7 @@ type ListSharedRateLimitingRulesResponseData struct     {
   Description *string `json:"description,omitempty" xml:"description,omitempty" require:"true"`
   // {"en":"Statistical stage.\nREQUEST:Request\nRESPONSE:Response","zh_CN":"统计阶段。\nREQUEST：请求\nRESPONSE：响应"}
   StatisticalStage *string `json:"statisticalStage,omitempty" xml:"statisticalStage,omitempty" require:"true"`
-  // {"en":"Client identifier.\nIP:Client IP\nIP_UA:Client IP and User-Agent\nCOOKIE:Cookie\nIP_COOKIE:Client IP and Cookie\nHEADER:Request Header\nIP_HEADER:Client IP and Request Header","zh_CN":"统计粒度。\nIP：客户端IP\nIP_UA：客户端IP和User-Agent\nCOOKIE：Cookie\nIP_COOKIE：客户端IP和Cookie\nHEADER：请求头\nIP_HEADER：客户端IP和请求头"}
+  // {"en":"Statistical granularity.\nIP:Client IP\nIP_UA:Client IP and User-Agent\nCOOKIE:Cookie\nIP_COOKIE:Client IP and Cookie\nHEADER:Request Header\nIP_HEADER:Client IP and Request Header","zh_CN":"统计粒度。\nIP：客户端IP\nIP_UA：客户端IP和User-Agent\nCOOKIE：Cookie\nIP_COOKIE：客户端IP和Cookie\nHEADER：请求头\nIP_HEADER：客户端IP和请求头"}
   StatisticalItem *string `json:"statisticalItem,omitempty" xml:"statisticalItem,omitempty" require:"true"`
   // {"en":"Statistical key value.","zh_CN":"统计key值。"}
   StatisticsKey *string `json:"statisticsKey,omitempty" xml:"statisticsKey,omitempty" require:"true"`
@@ -4771,7 +6794,7 @@ type ListSharedRateLimitingRulesResponseData struct     {
   EffectiveStatus *string `json:"effectiveStatus,omitempty" xml:"effectiveStatus,omitempty" require:"true"`
   // {"en":"Effective time period.","zh_CN":"规则生效周期。"}
   RateLimitEffective *ListSharedRateLimitingRulesResponseDataRateLimitEffective `json:"rateLimitEffective,omitempty" xml:"rateLimitEffective,omitempty" require:"true" type:"Struct"`
-  // {"en":"Action.\nNO_USE:Not Used\nLOG:Log\nCOOKIE:Cookie verification\nJS_CHECK:Javascript verification\nDELAY:Delay\nBLOCK:Deny\nRESET:Reset Connection\nCUSTOM_ACTION_ID:Fill in the custom action id of the corresponding action","zh_CN":"处理动作。\nNO_USE：不使用\nLOG：监控\nCOOKIE：Cookie校验\nJS_CHECK：JavaScript校验\nDELAY：延迟响应\nBLOCK：拦截\nRESET：断开连接\nCUSTOM_ACTION_ID：传入对应的自定义响应动作的ID"}
+  // {"en":"Action.\nNO_USE:Not Used\nLOG:Log\nCOOKIE:Cookie verification\nJS_CHECK:Javascript verification\nDELAY:Delay\nBLOCK:Deny\nRESET:Reset Connection\nIP_BLOCK:IP Blocking\nCUSTOM_ACTION_ID:Fill in the custom action id of the corresponding action","zh_CN":"处理动作。\nNO_USE：不使用\nLOG：监控\nCOOKIE：Cookie校验\nJS_CHECK：JavaScript校验\nDELAY：延迟响应\nBLOCK：拦截\nRESET：断开连接\nIP_BLOCK：IP封禁\nCUSTOM_ACTION_ID：传入对应的自定义响应动作的ID"}
   Action *string `json:"action,omitempty" xml:"action,omitempty" require:"true"`
   // {"en":"Matching conditions.","zh_CN":"匹配条件。"}
   RateLimitRuleCondition *ListSharedRateLimitingRulesResponseDataRateLimitRuleCondition `json:"rateLimitRuleCondition,omitempty" xml:"rateLimitRuleCondition,omitempty" require:"true" type:"Struct"`
@@ -7339,7 +9362,7 @@ type UpdateSharedRateLimitingRuleRequest struct {
   RuleName *string `json:"ruleName,omitempty" xml:"ruleName,omitempty"`
   // {"en":"Description, maximum 1000 characters.","zh_CN":"规则描述，最多1000个字符。"}
   Description *string `json:"description,omitempty" xml:"description,omitempty"`
-  // {"en":"Client identifier.\nIP:Client IP\nIP_UA:Client IP and User-Agent\nCOOKIE:Cookie\nIP_COOKIE:Client IP and Cookie\nHEADER:Request Header\nWhen there is a status code in the matching condition,this client identifier is not supported.\nIP_HEADER:Client IP and Request Header\nWhen there is a status code in the matching condition,this client identifier is not supported .","zh_CN":"统计粒度。\nIP：客户端IP\nIP_UA：客户端IP和User-Agent\nCOOKIE：Cookie\nIP_COOKIE：客户端IP和Cookie\nHEADER：请求头，当匹配条件中存在状态码时不支持此统计粒度\nIP_HEADER：客户端IP和请求头，当匹配条件中存在状态码时不支持此统计粒度"}
+  // {"en":"Statistical granularity.\nIP:Client IP\nIP_UA:Client IP and User-Agent\nCOOKIE:Cookie\nIP_COOKIE:Client IP and Cookie\nHEADER:Request Header\nIP_HEADER:Client IP and Request Header","zh_CN":"统计粒度。\nIP：客户端IP\nIP_UA：客户端IP和User-Agent\nCOOKIE：Cookie\nIP_COOKIE：客户端IP和Cookie\nHEADER：请求头\nIP_HEADER：客户端IP和请求头"}
   StatisticalItem *string `json:"statisticalItem,omitempty" xml:"statisticalItem,omitempty"`
   // {"en":"Statistical key value.\nWhen the client identifier is cookie/header value, the corresponding key value needs to be entered.","zh_CN":"统计key值。\n当统计粒度cookie/header值，需要输入对应的key值。"}
   StatisticsKey *string `json:"statisticsKey,omitempty" xml:"statisticsKey,omitempty"`
@@ -7353,7 +9376,7 @@ type UpdateSharedRateLimitingRuleRequest struct {
   EffectiveStatus *string `json:"effectiveStatus,omitempty" xml:"effectiveStatus,omitempty"`
   // {"en":"Effective time period.\nWhen the effective status is effective within the cycle or not effective within the cycle, this field must have a value.","zh_CN":"规则生效周期。\n生效状态为周期内生效或周期内不生效时，此字段必须有值。"}
   RateLimitEffective *UpdateSharedRateLimitingRuleRequestRateLimitEffective `json:"rateLimitEffective,omitempty" xml:"rateLimitEffective,omitempty" type:"Struct"`
-  // {"en":"Action.\nNO_USE:Not Used\nLOG:Log\nCOOKIE:Cookie verification\nJS_CHECK:Javascript verification\nDELAY:Delay\nBLOCK:Deny\nRESET:Reset Connection\nCUSTOM_ACTION_ID:Fill in the custom action id of the corresponding action\n(When there is a status code in the matching condition, the supported actions are Log, Deny, and Reset Connection.)","zh_CN":"处理动作。\nNO_USE：不使用\nLOG：监控\nCOOKIE：Cookie校验\nJS_CHECK：JavaScript校验\nDELAY：延迟响应\nBLOCK：拦截\nRESET：断开连接\nCUSTOM_ACTION_ID：传入对应的自定义响应动作的ID\n当匹配条件中存在状态码时，支持处理动作为监控、拦截、断开连接。"}
+  // {"en":"Action.\nNO_USE:Not Used\nLOG:Log\nCOOKIE:Cookie verification\nJS_CHECK:Javascript verification\nDELAY:Delay\nBLOCK:Deny\nRESET:Reset Connection\nIP_BLOCK:IP Blocking\nCUSTOM_ACTION_ID:Fill in the custom action id of the corresponding action\nWhen there is a status code in the matching condition, the supported actions are Log, Deny, Not Used, Reset Connection, and IP Blocking.","zh_CN":"处理动作。\nNO_USE：不使用\nLOG：监控\nCOOKIE：Cookie校验\nJS_CHECK：JavaScript校验\nDELAY：延迟响应\nBLOCK：拦截\nRESET：断开连接\nIP_BLOCK：IP封禁\nCUSTOM_ACTION_ID：传入对应的自定义响应动作的ID\n当匹配条件中存在状态码时，支持处理动作为不使用、监控、拦截、断开连接、IP封禁。"}
   Action *string `json:"action,omitempty" xml:"action,omitempty"`
   // {"en":"Matching conditions.","zh_CN":"匹配条件。"}
   RateLimitRuleCondition *UpdateSharedRateLimitingRuleRequestRateLimitRuleCondition `json:"rateLimitRuleCondition,omitempty" xml:"rateLimitRuleCondition,omitempty" type:"Struct"`
@@ -8096,6 +10119,8 @@ type CreateSharedWhitelistRuleRequestConditions struct {
   RefererConditions []*CreateSharedWhitelistRuleRequestConditionsRefererConditions `json:"refererConditions,omitempty" xml:"refererConditions,omitempty" type:"Repeated"`
   // {"en":"Request header match conditions.","zh_CN":"请求头匹配条件。"}
   HeaderConditions []*CreateSharedWhitelistRuleRequestConditionsHeaderConditions `json:"headerConditions,omitempty" xml:"headerConditions,omitempty" type:"Repeated"`
+  // {"en":"Geo, match type cannot be repeated.","zh_CN":"区域，匹配类型不可重复。"}
+  AreaConditions []*CreateSharedWhitelistRuleRequestConditionsAreaConditions `json:"areaConditions,omitempty" xml:"areaConditions,omitempty" type:"Repeated"`
 }
 
 func (s CreateSharedWhitelistRuleRequestConditions) String() string {
@@ -8133,6 +10158,11 @@ func (s *CreateSharedWhitelistRuleRequestConditions) SetRefererConditions(v []*C
 
 func (s *CreateSharedWhitelistRuleRequestConditions) SetHeaderConditions(v []*CreateSharedWhitelistRuleRequestConditionsHeaderConditions) *CreateSharedWhitelistRuleRequestConditions {
   s.HeaderConditions = v
+  return s
+}
+
+func (s *CreateSharedWhitelistRuleRequestConditions) SetAreaConditions(v []*CreateSharedWhitelistRuleRequestConditionsAreaConditions) *CreateSharedWhitelistRuleRequestConditions {
+  s.AreaConditions = v
   return s
 }
 
@@ -8290,6 +10320,31 @@ func (s *CreateSharedWhitelistRuleRequestConditionsHeaderConditions) SetKey(v st
 
 func (s *CreateSharedWhitelistRuleRequestConditionsHeaderConditions) SetValueList(v []*string) *CreateSharedWhitelistRuleRequestConditionsHeaderConditions {
   s.ValueList = v
+  return s
+}
+
+type CreateSharedWhitelistRuleRequestConditionsAreaConditions struct     {
+  // {"en":"Match type.\nEQUAL:Equals\nNOT_EQUAL:Does not equal","zh_CN":"匹配类型。\nEQUAL：等于\nNOT_EQUAL：不等于","exampleValue":"EQUAL,NOT_EQUAL"}
+  MatchType *string `json:"matchType,omitempty" xml:"matchType,omitempty" require:"true"`
+  // {"dictionary":"belong=WAAP-MS-Ext|dict=waap_areaCityAndCountry","en":"Geo.","zh_CN":"区域。"}
+  Areas []*string `json:"areas,omitempty" xml:"areas,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s CreateSharedWhitelistRuleRequestConditionsAreaConditions) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateSharedWhitelistRuleRequestConditionsAreaConditions) GoString() string {
+  return s.String()
+}
+
+func (s *CreateSharedWhitelistRuleRequestConditionsAreaConditions) SetMatchType(v string) *CreateSharedWhitelistRuleRequestConditionsAreaConditions {
+  s.MatchType = &v
+  return s
+}
+
+func (s *CreateSharedWhitelistRuleRequestConditionsAreaConditions) SetAreas(v []*string) *CreateSharedWhitelistRuleRequestConditionsAreaConditions {
+  s.Areas = v
   return s
 }
 

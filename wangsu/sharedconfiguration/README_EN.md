@@ -87,7 +87,9 @@ For detailed API documentation and available methods, please refer to the [offic
 | Queryappapiexceptionfeaturedetail | Query APP/API exception feature details(Share Configurations). | POST | /api/v1/dms/service-feature/get-detail |
 | Queryappapiexceptionfeaturereferenceddomains | Query APP/APIException Feature Referenced Domains(Share Configurations). | POST | /api/v1/dms/service-feature/get-relate-domain-list |
 | Updateshareconfigurationsappapiexceptionfeature | Modify App/API exceptions(ShareConfigurations). | POST | /api/v1/dms/service-feature/update |
+| Addsharecustomizebots | This interface is used to add a new shared custom Bot. Users need to specify the Bot's name, description, action, and detailed matching conditions. Matching conditions include the matching key, matching function, and a list of condition values. Upon successful creation, the interface will return the Bot's unique ID. | POST | /api/v1/share-customize-bots/add |
 | Listsharecustomizebots | Query share custom Bots list. | POST | /api/v1/share-customize-bots/get-list |
+| Updatesharecustomizebots | Update share custom Bots. | POST | /api/v1/share-customize-bots/update |
 | Deletesharecustomizebots | Delete share custom Bots. | POST | /api/v1/share-customize-bots/delete |
 | Createsharedcustomrule | Create a Custom rule for shared configurations. | POST | /api/v1/share-customize-rule/add |
 | Updatesharedcustomrules | Update the custom rule of the sharing configuration. | POST | /api/v1/share-customize-rule/update |
@@ -103,3 +105,6 @@ For detailed API documentation and available methods, please refer to the [offic
 | Disassociatesharedwhitelistrule | Disssociate shared configuration Whitelist rule from Domain. | POST | /api/v1/common/share-whitelist/disassociate |
 | Associatedmsshareservicefeature | Associate the shared configuration APP/API exception with the domain. | POST | /api/v1/dms/service-feature/relateDomains |
 | Disassociatedmsshareservicefeature | Disassociate the shared configuration app/API exception from the domain. | POST | /api/v1/dms/service-feature/disRelateDomains |
+| Listsharedratelimitingrules | This API is used to retrieve a list of shared rate limiting rules. Users can filter queries by rule name. The response includes detailed information such as rule ID, rule name, description, effective status, number of associated hostnames, client identifier, action, trigger threshold, statistics period, and effective time period. | POST | /api/v2/share-rate-limit/get-rule-list |
+| Updatesharedratelimitingrule | This API is used to modify rate limiting rules for shared configurations. Users can update parameters such as rule name, description, and effective period based on the rule ID, statistical granularity, action to be taken, and other related settings. | POST | /api/v2/share-rate-limit/update-rule |
+| Createsharedratelimitingrule | This API is used to add a new rate limiting rule for shared configurations. Users are required to specify parameters such as statistical granularity, action to be taken, trigger threshold, statistical period, and activation status. In addition, users can define detailed matching conditions and effective periods to achieve precise rate limiting control. | POST | /api/v2/share-rate-limit/add-rule |

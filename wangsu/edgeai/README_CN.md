@@ -79,3 +79,4 @@ if err != nil {
 | Listconnectorsbypage | 该接口用于分页查询连接器列表。用户可以根据名称（支持模糊查询）、ID（支持精确查询）等条件进行筛选，并指定页码和每页大小。响应结果包含连接器总数及当前页的连接器详细信息。 | GET | /api/v2/waiting_room_connectors |
 | Viewwrconnectorinfo | 该接口用于查看等候室连接器的详细信息。用户需通过RESTful路径参数`id`指定连接器实例，接口将返回该连接器的配置内容、同步周期、队列令牌有效期、状态、创建及修改时间等详细信息。 | GET | /api/v2/waiting_room_connectors/* |
 | Addimageconfig | 该接口用于上传或修改图片处理配置。用户通过请求体中的property和policySets参数上传配置详情，系统将返回操作结果的响应码和信息。 | POST | /api/v2/ivm_configs |
+| Queryaigatewayusage | 该接口用于查询客户在指定粒度下的AI网关用量数据。用户可以通过指定日期范围、聚合粒度、区域、加速类型、服务提供商、网关、模型等参数进行查询。默认情况下，查询会返回当天所有AI网关的用量数据，包括汇总数据和5分钟粒度的明细。 | POST | /myview/sharkletAIgateway |

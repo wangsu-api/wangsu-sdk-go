@@ -303,12 +303,12 @@ func (s GetAppResponseHeader) GoString() string {
 
 
 type UpdateTunnelApplicationsRequest struct {
-  // {"en":"application name", "zh_CN":"应用名称"}
-  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true" maxLength:"128"`
-  // {"en":"Remark,Maximum length is 255 characters.", "zh_CN":"备注最大长度255个字符"}
-  Remark *string `json:"remark,omitempty" xml:"remark,omitempty" maxLength:"255"`
-  // {"en":"application contents ", "zh_CN":"应用内容"}
-  ContentList []*UpdateTunnelApplicationsContentItem `json:"contentList,omitempty" xml:"contentList,omitempty" type:"Repeated"`
+  // {"en":"application name","zh_CN":"应用名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"Remark,Maximum length is 255 characters.","zh_CN":"备注最大长度255个字符"}
+  Remark *string `json:"remark,omitempty" xml:"remark,omitempty"`
+  // {"en":"application contents","zh_CN":"应用内容"}
+  ContentList []*UpdateTunnelApplicationsRequestContentList `json:"contentList,omitempty" xml:"contentList,omitempty" type:"Repeated"`
 }
 
 func (s UpdateTunnelApplicationsRequest) String() string {
@@ -329,73 +329,52 @@ func (s *UpdateTunnelApplicationsRequest) SetRemark(v string) *UpdateTunnelAppli
   return s
 }
 
-func (s *UpdateTunnelApplicationsRequest) SetContentList(v []*UpdateTunnelApplicationsContentItem) *UpdateTunnelApplicationsRequest {
+func (s *UpdateTunnelApplicationsRequest) SetContentList(v []*UpdateTunnelApplicationsRequestContentList) *UpdateTunnelApplicationsRequest {
   s.ContentList = v
   return s
 }
 
-type UpdateTunnelApplicationsContentItem struct {
-  // {"en":"protocol,support for tcp,udp,icmp,all", "zh_CN":"协议,支持tcp、udp、icmp、all.  all表示不限制协议"}
+type UpdateTunnelApplicationsRequestContentList struct     {
+  // {"en":"protocol,support for tcp,udp,icmp,all","zh_CN":"协议,支持tcp、udp、icmp、all.  all表示不限制协议"}
   Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty" require:"true"`
-  // {"en":"ip or domain", "zh_CN":"ip或者域名"}
+  // {"en":"ip or domain","zh_CN":"ip或者域名"}
   IpOrDomain *string `json:"ipOrDomain,omitempty" xml:"ipOrDomain,omitempty" require:"true"`
-  // {"en":"application ports", "zh_CN":"端口,支持IP地址(IP、IP/掩码、IPX-IPy)和域名(精确域名、泛域),多个以英文分号间隔,最大支持2万个"}
+  // {"en":"application ports","zh_CN":"端口,支持IP地址(IP、IP/掩码、IPX-IPy)和域名(精确域名、泛域),多个以英文分号间隔,最大支持2万个"}
   Ports *string `json:"ports,omitempty" xml:"ports,omitempty" require:"true"`
 }
 
-func (s UpdateTunnelApplicationsContentItem) String() string {
+func (s UpdateTunnelApplicationsRequestContentList) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateTunnelApplicationsContentItem) GoString() string {
+func (s UpdateTunnelApplicationsRequestContentList) GoString() string {
   return s.String()
 }
 
-func (s *UpdateTunnelApplicationsContentItem) SetProtocol(v string) *UpdateTunnelApplicationsContentItem {
+func (s *UpdateTunnelApplicationsRequestContentList) SetProtocol(v string) *UpdateTunnelApplicationsRequestContentList {
   s.Protocol = &v
   return s
 }
 
-func (s *UpdateTunnelApplicationsContentItem) SetIpOrDomain(v string) *UpdateTunnelApplicationsContentItem {
+func (s *UpdateTunnelApplicationsRequestContentList) SetIpOrDomain(v string) *UpdateTunnelApplicationsRequestContentList {
   s.IpOrDomain = &v
   return s
 }
 
-func (s *UpdateTunnelApplicationsContentItem) SetPorts(v string) *UpdateTunnelApplicationsContentItem {
+func (s *UpdateTunnelApplicationsRequestContentList) SetPorts(v string) *UpdateTunnelApplicationsRequestContentList {
   s.Ports = &v
   return s
 }
 
-type UpdateTunnelApplicationsResponse struct {
-  // {"en":"application name", "zh_CN":"应用名称"}
-  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
-  // {"en":"Remark,Maximum length is 255 characters.", "zh_CN":"备注最大长度255个字符"}
-  Remark *string `json:"remark,omitempty" xml:"remark,omitempty" maxLength:"255"`
-  // {"en":"application contents ", "zh_CN":"应用内容"}
-  ContentList []*UpdateTunnelApplicationsContentItem `json:"contentList,omitempty" xml:"contentList,omitempty" type:"Repeated"`
+type UpdateTunnelApplicationsRequestHeader struct {
 }
 
-func (s UpdateTunnelApplicationsResponse) String() string {
+func (s UpdateTunnelApplicationsRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateTunnelApplicationsResponse) GoString() string {
+func (s UpdateTunnelApplicationsRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *UpdateTunnelApplicationsResponse) SetName(v string) *UpdateTunnelApplicationsResponse {
-  s.Name = &v
-  return s
-}
-
-func (s *UpdateTunnelApplicationsResponse) SetRemark(v string) *UpdateTunnelApplicationsResponse {
-  s.Remark = &v
-  return s
-}
-
-func (s *UpdateTunnelApplicationsResponse) SetContentList(v []*UpdateTunnelApplicationsContentItem) *UpdateTunnelApplicationsResponse {
-  s.ContentList = v
-  return s
 }
 
 type UpdateTunnelApplicationsPaths struct {
@@ -420,15 +399,68 @@ func (s UpdateTunnelApplicationsParameters) GoString() string {
   return s.String()
 }
 
-type UpdateTunnelApplicationsRequestHeader struct {
+type UpdateTunnelApplicationsResponse struct {
+  // {"en":"application name","zh_CN":"应用名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"Remark,Maximum length is 255 characters.","zh_CN":"备注最大长度255个字符"}
+  Remark *string `json:"remark,omitempty" xml:"remark,omitempty" require:"true"`
+  // {"en":"application contents","zh_CN":"应用内容"}
+  ContentList []*UpdateTunnelApplicationsResponseContentList `json:"contentList,omitempty" xml:"contentList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s UpdateTunnelApplicationsRequestHeader) String() string {
+func (s UpdateTunnelApplicationsResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateTunnelApplicationsRequestHeader) GoString() string {
+func (s UpdateTunnelApplicationsResponse) GoString() string {
   return s.String()
+}
+
+func (s *UpdateTunnelApplicationsResponse) SetName(v string) *UpdateTunnelApplicationsResponse {
+  s.Name = &v
+  return s
+}
+
+func (s *UpdateTunnelApplicationsResponse) SetRemark(v string) *UpdateTunnelApplicationsResponse {
+  s.Remark = &v
+  return s
+}
+
+func (s *UpdateTunnelApplicationsResponse) SetContentList(v []*UpdateTunnelApplicationsResponseContentList) *UpdateTunnelApplicationsResponse {
+  s.ContentList = v
+  return s
+}
+
+type UpdateTunnelApplicationsResponseContentList struct     {
+  // {"en":"protocol,support for tcp,udp,icmp,all","zh_CN":"协议,支持tcp、udp、icmp、all.  all表示不限制协议"}
+  Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty" require:"true"`
+  // {"en":"ip or domain","zh_CN":"ip或者域名"}
+  IpOrDomain *string `json:"ipOrDomain,omitempty" xml:"ipOrDomain,omitempty" require:"true"`
+  // {"en":"application ports","zh_CN":"端口,支持IP地址(IP、IP/掩码、IPX-IPy)和域名(精确域名、泛域),多个以英文分号间隔,最大支持2万个"}
+  Ports *string `json:"ports,omitempty" xml:"ports,omitempty" require:"true"`
+}
+
+func (s UpdateTunnelApplicationsResponseContentList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateTunnelApplicationsResponseContentList) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateTunnelApplicationsResponseContentList) SetProtocol(v string) *UpdateTunnelApplicationsResponseContentList {
+  s.Protocol = &v
+  return s
+}
+
+func (s *UpdateTunnelApplicationsResponseContentList) SetIpOrDomain(v string) *UpdateTunnelApplicationsResponseContentList {
+  s.IpOrDomain = &v
+  return s
+}
+
+func (s *UpdateTunnelApplicationsResponseContentList) SetPorts(v string) *UpdateTunnelApplicationsResponseContentList {
+  s.Ports = &v
+  return s
 }
 
 type UpdateTunnelApplicationsResponseHeader struct {
@@ -707,16 +739,16 @@ func (s AuthorizeUserApplicationResponseHeader) GoString() string {
 
 
 type AddWebApplicationsRequest struct {
-  // {"en":"application name", "zh_CN":"应用名称"}
-  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true" maxLength:"128"`
-  // {"en":"protocol", "zh_CN":"协议"}
+  // {"en":"application name","zh_CN":"应用名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"protocol","zh_CN":"协议"}
   Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty" require:"true"`
-  // {"en":"ip or domain", "zh_CN":"ip或者域名"}
+  // {"en":"ip or domain","zh_CN":"ip或者域名"}
   IpOrDomain *string `json:"ipOrDomain,omitempty" xml:"ipOrDomain,omitempty" require:"true"`
-  // {"en":"application ports", "zh_CN":"端口:0-65535"}
+  // {"en":"application ports","zh_CN":"端口:0-65535"}
   Port *string `json:"port,omitempty" xml:"port,omitempty" require:"true"`
-  // {"en":"Remark,Maximum length is 255 characters.", "zh_CN":"备注最大长度255个字符"}
-  Remark *string `json:"remark,omitempty" xml:"remark,omitempty" maxLength:"255"`
+  // {"en":"Remark,Maximum length is 255 characters.","zh_CN":"备注最大长度255个字符"}
+  Remark *string `json:"remark,omitempty" xml:"remark,omitempty"`
 }
 
 func (s AddWebApplicationsRequest) String() string {
@@ -752,17 +784,50 @@ func (s *AddWebApplicationsRequest) SetRemark(v string) *AddWebApplicationsReque
   return s
 }
 
+type AddWebApplicationsRequestHeader struct {
+}
+
+func (s AddWebApplicationsRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddWebApplicationsRequestHeader) GoString() string {
+  return s.String()
+}
+
+type AddWebApplicationsPaths struct {
+}
+
+func (s AddWebApplicationsPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddWebApplicationsPaths) GoString() string {
+  return s.String()
+}
+
+type AddWebApplicationsParameters struct {
+}
+
+func (s AddWebApplicationsParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddWebApplicationsParameters) GoString() string {
+  return s.String()
+}
+
 type AddWebApplicationsResponse struct {
-  // {"en":"application name", "zh_CN":"应用名称"}
+  // {"en":"application name","zh_CN":"应用名称"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
-  // {"en":"protocol", "zh_CN":"协议"}
+  // {"en":"protocol","zh_CN":"协议"}
   Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty" require:"true"`
-  // {"en":"ip or domain", "zh_CN":"ip或者域名"}
+  // {"en":"ip or domain","zh_CN":"ip或者域名"}
   IpOrDomain *string `json:"ipOrDomain,omitempty" xml:"ipOrDomain,omitempty" require:"true"`
-  // {"en":"application ports", "zh_CN":"端口:0-65535"}
+  // {"en":"application ports","zh_CN":"端口:0-65535"}
   Port *string `json:"port,omitempty" xml:"port,omitempty" require:"true"`
-  // {"en":"Remark,Maximum length is 255 characters.", "zh_CN":"备注最大长度255个字符"}
-  Remark *string `json:"remark,omitempty" xml:"remark,omitempty" maxLength:"255"`
+  // {"en":"Remark,Maximum length is 255 characters.","zh_CN":"备注最大长度255个字符"}
+  Remark *string `json:"remark,omitempty" xml:"remark,omitempty" require:"true"`
 }
 
 func (s AddWebApplicationsResponse) String() string {
@@ -796,39 +861,6 @@ func (s *AddWebApplicationsResponse) SetPort(v string) *AddWebApplicationsRespon
 func (s *AddWebApplicationsResponse) SetRemark(v string) *AddWebApplicationsResponse {
   s.Remark = &v
   return s
-}
-
-type AddWebApplicationsPaths struct {
-}
-
-func (s AddWebApplicationsPaths) String() string {
-  return tea.Prettify(s)
-}
-
-func (s AddWebApplicationsPaths) GoString() string {
-  return s.String()
-}
-
-type AddWebApplicationsParameters struct {
-}
-
-func (s AddWebApplicationsParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s AddWebApplicationsParameters) GoString() string {
-  return s.String()
-}
-
-type AddWebApplicationsRequestHeader struct {
-}
-
-func (s AddWebApplicationsRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s AddWebApplicationsRequestHeader) GoString() string {
-  return s.String()
 }
 
 type AddWebApplicationsResponseHeader struct {
@@ -989,7 +1021,7 @@ func (s QueryAppListResponseHeader) GoString() string {
 
 
 type DescribeAuthorizedApplicationsOfUserRequest struct {
-  // {"en":"User Name", "zh_CN":"用户名"}
+  // {"en":"User Name","zh_CN":"用户名"}
   Username *string `json:"username,omitempty" xml:"username,omitempty" require:"true"`
 }
 
@@ -1006,29 +1038,15 @@ func (s *DescribeAuthorizedApplicationsOfUserRequest) SetUsername(v string) *Des
   return s
 }
 
-type DescribeAuthorizedApplicationsOfUserResponse struct {
-  // {"en":"Resource/Application type, default is tunnel. tunnel: tunnelApp, web: webApp, link: linkApp, saas: saasApp", "zh_CN":"资源/应用类型，默认是隧道应用. tunnel: 隧道应用, web: WEB应用, link: 快捷链接, saas: saas应用"}
-  ResourceType *string `json:"resourceType,omitempty" xml:"resourceType,omitempty" require:"true"`
-  // {"en":"Resource/Application name", "zh_CN":"资源/应用名称"}
-  ResourceName *string `json:"resourceName,omitempty" xml:"resourceName,omitempty" require:"true"`
+type DescribeAuthorizedApplicationsOfUserRequestHeader struct {
 }
 
-func (s DescribeAuthorizedApplicationsOfUserResponse) String() string {
+func (s DescribeAuthorizedApplicationsOfUserRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s DescribeAuthorizedApplicationsOfUserResponse) GoString() string {
+func (s DescribeAuthorizedApplicationsOfUserRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *DescribeAuthorizedApplicationsOfUserResponse) SetResourceType(v string) *DescribeAuthorizedApplicationsOfUserResponse {
-  s.ResourceType = &v
-  return s
-}
-
-func (s *DescribeAuthorizedApplicationsOfUserResponse) SetResourceName(v string) *DescribeAuthorizedApplicationsOfUserResponse {
-  s.ResourceName = &v
-  return s
 }
 
 type DescribeAuthorizedApplicationsOfUserPaths struct {
@@ -1053,15 +1071,29 @@ func (s DescribeAuthorizedApplicationsOfUserParameters) GoString() string {
   return s.String()
 }
 
-type DescribeAuthorizedApplicationsOfUserRequestHeader struct {
+type DescribeAuthorizedApplicationsOfUserResponse struct {
+  // {"en":"Resource/Application type, default is tunnel. tunnel: tunnelApp, web: webApp, link: linkApp, saas: saasApp","zh_CN":"资源/应用类型，默认是隧道应用. tunnel: 隧道应用, web: WEB应用, link: 快捷链接, saas: saas应用"}
+  ResourceType *string `json:"resourceType,omitempty" xml:"resourceType,omitempty" require:"true"`
+  // {"en":"Resource/Application name","zh_CN":"资源/应用名称"}
+  ResourceName *string `json:"resourceName,omitempty" xml:"resourceName,omitempty" require:"true"`
 }
 
-func (s DescribeAuthorizedApplicationsOfUserRequestHeader) String() string {
+func (s DescribeAuthorizedApplicationsOfUserResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s DescribeAuthorizedApplicationsOfUserRequestHeader) GoString() string {
+func (s DescribeAuthorizedApplicationsOfUserResponse) GoString() string {
   return s.String()
+}
+
+func (s *DescribeAuthorizedApplicationsOfUserResponse) SetResourceType(v string) *DescribeAuthorizedApplicationsOfUserResponse {
+  s.ResourceType = &v
+  return s
+}
+
+func (s *DescribeAuthorizedApplicationsOfUserResponse) SetResourceName(v string) *DescribeAuthorizedApplicationsOfUserResponse {
+  s.ResourceName = &v
+  return s
 }
 
 type DescribeAuthorizedApplicationsOfUserResponseHeader struct {
@@ -1169,12 +1201,12 @@ func (s DeleteAppResponseHeader) GoString() string {
 
 
 type QueryApplicationDetailRequest struct {
-  // {"en":"application name", "zh_CN":"应用名称"}
+  // {"en":"application name","zh_CN":"应用名称"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
-  // {"en":"Remark,Maximum length is 255 characters.", "zh_CN":"备注最大长度255个字符"}
-  Remark *string `json:"remark,omitempty" xml:"remark,omitempty" maxLength:"255"`
-  // {"en":"application contents ", "zh_CN":"应用内容"}
-  ContentList []*QueryApplicationDetailContentItem `json:"contentList,omitempty" xml:"contentList,omitempty" type:"Repeated"`
+  // {"en":"Remark,Maximum length is 255 characters.","zh_CN":"备注最大长度255个字符"}
+  Remark *string `json:"remark,omitempty" xml:"remark,omitempty"`
+  // {"en":"application contents","zh_CN":"应用内容"}
+  ContentList []*QueryApplicationDetailRequestContentList `json:"contentList,omitempty" xml:"contentList,omitempty" type:"Repeated"`
 }
 
 func (s QueryApplicationDetailRequest) String() string {
@@ -1195,73 +1227,52 @@ func (s *QueryApplicationDetailRequest) SetRemark(v string) *QueryApplicationDet
   return s
 }
 
-func (s *QueryApplicationDetailRequest) SetContentList(v []*QueryApplicationDetailContentItem) *QueryApplicationDetailRequest {
+func (s *QueryApplicationDetailRequest) SetContentList(v []*QueryApplicationDetailRequestContentList) *QueryApplicationDetailRequest {
   s.ContentList = v
   return s
 }
 
-type QueryApplicationDetailContentItem struct {
-  // {"en":"application name", "zh_CN":"协议"}
+type QueryApplicationDetailRequestContentList struct     {
+  // {"en":"application name","zh_CN":"协议"}
   Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty" require:"true"`
-  // {"en":"ip or domain", "zh_CN":"ip或者域名"}
+  // {"en":"ip or domain","zh_CN":"ip或者域名"}
   IpOrDomain *string `json:"ipOrDomain,omitempty" xml:"ipOrDomain,omitempty" require:"true"`
-  // {"en":"application ports", "zh_CN":"端口,支持IP地址(IP、IP/掩码、IPX-IPy)和域名(精确域名、泛域),多个以英文分号间隔,最大支持2万个"}
+  // {"en":"application ports","zh_CN":"端口,支持IP地址(IP、IP/掩码、IPX-IPy)和域名(精确域名、泛域),多个以英文分号间隔,最大支持2万个"}
   Ports *string `json:"ports,omitempty" xml:"ports,omitempty" require:"true"`
 }
 
-func (s QueryApplicationDetailContentItem) String() string {
+func (s QueryApplicationDetailRequestContentList) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryApplicationDetailContentItem) GoString() string {
+func (s QueryApplicationDetailRequestContentList) GoString() string {
   return s.String()
 }
 
-func (s *QueryApplicationDetailContentItem) SetProtocol(v string) *QueryApplicationDetailContentItem {
+func (s *QueryApplicationDetailRequestContentList) SetProtocol(v string) *QueryApplicationDetailRequestContentList {
   s.Protocol = &v
   return s
 }
 
-func (s *QueryApplicationDetailContentItem) SetIpOrDomain(v string) *QueryApplicationDetailContentItem {
+func (s *QueryApplicationDetailRequestContentList) SetIpOrDomain(v string) *QueryApplicationDetailRequestContentList {
   s.IpOrDomain = &v
   return s
 }
 
-func (s *QueryApplicationDetailContentItem) SetPorts(v string) *QueryApplicationDetailContentItem {
+func (s *QueryApplicationDetailRequestContentList) SetPorts(v string) *QueryApplicationDetailRequestContentList {
   s.Ports = &v
   return s
 }
 
-type QueryApplicationDetailResponse struct {
-  // {"en":"application name", "zh_CN":"应用名称"}
-  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
-  // {"en":"Remark,Maximum length is 255 characters.", "zh_CN":"备注最大长度255个字符"}
-  Remark *string `json:"remark,omitempty" xml:"remark,omitempty" maxLength:"255"`
-  // {"en":"application contents ", "zh_CN":"应用内容"}
-  ContentList []*QueryApplicationDetailContentItem `json:"contentList,omitempty" xml:"contentList,omitempty" type:"Repeated"`
+type QueryApplicationDetailRequestHeader struct {
 }
 
-func (s QueryApplicationDetailResponse) String() string {
+func (s QueryApplicationDetailRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryApplicationDetailResponse) GoString() string {
+func (s QueryApplicationDetailRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *QueryApplicationDetailResponse) SetName(v string) *QueryApplicationDetailResponse {
-  s.Name = &v
-  return s
-}
-
-func (s *QueryApplicationDetailResponse) SetRemark(v string) *QueryApplicationDetailResponse {
-  s.Remark = &v
-  return s
-}
-
-func (s *QueryApplicationDetailResponse) SetContentList(v []*QueryApplicationDetailContentItem) *QueryApplicationDetailResponse {
-  s.ContentList = v
-  return s
 }
 
 type QueryApplicationDetailPaths struct {
@@ -1286,15 +1297,68 @@ func (s QueryApplicationDetailParameters) GoString() string {
   return s.String()
 }
 
-type QueryApplicationDetailRequestHeader struct {
+type QueryApplicationDetailResponse struct {
+  // {"en":"application name","zh_CN":"应用名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"Remark,Maximum length is 255 characters.","zh_CN":"备注最大长度255个字符"}
+  Remark *string `json:"remark,omitempty" xml:"remark,omitempty" require:"true"`
+  // {"en":"application contents","zh_CN":"应用内容"}
+  ContentList []*QueryApplicationDetailResponseContentList `json:"contentList,omitempty" xml:"contentList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s QueryApplicationDetailRequestHeader) String() string {
+func (s QueryApplicationDetailResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s QueryApplicationDetailRequestHeader) GoString() string {
+func (s QueryApplicationDetailResponse) GoString() string {
   return s.String()
+}
+
+func (s *QueryApplicationDetailResponse) SetName(v string) *QueryApplicationDetailResponse {
+  s.Name = &v
+  return s
+}
+
+func (s *QueryApplicationDetailResponse) SetRemark(v string) *QueryApplicationDetailResponse {
+  s.Remark = &v
+  return s
+}
+
+func (s *QueryApplicationDetailResponse) SetContentList(v []*QueryApplicationDetailResponseContentList) *QueryApplicationDetailResponse {
+  s.ContentList = v
+  return s
+}
+
+type QueryApplicationDetailResponseContentList struct     {
+  // {"en":"application name","zh_CN":"协议"}
+  Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty" require:"true"`
+  // {"en":"ip or domain","zh_CN":"ip或者域名"}
+  IpOrDomain *string `json:"ipOrDomain,omitempty" xml:"ipOrDomain,omitempty" require:"true"`
+  // {"en":"application ports","zh_CN":"端口,支持IP地址(IP、IP/掩码、IPX-IPy)和域名(精确域名、泛域),多个以英文分号间隔,最大支持2万个"}
+  Ports *string `json:"ports,omitempty" xml:"ports,omitempty" require:"true"`
+}
+
+func (s QueryApplicationDetailResponseContentList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryApplicationDetailResponseContentList) GoString() string {
+  return s.String()
+}
+
+func (s *QueryApplicationDetailResponseContentList) SetProtocol(v string) *QueryApplicationDetailResponseContentList {
+  s.Protocol = &v
+  return s
+}
+
+func (s *QueryApplicationDetailResponseContentList) SetIpOrDomain(v string) *QueryApplicationDetailResponseContentList {
+  s.IpOrDomain = &v
+  return s
+}
+
+func (s *QueryApplicationDetailResponseContentList) SetPorts(v string) *QueryApplicationDetailResponseContentList {
+  s.Ports = &v
+  return s
 }
 
 type QueryApplicationDetailResponseHeader struct {
@@ -1312,19 +1376,19 @@ func (s QueryApplicationDetailResponseHeader) GoString() string {
 
 
 type AuthorizeApplicationForUserRequest struct {
-  // {"en":"Resource/Application Name", "zh_CN":"资源/应用名称"}
+  // {"en":"Resource/Application Name","zh_CN":"资源/应用名称"}
   ResourceName *string `json:"resourceName,omitempty" xml:"resourceName,omitempty" require:"true"`
-  // {"en":"Action Type, 0: Append, 1: Overwrite", "zh_CN":"操作类型，0：追加，1：覆盖"}
+  // {"en":"Action Type, 0: Append, 1: Overwrite","zh_CN":"操作类型，0：追加，1：覆盖"}
   ActionType *int `json:"actionType,omitempty" xml:"actionType,omitempty" require:"true"`
-  // {"en":"Resource Type, e.g., tunnel, web, link, saas", "zh_CN":"资源类型，比如：隧道应用、WEB应用、快捷链接、saas应用"}
+  // {"en":"Resource Type, e.g., tunnel, web, link, saas","zh_CN":"资源类型，比如：隧道应用、WEB应用、快捷链接、saas应用"}
   ResourceType *string `json:"resourceType,omitempty" xml:"resourceType,omitempty" require:"true"`
-  // {"en":"List of authorized users", "zh_CN":"授权的用户列表"}
+  // {"en":"List of authorized users","zh_CN":"授权的用户列表"}
   AuthorizedUsers []*string `json:"authorizedUsers,omitempty" xml:"authorizedUsers,omitempty" type:"Repeated"`
-  // {"en":"List of authorized user group IDs", "zh_CN":"授权的用户组ID列表"}
+  // {"en":"List of authorized user group IDs","zh_CN":"授权的用户组ID列表"}
   AuthorizedUserGroupIds []*int64 `json:"authorizedUserGroupIds,omitempty" xml:"authorizedUserGroupIds,omitempty" type:"Repeated"`
-  // {"en":"List of excluded users", "zh_CN":"例外用户列表"}
+  // {"en":"List of excluded users","zh_CN":"例外用户列表"}
   ExcludeUsers []*string `json:"excludeUsers,omitempty" xml:"excludeUsers,omitempty" type:"Repeated"`
-  // {"en":"List of excluded user group IDs", "zh_CN":"例外用户组ID列表"}
+  // {"en":"List of excluded user group IDs","zh_CN":"例外用户组ID列表"}
   ExcludeUserGroupIds []*int64 `json:"excludeUserGroupIds,omitempty" xml:"excludeUserGroupIds,omitempty" type:"Repeated"`
 }
 
@@ -1371,14 +1435,14 @@ func (s *AuthorizeApplicationForUserRequest) SetExcludeUserGroupIds(v []*int64) 
   return s
 }
 
-type AuthorizeApplicationForUserResponse struct {
+type AuthorizeApplicationForUserRequestHeader struct {
 }
 
-func (s AuthorizeApplicationForUserResponse) String() string {
+func (s AuthorizeApplicationForUserRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s AuthorizeApplicationForUserResponse) GoString() string {
+func (s AuthorizeApplicationForUserRequestHeader) GoString() string {
   return s.String()
 }
 
@@ -1404,14 +1468,14 @@ func (s AuthorizeApplicationForUserParameters) GoString() string {
   return s.String()
 }
 
-type AuthorizeApplicationForUserRequestHeader struct {
+type AuthorizeApplicationForUserResponse struct {
 }
 
-func (s AuthorizeApplicationForUserRequestHeader) String() string {
+func (s AuthorizeApplicationForUserResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s AuthorizeApplicationForUserRequestHeader) GoString() string {
+func (s AuthorizeApplicationForUserResponse) GoString() string {
   return s.String()
 }
 
@@ -1430,7 +1494,7 @@ func (s AuthorizeApplicationForUserResponseHeader) GoString() string {
 
 
 type DeleteWebApplicationsRequest struct {
-  // {"en":"application name", "zh_CN":"应用名称"}
+  // {"en":"application name","zh_CN":"应用名称"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
 }
 
@@ -1447,14 +1511,14 @@ func (s *DeleteWebApplicationsRequest) SetName(v string) *DeleteWebApplicationsR
   return s
 }
 
-type DeleteWebApplicationsResponse struct {
+type DeleteWebApplicationsRequestHeader struct {
 }
 
-func (s DeleteWebApplicationsResponse) String() string {
+func (s DeleteWebApplicationsRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s DeleteWebApplicationsResponse) GoString() string {
+func (s DeleteWebApplicationsRequestHeader) GoString() string {
   return s.String()
 }
 
@@ -1480,14 +1544,14 @@ func (s DeleteWebApplicationsParameters) GoString() string {
   return s.String()
 }
 
-type DeleteWebApplicationsRequestHeader struct {
+type DeleteWebApplicationsResponse struct {
 }
 
-func (s DeleteWebApplicationsRequestHeader) String() string {
+func (s DeleteWebApplicationsResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s DeleteWebApplicationsRequestHeader) GoString() string {
+func (s DeleteWebApplicationsResponse) GoString() string {
   return s.String()
 }
 
@@ -1506,12 +1570,12 @@ func (s DeleteWebApplicationsResponseHeader) GoString() string {
 
 
 type AddTunnelApplicationsRequest struct {
-  // {"en":"application name", "zh_CN":"应用名称"}
-  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true" maxLength:"128"`
-  // {"en":"Remark,Maximum length is 255 characters.", "zh_CN":"备注最大长度255个字符"}
-  Remark *string `json:"remark,omitempty" xml:"remark,omitempty" maxLength:"255"`
-  // {"en":"application contents ", "zh_CN":"应用内容"}
-  ContentList []*AddTunnelApplicationsContentItem `json:"contentList,omitempty" xml:"contentList,omitempty" require:"true" type:"Repeated"`
+  // {"en":"application name","zh_CN":"应用名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"Remark,Maximum length is 255 characters.","zh_CN":"备注最大长度255个字符"}
+  Remark *string `json:"remark,omitempty" xml:"remark,omitempty"`
+  // {"en":"application contents","zh_CN":"应用内容"}
+  ContentList []*AddTunnelApplicationsRequestContentList `json:"contentList,omitempty" xml:"contentList,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s AddTunnelApplicationsRequest) String() string {
@@ -1532,73 +1596,52 @@ func (s *AddTunnelApplicationsRequest) SetRemark(v string) *AddTunnelApplication
   return s
 }
 
-func (s *AddTunnelApplicationsRequest) SetContentList(v []*AddTunnelApplicationsContentItem) *AddTunnelApplicationsRequest {
+func (s *AddTunnelApplicationsRequest) SetContentList(v []*AddTunnelApplicationsRequestContentList) *AddTunnelApplicationsRequest {
   s.ContentList = v
   return s
 }
 
-type AddTunnelApplicationsContentItem struct {
-  // {"en":"protocol,support for tcp,udp,imcp,all.", "zh_CN":"协议,支持tcp,udp,icmp,all. all表示不限制协议"}
+type AddTunnelApplicationsRequestContentList struct     {
+  // {"en":"protocol,support for tcp,udp,imcp,all.","zh_CN":"协议,支持tcp,udp,icmp,all. all表示不限制协议"}
   Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty" require:"true"`
-  // {"en":"ip or domain", "zh_CN":"ip或者域名"}
+  // {"en":"ip or domain","zh_CN":"ip或者域名"}
   IpOrDomain *string `json:"ipOrDomain,omitempty" xml:"ipOrDomain,omitempty" require:"true"`
-  // {"en":"application ports", "zh_CN":"端口,支持IP地址(IP、IP/掩码、IPX-IPy)和域名(精确域名、泛域),多个以英文分号间隔,最大支持2万个"}
+  // {"en":"application ports","zh_CN":"端口,支持IP地址(IP、IP/掩码、IPX-IPy)和域名(精确域名、泛域),多个以英文分号间隔,最大支持2万个"}
   Ports *string `json:"ports,omitempty" xml:"ports,omitempty" require:"true"`
 }
 
-func (s AddTunnelApplicationsContentItem) String() string {
+func (s AddTunnelApplicationsRequestContentList) String() string {
   return tea.Prettify(s)
 }
 
-func (s AddTunnelApplicationsContentItem) GoString() string {
+func (s AddTunnelApplicationsRequestContentList) GoString() string {
   return s.String()
 }
 
-func (s *AddTunnelApplicationsContentItem) SetProtocol(v string) *AddTunnelApplicationsContentItem {
+func (s *AddTunnelApplicationsRequestContentList) SetProtocol(v string) *AddTunnelApplicationsRequestContentList {
   s.Protocol = &v
   return s
 }
 
-func (s *AddTunnelApplicationsContentItem) SetIpOrDomain(v string) *AddTunnelApplicationsContentItem {
+func (s *AddTunnelApplicationsRequestContentList) SetIpOrDomain(v string) *AddTunnelApplicationsRequestContentList {
   s.IpOrDomain = &v
   return s
 }
 
-func (s *AddTunnelApplicationsContentItem) SetPorts(v string) *AddTunnelApplicationsContentItem {
+func (s *AddTunnelApplicationsRequestContentList) SetPorts(v string) *AddTunnelApplicationsRequestContentList {
   s.Ports = &v
   return s
 }
 
-type AddTunnelApplicationsResponse struct {
-  // {"en":"application name", "zh_CN":"应用名称"}
-  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
-  // {"en":"Remark,Maximum length is 255 characters.", "zh_CN":"备注最大长度255个字符"}
-  Remark *string `json:"remark,omitempty" xml:"remark,omitempty" maxLength:"255"`
-  // {"en":"application contents ", "zh_CN":"应用内容"}
-  ContentList []*AddTunnelApplicationsContentItem `json:"contentList,omitempty" xml:"contentList,omitempty" require:"true" type:"Repeated"`
+type AddTunnelApplicationsRequestHeader struct {
 }
 
-func (s AddTunnelApplicationsResponse) String() string {
+func (s AddTunnelApplicationsRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s AddTunnelApplicationsResponse) GoString() string {
+func (s AddTunnelApplicationsRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *AddTunnelApplicationsResponse) SetName(v string) *AddTunnelApplicationsResponse {
-  s.Name = &v
-  return s
-}
-
-func (s *AddTunnelApplicationsResponse) SetRemark(v string) *AddTunnelApplicationsResponse {
-  s.Remark = &v
-  return s
-}
-
-func (s *AddTunnelApplicationsResponse) SetContentList(v []*AddTunnelApplicationsContentItem) *AddTunnelApplicationsResponse {
-  s.ContentList = v
-  return s
 }
 
 type AddTunnelApplicationsPaths struct {
@@ -1623,15 +1666,68 @@ func (s AddTunnelApplicationsParameters) GoString() string {
   return s.String()
 }
 
-type AddTunnelApplicationsRequestHeader struct {
+type AddTunnelApplicationsResponse struct {
+  // {"en":"application name","zh_CN":"应用名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"Remark,Maximum length is 255 characters.","zh_CN":"备注最大长度255个字符"}
+  Remark *string `json:"remark,omitempty" xml:"remark,omitempty" require:"true"`
+  // {"en":"application contents","zh_CN":"应用内容"}
+  ContentList []*AddTunnelApplicationsResponseContentList `json:"contentList,omitempty" xml:"contentList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s AddTunnelApplicationsRequestHeader) String() string {
+func (s AddTunnelApplicationsResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s AddTunnelApplicationsRequestHeader) GoString() string {
+func (s AddTunnelApplicationsResponse) GoString() string {
   return s.String()
+}
+
+func (s *AddTunnelApplicationsResponse) SetName(v string) *AddTunnelApplicationsResponse {
+  s.Name = &v
+  return s
+}
+
+func (s *AddTunnelApplicationsResponse) SetRemark(v string) *AddTunnelApplicationsResponse {
+  s.Remark = &v
+  return s
+}
+
+func (s *AddTunnelApplicationsResponse) SetContentList(v []*AddTunnelApplicationsResponseContentList) *AddTunnelApplicationsResponse {
+  s.ContentList = v
+  return s
+}
+
+type AddTunnelApplicationsResponseContentList struct     {
+  // {"en":"protocol,support for tcp,udp,imcp,all.","zh_CN":"协议,支持tcp,udp,icmp,all. all表示不限制协议"}
+  Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty" require:"true"`
+  // {"en":"ip or domain","zh_CN":"ip或者域名"}
+  IpOrDomain *string `json:"ipOrDomain,omitempty" xml:"ipOrDomain,omitempty" require:"true"`
+  // {"en":"application ports","zh_CN":"端口,支持IP地址(IP、IP/掩码、IPX-IPy)和域名(精确域名、泛域),多个以英文分号间隔,最大支持2万个"}
+  Ports *string `json:"ports,omitempty" xml:"ports,omitempty" require:"true"`
+}
+
+func (s AddTunnelApplicationsResponseContentList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddTunnelApplicationsResponseContentList) GoString() string {
+  return s.String()
+}
+
+func (s *AddTunnelApplicationsResponseContentList) SetProtocol(v string) *AddTunnelApplicationsResponseContentList {
+  s.Protocol = &v
+  return s
+}
+
+func (s *AddTunnelApplicationsResponseContentList) SetIpOrDomain(v string) *AddTunnelApplicationsResponseContentList {
+  s.IpOrDomain = &v
+  return s
+}
+
+func (s *AddTunnelApplicationsResponseContentList) SetPorts(v string) *AddTunnelApplicationsResponseContentList {
+  s.Ports = &v
+  return s
 }
 
 type AddTunnelApplicationsResponseHeader struct {
@@ -1649,14 +1745,14 @@ func (s AddTunnelApplicationsResponseHeader) GoString() string {
 
 
 type UpdateWebApplicationsRequest struct {
-  // {"en":"application name", "zh_CN":"应用名称"}
+  // {"en":"application name","zh_CN":"应用名称"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
-  // {"en":"new  application name", "zh_CN":"新的应用名称"}
+  // {"en":"new  application name","zh_CN":"新的应用名称"}
   NewName *string `json:"newName,omitempty" xml:"newName,omitempty" require:"true"`
-  // {"en":"Remark,Maximum length is 255 characters.", "zh_CN":"备注最大长度255个字符"}
-  Remark *string `json:"remark,omitempty" xml:"remark,omitempty" maxLength:"255"`
-  // {"en":"application contents ", "zh_CN":"应用内容"}
-  ContentList []*UpdateWebApplicationsContentItem `json:"contentList,omitempty" xml:"contentList,omitempty" type:"Repeated"`
+  // {"en":"Remark,Maximum length is 255 characters.","zh_CN":"备注最大长度255个字符"}
+  Remark *string `json:"remark,omitempty" xml:"remark,omitempty"`
+  // {"en":"application contents","zh_CN":"应用内容"}
+  ContentList []*UpdateWebApplicationsRequestContentList `json:"contentList,omitempty" xml:"contentList,omitempty" type:"Repeated"`
 }
 
 func (s UpdateWebApplicationsRequest) String() string {
@@ -1682,73 +1778,52 @@ func (s *UpdateWebApplicationsRequest) SetRemark(v string) *UpdateWebApplication
   return s
 }
 
-func (s *UpdateWebApplicationsRequest) SetContentList(v []*UpdateWebApplicationsContentItem) *UpdateWebApplicationsRequest {
+func (s *UpdateWebApplicationsRequest) SetContentList(v []*UpdateWebApplicationsRequestContentList) *UpdateWebApplicationsRequest {
   s.ContentList = v
   return s
 }
 
-type UpdateWebApplicationsContentItem struct {
-  // {"en":"protocol", "zh_CN":"协议"}
+type UpdateWebApplicationsRequestContentList struct     {
+  // {"en":"protocol","zh_CN":"协议"}
   Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty" require:"true"`
-  // {"en":"ip or domain", "zh_CN":"ip或者域名"}
+  // {"en":"ip or domain","zh_CN":"ip或者域名"}
   IpOrDomain *string `json:"ipOrDomain,omitempty" xml:"ipOrDomain,omitempty" require:"true"`
-  // {"en":"application ports", "zh_CN":"端口,支持IP地址(IP、IP/掩码、IPX-IPy)和域名(精确域名、泛域),多个以英文分号间隔,最大支持2万个"}
+  // {"en":"application ports","zh_CN":"端口,支持IP地址(IP、IP/掩码、IPX-IPy)和域名(精确域名、泛域),多个以英文分号间隔,最大支持2万个"}
   Ports *string `json:"ports,omitempty" xml:"ports,omitempty" require:"true"`
 }
 
-func (s UpdateWebApplicationsContentItem) String() string {
+func (s UpdateWebApplicationsRequestContentList) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateWebApplicationsContentItem) GoString() string {
+func (s UpdateWebApplicationsRequestContentList) GoString() string {
   return s.String()
 }
 
-func (s *UpdateWebApplicationsContentItem) SetProtocol(v string) *UpdateWebApplicationsContentItem {
+func (s *UpdateWebApplicationsRequestContentList) SetProtocol(v string) *UpdateWebApplicationsRequestContentList {
   s.Protocol = &v
   return s
 }
 
-func (s *UpdateWebApplicationsContentItem) SetIpOrDomain(v string) *UpdateWebApplicationsContentItem {
+func (s *UpdateWebApplicationsRequestContentList) SetIpOrDomain(v string) *UpdateWebApplicationsRequestContentList {
   s.IpOrDomain = &v
   return s
 }
 
-func (s *UpdateWebApplicationsContentItem) SetPorts(v string) *UpdateWebApplicationsContentItem {
+func (s *UpdateWebApplicationsRequestContentList) SetPorts(v string) *UpdateWebApplicationsRequestContentList {
   s.Ports = &v
   return s
 }
 
-type UpdateWebApplicationsResponse struct {
-  // {"en":"application name", "zh_CN":"应用名称"}
-  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
-  // {"en":"Remark,Maximum length is 255 characters.", "zh_CN":"备注最大长度255个字符"}
-  Remark *string `json:"remark,omitempty" xml:"remark,omitempty" maxLength:"255"`
-  // {"en":"application contents ", "zh_CN":"应用内容"}
-  ContentList []*UpdateWebApplicationsContentItem `json:"contentList,omitempty" xml:"contentList,omitempty" type:"Repeated"`
+type UpdateWebApplicationsRequestHeader struct {
 }
 
-func (s UpdateWebApplicationsResponse) String() string {
+func (s UpdateWebApplicationsRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateWebApplicationsResponse) GoString() string {
+func (s UpdateWebApplicationsRequestHeader) GoString() string {
   return s.String()
-}
-
-func (s *UpdateWebApplicationsResponse) SetName(v string) *UpdateWebApplicationsResponse {
-  s.Name = &v
-  return s
-}
-
-func (s *UpdateWebApplicationsResponse) SetRemark(v string) *UpdateWebApplicationsResponse {
-  s.Remark = &v
-  return s
-}
-
-func (s *UpdateWebApplicationsResponse) SetContentList(v []*UpdateWebApplicationsContentItem) *UpdateWebApplicationsResponse {
-  s.ContentList = v
-  return s
 }
 
 type UpdateWebApplicationsPaths struct {
@@ -1773,15 +1848,68 @@ func (s UpdateWebApplicationsParameters) GoString() string {
   return s.String()
 }
 
-type UpdateWebApplicationsRequestHeader struct {
+type UpdateWebApplicationsResponse struct {
+  // {"en":"application name","zh_CN":"应用名称"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"Remark,Maximum length is 255 characters.","zh_CN":"备注最大长度255个字符"}
+  Remark *string `json:"remark,omitempty" xml:"remark,omitempty" require:"true"`
+  // {"en":"application contents","zh_CN":"应用内容"}
+  ContentList []*UpdateWebApplicationsResponseContentList `json:"contentList,omitempty" xml:"contentList,omitempty" require:"true" type:"Repeated"`
 }
 
-func (s UpdateWebApplicationsRequestHeader) String() string {
+func (s UpdateWebApplicationsResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s UpdateWebApplicationsRequestHeader) GoString() string {
+func (s UpdateWebApplicationsResponse) GoString() string {
   return s.String()
+}
+
+func (s *UpdateWebApplicationsResponse) SetName(v string) *UpdateWebApplicationsResponse {
+  s.Name = &v
+  return s
+}
+
+func (s *UpdateWebApplicationsResponse) SetRemark(v string) *UpdateWebApplicationsResponse {
+  s.Remark = &v
+  return s
+}
+
+func (s *UpdateWebApplicationsResponse) SetContentList(v []*UpdateWebApplicationsResponseContentList) *UpdateWebApplicationsResponse {
+  s.ContentList = v
+  return s
+}
+
+type UpdateWebApplicationsResponseContentList struct     {
+  // {"en":"protocol","zh_CN":"协议"}
+  Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty" require:"true"`
+  // {"en":"ip or domain","zh_CN":"ip或者域名"}
+  IpOrDomain *string `json:"ipOrDomain,omitempty" xml:"ipOrDomain,omitempty" require:"true"`
+  // {"en":"application ports","zh_CN":"端口,支持IP地址(IP、IP/掩码、IPX-IPy)和域名(精确域名、泛域),多个以英文分号间隔,最大支持2万个"}
+  Ports *string `json:"ports,omitempty" xml:"ports,omitempty" require:"true"`
+}
+
+func (s UpdateWebApplicationsResponseContentList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateWebApplicationsResponseContentList) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateWebApplicationsResponseContentList) SetProtocol(v string) *UpdateWebApplicationsResponseContentList {
+  s.Protocol = &v
+  return s
+}
+
+func (s *UpdateWebApplicationsResponseContentList) SetIpOrDomain(v string) *UpdateWebApplicationsResponseContentList {
+  s.IpOrDomain = &v
+  return s
+}
+
+func (s *UpdateWebApplicationsResponseContentList) SetPorts(v string) *UpdateWebApplicationsResponseContentList {
+  s.Ports = &v
+  return s
 }
 
 type UpdateWebApplicationsResponseHeader struct {
@@ -1978,7 +2106,7 @@ func (s ManageEphoneAppResponseHeader) GoString() string {
 
 
 type DeleteTunnelApplicationsRequest struct {
-  // {"en":"application name", "zh_CN":"应用名称"}
+  // {"en":"application name","zh_CN":"应用名称"}
   Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
 }
 
@@ -1995,14 +2123,14 @@ func (s *DeleteTunnelApplicationsRequest) SetName(v string) *DeleteTunnelApplica
   return s
 }
 
-type DeleteTunnelApplicationsResponse struct {
+type DeleteTunnelApplicationsRequestHeader struct {
 }
 
-func (s DeleteTunnelApplicationsResponse) String() string {
+func (s DeleteTunnelApplicationsRequestHeader) String() string {
   return tea.Prettify(s)
 }
 
-func (s DeleteTunnelApplicationsResponse) GoString() string {
+func (s DeleteTunnelApplicationsRequestHeader) GoString() string {
   return s.String()
 }
 
@@ -2028,14 +2156,14 @@ func (s DeleteTunnelApplicationsParameters) GoString() string {
   return s.String()
 }
 
-type DeleteTunnelApplicationsRequestHeader struct {
+type DeleteTunnelApplicationsResponse struct {
 }
 
-func (s DeleteTunnelApplicationsRequestHeader) String() string {
+func (s DeleteTunnelApplicationsResponse) String() string {
   return tea.Prettify(s)
 }
 
-func (s DeleteTunnelApplicationsRequestHeader) GoString() string {
+func (s DeleteTunnelApplicationsResponse) GoString() string {
   return s.String()
 }
 

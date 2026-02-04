@@ -1488,6 +1488,392 @@ func (s GetCertificateApplicationOrderResponseHeader) GoString() string {
 
 
 
+type QueryCertificateApplicationIssuanceRecordsListRequest struct {
+  // {"en":"Unique identifier ID of the sales order, used to specify the certificate application to query.","zh_CN":"销售订单的唯一标识ID，用于指定查询的证书申请。"}
+  OrderId *string `json:"orderId,omitempty" xml:"orderId,omitempty" require:"true"`
+  // {"en":"Pagination information used to control the returned results, including page number and page size.","zh_CN":"用于控制返回结果的分页信息，包含页码和每页大小。"}
+  PageParam *QueryCertificateApplicationIssuanceRecordsListRequestPageParam `json:"pageParam,omitempty" xml:"pageParam,omitempty" type:"Struct"`
+}
+
+func (s QueryCertificateApplicationIssuanceRecordsListRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCertificateApplicationIssuanceRecordsListRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListRequest) SetOrderId(v string) *QueryCertificateApplicationIssuanceRecordsListRequest {
+  s.OrderId = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListRequest) SetPageParam(v *QueryCertificateApplicationIssuanceRecordsListRequestPageParam) *QueryCertificateApplicationIssuanceRecordsListRequest {
+  s.PageParam = v
+  return s
+}
+
+type QueryCertificateApplicationIssuanceRecordsListRequestPageParam struct {
+  // {"en":"Page size, 1-100","zh_CN":"每页大小，1-100"}
+  PageSize *int `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
+  // {"en":"Page number, current page, starting from 0 for the first page, must be greater than or equal to 0","zh_CN":"页码，当前页，第一页从0开始，必须大于等于0"}
+  PageNumber *int `json:"pageNumber,omitempty" xml:"pageNumber,omitempty"`
+}
+
+func (s QueryCertificateApplicationIssuanceRecordsListRequestPageParam) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCertificateApplicationIssuanceRecordsListRequestPageParam) GoString() string {
+  return s.String()
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListRequestPageParam) SetPageSize(v int) *QueryCertificateApplicationIssuanceRecordsListRequestPageParam {
+  s.PageSize = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListRequestPageParam) SetPageNumber(v int) *QueryCertificateApplicationIssuanceRecordsListRequestPageParam {
+  s.PageNumber = &v
+  return s
+}
+
+type QueryCertificateApplicationIssuanceRecordsListRequestHeader struct {
+}
+
+func (s QueryCertificateApplicationIssuanceRecordsListRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCertificateApplicationIssuanceRecordsListRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryCertificateApplicationIssuanceRecordsListPaths struct {
+}
+
+func (s QueryCertificateApplicationIssuanceRecordsListPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCertificateApplicationIssuanceRecordsListPaths) GoString() string {
+  return s.String()
+}
+
+type QueryCertificateApplicationIssuanceRecordsListParameters struct {
+}
+
+func (s QueryCertificateApplicationIssuanceRecordsListParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCertificateApplicationIssuanceRecordsListParameters) GoString() string {
+  return s.String()
+}
+
+type QueryCertificateApplicationIssuanceRecordsListResponse struct {
+  // {"en":"Response code, success is 0","zh_CN":"响应码，成功为0"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Response message","zh_CN":"响应信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Response data","zh_CN":"响应数据"}
+  Data *QueryCertificateApplicationIssuanceRecordsListResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryCertificateApplicationIssuanceRecordsListResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCertificateApplicationIssuanceRecordsListResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponse) SetCode(v string) *QueryCertificateApplicationIssuanceRecordsListResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponse) SetMessage(v string) *QueryCertificateApplicationIssuanceRecordsListResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponse) SetData(v *QueryCertificateApplicationIssuanceRecordsListResponseData) *QueryCertificateApplicationIssuanceRecordsListResponse {
+  s.Data = v
+  return s
+}
+
+type QueryCertificateApplicationIssuanceRecordsListResponseData struct {
+  // {"en":"Whether reissuance is allowed, true is yes, false is no","zh_CN":"是否允许重颁发，true 是、false 否"}
+  IsAllowReissue *string `json:"isAllowReissue,omitempty" xml:"isAllowReissue,omitempty" require:"true"`
+  // {"en":"Whether the certificate exists, true exists, false does not exist","zh_CN":"是否存在证书，true 存在、false 不存在"}
+  IsExistCertificate *string `json:"isExistCertificate,omitempty" xml:"isExistCertificate,omitempty" require:"true"`
+  // {"en":"Page Info","zh_CN":"分页数据"}
+  PageInfo *QueryCertificateApplicationIssuanceRecordsListResponseDataPageInfo `json:"pageInfo,omitempty" xml:"pageInfo,omitempty" require:"true" type:"Struct"`
+  // {"en":"Issuance record list","zh_CN":"颁发记录列表"}
+  Orders []*QueryCertificateApplicationIssuanceRecordsListResponseDataOrders `json:"orders,omitempty" xml:"orders,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryCertificateApplicationIssuanceRecordsListResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCertificateApplicationIssuanceRecordsListResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseData) SetIsAllowReissue(v string) *QueryCertificateApplicationIssuanceRecordsListResponseData {
+  s.IsAllowReissue = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseData) SetIsExistCertificate(v string) *QueryCertificateApplicationIssuanceRecordsListResponseData {
+  s.IsExistCertificate = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseData) SetPageInfo(v *QueryCertificateApplicationIssuanceRecordsListResponseDataPageInfo) *QueryCertificateApplicationIssuanceRecordsListResponseData {
+  s.PageInfo = v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseData) SetOrders(v []*QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) *QueryCertificateApplicationIssuanceRecordsListResponseData {
+  s.Orders = v
+  return s
+}
+
+type QueryCertificateApplicationIssuanceRecordsListResponseDataPageInfo struct {
+  // {"en":"Total number","zh_CN":"总数"}
+  TotalNumber *int `json:"totalNumber,omitempty" xml:"totalNumber,omitempty" require:"true"`
+  // {"en":"Page number","zh_CN":"页码"}
+  PageNumber *int `json:"pageNumber,omitempty" xml:"pageNumber,omitempty" require:"true"`
+  // {"en":"Page size","zh_CN":"每页大小"}
+  PageSize *int `json:"pageSize,omitempty" xml:"pageSize,omitempty" require:"true"`
+  // {"en":"Total number of pages","zh_CN":"总页码数"}
+  TotalPageNumber *int `json:"totalPageNumber,omitempty" xml:"totalPageNumber,omitempty" require:"true"`
+}
+
+func (s QueryCertificateApplicationIssuanceRecordsListResponseDataPageInfo) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCertificateApplicationIssuanceRecordsListResponseDataPageInfo) GoString() string {
+  return s.String()
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataPageInfo) SetTotalNumber(v int) *QueryCertificateApplicationIssuanceRecordsListResponseDataPageInfo {
+  s.TotalNumber = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataPageInfo) SetPageNumber(v int) *QueryCertificateApplicationIssuanceRecordsListResponseDataPageInfo {
+  s.PageNumber = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataPageInfo) SetPageSize(v int) *QueryCertificateApplicationIssuanceRecordsListResponseDataPageInfo {
+  s.PageSize = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataPageInfo) SetTotalPageNumber(v int) *QueryCertificateApplicationIssuanceRecordsListResponseDataPageInfo {
+  s.TotalPageNumber = &v
+  return s
+}
+
+type QueryCertificateApplicationIssuanceRecordsListResponseDataOrders struct     {
+  // {"en":"Sales order ID","zh_CN":"销售订单ID"}
+  OrderId *string `json:"orderId,omitempty" xml:"orderId,omitempty" require:"true"`
+  // {"en":"Purchase record ID","zh_CN":"购买记录ID"}
+  PurchaseRecordId *string `json:"purchaseRecordId,omitempty" xml:"purchaseRecordId,omitempty" require:"true"`
+  // {"en":"Certificate order ID","zh_CN":"证书订单ID"}
+  CaCertificateOrderId *string `json:"caCertificateOrderId,omitempty" xml:"caCertificateOrderId,omitempty" require:"true"`
+  // {"en":"Common name","zh_CN":"通用名称"}
+  CommonName *string `json:"commonName,omitempty" xml:"commonName,omitempty" require:"true"`
+  // {"en":"List of alternative names","zh_CN":"备用名称列表"}
+  SubjectAlternativeNames []*string `json:"subjectAlternativeNames,omitempty" xml:"subjectAlternativeNames,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Purchase type","zh_CN":"购买类型"}
+  PurchaseType *string `json:"purchaseType,omitempty" xml:"purchaseType,omitempty" require:"true"`
+  // {"en":"Whether reissued","zh_CN":"是否重签"}
+  IsReissue *string `json:"isReissue,omitempty" xml:"isReissue,omitempty" require:"true"`
+  // {"en":"Order status","zh_CN":"订单状态"}
+  OrderStatus *string `json:"orderStatus,omitempty" xml:"orderStatus,omitempty" require:"true"`
+  // {"en":"Total number of verified domains","zh_CN":"验证域名总数"}
+  AuthDomainTotalNum *int `json:"authDomainTotalNum,omitempty" xml:"authDomainTotalNum,omitempty" require:"true"`
+  // {"en":"Number of used domains","zh_CN":"已使用的域名数"}
+  UsedDomainNum *int `json:"usedDomainNum,omitempty" xml:"usedDomainNum,omitempty" require:"true"`
+  // {"en":"Validation method","zh_CN":"验证方式"}
+  ValidateMethod *string `json:"validateMethod,omitempty" xml:"validateMethod,omitempty" require:"true"`
+  // {"en":"Whether auto-validation","zh_CN":"是否自动验证"}
+  AutoValidate *string `json:"autoValidate,omitempty" xml:"autoValidate,omitempty" require:"true"`
+  // {"en":"Whether auto-deployment","zh_CN":"是否自动部署"}
+  AutoDeploy *string `json:"autoDeploy,omitempty" xml:"autoDeploy,omitempty" require:"true"`
+  // {"en":"CSR record ID","zh_CN":"CSR记录ID"}
+  CsrRecordId *string `json:"csrRecordId,omitempty" xml:"csrRecordId,omitempty" require:"true"`
+  // {"en":"Certificate ID","zh_CN":"证书ID"}
+  CertificateId *int `json:"certificateId,omitempty" xml:"certificateId,omitempty" require:"true"`
+  // {"en":"Certificate name","zh_CN":"证书名称"}
+  CertificateName *string `json:"certificateName,omitempty" xml:"certificateName,omitempty" require:"true"`
+  // {"en":"Creator","zh_CN":"创建者"}
+  Creator *string `json:"creator,omitempty" xml:"creator,omitempty" require:"true"`
+  // {"en":"Creation time","zh_CN":"创建时间"}
+  CreateTime *string `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
+  // {"en":"Certificate algorithm","zh_CN":"证书算法"}
+  Algorithm *string `json:"algorithm,omitempty" xml:"algorithm,omitempty" require:"true"`
+  // {"en":"Certificate version number","zh_CN":"证书版本号"}
+  VersionSerial *string `json:"versionSerial,omitempty" xml:"versionSerial,omitempty" require:"true"`
+  // {"en":"Security level","zh_CN":"安全等级"}
+  CrtCategory *string `json:"crtCategory,omitempty" xml:"crtCategory,omitempty" require:"true"`
+  // {"en":"Primary certificate brand","zh_CN":"主证书品牌"}
+  PrimaryCertificateBrand *string `json:"primaryCertificateBrand,omitempty" xml:"primaryCertificateBrand,omitempty" require:"true"`
+  // {"en":"Domain type","zh_CN":"域名类型"}
+  DomainType *string `json:"domainType,omitempty" xml:"domainType,omitempty" require:"true"`
+  // {"en":"Validity period","zh_CN":"有效期"}
+  ValidityDays *string `json:"validityDays,omitempty" xml:"validityDays,omitempty" require:"true"`
+}
+
+func (s QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) GoString() string {
+  return s.String()
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetOrderId(v string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.OrderId = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetPurchaseRecordId(v string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.PurchaseRecordId = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetCaCertificateOrderId(v string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.CaCertificateOrderId = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetCommonName(v string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.CommonName = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetSubjectAlternativeNames(v []*string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.SubjectAlternativeNames = v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetPurchaseType(v string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.PurchaseType = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetIsReissue(v string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.IsReissue = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetOrderStatus(v string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.OrderStatus = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetAuthDomainTotalNum(v int) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.AuthDomainTotalNum = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetUsedDomainNum(v int) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.UsedDomainNum = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetValidateMethod(v string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.ValidateMethod = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetAutoValidate(v string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.AutoValidate = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetAutoDeploy(v string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.AutoDeploy = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetCsrRecordId(v string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.CsrRecordId = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetCertificateId(v int) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.CertificateId = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetCertificateName(v string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.CertificateName = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetCreator(v string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.Creator = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetCreateTime(v string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.CreateTime = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetAlgorithm(v string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.Algorithm = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetVersionSerial(v string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.VersionSerial = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetCrtCategory(v string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.CrtCategory = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetPrimaryCertificateBrand(v string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.PrimaryCertificateBrand = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetDomainType(v string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.DomainType = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders) SetValidityDays(v string) *QueryCertificateApplicationIssuanceRecordsListResponseDataOrders {
+  s.ValidityDays = &v
+  return s
+}
+
+type QueryCertificateApplicationIssuanceRecordsListResponseHeader struct {
+}
+
+func (s QueryCertificateApplicationIssuanceRecordsListResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCertificateApplicationIssuanceRecordsListResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type ListCertificateApplicationOrdersForTerraformRequest struct {
   // {"en":"Order ID","zh_CN":"订单ID"}
   OrderId *string `json:"orderId,omitempty" xml:"orderId,omitempty"`
@@ -2916,6 +3302,504 @@ func (s CreateCertificateApplicationOrderResponseHeader) String() string {
 }
 
 func (s CreateCertificateApplicationOrderResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type QueryCertificateApplicationAndIssuanceRecordDetailRequest struct {
+  // {"en":"Purchase Record ID","zh_CN":"购买记录ID"}
+  PurchareRecordId *string `json:"purchareRecordId,omitempty" xml:"purchareRecordId,omitempty"`
+}
+
+func (s QueryCertificateApplicationAndIssuanceRecordDetailRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCertificateApplicationAndIssuanceRecordDetailRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailRequest) SetPurchareRecordId(v string) *QueryCertificateApplicationAndIssuanceRecordDetailRequest {
+  s.PurchareRecordId = &v
+  return s
+}
+
+type QueryCertificateApplicationAndIssuanceRecordDetailRequestHeader struct {
+}
+
+func (s QueryCertificateApplicationAndIssuanceRecordDetailRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCertificateApplicationAndIssuanceRecordDetailRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryCertificateApplicationAndIssuanceRecordDetailPaths struct {
+}
+
+func (s QueryCertificateApplicationAndIssuanceRecordDetailPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCertificateApplicationAndIssuanceRecordDetailPaths) GoString() string {
+  return s.String()
+}
+
+type QueryCertificateApplicationAndIssuanceRecordDetailParameters struct {
+}
+
+func (s QueryCertificateApplicationAndIssuanceRecordDetailParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCertificateApplicationAndIssuanceRecordDetailParameters) GoString() string {
+  return s.String()
+}
+
+type QueryCertificateApplicationAndIssuanceRecordDetailResponse struct {
+  // {"en":"Error code, 0 for success","zh_CN":"错误码，成功为0"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Error message","zh_CN":"错误信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Details of the certificate order.","zh_CN":"订单详情"}
+  Data *QueryCertificateApplicationAndIssuanceRecordDetailResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryCertificateApplicationAndIssuanceRecordDetailResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCertificateApplicationAndIssuanceRecordDetailResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponse) SetCode(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponse) SetMessage(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponse) SetData(v *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) *QueryCertificateApplicationAndIssuanceRecordDetailResponse {
+  s.Data = v
+  return s
+}
+
+type QueryCertificateApplicationAndIssuanceRecordDetailResponseData struct {
+  // {"en":"Unique identifier ID of the certificate order","zh_CN":"证书订单的唯一标识ID"}
+  OrderId *string `json:"orderId,omitempty" xml:"orderId,omitempty" require:"true"`
+  // {"en":"Order status\nACCEPT_SUCCESS: Acceptance successful\nAPPLYING: Applying\nAPPLY_FAILURE: Application preparation failed\nVALIDATE_WAIT: Waiting for validation\nVALIDATE_PROCESSING: Validating\nVALIDATE_SUCCESS: Validation successful\nVALIDATE_FAILURE: Validation failed\nISSUE_WAIT: Waiting for issuance\nISSUE_SUCCESS: Issuance successful\nISSUE_FAILURE: Issuance failed\nCANCELED: Application canceled\nREVOKED: Revoked\nDEPLOY_SUCCESS: Deployment successful\nDEPLOY_FAILURE: Deployment failed","zh_CN":"订单状态\nACCEPT_SUCCESS: 接收成功\nAPPLYING: 申请中\nAPPLY_FAILURE：申请准备失败\nVALIDATE_WAIT: 待验证\nVALIDATE_PROCESSING: 验证中\nVALIDATE_SUCCESS: 验证成功\nVALIDATE_FAILURE: 验证失败\nISSUE_WAIT: 待签发\nISSUE_SUCCESS: 签发成功\nISSUE_FAILURE: 签发失败\nCANCELED: 取消申请\nREVOKED: 吊销\nDEPLOY_SUCCESS：部署成功\nDEPLOY_FAILURE：部署失败"}
+  OrderStatus *string `json:"orderStatus,omitempty" xml:"orderStatus,omitempty" require:"true"`
+  // {"en":"Unique identifier ID of the certificate","zh_CN":"证书的唯一标识ID"}
+  CertificateId *int64 `json:"certificateId,omitempty" xml:"certificateId,omitempty" require:"true"`
+  // {"en":"Display name of the certificate","zh_CN":"证书的显示名称"}
+  CertificateName *string `json:"certificateName,omitempty" xml:"certificateName,omitempty" require:"true"`
+  // {"en":"Certificate brand","zh_CN":"证书品牌"}
+  CertificateBrand *string `json:"certificateBrand,omitempty" xml:"certificateBrand,omitempty" require:"true"`
+  // {"en":"Certificate type","zh_CN":"证书类型"}
+  CertificateType *string `json:"certificateType,omitempty" xml:"certificateType,omitempty" require:"true"`
+  // {"en":"Additional description information of the order or certificate","zh_CN":"订单或证书的附加描述信息"}
+  Description *string `json:"description,omitempty" xml:"description,omitempty" require:"true"`
+  // {"en":"Encryption algorithm used by the certificate","zh_CN":"证书使用的加密算法"}
+  Algorithm *string `json:"algorithm,omitempty" xml:"algorithm,omitempty" require:"true"`
+  // {"en":"Whether to validate automatically","zh_CN":"是否自动验证"}
+  AutoValidate *string `json:"autoValidate,omitempty" xml:"autoValidate,omitempty" require:"true"`
+  // {"en":"Validation method","zh_CN":"验证方式"}
+  ValidateMethod *string `json:"validateMethod,omitempty" xml:"validateMethod,omitempty" require:"true"`
+  // {"en":"Whether to renew automatically","zh_CN":"是否自动续订"}
+  AutoRenew *string `json:"autoRenew,omitempty" xml:"autoRenew,omitempty" require:"true"`
+  // {"en":"Validity days","zh_CN":"有效天数"}
+  ValidityDays *int `json:"validityDays,omitempty" xml:"validityDays,omitempty" require:"true"`
+  // {"en":"Country code","zh_CN":"国家代码"}
+  Country *string `json:"country,omitempty" xml:"country,omitempty" require:"true"`
+  // {"en":"Registered province/state","zh_CN":"注册所在省份/州"}
+  State *string `json:"state,omitempty" xml:"state,omitempty" require:"true"`
+  // {"en":"Registered city","zh_CN":"注册所在城市"}
+  City *string `json:"city,omitempty" xml:"city,omitempty" require:"true"`
+  // {"en":"Detailed street address","zh_CN":"详细街道地址"}
+  Street *string `json:"street,omitempty" xml:"street,omitempty" require:"true"`
+  // {"en":"Company or organization name","zh_CN":"公司或组织名称"}
+  Company *string `json:"company,omitempty" xml:"company,omitempty" require:"true"`
+  // {"en":"Company department name","zh_CN":"公司部门名称"}
+  Department *string `json:"department,omitempty" xml:"department,omitempty" require:"true"`
+  // {"en":"Common name","zh_CN":"通用名"}
+  CommonName *string `json:"commonName,omitempty" xml:"commonName,omitempty" require:"true"`
+  // {"en":"Contact email address","zh_CN":"联系邮箱地址"}
+  Email *string `json:"email,omitempty" xml:"email,omitempty" require:"true"`
+  // {"en":"Subject alternative names","zh_CN":"主体备用名称"}
+  SubjectAlternativeNames []*string `json:"subjectAlternativeNames,omitempty" xml:"subjectAlternativeNames,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Creation time","zh_CN":"创建时间"}
+  CreateTime *string `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
+  // {"en":"Error message","zh_CN":"错误信息"}
+  ErrorMessage *string `json:"errorMessage,omitempty" xml:"errorMessage,omitempty" require:"true"`
+  // {"en":"Certificate specification","zh_CN":"证书规格"}
+  CertificateSpec *string `json:"certificateSpec,omitempty" xml:"certificateSpec,omitempty" require:"true"`
+  // {"en":"Domain type","zh_CN":"域名类型"}
+  DomainType *string `json:"domainType,omitempty" xml:"domainType,omitempty" require:"true"`
+  // {"en":"Whether to deploy automatically","zh_CN":"是否自动部署"}
+  AutoDeploy *string `json:"autoDeploy,omitempty" xml:"autoDeploy,omitempty" require:"true"`
+  // {"en":"Remaining validity period","zh_CN":"剩余有效期"}
+  RemainValidityDays *int `json:"remainValidityDays,omitempty" xml:"remainValidityDays,omitempty" require:"true"`
+  // {"en":"DNS provider information","zh_CN":"DNS托管商信息"}
+  DnsProviderInfos []*QueryCertificateApplicationAndIssuanceRecordDetailResponseDataDnsProviderInfos `json:"dnsProviderInfos,omitempty" xml:"dnsProviderInfos,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Primary certificate brand","zh_CN":"主证书品牌"}
+  PrimaryCertificateBrand *string `json:"primaryCertificateBrand,omitempty" xml:"primaryCertificateBrand,omitempty" require:"true"`
+  // {"en":"Backup CA certificate brand","zh_CN":"备用CA证书品牌"}
+  BackupCertificateBrand *string `json:"backupCertificateBrand,omitempty" xml:"backupCertificateBrand,omitempty" require:"true"`
+  // {"en":"Organization validation method","zh_CN":"组织验证方式"}
+  OrgValidateMethod *string `json:"orgValidateMethod,omitempty" xml:"orgValidateMethod,omitempty" require:"true"`
+  // {"en":"Organization contact phone","zh_CN":"组织联系电话"}
+  Phone *string `json:"phone,omitempty" xml:"phone,omitempty" require:"true"`
+  // {"en":"Backup street address","zh_CN":"备用街道地址"}
+  Street1 *string `json:"street1,omitempty" xml:"street1,omitempty" require:"true"`
+  // {"en":"Registered postal code","zh_CN":"注册地邮政编码"}
+  PostalCode *string `json:"postalCode,omitempty" xml:"postalCode,omitempty" require:"true"`
+  // {"en":"Order management contact","zh_CN":"订单管理联系人"}
+  Admin *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataAdmin `json:"admin,omitempty" xml:"admin,omitempty" require:"true" type:"Struct"`
+  // {"en":"Order technical contact","zh_CN":"订单技术联系人"}
+  Tech *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataTech `json:"tech,omitempty" xml:"tech,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryCertificateApplicationAndIssuanceRecordDetailResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCertificateApplicationAndIssuanceRecordDetailResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetOrderId(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.OrderId = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetOrderStatus(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.OrderStatus = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetCertificateId(v int64) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.CertificateId = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetCertificateName(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.CertificateName = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetCertificateBrand(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.CertificateBrand = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetCertificateType(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.CertificateType = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetDescription(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.Description = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetAlgorithm(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.Algorithm = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetAutoValidate(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.AutoValidate = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetValidateMethod(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.ValidateMethod = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetAutoRenew(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.AutoRenew = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetValidityDays(v int) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.ValidityDays = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetCountry(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.Country = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetState(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.State = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetCity(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.City = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetStreet(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.Street = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetCompany(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.Company = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetDepartment(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.Department = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetCommonName(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.CommonName = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetEmail(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.Email = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetSubjectAlternativeNames(v []*string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.SubjectAlternativeNames = v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetCreateTime(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.CreateTime = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetErrorMessage(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.ErrorMessage = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetCertificateSpec(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.CertificateSpec = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetDomainType(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.DomainType = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetAutoDeploy(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.AutoDeploy = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetRemainValidityDays(v int) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.RemainValidityDays = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetDnsProviderInfos(v []*QueryCertificateApplicationAndIssuanceRecordDetailResponseDataDnsProviderInfos) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.DnsProviderInfos = v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetPrimaryCertificateBrand(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.PrimaryCertificateBrand = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetBackupCertificateBrand(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.BackupCertificateBrand = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetOrgValidateMethod(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.OrgValidateMethod = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetPhone(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.Phone = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetStreet1(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.Street1 = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetPostalCode(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.PostalCode = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetAdmin(v *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataAdmin) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.Admin = v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseData) SetTech(v *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataTech) *QueryCertificateApplicationAndIssuanceRecordDetailResponseData {
+  s.Tech = v
+  return s
+}
+
+type QueryCertificateApplicationAndIssuanceRecordDetailResponseDataDnsProviderInfos struct     {
+  // {"en":"domain","zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {"en":"Support CloudDNS, The optional certificate brand is LE or TrustAsia or GlobalSign or ZeroSSL;Support CloudFlare, The optional certificate brand is LE or ZeroSSL;Support DNSPod.cn, The optional certificate brand is LE or ZeroSSL;Support DNSPod.com, The optional certificate brand is LE or ZeroSSL;Support TencentDNSPod, The optional certificate brand is LE or ZeroSSL;Support Aliyun, The optional certificate brand is LE or ZeroSSL;Support GoDaddy, The optional certificate brand is LE or ZeroSSL;Support AmazonRoute53, The optional certificate brand is LE or ZeroSSL;Support GoogleDomains, The optional certificate brand is LE or ZeroSSL;Support AkamaiEdgeDNS, The optional certificate brand is LE or ZeroSSL.","zh_CN":"DNS托管商编码，支持CloudDNS，可选证书品牌为LE、TrustAsia、GlobalSign、ZeroSSL；支持CloudFlare，可选证书品牌为LE、ZeroSSL；支持DNSPod.cn，可选证书品牌为LE、ZeroSSL；支持DNSPod.com，可选证书品牌为LE、ZeroSSL；支持TencentDNSPod，可选证书品牌为LE、ZeroSSL；支持Aliyun，可选证书品牌为LE、ZeroSSL；支持GoDaddy，可选证书品牌为LE、ZeroSSL；支持AmazonRoute53，可选证书品牌为LE、ZeroSSL；支持GoogleDomains，可选证书品牌为LE、ZeroSSL；支持AkamaiEdgeDNS，可选证书品牌为LE、ZeroSSL。","exampleValue":"CloudDNS,CloudFlare"}
+  DnsProviderCode *string `json:"dnsProviderCode,omitempty" xml:"dnsProviderCode,omitempty" require:"true"`
+  // {"en":"DNS Api Access, JSON format:The hosting provider is CloudDNS, JSON KEY is accessKey and secretKey;The hosting provider is CloudFlare, The global API key JSON KEY is CF_Key CF_Email, The restricted API token JSON KEY is CF_Token, CF_ZoneID or CF_Sccount-ID.","zh_CN":"DNS托管商API凭证，JSON格式，托管商为CloudDNS，JSON KEY为accessKey、secretKey；托管商为CloudFlare，全局API密钥JSON KEY为CF_Key、CF_Email，限制性API令牌JSON KEY为CF_Token、CF_Zone_ID或CF_Account_ID；托管商为DNSPod.cn，JSON KEY为DP_Id、DP_Key；托管商为DNSPod.com，JSON KEY为DPI_Id、DPI_Key；托管商为TencentDNSPod，JSON KEY为Tencent_SecretId、Tencent_SecretKey；托管商为Aliyun，JSON KEY为Ali_Key、Ali_Secret；托管商为GoDaddy，JSON KEY为GD_Key、GD_Secret；托管商为AmazonRoute53，JSON KEY为AWS_ACCESS_KEY_ID、AWS_SECRET_ACCESS_KEY；托管商为GoogleDomains，JSON KEY为GOOGLEDOMAINS_ACCESS_TOKEN、GOOGLEDOMAINS_ZONE；托管商为AkamaiEdgeDNS，JSON KEY为AKAMAI_CLIENT_TOKEN、AKAMAI_ACCESS_TOKEN、AKAMAI_CLIENT_SECRET、AKAMAI_HOST；"}
+  DnsApiAccess *string `json:"dnsApiAccess,omitempty" xml:"dnsApiAccess,omitempty" require:"true"`
+  // {"defaultValue":"false","en":"Whether to use alias verification","zh_CN":"是否使用别名方式","exampleValue":"true,false"}
+  EnableDnsAliasMode *string `json:"enableDnsAliasMode,omitempty" xml:"enableDnsAliasMode,omitempty" require:"true"`
+  // {"en":"Validate alias","zh_CN":"验证别名"}
+  ValidateAliasDomain *string `json:"validateAliasDomain,omitempty" xml:"validateAliasDomain,omitempty" require:"true"`
+}
+
+func (s QueryCertificateApplicationAndIssuanceRecordDetailResponseDataDnsProviderInfos) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCertificateApplicationAndIssuanceRecordDetailResponseDataDnsProviderInfos) GoString() string {
+  return s.String()
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataDnsProviderInfos) SetDomain(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataDnsProviderInfos {
+  s.Domain = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataDnsProviderInfos) SetDnsProviderCode(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataDnsProviderInfos {
+  s.DnsProviderCode = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataDnsProviderInfos) SetDnsApiAccess(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataDnsProviderInfos {
+  s.DnsApiAccess = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataDnsProviderInfos) SetEnableDnsAliasMode(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataDnsProviderInfos {
+  s.EnableDnsAliasMode = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataDnsProviderInfos) SetValidateAliasDomain(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataDnsProviderInfos {
+  s.ValidateAliasDomain = &v
+  return s
+}
+
+type QueryCertificateApplicationAndIssuanceRecordDetailResponseDataAdmin struct {
+  // {"en":"First name. This field is mandatory for self-verified organizational information.","zh_CN":"名，自行验证组织信息此字段必填"}
+  FirstName *string `json:"firstName,omitempty" xml:"firstName,omitempty" require:"true"`
+  // {"en":"Last name. This field is mandatory for self-verified organizational information.","zh_CN":"姓，自行验证组织信息此字段必填"}
+  LastName *string `json:"lastName,omitempty" xml:"lastName,omitempty" require:"true"`
+  // {"en":"Phone number. This field is mandatory for self-verified organizational information.","zh_CN":"电话，自行验证组织信息此字段必填"}
+  Phone *string `json:"phone,omitempty" xml:"phone,omitempty" require:"true"`
+  // {"en":"Email address. This field is mandatory for self-verified organizational information.","zh_CN":"邮箱，自行验证组织信息此字段必填"}
+  Email *string `json:"email,omitempty" xml:"email,omitempty" require:"true"`
+  // {"en":"Job title. This field is mandatory for self-verified organizational information.","zh_CN":"职位，自行验证组织信息此字段必填"}
+  Title *string `json:"title,omitempty" xml:"title,omitempty" require:"true"`
+}
+
+func (s QueryCertificateApplicationAndIssuanceRecordDetailResponseDataAdmin) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCertificateApplicationAndIssuanceRecordDetailResponseDataAdmin) GoString() string {
+  return s.String()
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataAdmin) SetFirstName(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataAdmin {
+  s.FirstName = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataAdmin) SetLastName(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataAdmin {
+  s.LastName = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataAdmin) SetPhone(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataAdmin {
+  s.Phone = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataAdmin) SetEmail(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataAdmin {
+  s.Email = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataAdmin) SetTitle(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataAdmin {
+  s.Title = &v
+  return s
+}
+
+type QueryCertificateApplicationAndIssuanceRecordDetailResponseDataTech struct {
+  // {"en":"First name. This field is mandatory for self-verified organizational information.","zh_CN":"名，自行验证组织信息此字段必填"}
+  FirstName *string `json:"firstName,omitempty" xml:"firstName,omitempty" require:"true"`
+  // {"en":"Last name. This field is mandatory for self-verified organizational information.","zh_CN":"姓，自行验证组织信息此字段必填"}
+  LastName *string `json:"lastName,omitempty" xml:"lastName,omitempty" require:"true"`
+  // {"en":"Phone number. This field is mandatory for self-verified organizational information.","zh_CN":"电话，自行验证组织信息此字段必填"}
+  Phone *string `json:"phone,omitempty" xml:"phone,omitempty" require:"true"`
+  // {"en":"Email address. This field is mandatory for self-verified organizational information.","zh_CN":"邮箱，自行验证组织信息此字段必填"}
+  Email *string `json:"email,omitempty" xml:"email,omitempty" require:"true"`
+  // {"en":"Job title. This field is mandatory for self-verified organizational information.","zh_CN":"职位，自行验证组织信息此字段必填"}
+  Title *string `json:"title,omitempty" xml:"title,omitempty" require:"true"`
+}
+
+func (s QueryCertificateApplicationAndIssuanceRecordDetailResponseDataTech) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCertificateApplicationAndIssuanceRecordDetailResponseDataTech) GoString() string {
+  return s.String()
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataTech) SetFirstName(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataTech {
+  s.FirstName = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataTech) SetLastName(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataTech {
+  s.LastName = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataTech) SetPhone(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataTech {
+  s.Phone = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataTech) SetEmail(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataTech {
+  s.Email = &v
+  return s
+}
+
+func (s *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataTech) SetTitle(v string) *QueryCertificateApplicationAndIssuanceRecordDetailResponseDataTech {
+  s.Title = &v
+  return s
+}
+
+type QueryCertificateApplicationAndIssuanceRecordDetailResponseHeader struct {
+}
+
+func (s QueryCertificateApplicationAndIssuanceRecordDetailResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryCertificateApplicationAndIssuanceRecordDetailResponseHeader) GoString() string {
   return s.String()
 }
 

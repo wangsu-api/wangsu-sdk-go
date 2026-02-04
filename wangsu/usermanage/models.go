@@ -127,6 +127,124 @@ func (s AddAccountIdentResponseHeader) GoString() string {
 
 
 
+type ModifyGroupPolicyRequest struct {
+  // {"en":"Group id.","zh_CN":"用户组ID"}
+  GroupId *int64 `json:"groupId,omitempty" xml:"groupId,omitempty"`
+  // {"en":"Group name.  Either groupId or groupName must be provided. If groupId is specified, it will take precedence.","zh_CN":"用户组名称  groupId和groupName必传一个。若填写了groupId，则优先使用groupId。"}
+  GroupName *string `json:"groupName,omitempty" xml:"groupName,omitempty"`
+  // {"en":"Specify policy ID. Either policyId or policyName must be provided. If policyId is specified, it will take precedence. Example: [123,456]","zh_CN":"指定权限策略id  policyId和policyName必传一个。若填写了policyId，则优先使用policyId。示例：[123,456]"}
+  PolicyId []*int64 `json:"policyId,omitempty" xml:"policyId,omitempty" type:"Repeated"`
+  // {"en":"Policy name [\"policy1\",\"policy2\"]","zh_CN":"策略名称 [\"policy1\",\"policy2\"]"}
+  PolicyName []*string `json:"policyName,omitempty" xml:"policyName,omitempty" type:"Repeated"`
+  // {"en":"Operation type  0: Add permission 1: Revoke permission","zh_CN":"操作类型  0：添加权限 1：撤销权限"}
+  Type *int `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+}
+
+func (s ModifyGroupPolicyRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyGroupPolicyRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ModifyGroupPolicyRequest) SetGroupId(v int64) *ModifyGroupPolicyRequest {
+  s.GroupId = &v
+  return s
+}
+
+func (s *ModifyGroupPolicyRequest) SetGroupName(v string) *ModifyGroupPolicyRequest {
+  s.GroupName = &v
+  return s
+}
+
+func (s *ModifyGroupPolicyRequest) SetPolicyId(v []*int64) *ModifyGroupPolicyRequest {
+  s.PolicyId = v
+  return s
+}
+
+func (s *ModifyGroupPolicyRequest) SetPolicyName(v []*string) *ModifyGroupPolicyRequest {
+  s.PolicyName = v
+  return s
+}
+
+func (s *ModifyGroupPolicyRequest) SetType(v int) *ModifyGroupPolicyRequest {
+  s.Type = &v
+  return s
+}
+
+type ModifyGroupPolicyRequestHeader struct {
+}
+
+func (s ModifyGroupPolicyRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyGroupPolicyRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ModifyGroupPolicyPaths struct {
+}
+
+func (s ModifyGroupPolicyPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyGroupPolicyPaths) GoString() string {
+  return s.String()
+}
+
+type ModifyGroupPolicyParameters struct {
+}
+
+func (s ModifyGroupPolicyParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyGroupPolicyParameters) GoString() string {
+  return s.String()
+}
+
+type ModifyGroupPolicyResponse struct {
+  // {"en":"Request result status code.","zh_CN":"请求结果状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Request result information.","zh_CN":"请求结果信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+}
+
+func (s ModifyGroupPolicyResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyGroupPolicyResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ModifyGroupPolicyResponse) SetCode(v string) *ModifyGroupPolicyResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ModifyGroupPolicyResponse) SetMsg(v string) *ModifyGroupPolicyResponse {
+  s.Msg = &v
+  return s
+}
+
+type ModifyGroupPolicyResponseHeader struct {
+}
+
+func (s ModifyGroupPolicyResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyGroupPolicyResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type DeleteSubAccountRequest struct {
 }
 
@@ -301,6 +419,117 @@ func (s CheckLoginNameLegalResponseHeader) String() string {
 }
 
 func (s CheckLoginNameLegalResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type EditGroupBasicInfoRequest struct {
+  // {"en":"Group id.","zh_CN":"用户组ID"}
+  GroupId *int64 `json:"groupId,omitempty" xml:"groupId,omitempty" require:"true"`
+  // {"en":"The modified group name.  The name must be 1-40 characters and start with a letter. Supports letters, numbers, dash and underscore.  Not providing it means no modification.","zh_CN":"修改后的用户组名称  以字母开头，支持字母、数字、下划线、中划线。不超过40字符。  不传代表不修改。"}
+  GroupName *string `json:"groupName,omitempty" xml:"groupName,omitempty"`
+  // {"en":"The modified user group display name.  The name must be 1-24 characters. Supports letters, Chinese characters, numbers, dash and underscore.  Not providing it means no modification.","zh_CN":"修改后的用户组显示昵称  支持中英文、数字、下划线、中划线。不超过24字符。  不传代表不修改。"}
+  GroupDisplayName *string `json:"groupDisplayName,omitempty" xml:"groupDisplayName,omitempty"`
+  // {"en":"The modified user group notes. The notes must not exceed 128 characters. Not providing it means no modification.","zh_CN":"修改后的用户组备注信息。  不超过128个字符  不传代表不修改。"}
+  GroupNote *string `json:"groupNote,omitempty" xml:"groupNote,omitempty"`
+}
+
+func (s EditGroupBasicInfoRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EditGroupBasicInfoRequest) GoString() string {
+  return s.String()
+}
+
+func (s *EditGroupBasicInfoRequest) SetGroupId(v int64) *EditGroupBasicInfoRequest {
+  s.GroupId = &v
+  return s
+}
+
+func (s *EditGroupBasicInfoRequest) SetGroupName(v string) *EditGroupBasicInfoRequest {
+  s.GroupName = &v
+  return s
+}
+
+func (s *EditGroupBasicInfoRequest) SetGroupDisplayName(v string) *EditGroupBasicInfoRequest {
+  s.GroupDisplayName = &v
+  return s
+}
+
+func (s *EditGroupBasicInfoRequest) SetGroupNote(v string) *EditGroupBasicInfoRequest {
+  s.GroupNote = &v
+  return s
+}
+
+type EditGroupBasicInfoRequestHeader struct {
+}
+
+func (s EditGroupBasicInfoRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EditGroupBasicInfoRequestHeader) GoString() string {
+  return s.String()
+}
+
+type EditGroupBasicInfoPaths struct {
+}
+
+func (s EditGroupBasicInfoPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EditGroupBasicInfoPaths) GoString() string {
+  return s.String()
+}
+
+type EditGroupBasicInfoParameters struct {
+}
+
+func (s EditGroupBasicInfoParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EditGroupBasicInfoParameters) GoString() string {
+  return s.String()
+}
+
+type EditGroupBasicInfoResponse struct {
+  // {"en":"Request result status code.","zh_CN":"请求结果状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Request result information.","zh_CN":"请求结果信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+}
+
+func (s EditGroupBasicInfoResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EditGroupBasicInfoResponse) GoString() string {
+  return s.String()
+}
+
+func (s *EditGroupBasicInfoResponse) SetCode(v string) *EditGroupBasicInfoResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *EditGroupBasicInfoResponse) SetMsg(v string) *EditGroupBasicInfoResponse {
+  s.Msg = &v
+  return s
+}
+
+type EditGroupBasicInfoResponseHeader struct {
+}
+
+func (s EditGroupBasicInfoResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EditGroupBasicInfoResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -672,6 +901,188 @@ func (s UpdateAccountIdentResponseHeader) GoString() string {
 
 
 
+type ListGroupUsersRequest struct {
+  // {"en":"Group id.","zh_CN":"用户组ID"}
+  GroupId *int64 `json:"groupId,omitempty" xml:"groupId,omitempty"`
+  // {"en":"Group name.  Either groupId or groupName must be provided. If groupId is specified, it will take precedence.","zh_CN":"用户组名称  groupId和groupName必传一个。若填写了groupId，则优先使用groupId。"}
+  GroupName *string `json:"groupName,omitempty" xml:"groupName,omitempty"`
+  // {"en":"Page number for the current page when querying with pagination. If it is empty, pagination will not be applied, and all records will be returned, rendering the pageSize field ineffective. The first page is 1.","zh_CN":"指定分页查询时，当前页的页码。为空则不分页处理全部返回，pageSize字段填写内容不生效。第一页是1。"}
+  PageIndex *int `json:"pageIndex,omitempty" xml:"pageIndex,omitempty"`
+  // {"en":"The maximum number of records displayed per page when querying with pagination. The maximum value for PageSize is 100. The default number of records displayed per page is 20. If the PageSize value is empty, 20 records will be returned by default.","zh_CN":"指定分页查询时，每页显示的数据最大条数。 PageSize参数最大取值为100。每页默认显示的数据条数为20条，PageSize参数值为空时,将默认返回20条数据。"}
+  PageSize *int `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
+}
+
+func (s ListGroupUsersRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupUsersRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ListGroupUsersRequest) SetGroupId(v int64) *ListGroupUsersRequest {
+  s.GroupId = &v
+  return s
+}
+
+func (s *ListGroupUsersRequest) SetGroupName(v string) *ListGroupUsersRequest {
+  s.GroupName = &v
+  return s
+}
+
+func (s *ListGroupUsersRequest) SetPageIndex(v int) *ListGroupUsersRequest {
+  s.PageIndex = &v
+  return s
+}
+
+func (s *ListGroupUsersRequest) SetPageSize(v int) *ListGroupUsersRequest {
+  s.PageSize = &v
+  return s
+}
+
+type ListGroupUsersRequestHeader struct {
+}
+
+func (s ListGroupUsersRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupUsersRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ListGroupUsersPaths struct {
+}
+
+func (s ListGroupUsersPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupUsersPaths) GoString() string {
+  return s.String()
+}
+
+type ListGroupUsersParameters struct {
+}
+
+func (s ListGroupUsersParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupUsersParameters) GoString() string {
+  return s.String()
+}
+
+type ListGroupUsersResponse struct {
+  // {"en":"Request result status code.","zh_CN":"请求结果状态码。"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Request result information.","zh_CN":"请求结果信息。"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"Detailed data on the results of the request.","zh_CN":"请求结果的详细数据。"}
+  Data *ListGroupUsersResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s ListGroupUsersResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupUsersResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ListGroupUsersResponse) SetCode(v string) *ListGroupUsersResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ListGroupUsersResponse) SetMsg(v string) *ListGroupUsersResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *ListGroupUsersResponse) SetData(v *ListGroupUsersResponseData) *ListGroupUsersResponse {
+  s.Data = v
+  return s
+}
+
+type ListGroupUsersResponseData struct {
+  // {"en":"User details.","zh_CN":"成员信息"}
+  UserDetail []*ListGroupUsersResponseDataUserDetail `json:"userDetail,omitempty" xml:"userDetail,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Total number of returned records","zh_CN":"返回的总条数"}
+  Total *int64 `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+  // {"en":"Page number","zh_CN":"页码"}
+  PageIndex *int64 `json:"pageIndex,omitempty" xml:"pageIndex,omitempty" require:"true"`
+  // {"en":"Number per page","zh_CN":"每页的数量"}
+  PageSize *int64 `json:"pageSize,omitempty" xml:"pageSize,omitempty" require:"true"`
+}
+
+func (s ListGroupUsersResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupUsersResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *ListGroupUsersResponseData) SetUserDetail(v []*ListGroupUsersResponseDataUserDetail) *ListGroupUsersResponseData {
+  s.UserDetail = v
+  return s
+}
+
+func (s *ListGroupUsersResponseData) SetTotal(v int64) *ListGroupUsersResponseData {
+  s.Total = &v
+  return s
+}
+
+func (s *ListGroupUsersResponseData) SetPageIndex(v int64) *ListGroupUsersResponseData {
+  s.PageIndex = &v
+  return s
+}
+
+func (s *ListGroupUsersResponseData) SetPageSize(v int64) *ListGroupUsersResponseData {
+  s.PageSize = &v
+  return s
+}
+
+type ListGroupUsersResponseDataUserDetail struct     {
+  // {"en":"The users of the group.","zh_CN":"用户组的成员（子用户）"}
+  LoginName *string `json:"loginName,omitempty" xml:"loginName,omitempty" require:"true"`
+  // {"en":"The format is 2025-12-24 01:02:03. UTC+8","zh_CN":"格式为 2025-12-24 01:02:03。  东八区时间"}
+  JoinTime *string `json:"joinTime,omitempty" xml:"joinTime,omitempty" require:"true"`
+}
+
+func (s ListGroupUsersResponseDataUserDetail) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupUsersResponseDataUserDetail) GoString() string {
+  return s.String()
+}
+
+func (s *ListGroupUsersResponseDataUserDetail) SetLoginName(v string) *ListGroupUsersResponseDataUserDetail {
+  s.LoginName = &v
+  return s
+}
+
+func (s *ListGroupUsersResponseDataUserDetail) SetJoinTime(v string) *ListGroupUsersResponseDataUserDetail {
+  s.JoinTime = &v
+  return s
+}
+
+type ListGroupUsersResponseHeader struct {
+}
+
+func (s ListGroupUsersResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupUsersResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type QueryAgentAssociatedMainAccountServiceRequest struct {
 }
 
@@ -794,6 +1205,246 @@ func (s QueryAgentAssociatedMainAccountServiceResponseHeader) GoString() string 
 
 
 
+type ModifyGroupUserRequest struct {
+  // {"en":"Group id.","zh_CN":"用户组ID"}
+  GroupId *int64 `json:"groupId,omitempty" xml:"groupId,omitempty"`
+  // {"en":"Group name.  Either groupId or groupName must be provided. If groupId is specified, it will take precedence.","zh_CN":"用户组名称  groupId和groupName必传一个。若填写了groupId，则优先使用groupId。"}
+  GroupName *string `json:"groupName,omitempty" xml:"groupName,omitempty"`
+  // {"en":"Users to be updated from the group.  Example: [\"loginName1\", \"loginName2\"].","zh_CN":"需要更新的用户组成员  示例：[\"loginName1\",\"loginName2\"]"}
+  Users []*string `json:"users,omitempty" xml:"users,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Operation type  0: Add users 1: Revoke users","zh_CN":"操作类型  0：添加成员 1：删除成员"}
+  Type *int `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+}
+
+func (s ModifyGroupUserRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyGroupUserRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ModifyGroupUserRequest) SetGroupId(v int64) *ModifyGroupUserRequest {
+  s.GroupId = &v
+  return s
+}
+
+func (s *ModifyGroupUserRequest) SetGroupName(v string) *ModifyGroupUserRequest {
+  s.GroupName = &v
+  return s
+}
+
+func (s *ModifyGroupUserRequest) SetUsers(v []*string) *ModifyGroupUserRequest {
+  s.Users = v
+  return s
+}
+
+func (s *ModifyGroupUserRequest) SetType(v int) *ModifyGroupUserRequest {
+  s.Type = &v
+  return s
+}
+
+type ModifyGroupUserRequestHeader struct {
+}
+
+func (s ModifyGroupUserRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyGroupUserRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ModifyGroupUserPaths struct {
+}
+
+func (s ModifyGroupUserPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyGroupUserPaths) GoString() string {
+  return s.String()
+}
+
+type ModifyGroupUserParameters struct {
+}
+
+func (s ModifyGroupUserParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyGroupUserParameters) GoString() string {
+  return s.String()
+}
+
+type ModifyGroupUserResponse struct {
+  // {"en":"Request result status code.","zh_CN":"请求结果状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Request result information.","zh_CN":"请求结果信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+}
+
+func (s ModifyGroupUserResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyGroupUserResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ModifyGroupUserResponse) SetCode(v string) *ModifyGroupUserResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ModifyGroupUserResponse) SetMsg(v string) *ModifyGroupUserResponse {
+  s.Msg = &v
+  return s
+}
+
+type ModifyGroupUserResponseHeader struct {
+}
+
+func (s ModifyGroupUserResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyGroupUserResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type CreateGroupRequest struct {
+  // {"en":"Group name.  The name must be 1-40 characters and start with a letter. Supports letters, numbers, dash and underscore.","zh_CN":"用户组名称  以字母开头，支持字母、数字、下划线、中划线。不超过40字符。"}
+  GroupName *string `json:"groupName,omitempty" xml:"groupName,omitempty" require:"true"`
+  // {"en":"Group display name.  The name must be 1-24 characters. Supports letters, Chinese characters, numbers, dash and underscore.","zh_CN":"用户组显示昵称  支持中英文、数字、下划线、中划线。不超过24字符。"}
+  GroupDisplayName *string `json:"groupDisplayName,omitempty" xml:"groupDisplayName,omitempty" require:"true"`
+  // {"en":"Group notes.  The notes must be 1-128 characters.","zh_CN":"用户组备注信息.  不超过128个字符"}
+  GroupNote *string `json:"groupNote,omitempty" xml:"groupNote,omitempty"`
+}
+
+func (s CreateGroupRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateGroupRequest) GoString() string {
+  return s.String()
+}
+
+func (s *CreateGroupRequest) SetGroupName(v string) *CreateGroupRequest {
+  s.GroupName = &v
+  return s
+}
+
+func (s *CreateGroupRequest) SetGroupDisplayName(v string) *CreateGroupRequest {
+  s.GroupDisplayName = &v
+  return s
+}
+
+func (s *CreateGroupRequest) SetGroupNote(v string) *CreateGroupRequest {
+  s.GroupNote = &v
+  return s
+}
+
+type CreateGroupRequestHeader struct {
+}
+
+func (s CreateGroupRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateGroupRequestHeader) GoString() string {
+  return s.String()
+}
+
+type CreateGroupPaths struct {
+}
+
+func (s CreateGroupPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateGroupPaths) GoString() string {
+  return s.String()
+}
+
+type CreateGroupParameters struct {
+}
+
+func (s CreateGroupParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateGroupParameters) GoString() string {
+  return s.String()
+}
+
+type CreateGroupResponse struct {
+  // {"en":"Request result status code.","zh_CN":"请求结果状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Request result information.","zh_CN":"请求结果信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"Detailed data on the results of the request.","zh_CN":"请求结果的详细数据"}
+  Data *CreateGroupResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s CreateGroupResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateGroupResponse) GoString() string {
+  return s.String()
+}
+
+func (s *CreateGroupResponse) SetCode(v string) *CreateGroupResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *CreateGroupResponse) SetMsg(v string) *CreateGroupResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *CreateGroupResponse) SetData(v *CreateGroupResponseData) *CreateGroupResponse {
+  s.Data = v
+  return s
+}
+
+type CreateGroupResponseData struct {
+  // {"en":"Group id.","zh_CN":"用户组ID"}
+  GroupId *int64 `json:"groupId,omitempty" xml:"groupId,omitempty" require:"true"`
+}
+
+func (s CreateGroupResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateGroupResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *CreateGroupResponseData) SetGroupId(v int64) *CreateGroupResponseData {
+  s.GroupId = &v
+  return s
+}
+
+type CreateGroupResponseHeader struct {
+}
+
+func (s CreateGroupResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateGroupResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type DeleteAccountIdentRequest struct {
 }
 
@@ -878,6 +1529,103 @@ func (s DeleteAccountIdentResponseHeader) String() string {
 }
 
 func (s DeleteAccountIdentResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type DeleteGroupRequest struct {
+  // {"en":"Group id.","zh_CN":"用户组ID"}
+  GroupId *int64 `json:"groupId,omitempty" xml:"groupId,omitempty"`
+  // {"en":"Group name.  Either groupId or groupName must be provided. If groupId is specified, it will take precedence.","zh_CN":"用户组名称  groupId和groupName必传一个。若填写了groupId，则优先使用groupId。"}
+  GroupName *string `json:"groupName,omitempty" xml:"groupName,omitempty"`
+}
+
+func (s DeleteGroupRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteGroupRequest) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteGroupRequest) SetGroupId(v int64) *DeleteGroupRequest {
+  s.GroupId = &v
+  return s
+}
+
+func (s *DeleteGroupRequest) SetGroupName(v string) *DeleteGroupRequest {
+  s.GroupName = &v
+  return s
+}
+
+type DeleteGroupRequestHeader struct {
+}
+
+func (s DeleteGroupRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteGroupRequestHeader) GoString() string {
+  return s.String()
+}
+
+type DeleteGroupPaths struct {
+}
+
+func (s DeleteGroupPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteGroupPaths) GoString() string {
+  return s.String()
+}
+
+type DeleteGroupParameters struct {
+}
+
+func (s DeleteGroupParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteGroupParameters) GoString() string {
+  return s.String()
+}
+
+type DeleteGroupResponse struct {
+  // {"en":"Request result status code.","zh_CN":"请求结果状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Request result information.","zh_CN":"请求结果信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+}
+
+func (s DeleteGroupResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteGroupResponse) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteGroupResponse) SetCode(v string) *DeleteGroupResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *DeleteGroupResponse) SetMsg(v string) *DeleteGroupResponse {
+  s.Msg = &v
+  return s
+}
+
+type DeleteGroupResponseHeader struct {
+}
+
+func (s DeleteGroupResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteGroupResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -1045,6 +1793,216 @@ func (s AddSubAccountResponseHeader) String() string {
 }
 
 func (s AddSubAccountResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type ListGroupBasicInfoRequest struct {
+  // {"en":"Group id.","zh_CN":"用户组ID"}
+  GroupId *int64 `json:"groupId,omitempty" xml:"groupId,omitempty"`
+  // {"en":"Group name.  If neither groupId nor groupName is provided, all user groups under the main account will be returned.  If groupId is provided, only the user group information with the exact groupId will be retrieved.  If only groupName is provided, the user group information matching the groupName will be retrieved using a fuzzy search.","zh_CN":"用户组名称  groupId和groupName都没传时，返回主账号下所有用户组。  groupId有传，则只精确查询groupId的用户组信息。  只传groupName，则模糊查询groupName的用户组信息。"}
+  GroupName *string `json:"groupName,omitempty" xml:"groupName,omitempty"`
+  // {"en":"Page number for the current page when querying with pagination. If it is empty, pagination will not be applied, and all records will be returned, rendering the pageSize field ineffective. The first page is 1.","zh_CN":"指定分页查询时，当前页的页码。为空则不分页处理全部返回，pageSize字段填写内容不生效。第一页是1"}
+  PageIndex *int `json:"pageIndex,omitempty" xml:"pageIndex,omitempty"`
+  // {"en":"The maximum number of records displayed per page when querying with pagination. The maximum value for PageSize is 100. The default number of records displayed per page is 20. If the PageSize value is empty, 20 records will be returned by default.","zh_CN":"指定分页查询时，每页显示的数据最大条数。 PageSize参数最大取值为100。每页默认显示的数据条数为20条，PageSize参数值为空时,将默认返回20条数据。"}
+  PageSize *int `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
+}
+
+func (s ListGroupBasicInfoRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupBasicInfoRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ListGroupBasicInfoRequest) SetGroupId(v int64) *ListGroupBasicInfoRequest {
+  s.GroupId = &v
+  return s
+}
+
+func (s *ListGroupBasicInfoRequest) SetGroupName(v string) *ListGroupBasicInfoRequest {
+  s.GroupName = &v
+  return s
+}
+
+func (s *ListGroupBasicInfoRequest) SetPageIndex(v int) *ListGroupBasicInfoRequest {
+  s.PageIndex = &v
+  return s
+}
+
+func (s *ListGroupBasicInfoRequest) SetPageSize(v int) *ListGroupBasicInfoRequest {
+  s.PageSize = &v
+  return s
+}
+
+type ListGroupBasicInfoRequestHeader struct {
+}
+
+func (s ListGroupBasicInfoRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupBasicInfoRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ListGroupBasicInfoPaths struct {
+}
+
+func (s ListGroupBasicInfoPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupBasicInfoPaths) GoString() string {
+  return s.String()
+}
+
+type ListGroupBasicInfoParameters struct {
+}
+
+func (s ListGroupBasicInfoParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupBasicInfoParameters) GoString() string {
+  return s.String()
+}
+
+type ListGroupBasicInfoResponse struct {
+  // {"en":"Request result status code.","zh_CN":"请求结果状态码。"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Request result information.","zh_CN":"请求结果信息。"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"Detailed data on the results of the request.","zh_CN":"请求结果的详细数据。"}
+  Data *ListGroupBasicInfoResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s ListGroupBasicInfoResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupBasicInfoResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ListGroupBasicInfoResponse) SetCode(v string) *ListGroupBasicInfoResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ListGroupBasicInfoResponse) SetMsg(v string) *ListGroupBasicInfoResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *ListGroupBasicInfoResponse) SetData(v *ListGroupBasicInfoResponseData) *ListGroupBasicInfoResponse {
+  s.Data = v
+  return s
+}
+
+type ListGroupBasicInfoResponseData struct {
+  // {"en":"User group detailed data.","zh_CN":"用户组详细数据"}
+  GroupDetail []*ListGroupBasicInfoResponseDataGroupDetail `json:"groupDetail,omitempty" xml:"groupDetail,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Total number of returned records","zh_CN":"返回的总条数"}
+  Total *int `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+  // {"en":"Page number","zh_CN":"页码"}
+  PageIndex *int `json:"pageIndex,omitempty" xml:"pageIndex,omitempty" require:"true"`
+  // {"en":"Number per page","zh_CN":"每页的数量"}
+  PageSize *int `json:"pageSize,omitempty" xml:"pageSize,omitempty" require:"true"`
+}
+
+func (s ListGroupBasicInfoResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupBasicInfoResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *ListGroupBasicInfoResponseData) SetGroupDetail(v []*ListGroupBasicInfoResponseDataGroupDetail) *ListGroupBasicInfoResponseData {
+  s.GroupDetail = v
+  return s
+}
+
+func (s *ListGroupBasicInfoResponseData) SetTotal(v int) *ListGroupBasicInfoResponseData {
+  s.Total = &v
+  return s
+}
+
+func (s *ListGroupBasicInfoResponseData) SetPageIndex(v int) *ListGroupBasicInfoResponseData {
+  s.PageIndex = &v
+  return s
+}
+
+func (s *ListGroupBasicInfoResponseData) SetPageSize(v int) *ListGroupBasicInfoResponseData {
+  s.PageSize = &v
+  return s
+}
+
+type ListGroupBasicInfoResponseDataGroupDetail struct     {
+  // {"en":"Group id.","zh_CN":"用户组ID。"}
+  GroupId *int64 `json:"groupId,omitempty" xml:"groupId,omitempty" require:"true"`
+  // {"en":"Group name.","zh_CN":"用户组名称。"}
+  GroupName *string `json:"groupName,omitempty" xml:"groupName,omitempty" require:"true"`
+  // {"en":"Group display name.","zh_CN":"用户组显示昵称。"}
+  GroupDisplayName *string `json:"groupDisplayName,omitempty" xml:"groupDisplayName,omitempty" require:"true"`
+  // {"en":"Group notes.","zh_CN":"用户组备注信息。"}
+  GroupNote *string `json:"groupNote,omitempty" xml:"groupNote,omitempty" require:"true"`
+  // {"en":"The format is 2025-12-24 01:02:03. UTC+8","zh_CN":"格式为 2025-12-24 01:02:03。  东八区时间"}
+  CreateTime *string `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
+  // {"en":"The format is 2025-12-24 01:02:03. UTC+8","zh_CN":"格式为 2025-12-24 01:02:03。  东八区时间"}
+  UpdateTime *string `json:"updateTime,omitempty" xml:"updateTime,omitempty" require:"true"`
+}
+
+func (s ListGroupBasicInfoResponseDataGroupDetail) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupBasicInfoResponseDataGroupDetail) GoString() string {
+  return s.String()
+}
+
+func (s *ListGroupBasicInfoResponseDataGroupDetail) SetGroupId(v int64) *ListGroupBasicInfoResponseDataGroupDetail {
+  s.GroupId = &v
+  return s
+}
+
+func (s *ListGroupBasicInfoResponseDataGroupDetail) SetGroupName(v string) *ListGroupBasicInfoResponseDataGroupDetail {
+  s.GroupName = &v
+  return s
+}
+
+func (s *ListGroupBasicInfoResponseDataGroupDetail) SetGroupDisplayName(v string) *ListGroupBasicInfoResponseDataGroupDetail {
+  s.GroupDisplayName = &v
+  return s
+}
+
+func (s *ListGroupBasicInfoResponseDataGroupDetail) SetGroupNote(v string) *ListGroupBasicInfoResponseDataGroupDetail {
+  s.GroupNote = &v
+  return s
+}
+
+func (s *ListGroupBasicInfoResponseDataGroupDetail) SetCreateTime(v string) *ListGroupBasicInfoResponseDataGroupDetail {
+  s.CreateTime = &v
+  return s
+}
+
+func (s *ListGroupBasicInfoResponseDataGroupDetail) SetUpdateTime(v string) *ListGroupBasicInfoResponseDataGroupDetail {
+  s.UpdateTime = &v
+  return s
+}
+
+type ListGroupBasicInfoResponseHeader struct {
+}
+
+func (s ListGroupBasicInfoResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupBasicInfoResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -1405,6 +2363,156 @@ func (s QueryPolicyAttachedMainAccountOrSubAccountResponseHeader) String() strin
 }
 
 func (s QueryPolicyAttachedMainAccountOrSubAccountResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type ListGroupAttachedPolicyRequest struct {
+  // {"en":"Group ID.","zh_CN":"用户组ID"}
+  GroupId *int64 `json:"groupId,omitempty" xml:"groupId,omitempty"`
+  // {"en":"Group name.  Either groupId or groupName must be provided. If groupId is specified, it will take precedence.","zh_CN":"用户组名称  groupId和groupName必传一个。若填写了groupId，则优先使用groupId。"}
+  GroupName *string `json:"groupName,omitempty" xml:"groupName,omitempty"`
+}
+
+func (s ListGroupAttachedPolicyRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupAttachedPolicyRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ListGroupAttachedPolicyRequest) SetGroupId(v int64) *ListGroupAttachedPolicyRequest {
+  s.GroupId = &v
+  return s
+}
+
+func (s *ListGroupAttachedPolicyRequest) SetGroupName(v string) *ListGroupAttachedPolicyRequest {
+  s.GroupName = &v
+  return s
+}
+
+type ListGroupAttachedPolicyRequestHeader struct {
+  // {"en":"Selects the language for the policy description. Optional values include zh_CN, en, ko_KR, and ja_JP. Defaults to en if not specified.","zh_CN":"选择指定语言返回对应语言的策略描述，可选值：zh_CN，en，ko_KR，ja_JP；未选择默认en"}
+  AcceptLanguage *string `json:"Accept-Language,omitempty" xml:"Accept-Language,omitempty"`
+}
+
+func (s ListGroupAttachedPolicyRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupAttachedPolicyRequestHeader) GoString() string {
+  return s.String()
+}
+
+func (s *ListGroupAttachedPolicyRequestHeader) SetAcceptLanguage(v string) *ListGroupAttachedPolicyRequestHeader {
+  s.AcceptLanguage = &v
+  return s
+}
+
+type ListGroupAttachedPolicyPaths struct {
+}
+
+func (s ListGroupAttachedPolicyPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupAttachedPolicyPaths) GoString() string {
+  return s.String()
+}
+
+type ListGroupAttachedPolicyParameters struct {
+}
+
+func (s ListGroupAttachedPolicyParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupAttachedPolicyParameters) GoString() string {
+  return s.String()
+}
+
+type ListGroupAttachedPolicyResponse struct {
+  // {"en":"Request result status code.","zh_CN":"请求结果状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Request result information.","zh_CN":"请求结果信息"}
+  Msg *string `json:"msg,omitempty" xml:"msg,omitempty" require:"true"`
+  // {"en":"Detailed data on the results of the request.","zh_CN":"请求结果的详细数据"}
+  Data []*ListGroupAttachedPolicyResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s ListGroupAttachedPolicyResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupAttachedPolicyResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ListGroupAttachedPolicyResponse) SetCode(v string) *ListGroupAttachedPolicyResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ListGroupAttachedPolicyResponse) SetMsg(v string) *ListGroupAttachedPolicyResponse {
+  s.Msg = &v
+  return s
+}
+
+func (s *ListGroupAttachedPolicyResponse) SetData(v []*ListGroupAttachedPolicyResponseData) *ListGroupAttachedPolicyResponse {
+  s.Data = v
+  return s
+}
+
+type ListGroupAttachedPolicyResponseData struct     {
+  // {"en":"Policy ID.","zh_CN":"策略id"}
+  PolicyId *int64 `json:"policyId,omitempty" xml:"policyId,omitempty" require:"true"`
+  // {"en":"Policy name.","zh_CN":"策略名称"}
+  PolicyName *string `json:"policyName,omitempty" xml:"policyName,omitempty" require:"true"`
+  // {"en":"Policy description content.","zh_CN":"策略描述内容"}
+  PolicyDescribe *string `json:"policyDescribe,omitempty" xml:"policyDescribe,omitempty" require:"true"`
+  // {"en":"Policy type. Supported values are 'SYSTEM' for system policies and 'CUSTOM' for custom policies.\"","zh_CN":"策略类型：SYSTEM 系统策略、CUSTOM 自定义策略"}
+  PolicyType *string `json:"policyType,omitempty" xml:"policyType,omitempty" require:"true"`
+}
+
+func (s ListGroupAttachedPolicyResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupAttachedPolicyResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *ListGroupAttachedPolicyResponseData) SetPolicyId(v int64) *ListGroupAttachedPolicyResponseData {
+  s.PolicyId = &v
+  return s
+}
+
+func (s *ListGroupAttachedPolicyResponseData) SetPolicyName(v string) *ListGroupAttachedPolicyResponseData {
+  s.PolicyName = &v
+  return s
+}
+
+func (s *ListGroupAttachedPolicyResponseData) SetPolicyDescribe(v string) *ListGroupAttachedPolicyResponseData {
+  s.PolicyDescribe = &v
+  return s
+}
+
+func (s *ListGroupAttachedPolicyResponseData) SetPolicyType(v string) *ListGroupAttachedPolicyResponseData {
+  s.PolicyType = &v
+  return s
+}
+
+type ListGroupAttachedPolicyResponseHeader struct {
+}
+
+func (s ListGroupAttachedPolicyResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ListGroupAttachedPolicyResponseHeader) GoString() string {
   return s.String()
 }
 

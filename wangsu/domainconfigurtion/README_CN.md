@@ -199,3 +199,5 @@ if err != nil {
 | Rollbackdomainconfig | 回退指定域名指定版本的域名配置。用户可以输入域名、版本回退配置。主要让用户可以回退指定版本的配置 | POST | /api/rollback-domain-config |
 | Batchupdateapidomainforwplus | 该接口用于批量修改指定加速域名的基础配置。用户需在请求体中传入一个domainConfigs列表，每个元素包含待修改域名的`domain-name`，以及可选的其他域名配置。 | PUT | /api/batch/domain |
 | Querydomainconfigbydomainnames | 该接口用于根据用户提供的域名名称列表，查询这些域名的详细配置信息。主要功能包括获取域名的一级域名、状态、SNI证书配置和回源协议等。用户需要在请求体中传入要查询的域名名称列表。 | POST | /api/domain/config |
+| Updatefingerprintantihotlinkingconfig | 该接口用于通过传入JA4指纹及控制动作等参数，修改指定域名的指纹防盗链配置，并可选择性地配置允许或禁止的JA4指纹。通过此接口，可以实现对JA4指纹的快速封禁或放行，接口调用成功后，将返回操作状态及相关标识信息。 | PUT | /api/config/visitcontrol/fingerprint/* |
+| Queryfingerprintantihotlinkingconfig | 该接口用于查询指定域名或域名ID的指纹防盗链配置。用户需提供域名或域名ID作为查询参数。响应将返回域名的详细指纹防盗链规则，包括允许/禁止的JA4指纹、控制动作（403拒绝或302重定向）及相关的重定向URL、匹配模式和优先级等信息。 | GET | /api/config/visitcontrol/fingerprint/* |

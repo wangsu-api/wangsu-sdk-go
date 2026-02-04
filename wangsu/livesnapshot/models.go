@@ -5,6 +5,251 @@ import (
   "github.com/alibabacloud-go/tea/tea"
 )
 
+type QuerySnapshotRuleRequest struct {
+  // {"en":"rule id","zh_CN":"截图规则ID"}
+  RuleId *string `json:"ruleId,omitempty" xml:"ruleId,omitempty"`
+  // {"en":"domain","zh_CN":"推流域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty"`
+  // {"en":"Publishing point name","zh_CN":"发布点"}
+  AppName *string `json:"appName,omitempty" xml:"appName,omitempty"`
+  // {"en":"stream name","zh_CN":"流名"}
+  StreamName *string `json:"streamName,omitempty" xml:"streamName,omitempty"`
+  // {"en":"template id","zh_CN":"根据模版ID，查询关联该模版的规则"}
+  TemplateId *string `json:"templateId,omitempty" xml:"templateId,omitempty"`
+  // {"en":"pull domain","zh_CN":"拉流域名"}
+  PullDomain *string `json:"pullDomain,omitempty" xml:"pullDomain,omitempty"`
+  // {"en":"page number","zh_CN":"分页编号，从1开始。默认为1"}
+  PageNum *int `json:"pageNum,omitempty" xml:"pageNum,omitempty"`
+  // {"en":"page size","zh_CN":"分页大小，取值范围[1,200]。默认50"}
+  PageSize *int `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
+}
+
+func (s QuerySnapshotRuleRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QuerySnapshotRuleRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QuerySnapshotRuleRequest) SetRuleId(v string) *QuerySnapshotRuleRequest {
+  s.RuleId = &v
+  return s
+}
+
+func (s *QuerySnapshotRuleRequest) SetDomain(v string) *QuerySnapshotRuleRequest {
+  s.Domain = &v
+  return s
+}
+
+func (s *QuerySnapshotRuleRequest) SetAppName(v string) *QuerySnapshotRuleRequest {
+  s.AppName = &v
+  return s
+}
+
+func (s *QuerySnapshotRuleRequest) SetStreamName(v string) *QuerySnapshotRuleRequest {
+  s.StreamName = &v
+  return s
+}
+
+func (s *QuerySnapshotRuleRequest) SetTemplateId(v string) *QuerySnapshotRuleRequest {
+  s.TemplateId = &v
+  return s
+}
+
+func (s *QuerySnapshotRuleRequest) SetPullDomain(v string) *QuerySnapshotRuleRequest {
+  s.PullDomain = &v
+  return s
+}
+
+func (s *QuerySnapshotRuleRequest) SetPageNum(v int) *QuerySnapshotRuleRequest {
+  s.PageNum = &v
+  return s
+}
+
+func (s *QuerySnapshotRuleRequest) SetPageSize(v int) *QuerySnapshotRuleRequest {
+  s.PageSize = &v
+  return s
+}
+
+type QuerySnapshotRuleRequestHeader struct {
+}
+
+func (s QuerySnapshotRuleRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QuerySnapshotRuleRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QuerySnapshotRulePaths struct {
+}
+
+func (s QuerySnapshotRulePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QuerySnapshotRulePaths) GoString() string {
+  return s.String()
+}
+
+type QuerySnapshotRuleParameters struct {
+}
+
+func (s QuerySnapshotRuleParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QuerySnapshotRuleParameters) GoString() string {
+  return s.String()
+}
+
+type QuerySnapshotRuleResponse struct {
+  // {"en":"Response status code.","zh_CN":"响应码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Response message indicating success or failure.","zh_CN":"响应信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"","zh_CN":""}
+  Data *QuerySnapshotRuleResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QuerySnapshotRuleResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QuerySnapshotRuleResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QuerySnapshotRuleResponse) SetCode(v int) *QuerySnapshotRuleResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QuerySnapshotRuleResponse) SetMessage(v string) *QuerySnapshotRuleResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *QuerySnapshotRuleResponse) SetData(v *QuerySnapshotRuleResponseData) *QuerySnapshotRuleResponse {
+  s.Data = v
+  return s
+}
+
+type QuerySnapshotRuleResponseData struct {
+  // {"en":"data size.","zh_CN":"符合查询条件总数量"}
+  Total *int `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+  // {"en":"List of snapshot rule data.","zh_CN":"规则列表"}
+  List []*QuerySnapshotRuleResponseDataList `json:"list,omitempty" xml:"list,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QuerySnapshotRuleResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QuerySnapshotRuleResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *QuerySnapshotRuleResponseData) SetTotal(v int) *QuerySnapshotRuleResponseData {
+  s.Total = &v
+  return s
+}
+
+func (s *QuerySnapshotRuleResponseData) SetList(v []*QuerySnapshotRuleResponseDataList) *QuerySnapshotRuleResponseData {
+  s.List = v
+  return s
+}
+
+type QuerySnapshotRuleResponseDataList struct     {
+  // {"en":"rule id","zh_CN":"截图规则ID"}
+  RuleId *string `json:"ruleId,omitempty" xml:"ruleId,omitempty" require:"true"`
+  // {"en":"template id","zh_CN":"模版ID"}
+  TemplateId *string `json:"templateId,omitempty" xml:"templateId,omitempty" require:"true"`
+  // {"en":"domain","zh_CN":"推流域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {"en":"Publishing point name","zh_CN":"发布点"}
+  AppName *string `json:"appName,omitempty" xml:"appName,omitempty" require:"true"`
+  // {"en":"stream name","zh_CN":"流名"}
+  StreamName *string `json:"streamName,omitempty" xml:"streamName,omitempty" require:"true"`
+  // {"en":"Extension parameters for the stream name.","zh_CN":"流名扩展参数"}
+  StreamParams *string `json:"streamParams,omitempty" xml:"streamParams,omitempty" require:"true"`
+  // {"en":"Pull stream domain","zh_CN":"拉流域名"}
+  PullDomain *string `json:"pullDomain,omitempty" xml:"pullDomain,omitempty" require:"true"`
+  // {"en":"Whether the rule is enabled. 0 for disabled, 1 for enabled. Defaults to 1.","zh_CN":"0：不启用，1：启用 默认为1"}
+  IsEnabled *int `json:"isEnabled,omitempty" xml:"isEnabled,omitempty" require:"true"`
+  // {"en":"Creation timestamp","zh_CN":"创建时间，时间戳"}
+  CreateTime *int64 `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
+}
+
+func (s QuerySnapshotRuleResponseDataList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QuerySnapshotRuleResponseDataList) GoString() string {
+  return s.String()
+}
+
+func (s *QuerySnapshotRuleResponseDataList) SetRuleId(v string) *QuerySnapshotRuleResponseDataList {
+  s.RuleId = &v
+  return s
+}
+
+func (s *QuerySnapshotRuleResponseDataList) SetTemplateId(v string) *QuerySnapshotRuleResponseDataList {
+  s.TemplateId = &v
+  return s
+}
+
+func (s *QuerySnapshotRuleResponseDataList) SetDomain(v string) *QuerySnapshotRuleResponseDataList {
+  s.Domain = &v
+  return s
+}
+
+func (s *QuerySnapshotRuleResponseDataList) SetAppName(v string) *QuerySnapshotRuleResponseDataList {
+  s.AppName = &v
+  return s
+}
+
+func (s *QuerySnapshotRuleResponseDataList) SetStreamName(v string) *QuerySnapshotRuleResponseDataList {
+  s.StreamName = &v
+  return s
+}
+
+func (s *QuerySnapshotRuleResponseDataList) SetStreamParams(v string) *QuerySnapshotRuleResponseDataList {
+  s.StreamParams = &v
+  return s
+}
+
+func (s *QuerySnapshotRuleResponseDataList) SetPullDomain(v string) *QuerySnapshotRuleResponseDataList {
+  s.PullDomain = &v
+  return s
+}
+
+func (s *QuerySnapshotRuleResponseDataList) SetIsEnabled(v int) *QuerySnapshotRuleResponseDataList {
+  s.IsEnabled = &v
+  return s
+}
+
+func (s *QuerySnapshotRuleResponseDataList) SetCreateTime(v int64) *QuerySnapshotRuleResponseDataList {
+  s.CreateTime = &v
+  return s
+}
+
+type QuerySnapshotRuleResponseHeader struct {
+}
+
+func (s QuerySnapshotRuleResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QuerySnapshotRuleResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type AddSnapshotParameterTemplateRequest struct {
   // {"en":"Geographical region of the cloud storage.","zh_CN":"区域"}
   Region *string `json:"region,omitempty" xml:"region,omitempty"`
@@ -261,9 +506,256 @@ func (s AddSnapshotParameterTemplateResponseHeader) GoString() string {
 
 
 
+type AddSnapshotRulesRequest struct {
+  // {"en":"template id","zh_CN":"模版ID"}
+  TemplateId *string `json:"templateId,omitempty" xml:"templateId,omitempty" require:"true"`
+  // {"en":"domain","zh_CN":"推流域名，禁止传空字符串。  如果是推拉架构，推流域名必填"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty"`
+  // {"en":"Publishing point name","zh_CN":"发布点"}
+  AppName *string `json:"appName,omitempty" xml:"appName,omitempty"`
+  // {"en":"stream name","zh_CN":"流名"}
+  StreamName *string `json:"streamName,omitempty" xml:"streamName,omitempty"`
+  // {"en":"Extension parameters for the stream name.","zh_CN":"流名扩展参数"}
+  StreamParams *string `json:"streamParams,omitempty" xml:"streamParams,omitempty"`
+  // {"en":"Pull stream domain","zh_CN":"拉流域名,禁止传空字符串"}
+  PullDomain *string `json:"pullDomain,omitempty" xml:"pullDomain,omitempty" require:"true"`
+  // {"en":"Whether the rule is enabled. 0 for disabled, 1 for enabled. Defaults to 1.","zh_CN":"0：不启用，1：启用 默认为1"}
+  IsEnabled *int `json:"isEnabled,omitempty" xml:"isEnabled,omitempty"`
+}
+
+func (s AddSnapshotRulesRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddSnapshotRulesRequest) GoString() string {
+  return s.String()
+}
+
+func (s *AddSnapshotRulesRequest) SetTemplateId(v string) *AddSnapshotRulesRequest {
+  s.TemplateId = &v
+  return s
+}
+
+func (s *AddSnapshotRulesRequest) SetDomain(v string) *AddSnapshotRulesRequest {
+  s.Domain = &v
+  return s
+}
+
+func (s *AddSnapshotRulesRequest) SetAppName(v string) *AddSnapshotRulesRequest {
+  s.AppName = &v
+  return s
+}
+
+func (s *AddSnapshotRulesRequest) SetStreamName(v string) *AddSnapshotRulesRequest {
+  s.StreamName = &v
+  return s
+}
+
+func (s *AddSnapshotRulesRequest) SetStreamParams(v string) *AddSnapshotRulesRequest {
+  s.StreamParams = &v
+  return s
+}
+
+func (s *AddSnapshotRulesRequest) SetPullDomain(v string) *AddSnapshotRulesRequest {
+  s.PullDomain = &v
+  return s
+}
+
+func (s *AddSnapshotRulesRequest) SetIsEnabled(v int) *AddSnapshotRulesRequest {
+  s.IsEnabled = &v
+  return s
+}
+
+type AddSnapshotRulesRequestHeader struct {
+}
+
+func (s AddSnapshotRulesRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddSnapshotRulesRequestHeader) GoString() string {
+  return s.String()
+}
+
+type AddSnapshotRulesPaths struct {
+}
+
+func (s AddSnapshotRulesPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddSnapshotRulesPaths) GoString() string {
+  return s.String()
+}
+
+type AddSnapshotRulesParameters struct {
+}
+
+func (s AddSnapshotRulesParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddSnapshotRulesParameters) GoString() string {
+  return s.String()
+}
+
+type AddSnapshotRulesResponse struct {
+  // {"en":"The response status code.","zh_CN":"结果状态码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Detailed information or error message for the interface response.","zh_CN":"返回消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"The specific business data returned by the interface.","zh_CN":"返回数据"}
+  Data *AddSnapshotRulesResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s AddSnapshotRulesResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddSnapshotRulesResponse) GoString() string {
+  return s.String()
+}
+
+func (s *AddSnapshotRulesResponse) SetCode(v int) *AddSnapshotRulesResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *AddSnapshotRulesResponse) SetMessage(v string) *AddSnapshotRulesResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *AddSnapshotRulesResponse) SetData(v *AddSnapshotRulesResponseData) *AddSnapshotRulesResponse {
+  s.Data = v
+  return s
+}
+
+type AddSnapshotRulesResponseData struct {
+  // {"en":"The ID of the newly created screenshot rule","zh_CN":"截图规则ID"}
+  RuleId *string `json:"ruleId,omitempty" xml:"ruleId,omitempty" require:"true"`
+}
+
+func (s AddSnapshotRulesResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddSnapshotRulesResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *AddSnapshotRulesResponseData) SetRuleId(v string) *AddSnapshotRulesResponseData {
+  s.RuleId = &v
+  return s
+}
+
+type AddSnapshotRulesResponseHeader struct {
+}
+
+func (s AddSnapshotRulesResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddSnapshotRulesResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type StopRealTimeSnapshotRequest struct {
+}
+
+func (s StopRealTimeSnapshotRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StopRealTimeSnapshotRequest) GoString() string {
+  return s.String()
+}
+
+type StopRealTimeSnapshotRequestHeader struct {
+}
+
+func (s StopRealTimeSnapshotRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StopRealTimeSnapshotRequestHeader) GoString() string {
+  return s.String()
+}
+
+type StopRealTimeSnapshotPaths struct {
+  // {"en":"The unique identifier for the snapshotting task.","zh_CN":"截图任务的唯一标识符"}
+  PersistentId *string `json:"persistentId,omitempty" xml:"persistentId,omitempty" require:"true"`
+}
+
+func (s StopRealTimeSnapshotPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StopRealTimeSnapshotPaths) GoString() string {
+  return s.String()
+}
+
+func (s *StopRealTimeSnapshotPaths) SetPersistentId(v string) *StopRealTimeSnapshotPaths {
+  s.PersistentId = &v
+  return s
+}
+
+type StopRealTimeSnapshotParameters struct {
+}
+
+func (s StopRealTimeSnapshotParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StopRealTimeSnapshotParameters) GoString() string {
+  return s.String()
+}
+
+type StopRealTimeSnapshotResponse struct {
+  // {"en":"The overall response code of the API call","zh_CN":"结果状态码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"The overall response message of the API call","zh_CN":"返回消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s StopRealTimeSnapshotResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StopRealTimeSnapshotResponse) GoString() string {
+  return s.String()
+}
+
+func (s *StopRealTimeSnapshotResponse) SetCode(v int) *StopRealTimeSnapshotResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *StopRealTimeSnapshotResponse) SetMessage(v string) *StopRealTimeSnapshotResponse {
+  s.Message = &v
+  return s
+}
+
+type StopRealTimeSnapshotResponseHeader struct {
+}
+
+func (s StopRealTimeSnapshotResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StopRealTimeSnapshotResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type QuerySnapshotParameterTemplateRequest struct {
   // {"en":"The unique identifier of the screenshot parameter template.","zh_CN":"截图参数模板的唯一标识符"}
-  TemplateId *int `json:"templateId,omitempty" xml:"templateId,omitempty"`
+  TemplateId *string `json:"templateId,omitempty" xml:"templateId,omitempty"`
 }
 
 func (s QuerySnapshotParameterTemplateRequest) String() string {
@@ -274,7 +766,7 @@ func (s QuerySnapshotParameterTemplateRequest) GoString() string {
   return s.String()
 }
 
-func (s *QuerySnapshotParameterTemplateRequest) SetTemplateId(v int) *QuerySnapshotParameterTemplateRequest {
+func (s *QuerySnapshotParameterTemplateRequest) SetTemplateId(v string) *QuerySnapshotParameterTemplateRequest {
   s.TemplateId = &v
   return s
 }
@@ -573,7 +1065,7 @@ func (s DeleteSnapshotParameterTemplateRequestHeader) GoString() string {
 
 type DeleteSnapshotParameterTemplatePaths struct {
   // {"en":"The unique identifier of the template to be deleted.","zh_CN":"待删除模版的唯一标识符"}
-  TemplateId *int `json:"templateId,omitempty" xml:"templateId,omitempty" require:"true"`
+  TemplateId *string `json:"templateId,omitempty" xml:"templateId,omitempty" require:"true"`
 }
 
 func (s DeleteSnapshotParameterTemplatePaths) String() string {
@@ -584,7 +1076,7 @@ func (s DeleteSnapshotParameterTemplatePaths) GoString() string {
   return s.String()
 }
 
-func (s *DeleteSnapshotParameterTemplatePaths) SetTemplateId(v int) *DeleteSnapshotParameterTemplatePaths {
+func (s *DeleteSnapshotParameterTemplatePaths) SetTemplateId(v string) *DeleteSnapshotParameterTemplatePaths {
   s.TemplateId = &v
   return s
 }
@@ -633,6 +1125,96 @@ func (s DeleteSnapshotParameterTemplateResponseHeader) String() string {
 }
 
 func (s DeleteSnapshotParameterTemplateResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type DeleteScreenshotRulesRequest struct {
+}
+
+func (s DeleteScreenshotRulesRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteScreenshotRulesRequest) GoString() string {
+  return s.String()
+}
+
+type DeleteScreenshotRulesRequestHeader struct {
+}
+
+func (s DeleteScreenshotRulesRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteScreenshotRulesRequestHeader) GoString() string {
+  return s.String()
+}
+
+type DeleteScreenshotRulesPaths struct {
+  // {"en":"The unique identifier of the screenshot rule to be deleted.","zh_CN":"规则ID"}
+  RuleId *string `json:"ruleId,omitempty" xml:"ruleId,omitempty" require:"true"`
+}
+
+func (s DeleteScreenshotRulesPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteScreenshotRulesPaths) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteScreenshotRulesPaths) SetRuleId(v string) *DeleteScreenshotRulesPaths {
+  s.RuleId = &v
+  return s
+}
+
+type DeleteScreenshotRulesParameters struct {
+}
+
+func (s DeleteScreenshotRulesParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteScreenshotRulesParameters) GoString() string {
+  return s.String()
+}
+
+type DeleteScreenshotRulesResponse struct {
+  // {"en":"The status code of the API response.","zh_CN":"结果状态码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Detailed message describing the outcome of the API call.","zh_CN":"返回消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s DeleteScreenshotRulesResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteScreenshotRulesResponse) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteScreenshotRulesResponse) SetCode(v int) *DeleteScreenshotRulesResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *DeleteScreenshotRulesResponse) SetMessage(v string) *DeleteScreenshotRulesResponse {
+  s.Message = &v
+  return s
+}
+
+type DeleteScreenshotRulesResponseHeader struct {
+}
+
+func (s DeleteScreenshotRulesResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteScreenshotRulesResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -804,7 +1386,7 @@ func (s ModifySnapshotParameterTemplateRequestHeader) GoString() string {
 
 type ModifySnapshotParameterTemplatePaths struct {
   // {"en":"Unique identifier of the screenshot parameter template to be modified.","zh_CN":"待修改的截图参数模板的唯一标识符。"}
-  TemplateId *int `json:"templateId,omitempty" xml:"templateId,omitempty" require:"true"`
+  TemplateId *string `json:"templateId,omitempty" xml:"templateId,omitempty" require:"true"`
 }
 
 func (s ModifySnapshotParameterTemplatePaths) String() string {
@@ -815,7 +1397,7 @@ func (s ModifySnapshotParameterTemplatePaths) GoString() string {
   return s.String()
 }
 
-func (s *ModifySnapshotParameterTemplatePaths) SetTemplateId(v int) *ModifySnapshotParameterTemplatePaths {
+func (s *ModifySnapshotParameterTemplatePaths) SetTemplateId(v string) *ModifySnapshotParameterTemplatePaths {
   s.TemplateId = &v
   return s
 }
@@ -864,6 +1446,302 @@ func (s ModifySnapshotParameterTemplateResponseHeader) String() string {
 }
 
 func (s ModifySnapshotParameterTemplateResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type StartRealTimeSnapshotRequest struct {
+  // {"en":"The ID of the snapshot template to use for the real-time snapshot task","zh_CN":"模版ID"}
+  TemplateId *string `json:"templateId,omitempty" xml:"templateId,omitempty" require:"true"`
+  // {"en":"The pull domain of the live stream","zh_CN":"拉流域名"}
+  PullDomain *string `json:"pullDomain,omitempty" xml:"pullDomain,omitempty" require:"true"`
+  // {"en":"The application name or publishing point for the stream","zh_CN":"发布点"}
+  AppName *string `json:"appName,omitempty" xml:"appName,omitempty" require:"true"`
+  // {"en":"The name of the live stream for which to take a real-time snapshot","zh_CN":"流名，支持多个流名，多个流名用英文逗号分隔。最多5个  示例：stream1,stream2,stream3"}
+  StreamNames *string `json:"streamNames,omitempty" xml:"streamNames,omitempty" require:"true"`
+}
+
+func (s StartRealTimeSnapshotRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartRealTimeSnapshotRequest) GoString() string {
+  return s.String()
+}
+
+func (s *StartRealTimeSnapshotRequest) SetTemplateId(v string) *StartRealTimeSnapshotRequest {
+  s.TemplateId = &v
+  return s
+}
+
+func (s *StartRealTimeSnapshotRequest) SetPullDomain(v string) *StartRealTimeSnapshotRequest {
+  s.PullDomain = &v
+  return s
+}
+
+func (s *StartRealTimeSnapshotRequest) SetAppName(v string) *StartRealTimeSnapshotRequest {
+  s.AppName = &v
+  return s
+}
+
+func (s *StartRealTimeSnapshotRequest) SetStreamNames(v string) *StartRealTimeSnapshotRequest {
+  s.StreamNames = &v
+  return s
+}
+
+type StartRealTimeSnapshotRequestHeader struct {
+}
+
+func (s StartRealTimeSnapshotRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartRealTimeSnapshotRequestHeader) GoString() string {
+  return s.String()
+}
+
+type StartRealTimeSnapshotPaths struct {
+}
+
+func (s StartRealTimeSnapshotPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartRealTimeSnapshotPaths) GoString() string {
+  return s.String()
+}
+
+type StartRealTimeSnapshotParameters struct {
+}
+
+func (s StartRealTimeSnapshotParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartRealTimeSnapshotParameters) GoString() string {
+  return s.String()
+}
+
+type StartRealTimeSnapshotResponse struct {
+  // {"en":"The overall response code of the API call","zh_CN":"结果状态码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"The overall response message of the API call","zh_CN":"返回消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"The detailed response data containing snapshotting statuses","zh_CN":"返回数据"}
+  Data []*StartRealTimeSnapshotResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s StartRealTimeSnapshotResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartRealTimeSnapshotResponse) GoString() string {
+  return s.String()
+}
+
+func (s *StartRealTimeSnapshotResponse) SetCode(v int) *StartRealTimeSnapshotResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *StartRealTimeSnapshotResponse) SetMessage(v string) *StartRealTimeSnapshotResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *StartRealTimeSnapshotResponse) SetData(v []*StartRealTimeSnapshotResponseData) *StartRealTimeSnapshotResponse {
+  s.Data = v
+  return s
+}
+
+type StartRealTimeSnapshotResponseData struct     {
+  // {"en":"Stream-level response code","zh_CN":"结果状态码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Stream-level response message","zh_CN":"响应信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"The name of the stream this snapshotting status refers to","zh_CN":"流名"}
+  StreamName *string `json:"streamName,omitempty" xml:"streamName,omitempty" require:"true"`
+  // {"en":"The unique ID of the real-time snapshotting task","zh_CN":"截图任务的id"}
+  PersistentId *string `json:"persistentId,omitempty" xml:"persistentId,omitempty" require:"true"`
+}
+
+func (s StartRealTimeSnapshotResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartRealTimeSnapshotResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *StartRealTimeSnapshotResponseData) SetCode(v int) *StartRealTimeSnapshotResponseData {
+  s.Code = &v
+  return s
+}
+
+func (s *StartRealTimeSnapshotResponseData) SetMessage(v string) *StartRealTimeSnapshotResponseData {
+  s.Message = &v
+  return s
+}
+
+func (s *StartRealTimeSnapshotResponseData) SetStreamName(v string) *StartRealTimeSnapshotResponseData {
+  s.StreamName = &v
+  return s
+}
+
+func (s *StartRealTimeSnapshotResponseData) SetPersistentId(v string) *StartRealTimeSnapshotResponseData {
+  s.PersistentId = &v
+  return s
+}
+
+type StartRealTimeSnapshotResponseHeader struct {
+}
+
+func (s StartRealTimeSnapshotResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartRealTimeSnapshotResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type ModifySnapshotRulesRequest struct {
+  // {"en":"The unique identifier of the template.","zh_CN":"模版ID,禁止传空字符串。  不传：不修改原来的值"}
+  TemplateId *string `json:"templateId,omitempty" xml:"templateId,omitempty"`
+  // {"en":"The domain name.","zh_CN":"推流域名，如果是推拉架构，推流域名必填，不能传空字符串  不传：不修改原来的值  空字符串：删除配置"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty"`
+  // {"en":"Publishing point name","zh_CN":"发布点  不传：不修改原来的值  空字符串：删除配置"}
+  AppName *string `json:"appName,omitempty" xml:"appName,omitempty"`
+  // {"en":"The name of the stream.","zh_CN":"流名  不传：不修改原来的值  空字符串：删除配置"}
+  StreamName *string `json:"streamName,omitempty" xml:"streamName,omitempty"`
+  // {"en":"Extension parameters for the stream name.","zh_CN":"流名扩展参数。  不传：不修改原来的值  空字符串：删除配置"}
+  StreamParams *string `json:"streamParams,omitempty" xml:"streamParams,omitempty"`
+  // {"en":"Whether the rule is enabled. 0 for disabled, 1 for enabled. Defaults to 1.","zh_CN":"0：不启用，1：启用 默认为1"}
+  IsEnabled *int `json:"isEnabled,omitempty" xml:"isEnabled,omitempty"`
+  // {"en":"pull domain","zh_CN":"拉流域名,禁止传空字符串  不传：不修改原来的值"}
+  PullDomain *string `json:"pullDomain,omitempty" xml:"pullDomain,omitempty"`
+}
+
+func (s ModifySnapshotRulesRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifySnapshotRulesRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ModifySnapshotRulesRequest) SetTemplateId(v string) *ModifySnapshotRulesRequest {
+  s.TemplateId = &v
+  return s
+}
+
+func (s *ModifySnapshotRulesRequest) SetDomain(v string) *ModifySnapshotRulesRequest {
+  s.Domain = &v
+  return s
+}
+
+func (s *ModifySnapshotRulesRequest) SetAppName(v string) *ModifySnapshotRulesRequest {
+  s.AppName = &v
+  return s
+}
+
+func (s *ModifySnapshotRulesRequest) SetStreamName(v string) *ModifySnapshotRulesRequest {
+  s.StreamName = &v
+  return s
+}
+
+func (s *ModifySnapshotRulesRequest) SetStreamParams(v string) *ModifySnapshotRulesRequest {
+  s.StreamParams = &v
+  return s
+}
+
+func (s *ModifySnapshotRulesRequest) SetIsEnabled(v int) *ModifySnapshotRulesRequest {
+  s.IsEnabled = &v
+  return s
+}
+
+func (s *ModifySnapshotRulesRequest) SetPullDomain(v string) *ModifySnapshotRulesRequest {
+  s.PullDomain = &v
+  return s
+}
+
+type ModifySnapshotRulesRequestHeader struct {
+}
+
+func (s ModifySnapshotRulesRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifySnapshotRulesRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ModifySnapshotRulesPaths struct {
+  // {"en":"The unique identifier of the rule to be modified.","zh_CN":"截图规则ID"}
+  RuleId *string `json:"ruleId,omitempty" xml:"ruleId,omitempty" require:"true"`
+}
+
+func (s ModifySnapshotRulesPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifySnapshotRulesPaths) GoString() string {
+  return s.String()
+}
+
+func (s *ModifySnapshotRulesPaths) SetRuleId(v string) *ModifySnapshotRulesPaths {
+  s.RuleId = &v
+  return s
+}
+
+type ModifySnapshotRulesParameters struct {
+}
+
+func (s ModifySnapshotRulesParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifySnapshotRulesParameters) GoString() string {
+  return s.String()
+}
+
+type ModifySnapshotRulesResponse struct {
+  // {"en":"The status code of the API response.","zh_CN":"结果状态码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Detailed message describing the outcome of the API call.","zh_CN":"返回消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s ModifySnapshotRulesResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifySnapshotRulesResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ModifySnapshotRulesResponse) SetCode(v int) *ModifySnapshotRulesResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ModifySnapshotRulesResponse) SetMessage(v string) *ModifySnapshotRulesResponse {
+  s.Message = &v
+  return s
+}
+
+type ModifySnapshotRulesResponseHeader struct {
+}
+
+func (s ModifySnapshotRulesResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifySnapshotRulesResponseHeader) GoString() string {
   return s.String()
 }
 

@@ -184,7 +184,7 @@ func (s ModifyRecordingParameterTemplateRequestHeader) GoString() string {
 
 type ModifyRecordingParameterTemplatePaths struct {
   // {"en":"ID of the template to be modified.","zh_CN":"要修改的模版ID。"}
-  TemplateId *int `json:"templateId,omitempty" xml:"templateId,omitempty" require:"true"`
+  TemplateId *string `json:"templateId,omitempty" xml:"templateId,omitempty" require:"true"`
 }
 
 func (s ModifyRecordingParameterTemplatePaths) String() string {
@@ -195,7 +195,7 @@ func (s ModifyRecordingParameterTemplatePaths) GoString() string {
   return s.String()
 }
 
-func (s *ModifyRecordingParameterTemplatePaths) SetTemplateId(v int) *ModifyRecordingParameterTemplatePaths {
+func (s *ModifyRecordingParameterTemplatePaths) SetTemplateId(v string) *ModifyRecordingParameterTemplatePaths {
   s.TemplateId = &v
   return s
 }
@@ -250,9 +250,254 @@ func (s ModifyRecordingParameterTemplateResponseHeader) GoString() string {
 
 
 
+type QueryRecordingRuleRequest struct {
+  // {"en":"rule id","zh_CN":"录制规则ID"}
+  RuleId *string `json:"ruleId,omitempty" xml:"ruleId,omitempty"`
+  // {"en":"domain","zh_CN":"推流域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty"`
+  // {"en":"Publishing point name","zh_CN":"发布点"}
+  AppName *string `json:"appName,omitempty" xml:"appName,omitempty"`
+  // {"en":"stream name","zh_CN":"流名"}
+  StreamName *string `json:"streamName,omitempty" xml:"streamName,omitempty"`
+  // {"en":"template id","zh_CN":"根据模版ID，查询关联该模版的规则"}
+  TemplateId *string `json:"templateId,omitempty" xml:"templateId,omitempty"`
+  // {"en":"pull domain","zh_CN":"拉流域名"}
+  PullDomain *string `json:"pullDomain,omitempty" xml:"pullDomain,omitempty"`
+  // {"en":"page number","zh_CN":"分页编号，从1开始。默认为1"}
+  PageNum *int `json:"pageNum,omitempty" xml:"pageNum,omitempty"`
+  // {"en":"page size","zh_CN":"分页大小，取值范围[1,200]。默认50"}
+  PageSize *int `json:"pageSize,omitempty" xml:"pageSize,omitempty"`
+}
+
+func (s QueryRecordingRuleRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRecordingRuleRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryRecordingRuleRequest) SetRuleId(v string) *QueryRecordingRuleRequest {
+  s.RuleId = &v
+  return s
+}
+
+func (s *QueryRecordingRuleRequest) SetDomain(v string) *QueryRecordingRuleRequest {
+  s.Domain = &v
+  return s
+}
+
+func (s *QueryRecordingRuleRequest) SetAppName(v string) *QueryRecordingRuleRequest {
+  s.AppName = &v
+  return s
+}
+
+func (s *QueryRecordingRuleRequest) SetStreamName(v string) *QueryRecordingRuleRequest {
+  s.StreamName = &v
+  return s
+}
+
+func (s *QueryRecordingRuleRequest) SetTemplateId(v string) *QueryRecordingRuleRequest {
+  s.TemplateId = &v
+  return s
+}
+
+func (s *QueryRecordingRuleRequest) SetPullDomain(v string) *QueryRecordingRuleRequest {
+  s.PullDomain = &v
+  return s
+}
+
+func (s *QueryRecordingRuleRequest) SetPageNum(v int) *QueryRecordingRuleRequest {
+  s.PageNum = &v
+  return s
+}
+
+func (s *QueryRecordingRuleRequest) SetPageSize(v int) *QueryRecordingRuleRequest {
+  s.PageSize = &v
+  return s
+}
+
+type QueryRecordingRuleRequestHeader struct {
+}
+
+func (s QueryRecordingRuleRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRecordingRuleRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryRecordingRulePaths struct {
+}
+
+func (s QueryRecordingRulePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRecordingRulePaths) GoString() string {
+  return s.String()
+}
+
+type QueryRecordingRuleParameters struct {
+}
+
+func (s QueryRecordingRuleParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRecordingRuleParameters) GoString() string {
+  return s.String()
+}
+
+type QueryRecordingRuleResponse struct {
+  // {"en":"Response status code.","zh_CN":"响应码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Response message indicating success or failure.","zh_CN":"响应信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"response data","zh_CN":"返回数据"}
+  Data *QueryRecordingRuleResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryRecordingRuleResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRecordingRuleResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryRecordingRuleResponse) SetCode(v int) *QueryRecordingRuleResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *QueryRecordingRuleResponse) SetMessage(v string) *QueryRecordingRuleResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *QueryRecordingRuleResponse) SetData(v *QueryRecordingRuleResponseData) *QueryRecordingRuleResponse {
+  s.Data = v
+  return s
+}
+
+type QueryRecordingRuleResponseData struct {
+  // {"en":"data size","zh_CN":"符合查询条件总数量"}
+  Total *int `json:"total,omitempty" xml:"total,omitempty" require:"true"`
+  // {"en":"List of recording rule data.","zh_CN":"规则列表"}
+  List []*QueryRecordingRuleResponseDataList `json:"list,omitempty" xml:"list,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s QueryRecordingRuleResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRecordingRuleResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *QueryRecordingRuleResponseData) SetTotal(v int) *QueryRecordingRuleResponseData {
+  s.Total = &v
+  return s
+}
+
+func (s *QueryRecordingRuleResponseData) SetList(v []*QueryRecordingRuleResponseDataList) *QueryRecordingRuleResponseData {
+  s.List = v
+  return s
+}
+
+type QueryRecordingRuleResponseDataList struct     {
+  // {"en":"rule id","zh_CN":"规则ID"}
+  RuleId *string `json:"ruleId,omitempty" xml:"ruleId,omitempty" require:"true"`
+  // {"en":"template id","zh_CN":"模版ID"}
+  TemplateId *string `json:"templateId,omitempty" xml:"templateId,omitempty" require:"true"`
+  // {"en":"domain","zh_CN":"推流域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {"en":"Publishing point name","zh_CN":"发布点"}
+  AppName *string `json:"appName,omitempty" xml:"appName,omitempty" require:"true"`
+  // {"en":"stream name","zh_CN":"流名"}
+  StreamName *string `json:"streamName,omitempty" xml:"streamName,omitempty" require:"true"`
+  // {"en":"Extension parameters for the stream name.","zh_CN":"流名扩展参数"}
+  StreamParams *string `json:"streamParams,omitempty" xml:"streamParams,omitempty" require:"true"`
+  // {"en":"Pull stream domain","zh_CN":"拉流域名"}
+  PullDomain *string `json:"pullDomain,omitempty" xml:"pullDomain,omitempty" require:"true"`
+  // {"en":"Whether the rule is enabled. 0 for disabled, 1 for enabled. Defaults to 1.","zh_CN":"0：不启用，1：启用 默认为1"}
+  IsEnabled *int `json:"isEnabled,omitempty" xml:"isEnabled,omitempty" require:"true"`
+  // {"en":"Creation timestamp","zh_CN":"创建时间，时间戳"}
+  CreateTime *int64 `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
+}
+
+func (s QueryRecordingRuleResponseDataList) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRecordingRuleResponseDataList) GoString() string {
+  return s.String()
+}
+
+func (s *QueryRecordingRuleResponseDataList) SetRuleId(v string) *QueryRecordingRuleResponseDataList {
+  s.RuleId = &v
+  return s
+}
+
+func (s *QueryRecordingRuleResponseDataList) SetTemplateId(v string) *QueryRecordingRuleResponseDataList {
+  s.TemplateId = &v
+  return s
+}
+
+func (s *QueryRecordingRuleResponseDataList) SetDomain(v string) *QueryRecordingRuleResponseDataList {
+  s.Domain = &v
+  return s
+}
+
+func (s *QueryRecordingRuleResponseDataList) SetAppName(v string) *QueryRecordingRuleResponseDataList {
+  s.AppName = &v
+  return s
+}
+
+func (s *QueryRecordingRuleResponseDataList) SetStreamName(v string) *QueryRecordingRuleResponseDataList {
+  s.StreamName = &v
+  return s
+}
+
+func (s *QueryRecordingRuleResponseDataList) SetStreamParams(v string) *QueryRecordingRuleResponseDataList {
+  s.StreamParams = &v
+  return s
+}
+
+func (s *QueryRecordingRuleResponseDataList) SetPullDomain(v string) *QueryRecordingRuleResponseDataList {
+  s.PullDomain = &v
+  return s
+}
+
+func (s *QueryRecordingRuleResponseDataList) SetIsEnabled(v int) *QueryRecordingRuleResponseDataList {
+  s.IsEnabled = &v
+  return s
+}
+
+func (s *QueryRecordingRuleResponseDataList) SetCreateTime(v int64) *QueryRecordingRuleResponseDataList {
+  s.CreateTime = &v
+  return s
+}
+
+type QueryRecordingRuleResponseHeader struct {
+}
+
+func (s QueryRecordingRuleResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryRecordingRuleResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type QueryRecordingParameterTemplateRequest struct {
   // {"en":"The ID of the recording parameter template to query. If not provided, all templates under the account will be returned.","zh_CN":"要查询的录制参数模板ID。如果未提供，将返回账户下所有模板。"}
-  TemplateId *int `json:"templateId,omitempty" xml:"templateId,omitempty"`
+  TemplateId *string `json:"templateId,omitempty" xml:"templateId,omitempty"`
 }
 
 func (s QueryRecordingParameterTemplateRequest) String() string {
@@ -263,7 +508,7 @@ func (s QueryRecordingParameterTemplateRequest) GoString() string {
   return s.String()
 }
 
-func (s *QueryRecordingParameterTemplateRequest) SetTemplateId(v int) *QueryRecordingParameterTemplateRequest {
+func (s *QueryRecordingParameterTemplateRequest) SetTemplateId(v string) *QueryRecordingParameterTemplateRequest {
   s.TemplateId = &v
   return s
 }
@@ -532,6 +777,253 @@ func (s QueryRecordingParameterTemplateResponseHeader) String() string {
 }
 
 func (s QueryRecordingParameterTemplateResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type DeleteRecordingRulesRequest struct {
+}
+
+func (s DeleteRecordingRulesRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteRecordingRulesRequest) GoString() string {
+  return s.String()
+}
+
+type DeleteRecordingRulesRequestHeader struct {
+}
+
+func (s DeleteRecordingRulesRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteRecordingRulesRequestHeader) GoString() string {
+  return s.String()
+}
+
+type DeleteRecordingRulesPaths struct {
+  // {"en":"The unique identifier ID of the recording rule to be deleted","zh_CN":"规则ID"}
+  RuleId *string `json:"ruleId,omitempty" xml:"ruleId,omitempty" require:"true"`
+}
+
+func (s DeleteRecordingRulesPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteRecordingRulesPaths) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteRecordingRulesPaths) SetRuleId(v string) *DeleteRecordingRulesPaths {
+  s.RuleId = &v
+  return s
+}
+
+type DeleteRecordingRulesParameters struct {
+}
+
+func (s DeleteRecordingRulesParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteRecordingRulesParameters) GoString() string {
+  return s.String()
+}
+
+type DeleteRecordingRulesResponse struct {
+  // {"en":"The status code of the API response.","zh_CN":"接口响应的状态码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Detailed message describing the outcome of the API call.","zh_CN":"描述API调用结果的详细信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s DeleteRecordingRulesResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteRecordingRulesResponse) GoString() string {
+  return s.String()
+}
+
+func (s *DeleteRecordingRulesResponse) SetCode(v int) *DeleteRecordingRulesResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *DeleteRecordingRulesResponse) SetMessage(v string) *DeleteRecordingRulesResponse {
+  s.Message = &v
+  return s
+}
+
+type DeleteRecordingRulesResponseHeader struct {
+}
+
+func (s DeleteRecordingRulesResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s DeleteRecordingRulesResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type AddRecordingRulesRequest struct {
+  // {"en":"template id","zh_CN":"模版ID"}
+  TemplateId *string `json:"templateId,omitempty" xml:"templateId,omitempty" require:"true"`
+  // {"en":"domain","zh_CN":"推流域名，禁止传空字符串。  如果是推拉架构，推流域名必填"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty"`
+  // {"en":"Publishing point name","zh_CN":"发布点"}
+  AppName *string `json:"appName,omitempty" xml:"appName,omitempty"`
+  // {"en":"stream name","zh_CN":"流名"}
+  StreamName *string `json:"streamName,omitempty" xml:"streamName,omitempty"`
+  // {"en":"Extension parameters for the stream name.","zh_CN":"流名扩展参数"}
+  StreamParams *string `json:"streamParams,omitempty" xml:"streamParams,omitempty"`
+  // {"en":"Pull stream domain","zh_CN":"拉流域名，禁止传空字符串"}
+  PullDomain *string `json:"pullDomain,omitempty" xml:"pullDomain,omitempty" require:"true"`
+  // {"en":"Whether the rule is enabled. 0 for disabled, 1 for enabled. Defaults to 1.","zh_CN":"0：不启用，1：启用 默认为1"}
+  IsEnabled *int `json:"isEnabled,omitempty" xml:"isEnabled,omitempty"`
+}
+
+func (s AddRecordingRulesRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddRecordingRulesRequest) GoString() string {
+  return s.String()
+}
+
+func (s *AddRecordingRulesRequest) SetTemplateId(v string) *AddRecordingRulesRequest {
+  s.TemplateId = &v
+  return s
+}
+
+func (s *AddRecordingRulesRequest) SetDomain(v string) *AddRecordingRulesRequest {
+  s.Domain = &v
+  return s
+}
+
+func (s *AddRecordingRulesRequest) SetAppName(v string) *AddRecordingRulesRequest {
+  s.AppName = &v
+  return s
+}
+
+func (s *AddRecordingRulesRequest) SetStreamName(v string) *AddRecordingRulesRequest {
+  s.StreamName = &v
+  return s
+}
+
+func (s *AddRecordingRulesRequest) SetStreamParams(v string) *AddRecordingRulesRequest {
+  s.StreamParams = &v
+  return s
+}
+
+func (s *AddRecordingRulesRequest) SetPullDomain(v string) *AddRecordingRulesRequest {
+  s.PullDomain = &v
+  return s
+}
+
+func (s *AddRecordingRulesRequest) SetIsEnabled(v int) *AddRecordingRulesRequest {
+  s.IsEnabled = &v
+  return s
+}
+
+type AddRecordingRulesRequestHeader struct {
+}
+
+func (s AddRecordingRulesRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddRecordingRulesRequestHeader) GoString() string {
+  return s.String()
+}
+
+type AddRecordingRulesPaths struct {
+}
+
+func (s AddRecordingRulesPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddRecordingRulesPaths) GoString() string {
+  return s.String()
+}
+
+type AddRecordingRulesParameters struct {
+}
+
+func (s AddRecordingRulesParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddRecordingRulesParameters) GoString() string {
+  return s.String()
+}
+
+type AddRecordingRulesResponse struct {
+  // {"en":"code","zh_CN":"结果状态码，200为成功"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"message","zh_CN":"返回消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"data","zh_CN":"返回数据"}
+  Data *AddRecordingRulesResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s AddRecordingRulesResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddRecordingRulesResponse) GoString() string {
+  return s.String()
+}
+
+func (s *AddRecordingRulesResponse) SetCode(v int) *AddRecordingRulesResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *AddRecordingRulesResponse) SetMessage(v string) *AddRecordingRulesResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *AddRecordingRulesResponse) SetData(v *AddRecordingRulesResponseData) *AddRecordingRulesResponse {
+  s.Data = v
+  return s
+}
+
+type AddRecordingRulesResponseData struct {
+  // {"en":"rule id","zh_CN":"录制规则ID"}
+  RuleId *string `json:"ruleId,omitempty" xml:"ruleId,omitempty" require:"true"`
+}
+
+func (s AddRecordingRulesResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddRecordingRulesResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *AddRecordingRulesResponseData) SetRuleId(v string) *AddRecordingRulesResponseData {
+  s.RuleId = &v
+  return s
+}
+
+type AddRecordingRulesResponseHeader struct {
+}
+
+func (s AddRecordingRulesResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AddRecordingRulesResponseHeader) GoString() string {
   return s.String()
 }
 
@@ -808,6 +1300,145 @@ func (s AddRecordingParameterTemplateResponseHeader) GoString() string {
 
 
 
+type ModifyRecordingRulesRequest struct {
+  // {"en":"The unique identifier of the template.","zh_CN":"模版ID,禁止传空字符串。  不传：不修改原来的值"}
+  TemplateId *string `json:"templateId,omitempty" xml:"templateId,omitempty"`
+  // {"en":"domain","zh_CN":"推流域名，如果是推拉架构，推流域名必填，不能传空字符串  不传：不修改原来的值  空字符串：删除配置"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty"`
+  // {"en":"Publishing point name","zh_CN":"发布点  不传：不修改原来的值  空字符串：删除配置"}
+  AppName *string `json:"appName,omitempty" xml:"appName,omitempty"`
+  // {"en":"stream name","zh_CN":"流名  不传：不修改原来的值  空字符串：删除配置"}
+  StreamName *string `json:"streamName,omitempty" xml:"streamName,omitempty"`
+  // {"en":"Extension parameters for the stream name.","zh_CN":"流名扩展参数。  不传：不修改原来的值  空字符串：删除配置"}
+  StreamParams *string `json:"streamParams,omitempty" xml:"streamParams,omitempty"`
+  // {"en":"Whether the rule is enabled. 0 for disabled, 1 for enabled. Defaults to 1.","zh_CN":"0：不启用，1：启用 默认为1"}
+  IsEnabled *int `json:"isEnabled,omitempty" xml:"isEnabled,omitempty"`
+  // {"en":"pull domain","zh_CN":"拉流域名,禁止传空字符串  不传：不修改原来的值"}
+  PullDomain *string `json:"pullDomain,omitempty" xml:"pullDomain,omitempty"`
+}
+
+func (s ModifyRecordingRulesRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyRecordingRulesRequest) GoString() string {
+  return s.String()
+}
+
+func (s *ModifyRecordingRulesRequest) SetTemplateId(v string) *ModifyRecordingRulesRequest {
+  s.TemplateId = &v
+  return s
+}
+
+func (s *ModifyRecordingRulesRequest) SetDomain(v string) *ModifyRecordingRulesRequest {
+  s.Domain = &v
+  return s
+}
+
+func (s *ModifyRecordingRulesRequest) SetAppName(v string) *ModifyRecordingRulesRequest {
+  s.AppName = &v
+  return s
+}
+
+func (s *ModifyRecordingRulesRequest) SetStreamName(v string) *ModifyRecordingRulesRequest {
+  s.StreamName = &v
+  return s
+}
+
+func (s *ModifyRecordingRulesRequest) SetStreamParams(v string) *ModifyRecordingRulesRequest {
+  s.StreamParams = &v
+  return s
+}
+
+func (s *ModifyRecordingRulesRequest) SetIsEnabled(v int) *ModifyRecordingRulesRequest {
+  s.IsEnabled = &v
+  return s
+}
+
+func (s *ModifyRecordingRulesRequest) SetPullDomain(v string) *ModifyRecordingRulesRequest {
+  s.PullDomain = &v
+  return s
+}
+
+type ModifyRecordingRulesRequestHeader struct {
+}
+
+func (s ModifyRecordingRulesRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyRecordingRulesRequestHeader) GoString() string {
+  return s.String()
+}
+
+type ModifyRecordingRulesPaths struct {
+  // {"en":"The unique identifier of the recording rule.","zh_CN":"录制规则ID"}
+  RuleId *string `json:"ruleId,omitempty" xml:"ruleId,omitempty" require:"true"`
+}
+
+func (s ModifyRecordingRulesPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyRecordingRulesPaths) GoString() string {
+  return s.String()
+}
+
+func (s *ModifyRecordingRulesPaths) SetRuleId(v string) *ModifyRecordingRulesPaths {
+  s.RuleId = &v
+  return s
+}
+
+type ModifyRecordingRulesParameters struct {
+}
+
+func (s ModifyRecordingRulesParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyRecordingRulesParameters) GoString() string {
+  return s.String()
+}
+
+type ModifyRecordingRulesResponse struct {
+  // {"en":"The status code of the API response.","zh_CN":"接口响应的状态码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Detailed message describing the outcome of the API call.","zh_CN":"描述API调用结果的详细信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s ModifyRecordingRulesResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyRecordingRulesResponse) GoString() string {
+  return s.String()
+}
+
+func (s *ModifyRecordingRulesResponse) SetCode(v int) *ModifyRecordingRulesResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *ModifyRecordingRulesResponse) SetMessage(v string) *ModifyRecordingRulesResponse {
+  s.Message = &v
+  return s
+}
+
+type ModifyRecordingRulesResponseHeader struct {
+}
+
+func (s ModifyRecordingRulesResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s ModifyRecordingRulesResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type LiveVideoConcatRequest struct {
   // {"en":"Channel pull id", "zh_CN":"频道拉流id"}
   PullId *string `json:"pullId,omitempty" xml:"pullId,omitempty" require:"true"`
@@ -1012,7 +1643,7 @@ func (s DeleteRecordingParameterTemplateRequestHeader) GoString() string {
 
 type DeleteRecordingParameterTemplatePaths struct {
   // {"en":"The unique identifier of the template to be deleted.","zh_CN":"模版id"}
-  TemplateId *int `json:"templateId,omitempty" xml:"templateId,omitempty" require:"true"`
+  TemplateId *string `json:"templateId,omitempty" xml:"templateId,omitempty" require:"true"`
 }
 
 func (s DeleteRecordingParameterTemplatePaths) String() string {
@@ -1023,7 +1654,7 @@ func (s DeleteRecordingParameterTemplatePaths) GoString() string {
   return s.String()
 }
 
-func (s *DeleteRecordingParameterTemplatePaths) SetTemplateId(v int) *DeleteRecordingParameterTemplatePaths {
+func (s *DeleteRecordingParameterTemplatePaths) SetTemplateId(v string) *DeleteRecordingParameterTemplatePaths {
   s.TemplateId = &v
   return s
 }
@@ -1314,6 +1945,253 @@ func (s GetRecordTaskListQueryResponseHeader) String() string {
 }
 
 func (s GetRecordTaskListQueryResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type StartRealTimeRecordRequest struct {
+  // {"en":"The ID of the recording template to use","zh_CN":"模版ID"}
+  TemplateId *string `json:"templateId,omitempty" xml:"templateId,omitempty" require:"true"`
+  // {"en":"The pull domain of the live stream","zh_CN":"拉流域名"}
+  PullDomain *string `json:"pullDomain,omitempty" xml:"pullDomain,omitempty" require:"true"`
+  // {"en":"The application name or publishing point for the stream","zh_CN":"发布点"}
+  AppName *string `json:"appName,omitempty" xml:"appName,omitempty" require:"true"`
+  // {"en":"The name of the live stream to be recorded","zh_CN":"流名，支持多个流名，多个流名用英文逗号分隔。最多5个  示例：stream1,stream2,stream3"}
+  StreamNames *string `json:"streamNames,omitempty" xml:"streamNames,omitempty" require:"true"`
+}
+
+func (s StartRealTimeRecordRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartRealTimeRecordRequest) GoString() string {
+  return s.String()
+}
+
+func (s *StartRealTimeRecordRequest) SetTemplateId(v string) *StartRealTimeRecordRequest {
+  s.TemplateId = &v
+  return s
+}
+
+func (s *StartRealTimeRecordRequest) SetPullDomain(v string) *StartRealTimeRecordRequest {
+  s.PullDomain = &v
+  return s
+}
+
+func (s *StartRealTimeRecordRequest) SetAppName(v string) *StartRealTimeRecordRequest {
+  s.AppName = &v
+  return s
+}
+
+func (s *StartRealTimeRecordRequest) SetStreamNames(v string) *StartRealTimeRecordRequest {
+  s.StreamNames = &v
+  return s
+}
+
+type StartRealTimeRecordRequestHeader struct {
+}
+
+func (s StartRealTimeRecordRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartRealTimeRecordRequestHeader) GoString() string {
+  return s.String()
+}
+
+type StartRealTimeRecordPaths struct {
+}
+
+func (s StartRealTimeRecordPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartRealTimeRecordPaths) GoString() string {
+  return s.String()
+}
+
+type StartRealTimeRecordParameters struct {
+}
+
+func (s StartRealTimeRecordParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartRealTimeRecordParameters) GoString() string {
+  return s.String()
+}
+
+type StartRealTimeRecordResponse struct {
+  // {"en":"The overall response code of the API call","zh_CN":"结果状态码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"The overall response message of the API call","zh_CN":"返回消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"The detailed response data containing recording statuses","zh_CN":"返回数据"}
+  Data []*StartRealTimeRecordResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s StartRealTimeRecordResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartRealTimeRecordResponse) GoString() string {
+  return s.String()
+}
+
+func (s *StartRealTimeRecordResponse) SetCode(v int) *StartRealTimeRecordResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *StartRealTimeRecordResponse) SetMessage(v string) *StartRealTimeRecordResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *StartRealTimeRecordResponse) SetData(v []*StartRealTimeRecordResponseData) *StartRealTimeRecordResponse {
+  s.Data = v
+  return s
+}
+
+type StartRealTimeRecordResponseData struct     {
+  // {"en":"Stream-level response code","zh_CN":"结果状态码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Stream-level response message","zh_CN":"响应信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"The name of the stream this status refers to","zh_CN":"流名"}
+  StreamName *string `json:"streamName,omitempty" xml:"streamName,omitempty" require:"true"`
+  // {"en":"The unique ID of the real-time recording task","zh_CN":"录制任务的id"}
+  PersistentId *string `json:"persistentId,omitempty" xml:"persistentId,omitempty" require:"true"`
+}
+
+func (s StartRealTimeRecordResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartRealTimeRecordResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *StartRealTimeRecordResponseData) SetCode(v int) *StartRealTimeRecordResponseData {
+  s.Code = &v
+  return s
+}
+
+func (s *StartRealTimeRecordResponseData) SetMessage(v string) *StartRealTimeRecordResponseData {
+  s.Message = &v
+  return s
+}
+
+func (s *StartRealTimeRecordResponseData) SetStreamName(v string) *StartRealTimeRecordResponseData {
+  s.StreamName = &v
+  return s
+}
+
+func (s *StartRealTimeRecordResponseData) SetPersistentId(v string) *StartRealTimeRecordResponseData {
+  s.PersistentId = &v
+  return s
+}
+
+type StartRealTimeRecordResponseHeader struct {
+}
+
+func (s StartRealTimeRecordResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StartRealTimeRecordResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type StopRealTimeRecordRequest struct {
+}
+
+func (s StopRealTimeRecordRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StopRealTimeRecordRequest) GoString() string {
+  return s.String()
+}
+
+type StopRealTimeRecordRequestHeader struct {
+}
+
+func (s StopRealTimeRecordRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StopRealTimeRecordRequestHeader) GoString() string {
+  return s.String()
+}
+
+type StopRealTimeRecordPaths struct {
+  // {"en":"The unique identifier for the recording task.","zh_CN":"录制任务的唯一标识符"}
+  PersistentId *string `json:"persistentId,omitempty" xml:"persistentId,omitempty" require:"true"`
+}
+
+func (s StopRealTimeRecordPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StopRealTimeRecordPaths) GoString() string {
+  return s.String()
+}
+
+func (s *StopRealTimeRecordPaths) SetPersistentId(v string) *StopRealTimeRecordPaths {
+  s.PersistentId = &v
+  return s
+}
+
+type StopRealTimeRecordParameters struct {
+}
+
+func (s StopRealTimeRecordParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StopRealTimeRecordParameters) GoString() string {
+  return s.String()
+}
+
+type StopRealTimeRecordResponse struct {
+  // {"en":"The overall response code of the API call","zh_CN":"结果状态码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"The overall response message of the API call","zh_CN":"返回消息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s StopRealTimeRecordResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StopRealTimeRecordResponse) GoString() string {
+  return s.String()
+}
+
+func (s *StopRealTimeRecordResponse) SetCode(v int) *StopRealTimeRecordResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *StopRealTimeRecordResponse) SetMessage(v string) *StopRealTimeRecordResponse {
+  s.Message = &v
+  return s
+}
+
+type StopRealTimeRecordResponseHeader struct {
+}
+
+func (s StopRealTimeRecordResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s StopRealTimeRecordResponseHeader) GoString() string {
   return s.String()
 }
 

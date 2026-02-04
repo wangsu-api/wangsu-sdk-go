@@ -75,3 +75,5 @@ if err != nil {
 | Getcertificateapplicationorderforterraform | 该接口用于在Terraform场景下，查询指定证书申请订单的详细信息，包括订单状态、证书详情等。用户可通过`purchaseRecordId`或`orderId`进行查询。 | POST | /api/terraform/certificate/order/detail |
 | Cancelcertificateapplicationorderforterraform | 该接口用于Terraform场景取消已提交的证书申请订单。用户需提供采购记录ID或订单ID来指定要取消的订单。取消成功后，订单状态将更新。 | POST | /api/terraform/certificate/order/cancel |
 | Batchgetdcvcontent | 该接口用于批量查询CA机构在进行域名所有权验证时所需的验证内容。用户需提供采购记录ID列表或域名列表进行查询，接口将返回相应的证书域名验证信息。 | POST | /api/certificate/orders/domain/validate/info |
+| Querycertificateapplicationandissuancerecorddetail | 该接口用于根据证书订单ID查询证书申请和颁发记录的详细信息，包括证书的基本属性、订单状态、联系人信息等。 | POST | /api/certificate/order/record/detail |
+| Querycertificateapplicationissuancerecordslist | 该接口用于通过销售订单ID查询证书申请的所有颁发记录。用户需提供订单ID，并可选填分页参数（如页码和每页大小）以获取指定范围的记录列表。 | POST | /api/certificate/order/record/list |

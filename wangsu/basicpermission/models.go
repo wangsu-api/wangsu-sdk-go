@@ -128,13 +128,13 @@ func (s DeleteTerminalAuthResponseHeader) GoString() string {
 
 
 type AssociateRightsGroupsToUserOrUserGroupRequest struct {
-  // {"en":"List of base permission names", "zh_CN":"基础权限名称列表"}
+  // {"en":"List of base permission names","zh_CN":"基础权限名称列表"}
   TerminalAuthNames []*string `json:"terminalAuthNames,omitempty" xml:"terminalAuthNames,omitempty" require:"true" type:"Repeated"`
-  // {"en":"List of authorized users", "zh_CN":"授权的用户列表"}
+  // {"en":"List of authorized users","zh_CN":"授权的用户列表"}
   AuthorizedUsers []*string `json:"authorizedUsers,omitempty" xml:"authorizedUsers,omitempty" type:"Repeated"`
-  // {"en":"List of authorized user group IDs", "zh_CN":"授权的用户组ID列表"}
+  // {"en":"List of authorized user group IDs","zh_CN":"授权的用户组ID列表"}
   AuthorizedUserGroupIds []*int64 `json:"authorizedUserGroupIds,omitempty" xml:"authorizedUserGroupIds,omitempty" type:"Repeated"`
-  // {"en":"Action Type, 0: Append, 1: Overwrite", "zh_CN":"操作类型，0：追加，1：覆盖"}
+  // {"en":"Action Type, 0: Append, 1: Overwrite","zh_CN":"操作类型，0：追加，1：覆盖"}
   ActionType *int `json:"actionType,omitempty" xml:"actionType,omitempty" require:"true"`
 }
 
@@ -166,14 +166,47 @@ func (s *AssociateRightsGroupsToUserOrUserGroupRequest) SetActionType(v int) *As
   return s
 }
 
+type AssociateRightsGroupsToUserOrUserGroupRequestHeader struct {
+}
+
+func (s AssociateRightsGroupsToUserOrUserGroupRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AssociateRightsGroupsToUserOrUserGroupRequestHeader) GoString() string {
+  return s.String()
+}
+
+type AssociateRightsGroupsToUserOrUserGroupPaths struct {
+}
+
+func (s AssociateRightsGroupsToUserOrUserGroupPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AssociateRightsGroupsToUserOrUserGroupPaths) GoString() string {
+  return s.String()
+}
+
+type AssociateRightsGroupsToUserOrUserGroupParameters struct {
+}
+
+func (s AssociateRightsGroupsToUserOrUserGroupParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s AssociateRightsGroupsToUserOrUserGroupParameters) GoString() string {
+  return s.String()
+}
+
 type AssociateRightsGroupsToUserOrUserGroupResponse struct {
-  // {"en":"List of base permission names", "zh_CN":"基础权限名称列表"}
+  // {"en":"List of base permission names","zh_CN":"基础权限名称列表"}
   TerminalAuthNames []*string `json:"terminalAuthNames,omitempty" xml:"terminalAuthNames,omitempty" require:"true" type:"Repeated"`
-  // {"en":"List of authorized users", "zh_CN":"授权的用户列表"}
-  AuthorizedUsers []*string `json:"authorizedUsers,omitempty" xml:"authorizedUsers,omitempty" type:"Repeated"`
-  // {"en":"List of authorized user group IDs", "zh_CN":"授权的用户组ID列表"}
-  AuthorizedUserGroupIds []*int64 `json:"authorizedUserGroupIds,omitempty" xml:"authorizedUserGroupIds,omitempty" type:"Repeated"`
-  // {"en":"Action Type, 0: Append, 1: Overwrite", "zh_CN":"操作类型，0：追加，1：覆盖"}
+  // {"en":"List of authorized users","zh_CN":"授权的用户列表"}
+  AuthorizedUsers []*string `json:"authorizedUsers,omitempty" xml:"authorizedUsers,omitempty" require:"true" type:"Repeated"`
+  // {"en":"List of authorized user group IDs","zh_CN":"授权的用户组ID列表"}
+  AuthorizedUserGroupIds []*int64 `json:"authorizedUserGroupIds,omitempty" xml:"authorizedUserGroupIds,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Action Type, 0: Append, 1: Overwrite","zh_CN":"操作类型，0：追加，1：覆盖"}
   ActionType *int `json:"actionType,omitempty" xml:"actionType,omitempty" require:"true"`
 }
 
@@ -203,39 +236,6 @@ func (s *AssociateRightsGroupsToUserOrUserGroupResponse) SetAuthorizedUserGroupI
 func (s *AssociateRightsGroupsToUserOrUserGroupResponse) SetActionType(v int) *AssociateRightsGroupsToUserOrUserGroupResponse {
   s.ActionType = &v
   return s
-}
-
-type AssociateRightsGroupsToUserOrUserGroupPaths struct {
-}
-
-func (s AssociateRightsGroupsToUserOrUserGroupPaths) String() string {
-  return tea.Prettify(s)
-}
-
-func (s AssociateRightsGroupsToUserOrUserGroupPaths) GoString() string {
-  return s.String()
-}
-
-type AssociateRightsGroupsToUserOrUserGroupParameters struct {
-}
-
-func (s AssociateRightsGroupsToUserOrUserGroupParameters) String() string {
-  return tea.Prettify(s)
-}
-
-func (s AssociateRightsGroupsToUserOrUserGroupParameters) GoString() string {
-  return s.String()
-}
-
-type AssociateRightsGroupsToUserOrUserGroupRequestHeader struct {
-}
-
-func (s AssociateRightsGroupsToUserOrUserGroupRequestHeader) String() string {
-  return tea.Prettify(s)
-}
-
-func (s AssociateRightsGroupsToUserOrUserGroupRequestHeader) GoString() string {
-  return s.String()
 }
 
 type AssociateRightsGroupsToUserOrUserGroupResponseHeader struct {

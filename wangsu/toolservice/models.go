@@ -1813,6 +1813,8 @@ func (s *CreateWebSecurityConfigurationTaskResponse) SetData(v *CreateWebSecurit
 type CreateWebSecurityConfigurationTaskResponseData struct {
   // {"en":"Task ID.","zh_CN":"任务ID。"}
   TaskNo *string `json:"taskNo,omitempty" xml:"taskNo,omitempty" require:"true"`
+  // {"en":"Client/network lists that are referenced but not uploaded in the Web Security Configuration.Data format:{policyId1: list name1, policyId2: list name2}","zh_CN":"Web安全配置中有引用但未上传的客户端/网络列表列表信息。返回数据格式：{policyId1: 列表名称1, policyId2: 列表名称2}"}
+  Errors *CreateWebSecurityConfigurationTaskResponseDataErrors `json:"errors,omitempty" xml:"errors,omitempty" require:"true" type:"Struct"`
 }
 
 func (s CreateWebSecurityConfigurationTaskResponseData) String() string {
@@ -1826,6 +1828,22 @@ func (s CreateWebSecurityConfigurationTaskResponseData) GoString() string {
 func (s *CreateWebSecurityConfigurationTaskResponseData) SetTaskNo(v string) *CreateWebSecurityConfigurationTaskResponseData {
   s.TaskNo = &v
   return s
+}
+
+func (s *CreateWebSecurityConfigurationTaskResponseData) SetErrors(v *CreateWebSecurityConfigurationTaskResponseDataErrors) *CreateWebSecurityConfigurationTaskResponseData {
+  s.Errors = v
+  return s
+}
+
+type CreateWebSecurityConfigurationTaskResponseDataErrors struct {
+}
+
+func (s CreateWebSecurityConfigurationTaskResponseDataErrors) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateWebSecurityConfigurationTaskResponseDataErrors) GoString() string {
+  return s.String()
 }
 
 type CreateWebSecurityConfigurationTaskResponseHeader struct {

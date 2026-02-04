@@ -5890,6 +5890,266 @@ func (s ReportDomainListExistFlowServiceResponseHeader) GoString() string {
 
 
 
+type GetProtocolBandwidthAndRequestByIspProvinceRequest struct {
+  // {"en":"Start time (in seconds), a 10-digit timestamp.","zh_CN":"开始时间（秒级），10位时间戳"}
+  StartTime *int `json:"startTime,omitempty" xml:"startTime,omitempty" require:"true"`
+  // {"en":"End time (in seconds), a 10-digit timestamp.","zh_CN":"结束时间（秒级），10位时间戳"}
+  EndTime *int `json:"endTime,omitempty" xml:"endTime,omitempty" require:"true"`
+  // {"en":"Data Granularity:  Supports 1m (1-minute granularity) and 5m (5-minute granularity).","zh_CN":"数据粒度: 支持1m(1分钟粒度),5m(5分钟粒度)"}
+  Granularity *string `json:"granularity,omitempty" xml:"granularity,omitempty" require:"true"`
+  // {"en":"Domain Names: The maximum number of domain names that can be submitted is 50. Note: Authentication is required to verify whether the account has permission for these domain names during the specified time period.","zh_CN":"域名:可传递域名数量上限为50个;\n特别注意：需要鉴权，判断账号这个时间这些域名是否有权限"}
+  Domain []*string `json:"domain,omitempty" xml:"domain,omitempty" require:"true" type:"Repeated"`
+  // {"en":"Sets the method for rounding the returned timestamps, either up or down. This parameter is only valid when the granularity is less than 1 day (exclusive of 1 day).\n1. `up`: rounds up; e.g., if `granularity=5m`, `00:00:00-00:04:49` will be displayed as `00:05:00`.\n2. `down`: rounds down; e.g., if `granularity=5m`, `00:00:00-00:04:49` will be displayed as `00:00:00`.\n3. If not specified, the result will be rounded up (up).","zh_CN":"设置返回时间的归整方式，进行向上或向下取整。仅当粒度小于1天（不包含1天）时有效。\n1. up – 向上取整。例如：granularity=5m，00:00:00-00:04:49 将会显示为 00:05:00\n2. down-向下取整，例如：granularity=5m时，00:00:00-00:04:49将显示为00:00:00\n3. 如未传值，结果将进行向上取整(up)"}
+  TimeRounding *string `json:"timeRounding,omitempty" xml:"timeRounding,omitempty"`
+}
+
+func (s GetProtocolBandwidthAndRequestByIspProvinceRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetProtocolBandwidthAndRequestByIspProvinceRequest) GoString() string {
+  return s.String()
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceRequest) SetStartTime(v int) *GetProtocolBandwidthAndRequestByIspProvinceRequest {
+  s.StartTime = &v
+  return s
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceRequest) SetEndTime(v int) *GetProtocolBandwidthAndRequestByIspProvinceRequest {
+  s.EndTime = &v
+  return s
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceRequest) SetGranularity(v string) *GetProtocolBandwidthAndRequestByIspProvinceRequest {
+  s.Granularity = &v
+  return s
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceRequest) SetDomain(v []*string) *GetProtocolBandwidthAndRequestByIspProvinceRequest {
+  s.Domain = v
+  return s
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceRequest) SetTimeRounding(v string) *GetProtocolBandwidthAndRequestByIspProvinceRequest {
+  s.TimeRounding = &v
+  return s
+}
+
+type GetProtocolBandwidthAndRequestByIspProvinceRequestHeader struct {
+}
+
+func (s GetProtocolBandwidthAndRequestByIspProvinceRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetProtocolBandwidthAndRequestByIspProvinceRequestHeader) GoString() string {
+  return s.String()
+}
+
+type GetProtocolBandwidthAndRequestByIspProvincePaths struct {
+}
+
+func (s GetProtocolBandwidthAndRequestByIspProvincePaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetProtocolBandwidthAndRequestByIspProvincePaths) GoString() string {
+  return s.String()
+}
+
+type GetProtocolBandwidthAndRequestByIspProvinceParameters struct {
+}
+
+func (s GetProtocolBandwidthAndRequestByIspProvinceParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetProtocolBandwidthAndRequestByIspProvinceParameters) GoString() string {
+  return s.String()
+}
+
+type GetProtocolBandwidthAndRequestByIspProvinceResponse struct {
+  // {"en":"Response code","zh_CN":"响应状态码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Response message","zh_CN":"响应结果"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"List of response data","zh_CN":"响应数据列表"}
+  Data []*GetProtocolBandwidthAndRequestByIspProvinceResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s GetProtocolBandwidthAndRequestByIspProvinceResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetProtocolBandwidthAndRequestByIspProvinceResponse) GoString() string {
+  return s.String()
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceResponse) SetCode(v string) *GetProtocolBandwidthAndRequestByIspProvinceResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceResponse) SetMessage(v string) *GetProtocolBandwidthAndRequestByIspProvinceResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceResponse) SetData(v []*GetProtocolBandwidthAndRequestByIspProvinceResponseData) *GetProtocolBandwidthAndRequestByIspProvinceResponse {
+  s.Data = v
+  return s
+}
+
+type GetProtocolBandwidthAndRequestByIspProvinceResponseData struct     {
+  // {"en":"Domain","zh_CN":"域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {"en":"Minute result data","zh_CN":"分钟的结果数据"}
+  PerMinuteStats []*GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStats `json:"perMinuteStats,omitempty" xml:"perMinuteStats,omitempty" require:"true" type:"Repeated"`
+}
+
+func (s GetProtocolBandwidthAndRequestByIspProvinceResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetProtocolBandwidthAndRequestByIspProvinceResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceResponseData) SetDomain(v string) *GetProtocolBandwidthAndRequestByIspProvinceResponseData {
+  s.Domain = &v
+  return s
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceResponseData) SetPerMinuteStats(v []*GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStats) *GetProtocolBandwidthAndRequestByIspProvinceResponseData {
+  s.PerMinuteStats = v
+  return s
+}
+
+type GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStats struct     {
+  // {"en":"Timestamp (in seconds)","zh_CN":"时间戳（秒）"}
+  Timestamp *string `json:"timestamp,omitempty" xml:"timestamp,omitempty" require:"true"`
+  // {"en":"Two-letter province code","zh_CN":"省份二字码"}
+  Province *string `json:"province,omitempty" xml:"province,omitempty" require:"true"`
+  // {"en":"ISP","zh_CN":"运营商"}
+  Isp *string `json:"isp,omitempty" xml:"isp,omitempty" require:"true"`
+  // {"en":"HTTP protocol data","zh_CN":"HTTP协议数据"}
+  Http *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttp `json:"http,omitempty" xml:"http,omitempty" require:"true" type:"Struct"`
+  // {"en":"HTTPS protocol data","zh_CN":"HTTPS协议数据"}
+  Https *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttps `json:"https,omitempty" xml:"https,omitempty" require:"true" type:"Struct"`
+}
+
+func (s GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStats) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStats) GoString() string {
+  return s.String()
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStats) SetTimestamp(v string) *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStats {
+  s.Timestamp = &v
+  return s
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStats) SetProvince(v string) *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStats {
+  s.Province = &v
+  return s
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStats) SetIsp(v string) *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStats {
+  s.Isp = &v
+  return s
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStats) SetHttp(v *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttp) *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStats {
+  s.Http = v
+  return s
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStats) SetHttps(v *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttps) *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStats {
+  s.Https = v
+  return s
+}
+
+type GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttp struct {
+  // {"en":"HTTP bandwidth, in bps","zh_CN":"http带宽，单位bps"}
+  Bandwidth *int64 `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true"`
+  // {"en":"HTTP traffic, in Bytes","zh_CN":"http流量，单位B"}
+  Traffic *int64 `json:"traffic,omitempty" xml:"traffic,omitempty" require:"true"`
+  // {"en":"HTTP requests","zh_CN":"http请求数"}
+  Requests *int64 `json:"requests,omitempty" xml:"requests,omitempty" require:"true"`
+}
+
+func (s GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttp) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttp) GoString() string {
+  return s.String()
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttp) SetBandwidth(v int64) *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttp {
+  s.Bandwidth = &v
+  return s
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttp) SetTraffic(v int64) *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttp {
+  s.Traffic = &v
+  return s
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttp) SetRequests(v int64) *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttp {
+  s.Requests = &v
+  return s
+}
+
+type GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttps struct {
+  // {"en":"HTTPS bandwidth, in bps","zh_CN":"https带宽，单位bps"}
+  Bandwidth *int64 `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true"`
+  // {"en":"HTTPS traffic, in Bytes","zh_CN":"https流量，单位B"}
+  Traffic *int64 `json:"traffic,omitempty" xml:"traffic,omitempty" require:"true"`
+  // {"en":"HTTPS requests","zh_CN":"https请求数"}
+  Requests *int64 `json:"requests,omitempty" xml:"requests,omitempty" require:"true"`
+}
+
+func (s GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttps) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttps) GoString() string {
+  return s.String()
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttps) SetBandwidth(v int64) *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttps {
+  s.Bandwidth = &v
+  return s
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttps) SetTraffic(v int64) *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttps {
+  s.Traffic = &v
+  return s
+}
+
+func (s *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttps) SetRequests(v int64) *GetProtocolBandwidthAndRequestByIspProvinceResponseDataPerMinuteStatsHttps {
+  s.Requests = &v
+  return s
+}
+
+type GetProtocolBandwidthAndRequestByIspProvinceResponseHeader struct {
+}
+
+func (s GetProtocolBandwidthAndRequestByIspProvinceResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s GetProtocolBandwidthAndRequestByIspProvinceResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type SubmitXlwInjectTaskRequest struct {
   // {"en":"CDN manufacturer authorized username","zh_CN":"cdn厂家授权用户名"}
   Username *string `json:"username,omitempty" xml:"username,omitempty" require:"true"`

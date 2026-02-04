@@ -66,4 +66,4 @@ if err != nil {
 | --- | --- | --- | --- |
 | Querydeploymentrecords | 该接口用于分页查询指定实例类型的部署记录。用户需指定页码、页大小和可选的实例类型进行查询。响应包含总记录数和部署任务列表。 | GET | /api/v2/deployments |
 | Querydeploymentdetail | 该接口用于查看特定部署任务的详细信息。用户需通过 `deployId` 指定要查询的部署任务。接口将返回该部署任务的实例类型、备注、ID、部署时间、版本、部署内容详情和状态等信息。 | GET | /api/v2/deployments/* |
-| Deployinstance | 该接口用于部署指定的实例。用户需提供待部署实例的ID和类型（当前仅支持WaitingRoomConnector类型），接口将返回部署操作的ID。 | POST | /api/v2/deployments |
+| Deployinstance | 该接口用于部署指定的实例。用户需提供待部署实例的ID和类型，接口将返回部署操作的ID。 | POST | /api/v2/deployments |

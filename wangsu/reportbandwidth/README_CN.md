@@ -102,3 +102,4 @@ if err != nil {
 | Quiclogbandwidth | 查询QUIC的日志带宽信息，包括：QUIC日志带宽、日志带宽扣减QUIC带宽 | POST | /myview/Quiclogbandwidth |
 | Getcdnrelaytraffic | 该接口用于查询指定维度的cdn中间流量数据，用户可以通过该接口来查询对应客户的详细频道中间流量报表，包括输出日期、峰值时间、带宽峰值、总流量等。这对客户了解自身的中间流量使用情况有很直接的帮助。 | POST | /cdn/traffic/relay |
 | Reportappaflowdomaincountryservice | 该接口查询指定域名在各国家和地区的流量带宽分布。用户输入时间范围和域名列表，可按域名、国家或国内外查询数据。返回结果包括各地区的流量总和及其百分比，以及每个时间片段的流量和带宽，帮助分析和管理全球范围内的网站流量带宽。建议查询24小时前的数据。 | POST | /api/report/appa-flow/domain-country |
+| Querydynamicstaticrequests | 该接口用于查询客户不同协议下的动静态请求数。用户可以指定日期范围、聚合粒度、区域、加速类型等参数进行查询，接口将返回按指定维度聚合的请求数数据。 | POST | /myview/dyHit |

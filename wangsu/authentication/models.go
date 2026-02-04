@@ -36,6 +36,8 @@ type CreateUserRequest struct {
   Remark *string `json:"remark,omitempty" xml:"remark,omitempty"`
   // {"en":"You can choose between parentGroupId and parentGroupName. It is recommended to pass parentGroupId first to ensure uniqueness.","zh_CN":"parentGroupId和parentGroupName二选一，推荐优先传递parentGroupId，以确保唯一性"}
   ParentGroupId *string `json:"parentGroupId,omitempty" xml:"parentGroupId,omitempty"`
+  // {"en":"Function Module Authorization.You need to authorize the required function modules for the user account before they can use the corresponding module functions normally.\nIf the request parameters do not include this field, all activated modules are authorized by default; if the request parameters include this field but the value is empty, no modules are authorized. The modules corresponding to the module codes are as follows:\n- ZTNA: Zero Trust Network Access\n- EDLP: File External Distribution Control\n- DEM: Document Encryption Management\n- SBOX: Security Workspace\n- ESM: Endpoint Management\n- NAC: Network Access Control\n- RA: Remote Assistance\n- EDR: Endpoint Detection Response","zh_CN":"授权功能模块。您需要对用户账户授权所需功能模块后，用户才能正常使用对应模块功能。\n若该字段不传，则默认授权所有已开通的模块；若该字段有传，但值为空，则不授权。模块Code对应的模块分别是：\n- ZTNA：零信任访问\n- EDLP：文件外发管控\n- DEM：文档加密管理\n- SBOX：安全工作空间\n- ESM：终端管理\n- NAC：本地网络准入\n- RA：极速远程协助\n- EDR：终端检测防护","exampleValue":"ZTNA, EDLP, DEM, SBOX, ESM, NAC, AC, RA, EDR"}
+  ModuleAuthList []*string `json:"moduleAuthList,omitempty" xml:"moduleAuthList,omitempty" type:"Repeated"`
 }
 
 func (s CreateUserRequest) String() string {
@@ -121,6 +123,11 @@ func (s *CreateUserRequest) SetParentGroupId(v string) *CreateUserRequest {
   return s
 }
 
+func (s *CreateUserRequest) SetModuleAuthList(v []*string) *CreateUserRequest {
+  s.ModuleAuthList = v
+  return s
+}
+
 type CreateUserRequestHeader struct {
 }
 
@@ -202,7 +209,7 @@ type CreateUserResponseContent struct {
   // {"en":"groupName","zh_CN":"父组名称"}
   GroupName *string `json:"groupName,omitempty" xml:"groupName,omitempty" require:"true"`
   // {"en":"bandwidth","zh_CN":"带宽"}
-  Bandwidth *string `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true"`
+  Bandwidth *int64 `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true"`
   // {"en":"remark","zh_CN":"备注"}
   Remark *string `json:"remark,omitempty" xml:"remark,omitempty" require:"true"`
   // {"en":"expirationTime","zh_CN":"过期时间戳，0-永不过期"}
@@ -215,6 +222,8 @@ type CreateUserResponseContent struct {
   TotpAuth *int `json:"totpAuth,omitempty" xml:"totpAuth,omitempty" require:"true"`
   // {"en":"createTime","zh_CN":"创建时间戳"}
   CreateTime *int64 `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
+  // {"en":"Function modules authorized for the user. The modules corresponding to the module codes are as follows:\n- ZTNA: Zero Trust Network Access\n- EDLP: File External Distribution Control\n- DEM: Document Encryption Management\n- SBOX: Security Workspace\n- ESM: Endpoint Management\n- NAC: Network Access Control\n- RA: Remote Assistance\n- EDR: Endpoint Detection Response","zh_CN":"用户授权的功能模块。模块Code对应的模块分别是：\n- ZTNA：零信任访问\n- EDLP：文件外发管控\n- DEM：文档加密管理\n- SBOX：安全工作空间\n- ESM：终端管理\n- NAC：本地网络准入\n- RA：极速远程协助\n- EDR：终端检测防护"}
+  ModuleAuthList []*string `json:"moduleAuthList,omitempty" xml:"moduleAuthList,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s CreateUserResponseContent) String() string {
@@ -260,7 +269,7 @@ func (s *CreateUserResponseContent) SetGroupName(v string) *CreateUserResponseCo
   return s
 }
 
-func (s *CreateUserResponseContent) SetBandwidth(v string) *CreateUserResponseContent {
+func (s *CreateUserResponseContent) SetBandwidth(v int64) *CreateUserResponseContent {
   s.Bandwidth = &v
   return s
 }
@@ -292,6 +301,11 @@ func (s *CreateUserResponseContent) SetTotpAuth(v int) *CreateUserResponseConten
 
 func (s *CreateUserResponseContent) SetCreateTime(v int64) *CreateUserResponseContent {
   s.CreateTime = &v
+  return s
+}
+
+func (s *CreateUserResponseContent) SetModuleAuthList(v []*string) *CreateUserResponseContent {
+  s.ModuleAuthList = v
   return s
 }
 
@@ -939,6 +953,8 @@ type DescribeUserInfoResponseContent struct {
   Vip *string `json:"vip,omitempty" xml:"vip,omitempty" require:"true"`
   // {"en":"createTime","zh_CN":"创建时间戳"}
   CreateTime *int64 `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
+  // {"en":"Function modules authorized for the user. The modules corresponding to the module codes are as follows:\n- ZTNA: Zero Trust Network Access\n- EDLP: File External Distribution Control\n- DEM: Document Encryption Management\n- SBOX: Security Workspace\n- ESM: Endpoint Management\n- NAC: Network Access Control\n- RA: Remote Assistance\n- EDR: Endpoint Detection Response","zh_CN":"用户授权的功能模块。模块Code对应的模块分别是：\n- ZTNA：零信任访问\n- EDLP：文件外发管控\n- DEM：文档加密管理\n- SBOX：安全工作空间\n- ESM：终端管理\n- NAC：本地网络准入\n- RA：极速远程协助\n- EDR：终端检测防护"}
+  ModuleAuthList []*string `json:"moduleAuthList,omitempty" xml:"moduleAuthList,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s DescribeUserInfoResponseContent) String() string {
@@ -1021,6 +1037,11 @@ func (s *DescribeUserInfoResponseContent) SetVip(v string) *DescribeUserInfoResp
 
 func (s *DescribeUserInfoResponseContent) SetCreateTime(v int64) *DescribeUserInfoResponseContent {
   s.CreateTime = &v
+  return s
+}
+
+func (s *DescribeUserInfoResponseContent) SetModuleAuthList(v []*string) *DescribeUserInfoResponseContent {
+  s.ModuleAuthList = v
   return s
 }
 
@@ -1157,9 +1178,11 @@ type ModifyuserRequest struct {
   // {"en":"New note\nMaximum length is 255 characters.","zh_CN":"新的备注\n最大长度255个字符"}
   Remark *string `json:"remark,omitempty" xml:"remark,omitempty"`
   // {"en":"Bandwidth limit\nNo parameter transmission is 1/2{max bandwidth}\nIf the parameter transmission exceeds the maximum bandwidth, it is {maximum bandwidth}","zh_CN":"带宽限制\n不传参为 1/2{最大带宽}\n传参超过最大带宽，则为{最大带宽}"}
-  Bandwidth *ModifyuserRequestBandwidth `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" type:"Struct"`
+  Bandwidth *int64 `json:"bandwidth,omitempty" xml:"bandwidth,omitempty"`
   // {"en":"You can choose between parentGroupId and parentGroupName. It is recommended to pass parentGroupId first to ensure uniqueness.","zh_CN":"parentGroupId和parentGroupName二选一，推荐优先传递parentGroupId，以确保唯一性"}
   ParentGroupId *string `json:"parentGroupId,omitempty" xml:"parentGroupId,omitempty"`
+  // {"en":"Function Module Authorization.You need to authorize the required function modules for the user account before they can use the corresponding module functions normally.\nIf the request parameters do not include this field, the currently authorized function modules will remain unchanged by default; if the request parameters include this field but the value is empty, all authorized function modules will be revoked. The modules corresponding to the module codes are as follows:\n- ZTNA: Zero Trust Network Access\n- EDLP: File External Distribution Control\n- DEM: Document Encryption Management\n- SBOX: Security Workspace\n- ESM: Endpoint Management\n- NAC: Network Access Control\n- RA: Remote Assistance\n- EDR: Endpoint Detection Response","zh_CN":"授权功能模块。您需要对用户账户授权所需功能模块后，用户才能正常使用对应模块功能。\n若该字段不传，则默认不改变当前授权的功能模块；若该字段有传，但值为空，则撤销全部授权的功能模块。模块Code对应的模块分别是：\n- ZTNA：零信任访问\n- EDLP：文件外发管控\n- DEM：文档加密管理\n- SBOX：安全工作空间\n- ESM：终端管理\n- NAC：本地网络准入\n- RA：极速远程协助\n- EDR：终端检测防护","exampleValue":"ZTNA,EDLP,DEM,SBOX,ESM,NAC,AC,RA,EDR"}
+  ModuleAuthList []*string `json:"moduleAuthList,omitempty" xml:"moduleAuthList,omitempty" type:"Repeated"`
 }
 
 func (s ModifyuserRequest) String() string {
@@ -1220,8 +1243,8 @@ func (s *ModifyuserRequest) SetRemark(v string) *ModifyuserRequest {
   return s
 }
 
-func (s *ModifyuserRequest) SetBandwidth(v *ModifyuserRequestBandwidth) *ModifyuserRequest {
-  s.Bandwidth = v
+func (s *ModifyuserRequest) SetBandwidth(v int64) *ModifyuserRequest {
+  s.Bandwidth = &v
   return s
 }
 
@@ -1230,15 +1253,9 @@ func (s *ModifyuserRequest) SetParentGroupId(v string) *ModifyuserRequest {
   return s
 }
 
-type ModifyuserRequestBandwidth struct {
-}
-
-func (s ModifyuserRequestBandwidth) String() string {
-  return tea.Prettify(s)
-}
-
-func (s ModifyuserRequestBandwidth) GoString() string {
-  return s.String()
+func (s *ModifyuserRequest) SetModuleAuthList(v []*string) *ModifyuserRequest {
+  s.ModuleAuthList = v
+  return s
 }
 
 type ModifyuserRequestHeader struct {
@@ -1322,7 +1339,7 @@ type ModifyuserResponseContent struct {
   // {"en":"groupName","zh_CN":"父组名称"}
   GroupName *string `json:"groupName,omitempty" xml:"groupName,omitempty" require:"true"`
   // {"en":"bandwidth","zh_CN":"带宽"}
-  Bandwidth *string `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true"`
+  Bandwidth *int64 `json:"bandwidth,omitempty" xml:"bandwidth,omitempty" require:"true"`
   // {"en":"remark","zh_CN":"备注"}
   Remark *string `json:"remark,omitempty" xml:"remark,omitempty" require:"true"`
   // {"en":"expirationTime","zh_CN":"过期时间戳，0-永不过期"}
@@ -1335,6 +1352,8 @@ type ModifyuserResponseContent struct {
   TotpAuth *int `json:"totpAuth,omitempty" xml:"totpAuth,omitempty" require:"true"`
   // {"en":"createTime","zh_CN":"创建时间戳"}
   CreateTime *int64 `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
+  // {"en":"Function modules authorized for the user. The modules corresponding to the module codes are as follows:\n- ZTNA: Zero Trust Network Access\n- EDLP: File External Distribution Control\n- DEM: Document Encryption Management\n- SBOX: Security Workspace\n- ESM: Endpoint Management\n- NAC: Network Access Control\n- RA: Remote Assistance\n- EDR: Endpoint Detection Response","zh_CN":"用户授权的功能模块。模块Code对应的模块分别是：\n- ZTNA：零信任访问\n- EDLP：文件外发管控\n- DEM：文档加密管理\n- SBOX：安全工作空间\n- ESM：终端管理\n- NAC：本地网络准入\n- RA：极速远程协助\n- EDR：终端检测防护"}
+  ModuleAuthList []*string `json:"moduleAuthList,omitempty" xml:"moduleAuthList,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ModifyuserResponseContent) String() string {
@@ -1380,7 +1399,7 @@ func (s *ModifyuserResponseContent) SetGroupName(v string) *ModifyuserResponseCo
   return s
 }
 
-func (s *ModifyuserResponseContent) SetBandwidth(v string) *ModifyuserResponseContent {
+func (s *ModifyuserResponseContent) SetBandwidth(v int64) *ModifyuserResponseContent {
   s.Bandwidth = &v
   return s
 }
@@ -1412,6 +1431,11 @@ func (s *ModifyuserResponseContent) SetTotpAuth(v int) *ModifyuserResponseConten
 
 func (s *ModifyuserResponseContent) SetCreateTime(v int64) *ModifyuserResponseContent {
   s.CreateTime = &v
+  return s
+}
+
+func (s *ModifyuserResponseContent) SetModuleAuthList(v []*string) *ModifyuserResponseContent {
+  s.ModuleAuthList = v
   return s
 }
 
@@ -1981,6 +2005,8 @@ type ListUsersResponseContentResult struct {
   Vip *string `json:"vip,omitempty" xml:"vip,omitempty" require:"true"`
   // {"en":"createTime","zh_CN":"创建时间戳"}
   CreateTime *int64 `json:"createTime,omitempty" xml:"createTime,omitempty" require:"true"`
+  // {"en":"Function modules authorized for the user. The modules corresponding to the module codes are as follows:\n- ZTNA: Zero Trust Network Access\n- EDLP: File External Distribution Control\n- DEM: Document Encryption Management\n- SBOX: Security Workspace\n- ESM: Endpoint Management\n- NAC: Network Access Control\n- RA: Remote Assistance\n- EDR: Endpoint Detection Response","zh_CN":"用户授权的功能模块。模块Code对应的模块分别是：\n- ZTNA：零信任访问\n- EDLP：文件外发管控\n- DEM：文档加密管理\n- SBOX：安全工作空间\n- ESM：终端管理\n- NAC：本地网络准入\n- RA：极速远程协助\n- EDR：终端检测防护"}
+  ModuleAuthList []*string `json:"moduleAuthList,omitempty" xml:"moduleAuthList,omitempty" require:"true" type:"Repeated"`
 }
 
 func (s ListUsersResponseContentResult) String() string {
@@ -2063,6 +2089,11 @@ func (s *ListUsersResponseContentResult) SetVip(v string) *ListUsersResponseCont
 
 func (s *ListUsersResponseContentResult) SetCreateTime(v int64) *ListUsersResponseContentResult {
   s.CreateTime = &v
+  return s
+}
+
+func (s *ListUsersResponseContentResult) SetModuleAuthList(v []*string) *ListUsersResponseContentResult {
+  s.ModuleAuthList = v
   return s
 }
 

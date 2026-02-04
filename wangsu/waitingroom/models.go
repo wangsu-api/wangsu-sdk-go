@@ -379,7 +379,7 @@ func (s QueryDeploymentDetailResponseHeader) GoString() string {
 type DeployInstanceRequest struct {
   // {"en":"The ID of the entity to deploy","zh_CN":"要部署的实体ID"}
   InstanceId *string `json:"instanceId,omitempty" xml:"instanceId,omitempty" require:"true"`
-  // {"en":"The entity type to deploy, currently only WaitingRoomConnector","zh_CN":"要部署的实体类型,当前只有 WaitingRoomConnector"}
+  // {"en":"The entity type to deploy, Such as: WaitingRoomConnector, EdgeFunc","zh_CN":"要部署的实体类型,枚举值：WaitingRoomConnector, EdgeFunc"}
   InstanceType *string `json:"instanceType,omitempty" xml:"instanceType,omitempty" require:"true"`
 }
 

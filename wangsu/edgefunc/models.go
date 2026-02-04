@@ -1359,6 +1359,128 @@ func (s UploadFuncCodeResponseHeader) GoString() string {
 
 
 
+type EdgeFuncGetDebugUrlRequest struct {
+}
+
+func (s EdgeFuncGetDebugUrlRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EdgeFuncGetDebugUrlRequest) GoString() string {
+  return s.String()
+}
+
+type EdgeFuncGetDebugUrlRequestHeader struct {
+}
+
+func (s EdgeFuncGetDebugUrlRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EdgeFuncGetDebugUrlRequestHeader) GoString() string {
+  return s.String()
+}
+
+type EdgeFuncGetDebugUrlPaths struct {
+  // {"en":"Function ID","zh_CN":"函数 ID"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+}
+
+func (s EdgeFuncGetDebugUrlPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EdgeFuncGetDebugUrlPaths) GoString() string {
+  return s.String()
+}
+
+func (s *EdgeFuncGetDebugUrlPaths) SetId(v string) *EdgeFuncGetDebugUrlPaths {
+  s.Id = &v
+  return s
+}
+
+type EdgeFuncGetDebugUrlParameters struct {
+}
+
+func (s EdgeFuncGetDebugUrlParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EdgeFuncGetDebugUrlParameters) GoString() string {
+  return s.String()
+}
+
+type EdgeFuncGetDebugUrlResponse struct {
+  // {"en":"Code","zh_CN":"状态码"}
+  Code *int `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"Message","zh_CN":"状态信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+  // {"en":"Response data body","zh_CN":"响应数据结构体"}
+  Data *EdgeFuncGetDebugUrlResponseData `json:"data,omitempty" xml:"data,omitempty" require:"true" type:"Struct"`
+}
+
+func (s EdgeFuncGetDebugUrlResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EdgeFuncGetDebugUrlResponse) GoString() string {
+  return s.String()
+}
+
+func (s *EdgeFuncGetDebugUrlResponse) SetCode(v int) *EdgeFuncGetDebugUrlResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *EdgeFuncGetDebugUrlResponse) SetMessage(v string) *EdgeFuncGetDebugUrlResponse {
+  s.Message = &v
+  return s
+}
+
+func (s *EdgeFuncGetDebugUrlResponse) SetData(v *EdgeFuncGetDebugUrlResponseData) *EdgeFuncGetDebugUrlResponse {
+  s.Data = v
+  return s
+}
+
+type EdgeFuncGetDebugUrlResponseData struct {
+  // {"en":"Debug URL","zh_CN":"调试 URL"}
+  DebugUrl *string `json:"debugUrl,omitempty" xml:"debugUrl,omitempty" require:"true"`
+  // {"en":"Debug ID","zh_CN":"调试 ID"}
+  DebugId *string `json:"debugId,omitempty" xml:"debugId,omitempty" require:"true"`
+}
+
+func (s EdgeFuncGetDebugUrlResponseData) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EdgeFuncGetDebugUrlResponseData) GoString() string {
+  return s.String()
+}
+
+func (s *EdgeFuncGetDebugUrlResponseData) SetDebugUrl(v string) *EdgeFuncGetDebugUrlResponseData {
+  s.DebugUrl = &v
+  return s
+}
+
+func (s *EdgeFuncGetDebugUrlResponseData) SetDebugId(v string) *EdgeFuncGetDebugUrlResponseData {
+  s.DebugId = &v
+  return s
+}
+
+type EdgeFuncGetDebugUrlResponseHeader struct {
+}
+
+func (s EdgeFuncGetDebugUrlResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s EdgeFuncGetDebugUrlResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type CreateEdgeFuncRequest struct {
   // {"en":"function name","zh_CN":"函数名称","exampleValue":"calculateTotal"}
   FuncName *string `json:"funcName,omitempty" xml:"funcName,omitempty"`
@@ -1478,6 +1600,131 @@ func (s CreateEdgeFuncResponseHeader) String() string {
 }
 
 func (s CreateEdgeFuncResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
+type UpdateEdgeFuncRequest struct {
+  // {"en":"Function name","zh_CN":"函数名称"}
+  FuncName *string `json:"funcName,omitempty" xml:"funcName,omitempty" require:"true"`
+  // {"en":"Function alias","zh_CN":"函数别名"}
+  FuncAlias *string `json:"funcAlias,omitempty" xml:"funcAlias,omitempty" require:"true"`
+  // {"en":"Test domain","zh_CN":"测试域名"}
+  Domain *string `json:"domain,omitempty" xml:"domain,omitempty" require:"true"`
+  // {"en":"Comment","zh_CN":"备注"}
+  Memo *string `json:"memo,omitempty" xml:"memo,omitempty"`
+}
+
+func (s UpdateEdgeFuncRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateEdgeFuncRequest) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateEdgeFuncRequest) SetFuncName(v string) *UpdateEdgeFuncRequest {
+  s.FuncName = &v
+  return s
+}
+
+func (s *UpdateEdgeFuncRequest) SetFuncAlias(v string) *UpdateEdgeFuncRequest {
+  s.FuncAlias = &v
+  return s
+}
+
+func (s *UpdateEdgeFuncRequest) SetDomain(v string) *UpdateEdgeFuncRequest {
+  s.Domain = &v
+  return s
+}
+
+func (s *UpdateEdgeFuncRequest) SetMemo(v string) *UpdateEdgeFuncRequest {
+  s.Memo = &v
+  return s
+}
+
+type UpdateEdgeFuncRequestHeader struct {
+}
+
+func (s UpdateEdgeFuncRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateEdgeFuncRequestHeader) GoString() string {
+  return s.String()
+}
+
+type UpdateEdgeFuncPaths struct {
+  // {"en":"Function ID","zh_CN":"函数ID"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty" require:"true"`
+}
+
+func (s UpdateEdgeFuncPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateEdgeFuncPaths) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateEdgeFuncPaths) SetId(v string) *UpdateEdgeFuncPaths {
+  s.Id = &v
+  return s
+}
+
+type UpdateEdgeFuncParameters struct {
+  // {"en":"Function ID","zh_CN":"函数 ID"}
+  Id *string `json:"id,omitempty" xml:"id,omitempty"`
+}
+
+func (s UpdateEdgeFuncParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateEdgeFuncParameters) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateEdgeFuncParameters) SetId(v string) *UpdateEdgeFuncParameters {
+  s.Id = &v
+  return s
+}
+
+type UpdateEdgeFuncResponse struct {
+  // {"en":"code","zh_CN":"错误码"}
+  Code *string `json:"code,omitempty" xml:"code,omitempty" require:"true"`
+  // {"en":"message","zh_CN":"错误信息"}
+  Message *string `json:"message,omitempty" xml:"message,omitempty" require:"true"`
+}
+
+func (s UpdateEdgeFuncResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateEdgeFuncResponse) GoString() string {
+  return s.String()
+}
+
+func (s *UpdateEdgeFuncResponse) SetCode(v string) *UpdateEdgeFuncResponse {
+  s.Code = &v
+  return s
+}
+
+func (s *UpdateEdgeFuncResponse) SetMessage(v string) *UpdateEdgeFuncResponse {
+  s.Message = &v
+  return s
+}
+
+type UpdateEdgeFuncResponseHeader struct {
+}
+
+func (s UpdateEdgeFuncResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s UpdateEdgeFuncResponseHeader) GoString() string {
   return s.String()
 }
 

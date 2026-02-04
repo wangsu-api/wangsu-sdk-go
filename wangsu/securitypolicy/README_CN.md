@@ -236,3 +236,8 @@ if err != nil {
 | Getdetectionlengthlimitconfiguration | 该接口用于查询指定域名的检测长度限制配置。用户可以通过提供域名来获取该域名检测长度校验配置，包括请求正文最大检测长度。 | POST | /api/v1/security-policy/basic/get-detection-length-limit-config |
 | Getbotgeneralconfig | 该接口用于查询Bot通用策略配置，包括公开Bots、AI Bots、绝对Bots和Bot标记的详细配置信息 | POST | /api/v1/security-policy/bot/get-general-config |
 | Updatebotgeneralconfig | 该接口用于修改Bot通用策略配置，包括公开Bots、AI Bots、绝对Bots和Bot标记的详细配置信息 | POST | /api/v1/security-policy/bot/update-general-config |
+| Getratelimitingrulesforthesharedconfigurationassociatedwithdomain | 该接口用于查询指定域名关联的共享配置的频率限制规则。用户需要提供域名参数，接口将返回该域名关联的所有频率限制规则的详细信息，包括规则名称、触发阈值、统计粒度、生效周期等。 | POST | /api/v2/rate-limit/get-relation-by-domain |
+| Addratelimitingrule | 该接口用于新增频率限制规则。用户可根据IP、User-Agent、Cookie、URL、请求头等多种统计粒度，结合请求方法、URI、状态码等匹配条件，配置触发阈值和对应的处理动作，如监控、拦截或IP封禁。接口支持设置规则生效周期和持续时间。 | POST | /api/v2/rate-limit/add-rule |
+| Listratelimitingrules | 该接口用于获取频率限制规则的列表。用户可以根据域名和规则名称进行模糊查询，从而检索满足条件的频率限制规则。响应中将返回规则的详细信息，包括统计粒度、触发阈值、处理动作、生效周期以及匹配条件等。 | POST | /api/v2/rate-limit/get-rule-list |
+| Updateratelimitingrule | 修改频率限制规则的配置。该接口允许用户更新现有频率限制规则，通过指定规则ID，可以调整统计粒度、触发阈值、处理动作、生效周期以及各种匹配条件等配置。此规则将根据配置对特定流量进行限制。 | POST | /api/v2/rate-limit/update-rule |
+| Getthreatintelligencedomainwhitelist | 该接口用于获取指定域名的威胁情报白名单列表。用户需要提供一个域名列表作为输入。接口将返回查询结果，包含白名单详情。 | POST | /api/v1/common/intelligence/query-whitelist-list |

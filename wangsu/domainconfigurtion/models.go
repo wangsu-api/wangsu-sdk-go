@@ -13273,9 +13273,9 @@ type UpdateFingerprintAntiHotlinkingConfigRequestVisitControlFingerprintRules st
   PathPattern *string `json:"path-pattern,omitempty" xml:"path-pattern,omitempty"`
   // {"en":"control direction. Available values: 403 and 302\n1) 403 means to return a specific error status code to reject the service (the default mode, the status code can be specified, generally 403).\n2) 302 means to return 302 the redirect url of the Found, the redirected url can be specified. If pass 302, rewrite-to is required","zh_CN":"控制动作。可选值：403和302\n1） 403表示返回特定的错误状态码来拒绝服务（默认方式，状态码可以指定，一般为403）。\n2） 302表示返回302 Found的重定向url，重定向的url可以指定。如果传302，rewrite-to必填"}
   ControlAction *string `json:"control-action,omitempty" xml:"control-action,omitempty"`
-  // {"en":"Allowed JA4 fingerprint","zh_CN":"允许的ja4指纹"}
+  // {"en":"Allowed JA4 fingerprint,Multiple configurations are allowed, and they are separated by ;","zh_CN":"允许的ja4指纹，允许配置多个，配置多个时以 ; 隔开"}
   ExceptionalFingerprintJa4 *string `json:"exceptional-fingerprint-ja4,omitempty" xml:"exceptional-fingerprint-ja4,omitempty"`
-  // {"en":"Prohibited JA4 fingerprint","zh_CN":"禁止的ja4指纹"}
+  // {"en":"Prohibited JA4 fingerprint,Multiple configurations are allowed, and they are separated by ;","zh_CN":"禁止的ja4指纹，允许配置多个，配置多个时以 ; 隔开"}
   ProhibitFingerprintJa4 *string `json:"prohibit-fingerprint-ja4,omitempty" xml:"prohibit-fingerprint-ja4,omitempty"`
   // {"en":"Indicates the priority execution order of multiple sets of redirected content by the customer. The higher the number, the higher the priority.When adding a new configuration item, the default is 10","zh_CN":"表示客户多组重定向内容的优先执行顺序。数字越大，优先级越高。\n新增配置项时，不传默认为 10"}
   Priority *int `json:"priority,omitempty" xml:"priority,omitempty"`
@@ -21754,9 +21754,9 @@ type QueryFingerprintAntiHotlinkingConfigResponseVisitControlFingerprintRules st
   RewriteTo *string `json:"rewrite-to,omitempty" xml:"rewrite-to,omitempty" require:"true"`
   // {"en":"Indicates the priority execution order of multiple sets of redirected content by the customer. The higher the number, the higher the priority.\nWhen adding a new configuration item, the default is 10","zh_CN":"表示客户多组重定向内容的优先执行顺序。数字越大，优先级越高。\n新增配置项时，不传默认为 10"}
   Priority *int `json:"priority,omitempty" xml:"priority,omitempty" require:"true"`
-  // {"en":"Allowed JA4 fingerprint","zh_CN":"允许的ja4指纹"}
+  // {"en":"Allowed JA4 fingerprint,Multiple configurations are allowed, and they are separated by ;","zh_CN":"允许的ja4指纹，允许配置多个，配置多个时以 ; 隔开"}
   ExceptionalFingerprintJa4 *string `json:"exceptional-fingerprint-ja4,omitempty" xml:"exceptional-fingerprint-ja4,omitempty" require:"true"`
-  // {"en":"Prohibited JA4 fingerprint","zh_CN":"禁止的ja4指纹"}
+  // {"en":"Prohibited JA4 fingerprint,Multiple configurations are allowed, and they are separated by ;","zh_CN":"禁止的ja4指纹，允许配置多个，配置多个时以 ; 隔开"}
   ProhibitFingerprintJa4 *string `json:"prohibit-fingerprint-ja4,omitempty" xml:"prohibit-fingerprint-ja4,omitempty" require:"true"`
 }
 

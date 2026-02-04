@@ -718,7 +718,7 @@ type QueryAPIDefinitionDetailResponseDataParamLimitMethodListJsonParam struct {
   Required *string `json:"required,omitempty" xml:"required,omitempty" require:"true"`
   // {"en":"Content.","zh_CN":"内容。"}
   Content *string `json:"content,omitempty" xml:"content,omitempty" require:"true"`
-  // {"en":"Child node array, required when type= Array.","zh_CN":"子节点数组，type = Array 时必填。"}
+  // {"en":"Child node array.When type is Array, child nodes must be filled.When type is Json, the root node must be filled.","zh_CN":"子节点数组。type = Array 时必填，type = Json 时根节点必填。"}
   Children []*QueryAPIDefinitionDetailResponseDataParamLimitMethodListJsonParamChildren `json:"children,omitempty" xml:"children,omitempty" require:"true" type:"Repeated"`
 }
 
@@ -1419,7 +1419,7 @@ type UpdateAPIDefinitionRequestParamLimitMethodListJsonParam struct {
   Required *string `json:"required,omitempty" xml:"required,omitempty"`
   // {"en":"Content (maximum 2000 characters), required when type = Enumeration, multiple separated by ; sign.","zh_CN":"内容（最多2000个字符），type = Enumeration 时必填，多个以 ; 号分隔。"}
   Content *string `json:"content,omitempty" xml:"content,omitempty"`
-  // {"en":"Array of child nodes, required when type= Array.","zh_CN":"子节点数组，type = Array 时必填。"}
+  // {"en":"Child node array.When type is Array, child nodes must be filled.When type is Json, the root node must be filled.","zh_CN":"子节点数组。type = Array 时必填，type = Json 时根节点必填。"}
   Children []*UpdateAPIDefinitionRequestParamLimitMethodListJsonParamChildren `json:"children,omitempty" xml:"children,omitempty" type:"Repeated"`
 }
 
@@ -2263,7 +2263,7 @@ type CreateAPIDefinitionRequestParamLimitMethodListJsonParam struct {
   Required *string `json:"required,omitempty" xml:"required,omitempty"`
   // {"en":"Content (maximum 2000 characters), required when type = Enumeration, multiple separated by ; sign.","zh_CN":"内容（最多2000个字符），type = Enumeration 时必填，多个以 ; 号分隔。"}
   Content *string `json:"content,omitempty" xml:"content,omitempty"`
-  // {"en":"Child node array, required when type= Array.","zh_CN":"子节点数组，type = Array 时必填。"}
+  // {"en":"Child node array.When type is Array, child nodes must be filled.When type is Json, the root node must be filled.","zh_CN":"子节点数组。type = Array 时必填，type = Json 时根节点必填。"}
   Children []*CreateAPIDefinitionRequestParamLimitMethodListJsonParamChildren `json:"children,omitempty" xml:"children,omitempty" type:"Repeated"`
 }
 

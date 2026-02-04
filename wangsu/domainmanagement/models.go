@@ -3632,38 +3632,42 @@ func (s *QueryApiDomainListServiceResponseHeader) SetXCncRequestId(v string) *Qu
 
 
 type CreateDomainRequest struct {
-  // {"en":"Version code , the current version is 1.0.0","zh_CN":"版本号，当前版本号1.0.0"}
+  // {"en":"Version number, current version 1.0.0","zh_CN":"版本号，当前版本号1.0.0"}
   Version *string `json:"version,omitempty" xml:"version,omitempty" require:"true"`
-  // {"en":"Need to access the domain name of the CDN. a generic domain name is supported, starting with the symbol '.', such as.example.com, which also contains a multilevel 'a.b.example.com'.If example.com is filed, the domain name xx.example.com does not need to be filed.","zh_CN":"需要接入CDN的域名。支持泛域名，以符号“.”开头，如：.example.com，泛域名也包含多级“a.b.example.com”。\n如果example.com已备案，那么域名xx.example.com则不需要备案。"}
+  // {"en":"Domain to be integrated into CDN. Supports wildcard domains, starting with a symbol '.', such as: .example.com, wildcard domains also include multi-level 'a.b.example.com'.\nIf example.com is registered, then the domain xx.example.com does not need to be registered.","zh_CN":"需要接入CDN的域名。支持泛域名，以符号“.”开头，如：.example.com，泛域名也包含多级“a.b.example.com”。\n如果example.com已备案，那么域名xx.example.com则不需要备案。"}
   DomainName *string `json:"domain-name,omitempty" xml:"domain-name,omitempty" require:"true"`
-  // {"en":"The service type of the accelerated domain name (only one service type can be submitted at a time):\nweb/web-https: Web page acceleration/Web page acceleration-https\nwsa/Wsa-https: Full-station acceleration/full-station acceleration-https\nvodstream/vod-https: on-demand acceleration/on-demand acceleration-https\ndownload/dl-https: Download Acceleration/Download Acceleration-https\nlivestream/live-https/cloudv-live: livestream acceleration\nv6sa/osv6: IPv6 Security&Acceleration Solution/IPv6 One-stop Solution\nNote:\n1. the https in the code, such as web-https does not represent immediate support for https access, you need to upload the certificate to support https.","zh_CN":"加速域名的服务类型（一次只能提交一个服务类型）：\nweb/web-https：网页加速/网页加速-https\nwsa/wsa-https：全站加速/全站加速-https\nvodstream/vod-https：点播加速/点播加速-https\ndownload/dl-https：下载加速/下载加速-https\nlivestream/live-https/cloudv-live：直播加速\nv6sa/osv6：ipv6安全加速解决方案/IPv6一体化解决方案\n注意：\n1、service-type中的https不代表立即开启https，比如web-https中的https并不代表立刻支持https访问，需上传完证书后才可以支持https，切记！"}
+  // {"en":"Service type of the acceleration domain (only one service type can be submitted at a time):\nweb/web-https: Web acceleration/Web acceleration-https\nwsa/wsa-https: Whole site acceleration/Whole site acceleration-https\nvodstream/vod-https: VOD acceleration/VOD acceleration-https\ndownload/dl-https: Download acceleration/Download acceleration-https\nlivestream/live-https/cloudv-live: Live streaming acceleration\nv6sa/osv6: IPv6 security acceleration solution/IPv6 integrated solution\nNote:\n1. The https in service-type does not mean that https is enabled immediately, for example, the https in web-https does not mean that https access is supported immediately, it can only be supported after the certificate is uploaded, remember!","zh_CN":"加速域名的服务类型（一次只能提交一个服务类型）：\nweb/web-https：网页加速/网页加速-https\nwsa/wsa-https：全站加速/全站加速-https\nvodstream/vod-https：点播加速/点播加速-https\ndownload/dl-https：下载加速/下载加速-https\nlivestream/live-https/cloudv-live：直播加速\nv6sa/osv6：ipv6安全加速解决方案/IPv6一体化解决方案\n注意：\n1、service-type中的https不代表立即开启https，比如web-https中的https并不代表立刻支持https访问，需上传完证书后才可以支持https，切记！"}
   ServiceType *string `json:"service-type,omitempty" xml:"service-type,omitempty"`
-  // {"en":"The acceleration area of the acceleration domain, if the resource coverage needs to be limited according to the area, the acceleration area needs to be specified.\nWhen no acceleration area is specified, we will provide acceleration services with optimal resource coverage according to the service area opened by the customer.\nMultiple regions are separated by semicolons, and the supported regions are as follows: cn (Mainland China), am (Americas),\nemea (Europe, Middle East, Africa), apac (Asia-Pacific region).","zh_CN":"加速域名的加速区域，如果有需要根据区域限定资源覆盖时，才需要指定加速区域。未指定加速区域时，我们将按照客户开通的服务区域，以最优的资源覆盖提供加速服务。多个区域以分号分隔，支持配置的区域如下：cn（中国大陆）、am（美洲）、emea（欧洲、中东、非洲）、apac（亚太地区）"}
+  // {"en":"Acceleration area of the acceleration domain. If there is a need to limit resource coverage by area, the acceleration area needs to be specified. If no acceleration area is specified, we will provide acceleration services with optimal resource coverage according to the customer's opened service area. Multiple areas are separated by semicolons, and the supported areas are as follows: cn (China Mainland), am (America), emea (Europe, Middle East, Africa), apac (Asia Pacific)","zh_CN":"加速域名的加速区域，如果有需要根据区域限定资源覆盖时，才需要指定加速区域。未指定加速区域时，我们将按照客户开通的服务区域，以最优的资源覆盖提供加速服务。多个区域以分号分隔，支持配置的区域如下：cn（中国大陆）、am（美洲）、emea（欧洲、中东、非洲）、apac（亚太地区）"}
   ServiceAreas *string `json:"service-areas,omitempty" xml:"service-areas,omitempty"`
-  // {"en":"Remarks, up to 1000 characters","zh_CN":"备注信息，最大限制1000个字符"}
+  // {"en":"Remarks, maximum limit of 1000 characters","zh_CN":"备注信息，最大限制1000个字符"}
   Comment *string `json:"comment,omitempty" xml:"comment,omitempty"`
-  // {"en":"Configuration template, if you want to add the a domain using some specified configuration by default, you can specify the template id. For more detail, please contract the technical support.","zh_CN":"配置单模板，特定的使用场景下，如果希望新增的加速域名参照某些指定配置时，可以指定配置单模板，具体使用请咨询对应的客户负责人。"}
+  // {"en":"Configuration form template. In specific usage scenarios, if you want the newly added acceleration domain to refer to certain specified configurations, you can specify the configuration form template. Please consult the corresponding customer representative for specific usage.","zh_CN":"配置单模板，特定的使用场景下，如果希望新增的加速域名参照某些指定配置时，可以指定配置单模板，具体使用请咨询对应的客户负责人。"}
   ConfigFormId *int `json:"config-form-id,omitempty" xml:"config-form-id,omitempty"`
-  // {"en":"Refer to the configuration of the specified domain.\nNote:\n1. If the referenced domain uses a certificate, the new domain should be in the 'DNS name' of the certificate.\n2. If the referenced domain has no China ICP, while the new domain name has, it may affect the cover resources and service quality.\n3. If the referenced domain has China ICP, while the new domain name doesn't, then the cover resources may be re-selected if it does not meet the policy requirements.\n4. It is not allowed to reference a domain which is traffic-free.","zh_CN":"参照指定域名的配置，来创建加速域名。\n注意：\n1.参照域名如果有使用证书，新增域名也要在对应证书授权范围内。\n2.参照未备案域名，新增的域名如果已备案，可能影响资源使用和服务质量。\n3.参照备案域名，新增的域名如果未备案，若资源不满足政策要求，可能重选。\n4.不允许参照免流域名创建新域名。"}
+  // {"en":"Create an acceleration domain by referring to the configuration of a specified domain.\nNote:\n1. If the referenced domain uses a certificate, the new domain must also be within the authorized range of the corresponding certificate.\n2. If the referenced domain is not registered, the new domain may affect resource usage and service quality if it is registered.\n3. If the referenced domain is registered, the new domain may be reselected if it is not registered and the resources do not meet policy requirements.\n4. It is not allowed to create a new domain by referring to a traffic-free domain.","zh_CN":"参照指定域名的配置，来创建加速域名。\n注意：\n1.参照域名如果有使用证书，新增域名也要在对应证书授权范围内。\n2.参照未备案域名，新增的域名如果已备案，可能影响资源使用和服务质量。\n3.参照备案域名，新增的域名如果未备案，若资源不满足政策要求，可能重选。\n4.不允许参照免流域名创建新域名。"}
   ReferencedDomainName *string `json:"referenced-domain-name,omitempty" xml:"referenced-domain-name,omitempty"`
-  // {"en":"If you need to share a CNAME between domains, you can use this parameter. This parameter is a unique label for a public CNAME. Domains with the same cname-label will have the same CNAME.\nNote:\n1. Domains with the same cname-label have the same coverage.\n2. Constraints of sharing a CNAME: consistent service-type, consistent certificate-id (if there is a certificate), consistent service-areas\n3. Multiple http domains can share a CNAME, multiple sni https domains can share a CNAME too.\n4. When a cname-label is used by a single domain, then the domain can be canceled acceleration. While a cname-label using by more then one domains, they can not be canceled acceleration.\n5. Support the purpose of modifying cname by modifying cname-label. )","zh_CN":"共用一级标签，若有多个加速域名需要共用一级域名，则可以使用该参数。即拥有相同cname-label的一组域名，共用一级cname。\n注意：\n1、拥有相同cname-label的域名共用一级cname，且有完全一致的dns覆盖\n2、共用一级的约束：加速类型一致(service-type)、证书id一致（certificate-id,如果有证书）、加速区域一致(service-areas)\n3、多个http域名可共用一级，多个sni https域名可共用一级\n4、单个域名使用cname-label时，域名可cancel；多个域名共用一级时，不允许cancel这些域名\n5、支持通过修改cname-label达到修改cname的目的。）"}
+  // {"en":"Shared first-level label. If multiple acceleration domains need to share a first-level domain, this parameter can be used. That is, a group of domains with the same cname-label share a first-level cname.\nNote:\n1. Domains with the same cname-label share a first-level cname and have completely consistent DNS coverage.\n2. Constraints on sharing a first-level: consistent acceleration type (service-type), consistent certificate id (certificate-id, if there is a certificate), consistent acceleration area (service-areas)\n3. Multiple http domains can share a first-level, multiple sni https domains can share a first-level\n4. When a single domain uses cname-label, the domain can be canceled; when multiple domains share a first-level, these domains cannot be canceled\n5. It is supported to modify the cname by modifying the cname-label.","zh_CN":"共用一级标签，若有多个加速域名需要共用一级域名，则可以使用该参数。即拥有相同cname-label的一组域名，共用一级cname。\n注意：\n1、拥有相同cname-label的域名共用一级cname，且有完全一致的dns覆盖\n2、共用一级的约束：加速类型一致(service-type)、证书id一致（certificate-id,如果有证书）、加速区域一致(service-areas)\n3、多个http域名可共用一级，多个sni https域名可共用一级\n4、单个域名使用cname-label时，域名可cancel；多个域名共用一级时，不允许cancel这些域名\n5、支持通过修改cname-label达到修改cname的目的。）"}
   CnameLabel *string `json:"cname-label,omitempty" xml:"cname-label,omitempty"`
-  // {"en":"The first level of cname prefix, true, indicates that the domain cname is used as the cname prefix, otherwise the 14-bit random string (number + letter) is used as the cname prefix.\nNote: When the prefix is a generic domain name, a wsall is added as a prefix. Such as... Baidu.com.wscloudcdn.com, which will generate wsall.Baidu.com.wscloudcdn.com","zh_CN":"一级cname前缀，true表示使用域名名称作为cname前缀，否则，使用14位随机串（数字+字母）作为cname前缀。\n注意：当前缀是泛域名时，则再增加wsall作为前缀。如.baidu.com.wscloudcdn.com，会生成wsall.baidu.com.wscloudcdn.com"}
+  // {"en":"First-level cname prefix, true means using the domain name as the cname prefix, otherwise, a 14-character random string (numbers + letters) is used as the cname prefix.\nNote: When the prefix is a wildcard domain, wsall is added as a prefix. For example, .baidu.com.wscloudcdn.com will generate wsall.baidu.com.wscloudcdn.com","zh_CN":"一级cname前缀，true表示使用域名名称作为cname前缀，否则，使用14位随机串（数字+字母）作为cname前缀。\n注意：当前缀是泛域名时，则再增加wsall作为前缀。如.baidu.com.wscloudcdn.com，会生成wsall.baidu.com.wscloudcdn.com"}
   CnameWithCustomizedPrefix *string `json:"cname-with-customized-prefix,omitempty" xml:"cname-with-customized-prefix,omitempty"`
-  // {"en":"Back-to-origin policy setting, which is used to set the origin site information and the back-to-origin policy of the none-live accelerated domain","zh_CN":"回源策略设置(非直播域名使用)，用于设置加速域名的源站信息和回源策略。"}
+  // {"en":"Origin strategy settings (used for non-live domains), used to set the source station information and origin strategy of the acceleration domain.","zh_CN":"回源策略设置(非直播域名使用)，用于设置加速域名的源站信息和回源策略。"}
   OriginConfig *CreateDomainRequestOriginConfig `json:"origin-config,omitempty" xml:"origin-config,omitempty" type:"Struct"`
-  // {"en":"Live domain configuration, used to set the push flow of rtmp live acceleration domain (use required)\nNote: In addition to the API call permission, you need to contact the dedicated customer service to apply for the corresponding API client template.","zh_CN":"直播域名配置，用于设置rtmp直播加速域名的推拉流（使用需申请）\n注意：该节点下的相关参数配置，除开通API调用权限外，还需要联系专属客服申请开通对应的API客户模板"}
+  // {"en":"Live domain configuration, used to set the push and pull stream of the rtmp live acceleration domain (application required)\nNote: The relevant parameter configuration under this node, in addition to opening API call permissions, also needs to contact the exclusive customer service to apply for the corresponding API customer template","zh_CN":"直播域名配置，用于设置rtmp直播加速域名的推拉流（使用需申请）\n注意：该节点下的相关参数配置，除开通API调用权限外，还需要联系专属客服申请开通对应的API客户模板"}
   LiveConfig *CreateDomainRequestLiveConfig `json:"live-config,omitempty" xml:"live-config,omitempty" type:"Struct"`
-  // {"en":"Identifies whether a domain name is fully overseas accelerated.\nThe default value is \"false\".\nTrue: indicates that the client domain name is a pure overseas acceleration.\nFalse: Indicates that the client domain name has accelerated in China.","zh_CN":"标识域名是否是纯海外加速的。\n默认值为“false”。\ntrue ：表示客户域名纯海外加速。\nfalse：表示客户域名有在中国加速。"}
+  // {"en":"Indicates whether the domain is purely accelerated overseas.\nThe default value is 'false'.\ntrue: indicates that the customer's domain is purely accelerated overseas.\nfalse: indicates that the customer's domain is accelerated in China.","zh_CN":"标识域名是否是纯海外加速的。\n默认值为“false”。\ntrue ：表示客户域名纯海外加速。\nfalse：表示客户域名有在中国加速。"}
   AccelerateNoChina *string `json:"accelerate-no-china,omitempty" xml:"accelerate-no-china,omitempty"`
-  // {"en":"Pass the response header of client IP. The optional values are Cdn-Src-Ip, X-Forwarded-For and ori_X-Forwarded-For. The default value is Cdn-Src-Ip.","zh_CN":"传递客户端ip的响应头部，可选值为Cdn-Src-Ip、X-Forwarded-For、ori_X-Forwarded-For\n1） Cdn-Src-Ip： 回源头部名称为Cdn-Src-Ip，获取与节点进行建联的IP作为客户端IP传递回源。\n2） X-Forwarded-For： 回源头部名称为X-Forwarded-For，携带的客户端IP值是Cdn-Src-Ip获取到的建联IP。\n3） ori_X-Forwarded-For：客户端请求CDN节点时会自带X-Forwarded-For，则CDN透传此头部和值回源。"}
+  // {"en":"Response header for passing client IP, optional values are Cdn-Src-Ip, X-Forwarded-For, ori_X-Forwarded-For\n1) Cdn-Src-Ip: The origin header name is Cdn-Src-Ip, and the IP that establishes a connection with the node is obtained as the client IP and passed back to the origin.\n2) X-Forwarded-For: The origin header name is X-Forwarded-For, and the client IP value carried is the connection IP obtained by Cdn-Src-Ip.\n3) ori_X-Forwarded-For: When the client requests the CDN node, it will carry the X-Forwarded-For, and the CDN will transparently transmit this header and value back to the origin.","zh_CN":"传递客户端ip的响应头部，可选值为Cdn-Src-Ip、X-Forwarded-For、ori_X-Forwarded-For\n1） Cdn-Src-Ip： 回源头部名称为Cdn-Src-Ip，获取与节点进行建联的IP作为客户端IP传递回源。\n2） X-Forwarded-For： 回源头部名称为X-Forwarded-For，携带的客户端IP值是Cdn-Src-Ip获取到的建联IP。\n3） ori_X-Forwarded-For：客户端请求CDN节点时会自带X-Forwarded-For，则CDN透传此头部和值回源。"}
   HeaderOfClientip *string `json:"header-of-clientip,omitempty" xml:"header-of-clientip,omitempty"`
-  // {"en":"The live streaming domain which is pull domian ,and  directly returned to the source to verify the configuration.\nwhich can be an IP or a domain name.\nCan be IP or domain name. Ip and domain names can only be one. Multiple input parameters are not supported.","zh_CN":"直播拉流域名，直接回源校验配置。\n可以是IP或域名。ip和域名只能一种。不支持多个入参。"}
+  // {"en":"Live pull stream domain name, direct origin verification configuration.\nCan be IP or domain name. Only one of IP and domain name is supported. Multiple input parameters are not supported.","zh_CN":"直播拉流域名，直接回源校验配置。\n可以是IP或域名。ip和域名只能一种。不支持多个入参。"}
   UpstreamHost *string `json:"upstream-host,omitempty" xml:"upstream-host,omitempty"`
-  // {"en":"Set the publishing point of the live push-pull domain name\nnote:\n1. Pull flow and corresponding push flow domain name must be configured with the same publishing point.\n2. do not want to modify the publishing point, do not pass the node and the following parameters\n3. The publishing point adopts the overlay update. Each time you modify, you need to submit all the publishing points. You cannot submit only the parts that need to be modified.","zh_CN":"设置直播推拉流域名的发布点\n注意：\n1、拉流和对应的推流域名，必须配置相同的发布点；\n2、不想修改发布点时，不要传入该节点及以下入参；\n3、发布点采用覆盖式更新，每次修改时，需要提交全部发布点，不能仅提交需要修改的部分。"}
+  // {"en":"Set the publish point of the live push-pull stream domain name\nNote:\n1. The pull stream and the corresponding push stream domain name must configure the same publish point;\n2. If you do not want to modify the publish point, do not pass in this node and the following input parameters;\n3. The publish point is updated in an overlay manner, and each modification requires submitting all publish points, not just the parts that need to be modified.","zh_CN":"设置直播推拉流域名的发布点\n注意：\n1、拉流和对应的推流域名，必须配置相同的发布点；\n2、不想修改发布点时，不要传入该节点及以下入参；\n3、发布点采用覆盖式更新，每次修改时，需要提交全部发布点，不能仅提交需要修改的部分。"}
   PublishPoints []*CreateDomainRequestPublishPoints `json:"publish-points,omitempty" xml:"publish-points,omitempty" type:"Repeated"`
-  // {"en":"SSL settings, to bind a certificate with the accelerated domain. You can use the interface [AddCertificate] to upload your  certificates. If you want to modify a certificate, please use the interface: [UpdateCertificate]","zh_CN":"ssl证书设置，用于设置加速域名的ssl证书配置。上传证书请使用接口：【新增证书V2】；若要修改证书，请使用接口：【修改证书V2】"}
+  // {"en":"SSL certificate settings, used to set the SSL certificate configuration of the acceleration domain. To upload a certificate, please use the interface: [Add Certificate V2]; to modify the certificate, please use the interface: [Modify Certificate V2]","zh_CN":"ssl证书设置，用于设置加速域名的ssl证书配置。上传证书请使用接口：【新增证书V2】；若要修改证书，请使用接口：【修改证书V2】"}
   Ssl *CreateDomainRequestSsl `json:"ssl,omitempty" xml:"ssl,omitempty" type:"Struct"`
+  // {"en":"Modify the origin protocol and port; if you want to return to the origin according to the original request, you can clear this object, example \"back-to-origin-rewrite-rule\":{}","zh_CN":"修改回源协议和端口；若要按原始请求回源，则可清空该对象，示例\"back-to-origin-rewrite-rule\":{}"}
+  BackToOriginRewriteRule *CreateDomainRequestBackToOriginRewriteRule `json:"back-to-origin-rewrite-rule,omitempty" xml:"back-to-origin-rewrite-rule,omitempty" type:"Struct"`
+  // {"en":"Cache time configuration","zh_CN":"缓存时间配置"}
+  CacheBehaviors []*CreateDomainRequestCacheBehaviors `json:"cache-behaviors,omitempty" xml:"cache-behaviors,omitempty" type:"Repeated"`
 }
 
 func (s CreateDomainRequest) String() string {
@@ -3754,10 +3758,20 @@ func (s *CreateDomainRequest) SetSsl(v *CreateDomainRequestSsl) *CreateDomainReq
   return s
 }
 
+func (s *CreateDomainRequest) SetBackToOriginRewriteRule(v *CreateDomainRequestBackToOriginRewriteRule) *CreateDomainRequest {
+  s.BackToOriginRewriteRule = v
+  return s
+}
+
+func (s *CreateDomainRequest) SetCacheBehaviors(v []*CreateDomainRequestCacheBehaviors) *CreateDomainRequest {
+  s.CacheBehaviors = v
+  return s
+}
+
 type CreateDomainRequestOriginConfig struct {
-  // {"en":"Origin address, which can be an IP or domain name.\n1. Multiple IPs are supported, separated by semicolons.\n2. Only one domain name is allowed. IP and domain name cannot exist at the same time.\n3. The length cannot exceed 500 characters.\n4. The number of IPs cannot exceed 15.","zh_CN":"回源地址，可以是IP或域名。\n1、IP以分号分隔，支持多个。\n2、域名只能输入一个。IP与域名不能同时输入。\n3、限制最大不能超过500个字符长度。\n4、源IP个数不能超过15个。"}
+  // {"en":"Origin address, can be IP or domain name.\n1. IPs are separated by semicolons, multiple are supported.\n2. Only one domain name can be entered. IP and domain name cannot be entered at the same time.\n3. The maximum length cannot exceed 500 characters.\n4. The number of source IPs cannot exceed 15.","zh_CN":"回源地址，可以是IP或域名。\n1、IP以分号分隔，支持多个。\n2、域名只能输入一个。IP与域名不能同时输入。\n3、限制最大不能超过500个字符长度。\n4、源IP个数不能超过15个。"}
   OriginIps *string `json:"origin-ips,omitempty" xml:"origin-ips,omitempty"`
-  // {"en":"The Origin HOST for changing the HOST field in the return source HTTP request header. The supported domain name formats, each segement separated by a dot, does not exceed 62 characters, the total length should not exceed 128 characters.\n.","zh_CN":"回源HOST，用于更改回源HTTP请求头中的HOST字段。支持格式为: 域名，每段（点号分隔）长度小于等于62，域名总长度小于等于128。"}
+  // {"en":"Origin HOST, used to change the HOST field in the origin HTTP request header. The supported format is: domain name, each segment (dot-separated) length is less than or equal to 62, and the total length of the domain name is less than or equal to 128.","zh_CN":"回源HOST，用于更改回源HTTP请求头中的HOST字段。支持格式为: 域名，每段（点号分隔）长度小于等于62，域名总长度小于等于128。"}
   DefaultOriginHostHeader *string `json:"default-origin-host-header,omitempty" xml:"default-origin-host-header,omitempty"`
 }
 
@@ -3780,11 +3794,11 @@ func (s *CreateDomainRequestOriginConfig) SetDefaultOriginHostHeader(v string) *
 }
 
 type CreateDomainRequestLiveConfig struct {
-  // {"en":"The live push-pull stream type, the optional values are pull and push, pull means pull flow; push means push flow.","zh_CN":"直播推拉流类型，可选值为pull和push，pull表示拉流；   push表示推流。"}
+  // {"en":"Live stream type, optional values are pull and push, pull means pulling stream; push means pushing stream.","zh_CN":"直播推拉流类型，可选值为pull和push，pull表示拉流；   push表示推流。"}
   StreamType *string `json:"stream-type,omitempty" xml:"stream-type,omitempty"`
-  // {"en":"The push-pull domain name is used to set the push-flow domain name corresponding to the rtmp live streaming domain name. When the stream-type is pull, at least one of the source IP address and the corresponding push-stream domain name is not empty. When the stream-type is push, Incoming.","zh_CN":"配套推流域名，用于设置rtmp直播拉流域名对应的推流域名，当stream-type为pull时，源站IP和配套推流域名至少一个不为空；当stream-type为push时，无需传入。"}
+  // {"en":"Supporting push stream domain name, used to set the push stream domain name corresponding to the rtmp live pull stream domain name. When stream-type is pull, at least one of the source station IP and supporting push stream domain name must not be empty; when stream-type is push, it is not necessary to pass in.","zh_CN":"配套推流域名，用于设置rtmp直播拉流域名对应的推流域名，当stream-type为pull时，源站IP和配套推流域名至少一个不为空；当stream-type为push时，无需传入。"}
   OriginPushHost *string `json:"origin-push-host,omitempty" xml:"origin-push-host,omitempty"`
-  // {"en":"Source station IP. When the stream-type is pull, at least one of the source station IP and the companion push stream domain name is not empty.\n1. If it is a push-pull flow package, fill in 127.0.0.1, and the system will also default to 127.0.0.1.\n2. If it is directly returning to the source, fill in the source IP of the source pull stream.","zh_CN":"源站IP，当stream-type为pull时，源站IP和配套推流域名至少一个不为空。\n1、如果是推拉流配套，则填写127.0.0.1，不传系统也默认为127.0.0.1\n2、如果是直接回源拉流，则填写回源拉流的源站IP"}
+  // {"en":"Source station IP, when stream-type is pull, at least one of the source station IP and supporting push stream domain name must not be empty.\n1. If it is a push-pull stream match, fill in 127.0.0.1, and the system defaults to 127.0.0.1 if not passed\n2. If it is a direct origin pull stream, fill in the source station IP of the origin pull stream","zh_CN":"源站IP，当stream-type为pull时，源站IP和配套推流域名至少一个不为空。\n1、如果是推拉流配套，则填写127.0.0.1，不传系统也默认为127.0.0.1\n2、如果是直接回源拉流，则填写回源拉流的源站IP"}
   OriginIps *string `json:"origin-ips,omitempty" xml:"origin-ips,omitempty"`
 }
 
@@ -3812,7 +3826,7 @@ func (s *CreateDomainRequestLiveConfig) SetOriginIps(v string) *CreateDomainRequ
 }
 
 type CreateDomainRequestPublishPoints struct     {
-  // {"en":"Livestream domain settings. Publish point, support multiple, do not pass the system by default to generate a publishing point uri for [/]","zh_CN":"发布点，支持多个，不传系统默认生成一条发布点uri为“/”"}
+  // {"en":"Publish point, supports multiple, if not passed, the system defaults to generate a publish point uri as '/'","zh_CN":"发布点，支持多个，不传系统默认生成一条发布点uri为“/”"}
   Uri *string `json:"uri,omitempty" xml:"uri,omitempty"`
 }
 
@@ -3830,11 +3844,11 @@ func (s *CreateDomainRequestPublishPoints) SetUri(v string) *CreateDomainRequest
 }
 
 type CreateDomainRequestSsl struct {
-  // {"en":"Use a certificate, the optional values are true and false, true means to use the certificate, false means not to use the certificate","zh_CN":"使用证书，可选值为true和false，true表示使用证书，false表示不使用证书"}
+  // {"en":"Use certificate, optional values are true and false, true means using certificate, false means not using certificate","zh_CN":"使用证书，可选值为true和false，true表示使用证书，false表示不使用证书"}
   UseSsl *string `json:"use-ssl,omitempty" xml:"use-ssl,omitempty"`
-  // {"en":"Use sni certificate, the optional values are true and false, true means use sni certificate, false means use shared certificate (not supported)","zh_CN":"使用sni证书，可选值为true和false，true表示使用sni证书，false表示使用合用证书（暂不支持）"}
+  // {"en":"Use SNI certificate, optional values are true and false, true means using SNI certificate, false means using shared certificate (not supported yet)","zh_CN":"使用sni证书，可选值为true和false，true表示使用sni证书，false表示使用合用证书（暂不支持）"}
   UseForSni *string `json:"use-for-sni,omitempty" xml:"use-for-sni,omitempty"`
-  // {"en":"Use sni certificate, the optional values are true and false, true means use sni certificate, false means use shared certificate (not supported)","zh_CN":"证书ID，新增证书成功后，系统返回的证书ID，use-ssl为true时，才能传ssl-certificate-id。"}
+  // {"en":"Certificate ID, the certificate ID returned by the system after the certificate is successfully added, ssl-certificate-id can only be passed when use-ssl is true.","zh_CN":"证书ID，新增证书成功后，系统返回的证书ID，use-ssl为true时，才能传ssl-certificate-id。"}
   SslCertificateId *int `json:"ssl-certificate-id,omitempty" xml:"ssl-certificate-id,omitempty"`
 }
 
@@ -3858,6 +3872,70 @@ func (s *CreateDomainRequestSsl) SetUseForSni(v string) *CreateDomainRequestSsl 
 
 func (s *CreateDomainRequestSsl) SetSslCertificateId(v int) *CreateDomainRequestSsl {
   s.SslCertificateId = &v
+  return s
+}
+
+type CreateDomainRequestBackToOriginRewriteRule struct {
+  // {"en":"Rewritten origin protocol, optional values: http, https","zh_CN":"改写后的回源协议，可选值：http、https"}
+  Protocol *string `json:"protocol,omitempty" xml:"protocol,omitempty"`
+  // {"en":"Rewritten origin port, if protocol is http, the default is 80, if protocol is https, the default is 443","zh_CN":"改写后的回源端口，若protocol为http时，默认为80，若protocol为https时，默认为443"}
+  Port *string `json:"port,omitempty" xml:"port,omitempty"`
+}
+
+func (s CreateDomainRequestBackToOriginRewriteRule) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateDomainRequestBackToOriginRewriteRule) GoString() string {
+  return s.String()
+}
+
+func (s *CreateDomainRequestBackToOriginRewriteRule) SetProtocol(v string) *CreateDomainRequestBackToOriginRewriteRule {
+  s.Protocol = &v
+  return s
+}
+
+func (s *CreateDomainRequestBackToOriginRewriteRule) SetPort(v string) *CreateDomainRequestBackToOriginRewriteRule {
+  s.Port = &v
+  return s
+}
+
+type CreateDomainRequestCacheBehaviors struct     {
+  // {"en":"File type","zh_CN":"文件类型"}
+  FileType *string `json:"file-type,omitempty" xml:"file-type,omitempty"`
+  // {"en":"Custom file type","zh_CN":"自定义文件类型"}
+  CustomFileType *string `json:"custom-file-type,omitempty" xml:"custom-file-type,omitempty"`
+  // {"en":"Cache time","zh_CN":"缓存时间"}
+  CacheTtl *string `json:"cache-ttl,omitempty" xml:"cache-ttl,omitempty"`
+  // {"en":"Cache time unit, optional values: s, m, h, d","zh_CN":"缓存时间单位，可选值：s、m、h、d"}
+  CacheUnit *string `json:"cache-unit,omitempty" xml:"cache-unit,omitempty"`
+}
+
+func (s CreateDomainRequestCacheBehaviors) String() string {
+  return tea.Prettify(s)
+}
+
+func (s CreateDomainRequestCacheBehaviors) GoString() string {
+  return s.String()
+}
+
+func (s *CreateDomainRequestCacheBehaviors) SetFileType(v string) *CreateDomainRequestCacheBehaviors {
+  s.FileType = &v
+  return s
+}
+
+func (s *CreateDomainRequestCacheBehaviors) SetCustomFileType(v string) *CreateDomainRequestCacheBehaviors {
+  s.CustomFileType = &v
+  return s
+}
+
+func (s *CreateDomainRequestCacheBehaviors) SetCacheTtl(v string) *CreateDomainRequestCacheBehaviors {
+  s.CacheTtl = &v
+  return s
+}
+
+func (s *CreateDomainRequestCacheBehaviors) SetCacheUnit(v string) *CreateDomainRequestCacheBehaviors {
+  s.CacheUnit = &v
   return s
 }
 

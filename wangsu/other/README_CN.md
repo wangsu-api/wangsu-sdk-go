@@ -103,3 +103,5 @@ if err != nil {
 | Streamtrafficservice | 该接口用于查询流名带宽，用户可以通过指定时间，域名，区域，发布点，协议等查询数据；根据区域，域名，流名，发布点，协议等维度聚合流量维度返回数据 | POST | /api/gdp/stream-traffic-service |
 | Querydomainresourcegroup | 该接口用于查询域名所属资源组。用户可以通过域名查询相关的资源组信息。包括资源组名称、资源组ID。 | POST | /api/v1/dms/domainResource |
 | Getcdnoriginiprequest | 用于查询客户源站ip的回源请求数，用户可以通过该接口来查询对应客户频道对应的源站ip请求数，包括输出日期、状态码、请求数等。这对客户了解自身的回源站请求数使用情况有很直接的帮助。<br> | POST | /cdn/request/originip_request |
+| Submitxlwinjecttask | 该接口用于为新蓝网客户提交定制的注入任务。用户需提供注入内容、视频唯一标识、切片选项、文件源URL、发布路径、操作指令以及CDN厂商授权的用户名和密码。接口将返回任务处理结果，包括成功和失败的数据。 | POST | /content/inject |
+| Getprotocolbandwidthandrequestbyispprovince | 该接口用于查询指定省份和运营商下，按协议（HTTP/HTTPS）区分的带宽和请求数数据。用户可指定数据粒度、域名列表（最多50个）、时间范围，并可设置时间戳的归整方式。接口将返回每个域名在不同省份、运营商和协议下的带宽、请求数、流量及其对应的时间戳。 | POST | /cdn/request/protocol-bandwidth-request-isp-province |

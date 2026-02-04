@@ -1340,6 +1340,273 @@ func (s ReportP2pBandwidthDomainServiceResponseHeader) GoString() string {
 
 
 
+type QueryDynamicStaticRequestsRequest struct {
+  // {"en":"The English name (cust_en_name) of a sub-client. When a merged account needs to view a sub-client's information, this parameter is required.","zh_CN":"合并账号下的某个客户的英文名，当合并账号要查看子客户的信息时，必须填写子客户的英文名。"}
+  Cust *string `json:"cust,omitempty" xml:"cust,omitempty"`
+  // {"en":"Specifies the query date. The date format is yyyy-mm-dd. If not provided or empty, it defaults to the current day.","zh_CN":"查询的日期，日期格式为yyyy-mm-dd,不选或者为空时默认为当天；"}
+  Date *string `json:"date,omitempty" xml:"date,omitempty"`
+  // {"en":"The start date for the query. Format: yyyy-mm-dd. This parameter must be used with 'enddate'. If the 'date' parameter is also provided, this parameter will be ignored.","zh_CN":"查询的起始日期，日期格式为yyyy-mm-dd；此参数需与enddate参数配合，若存在date参数，则该参数无效。"}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty"`
+  // {"en":"The end date for the query. Format: yyyy-mm-dd. This parameter must be used with 'startdate'. If the 'date' parameter is also provided, this parameter will be ignored.","zh_CN":"查询的结束日期，日期格式为yyyy-mm-dd；此参数需与startdate参数配合，若存在date参数，则该参数无效。"}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty"`
+  // {"en":"The channels (domains) to be queried. If multiple channels are specified, use a semicolon (';') as a separator. If not provided or empty, it defaults to all channels for the queried customer.","zh_CN":"查询的频道，多个频道值请用英文分号';'，不选或者为空时默认为所查询客户的所有频道"}
+  Channel *string `json:"channel,omitempty" xml:"channel,omitempty"`
+  // {"dictionary":"belong=BCS-CC-API|dict=flowRegionCode","en":"The abbreviation for the acceleration region(s). If multiple regions are specified, use a semicolon (';') as a separator (e.g., 'region=cn;apac' to query data for CN and APAC regions). If not provided or empty, it defaults to all regions.","zh_CN":"查询的加速区域的缩写，多个区域请用英文分号';'分隔开，如查询大陆及亚太区域，参数填写为：'region=cn;apac'。不选或者为空时默认为全部区域。"}
+  Region *string `json:"region,omitempty" xml:"region,omitempty"`
+  // {"en":"The acceleration type parameter (e.g., accetype=web). If multiple types are specified, use a semicolon (';') as a separator. If not provided or set to 'all', it represents all types.","zh_CN":"加速类型参数，如accetype=web。多个请用英文分号';'分隔开，不填或值为all表示所有类型"}
+  Accetype *string `json:"accetype,omitempty" xml:"accetype,omitempty"`
+  // {"en":"Type of requests.\n- 0: Number of HTTPS requests\n- 1: Number of dynamic HTTPS requests\n- 2: Number of HTTP requests\n- 3: Number of dynamic HTTP requests\n- 4: Number of static HTTPS requests\n- 5: Number of static HTTP requests\n- 6: Total number of requests","zh_CN":"请求数类型。\n- 0：HTTPS请求数\n- 1：动态HTTPS请求数\n- 2：HTTP请求数\n- 3：动态HTTP请求数\n- 4：静态HTTPS请求数\n- 5：静态HTTP请求数\n- 6：总请求数","exampleValue":"0,1,2,3,4,5,6"}
+  DataType *string `json:"dataType,omitempty" xml:"dataType,omitempty"`
+  // {"en":"Whether to aggregate in a specific way. Format: number_day|hour. For example, '2_day' means aggregation by every 2 days. If not specified, data will be returned in its original granularity (5_min) by default.","zh_CN":"是否按照特定方式聚合,格式 :  数字_day|hour，例如‘2_day’表示按照2天聚合, 不填默认以底层数据粒度返回 （5_min）。"}
+  ReturnType *string `json:"returnType,omitempty" xml:"returnType,omitempty"`
+  // {"defaultValue":"xml","en":"The response format.\n1. optional values:xml, json.\n2. 'xml' as default.","zh_CN":"返回结果格式，支持格式为xml和json，默认为xml。","exampleValue":"json,xml"}
+  Dataformat *string `json:"dataformat,omitempty" xml:"dataformat,omitempty"`
+  // {"en":"The GMT time zone. The parameter format is GMT+09:00 for the East Ninth Zone and GMT-09:00 for the West Ninth Zone. If not provided, it defaults to the local time zone (GMT+08:00, East Eighth Zone).","zh_CN":"格林尼治时区，参数格式 GMT+09:00 表示东九区，GMT-09:00 表示西9区，不传则默认为本地时区（东八区）。"}
+  Timezone *string `json:"timezone,omitempty" xml:"timezone,omitempty"`
+}
+
+func (s QueryDynamicStaticRequestsRequest) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDynamicStaticRequestsRequest) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDynamicStaticRequestsRequest) SetCust(v string) *QueryDynamicStaticRequestsRequest {
+  s.Cust = &v
+  return s
+}
+
+func (s *QueryDynamicStaticRequestsRequest) SetDate(v string) *QueryDynamicStaticRequestsRequest {
+  s.Date = &v
+  return s
+}
+
+func (s *QueryDynamicStaticRequestsRequest) SetStartdate(v string) *QueryDynamicStaticRequestsRequest {
+  s.Startdate = &v
+  return s
+}
+
+func (s *QueryDynamicStaticRequestsRequest) SetEnddate(v string) *QueryDynamicStaticRequestsRequest {
+  s.Enddate = &v
+  return s
+}
+
+func (s *QueryDynamicStaticRequestsRequest) SetChannel(v string) *QueryDynamicStaticRequestsRequest {
+  s.Channel = &v
+  return s
+}
+
+func (s *QueryDynamicStaticRequestsRequest) SetRegion(v string) *QueryDynamicStaticRequestsRequest {
+  s.Region = &v
+  return s
+}
+
+func (s *QueryDynamicStaticRequestsRequest) SetAccetype(v string) *QueryDynamicStaticRequestsRequest {
+  s.Accetype = &v
+  return s
+}
+
+func (s *QueryDynamicStaticRequestsRequest) SetDataType(v string) *QueryDynamicStaticRequestsRequest {
+  s.DataType = &v
+  return s
+}
+
+func (s *QueryDynamicStaticRequestsRequest) SetReturnType(v string) *QueryDynamicStaticRequestsRequest {
+  s.ReturnType = &v
+  return s
+}
+
+func (s *QueryDynamicStaticRequestsRequest) SetDataformat(v string) *QueryDynamicStaticRequestsRequest {
+  s.Dataformat = &v
+  return s
+}
+
+func (s *QueryDynamicStaticRequestsRequest) SetTimezone(v string) *QueryDynamicStaticRequestsRequest {
+  s.Timezone = &v
+  return s
+}
+
+type QueryDynamicStaticRequestsRequestHeader struct {
+}
+
+func (s QueryDynamicStaticRequestsRequestHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDynamicStaticRequestsRequestHeader) GoString() string {
+  return s.String()
+}
+
+type QueryDynamicStaticRequestsPaths struct {
+}
+
+func (s QueryDynamicStaticRequestsPaths) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDynamicStaticRequestsPaths) GoString() string {
+  return s.String()
+}
+
+type QueryDynamicStaticRequestsParameters struct {
+}
+
+func (s QueryDynamicStaticRequestsParameters) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDynamicStaticRequestsParameters) GoString() string {
+  return s.String()
+}
+
+type QueryDynamicStaticRequestsResponse struct {
+  // {"en":"Result data from the provider.","zh_CN":"提供方返回的结果数据。"}
+  Provider *QueryDynamicStaticRequestsResponseProvider `json:"provider,omitempty" xml:"provider,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryDynamicStaticRequestsResponse) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDynamicStaticRequestsResponse) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDynamicStaticRequestsResponse) SetProvider(v *QueryDynamicStaticRequestsResponseProvider) *QueryDynamicStaticRequestsResponse {
+  s.Provider = v
+  return s
+}
+
+type QueryDynamicStaticRequestsResponseProvider struct {
+  // {"en":"Tenant name.","zh_CN":"租户名称。"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"defaultValue":"hit","en":"The business type of the interface.","zh_CN":"接口的业务类型。"}
+  Type *string `json:"type,omitempty" xml:"type,omitempty" require:"true"`
+  // {"en":"Contains detailed time-series data for the queried period.","zh_CN":"包含查询期间详细的时间序列数据"}
+  Date *QueryDynamicStaticRequestsResponseProviderDate `json:"date,omitempty" xml:"date,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryDynamicStaticRequestsResponseProvider) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDynamicStaticRequestsResponseProvider) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDynamicStaticRequestsResponseProvider) SetName(v string) *QueryDynamicStaticRequestsResponseProvider {
+  s.Name = &v
+  return s
+}
+
+func (s *QueryDynamicStaticRequestsResponseProvider) SetType(v string) *QueryDynamicStaticRequestsResponseProvider {
+  s.Type = &v
+  return s
+}
+
+func (s *QueryDynamicStaticRequestsResponseProvider) SetDate(v *QueryDynamicStaticRequestsResponseProviderDate) *QueryDynamicStaticRequestsResponseProvider {
+  s.Date = v
+  return s
+}
+
+type QueryDynamicStaticRequestsResponseProviderDate struct {
+  // {"en":"Start date.","zh_CN":"开始时间"}
+  Startdate *string `json:"startdate,omitempty" xml:"startdate,omitempty" require:"true"`
+  // {"en":"End date.","zh_CN":"结束时间"}
+  Enddate *string `json:"enddate,omitempty" xml:"enddate,omitempty" require:"true"`
+  // {"en":"Contains detailed request count, grouped by channel.","zh_CN":"包含按频道聚合的详细请求数"}
+  Channel *QueryDynamicStaticRequestsResponseProviderDateChannel `json:"channel,omitempty" xml:"channel,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryDynamicStaticRequestsResponseProviderDate) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDynamicStaticRequestsResponseProviderDate) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDynamicStaticRequestsResponseProviderDate) SetStartdate(v string) *QueryDynamicStaticRequestsResponseProviderDate {
+  s.Startdate = &v
+  return s
+}
+
+func (s *QueryDynamicStaticRequestsResponseProviderDate) SetEnddate(v string) *QueryDynamicStaticRequestsResponseProviderDate {
+  s.Enddate = &v
+  return s
+}
+
+func (s *QueryDynamicStaticRequestsResponseProviderDate) SetChannel(v *QueryDynamicStaticRequestsResponseProviderDateChannel) *QueryDynamicStaticRequestsResponseProviderDate {
+  s.Channel = v
+  return s
+}
+
+type QueryDynamicStaticRequestsResponseProviderDateChannel struct {
+  // {"en":"Channel","zh_CN":"频道"}
+  Name *string `json:"name,omitempty" xml:"name,omitempty" require:"true"`
+  // {"en":"Number of requests","zh_CN":"请求数"}
+  Hit *QueryDynamicStaticRequestsResponseProviderDateChannelHit `json:"hit,omitempty" xml:"hit,omitempty" require:"true" type:"Struct"`
+}
+
+func (s QueryDynamicStaticRequestsResponseProviderDateChannel) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDynamicStaticRequestsResponseProviderDateChannel) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDynamicStaticRequestsResponseProviderDateChannel) SetName(v string) *QueryDynamicStaticRequestsResponseProviderDateChannel {
+  s.Name = &v
+  return s
+}
+
+func (s *QueryDynamicStaticRequestsResponseProviderDateChannel) SetHit(v *QueryDynamicStaticRequestsResponseProviderDateChannelHit) *QueryDynamicStaticRequestsResponseProviderDateChannel {
+  s.Hit = v
+  return s
+}
+
+type QueryDynamicStaticRequestsResponseProviderDateChannelHit struct {
+  // {"en":"Time for the data point.","zh_CN":"数据对应的时间串"}
+  Time *string `json:"time,omitempty" xml:"time,omitempty" require:"true"`
+  // {"en":"Value of request number.","zh_CN":"请求数值"}
+  Text *string `json:"text,omitempty" xml:"text,omitempty" require:"true"`
+}
+
+func (s QueryDynamicStaticRequestsResponseProviderDateChannelHit) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDynamicStaticRequestsResponseProviderDateChannelHit) GoString() string {
+  return s.String()
+}
+
+func (s *QueryDynamicStaticRequestsResponseProviderDateChannelHit) SetTime(v string) *QueryDynamicStaticRequestsResponseProviderDateChannelHit {
+  s.Time = &v
+  return s
+}
+
+func (s *QueryDynamicStaticRequestsResponseProviderDateChannelHit) SetText(v string) *QueryDynamicStaticRequestsResponseProviderDateChannelHit {
+  s.Text = &v
+  return s
+}
+
+type QueryDynamicStaticRequestsResponseHeader struct {
+}
+
+func (s QueryDynamicStaticRequestsResponseHeader) String() string {
+  return tea.Prettify(s)
+}
+
+func (s QueryDynamicStaticRequestsResponseHeader) GoString() string {
+  return s.String()
+}
+
+
+
+
 type QueryBandwidthofOriginminutelyRequest struct {
   // {"en":"Start Time:\n1. The time format is yyyy-MM-ddTHH:mm:ss±HH:mm. Please note: ±HH:mm is the time zone offset, which can be adjusted according to your data needs, for example, +00:00 represents UTC time, +08:00 represents East 8th District, and -05:00 represents West 5th District. 2024-01-15T10:30:45+00:00 means UTC time January 15, 2024 10:30:45 AM;\n2. Not later than the current time;\n3. Up to 6 months (183 days) of data are available.","zh_CN":"开始时间：\n1.时间格式为 yyyy-MM-ddTHH:mm:ss±HH:mm。请注意：±HH:mm 为时区偏移量，可根据您的数据需要进行调整，例如 +00:00 代表 UTC 时间，+08:00 代表东八区，-05:00 代表西五区。2024-01-15T10:30:45+00:00，表示UTC 时间 2024 年 1 月 15 日上午 10 点 30 分 45 秒；\n2.不能大于当前时间；\n3.最多可获取最近半年（183天）的数据。"}
   DateFrom *string `json:"dateFrom,omitempty" xml:"dateFrom,omitempty"`
